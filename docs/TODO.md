@@ -1,51 +1,90 @@
-# TODO
+# Elite:Dangerous Black Book — TODO
 
+Working backlog for the project. Items are grouped by theme and tagged with a
+suggested phase so the work has a sensible order: **foundation first, then migrate &
+publish, then tooling, metadata, editorial polish, and new content.**
 
-Common design language
+> The raw original brain-dump is preserved in `docs/TODO_LEGACY.md` (to be deleted
+> once this rework is confirmed complete). See `docs/PROJECT_OVERVIEW.md` for the
+> full project map.
 
-Two things I intentionally left as open decisions rather than guessing: a brand logo/favicon concept isn't wired into the starter yet (you have eight to choose from), and the actual migration of the ~105 existing pages isn't done — both are noted in the changelog. Want me to wire in a chosen logo concept, or take the first migration pass on the ship × role dossiers?
+**Suggested phasing at a glance**
 
-Port over knowledge from CLAUDE_DESKTOP_KNOWLEDGE
-Credits
-Export a project knowledge related to all field manuals published that can be used in Claude Code
-Page_Data.md -> Convert data in page to MD files - to make page rebuilds easier
-Page_Anchors.md -> Add Hyperlink anchors that can be referred by the rest of the project
-Build skills/generator scripts to build pages basis markdown files and template style
-Reorganize file heirarchy
-Add a last updated for every page - date and ED build number
+| Phase | Theme | Goal |
+|---|---|---|
+| 0 | Foundation & branding | Lock the shared look, chrome, and brand identity |
+| 1 | Migration & publish | Move all guides onto the design system; ship to the web |
+| 2 | Content-as-data tooling | Make page rebuilds easy via Markdown + generators |
+| 3 | Per-page metadata & engagement | Freshness, sourcing, and feedback on every page |
+| 4 | Editorial polish | Voice, neutrality, and consistency pass |
+| 5 | New content | Expand the manual library |
 
-Common header and footer
-Logo and Banner
-favicon.ico
-Standardize page titles
-Publish on github pages
-Template for content
-Consistent page styling
-Github pages
-Glossary
-Link to inara
-Page title, header and breadcrumbs
-Build links to coriolis, edsy and slef (build javascript generator to generate/parse coriolis/edsy links)
-Role activities field manuals
-photos of ships in ship manuals - also add manufacturer logos
-Guide - modules and upgrades
-Guide - ED Glossary (better name) - https://newp.io/glossary
-Guide - Modules Guide - https://newp.io/shipyard
-quick nav option to match the one in the engineers.html page (add a go to top button)
-standardize file names - lower case "-" vs "_" slugify etc
-hyperlinks opne in new pages (think about this)
-Add On Foot / Odyssey Blueprints
-Add Guardian Mods
-Remove fleet bias
-Add ability to file tickets directly from every page (Github Issues)
-Remove CMDR etc from headers 
-Add sources on all pages, with hyperlinks (just base for fdev forums, reddit, steamcommunity)
+## Phase 0 — Foundation & branding
 
-# Done
+### Design system & shared styling
+- [ ] Confirm the `design-system/` (v1.0.0) is feature-complete for migration needs
+- [ ] Finalize the canonical content template (extend `design-system/templates/starter-page.html`)
+- [ ] Lock a single common design language so every page reads as one publication
 
-Engineering unlock guide
-Engineering field manual
-Role specific comparison pages
-Guide - BGS Guide - https://novaforce.com/guides/bgs/ and https://sinc.science/bgsguide.pdf
-Guide - HUD Customization Guide - https://newp.io/hud
-Guide - Super Power Reputation Grind - Empire/Federation/Alliance - https://newp.io/superpowerrank
+### Site chrome
+- [ ] Common header and footer across all pages
+- [ ] Page header + breadcrumbs (parent-index navigation)
+- [ ] Add a "Black Book" home link back to `guides/index.html` from every guide (masthead or footer) — touches all 108 files
+- [ ] Standardize page titles (one consistent `<title>` pattern site-wide)
+- [ ] Quick-nav on every page, matching `Engineers.html`, **plus a "go to top" button**
+
+### Branding
+- [ ] Choose one logo concept from `images/logos/` (8 candidates) and wire it in
+- [ ] Add the chosen logo + banner
+- [ ] Add `favicon.ico`
+
+## Phase 1 — Migration & publishing
+
+- [ ] Migrate all ~105 existing guides onto the design system (consistent page styling)
+- [ ] Reorganize the file hierarchy
+- [ ] Consolidate scattered images into the top-level `images/` folder
+- [ ] Standardize file names — lowercase, slugify, settle `-` vs `_`
+- [ ] Publish on GitHub Pages
+
+## Phase 2 — Content-as-data tooling
+
+- [ ] `Page_Data.md` — extract page content into per-page Markdown to make rebuilds easy
+- [ ] `Page_Anchors.md` — maintain hyperlink anchors referenceable across the project
+- [ ] Build skills / generator scripts that assemble pages from Markdown + the template
+- [ ] Build-link generators for Coriolis / EDSY / SLEF (JS to generate & parse loadout links)
+
+## Phase 3 — Per-page metadata & engagement
+
+- [ ] "Last updated" on every page — date **and** ED build number
+- [ ] Add sources on every page, with hyperlinks (base set: FDev forums, Reddit, Steam Community)
+- [ ] Wire credits/sourcing into pages (surface `docs/Credits.md` references inline)
+- [ ] Link out to INARA where relevant
+- [ ] "File a ticket" link on every page → GitHub Issues
+
+## Phase 4 — Editorial polish
+
+- [ ] Add ship photos to ship manuals + manufacturer logos
+- [ ] Remove fleet bias from content
+- [ ] Remove "CMDR" etc. from headers
+
+## Phase 5 — New content / guides
+
+- [ ] Modules & upgrades guide (ref: <https://newp.io/shipyard>)
+- [ ] ED glossary — pick a better name (ref: <https://newp.io/glossary>)
+- [ ] On-foot / Odyssey blueprints
+- [ ] Guardian mods
+
+## Open decisions (needs a call before building)
+
+- [ ] Should hyperlinks open in a new tab/page? (decide the site-wide link target behavior)
+
+## Done
+
+- [x] Home / landing page (`guides/index.html`) — indexes & links to all guides (styled like `Engineers.html`)
+- [x] Engineering unlock guide (`Checklist.html`)
+- [x] Engineering field manual (`Engineers.html`, `Blueprints.html`)
+- [x] Role-specific comparison pages (`role-ship/`)
+- [x] Role-activity field manuals (`role-activities/`)
+- [x] BGS guide — refs: <https://novaforce.com/guides/bgs/>, <https://sinc.science/bgsguide.pdf>
+- [x] HUD customization guide — ref: <https://newp.io/hud>
+- [x] Superpower reputation grind (Empire / Federation / Alliance) — ref: <https://newp.io/superpowerrank>
