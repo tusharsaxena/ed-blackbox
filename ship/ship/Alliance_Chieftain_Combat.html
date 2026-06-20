@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Alliance Chieftain · Combat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#e0463c;
+    --acc-lt:#ff6f64;
+    --acc-deep:#7d1e1a;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon / Alliance</div>
+    <h1>Alliance Chieftain<span class="role">Combat</span></h1>
+    <p class="lede">The agile tank. The Alliance Chieftain pairs <b>three military slots and a heavy armour base with the best agility of any tough medium</b> &mdash; a brawler that turns like a much smaller ship while shrugging off punishment, all for a fraction of the price of the premium combat mediums. The community's value-combat darling.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Hardpoints</span><b>2L &middot; 1M &middot; 3S</b></div>
+      <div class="chip"><span>Military</span><b>3 slots</b></div>
+      <div class="chip"><span>Hull</span><b>~18.6M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Combat</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:88"><div class="num">88<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Combat Suitability Rating</div>
+        <div class="d">One of the best-value combat ships in the game and a top-tier AX hull. Its agility-plus-armour combination is rare, and three military slots make it brutally tanky. It ranks just below the duelling and alpha specialists only because its raw DPS ceiling is a touch lower &mdash; everything else is elite.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Alliance Chieftain is the ship that proved a medium could be tough <em>and</em> nimble. Built on the Alliance chassis it shares with the Challenger and Crusader, it carries a heavy armour base, three dedicated military slots for reinforcement, and &mdash; uniquely among tanky mediums &mdash; agility that lets it out-turn ships half its mass.</p>
+    <p>Two large hardpoints anchor a six-mount loadout, and the military slots let it hull-tank to absurd levels while keeping its shields as a buffer. At under 19M credits it's a fraction of the cost of a Fer-de-Lance or Python Mk II, yet it holds its own against both in a sustained fight. It's also one of the premier anti-Thargoid platforms, which is why so many AX pilots fly it.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Conflict zones, Hazardous RES, pirate massacres and &mdash; especially &mdash; Thargoid AX combat. Anywhere a tough, agile, affordable brawler that can stand in the fight and keep turning matters.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">235 / 338 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2 Large &middot; 1 Medium &middot; 3 Small</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">400 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">504 <small>(heavy)</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~162 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">3 <small>(class 4)</small></div></div>
+      <div class="cell"><div class="k">Power plant</div><div class="v">Class 6</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;4&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Excellent <small>(for a tank)</small></div></div>
+      <div class="cell"><div class="k">Distributor</div><div class="v">Class 6</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      </div>
+    <p>Four things make the Chieftain a standout combat medium:</p>
+    <ul class="clean">
+      <li><b>Agility plus armour.</b> The rare combination &mdash; it turns like a light ship but tanks like a heavy one, so it holds guns on target while absorbing return fire.</li>
+      <li><b>Three military slots.</b> Dedicated reinforcement bays let it hull-tank far beyond what its optionals alone would allow &mdash; the Alliance signature.</li>
+      <li><b>Two large hardpoints.</b> Enough main-battery punch to kill anything in a RES or CZ, backed by a medium and three smalls for utility weapons.</li>
+      <li><b>Outstanding value.</b> Under 19M credits for a top-tier brawler &mdash; the cheapest way into elite-class medium combat.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>Its raw DPS ceiling sits below the four-large Python Mk II and the huge-mount Fer-de-Lance, and its shields are modest (it's a hull-tank, not a shield-tank). It won't out-duel an FDL or out-alpha a Mamba &mdash; but it out-turns and out-lasts most of them, and costs a fraction as much. The trade is peak damage for balance, toughness and price.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <p class="subhd">Same class &mdash; medium-pad combat ships</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Alliance Chieftain</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Huge mount; best duelling agility; higher alpha</span><span class="c">Tiny internals; far pricier; no military slots</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
+        <tr><td class="mod">Python Mk II</td><td>Medium</td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; more sustained DPS</span><span class="c">Less agile; pricier; no military slots</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; deeper internals; bigger guns</span><span class="c">Pricier; less agile</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Mamba</td><td>Medium</td><td>1H 2L 2S</td><td class="pcc"><span class="p">Far faster; bigger alpha</span><span class="c">Poor agility; pricier; fragile internals</span></td><td><span class="rscore">89</span><div class="bar"><i style="width:89%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Chieftain <span class="tag r">this</span></td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Even tankier; more hardpoints</span><span class="c">Slower and less agile</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>3L 3M</td><td class="pcc"><span class="p">Six guns; modern; roomier</span><span class="c">Pricier; no military slots</span></td><td><span class="rscore">85</span><div class="bar"><i style="width:85%"></i></div></td></tr>
+        <tr><td class="mod">Federal Assault Ship</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Similarly fast/agile/tough Federal brawler</span><span class="c">Federal rank gate; fewer total mounts</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Versatile; roomy multi-role</span><span class="c">Less agile; lower combat focus</span></td><td><span class="rscore">83</span><div class="bar"><i style="width:83%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Crusader</td><td>Medium</td><td>1L 2M 3S</td><td class="pcc"><span class="p">SLF bay; 3 crew; same tank chassis</span><span class="c">Slowest of the three; lower shield</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Chieftain is the value-combat champion of the medium class. The premium specialists out-gun or out-duel it, but none matches its blend of agility, armour and price. For most PvE combat &mdash; and almost all AX work &mdash; it's the smartest credits you can spend.</p>
+    <p class="subhd">Other classes &mdash; the larger leagues</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Alliance Chieftain</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">The combat apex; firepower and tank without peer</span><span class="c">Federal Rear Admiral rank; ~187M Cr; large pad</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shields and firepower</span><span class="c">Imperial rank; poor agility; large pad</span></td><td><span class="rscore">91</span><div class="bar"><i style="width:91%"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight hardpoints; vast internals</span><span class="c">Ponderous; costly; large pad</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Vulture</td><td>Small</td><td>2L</td><td class="pcc"><span class="p">Small-pad agility; cheap</span><span class="c">Two guns; power-starved; less tank</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">Turret AX platform; very tough</span><span class="c">Slow and unwieldy; large pad</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Large warships out-gun and out-tank the Chieftain but cost five to ten times as much and need a large pad. The Chieftain's whole pitch is delivering most of a heavy brawler's staying power, with better agility, on a medium pad, for under 19M credits.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~18.6M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~30M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~50M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~18.6M Cr the Chieftain is astonishingly cheap for its combat capability, with no rank or permit gate. A full combat fit &mdash; with three military-slot reinforcements engineered &mdash; stays well under the cost of a single premium combat medium's hull.</p>
+    <p>Because it's so affordable, many commanders keep one purely for AX work and another for CZ/RES, or fly it as their first serious combat ship before ever touching a Python Mk II or FDL.</p>
+    <div class="callout amber"><span class="lbl">The value pick</span>No combat medium delivers more capability per credit. The Chieftain is the standard 'first real warship' recommendation precisely because it punches so far above its price.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>The Alliance Chieftain anchors the 'AX Combat Jumpstart' ARX pre-built, themed for Thargoid combat. The standard pre-built rules apply: stock modules sell for 0 Cr and cannot be stored or transferred, but engineering the stock cores in place preserves the free rebuy.</p>
+    <p>If you fly the AX Jumpstart hull, add AX weapons and guardian modules to open slots and engineer the cores in situ &mdash; never strip the stock modules out.</p>
+    <table>
+      <thead><tr><th>Package</th><th>AX Combat Jumpstart (Alliance Chieftain)</th></tr></thead>
+      <tbody>
+        <tr><td>T</td><td>h</td><td>e</td><td>m</td><td>e</td></tr>
+        <tr><td>A</td><td>n</td><td>t</td><td>i</td><td>-</td><td>T</td><td>h</td><td>a</td><td>r</td><td>g</td><td>o</td><td>i</td><td>d</td><td> </td><td>(</td><td>A</td><td>X</td><td>)</td><td> </td><td>c</td><td>o</td><td>m</td><td>b</td><td>a</td><td>t</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">AX-themed pre-built</span>The Chieftain's Jumpstart is built for Thargoid combat &mdash; a natural fit, since the Chieftain is one of the best AX mediums. Build the AX kit into open slots and keep the rebuy free.</div>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A hull-tank combat fit that leans on the three military slots. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern with heavy reinforcement. An AX variant swaps the weapons for Guardian/AX hardpoints.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">Pulse Laser 3</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">Multi-Cannon 3</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Pulse Laser 2</td><td class="st">Beam Laser 2</td><td class="eng">Beam 2 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">Multi-Cannon 1</td><td class="st">Multi-Cannon 1</td><td class="eng">MC 1 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Pulse Laser 1</td><td class="eng">Pulse 1 &mdash; Efficient</td></tr>
+        <tr><td class="slot">Small 3</td><td class="st">&mdash;</td><td class="st">Pulse Laser 1</td><td class="eng">Pulse 1 &mdash; Efficient</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G3)</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (4)</td><td class="st">Hull Reinforcement</td><td class="st">Hull Reinforcement 4</td><td class="eng">HRP 4 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Military 2 (4)</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 4</td><td class="eng">HRP 4 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Military 3 (4)</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 4</td><td class="eng">Module Reinforcement 4</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Shield Generator 6</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Cargo Rack 5</td><td class="st">Shield Cell Bank 5</td><td class="eng">SCB 5</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 4</td><td class="eng">HRP 4 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 2</td><td class="eng">Module Reinforcement 2</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 2</td><td class="eng">SCB 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">Heat Sink storage</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">The military slots are the point</span>Three class-4 military slots filled with Heavy-Duty hull and module reinforcement are what make the Chieftain so durable. They don't compete with your shield or cargo, so the tank is almost free &mdash; use them.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~18.6M Cr) and fit a shield, then fill the military slots with hull reinforcement &mdash; instant tank.</p>
+    <p>Arm the two large mounts with gimballed multi-cannons; add a beam on the medium for shield-stripping.</p>
+    <p>Even unengineered, the armour base plus military slots make it RES- and CZ-ready immediately.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for an agile hull-tank:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Thrusters &rarr; A', 'Preserve the agility that sets the Chieftain apart.', '~3M Cr')</li>
+      <li><span class="stepnum">2</span>('Power Distributor &rarr; A', 'Sustain two large guns plus boost.', '~3M Cr')</li>
+      <li><span class="stepnum">3</span>('Power Plant &rarr; A', 'Headroom for guns, shields and utilities.', '~3M Cr')</li>
+      <li><span class="stepnum">4</span>('Shield Generator &rarr; bi-weave', 'A fast-regen buffer over the heavy hull.', '~2M Cr')</li>
+      <li><span class="stepnum">5</span>('FSD &rarr; A', 'Reach fights and turn-ins faster.', '~3M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Agility is the edge</span>Don't over-mass it chasing more tank &mdash; A-rate thrusters and keep the agility advantage that lets it hold guns on target while turning inside the enemy.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern with heavy reinforcement in the military slots. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one)</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">Beam Laser</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Thrusters first &mdash; the agility is the whole point; keep it.</li>
+      <li><span class="stepnum">2</span>Distributor and plant to G5 to sustain the guns.</li>
+      <li><span class="stepnum">3</span>Heavy-Duty hull reinforcement across the three military slots for the signature tank.</li>
+      <li><span class="stepnum">4</span>Weapons and shields last: Overcharged multi-cannons with one Corrosive, Resistance-Augmented bi-weave.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Moderate &mdash; standard combat G5s plus several Heavy-Duty hull reinforcements (Selene Jean). With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>338 m/s</td><td>338 m/s</td><td class="acc">~420 m/s</td></tr>
+        <tr><td class="mod">Agility</td><td>excellent</td><td>excellent</td><td class="acc">elite</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>504</td><td>504</td><td class="acc">~3,000+</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~230</td><td>~320</td><td class="acc">~650</td></tr>
+        <tr><td class="mod">Sustained DPS</td><td>high</td><td>high</td><td class="acc">high</td></tr>
+      </tbody>
+    </table>
+    <p>Engineering turns the Chieftain into an agile fortress &mdash; effective armour into the thousands via the military slots, boost past 400 m/s, and a usable shield buffer &mdash; while keeping the turn rate that lets it dominate a turning fight. The DPS stays solid rather than spectacular; survivability and control are the story.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Conflict zones.</b> The Chieftain's tank and agility let it sit in a CZ and farm combat bonds where lighter ships are forced out.</li>
+      <li><b>Hazardous RES.</b> Big-bounty targets fall to the two large guns while the hull soaks return fire.</li>
+      <li><b>Pirate massacre stacks.</b> Stack massacre missions and clear them in one durable CZ or RES session.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Thargoid AX combat.</b> With AX/Guardian weapons the Chieftain is a front-line anti-Thargoid hull &mdash; its agility dodges lightning and its tank survives hits. (A dedicated AX field manual covers this in depth.)</li>
+      <li><b>High-intensity CZ farming.</b> Engineered, it thrives in the toughest conflict zones for top combat-bond rates.</li>
+      <li><b>Power-play combat.</b> Clears enemy assets affordably while you grind faction standing.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example systems</span>Any Haz RES or CZ suits it; for AX, head to systems with Thargoid activity or spires. Around your Diaguandri / Ray Gateway base, CZ and massacre payouts double as Imperial-standing progress.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>Fill all three military slots with Heavy-Duty reinforcement &mdash; it's the cheapest, biggest survivability gain on the ship.</li>
+      <li>Fly it as an agile brawler: turn inside the enemy, hold guns on, and let the hull soak what gets through.</li>
+      <li>It's a hull-tank, not a shield-tank &mdash; modest shields are fine; the armour and reinforcement carry it.</li>
+      <li>Keep one configured for AX; the Chieftain is among the best value anti-Thargoid mediums in the game.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Alliance Chieftain is the best-value combat medium in Elite Dangerous: agile like a light ship, tough like a heavy one, and cheap enough to own several. It won't top a DPS chart, but it out-turns and out-lasts most ships that do, and it's a premier AX platform besides. For most commanders, it's the smartest combat purchase in the game.</div>
+  </section>
+
+  <footer>
+    <p><b>Alliance Chieftain &middot; Combat</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Alliance Chieftain &middot; Combat dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passenger Role Dossier — Ship Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#4f9fd6;        /* per-dossier accent (see conventions table) */
+    --acc-lt:#84c4ee;
+    --acc-deep:#1f4f72;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+
+  /* role-dossier additions */
+  td.cnum{font-family:'Chakra Petch',sans-serif;font-size:13.5px;color:var(--ink);text-align:right;white-space:nowrap}
+  td.ceng{font-size:12.5px;color:var(--ink-dim)}
+  td.ceng b{color:var(--acc-lt);font-weight:500}
+  td.led{font-size:12.5px;color:var(--ink-dim);line-height:1.4}
+  table.cmp2{table-layout:fixed}
+  .recgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .rec{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--acc);border-radius:var(--radius);padding:15px 17px}
+  .rec .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--amber);font-weight:600}
+  .rec .pick{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--acc-lt);margin:5px 0 7px;font-weight:600}
+  .rec .pick small{color:var(--ink-faint);font-size:12px;font-weight:400}
+  .rec p{margin:0;font-size:13.5px;color:var(--ink-dim)}
+  .rec .alt{margin-top:8px;font-size:12.5px;color:var(--ink-faint)}
+  .rec .alt b{color:var(--ink-dim);font-weight:500}
+  .anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+  .anchors .cell{background:var(--panel);padding:12px 14px}
+  .anchors .s{font-family:'Chakra Petch',sans-serif;font-size:24px;color:var(--acc-lt);font-weight:700}
+  .anchors .n{font-size:13px;color:var(--ink);margin-top:2px}
+  .anchors .n small{color:var(--ink-faint);display:block;font-size:11px}
+  @media(max-width:680px){.recgrid{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Role Dossier <span class="sep">//</span> Passenger</div>
+    <h1>Passenger<span class="role">Ship Comparison</span></h1>
+    <p class="lede">Every passenger-carrying hull, judged <b>for passenger transport specifically</b> and ranked on one 1&ndash;100 scale. Carrying passengers rewards a blend the other roles don&rsquo;t &mdash; <b>cabin capacity and cabin <em>class</em></b> (economy for bulk sightseeing, first/luxury for high-paying VIPs), then jump range for long tours, comfort and a strong shield to keep nervous VIPs happy and safe. This dossier groups all <b>6 liners</b> by pad class, ranks them, breaks down buy / A-rate / engineer costs, and closes with picks for bulk tourism and luxury VIP work.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Ships compared</span><b>6</b></div><div class="chip"><span>Classes</span><b>Small / Medium / Large</b></div><div class="chip"><span>Defining stat</span><b>Cabin berths</b></div><div class="chip"><span>Ceiling</span><b>Beluga 95</b></div><div class="chip"><span>Floor</span><b>Dolphin 80</b></div>
+    </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:95"><div class="num">95<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">How to read the scale</div>
+        <div class="d">A ship&rsquo;s number is its <b>passenger ceiling</b> relative to the field &mdash; weighing not just how many berths it fits, but how well it serves <b>luxury and VIP</b> missions, how comfortably it tours, and how safely. The <span class="acc">Beluga Liner (95)</span> anchors the top; the <span class="acc">Dolphin (80)</span> the floor. This is a tight, high-quality field &mdash; even the floor is a fine liner. Berth figures are <b>approximate economy maxima</b>; luxury fits carry far fewer, higher-paying passengers.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 How scored</a>
+    <a href="#s3">03 The full ladder</a>
+    <a href="#s4">04 Small pad</a>
+    <a href="#s5">05 Medium pad</a>
+    <a href="#s6">06 Large pad</a>
+    <a href="#s7">07 Recommendations</a>
+    <a href="#s8">08 Cost &amp; engineering</a>
+    <a href="#s9">09 Field notes</a>
+  </nav>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>The Passenger Role</h2></div>
+    <p>Passenger transport means carrying people, not cargo &mdash; from bulk sightseeing tours to pampered VIPs &mdash; in cabins fitted in place of cargo racks. It splits sharply into two trades, and the right ship depends on which you fly.</p><ul class="clean"><li><b>Bulk economy tourism.</b> Pack in economy cabins and ferry crowds to sightseeing beacons &mdash; the Robigo Mines loop is the archetype. Capacity is everything.</li><li><b>Luxury &amp; VIP missions.</b> A few first-class or luxury suites carrying wealthy, demanding passengers for huge payouts &mdash; cabin <em>class</em> and comfort matter more than count.</li><li><b>Long-range sightseeing.</b> Tours to distant landmarks; jump range and a big fuel tank decide how smoothly (and how on-time) you deliver.</li><li><b>Wanted / discrete passengers.</b> Some VIPs are hot &mdash; a shield and the speed to escape a scan keep the contract (and the payout) intact.</li></ul><div class="callout amber"><span class="lbl">What makes a liner</span>Cabin capacity and cabin <em>class</em> first &mdash; economy for crowds, first/luxury for VIPs. Then comfort (the Saud Kruger liners carry a happiness bonus), jump range for tour length, and a strong shield: a frightened or injured VIP cancels the mission. Speed helps you keep to a schedule and dodge scans.</div>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>How These Ships Are Scored</h2></div>
+    <p>The 1&ndash;100 passenger rating weighs, in order:</p><ul class="clean"><li><b>Cabin capacity &amp; class fit</b> &mdash; both raw berths for bulk work and the ability to fit large first/luxury suites for VIPs.</li><li><b>Comfort</b> &mdash; the dedicated Saud Kruger liners (Beluga, Orca, Dolphin) carry a passenger-satisfaction edge that raises payouts and lowers complaints.</li><li><b>Jump range &amp; tank</b> &mdash; long sightseeing tours live or die on reach.</li><li><b>Shield &amp; safety</b> &mdash; protecting VIPs from harm and scans; a cancelled VIP mission is a total loss.</li><li><b>Pad class &amp; cost</b> &mdash; mediums reach more destinations; cost sets how freely you operate.</li></ul><p>This is the tightest field in the series &mdash; every hull here is a genuinely good liner, so the floor sits at 80, not 40. The Beluga tops it on capacity-plus-comfort; the Cutter holds <em>more</em> economy berths but lacks the comfort bonus and the liner polish, which is why it scores just below the dedicated ships.</p><div class="anchors"><div class="cell"><div class="s">95</div><div class="n">Beluga<small>the ceiling</small></div></div><div class="cell"><div class="s">90</div><div class="n">Orca<small>luxury speedster</small></div></div><div class="cell"><div class="s">88</div><div class="n">Lynx Highliner<small>medium-pad liner</small></div></div><div class="cell"><div class="s">82</div><div class="n">Anaconda<small>long-range berths</small></div></div><div class="cell"><div class="s">80</div><div class="n">Dolphin<small>the floor</small></div></div></div><p class="subhd">The three cost figures</p><ul class="clean"><li><b>Hull</b> — the shipyard price of the bare ship.</li><li><b>A-rated fit (no engineering)</b> — an approximate all-in credit total for a full role-appropriate loadout using the best <em>buyable</em> modules. A ballpark; your module choices swing it.</li><li><b>To engineer</b> — engineering costs <b>materials and engineer unlocks, not credits</b>. A fully-engineered ship costs the same credits as its A-rated fit; the extra cost is a materials grind whose <b>tier</b> (Moderate / Heavy / Very heavy) scales with hull size.</li></ul><div class="callout acc"><span class="lbl">The rebuy column</span>The cost tables also list an approximate <b>rebuy</b> (~5% of insured value) — what you pay each time the ship is destroyed. It is the number that really governs how boldly you can fly.</div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>The Full Passenger Ladder</h2></div>
+    <p>All 6 liners on one scale, best to worst, with approximate economy berth count as the headline. Luxury fits trade many berths for far higher-paying passengers. Per-class breakdowns and costs follow.</p>
+    <table class="cmp2">
+      <colgroup><col style="width:17%"><col style="width:10%"><col style="width:16%"><col style="width:7%"><col style="width:38%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max berths</th><th>Dist.</th><th>One-line verdict</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Beluga Liner</td><td><span class="tag r">Large</span></td><td>~250</td><td>PD6</td><td class="led">The flagship liner &mdash; the definitive passenger ship.</td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
+<tr><td class="mod">Orca</td><td><span class="tag r">Large</span></td><td>~118</td><td>PD5</td><td class="led">The luxury speedster &mdash; comfort and pace for VIP work.</td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+<tr><td class="mod">Imperial Cutter</td><td><span class="tag r">Large</span></td><td>~340</td><td>PD7</td><td class="led">The armoured megaliner &mdash; capacity and safety over charm.</td><td><span class="rscore">89</span><div class="bar"><i style="width:89%"></i></div></td></tr>
+<tr><td class="mod">Lynx Highliner</td><td><span class="tag g">Medium</span></td><td>~110</td><td>PD5</td><td class="led">The medium-pad liner &mdash; bulk tourism that reaches outposts.</td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+<tr><td class="mod">Anaconda</td><td><span class="tag r">Large</span></td><td>~170</td><td>PD8</td><td class="led">The long-range generalist &mdash; great berths, no liner polish.</td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+<tr><td class="mod">Dolphin</td><td><span class="tag a">Small</span></td><td>~26</td><td>PD3</td><td class="led">The boutique tourer &mdash; small, comfortable, and charming.</td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Read it in a narrow band: every ship here is between <b>80</b> and <b>95</b>, because there are few passenger hulls and all are good at it. The real choice isn&rsquo;t good-vs-bad &mdash; it&rsquo;s <b>bulk economy vs luxury VIP</b>, and <b>large-pad capacity vs medium-pad reach</b>.</p>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Small-Pad Passenger</h2></div>
+    <p>The small class offers one true liner &mdash; and it&rsquo;s a gem. The Dolphin proves a passenger ship doesn&rsquo;t need to be huge: it&rsquo;s cool, comfortable, lands anywhere, and runs small luxury and long-range VIP contracts beautifully.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max berths</th><th>Pros &amp; cons for passenger</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Dolphin</td><td>Small</td><td>~26</td><td class="pcc"><span class="p">Cool, comfortable, lands anywhere, with a lovely Saud Kruger cabin feel</span><span class="p">Cheap, and superb for small luxury and long-range VIP runs</span><span class="c">Only a handful of berths &mdash; not a bulk-tourism ship</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each small hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Dolphin</td><td class="cnum">1.3M</td><td class="cnum amb">~5.7M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~283k</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Small-pad takeaway</span>The <span class="amb">Dolphin (80)</span> is the boutique choice &mdash; a few comfortable berths, a Saud Kruger comfort bonus, a cool-running hull and a tiny rebuy. It can&rsquo;t do bulk tourism, but for a couple of well-paid VIPs on a long, scenic run it&rsquo;s delightful and nearly free to operate.</div>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>Medium-Pad Passenger</h2></div>
+    <p>The medium class is about <b>reach</b>: a liner that docks at the outposts the big Saud Kruger ships can&rsquo;t. For the Robigo-style bulk-tourism loop, where the destination is often a medium pad, that access is decisive.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max berths</th><th>Pros &amp; cons for passenger</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Lynx Highliner</td><td>Medium</td><td>~110</td><td class="pcc"><span class="p">A dedicated medium-pad liner &mdash; docks where the big liners can&rsquo;t</span><span class="p">Purpose-built passenger slots; the natural Robigo bulk-tourism hull</span><span class="c">Restricted FSD slot caps its jump range; medium-scale capacity</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each medium hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Lynx Highliner</td><td class="cnum">69M</td><td class="cnum amb">~93M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~4.6M</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Medium-pad takeaway</span>The <span class="amb">Lynx Highliner (88)</span> is the dedicated medium-pad liner &mdash; purpose-built passenger slots and the natural hull for bulk Robigo tourism that needs to reach outposts. Its restricted FSD slot caps jump range, so it&rsquo;s a loop-runner, not a deep-tour ship &mdash; but on its home turf nothing medium matches it.</div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>Large-Pad Passenger</h2></div>
+    <p>Large pad is where capacity and luxury peak. The dedicated Saud Kruger liners bring comfort bonuses and banks of suites; the Cutter and Anaconda bring sheer berth count, shielding and (for the Anaconda) range. The cost is a large pad and a large price.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max berths</th><th>Pros &amp; cons for passenger</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Beluga Liner</td><td>Large</td><td>~250</td><td class="pcc"><span class="p">The flagship dedicated liner &mdash; vast cabin capacity and Saud Kruger passenger comfort</span><span class="p">Equally at home with bulk economy tours or banks of luxury suites</span><span class="c">Large pad, expensive, and ponderous to fly</span></td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
+<tr><td class="mod">Orca</td><td>Large</td><td>~118</td><td class="pcc"><span class="p">A fast, beautiful luxury liner with excellent passenger comfort</span><span class="p">Lighter and quicker than the Beluga &mdash; lovely for scenic VIP tours</span><span class="c">Large pad; fewer berths than the bigger liners</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+<tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~340</td><td class="pcc"><span class="p">The most economy berths in the game, plus a warship shield to protect VIPs</span><span class="p">Fast for a large &mdash; outruns the trouble that wealthy passengers attract</span><span class="c">Imperial Duke rank, very expensive, no passenger-comfort bonus</span></td><td><span class="rscore">89</span><div class="bar"><i style="width:89%"></i></div></td></tr>
+<tr><td class="mod">Anaconda</td><td>Large</td><td>~170</td><td class="pcc"><span class="p">Big cabin capacity and the jump range for the longest sightseeing tours</span><span class="p">No rank gate; doubles as everything else you own</span><span class="c">No comfort bonus, large pad, heavy rebuy</span></td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each large hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Beluga Liner</td><td class="cnum">85M</td><td class="cnum amb">~161M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~8.0M</td></tr>
+<tr><td class="mod">Orca</td><td class="cnum">49M</td><td class="cnum amb">~66M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~3.3M</td></tr>
+<tr><td class="mod">Imperial Cutter</td><td class="cnum">209M</td><td class="cnum amb">~451M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~23M</td></tr>
+<tr><td class="mod">Anaconda</td><td class="cnum">147M</td><td class="cnum amb">~366M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~18M</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Large-pad takeaway</span>The <span class="amb">Beluga Liner (95)</span> is the definitive liner &mdash; vast capacity and the best comfort. The <span class="amb">Orca (90)</span> is its faster, prettier luxury sibling. The <span class="amb">Imperial Cutter (89)</span> holds the most economy berths and the best shield for risky VIPs, and the <span class="amb">Anaconda (82)</span> adds the jump range for the longest tours.</div>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Recommendations By Liner</h2></div>
+    <p>The right liner is decided by your trade: bulk crowds or pampered VIPs, and which pads your destinations use. Pick the description that fits you.</p><div class="recgrid"><div class="rec"><div class="who">Brand-new · boutique VIP runs</div><div class="pick">Dolphin <small>· 80 · ~6M all-in</small></div><p>Cheap, comfortable, cool, and lands anywhere &mdash; perfect for a couple of well-paid luxury passengers on a scenic route. The friendliest way into the trade.</p><div class="alt"><b>Also:</b> the <b>Lynx Highliner</b> when you&rsquo;re ready to carry crowds.</div></div><div class="rec"><div class="who">The Robigo bulk-tourism loop</div><div class="pick">Lynx Highliner <small>· 88 · ~75M all-in</small></div><p>A dedicated medium-pad liner that reaches the outposts bulk-tourism missions love &mdash; purpose-built passenger slots and capacity tuned for the loop.</p><div class="alt"><b>Also:</b> the <b>Beluga</b> if every destination on your loop has a large pad.</div></div><div class="rec"><div class="who">One liner for everything</div><div class="pick">Beluga Liner <small>· 95 · ~210M all-in</small></div><p>The flagship &mdash; vast capacity, the best comfort bonus, and the flexibility to run bulk economy or banks of luxury suites. If you carry passengers seriously, this is the ship.</p><div class="alt"><b>Also:</b> the <b>Orca</b> for the same trade in a faster, lighter hull.</div></div><div class="rec"><div class="who">High-value luxury VIPs, in style</div><div class="pick">Orca <small>· 90 · ~80M all-in</small></div><p>Fast, beautiful and supremely comfortable &mdash; the liner for pampering a handful of wealthy passengers on a scenic tour and arriving early.</p><div class="alt"><b>Also:</b> the <b>Beluga</b> for more capacity; the <b>Dolphin</b> for a budget version.</div></div><div class="rec"><div class="who">Risky or wanted VIPs</div><div class="pick">Imperial Cutter <small>· 89 · ~520M all-in</small></div><p>The most berths in the game behind a warship shield, fast enough to flee a scan &mdash; the safe choice when your passengers attract trouble.</p><div class="alt"><b>Also:</b> the <b>Anaconda</b> for more range and no rank gate.</div></div><div class="rec"><div class="who">Longest sightseeing tours</div><div class="pick">Anaconda <small>· 82 · ~290M all-in</small></div><p>Big cabin capacity plus the jump range and fuel tank for tours to distant landmarks &mdash; and it&rsquo;s the same hull you already explore and fight in.</p><div class="alt"><b>Also:</b> the <b>Beluga</b> if comfort and capacity matter more than reach.</div></div></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>Cost &amp; Engineering Reality</h2></div>
+    <p>A liner&rsquo;s engineering is gentle &mdash; the goal is reach, comfort and safety, not combat performance. The tour is short and shared across the hulls here.</p><table><thead><tr><th>Module</th><th>Blueprint (G5)</th><th>Experimental</th><th>Engineer</th></tr></thead><tbody><tr><td class="mod">Frame Shift Drive</td><td>Increased Range</td><td><span class="acc">Mass Manager</span></td><td>Felicity Farseer</td></tr><tr><td class="mod">Shield Generator</td><td>Reinforced</td><td>Hi-Cap</td><td>Lei Cheung</td></tr><tr><td class="mod">Thrusters</td><td>Clean Drive Tuning</td><td>Drag Drives</td><td>Prof. Palin</td></tr><tr><td class="mod">Power Plant</td><td>Low Emissions</td><td>Thermal Spread</td><td>Hera Tani</td></tr><tr><td class="mod">Life Support</td><td>Lightweight</td><td>&mdash;</td><td>Felicity Farseer</td></tr></tbody></table><div class="callout"><span class="lbl">Where the credits go</span>The expense is the <b>cabins</b> &mdash; especially first-class and luxury suites, which cost a fortune and eat huge slots, but pay many times more per passenger. A bulk economy fit is cheap; a luxury VIP fit is where the money (and the earnings) live. Engineering costs <b>materials, not credits</b>; a liner&rsquo;s materials tier is <b>Moderate</b> on the small/medium hulls and <b>Heavy</b> on the larges &mdash; mostly just FSD range and a shield.</div><p class="subhd">Two practical notes</p><ul class="clean"><li><b>Match cabin class to the mission.</b> Economy cabins for sightseeing crowds; first/luxury for VIP contracts. A wrong-class cabin can&rsquo;t take the passenger at all &mdash; many liners carry a mix to stay flexible.</li><li><b>A shield is non-negotiable for VIPs.</b> Hull damage frightens or injures passengers and can void the contract; never run high-value VIPs without a healthy shield and an escape plan.</li></ul>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Field Notes &amp; Verdict</h2></div>
+    <ul class="clean"><li><b>Two trades, one role.</b> Bulk economy tourism and luxury VIP work want almost opposite fits &mdash; many berths of cheap cabins, or a few hugely expensive suites. Decide which you fly before you buy.</li><li><b>Comfort is real money.</b> The Saud Kruger liners&rsquo; satisfaction bonus raises payouts and cuts complaints &mdash; it&rsquo;s why the Beluga and Orca out-rate the bigger-capacity Cutter for VIP work.</li><li><b>Pad class shapes the loop.</b> Robigo-style bulk tourism often ends at outposts, which is exactly why a medium-pad Lynx Highliner can out-earn a Beluga that can&rsquo;t dock there.</li><li><b>Keep to the clock.</b> Timed sightseeing missions reward range and speed; a long tour in a short-legged hull bleeds bonuses.</li><li><b>Protect the cargo that complains.</b> Unlike ore, passengers react to danger &mdash; fly smooth, shielded and unscanned, and the payouts are among the best in the game.</li></ul><div class="callout acc"><span class="lbl">Verdict</span>For the definitive passenger ship, buy the <b>Beluga Liner (95)</b>. For fast, stylish luxury VIP work, the <b>Orca (90)</b>. For the Robigo bulk-tourism loop into outposts, the medium-pad <b>Lynx Highliner (88)</b> is the specialist&rsquo;s pick &mdash; and the <b>Dolphin (80)</b> remains a delightful, near-free way to carry a VIP or two in comfort.</div>
+  </section>
+
+  <footer>
+    <p><b>Passenger · Role Comparison Dossier</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data, cross-checked against Inara; Lynx Highliner slot layout hand-derived (not in coriolis-data). Berth figures are approximate economy maxima; luxury/first-class fits carry far fewer, higher-paying passengers. Ratings are role-suitability judgements on a 1&ndash;100 scale, frozen across the roster. Cost figures are approximate. Engineering costs materials and engineer unlocks, not credits.</p>
+  </footer>
+
+</div>
+</body>
+</html>

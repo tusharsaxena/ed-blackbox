@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Keelback · Trading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#3fa45c;
+    --acc-lt:#74d68c;
+    --acc-deep:#155029;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1>Keelback<span class="role">Trading</span></h1>
+    <p class="lede">The freighter that fights back. The Keelback is a <b>Type-6 with a fighter bay</b> &mdash; a cheap medium hauler that, uniquely at its price, can launch a ship-launched fighter to defend its cargo. Modest hold, but the budget trader that doesn't have to flee every pirate.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Max cargo</span><b>~98 t</b></div>
+      <div class="chip"><span>Utility</span><b>3</b></div>
+      <div class="chip"><span>Hull</span><b>~2.95M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Trading</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:52"><div class="num">52<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Trading Suitability Rating</div>
+        <div class="d">A characterful budget trader defined by one trick: a fighter bay. Its cargo is small &mdash; less even than the cheaper Type-6 &mdash; but the ability to deploy an SLF for defence is unique at this price; it ranks low on pure capacity, high on novelty and self-defence for a cheap hauler.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Keelback is Lakon's combat-capable take on the Type-6: a cheap medium freighter that gives up a little cargo in exchange for a ship-launched fighter bay and a tougher hull. That fighter is the whole point &mdash; a cheap hauler that, when a pirate interdicts, can launch an SLF (or have a crewmate fly it) to fight back, rather than simply running or dying.</p>
+    <p>Its cargo is genuinely modest &mdash; around 98 tonnes, actually less than the cheaper Type-6, since slots go to the fighter bay and defences. So as a pure hauler it's poor value. But for a budget trader who'd rather deploy a fighter than flee, or who wants a cheap ship that can dabble in light combat and mining too, the Keelback's defensive trick gives it a niche the plain freighters can't match.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Defended budget trading: cheap hauling through pirate-prone space with an SLF for protection, mixed trade-and-light-combat play, and a versatile cheap hull that hauls, fights a little, or mines.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~98 <small>t</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">202 / 303 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">3</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">180 <small>t</small></div></div>
+      <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF for defence)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;5&middot;4&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Power plant</div><div class="v">Class 4</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>Four things define the Keelback as a trader:</p>
+    <ul class="clean">
+      <li><b>A fighter bay.</b> Unique at its price &mdash; launch an SLF to defend your cargo against pirates instead of fleeing.</li>
+      <li><b>Tougher than a Type-6.</b> A more durable hull better suited to standing its ground.</li>
+      <li><b>Medium-pad access.</b> Lands at most stations, including outposts.</li>
+      <li><b>Cheap and versatile.</b> Under 3M credits, and the same hull can fight a little or mine.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>Its cargo is small &mdash; less than the cheaper Type-6 &mdash; because slots go to the fighter bay and defences, so as a pure hauler it's poor value. It's slow, and the fighter needs crew or NPC piloting to use well. The Keelback only makes sense if you specifically want a cheap hauler with an SLF; for tonnage-per-credit, the Type-6 or Type-8 win easily.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for trading specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; the headline number for bulk hauling.</p>
+    <p class="subhd">Same class &mdash; medium-pad traders</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Keelback</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Far more cargo; tougher; faster</span><span class="c">No fighter bay; pricier</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">More cargo; fights without an SLF</span><span class="c">Pricier</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~110</td><td class="pcc"><span class="p">More cargo; cheaper</span><span class="c">No fighter bay; can't fight</span></td><td><span class="rscore">65</span><div class="bar"><i style="width:65%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">More cargo; SLF; combat-capable</span><span class="c">Pricier</span></td><td><span class="rscore">64</span><div class="bar"><i style="width:64%"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~220</td><td class="pcc"><span class="p">More cargo; great range</span><span class="c">No fighter bay; pricier</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+        <tr><td class="mod">Keelback <span class="tag r">this</span></td><td>Medium</td><td>~98</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">52</span><div class="bar"><i style="width:52%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Keelback carries the least of the medium traders, but it's the cheapest with a fighter bay. The Type-6 hauls more for less, and the Python fights better &mdash; so the Keelback only wins if you specifically want a budget hauler that can deploy an SLF. A niche pick.</p>
+    <p class="subhd">Other classes &mdash; the alternatives</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Keelback</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Far more cargo</span><span class="c">Large pad; no fighter; pricier</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">More cargo; fights decisively itself</span><span class="c">Pricier</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~110</td><td class="pcc"><span class="p">More cargo; far cheaper</span><span class="c">Can't defend itself</span></td><td><span class="rscore">65</span><div class="bar"><i style="width:65%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Faster; lands anywhere; versatile</span><span class="c">Less cargo; no fighter</span></td><td><span class="rscore">48</span><div class="bar"><i style="width:48%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">More cargo plus an SLF and big guns</span><span class="c">Far pricier</span></td><td><span class="rscore">64</span><div class="bar"><i style="width:64%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>If you want a hauler with a fighter, the pricier Krait Mk II does it far better with more cargo and real guns. The Keelback's only edge is doing it cheaply. For most budget traders, a Type-6 (more cargo) or a Python (fights itself) is the smarter buy &mdash; the Keelback is for the SLF novelty on a budget.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~2.95M Cr</div></div>
+      <div class="cell"><div class="k">A-rated trader</div><div class="v">~6M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~12M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~2.95M Cr the Keelback is cheap, with no rank gate, though a fighter bay plus a hangar and SLF add to the fit. The all-in cost lands around 12M Cr with a defended, fighter-equipped build.</p>
+    <p>It's a niche-and-novelty pick. For pure cargo the cheaper Type-6 carries more; for fighting, the Python is better. The Keelback makes sense only if the cheap fighter bay specifically appeals.</p>
+    <div class="callout amber"><span class="lbl">Cheap fighter bay, little else</span>Around 12M Cr for a budget hauler that can launch an SLF &mdash; a fun, niche trick, but the Type-6 hauls more and the Python fights better.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no trading-specific ARX pre-built built around the Keelback; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A defended budget trade fit built around the fighter bay. Initial is buy-only; A-rated is the trade baseline; Engineered balances modest cargo, a shield and the SLF.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Cargo Rack 5</td><td class="st">Fighter Hangar 5</td><td class="eng">Fighter Hangar 5 (SLF)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Cargo Rack 5</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo Rack 4 (16t)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Generator 3 (bi-weave)</td><td class="eng">Bi-Weave 3 &mdash; defence</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Cargo Rack 2 (4t)</td><td class="eng">Cargo Rack 2 (4t)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 2</td><td class="eng">SCB 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS / spare</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">The fighter is the point</span>A class-5 fighter hangar is the Keelback's reason to exist &mdash; deploy an SLF (yourself, a crewmate or an NPC) to fight off pirates while the freighter survives. The cargo it costs you is the price of that defence; if you don't want the fighter, buy a Type-6 instead.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~2.95M Cr) and fit a fighter hangar plus cargo racks and a small shield.</p>
+    <p>Add a fighter of your choice and crew (or NPC pilot) to operate it.</p>
+    <p>A-rate the FSD and thrusters so the laden ship moves and jumps reasonably.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a defended budget hauler:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Power Plant &rarr; A', 'Power for the fighter bay, shield and modules.', '~1.5M Cr')</li>
+      <li><span class="stepnum">2</span>('FSD &rarr; A', 'Laden jump range for route efficiency.', '~1.5M Cr')</li>
+      <li><span class="stepnum">3</span>('Thrusters &rarr; A', 'Move the laden hull and reposition.', '~1.5M Cr')</li>
+      <li><span class="stepnum">4</span>('Shield Generator &rarr; bi-weave', 'Survive while the fighter does its work.', '~1M Cr')</li>
+      <li><span class="stepnum">5</span>('Power Distributor &rarr; A', 'Sustain boost and the fighter bay.', '~1M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Power the fighter</span>The fighter bay is power-hungry &mdash; A-rate the plant so you can run the hangar, a shield and the SLF together when a pirate strikes.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>A defended trade engineering pattern. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Multi-Cannon</td><td>Overcharged (G5)</td><td>Corrosive Shell</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Plant to G5 so the fighter bay, shield and modules run together.</li>
+      <li><span class="stepnum">2</span>FSD and thrusters for range and mobility.</li>
+      <li><span class="stepnum">3</span>Bi-weave shield to survive while the SLF fights.</li>
+      <li><span class="stepnum">4</span>A light multi-cannon so the mothership contributes to its own defence.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Light &mdash; trade and a little combat engineering on modest modules. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max cargo (t)</td><td>~64</td><td>~90</td><td class="acc">~98</td></tr>
+        <tr><td class="mod">Self-defence</td><td>SLF</td><td>SLF</td><td class="acc">SLF + guns</td></tr>
+        <tr><td class="mod">Laden jump (LY)</td><td>~16</td><td>~24</td><td class="acc">~30</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>303 m/s</td><td>303 m/s</td><td class="acc">~340 m/s</td></tr>
+        <tr><td class="mod">Cargo-per-credit</td><td>poor</td><td>poor</td><td class="acc">poor</td></tr>
+      </tbody>
+    </table>
+    <p>Engineered, the Keelback hauls a modest ~98t but can launch a fighter to defend it &mdash; a cheap hauler that needn't flee. Its cargo-per-credit is poor; the SLF is the entire reason to choose it over a plain, roomier freighter.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Defended budget runs.</b> Haul through pirate-prone space with an SLF to fight back.</li>
+      <li><b>Mixed trade-and-light-combat.</b> Deploy the fighter for bounties or defence between deliveries.</li>
+      <li><b>Mission cargo with protection.</b> Run delivery missions safely on a budget.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Crewed hauling.</b> A friend or NPC flies the SLF while you fly the freighter &mdash; cheap teamwork.</li>
+      <li><b>Versatile budget hull.</b> The same cheap ship hauls, fights a little, or mines.</li>
+      <li><b>Learning SLF tactics.</b> An affordable way to learn fighter-bay operation.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example routes</span>Any budget loop through risky space suits a fighter-defended Keelback. From your Diaguandri / Ray Gateway base it's a cheap way to haul with a measure of self-defence.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>The fighter bay is the whole point &mdash; if you don't want it, a Type-6 hauls more for less.</li>
+      <li>An NPC or crewmate must fly the SLF for it to defend you while you pilot the freighter.</li>
+      <li>Cargo-per-credit is poor &mdash; choose the Keelback for the novelty and self-defence, not capacity.</li>
+      <li>It re-roles to light combat or mining too &mdash; a cheap, versatile niche hull.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Keelback is the freighter that fights back: a cheap medium hauler with a ship-launched fighter bay, unique at its price. Its hold is small &mdash; smaller than the cheaper Type-6 &mdash; so as a pure trader it's poor value. But for a budget hauler that can deploy a fighter rather than flee, and dabble in combat or mining besides, the Keelback's one trick gives it a charm and a niche all its own.</div>
+  </section>
+
+  <footer>
+    <p><b>Keelback &middot; Trading</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Keelback &middot; Trading dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

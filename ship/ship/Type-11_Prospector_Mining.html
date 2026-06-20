@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Type-11 Prospector · Mining</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#9b6cd4;
+    --acc-lt:#c79bf2;
+    --acc-deep:#4a2d72;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1>Type-11 Prospector<span class="role">Mining</span></h1>
+    <p class="lede">The first ship Lakon ever built <b>only</b> to mine. The Type-11 Prospector pairs dedicated mining-tool hardpoints, an oversized class-7 power distributor and the exclusive Mk II mining modules with real speed and shields &mdash; so it works hot rings safely, sustains its tools indefinitely, and out-yields every general-purpose miner. The purpose-built apex of the mining role.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Distributor</span><b>Class 7</b></div>
+      <div class="chip"><span>Mining mounts</span><b>Dedicated</b></div>
+      <div class="chip"><span>Hull</span><b>~66M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Mining</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:95"><div class="num">95<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Mining Suitability Rating</div>
+        <div class="d">The best dedicated mining ship in the game. It gives up some raw cargo to the Type-9 and Cutter barges, but its mining-specific mounts, huge distributor, strong shields and medium-pad speed make it faster, safer and more efficient per session than anything else. If mining is the mission, this is the ship.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Every other 'mining ship' is really a freighter or multirole with mining tools bolted on. The Type-11 Prospector is different: Lakon designed it from the keel up for one job. Its hardpoints are dedicated mining mounts, it accepts the exclusive Mk II mining modules unavailable to other hulls, and its specification &mdash; an outsized class-7 power distributor, strong shields, genuine speed &mdash; reads like a mining engineer's wish list.</p>
+    <p>The class-7 distributor is the headline. Mining tools are distributor-hungry, and most miners throttle their lasers to avoid browning out; the Type-11 simply doesn't, sustaining full tool output continuously. Add medium-pad access, real shielding and a turn of speed that lets it work and survive in high-yield rings, and you have a ship that mines faster, safer and longer than any barge &mdash; even if its hold is smaller.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Efficient, sustained mining of any type &mdash; laser, core, sub-surface &mdash; in high-value rings, including hotter systems where a Type-9 would be prey. The premium, do-it-properly mining platform.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">272 / 367 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Power distributor</div><div class="v">Class 7 <small>(sustains tools)</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">Dedicated mining mounts</div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~256+ <small>t (mining fit)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4 <small>(for PWA)</small></div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">320 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~275 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">350</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;6&middot;5&middot;5&middot;4&middot;3&middot;2&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Core sizes</div><div class="v"><span style="font-size:13px;letter-spacing:.3px">PP6 &middot; TH5 &middot; FSD5 &middot; LS3 &middot; PD7 &middot; SS3 &middot; FT5</span></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(docks widely)</small></div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">3</div></div>
+      </div>
+    <p>Four things make the Type-11 the purpose-built mining apex:</p>
+    <ul class="clean">
+      <li><b>Class-7 power distributor.</b> Mining tools are distributor-hungry; the Type-11's oversized distributor sustains full laser and tool output without throttling &mdash; more ore per minute than any rival.</li>
+      <li><b>Dedicated mining mounts and Mk II modules.</b> Purpose-built hardpoints and exclusive Mk II mining tools that no other hull can fit, tuned for maximum extraction.</li>
+      <li><b>Speed and shields that survive.</b> 367 m/s boost and ~275 MJ of base shield let it work hot, high-value rings and escape pirates a Type-9 never could.</li>
+      <li><b>Medium-pad access.</b> Docks at far more stations than the large barges, shortening market runs and opening more selling options.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>The Type-9 and Imperial Cutter haul far more ore per trip, so for pure volume-per-session in a safe ring a barge still wins on tonnage. The Type-11's answer is everything else: it mines faster, survives hotter rings, sustains its tools without throttling and reaches more markets. It is the best <em>miner</em>, even if it isn't the biggest <em>bucket</em>.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the mining role specifically</em>. The role column is approximate maximum cargo &mdash; one input to mining value alongside speed, shields and tool sustain, where the Type-11 leads.</p>
+    <p class="subhd">Same class &mdash; medium-pad miners</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-11 Prospector</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-11 Prospector <span class="tag r">this</span></td><td>Medium</td><td>~288</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Mines, fights and flees; flexible all-rounder</span><span class="c">No dedicated mounts; throttles tools on its smaller distributor</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Bigger hold; cheaper; medium-pad</span><span class="c">Freighter at heart; weaker shields; no mining mounts</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">Defends itself; SLF bay; flexible</span><span class="c">Modest hold; not mining-specialised</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Long-legged; roomy; sleek</span><span class="c">Small hold; general-purpose</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">Cheap entry miner with an SLF</span><span class="c">Tiny hold; a starter only</span></td><td><span class="rscore">68</span><div class="bar"><i style="width:68%"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~130</td><td class="pcc"><span class="p">Cheap; flexible; can also explore</span><span class="c">Small hold; no mining specialisation</span></td><td><span class="rscore">64</span><div class="bar"><i style="width:64%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Among medium miners the Type-11 is in a class of its own &mdash; the only purpose-built option, and the only one that sustains full tool output. The Python is the flexible runner-up and the Type-8 the budget-volume choice, but for serious mining the Type-11's dedicated design wins decisively.</p>
+    <p class="subhd">Other classes &mdash; the big barges</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-11 Prospector</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Enormous hold and shields; survives anything</span><span class="c">Imperial Duke rank; very costly; large pad</span></td><td><span class="rscore">92</span><div class="bar"><i style="width:92%"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Vast cheap hold; longest sessions in safe rings</span><span class="c">Fragile and slow; needs solo/escort; large pad</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Big hold; mines and defends itself</span><span class="c">Large pad; ponderous; no mining specialisation</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>~618</td><td class="pcc"><span class="p">Mines and destroys any pirate present</span><span class="c">Federal rank; overkill; large pad</span></td><td><span class="rscore">66</span><div class="bar"><i style="width:66%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The big barges out-haul the Type-11 on tonnage per trip, but all need a large pad and either a rank grind (Cutter, Corvette) or careful safety management (Type-9). The Type-11 trades some cargo for speed, shields, sustained tools and medium-pad reach &mdash; the better choice for active, efficient mining rather than slow bulk hauling.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~66M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~85M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~100M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~66M Cr the Type-11 is a premium purchase, but it carries no rank or permit gate &mdash; just credits. For a dedicated miner the price buys capability you cannot get elsewhere: sustained tools, dedicated mounts and survivability in one hull.</p>
+    <p>A mining fit avoids costly combat engineering, so the all-in figure is dominated by the hull and the Mk II mining kit. Given how fast a well-run session fills a hold with high-value ore, it repays the investment quickly for anyone who mines regularly.</p>
+    <div class="callout amber"><span class="lbl">Premium, but it earns</span>The Type-11 costs more than a Type-9, but its sustained tools and ability to work hot rings mean higher yield per hour and fewer interrupted sessions &mdash; the price difference pays back fast for an active miner.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>The Type-11 Prospector may be available as an ARX pre-built. If so, the standard rule applies: stock modules sell for 0 Cr and cannot be stored or transferred, but engineering the stock cores in place keeps the free rebuy.</p>
+    <p>Whether bought for credits or via ARX, build the Mk II mining kit into the optional and hardpoint slots and engineer the cores in situ; never strip stock modules out.</p>
+    <table>
+      <thead><tr><th>Package</th><th>Type-11 Prospector (pre-built, if offered)</th></tr></thead>
+      <tbody>
+        <tr><td>I</td><td>n</td><td>c</td><td>l</td><td>u</td><td>d</td><td>e</td><td>s</td></tr>
+        <tr><td>P</td><td>r</td><td>e</td><td>-</td><td>f</td><td>i</td><td>t</td><td>t</td><td>e</td><td>d</td><td> </td><td>h</td><td>u</td><td>l</td><td>l</td><td>,</td><td> </td><td>s</td><td>h</td><td>i</td><td>p</td><td> </td><td>k</td><td>i</td><td>t</td><td>,</td><td> </td><td>p</td><td>a</td><td>i</td><td>n</td><td>t</td><td>j</td><td>o</td><td>b</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Mk II mining modules</span>The Type-11's signature is its exclusive Mk II mining tools &mdash; fit these to its dedicated mounts. They are the reason its extraction rate leads the class; don't substitute standard tools where Mk II versions exist.</div>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A dedicated mining fit built around sustained tool output and survivability. Initial is a working starter; A-rated is the efficient baseline; Engineered tunes the cores and shield. The Mk II mining tools themselves are not engineered, but the class-7 distributor lets them run flat-out.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Mining 1 (L)</td><td class="st">Mining Laser (Mk II)</td><td class="st">Mining Laser (Mk II)</td><td class="eng">Mining Laser (Mk II)</td></tr>
+        <tr><td class="slot">Mining 2 (M)</td><td class="st">Mining Laser (Mk II)</td><td class="st">Mining Laser (Mk II)</td><td class="eng">Mining Laser (Mk II)</td></tr>
+        <tr><td class="slot">Mining 3 (M)</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster (Mk II)</td><td class="eng">Abrasion Blaster (Mk II)</td></tr>
+        <tr><td class="slot">Mining 4 (S)</td><td class="st">&mdash;</td><td class="st">Seismic Charge Launcher</td><td class="eng">Seismic Charge Launcher</td></tr>
+        <tr><td class="slot">Small</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr><td class="slot">Small</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Pulse Wave Analyser</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (7)</td><td class="st">A</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G3)</td></tr>
+        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6</td><td class="eng">Cargo Rack 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6</td><td class="eng">Cargo Rack 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Refinery (best)</td><td class="st">Cargo Rack 6</td><td class="eng">Cargo Rack 6</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Collector Limpet Ctrl</td><td class="st">Collector Limpet Ctrl (multi)</td><td class="eng">Collector Limpet Ctrl (multi)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Prospector Limpet Ctrl</td><td class="st">Refinery (best)</td><td class="eng">Refinery (best)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Generator 4 (bi-weave)</td><td class="eng">Bi-Weave 4 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Collector Limpet Ctrl</td><td class="eng">Collector Limpet Ctrl</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Ctrl</td><td class="eng">Prospector Limpet Ctrl</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">Detailed Surface Scanner</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Collector Limpet Ctrl 1</td><td class="eng">Collector Limpet Ctrl 1</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">Sustain is the whole point</span>The class-7 distributor means you never throttle the lasers &mdash; fit the best Mk II tools and run them continuously. Balance collector controllers (throughput) against a couple of prospectors (yield), and keep the bi-weave for working hot rings.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit Mk II mining lasers to the dedicated mounts, a refinery, and one prospector plus one collector controller.</p>
+    <p>Add a Pulse Wave Analyser utility to spot mineable and core-bearing rocks instantly.</p>
+    <p>Mine a high-value hotspot &mdash; thanks to the big distributor you can run lasers continuously from the first session.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a dedicated miner &mdash; the distributor is already large, so protect sustain and transit:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Power Distributor &rarr; A', "The class-7 unit is the ship's heart; A-rate it so tools never falter.", '~10M Cr')</li>
+      <li><span class="stepnum">2</span>('Thrusters &rarr; A', 'Speed to work the ring and escape trouble.', '~7M Cr')</li>
+      <li><span class="stepnum">3</span>('FSD &rarr; A', 'Shorter market runs with a laden hold.', '~9M Cr')</li>
+      <li><span class="stepnum">4</span>('Power Plant &rarr; A', 'Run tools, limpets, refinery and shields together.', '~8M Cr')</li>
+      <li><span class="stepnum">5</span>('Shield Generator &rarr; bi-weave', 'Strong, fast-regenerating shields to work hot rings.', '~5M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Distributor first</span>Even though the Type-11's distributor is oversized, A-rating it guarantees full uninterrupted tool output &mdash; the single biggest factor in its class-leading yield.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering on the Type-11 is about sustain, transit and survivability. Mk II mining tools aren't engineered; the cores and shield are. Pin blueprints for remote G1&rarr;G5 application.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G3)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">FSD</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Distributor and thrusters first &mdash; uninterrupted tools and the agility to work and survive a ring.</li>
+      <li><span class="stepnum">2</span>FSD Increased Range to shorten laden market runs.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant to stay cool and low-signature while running a full limpet fleet.</li>
+      <li><span class="stepnum">4</span>Resistance-Augmented bi-weave plus Heavy-Duty boosters to confidently mine hot, high-value rings.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Moderate &mdash; core and shield blueprints only, no weapon grind. Thruster and FSD G5 are the demanding ones. With a complete material inventory this is engineering-spend rather than farming. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>367 m/s</td><td>367 m/s</td><td class="acc">~430 m/s</td></tr>
+        <tr><td class="mod">Jump range (laden)</td><td>~22 LY</td><td>~30 LY</td><td class="acc">~42 LY</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~275</td><td>~420</td><td class="acc">~620</td></tr>
+        <tr><td class="mod">Tool sustain</td><td>continuous</td><td>continuous</td><td class="acc">continuous</td></tr>
+        <tr><td class="mod">Cargo (mining fit)</td><td>~160 t</td><td>~224 t</td><td class="acc">~256+ t</td></tr>
+      </tbody>
+    </table>
+    <p>Engineering lifts boost past 420 m/s, more than doubles shields and extends laden range for market runs &mdash; while the class-7 distributor keeps the Mk II tools running flat-out at every stage. The result is the fastest, safest, most sustained mining platform in the game.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Hotspot laser mining.</b> Scan a ring, find a high-value hotspot, and run the Mk II lasers continuously with limpet support &mdash; the distributor never makes you pause.</li>
+      <li><b>Core mining.</b> Use the Pulse Wave Analyser to find motherlode rocks, crack them with seismic charges, and harvest premium cores like void opals.</li>
+      <li><b>Sub-surface mining.</b> Sub-surface displacement missiles extract embedded deposits the dedicated mounts are tuned for.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Hot-ring high-value mining.</b> Its shields and speed let it work rings in busier systems where the highest prices and richest hotspots are, escaping pirates a barge could not.</li>
+      <li><b>Mixed-method sessions.</b> Carry laser, core and sub-surface tools at once and switch method per rock for maximum yield from every deposit.</li>
+      <li><b>Colonisation and CG supply.</b> Feed construction and community-goal demand with premium ore at peak prices, turning around quickly thanks to medium-pad market access.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example systems</span>Any ringed body with a mineral hotspot suits it; the Type-11's survivability means you can chase the richest hotspots even in busier systems. Sell at the nearest high-price market &mdash; medium-pad access usually means a station within a jump or two.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>Fit the Mk II mining tools to the dedicated mounts &mdash; they are the reason to own this ship over a Python or Type-8.</li>
+      <li>Don't throttle the lasers out of habit; the class-7 distributor is built to run them flat-out.</li>
+      <li>Balance the limpet fleet toward collectors for throughput, with one or two prospectors for yield.</li>
+      <li>Its shields and speed make open-play hot-ring mining viable &mdash; but a Pulse Wave Analyser and situational awareness still beat a fight.</li>
+      <li>Medium pad is a quiet superpower: more selling options and shorter runs than any large barge.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Type-11 Prospector is the apex of dedicated mining: the only purpose-built miner, with exclusive Mk II tools, a distributor that sustains them indefinitely, and the speed and shields to work the richest rings safely. Barges out-haul it on tonnage, but nothing matches it for yield-per-hour, survivability and reach. If mining is your trade, this is the ship built for you.</div>
+  </section>
+
+  <footer>
+    <p><b>Type-11 Prospector &middot; Mining</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Type-11 Prospector &middot; Mining dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Role Dossier — Ship Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#3fa45c;        /* per-dossier accent (see conventions table) */
+    --acc-lt:#74d68c;
+    --acc-deep:#155029;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+
+  /* role-dossier additions */
+  td.cnum{font-family:'Chakra Petch',sans-serif;font-size:13.5px;color:var(--ink);text-align:right;white-space:nowrap}
+  td.ceng{font-size:12.5px;color:var(--ink-dim)}
+  td.ceng b{color:var(--acc-lt);font-weight:500}
+  td.led{font-size:12.5px;color:var(--ink-dim);line-height:1.4}
+  table.cmp2{table-layout:fixed}
+  .recgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .rec{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--acc);border-radius:var(--radius);padding:15px 17px}
+  .rec .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--amber);font-weight:600}
+  .rec .pick{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--acc-lt);margin:5px 0 7px;font-weight:600}
+  .rec .pick small{color:var(--ink-faint);font-size:12px;font-weight:400}
+  .rec p{margin:0;font-size:13.5px;color:var(--ink-dim)}
+  .rec .alt{margin-top:8px;font-size:12.5px;color:var(--ink-faint)}
+  .rec .alt b{color:var(--ink-dim);font-weight:500}
+  .anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+  .anchors .cell{background:var(--panel);padding:12px 14px}
+  .anchors .s{font-family:'Chakra Petch',sans-serif;font-size:24px;color:var(--acc-lt);font-weight:700}
+  .anchors .n{font-size:13px;color:var(--ink);margin-top:2px}
+  .anchors .n small{color:var(--ink-faint);display:block;font-size:11px}
+  @media(max-width:680px){.recgrid{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Role Dossier <span class="sep">//</span> Trading</div>
+    <h1>Trading<span class="role">Ship Comparison</span></h1>
+    <p class="lede">Every cargo-hauling hull, judged <b>for trading specifically</b> and ranked on one 1&ndash;100 scale. Trading is a volume game &mdash; <b>cargo capacity</b> first, then pad class (which markets you can dock at), jump range (route length) and enough shielding to survive an interdiction. This dossier groups all <b>10 traders</b> by pad class, ranks them, breaks down buy / A-rate / engineer costs, and closes with picks for every kind of hauler.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Ships compared</span><b>10</b></div><div class="chip"><span>Classes</span><b>Small / Medium / Large</b></div><div class="chip"><span>Defining stat</span><b>Max cargo (t)</b></div><div class="chip"><span>Ceiling</span><b>Panther Clipper 98</b></div><div class="chip"><span>Floor</span><b>Hauler 58</b></div>
+    </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:98"><div class="num">98<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">How to read the scale</div>
+        <div class="d">A ship&rsquo;s number is its <b>trading ceiling</b> relative to the field. The <span class="acc">Panther Clipper Mk II (98)</span> anchors the top with over 1000&nbsp;t of cargo; the <span class="acc">Hauler (58)</span> the floor. Cargo figures are <b>maximum cargo-capable tonnage</b> &mdash; every cargo-rack slot filled, no shield or utility &mdash; so a real working build carries a little less.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 How scored</a>
+    <a href="#s3">03 The full ladder</a>
+    <a href="#s4">04 Small pad</a>
+    <a href="#s5">05 Medium pad</a>
+    <a href="#s6">06 Large pad</a>
+    <a href="#s7">07 Recommendations</a>
+    <a href="#s8">08 Cost &amp; engineering</a>
+    <a href="#s9">09 Field notes</a>
+  </nav>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>The Trading Role</h2></div>
+    <p>Trading is the act of moving goods for profit &mdash; and at scale it is the most reliable income in the game. The ship&rsquo;s job is simple: carry as much as possible, to the right kind of station, and arrive in one piece.</p><ul class="clean"><li><b>Bulk commodity loops.</b> Buy low, sell high between fixed markets &mdash; profit scales linearly with cargo, so capacity is king.</li><li><b>Stacked delivery / wing missions.</b> Take many delivery and source-and-return missions at once; a big hold lets you clear a board in a single run.</li><li><b>Rare goods runs.</b> Long loops carrying small quantities of high-value rares &mdash; here jump range and speed matter more than raw tonnage.</li><li><b>Tritium &amp; fleet-carrier logistics.</b> Feeding a carrier&rsquo;s fuel and market &mdash; pure volume hauling.</li></ul><div class="callout amber"><span class="lbl">What makes a trader</span>Cargo capacity first &mdash; profit is tonnage &times; margin. Then <em>pad class</em>: a large pad locks you out of outposts, so medium haulers reach markets larges can&rsquo;t. Then jump range for route length, and enough shield to survive the interdiction that <em>will</em> come on a profitable lane.</div>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>How These Ships Are Scored</h2></div>
+    <p>The 1&ndash;100 trading rating weighs, in order:</p><ul class="clean"><li><b>Maximum cargo</b> &mdash; the dominant factor; trading profit scales directly with tonnage.</li><li><b>Pad class &amp; market reach</b> &mdash; mediums dock at outposts that larges cannot; a slight cargo penalty for far wider access.</li><li><b>Laden jump range</b> &mdash; how far a full hold travels per jump; sets route length and trips-per-hour.</li><li><b>Survivability</b> &mdash; shield and hull enough to outlast or outrun a pirate interdiction.</li><li><b>Speed &amp; cost</b> &mdash; faster supercruise = more loops; cheaper hull = lower risk on a defenceless barge.</li></ul><p>The scale is roster-relative. A medium scoring 82 is not &ldquo;worse&rdquo; than a large scoring 93 &mdash; it carries less but reaches markets the large never can. Compare within a class first, then decide whether you need pad reach or raw bulk.</p><div class="anchors"><div class="cell"><div class="s">98</div><div class="n">Panther Clipper<small>the ceiling</small></div></div><div class="cell"><div class="s">95</div><div class="n">Imperial Cutter<small>fast + huge</small></div></div><div class="cell"><div class="s">82</div><div class="n">Type-8<small>medium-pad king</small></div></div><div class="cell"><div class="s">70</div><div class="n">Keelback<small>defended budget</small></div></div><div class="cell"><div class="s">58</div><div class="n">Hauler<small>the floor</small></div></div></div><p class="subhd">The three cost figures</p><ul class="clean"><li><b>Hull</b> — the shipyard price of the bare ship.</li><li><b>A-rated fit (no engineering)</b> — an approximate all-in credit total for a full role-appropriate loadout using the best <em>buyable</em> modules. A ballpark; your module choices swing it.</li><li><b>To engineer</b> — engineering costs <b>materials and engineer unlocks, not credits</b>. A fully-engineered ship costs the same credits as its A-rated fit; the extra cost is a materials grind whose <b>tier</b> (Moderate / Heavy / Very heavy) scales with hull size.</li></ul><div class="callout acc"><span class="lbl">The rebuy column</span>The cost tables also list an approximate <b>rebuy</b> (~5% of insured value) — what you pay each time the ship is destroyed. It is the number that really governs how boldly you can fly.</div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>The Full Trading Ladder</h2></div>
+    <p>All 10 traders on one scale, best to worst, with maximum cargo as the headline figure. Per-class breakdowns and costs follow.</p>
+    <table class="cmp2">
+      <colgroup><col style="width:17%"><col style="width:10%"><col style="width:16%"><col style="width:7%"><col style="width:38%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Dist.</th><th>One-line verdict</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Panther Clipper Mk II</td><td><span class="tag r">Large</span></td><td>1046 t</td><td>PD7</td><td class="led">The ultimate hauler &mdash; nothing in the game carries more.</td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
+<tr><td class="mod">Imperial Cutter</td><td><span class="tag r">Large</span></td><td>794 t</td><td>PD7</td><td class="led">The fast luxury freighter &mdash; capacity and speed in one hull.</td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
+<tr><td class="mod">Type-9 Heavy</td><td><span class="tag r">Large</span></td><td>790 t</td><td>PD6</td><td class="led">The workhorse bulk hauler &mdash; the most cargo per credit.</td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
+<tr><td class="mod">Type-8 Transporter</td><td><span class="tag g">Medium</span></td><td>406 t</td><td>PD4</td><td class="led">The medium-pad cargo champion &mdash; outpost trading&rsquo;s answer.</td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+<tr><td class="mod">Python</td><td><span class="tag g">Medium</span></td><td>294 t</td><td>PD7</td><td class="led">The armed trader &mdash; less cargo, far more survivable.</td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+<tr><td class="mod">Type-7 Transporter</td><td><span class="tag r">Large</span></td><td>310 t</td><td>PD4</td><td class="led">The budget large hauler &mdash; a stepping stone to the Type-9.</td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+<tr><td class="mod">Imperial Clipper</td><td><span class="tag r">Large</span></td><td>250 t</td><td>PD6</td><td class="led">The speed-hauler &mdash; quick, but not capacious.</td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
+<tr><td class="mod">Keelback</td><td><span class="tag g">Medium</span></td><td>98 t</td><td>PD3</td><td class="led">A defended budget trader &mdash; low capacity, hard to pirate.</td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+<tr><td class="mod">Type-6 Transporter</td><td><span class="tag g">Medium</span></td><td>114 t</td><td>PD3</td><td class="led">The classic first trading ship &mdash; where most careers begin.</td><td><span class="rscore">65</span><div class="bar"><i style="width:65%"></i></div></td></tr>
+<tr><td class="mod">Hauler</td><td><span class="tag a">Small</span></td><td>26 t</td><td>PD1</td><td class="led">The absolute entry hauler &mdash; data and small deliveries only.</td><td><span class="rscore">58</span><div class="bar"><i style="width:58%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Read it in bands: <b>90&ndash;98</b> is an end-game bulk freighter; <b>76&ndash;89</b> is a serious working trader; <b>58&ndash;75</b> is a budget or starter hauler. The crucial split is <b>pad class</b> &mdash; the top three are all large-pad, so if you trade at outposts the <b>Type-8 (82)</b> is effectively your ceiling.</p>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Small-Pad Trading</h2></div>
+    <p>&ldquo;Small&rdquo; barely applies to trading &mdash; only the Hauler qualifies, and it is a courier, not a freighter. It exists here for completeness and for the earliest game, when even a few tonnes of profit matters and the rebuy is rounding error.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons for trading</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Hauler</td><td>Small</td><td>26 t</td><td class="pcc"><span class="p">Nearly free, lands anywhere, and has a great jump range</span><span class="c">A tiny cargo hold &mdash; courier work, not bulk trade</span></td><td><span class="rscore">58</span><div class="bar"><i style="width:58%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each small hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Hauler</td><td class="cnum">53k</td><td class="cnum amb">~907k</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~45k</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Small-pad takeaway</span>The <span class="amb">Hauler (58)</span> is the floor &mdash; nearly free, great jump, lands anywhere, but a hold so small it only suits data and small delivery missions. Outgrow it the moment you can afford a Type-6.</div>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>Medium-Pad Trading</h2></div>
+    <p>Medium pad is where serious trading meets <b>market reach</b>. A medium docks at the outposts that lock out every large freighter, so its slightly smaller hold is often worth more in practice than a Type-9&rsquo;s bulk you can&rsquo;t bring to half the galaxy&rsquo;s stations.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons for trading</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>406 t</td><td class="pcc"><span class="p">Best medium-pad cargo (~400&nbsp;t) &mdash; docks where larges can&rsquo;t</span><span class="p">Cheap hull, simple to fit out</span><span class="c">Slow and a paper-thin tank</span></td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+<tr><td class="mod">Python</td><td>Medium</td><td>294 t</td><td class="pcc"><span class="p">A combat-capable trader that fights back when interdicted</span><span class="p">Lands on a medium pad; genuinely tanky</span><span class="c">Carries far less than a dedicated freighter</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+<tr><td class="mod">Keelback</td><td>Medium</td><td>98 t</td><td class="pcc"><span class="p">Cheap, and can mount a fighter bay for interdiction defence</span><span class="c">Tiny cargo hold and slow</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+<tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>114 t</td><td class="pcc"><span class="p">Cheap, nimble, and jumps well &mdash; the classic first trader</span><span class="c">Small hold and a paper tank</span></td><td><span class="rscore">65</span><div class="bar"><i style="width:65%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each medium hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Type-8 Transporter</td><td class="cnum">38M</td><td class="cnum amb">~46M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~2.3M</td></tr>
+<tr><td class="mod">Python</td><td class="cnum">57M</td><td class="cnum amb">~108M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~5.4M</td></tr>
+<tr><td class="mod">Keelback</td><td class="cnum">3.1M</td><td class="cnum amb">~5.2M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~260k</td></tr>
+<tr><td class="mod">Type-6 Transporter</td><td class="cnum">1.0M</td><td class="cnum amb">~2.9M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~146k</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Medium-pad takeaway</span>The <span class="amb">Type-8 Transporter (82)</span> is the medium-pad cargo champion &mdash; ~400&nbsp;t that reaches anywhere. The <span class="amb">Python (80)</span> trades capacity for the ability to fight off interdictors. The <span class="amb">Type-6 (65)</span> is the beloved first trader, and the <span class="amb">Keelback (70)</span> is its defended cousin.</div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>Large-Pad Trading</h2></div>
+    <p>Large pad is pure <b>bulk</b>. These hulls carry the most cargo in the game, but a large pad locks you out of outposts &mdash; so you trade at the major stations and accept the lost market access in exchange for moving enormous tonnage per trip.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons for trading</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>1046 t</td><td class="pcc"><span class="p">The undisputed cargo king &mdash; over 1000&nbsp;t in one hold</span><span class="p">Surprisingly tanky for a freighter; built only to haul</span><span class="c">~287M hull, glacial handling, and a large pad everywhere</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
+<tr><td class="mod">Imperial Cutter</td><td>Large</td><td>794 t</td><td class="pcc"><span class="p">~700&nbsp;t of cargo with the speed and shield of a warship</span><span class="p">The elite trader &mdash; fast enough to shrug off interdictions</span><span class="c">Imperial Duke rank, ~209M hull, large pad only</span></td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
+<tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>790 t</td><td class="pcc"><span class="p">Enormous ~790&nbsp;t hold for a fraction of the Cutter&rsquo;s price</span><span class="p">Cheap to buy and run; the classic bulk workhorse</span><span class="c">Glacial, near-defenceless, and a large pad</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
+<tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>310 t</td><td class="pcc"><span class="p">A cheap large-pad step up in capacity from the mediums</span><span class="c">Slow, fragile, and needs a large pad for medium-ish cargo</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+<tr><td class="mod">Imperial Clipper</td><td>Large</td><td>250 t</td><td class="pcc"><span class="p">Very fast and stylish for a large-class hauler</span><span class="c">Large pad, only modest cargo, and an Imperial rank gate</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each large hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Panther Clipper Mk II</td><td class="cnum">301M</td><td class="cnum amb">~525M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~26M</td></tr>
+<tr><td class="mod">Imperial Cutter</td><td class="cnum">209M</td><td class="cnum amb">~432M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~22M</td></tr>
+<tr><td class="mod">Type-9 Heavy</td><td class="cnum">77M</td><td class="cnum amb">~127M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~6.3M</td></tr>
+<tr><td class="mod">Type-7 Transporter</td><td class="cnum">17M</td><td class="cnum amb">~24M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~1.2M</td></tr>
+<tr><td class="mod">Imperial Clipper</td><td class="cnum">22M</td><td class="cnum amb">~41M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~2.0M</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Large-pad takeaway</span>The <span class="amb">Panther Clipper Mk II (98)</span> is the cargo king &mdash; over 1000&nbsp;t, but ~287M and glacial. The <span class="amb">Imperial Cutter (95)</span> is the smart end-game pick: nearly as much cargo with warship speed and shields. The <span class="amb">Type-9 (93)</span> is the value king &mdash; vast capacity for a fraction of the price, if you can defend or avoid trouble.</div>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Recommendations By Trader</h2></div>
+    <p>The right trader depends entirely on where you dock and what you can spend. Pick the description that fits you.</p><div class="recgrid"><div class="rec"><div class="who">Brand-new · first cargo runs</div><div class="pick">Type-6 Transporter <small>· 65 · ~2M all-in</small></div><p>Cheap, nimble and jumps well &mdash; enough hold to feel real profit, cheap enough that a lost run never hurts. Every trading career starts here.</p><div class="alt"><b>Also:</b> the <b>Hauler</b> if you&rsquo;re truly broke; the <b>Keelback</b> if pirates keep finding you.</div></div><div class="rec"><div class="who">Trades at outposts (medium-pad only)</div><div class="pick">Type-8 Transporter <small>· 82 · ~30M all-in</small></div><p>The most cargo you can bring to an outpost &mdash; ~400&nbsp;t that docks where the big freighters can&rsquo;t. The correct ship if your best markets are medium-pad.</p><div class="alt"><b>Also:</b> the <b>Python</b> if you want to fight back instead of running.</div></div><div class="rec"><div class="who">Maximum profit, money no object</div><div class="pick">Imperial Cutter <small>· 95 · ~520M all-in</small></div><p>Nearly Panther-class cargo with the speed and shields of a warship &mdash; it outruns interdictions instead of dying to them. The end-game trader of choice once you hit Duke.</p><div class="alt"><b>Also:</b> the <b>Panther Clipper</b> for pure tonnage if speed doesn&rsquo;t matter.</div></div><div class="rec"><div class="who">Most cargo per credit</div><div class="pick">Type-9 Heavy <small>· 93 · ~75M all-in</small></div><p>A ~790&nbsp;t hold for a tiny fraction of the Cutter&rsquo;s price &mdash; unbeatable value if you trade safe lanes or accept the occasional rebuy.</p><div class="alt"><b>Also:</b> the <b>Type-7</b> as a cheaper, smaller stepping stone.</div></div><div class="rec"><div class="who">Wants to fight pirates, not flee them</div><div class="pick">Python <small>· 80 · ~75M all-in</small></div><p>A true combat hull that also hauls &mdash; tanky, medium-pad, and armed enough that interdictors regret it. Less cargo, far more peace of mind.</p><div class="alt"><b>Also:</b> the <b>Keelback</b> for a budget version with a fighter bay.</div></div><div class="rec"><div class="who">The absolute cargo crown</div><div class="pick">Panther Clipper Mk II <small>· 98 · ~430M all-in</small></div><p>Over a thousand tonnes in a single hold &mdash; the most cargo any ship can carry. Slow and pricey, but unmatched for fleet-carrier logistics and bulk loops.</p><div class="alt"><b>Also:</b> the <b>Cutter</b> if you&rsquo;d trade a little capacity for a lot of speed.</div></div></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>Cost &amp; Engineering Reality</h2></div>
+    <p>A trader&rsquo;s engineering is light and cheap &mdash; you are not min-maxing a weapon platform, just stretching range and shaving a few risks. The tour is short and shared across every hull here.</p><table><thead><tr><th>Module</th><th>Blueprint (G5)</th><th>Experimental</th><th>Engineer</th></tr></thead><tbody><tr><td class="mod">Frame Shift Drive</td><td>Increased Range</td><td><span class="acc">Mass Manager</span></td><td>Felicity Farseer</td></tr><tr><td class="mod">Power Plant</td><td>Low Emissions</td><td>Thermal Spread</td><td>Hera Tani</td></tr><tr><td class="mod">Thrusters</td><td>Dirty Drives <span class="muted">(or Clean)</span></td><td>Drag Drives</td><td>Felicity Farseer</td></tr><tr><td class="mod">Shield Generator</td><td>Reinforced <span class="muted">(or Enhanced Low Power)</span></td><td>Hi-Cap / Lo-Draw</td><td>Lei Cheung</td></tr><tr><td class="mod">Power Distributor</td><td>Engine Focused</td><td>Stripped Down</td><td>The Dweller</td></tr></tbody></table><div class="callout"><span class="lbl">Where the credits really go</span>For a trader the big number is the <b>hull and cargo racks</b>, not engineering. Engineering costs <b>materials, not credits</b>, and a trader&rsquo;s materials tier is light: just FSD range plus a defensive shield roll. The grind tier scales with hull size only because bigger ships have bigger (more numerous) modules to roll &mdash; <b>Moderate</b> for the mediums, <b>Very heavy</b> for a fully-rolled Cutter or Panther, but you rarely need to go that far on a hauler.</div><p class="subhd">Two practical notes</p><ul class="clean"><li><b>Shield, don&rsquo;t armour.</b> A trader&rsquo;s survival is a shield that buys time to high-wake out of an interdiction &mdash; not a slugging match. Fit the biggest bi-weave you can spare a slot for.</li><li><b>Laden range is the real range.</b> A full hold tanks your jump distance; engineer the FSD and keep the build light so a loaded run still reaches the next market in a sensible number of jumps.</li></ul>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Field Notes &amp; Verdict</h2></div>
+    <ul class="clean"><li><b>Pad class is the first decision, not cargo.</b> The most profitable lane is worthless if your large freighter can&rsquo;t dock at one end of it. Check both stations&rsquo; pads before you buy the hull.</li><li><b>Profit is tonnage &times; margin &times; trips.</b> A faster ship that carries less can out-earn a slow barge by doing more loops &mdash; which is exactly why the Cutter rivals the Panther in practice.</li><li><b>You will be interdicted.</b> Submit, boost, and high-wake &mdash; a shield and good thrusters beat guns for a trader every time.</li><li><b>Markets move.</b> Station inventories and prices shift with the background sim; use a live trade tool rather than memorising routes.</li><li><b>The rebuy on a defenceless barge stings.</b> A Type-9 is cheap to buy but you fly it knowing one bad interdiction means a real rebuy &mdash; price that into the route.</li></ul><div class="callout acc"><span class="lbl">Verdict</span>For the most cargo in the game, the <b>Panther Clipper Mk II (98)</b>. For the best end-game balance of capacity, speed and safety, the <b>Imperial Cutter (95)</b>. For the most profit per credit spent, the <b>Type-9 Heavy (93)</b>. And if you trade at outposts, the <b>Type-8 Transporter (82)</b> is your real ceiling &mdash; the most cargo that still fits a medium pad.</div>
+  </section>
+
+  <footer>
+    <p><b>Trading · Role Comparison Dossier</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data, cross-checked against Inara. Max-cargo figures are theoretical maxima (all cargo-capable slots filled, no shield/utility); working builds carry slightly less. Ratings are role-suitability judgements on a 1&ndash;100 scale, frozen across the roster. Cost figures are approximate. Engineering costs materials and engineer unlocks, not credits.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading — Role &amp; Activities Field Manual | CMDR Ka0s</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#3fa45c;        /* combat crimson */
+    --acc-lt:#74d68c;
+    --acc-deep:#155029;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --good-lt:#7fce98;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:780px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .verdict{margin-top:30px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.10),rgba(20,13,11,.6));padding:22px 24px;position:relative;overflow:hidden}
+  .verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--acc),transparent)}
+  .verdict .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--acc-lt);font-weight:600;margin-bottom:8px}
+  .verdict p{margin:0;font-size:16px;color:var(--ink-dim)}
+  .verdict p b{color:var(--ink);font-weight:600}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:26px -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--acc-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:50px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  h3.sub{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:16px;letter-spacing:.4px;color:var(--ink);margin:24px 0 4px}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+  .gd{color:var(--good-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .tag.b{color:var(--blue);border-color:rgba(91,155,209,.45)}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+  td.rt{white-space:nowrap}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout.good{border-left-color:var(--good);background:linear-gradient(90deg,rgba(95,179,122,.10),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+  .callout.good .lbl{color:var(--good-lt)}
+  .callout p{margin:6px 0 0;color:var(--ink-dim)}
+  .callout p:first-of-type{margin-top:0}
+
+  ol.steps{list-style:none;counter-reset:s;margin:16px 0 2px}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 16px 44px;color:var(--ink-dim)}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:28px;height:28px;
+    display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;color:var(--bg);background:var(--acc);border-radius:3px}
+  ol.steps li::after{content:"";position:absolute;left:13px;top:28px;bottom:0;width:1px;background:var(--hair)}
+  ol.steps li:last-child::after{display:none}
+  ol.steps li:last-child{padding-bottom:0}
+  ol.steps li b{color:var(--ink)}
+
+  .recgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .rec{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--acc);border-radius:var(--radius);padding:15px 17px}
+  .rec .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--amber);font-weight:600}
+  .rec .pick{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--acc-lt);margin:5px 0 7px;font-weight:600}
+  .rec .pick small{color:var(--ink-faint);font-size:12px;font-weight:400;display:block;margin-top:2px}
+  .rec p{margin:0;font-size:13.5px;color:var(--ink-dim)}
+  .rec .ref{margin-top:9px;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);text-transform:uppercase}
+  .rec .ref b{color:var(--amber-lt);font-weight:600}
+
+  .anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+  .anchors .cell{background:var(--panel);padding:14px 15px}
+  .anchors .s{font-family:'Chakra Petch',sans-serif;font-size:22px;color:var(--acc-lt);font-weight:700}
+  .anchors .n{font-size:13px;color:var(--ink);margin-top:3px}
+  .anchors .n small{color:var(--ink-faint);display:block;font-size:11px;margin-top:1px}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:24px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    .recgrid{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Role &amp; Activities <span class="sep">//</span> Trading</div>
+    <h1>Trading<span class="role">Role &amp; Activities</span></h1>
+    <p class="lede">A full deep-dive on the <b>trading role</b> — not which ship to fly (that lives in the companion ship dossiers), but what hauling actually <b>is</b>: how the commodity market works, the venues from a two-station loop to billion-credit wing missions, how to start, what to do mid- and end-game, and every reward and system the role plugs into.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Scope</span><b>Odyssey · PC · Live 4.0</b></div>
+      <div class="chip"><span>Tempo</span><b>Steady · low-stress · scalable</b></div>
+      <div class="chip"><span>Core stat</span><b>Cargo capacity + jump</b></div>
+      <div class="chip"><span>Pays in</span><b>CR · rank · BGS · CG</b></div>
+    </div>
+
+    <div class="verdict">
+      <div class="t">The role in one line</div>
+      <p>Trading is <b>buy low, sell high, at scale</b>: read the market, fill the hold, dodge the pirates, and turn tonnage into credits. It is the steadiest big income in the game and the logistical backbone everything else — colonisation, Powerplay, the background sim — quietly relies on.</p>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 The Role</a>
+    <a href="#s2">02 Core Mechanics</a>
+    <a href="#s3">03 The Activities</a>
+    <a href="#s4">04 Getting Started</a>
+    <a href="#s5">05 Mid-Game</a>
+    <a href="#s6">06 End-Game</a>
+    <a href="#s7">07 Best Ships</a>
+    <a href="#s8">08 Outcomes &amp; Rewards</a>
+    <a href="#s9">09 System Interactions</a>
+    <a href="#s10">10 Field Notes</a>
+  </nav>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>What the Trading Role Actually Is</h2></div>
+    <p>Trading is moving commodities from where they are cheap to where they are wanted, and pocketing the spread. The galaxy runs a living economy: each station has an <span class="acc">economy type</span> that produces some goods and demands others, and the difference between a producer's price and a consumer's price is your profit per tonne. Multiply by the size of your hold and the speed of your route, and you have an income.</p>
+
+    <p>The minute-to-minute loop never changes:</p>
+    <div class="anchors">
+      <div class="cell"><div class="s">1</div><div class="n">Read the market<small>Find a profitable spread</small></div></div>
+      <div class="cell"><div class="s">2</div><div class="n">Buy &amp; fill<small>Load the hold at the source</small></div></div>
+      <div class="cell"><div class="s">3</div><div class="n">Haul<small>Jump, dodge interdictions</small></div></div>
+      <div class="cell"><div class="s">4</div><div class="n">Sell &amp; repeat<small>Cash out, reload the return leg</small></div></div>
+    </div>
+
+    <p>Trading is the inverse of combat's risk profile: low danger, low drama, but it rewards <b>planning and information</b> over reflexes. The skill is route-finding and market-reading, not gunnery — and the ceiling is enormous once you scale into the biggest hulls and the wing-mission economy.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Core Gameplay Mechanics</h2></div>
+
+    <h3 class="sub">2.1 — Supply, demand &amp; economy types</h3>
+    <p>Every commodity has a galactic average price; a station sells below average what its economy <b>produces</b> and pays above average for what it <b>consumes</b>. The classic pairings: extraction/refinery economies feed industrial and hi-tech ones; agricultural feeds industrial; hi-tech and industrial produce the high-value manufactured goods. The bigger the supply and demand numbers, the more tonnes you can move before the price moves against you.</p>
+
+    <h3 class="sub">2.2 — The hold &amp; the route</h3>
+    <p><b>Cargo capacity</b> is your master stat — profit scales linearly with tonnes per trip. <b>Jump range</b> and <b>route length</b> set how fast those trips cycle. The best loops are two stations close together (ideally same system or one jump) with a profitable commodity each way, so you never fly empty.</p>
+
+    <h3 class="sub">2.3 — Market information</h3>
+    <p>You cannot read distant prices from the cockpit, so traders live on <b>community market data</b> (Inara and similar trackers, fed by player tools). Finding the current best loops, rare-goods routes and CG hand-in prices is half the role. Prices drift as players trade them out, so the meta route is always moving.</p>
+
+    <h3 class="sub">2.4 — Risk: interdiction &amp; smuggling</h3>
+    <div class="twocol">
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Staying alive</h3>
+        <ul class="clean">
+          <li><b>You are the prey.</b> A full hold is a pirate magnet; NPCs and players will interdict.</li>
+          <li><b>Submit and boost.</b> Submitting to an interdiction gives a faster FSD cooldown to high-wake away than fighting the pull.</li>
+          <li><b>Point defence &amp; a token shield</b> beat trying to out-gun anyone in a freighter.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Smuggling</h3>
+        <ul class="clean">
+          <li><b>Illegal goods</b> (narcotics, slaves, stolen cargo) pay more but are confiscated if scanned.</li>
+          <li><b>Black markets</b> at anarchy/low-sec stations fence them.</li>
+          <li><b>Run silent &amp; cold</b> to slip station and ship scans.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout acc"><span class="lbl">Fleet doctrine reminder</span><p>The fleet's <b>Type-9 Heavy</b> is the bulk hauler — maximum tonnage, run as an ARX Jumpstart hull <b>engineered in place</b> so it keeps its free rebuy. Trading fits prioritise cargo racks and just enough jump to cycle the route; the gun slots stay empty.</p></div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>The Trading Activities</h2></div>
+    <table>
+      <colgroup><col style="width:21%"><col style="width:13%"><col style="width:18%"><col style="width:48%"></colgroup>
+      <thead><tr><th>Activity</th><th>Pays in</th><th>Difficulty</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Loop trading (A↔B)</td><td>Market spread</td><td><span class="tag g">Entry</span></td><td>Two stations, a profitable commodity each way, flown over and over. The bread-and-butter income — find the loop, then optimise the hull.</td></tr>
+        <tr><td class="mod">Trade missions</td><td>Mission CR</td><td><span class="tag g">Entry</span></td><td>Deliver or source X tonnes for a faction. Stack several to the same destination for efficiency; also builds faction reputation.</td></tr>
+        <tr><td class="mod">Rare goods</td><td>Scaling profit</td><td><span class="tag a">Mid</span></td><td>Buy a system's unique rare commodity (limited stock) and sell it far away — profit per tonne <b>grows with distance</b> travelled.</td></tr>
+        <tr><td class="mod">Wing trade missions</td><td>Mission CR (huge)</td><td><span class="tag a">Mid</span></td><td>Massive multi-thousand-tonne delivery missions designed for a wing; even solo, a big hauler can complete them for some of the largest single payouts in the game.</td></tr>
+        <tr><td class="mod">Community Goals</td><td>CG rewards</td><td><span class="tag a">Mid</span></td><td>Deliver a commodity to a CG site for tiered credit and module rewards; top contributors earn the most.</td></tr>
+        <tr><td class="mod">Colonisation hauling</td><td>System progress</td><td><span class="tag r">End</span></td><td>Ferry the thousands of tonnes of construction commodities a new colony needs — the logistics core of system colonisation.</td></tr>
+        <tr><td class="mod">Powerplay hauling</td><td>Merits</td><td><span class="tag r">End</span></td><td>Move a Power's commodities to fortify or undermine systems, banking merits for the pledged Power.</td></tr>
+        <tr><td class="mod">Smuggling</td><td>Black-market CR</td><td><span class="tag a">Mid</span></td><td>Run illegal or stolen goods to black markets — higher margins, scan risk, and a bounty if caught.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><span class="lbl">Where the big money is</span><p>Routine loop trading is reliable but modest; the <b>largest payouts</b> come from stacking wing-trade missions, peak Community Goals, and high-distance rare runs. A big engineered freighter running wing missions can clear hundreds of millions in a focused session.</p></div>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Getting Started — Early Game</h2></div>
+    <ol class="steps">
+      <li><b>Get a small hauler.</b> Any hull with a few cargo racks and a token shield. Don't over-invest — early trading is about building capital, not perfection.</li>
+      <li><b>Find a loop.</b> Use a market tracker to find two nearby stations with a profitable commodity in each direction, so you fly loaded both ways.</li>
+      <li><b>Fill the hold and learn to submit.</b> Buy to capacity. When interdicted, <b>submit</b>, then boost and high-wake out rather than fighting.</li>
+      <li><b>Reinvest into cargo.</b> Every profit goes into a bigger hold or a bigger ship. Capacity compounds: doubling tonnes doubles income on the same route.</li>
+      <li><b>Take trade missions alongside.</b> They stack neatly with a loop and build the faction reputation you'll want later for rank and CG access.</li>
+      <li><b>Watch the price drift.</b> A route's margin shrinks as it's traded out; be ready to move to the next loop when the spread thins.</li>
+    </ol>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>Mid-Game Activities</h2></div>
+    <p>Mid-game trading is about <b>scaling tonnage and chasing the high-value mechanics</b>.</p>
+    <h3 class="sub">Scale the hull</h3>
+    <p>Move up to a large-internal hauler and engineer the FSD and thrusters so a heavy hull still cycles routes quickly. Cargo capacity is the lever — bigger hold, bigger trips, same effort.</p>
+    <h3 class="sub">Chase the high-margin work</h3>
+    <ul class="clean">
+      <li><b>Wing trade missions</b> — the mid-game's standout earner; a big hauler can solo the smaller ones for outsized pay.</li>
+      <li><b>Rare-goods circuits</b> — plan a long loop of rare-commodity origin points and a distant sell hub.</li>
+      <li><b>Community Goals</b> — show up to delivery CGs for tiered rewards and useful modules.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Information is the multiplier</span><p>A mid-game trader's real upgrade isn't the ship — it's the habit of checking current market data before every run. The best loop this week is rarely the best loop next week.</p></div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>End-Game Activities</h2></div>
+    <ul class="clean">
+      <li><b>Maximum-tonnage hauling</b> — the biggest freighters (Type-9, Cutter, Type-11 carrying cargo) running the highest-margin loops and wing missions for sustained nine-figure income.</li>
+      <li><b>Colonisation logistics</b> — bankrolling and supplying a colony build, moving the thousands of tonnes of construction goods it needs through its tiers.</li>
+      <li><b>Fleet-carrier trading</b> — using a carrier as a mobile market and warehouse to stage huge deliveries, CG contributions and colonisation hauls.</li>
+      <li><b>Trade Elite</b> — the trade rank climbs to Elite naturally as the credits pile up; a prestige cap on the role.</li>
+      <li><b>Powerplay fortification at scale</b> — moving the commodity tonnage that swings a Power's standing, banking merits as you go.</li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Best Ships for the Role</h2></div>
+    <p>Full ratings, cargo figures and costs live in the comparison dossier — shortlist by stage below. <em>(References by name for now; hyperlinks to follow.)</em></p>
+    <div class="recgrid">
+      <div class="rec">
+        <div class="who">The fleet hauler — large pad</div>
+        <div class="pick">Type-9 Heavy<small>Maximum tonnage</small></div>
+        <p>The bulk freighter — the most cargo for the credits, run as an ARX Jumpstart hull engineered in place to keep its free rebuy.</p>
+        <div class="ref">See <b>Type-9 Heavy — Trading Field Manual</b></div>
+      </div>
+      <div class="rec">
+        <div class="who">Top-tier — large pad</div>
+        <div class="pick">Imperial Cutter<small>Huge hold, fast, shielded</small></div>
+        <p>The premium hauler: enormous cargo, strong shields and surprising speed — Imperial rank-gated and expensive.</p>
+        <div class="ref">See the <b>Trading — Ship Comparison</b> dossier</div>
+      </div>
+      <div class="rec">
+        <div class="who">Balanced — medium pad</div>
+        <div class="pick">Python<small>Cargo that fits a medium pad</small></div>
+        <p>Strong cargo for a medium-pad hull that can also defend itself — the flexible mid-tier trader and outpost-friendly hauler.</p>
+        <div class="ref">See the <b>Trading — Ship Comparison</b> dossier</div>
+      </div>
+      <div class="rec">
+        <div class="who">Entry — medium pad</div>
+        <div class="pick">Type-6 / Type-7<small>Cheap tonnage per credit</small></div>
+        <p>The classic starter freighters — modest hulls that turn a small bankroll into a bigger hold fast.</p>
+        <div class="ref">See the <b>Trading — Ship Comparison</b> dossier</div>
+      </div>
+    </div>
+    <div class="callout"><span class="lbl">Full ranking</span><p>For every cargo-capable hull scored on one scale with max-cargo and cost figures, see the <b>Trading — Ship Comparison</b> role dossier.</p></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>Outcomes, Benefits &amp; Rewards</h2></div>
+    <table>
+      <colgroup><col style="width:22%"><col style="width:30%"><col style="width:48%"></colgroup>
+      <thead><tr><th>Reward</th><th>Earned from</th><th>Notes &amp; rough scale</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Credits</td><td>Market spread, missions, CGs</td><td>The steadiest large income: a tuned loop earns reliably; wing missions and peak CGs spike into the hundreds of millions per session.</td></tr>
+        <tr><td class="mod">Trade rank</td><td>Profit from selling commodities</td><td>Climbs to Elite as you sell; a prestige track. (Mining sales also count toward it.)</td></tr>
+        <tr><td class="mod">Faction reputation</td><td>Trade missions &amp; deliveries</td><td>Unlocks better missions and supports Navy-rank access alongside the other roles.</td></tr>
+        <tr><td class="mod">BGS influence</td><td>Trading in a faction's stations</td><td>Commerce shifts a system's economic and influence standing — a quieter BGS lever than combat.</td></tr>
+        <tr><td class="mod">CG rewards</td><td>Community Goal deliveries</td><td>Tiered credits plus sometimes-exclusive modules for top contributors.</td></tr>
+        <tr><td class="mod">Powerplay merits</td><td>Hauling a Power's commodities</td><td>Fortification/undermining hauls bank merits toward Power rewards.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>How Trading Interacts With Other Systems</h2></div>
+    <div class="twocol">
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Colonisation ↔ Trading</h3>
+        <p>System colonisation is a trading problem wearing a construction hat — it consumes thousands of tonnes of commodities through its tiers, and a bulk hauler is the engine that feeds it. The fleet's colonisation plan is, at heart, a haulage plan.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Mining &amp; Piracy supply</h3>
+        <p>Trading is the sell-side for both mining (your refined minerals) and piracy (fenced cargo). The combat and mining roles produce goods; trading turns them into credits.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Powerplay &amp; BGS</h3>
+        <p>Commodity movement fortifies Powers and nudges the background sim, making trading a non-combat way to shape territory and influence.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Funding the fleet</h3>
+        <p>Trading is the low-risk bankroll behind everything else — combat rebuys, engineering grinds, new hulls and the eventual Corvette are paid for, in part, by the hold.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Field Notes</h2></div>
+    <ul class="clean">
+      <li><b>Never fly empty.</b> A good loop is profitable in <em>both</em> directions; a one-way haul wastes half your trips.</li>
+      <li><b>Tonnes are everything.</b> Profit scales linearly with cargo — capacity upgrades beat almost any other spend.</li>
+      <li><b>Check the market before every run.</b> Routes get traded out; the best spread is a moving target.</li>
+      <li><b>Submit, don't fight.</b> Submitting to interdiction cools the FSD faster so you can high-wake away — freighters don't win brawls.</li>
+      <li><b>Mind cargo legality per jurisdiction.</b> A legal good in one system is contraband in another; a scan can cost you the hold and a bounty.</li>
+      <li><b>Wing missions solo.</b> A big hauler can complete the smaller wing-trade missions alone for payouts far above loop trading.</li>
+      <li><b>Engineer the freighter in place if it's an ARX hull.</b> It preserves the free rebuy — never sell and re-buy a Jumpstart ship.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Bottom line</span><p>Trading is the fleet's treasury and logistics corps: it is the calmest reliable income in the game, the supply line for colonisation and Powerplay, and the sell-side for mining and piracy. Master route-reading and tonnage, and it funds every louder ambition the fleet has.</p></div>
+  </section>
+
+  <footer>
+    <p><b>Trading — Role &amp; Activities Field Manual</b> · CMDR Ka0s · Inara 173082 · Elite Dangerous Odyssey (PC, Live 4.0). Companion to the per-ship trading manuals and the Trading — Ship Comparison dossier. Living document — one of the role &amp; activities set.</p>
+  </footer>
+
+</div>
+</body>
+</html>

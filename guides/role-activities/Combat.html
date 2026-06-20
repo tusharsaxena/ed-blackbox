@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combat — Role &amp; Activities Field Manual | CMDR Ka0s</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#e0463c;        /* combat crimson */
+    --acc-lt:#ff6f64;
+    --acc-deep:#7d1e1a;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --good-lt:#7fce98;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:780px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .verdict{margin-top:30px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.10),rgba(20,13,11,.6));padding:22px 24px;position:relative;overflow:hidden}
+  .verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--acc),transparent)}
+  .verdict .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--acc-lt);font-weight:600;margin-bottom:8px}
+  .verdict p{margin:0;font-size:16px;color:var(--ink-dim)}
+  .verdict p b{color:var(--ink);font-weight:600}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:26px -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--acc-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:50px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  h3.sub{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:16px;letter-spacing:.4px;color:var(--ink);margin:24px 0 4px}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+  .gd{color:var(--good-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .tag.b{color:var(--blue);border-color:rgba(91,155,209,.45)}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+  td.rt{white-space:nowrap}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout.good{border-left-color:var(--good);background:linear-gradient(90deg,rgba(95,179,122,.10),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+  .callout.good .lbl{color:var(--good-lt)}
+  .callout p{margin:6px 0 0;color:var(--ink-dim)}
+  .callout p:first-of-type{margin-top:0}
+
+  ol.steps{list-style:none;counter-reset:s;margin:16px 0 2px}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 16px 44px;color:var(--ink-dim)}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:28px;height:28px;
+    display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;color:var(--bg);background:var(--acc);border-radius:3px}
+  ol.steps li::after{content:"";position:absolute;left:13px;top:28px;bottom:0;width:1px;background:var(--hair)}
+  ol.steps li:last-child::after{display:none}
+  ol.steps li:last-child{padding-bottom:0}
+  ol.steps li b{color:var(--ink)}
+
+  .recgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .rec{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--acc);border-radius:var(--radius);padding:15px 17px}
+  .rec .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--amber);font-weight:600}
+  .rec .pick{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--acc-lt);margin:5px 0 7px;font-weight:600}
+  .rec .pick small{color:var(--ink-faint);font-size:12px;font-weight:400;display:block;margin-top:2px}
+  .rec p{margin:0;font-size:13.5px;color:var(--ink-dim)}
+  .rec .ref{margin-top:9px;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);text-transform:uppercase}
+  .rec .ref b{color:var(--amber-lt);font-weight:600}
+
+  .anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+  .anchors .cell{background:var(--panel);padding:14px 15px}
+  .anchors .s{font-family:'Chakra Petch',sans-serif;font-size:22px;color:var(--acc-lt);font-weight:700}
+  .anchors .n{font-size:13px;color:var(--ink);margin-top:3px}
+  .anchors .n small{color:var(--ink-faint);display:block;font-size:11px;margin-top:1px}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:24px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    .recgrid{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Role &amp; Activities <span class="sep">//</span> Combat</div>
+    <h1>Combat<span class="role">Role &amp; Activities</span></h1>
+    <p class="lede">A full deep-dive on the <b>combat role</b> in Elite Dangerous — not which ship to fly (that lives in the companion ship dossiers), but what fighting actually <b>is</b>: the engine mechanics under the hood, the venues you fight in, how to start, what to do mid- and end-game, and every reward and system the role plugs into.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Scope</span><b>Odyssey · PC · Live 4.0</b></div>
+      <div class="chip"><span>Priority</span><b>Heavily weighted</b></div>
+      <div class="chip"><span>Core stat</span><b>Hardpoints + distributor</b></div>
+      <div class="chip"><span>Pays in</span><b>CR · rank · merits · mats</b></div>
+    </div>
+
+    <div class="verdict">
+      <div class="t">The role in one line</div>
+      <p>Combat is a <b>family of activities</b> sharing one engine: strip the shield with thermal, break the hull with kinetic, manage pips and heat, and don't die. Master that loop once and it pays you in credits, combat rank, faction influence, Powerplay merits, engineering materials, and the Navy ranks that gate your endgame ships.</p>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 The Role</a>
+    <a href="#s2">02 Core Mechanics</a>
+    <a href="#s3">03 The Activities</a>
+    <a href="#s4">04 Getting Started</a>
+    <a href="#s5">05 Mid-Game</a>
+    <a href="#s6">06 End-Game</a>
+    <a href="#s7">07 Best Ships</a>
+    <a href="#s8">08 Outcomes &amp; Rewards</a>
+    <a href="#s9">09 System Interactions</a>
+    <a href="#s10">10 Field Notes</a>
+  </nav>
+
+  <!-- 1 — THE ROLE -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>What the Combat Role Actually Is</h2></div>
+    <p>"Combat" is not a single activity but a <b>cluster</b> of them, all running on the same flight-and-gunnery engine. The thing that unites bounty hunting, conflict zones, massacre missions, piracy and Powerplay fighting is that you point guns at another ship and apply damage faster than it applies damage to you. The differences are the <span class="acc">venue</span>, the <span class="acc">payout type</span>, and the <span class="acc">opposition</span> — not the fundamentals.</p>
+
+    <p>The minute-to-minute loop is always the same four beats:</p>
+    <div class="anchors">
+      <div class="cell"><div class="s">1</div><div class="n">Acquire<small>Scan / interdict / target a hostile</small></div></div>
+      <div class="cell"><div class="s">2</div><div class="n">Strip shield<small>Thermal damage, 4 pips WEP</small></div></div>
+      <div class="cell"><div class="s">3</div><div class="n">Break hull<small>Kinetic, hold gimbal lock</small></div></div>
+      <div class="cell"><div class="s">4</div><div class="n">Survive &amp; bank<small>Flip pips to SYS, collect reward</small></div></div>
+    </div>
+
+    <p>Where it differs from your other fleet roles: trading and exploration reward <em>route optimisation</em> and patience; combat rewards <b>build correctness and pip discipline</b>. A poorly-built combat ship doesn't lose money slowly — it dies and pays a rebuy. That's why the role is so engineering-hungry, and why it sits at the centre of the Ka0s fleet doctrine.</p>
+
+    <div class="callout amber"><span class="lbl">Scope note</span><p><b>Anti-Xeno (Thargoid) combat is a separate role</b> with its own weapons (Gauss, AX multi-cannons, flak), heat and caustic-damage rules. It is covered in its own dossier and is deliberately out of scope here — everything below is <b>human/NPC combat</b>.</p></div>
+  </section>
+
+  <!-- 2 — CORE MECHANICS -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Core Gameplay Mechanics</h2></div>
+    <p>Six mechanical systems decide every fight. Internalise these and the activities in §3 become variations on a theme.</p>
+
+    <h3 class="sub">2.1 — The damage triangle (the most important thing)</h3>
+    <p>Every fight has two phases — <b>shield</b>, then <b>hull</b> — and they want opposite damage types. This is the single biggest source of "why am I taking forever to kill things."</p>
+    <table>
+      <colgroup><col style="width:18%"><col style="width:30%"><col style="width:26%"><col style="width:26%"></colgroup>
+      <thead><tr><th>Damage type</th><th>Weapons</th><th>vs Shields</th><th>vs Hull</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Thermal</td><td>Lasers — beam, burst, pulse</td><td class="gd">Strong (shields are weak to heat)</td><td><span class="acc">Weak</span> — bounces off armour</td></tr>
+        <tr><td class="mod">Kinetic</td><td>Multi-cannons, cannons, frag cannons, railguns</td><td><span class="acc">Resisted</span> by shields</td><td class="gd">Strong — armour is weak to it</td></tr>
+        <tr><td class="mod">Explosive</td><td>Missiles, torpedoes, mines, plasma (part)</td><td><span class="acc">Resisted</span></td><td class="gd">Strong vs hull &amp; modules</td></tr>
+        <tr><td class="mod">Absolute</td><td>Plasma accelerators (part), some special FX</td><td>Ignores resistances</td><td>Ignores resistances</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">The lesson the Python taught</span><p>A ship that's all kinetic guns (multi-cannons) spends the entire shield phase doing almost nothing, because shields resist kinetic. You need <b>enough thermal to break shields quickly</b>, then your kinetic does the real killing on hull. A balanced bird carries both; an unbalanced one feels "slow to kill" even with big guns.</p></div>
+
+    <h3 class="sub">2.2 — Weapon mounts</h3>
+    <ul class="clean">
+      <li><b>Fixed</b> — highest DPS and best projectile speed, but you must aim. Rewards skill; the PvP standard.</li>
+      <li><b>Gimballed</b> — auto-track inside a cone. Lower DPS, easiest to land, but <b>chaff breaks the lock</b>. The PvE workhorse.</li>
+      <li><b>Turreted</b> — track almost any angle, lowest DPS, fire-and-forget. Best on big slow hulls and for gunner-crewed fighters.</li>
+    </ul>
+
+    <h3 class="sub">2.3 — The power distributor &amp; pips</h3>
+    <p>You have <b>six pips</b> to distribute across three capacitors, max four in any one:</p>
+    <div class="specgrid">
+      <div class="cell"><div class="k">SYS</div><div class="v">Shield <small>resistance + recharge rate. Flip here when taking fire.</small></div></div>
+      <div class="cell"><div class="k">ENG</div><div class="v">Engines <small>top speed + boost frequency. Range control.</small></div></div>
+      <div class="cell"><div class="k">WEP</div><div class="v">Weapons <small>fire without the capacitor draining. 4 here while shooting.</small></div></div>
+    </div>
+    <p>The combat rhythm is <b>pip-flipping</b>: 4 pips to WEP while you're on target and dealing damage, snap to 4-SYS the instant an enemy is hammering your shield. Doing this well is worth more than any single module upgrade.</p>
+
+    <h3 class="sub">2.4 — Heat</h3>
+    <p>Firing and charging generate heat. Above 100% your ship takes thermal damage; above ~150% modules start to break. <b>Heat sink launchers</b> dump heat instantly; the <span class="amb">Thermal Vent</span> experimental on beam lasers dumps your heat into the target every time you fire — the standard fix for hot energy builds. Running cold also makes you harder to target and lets you hide (silent running).</p>
+
+    <h3 class="sub">2.5 — Subsystem targeting</h3>
+    <p>Sub-target an enemy's modules to cripple rather than just delete: kill the <b>Power Plant</b> (forces a malfunction or outright kill), <b>Drives</b> (immobilise), <b>FSD</b> (stop it fleeing), or <b>Power Distributor</b> (starve its guns and shields). Cannons and railguns with high per-shot damage are best for this; it's how you stop a fleeing assassination target or disable a piracy mark without destroying its cargo.</p>
+
+    <h3 class="sub">2.6 — Defences &amp; utilities</h3>
+    <div class="twocol">
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Survival modules</h3>
+        <ul class="clean">
+          <li><b>Shields</b> — Bi-Weave (fast regen, lower buffer) for sustained PvE; Reinforced/Prismatic (big buffer) for spikes and PvP.</li>
+          <li><b>Shield Boosters</b> — Heavy Duty for raw buffer; Resistance Augmented to plug resist holes.</li>
+          <li><b>SCBs</b> — Shield Cell Banks instantly restore a chunk; ammo-limited and generate heat.</li>
+          <li><b>HRP / MRP</b> — Hull and Module Reinforcement Packages; your second life when shields drop.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Utility mounts</h3>
+        <ul class="clean">
+          <li><b>Chaff</b> — breaks enemy gimbal/turret lock for a few seconds. Huge survivability.</li>
+          <li><b>Heat Sink</b> — instant heat dump; also escapes some lock-ons.</li>
+          <li><b>Point Defence</b> — shoots down incoming missiles &amp; hatch-breaker limpets.</li>
+          <li><b>Kill Warrant Scanner (KWS)</b> — reveals bounties from other jurisdictions and <b>stacks the payout</b>. Near-mandatory for bounty hunting.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">2.7 — NPC rank &amp; the opposition</h3>
+    <p>NPCs carry their own combat rank ladder — <b>Harmless → Mostly Harmless → Novice → Competent → Expert → Master → Dangerous → Deadly → Elite</b>. Higher-ranked NPCs fly better-built ships and pip-flip against you. The reward for a kill scales with the target's danger, so a Deadly Anaconda is both harder and far more lucrative than a Harmless Sidewinder.</p>
+    <div class="callout"><span class="lbl">Fleet doctrine reminder</span><p>The Ka0s combat engineering pattern: <b>G5 Overcharged power plant</b> (Thermal Spread), <b>G5 Overcharged multi-cannons</b>, exactly <b>one Corrosive Shell</b> multi-cannon per ship (it debuffs the target so <em>all</em> your weapons hit harder), <b>Auto Loader</b> on the rest, <b>Dirty Drives</b> thrusters, <b>Heavy Duty</b> boosters &amp; HRPs. Apply experimentals last, in a single in-person engineer visit.</p></div>
+  </section>
+
+  <!-- 3 — THE ACTIVITIES -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>The Combat Activities</h2></div>
+    <p>The venues, ordered roughly from accessible to advanced. Each rewards a different currency and suits a different stage of the fleet.</p>
+
+    <table>
+      <colgroup><col style="width:21%"><col style="width:13%"><col style="width:18%"><col style="width:48%"></colgroup>
+      <thead><tr><th>Activity</th><th>Pays in</th><th>Difficulty</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">RES (Resource Extraction)</td><td>Bounty vouchers</td><td><span class="tag g">Entry</span></td><td>Bounty hunting in metallic/rocky rings. Low/Std/High have system security backing you up; <b>Hazardous</b> does not. The bread-and-butter loop — scan with KWS, kill the wanted, collect.</td></tr>
+        <tr><td class="mod">Nav Beacon</td><td>Bounty vouchers</td><td><span class="tag g">Entry</span></td><td>Scan the main-star nav beacon and ships warp in. Lower density than RES but no ring to navigate. A <b>Compromised</b> nav beacon has richer targets and no security.</td></tr>
+        <tr><td class="mod">Massacre / pirate-kill missions</td><td>Mission CR (big)</td><td><span class="tag a">Mid</span></td><td><b>Stack</b> several kill missions from a hub bordering an anarchy system, then farm the kills in one place. The classic high-credit combat earner when stacked correctly.</td></tr>
+        <tr><td class="mod">Assassination missions</td><td>Mission CR</td><td><span class="tag a">Mid</span></td><td>Hunt a single named target who arrives by interdiction or at a USS. Sub-target their FSD so they can't flee. Higher skill, clean payout.</td></tr>
+        <tr><td class="mod">Conflict Zones (space)</td><td>Combat bonds</td><td><span class="tag a">Mid</span></td><td>Faction battles, Low/Med/High intensity. Pick a side, kill enemies for bonds, complete objectives (capture ships, kill specialists). <b>High-intensity CZs punish thin hulls</b> — this is where tank + sustained DPS matter most.</td></tr>
+        <tr><td class="mod">On-foot CZ (Odyssey)</td><td>Bonds + merits</td><td><span class="tag a">Mid</span></td><td>Frontline Solutions infantry battles — combat suits, ground weapons, dropships. A whole separate skill set, but stacks influence and Powerplay merits like space CZs.</td></tr>
+        <tr><td class="mod">Piracy</td><td>Stolen cargo</td><td><span class="tag a">Mid</span></td><td>Interdict a hauler, hatch-breaker its cargo loose (or threaten until it drops), scoop and fence. A combat/trade hybrid — see the trading dossier for the selling side.</td></tr>
+        <tr><td class="mod">Powerplay combat</td><td>Merits</td><td><span class="tag r">End</span></td><td>Kill enemy-Power ships in contested/acquisition systems to bank merits for your pledged Power. Pairs with bounty hunting when your Power's space overlaps a good RES.</td></tr>
+        <tr><td class="mod">PvP &amp; player bounties</td><td>Sport / CR</td><td><span class="tag r">End</span></td><td>A different game — fixed weapons, FA-off piloting, shield/hull min-maxing, convergence. Hull rankings shift; agility and shield matter even more. Mostly for the challenge.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout good"><span class="lbl">Powerplay caveat (from the playbook)</span><p>Only <b>combat-type</b> Powerplay actions bank merits — kills in contested space. <b>Passenger missions earn zero Powerplay merits under any Power.</b> The recommended pledge is <span class="amb">Jerome Archer</span> (Federation, combat ethos): bounty hunting in his territory simultaneously doubles bounty credits, banks merits, <em>and</em> advances the Tod McQuinn unlock.</p></div>
+  </section>
+
+  <!-- 4 — GETTING STARTED -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Getting Started — Early Game</h2></div>
+    <p>The goal of the early game is to learn the loop cheaply, in a hull you can afford to rebuy, before you sink engineering into anything.</p>
+    <ol class="steps">
+      <li><b>Pick a cheap, tough small hull.</b> A small-pad combat ship — the <span class="acc">Viper Mk IV</span> in the fleet — is fast, durable and cheap to rebuy. Don't engineer it yet; learn in it.</li>
+      <li><b>Fit the bounty-hunting kit.</b> A mix of thermal (a couple of pulse/burst lasers) and kinetic (multi-cannons), a Bi-Weave shield, two shield boosters, a chaff launcher, and a <b>Kill Warrant Scanner</b>. The KWS pays for itself in one session.</li>
+      <li><b>Go to a Low or Standard RES.</b> Drop into a ringed planet's RES; system security ships fight alongside you. Let them tank while you learn to land shots and flip pips.</li>
+      <li><b>Scan before you shoot.</b> Target a ship, scan it — only engage <span class="acc">WANTED</span> ships, or you'll earn a bounty on your own head. KWS-scan to stack the voucher value.</li>
+      <li><b>Practise pip discipline.</b> 4 WEP on the attack, snap to 4 SYS when shields drop. Chaff when a gimballed NPC is tearing you up. Boost away to reset if you're losing.</li>
+      <li><b>Bank often.</b> Bounty vouchers are only paid when redeemed at a station (or any Interstellar Factors contact). Don't hoard a fortune in a ship that can be destroyed.</li>
+    </ol>
+    <div class="callout amber"><span class="lbl">Don't die broke</span><p>An undestroyed ship carries unredeemed vouchers; a destroyed one loses them. Cash out every couple of runs, and never fly a fit you can't afford to rebuy. Respawn happens at the <b>nearest rebuy-capable port to where you died</b> — including a fleet carrier — not your last dock.</p></div>
+  </section>
+
+  <!-- 5 — MID-GAME -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>Mid-Game Activities</h2></div>
+    <p>The mid-game is where combat stops being "can I win this fight" and becomes "how fast can I clear the site." Three things change: you <b>engineer</b>, you move to a <b>medium hull</b>, and you start <b>stacking</b> rewards.</p>
+
+    <h3 class="sub">Engineer the guns and the tank</h3>
+    <p>Run the fleet pattern: Felicity Farseer (FSD, done), then <span class="amb">Tod McQuinn</span> for G5 Overcharged multi-cannons, a G5 Overcharged power plant with Thermal Spread, Dirty Drives, and Heavy Duty boosters/HRPs. Engineer the <b>module, not the ship</b> — an engineered gun keeps its mods when you move it between hulls, so the spend is fleet-portable.</p>
+
+    <h3 class="sub">Graduate to a medium gun platform</h3>
+    <p>Step up to a medium-pad flagship — the fleet's <span class="acc">Python Mk II</span> — which carries roughly 84% of a Corvette's hardpoint tonnage but lands on a medium pad and rebuys for far less. This is the workhorse for High RES and medium-intensity CZs.</p>
+
+    <h3 class="sub">Start stacking rewards</h3>
+    <ul class="clean">
+      <li><b>Massacre mission stacking</b> — pull multiple kill missions targeting the same anarchy faction from a hub system, then farm the kills once. Every kill ticks several missions at once.</li>
+      <li><b>Conflict zone bond farming</b> — pick the winning side, focus high-value targets and specialists, and turn bonds in to the controlling faction for the influence bonus.</li>
+      <li><b>Rank missions</b> — combat reputation surfaces Federal/Imperial Navy missions; this is where the long Navy-rank grind toward the capstone ships actually happens (see §9).</li>
+    </ul>
+
+    <div class="callout"><span class="lbl">Throughput beats alpha</span><p>Mid-game earnings are a <b>kills-per-hour</b> game, not a damage-per-shot game. Exploiting allied security/wing ships to skip the shield phase, clean pip discipline, and not chasing fleeing targets matter more than a marginally bigger gun.</p></div>
+  </section>
+
+  <!-- 6 — END-GAME -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>End-Game Activities</h2></div>
+    <p>End-game combat is about <b>sustained throughput in the hardest venues</b> and the prestige ladders.</p>
+    <ul class="clean">
+      <li><b>High-intensity Conflict Zones</b> — the densest combat-bond farm in the game for a fully-engineered large hull. A geared ship clears bonds continuously; thin hulls get deleted.</li>
+      <li><b>The capstone gunship</b> — the <span class="acc">Federal Corvette</span> (Rear Admiral-gated, ~187M CR) or Imperial Cutter as the tanky alternative. The whole Federal thesis builds toward this.</li>
+      <li><b>Combat Elite</b> — grinding the combat rank to Elite (and Elite I–V beyond) is a long-tail prestige goal, achieved naturally through everything above.</li>
+      <li><b>Top-tier Powerplay</b> — high merit standing unlocks Power-specific modules (e.g. prismatic shields, Powerplay weapons) that feed straight back into your combat builds.</li>
+      <li><b>PvP &amp; Community Goal combat</b> — the skill ceiling: FA-off, fixed-weapon convergence, min-maxed defensive fits.</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Where the fleet is pointed</span><p>The end-game combat arc for CMDR Ka0s is explicit: finish the engineering spend across the combat ships, grind <b>Federal Navy rank to Rear Admiral</b>, and stand up the Corvette as the large-pad flagship — with the Python Mk II remaining the medium-pad daily driver.</p></div>
+  </section>
+
+  <!-- 7 — BEST SHIPS -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Best Ships for the Role</h2></div>
+    <p>Full head-to-head ratings, costs and per-class breakdowns live in the dedicated comparison dossier — this is just the shortlist by stage. <em>(References by name for now; hyperlinks to follow.)</em></p>
+
+    <div class="recgrid">
+      <div class="rec">
+        <div class="who">Entry — small pad</div>
+        <div class="pick">Viper Mk IV<small>Cheap, fast, tough learner</small></div>
+        <p>The small-pad interceptor for RES and nav-beacon work while you build toward the heavier platforms.</p>
+        <div class="ref">See <b>Viper Mk IV — Combat Field Manual</b></div>
+      </div>
+      <div class="rec">
+        <div class="who">Flexible — small pad</div>
+        <div class="pick">Cobra Mk V<small>Multirole all-rounder</small></div>
+        <p>Combat plus light utility in a small footprint — for missions that demand a small pad but still want teeth.</p>
+        <div class="ref">See <b>Cobra Mk V — Combat Field Manual</b></div>
+      </div>
+      <div class="rec">
+        <div class="who">Mid — medium pad</div>
+        <div class="pick">Python Mk II<small>Medium combat flagship</small></div>
+        <p>Six-internal dedicated gun platform, ~84% of Corvette hardpoint tonnage on a medium pad. The doctrine centrepiece.</p>
+        <div class="ref">See <b>Python Mk II — Combat Field Manual</b></div>
+      </div>
+      <div class="rec">
+        <div class="who">End — large pad</div>
+        <div class="pick">Federal Corvette<small>Capstone gunship</small></div>
+        <p>Rear-Admiral-gated ~187M CR endgame large combat ship — the top of the combat ladder and the fleet's long-term goal.</p>
+        <div class="ref">See <b>Federal Corvette — Combat Field Manual</b></div>
+      </div>
+    </div>
+
+    <div class="callout"><span class="lbl">Full ranking</span><p>For every combat-capable hull in the game scored on one scale, grouped by pad class, with cost and engineering-grind figures, see the <b>Combat — Ship Comparison</b> role dossier. The ratings there match the per-ship manuals above.</p></div>
+  </section>
+
+  <!-- 8 — OUTCOMES -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>Outcomes, Benefits &amp; Rewards</h2></div>
+    <p>Combat is the most <b>multi-currency</b> role in the game — one kill can advance five different progress tracks at once.</p>
+    <table>
+      <colgroup><col style="width:22%"><col style="width:30%"><col style="width:48%"></colgroup>
+      <thead><tr><th>Reward</th><th>Earned from</th><th>Notes &amp; rough scale</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Credits</td><td>Bounties, bonds, mission payouts, fenced cargo</td><td>Order-of-magnitude: a Haz-RES session = a few M/hr; a geared High CZ or stacked massacre batch = tens of M/hr. Scales hard with your combat rank, the target's rank, and current galaxy rates.</td></tr>
+        <tr><td class="mod">Combat rank</td><td>Every kill, weighted by target danger</td><td>Climbs toward Elite. A prestige track; also a soft gate on some content and a flex on your commander profile.</td></tr>
+        <tr><td class="mod">Faction reputation</td><td>Turning in bounties/bonds to a faction</td><td>Higher rep unlocks better missions and is a prerequisite for Navy-rank missions and some engineer referrals.</td></tr>
+        <tr><td class="mod">BGS influence</td><td>Bonds/bounties handed to a faction</td><td>Combat directly shifts the background-simulation balance of power in a system — the lever for player factions and CG outcomes.</td></tr>
+        <tr><td class="mod">Powerplay merits</td><td>Kills in contested/acquisition space</td><td>Bank toward Power rewards: Power-specific weapons, prismatic shields, rank perks. (Combat-type actions only.)</td></tr>
+        <tr><td class="mod">Engineering materials</td><td>Ship-kill drops, USS/threat sites, HGEs</td><td>Manufactured materials and encoded data drop from kills — combat <em>feeds</em> the engineering that makes combat better.</td></tr>
+        <tr><td class="mod">Navy rank</td><td>Navy missions surfaced by combat rep</td><td>The path to the Federal Corvette (Rear Admiral) and Imperial Cutter (Duke). The two ladders are independent.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 9 — SYSTEM INTERACTIONS -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>How Combat Interacts With Other Systems</h2></div>
+    <p>Combat is not a silo — it's the hub the rest of the progression wheel turns on.</p>
+    <div class="twocol">
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Engineering ↔ Combat</h3>
+        <p>A circular dependency: engineered guns and tanks make combat fast and survivable, and combat (kills, threat USS, HGEs) drops the manufactured materials and encoded data that engineering consumes. Tod McQuinn's unlock is itself a combat task.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Powerplay ↔ Combat</h3>
+        <p>Pledging a combat Power (Jerome Archer) turns bounty hunting into a triple-dip: credits, merits, and unlock progress. Merit rewards then loop back as combat modules.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">BGS &amp; Conflict Zones</h3>
+        <p>CZs only appear when factions are at war, and that war state is driven by BGS activity. Handing in bonds tips the war — combat is the most direct way to move a system's balance of power.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Navy Ranks ↔ Endgame Ships</h3>
+        <p>Combat reputation surfaces Federal/Imperial Navy missions; Navy rank gates the capstone hulls. Combat is both the means (rep, credits) and the motive (the Corvette) for the rank grind.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Materials &amp; Trading</h3>
+        <p>Combat funds the whole fleet and supplies engineering mats; piracy bridges directly into the trading economy (you still have to fence the cargo). Raw-material shortfalls are solved at the trader, not in a RES.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">On-Foot (Odyssey)</h3>
+        <p>Ground Conflict Zones and settlement raids extend the combat role to infantry play, with their own suit/weapon engineering and their own merit and influence payouts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 — FIELD NOTES -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Field Notes</h2></div>
+    <ul class="clean">
+      <li><b>Carry both damage types.</b> The single most common "slow to kill" cause is an all-kinetic or all-thermal fit. Break shields with thermal, hull with kinetic.</li>
+      <li><b>One Corrosive Shell, never two.</b> The debuff doesn't stack usefully — one multi-cannon with Corrosive Shell boosts <em>all</em> your weapons against that target; everything else runs Auto Loader.</li>
+      <li><b>Pip-flipping is free DPS and free tank.</b> No module upgrade matches the value of disciplined 4-WEP / 4-SYS swapping.</li>
+      <li><b>Let allies eat the shield phase.</b> In Low/Std RES and CZs, let security or your faction's wing strip shields, then you cash the hull-phase kill. Throughput, not heroics.</li>
+      <li><b>KWS pays the rent.</b> A Kill Warrant Scanner stacks bounty value across jurisdictions — never bounty-hunt without one.</li>
+      <li><b>Bank vouchers and bonds often.</b> They're only worth anything redeemed; a rebuy wipes the unbanked ones.</li>
+      <li><b>Sub-target to control the fight.</b> FSD to stop a runner, Drives to pin, Power Plant to finish — high-alpha cannons and rails do this best.</li>
+      <li><b>Engineer modules, not ships.</b> Mods travel with the module across the fleet, so combat spend is portable — build for reuse.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Bottom line</span><p>Combat is the engine room of the whole fleet plan: it earns the credits, drops the materials, banks the merits, and grinds the rep that everything else — engineering, Powerplay, the Corvette — runs on. Get the four-beat loop and pip discipline right, and every other reward track advances on autopilot.</p></div>
+  </section>
+
+  <footer>
+    <p><b>Combat — Role &amp; Activities Field Manual</b> · CMDR Ka0s · Inara 173082 · Elite Dangerous Odyssey (PC, Live 4.0). Companion to the per-ship combat manuals and the Combat — Ship Comparison dossier. Scope: human/NPC combat; Anti-Xeno covered separately. Living document — iterate, then replicate across roles.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crystalline Shards — G4 Raw Material Field Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070a0f;
+    --bg2:#0b1016;
+    --panel:#0e151d;
+    --line:#1d2a36;
+    --orange:#ff7a18;
+    --amber:#ffb24d;
+    --amber-dim:#7a5320;
+    --ink:#d6e2ec;
+    --ink-dim:#7e94a6;
+    --green:#46d39a;
+    --green-bg:rgba(70,211,154,.09);
+    --red:#ff5a52;
+    --red-bg:rgba(255,90,82,.09);
+    --warn:#ffcf5c;
+    --warn-bg:rgba(255,207,92,.08);
+    --cyan:#52c7e8;
+    --cyan-bg:rgba(82,199,232,.08);
+    --crystal:#7fe3ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Saira',sans-serif;
+    font-weight:300;
+    line-height:1.62;
+    font-size:16.5px;
+    letter-spacing:.1px;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 16% 10%, rgba(82,199,232,.07), transparent 42%),
+      radial-gradient(circle at 86% 6%, rgba(255,122,24,.05), transparent 38%),
+      linear-gradient(rgba(255,255,255,.014) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
+    background-size:auto,auto,46px 46px,46px 46px;
+    background-attachment:fixed;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px 90px}
+
+  /* HEADER */
+  header{padding:64px 0 30px;border-bottom:1px solid var(--line);margin-bottom:42px;position:relative}
+  .kicker{
+    font-family:'Saira Semi Condensed',sans-serif;text-transform:uppercase;letter-spacing:.42em;
+    font-size:11.5px;font-weight:600;color:var(--cyan);margin-bottom:18px;display:flex;align-items:center;gap:12px;
+  }
+  .kicker::before{content:"";width:34px;height:1px;background:var(--cyan);display:inline-block}
+  h1{
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(33px,6vw,54px);
+    line-height:1.02;letter-spacing:-.5px;color:#fff;text-transform:uppercase;
+  }
+  h1 .sub{display:block;color:var(--amber);font-size:.46em;letter-spacing:.06em;margin-top:12px;font-weight:500}
+  .lede{margin-top:24px;color:var(--ink-dim);font-size:17px;max-width:66ch}
+  .meta-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .chip{
+    font-family:'Saira Semi Condensed',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink-dim);padding:6px 12px;border-radius:3px;
+  }
+  .chip b{color:var(--amber);font-weight:600}
+
+  section{margin-bottom:50px;scroll-margin-top:24px}
+  h2{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:24px;text-transform:uppercase;letter-spacing:.5px;
+    color:#fff;display:flex;align-items:baseline;gap:14px;margin-bottom:20px;
+  }
+  h2 .num{
+    font-family:'Chakra Petch',sans-serif;color:var(--cyan);font-size:15px;font-weight:700;
+    border:1px solid #244a57;border-radius:3px;padding:2px 9px;letter-spacing:0;flex:none;
+  }
+  h3{font-family:'Saira Semi Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:16px;color:var(--amber);margin:26px 0 10px}
+  p{margin-bottom:14px}
+  strong{color:#fff;font-weight:600}
+  em{color:var(--crystal);font-style:normal}
+  a{color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(82,199,232,.3)}
+  a:hover{border-bottom-color:var(--cyan)}
+
+  .panel{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:6px;padding:22px 24px;margin:18px 0;position:relative}
+  .panel::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;background:var(--cyan);border-radius:2px}
+
+  ul.clean{list-style:none;margin:6px 0}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:8px}
+  ul.clean li::before{content:"›";position:absolute;left:2px;top:-1px;color:var(--cyan);font-weight:700;font-size:18px}
+
+  ol.steps{list-style:none;counter-reset:s;margin:8px 0}
+  ol.steps li{
+    counter-increment:s;position:relative;padding:13px 16px 13px 56px;border:1px solid var(--line);
+    border-radius:5px;margin-bottom:9px;background:var(--panel);transition:border-color .2s,transform .2s;
+  }
+  ol.steps li:hover{border-color:#244a57;transform:translateX(3px)}
+  ol.steps li::before{
+    content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;bottom:0;width:42px;
+    display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;
+    font-size:15px;color:var(--cyan);border-right:1px solid var(--line);background:var(--bg2);
+  }
+
+  /* WAYPOINT CARDS */
+  .wp-intro{font-size:13.5px;color:var(--ink-dim);margin-bottom:16px}
+  .wp{
+    display:grid;grid-template-columns:34px 1fr auto;gap:0 16px;align-items:center;
+    border:1px solid var(--line);border-radius:6px;background:linear-gradient(180deg,var(--panel),var(--bg2));
+    padding:14px 16px 14px 0;margin-bottom:10px;position:relative;overflow:hidden;transition:border-color .2s;
+  }
+  .wp:hover{border-color:var(--crystal)}
+  .wp .idx{
+    grid-row:1/3;align-self:stretch;display:flex;align-items:center;justify-content:center;
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:16px;color:var(--crystal);
+    border-right:1px solid var(--line);background:var(--bg2);
+  }
+  .wp .loc{grid-column:2}
+  .wp .sys{font-family:'Saira Semi Condensed',sans-serif;font-weight:700;color:#fff;font-size:16px;letter-spacing:.02em}
+  .wp .body{font-size:12.5px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.08em}
+  .wp .mat{grid-column:3;grid-row:1/3;text-align:right;padding-left:10px}
+  .wp .mat .name{font-family:'Chakra Petch',sans-serif;font-weight:600;color:var(--amber);font-size:15px}
+  .wp .mat .cat{font-size:11px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.06em}
+  .wp .coord{
+    grid-column:2;margin-top:7px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+    font-family:'JetBrains Mono',monospace;font-weight:500;font-size:14px;color:var(--crystal);
+    background:rgba(127,227,255,.07);border:1px solid rgba(127,227,255,.22);border-radius:4px;
+    padding:4px 10px;transition:background .15s,border-color .15s;user-select:all;width:fit-content;
+  }
+  .wp .coord:hover{background:rgba(127,227,255,.14);border-color:var(--crystal)}
+  .wp .coord .cp{font-family:'Saira Semi Condensed',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim)}
+  .wp .coord.copied{background:var(--green-bg);border-color:var(--green);color:var(--green)}
+  .wp .coord.copied .cp{color:var(--green)}
+  .wp.selen{border-style:dashed}
+  .wp.selen .idx{color:var(--warn)}
+
+  /* TRADE TREE */
+  .tree{display:grid;grid-template-columns:1fr;gap:8px;margin:16px 0}
+  .branch{
+    display:flex;align-items:center;flex-wrap:wrap;gap:8px;border:1px solid var(--line);border-radius:5px;
+    background:var(--panel);padding:11px 14px;font-family:'Saira Semi Condensed',sans-serif;font-size:14px;
+  }
+  .branch .g4{color:var(--amber);font-weight:700;background:var(--warn-bg);border:1px solid rgba(255,207,92,.3);padding:3px 9px;border-radius:3px;white-space:nowrap}
+  .branch .arrow{color:var(--cyan);font-weight:700}
+  .branch .down{color:var(--ink);font-weight:500;opacity:.9}
+  .branch .g1{color:var(--ink-dim);font-weight:500}
+  .branch .grade{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-dim);margin-left:2px}
+
+  .callout{border:1px solid rgba(82,199,232,.3);background:var(--cyan-bg);border-radius:6px;padding:16px 20px;margin:18px 0;font-size:15px}
+  .callout b{color:var(--cyan)}
+  .callout.warn{border-color:rgba(255,207,92,.35);background:var(--warn-bg)}
+  .callout.warn b{color:var(--warn)}
+  .callout.green{border-color:rgba(70,211,154,.3);background:var(--green-bg)}
+  .callout.green b{color:var(--green)}
+
+  .spec{display:grid;grid-template-columns:1fr;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:16px 0}
+  .spec div{display:flex;justify-content:space-between;gap:16px;padding:11px 18px;border-bottom:1px solid var(--line)}
+  .spec div:last-child{border-bottom:none}
+  .spec div:nth-child(odd){background:var(--panel)}
+  .spec .k{font-family:'Saira Semi Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:13px;color:var(--ink-dim)}
+  .spec .v{color:#fff;text-align:right;font-weight:400}
+
+  footer{margin-top:60px;padding-top:26px;border-top:1px solid var(--line);color:var(--ink-dim);font-size:13px}
+  footer .src{font-family:'Saira Semi Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);font-size:12px;margin-bottom:8px}
+
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
+    background:var(--green);color:#04130c;font-family:'Saira Semi Condensed',sans-serif;font-weight:700;
+    text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;padding:9px 18px;border-radius:5px;
+    opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  .fade{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  section:nth-of-type(1){animation-delay:.08s}
+  section:nth-of-type(2){animation-delay:.14s}
+  section:nth-of-type(3){animation-delay:.2s}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="fade">
+    <div class="kicker">CMDR 173082 · Field Manual</div>
+    <h1>Crystalline Shards<span class="sub">G4 Raw Material Farming</span></h1>
+    <p class="lede">One long trip to the Sanguineous Rim fills every Grade-4 raw bin in the game. Trade those seven category-tops down at a Raw Material Trader and you've stocked the <em>entire</em> raw grid. Includes the seven exact stand-here coordinates.</p>
+    <div class="meta-strip">
+      <span class="chip">Ship · <b>Asp Explorer</b></span>
+      <span class="chip">Distance · <b>~1,500 Ly</b></span>
+      <span class="chip">Sites · <b>7 (3 systems)</b></span>
+      <span class="chip">Bonus · <b>Palin unlock</b></span>
+    </div>
+  </header>
+
+  <!-- 1 -->
+  <section class="fade">
+    <h2><span class="num">01</span>What Crystalline Shards Are</h2>
+    <p>Crystalline Shard fields are surface biological sites that grow clusters of crystals you harvest from the SRV. Each cluster tip drops <strong>~3 units</strong> of one <strong>Grade-4 raw material</strong> — the rarest tier of raw mats (raw materials only go G1–G4; there is no G5 raw).</p>
+    <p>The magic is the math: there are exactly <strong>7 raw-material categories</strong>, each topped by one G4. The shard circuit below hits all seven. Cap the seven G4 bins, fly home, and <em>trade down</em> at a Raw Material Trader to backfill every G3 and G2 in every category. One run = the whole raw grid filled. It also conveniently progresses your <strong>Professor Palin</strong> unlock if that's still open.</p>
+    <div class="callout green"><b>Yields are huge.</b> A single dense field can fill a G4 bin (cap 150) in minutes — you only ever need a fraction of that, since trading down multiplies it across the lower grades.</div>
+  </section>
+
+  <!-- 2 -->
+  <section class="fade">
+    <h2><span class="num">02</span>Outfitting</h2>
+    <p>Any exploration-capable ship works (unengineered is fine). Your <strong>Asp Explorer</strong> is ideal and already carries most of this:</p>
+    <div class="spec">
+      <div><span class="k">Detailed Surface Scanner</span><span class="v">Required · 1-slot optional internal, cheap</span></div>
+      <div><span class="k">Planetary Vehicle Hangar + SRV</span><span class="v">The harvest vehicle</span></div>
+      <div><span class="k">Fuel Scoop</span><span class="v">For the 1,500 Ly haul each way</span></div>
+      <div><span class="k">Decent jump range</span><span class="v">Keep the engineered FSD</span></div>
+      <div><span class="k">Cargo</span><span class="v">Not needed — raw mats are weightless</span></div>
+    </div>
+    <p>The <strong>Detailed Surface Scanner (DSS)</strong> is the one non-negotiable: it's how you confirm a body actually has shards and map the dense patches before committing to a landing.</p>
+  </section>
+
+  <!-- 3 -->
+  <section class="fade">
+    <h2><span class="num">03</span>Collecting at a Shard Field</h2>
+    <p>The procedure is identical at every site:</p>
+    <ol class="steps">
+      <li><strong>Honk &amp; check.</strong> Discovery-scan the system, open the system map — a shard world lists <em>Surface Signals</em>, and crystal shards register under the <strong>Biological</strong> category (not Geological).</li>
+      <li><strong>Enter orbital cruise.</strong> Fly to the planet until you drop into the glide screen.</li>
+      <li><strong>Deploy the DSS.</strong> Switch to Analysis mode, deploy the scanner — the view changes to the probe-aiming overlay.</li>
+      <li><strong>Map it.</strong> Fire probes (they arc around the horizon, so no full line-of-sight needed) until you hit "Mapped" — aim for 90%+.</li>
+      <li><strong>Filter to Biological.</strong> Cycle the heat-map filter to Biological signals. Darker / more intense colour = denser concentration. (There's no "Crystal Shards" label — they live under Biological.)</li>
+      <li><strong>Drop on the densest patch — or just use the coordinates in §04.</strong> On the Live engine there's no selectable shard waypoint in the left panel, so you fly to the lat/long manually (your HUD shows current lat/long in orbital cruise).</li>
+      <li><strong>Land, deploy SRV, harvest.</strong> Drive to the clusters and shoot the tips — each drops ~3 units of that planet's raw material.</li>
+    </ol>
+    <div class="callout"><b>Speed trick:</b> hop out on foot and knock several cluster tips down with your sidearm first, then jump back in the SRV and scoop the whole scattered pile in one pass.</div>
+    <div class="callout"><b>Map vs. coordinates:</b> for these known sites the coordinates are far faster — the DSS map is really just there to confirm shards exist before you land. The Biological heat map is how you'd find <em>brand-new</em> sites you're prospecting yourself.</div>
+  </section>
+
+  <!-- 4 -->
+  <section class="fade">
+    <h2><span class="num">04</span>The Seven Sites — SRV Loop Coordinates</h2>
+    <p class="wp-intro">Tap any coordinate to copy it. Four categories at HIP 36601, two at Outotz LS-K D8-3, and Selenium out at HR 3230.</p>
+
+    <div class="wp">
+      <div class="idx">1</div>
+      <div class="loc"><span class="sys">HIP 36601</span> <span class="body">· Planet C 1 A</span></div>
+      <div class="coord" data-copy="-57.4599, 126.9543"><span>-57.4599, 126.9543</span><span class="cp">Copy</span></div>
+      <div class="mat"><div class="name">Polonium</div><div class="cat">Category 6</div></div>
+    </div>
+
+    <div class="wp">
+      <div class="idx">2</div>
+      <div class="loc"><span class="sys">HIP 36601</span> <span class="body">· Planet C 1 D</span></div>
+      <div class="coord" data-copy="-51.2639, 14.7291"><span>-51.2639, 14.7291</span><span class="cp">Copy</span></div>
+      <div class="mat"><div class="name">Ruthenium</div><div class="cat">Category 3</div></div>
+    </div>
+
+    <div class="wp">
+      <div class="idx">3</div>
+      <div class="loc"><span class="sys">HIP 36601</span> <span class="body">· Planet C 3 B</span></div>
+      <div class="coord" data-copy="-17.6769, -55.1800"><span>-17.6769, -55.1800</span><span class="cp">Copy</span></div>
+      <div class="mat"><div class="name">Tellurium</div><div class="cat">Category 5</div></div>
+    </div>
+
+    <div class="wp">
+      <div class="idx">4</div>
+      <div class="loc"><span class="sys">HIP 36601</span> <span class="body">· Planet C 5 A</span></div>
+      <div class="coord" data-copy="3.5500, 111.5415"><span>3.5500, 111.5415</span><span class="cp">Copy</span></div>
+      <div class="mat"><div class="name">Technetium</div><div class="cat">Category 2</div></div>
+    </div>
+
+    <div class="wp">
+      <div class="idx">5</div>
+      <div class="loc"><span class="sys">Outotz LS-K D8-3</span> <span class="body">· Planet B 5 A</span></div>
+      <div class="coord" data-copy="-1.9216, -145.7013"><span>-1.9216, -145.7013</span><span class="cp">Copy</span></div>
+      <div class="mat"><div class="name">Yttrium</div><div class="cat">Category 1</div></div>
+    </div>
+
+    <div class="wp">
+      <div class="idx">6</div>
+      <div class="loc"><span class="sys">Outotz LS-K D8-3</span> <span class="body">· Planet B 5 C</span></div>
+      <div class="coord" data-copy="-62.4905, 80.2426"><span>-62.4905, 80.2426</span><span class="cp">Copy</span></div>
+      <div class="mat"><div class="name">Antimony</div><div class="cat">Category 7</div></div>
+    </div>
+
+    <div class="wp selen">
+      <div class="idx">7</div>
+      <div class="loc"><span class="sys">HR 3230</span> <span class="body">· Planet 3 A A</span></div>
+      <div class="coord" data-copy="45.66, -30.49"><span>45.66, -30.49</span><span class="cp">Copy</span></div>
+      <div class="mat"><div class="name">Selenium</div><div class="cat">Category 4 · see §07</div></div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="fade">
+    <h2><span class="num">05</span>Hitting the Coordinates</h2>
+    <p>The chase is the only fiddly part. Done right it's a minute per planet; done wrong (from the SRV) it's an hour-long slog. Three rules:</p>
+    <ol class="steps">
+      <li><strong>Do it from orbital cruise, not the SRV.</strong> The higher you are, the faster the numbers move. Line the coordinates up while still up high, then drop almost straight down.</li>
+      <li><strong>Lock one axis at a time.</strong> Fix latitude first by flying only heading 0° or 180°; once within a few degrees, turn to 90°/270° for longitude. (For site 1: head south to ≈ -57.5 lat, then east toward +126.95 long.)</li>
+      <li><strong>Refine, then drop.</strong> Hold the first axis ±1–2° while dialing the second to within ±0.5°, then go visual — your SRV wave scanner and your eyes handle the last stretch. You can't fully steer the descent, so spend the final few km low and slow.</li>
+    </ol>
+    <div class="callout"><b>Stop watching four numbers — let a tool steer.</b> Two options, both in your apps directory's spirit:
+      <ul class="clean" style="margin-top:10px">
+        <li><strong>EDISON</strong> — calculates the course to a destination for you and reads out bearings, no need to type your current position. Best for running the whole seven-site circuit back to back.</li>
+        <li><strong>EDbearing</strong> — <a href="https://hotdoy.ca/edbearing">hotdoy.ca/edbearing</a> — lighter web option; punch in your position + the target and it gives you a heading to fly.</li>
+      </ul>
+      Either turns "watch four numbers and guess" into "point the nose this way."
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="fade">
+    <h2><span class="num">06</span>The Circuit &amp; Trade-Down</h2>
+    <p>The play: fly out, top off all seven G4 bins, fly home, then visit a Raw Material Trader (find your nearest on Inara) and trade each G4 down its category to fill the G3 and G2 rows. The G1 commons you never collect deliberately — they accumulate everywhere you fly.</p>
+    <h3>Seven G4 tops → all seven categories</h3>
+    <div class="tree">
+      <div class="branch"><span class="g4">Yttrium<span class="grade">G4</span></span><span class="arrow">↳</span><span class="down">Niobium<span class="grade">G3</span> · Vanadium<span class="grade">G2</span></span> <span class="g1">· Carbon<span class="grade">G1</span></span></div>
+      <div class="branch"><span class="g4">Technetium<span class="grade">G4</span></span><span class="arrow">↳</span><span class="down">Molybdenum<span class="grade">G3</span> · Chromium<span class="grade">G2</span></span> <span class="g1">· Phosphorus<span class="grade">G1</span></span></div>
+      <div class="branch"><span class="g4">Ruthenium<span class="grade">G4</span></span><span class="arrow">↳</span><span class="down">Cadmium<span class="grade">G3</span> · Manganese<span class="grade">G2</span></span> <span class="g1">· Sulphur<span class="grade">G1</span></span></div>
+      <div class="branch"><span class="g4">Selenium<span class="grade">G4</span></span><span class="arrow">↳</span><span class="down">Tin<span class="grade">G3</span> · Zinc<span class="grade">G2</span></span> <span class="g1">· Iron<span class="grade">G1</span></span></div>
+      <div class="branch"><span class="g4">Tellurium<span class="grade">G4</span></span><span class="arrow">↳</span><span class="down">Tungsten<span class="grade">G3</span> · Germanium<span class="grade">G2</span></span> <span class="g1">· Nickel<span class="grade">G1</span></span></div>
+      <div class="branch"><span class="g4">Polonium<span class="grade">G4</span></span><span class="arrow">↳</span><span class="down">Mercury<span class="grade">G3</span> · Arsenic<span class="grade">G2</span></span> <span class="g1">· Rhenium<span class="grade">G1</span></span></div>
+      <div class="branch"><span class="g4">Antimony<span class="grade">G4</span></span><span class="arrow">↳</span><span class="down">Boron<span class="grade">G3</span> · Zirconium<span class="grade">G2</span></span> <span class="g1">· Lead<span class="grade">G1</span></span></div>
+    </div>
+    <div class="callout green"><b>That's the whole grid.</b> Seven category-tops cover all 28 raw materials. Trading down within a category is cheap (1 G4 → several G3, and so on), so a modest G4 stock backfills everything below it.</div>
+  </section>
+
+  <!-- 7 -->
+  <section class="fade">
+    <h2><span class="num">07</span>Two Caveats</h2>
+    <div class="callout warn"><b>Selenium is the odd one out.</b> It's a category-top G4 with <em>no</em> crystal-shard site at HIP 36601. The HR 3230, 3 A A location (site 7) is actually a <strong>brain-tree forest</strong>, not a shard field — same drive-up-and-harvest idea, but tips give roughly 1 unit each rather than 3, so it's slower (the forests are dense enough to make up for it). Alternatively, surface-prospect a metal-rich body whose composition lists Selenium — but check the composition first, because on most bodies it simply isn't present.</div>
+    <div class="callout"><b>Don't make a trip for the G1 commons.</b> Carbon, Phosphorus, Sulphur, Iron and Nickel accumulate incidentally everywhere you fly and prospect. Never burn a shard run on them.</div>
+  </section>
+
+  <footer>
+    <div class="src">Sources &amp; Notes</div>
+    Coordinates and method from CMDR field notes, cross-checked against the AXI Engineering Materials wiki, Frontier Forums crystalline-shard threads, and community Steam guides; video reference <a href="https://youtu.be/9D7jG7j9Vo0">youtu.be/9D7jG7j9Vo0</a>. Live-engine note: there is no longer a selectable bio/geo site in the left panel, so coordinate navigation (or EDISON / EDbearing) is the current method. Raw materials cap at G4 (150). CMDR 173082 field manual · Elite Dangerous fleet project.
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">Coordinate copied</div>
+
+<script>
+  (function(){
+    var toast=document.getElementById('toast');
+    function flash(){toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(function(){toast.classList.remove('show');},1300);}
+    function fallback(text){try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();document.execCommand('copy');document.body.removeChild(ta);return true;}catch(e){return false;}}
+    document.querySelectorAll('.coord').forEach(function(el){
+      el.addEventListener('click',function(){
+        var text=el.getAttribute('data-copy');
+        var done=function(){el.classList.add('copied');flash();setTimeout(function(){el.classList.remove('copied');},1100);};
+        if(navigator.clipboard&&navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(done).catch(function(){if(fallback(text))done();});
+        }else{if(fallback(text))done();}
+      });
+    });
+  })();
+</script>
+</body>
+</html>

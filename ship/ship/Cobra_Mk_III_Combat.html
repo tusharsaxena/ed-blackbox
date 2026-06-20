@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Cobra Mk III · Combat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#e0463c;
+    --acc-lt:#ff6f64;
+    --acc-deep:#7d1e1a;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1>Cobra Mk III<span class="role">Combat</span></h1>
+    <p class="lede">The legendary all-rounder. The original Cobra Mk III is the <b>jack-of-all-trades that has done a bit of everything since the dawn of the genre</b> &mdash; four hardpoints, real cargo room and good speed on a cheap, beloved hull. As a fighter it's modest but versatile: it'll brawl, then haul or explore on the same frame.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Small &middot; Pad S</b></div>
+      <div class="chip"><span>Hardpoints</span><b>2M &middot; 2S</b></div>
+      <div class="chip"><span>Utility</span><b>2</b></div>
+      <div class="chip"><span>Hull</span><b>~208k Cr</b></div>
+      <div class="chip"><span>Role</span><b>Combat</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:58"><div class="num">58<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Combat Suitability Rating</div>
+        <div class="d">An iconic, versatile small ship that fights competently rather than excellently. Four hardpoints and good speed make it a capable budget fighter, but thin shields and small-class internals keep its pure-combat rating modest &mdash; its real strength is doing everything adequately on one cheap hull.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Cobra Mk III is one of gaming's most storied spaceships, carried into Elite Dangerous as the definitive jack-of-all-trades. Four hardpoints (two medium, two small), a genuinely useful cargo hold, good speed and eight optional internals make it a ship that fights, hauls, explores and runs missions &mdash; all competently, none superbly, on a cheap and cheerful hull.</p>
+    <p>As a combat ship specifically it's a capable budget fighter: enough guns to threaten, enough speed to choose its fights, and enough room to add shields and a little reinforcement. Its shields are thin and its guns small-class, so it won't out-fight the dedicated small combat hulls &mdash; but few ships are more pleasant or flexible, and as a do-everything starter that can also brawl, the Cobra Mk III remains a perennial favourite.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Versatile budget combat: low-to-medium RES, mixed mission boards (bounty plus cargo plus delivery), and as a single cheap hull that fights, hauls and explores without buying separate ships.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">282 / 403 <small>m/s (fast)</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2 Medium &middot; 2 Small</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">180 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~92 <small>MJ (thin)</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">216</div></div>
+      <div class="cell"><div class="k">Power plant</div><div class="v">Class 4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">4&middot;4&middot;4&middot;2&middot;2&middot;2&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(docks anywhere)</small></div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Good</div></div>
+      </div>
+    <p>Four things define the Cobra Mk III as a combat ship:</p>
+    <ul class="clean">
+      <li><b>Four hardpoints.</b> Two medium and two small give it a respectable budget battery &mdash; enough to threaten targets and clear lower-tier RES.</li>
+      <li><b>Good speed.</b> A 403 m/s boost lets it dictate range, chase, and escape fights it can't win.</li>
+      <li><b>Deep optionals and cargo.</b> Eight internals (three class-4) mean room for shields, reinforcement <em>and</em> cargo &mdash; the versatility that defines it.</li>
+      <li><b>Cheap and beloved.</b> Around 200k credits, with handling that has charmed pilots for decades.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>Thin shields, only two utilities, no military slots and small-class guns mean it can't trade blows for long or hit very hard. Every dedicated small combat ship out-fights it. The Cobra Mk III's case is versatility, not combat focus &mdash; it's the ship that does everything adequately, not the one that wins straight-up fights.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <p class="subhd">Same class &mdash; small-pad combat ships</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Cobra Mk III</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Vulture</td><td>Small</td><td>2L</td><td class="pcc"><span class="p">Two large guns; elite agility; tough</span><span class="c">Far pricier; power-starved; no cargo</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>3M 2S</td><td class="pcc"><span class="p">The modern Cobra: more guns, tank, speed</span><span class="c">Far pricier</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>3M</td><td class="pcc"><span class="p">Faster; far stronger shields</span><span class="c">Imperial rank; paper armour; no cargo</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+        <tr><td class="mod">Viper Mk IV</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Tougher; four utilities</span><span class="c">Less cargo and versatility</span></td><td><span class="rscore">66</span><div class="bar"><i style="width:66%"></i></div></td></tr>
+        <tr><td class="mod">Viper Mk III</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Faster; cheaper interceptor</span><span class="c">Thinner; less room and cargo</span></td><td><span class="rscore">63</span><div class="bar"><i style="width:63%"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Cool-running; four utilities; tougher</span><span class="c">Less cargo and versatility</span></td><td><span class="rscore">60</span><div class="bar"><i style="width:60%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III <span class="tag r">this</span></td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">58</span><div class="bar"><i style="width:58%"></i></div></td></tr>
+        <tr><td class="mod">Eagle Mk II</td><td>Small</td><td>3S</td><td class="pcc"><span class="p">More agile; even cheaper</span><span class="c">Tiny guns; eggshell hull; no cargo</span></td><td><span class="rscore">55</span><div class="bar"><i style="width:55%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Among small combat ships the Cobra Mk III is the versatile budget pick. The dedicated fighters out-shoot it, but none combines competent guns, good speed and real cargo room on one cheap hull. Buy it to do everything, including a fight; buy a focused hull to win fights.</p>
+    <p class="subhd">Other classes &mdash; and its own roles</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Cobra Mk III</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>3M 2S</td><td class="pcc"><span class="p">The modern successor &mdash; more of everything</span><span class="c">Far pricier</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">A proper combat medium; tank and firepower</span><span class="c">Medium pad; vastly pricier</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Vulture</td><td>Small</td><td>2L</td><td class="pcc"><span class="p">The agile small-pad fighter step-up</span><span class="c">Far pricier; no cargo</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Big guns; deep tank; SLF</span><span class="c">Medium pad; vastly pricier</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Adder</td><td>Small</td><td>1M 2S</td><td class="pcc"><span class="p">Cheaper multi-role with cargo</span><span class="c">Slower; fewer and smaller guns</span></td><td><span class="rscore">&mdash;</span><div class="bar"><i style="width:&mdash;%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Cobra Mk III is rivalled most by its own modern successor, the Cobra Mk V, which does everything it does but more. For pure combat, step up to a Vulture or a medium. The Mk III's enduring charm is being the affordable do-everything classic &mdash; and it has dedicated exploration and multipurpose manuals of its own.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~208k Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~1.5M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~6M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~208k Cr the Cobra Mk III is very cheap, with no rank gate and a negligible rebuy. Its small modules keep engineering inexpensive, so even a fully kitted Cobra stays affordable.</p>
+    <p>It's a value-and-versatility pick: cheap enough to own alongside specialist ships, and flexible enough to re-role from fighter to hauler to explorer by swapping its deep optionals.</p>
+    <div class="callout amber"><span class="lbl">Cheap and flexible</span>Around 200k credits for a four-gun fighter that also hauls and explores &mdash; the do-everything classic that costs almost nothing to own.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no combat-specific ARX pre-built built around the Cobra Mk III; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A versatile budget combat fit that keeps a little cargo room. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern, leaning on speed and a bi-weave since shields are thin.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Pulse Laser 2</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">Multi-Cannon 2</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">Pulse Laser 1</td><td class="st">Pulse Laser 1</td><td class="eng">Pulse 1 &mdash; Efficient</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Pulse Laser 1</td><td class="eng">Pulse 1 &mdash; Efficient</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G3)</td></tr>
+        <tr><td class="slot">Life Support (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">Shield Generator 4</td><td class="st">Shield Generator 4 (bi-weave)</td><td class="eng">Bi-Weave 4 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">Cargo Rack 4</td><td class="st">Shield Cell Bank 4</td><td class="eng">SCB 4</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">Cargo Rack 4</td><td class="st">Cargo Rack 4 / HRP 4</td><td class="eng">HRP 4 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 2</td><td class="eng">HRP 2 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 2</td><td class="eng">SCB 2</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 2</td><td class="eng">Module Reinforcement 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">Heat Sink storage</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">Shield Cell Bank 1</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">Fight, then re-role</span>The Cobra Mk III's charm is flexibility &mdash; keep a bi-weave and light reinforcement for combat, but its deep optionals can swap to cargo racks in minutes to turn the fighter into a hauler or explorer.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~208k Cr) and fit a shield plus a hull reinforcement.</p>
+    <p>Arm the mediums with gimballed multi-cannons and the smalls with pulse lasers.</p>
+    <p>Keep a cargo rack or two so the same hull can run delivery missions between fights.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a versatile budget fighter:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Thrusters &rarr; A', 'Speed lets it dictate range and escape; A-rate early.', '~400k Cr')</li>
+      <li><span class="stepnum">2</span>('Power Distributor &rarr; A', 'Sustain four guns and boost.', '~300k Cr')</li>
+      <li><span class="stepnum">3</span>('Power Plant &rarr; A', 'Headroom for guns, shields and utilities.', '~400k Cr')</li>
+      <li><span class="stepnum">4</span>('Shield Generator &rarr; bi-weave', 'A regenerating buffer over the thin shield.', '~300k Cr')</li>
+      <li><span class="stepnum">5</span>('FSD &rarr; A', 'Range for combat and its other roles.', '~400k Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Cheap, flexible spec</span>A full A-rating costs only a couple of million &mdash; and because the Cobra re-roles so easily, that investment serves combat, hauling and exploration alike.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern on a versatile classic. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one)</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">Pulse Lasers</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Thrusters and distributor first for mobility and sustain.</li>
+      <li><span class="stepnum">2</span>Power plant Overcharged to run four guns, shields and utilities.</li>
+      <li><span class="stepnum">3</span>Weapons: Overcharged multi-cannons with one Corrosive, Efficient pulses.</li>
+      <li><span class="stepnum">4</span>Bi-weave plus light reinforcement for the modest tank &mdash; keep cargo room if you want versatility.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Light &mdash; small-class modules throughout; a cheap grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>403 m/s</td><td>403 m/s</td><td class="acc">~480 m/s</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~120</td><td>~170</td><td class="acc">~330</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>216</td><td>216</td><td class="acc">~750</td></tr>
+        <tr><td class="mod">Sustained DPS</td><td>medium</td><td>medium</td><td class="acc">medium</td></tr>
+        <tr><td class="mod">Versatility</td><td>high</td><td>high</td><td class="acc">high</td></tr>
+      </tbody>
+    </table>
+    <p>Engineered, the Cobra Mk III is a fast, flexible budget fighter &mdash; 480 m/s boost, a usable shield, four guns, and the room to carry cargo too. Its combat ceiling stays modest; its enduring value is doing everything adequately on one cheap, charming hull.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Low-to-medium RES.</b> Competent guns and good speed clear lower-tier bounties while you keep cargo room for missions.</li>
+      <li><b>Mixed mission boards.</b> Stack bounty, delivery and small cargo missions and run them all in one hull.</li>
+      <li><b>Bounty turn-ins.</b> Cash vouchers toward the Tod McQuinn unlock in a cheap, flexible ship.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Combat-and-cargo runs.</b> Fight, then haul salvage or trade goods on the same frame &mdash; the Cobra's signature flexibility.</li>
+      <li><b>Re-role on demand.</b> Swap optionals to turn the fighter into a hauler or explorer in minutes.</li>
+      <li><b>Budget learning.</b> Cheap and forgiving, it's a fine ship to learn versatile play in.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example systems</span>Any low or medium RES near an outpost suits it; its cargo room lets you combine bounty hunting with delivery runs around your Diaguandri / Ray Gateway home.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>Play to versatility &mdash; the Cobra fights adequately and re-roles brilliantly; lean on the flexibility.</li>
+      <li>Speed and a bi-weave are its defence; it can't trade blows for long, so disengage if pressed.</li>
+      <li>Its modern successor the Cobra Mk V does everything it does but more &mdash; consider it when budget allows.</li>
+      <li>Keep a cargo rack fitted; the ability to haul between fights is half the point of the hull.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Cobra Mk III is the legendary all-rounder: four guns, good speed and real cargo room on a cheap, beloved hull. As a pure fighter it's merely competent &mdash; every dedicated small combat ship out-shoots it &mdash; but as the do-everything classic that brawls, hauls and explores on one frame, it has earned its place in spaceflight history many times over.</div>
+  </section>
+
+  <footer>
+    <p><b>Cobra Mk III &middot; Combat</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Cobra Mk III &middot; Combat dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

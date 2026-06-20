@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Keelback · Mining</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#9b6cd4;
+    --acc-lt:#c79bf2;
+    --acc-deep:#4a2d72;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1>Keelback<span class="role">Mining</span></h1>
+    <p class="lede">The defended budget miner. The Keelback is a <b>cheap mining hull with a ship-launched fighter bay</b> &mdash; the affordable miner that can deploy an SLF to drive off the pirates who hunt laden miners. Small ore hold, but the budget option that doesn't have to flee.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Max cargo</span><b>~98 t</b></div>
+      <div class="chip"><span>Utility</span><b>3</b></div>
+      <div class="chip"><span>Hull</span><b>~2.95M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Mining</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:68"><div class="num">68<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Mining Suitability Rating</div>
+        <div class="d">A characterful budget miner with one real trick: an SLF for defence. Its ore hold is small, but the ability to deploy a fighter against pirates is unique at its price; it ranks toward the lower end on capacity, higher on cheap self-defence.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Mining makes you a sitting target, and the Keelback's answer is unusual for so cheap a ship: a ship-launched fighter bay. The same combat-capable Type-6 derivative that hauls cargo makes a budget miner that, when a pirate interdicts you mid-session, can deploy an SLF (flown by you, a crewmate or an NPC) to drive the attacker off &mdash; rather than simply dying laden in the ring.</p>
+    <p>Its ore hold is small &mdash; around 98 tonnes &mdash; because slots go to the fighter bay, refinery and limpet controllers, so per-trip hauls are modest. As pure mining throughput it's poor value. But for a budget commander who wants a cheap miner with genuine self-defence, or who enjoys the SLF mechanic, the Keelback offers something no other low-cost miner does: the ability to fight back without a Python's price tag.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Defended budget mining: cheap laser mining in pirate-prone rings with an SLF for protection, crewed mining where a friend flies the fighter, and a versatile cheap hull that mines, hauls or fights a little.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Ore hold (practical)</div><div class="v">~50&ndash;70 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~98 <small>t</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">3</div></div>
+      <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF for defence)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;5&middot;4&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2M &middot; 2S <small>(tools)</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Self-defence</div><div class="v">SLF <small>(can fight pirates)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>Four things define the Keelback as a miner:</p>
+    <ul class="clean">
+      <li><b>A fighter bay for defence.</b> Unique at its price &mdash; deploy an SLF to drive off the pirates that hunt laden miners.</li>
+      <li><b>Cheap and rank-free.</b> Under 3M credits &mdash; the most affordable miner with real self-defence.</li>
+      <li><b>Tougher than a Type-6.</b> A more durable hull better suited to standing its ground in a ring.</li>
+      <li><b>Versatile.</b> The same cheap hull mines, hauls cargo, or fights a little.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>Its ore hold is small &mdash; the fighter bay, refinery and limpets leave little room for cargo &mdash; so per-trip hauls are modest and throughput is low. The fighter needs crew or NPC piloting to defend you while you mine. As mining volume per credit it's poor; the Keelback only makes sense if the cheap SLF defence specifically appeals.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite and fighter bay are fitted.</p>
+    <p class="subhd">Same class &mdash; medium-pad miners</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Keelback</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Far bigger hold; fights without an SLF</span><span class="c">Far pricier</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Vastly bigger hold</span><span class="c">Can't fight; pricier</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">Bigger hold; SLF and big guns</span><span class="c">Far pricier</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Bigger hold; great range</span><span class="c">No fighter; pricier</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+        <tr><td class="mod">Keelback <span class="tag r">this</span></td><td>Medium</td><td>~98</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">68</span><div class="bar"><i style="width:68%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Keelback carries the least of the medium miners but is the cheapest with a fighter bay. The Python and Krait Mk II defend themselves better with far bigger holds, but cost much more. The Keelback's edge is cheap SLF defence &mdash; a niche pick.</p>
+    <p class="subhd">Other classes &mdash; the alternatives</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Keelback</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-11 Prospector</td><td>Large</td><td>~288</td><td class="pcc"><span class="p">Dedicated miner; exclusive Mk II modules</span><span class="c">Large pad; far pricier</span></td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Far bigger hold; cheap-ish</span><span class="c">Large pad; can't fight</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Bigger hold; fights decisively itself</span><span class="c">Far pricier</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~90</td><td class="pcc"><span class="p">Faster; versatile; lands anywhere</span><span class="c">No fighter; similar hold</span></td><td><span class="rscore">58</span><div class="bar"><i style="width:58%"></i></div></td></tr>
+        <tr><td class="mod">Adder</td><td>Small</td><td>~30</td><td class="pcc"><span class="p">Cheaper; lands anywhere</span><span class="c">Tiny hold; no fighter</span></td><td><span class="rscore">48</span><div class="bar"><i style="width:48%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>If you want a defended miner, the pricier Python and Krait Mk II do it far better with much bigger holds. The Keelback's only edge is doing it cheaply. For most budget miners, a bigger-hold option or simply mining safe systems makes more sense &mdash; the Keelback is for the SLF novelty on a budget.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~2.95M Cr</div></div>
+      <div class="cell"><div class="k">A-rated miner</div><div class="v">~6M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~12M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~2.95M Cr the Keelback is cheap, with no rank gate, though the fighter bay, hangar and SLF add to the fit. The all-in cost lands around 12M Cr with a defended mining build.</p>
+    <p>It's a niche-and-novelty pick. For mining volume the cheaper Type-8 (or even a Type-7) holds far more; the Keelback makes sense only if the cheap fighter-bay defence specifically appeals.</p>
+    <div class="callout amber"><span class="lbl">Cheap SLF defence, small hold</span>Around 12M Cr for a budget miner that launches a fighter to fight off pirates &mdash; a fun niche, but the hold is small and bigger miners cost less per tonne.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no mining-specific ARX pre-built built around the Keelback; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A defended budget mining fit built around the fighter bay. Initial is buy-only; A-rated is the mining baseline; Engineered targets the ship's defence and mobility &mdash; the mining tools are not meaningfully engineered.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Mining Laser</td><td class="st">Mining Laser 1</td><td class="eng">Mining Laser 1</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster</td><td class="eng">Abrasion Blaster</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Mining Laser 1</td><td class="eng">Mining Laser 1</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Cargo Rack 5</td><td class="st">Fighter Hangar 5</td><td class="eng">Fighter Hangar 5 (SLF)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Cargo Rack 5</td><td class="st">Cargo Rack 5 (32t ore)</td><td class="eng">Cargo Rack 5 (32t ore)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Refinery 4</td><td class="eng">Refinery 4 (deep bins)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Generator 3 (bi-weave)</td><td class="eng">Bi-Weave 3 &mdash; defence</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 2</td><td class="eng">Collector Controller 2 (multi)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Controller 2</td><td class="eng">Prospector Controller 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS (find hotspots)</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">Fighter first, ore second</span>The fighter hangar is the Keelback's reason to mine &mdash; deploy an SLF to drive off pirates while you work the ring. That leaves a small ore hold, refinery and limpet controllers; per-trip hauls are modest, but you survive the rings that kill cheaper miners.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~2.95M Cr) and fit a fighter hangar, lasers, refinery and limpet controllers.</p>
+    <p>Add a fighter and crew (or NPC pilot) to defend you while mining.</p>
+    <p>Fill remaining slots with a small ore hold and a bi-weave shield; A-rate the plant for the bay.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a defended budget miner:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Power Plant &rarr; A', 'Run the fighter bay, lasers, limpets and shield together.', '~1.5M Cr')</li>
+      <li><span class="stepnum">2</span>('Power Distributor &rarr; A', 'Sustained laser and limpet power.', '~1M Cr')</li>
+      <li><span class="stepnum">3</span>('Refinery + collectors', 'The mining loop.', '~1M Cr')</li>
+      <li><span class="stepnum">4</span>('Shield Generator &rarr; bi-weave', 'Survive while the SLF fights.', '~1M Cr')</li>
+      <li><span class="stepnum">5</span>('Thrusters &rarr; A', 'Reposition and escape.', '~1.5M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Power the fighter and the tools</span>The fighter bay plus mining lasers and limpets are power-hungry on a small hull &mdash; A-rate the plant so the whole defended-mining suite runs at once.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is light and targets the ship, not the tools. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Engine Focused (G3)</td><td>&mdash;</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Plant to G5 so the fighter bay, tools and shield run together.</li>
+      <li><span class="stepnum">2</span>Engineer the ship's defence and mobility &mdash; bi-weave, thrusters &mdash; not the tools.</li>
+      <li><span class="stepnum">3</span>FSD Increased Range for reaching hotspots and hauling ore home.</li>
+      <li><span class="stepnum">4</span>Leave the mining lasers, refinery and limpet controllers stock.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Light &mdash; ship mobility and defence blueprints only; mining tools stay stock. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Ore per trip (t)</td><td>~40</td><td>~60</td><td class="acc">~70</td></tr>
+        <tr><td class="mod">Self-defence</td><td>SLF</td><td>SLF</td><td class="acc">SLF</td></tr>
+        <tr><td class="mod">Laden jump (LY)</td><td>~16</td><td>~24</td><td class="acc">~30</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>303 m/s</td><td>303 m/s</td><td class="acc">~340 m/s</td></tr>
+        <tr><td class="mod">Ore-per-credit</td><td>poor</td><td>poor</td><td class="acc">poor</td></tr>
+      </tbody>
+    </table>
+    <p>Engineered, the Keelback mines a modest ~70t hold but can launch a fighter to defend it &mdash; a cheap miner that survives the rings that kill plain budget haulers. Its ore-per-credit is poor; the SLF is the entire reason to choose it over a bigger-hold miner.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Defended budget mining.</b> Work pirate-prone rings with an SLF for protection.</li>
+      <li><b>Crewed mining.</b> A friend or NPC flies the fighter while you mine &mdash; cheap teamwork.</li>
+      <li><b>Mixed mine-and-fight.</b> Deploy the fighter for defence or light bounties between sessions.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Learning defended mining.</b> An affordable way to mine where you'd otherwise need an escort.</li>
+      <li><b>Versatile budget hull.</b> The same cheap ship mines, hauls or fights a little.</li>
+      <li><b>SLF practice.</b> A low-cost platform to learn fighter-bay tactics while mining.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example sites</span>Any reasonably rich ring, including pirate-prone ones, suits a fighter-defended Keelback. From your Diaguandri / Ray Gateway base it's a cheap way to mine with a measure of self-defence.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>The fighter bay is the whole point &mdash; if you don't want it, a bigger-hold miner makes more sense.</li>
+      <li>An NPC or crewmate must fly the SLF to defend you while you mine.</li>
+      <li>Ore-per-credit is poor &mdash; choose the Keelback for cheap defence, not volume.</li>
+      <li>Don't engineer the mining tools; engineer the ship's defence and the plant for the bay.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Keelback is the defended budget miner: a cheap mining hull with a ship-launched fighter bay, unique at its price. Its ore hold is small &mdash; the fighter and tools crowd out cargo &mdash; so as pure throughput it's poor value. But for a budget miner that can deploy a fighter rather than die laden in a pirate-prone ring, the Keelback's one trick gives it a genuine, if narrow, niche.</div>
+  </section>
+
+  <footer>
+    <p><b>Keelback &middot; Mining</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Keelback &middot; Mining dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

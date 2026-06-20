@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Asp Explorer · Exploration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#25b0a0;
+    --acc-lt:#63e2d2;
+    --acc-deep:#0f5249;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1>Asp Explorer<span class="role">Exploration</span></h1>
+    <p class="lede">The ship that taught a generation of commanders to love the black. The Asp Explorer pairs a <b>panoramic canopy</b> with a long jump range, a class-5 fuel scoop slot and room for every exploration module that matters &mdash; AFMU, DSS, SRV bay and shields all at once. It is the definitive mid-budget explorer, eclipsed at the very top only by the newer Mandalay and the long-haul Anaconda.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Jump (eng.)</span><b>~60+ LY</b></div>
+      <div class="chip"><span>Optionals</span><b>6&middot;5&middot;3&middot;3&middot;3&middot;2&middot;2&middot;1</b></div>
+      <div class="chip"><span>Hull</span><b>6.1M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Exploration</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:86"><div class="num">86<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Exploration Suitability Rating</div>
+        <div class="d">One of the all-time great explorers &mdash; superb visibility, strong engineered range and full module flexibility. Sits a few points below the Mandalay, Anaconda and Krait Phantom only on raw jump range, not on fitness for the job.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Asp Explorer is Lakon's purpose-built deep-space hull and, for the better part of a decade, the community's default recommendation for a first serious explorer. Its signature is the cockpit &mdash; an enormous wrap-around canopy that makes scanning, fuel-scooping and just <em>looking</em> at the galaxy a pleasure no other ship in its bracket matches.</p>
+    <p>Functionally it does everything an expedition needs on a medium pad: a class-5 FSD that engineers into the 60-plus light-year range with a Guardian booster, enough optional internals for a fuel scoop, AFMU, Detailed Surface Scanner, SRV hangar and a light shield, and good heat behaviour for close fuel scooping. The consensus today places it just behind the Mandalay (more range, lighter) and the Anaconda (more range, far more module room) &mdash; but the Asp remains the sweet spot of cost, comfort and capability.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Long-range expeditions, exobiology tours, Detailed-Surface-Scanner mapping for credits, and road-to-riches first-discovery runs. Its canopy and heat profile make it especially pleasant for hands-on scooping and planetary approaches.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">254 / 345 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Max jump (eng.)</div><div class="v">~60+ <small>LY (w/ Guardian booster)</small></div></div>
+      <div class="cell"><div class="k">FSD size</div><div class="v">Class 5 <small>(SCO capable)</small></div></div>
+      <div class="cell"><div class="k">Fuel scoop</div><div class="v">Up to class 6 slot</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">280 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">152 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;3&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Core sizes</div><div class="v"><span style="font-size:14px;letter-spacing:.4px">PP5 &middot; TH5 &middot; FSD5 &middot; LS4 &middot; PD4 &middot; SS5 &middot; FT5</span></div></div>
+      <div class="cell"><div class="k">Canopy</div><div class="v">Panoramic <small>(class-leading)</small></div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">SRV hangar</div><div class="v">Yes <small>(planetary ops)</small></div></div>
+      </div>
+    <p>Four things make the Asp a genuine explorer rather than a multirole that tolerates exploration:</p>
+    <ul class="clean">
+      <li><b>Class-5 FSD that engineers long.</b> Increased Range + Mass Manager plus a Guardian FSD Booster puts laden jumps comfortably past 60 LY &mdash; few medium hulls reach further.</li>
+      <li><b>The canopy.</b> The widest field of view in its class. It sounds cosmetic; on a thousand-jump expedition it's the difference between a chore and a joy.</li>
+      <li><b>Eight optional internals.</b> Room for fuel scoop, AFMU, DSS, SRV bay, a light shield and spare module reinforcement &mdash; you never choose between survival kit and science kit.</li>
+      <li><b>Cool-running.</b> Manageable heat for close fuel scooping and neutron-star supercharging, which keeps long hauls fast and safe.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>The Mandalay is lighter and jumps further for less mass; the Anaconda carries more and reaches further still; the Krait Phantom matches the Asp's range with a sleeker profile. The Asp is beaten on the single stat of maximum range &mdash; but it gives up almost nothing in practical expedition capability, and it's cheaper and comfier than all three.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the exploration role specifically</em>. The role column is engineered maximum jump range &mdash; the number that decides how far each hop takes you.</p>
+    <p class="subhd">Same class &mdash; medium-pad explorers</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Asp Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~85</td><td class="pcc"><span class="p">Lightest modern explorer; the longest jumps in class; built-in SCO</span><span class="c">Pricier; smaller canopy feel than the Asp</span></td><td><span class="rscore">96</span><div class="bar"><i style="width:96%"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~75</td><td class="pcc"><span class="p">Sleek, four optionals, strong range, no shield-strut blind spots</span><span class="c">No SRV-and-everything room without trade-offs</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer <span class="tag r">this</span></td><td>Medium</td><td>~62</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~58</td><td class="pcc"><span class="p">Tanky, can fight on the way out, SLF bay</span><span class="c">Heavier; shorter range than the dedicated explorers</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~45</td><td class="pcc"><span class="p">Huge internals; can haul exploration <em>and</em> cargo</span><span class="c">Heavy; mediocre range; large mass-lock</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>~55</td><td class="pcc"><span class="p">Cool-running and cheap; tidy little scout</span><span class="c">Tiny internals; no SRV-plus-everything room</span></td><td><span class="rscore">74</span><div class="bar"><i style="width:74%"></i></div></td></tr>
+        <tr><td class="mod">Asp Scout</td><td>Medium</td><td>~52</td><td class="pcc"><span class="p">Cheaper Asp variant; same canopy lineage</span><span class="c">Smaller internals &amp; weaker FSD than the Explorer</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Among mediums the Mandalay and Krait Phantom now out-jump the Asp, and a Krait Mk II trades range for the ability to fight on the way out. But none beat the Asp on the blend of cost, canopy comfort and 'fits everything' internal room &mdash; which is exactly why it stayed the default recommendation for so long.</p>
+    <p class="subhd">The step up (or sideways) &mdash; other classes</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Why you'd move (or not)</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~78</td><td class="pcc"><span class="p">Legendary range <em>and</em> the most module room of any explorer</span><span class="c">Large pad; slow; pricey; ponderous on planets</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
+        <tr><td class="mod">Caspian Explorer</td><td>Large</td><td>~80</td><td class="pcc"><span class="p">Purpose-built modern long-haul explorer</span><span class="c">Large pad; newest-hull cost &amp; access</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~65</td><td class="pcc"><span class="p">Budget legend &mdash; superb range &amp; heat for the price; lands anywhere</span><span class="c">Cramped internals; spartan canopy</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Dolphin</td><td>Small</td><td>~58</td><td class="pcc"><span class="p">Coolest-running hull in the game; sips fuel; small pad</span><span class="c">Light internals; really a passenger hull moonlighting</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>~55</td><td class="pcc"><span class="p">Very fast, small pad, tidy range for a tiny hull</span><span class="c">Imperial rank; minimal internals</span></td><td><span class="rscore">73</span><div class="bar"><i style="width:73%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Classic cheap do-anything explorer; lands anywhere</span><span class="c">Dated; modest range &amp; internals</span></td><td><span class="rscore">71</span><div class="bar"><i style="width:71%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~48</td><td class="pcc"><span class="p">Modern small hull; SCO drive; flexible</span><span class="c">Built for combat/flex, not range</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~48</td><td class="pcc"><span class="p">Cheap, light, surprising range; big internals for trade-explore</span><span class="c">No shield room without sacrifice; utilitarian</span></td><td><span class="rscore">68</span><div class="bar"><i style="width:68%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~45</td><td class="pcc"><span class="p">Very fast cruiser that can explore in style</span><span class="c">Large pad; range trails the dedicated explorers</span></td><td><span class="rscore">66</span><div class="bar"><i style="width:66%"></i></div></td></tr>
+        <tr><td class="mod">Hauler</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Absurd range-per-credit; the budget shoestring explorer</span><span class="c">One real internal; no comfort or science kit</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+        <tr><td class="mod">Adder</td><td>Small</td><td>~47</td><td class="pcc"><span class="p">Cheap, lands anywhere, decent budget range</span><span class="c">Tiny; spartan; slow</span></td><td><span class="rscore">60</span><div class="bar"><i style="width:60%"></i></div></td></tr>
+        <tr><td class="mod">Orca</td><td>Large</td><td>~42</td><td class="pcc"><span class="p">Fast, comfortable, stylish tourer</span><span class="c">Large pad; passenger hull at heart</span></td><td><span class="rscore">64</span><div class="bar"><i style="width:64%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The genuine upgrades are the Anaconda and Caspian (more range and far more room, at the cost of a large pad and slower handling) and, at the budget end, the Diamondback Explorer (nearly the Asp's range for a fraction of the cost, with small-pad access). Everything else here is a sidegrade or a budget option &mdash; the Asp remains the comfortable middle of the field.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Base hull</div><div class="v">6,145,793 <small>Cr</small></div></div>
+      <div class="cell"><div class="k">Shipyard (stock fit)</div><div class="v">6,661,160 <small>Cr</small></div></div>
+      <div class="cell"><div class="k">Unlock requirement</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Where to buy</div><div class="v">Most shipyards</div></div>
+      </div>
+    <p>The Asp Explorer is a credits-only purchase at most High-Tech and Industrial shipyards &mdash; <b>no permit, rank or engineer gate</b>, and no expansion requirement (it predates Odyssey). At roughly 6.1M Cr for the hull it sits in the affordable-but-meaningful bracket: cheap enough to be a sensible first 'real' explorer, expensive enough that you'll want to outfit it properly.</p>
+    <p>Use Inara's nearest-shipyard search to find stock near your base. The exploration <em>fit</em> &mdash; A-rated FSD, Guardian booster, fuel scoop, scanners &mdash; is where the real money goes (section 08).</p>
+    <div class="callout amber"><span class="lbl">Budget reality</span>Hull ~6M; a full A-rated exploration fit adds roughly <b>10&ndash;20M Cr</b> depending on FSD grade and whether you fit the Guardian FSD Booster (unlocked, not bought). Engineering on top costs materials, not credits.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is <b>no ARX pre-built</b> of the Asp Explorer &mdash; it's a credits-only classic. Buy the bare hull and build the exploration fit yourself; the loadout below is the standard expedition configuration.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>The whole exploration build on one screen. <b>Initial</b> is a jump-capable starter; <b>A-Rated</b> is the best buy-only expedition fit; <b>Engineered</b> is the long-range end state. Plans and costs follow in sections 07&ndash;09.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints &mdash; 2 Medium + 4 Small (mostly empty for exploration)</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="empty">empty</td><td class="empty">empty</td><td class="eng">empty <small>(or 1 small PD weapon)</small></td></tr>
+        <tr><td class="slot">Small 1</td><td class="empty">empty</td><td class="empty">empty</td><td class="empty">empty</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts &mdash; 4</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Heat Sink</td><td class="st">Heat Sink</td><td class="eng">Heat Sink</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">Shield Booster 0D</td><td class="st">Shield Booster 0A</td><td class="eng">Shield Booster &middot; <b>Heavy Duty</b></td></tr>
+        <tr><td class="slot">Utility 3</td><td class="empty">empty</td><td class="empty">empty</td><td class="empty">empty</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="empty">empty</td><td class="empty">empty</td><td class="empty">empty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant</td><td class="st">5D</td><td class="st">5D</td><td class="eng">5D &middot; <b>Low Emissions</b></td></tr>
+        <tr><td class="slot">Thrusters</td><td class="st">5D</td><td class="st">5D</td><td class="eng">5D &middot; <b>Clean Drives</b></td></tr>
+        <tr><td class="slot">Frame Shift Drive</td><td class="st">5A (SCO)</td><td class="st">5A (SCO)</td><td class="eng">5A SCO &middot; <b>Increased Range + Mass Mgr</b></td></tr>
+        <tr><td class="slot">Life Support</td><td class="st">4D</td><td class="st">4D</td><td class="eng">4D &middot; <b>Lightweight</b></td></tr>
+        <tr><td class="slot">Power Distributor</td><td class="st">4D</td><td class="st">4D</td><td class="eng">4D &middot; <b>Engine Focused</b> (opt.)</td></tr>
+        <tr><td class="slot">Sensors</td><td class="st">5D</td><td class="st">5D</td><td class="eng">5D &middot; <b>Lightweight</b></td></tr>
+        <tr><td class="slot">Fuel Tank</td><td class="st">5C</td><td class="st">5C</td><td class="eng">5C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals &mdash; 6&middot;5&middot;3&middot;3&middot;3&middot;2&middot;2&middot;1</td></tr>
+        <tr><td class="slot">Size 6</td><td class="st">Fuel Scoop 5A</td><td class="st">Fuel Scoop 6A</td><td class="eng">Fuel Scoop 6A</td></tr>
+        <tr><td class="slot">Size 5</td><td class="st">Shield Gen 5D</td><td class="st">Bi-Weave Shield 4D</td><td class="eng">Bi-Weave 4 &middot; <b>Lo-Draw / Resist</b></td></tr>
+        <tr><td class="slot">Size 3</td><td class="st">Guardian FSD Booster 3</td><td class="st">Guardian FSD Booster 3</td><td class="eng">Guardian FSD Booster 3</td></tr>
+        <tr><td class="slot">Size 3</td><td class="st">SRV Hangar 2</td><td class="st">SRV Hangar 2</td><td class="eng">SRV Hangar 2</td></tr>
+        <tr><td class="slot">Size 3</td><td class="st">AFMU 3</td><td class="st">AFMU 3</td><td class="eng">AFMU 3 &middot; (repairs en route)</td></tr>
+        <tr><td class="slot">Size 2</td><td class="st">Det. Surface Scanner</td><td class="st">Det. Surface Scanner</td><td class="eng">Det. Surface Scanner</td></tr>
+        <tr><td class="slot">Size 2</td><td class="empty">empty</td><td class="st">AFMU 2</td><td class="eng">AFMU 2 <small>(2nd unit)</small></td></tr>
+        <tr><td class="slot">Size 1</td><td class="empty">empty</td><td class="st">Repair Limpet Ctrl 1</td><td class="eng">empty <small>(or limpet)</small></td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout"><span class="lbl">The two modules that define the build</span>The <b>Guardian FSD Booster</b> (a flat range gain, unlocked at a Guardian site) and the <b>fuel scoop</b> (so you never strand) are non-negotiable. Everything else is comfort and survival kit you tune to taste.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Goal: get into deep space cheaply but safely. Fit a <b>5A SCO Frame Shift Drive</b> first &mdash; range is the whole point, and the SCO drive speeds in-system travel. Add a <b>class-5 fuel scoop</b> so you never strand, a <b>Detailed Surface Scanner</b> for mapping income, and an <b>SRV hangar</b> for planetary exobiology.</p>
+    <p>Strip weight everywhere else: D-rated power plant, thrusters, sensors and life support keep mass down and range up. A light shield generator and one heat sink cover the two ways explorers die &mdash; a botched planetary landing and an overheated fuel scoop. This buy-only starter runs roughly <b>8&ndash;12M Cr</b> on top of the hull and is genuinely expedition-ready.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>To reach the best buy-only range and safety before engineering, upgrade in this order:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span><b>FSD to 5A (SCO).</b> The largest single range jump available without engineering &mdash; do this first, always.</li>
+      <li><span class="stepnum">2</span><b>Guardian FSD Booster (class 3+).</b> A flat range bonus on top of the FSD; unlock it at a Guardian structure rather than buying it.</li>
+      <li><span class="stepnum">3</span><b>Fuel Scoop to 6A.</b> Faster scooping means less time sitting in a star's corona and more time covering distance.</li>
+      <li><span class="stepnum">4</span><b>Lightweight everything non-essential.</b> D-rated cores and a small shield keep optimal mass low, which compounds with the FSD for extra range.</li>
+      <li><span class="stepnum">5</span><b>Second AFMU + DSS.</b> Redundant repairs for long hauls and the scanner that turns every mapped body into credits.</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Total A-rated cost</span>Roughly <b>12&ndash;20M Cr</b> all-in depending on FSD and scoop grade. The Guardian FSD Booster is the highest-impact item and costs materials, not credits &mdash; unlock it before you leave the bubble.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>Exploration engineering is short and almost entirely about range and weight &mdash; one engineer does most of the work:</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Clean Drives</td><td>Drag Drives</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Life Support</td><td>Lightweight</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Sensors</td><td>Lightweight</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Shield Gen</td><td>Lo-Draw / Reinforced</td><td>&mdash;</td><td>Lei Cheung</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span><b>FSD &mdash; Increased Range + Mass Manager (Farseer).</b> The single most important roll in exploration; do it to G5 first.</li>
+      <li><span class="stepnum">2</span><b>Lightweight the cores &mdash; LS, Sensors, Power Plant (Farseer / Hera Tani).</b> Lower optimal mass compounds with the FSD for more range per jump.</li>
+      <li><span class="stepnum">3</span><b>Thrusters &mdash; Clean Drives (Farseer).</b> Cooler thrust for safer planetary work and a touch more speed.</li>
+      <li><span class="stepnum">4</span><b>Shield &mdash; Lo-Draw or Reinforced (Lei Cheung).</b> A light, cheap-to-power buffer for landings.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Light overall &mdash; heavy on <b>encoded</b> data for the FSD and a little <b>raw</b> for thrusters and lightweight rolls. Felicity Farseer (your maxed engineer) covers most of it; the FSD roll alone is the bulk of the value.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Laden jump range</td><td>~38 LY</td><td>~50 LY</td><td class="acc">~62+ LY</td></tr>
+        <tr><td class="mod">Unladen jump</td><td>~42 LY</td><td>~55 LY</td><td class="acc">~68+ LY</td></tr>
+        <tr><td class="mod">Fuel scoop rate</td><td>Moderate</td><td>Fast</td><td class="acc">Fast</td></tr>
+        <tr><td class="mod">Effective hull</td><td>~400</td><td>~500</td><td class="acc">~600 (light)</td></tr>
+        <tr><td class="mod">Heat (scooping)</td><td>Cool</td><td>Cool</td><td class="acc">Cool</td></tr>
+        <tr><td class="mod">Module repair</td><td>1 AFMU</td><td>2 AFMU</td><td class="acc">2 AFMU</td></tr>
+      </tbody>
+    </table>
+    <p>The number you'll feel is laden jump range: from ~38 LY raw to ~62+ LY engineered with the Guardian booster. That's the difference between a slow plod and reaching distant nebulae in an evening &mdash; the FSD roll is where almost all the value lives.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Detailed-Surface-Scanner mapping</b> in unexplored systems near the bubble &mdash; honk on arrival, map high-value bodies (water worlds, ELWs, ammonia worlds) and bank the data.</li>
+      <li><b>Exobiology</b> on atmospheric planets with the SRV and on-foot sampler &mdash; the single highest credits-per-hour in exploration right now.</li>
+      <li><b>Where:</b> head a few hundred light-years off the beaten track in any direction; the <span class="amb">Pleiades</span>, <span class="amb">California Nebula</span> or simply the systems just past the populated bubble are full of unmapped bodies.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Long expeditions</b> to the galactic core, distant nebulae or named landmarks (e.g. <span class="amb">Sagittarius A*</span>) &mdash; the Asp's comfort and range make multi-thousand-jump trips bearable.</li>
+      <li><b>Neutron-star highway</b> supercharging to extend jump range dramatically on long hauls &mdash; plan routes in Spansh.</li>
+      <li><b>Road to Riches</b> first-discovery + first-mapped circuits for tens of millions in a single session.</li>
+      <li><b>Where:</b> use Spansh's road-to-riches and neutron plotters; the EDSM map to find unvisited systems; and exobiology hotspots in the galactic arms.</li>
+    </ul></div>
+    </div>
+    <div class="callout amber"><span class="lbl">Comfort note</span>The Asp's canopy and cool running make it the hull people actually <em>enjoy</em> living in for weeks of exploration. If you plan long trips, that comfort is a real, if unquantifiable, advantage over a slightly longer-jumping but more cramped rival.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li><b>Unlock the Guardian FSD Booster before you leave.</b> It's the biggest range gain on the ship and it costs materials, not credits &mdash; don't depart the bubble without it.</li>
+      <li><b>Carry two AFMUs.</b> One repairs the other; module wear on long hauls is real, and a dead FSD a thousand jumps out is a long self-destruct home.</li>
+      <li><b>Honk, then map selectively.</b> Full system scans on arrival, then DSS only the high-value bodies &mdash; map efficiency is your credits-per-hour.</li>
+      <li><b>It can fight in a pinch.</b> The two medium hardpoints mean you're not defenceless near the bubble, but exploration fits run them empty for weight &mdash; see the Asp Explorer <span class="amb">Multipurpose</span> dossier for a flex build.</li>
+      <li><b>Watch heat on the scoop.</b> The Asp is cool, but a steep scoop on a hot star still bites &mdash; keep a heat sink mapped to a fire group.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Asp Explorer is the explorer the community recommends when someone asks for their first real deep-space ship, and it's still a top pick years later. 86/100 &mdash; out-jumped now by the Mandalay, Anaconda and Krait Phantom, but unmatched on the blend of range, that glorious canopy, full science-and-survival module room, and a price that doesn't sting. Fit the FSD and Guardian booster, point it at the black, and go.</div>
+  </section>
+
+  <footer>
+    <p><b>Asp Explorer &middot; Exploration</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Build &amp; engineering: community consensus + standard exploration engineer tour. Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

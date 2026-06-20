@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HGE Farming — G5 Manufactured Materials Field Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070a0f;
+    --bg2:#0b1016;
+    --panel:#0e151d;
+    --panel2:#121b25;
+    --line:#1d2a36;
+    --orange:#ff7a18;
+    --amber:#ffb24d;
+    --amber-dim:#7a5320;
+    --ink:#d6e2ec;
+    --ink-dim:#7e94a6;
+    --green:#46d39a;
+    --green-bg:rgba(70,211,154,.09);
+    --red:#ff5a52;
+    --red-bg:rgba(255,90,82,.09);
+    --warn:#ffcf5c;
+    --warn-bg:rgba(255,207,92,.08);
+    --cyan:#52c7e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Saira',sans-serif;
+    font-weight:300;
+    line-height:1.62;
+    font-size:16.5px;
+    letter-spacing:.1px;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 18% 12%, rgba(255,122,24,.06), transparent 42%),
+      radial-gradient(circle at 85% 8%, rgba(82,199,232,.05), transparent 38%),
+      linear-gradient(rgba(255,255,255,.014) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
+    background-size:auto,auto,46px 46px,46px 46px;
+    background-attachment:fixed;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px 90px}
+
+  /* HEADER */
+  header{
+    padding:64px 0 30px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:42px;
+    position:relative;
+  }
+  .kicker{
+    font-family:'Saira Semi Condensed',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.42em;
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--orange);
+    margin-bottom:18px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .kicker::before{content:"";width:34px;height:1px;background:var(--orange);display:inline-block}
+  h1{
+    font-family:'Chakra Petch',sans-serif;
+    font-weight:700;
+    font-size:clamp(33px,6vw,54px);
+    line-height:1.02;
+    letter-spacing:-.5px;
+    color:#fff;
+    text-transform:uppercase;
+  }
+  h1 .sub{display:block;color:var(--amber);font-size:.46em;letter-spacing:.06em;margin-top:12px;font-weight:500}
+  .lede{
+    margin-top:24px;
+    color:var(--ink-dim);
+    font-size:17px;
+    max-width:64ch;
+  }
+  .meta-strip{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;
+  }
+  .chip{
+    font-family:'Saira Semi Condensed',sans-serif;
+    font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+    border:1px solid var(--line);
+    background:var(--panel);
+    color:var(--ink-dim);
+    padding:6px 12px;border-radius:3px;
+  }
+  .chip b{color:var(--amber);font-weight:600}
+
+  /* SECTIONS */
+  section{margin-bottom:50px;scroll-margin-top:24px}
+  h2{
+    font-family:'Chakra Petch',sans-serif;
+    font-weight:600;
+    font-size:24px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    color:#fff;
+    display:flex;align-items:baseline;gap:14px;
+    margin-bottom:20px;
+    padding-bottom:0;
+  }
+  h2 .num{
+    font-family:'Chakra Petch',sans-serif;
+    color:var(--orange);
+    font-size:15px;
+    font-weight:700;
+    border:1px solid var(--amber-dim);
+    border-radius:3px;
+    padding:2px 9px;
+    letter-spacing:0;
+    flex:none;
+  }
+  h3{
+    font-family:'Saira Semi Condensed',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    font-size:16px;
+    color:var(--amber);
+    margin:26px 0 10px;
+  }
+  p{margin-bottom:14px}
+  p+p{margin-top:-2px}
+  strong{color:#fff;font-weight:600}
+  a{color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(82,199,232,.3)}
+  a:hover{border-bottom-color:var(--cyan)}
+
+  /* PANELS */
+  .panel{
+    background:linear-gradient(180deg,var(--panel),var(--bg2));
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:22px 24px;
+    margin:18px 0;
+    position:relative;
+  }
+  .panel::before{
+    content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;
+    background:var(--orange);border-radius:2px;
+  }
+  .panel.cyan::before{background:var(--cyan)}
+
+  ul.clean{list-style:none;margin:6px 0}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:8px}
+  ul.clean li::before{
+    content:"›";position:absolute;left:2px;top:-1px;color:var(--orange);font-weight:700;font-size:18px;
+  }
+
+  /* STEPS */
+  ol.steps{list-style:none;counter-reset:s;margin:8px 0}
+  ol.steps li{
+    counter-increment:s;
+    position:relative;
+    padding:13px 16px 13px 56px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    margin-bottom:9px;
+    background:var(--panel);
+    transition:border-color .2s,transform .2s;
+  }
+  ol.steps li:hover{border-color:var(--amber-dim);transform:translateX(3px)}
+  ol.steps li::before{
+    content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:0;bottom:0;width:42px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:15px;
+    color:var(--orange);
+    border-right:1px solid var(--line);
+    background:var(--bg2);
+  }
+
+  /* TABLE */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;margin:18px 0}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
+  thead th{
+    background:var(--bg2);
+    font-family:'Saira Semi Condensed',sans-serif;
+    text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:700;
+    color:var(--amber);
+    text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);
+  }
+  tbody td{padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr{transition:background .15s}
+  tbody tr:hover{background:rgba(255,122,24,.04)}
+  td.mat{font-family:'Saira Semi Condensed',sans-serif;font-weight:600;color:#fff;white-space:nowrap}
+  .tag{
+    font-family:'Saira Semi Condensed',sans-serif;font-size:10.5px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.06em;padding:2px 7px;border-radius:3px;display:inline-block;
+  }
+  .tag.f{background:var(--green-bg);color:var(--green);border:1px solid rgba(70,211,154,.3)}
+  .tag.t{background:var(--warn-bg);color:var(--warn);border:1px solid rgba(255,207,92,.3)}
+  .tag.x{background:var(--red-bg);color:var(--red);border:1px solid rgba(255,90,82,.3)}
+
+  /* CHECKLIST */
+  .check-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}
+  @media(min-width:680px){.check-grid{grid-template-columns:1fr 1fr 1fr}}
+  .cl{
+    border:1px solid var(--line);border-radius:6px;padding:18px 18px 20px;
+    background:linear-gradient(180deg,var(--panel),var(--bg2));
+    position:relative;overflow:hidden;
+  }
+  .cl-head{
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;
+    text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;display:flex;align-items:center;gap:8px;
+  }
+  .cl-sub{font-size:12.5px;color:var(--ink-dim);margin-bottom:14px;min-height:34px}
+  .cl.green{border-top:2px solid var(--green)}
+  .cl.green .cl-head{color:var(--green)}
+  .cl.warn{border-top:2px solid var(--warn)}
+  .cl.warn .cl-head{color:var(--warn)}
+  .cl.red{border-top:2px solid var(--red)}
+  .cl.red .cl-head{color:var(--red)}
+  .cl ul{list-style:none}
+  .cl li{font-family:'Saira Semi Condensed',sans-serif;font-weight:500;font-size:14.5px;padding:6px 0 6px 22px;position:relative;border-bottom:1px dashed rgba(255,255,255,.05)}
+  .cl li:last-child{border-bottom:none}
+  .cl li::before{position:absolute;left:0;top:6px;font-size:13px}
+  .cl.green li::before{content:"◉";color:var(--green)}
+  .cl.warn li::before{content:"◐";color:var(--warn)}
+  .cl.red li::before{content:"✕";color:var(--red);font-size:11px;top:7px}
+  .cl li small{display:block;font-family:'Saira',sans-serif;font-weight:300;font-size:11.5px;color:var(--ink-dim);text-transform:none;letter-spacing:0}
+
+  /* CALLOUT */
+  .callout{
+    border:1px solid rgba(255,90,82,.35);
+    background:var(--red-bg);
+    border-radius:6px;padding:16px 20px;margin:18px 0;
+    font-size:15px;
+  }
+  .callout b{color:var(--red)}
+  .callout.tip{border-color:rgba(82,199,232,.3);background:rgba(82,199,232,.06)}
+  .callout.tip b{color:var(--cyan)}
+
+  /* SPEC GRID */
+  .spec{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:16px 0}
+  .spec div{display:flex;justify-content:space-between;gap:16px;padding:11px 18px;border-bottom:1px solid var(--line)}
+  .spec div:last-child{border-bottom:none}
+  .spec div:nth-child(odd){background:var(--panel)}
+  .spec .k{font-family:'Saira Semi Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:13px;color:var(--ink-dim)}
+  .spec .v{color:#fff;text-align:right;font-weight:400}
+
+  footer{
+    margin-top:60px;padding-top:26px;border-top:1px solid var(--line);
+    color:var(--ink-dim);font-size:13px;
+  }
+  footer .src{font-family:'Saira Semi Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);font-size:12px;margin-bottom:8px}
+
+  /* load anim */
+  .fade{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  header{animation-delay:0s}
+  section:nth-of-type(1){animation-delay:.08s}
+  section:nth-of-type(2){animation-delay:.14s}
+  section:nth-of-type(3){animation-delay:.2s}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="fade">
+    <div class="kicker">CMDR 173082 · Field Manual</div>
+    <h1>High&nbsp;Grade Emissions<span class="sub">G5 Manufactured Material Farming</span></h1>
+    <p class="lede">Everything needed to cap all ten Grade-5 manufactured materials (excluding Guardian &amp; Thargoid): the outfitting, the relog method, the system-state map, and where to find live signals.</p>
+    <div class="meta-strip">
+      <span class="chip">Best ship · <b>Asp Explorer</b></span>
+      <span class="chip">Method · <b>Relog loop</b></span>
+      <span class="chip">Time to cap one mat · <b>&lt;15 min</b></span>
+      <span class="chip">Post-2024 buff · <b>~1 HGE = 100</b></span>
+    </div>
+  </header>
+
+  <!-- 1 WHAT IT IS -->
+  <section class="fade">
+    <h2><span class="num">01</span>What an HGE Is</h2>
+    <p>A <strong>High Grade Emission</strong> is a transient signal source floating in supercruise. Drop into one and it's empty except for free-floating canisters of a <strong>single</strong> Grade-5 manufactured material. Which material depends entirely on the controlling faction's <strong>allegiance</strong> and <strong>state</strong> — covered in §05.</p>
+    <p>Since the July/August 2024 engineering rework, drop rates are enormous: every canister scooped is worth <strong>3 units</strong>, and a single signal usually holds enough to fill that G5 from zero to the cap of <strong>100</strong> in one or two visits. Anything written before mid-2024 badly understates how fast this now is.</p>
+    <div class="callout tip"><b>Why bother, when you only farm a few?</b> Engineering eats G5 mats fast across a fleet, and the material trader lets you convert one abundant mat into the rare ones. Cap the easy stuff once, trade for the rest — see the checklist in §06.</div>
+  </section>
+
+  <!-- 2 OUTFITTING -->
+  <section class="fade">
+    <h2><span class="num">02</span>Outfitting</h2>
+    <p>HGEs are empty and non-hostile, so no weapons or defences are needed. Any ship that mounts a collector limpet controller and carries limpets works. Of the current fleet the <strong>Asp Explorer</strong> is the natural pick — strong jump range for hopping between systems and plenty of optional slots. Strip the exploration internals and run a throwaway farming variant:</p>
+    <div class="spec">
+      <div><span class="k">Collector Limpet Controller</span><span class="v">1–2× (3A / 5A) — two = double scoop speed</span></div>
+      <div><span class="k">Cargo Rack</span><span class="v">1–2× (e.g. 4E + 2E ≈ 20t)</span></div>
+      <div><span class="k">Limpets (cargo)</span><span class="v">~40, bought at any station market</span></div>
+      <div><span class="k">FSD</span><span class="v">Keep engineered — range = faster system hops</span></div>
+      <div><span class="k">Drop / not needed</span><span class="v">Weapons, SRV, AFMU, shields optional</span></div>
+    </div>
+    <p>Refinery not required. Cargo capacity only ever needs to hold limpets — never the loot (see below).</p>
+  </section>
+
+  <!-- 3 LIMPETS -->
+  <section class="fade">
+    <h2><span class="num">03</span>Cargo Racks &amp; Collector Limpets</h2>
+    <p>This is the part that confuses people, so here's the mechanism end to end:</p>
+    <h3>Limpets are cargo</h3>
+    <p>A limpet is a 1-ton consumable drone bought at a station's commodity market. It sits in your hold until launched. That is the <strong>only</strong> reason a farming ship needs cargo racks — to carry the limpets themselves. 40 limpets = 40 tons of space.</p>
+    <h3>The Collector Limpet Controller launches them</h3>
+    <p>Sitting inside an HGE surrounded by floating canisters, you deploy limpets and each one flies out on its own, grabs a canister, returns it to your ship, and repeats — no manual fly-and-scoop. A controller can run several limpets at once depending on rating, so two controllers roughly doubles throughput.</p>
+    <h3>The loot never touches your hold</h3>
+    <p>Manufactured materials go straight into your weightless <strong>materials inventory</strong> (the backpack that follows you between ships), <em>not</em> your cargo hold. That's why cargo size only matters for limpets. You'll know a material is capped at 100 when the limpets simply stop collecting it.</p>
+  </section>
+
+  <!-- 4 METHOD -->
+  <section class="fade">
+    <h2><span class="num">04</span>The Relog Farming Loop</h2>
+    <p>Find one good HGE, drain it, then re-spawn the <em>same</em> signal by relogging instead of waiting for RNG. With current drop rates you'll often cap in one or two drops without even needing the relog.</p>
+    <ol class="steps">
+      <li>Jump into a target system. Open the left <strong>Nav panel</strong> and filter it to <strong>Signal Sources only</strong>.</li>
+      <li>Find a <strong>High Grade Emission</strong>. Select it and check the timer top-right — aim for <strong>25+ minutes</strong>. A shorter one still works; you just won't max out in a single session.</li>
+      <li>Drop in. On the contacts/cargo panel, <strong>confirm the canisters are the material you want</strong> before committing.</li>
+      <li>Deploy all limpets and let them vacuum the instance clean.</li>
+      <li>The instant you see <strong>"no valid collection targets,"</strong> the instance is empty.</li>
+      <li><strong>Relog:</strong> quit to desktop (or main menu), log back into the <strong>same game mode</strong> (Solo is fastest).</li>
+      <li>Back in supercruise, set <strong>throttle to zero</strong> — the same HGE is right behind you. Turn around, use Supercruise Assist to drop back in.</li>
+      <li>Repeat from step 4 until limpets refuse to collect (material capped at 100).</li>
+      <li>Fly to a <strong>Manufactured Material Trader</strong> and cross-trade for the rare mats.</li>
+    </ol>
+    <div class="callout tip"><b>Starter spot:</b> Achenar (Empire, high-pop) is the textbook Imperial Shielding farm — cap shielding there, then trade it down and across for nearly everything else.</div>
+  </section>
+
+  <!-- 5 MAP -->
+  <section class="fade">
+    <h2><span class="num">05</span>Material → System-State Map</h2>
+    <p>HGE contents are set by faction <strong>allegiance + state</strong>, and high-population systems spawn signals far more often. Favour high-pop every time.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Material</th><th>Allegiance</th><th>State</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td class="mat">Imperial Shielding</td><td>Empire</td><td>Any (None/Election/Boom)</td><td><span class="tag f">HGE — abundant</span></td></tr>
+          <tr><td class="mat">Core Dynamics Composites</td><td>Federation</td><td>Any (None)</td><td><span class="tag f">HGE — abundant</span></td></tr>
+          <tr><td class="mat">Proto Heat Radiators</td><td>Independent / Alliance</td><td>Boom</td><td><span class="tag f">HGE</span></td></tr>
+          <tr><td class="mat">Proto Radiolic Alloys</td><td>Independent / Alliance</td><td>Boom</td><td><span class="tag f">HGE — with Heat Rad.</span></td></tr>
+          <tr><td class="mat">Military Grade Alloys</td><td>Any</td><td>War / Civil War</td><td><span class="tag f">HGE</span></td></tr>
+          <tr><td class="mat">Improvised Components</td><td>Independent / Alliance</td><td>Civil Unrest</td><td><span class="tag t">HGE — or trade</span></td></tr>
+          <tr><td class="mat">Pharmaceutical Isolators</td><td>Independent / Alliance</td><td>Outbreak</td><td><span class="tag t">HGE — or trade</span></td></tr>
+          <tr><td class="mat">Military Supercapacitors</td><td>Any</td><td>War / Civil War</td><td><span class="tag t">Rare — trade</span></td></tr>
+          <tr><td class="mat">Biotech Conductors</td><td>—</td><td>—</td><td><span class="tag x">No HGE · missions</span></td></tr>
+          <tr><td class="mat">Exquisite Focus Crystals</td><td>—</td><td>—</td><td><span class="tag x">No HGE · missions</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-dim)">Trade economics at a material trader: trading <em>down</em> a grade is cheap; cross-trading same-grade runs ~3:1; trading <em>up</em> ~6:1. So deliberately over-collect the abundant mats to pay for the rare ones.</p>
+  </section>
+
+  <!-- 6 CHECKLIST -->
+  <section class="fade">
+    <h2><span class="num">06</span>Farm vs. Trade — The Ten</h2>
+    <p>Your decision grid for all ten G5 manufactured materials:</p>
+    <div class="check-grid">
+      <div class="cl green">
+        <div class="cl-head">◉ Farm Direct</div>
+        <div class="cl-sub">Abundant at HGEs — over-collect these as trade currency.</div>
+        <ul>
+          <li>Imperial Shielding<small>Empire · the #1 trade fodder</small></li>
+          <li>Core Dynamics Composites<small>Federation</small></li>
+          <li>Proto Heat Radiators<small>Ind/Alliance · Boom</small></li>
+          <li>Proto Radiolic Alloys<small>Ind/Alliance · Boom</small></li>
+          <li>Military Grade Alloys<small>Any · War / Civil War</small></li>
+        </ul>
+      </div>
+      <div class="cl warn">
+        <div class="cl-head">◐ Trade For</div>
+        <div class="cl-sub">HGE-able in theory, but rare states — usually faster to trade.</div>
+        <ul>
+          <li>Improvised Components<small>Civil Unrest state</small></li>
+          <li>Pharmaceutical Isolators<small>Outbreak state</small></li>
+          <li>Military Supercapacitors<small>Scarce even in War</small></li>
+        </ul>
+      </div>
+      <div class="cl red">
+        <div class="cl-head">✕ Missions Only</div>
+        <div class="cl-sub">Never spawn in HGEs. Run missions or cross-trade.</div>
+        <ul>
+          <li>Biotech Conductors<small>Robigo / wing missions</small></li>
+          <li>Exquisite Focus Crystals<small>Robigo / wing missions</small></li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout"><b>The two HGE-impossible mats</b> — Biotech Conductors &amp; Exquisite Focus Crystals — come from passenger missions (your Lynx Highliner's Robigo route is perfect), wing mining/massacre missions, or cross-trading abundant HGE loot at a loss.</div>
+  </section>
+
+  <!-- 7 RESOURCES -->
+  <section class="fade">
+    <h2><span class="num">07</span>Finding Live HGEs</h2>
+    <div class="panel">
+      <ul class="clean">
+        <li><strong>HGE Finder — <a href="https://edgalaxy.net/hge">edgalaxy.net/hge</a></strong> — the current go-to. Lists HGE detections reported by commanders since the last BGS tick, sorted by the G5 material you want. (Replaces the defunct CMDR's Toolbox finder in your apps directory; it occasionally goes down.)</li>
+        <li><strong>In-game Galaxy Map filters</strong> — most reliable fallback. Filter by allegiance + state from §05, favour high-population systems, jump in, check the Nav panel.</li>
+        <li><strong>EDCoPilot</strong> — on system entry it announces which rare manufactured mats that system's HGEs can produce. Handy while hopping.</li>
+        <li><strong>Inara → Nearest Stations</strong> (Manufactured Material Trader filter) — locate where to cross-trade once you're loaded up.</li>
+      </ul>
+    </div>
+    <div class="callout tip"><b>If a system shows no signals:</b> jump out to a neighbour and back to reset the instance, or move to the next same-state system — waiting in place for a respawn is slower than hopping.</div>
+  </section>
+
+  <footer>
+    <div class="src">Sources &amp; Notes</div>
+    Method synthesised from the Down to Earth Astronomy 2025 relog guide, the AXI Engineering Materials wiki, NEWP engineering guide, the Frontier farming guide, and community testing. The big variable is the mid-2024 drop-rate buff — older guides understate yields. State/allegiance gating can overlap, so an HGE isn't 100% guaranteed to be the exact mat, but it will always be a G5 manufactured material. CMDR 173082 field manual · compiled for the Elite Dangerous fleet project.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docking &amp; Landing — Field Manual | CMDR Ka0s</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0708;
+    --bg2:#0e0a0b;
+    --panel:#140d0f;
+    --panel2:#1a1113;
+    --grid:rgba(180,70,60,.045);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --assist:#4f9fd6;     /* BLUE = the assisted path (Docking Computer / SC Assist) */
+    --assist-lt:#7cc0ee;
+    --manual:#e0913a;     /* AMBER = the manual / vanilla path */
+    --manual-lt:#f4b15f;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(190,120,110,.32);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),
+      radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),
+      radial-gradient(1200px 900px at 50% 120%,rgba(79,159,214,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 22px 120px}
+
+  /* ---------- header ---------- */
+  header.masthead{padding:54px 0 26px;border-bottom:1px solid var(--hair-strong);margin-bottom:8px}
+  .kicker{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:5px;
+    text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
+  .kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
+  h1.title{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(34px,6vw,62px);
+    line-height:.98;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1.title span{color:var(--maroon-lt)}
+  .subtitle{margin-top:16px;font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);max-width:780px;font-weight:300}
+  .masthead-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:'Saira Condensed',sans-serif;
+    font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
+  .masthead-meta b{color:var(--amber-lt);font-weight:600}
+
+  /* ---------- verdict hero ---------- */
+  .verdict{margin:34px 0 14px;border:1px solid rgba(224,145,58,.4);border-radius:4px;
+    background:linear-gradient(180deg,rgba(224,145,58,.10),rgba(20,13,15,.6));padding:30px 30px 26px;position:relative;overflow:hidden}
+  .verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--amber),transparent)}
+  .verdict .v-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;
+    text-transform:uppercase;color:var(--amber-lt);margin-bottom:10px}
+  .verdict h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(23px,4vw,32px);line-height:1.05;
+    text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:6px}
+  .verdict h2 em{font-style:normal;color:var(--amber-lt)}
+  .verdict p{font-size:15.5px;color:var(--ink-dim);margin-top:12px;max-width:900px}
+  .verdict .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:22px}
+  .verdict .why div{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:3px;padding:13px 15px}
+  .verdict .why h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11.5px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--amber-lt);margin-bottom:5px}
+  .verdict .why p{font-size:13.5px;color:var(--ink-dim);margin:0}
+
+  /* ---------- TOC ---------- */
+  .toc{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:20px 24px;margin:28px 0}
+  .toc .eye{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;
+    text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+  .toc ol{columns:2;column-gap:38px;padding-left:18px;margin:0}
+  .toc li{margin:6px 0;font-family:'Saira Condensed',sans-serif;font-weight:500;letter-spacing:.3px;color:var(--ink-dim)}
+  .toc a{color:var(--ink-dim);text-decoration:none;border:none}
+  .toc a:hover{color:var(--amber-lt)}
+
+  /* ---------- sections ---------- */
+  section{margin-top:58px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:22px;border-bottom:1px solid var(--hair);padding-bottom:14px}
+  .sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;color:var(--bg);
+    background:var(--amber);padding:3px 9px;border-radius:2px;flex:none}
+  .sec-head h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(20px,3.4vw,29px);
+    text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05}
+  .sec-head .tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center}
+  p.lead{font-size:16px;color:var(--ink-dim);margin-bottom:18px}
+  section p{margin-bottom:14px;color:var(--ink-dim);font-size:15px}
+  section p strong,section li strong{color:var(--ink);font-weight:600}
+  section a{color:var(--amber-lt);text-decoration:none;border-bottom:1px solid rgba(224,145,58,.35)}
+  .em-assist{color:var(--assist-lt);font-weight:600}
+  .em-manual{color:var(--manual-lt);font-weight:600}
+  .em-good{color:var(--good);font-weight:600}
+  .em-bad{color:var(--danger);font-weight:600}
+
+  ul.clean{list-style:none;margin:6px 0 18px}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:9px;color:var(--ink-dim);font-size:15px}
+  ul.clean li::before{content:"▸";position:absolute;left:0;top:0;color:var(--amber);font-size:13px}
+
+  /* ---------- panels ---------- */
+  .panel{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:22px 24px;margin:18px 0}
+  .panel.accent{border-left:3px solid var(--amber)}
+  .panel.assist{border-left:3px solid var(--assist)}
+  .panel.manual{border-left:3px solid var(--manual)}
+  .panel.good{border-left:3px solid var(--good)}
+  .panel.warn{border-left:3px solid var(--danger)}
+  .panel h3{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:14px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--amber-lt);margin-bottom:12px}
+  .panel.assist h3{color:var(--assist-lt)}
+  .panel.manual h3{color:var(--manual-lt)}
+  .panel.good h3{color:var(--good)}
+  .panel.warn h3{color:var(--danger)}
+  .panel p:last-child{margin-bottom:0}
+
+  /* ---------- two-column compare ---------- */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+  .col{border:1px solid var(--hair);border-radius:4px;padding:18px 20px;background:var(--panel)}
+  .col.assist{border-top:3px solid var(--assist)}
+  .col.manual{border-top:3px solid var(--manual)}
+  .col h4{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+  .col.assist h4{color:var(--assist-lt)}
+  .col.manual h4{color:var(--manual-lt)}
+  .col .pathlbl{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;display:block}
+  .col p{font-size:14px;margin-bottom:10px}
+  @media(max-width:680px){.cols{grid-template-columns:1fr}}
+
+  /* ---------- tables ---------- */
+  .tbl-scroll{overflow-x:auto;margin:18px 0;border:1px solid var(--hair);border-radius:4px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}
+  thead th{background:linear-gradient(180deg,var(--maroon),#5c1721);color:#fff;font-family:'Chakra Petch',sans-serif;
+    font-weight:600;font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;padding:11px 13px;text-align:left;white-space:nowrap}
+  tbody td{padding:10px 13px;border-top:1px solid var(--hair);color:var(--ink-dim);vertical-align:top}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+  tbody tr:hover{background:rgba(224,145,58,.05)}
+  tbody td b{color:var(--ink);font-weight:600}
+  .pill{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:.6px;text-transform:uppercase;
+    padding:1px 7px;border-radius:10px;border:1px solid var(--hair-strong);white-space:nowrap;display:inline-block}
+  .pill.as{color:var(--assist-lt);border-color:rgba(79,159,214,.45);background:rgba(79,159,214,.08)}
+  .pill.ma{color:var(--manual-lt);border-color:rgba(224,145,58,.4);background:rgba(224,145,58,.08)}
+  .pill.gd{color:var(--good);border-color:rgba(95,179,122,.4);background:rgba(95,179,122,.08)}
+  .pill.bd{color:var(--danger);border-color:rgba(216,66,59,.4);background:rgba(216,66,59,.08)}
+
+  /* ---------- step list ---------- */
+  ol.steps{list-style:none;counter-reset:s;margin:14px 0}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 18px 46px;margin-bottom:4px}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:30px;height:30px;display:flex;
+    align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;
+    color:var(--bg);background:var(--amber);border-radius:3px}
+  ol.steps.as li::before{background:var(--assist)}
+  ol.steps li b{color:var(--ink)}
+  ol.steps li::after{content:"";position:absolute;left:14px;top:30px;bottom:0;width:1px;background:var(--hair)}
+  ol.steps li:last-child::after{display:none}
+  ol.steps li p{font-size:13.5px;color:var(--ink-dim);margin:4px 0 0}
+
+  /* ---------- stat callouts ---------- */
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0}
+  .stat{background:var(--panel2);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
+  .stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:24px;color:var(--amber-lt);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--ink-dim);margin-top:6px;letter-spacing:.3px}
+
+  /* ---------- key caps ---------- */
+  .kbd{font-family:'Chakra Petch',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.5px;color:var(--ink);
+    background:var(--panel2);border:1px solid var(--hair-strong);border-bottom-width:2px;border-radius:3px;padding:1px 7px;white-space:nowrap}
+
+  /* ---------- figures / diagrams ---------- */
+  figure{margin:26px 0;background:linear-gradient(180deg,rgba(20,13,15,.7),rgba(10,7,8,.5));
+    border:1px solid var(--hair-strong);border-radius:6px;padding:18px 18px 6px;overflow:hidden}
+  figure svg{width:100%;height:auto;display:block}
+  figcaption{font-family:'Saira Condensed',sans-serif;font-size:12.5px;letter-spacing:.6px;color:var(--ink-faint);
+    text-transform:uppercase;margin:12px 2px 8px;border-top:1px solid var(--hair);padding-top:10px}
+  figcaption b{color:var(--amber-lt);font-weight:600}
+  .fig-tag{font-family:'Chakra Petch',sans-serif;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--amber);margin:2px 2px 10px}
+
+  footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--hair-strong);font-family:'Saira Condensed',sans-serif;
+    font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:8px 20px}
+  footer b{color:var(--amber-lt)}
+
+  @media (max-width:560px){.sec-head .tag{display:none}.toc ol{columns:1}}
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Flight Operations · Approach Doctrine <span class="id">CMDR KA0S · INARA 173082 · KA-</span></div>
+    <h1 class="title">Docking &amp;<br><span>Landing Manual</span></h1>
+    <p class="subtitle">The complete operator's guide to putting any hull on any pad in the <em>shortest possible time</em> — orbital starports, outposts, planetary ports and Odyssey settlements — covered both for the <span class="em-manual">manual / vanilla</span> pilot and for the <span class="em-assist">Docking-Computer + Supercruise-Assist</span> pilot.</p>
+    <div class="masthead-meta">
+      <span>Platform <b>PC · Odyssey</b></span>
+      <span>Base <b>Ray Gateway, Diaguandri</b></span>
+      <span>Objective <b>Minimum turnaround time</b></span>
+      <span>Colour key <b>Blue = assisted · Amber = manual</b></span>
+    </div>
+  </header>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <div class="v-eyebrow">Bottom line up front</div>
+    <h2>Time is lost in <em>four</em> places — kill all four</h2>
+    <p>Every docking, station or planet, is the same race against the same four leaks: <strong>overshooting the drop</strong>, <strong>lazy throttle discipline</strong> on the approach, <strong>fumbling the slot or the glide</strong>, and <strong>faffing with pad orientation</strong>. A skilled manual pilot beats the assists by 20–40 seconds per dock because the assists deliberately fly slow and gentle. But the assists never panic, never overshoot, and let you do something else — so the real win is knowing exactly when each pays. This manual drills both, side by side, with the same colour code throughout.</p>
+    <div class="why">
+      <div><h4>Drop close</h4><p>Arrive on top of the target. A bad drop is a 30–90s detour that no technique recovers.</p></div>
+      <div><h4>Throttle in the blue</h4><p>~75% throttle self-centres the speed marker and triggers the 7-second timer on schedule.</p></div>
+      <div><h4>Thread, don't dawdle</h4><p>Match roll to the slot / nail the glide on the first pass — re-aligning is pure dead time.</p></div>
+      <div><h4>Pre-rotate</h4><p>Turn to the pad's facing <em>while</em> you descend, not after you're parked over it.</p></div>
+    </div>
+  </div>
+
+  <div class="toc">
+    <span class="eye">Navigation</span>
+    <ol>
+      <li><a href="#budget">01 · The Time Budget</a></li>
+      <li><a href="#sc">02 · The Supercruise Approach</a></li>
+      <li><a href="#starport">03 · Orbital Starports — The Mailslot</a></li>
+      <li><a href="#interior">04 · Interior — Finding &amp; Taking the Pad</a></li>
+      <li><a href="#outpost">05 · Outposts &amp; Slot-Free Ports</a></li>
+      <li><a href="#planet">06 · Planets — Orbital Cruise &amp; Glide</a></li>
+      <li><a href="#settlement">07 · Odyssey Settlements</a></li>
+      <li><a href="#assisted">08 · The Assisted Workflow</a></li>
+      <li><a href="#manualfast">09 · The Manual Speed Workflow</a></li>
+      <li><a href="#compare">10 · Assisted vs Manual — Verdict</a></li>
+      <li><a href="#checklists">11 · Quick-Reference Checklists</a></li>
+      <li><a href="#pitfalls">12 · Pitfalls &amp; Gotchas</a></li>
+    </ol>
+  </div>
+
+  <!-- 01 TIME BUDGET -->
+  <section id="budget">
+    <div class="sec-head"><span class="sec-num">01</span><h2>The Time Budget</h2><span class="tag">Where seconds go</span></div>
+    <p class="lead">Before any technique, understand the anatomy of an arrival. Every dock — station or planet — breaks into the same phases. Optimising means spending the <em>least total time across all phases</em>, not flooring it in one and crashing the next.</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">~7 s</div><div class="l">Safe-disengage timer once you're in the blue</div></div>
+      <div class="stat"><div class="n">7.5 km</div><div class="l">Range at which "Request Docking" becomes available</div></div>
+      <div class="stat"><div class="n">~10 min</div><div class="l">Docking permission window before it lapses</div></div>
+      <div class="stat"><div class="n">30 km/s</div><div class="l">Minimum supercruise speed — you can't crawl</div></div>
+    </div>
+    <p>The two biggest, most recoverable leaks are at the ends: a sloppy <strong>drop</strong> that lands you far out, and a sloppy <strong>final 200 m</strong> where you drift, re-orient and re-approach the pad. The middle phases (cruise, slot, glide) reward smoothness over raw speed. Internalise this order of priority:</p>
+    <ul class="clean">
+      <li><strong>Drop placement</strong> — the single highest-leverage skill. Drop on top of the target, facing the way in.</li>
+      <li><strong>Permission timing</strong> — request docking the instant it un-greys; the grant often lands before you reach the slot.</li>
+      <li><strong>One-pass entry</strong> — thread the slot / nail the glide on the first attempt. A re-align is 15–40 s gone.</li>
+      <li><strong>Pre-rotated descent</strong> — be facing the pad's arrow before you're over it.</li>
+    </ul>
+    <div class="panel accent">
+      <h3>The golden rule of minimum time</h3>
+      <p>Speed kills time only if you can <strong>bleed it on schedule</strong>. The fast pilot isn't the one going fastest — it's the one decelerating <em>latest</em> and most precisely. Carry speed deep, then dump it in one decisive move (flip-and-burn at a station, a clean glide on a planet). Everything below is in service of that.</p>
+    </div>
+  </section>
+
+  <!-- 02 SUPERCRUISE -->
+  <section id="sc">
+    <div class="sec-head"><span class="sec-num">02</span><h2>The Supercruise Approach</h2><span class="tag">Universal phase</span></div>
+    <p class="lead">Every arrival starts the same way: select the target, point at it, and manage the right-hand approach indicator. This is the phase where overshoots are born — and where the assists earn their keep by never overshooting.</p>
+
+    <figure>
+      <div class="fig-tag">Diagram A</div>
+      <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supercruise approach indicator showing the optimal blue speed band">
+        <!-- indicator bar -->
+        <rect x="96" y="36" width="48" height="224" rx="6" fill="#140d0f" stroke="rgba(190,120,110,.32)"/>
+        <!-- overshoot zone -->
+        <rect x="100" y="40" width="40" height="74" rx="3" fill="rgba(216,66,59,.18)"/>
+        <!-- optimal blue zone -->
+        <rect x="100" y="118" width="40" height="66" rx="3" fill="rgba(79,159,214,.30)" stroke="#4f9fd6"/>
+        <!-- slow zone -->
+        <rect x="100" y="188" width="40" height="68" rx="3" fill="rgba(168,154,147,.10)"/>
+        <!-- ticks -->
+        <g stroke="rgba(190,120,110,.4)" stroke-width="1">
+          <line x1="144" y1="60" x2="156" y2="60"/><line x1="144" y1="100" x2="156" y2="100"/>
+          <line x1="144" y1="150" x2="156" y2="150"/><line x1="144" y1="210" x2="156" y2="210"/>
+        </g>
+        <!-- speed marker -->
+        <polygon points="92,150 78,142 78,158" fill="#f4b15f"/>
+        <line x1="78" y1="150" x2="40" y2="150" stroke="#f4b15f" stroke-width="1.5"/>
+        <text x="38" y="146" text-anchor="end" font-family="Saira Condensed" font-size="12" fill="#f4b15f">YOUR</text>
+        <text x="38" y="160" text-anchor="end" font-family="Saira Condensed" font-size="12" fill="#f4b15f">SPEED</text>
+        <!-- 7s chip -->
+        <rect x="150" y="134" width="40" height="22" rx="4" fill="rgba(79,159,214,.15)" stroke="#4f9fd6"/>
+        <text x="170" y="149" text-anchor="middle" font-family="Chakra Petch" font-size="12" font-weight="700" fill="#7cc0ee">7s</text>
+        <!-- zone labels -->
+        <text x="210" y="82" font-family="Chakra Petch" font-size="13" font-weight="700" fill="#d8423b">TOO FAST</text>
+        <text x="210" y="100" font-family="Saira" font-size="12.5" fill="#a89a93">You blow past the target — a U-turn costs 30–60 s.</text>
+        <text x="210" y="148" font-family="Chakra Petch" font-size="13" font-weight="700" fill="#7cc0ee">OPTIMAL (BLUE)</text>
+        <text x="210" y="166" font-family="Saira" font-size="12.5" fill="#a89a93">Marker centred here → the 7-second disengage timer runs.</text>
+        <text x="210" y="214" font-family="Chakra Petch" font-size="13" font-weight="700" fill="#a89a93">TOO SLOW</text>
+        <text x="210" y="232" font-family="Saira" font-size="12.5" fill="#a89a93">Safe, but you're leaving seconds on the table.</text>
+        <!-- throttle note -->
+        <text x="120" y="284" text-anchor="middle" font-family="Chakra Petch" font-size="11" letter-spacing="1" fill="#e0913a">≈75% THROTTLE</text>
+      </svg>
+      <figcaption>The right-hand approach indicator. <b>Hold ~75% throttle</b> and the speed marker self-parks in the blue band; the band widens as you slow, so it forgives you near the end. The whole game is keeping the marker out of the red.</figcaption>
+    </figure>
+
+    <p>The mechanic, precisely: with the target selected, the indicator's blue band shows the speed range that will let you disengage <em>at</em> the target rather than past it. When your marker sits in the blue and you're inside range, a <strong>seven-second countdown</strong> appears — let it run and you drop cleanly. The most reliable manual technique is dull and effective: <strong>set throttle to roughly three-quarters and leave it.</strong> The band naturally pulls the marker to centre as the distance closes. Only intervene if the marker creeps into the red (ease off) or you want to squeeze the last seconds (hold high, then chop late).</p>
+
+    <div class="cols">
+      <div class="col assist">
+        <span class="pathlbl">Blue path</span>
+        <h4>With Supercruise Assist</h4>
+        <p>Target the destination, engage <strong>full assist</strong>. It auto-throttles to the optimal curve and performs the disengage on the timer — <em>zero</em> overshoot risk, every time. It's tuned for safety, so it's a touch conservative on speed, but it never makes the expensive mistake.</p>
+        <p>If you want it faster: run SC Assist in <strong>throttle-assist only</strong> mode and trigger the drop yourself the moment the timer hits zero.</p>
+      </div>
+      <div class="col manual">
+        <span class="pathlbl">Amber path</span>
+        <h4>Vanilla / manual</h4>
+        <p>Throttle to ~75% on final approach. Watch the marker, not the speed number. Hold it in the blue; when the 7s timer appears, let it run. <strong>Do not</strong> chase the target with full throttle to the end — that is the classic overshoot.</p>
+        <p>Aggressive variant: hold higher in the band, then <strong>chop to zero throttle</strong> the instant the timer starts. Shaves a few seconds at the cost of a tighter window.</p>
+      </div>
+    </div>
+
+    <div class="panel warn">
+      <h3>The overshoot trap</h3>
+      <p>If you're dropped "way too far out," 90% of the time it's one of two things: you carried <strong>too much speed</strong> (marker in the red, blew past), or you had the <strong>wrong thing targeted</strong> — the parent star or planet instead of the station/settlement signal. Always confirm the target name in the contacts panel before committing.</p>
+    </div>
+  </section>
+
+  <!-- 03 STARPORTS -->
+  <section id="starport">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Orbital Starports — The Mailslot</h2><span class="tag">Coriolis · Orbis · Ocellus</span></div>
+    <p class="lead">The big rotating starports hide every pad behind a single rotating letterbox — the "mailslot." Threading it cleanly on the first pass is the whole battle. Where you drop, and which way the slot faces, decides whether that's a 10-second move or a 60-second loop.</p>
+
+    <figure>
+      <div class="fig-tag">Diagram B</div>
+      <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Top-down approach geometry: drop on the slot side to avoid looping around the station">
+        <!-- station body -->
+        <circle cx="330" cy="160" r="74" fill="#1a1113" stroke="rgba(190,120,110,.4)"/>
+        <circle cx="330" cy="160" r="50" fill="none" stroke="rgba(190,120,110,.2)"/>
+        <!-- rotation arrow -->
+        <path d="M330 96 A64 64 0 0 1 388 130" fill="none" stroke="rgba(224,145,58,.5)" stroke-width="2"/>
+        <polygon points="388,130 392,116 378,124" fill="rgba(224,145,58,.7)"/>
+        <!-- slot (facing right) -->
+        <rect x="400" y="150" width="22" height="20" rx="2" fill="#0a0708" stroke="#5fb37a" stroke-width="2"/>
+        <line x1="404" y1="146" x2="418" y2="146" stroke="#5fb37a" stroke-width="3"/>
+        <line x1="404" y1="174" x2="418" y2="174" stroke="#5fb37a" stroke-width="3"/>
+        <text x="411" y="196" text-anchor="middle" font-family="Saira Condensed" font-size="11" fill="#5fb37a">SLOT</text>
+        <!-- no-fire ring -->
+        <circle cx="330" cy="160" r="74" fill="none" stroke="rgba(216,66,59,.18)" stroke-dasharray="3 5"/>
+        <!-- GOOD drop -->
+        <polygon points="620,160 600,150 600,170" fill="#5fb37a"/>
+        <line x1="600" y1="160" x2="424" y2="160" stroke="#5fb37a" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="628" y="156" font-family="Chakra Petch" font-size="12" font-weight="700" fill="#5fb37a">GOOD DROP</text>
+        <text x="628" y="172" font-family="Saira" font-size="11.5" fill="#a89a93">Slot side · straight in</text>
+        <!-- BAD drop -->
+        <polygon points="150,160 170,150 170,170" fill="#d8423b"/>
+        <path d="M170 160 C 220 90, 300 70, 360 96 S 420 140, 398 156" fill="none" stroke="#d8423b" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="142" y="156" text-anchor="end" font-family="Chakra Petch" font-size="12" font-weight="700" fill="#d8423b">BAD DROP</text>
+        <text x="142" y="172" text-anchor="end" font-family="Saira" font-size="11.5" fill="#a89a93">Wrong side · long loop</text>
+      </svg>
+      <figcaption>Drop placement decides everything. Arriving on the <b>slot side</b> is a straight run in; arriving behind the station forces a slow loop through the no-fire zone. The slot always faces a fixed direction relative to the station's "front" — note it as you approach.</figcaption>
+    </figure>
+
+    <p>Two things are happening as you approach in normal space. First, the station's defenses enforce a <strong>no-fire zone</strong> — retract your hardpoints, and don't loiter without permission or you'll be warned, then fined, then fired on. Second, the slot is on a <strong>rotating face</strong>, so its orientation is constantly turning. You don't fight the rotation — you match it.</p>
+
+    <figure>
+      <div class="fig-tag">Diagram C</div>
+      <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Front view of the mailslot with a ship rolled to match the slot's long axis">
+        <!-- station face -->
+        <rect x="250" y="40" width="260" height="220" rx="14" fill="#1a1113" stroke="rgba(190,120,110,.4)"/>
+        <rect x="276" y="66" width="208" height="168" rx="8" fill="none" stroke="rgba(190,120,110,.18)"/>
+        <!-- slot -->
+        <rect x="320" y="138" width="120" height="30" rx="3" fill="#0a0708" stroke="#5fb37a" stroke-width="2"/>
+        <!-- toast-rack lights -->
+        <g fill="#5fb37a"><rect x="330" y="126" width="22" height="6" rx="2"/><rect x="369" y="126" width="22" height="6" rx="2"/><rect x="408" y="126" width="22" height="6" rx="2"/>
+          <rect x="330" y="174" width="22" height="6" rx="2"/><rect x="369" y="174" width="22" height="6" rx="2"/><rect x="408" y="174" width="22" height="6" rx="2"/></g>
+        <text x="380" y="158" text-anchor="middle" font-family="Saira Condensed" font-size="11" fill="#5fb37a">ENTRY</text>
+        <!-- rotation arc -->
+        <path d="M512 90 A150 150 0 0 1 540 150" fill="none" stroke="rgba(224,145,58,.5)" stroke-width="2"/>
+        <polygon points="540,150 548,138 530,142" fill="rgba(224,145,58,.7)"/>
+        <text x="556" y="120" font-family="Saira Condensed" font-size="11" fill="#e0913a">FACE</text>
+        <text x="556" y="134" font-family="Saira Condensed" font-size="11" fill="#e0913a">ROTATES</text>
+        <!-- approaching ship, rolled to match slot (wings horizontal) -->
+        <g transform="translate(110,150)">
+          <polygon points="0,-10 26,0 0,10 8,0" fill="#f4b15f"/>
+          <line x1="-2" y1="-22" x2="-2" y2="22" stroke="#f4b15f" stroke-width="2"/>
+          <text x="0" y="-32" text-anchor="middle" font-family="Saira Condensed" font-size="11" fill="#f4b15f">WINGS LEVEL</text>
+          <text x="0" y="44" text-anchor="middle" font-family="Saira Condensed" font-size="11" fill="#f4b15f">WITH SLOT</text>
+        </g>
+        <line x1="142" y1="153" x2="316" y2="153" stroke="#f4b15f" stroke-width="2" stroke-dasharray="6 5"/>
+        <!-- roll arrows -->
+        <path d="M150 110 A28 28 0 0 1 178 96" fill="none" stroke="rgba(244,177,95,.6)" stroke-width="2"/>
+        <polygon points="178,96 188,98 180,86" fill="rgba(244,177,95,.8)"/>
+      </svg>
+      <figcaption>Match your <b>roll</b> so your wings line up with the long axis of the slot, centre on the opening, and fly straight through under power. Green lights ("toast rack") confirm you're cleared. Keep it to roughly <b>100 m/s inside</b> for control — the danger is collision, not a speed fine.</figcaption>
+    </figure>
+
+    <ol class="steps">
+      <li><b>Drop on the slot side, facing in.</b><p>Note which way the slot faces during approach and aim your drop there. This one habit removes most loops.</p></li>
+      <li><b>Request docking immediately</b> — left panel → station → Request Docking, the moment it un-greys at 7.5 km. The grant and your <span class="kbd">pad number</span> usually arrive before you reach the slot.<p>Retract hardpoints. Throttle down to a controllable speed.</p></li>
+      <li><b>Match roll, centre, thread.</b><p>Roll wings-level with the slot, keep the opening centred, fly straight through. Don't clip the edges — that's hull damage and a stall.</p></li>
+      <li><b>Carry into the interior</b> at ~100 m/s and start scanning for your pad number as you emerge.</li>
+    </ol>
+  </section>
+
+  <!-- 04 INTERIOR -->
+  <section id="interior">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Interior — Finding &amp; Taking the Pad</h2><span class="tag">The final 200 m</span></div>
+    <p class="lead">Inside, the rotating ring is your "ground." Pads are numbered and your assigned one glows. This is the second great time-sink: drifting over the pad, then slowly rotating to face the right way. Fix it by rotating <em>en route</em>.</p>
+
+    <figure>
+      <div class="fig-tag">Diagram D</div>
+      <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Top-down landing pad with orientation arrow, ship aligned, and the landing-assist box">
+        <!-- pad -->
+        <rect x="80" y="70" width="300" height="180" rx="10" fill="#140d0f" stroke="rgba(224,145,58,.5)" stroke-width="2"/>
+        <rect x="100" y="90" width="260" height="140" rx="6" fill="none" stroke="rgba(224,145,58,.25)" stroke-dasharray="4 5"/>
+        <!-- pad number -->
+        <text x="120" y="232" font-family="Chakra Petch" font-size="34" font-weight="700" fill="rgba(224,145,58,.55)">07</text>
+        <!-- orientation arrow -->
+        <polygon points="230,104 214,128 246,128" fill="#e0913a"/>
+        <text x="230" y="150" text-anchor="middle" font-family="Saira Condensed" font-size="11" fill="#e0913a">PAD FACING</text>
+        <!-- ship aligned to arrow -->
+        <g transform="translate(230,185)">
+          <polygon points="0,-22 14,16 0,8 -14,16" fill="#f4b15f" stroke="#0a0708" stroke-width="1"/>
+        </g>
+        <text x="230" y="278" text-anchor="middle" font-family="Saira Condensed" font-size="11.5" fill="#a89a93">Nose matches the arrow BEFORE you're centred</text>
+
+        <!-- landing assist inset (the bottom-left UI) -->
+        <rect x="470" y="74" width="220" height="172" rx="8" fill="#0a0708" stroke="rgba(79,159,214,.4)"/>
+        <text x="580" y="98" text-anchor="middle" font-family="Chakra Petch" font-size="11" letter-spacing="2" fill="#7cc0ee">LANDING ASSIST BOX</text>
+        <!-- 3d box -->
+        <polygon points="510,210 650,210 670,150 530,150" fill="none" stroke="rgba(79,159,214,.5)"/>
+        <polygon points="530,150 670,150 670,124 530,124" fill="none" stroke="rgba(79,159,214,.3)"/>
+        <!-- target rectangle -->
+        <rect x="556" y="166" width="68" height="30" rx="3" fill="rgba(95,179,122,.15)" stroke="#5fb37a"/>
+        <!-- ship marker centred -->
+        <polygon points="590,176 598,190 590,186 582,190" fill="#5fb37a"/>
+        <!-- descent bar -->
+        <line x1="660" y1="130" x2="660" y2="206" stroke="rgba(79,159,214,.4)"/>
+        <polygon points="660,168 654,160 666,160" fill="#7cc0ee"/>
+        <text x="580" y="234" text-anchor="middle" font-family="Saira" font-size="11" fill="#a89a93">Centre the marker · descend until it locks green</text>
+      </svg>
+      <figcaption>Each pad has a <b>number</b> at one end and an <b>arrow</b> showing which way your nose must point. Rotate to the arrow while you're still translating toward the pad. With gear down, the <b>landing-assist box</b> (bottom-left HUD) gives you a 3-D lock — keep the ship marker centred and sink until it turns green.</figcaption>
+    </figure>
+
+    <ol class="steps">
+      <li><b>Read your pad's position</b> from the holographic number as you enter, and start translating toward it immediately (lateral + vertical thrusters).</li>
+      <li><b>Pre-rotate to the pad arrow</b> on the way over — don't arrive square then spin in place. Yaw/roll so your nose already matches the facing as you arrive.</li>
+      <li><b>Deploy landing gear late.</b> <span class="kbd">L</span> by default. Gear-down caps your speed, so dropping it too early makes you crawl across the bay. Drop it once you're nearly over the pad.<p>This is a real time-saver people miss: gear is a speed limiter, not a "get ready" toggle.</p></li>
+      <li><b>Use the landing-assist box</b> to centre and align, then descend straight down until contact. Done.</li>
+    </ol>
+  </section>
+
+  <!-- 05 OUTPOSTS -->
+  <section id="outpost">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Outposts &amp; Slot-Free Ports</h2><span class="tag">Open pads</span></div>
+    <p class="lead">Outposts have no mailslot — the pads sit on exposed arms in open space. There's nothing to thread, which makes them <em>faster</em> in principle, but the pads can face awkward directions and there's no enclosing wall to stop an overshoot.</p>
+    <ul class="clean">
+      <li><strong>No slot, so drop closer and come straight at the pads.</strong> The whole "match roll, thread the letterbox" phase simply doesn't exist.</li>
+      <li><strong>Check pad size before you fly out.</strong> Most outposts have <em>only small and medium</em> pads — a large hull (Type-9, Python Mk II on a large pad, a future Corvette) physically cannot dock. Confirm in the system map first.</li>
+      <li><strong>Pads point every which way.</strong> Approach from the open side, line up with the pad's arrow, and descend. The same pre-rotate rule applies.</li>
+      <li><strong>Still request docking</strong> at 7.5 km and retract hardpoints — outposts have the same no-fire / no-permission rules.</li>
+    </ul>
+    <div class="panel manual">
+      <h3>Manual edge here</h3>
+      <p>Because there's no slot to slow for, a manual pilot can carry speed almost to the pad and flip-and-burn directly over it. The docking computer, by contrast, flies the same leisurely arc it always does — this is one of the bigger manual-vs-assisted time gaps.</p>
+    </div>
+  </section>
+
+  <!-- 06 PLANETS -->
+  <section id="planet">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Planets — Orbital Cruise &amp; Glide</h2><span class="tag">The descent profile</span></div>
+    <p class="lead">Planetary arrivals are where most time is won or lost, because normal flight near a surface is painfully slow. The entire trick is the <strong>glide</strong> — a fast controlled descent — and arriving from supercruise <em>directly above</em> your target so the over-surface crawl is as short as possible.</p>
+
+    <figure>
+      <div class="fig-tag">Diagram E</div>
+      <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section of a planetary descent: supercruise to orbital cruise to glide to landing on the target">
+        <!-- altitude bands -->
+        <rect x="0" y="40" width="800" height="70" fill="rgba(79,159,214,.05)"/>
+        <rect x="0" y="110" width="800" height="80" fill="rgba(224,145,58,.05)"/>
+        <rect x="0" y="190" width="800" height="100" fill="rgba(139,35,50,.07)"/>
+        <text x="16" y="62" font-family="Chakra Petch" font-size="12" letter-spacing="2" fill="#7cc0ee">SUPERCRUISE</text>
+        <text x="16" y="132" font-family="Chakra Petch" font-size="12" letter-spacing="2" fill="#e0913a">ORBITAL CRUISE — speed capped by altitude</text>
+        <text x="16" y="212" font-family="Chakra Petch" font-size="12" letter-spacing="2" fill="#f4b15f">GLIDE — the fast lane down</text>
+        <!-- planet surface -->
+        <path d="M0 340 Q400 286 800 340 L800 380 L0 380 Z" fill="#1a1113" stroke="rgba(190,120,110,.4)"/>
+        <!-- settlement / pad -->
+        <g transform="translate(560,300)">
+          <rect x="-22" y="0" width="44" height="10" rx="2" fill="rgba(224,145,58,.5)" stroke="#e0913a"/>
+          <polygon points="0,-14 -8,0 8,0" fill="#e0913a"/>
+          <text x="0" y="-22" text-anchor="middle" font-family="Saira Condensed" font-size="11" fill="#e0913a">TARGET</text>
+        </g>
+        <!-- trajectory: supercruise in -->
+        <path d="M60 70 Q220 80 320 130" fill="none" stroke="#7cc0ee" stroke-width="2.5"/>
+        <!-- orbital cruise arc -->
+        <path d="M320 130 Q400 150 440 180" fill="none" stroke="#e0913a" stroke-width="2.5"/>
+        <!-- glide funnel -->
+        <line x1="440" y1="180" x2="610" y2="296" stroke="rgba(244,177,95,.35)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="470" y1="180" x2="555" y2="296" stroke="rgba(244,177,95,.35)" stroke-width="1" stroke-dasharray="4 4"/>
+        <!-- glide line -->
+        <path d="M455 180 L562 298" fill="none" stroke="#f4b15f" stroke-width="2.5"/>
+        <polygon points="562,298 556,284 548,292" fill="#f4b15f"/>
+        <!-- prompt markers -->
+        <circle cx="320" cy="130" r="5" fill="#7cc0ee"/>
+        <text x="300" y="120" text-anchor="end" font-family="Saira" font-size="11" fill="#a89a93">drop to orbital cruise</text>
+        <circle cx="455" cy="180" r="5" fill="#f4b15f"/>
+        <text x="470" y="172" font-family="Saira" font-size="11" fill="#a89a93">"DROP TO GLIDE" prompt → pitch down, nose on target</text>
+        <circle cx="562" cy="298" r="5" fill="#5fb37a"/>
+        <text x="582" y="296" font-family="Saira" font-size="11" fill="#5fb37a">exit glide ON TOP of the pad</text>
+        <!-- minimise crawl note -->
+        <text x="690" y="330" text-anchor="middle" font-family="Saira Condensed" font-size="11" fill="#d8423b">normal flight here = slow — keep it short</text>
+      </svg>
+      <figcaption>Aim your supercruise so you arrive <b>above</b> the target. As you near the planet you're forced into <b>orbital cruise</b> (speed limited by altitude). When the <b>"drop to glide"</b> prompt appears, pitch down with the target in your sights and ride the glide straight onto it — the glide is many times faster than normal flight, so the goal is to exit it right on the pad.</figcaption>
+    </figure>
+
+    <p>Step by step: approach the planet so the target sits roughly under your flight path — orbit lines and the target indicator help you judge this. You'll transition into <strong>orbital cruise</strong> automatically; your speed is now governed by altitude. Keep the nose toward the surface target and a <strong>"drop to glide"</strong> prompt appears when the angle and altitude are right. Pitch down to enter the glide and keep your velocity vector inside the glide funnel. Hold it until you exit low and close, then it's a short normal-flight hop to the pad.</p>
+
+    <div class="cols">
+      <div class="col assist">
+        <span class="pathlbl">Blue path</span>
+        <h4>With Supercruise Assist + DC</h4>
+        <p>SC Assist flies the supercruise and orbital-cruise approach and drops you near the surface target; the <strong>Docking Computer</strong> then takes the final landing once permission is granted. Fully hands-off, but it descends gently and won't optimise the glide — expect it to be slower than a clean manual glide.</p>
+      </div>
+      <div class="col manual">
+        <span class="pathlbl">Amber path</span>
+        <h4>Vanilla / manual</h4>
+        <p>The big lever is <strong>arriving above the target</strong> and <strong>nailing the glide on the first try</strong>. A botched glide (too shallow → skip back to orbital cruise; too steep → overshoot far) is the planetary equivalent of a station overshoot. Keep the target centred, ride the funnel, exit on top.</p>
+      </div>
+    </div>
+
+    <div class="panel warn">
+      <h3>The glide overshoot — your exact symptom</h3>
+      <p>If you keep "dropping out too far out" at planetary targets, you're coming in <strong>too fast or too shallow</strong>, skimming the surface past the target and dumping into normal flight kilometres away, where top speed is a miserable few hundred m/s. Approach so the target is <em>below and ahead</em>, descend onto it rather than skating toward it, and aim to exit glide within a couple of km of the pad.</p>
+    </div>
+  </section>
+
+  <!-- 07 SETTLEMENTS -->
+  <section id="settlement">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Odyssey Settlements</h2><span class="tag">On-foot ports</span></div>
+    <p class="lead">Odyssey ground settlements follow the same orbital-cruise → glide profile as any planetary target, with a couple of settlement-specific wrinkles for the final approach.</p>
+    <ul class="clean">
+      <li><strong>Many settlements have a landing pad</strong> with its own pad controller. If so, request docking exactly as you would at an outpost — you'll be assigned a small or medium pad and land normally.</li>
+      <li><strong>Some have no pad</strong> (or you only need to be nearby for SRV/on-foot work). In that case, exit the glide near the settlement and set down on flat ground close by, then disembark or drop the SRV.</li>
+      <li><strong>Pad size still matters.</strong> Settlement pads are small/medium — your large hulls can't dock there; bring a small or medium ship (your Cobra Mk V or Viper are ideal settlement runabouts).</li>
+      <li><strong>Watch the security response.</strong> At occupied/secure settlements, loitering low without authorisation, deploying weapons, or trespassing triggers a response — land deliberately and mind the scan zones.</li>
+    </ul>
+    <div class="panel accent">
+      <h3>The same time rule, restated</h3>
+      <p>Whether the settlement has a pad or not, the seconds are won in the same place: <strong>arrive above it and exit the glide on top of it.</strong> Everything after that is a short, deliberate set-down.</p>
+    </div>
+  </section>
+
+  <!-- 08 ASSISTED -->
+  <section id="assisted">
+    <div class="sec-head"><span class="sec-num">08</span><h2>The Assisted Workflow</h2><span class="tag">Blue path · full detail</span></div>
+    <p class="lead">Two modules, two jobs. <span class="em-assist">Supercruise Assist</span> owns the cruise/approach and the disengage; the <span class="em-assist">Docking Computer</span> owns the slot-or-glide and the final landing. Run both and arrival is genuinely hands-off — at the cost of some speed.</p>
+
+    <div class="cols">
+      <div class="col assist">
+        <span class="pathlbl">Module 1</span>
+        <h4>Supercruise Assist</h4>
+        <p>A size-1 optional internal. In <strong>full assist</strong> it auto-throttles to the optimal approach curve and triggers the disengage on the 7-second timer — no overshoot, ever. It can also loiter if you arrive and don't drop. It does <em>not</em> thread the slot or land; it just delivers you to the doorstep.</p>
+      </div>
+      <div class="col assist">
+        <span class="pathlbl">Module 2</span>
+        <h4>Docking Computer (std / Advanced)</h4>
+        <p>Engages after docking is <strong>granted</strong>, when you set throttle to <strong>zero</strong>. It then flies the slot (or final surface approach) and parks you on the pad automatically. The <strong>Advanced</strong> version also auto-launches on undock. You can override anytime by applying throttle.</p>
+      </div>
+    </div>
+
+    <ol class="steps as">
+      <li><b>Target the station/settlement</b> and engage Supercruise Assist (full).</li>
+      <li><b>Request docking</b> the instant it's available at 7.5 km. (You still have to do this — the computers won't ask for you.)</li>
+      <li><b>SC Assist disengages</b> you at the target with no overshoot.</li>
+      <li><b>Throttle to zero.</b> With permission granted, the Docking Computer takes over — slot, interior, pad, or surface landing — and docks you. Cue the Blue Danube.</li>
+    </ol>
+
+    <div class="panel good">
+      <h3>How to claw back the time the assists cost you</h3>
+      <p>The assists are deliberately gentle. You can hybridise for most of the manual speed with most of the assisted safety:</p>
+      <ul class="clean">
+        <li><strong>Throttle-assist only + self-drop:</strong> let SC Assist hold the speed curve, but you hit the drop yourself the instant the timer zeroes.</li>
+        <li><strong>Manual slot, DC finish:</strong> thread the mailslot yourself at speed, then throttle to zero <em>inside</em> the station to let the DC handle only the fiddly final park.</li>
+        <li><strong>Request early, always:</strong> permission is the one thing the computers never do — get it in flight so the DC can engage the moment you're ready.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 09 MANUAL FAST -->
+  <section id="manualfast">
+    <div class="sec-head"><span class="sec-num">09</span><h2>The Manual Speed Workflow</h2><span class="tag">Amber path · expert</span></div>
+    <p class="lead">The fastest dock in the game is a clean manual one. The signature move is the <strong>flip-and-burn</strong>: carry speed to the door, then dump it in one decisive flick using flight-assist-off. It feels reckless; done right it's surgical.</p>
+
+    <ol class="steps">
+      <li><b>Drop on the slot side, facing in</b> (Diagram B). Request docking immediately; retract hardpoints.</li>
+      <li><b>Boost toward the slot</b> with throttle high. Carry the speed — don't trickle in.<p>You're betting that you can shed it on time. That's the whole skill.</p></li>
+      <li><b>Flip-and-burn at ~1–1.5 km.</b> Flight-assist <strong>off</strong>, rotate 180° to face retrograde while your momentum still carries you toward the slot, throttle to decelerate, flight-assist back <strong>on</strong> to stabilise.<p>You're now drifting slot-ward but slowing hard — the fastest possible bleed.</p></li>
+      <li><b>Re-face the slot, match roll, thread</b> at a controllable ~100 m/s. Roll wings-level with the slot, centre, straight through.</li>
+      <li><b>Translate to the pad while pre-rotating</b> to its arrow. Gear down only as you arrive. Centre on the landing box, descend, contact.</li>
+    </ol>
+
+    <div class="cols">
+      <div class="col manual">
+        <span class="pathlbl">Station variant</span>
+        <h4>Boost-through (advanced)</h4>
+        <p>With a granted pad and a clear slot, experienced pilots boost <em>through</em> the slot and bleed speed inside. High risk of clipping the slot edge or ramming the far wall — only worth it once your slot alignment is automatic. The flip-and-burn above is the safer 95%-as-fast option.</p>
+      </div>
+      <div class="col manual">
+        <span class="pathlbl">Planet variant</span>
+        <h4>Glide discipline</h4>
+        <p>No flip-and-burn here — the glide <em>is</em> your speed control. The manual win is purely geometric: arrive above the target, take the glide prompt early, keep the target centred, exit on top. Re-doing a missed glide is the time killer to avoid.</p>
+      </div>
+    </div>
+
+    <div class="panel accent">
+      <h3>Bindings worth having</h3>
+      <p>Manual speed depends on muscle-memory inputs. Make sure these are comfortable: <span class="kbd">Flight Assist Toggle/Hold</span>, <span class="kbd">Boost</span>, all six <span class="kbd">Lateral / Vertical Thrusters</span>, <span class="kbd">Landing Gear</span>, <span class="kbd">Retract Hardpoints</span>, and quick access to the <span class="kbd">Left (Target) Panel</span> for the docking request.</p>
+    </div>
+  </section>
+
+  <!-- 10 COMPARE -->
+  <section id="compare">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Assisted vs Manual — Verdict</h2><span class="tag">When to use which</span></div>
+    <p class="lead">Neither path is "correct" — they optimise different things. Manual optimises raw time and module slots; assisted optimises attention and consistency. Here's the honest trade.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Factor</th><th>Manual / Vanilla</th><th>Assisted (SC Assist + DC)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Raw time per dock</b></td><td><span class="pill ma">Fastest</span> ~20–40 s quicker</td><td><span class="pill as">Slower</span> deliberately gentle</td></tr>
+          <tr><td><b>Overshoot risk</b></td><td>Depends on you</td><td><span class="pill gd">Near zero</span></td></tr>
+          <tr><td><b>Attention required</b></td><td>Full, hands-on</td><td><span class="pill gd">Hands-off</span> (do something else)</td></tr>
+          <tr><td><b>Module slots</b></td><td><span class="pill gd">Free</span> — slots for HRP/utility</td><td>Costs 1–2 optional internals</td></tr>
+          <tr><td><b>Outposts (no slot)</b></td><td><span class="pill ma">Big manual edge</span></td><td>Same slow arc as always</td></tr>
+          <tr><td><b>Consistency / fatigue</b></td><td>Drops when tired</td><td><span class="pill gd">Rock steady</span></td></tr>
+          <tr><td><b>Best fit</b></td><td>Combat ships, quick turnarounds, outpost runs</td><td>Haulers, passenger loops, AFK-ish trade, long sessions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel accent">
+      <h3>Your fleet, mapped</h3>
+      <p>For the brawlers (Viper, Cobra Mk V, Python Mk II) the slot is repurposed for hull — fly them manually; the time and the freed slot both favour it. For the <strong>Lynx Highliner</strong> passenger loop and the <strong>Type-9</strong> bulk hauls, the Docking Computer already earns its slot — hands-off arrival between long supercruise legs is exactly its niche. The <strong>Type-11</strong> mining runs benefit from SC Assist on the long hops out and back. Best of both: keep the assists fitted on the haulers but learn the manual flip-and-burn for when you want the time.</p>
+    </div>
+  </section>
+
+  <!-- 11 CHECKLISTS -->
+  <section id="checklists">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Quick-Reference Checklists</h2><span class="tag">Print &amp; fly</span></div>
+    <div class="cols">
+      <div class="col manual">
+        <span class="pathlbl">Amber · manual station</span>
+        <h4>Station — Manual</h4>
+        <ul class="clean">
+          <li>Confirm target name (not the star).</li>
+          <li>~75% throttle; marker in the blue.</li>
+          <li>Drop on the slot side, facing in.</li>
+          <li>Request docking @ 7.5 km · hardpoints in.</li>
+          <li>Boost in → flip-and-burn @ ~1 km.</li>
+          <li>Match roll, centre, thread the slot.</li>
+          <li>Translate to pad, pre-rotate to arrow.</li>
+          <li>Gear down late · centre box · descend.</li>
+        </ul>
+      </div>
+      <div class="col assist">
+        <span class="pathlbl">Blue · assisted station</span>
+        <h4>Station — Assisted</h4>
+        <ul class="clean">
+          <li>Target station · SC Assist full on.</li>
+          <li>Request docking @ 7.5 km (you must).</li>
+          <li>Let SC Assist disengage you.</li>
+          <li>Throttle to zero → DC takes over.</li>
+          <li>(Optional) thread slot yourself, then zero throttle inside for DC to park.</li>
+        </ul>
+      </div>
+      <div class="col manual">
+        <span class="pathlbl">Amber · manual planet</span>
+        <h4>Planet — Manual</h4>
+        <ul class="clean">
+          <li>Approach so target is below your path.</li>
+          <li>Enter orbital cruise; nose on target.</li>
+          <li>Take the "drop to glide" prompt early.</li>
+          <li>Keep target centred in the funnel.</li>
+          <li>Exit glide on top of the pad/settlement.</li>
+          <li>Request docking (if it has a pad).</li>
+          <li>Pre-rotate, gear late, descend.</li>
+        </ul>
+      </div>
+      <div class="col assist">
+        <span class="pathlbl">Blue · assisted planet</span>
+        <h4>Planet — Assisted</h4>
+        <ul class="clean">
+          <li>Target surface port · SC Assist on.</li>
+          <li>Let it fly the cruise + approach.</li>
+          <li>Request docking when available.</li>
+          <li>Throttle to zero → DC lands you.</li>
+          <li>Confirm pad size fits your hull first.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 PITFALLS -->
+  <section id="pitfalls">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Pitfalls &amp; Gotchas</h2><span class="tag">Avoid the dead time</span></div>
+    <ul class="clean">
+      <li><strong>Wrong target → far drop.</strong> Locking the star/planet instead of the station signal is the #1 cause of a "way too far out" drop. Verify the name.</li>
+      <li><strong>Gear deployed too early.</strong> Landing gear caps your speed — deploy it only over the pad, or you'll crawl across the whole bay.</li>
+      <li><strong>Loitering without permission.</strong> No docking grant + sitting in the no-fire zone = warning → fine → station guns. Request early, or stay out until granted.</li>
+      <li><strong>Permission lapse.</strong> The grant only lasts ~10 minutes — don't sightsee, or you'll have to re-request.</li>
+      <li><strong>Pad too small.</strong> Outposts and settlements are usually small/medium only. A large hull can't dock there at all — check before you launch.</li>
+      <li><strong>Slot clipping.</strong> Hitting the mailslot edge is hull damage and a momentum stall. If you're not aligned, slow down rather than force it.</li>
+      <li><strong>Glide too shallow / too steep.</strong> Shallow skips you back to orbital cruise; steep overshoots far. Descend <em>onto</em> the target, not toward it across the surface.</li>
+      <li><strong>Mass-lock / interdiction.</strong> Being yanked out en route isn't a docking error — it's a separate event. Submit, boost, high-wake away, and re-approach rather than fighting in the well.</li>
+    </ul>
+    <div class="panel good">
+      <h3>One habit that fixes most of it</h3>
+      <p>Request docking the <em>instant</em> the option becomes available, and confirm your target name at the same moment. Those two reflexes — done at 7.5 km, every time — prevent the far drop, the loiter fine, and the wasted slot approach all at once.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Doc Class <b>Field Manual</b></span>
+    <span>Subject <b>Docking &amp; Landing — Optimal Approach</b></span>
+    <span>Scope <b>Odyssey · PC</b></span>
+    <span>Prepared for <b>CMDR Ka0s</b></span>
+    <span>Colour key <b>Blue = assisted · Amber = manual</b></span>
+  </footer>
+
+</div>
+</body>
+</html>

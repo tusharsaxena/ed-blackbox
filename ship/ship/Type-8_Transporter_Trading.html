@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Type-8 Transporter · Trading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#3fa45c;
+    --acc-lt:#74d68c;
+    --acc-deep:#155029;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1>Type-8 Transporter<span class="role">Trading</span></h1>
+    <p class="lede">The modern medium hauler. The Type-8 Transporter packs <b>over 400 tonnes of cargo onto a medium pad</b> &mdash; more than the larger Type-7, and able to land where it can't. A tough, modern freighter that's become the go-to medium trader: big capacity, flexible docking, sensible price.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Max cargo</span><b>~406 t</b></div>
+      <div class="chip"><span>Utility</span><b>4</b></div>
+      <div class="chip"><span>Hull</span><b>~34.8M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Trading</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:76"><div class="num">76<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Trading Suitability Rating</div>
+        <div class="d">An excellent medium trading ship and the best medium-pad hauler in the game. It carries more than the large Type-7 while landing at most stations, and it's tougher than the old freighters; it ranks just below the large super-haulers on raw tonnage, but for medium-pad capacity it's unmatched.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Type-8 Transporter is Lakon's modern medium freighter, and it quietly rewrote the rules: it carries over 400 tonnes &mdash; more than the larger, large-pad-only Type-7 &mdash; while fitting on a medium pad that lands at the vast majority of stations. For a trader who values flexible docking, that combination is transformative.</p>
+    <p>It's also tougher and faster than the old freighters, with enough optional space to keep a real shield alongside its big hold. It can't match the large super-haulers' raw tonnage, and at ~35M Cr it's pricier than the budget mediums &mdash; but as the most cargo you can land on a medium pad, on a modern, durable hull, the Type-8 has become the default medium trader for good reason.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Flexible high-capacity trading: medium-pad commodity runs to stations large freighters can't reach, mission cargo hauling, and any trade operation where landing flexibility matters alongside serious capacity.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~406 <small>t</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">200 / 340 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">400 <small>t</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;6&middot;6&middot;5&middot;5&middot;4&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Defensibility</div><div class="v">Good <small>(for a hauler)</small></div></div>
+      <div class="cell"><div class="k">Power plant</div><div class="v">Class 6</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>Four things make the Type-8 the best medium hauler:</p>
+    <ul class="clean">
+      <li><b>Over 400 tonnes on a medium pad.</b> More cargo than the large Type-7 &mdash; and it lands where the Type-7 can't.</li>
+      <li><b>Medium-pad flexibility.</b> Docks at the vast majority of stations, including many outposts &mdash; far fewer route restrictions.</li>
+      <li><b>Tough and modern.</b> More durable than the old freighters, with room for a real shield.</li>
+      <li><b>Good speed for a freighter.</b> A 340 m/s boost helps it escape interdiction better than the lumbering big haulers.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>It carries far less than the large super-haulers &mdash; roughly half a Type-9 or Cutter &mdash; so for pure maximum tonnage it can't compete. At ~35M Cr it's also a real step up in price from budget mediums like the Type-6. The Type-8's case is the best <em>medium-pad</em> capacity; if you only ever use large pads, a big freighter hauls far more.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for trading specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; the headline number for bulk hauling.</p>
+    <p class="subhd">Same class &mdash; medium-pad traders</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-8 Transporter</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-8 Transporter <span class="tag r">this</span></td><td>Medium</td><td>~406</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">More defensible; versatile; combat-capable</span><span class="c">Less cargo</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Versatile; SLF; combat-capable</span><span class="c">Far less cargo</span></td><td><span class="rscore">64</span><div class="bar"><i style="width:64%"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~220</td><td class="pcc"><span class="p">Versatile; great range</span><span class="c">Less cargo</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~110</td><td class="pcc"><span class="p">Far cheaper</span><span class="c">Far less cargo</span></td><td><span class="rscore">65</span><div class="bar"><i style="width:65%"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">Cheap; can carry a fighter</span><span class="c">Far less cargo</span></td><td><span class="rscore">52</span><div class="bar"><i style="width:52%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Type-8 tops the medium-pad traders on cargo by a wide margin &mdash; it carries more than twice a budget Type-6 and far more than the versatile Pythons and Kraits. For a dedicated medium hauler, nothing else comes close on capacity.</p>
+    <p class="subhd">Other classes &mdash; the large freighters</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-8 Transporter</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1048</td><td class="pcc"><span class="p">Vastly more cargo</span><span class="c">Large pad; hugely pricier</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Far more cargo; shields; fast</span><span class="c">Large pad; Imperial rank; pricier</span></td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Far more cargo; cheap-ish</span><span class="c">Large pad; flimsy; slow</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Cheaper hull</span><span class="c">Large pad; <em>less</em> cargo than the Type-8</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">More cargo; versatile</span><span class="c">Large pad; far pricier</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The large freighters out-haul the Type-8 by two to three times, but all need a large pad. Notably, the Type-8 carries <em>more</em> than the large-pad Type-7 while landing far more flexibly &mdash; making it the smarter mid-tier buy unless you specifically need a large hold.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~34.8M Cr</div></div>
+      <div class="cell"><div class="k">A-rated trader</div><div class="v">~42M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~52M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~34.8M Cr the Type-8 is mid-priced &mdash; pricier than budget mediums but far cheaper than the big freighters &mdash; with no rank gate. A trade fit keeps the all-in cost around 52M Cr.</p>
+    <p>It's the sensible default medium trader: more capacity than anything else its size, flexible docking, and a durable modern hull, all for a fraction of a large freighter's cost. For most traders who value pad flexibility, it's the smart pick.</p>
+    <div class="callout amber"><span class="lbl">The smart medium trader</span>Around 52M Cr all-in for the most cargo on a medium pad &mdash; more than the large Type-7, landing where big freighters can't. The default modern medium hauler.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no trading-specific ARX pre-built built around the Type-8 Transporter; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A high-capacity medium-pad trade fit that keeps a shield. Initial is buy-only; A-rated is the trade baseline; Engineered maximises protected cargo and laden range.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Hardpoints</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash; (run clean)</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">Cargo Rack 7</td><td class="st">Cargo Rack 7 (128t)</td><td class="eng">Cargo Rack 7 (128t)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6 (64t)</td><td class="eng">Cargo Rack 6 (64t)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6 (64t)</td><td class="eng">Cargo Rack 6 (64t)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; defence</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo Rack 4 (16t)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 2</td><td class="eng">SCB 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS / spare</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">Big hold, real shield</span>The Type-8's depth lets it carry over 400 tonnes while keeping a class-6 bi-weave and a booster suite &mdash; far more defensible than a stripped Type-9. Run it shielded; the medium pad means you can reach safer high-margin stations anyway.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fill the optionals with cargo racks plus one bi-weave shield.</p>
+    <p>A-rate thrusters and FSD so the laden ship moves and jumps well.</p>
+    <p>Add shield boosters and point defence on the utilities.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a medium hauler:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('FSD &rarr; A', 'Laden jump range for route efficiency.', '~5M Cr')</li>
+      <li><span class="stepnum">2</span>('Thrusters &rarr; A', 'Escape interdiction; the Type-8 is quick for a freighter.', '~5M Cr')</li>
+      <li><span class="stepnum">3</span>('Power Plant &rarr; A', 'Power for shields and modules.', '~5M Cr')</li>
+      <li><span class="stepnum">4</span>('Shield Generator &rarr; bi-weave', 'Protect the big cargo hold.', '~3M Cr')</li>
+      <li><span class="stepnum">5</span>('Power Distributor &rarr; A', 'Sustain boost.', '~4M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Quick for a freighter</span>The Type-8's good speed lets it escape interdictions the big haulers can't &mdash; A-rate thrusters and keep a shield, and it's a genuinely survivable trader.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>The trading engineering pattern: range, mobility and defence. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>FSD and thrusters to G5 first for range and the ability to escape trouble.</li>
+      <li><span class="stepnum">2</span>Bi-weave shield and boosters to protect the big medium-pad hold.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant and lightweight non-essentials for efficiency.</li>
+      <li><span class="stepnum">4</span>Fill the rest with the biggest cargo racks.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Light-to-moderate &mdash; FSD, thrusters, plant and shield blueprints; no weapon grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max cargo (t)</td><td>~280</td><td>~370</td><td class="acc">~406</td></tr>
+        <tr><td class="mod">Laden jump (LY)</td><td>~16</td><td>~24</td><td class="acc">~32</td></tr>
+        <tr><td class="mod">Defensibility</td><td>good</td><td>good</td><td class="acc">good</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>340 m/s</td><td>340 m/s</td><td class="acc">~380 m/s</td></tr>
+        <tr><td class="mod">Pad access</td><td>medium</td><td>medium</td><td class="acc">medium</td></tr>
+      </tbody>
+    </table>
+    <p>Engineered, the Type-8 hauls ~406t on a medium pad behind a real shield, quick enough to escape trouble &mdash; the most flexible high-capacity trader in the game. It carries half a super-hauler's load, but lands almost anywhere and survives far better than a Type-9.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Flexible commodity runs.</b> Haul big loads to medium-pad stations large freighters can't reach.</li>
+      <li><b>Mission cargo hauling.</b> Stack bulk delivery missions and clear them in one trip.</li>
+      <li><b>High-margin medium-pad loops.</b> Reach profitable markets restricted to medium pads.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Outpost-inclusive trading.</b> Its medium pad opens routes and markets the big haulers are locked out of.</li>
+      <li><b>Survivable bulk hauling.</b> Shield, speed and a medium pad make it far harder to rob than a Type-9.</li>
+      <li><b>Colonisation supply.</b> Bulk-deliver materials to medium-pad construction sites.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example routes</span>Any high-capacity loop, especially ones touching medium-pad stations, suits it. From your Diaguandri / Ray Gateway base it's the flexible workhorse for serious medium-pad trading.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>Exploit the medium pad &mdash; it's the Type-8's edge: more cargo than a Type-7, landing where big freighters can't.</li>
+      <li>Run it shielded; its depth easily fits a bi-weave alongside 400+ tonnes.</li>
+      <li>It's the smart mid-tier trader for most &mdash; only choose a large freighter if you need maximum tonnage on large pads.</li>
+      <li>Its good speed genuinely helps it escape interdiction &mdash; A-rate thrusters.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Type-8 Transporter is the modern medium hauler: over 400 tonnes &mdash; more than the larger Type-7 &mdash; on a flexible medium pad, behind a real shield, on a tough fast hull. It can't match the large super-haulers' tonnage, but for the most cargo you can land almost anywhere, on a durable modern freighter, it's become the default medium trader, and rightly so.</div>
+  </section>
+
+  <footer>
+    <p><b>Type-8 Transporter &middot; Trading</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Type-8 Transporter &middot; Trading dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

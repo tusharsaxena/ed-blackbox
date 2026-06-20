@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passenger — Role &amp; Activities Field Manual | CMDR Ka0s</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#4f9fd6;        /* combat crimson */
+    --acc-lt:#84c4ee;
+    --acc-deep:#1f4f72;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --good-lt:#7fce98;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:780px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .verdict{margin-top:30px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.10),rgba(20,13,11,.6));padding:22px 24px;position:relative;overflow:hidden}
+  .verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--acc),transparent)}
+  .verdict .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--acc-lt);font-weight:600;margin-bottom:8px}
+  .verdict p{margin:0;font-size:16px;color:var(--ink-dim)}
+  .verdict p b{color:var(--ink);font-weight:600}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:26px -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--acc-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:50px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  h3.sub{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:16px;letter-spacing:.4px;color:var(--ink);margin:24px 0 4px}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+  .gd{color:var(--good-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .tag.b{color:var(--blue);border-color:rgba(91,155,209,.45)}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+  td.rt{white-space:nowrap}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout.good{border-left-color:var(--good);background:linear-gradient(90deg,rgba(95,179,122,.10),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+  .callout.good .lbl{color:var(--good-lt)}
+  .callout p{margin:6px 0 0;color:var(--ink-dim)}
+  .callout p:first-of-type{margin-top:0}
+
+  ol.steps{list-style:none;counter-reset:s;margin:16px 0 2px}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 16px 44px;color:var(--ink-dim)}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:28px;height:28px;
+    display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;color:var(--bg);background:var(--acc);border-radius:3px}
+  ol.steps li::after{content:"";position:absolute;left:13px;top:28px;bottom:0;width:1px;background:var(--hair)}
+  ol.steps li:last-child::after{display:none}
+  ol.steps li:last-child{padding-bottom:0}
+  ol.steps li b{color:var(--ink)}
+
+  .recgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .rec{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--acc);border-radius:var(--radius);padding:15px 17px}
+  .rec .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--amber);font-weight:600}
+  .rec .pick{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--acc-lt);margin:5px 0 7px;font-weight:600}
+  .rec .pick small{color:var(--ink-faint);font-size:12px;font-weight:400;display:block;margin-top:2px}
+  .rec p{margin:0;font-size:13.5px;color:var(--ink-dim)}
+  .rec .ref{margin-top:9px;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);text-transform:uppercase}
+  .rec .ref b{color:var(--amber-lt);font-weight:600}
+
+  .anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+  .anchors .cell{background:var(--panel);padding:14px 15px}
+  .anchors .s{font-family:'Chakra Petch',sans-serif;font-size:22px;color:var(--acc-lt);font-weight:700}
+  .anchors .n{font-size:13px;color:var(--ink);margin-top:3px}
+  .anchors .n small{color:var(--ink-faint);display:block;font-size:11px;margin-top:1px}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:24px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    .recgrid{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Role &amp; Activities <span class="sep">//</span> Passenger</div>
+    <h1>Passenger<span class="role">Role &amp; Activities</span></h1>
+    <p class="lede">A full deep-dive on the <b>passenger role</b> — not which ship to fly (that lives in the companion ship dossiers), but what carrying passengers actually <b>is</b>: cabin classes and passenger demands, the venues from a tourist hop to the Robigo sightseeing loop, how to start, what to do mid- and end-game, and every reward and system the role plugs into.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Scope</span><b>Odyssey · PC · Live 4.0</b></div>
+      <div class="chip"><span>Tempo</span><b>Routine · high-income loops</b></div>
+      <div class="chip"><span>Core stat</span><b>Cabins + jump range</b></div>
+      <div class="chip"><span>Pays in</span><b>CR · rep · some explo data</b></div>
+    </div>
+
+    <div class="verdict">
+      <div class="t">The role in one line</div>
+      <p>The passenger role is <b>ferrying people for money</b> — tourists to scenic beacons, VIPs to distant ports, refugees in bulk, and the occasional wanted fugitive. It is famous for the <b>Robigo sightseeing loop</b>, one of the best credit-per-hour activities in the early-to-mid game, and it sits on the seam between trading and exploration.</p>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 The Role</a>
+    <a href="#s2">02 Core Mechanics</a>
+    <a href="#s3">03 The Activities</a>
+    <a href="#s4">04 Getting Started</a>
+    <a href="#s5">05 Mid-Game</a>
+    <a href="#s6">06 End-Game</a>
+    <a href="#s7">07 Best Ships</a>
+    <a href="#s8">08 Outcomes &amp; Rewards</a>
+    <a href="#s9">09 System Interactions</a>
+    <a href="#s10">10 Field Notes</a>
+  </nav>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>What the Passenger Role Actually Is</h2></div>
+    <p>The passenger role swaps cargo racks for <b>passenger cabins</b> and freight for people. Instead of a market spread, your income comes from <span class="acc">missions</span> taken at a station's Passenger Lounge — each with a destination, a fare, a time limit, and sometimes a list of demands the passenger insists on. It is trading's sociable cousin: same logistics instincts, different cargo, and a few unique twists in who you're carrying.</p>
+
+    <p>The loop is mission-driven rather than market-driven:</p>
+    <div class="anchors">
+      <div class="cell"><div class="s">1</div><div class="n">Accept<small>Fill cabins at the lounge</small></div></div>
+      <div class="cell"><div class="s">2</div><div class="n">Route<small>Plan the multi-stop trip</small></div></div>
+      <div class="cell"><div class="s">3</div><div class="n">Deliver<small>Visit beacons / reach the port</small></div></div>
+      <div class="cell"><div class="s">4</div><div class="n">Return &amp; bank<small>Drop off, collect the fares</small></div></div>
+    </div>
+
+    <p>Most passenger work is low-risk transport, but two wrinkles add spice: <b>VIP demands</b> (a fast trip, a specific cabin class, no scans) and <b>criminal passengers</b> (wanted fugitives whose presence draws interdictions and scans you must evade). The role's signature is the high-density sightseeing loop, where a hull full of tourists earns far more per hour than its tonnage would in cargo.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Core Gameplay Mechanics</h2></div>
+
+    <h3 class="sub">2.1 — Cabin classes</h3>
+    <p>Passenger cabins come in four tiers, and missions specify the class their passengers require:</p>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Economy</div><div class="v">Bulk <small>cheap fares, many seats — refugees, groups</small></div></div>
+      <div class="cell"><div class="k">Business</div><div class="v">Mid <small>better fares, fewer seats</small></div></div>
+      <div class="cell"><div class="k">First</div><div class="v">High <small>premium tourists &amp; many VIPs</small></div></div>
+      <div class="cell"><div class="k">Luxury</div><div class="v">Top <small>the richest VIP and sightseeing fares</small></div></div>
+    </div>
+    <p>A passenger will only board a cabin of <b>their class or higher</b>, so a mixed cabin layout lets one ship take a broad spread of missions. Higher-class cabins are larger and rarer per slot — the fit is a deliberate trade between fare quality and headcount.</p>
+
+    <h3 class="sub">2.2 — Mission types &amp; demands</h3>
+    <ul class="clean">
+      <li><b>Sightseeing</b> — visit a list of tourist beacons / scenic locations, then return. The high-value bread-and-butter.</li>
+      <li><b>Transport</b> — carry passengers from A to B; bulk economy groups or single premium fares.</li>
+      <li><b>VIP</b> — demanding single passengers who may require a minimum cabin class, a time limit, or that you're never scanned.</li>
+      <li><b>Criminal</b> — wanted passengers who attract interdictions and station scans; pay more, riskier.</li>
+    </ul>
+
+    <h3 class="sub">2.3 — Range, comfort &amp; risk</h3>
+    <p>Sightseeing destinations are often <b>far apart</b>, so <span class="acc">jump range</span> matters almost as much as cabin count — a passenger liner needs enough legs to reach distant beacons inside the time limit. Passengers have patience and comfort thresholds; taking too long or taking damage can make them disembark early and forfeit the fare. Criminal and some VIP runs add scan-evasion: run cold, avoid security, and high-wake away from interdictions.</p>
+
+    <div class="callout acc"><span class="lbl">Fleet doctrine reminder</span><p>The fleet's liner is the <b>Lynx Highliner</b>, built for the Robigo–Sirius sightseeing loop. Its slots are constrained: a <b>Class 5 FSD maximum</b>, a <b>Class 6 minimum Life Support</b>, and restricted passenger-only slots (two C6, one C5) that must hold cabins. The fit fills those with the highest-class cabins that fit, balanced against the range to reach the beacons.</p></div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>The Passenger Activities</h2></div>
+    <table>
+      <colgroup><col style="width:21%"><col style="width:13%"><col style="width:18%"><col style="width:48%"></colgroup>
+      <thead><tr><th>Activity</th><th>Pays in</th><th>Difficulty</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Robigo sightseeing loop</td><td>Mission CR (high)</td><td><span class="tag a">Mid</span></td><td>The famous loop: stack sightseeing missions at Robigo Mines bound for Sirius-area beacons, fly the circuit, return and bank. One of the best credit-per-hour loops in the early-to-mid game.</td></tr>
+        <tr><td class="mod">Tourist beacon runs</td><td>Mission CR</td><td><span class="tag g">Entry</span></td><td>General sightseeing missions to scenic beacons from any hub with a busy Passenger Lounge.</td></tr>
+        <tr><td class="mod">Bulk transport</td><td>Mission CR</td><td><span class="tag g">Entry</span></td><td>Move groups of economy passengers (e.g. refugees) between systems — high headcount, modest per-head fares.</td></tr>
+        <tr><td class="mod">VIP charters</td><td>Mission CR (high)</td><td><span class="tag a">Mid</span></td><td>Single high-fare passengers with demands — a cabin class, a deadline, or no scans. Lucrative when their conditions are met.</td></tr>
+        <tr><td class="mod">Criminal runs</td><td>Mission CR (high)</td><td><span class="tag a">Mid</span></td><td>Carry wanted fugitives past security and scans for premium pay; failure or a scan can cost the fare and a fine.</td></tr>
+        <tr><td class="mod">Long-haul / explorer tourism</td><td>Mission CR (very high)</td><td><span class="tag r">End</span></td><td>Carry sightseers to distant landmarks — sometimes thousands of light-years — blending the passenger and exploration roles for huge fares.</td></tr>
+        <tr><td class="mod">Community Goals</td><td>CG rewards</td><td><span class="tag a">Mid</span></td><td>Passenger-evacuation or transport CGs for tiered credit and module rewards.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><span class="lbl">The Robigo caveat</span><p>The Robigo loop is the role's signature earner, but it is sensitive to game balancing and the exact beacon set — fares and the best stack change over time. Treat current community route guides as the live source for which missions to stack and where they point.</p></div>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Getting Started — Early Game</h2></div>
+    <ol class="steps">
+      <li><b>Get a hull with cabins.</b> A small dedicated passenger ship like the Dolphin is cheap, cool and long-legged — perfect for first sightseeing runs.</li>
+      <li><b>Fit a mix of cabin classes.</b> A spread of Economy/Business/First lets you accept the widest range of missions from one lounge.</li>
+      <li><b>Stack sightseeing missions.</b> At a busy Passenger Lounge, take several missions whose beacons overlap, so one circuit completes many at once.</li>
+      <li><b>Plan the route for range and time.</b> Order the beacons into an efficient loop and check every leg fits your jump range inside the deadlines.</li>
+      <li><b>Fly smooth, fly cool.</b> Avoid damage and long detours — uncomfortable passengers leave. For any criminal fares, run cold and dodge scans.</li>
+      <li><b>Return and bank the stack.</b> Hand in all the completed missions at once; a well-stacked sightseeing loop pays far above its hull's cargo value.</li>
+    </ol>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>Mid-Game Activities</h2></div>
+    <p>Mid-game passenger work is about <b>cabin density, range and the high-value loops</b>.</p>
+    <h3 class="sub">Step up to a liner</h3>
+    <p>Move to a dedicated liner — the fleet's <span class="acc">Lynx Highliner</span> — with its passenger slots packed with the highest-class cabins that fit and an FSD tuned for the loop's legs. More premium cabins per trip is the income lever.</p>
+    <h3 class="sub">Run the signature loops</h3>
+    <ul class="clean">
+      <li><b>Robigo–Sirius</b> — the classic high-density sightseeing circuit the Highliner is built for.</li>
+      <li><b>VIP charters</b> — chase the demanding, high-fare single passengers when your cabin classes can satisfy them.</li>
+      <li><b>Criminal premiums</b> — when you're confident in scan-evasion, the wanted fares pay a useful bonus.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Reputation pays forward</span><p>Stacking passenger missions builds faction reputation, which surfaces better-paying missions over time and feeds the broader rank and access progression the rest of the fleet benefits from.</p></div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>End-Game Activities</h2></div>
+    <ul class="clean">
+      <li><b>Long-haul tourism</b> — the biggest passenger fares come from sightseeing trips to genuinely distant landmarks; a high-range liner carrying luxury tourists thousands of light-years blends the role with exploration for outsized pay.</li>
+      <li><b>Luxury liners</b> — the largest passenger hulls (Orca, Beluga Liner) packed with First and Luxury cabins for premium VIP and sightseeing work.</li>
+      <li><b>Optimised Robigo grinding</b> — running the signature loop at full cabin density for sustained, fast credits.</li>
+      <li><b>Passenger Community Goals</b> — large evacuation or transport CGs for tiered rewards and exclusive modules.</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">A note on Powerplay</span><p><b>Passenger missions earn zero Powerplay merits under any Power.</b> If you want passenger income <em>and</em> Power progress in the same session, the role won't deliver merits — that's a combat or hauling job.</p></div>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Best Ships for the Role</h2></div>
+    <p>Full ratings, cabin counts and costs live in the comparison dossier — shortlist by stage below. <em>(References by name for now; hyperlinks to follow.)</em></p>
+    <div class="recgrid">
+      <div class="rec">
+        <div class="who">The fleet liner — medium pad</div>
+        <div class="pick">Lynx Highliner<small>Robigo–Sirius specialist</small></div>
+        <p>The dedicated sightseeing liner — passenger slots packed with high-class cabins and a fit tuned for the Robigo loop.</p>
+        <div class="ref">See <b>Lynx Highliner — Passenger Field Manual</b></div>
+      </div>
+      <div class="rec">
+        <div class="who">Luxury — large pad</div>
+        <div class="pick">Beluga Liner<small>Maximum premium cabins</small></div>
+        <p>The flagship tourism hull — the most First/Luxury cabins for the highest-fare sightseeing and VIP charters.</p>
+        <div class="ref">See the <b>Passenger — Ship Comparison</b> dossier</div>
+      </div>
+      <div class="rec">
+        <div class="who">Premium &amp; quick — medium pad</div>
+        <div class="pick">Orca<small>Fast, stylish liner</small></div>
+        <p>A quick, good-looking liner that satisfies time-pressured VIPs and long-range sightseeing without a large pad.</p>
+        <div class="ref">See the <b>Passenger — Ship Comparison</b> dossier</div>
+      </div>
+      <div class="rec">
+        <div class="who">Entry — medium pad</div>
+        <div class="pick">Dolphin<small>Cheap, cool, long-legged</small></div>
+        <p>The ideal first passenger ship — low cost, runs cool, and enough range to reach scenic beacons on a budget.</p>
+        <div class="ref">See the <b>Passenger — Ship Comparison</b> dossier</div>
+      </div>
+    </div>
+    <div class="callout"><span class="lbl">Full ranking</span><p>For every cabin-capable hull scored on one scale with max-cabin and cost figures, see the <b>Passenger — Ship Comparison</b> role dossier.</p></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>Outcomes, Benefits &amp; Rewards</h2></div>
+    <table>
+      <colgroup><col style="width:22%"><col style="width:30%"><col style="width:48%"></colgroup>
+      <thead><tr><th>Reward</th><th>Earned from</th><th>Notes &amp; rough scale</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Credits</td><td>Mission fares</td><td>The signature draw: a full sightseeing stack on the Robigo loop is among the best early-to-mid credit-per-hour activities; long-haul luxury fares scale far higher.</td></tr>
+        <tr><td class="mod">Faction reputation</td><td>Completed passenger missions</td><td>Builds the rep that unlocks better missions and supports Navy-rank access across the fleet.</td></tr>
+        <tr><td class="mod">Exploration data (incidental)</td><td>Honking systems en route</td><td>Long sightseeing trips pass through unscanned systems — a discovery-scan habit banks some cartographic value on the side.</td></tr>
+        <tr><td class="mod">CG rewards</td><td>Passenger/evacuation CGs</td><td>Tiered credits and modules for transport or evacuation goals.</td></tr>
+        <tr><td class="mod">Powerplay merits</td><td>— none —</td><td><span class="acc">Passenger missions grant no Powerplay merits under any Power.</span> Plan Power progress around other roles.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>How Passenger Interacts With Other Systems</h2></div>
+    <div class="twocol">
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Exploration ↔ Passenger</h3>
+        <p>Long-haul tourism is exploration with a paying guest — scenic beacons and distant landmarks overlap directly, and a honk habit on the way banks cartographic data alongside the fare.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Trading kinship</h3>
+        <p>Passenger work shares trading's logistics DNA — route planning, time limits, jump-range management — but swaps a market spread for fixed mission fares and cabin-class matching.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Powerplay (the gap)</h3>
+        <p>Because passenger missions bank no merits, the role is a pure-credit-and-rep play. Pair it deliberately with a combat or hauling session when Power progress matters.</p>
+      </div>
+      <div class="panel">
+        <h3 class="sub" style="margin-top:0">Funding &amp; reputation</h3>
+        <p>The Robigo loop is a fast early bankroll for the wider fleet, and the faction reputation it builds feeds the rank and mission-access progression the rest of the roles draw on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Field Notes</h2></div>
+    <ul class="clean">
+      <li><b>Stack overlapping missions.</b> The whole income model is taking many sightseeing missions whose beacons share a route, then flying it once.</li>
+      <li><b>Mix cabin classes.</b> A spread of classes lets one hull accept the widest range of missions; passengers board their class or higher.</li>
+      <li><b>Range can matter as much as cabins.</b> Distant beacons under a deadline need legs — balance cabin count against jump range.</li>
+      <li><b>Keep passengers comfortable.</b> Damage and delays make them disembark and forfeit the fare; fly smooth and don't dawdle.</li>
+      <li><b>For criminal fares, run cold and dodge scans.</b> The premium is only worth it if you avoid security and station scans.</li>
+      <li><b>Honk as you go.</b> Long trips pass unscanned systems — a discovery scan banks free cartographic value.</li>
+      <li><b>Don't expect Powerplay merits.</b> Passenger work pays credits and rep, never merits.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Bottom line</span><p>The passenger role is the fleet's fast, sociable bankroll: the Robigo loop turns a liner full of tourists into excellent early-to-mid income, long-haul tourism blends into exploration for the biggest fares, and the reputation it banks feeds the wider progression — just don't look to it for Powerplay merits.</p></div>
+  </section>
+
+  <footer>
+    <p><b>Passenger — Role &amp; Activities Field Manual</b> · CMDR Ka0s · Inara 173082 · Elite Dangerous Odyssey (PC, Live 4.0). Companion to the per-ship passenger manuals and the Passenger — Ship Comparison dossier. Living document — one of the role &amp; activities set.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Krait Mk II · Multipurpose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#d77a2e;
+    --acc-lt:#f4a259;
+    --acc-deep:#7a3f12;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1>Krait Mk II<span class="role">Multipurpose</span></h1>
+    <p class="lede">The fast fighting all-rounder. The Krait Mk II pairs <b>three large hardpoints and a ship-launched fighter bay with real speed and a medium pad</b> &mdash; a combat-leaning do-everything hull that fights hard, hauls and mines decently, and brings a wingman of its own. The action-oriented medium generalist.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Max cargo</span><b>~230 t</b></div>
+      <div class="chip"><span>Hardpoints</span><b>3L &middot; 2M + SLF</b></div>
+      <div class="chip"><span>Hull</span><b>~45.2M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Multipurpose</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:84"><div class="num">84<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Multipurpose Suitability Rating</div>
+        <div class="d">A superb combat-leaning all-rounder. Strong firepower, an SLF bay and good speed make it excellent in a fight and capable everywhere else; it ties among the top versatile mediums, trading a little of the Python's cargo and shielding for more pace and a fighter.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Krait Mk II is the Python's faster, more combat-minded cousin. It shares the three large hardpoints but adds a ship-launched fighter bay and noticeably more speed, making it a fearsome fighter that also hauls ~230 tonnes, mines decently and explores reasonably. It's the do-everything medium for a commander whose 'everything' leans toward action.</p>
+    <p>Compared with the Python it trades a little cargo and shield strength for pace and that fighter bay &mdash; a wingman you can deploy or hand to an NPC. On a medium pad it lands almost anywhere. It explores less far than a Phantom and hauls less than a Type-8, but few mediums fight as well while still doing everything else competently. For a versatile hull with a combat edge and its own fighter, the Krait Mk II is a brilliant, popular choice.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Combat-leaning versatility: bounty hunting and conflict zones with an SLF wingman, defensible trade and mining, and any commander who wants a fast do-everything medium that excels when the guns come out.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~230 <small>t</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3L &middot; 2M <small>+ SLF bay</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">245 / 337 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;5&middot;5&middot;4&middot;3&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF wingman)</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>Four things make the Krait Mk II a great combat all-rounder:</p>
+    <ul class="clean">
+      <li><b>Three large guns plus a fighter.</b> Serious firepower and an SLF wingman &mdash; it fights harder than almost any versatile medium.</li>
+      <li><b>Fast.</b> Quicker than the Python, so it dictates engagements and escapes trouble when hauling.</li>
+      <li><b>Capable everywhere else.</b> ~230 tonnes of cargo, decent mining and reasonable exploration round it out.</li>
+      <li><b>Medium-pad and rank-free.</b> Lands at most stations; anyone with the credits can fly one.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>It carries a little less and shields a little weaker than the Python, explores far less than a Phantom or Mandalay, and hauls far less than a dedicated freighter. Its jump range is modest. The Krait Mk II's case is combat-leaning versatility with a fighter and speed; for max cargo, range or pure tank, other ships beat it.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for multipurpose use</em> &mdash; versatility across combat, trade, exploration and more. The role column is the maximum cargo capacity in tonnes as one measure of capacity; versatility is judged across all roles.</p>
+    <p class="subhd">Same class &mdash; versatile mediums</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Krait Mk II</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">More cargo and shield</span><span class="c">Slower; no fighter bay</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II <span class="tag r">this</span></td><td>Medium</td><td>~230</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Far better range; faster</span><span class="c">Less firepower; no SLF</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>~318</td><td class="pcc"><span class="p">Modern; well-rounded</span><span class="c">Comparable; newer</span></td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Cheaper; better range and view</span><span class="c">Far weaker combat</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~154</td><td class="pcc"><span class="p">Far better range; modern</span><span class="c">Weaker combat</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Krait Mk II is the combat-leaning pick of the versatile mediums. The Python out-cargos and out-tanks it, the Phantom out-ranges it, but neither fights as hard or brings a fighter. For action-first versatility, the Krait Mk II leads.</p>
+    <p class="subhd">Other classes &mdash; the capital and small all-rounders</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Krait Mk II</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Capital-scale at everything; ~78 LY</span><span class="c">Large pad; pricier</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Far more cargo and shields</span><span class="c">Large pad; Imperial rank</span></td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~110</td><td class="pcc"><span class="p">Cheaper; lands anywhere; fast</span><span class="c">Far less firepower and cargo</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">More cargo and tank</span><span class="c">Slower; no fighter</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Far cheaper; lands anywhere</span><span class="c">Much less of everything</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Anaconda does everything at capital scale; the small all-rounders are cheaper and land anywhere. The Krait Mk II's niche among them is being the fast, hard-hitting medium with a fighter &mdash; the action-oriented choice in the versatile sweet spot.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~45.2M Cr</div></div>
+      <div class="cell"><div class="k">A-rated multirole</div><div class="v">~58M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~78M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~45.2M Cr the Krait Mk II is a bit cheaper than the Python, with no rank gate. Its versatility spreads the cost: one engineered hull fights, hauls, mines and explores, switchable by swapping modules.</p>
+    <p>Outfitting it well across roles plus a fighter and module sets brings the practical figure to around 78M Cr &mdash; a versatile, combat-strong medium for less than a Python or Anaconda.</p>
+    <div class="callout amber"><span class="lbl">Fast, armed, flexible</span>Around 78M Cr for a hard-hitting do-everything medium with its own fighter &mdash; combat-leaning versatility for less than a Python.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no multipurpose-specific ARX pre-built built around the Krait Mk II; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A combat-leaning multirole fit with a fighter bay. Initial is buy-only; A-rated is the multirole baseline; Engineered sharpens its firepower and survivability while keeping flexibility.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Large 3</td><td class="st">&mdash;</td><td class="st">Beam Laser 3</td><td class="eng">Beam 3 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Pulse Laser 2</td><td class="eng">Pulse 2 &mdash; Efficient</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Pulse Laser 2</td><td class="eng">Pulse 2 &mdash; Efficient</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced</td></tr>
+        <tr><td class="slot">Sensors (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Fighter Hangar 6</td><td class="eng">Fighter Hangar 6 (SLF wingman)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo / role swap</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 5</td><td class="eng">SCB 5</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo / role swap</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 3</td><td class="eng">HRP 3 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Cargo Rack 3 (8t)</td><td class="eng">Cargo / AFMU</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">spare</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">A fighter and a flexible hold</span>The SLF bay is the Krait Mk II's signature &mdash; deploy a wingman in combat, or have an NPC fly it. The rest re-tunes: cargo for trade, a mining suite to mine, a fuel scoop and SRV to explore. Keep role module sets in storage.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit three large guns, a fighter bay and a strong shield.</p>
+    <p>A-rate the core internals first &mdash; they serve every role.</p>
+    <p>Build role-specific module sets (trader, miner, explorer) in storage to swap in.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a combat all-rounder:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Core internals &rarr; A', 'Plant, thrusters, FSD and distributor serve every role.', '~16M Cr')</li>
+      <li><span class="stepnum">2</span>('Weapons + distributor', 'Three large guns and the power to sustain them.', '~12M Cr')</li>
+      <li><span class="stepnum">3</span>('Shield Generator &rarr; bi-weave', 'Survivability across combat and hauling.', '~5M Cr')</li>
+      <li><span class="stepnum">4</span>('Fighter bay', 'An SLF wingman for combat.', '~5M Cr')</li>
+      <li><span class="stepnum">5</span>('Role module sets', 'Cargo, mining suite, fuel scoop and SRV to swap.', 'varies')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Power the guns and the fighter</span>The Krait Mk II's combat edge needs power &mdash; A-rate the plant and distributor so three large guns and the fighter bay run together.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>The house all-rounder engineering pattern, combat-weighted. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one)</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Overcharged plant and Dirty thrusters first &mdash; power and pace for combat and every role.</li>
+      <li><span class="stepnum">2</span>Overcharged multi-cannons (one Corrosive) plus a Thermal-Vent beam for hard hitting.</li>
+      <li><span class="stepnum">3</span>Bi-weave shield Resistance-Augmented plus boosters and HRPs for survivability.</li>
+      <li><span class="stepnum">4</span>Increased-Range FSD for the explorer/trader roles; engineer once, reuse across swaps.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Moderate &mdash; combat-weighted all-rounder blueprints; each module done once and reused. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Combat capability</td><td>strong</td><td>strong</td><td class="acc">excellent</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>337 m/s</td><td>337 m/s</td><td class="acc">~400 m/s</td></tr>
+        <tr><td class="mod">Max cargo (t)</td><td>~160</td><td>~210</td><td class="acc">~230</td></tr>
+        <tr><td class="mod">Has a fighter</td><td>yes</td><td>yes</td><td class="acc">yes</td></tr>
+        <tr><td class="mod">Versatility</td><td>excellent</td><td>excellent</td><td class="acc">excellent</td></tr>
+      </tbody>
+    </table>
+    <p>Engineered, the Krait Mk II fights with three large guns and an SLF wingman at ~400 m/s, hauls ~230t and mines or explores competently. It carries and tanks a little less than the Python, but fights harder and faster &mdash; the action-first medium all-rounder.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Combat-leaning everything.</b> Bounties and conflict zones with a fighter, plus trade and mining on the side.</li>
+      <li><b>Defended trade and mining.</b> Haul or mine and fight off pirates, with an SLF to help.</li>
+      <li><b>Fast versatile play.</b> Its pace makes every role brisker than the Python.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Wingman combat.</b> Deploy or NPC-crew the fighter for tougher engagements.</li>
+      <li><b>Re-role on demand.</b> Swap module sets to switch jobs without another ship.</li>
+      <li><b>Carrier companion.</b> A medium pad docks on carriers as a fast all-purpose ship.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example uses</span>Whatever the week demands, with a combat tilt &mdash; bounties, a defended trade loop, a mining run, a short trip. From your Diaguandri / Ray Gateway base, one Krait Mk II covers them all and fights hard.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>A-rate the cores and power first &mdash; they run the guns, the fighter and every role.</li>
+      <li>Keep the SLF bay &mdash; it's the Krait Mk II's signature multirole edge.</li>
+      <li>It out-fights the Python but carries and tanks a little less &mdash; choose by your priorities.</li>
+      <li>It has a combat manual too &mdash; this one is for the do-everything build.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Krait Mk II is the fast fighting all-rounder: three large guns and a fighter bay with real speed on a medium pad, plus enough cargo and capability to trade, mine and explore. The Python out-cargos and out-tanks it and the Phantom out-ranges it, but none fights as hard or brings a wingman. For combat-leaning versatility, it's a brilliant, popular medium choice.</div>
+  </section>
+
+  <footer>
+    <p><b>Krait Mk II &middot; Multipurpose</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Krait Mk II &middot; Multipurpose dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

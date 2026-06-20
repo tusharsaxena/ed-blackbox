@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet Carrier — Drake-Class Capital Ship | Field Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0506;
+    --panel:#160a0d;
+    --panel-2:#1d0e12;
+    --ink:#ead7cf;
+    --ink-dim:#b89890;
+    --maroon:#6e1423;
+    --maroon-bright:#a81f33;
+    --maroon-line:#43141c;
+    --amber:#f5a623;
+    --amber-bright:#ffc14d;
+    --amber-dim:#a8761f;
+    --tritium:#3fd0c9;
+    --tritium-dim:#1f6b67;
+    --danger:#ff5a4d;
+    --ok:#5fcf6b;
+    --grid:rgba(245,166,35,.045);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 700px at 78% -8%, rgba(245,166,35,.10), transparent 60%),
+      radial-gradient(900px 600px at 10% 12%, rgba(110,20,35,.30), transparent 55%),
+      radial-gradient(700px 500px at 50% 120%, rgba(63,208,201,.07), transparent 60%),
+      linear-gradient(180deg,#0a0506 0%, #0c0608 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:'Saira',system-ui,sans-serif;
+    font-weight:300;
+    line-height:1.62;
+    font-size:16px;
+    padding:0 0 90px;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:46px 46px;
+    mask-image:radial-gradient(ellipse 100% 80% at 50% 0%, #000 40%, transparent 100%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 22px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    margin-top:42px;border:1px solid var(--maroon-line);
+    background:
+      linear-gradient(135deg, rgba(110,20,35,.42), rgba(22,10,13,.6) 55%),
+      repeating-linear-gradient(45deg, rgba(0,0,0,0) 0 12px, rgba(245,166,35,.025) 12px 13px);
+    border-radius:14px;overflow:hidden;position:relative;
+    box-shadow:0 0 0 1px rgba(245,166,35,.06), 0 26px 60px -28px rgba(0,0,0,.9);
+  }
+  .hero::after{
+    content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;
+    background:radial-gradient(circle, rgba(245,166,35,.20), transparent 65%);
+    pointer-events:none;
+  }
+  .hero-band{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:9px 18px;font-family:'Chakra Petch',monospace;font-size:11px;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--amber);
+    background:rgba(0,0,0,.4);border-bottom:1px solid var(--maroon-line);
+  }
+  .hero-band .blink{color:var(--tritium);}
+  .hero-body{padding:30px 30px 34px;position:relative;}
+  .eyebrow{
+    font-family:'Chakra Petch',monospace;letter-spacing:.34em;text-transform:uppercase;
+    font-size:12px;color:var(--ink-dim);margin-bottom:8px;
+  }
+  h1{
+    font-family:'Chakra Petch',sans-serif;font-weight:700;
+    font-size:clamp(34px,6.4vw,62px);line-height:.96;margin:0;
+    color:#fff;text-shadow:0 0 26px rgba(245,166,35,.30);
+  }
+  h1 .sub{display:block;font-size:clamp(15px,2.4vw,21px);font-weight:500;color:var(--amber-bright);letter-spacing:.04em;margin-top:12px;}
+  .hero-tagline{margin:18px 0 0;max-width:60ch;color:var(--ink-dim);font-size:16px;}
+  .ident-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+  .chip{
+    font-family:'Chakra Petch',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    padding:6px 11px;border:1px solid var(--maroon-line);border-radius:6px;
+    background:rgba(0,0,0,.32);color:var(--ink-dim);
+  }
+  .chip b{color:var(--amber);font-weight:600;}
+  .chip.tri b{color:var(--tritium);}
+
+  /* ---------- NAV ---------- */
+  nav.toc{
+    margin:26px 0;padding:18px 20px;border:1px solid var(--maroon-line);border-radius:12px;
+    background:linear-gradient(180deg, rgba(29,14,18,.7), rgba(13,7,9,.7));
+  }
+  nav.toc .toc-title{font-family:'Chakra Petch',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--amber);margin-bottom:12px;}
+  nav.toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 22px;counter-reset:t;}
+  nav.toc li{counter-increment:t;}
+  nav.toc a{
+    display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink-dim);
+    font-size:14.5px;padding:4px 0;border-bottom:1px dotted transparent;transition:.15s;
+  }
+  nav.toc a::before{content:counter(t,decimal-leading-zero);font-family:'Chakra Petch',monospace;
+    font-size:11px;color:var(--maroon-bright);min-width:24px;}
+  nav.toc a:hover{color:var(--amber-bright);border-bottom-color:var(--maroon-line);}
+
+  /* ---------- SECTIONS ---------- */
+  section{margin:46px 0;scroll-margin-top:20px;}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .sec-num{
+    font-family:'Chakra Petch',monospace;font-size:13px;font-weight:600;letter-spacing:.1em;
+    color:var(--bg);background:var(--amber);padding:4px 9px;border-radius:5px;flex-shrink:0;
+    box-shadow:0 0 18px rgba(245,166,35,.4);
+  }
+  h2{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(22px,3.6vw,30px);
+    margin:0;color:#fff;letter-spacing:.01em;line-height:1.1;
+  }
+  .sec-head .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--maroon-line),transparent);}
+  h3{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:19px;color:var(--amber-bright);
+    margin:30px 0 10px;letter-spacing:.01em;
+  }
+  h4{font-family:'Chakra Petch',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--tritium);margin:22px 0 8px;}
+  p{margin:0 0 14px;}
+  strong{color:var(--ink);font-weight:600;}
+  em{color:var(--amber-bright);font-style:normal;font-weight:500;}
+  a.ext{color:var(--tritium);text-decoration:none;border-bottom:1px solid var(--tritium-dim);}
+  a.ext:hover{color:#8be9e3;border-bottom-color:var(--tritium);}
+  ul,ol{margin:0 0 16px;padding-left:22px;}
+  li{margin:6px 0;}
+  li::marker{color:var(--maroon-bright);}
+
+  /* ---------- PANELS ---------- */
+  .panel{
+    border:1px solid var(--maroon-line);border-radius:12px;padding:22px 24px;
+    background:linear-gradient(180deg, rgba(29,14,18,.55), rgba(13,7,9,.55));
+    margin:18px 0;
+  }
+  .panel.glow{box-shadow:inset 0 0 40px rgba(245,166,35,.05),0 18px 40px -30px #000;}
+
+  .lead{
+    font-size:18px;color:var(--ink);font-weight:400;border-left:3px solid var(--amber);
+    padding-left:18px;margin:0 0 20px;
+  }
+
+  /* spec grid */
+  .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+    background:var(--maroon-line);border:1px solid var(--maroon-line);border-radius:10px;overflow:hidden;margin:20px 0;}
+  .spec{background:var(--panel);padding:15px 16px;}
+  .spec .k{font-family:'Chakra Petch',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);}
+  .spec .v{font-family:'Chakra Petch',sans-serif;font-size:21px;font-weight:600;color:var(--amber-bright);margin-top:4px;line-height:1.05;}
+  .spec .v small{font-size:12px;color:var(--ink-dim);font-weight:400;}
+
+  /* callouts */
+  .call{border-radius:10px;padding:16px 18px 16px 46px;margin:18px 0;position:relative;font-size:15px;border:1px solid;}
+  .call::before{position:absolute;left:14px;top:15px;font-family:'Chakra Petch',monospace;font-weight:700;font-size:16px;}
+  .call .ct{font-family:'Chakra Petch',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:5px;}
+  .call.intel{border-color:var(--tritium-dim);background:rgba(63,208,201,.06);}
+  .call.intel::before{content:"◈";color:var(--tritium);}
+  .call.intel .ct{color:var(--tritium);}
+  .call.warn{border-color:#7a3a18;background:rgba(245,120,35,.07);}
+  .call.warn::before{content:"▲";color:var(--amber);}
+  .call.warn .ct{color:var(--amber);}
+  .call.danger{border-color:#7a1f1f;background:rgba(255,90,77,.08);}
+  .call.danger::before{content:"✖";color:var(--danger);}
+  .call.danger .ct{color:var(--danger);}
+  .call.tip{border-color:var(--maroon-line);background:rgba(110,20,35,.16);}
+  .call.tip::before{content:"★";color:var(--maroon-bright);}
+  .call.tip .ct{color:var(--maroon-bright);}
+
+  /* tables */
+  .tbl-scroll{overflow-x:auto;margin:18px 0;border:1px solid var(--maroon-line);border-radius:10px;}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;}
+  th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--maroon-line);}
+  thead th{
+    font-family:'Chakra Petch',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--amber);background:rgba(0,0,0,.4);position:sticky;top:0;
+  }
+  tbody tr:nth-child(odd){background:rgba(245,166,35,.018);}
+  tbody tr:hover{background:rgba(245,166,35,.06);}
+  td.num{font-family:'Chakra Petch',monospace;color:var(--ink);text-align:right;white-space:nowrap;}
+  td.core{color:var(--tritium);font-family:'Chakra Petch',monospace;font-size:12px;}
+  .tag{font-family:'Chakra Petch',monospace;font-size:10px;letter-spacing:.08em;padding:2px 7px;border-radius:4px;text-transform:uppercase;white-space:nowrap;}
+  .tag.cmb{background:rgba(168,31,51,.3);color:#ff8a9a;border:1px solid var(--maroon-line);}
+  .tag.psg{background:rgba(63,208,201,.18);color:var(--tritium);border:1px solid var(--tritium-dim);}
+  .tag.trd{background:rgba(245,166,35,.18);color:var(--amber-bright);border:1px solid var(--amber-dim);}
+  .tag.min{background:rgba(95,207,107,.16);color:var(--ok);border:1px solid #2f6b35;}
+
+  /* role cards */
+  .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0;}
+  .role{border:1px solid var(--maroon-line);border-radius:12px;padding:18px 18px 20px;background:linear-gradient(180deg,rgba(29,14,18,.6),rgba(13,7,9,.6));position:relative;overflow:hidden;}
+  .role::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;}
+  .role.r1::before{background:var(--maroon-bright);}
+  .role.r2::before{background:var(--tritium);}
+  .role.r3::before{background:var(--amber);}
+  .role.r4::before{background:var(--ok);}
+  .role .prio{font-family:'Chakra Petch',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);}
+  .role h3{margin:6px 0 4px;font-size:18px;color:#fff;}
+  .role .lvl{font-family:'Chakra Petch',monospace;font-size:11px;color:var(--amber);letter-spacing:.1em;margin-bottom:10px;}
+  .role ul{padding-left:18px;margin:0;font-size:14px;}
+  .role li{margin:5px 0;color:var(--ink-dim);}
+  .role li b{color:var(--ink);}
+
+  /* steps */
+  .steps{counter-reset:s;margin:20px 0;padding:0;list-style:none;}
+  .steps>li{counter-increment:s;position:relative;padding:4px 0 18px 52px;border-left:1px solid var(--maroon-line);margin-left:18px;}
+  .steps>li:last-child{border-left-color:transparent;}
+  .steps>li::before{
+    content:counter(s);position:absolute;left:-18px;top:0;width:36px;height:36px;border-radius:50%;
+    background:var(--panel);border:1px solid var(--amber-dim);color:var(--amber-bright);
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 16px rgba(245,166,35,.2);
+  }
+  .steps>li .st{font-family:'Chakra Petch',sans-serif;font-weight:600;color:#fff;font-size:17px;display:block;margin-bottom:3px;}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:640px){.two{grid-template-columns:1fr;}}
+
+  .footer{margin-top:60px;border-top:1px solid var(--maroon-line);padding-top:22px;font-size:13px;color:var(--ink-dim);}
+  .footer .o7{font-family:'Chakra Petch',monospace;color:var(--amber);letter-spacing:.2em;}
+  .src{font-size:12.5px;color:var(--ink-dim);}
+  .src a{color:var(--tritium-dim);}
+
+  .kbd{font-family:'Chakra Petch',monospace;font-size:12px;background:rgba(0,0,0,.4);border:1px solid var(--maroon-line);border-radius:4px;padding:1px 6px;color:var(--amber-bright);}
+  .big-num{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--amber-bright);font-size:1.05em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-band">
+      <span>BREWER CORP // CAPITAL ASSET DOSSIER</span>
+      <span class="blink">CLASS: DRAKE ◈ STATUS: PROSPECTIVE</span>
+    </div>
+    <div class="hero-body">
+      <div class="eyebrow">CMDR Ka0s — Fleet Expansion Programme</div>
+      <h1>FLEET CARRIER
+        <span class="sub">Drake-Class Capital Ship — The Mobile Base of Operations</span>
+      </h1>
+      <p class="hero-tagline">Your own indestructible, 25,000-tonne flying station with a 500-light-year jump drive. Not a ship you fly — a ship you <em>command</em>. This is the complete owner's brief: what it is, why it matters, what it costs, and how to go from zero to a self-sustaining carrier built around combat, passengers, trade, and mining.</p>
+      <div class="ident-chips">
+        <span class="chip"><b>5,000,000,000</b> CR hull</span>
+        <span class="chip"><b>500 ly</b> per jump</span>
+        <span class="chip"><b>16</b> landing pads</span>
+        <span class="chip"><b>25,000 t</b> cargo</span>
+        <span class="chip tri"><b>1,000 t</b> tritium</span>
+        <span class="chip">prefix <b>KA-</b> recommended</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- TOC -->
+  <nav class="toc">
+    <div class="toc-title">// Manual Index</div>
+    <ol>
+      <li><a href="#what">What a Fleet Carrier Is</a></li>
+      <li><a href="#stats">Vital Statistics</a></li>
+      <li><a href="#why">Why It Matters</a></li>
+      <li><a href="#who">Who It's For (Be Honest)</a></li>
+      <li><a href="#economics">The Cost Reality</a></li>
+      <li><a href="#services">Services &amp; Cost Table</a></li>
+      <li><a href="#tritium">Tritium &amp; Jumping</a></li>
+      <li><a href="#roles">Role-Tailored Loadouts</a></li>
+      <li><a href="#starter">Your Starter Configuration</a></li>
+      <li><a href="#getstarted">How To Get Started</a></li>
+      <li><a href="#roadmap">The Progression Roadmap</a></li>
+      <li><a href="#federation">Federation &amp; Corvette Path</a></li>
+      <li><a href="#income">Paying The Upkeep</a></li>
+      <li><a href="#pitfalls">Pitfalls &amp; Pro Tips</a></li>
+      <li><a href="#tools">Tools &amp; References</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 WHAT -->
+  <section id="what">
+    <div class="sec-head"><span class="sec-num">01</span><h2>What a Fleet Carrier Actually Is</h2><span class="rule"></span></div>
+    <p class="lead">A Fleet Carrier is the largest and most expensive thing a commander can own — a capital-class mobile space station that you don't pilot directly. You issue it orders, and it carries your entire fleet, your cargo, and a suite of station services anywhere in the galaxy.</p>
+
+    <p>Manufactured by the <strong>Brewer Corporation</strong>, the Drake-Class Carrier was added in the 2020 Fleet Carriers Update, with walkable interiors (the <em>Concourse</em>) arriving in Odyssey Update 11. Mechanically, it behaves nothing like a normal ship — there is no cockpit you sit in to fly it. Instead, after purchase a <strong>Carrier Management</strong> menu appears in your ship's right-hand HUD panel, and from there you run the whole operation: scheduling jumps, installing services, setting market orders, and managing the bank.</p>
+
+    <h4>The mental model</h4>
+    <p>Think of it as <strong>a station you own that can teleport</strong>. It has 16 landing pads (8 large, 4 medium, 4 small), so any ship in your fleet can dock at it. It can store your other ships and modules, refuel and repair you, rearm you, buy and sell commodities, and — depending on what you install — cash in bounties, sell exploration data, register exobiology, and more. Then, when you want to be somewhere else, you tell it to jump up to 500 light-years and it brings everything with it.</p>
+
+    <div class="call intel">
+      <span class="ct">Key Concept — Executive Control</span>
+      You command the carrier; you never fly it. Jumps are plotted one at a time through the Galaxy Map (arrives at a random body) or System Map (pick a specific body, if the system is charted). It can reach anywhere in the galaxy <strong>except permit-locked systems</strong>.
+    </div>
+
+    <h4>It is persistent and indestructible</h4>
+    <p>Your carrier exists in the game world whether you are online or offline, and across Open, Solo, and Private Group play. Like a station, it cannot be destroyed and has 20 defence turrets that protect it and nearby friendly ships. It carries a <strong>permanent alphanumeric identifier</strong> (e.g. "L07-P4H") that stays with it even if you rename it — so other players can always identify a specific carrier.</p>
+  </section>
+
+  <!-- 2 STATS -->
+  <section id="stats">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Vital Statistics</h2><span class="rule"></span></div>
+    <div class="specs">
+      <div class="spec"><div class="k">Manufacturer</div><div class="v">Brewer<small> Corp.</small></div></div>
+      <div class="spec"><div class="k">Type</div><div class="v">Capital<small> Ship</small></div></div>
+      <div class="spec"><div class="k">Hull Cost</div><div class="v">5 B<small> CR</small></div></div>
+      <div class="spec"><div class="k">Dimensions</div><div class="v">~3200 m<small> long</small></div></div>
+      <div class="spec"><div class="k">Landing Pads</div><div class="v">16<small> (8L/4M/4S)</small></div></div>
+      <div class="spec"><div class="k">Max Jump</div><div class="v">500<small> ly</small></div></div>
+      <div class="spec"><div class="k">Cargo Capacity</div><div class="v">25,000<small> t</small></div></div>
+      <div class="spec"><div class="k">Fuel (Tritium)</div><div class="v">1,000<small> t</small></div></div>
+      <div class="spec"><div class="k">Crew</div><div class="v">11<small> officers</small></div></div>
+      <div class="spec"><div class="k">Defence</div><div class="v">20<small> turrets</small></div></div>
+      <div class="spec"><div class="k">Base Upkeep</div><div class="v">5 M<small> CR/wk</small></div></div>
+      <div class="spec"><div class="k">Limit</div><div class="v">1<small> per CMDR</small></div></div>
+    </div>
+    <p class="src">Carriers also carry a notional cargo hold whose used space — including the footprint of installed services — is what determines how much tritium each jump burns. More on that in <a href="#tritium" class="ext">Section 07</a>.</p>
+  </section>
+
+  <!-- 3 WHY -->
+  <section id="why">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why It Matters — The Strategic Value</h2><span class="rule"></span></div>
+    <p>For a fleet-builder like you, the carrier isn't a single-purpose tool — it's the keystone that makes a <em>multi-role fleet</em> actually coherent. Here is what it changes:</p>
+
+    <div class="two">
+      <div class="panel">
+        <h4>Your whole fleet travels together</h4>
+        <p>Today your ships are scattered across stored hangars and you transfer them at cost and on a timer. A carrier is a single garage for the entire fleet that you can relocate. Park it at a combat hotspot and your Python Mk II, Viper, and Cobra are all <em>right there</em>.</p>
+      </div>
+      <div class="panel">
+        <h4>You bring the station to the gameplay</h4>
+        <p>No more 200-second supercruise back to a station to rearm, repair, or cash in. Fit the right services and your refuel/repair/rearm/redemption desk is parked next to the Resource Extraction Site, conflict zone, or mining ring you're working.</p>
+      </div>
+      <div class="panel">
+        <h4>A 25,000 t mobile warehouse</h4>
+        <p>Stockpile ore, trade goods, or colonisation commodities and move them in bulk. Buy/sell orders let you run arbitrage and let other players feed your hold for a finder's fee.</p>
+      </div>
+      <div class="panel">
+        <h4>Engineering &amp; logistics freedom</h4>
+        <p>Store engineered modules, swap loadouts on the fly, and stage long expeditions. Your pinned blueprints are viewable onboard, and the carrier becomes a forward operating base far from the bubble.</p>
+      </div>
+    </div>
+
+    <div class="call tip">
+      <span class="ct">Respawn synergy</span>
+      A carrier is a valid rebuy-capable port. If a ship is destroyed near it, you respawn at the carrier rather than being flung to a distant station — directly relevant to the way you run combat ops.
+    </div>
+  </section>
+
+  <!-- 4 WHO -->
+  <section id="who">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Who It's For — And Whether You're Ready</h2><span class="rule"></span></div>
+    <p>A carrier rewards players who are <strong>active and have a destination problem</strong> — people who repeatedly want their fleet and a station somewhere specific. That's you: combat at specific RES/CZ sites, Robigo passenger loops, trade runs, and mining all benefit from a relocatable base.</p>
+
+    <p>It is a poor fit for someone who plays rarely, because the upkeep is billed <strong>every week whether you log in or not</strong>. The honest gate is financial, not skill-based:</p>
+
+    <div class="call warn">
+      <span class="ct">The readiness test</span>
+      Don't buy with exactly 5 billion. The community standard is to have roughly <span class="big-num">7 billion CR</span> banked first: 5 B for the hull, ~1–2 B for services and an initial tritium stock, and a buffer for rebuys and the first several weeks of upkeep. Buying yourself broke is the classic new-owner mistake.
+    </div>
+
+    <p>Given your stated priorities — heavily combat-skewed, with passengers, trade, and mining behind it — a carrier is a strong investment <em>once the bank is ready</em>. It is explicitly a "nice to have" accelerant for your long-term Federal Corvette goal too, but it does not directly grant rank (see <a href="#federation" class="ext">Section 12</a>).</p>
+  </section>
+
+  <!-- 5 ECONOMICS -->
+  <section id="economics">
+    <div class="sec-head"><span class="sec-num">05</span><h2>The Cost Reality — Purchase, Upkeep, Debt</h2><span class="rule"></span></div>
+
+    <h3>Up-front cost</h3>
+    <p>The hull is a flat <strong>5,000,000,000 CR</strong>. Services are bought separately and on top (see the table in <a href="#services" class="ext">Section 06</a>). Kickstarter backers get their historic discount applied automatically.</p>
+
+    <h3>Weekly upkeep</h3>
+    <p>This is the part that scares people, and it's worth understanding precisely. Upkeep is deducted from the <strong>Fleet Carrier Bank (FCB)</strong> every <strong>Thursday at 07:00 UTC</strong> during server downtime. It is made of three parts:</p>
+    <ul>
+      <li><strong>Core costs</strong> — a base <span class="big-num">5 M CR/week</span> that covers the three always-on core services and the bridge crew.</li>
+      <li><strong>Optional costs</strong> — the crew salaries for each optional service you install. You can <em>suspend</em> a service to roughly halve its cost (the crew stays on a retainer), or <em>uninstall</em> it to remove the cost entirely.</li>
+      <li><strong>Maintenance</strong> — a flat <span class="big-num">100,000 CR per jump</span> for wear and tear, billed alongside the rest.</li>
+    </ul>
+    <p>A bare carrier costs 5 M/week. A fully kitted-out carrier with every service active can climb to roughly <strong>25–30 M/week</strong>. A sensible combat-focused build (more below) typically lands in the <strong>9–13 M/week</strong> range.</p>
+
+    <div class="call intel">
+      <span class="ct">Income from tariffs</span>
+      You can set tariffs (0–100%) on your services and a margin on commodity orders. When other commanders use your carrier they pay the markup, and the profit flows to the FCB. Parked in a high-traffic system, a carrier can substantially or fully self-fund its upkeep from visitor traffic.
+    </div>
+
+    <h3>Debt &amp; the decommission cliff</h3>
+    <div class="call danger">
+      <span class="ct">Hard limit — do not ignore</span>
+      If you miss payments and the carrier's debt exceeds <span class="big-num">250 M CR</span> (about 10 weeks unpaid with everything installed), you get a one-week grace period, then the carrier is <strong>automatically decommissioned and scrapped</strong>. While in debt it auto-suspends all optional services to slow the bleed. Keep a comfortable FCB balance and this never happens.
+    </div>
+    <p>The good news: decommissioning is not a total loss. Voluntary decommissioning (which you can do any time, in any system) refunds the full hull cost and the value of installed services, minus a fixed fee of around <strong>125 M CR</strong> (some guides cite 150 M). Your stored ships and modules are transferred out for free. <strong>Caveat:</strong> sell off service stock and uninstall services manually first, and remove all commodities and tritium — those are not reliably refunded.</p>
+  </section>
+
+  <!-- 6 SERVICES -->
+  <section id="services">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Services — The Complete Cost Table</h2><span class="rule"></span></div>
+
+    <h3>The three core services (free, always on)</h3>
+    <p>Every new carrier ships with these, paid for inside the 5 M base upkeep:</p>
+    <ul>
+      <li><strong>Bridge Crew</strong> — the personnel who run the carrier, led by the Deck Officer.</li>
+      <li><strong>Commodity Trading</strong> — lets you and visitors buy/sell commodities and set market orders. This is a genuinely powerful free tool for trade and stockpiling.</li>
+      <li><strong>Tritium Depot</strong> — manages your fuel stockpile and shows jump range.</li>
+    </ul>
+
+    <h3>Optional services</h3>
+    <p>Installed only while the carrier is in a system with the <strong>Carrier Administration</strong> service. Every service occupies cargo capacity — which means more services = more tritium burned per jump, <em>even when suspended</em>. Choose deliberately.</p>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Install</th><th>Upkeep (active)</th><th>Suspended</th><th>Cargo</th><th>Best for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Refuel Station</strong></td><td class="num">40 M</td><td class="num">1.5 M</td><td class="num">750 k</td><td class="num">500 t</td><td><span class="tag cmb">CMB</span> <span class="tag min">MIN</span></td></tr>
+          <tr><td><strong>Repair Crews</strong></td><td class="num">50 M</td><td class="num">1.5 M</td><td class="num">750 k</td><td class="num">180 t</td><td><span class="tag cmb">CMB</span></td></tr>
+          <tr><td><strong>Armoury</strong> <small>(rearm + limpets)</small></td><td class="num">95 M</td><td class="num">1.5 M</td><td class="num">750 k</td><td class="num">250 t</td><td><span class="tag cmb">CMB</span> <span class="tag min">MIN</span></td></tr>
+          <tr><td><strong>Redemption Office</strong></td><td class="num">150 M</td><td class="num">1.85 M</td><td class="num">850 k</td><td class="num">100 t</td><td><span class="tag cmb">CMB</span></td></tr>
+          <tr><td><strong>Shipyard</strong></td><td class="num">250 M</td><td class="num">6.5 M</td><td class="num">1.8 M</td><td class="num">3,000 t</td><td>storage / resale</td></tr>
+          <tr><td><strong>Outfitting</strong></td><td class="num">250 M</td><td class="num">5 M</td><td class="num">1.5 M</td><td class="num">1,750 t</td><td>module swaps</td></tr>
+          <tr><td><strong>Universal Cartographics</strong></td><td class="num">150 M</td><td class="num">1.85 M</td><td class="num">700 k</td><td class="num">120 t</td><td>exploration</td></tr>
+          <tr><td><strong>Vista Genomics</strong></td><td class="num">150 M</td><td class="num">1.5 M</td><td class="num">700 k</td><td class="num">120 t</td><td>exobiology</td></tr>
+          <tr><td><strong>Pioneer Supplies</strong></td><td class="num">250 M</td><td class="num">5 M</td><td class="num">1.5 M</td><td class="num">200 t</td><td>on-foot kit</td></tr>
+          <tr><td><strong>Concourse Bar</strong></td><td class="num">200 M</td><td class="num">1.75 M</td><td class="num">1.25 M</td><td class="num">250 t</td><td>micro-mats</td></tr>
+          <tr><td><strong>Secure Warehouse</strong></td><td class="num">165 M</td><td class="num">2 M</td><td class="num">1.25 M</td><td class="num">250 t</td><td>stolen goods</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Refuel / Repair / Armoury are grouped in-game under "Advanced Maintenance." Redemption Office, Secure Warehouse and Universal Cartographics take a <strong>25% service fee</strong> on transactions (split between the service officer and your bank). Shipyard and Outfitting let visitors store their own ships/modules — but note <strong>you</strong> can always store your own ships and modules even without those services installed.</p>
+
+    <div class="call warn">
+      <span class="ct">The expensive two</span>
+      Shipyard (6.5 M/wk, 3,000 t) and Outfitting (5 M/wk, 1,750 t) are by far the heaviest in both credits and cargo footprint — they roughly double your jump fuel cost on their own. Only install them if you genuinely need to buy/sell ships/modules in the field or want to offer them to visitors. For pure storage, you don't need either.
+    </div>
+  </section>
+
+  <!-- 7 TRITIUM -->
+  <section id="tritium">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Tritium &amp; Jumping — The Fuel Loop</h2><span class="rule"></span></div>
+
+    <p>Carriers run on <strong>Tritium</strong>, stored in the 1,000 t Tritium Depot. You feed it two ways:</p>
+    <ul>
+      <li><strong>Buy it</strong> from Commodity Markets at starports with a <em>Refinery</em> economy (or from other players' carriers / the STAR initiative).</li>
+      <li><strong>Mine it</strong> from surface and sub-surface deposits in icy asteroid rings — which is exactly what your dedicated <strong>Type-11 Prospector</strong> is for. This makes you fuel-independent.</li>
+    </ul>
+
+    <div class="call danger">
+      <span class="ct">Critical mechanic — manual transfer only</span>
+      Tritium can only be moved into the Depot <strong>from a docked ship</strong>. The carrier cannot refuel itself. You (or a friend) must dock with tritium in the cargo hold and transfer it. Never strand the carrier somewhere it can't buy fuel with an empty depot.
+    </div>
+
+    <h3>How much fuel per jump?</h3>
+    <p>Consumption scales with jump distance <em>and</em> the carrier's current loaded mass (cargo + the footprint of installed services). As a reference point:</p>
+    <div class="specs">
+      <div class="spec"><div class="k">Empty, max jump</div><div class="v">~68 t<small> for a full 500 ly</small></div></div>
+      <div class="spec"><div class="k">In-system body hop</div><div class="v">5 t<small> flat rate</small></div></div>
+      <div class="spec"><div class="k">Depot capacity</div><div class="v">1,000 t<small> ≈ 14+ empty jumps</small></div></div>
+      <div class="spec"><div class="k">Per-jump fee</div><div class="v">100 k<small> CR maintenance</small></div></div>
+    </div>
+    <p>A loaded carrier with heavy services burns considerably more — another reason to keep your service list lean if you plan to relocate often.</p>
+
+    <h3>The jump sequence</h3>
+    <p>Plotting a jump starts a preparation timer of <strong>at least 15 minutes</strong> (longer when server traffic is high — during the Trailblazers colonisation rush, hour-plus waits and "no time slots" errors were common). You can cancel until the 10-minute mark. The final phases:</p>
+    <ol>
+      <li><strong>Lockdown</strong> begins at <span class="kbd">3:20</span> — all services suspend, ships are forced into hangars, on-foot crew must be seated.</li>
+      <li>The drive spins up, the carrier enters the hyperspace portal, and arrives in the target system.</li>
+      <li>A <strong>~5 minute cooldown</strong> follows before you can plot the next jump.</li>
+    </ol>
+    <p>Anyone docked when lockdown hits jumps <em>with</em> the carrier. Walk to the Command Deck on foot and you can watch hyperspace through the windows.</p>
+
+    <div class="call intel">
+      <span class="ct">Long-haul routing</span>
+      For trips beyond one 500 ly hop, use the <a href="https://www.spansh.co.uk/fleet-carrier" class="ext">Spansh Fleet Carrier route planner</a> — it plots multi-jump routes and tells you the tritium budget for the whole journey.
+    </div>
+  </section>
+
+  <!-- 8 ROLES -->
+  <section id="roles">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Role-Tailored Loadouts</h2><span class="rule"></span></div>
+    <p>Mapped to your stated priorities, in your order. The recurring theme: services don't change <em>what</em> you do, they remove the round-trip to a station so you can do it where the action is.</p>
+
+    <div class="roles">
+      <div class="role r1">
+        <div class="prio">Priority 01 — Heavily skewed</div>
+        <h3>PvE Combat</h3>
+        <div class="lvl">CORE PURPOSE OF YOUR BUILD</div>
+        <ul>
+          <li><b>Redemption Office</b> — cash bounty vouchers <em>and</em> combat bonds at the carrier instead of flying to a station. Park at a Hazardous RES or Conflict Zone, fight, dock, cash out, repeat.</li>
+          <li><b>Repair Crews</b> — patch hull/canopy between waves.</li>
+          <li><b>Armoury</b> — rearm and restock without leaving the site.</li>
+          <li><b>Refuel Station</b> — top off the combat ships.</li>
+        </ul>
+      </div>
+      <div class="role r2">
+        <div class="prio">Priority 02</div>
+        <h3>Passenger Missions</h3>
+        <div class="lvl">STAGING BASE</div>
+        <ul>
+          <li>Missions are still taken from stations (e.g. Robigo/Sirius), so the carrier is a <b>forward base</b>, not the mission board.</li>
+          <li><b>Refuel + Repair</b> keep the Lynx Highliner serviced near the loop.</li>
+          <li>Use it to garage the liner and stage between sightseeing tour legs far from the bubble.</li>
+        </ul>
+      </div>
+      <div class="role r3">
+        <div class="prio">Priority 03</div>
+        <h3>Cargo Trading</h3>
+        <div class="lvl">USES FREE CORE SERVICE</div>
+        <ul>
+          <li><b>Commodity Trading</b> is a <em>core</em> service — free. Set buy/sell orders, stockpile, and run arbitrage with no added upkeep.</li>
+          <li>25,000 t hold = a mobile warehouse; relocate stock toward the best market.</li>
+          <li>Note the <b>2 B CR cap</b> on any single buy order.</li>
+        </ul>
+      </div>
+      <div class="role r4">
+        <div class="prio">Priority 04</div>
+        <h3>Mining</h3>
+        <div class="lvl">SELF-SUFFICIENT FUEL + SILO</div>
+        <ul>
+          <li><b>Armoury</b> for limpet restock at the ring.</li>
+          <li>Use the free <b>Commodity Market</b> as an ore silo — dump loads, sell in bulk later.</li>
+          <li>Mine <b>tritium</b> with the Type-11 to keep the depot full for free.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 STARTER -->
+  <section id="starter">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Recommended Starter Configuration — "KA-" Carrier</h2><span class="rule"></span></div>
+    <p>A lean, combat-first build that serves all four of your roles without the two cargo-hungry storage services. Install these at launch:</p>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Install at launch</th><th>Install cost</th><th>Weekly</th><th>Serves</th></tr></thead>
+        <tbody>
+          <tr><td>Refuel Station</td><td class="num">40 M</td><td class="num">1.5 M</td><td>Combat · Passenger · Mining</td></tr>
+          <tr><td>Repair Crews</td><td class="num">50 M</td><td class="num">1.5 M</td><td>Combat · Passenger</td></tr>
+          <tr><td>Armoury</td><td class="num">95 M</td><td class="num">1.5 M</td><td>Combat · Mining</td></tr>
+          <tr><td>Redemption Office</td><td class="num">150 M</td><td class="num">1.85 M</td><td>Combat (the big one)</td></tr>
+          <tr><td>Commodity Trading <small>(core)</small></td><td class="core">FREE</td><td class="core">incl.</td><td>Trade · Mining silo</td></tr>
+          <tr style="background:rgba(245,166,35,.10);"><td><strong>Subtotal</strong></td><td class="num"><strong>~335 M</strong></td><td class="num"><strong>~11.3 M/wk</strong></td><td>+ 5 M base = covered by ~2–3 hrs combat</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>This keeps the cargo footprint modest (so jumps stay cheap on fuel) and gives you a combat fast-loop, a trade/mining silo, and a serviced base for the liner. <strong>Defer Shipyard and Outfitting</strong> — you can store your own fleet and modules without them, and they're the two heaviest services. Add them later only if you want field module-swaps or to sell to visitors.</p>
+
+    <div class="call tip">
+      <span class="ct">Naming &amp; livery</span>
+      Keep your <span class="kbd">KA-</span> prefix convention for fleet consistency (the permanent system identifier sits alongside it). Cosmetic Layouts — Fortune, Nautilus, Victory — are ARX-only and even change the jump klaxon, but are purely visual.
+    </div>
+  </section>
+
+  <!-- 10 GET STARTED -->
+  <section id="getstarted">
+    <div class="sec-head"><span class="sec-num">10</span><h2>How To Get Started — Acquisition Checklist</h2><span class="rule"></span></div>
+
+    <ol class="steps">
+      <li><span class="st">Bank ~7 billion credits</span> 5 B hull + ~335 M starter services + tritium stock + a buffer for rebuys and several weeks of upkeep. Don't buy yourself broke.</li>
+      <li><span class="st">Travel to a Fleet Carrier Vendor</span> Vendors sit at starports flagged by a nearby <em>Carrier Construction Dock</em>. From Diaguandri the closest bubble options include <strong>Diso – Shifnalport</strong>, <strong>Kruger 60 – Kepler Gateway</strong>, <strong>CD-47 990 – Jackson Ring</strong>, <strong>Lan Tzak – Jacobi Platform</strong>, and <strong>Namnetes – Jolliet Enterprise</strong>. Confirm the nearest on Inara.</li>
+      <li><span class="st">Buy via the Contacts tab</span> Dock, open Station Services → <span class="kbd">Contacts</span> → Fleet Carrier Vendor → purchase. The carrier spawns orbiting a body in that system (or the nearest system with Carrier Administration if it's full).</li>
+      <li><span class="st">Open Carrier Management</span> A new option appears in your ship's right HUD panel. This is your entire control surface — you can manage it remotely from anywhere from now on.</li>
+      <li><span class="st">Install your starter services</span> While in a Carrier Administration system, install Refuel, Repair, Armoury, and Redemption Office. (Commodity Trading is already there, free.)</li>
+      <li><span class="st">Fuel the Depot</span> Buy or mine tritium, dock, and transfer it from your ship into the Depot. Aim for a healthy reserve before your first relocation jump.</li>
+      <li><span class="st">Pre-load the Fleet Carrier Bank</span> Deposit enough credits to cover several weeks of upkeep so a missed session never starts a debt spiral.</li>
+      <li><span class="st">Set tariffs (optional) &amp; jump to work</span> If parking somewhere with traffic, set service tariffs to earn income, then plot your first jump to a combat hotspot and start operating.</li>
+    </ol>
+  </section>
+
+  <!-- 11 ROADMAP -->
+  <section id="roadmap">
+    <div class="sec-head"><span class="sec-num">11</span><h2>The Progression Roadmap — How To Proceed</h2><span class="rule"></span></div>
+
+    <div class="two">
+      <div class="panel glow">
+        <h4>Phase 0 — Earn the bank</h4>
+        <p>Reaching ~7 B is the real project. Fast credit avenues that suit your fleet: high-value <strong>combat massacre stacks</strong> and bounty farming in your Python Mk II; <strong>core mining</strong> (platinum / void opals / tritium) in the Type-11; bulk <strong>trade loops</strong> in the Type-9; and <strong>colonisation hauling</strong> contracts, which are a current high-throughput earner.</p>
+      </div>
+      <div class="panel glow">
+        <h4>Phase 1 — Acquire &amp; fit</h4>
+        <p>Follow the checklist in Section 10. Launch lean: the four combat-support services plus the free market. Resist the urge to install everything on day one — upkeep compounds.</p>
+      </div>
+      <div class="panel glow">
+        <h4>Phase 2 — Operate &amp; self-fund</h4>
+        <p>Run your combat loop with the Redemption Office. Tune tariffs if parked in traffic. Keep the FCB topped up and the Depot fuelled. Target: upkeep fully covered by a couple of hours of play per week.</p>
+      </div>
+      <div class="panel glow">
+        <h4>Phase 3 — Expand role coverage</h4>
+        <p>Once self-sustaining, consider adding Outfitting (field module-swaps for your engineered fleet) or Universal Cartographics / Vista Genomics if you start ranging out for exploration and exobiology. Add Shipyard last, if ever.</p>
+      </div>
+    </div>
+
+    <div class="call intel">
+      <span class="ct">Sequencing advice</span>
+      Treat the carrier as the <em>capstone of fleet logistics</em>, not the next purchase. With combat-grade ships already engineered, the most efficient path is: finish your in-progress engineer unlocks and rank grinds, build the bank through combat + mining + trade, then buy the carrier as the asset that ties the whole fleet together.
+    </div>
+  </section>
+
+  <!-- 12 FEDERATION -->
+  <section id="federation">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Federation Alignment &amp; The Corvette Path</h2><span class="rule"></span></div>
+    <p>Two things to be clear about, because they're easy to misunderstand:</p>
+
+    <div class="call danger">
+      <span class="ct">A carrier does NOT sell rank-locked ships</span>
+      Federal and Imperial ships that require reputation to unlock — including the <strong>Federal Corvette</strong> — <em>cannot be bought or stocked on a Fleet Carrier</em>. You must still purchase the Corvette at a Federation system shipyard after reaching <strong>Rear Admiral</strong>. The carrier doesn't shortcut the rank grind.</p>
+    </div>
+
+    <p>What the carrier <em>does</em> do for the Federation path:</p>
+    <ul>
+      <li><strong>Stages the grind.</strong> Park it near your Federal Navy rank-up venues and combat sites so your fleet and a rearm/repair/redemption desk are always on hand.</li>
+      <li><strong>Builds superpower reputation passively.</strong> A carrier carries its own reputation with the local superpower (Federation/Empire/Alliance), which affects the security response that protects it. Operating cleanly in Federation space raises it over time.</li>
+      <li><strong>Bankrolls the Corvette.</strong> The Corvette hull alone runs well over 180 M CR before a combat fit — the carrier's combat-cashflow loop helps you bank that, and later stores and services the Corvette as your capstone large combat ship.</li>
+    </ul>
+    <p class="src">Note your existing Imperial rank work (toward Squire / the Achenar permit) and Powerplay standing are separate tracks; the carrier is superpower-neutral and won't conflict with either.</p>
+  </section>
+
+  <!-- 13 INCOME -->
+  <section id="income">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Paying The Upkeep — Income Strategies</h2><span class="rule"></span></div>
+    <p>Upkeep is very beatable. A few hours of focused activity typically funds weeks. Options, roughly best-to-worst for your fleet:</p>
+    <ul>
+      <li><strong>Combat cashflow</strong> — massacre mission stacks and bounty/bond farming in the Python Mk II routinely clear a week's upkeep in 2–3 hours, especially with the Redemption Office removing station trips.</li>
+      <li><strong>Tariff income</strong> — park in a high-traffic system (popular mining rings, community-goal hubs, colonisation staging systems) and let visitors' fees fund the bank while you're offline.</li>
+      <li><strong>Commodity arbitrage</strong> — buy/sell orders on the free market; let other haulers fill your hold for a finder's fee, then move and sell in bulk.</li>
+      <li><strong>Colonisation hauling</strong> — a current high-demand activity; carriers are prized for ferrying construction commodities, and there are player networks that pay for carrier hauling.</li>
+      <li><strong>Mining</strong> — bulk platinum/opals via the Type-11, stockpiled in the hold and sold to the best market you can jump to.</li>
+    </ul>
+    <div class="call tip">
+      <span class="ct">Rule of thumb</span>
+      Keep the FCB balance above ~4–6 weeks of upkeep at all times. That single habit removes essentially all risk of the debt cliff, even through a busy real-life month away from the game.
+    </div>
+  </section>
+
+  <!-- 14 PITFALLS -->
+  <section id="pitfalls">
+    <div class="sec-head"><span class="sec-num">14</span><h2>Pitfalls &amp; Pro Tips</h2><span class="rule"></span></div>
+    <ul>
+      <li><strong>Don't strand it dry.</strong> The carrier can't refuel itself; an empty Depot in a fuel-less system means relying on another player to bring tritium. Always jump with reserve fuel.</li>
+      <li><strong>Suspended services still cost cargo.</strong> Suspending cuts the credit cost but the service's footprint still counts toward jump-fuel mass. To truly lighten the carrier, <em>uninstall</em>.</li>
+      <li><strong>Decommission cleanly.</strong> If you ever sell the carrier, manually uninstall services, sell stock, and empty commodities + tritium first — those aren't reliably refunded.</li>
+      <li><strong>Plot jumps early in busy periods.</strong> During colonisation surges the prep timer balloons; schedule ahead rather than waiting at the pad.</li>
+      <li><strong>The 25% fee on Redemption is the price of convenience.</strong> For high-value single bounties it can be worth a station trip; for grinding bonds at a distant CZ, the on-site desk usually wins on time.</li>
+      <li><strong>Body limit per orbit.</strong> Up to 16 carriers can orbit a given body; a red carrier icon on the system map means that body is full — pick another.</li>
+      <li><strong>Set your "Current Activity."</strong> A cosmetic touch that reskins the management UI to your role (mining, bounty hunting, etc.) — nice for a themed fleet log.</li>
+    </ul>
+  </section>
+
+  <!-- 15 TOOLS -->
+  <section id="tools">
+    <div class="sec-head"><span class="sec-num">15</span><h2>Tools &amp; External References</h2><span class="rule"></span></div>
+    <div class="two">
+      <div class="panel">
+        <h4>Planning &amp; calculators</h4>
+        <ul>
+          <li><a href="https://www.spansh.co.uk/fleet-carrier" class="ext">Spansh — Fleet Carrier route planner</a> (multi-jump tritium routing)</li>
+          <li><a href="https://cmdrs-toolbox.com/fleet-carrier-calculator" class="ext">CMDR's Toolbox — upkeep calculator</a></li>
+          <li><a href="https://pilotstradenetwork.com/tools/carrier-calculator/" class="ext">PTN — carrier cost calculator</a></li>
+          <li><a href="https://inara.cz/" class="ext">Inara</a> — tritium prices, vendor &amp; admin systems, nearest services</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>Reference reading</h4>
+        <ul>
+          <li><a href="https://elite-dangerous.fandom.com/wiki/Drake-Class_Carrier" class="ext">ED Wiki — Drake-Class Carrier</a> (authoritative spec &amp; service tables)</li>
+          <li><a href="https://pilotstradenetwork.com/guides/fleet-carrier-owner/" class="ext">PTN — Fleet Carrier Owner's Guide</a></li>
+          <li><a href="https://pilotstradenetwork.com/guides/fleet-carrier-trading/" class="ext">PTN — Carrier Owner's Trade Guide</a></li>
+          <li><a href="https://elite-dangerous.fandom.com/wiki/Tritium" class="ext">ED Wiki — Tritium</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="src">All figures verified against the ED Wiki Drake-Class entry and the PTN owner's guide (last updated March 2026). Service costs, upkeep, and decommission fees are subject to change in future updates — re-verify before a major purchase.</p>
+  </section>
+
+  <div class="footer">
+    <p>Filed for <strong>CMDR Ka0s</strong> — Fleet Expansion Programme · Capital Asset Dossier · Drake-Class Fleet Carrier</p>
+    <p class="o7">FLY SAFE, COMMANDER · o7</p>
+  </div>
+
+</div>
+</body>
+</html>

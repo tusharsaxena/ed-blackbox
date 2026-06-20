@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Component Gallery — ed-blackbox design system</title>
+<!-- The ONLY style/behaviour source. Fonts are pulled in by the CSS @import. -->
+<link rel="stylesheet" href="../css/ed-blackbox.css">
+<!-- Per-page theming, when needed, goes in a tiny page-level <style> that
+     overrides ONLY the --accent* group. This gallery uses the amber default. -->
+</head>
+<body>
+<div class="wrap">
+
+<div class="wrap">
+
+<!-- ============================================================
+     MASTHEAD  — top of every page.
+     .kicker  = series label + commander ID (id floats right)
+     h1.title = title; wrap one word in <span> for the maroon accent.
+                Optional <span class="role"> suffix for ship × role dossiers.
+     .subtitle/.lede = one-paragraph scope statement (bold the key phrase)
+     .masthead-meta = pipe-style meta facts (part, sources, patch)
+     ============================================================ -->
+<header class="masthead">
+  <div class="kicker">Series Label <span class="sep">//</span> Part N <span class="sep">//</span> Section<span class="id">CMDR KA0S · INARA 173082</span></div>
+  <h1 class="title">Page <span>Title</span><span class="role">Role</span></h1>
+  <p class="subtitle">One-sentence scope statement describing exactly what this manual covers and how it is organised — kept under ~840px wide, dimmed ink, with the <b>key phrase</b> in bright ink. No marketing tone.</p>
+  <div class="masthead-meta">
+    <span>Part <b>N of M</b> · Section name</span>
+    <span>Sources <b>INARA · EDSM · EDCD</b></span>
+    <span>Patch <b>Live 4.0</b></span>
+  </div>
+</header>
+
+<!-- ============================================================
+     QUICK-NAV  (OPTIONAL) — sticky searchable jump menu.
+     Use only on long index-style pages with many anchored records.
+     Each .qn-item href must match a record id below.
+     ============================================================ -->
+<nav class="quicknav" aria-label="Jump to record">
+  <span class="qn-eyebrow">Quick Nav</span>
+  <div class="qn-dd" id="qn-dd">
+    <div class="qn-field">
+      <span class="qn-ico" aria-hidden="true">⌕</span>
+      <input id="qn-search" class="qn-input" type="text" placeholder="Search or jump to a record…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+      <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+    </div>
+    <div class="qn-panel" id="qn-panel" role="listbox">
+      <a class="qn-item" href="#rec-alpha"><span class="qn-dot amber"></span><span class="qn-nm">Record Alpha</span><span class="qn-side">Group A</span></a>
+      <a class="qn-item" href="#rec-bravo"><span class="qn-dot fed"></span><span class="qn-nm">Record Bravo</span><span class="qn-side">Group B</span></a>
+      <a class="qn-item" href="#rec-charlie"><span class="qn-dot maroon"></span><span class="qn-nm">Record Charlie</span><span class="qn-side">Permit</span></a>
+      <div class="qn-empty" hidden>No matching records</div>
+    </div>
+  </div>
+  <span class="qn-hint">N records · A–Z</span>
+</nav>
+
+<!-- ============================================================
+     STICKY TOC  (OPTIONAL alternative to quick-nav) — horizontal
+     scrolling section index. Use on long single-subject guides
+     where sections are the navigation unit. Links target section ids;
+     the scrollspy script highlights the active one.
+     ============================================================ -->
+<nav class="toc" id="toc" aria-label="Sections">
+  <a href="#legend">01 Legend</a>
+  <a href="#components">02 Inline</a>
+  <a href="#table">03 Tables</a>
+  <a href="#records">04 Records</a>
+  <a href="#displays">05 Displays</a>
+  <a href="#buildtables">06 Build tables</a>
+  <a href="#cards">07 Cards</a>
+  <a href="#procedure">08 Procedure</a>
+  <a href="#site">09 Site readout</a>
+</nav>
+
+<!-- ============================================================
+     VERDICT / FIELD BRIEFING — the one-box thesis of the page.
+     v-eyebrow = small label; h2 with one <em> for the accent word.
+     Optional .why sub-grid for 2–4 supporting reason cells.
+     ============================================================ -->
+<div class="verdict">
+  <div class="v-eyebrow">Field Briefing</div>
+  <h2>The single big idea, with one <em>accent phrase</em>.</h2>
+  <p>A short paragraph (2–4 sentences) that frames the whole page: what the reader is looking at, the mental model to hold, and what each section will deliver. Dimmed ink, max ~980px.</p>
+  <div class="why">
+    <div><h4>Reason one</h4><p>A short supporting point in one or two lines.</p></div>
+    <div><h4>Reason two</h4><p>A short supporting point in one or two lines.</p></div>
+    <div><h4>Reason three</h4><p>A short supporting point in one or two lines.</p></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     STAT GRID — headline numbers. .n.fed / .n.mar / .n.good recolor.
+     ============================================================ -->
+<div class="stat-grid">
+  <div class="stat"><div class="n">38</div><div class="l">Primary metric</div></div>
+  <div class="stat"><div class="n">25</div><div class="l">Secondary metric</div></div>
+  <div class="stat"><div class="n fed">13</div><div class="l">Blue-accent metric</div></div>
+  <div class="stat"><div class="n mar">5</div><div class="l">Maroon-accent metric</div></div>
+  <div class="stat"><div class="n good">8</div><div class="l">Green-accent metric</div></div>
+</div>
+
+<!-- ============================================================
+     SECTION 01 — legend / how-to-read. Numbered head + lead + legend grid.
+     ============================================================ -->
+<section id="legend">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Section Heading</h2><span class="tag">Right Tag · N</span></div>
+  <p class="lead">A lead paragraph introducing the section. One or two sentences, dimmed ink, sitting directly under the numbered header.</p>
+  <div class="legend">
+    <div class="lg"><h4>Colour key</h4>
+      <div class="row"><span class="swatch sw-amber"></span><b>Amber</b> — primary / default accent</div>
+      <div class="row"><span class="swatch sw-fed"></span><b>Fed-blue</b> — secondary accent</div>
+      <div class="row"><span class="swatch sw-maroon"></span><b>Maroon</b> — flag / permit-locked</div>
+      <div class="row"><span class="swatch sw-good"></span><b>Green</b> — positive / complete</div>
+    </div>
+    <div class="lg"><h4>Tiers / groups</h4>
+      <div class="row"><b>Group A</b> — short description</div>
+      <div class="row"><b>Group B</b> — short description</div>
+      <div class="row"><b>Group C</b> — short description</div>
+    </div>
+    <div class="lg"><h4>Card fields</h4>
+      <div class="row"><b>Field one</b> — what it means</div>
+      <div class="row"><b>Field two</b> — what it means</div>
+      <div class="row"><b>Field three</b> — what it means</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 02 — inline components: chips, pills, kbd, accent text,
+     rating bars, HUD panel, callouts (incl. icon variant).
+     ============================================================ -->
+<section id="components">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Inline Components</h2><span class="tag">Kit</span></div>
+
+  <h3 class="subhead">Chips &amp; pills</h3>
+  <div class="chips">
+    <span class="chip amber">Amber chip</span>
+    <span class="chip fed">Fed chip</span>
+    <span class="chip maroon">Permit chip</span>
+    <span class="chip faint">Faint chip</span>
+    <span class="pill lo">Low</span>
+    <span class="pill md">Medium</span>
+    <span class="pill hi">High</span>
+    <span class="pill fed">Info</span>
+    <span class="pill neutral">Neutral</span>
+  </div>
+
+  <p class="note-sg">Inline text emphasis uses <span class="acc">accent text</span>, and control references use key caps like <span class="kbd">Ctrl</span> + <span class="kbd">Tab</span> or <span class="kbd">G</span> (landing gear).</p>
+
+  <h3 class="subhead">Rating bars (linear 1–100)</h3>
+  <div class="rating"><span class="score">92<small>/100</small></span><div class="bar"><i style="width:92%"></i></div></div>
+  <div class="rating"><span class="score">64<small>/100</small></span><div class="bar fed"><i style="width:64%"></i></div></div>
+  <div class="rating"><span class="score">38<small>/100</small></span><div class="bar good"><i style="width:38%"></i></div></div>
+
+  <h3 class="subhead">Corner-bracket HUD panel</h3>
+  <div class="hud"><span class="hud-c1"></span><span class="hud-c2"></span>
+    <h4>Framed Panel Title</h4>
+    <p>A HUD-style framed box with four corner brackets in the page accent colour. Use for a key takeaway, a build summary, or a highlighted readout.</p>
+  </div>
+
+  <h3 class="subhead">Callouts</h3>
+  <div class="callout tip"><span class="lbl">Tip</span><p>Positive / helpful aside. Green left edge.</p></div>
+  <div class="callout warn"><span class="lbl">Note</span><p>Caution or caveat. Amber left edge.</p></div>
+  <div class="callout danger"><span class="lbl">Warning</span><p>Hard warning / irreversible action. Red left edge.</p></div>
+  <div class="callout icon tip"><span class="lbl">Icon variant</span><p>Add <b>icon</b> for a leading glyph (★ tip · ▲ warn/danger · ◈ default).</p></div>
+</section>
+
+<!-- ============================================================
+     SECTION 03 — data / comparison table (simple ranked ladder).
+     ============================================================ -->
+<section id="table">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Data Table</h2><span class="tag">Tabular</span></div>
+  <p class="lead">Use for ranked ladders and simple comparisons. Wrap in .tbl-scroll for mobile. Right-align numerics with td.num; highlight a row with tr.hl.</p>
+  <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>#</th><th>Name</th><th>Role stat</th><th class="num">Rating</th><th class="num">Cost (CR)</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="row-rank">01</td><td><b>Item Alpha</b></td><td>Defining stat</td><td class="num">92</td><td class="num">38,500,000</td><td>Top pick</td></tr>
+        <tr><td class="row-rank">02</td><td><b>Item Bravo</b></td><td>Defining stat</td><td class="num">81</td><td class="num">21,000,000</td><td>Strong value</td></tr>
+        <tr><td class="row-rank">03</td><td><b>Item Charlie</b></td><td>Defining stat</td><td class="num">64</td><td class="num">9,800,000</td><td>Budget option</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 04 — record cards (the workhorse). One .rec per entry.
+     Accent variants: ac-amber / ac-fed / ac-maroon / ac-good.
+     Relabel .rcl field labels + .rec-head per page domain.
+     ============================================================ -->
+<section id="records">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Record Cards</h2><span class="tag">Catalogue · 3</span></div>
+  <p class="lead">The repeating data record. Identity rail on the left (banner, name, role line, chips, meta); a relabelable field grid on the right; optional full-width Note and Description strips beneath.</p>
+
+  <div class="rec-list">
+
+    <article class="rec ac-amber" id="rec-alpha">
+      <div class="rec-id">
+        <div class="rec-banner ph">Banner / portrait</div>
+        <div class="rec-id-body">
+          <div class="rec-name"><h3>Record Alpha</h3><a class="permalink" href="#rec-alpha" title="Permalink">#</a></div>
+          <div class="rec-head">Role / one-line descriptor</div>
+          <div class="chips"><span class="chip amber">Group A</span><span class="chip faint">Kind</span></div>
+          <div class="rec-meta">small italic meta line</div>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="rc area-a"><div class="rcl">Location</div>
+          <div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Example</b></div><div class="lk">Body</div><div class="lv">2 A</div><div class="lk">Site</div><div class="lv">Some Base</div></div>
+        </div>
+        <div class="rc area-b"><div class="rcl">Field label two</div><div class="rcv">Plain value text with an optional <b>bold</b> highlight.</div></div>
+        <div class="rc area-c"><div class="rcl">Field label three</div><div class="rcv"><a href="#rec-bravo">Cross-link</a> to another record.</div></div>
+        <div class="rc area-d"><div class="rcl">Field label four</div><div class="rcv">Short value.</div></div>
+        <div class="rc area-e"><div class="rcl">List field</div>
+          <ul class="reclist"><li>List item one</li><li>List item with <a href="#">link</a></li><li>List item three</li></ul>
+        </div>
+      </div>
+      <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">An optional full-width note strip for tactical advice or caveats.</div></div>
+      <div class="rec-desc"><div class="dq-eyebrow">Description</div><div class="dq">An optional italic description / lore strip at the foot of the card.</div></div>
+    </article>
+
+    <article class="rec ac-fed" id="rec-bravo">
+      <div class="rec-id">
+        <div class="rec-banner ph">Banner / portrait</div>
+        <div class="rec-id-body">
+          <div class="rec-name"><h3>Record Bravo</h3><a class="permalink" href="#rec-bravo" title="Permalink">#</a></div>
+          <div class="rec-head">Role / one-line descriptor</div>
+          <div class="chips"><span class="chip fed">Group B</span><span class="chip faint">Kind</span></div>
+          <div class="rec-meta">referred by <a href="#rec-alpha">Record Alpha</a></div>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="rc area-a"><div class="rcl">Field label one</div><div class="rcv">Value text.</div></div>
+        <div class="rc area-b"><div class="rcl">Field label two</div><div class="rcv">Value text.</div></div>
+        <div class="rc area-c"><div class="rcl">Field label three</div><div class="rcv"><span class="kv-tbd">unconfirmed</span></div></div>
+        <div class="rc area-d"><div class="rcl">Field label four</div><div class="rcv">Value text.</div></div>
+        <div class="rc area-e"><div class="rcl">List field</div><ul class="reclist"><li>Item one</li><li>Item two</li></ul></div>
+      </div>
+      <div class="rec-desc nobio"><div class="dq-eyebrow">Description</div><div class="dq">No record available — dimmed placeholder variant (.nobio).</div></div>
+    </article>
+
+    <article class="rec ac-maroon" id="rec-charlie">
+      <div class="rec-id">
+        <div class="rec-banner ph">Banner / portrait</div>
+        <div class="rec-id-body">
+          <div class="rec-name"><h3>Record Charlie</h3><a class="permalink" href="#rec-charlie" title="Permalink">#</a></div>
+          <div class="rec-head">Role / one-line descriptor</div>
+          <div class="chips"><span class="chip maroon">Permit-locked</span><span class="chip faint">Kind</span></div>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="rc area-a"><div class="rcl">Field label one</div><div class="rcv">Value text.</div></div>
+        <div class="rc area-b"><div class="rcl">Field label two</div><div class="rcv">Value text.</div></div>
+        <div class="rc area-c"><div class="rcl">Field label three</div><div class="rcv">Value text.</div></div>
+        <div class="rc area-d"><div class="rcl">Field label four</div><div class="rcv">Value text.</div></div>
+        <div class="rc area-e"><div class="rcl">List field</div><ul class="reclist"><li>Item one</li><li>Item two</li><li>Item three</li></ul></div>
+      </div>
+      <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Permit-locked entries use the maroon accent edge + a maroon chip.</div></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 05 — rating dial + spec grid (headline displays).
+     The dial reads its value from style="--v:NN". Spec grid is a
+     seamless k/v readout for technical stats.
+     ============================================================ -->
+<section id="displays">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Rating Dial &amp; Spec Grid</h2><span class="tag">Displays</span></div>
+  <p class="lead">The circular dial is the headline suitability gauge for a ship × role dossier; the spec grid is the compact technical readout beneath it.</p>
+
+  <div class="ratebox">
+    <div class="dial" style="--v:90"><div class="num">90<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Suitability Rating</div>
+      <div class="d">One short paragraph justifying the score — what the subject does best, and the one thing that holds it just below the top.</div>
+    </div>
+  </div>
+
+  <div class="specgrid">
+    <div class="cell"><div class="k">Top speed / boost</div><div class="v">256 / 345 <small>m/s</small></div></div>
+    <div class="cell"><div class="k">Hardpoints</div><div class="v">4 Large · 2 Medium</div></div>
+    <div class="cell"><div class="k">Utility mounts</div><div class="v">6</div></div>
+    <div class="cell"><div class="k">Hull mass</div><div class="v">450 <small>t</small></div></div>
+    <div class="cell"><div class="k">Base shield</div><div class="v">335 <small>MJ</small></div></div>
+    <div class="cell"><div class="k">Jump range</div><div class="v">19.4 <small>ly</small></div></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 06 — build tables: 3-state loadout (l3, grouped) and
+     pros/cons comparison (cmp, with inline rscore + mini bar).
+     ============================================================ -->
+<section id="buildtables">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Build &amp; Comparison Tables</h2><span class="tag">Tabular</span></div>
+
+  <h3 class="subhead">3-state loadout (table.l3)</h3>
+  <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">Pulse Laser 3</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 — Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">Pulse Laser 3</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 — Overcharged</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant</td><td class="st">5E</td><td class="st">5A</td><td class="eng">5A — Overcharged + Thermal Spread</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="subhead">Pros / cons comparison (table.cmp)</h3>
+  <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:20%"><col style="width:10%"><col style="width:54%"><col style="width:16%"></colgroup>
+      <thead><tr><th>Subject</th><th>Class</th><th>Pros &amp; cons</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="mod">Subject Alpha</td><td>Medium</td>
+          <td class="pcc"><span class="p">Best-in-class at the headline stat; flexible internals</span><span class="c">Thirsty distributor, short jump range</span></td>
+          <td><span class="rscore">93</span><div class="bar mini"><i style="width:93%"></i></div></td>
+        </tr>
+        <tr>
+          <td class="mod">Subject Bravo</td><td>Large</td>
+          <td class="pcc"><span class="p">Huge capacity and tank</span><span class="c">Sluggish; large pad only</span><span class="base">the durable generalist</span></td>
+          <td><span class="rscore">78</span><div class="bar mini"><i style="width:78%"></i></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 07 — card grids: feature/objective cards (.cards>.card)
+     and pick/recommendation cards (.pickgrid>.pickcard).
+     ============================================================ -->
+<section id="cards">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Cards &amp; Recommendations</h2><span class="tag">Cards</span></div>
+
+  <h3 class="subhead">Feature / objective cards</h3>
+  <div class="cards">
+    <div class="card"><span class="ico">Objective</span><h4>Card One</h4><p>A short feature, objective, or option described in two or three lines.</p></div>
+    <div class="card ac-fed"><span class="ico">Objective</span><h4>Card Two</h4><p>Top accent border recolors with ac-fed / ac-maroon / ac-good.</p></div>
+    <div class="card ac-good"><span class="ico">Objective</span><h4>Card Three</h4><p>A short feature, objective, or option described in two or three lines.</p></div>
+  </div>
+
+  <h3 class="subhead">Pick / recommendation cards</h3>
+  <div class="pickgrid">
+    <div class="pickcard">
+      <div class="who">Brand-new · first time</div>
+      <div class="pick">Pick Name <small>· 68 · ~5M all-in</small></div>
+      <p>One or two sentences on why this is the right pick for this reader profile.</p>
+      <div class="alt"><b>Also:</b> a named alternative if they want a different trade-off.</div>
+    </div>
+    <div class="pickcard">
+      <div class="who">One option for everything</div>
+      <div class="pick">Pick Name <small>· 89 · ~80M all-in</small></div>
+      <p>One or two sentences on why this is the safe, capable default.</p>
+      <div class="alt"><b>Also:</b> a named alternative if they want a different trade-off.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 08 — step timeline (numbered vertical procedure).
+     Use <ol class="steps"> for ordered procedures.
+     ============================================================ -->
+<section id="procedure">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Step Procedure</h2><span class="tag">Sequence</span></div>
+  <p class="lead">A numbered vertical timeline for procedures — docking, an unlock sequence, a farm loop. Each step has a bold .st title and supporting prose.</p>
+  <ol class="steps">
+    <li><span class="st">First action</span><p>What the commander does first, with any <span class="kbd">key</span> references inline.</p></li>
+    <li><span class="st">Second action</span><p>The next step, kept to one or two lines. Use <span class="acc">accent text</span> for the critical detail.</p></li>
+    <li><span class="st">Third action</span><p>The final step. The connector line stops at the last node.</p></li>
+  </ol>
+</section>
+
+<!-- ============================================================
+     SECTION 09 — site / coordinate readout. Location card with
+     dashed k/v rows and a click-to-copy coordinate chip.
+     ============================================================ -->
+<section id="site">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Site Readout</h2><span class="tag">Location</span></div>
+  <p class="lead">For material-farm and point-of-interest sites: a location card with a copyable coordinate chip (click to copy via the script below).</p>
+  <div class="loc-card">
+    <div class="loc-row"><span class="loc-k">System</span><span class="loc-v">Hyades Sector DR-V c2-23</span></div>
+    <div class="loc-row"><span class="loc-k">Orbital Body</span><span class="loc-v">A 5</span></div>
+    <div class="loc-row"><span class="loc-k">Site Coordinates</span><span class="loc-v"><span class="coord" data-copy="50.5322, 137.4363"><span>50.5322, 137.4363</span><span class="cp">Copy</span></span></span></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER — series breadcrumb + provenance.
+     ============================================================ -->
+<footer>
+  <span>CMDR Ka0s · Field Manual</span>
+  <span>Part <b>N</b> · Section name</span>
+  <span><b>N</b> records catalogued</span>
+  <span>Verified vs <b>INARA</b> · Live 4.0</span>
+  <span>Next: <b>Linked manual</b></span>
+</footer>
+
+</div>
+
+<!-- ============================================================
+     SCRIPTS
+     1) Quick-nav dropdown — only if the .quicknav block is present.
+     2) TOC scrollspy — only if the nav.toc block is present.
+     3) Coordinate copy — only if .coord[data-copy] chips are present.
+     All three are null-safe; drop the ones you don't use.
+     ============================================================ -->
+</div>
+<script src="../js/ed-blackbox.js" defer></script>
+</body>
+</html>

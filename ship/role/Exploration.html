@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exploration Role Dossier — Ship Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#25b0a0;        /* per-dossier accent (see conventions table) */
+    --acc-lt:#63e2d2;
+    --acc-deep:#0f5249;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+
+  /* role-dossier additions */
+  td.cnum{font-family:'Chakra Petch',sans-serif;font-size:13.5px;color:var(--ink);text-align:right;white-space:nowrap}
+  td.ceng{font-size:12.5px;color:var(--ink-dim)}
+  td.ceng b{color:var(--acc-lt);font-weight:500}
+  td.led{font-size:12.5px;color:var(--ink-dim);line-height:1.4}
+  table.cmp2{table-layout:fixed}
+  .recgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .rec{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--acc);border-radius:var(--radius);padding:15px 17px}
+  .rec .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--amber);font-weight:600}
+  .rec .pick{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--acc-lt);margin:5px 0 7px;font-weight:600}
+  .rec .pick small{color:var(--ink-faint);font-size:12px;font-weight:400}
+  .rec p{margin:0;font-size:13.5px;color:var(--ink-dim)}
+  .rec .alt{margin-top:8px;font-size:12.5px;color:var(--ink-faint)}
+  .rec .alt b{color:var(--ink-dim);font-weight:500}
+  .anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+  .anchors .cell{background:var(--panel);padding:12px 14px}
+  .anchors .s{font-family:'Chakra Petch',sans-serif;font-size:24px;color:var(--acc-lt);font-weight:700}
+  .anchors .n{font-size:13px;color:var(--ink);margin-top:2px}
+  .anchors .n small{color:var(--ink-faint);display:block;font-size:11px}
+  @media(max-width:680px){.recgrid{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Role Dossier <span class="sep">//</span> Exploration</div>
+    <h1>Exploration<span class="role">Ship Comparison</span></h1>
+    <p class="lede">Every exploration-capable hull, judged <b>for deep-space exploration specifically</b> and ranked on one 1&ndash;100 scale. Exploration rewards a different set of virtues from combat &mdash; <b>jump range</b> above all, then a cool-running heat profile, a panoramic canopy, fuel-scoop throughput, and the internal room for an AFMU, SRV and DSS. This dossier groups all <b>14 explorers</b> by pad class, ranks them, breaks down what each costs to buy, A-rate and engineer, and closes with picks for different kinds of explorer.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Ships compared</span><b>14</b></div><div class="chip"><span>Classes</span><b>Small / Medium / Large</b></div><div class="chip"><span>Defining stat</span><b>Engineered jump (LY)</b></div><div class="chip"><span>Ceiling</span><b>Mandalay 96</b></div><div class="chip"><span>Floor</span><b>Adder 60</b></div>
+    </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:96"><div class="num">96<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">How to read the scale</div>
+        <div class="d">A ship&rsquo;s number is its <b>fully-built explorer ceiling</b> relative to the field &mdash; not stock range. The <span class="acc">Mandalay (96)</span> anchors the top and the <span class="acc">Adder (60)</span> the floor. Jump figures are <b>approximate engineered maxima</b> (A-rated SCO FSD, Guardian booster, stripped/lightweight) and shift with the build.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 How scored</a>
+    <a href="#s3">03 The full ladder</a>
+    <a href="#s4">04 Small pad</a>
+    <a href="#s5">05 Medium pad</a>
+    <a href="#s6">06 Large pad</a>
+    <a href="#s7">07 Recommendations</a>
+    <a href="#s8">08 Cost &amp; engineering</a>
+    <a href="#s9">09 Field notes</a>
+  </nav>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>The Exploration Role</h2></div>
+    <p>Exploration is the long game: leaving the bubble to scan systems, map bodies, hunt exobiology and bank cartographics. The ship requirements are almost the opposite of combat &mdash; you optimise for reach and self-sufficiency, not firepower.</p><ul class="clean"><li><b>Honk &amp; map.</b> Discovery Scanner (the &ldquo;honk&rdquo;) plus a Detailed Surface Scanner to map high-value bodies. The bread-and-butter income.</li><li><b>Exobiology.</b> Odyssey on-foot sampling of biological signals &mdash; the highest-paying exploration activity, and it rewards range + a good SRV/disembark workflow.</li><li><b>Long-range expeditions.</b> Trips to the galactic core, the rim or named landmarks &mdash; here jump range and fuel-tank size decide how smoothly you travel.</li><li><b>Road-to-Riches.</b> Curated routes of high-value mapping targets close to the bubble; the standard way to bank a first fortune.</li></ul><div class="callout amber"><span class="lbl">What makes an explorer</span>Jump range first, then heat (low heat = safe fuel-scooping and neutron boosting), a clear canopy for honking and landing, and internal room for an AFMU (self-repair), an SRV (planetary work) and the scanners. A big fuel tank turns range into <em>reach</em>.</div>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>How These Ships Are Scored</h2></div>
+    <p>The 1&ndash;100 exploration rating weighs, in order:</p><ul class="clean"><li><b>Engineered jump range</b> &mdash; the single biggest factor; it sets how far each jump takes you and how few you make.</li><li><b>Heat profile</b> &mdash; cool ships scoop safely and survive neutron/white-dwarf boosting.</li><li><b>Fuel tank &amp; reach</b> &mdash; how many jumps between stars; big tanks cross sparse regions.</li><li><b>Canopy &amp; visibility</b> &mdash; quality-of-life for honking, landing and bio-hunting.</li><li><b>Internals</b> &mdash; room for AFMU, SRV, DSS and a fuel scoop without compromise.</li><li><b>Comfort &amp; cost</b> &mdash; agility, looks and how little it hurts to lose far from home.</li></ul><p>The scale is roster-relative and engineered-state. Class is not a handicap in the number &mdash; a small explorer and a large one on the same score are not equal in reach; the small one is simply excellent <em>for its class</em>. Compare within a class first.</p><div class="anchors"><div class="cell"><div class="s">96</div><div class="n">Mandalay<small>the ceiling</small></div></div><div class="cell"><div class="s">93</div><div class="n">Krait Phantom<small>best all-rounder</small></div></div><div class="cell"><div class="s">86</div><div class="n">Diamondback Explorer<small>budget range king</small></div></div><div class="cell"><div class="s">72</div><div class="n">Asp Explorer<small>the classic benchmark</small></div></div><div class="cell"><div class="s">60</div><div class="n">Adder<small>the floor</small></div></div></div><p class="subhd">The three cost figures</p><ul class="clean"><li><b>Hull</b> — the shipyard price of the bare ship.</li><li><b>A-rated fit (no engineering)</b> — an approximate all-in credit total for a full role-appropriate loadout using the best <em>buyable</em> modules. A ballpark; your module choices swing it.</li><li><b>To engineer</b> — engineering costs <b>materials and engineer unlocks, not credits</b>. A fully-engineered ship costs the same credits as its A-rated fit; the extra cost is a materials grind whose <b>tier</b> (Moderate / Heavy / Very heavy) scales with hull size.</li></ul><div class="callout acc"><span class="lbl">The rebuy column</span>The cost tables also list an approximate <b>rebuy</b> (~5% of insured value) — what you pay each time the ship is destroyed. It is the number that really governs how boldly you can fly.</div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>The Full Exploration Ladder</h2></div>
+    <p>All 14 explorers on one scale, best to worst. The jump figures are approximate engineered maxima; the per-class breakdowns and costs follow.</p>
+    <table class="cmp2">
+      <colgroup><col style="width:17%"><col style="width:10%"><col style="width:16%"><col style="width:7%"><col style="width:38%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump</th><th>Dist.</th><th>One-line verdict</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Mandalay</td><td><span class="tag g">Medium</span></td><td>~85 LY</td><td>PD5</td><td class="led">The modern explorer king &mdash; range, heat and visibility all at the top.</td><td><span class="rscore">96</span><div class="bar"><i style="width:96%"></i></div></td></tr>
+<tr><td class="mod">Anaconda</td><td><span class="tag r">Large</span></td><td>~82 LY</td><td>PD8</td><td class="led">The long-haul jump monster &mdash; unmatched legs between scoops.</td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
+<tr><td class="mod">Krait Phantom</td><td><span class="tag g">Medium</span></td><td>~80 LY</td><td>PD7</td><td class="led">The do-everything medium explorer &mdash; range, speed and space in one.</td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
+<tr><td class="mod">Caspian Explorer</td><td><span class="tag r">Large</span></td><td>~77 LY</td><td>PD7</td><td class="led">The luxury large explorer &mdash; superb if money is no object.</td><td><span class="rscore">92</span><div class="bar"><i style="width:92%"></i></div></td></tr>
+<tr><td class="mod">Asp Explorer</td><td><span class="tag g">Medium</span></td><td>~72 LY</td><td>PD4</td><td class="led">The beloved budget benchmark &mdash; still the easy first explorer.</td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+<tr><td class="mod">Diamondback Explorer</td><td><span class="tag a">Small</span></td><td>~75 LY</td><td>PD4</td><td class="led">The cold-running budget range king &mdash; huge legs for pocket change.</td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+<tr><td class="mod">Dolphin</td><td><span class="tag a">Small</span></td><td>~60 LY</td><td>PD3</td><td class="led">The cosy small tourer &mdash; range is fine, the ride is lovely.</td><td><span class="rscore">79</span><div class="bar"><i style="width:79%"></i></div></td></tr>
+<tr><td class="mod">Imperial Courier</td><td><span class="tag a">Small</span></td><td>~54 LY</td><td>PD3</td><td class="led">A quick scenic runabout &mdash; not a deep-space ship.</td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
+<tr><td class="mod">Asp Scout</td><td><span class="tag g">Medium</span></td><td>~66 LY</td><td>PD4</td><td class="led">The Asp X&rsquo;s poor cousin &mdash; buy the Explorer instead.</td><td><span class="rscore">73</span><div class="bar"><i style="width:73%"></i></div></td></tr>
+<tr><td class="mod">Cobra Mk III</td><td><span class="tag a">Small</span></td><td>~55 LY</td><td>PD3</td><td class="led">A charming budget starter that explores on the side.</td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
+<tr><td class="mod">Diamondback Scout</td><td><span class="tag a">Small</span></td><td>~62 LY</td><td>PD3</td><td class="led">A frosty budget scout &mdash; outshone by its bigger sibling.</td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+<tr><td class="mod">Type-6 Transporter</td><td><span class="tag g">Medium</span></td><td>~52 LY</td><td>PD3</td><td class="led">A thrifty hauler that moonlights as an explorer.</td><td><span class="rscore">66</span><div class="bar"><i style="width:66%"></i></div></td></tr>
+<tr><td class="mod">Hauler</td><td><span class="tag a">Small</span></td><td>~58 LY</td><td>PD1</td><td class="led">The meme budget explorer &mdash; real range for nearly free.</td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+<tr><td class="mod">Adder</td><td><span class="tag a">Small</span></td><td>~56 LY</td><td>PD2</td><td class="led">A humble all-rounder that explores on a shoestring.</td><td><span class="rscore">60</span><div class="bar"><i style="width:60%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Read it in bands: <b>88&ndash;96</b> is a top-tier expedition ship; <b>72&ndash;87</b> is a genuinely good explorer; <b>60&ndash;71</b> is a capable budget or starter hull. Note how little class matters here &mdash; a 96 medium out-explores most larges, because reach, not bulk, is what counts.</p>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Small-Pad Exploration</h2></div>
+    <p>Small explorers are cheap, land anywhere, and several punch far above their price on pure range. They lack the fuel-tank reach of the big hulls, but for Road-to-Riches and bubble-edge exobiology they are perfect &mdash; and you&rsquo;ll never weep over the rebuy.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump</th><th>Pros &amp; cons for exploration</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~75 LY</td><td class="pcc"><span class="p">Legendary range-per-credit (~75 LY) and runs ice-cold</span><span class="p">Lands on any pad; tiny rebuy</span><span class="c">Cramped internals and a basic canopy; sluggish boost</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+<tr><td class="mod">Dolphin</td><td>Small</td><td>~60 LY</td><td class="pcc"><span class="p">Comfortable, cool, lovely canopy; lands anywhere</span><span class="p">A genuinely pleasant small tourer</span><span class="c">Modest range (~60 LY) and a fragile hull</span></td><td><span class="rscore">79</span><div class="bar"><i style="width:79%"></i></div></td></tr>
+<tr><td class="mod">Imperial Courier</td><td>Small</td><td>~54 LY</td><td class="pcc"><span class="p">Very fast with a strong shield for a small explorer</span><span class="c">Tiny fuel tank and internals; Imperial rank gate; short legs (~54 LY)</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
+<tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~55 LY</td><td class="pcc"><span class="p">Classic cheap multirole; fast, with a decent ~55 LY range</span><span class="c">Small fuel tank and internals; dated for long expeditions</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
+<tr><td class="mod">Diamondback Scout</td><td>Small</td><td>~62 LY</td><td class="pcc"><span class="p">Extremely cool-running, agile and cheap</span><span class="c">Small internals; the DBX does everything it does, better</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+<tr><td class="mod">Hauler</td><td>Small</td><td>~58 LY</td><td class="pcc"><span class="p">Absurd range-per-credit when stripped; lands anywhere</span><span class="p">Costs almost nothing to fly or lose</span><span class="c">Tiny, fragile, zero comfort or internal room</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+<tr><td class="mod">Adder</td><td>Small</td><td>~56 LY</td><td class="pcc"><span class="p">Cheap, balanced, with room for a small SRV and decent range</span><span class="c">Slow and very plain</span></td><td><span class="rscore">60</span><div class="bar"><i style="width:60%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each small hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Diamondback Explorer</td><td class="cnum">1.9M</td><td class="cnum amb">~5.5M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~273k</td></tr>
+<tr><td class="mod">Dolphin</td><td class="cnum">1.3M</td><td class="cnum amb">~4.9M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~244k</td></tr>
+<tr><td class="mod">Imperial Courier</td><td class="cnum">2.5M</td><td class="cnum amb">~4.0M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~200k</td></tr>
+<tr><td class="mod">Cobra Mk III</td><td class="cnum">350k</td><td class="cnum amb">~2.7M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~136k</td></tr>
+<tr><td class="mod">Diamondback Scout</td><td class="cnum">564k</td><td class="cnum amb">~2.5M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~125k</td></tr>
+<tr><td class="mod">Hauler</td><td class="cnum">53k</td><td class="cnum amb">~1.0M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~50k</td></tr>
+<tr><td class="mod">Adder</td><td class="cnum">88k</td><td class="cnum amb">~1.2M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~62k</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Small-pad takeaway</span>The <span class="amb">Diamondback Explorer (86)</span> is the budget range king &mdash; ice-cold and ~75 LY for a pittance. The <span class="amb">Dolphin (79)</span> trades a little range for a lovely, comfortable ride. Below them the <span class="amb">Hauler</span> is the famous near-free range meme. None has the fuel tank for the deepest expeditions, but all are superb close-range scanners.</div>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>Medium-Pad Exploration</h2></div>
+    <p>The medium class owns exploration. A medium pad mounts a top-tier FSD, stays light enough for monster range, runs cool, and docks almost everywhere. If you buy one explorer for life, it is almost certainly a medium.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump</th><th>Pros &amp; cons for exploration</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Mandalay</td><td>Medium</td><td>~85 LY</td><td class="pcc"><span class="p">Best-in-class engineered range (~85 LY) with a superb cool-running heat profile</span><span class="p">Gorgeous panoramic canopy, agile, ships with an SCO FSD; cheap hull (~17M)</span><span class="c">Medium tank only &mdash; treat the hull as fragile far from the bubble</span></td><td><span class="rscore">96</span><div class="bar"><i style="width:96%"></i></div></td></tr>
+<tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~80 LY</td><td class="pcc"><span class="p">~80 LY, fast, with an SLF bay and excellent internals</span><span class="p">The most well-rounded medium explorer; no rank gate</span><span class="c">Costs ~36M; canopy view is good but less open than the Asp</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
+<tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~72 LY</td><td class="pcc"><span class="p">The classic &mdash; iconic wrap-around canopy and a great ~72 LY range</span><span class="p">Dirt cheap (~6M); the benchmark explorers are measured against</span><span class="c">Thin shields/tank; outclassed on range and heat by the Mandalay</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+<tr><td class="mod">Asp Scout</td><td>Medium</td><td>~66 LY</td><td class="pcc"><span class="p">A cheaper, cool-running Asp sibling</span><span class="c">Weaker on range, internals and everything else than the Explorer</span></td><td><span class="rscore">73</span><div class="bar"><i style="width:73%"></i></div></td></tr>
+<tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~52 LY</td><td class="pcc"><span class="p">Cheap and surprisingly long-legged for a cargo hull</span><span class="c">Paper tank and no expedition frills</span></td><td><span class="rscore">66</span><div class="bar"><i style="width:66%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each medium hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Mandalay</td><td class="cnum">18M</td><td class="cnum amb">~26M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~1.3M</td></tr>
+<tr><td class="mod">Krait Phantom</td><td class="cnum">37M</td><td class="cnum amb">~89M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~4.4M</td></tr>
+<tr><td class="mod">Asp Explorer</td><td class="cnum">6.7M</td><td class="cnum amb">~14M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~719k</td></tr>
+<tr><td class="mod">Asp Scout</td><td class="cnum">4.0M</td><td class="cnum amb">~6.8M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~339k</td></tr>
+<tr><td class="mod">Type-6 Transporter</td><td class="cnum">1.0M</td><td class="cnum amb">~4.5M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~226k</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Medium-pad takeaway</span>The <span class="amb">Mandalay (96)</span> is simply the best explorer in the game &mdash; range, heat and canopy all at the top, for a ~17M hull. The <span class="amb">Krait Phantom (93)</span> is the do-everything alternative with an SLF bay and more internal room. The evergreen <span class="amb">Asp Explorer (88)</span> remains the friendliest first explorer at ~6M. Skip the Asp Scout &mdash; the Explorer beats it on every axis.</div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>Large-Pad Exploration</h2></div>
+    <p>Large explorers exist for one thing: <b>reach</b>. Their enormous fuel tanks let you cross the sparsest regions of the galaxy with the fewest scoops, and their internals swallow every expedition module at once. The price is a large pad, ponderous handling, and a fortune in hull and rebuy.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump</th><th>Pros &amp; cons for exploration</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Anaconda</td><td>Large</td><td>~82 LY</td><td class="pcc"><span class="p">The &ldquo;jumpaconda&rdquo; &mdash; huge range plus a massive fuel tank for the longest single legs</span><span class="p">Cavernous internals for AFMU/SRV/repair; no rank gate</span><span class="c">Large pad, ponderous handling, and a heavy rebuy if you bin it</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
+<tr><td class="mod">Caspian Explorer</td><td>Large</td><td>~77 LY</td><td class="pcc"><span class="p">Purpose-built large explorer &mdash; big range, big tank, big comfort</span><span class="p">Generous internals for a fully-kitted expedition rig</span><span class="c">Large pad; eye-watering ~190M hull</span></td><td><span class="rscore">92</span><div class="bar"><i style="width:92%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each large hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Anaconda</td><td class="cnum">147M</td><td class="cnum amb">~355M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~18M</td></tr>
+<tr><td class="mod">Caspian Explorer</td><td class="cnum">195M</td><td class="cnum amb">~419M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~21M</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Large-pad takeaway</span>The <span class="amb">Anaconda (94)</span> is the jump monster &mdash; the longest legs in the game and no rank gate. The <span class="amb">Caspian Explorer (92)</span> is the purpose-built luxury option, superb but ~190M. For most commanders a medium does 95% of the job at a tenth of the cost &mdash; the larges earn their keep only on the very longest hauls.</div>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Recommendations By Explorer</h2></div>
+    <p>There is no single best explorer &mdash; only the best one for how far you go and what you can spend. Pick the description that fits you.</p><div class="recgrid"><div class="rec"><div class="who">Brand-new · cheapest way to start scanning</div><div class="pick">Diamondback Explorer <small>· 86 · ~3M all-in</small></div><p>Famous range-per-credit (~75 LY), runs so cool you can neutron-boost safely, and lands on any pad. The smartest first explorer by a mile.</p><div class="alt"><b>Also:</b> the <b>Hauler</b> for near-free range, or <b>Asp Explorer</b> if you can stretch to ~6M.</div></div><div class="rec"><div class="who">One explorer for life</div><div class="pick">Mandalay <small>· 96 · ~25M all-in</small></div><p>Top range, top heat, a gorgeous canopy and an SCO FSD &mdash; the complete modern expedition ship, and cheap for what it delivers.</p><div class="alt"><b>Also:</b> <b>Krait Phantom</b> if you want an SLF bay and more internal room.</div></div><div class="rec"><div class="who">The do-everything medium</div><div class="pick">Krait Phantom <small>· 93 · ~55M all-in</small></div><p>~80 LY, fast, roomy and SLF-capable &mdash; it explores brilliantly and re-roles into trade or combat on the same hull.</p><div class="alt"><b>Also:</b> <b>Mandalay</b> for pure range; <b>Asp Explorer</b> for half the price.</div></div><div class="rec"><div class="who">Longest legs, deepest expeditions</div><div class="pick">Anaconda <small>· 94 · ~290M all-in</small></div><p>The jumpaconda&rsquo;s vast fuel tank means the fewest scoops crossing the void &mdash; the right tool for core runs and rim expeditions, with no rank gate.</p><div class="alt"><b>Also:</b> <b>Caspian Explorer</b> for a comfier (pricier) large.</div></div><div class="rec"><div class="who">Cosy scenic tourism near the bubble</div><div class="pick">Dolphin <small>· 79 · ~6M all-in</small></div><p>Cool, comfortable, lovely to fly and lands anywhere &mdash; ideal for Road-to-Riches and relaxed exobiology hops.</p><div class="alt"><b>Also:</b> <b>Diamondback Explorer</b> for more range, less comfort.</div></div><div class="rec"><div class="who">The sentimental classic</div><div class="pick">Asp Explorer <small>· 88 · ~12M all-in</small></div><p>That panoramic canopy and a great ~72 LY range for ~6M &mdash; the explorer a generation of commanders learned the black on.</p><div class="alt"><b>Also:</b> the <b>Mandalay</b> is its modern successor in every measurable way.</div></div></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>Cost &amp; Engineering Reality</h2></div>
+    <p>An explorer lives or dies on its FSD. The engineering tour is short and shared across every hull here &mdash; and far lighter than a combat grind.</p><table><thead><tr><th>Module</th><th>Blueprint (G5)</th><th>Experimental</th><th>Engineer</th></tr></thead><tbody><tr><td class="mod">Frame Shift Drive (SCO)</td><td>Increased Range</td><td><span class="acc">Mass Manager</span> (size 5+) / Deep Charge (size 4&minus;)</td><td>Felicity Farseer</td></tr><tr><td class="mod">Thrusters</td><td>Clean Drive Tuning</td><td>Drag Drives</td><td>Prof. Palin</td></tr><tr><td class="mod">Power Plant</td><td>Low Emissions</td><td>Thermal Spread</td><td>Hera Tani</td></tr><tr><td class="mod">Life Support / Sensors</td><td>Lightweight</td><td>&mdash;</td><td>Felicity Farseer</td></tr><tr><td class="mod">Shield Generator (light)</td><td>Enhanced Low Power</td><td>&mdash;</td><td>Lei Cheung</td></tr></tbody></table><div class="callout"><span class="lbl">Why this grind is the easy one</span>The only blueprint that truly matters is <b>FSD Increased Range</b> &mdash; one engineer (Farseer), one of the first you unlock, and the bulk of your range gain. Everything else is lightweighting to squeeze out a few more light-years. Engineering costs <b>materials, not credits</b>; for explorers the materials tier is <b>Moderate</b> even on the larges, because there are no weapons or hull stacks to roll.</div><p class="subhd">Two practical notes</p><ul class="clean"><li><b>The Guardian FSD Booster is mandatory.</b> A tech-broker unlock that adds a flat range bonus (up to ~+10.5 LY) &mdash; the single best non-engineering upgrade an explorer can fit.</li><li><b>Strip for range.</b> Lightweight everything, D-rate non-essentials, carry only the fuel you need; every tonne shed is range gained. An AFMU and SRV are the only &ldquo;heavy&rdquo; modules worth their mass far from home.</li></ul>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Field Notes &amp; Verdict</h2></div>
+    <ul class="clean"><li><b>Range is reach, but the tank is endurance.</b> A high-jump small ship can out-jump an Anaconda per hop, yet the Anaconda crosses a sparse region in fewer stops because it carries more fuel. Match the tool to the trip.</li><li><b>Heat is a safety system.</b> Cool ships scoop without cooking and survive neutron boosting; a hot ship turns every fuel star into a gamble.</li><li><b>Mediums are the sweet spot.</b> They jump like the best, run cool, and dock anywhere &mdash; the rational explorer for almost everyone.</li><li><b>Bring an AFMU and an SRV.</b> Self-repair and planetary mobility are what make deep expeditions and exobiology viable; they are worth their mass.</li><li><b>The rebuy is your safety net far from home.</b> A cheap hull means a careless landing or a hot scoop costs almost nothing &mdash; one reason the budget explorers are so beloved.</li></ul><div class="callout acc"><span class="lbl">Verdict</span>For the best explorer in the game, buy the <b>Mandalay (96)</b>. For the deepest expeditions, the <b>Anaconda (94)</b>&rsquo;s fuel tank rules. For the best value, the <b>Diamondback Explorer (86)</b> delivers huge range for almost nothing &mdash; and the <b>Asp Explorer (88)</b> remains the classic everyone should fly at least once.</div>
+  </section>
+
+  <footer>
+    <p><b>Exploration · Role Comparison Dossier</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data, cross-checked against Inara. Ratings are role-suitability judgements on a 1&ndash;100 scale, frozen across the per-ship manuals and anchored across the explorer roster. Jump ranges are approximate engineered maxima (A-rated SCO FSD + Guardian booster, lightweight). Cost figures are approximate. Engineering costs materials and engineer unlocks, not credits.</p>
+  </footer>
+
+</div>
+</body>
+</html>

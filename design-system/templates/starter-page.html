@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAGE TITLE — CMDR Ka0s Field Manual</title>
+
+<!-- ============================================================
+     1. LINK THE DESIGN SYSTEM. This is the ONLY stylesheet.
+        Adjust the path to ed-blackbox.css for THIS page's depth, OR use
+        the published root-relative path (recommended on GitHub Pages):
+          /ed-blackbox/design-system/css/ed-blackbox.css
+        Fonts are pulled in automatically by the CSS @import — no font
+        <link> needed.
+     ============================================================ -->
+<link rel="stylesheet" href="/ed-blackbox/design-system/css/ed-blackbox.css">
+
+<!-- ============================================================
+     2. (OPTIONAL) PER-PAGE THEME. Override ONLY the --accent* group.
+        Delete this block to use the amber default. Examples in
+        docs/02-tokens.md. Combat shown below:
+     ============================================================ -->
+<style>
+  :root{
+    --accent:var(--maroon-lt); --accent-lt:var(--maroon-lt); --accent-deep:#5e0f1a;
+    --accent-soft:rgba(177,49,64,.45); --accent-glow:rgba(177,49,64,.12);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ---- MASTHEAD (required) ---- -->
+  <header class="masthead">
+    <div class="kicker">Series Label <span class="sep">//</span> Part N <span class="sep">//</span> Section<span class="id">CMDR KA0S · INARA 173082</span></div>
+    <h1 class="title">Page <span>Title</span></h1>
+    <p class="subtitle">One-sentence scope statement with the <b>key phrase</b> in bright ink.</p>
+    <div class="masthead-meta">
+      <span>Part <b>N of M</b></span>
+      <span>Sources <b>INARA · EDSM · EDCD</b></span>
+      <span>Patch <b>Live 4.0</b></span>
+    </div>
+  </header>
+
+  <!-- ---- VERDICT (optional but common) ---- -->
+  <div class="verdict">
+    <div class="v-eyebrow">Field Briefing</div>
+    <h2>The single big idea, with one <em>accent phrase</em>.</h2>
+    <p>Two-to-four sentences framing the whole page.</p>
+  </div>
+
+  <!-- ---- SECTIONS (number sequentially) ---- -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">01</span><h2>First Section</h2><span class="tag">Tag</span></div>
+    <p class="lead">Lead paragraph.</p>
+    <!-- Drop in components from the gallery: .stat-grid, .rec-list, table.data,
+         .ratebox, .specgrid, .cards, .pickgrid, ol.steps, .callout, .loc-card … -->
+  </section>
+
+  <!-- ---- FOOTER (required) ---- -->
+  <footer>
+    <span>CMDR Ka0s · Field Manual</span>
+    <span>Part <b>N</b></span>
+    <span>Verified vs <b>INARA</b> · Live 4.0</span>
+    <span>Next: <b>Sibling manual</b></span>
+  </footer>
+
+</div>
+
+<!-- ============================================================
+     3. LINK THE BEHAVIOURS. Safe to include always (each module is
+        null-safe). Match the path to ed-blackbox.js as in step 1.
+     ============================================================ -->
+<script src="/ed-blackbox/design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

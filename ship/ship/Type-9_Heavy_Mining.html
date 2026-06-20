@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Type-9 Heavy · Mining</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#9b6cd4;
+    --acc-lt:#c79bf2;
+    --acc-deep:#4a2d72;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1>Type-9 Heavy<span class="role">Mining</span></h1>
+    <p class="lede">The galaxy's biggest ore bucket. The Type-9 Heavy turns its <b>enormous internal bay</b> to mining: room for a full limpet fleet, the largest refinery, and a cargo hold measured in the hundreds of tonnes &mdash; so a single laser-mining session fills a hold that would take a medium ship four trips to match.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Large &middot; Pad L</b></div>
+      <div class="chip"><span>Max cargo</span><b>~512+ t</b></div>
+      <div class="chip"><span>Hardpoints</span><b>3M &middot; 2S</b></div>
+      <div class="chip"><span>Hull</span><b>~72M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Mining</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:90"><div class="num">90<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Mining Suitability Rating</div>
+        <div class="d">A top-tier laser-mining barge on raw capacity alone. Its weak shields and glacial speed make it a sitting duck if pirates find it, so it shines in safe rings, solo, or under a wing's protection. For sheer volume per session, almost nothing beats it; the Type-11 edges it only by being purpose-built.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Type-9 Heavy is Lakon's bulk freighter, and mining is simply bulk hauling with extra steps &mdash; which is exactly why it excels at it. Eleven optional internals (topped by two class-8 slots) swallow a maximum-size refinery, several collector and prospector limpet controllers, and still leave hundreds of tonnes of cargo room for the ore.</p>
+    <p>The trade is survivability. The Type-9 has notoriously weak shields and the agility of a moon &mdash; it cannot run from or fight off a determined pirate. As a mining platform that means choosing your ring carefully: mine in solo or a private group, pick low-threat systems, or bring a wingmate to ride shotgun. Get the safety right and it is the most productive laser-mining session in the game.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>High-volume laser and surface mining in safe rings &mdash; painite, platinum, low-temperature diamonds and tritium hauled by the hundreds of tonnes per session, ideally in solo or under escort.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">132 / 202 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~512+ <small>t (mining fit)</small></div></div>
+      <div class="cell"><div class="k">Refinery</div><div class="v">Up to class 8 slot</div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3 Medium &middot; 2 Small</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4 <small>(for PWA)</small></div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">850 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~110 <small>MJ (weak)</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">864</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">8&middot;8&middot;7&middot;6&middot;5&middot;4&middot;4&middot;3&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Core sizes</div><div class="v"><span style="font-size:13px;letter-spacing:.3px">PP6 &middot; TH7 &middot; FSD6 &middot; LS5 &middot; PD6 &middot; SS4 &middot; FT6</span></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">4</div></div>
+      </div>
+    <p>Four things make the Type-9 a mining powerhouse:</p>
+    <ul class="clean">
+      <li><b>The biggest hold.</b> Hundreds of tonnes of ore per trip &mdash; the single longest mining session of any non-Cutter hull, so you make fewer, fatter runs to market.</li>
+      <li><b>Room for the full limpet fleet.</b> Multiple collector and prospector controllers plus a class-8 refinery means limpets do the gathering while you cut, maximising yield per minute.</li>
+      <li><b>Three medium mining mounts.</b> Three large-equivalent mining lasers (or a core-mining toolkit) chew through deposits fast.</li>
+      <li><b>Cheap to run for the capacity.</b> No rank or permit gate, and the credits-per-session from a full hold of high-value ore are enormous.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>The Imperial Cutter carries even more and survives pirates with its huge shields; the Type-11 Prospector is purpose-built with dedicated mining mounts and far better speed and shields. The Type-9's weak shields and crawling speed are a real liability &mdash; it is the volume champion only when you can mine somewhere safe. In a hot ring it is prey.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the mining role specifically</em>. The role column is approximate maximum cargo &mdash; the ore capacity that decides how long you can mine before a market run.</p>
+    <p class="subhd">Same class &mdash; large-pad miners</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-9 Heavy</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Even more cargo, plus huge shields that survive pirates</span><span class="c">Imperial Duke rank; very expensive; large pad</span></td><td><span class="rscore">92</span><div class="bar"><i style="width:92%"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy <span class="tag r">this</span></td><td>Large</td><td>~790</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Mines and defends itself; flexible</span><span class="c">Less cargo; costlier to outfit well</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Cheap; medium-ish handling; decent hold</span><span class="c">Far less cargo; also fragile</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~250</td><td class="pcc"><span class="p">Fast for a large ship; can flee trouble</span><span class="c">Modest mining cargo; awkward big pad needs</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>~618</td><td class="pcc"><span class="p">Can mine and obliterate any pirate that shows up</span><span class="c">Federal rank; overkill and costly for mining</span></td><td><span class="rscore">66</span><div class="bar"><i style="width:66%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Among large miners the Type-9 is the value volume king &mdash; only the rank-gated, far pricier Imperial Cutter beats it, and chiefly on survivability rather than raw capacity. If you can mine safely, the Type-9 delivers Cutter-class hauls without the Imperial grind.</p>
+    <p class="subhd">Other classes &mdash; medium miners</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-9 Heavy</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-11 Prospector</td><td>Medium</td><td>~288</td><td class="pcc"><span class="p">Purpose-built miner; dedicated mounts; fast and well-shielded</span><span class="c">Less cargo; far costlier than the Type-9</span></td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Mines, fights and flees; medium-pad access</span><span class="c">Less cargo than the Type-9; pricier per tonne</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Big medium hold; cheaper; medium-pad access</span><span class="c">Still fragile; less cargo than the Type-9</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">Can defend itself; medium-pad; flexible</span><span class="c">Modest cargo for serious mining</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">Cheap entry miner with an SLF for defence</span><span class="c">Tiny hold; a starter, not a barge</span></td><td><span class="rscore">68</span><div class="bar"><i style="width:68%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Medium miners trade cargo for speed, shields and pad access. The Type-11 is the purpose-built premium choice and the Python the flexible all-rounder, but neither hauls as much per trip as the Type-9. Pick the Type-9 when volume-per-session is the goal and you can keep it safe.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~72M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~95M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~110M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>The hull is around 72M Cr with no rank or permit gate &mdash; the cheapest route to a truly enormous cargo hold. A mining fit doesn't need expensive combat engineering, so the all-in cost is dominated by the hull and the limpet/refinery kit rather than weapons.</p>
+    <p>Because a full hold of high-value ore can be worth tens of millions, a well-run Type-9 pays for itself in a handful of sessions. The ARX Jumpstart variant (below) gets you started even faster.</p>
+    <div class="callout amber"><span class="lbl">Pays for itself fast</span>A single full hold of painite or platinum can be worth 20&ndash;40M Cr at a good market. Two or three safe sessions cover the hull; everything after is profit.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>Lakon offers the Type-9 as an ARX pre-built &mdash; the same hull you may already own via the Jumpstart trading package. The pre-built rules apply: stock modules sell for 0 Cr and cannot be stored or transferred, but engineering the stock cores in place keeps the free rebuy.</p>
+    <p>To convert a trading Jumpstart Type-9 to mining, add mining tools, limpet controllers and a refinery to open slots &mdash; never strip stock modules &mdash; and swap cargo racks as needed.</p>
+    <table>
+      <thead><tr><th>Package</th><th>Type-9 Heavy (ARX Jumpstart / pre-built)</th></tr></thead>
+      <tbody>
+        <tr><td>I</td><td>n</td><td>c</td><td>l</td><td>u</td><td>d</td><td>e</td><td>s</td></tr>
+        <tr><td>P</td><td>r</td><td>e</td><td>-</td><td>f</td><td>i</td><td>t</td><td>t</td><td>e</td><td>d</td><td> </td><td>h</td><td>u</td><td>l</td><td>l</td><td>,</td><td> </td><td>s</td><td>h</td><td>i</td><td>p</td><td> </td><td>k</td><td>i</td><td>t</td><td>,</td><td> </td><td>p</td><td>a</td><td>i</td><td>n</td><td>t</td><td>j</td><td>o</td><td>b</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Re-roling a Jumpstart hull</span>If your Type-9 came from the trading Jumpstart, build the mining kit into empty optionals and engineer the stock cores in situ. Don't sell the stock modules &mdash; they return 0 Cr and void nothing only if left in place.</div>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A high-volume laser-mining fit. Initial is a buy-only starter; A-rated is the productive baseline; Engineered focuses on the cores that matter for a barge &mdash; thrusters and FSD for transit, a tougher shield, and mass-managed range. Mining tools themselves are not engineered.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Mining Laser 2</td><td class="st">Mining Laser 2</td><td class="eng">Mining Laser 2</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">Mining Laser 2</td><td class="st">Mining Laser 2</td><td class="eng">Mining Laser 2</td></tr>
+        <tr><td class="slot">Medium 3</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster</td><td class="eng">Abrasion Blaster</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Seismic Charge Launcher</td><td class="eng">Seismic Charge Launcher</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Pulse Wave Analyser</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G3)</td></tr>
+        <tr><td class="slot">Sensors (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (6)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 8</td><td class="st">Cargo Rack 8</td><td class="st">Cargo Rack 8</td><td class="eng">Cargo Rack 8</td></tr>
+        <tr><td class="slot">Optional 8</td><td class="st">Cargo Rack 8</td><td class="st">Cargo Rack 8</td><td class="eng">Cargo Rack 8</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">Refinery (best)</td><td class="st">Cargo Rack 7</td><td class="eng">Cargo Rack 7</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Collector Limpet Ctrl</td><td class="st">Cargo Rack 6</td><td class="eng">Cargo Rack 6</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Prospector Limpet Ctrl</td><td class="st">Collector Limpet Ctrl (multi)</td><td class="eng">Collector Limpet Ctrl (multi)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Collector Limpet Ctrl</td><td class="eng">Collector Limpet Ctrl</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Generator 4 (bi-weave)</td><td class="eng">Bi-Weave 4 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Ctrl</td><td class="eng">Prospector Limpet Ctrl</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Refinery (class 4)</td><td class="eng">Refinery (class 4)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">Detailed Surface Scanner</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Collector Limpet Ctrl 1</td><td class="eng">Collector Limpet Ctrl 1</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">Limpets do the work</span>Fit several collector controllers (each runs multiple limpets) so the ore flows in while you keep cutting. One or two prospector controllers boost yield per rock. The class-8 slots are pure cargo &mdash; never waste them on anything else.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy or re-role the hull and fit two mining lasers, a refinery, one prospector and one collector controller, and as much cargo as fits.</p>
+    <p>Add a Pulse Wave Analyser in a utility slot to spot mineable rocks at a glance.</p>
+    <p>Mine a known painite or platinum hotspot in solo until the hold is full, then sell &mdash; even this basic fit is hugely profitable.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a barge &mdash; transit and survival, since mining tools aren't rated:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Thrusters &rarr; A', 'A 850t hull needs every scrap of thrust to manoeuvre in a ring and dock.', '~9M Cr')</li>
+      <li><span class="stepnum">2</span>('FSD &rarr; A', 'Shorter market runs with a full, heavy hold.', '~12M Cr')</li>
+      <li><span class="stepnum">3</span>('Power Plant &rarr; A', 'Run lasers, limpets, refinery and shields together.', '~8M Cr')</li>
+      <li><span class="stepnum">4</span>('Power Distributor &rarr; A', 'Sustained laser fire without browning out.', '~6M Cr')</li>
+      <li><span class="stepnum">5</span>('Shield Generator &rarr; bi-weave', "Any shield is better than the Type-9's feeble stock protection.", '~5M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Shields are survival</span>The Type-9's stock shields are dangerously thin. A bi-weave plus a couple of boosters won't make it a fighter, but it buys the seconds you need to high-wake away from a pirate.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is about transit, range and a survivable shield &mdash; not weapons. Mining tools cannot be engineered. Pin core blueprints for remote G1&rarr;G5 application.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">FSD</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G3)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Thrusters and FSD first &mdash; a heavy barge lives or dies on manoeuvring in the ring and getting laden cargo to market quickly.</li>
+      <li><span class="stepnum">2</span>Low-Emissions plant keeps heat and signature down while running a full limpet fleet.</li>
+      <li><span class="stepnum">3</span>Resistance-Augmented bi-weave plus Heavy-Duty boosters give the best survivable-shield-per-slot.</li>
+      <li><span class="stepnum">4</span>A hull reinforcement or two adds a final buffer if a pirate does land hits.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Moderate &mdash; only core and shield blueprints, no weapon grind. Thruster and FSD G5 are the demanding ones; the rest are light. With a complete material inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>202 m/s</td><td>202 m/s</td><td class="acc">~250 m/s</td></tr>
+        <tr><td class="mod">Jump range (laden)</td><td>~12 LY</td><td>~18 LY</td><td class="acc">~28 LY</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~110</td><td>~280</td><td class="acc">~520</td></tr>
+        <tr><td class="mod">Cargo (mining fit)</td><td>~256 t</td><td>~448 t</td><td class="acc">~512+ t</td></tr>
+        <tr><td class="mod">Survivability</td><td>very low</td><td>low-moderate</td><td class="acc">moderate</td></tr>
+      </tbody>
+    </table>
+    <p>Engineering won't make the Type-9 nimble, but it roughly quadruples shields, adds meaningful jump range for market runs, and lifts the hold past 500 tonnes &mdash; turning a fragile barge into a productive, survivable mining operation.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Core/laser hotspot mining.</b> Use a Detailed Surface Scanner to map a ring, find a high-value hotspot (painite, platinum, LTD), and laser-mine it with limpet support.</li>
+      <li><b>Tritium mining.</b> Mine tritium for fleet-carrier fuel or to sell during colonisation demand &mdash; the Type-9's hold makes it efficient.</li>
+      <li><b>Sell at the best market.</b> Use a market tool to find the highest buy price within a few jumps and run the full hold there.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Deep-core mining.</b> Add seismic charges, abrasion blaster and sub-surface missiles to crack motherlode rocks for void opals and other premium cores.</li>
+      <li><b>Wing mining.</b> Mine in a wing with a combat escort so you can work hot, high-yield rings safely.</li>
+      <li><b>Colonisation supply.</b> Feed construction demand with bulk ore and minerals during expansion phases for premium prices.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example systems</span>Any ringed planet with a mineral hotspot works; metallic and icy rings hold the highest-value ores. Mine in solo or a private group near a station that buys your ore, ideally within a couple of jumps to keep market runs short.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>Always mine the Type-9 in solo, a private group, or under escort &mdash; its shields and speed cannot survive an open-play pirate interdiction.</li>
+      <li>Set the FSD to a low power priority so a deployed limpet fleet never browns out your drive when you need to wake away.</li>
+      <li>Collector limpet controllers matter more than prospectors for throughput &mdash; bias the fit toward collection.</li>
+      <li>Class-8 slots are sacred cargo space; put the refinery and controllers in the smaller bays.</li>
+      <li>A laden Type-9 high-wakes slowly &mdash; start the jump the instant trouble appears, don't wait.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Type-9 Heavy is the volume champion of laser mining: the biggest affordable hold in the game, room for a full limpet fleet and the largest refinery, and no rank gate. Its fatal flaw is fragility &mdash; mine it somewhere safe and it is wildly productive; take it into a hot ring in open play and it is a target. For patient, protected bulk mining, nothing fills a hold faster for the money.</div>
+  </section>
+
+  <footer>
+    <p><b>Type-9 Heavy &middot; Mining</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Type-9 Heavy &middot; Mining dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

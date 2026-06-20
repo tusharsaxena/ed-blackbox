@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Mamba · Combat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#e0463c;
+    --acc-lt:#ff6f64;
+    --acc-deep:#7d1e1a;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Zorgon Peterson</div>
+    <h1>Mamba<span class="role">Combat</span></h1>
+    <p class="lede">The fastest knife in the medium class. The Mamba takes the Fer-de-Lance chassis and trades some agility for raw speed &mdash; <b>the highest top speed of any medium</b> &mdash; pairing a huge hardpoint with a fixed-weapon firing-pass style that delivers devastating alpha on a target it blows past at nearly 490 m/s.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Hardpoints</span><b>1H &middot; 2L &middot; 2S</b></div>
+      <div class="chip"><span>Utility</span><b>6</b></div>
+      <div class="chip"><span>Hull</span><b>~55M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Combat</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:89"><div class="num">89<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Combat Suitability Rating</div>
+        <div class="d">A specialist's combat ship and a brilliant one in the right hands. Its speed and huge-mount alpha are elite, but its poor turn rate punishes pilots who try to dogfight it. Slightly below the FDL and Krait because it's less forgiving and narrower in build, not less lethal.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Mamba shares the Fer-de-Lance's bones but flies nothing like it. Where the FDL turns to hold a target, the Mamba runs it down: it has the highest top speed of any medium ship, and a fixed-weapon loadout built for high-speed firing passes rather than circling dogfights. A huge hardpoint plus two large and two small mounts deliver a brutal alpha as you scream past.</p>
+    <p>The cost is agility. The Mamba turns poorly for its speed &mdash; it's a straight-line attacker, not a turn-fighter. Pilots who try to dogfight it find themselves overshooting and exposed; pilots who learn to joust it, lining up rail guns or plasma accelerators on each pass, find one of the deadliest alpha platforms in the game. It rewards a specific, disciplined style.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>High-alpha firing-pass combat: rail-gun and plasma-accelerator builds that strip a target's shields or hull in a single pass, PvP hit-and-run, and hunting large slow ships it can out-speed.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">316 / 387 <small>m/s (highest medium)</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1 Huge &middot; 2 Large &middot; 2 Small</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">6</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">250 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~244 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">414</div></div>
+      <div class="cell"><div class="k">Power plant</div><div class="v">Class 6</div></div>
+      <div class="cell"><div class="k">Distributor</div><div class="v">Class 6 <small>(oversized)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;4&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Low <small>(for its speed)</small></div></div>
+      <div class="cell"><div class="k">Style</div><div class="v">Firing-pass / joust</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      </div>
+    <p>Four things define the Mamba as a combat ship:</p>
+    <ul class="clean">
+      <li><b>Top speed of any medium.</b> 387 m/s boost stock, ~490 engineered &mdash; it dictates engagement range, runs down slow targets and disengages at will.</li>
+      <li><b>A huge hardpoint plus two large.</b> Elite alpha &mdash; a huge plasma accelerator or rail-gun battery can gut a target in one well-aimed pass.</li>
+      <li><b>Oversized distributor.</b> The class-6 distributor sustains heavy fixed weapons and boost on a 250t hull &mdash; rails and plasma love it.</li>
+      <li><b>Six utility mounts.</b> A heavy shield-booster suite gives it more defensive padding than its agility-light frame would otherwise allow.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>The Mamba's poor turn rate is a genuine weakness &mdash; in a sustained dogfight a more agile medium will get and keep guns on it. Its small internals (six optionals) limit tanking, like the FDL. It's a narrow, demanding build: superb for firing-pass alpha, awkward for anything that forces it to circle.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <p class="subhd">Same class &mdash; medium-pad combat ships</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Mamba</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Same huge mount; far better agility for turn fights</span><span class="c">Slower; less raw straight-line speed</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
+        <tr><td class="mod">Python Mk II</td><td>Medium</td><td>4L 2M</td><td class="pcc"><span class="p">More sustained DPS; deeper tank</span><span class="c">Much slower; no huge mount</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; deep internals; balanced</span><span class="c">Slower; no huge mount</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Mamba <span class="tag r">this</span></td><td>Medium</td><td>1H 2L 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">89</span><div class="bar"><i style="width:89%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Superb agility; tough; cheap</span><span class="c">Lower alpha; far slower</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Tankiest Alliance hull</span><span class="c">Slow; less alpha</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>3L 3M</td><td class="pcc"><span class="p">Six guns; modern; roomier</span><span class="c">No huge mount; slower</span></td><td><span class="rscore">85</span><div class="bar"><i style="width:85%"></i></div></td></tr>
+        <tr><td class="mod">Federal Assault Ship</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Fast and agile Federal brawler</span><span class="c">Less alpha; Federal rank gate</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Mamba and Fer-de-Lance are siblings with opposite philosophies: the FDL turns, the Mamba runs. For firing-pass alpha and dictating range the Mamba leads; for sustained turn-fighting the FDL and the tankier Krait/Python Mk II are better. Choose the Mamba if you fly disciplined high-speed passes.</p>
+    <p class="subhd">Other classes &mdash; the larger leagues</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Mamba</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">More guns, tank and (engineered) surprising agility</span><span class="c">Federal rank; ~187M Cr; large pad</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shields and firepower; also fast for a large ship</span><span class="c">Imperial rank; poor agility; large pad</span></td><td><span class="rscore">91</span><div class="bar"><i style="width:91%"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight hardpoints; vast internals</span><span class="c">Ponderous; large pad</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Vulture</td><td>Small</td><td>2L</td><td class="pcc"><span class="p">Tiny, agile small-pad duellist</span><span class="c">Slow; two guns; power-starved</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Kestrel Mk II</td><td>Small</td><td>3L 2S</td><td class="pcc"><span class="p">Small-pad firepower; agile</span><span class="c">Less speed and alpha than the Mamba</span></td><td><span class="rscore">85</span><div class="bar"><i style="width:85%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Larger ships out-gun and out-tank the Mamba but can't match its speed; the Cutter is the closest large ship for pace. The Mamba's niche &mdash; the fastest medium, built for alpha passes &mdash; isn't really replicated elsewhere, which is its appeal to pilots who like to dictate the fight's tempo.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~55M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~72M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~90M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~55M Cr the Mamba is a premium medium, with no rank or permit gate. Like the FDL its small internals keep the module bill modest; the cost is dominated by the hull, the heavy weapons and the engineering to push its speed and alpha to their ceilings.</p>
+    <p>Rail guns and plasma accelerators are the natural fit &mdash; weapons that reward the Mamba's distributor and firing-pass style &mdash; so budget for those and the experimental effects that make them sing.</p>
+    <div class="callout amber"><span class="lbl">No rank gate</span>The Mamba needs only credits. It's an accessible elite alpha platform for any commander willing to learn its jousting style.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no combat-specific ARX pre-built built around the Mamba; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A firing-pass alpha fit. Initial is buy-only; A-rated is the combat-ready baseline; Engineered leans into speed and fixed-weapon alpha. A rail/plasma variant simply swaps the gimballed guns for fixed and tightens convergence.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge</td><td class="st">Multi-Cannon 4</td><td class="st">Plasma Accelerator 4</td><td class="eng">Plasma Accelerator 4 &mdash; Efficient</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">Multi-Cannon 3</td><td class="st">Rail Gun (Large n/a &rarr; Pulse 3)</td><td class="eng">Beam Laser 3 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">Pulse Laser 3</td><td class="st">Beam Laser 3</td><td class="eng">Beam Laser 3 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">Multi-Cannon 1</td><td class="st">Rail Gun 1</td><td class="eng">Rail Gun 1 &mdash; Long Range</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">Multi-Cannon 1</td><td class="st">Rail Gun 1</td><td class="eng">Rail Gun 1 &mdash; Long Range</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 6</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G3)</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (3)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Shield Generator 5</td><td class="st">Shield Generator 5 (bi-weave)</td><td class="eng">Bi-Weave 5 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 4</td><td class="eng">SCB 4</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 3</td><td class="eng">HRP 3 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 2</td><td class="eng">HRP 2 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 2</td><td class="eng">Module Reinforcement 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 1</td><td class="eng">Module Reinforcement 1</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">Build for the pass, not the circle</span>Fixed plasma and rail guns reward the Mamba's straight-line speed and tight convergence. Line the target up, alpha it on the pass, boost out, and come around &mdash; don't try to hold a turning fight the hull can't win.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit the largest shield the class-5 bay allows plus a hull reinforcement.</p>
+    <p>Start with gimballed weapons to learn the firing-pass timing before committing to fixed rails/plasma.</p>
+    <p>Load shield boosters in the six utilities &mdash; the Mamba pads its modest agility with shield strength.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a speed-and-alpha platform:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Thrusters &rarr; A', "Speed is the Mamba's defining weapon; A-rate thrusters first.", '~5M Cr')</li>
+      <li><span class="stepnum">2</span>('Power Distributor &rarr; A', 'Rails and plasma are distributor-hungry; feed them.', '~6M Cr')</li>
+      <li><span class="stepnum">3</span>('Power Plant &rarr; A', 'Headroom for heavy fixed weapons, shields and boost.', '~7M Cr')</li>
+      <li><span class="stepnum">4</span>('Shield Generator &rarr; bi-weave', "Padding for a hull that can't out-turn return fire.", '~4M Cr')</li>
+      <li><span class="stepnum">5</span>('FSD &rarr; A', 'Mitigate the short jump range.', '~3M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Speed first</span>Unlike most fighters, the Mamba's survival and offence both come from speed &mdash; A-rate and engineer thrusters before anything else.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern tuned for speed and fixed-weapon alpha. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Plasma Accelerator</td><td>Efficient (G5)</td><td>Plasma Slug / Dispersal</td><td>Bill Turner</td></tr>
+        <tr><td class="mod">Rail Guns</td><td>Long Range (G5)</td><td>Feedback Cascade</td><td>The Sarge</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Thrusters to G5 first &mdash; the Mamba's whole game is speed.</li>
+      <li><span class="stepnum">2</span>Distributor and plant to G5 to sustain heavy fixed weapons.</li>
+      <li><span class="stepnum">3</span>Weapons: Efficient plasma for the huge mount, Long-Range rails on the smalls for shield-stripping at range.</li>
+      <li><span class="stepnum">4</span>Resistance-Augmented bi-weave and Heavy-Duty boosters to pad the agility-light frame.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Moderate-to-heavy &mdash; rail and plasma blueprints plus the usual core G5s. Bill Turner (plasma) and The Sarge (rails) unlocks are needed for the signature weapons. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>387 m/s</td><td>387 m/s</td><td class="acc">~490 m/s</td></tr>
+        <tr><td class="mod">Agility</td><td>low</td><td>low</td><td class="acc">low (by design)</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~340</td><td>~480</td><td class="acc">~1,000+</td></tr>
+        <tr><td class="mod">Alpha damage</td><td>very high</td><td>very high</td><td class="acc">elite (huge mount)</td></tr>
+        <tr><td class="mod">Jump range</td><td>short</td><td>short</td><td class="acc">short</td></tr>
+      </tbody>
+    </table>
+    <p>Engineering pushes boost toward 490 m/s &mdash; untouchable among mediums &mdash; while shields climb past 1,000 MJ. Agility stays deliberately low; the Mamba is the fastest medium alpha platform, and engineering sharpens that identity rather than rounding it off.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Firing-pass RES hunting.</b> Use speed to dictate range, alpha targets on the pass, and reset &mdash; ideal once you've learned the rhythm.</li>
+      <li><b>Assassination targets.</b> Run down and alpha single high-value targets that slower ships struggle to catch.</li>
+      <li><b>Bounty turn-ins.</b> Cash vouchers toward the Tod McQuinn unlock while you fly heavy weapons his and others' blueprints serve.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>PvP hit-and-run.</b> The Mamba's speed and alpha make it a feared ambush and disengage platform in player combat.</li>
+      <li><b>Hunting large slow ships.</b> It out-runs Anacondas, Cutters and barges, dictating every pass while they can't escape.</li>
+      <li><b>Rail/plasma sniping in CZs.</b> Pick off priority targets at range with Long-Range rails, using speed to stay out of the brawl.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example systems</span>Any Haz RES or CZ suits a disciplined Mamba pilot. Its short range means basing near your hunting grounds &mdash; around Diaguandri / Ray Gateway &mdash; rather than roaming far.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>Joust, don't dogfight &mdash; the Mamba overshoots in a turning fight; line up passes and use speed to reset.</li>
+      <li>Fixed weapons reward its convergence and speed; gimbals waste its alpha potential once you've learned to aim.</li>
+      <li>Shield-tank with the six utilities; you can't out-turn return fire, so absorb it.</li>
+      <li>Manage heat carefully with rails and plasma &mdash; carry two heat sinks and use them on passes.</li>
+      <li>Accept the short range and low agility as the cost of the highest speed and biggest alpha in the class.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Mamba is the fastest medium in the game and one of its deadliest alpha platforms &mdash; in the hands of a pilot who joust-fights rather than dogfights. Its low agility and small internals make it unforgiving and narrow, but for high-speed firing passes with a huge plasma or rail battery, nothing in the class dictates a fight quite like it.</div>
+  </section>
+
+  <footer>
+    <p><b>Mamba &middot; Combat</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Mamba &middot; Combat dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Community Goals — Field Manual | Elite Dangerous</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0607;
+  --bg2:#0e0a0c;
+  --panel:#150f12;
+  --panel2:#1c1418;
+  --line:#3a2228;
+  --maroon:#6e1423;
+  --maroon-bright:#a01f33;
+  --maroon-glow:#c8324a;
+  --gold:#f0a500;
+  --gold-bright:#ffc24d;
+  --gold-dim:#b9821f;
+  --ink:#ece3da;
+  --ink-dim:#b6a596;
+  --ink-faint:#7d6f64;
+  --green:#46c46b;
+  --red:#e0533d;
+  --cyan:#4fb8c9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 600px at 12% -5%, rgba(160,31,51,.20), transparent 60%),
+    radial-gradient(1100px 700px at 100% 8%, rgba(240,165,0,.10), transparent 55%),
+    radial-gradient(800px 800px at 50% 120%, rgba(110,20,35,.18), transparent 60%),
+    linear-gradient(180deg,var(--bg),var(--bg2));
+  background-attachment:fixed;
+  color:var(--ink);
+  font-family:'Saira',system-ui,sans-serif;
+  font-weight:300;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(240,165,0,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(240,165,0,.035) 1px,transparent 1px);
+  background-size:46px 46px;
+  mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 85%);
+}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+/* ---------- Header ---------- */
+header.hero{padding:54px 0 30px;border-bottom:1px solid var(--line)}
+.tag-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:26px;font-family:'Saira Condensed',sans-serif;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase}
+.chip{border:1px solid var(--line);padding:4px 11px;color:var(--ink-dim);background:rgba(255,255,255,.015)}
+.chip.live{border-color:var(--gold-dim);color:var(--gold-bright);background:rgba(240,165,0,.07)}
+.chip.fed{border-color:var(--cyan);color:var(--cyan)}
+h1{
+  font-family:'Chakra Petch',sans-serif;font-weight:700;
+  font-size:clamp(38px,8vw,76px);line-height:.95;margin:0;letter-spacing:-.5px;
+  text-transform:uppercase;
+  background:linear-gradient(92deg,var(--gold-bright),var(--gold) 40%,var(--maroon-glow));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 38px rgba(240,165,0,.18);
+}
+.subtitle{font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:clamp(15px,2.4vw,20px);color:var(--ink-dim);letter-spacing:.04em;margin:14px 0 0;max-width:62ch}
+.cmdr-block{display:flex;flex-wrap:wrap;gap:26px 40px;margin-top:30px;padding:18px 22px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(110,20,35,.10),rgba(0,0,0,.18))}
+.cmdr-cell .k{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.cmdr-cell .v{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:16px;color:var(--ink);margin-top:2px}
+.cmdr-cell .v.gold{color:var(--gold-bright)}
+
+/* ---------- TOC ---------- */
+nav.toc{margin:34px 0 10px;padding:20px 22px;border:1px solid var(--line);background:rgba(20,14,17,.55)}
+nav.toc h4{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:var(--gold);margin:0 0 14px}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:7px 26px}
+.toc-grid a{display:flex;gap:11px;align-items:baseline;color:var(--ink-dim);text-decoration:none;font-size:14.5px;padding:3px 0;border-bottom:1px solid transparent;transition:.15s}
+.toc-grid a:hover{color:var(--gold-bright);border-bottom-color:var(--line)}
+.toc-grid a .num{font-family:'Chakra Petch',sans-serif;color:var(--maroon-glow);font-size:12.5px;min-width:26px}
+
+/* ---------- Sections ---------- */
+section{padding:46px 0 8px;border-top:1px solid var(--line);margin-top:30px}
+section:first-of-type{border-top:none}
+.eyebrow{font-family:'Saira Condensed',sans-serif;letter-spacing:.26em;text-transform:uppercase;font-size:12px;color:var(--gold-dim);display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold-dim)}
+h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(26px,4.4vw,38px);line-height:1.05;margin:0 0 8px;text-transform:uppercase;letter-spacing:-.3px;color:var(--ink)}
+h2 .secnum{color:var(--maroon-glow);margin-right:14px;-webkit-text-fill-color:var(--maroon-glow)}
+h3{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:20px;color:var(--gold-bright);margin:30px 0 8px;letter-spacing:.01em}
+h4.mini{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--ink-dim);margin:22px 0 6px}
+p{margin:12px 0;color:var(--ink)}
+strong{color:var(--gold-bright);font-weight:600}
+em{color:var(--ink);font-style:italic}
+a.link{color:var(--cyan);text-decoration:none;border-bottom:1px dotted rgba(79,184,201,.5)}
+a.link:hover{color:var(--gold-bright);border-bottom-color:var(--gold-bright)}
+ul,ol{margin:12px 0;padding-left:22px}
+li{margin:7px 0}
+li::marker{color:var(--maroon-glow)}
+
+/* ---------- Callouts ---------- */
+.callout{border-left:3px solid var(--gold);background:linear-gradient(90deg,rgba(240,165,0,.08),transparent);padding:14px 18px;margin:20px 0}
+.callout.warn{border-left-color:var(--red);background:linear-gradient(90deg,rgba(224,83,61,.09),transparent)}
+.callout.fed{border-left-color:var(--cyan);background:linear-gradient(90deg,rgba(79,184,201,.08),transparent)}
+.callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--gold);display:block;margin-bottom:4px}
+.callout.warn .lbl{color:var(--red)}
+.callout.fed .lbl{color:var(--cyan)}
+.callout p{margin:4px 0}
+
+/* ---------- Cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:22px 0}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(28,20,24,.7),rgba(10,6,7,.5));padding:18px}
+.card .ico{font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon-glow);margin-bottom:8px}
+.card h5{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:17px;margin:0 0 6px;color:var(--gold-bright)}
+.card p{font-size:14px;margin:6px 0;color:var(--ink-dim)}
+
+/* ---------- Tables ---------- */
+.tbl-scroll{overflow-x:auto;margin:20px 0;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:540px}
+th{font-family:'Saira Condensed',sans-serif;letter-spacing:.13em;text-transform:uppercase;font-size:12px;text-align:left;background:linear-gradient(180deg,var(--maroon),#3a0c14);color:var(--ink);padding:11px 14px;font-weight:600;border-bottom:1px solid var(--line)}
+td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--ink-dim);vertical-align:top}
+tr:nth-child(even) td{background:rgba(255,255,255,.018)}
+td strong{color:var(--gold-bright)}
+.pct{font-family:'Chakra Petch',sans-serif;color:var(--gold-bright);font-weight:600;white-space:nowrap}
+
+/* ---------- Step list ---------- */
+.steps{counter-reset:step;margin:24px 0;padding:0;list-style:none}
+.steps>li{position:relative;padding:0 0 22px 56px;border-left:1px solid var(--line);margin-left:18px}
+.steps>li:last-child{border-left-color:transparent}
+.steps>li::before{counter-increment:step;content:counter(step,decimal-leading-zero);position:absolute;left:-18px;top:-4px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--bg);background:linear-gradient(135deg,var(--gold-bright),var(--gold-dim));border-radius:2px}
+.steps>li .st{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:17px;color:var(--gold-bright);display:block;margin-bottom:3px}
+.steps>li p{margin:5px 0;font-size:14.5px}
+
+/* ---------- Reward ladder ---------- */
+.ladder{display:flex;flex-direction:column;gap:3px;margin:18px 0}
+.rung{display:flex;align-items:center;gap:14px;padding:9px 14px;border:1px solid var(--line);background:rgba(0,0,0,.2)}
+.rung .band{font-family:'Chakra Petch',sans-serif;font-weight:700;min-width:118px;font-size:14px}
+.rung .bar{flex:1;height:9px;background:rgba(255,255,255,.06);position:relative;overflow:hidden}
+.rung .bar i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--maroon-glow),var(--gold))}
+.rung .desc{font-size:13px;color:var(--ink-faint);min-width:128px;text-align:right;font-family:'Saira Condensed',sans-serif;letter-spacing:.05em}
+
+/* ---------- Footer ---------- */
+footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-faint);font-family:'Saira Condensed',sans-serif;letter-spacing:.04em}
+footer .o7{font-family:'Chakra Petch',sans-serif;color:var(--maroon-glow);font-size:15px}
+.divider-dots{text-align:center;color:var(--maroon);letter-spacing:1em;margin:8px 0 2px}
+
+@media(max-width:560px){
+  .cmdr-block{gap:18px 28px}
+  .rung{flex-wrap:wrap}
+  .rung .desc{text-align:left;min-width:0}
+  section{padding-top:38px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="tag-row">
+    <span class="chip live">● Field Manual</span>
+    <span class="chip">Elite Dangerous · Odyssey · PC</span>
+    <span class="chip">Galactic Operations</span>
+    <span class="chip fed">Federation-Aligned Doctrine</span>
+  </div>
+  <h1>Community<br>Goals</h1>
+  <p class="subtitle">Cooperate with Commanders en masse to reshape the galaxy — a complete operator's guide to the game's largest recurring cooperative event, written for a commander who has never touched one.</p>
+
+  <div class="cmdr-block">
+    <div class="cmdr-cell"><div class="k">Commander</div><div class="v gold">Ka0s</div></div>
+    <div class="cmdr-cell"><div class="k">Ident Prefix</div><div class="v">KA-</div></div>
+    <div class="cmdr-cell"><div class="k">Base of Ops</div><div class="v">Ray Gateway · Diaguandri</div></div>
+    <div class="cmdr-cell"><div class="k">Doctrine Focus</div><div class="v">Combat ▸ Passenger ▸ Cargo ▸ Mining</div></div>
+    <div class="cmdr-cell"><div class="k">Long Game</div><div class="v gold">Federal Corvette</div></div>
+  </div>
+
+  <nav class="toc">
+    <h4>Manual Contents</h4>
+    <div class="toc-grid">
+      <a href="#brief"><span class="num">00</span> Briefing</a>
+      <a href="#what"><span class="num">01</span> What a Community Goal Is</a>
+      <a href="#why"><span class="num">02</span> Why They Matter</a>
+      <a href="#who"><span class="num">03</span> Who They're For</a>
+      <a href="#anatomy"><span class="num">04</span> Anatomy of a CG</a>
+      <a href="#types"><span class="num">05</span> The CG Types</a>
+      <a href="#start"><span class="num">06</span> Getting Started</a>
+      <a href="#strategy"><span class="num">07</span> Strategy &amp; Optimization</a>
+      <a href="#combat"><span class="num">08</span> Combat CG Deep-Dive</a>
+      <a href="#fed"><span class="num">09</span> Federation Playbook</a>
+      <a href="#pitfalls"><span class="num">10</span> Pitfalls &amp; Gotchas</a>
+      <a href="#fleet"><span class="num">11</span> Your Fleet → CG Map</a>
+      <a href="#tools"><span class="num">12</span> Tools &amp; References</a>
+      <a href="#tldr"><span class="num">13</span> Quick-Start Checklist</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ===================== 00 BRIEF ===================== -->
+<section id="brief">
+  <div class="eyebrow">Section 00 — Orientation</div>
+  <h2><span class="secnum">00</span>Briefing</h2>
+  <p>This manual assumes you have never participated in a Community Goal (CG) and explains the system from first principles: what it is, why it exists, what you gain, and the precise sequence of actions to take part. It then layers in optimization, a dedicated combat deep-dive (your primary playstyle), and a Federation-alignment playbook aimed at your eventual Federal Corvette.</p>
+  <p>A CG is the single most beginner-friendly, high-yield activity in <em>Elite Dangerous</em> precisely because the game does the hard part — coordinating thousands of pilots — for you. You just turn up and do what you already do (shoot, haul, ferry, mine), then collect a payout that scales with the whole community's effort. Your existing fleet already covers every CG category that exists.</p>
+  <div class="callout">
+    <span class="lbl">Read this first</span>
+    <p>CGs are <strong>opt-in</strong>. Nothing you do counts toward a CG until you have flown to the host system and signed up at the mission board. The most common rookie mistake is grinding bounties or cargo for hours, then discovering none of it registered because the sign-up step was skipped. Sign up <em>first</em>.</p>
+  </div>
+</section>
+
+<!-- ===================== 01 WHAT ===================== -->
+<section id="what">
+  <div class="eyebrow">Section 01 — Definition</div>
+  <h2><span class="secnum">01</span>What a Community Goal Is</h2>
+  <p>A Community Goal is a <strong>time-limited, server-wide cooperative event</strong> where every commander in the galaxy can contribute toward one shared objective sponsored by an in-fiction faction or megacorporation. They were the headline feature of game update 1.1 back in 2015 and have run continuously ever since — typically <strong>one to two active at any time</strong>, usually starting on a Thursday and running for roughly a week (occasionally up to four weeks, or ending early if the community blows through every target).</p>
+  <p>Mechanically, a CG is a giant shared mission. The sponsoring faction asks the playerbase to <em>deliver</em> something — combat bounty vouchers, combat bonds, trade commodities, mined ore, ferried passengers, exploration or exobiology data — toward a single galaxy-scale counter. Crucially, a CG is simultaneously <strong>cooperative and competitive</strong>: everyone pushes the same counter up together, but you are also individually ranked against every other participant for a share of the reward pool.</p>
+  <p>The fiction is not decoration. CG outcomes genuinely reshape the lived galaxy. Past goals have built brand-new starports, megaships and surface settlements, upgraded outposts into full starports, expanded station services, and decided the victor of system-level conflicts. The very first CG ever run constructed the Orbis starport <em>Unity</em> in the New Yembo system — a structure still in the galaxy today.</p>
+  <div class="callout fed">
+    <span class="lbl">All play modes count</span>
+    <p>CGs are powered by the shared Background Simulation, so they progress identically whether you play in <strong>Open, Private Group, or Solo</strong>. You can even switch modes mid-goal. You never have to expose yourself to PvP to participate — a major reassurance for a primarily PvE commander.</p>
+  </div>
+</section>
+
+<!-- ===================== 02 WHY ===================== -->
+<section id="why">
+  <div class="eyebrow">Section 02 — The Payoff</div>
+  <h2><span class="secnum">02</span>Why They Matter</h2>
+  <p>CGs are widely regarded as the most legitimate "get-rich" loop in the game, but the credits are only one of five reasons to run them.</p>
+  <div class="cards">
+    <div class="card"><div class="ico">▸ Reward 01</div><h5>Credits</h5><p>Payouts scale with the global completion tier reached <em>and</em> your individual contribution percentile. Top brackets routinely pay tens of millions for a few evenings of work.</p></div>
+    <div class="card"><div class="ico">▸ Reward 02</div><h5>Exclusive Unlocks</h5><p>Many CGs grant rewards money can't otherwise buy: limited-availability or pre-engineered modules, permits, discounts on hulls/outfitting, decals, paint jobs and bobbleheads.</p></div>
+    <div class="card"><div class="ico">▸ Reward 03</div><h5>Reputation</h5><p>Contributing builds reputation with the sponsoring minor faction, which flows up to its superpower — the engine behind Federal &amp; Imperial rank.</p></div>
+    <div class="card"><div class="ico">▸ Reward 04</div><h5>Galaxy Impact</h5><p>Your tonnage and kills literally help build the station or win the war. CGs are the clearest way a solo pilot leaves a permanent mark on the map.</p></div>
+    <div class="card"><div class="ico">▸ Reward 05</div><h5>Throughput</h5><p>A CG concentrates demand in one place: a single station buying one commodity at inflated prices, or one RES worth of targets all paying toward your counter. Less searching, more doing.</p></div>
+  </div>
+  <p>For your profile specifically: CGs let you do the combat you already enjoy, get paid combat-grade money <em>and</em> stack Federation reputation toward the Corvette — three birds, one trigger pull.</p>
+</section>
+
+<!-- ===================== 03 WHO ===================== -->
+<section id="who">
+  <div class="eyebrow">Section 03 — Audience</div>
+  <h2><span class="secnum">03</span>Who They're For</h2>
+  <p>Everyone, at every stage. A brand-new commander in a stock Sidewinder can meaningfully contribute to a bounty-hunting CG and bank a six-figure reward; a fully-engineered fleet owner can dominate a Top-10 leaderboard. Because rewards scale relative to the community, you are never priced out — you simply earn a bracket appropriate to the effort you put in.</p>
+  <p>CGs are an especially good fit if you:</p>
+  <ul>
+    <li>Want <strong>structured objectives</strong> rather than open-ended sandbox grinding — the game hands you a destination and a task.</li>
+    <li>Enjoy a <strong>specific role</strong> (combat, hauling, ferrying, mining) and want it to pay better than usual.</li>
+    <li>Are working toward <strong>superpower rank</strong> and want reputation gains bundled with activity you'd do anyway.</li>
+    <li>Like the idea of your individual play <strong>moving a galaxy-wide needle</strong> alongside thousands of others.</li>
+  </ul>
+  <p>Your established role-specialized fleet — combat flagship, dedicated hauler, dedicated miner, passenger liner, multirole — means you are already equipped for <em>any</em> CG type that appears. Most commanders have to scramble to fit a ship; you just pick the right hull from the hangar.</p>
+</section>
+
+<!-- ===================== 04 ANATOMY ===================== -->
+<section id="anatomy">
+  <div class="eyebrow">Section 04 — Mechanics</div>
+  <h2><span class="secnum">04</span>Anatomy of a Community Goal</h2>
+  <p>Every CG is scored on <strong>two independent axes</strong>. Understanding both is the whole game.</p>
+
+  <h3>Axis 1 — The Global Completion Tier</h3>
+  <p>The community as a whole fills a progress bar through a series of tiers, usually <strong>Tier 1 through Tier 10</strong> (Frontier sometimes extends to Tier 11 if T10 falls early, or pulls the ceiling down to end a goal on schedule). Each tier the playerbase unlocks raises the <em>size of the entire reward pool</em>. A CG that only reaches T3 pays everyone far less than the same CG completed to T10. This is the cooperative half: every commander's contribution helps drag the whole bar upward, benefiting all participants.</p>
+
+  <h3>Axis 2 — Your Individual Percentile Bracket</h3>
+  <p>Within that pool, your slice is determined by where your personal contribution ranks against every other participant. The brackets are fixed percentile bands — your reward jumps each time you climb into a higher one:</p>
+  <div class="ladder">
+    <div class="rung"><span class="band" style="color:var(--ink-dim)">Top 100%</span><span class="bar"><i style="width:16%"></i></span><span class="desc">Participation floor</span></div>
+    <div class="rung"><span class="band" style="color:var(--ink-dim)">Top 75%</span><span class="bar"><i style="width:30%"></i></span><span class="desc">Light effort</span></div>
+    <div class="rung"><span class="band" style="color:var(--ink)">Top 50%</span><span class="bar"><i style="width:48%"></i></span><span class="desc">Solid evening</span></div>
+    <div class="rung"><span class="band" style="color:var(--gold-dim)">Top 25%</span><span class="bar"><i style="width:66%"></i></span><span class="desc">Committed run</span></div>
+    <div class="rung"><span class="band" style="color:var(--gold)">Top 10%</span><span class="bar"><i style="width:84%"></i></span><span class="desc">Serious grind</span></div>
+    <div class="rung"><span class="band" style="color:var(--gold-bright)">Top 10 CMDRs</span><span class="bar"><i style="width:100%"></i></span><span class="desc">Leaderboard / prestige</span></div>
+  </div>
+  <p>You are paid the <em>minimum</em> pool figure at Top 100% and the <em>maximum</em> at Top 10%, with the <strong>Top 10 Commanders</strong> receiving the single largest payout — a prestige tier worth chasing if you commit hard to one goal.</p>
+
+  <div class="callout warn">
+    <span class="lbl">Your bracket can slip</span>
+    <p>Brackets are <em>relative</em>, not banked. If you stop contributing while others keep going, you can be overtaken and slide from, say, Top 25% down to Top 50% by the time the goal closes. This is why the <strong>final hours of a CG matter most</strong> — heavy contributors dump everything at the end to lock their position. Don't assume an early lead is safe.</p>
+  </div>
+
+  <h4 class="mini">Claiming Your Reward</h4>
+  <p>Rewards are not paid instantly. When the CG ends, you collect at the host station, ideally within two weeks. Earned <strong>credits auto-deposit</strong> to your balance if you forget; other rewards (modules, decals, etc.) remain available for pickup at the host station essentially indefinitely. There is no penalty for collecting late — but get the special modules before you forget which goal they came from.</p>
+</section>
+
+<!-- ===================== 05 TYPES ===================== -->
+<section id="types">
+  <div class="eyebrow">Section 05 — Variants</div>
+  <h2><span class="secnum">05</span>The Community Goal Types</h2>
+  <p>All CGs share the two-axis structure above; they differ only in <em>what you deliver</em>. These are the recurring categories, ordered to match your stated priorities.</p>
+
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr><th>Type</th><th>What you deliver</th><th>Where you earn it</th><th>Your hull</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Combat — Bounty</strong></td><td>Bounty vouchers for the sponsoring faction</td><td>RES, Nav Beacons &amp; system policing in/near the CG system</td><td>Python Mk II / Viper Mk IV</td></tr>
+      <tr><td><strong>Combat — Bonds</strong></td><td>Combat bonds from Conflict Zones</td><td>Space or on-foot Conflict Zones for the right side</td><td>Python Mk II</td></tr>
+      <tr><td><strong>Passenger</strong></td><td>Ferried / evacuated passengers</td><td>Passenger lounge at origin → CG station</td><td>Lynx Highliner</td></tr>
+      <tr><td><strong>Cargo / Trade</strong></td><td>Specific commodity tonnage</td><td>Buy cheap elsewhere → sell at CG station</td><td>Type-9 Heavy</td></tr>
+      <tr><td><strong>Mining</strong></td><td>Mined ore / minerals / materials</td><td>Mine in rings → deliver raw to CG station</td><td>Type-11 Prospector</td></tr>
+      <tr><td>Exploration / Exobiology</td><td>Cartographic or biological data / samples</td><td>Scan out in the black → hand in at CG</td><td>Mandalay / Asp Explorer</td></tr>
+      <tr><td>PowerPlay CG</td><td>PowerPlay merits via the above activities</td><td>Tied to a Power's campaign in a system</td><td>Role-dependent</td></tr>
+      <tr><td>CQC</td><td>Arena (close-quarters) match performance</td><td>The CQC playlist menu</td><td>n/a — instanced</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Combat CGs (your bread and butter)</h3>
+  <p>These come in two distinct flavours that are easy to confuse — and the distinction is one you already track carefully:</p>
+  <ul>
+    <li><strong>Bounty-hunting CGs</strong> ask for <strong>bounty vouchers</strong>: kill <em>wanted</em> ships (at Resource Extraction Sites, Nav Beacons, etc.) and hand the vouchers in. This is the classic "telethon" combat CG.</li>
+    <li><strong>Conflict-Zone CGs</strong> ask for <strong>combat bonds</strong>: pick a side in a Conflict Zone and destroy the enemy faction's ships. Bonds and bounties are <em>separate currencies</em> — make sure you're earning the one the CG actually wants.</li>
+  </ul>
+  <p>Both types reward assisted kills (you only need to land meaningful damage before the kill registers), which makes RES "tag-and-move" tactics viable even in a modest ship.</p>
+
+  <div class="callout fed">
+    <span class="lbl">PowerPlay CGs — note for a future Federalist</span>
+    <p>A newer breed ties CGs directly into PowerPlay campaigns — recent examples include the dueling <em>"Opening Federal Campaign"</em> and <em>"Opening Independence Campaign"</em> for the same contested system. These can advance Federation interests directly, but they interact with PowerPlay pledging and merits. Since you are currently working Imperial rank and sit Hostile to a specific Imperial Power, read the goal's faction and Power alignment carefully before committing — see Section 09.</p>
+  </div>
+</section>
+
+<!-- ===================== 06 START ===================== -->
+<section id="start">
+  <div class="eyebrow">Section 06 — Operations Sequence</div>
+  <h2><span class="secnum">06</span>Getting Started: Step by Step</h2>
+  <p>This is the full loop, from "I've never done one" to "reward in the bank." Do it once and it's second nature.</p>
+
+  <ol class="steps">
+    <li><span class="st">Find the active goals</span>
+      <p>Check what's running before you fly anywhere. Three reliable sources: the in-game <strong>Galaxy Map</strong> (active CG systems show a distinctive <em>gold</em> marker), the official <a class="link" href="https://www.elitedangerous.com/community/goals">Elite Dangerous Community Goals page</a>, and — best of all — the <a class="link" href="https://inara.cz/elite/communitygoals/">INARA Community Goals tracker</a>, which shows live global progress, your own contribution, and estimated bracket boundaries.</p>
+    </li>
+    <li><span class="st">Read the brief</span>
+      <p>Each CG has a GalNet write-up stating the exact deliverable, the sponsoring faction, the host station, and any constraints (e.g. "bounties for <em>Faction X</em>"). Decide whether the activity, location, and reward justify the trip. A 20,000 Ly goal paying a few million is rarely worth it; a goal a few jumps from the Bubble usually is.</p>
+    </li>
+    <li><span class="st">Sign up — from anywhere</span>
+      <p>You can register from any station's <strong>Mission Board → Community Goals</strong> tab without flying there first. Open the goal and select <em>Sign Up</em>. <strong>This is mandatory and the most-skipped step.</strong> Until you sign up, nothing counts.</p>
+    </li>
+    <li><span class="st">Pick the right hull</span>
+      <p>Match the ship to the deliverable using the table in Section 05. Combat → Python Mk II. Trade → Type-9. Passengers → Lynx Highliner. Mining → Type-11. Fit a <strong>cargo rack</strong> if it's a trade/mining CG and confirm the right module set before you leave Ray Gateway.</p>
+    </li>
+    <li><span class="st">Travel to the host system</span>
+      <p>Signing up is remote, but <em>contributing is local</em>. You must physically be in the CG system, earning/delivering for the sponsoring faction, for it to register. For combat goals, the qualifying RES / Conflict Zone is in or immediately around the host system.</p>
+    </li>
+    <li><span class="st">Do the work &amp; bank often</span>
+      <p>Earn the deliverable, then hand it in at the host station's relevant Contact (bounty/bond voucher office, Commodities market, passenger lounge, etc.). <strong>Bank frequently</strong> — uncashed bounty vouchers are <em>lost if your ship is destroyed</em> before you redeem them. Track progress live on the <strong>Transactions</strong> tab of your left HUD panel.</p>
+    </li>
+    <li><span class="st">Monitor your bracket</span>
+      <p>Watch INARA and the in-game CG screen to see which percentile you're in and how far the next bracket is. Decide whether "one more run" is worth it (Section 07). Remember your standing can erode as others contribute.</p>
+    </li>
+    <li><span class="st">Collect your reward</span>
+      <p>When the goal ends, return to the host station and claim at the CG board / Contacts. Grab any special modules or cosmetics in person; credits will auto-deposit if you don't.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ===================== 07 STRATEGY ===================== -->
+<section id="strategy">
+  <div class="eyebrow">Section 07 — Optimization</div>
+  <h2><span class="secnum">07</span>Strategy &amp; Optimization</h2>
+
+  <h3>The "one more run" calculation</h3>
+  <p>The core decision in every CG is whether the next batch of effort crosses a bracket boundary. Because bracket jumps are worth far more than linear contribution, knowing you're <em>20 tonnes / one bounty stack short of Top 25%</em> changes everything. INARA and dedicated <a class="link" href="https://edcodex.info/?m=tools&entry=454">CG threshold calculators</a> estimate these boundaries from community-submitted data and tell you how many more runs a bracket costs. Use them; don't grind blind.</p>
+
+  <h3>Time the endgame</h3>
+  <p>Brackets are relative and most heavily contested in the <strong>final 24 hours</strong>, when committed players dump their stockpiles. Two viable approaches: contribute steadily and accept some bracket drift, or — if chasing Top 10% / Top 10 — hold a reserve and push hard near the close to leapfrog people who finished early.</p>
+
+  <h3>Stack and double-dip</h3>
+  <p>On combat CGs you can run a kill-mission for the same faction <em>and</em> earn the CG vouchers from the same kills — collecting mission reward and CG credit simultaneously. On trade CGs, source the commodity in bulk where it's cheapest and confirm the CG station's buy price; the inflated CG demand often makes the haul profitable on its own before the reward even lands.</p>
+
+  <h3>Juggle concurrent goals</h3>
+  <p>When two CGs of the same type run at once (or two phases of one campaign), check whether one shares a system or commodity with the other. Stacking compatible goals doubles your reward for the same activity. When they conflict (opposing PowerPlay campaigns), pick the side that matches your long-term allegiance.</p>
+
+  <div class="callout">
+    <span class="lbl">Mode flexibility is a tool</span>
+    <p>If Open feels risky near a popular combat CG (gankers do camp host stations), drop to Solo or a Private Group. Progress and rewards are identical. There is no mechanical reason to take PvP risk for a CG unless you want to.</p>
+  </div>
+</section>
+
+<!-- ===================== 08 COMBAT ===================== -->
+<section id="combat">
+  <div class="eyebrow">Section 08 — Primary Doctrine</div>
+  <h2><span class="secnum">08</span>Combat CG Deep-Dive</h2>
+  <p>Since your activity is heavily skewed to PvE combat, this is the section that matters most. Combat CGs are also the most consistently available — there is almost always one running.</p>
+
+  <h3>Bounty-hunting CG workflow</h3>
+  <ol>
+    <li>Sign up, fly to the CG system, locate a <strong>HIGH or LOW Resource Extraction Site</strong> (avoid <em>Hazardous</em> unless you want the heat — they're unpoliced).</li>
+    <li>Fit and deploy a <strong>Kill Warrant Scanner</strong>. It raises bounty values and, critically, lets you reliably accrue vouchers for the faction the CG actually wants in multi-faction systems.</li>
+    <li>Follow the system security ships (green contacts) and engage whatever they're attacking. Tag wanted targets — assisted kills pay you the full bounty, so even chipping in damage before the police finish a kill counts.</li>
+    <li>Bank to the CG station before your hold of vouchers gets dangerous. Repeat.</li>
+  </ol>
+
+  <h3>Conflict-Zone CG workflow</h3>
+  <ol>
+    <li>Confirm the CG wants <strong>combat bonds</strong>, not bounties — they are different currencies handed in at different contacts.</li>
+    <li>Drop into a Conflict Zone in/near the CG system and, in the side-selection tab, choose the faction the CG is sponsoring.</li>
+    <li>Destroy the opposing faction's ships for bonds; redeem them at the combat-bond contact, which credits the CG.</li>
+  </ol>
+
+  <div class="callout">
+    <span class="lbl">Ship note — Python Mk II</span>
+    <p>Your medium combat flagship is ideal here. Its 6 optional internals force trade-offs (HRPs, MRPs, SCBs and the shield generator all compete for the same bays), so build for <em>sustained</em> RES/CZ uptime rather than a glass-cannon burst: bi-weave with Resistance Augmented, Heavy-Duty boosters/HRPs, and at least one SCB to ride out long sessions without docking. For lighter or assist-tagging duty, the Viper Mk IV gets you in and out fast and cheap.</p>
+  </div>
+
+  <div class="callout warn">
+    <span class="lbl">Don't lose your vouchers</span>
+    <p>Bounty vouchers held in your hold are <strong>forfeit if you're destroyed</strong> before redeeming. In a busy combat CG, bank in shorter cycles than you would for normal bounty hunting. (Combat bonds are credited on kill and are safer, but the discipline of frequent banking is good practice either way.)</p>
+  </div>
+</section>
+
+<!-- ===================== 09 FED ===================== -->
+<section id="fed">
+  <div class="eyebrow">Section 09 — Allegiance Strategy</div>
+  <h2><span class="secnum">09</span>Federation Alignment Playbook</h2>
+  <p>You want to drift toward the Federation for an eventual Federal Corvette while you're currently grinding Imperial rank. CGs can serve both ends, but the interactions need care.</p>
+
+  <h3>How CG rewards build toward the Corvette</h3>
+  <p>Reputation in <em>Elite Dangerous</em> is unified: doing work for a minor faction raises your standing with that faction <em>and</em> with its parent superpower. Complete a CG sponsored by a <strong>Federation-aligned faction</strong> and you bank Federation reputation alongside the credits. Reputation is what fills your <strong>Federal Navy rank</strong> bar — and the Corvette requires <em>Rear Admiral</em>, the second-highest Federal rank, plus a hull cost around 187M CR. CGs are therefore a way to make Corvette-fund credits and Corvette-unlock rank from the same activity.</p>
+
+  <div class="callout fed">
+    <span class="lbl">Rank vs. reputation — the crucial distinction</span>
+    <p>Reputation fills the rank bar, but it does not <em>promote</em> you. Each Federal rank-up requires completing a specific <strong>"Federal Navy" promotion mission</strong> that appears only once the bar is full and only from factions you're allied with. CGs accelerate the bar; you still hand-finish each rank with its named Navy mission. (This mirrors the Imperial Navy mechanic you already know.)</p>
+  </div>
+
+  <h3>You can serve two masters</h3>
+  <p>There is no penalty for being allied with both the Federation and the Empire at once — superpower reputations are tracked independently and don't cancel each other. You can finish your Imperial Squire/Achenar-permit grind <em>and</em> climb the Federal ladder in parallel. The only real friction is reputation <em>decay</em>: standing above 75% with a superpower slowly bleeds back toward 75% over time, so the way to <em>stay</em> Allied is to keep feeding it — periodic Federation CGs are a tidy way to top that up.</p>
+
+  <div class="callout warn">
+    <span class="lbl">PowerPlay caution — read the faction first</span>
+    <p>PowerPlay CGs are <em>not</em> automatically aligned to your interests. You are currently <strong>Hostile to a specific Imperial Power (Lavigny-Duval)</strong> and pledged into the PowerPlay layer. Before joining any PowerPlay CG, confirm two things: (1) the sponsoring faction's superpower allegiance, and (2) which Power the campaign serves. A Federation-allegiance PowerPlay CG advances your Corvette goal; an Imperial one may undercut your current Imperial rank grind or your PowerPlay standing. When in doubt, stick to plain (non-PowerPlay) Federation-faction CGs — they give clean Federal reputation without the PowerPlay entanglement.</p>
+  </div>
+
+  <h3>Practical Federalist CG routine</h3>
+  <ul>
+    <li><strong>Favour</strong> combat/trade/passenger CGs whose host faction is Federation-aligned — check allegiance on INARA before flying.</li>
+    <li><strong>Bank reputation</strong> opportunistically: even a Top 50% finish on a Fed CG nudges the Federal bar while paying well.</li>
+    <li><strong>Keep your Imperial grind separate</strong>: run Imperial-faction donation/courier missions (Cemiess) for the Achenar permit, and Federation CGs for the Corvette track — they don't conflict.</li>
+    <li><strong>Top up before decay bites</strong>: once you cross into Allied with the Federation, a single periodic Fed CG keeps you there.</li>
+  </ul>
+</section>
+
+<!-- ===================== 10 PITFALLS ===================== -->
+<section id="pitfalls">
+  <div class="eyebrow">Section 10 — Failure Modes</div>
+  <h2><span class="secnum">10</span>Pitfalls &amp; Gotchas</h2>
+  <div class="cards">
+    <div class="card"><div class="ico">✕ Trap 01</div><h5>Forgetting to sign up</h5><p>Hours of work register as zero. Always sign up at the Mission Board <em>before</em> you start earning.</p></div>
+    <div class="card"><div class="ico">✕ Trap 02</div><h5>Wrong currency</h5><p>Earning combat bonds for a bounty CG (or vice-versa). Confirm the exact deliverable in the brief.</p></div>
+    <div class="card"><div class="ico">✕ Trap 03</div><h5>Wrong faction</h5><p>Bounties/bonds must be for the CG's sponsoring faction. A Kill Warrant Scanner keeps your vouchers on-target.</p></div>
+    <div class="card"><div class="ico">✕ Trap 04</div><h5>Dying with vouchers</h5><p>Unbanked bounty vouchers are lost on destruction. Bank in short cycles during combat CGs.</p></div>
+    <div class="card"><div class="ico">✕ Trap 05</div><h5>Bracket complacency</h5><p>An early Top 25% can slide to Top 50% if you stop. The last day is where positions are decided.</p></div>
+    <div class="card"><div class="ico">✕ Trap 06</div><h5>Chasing distant CGs</h5><p>A goal thousands of light-years out rarely pays for the travel time. Weigh reward against distance.</p></div>
+    <div class="card"><div class="ico">✕ Trap 07</div><h5>Local-only delivery</h5><p>You can sign up anywhere, but you must earn/deliver in the host system. Vouchers from elsewhere may not count.</p></div>
+    <div class="card"><div class="ico">✕ Trap 08</div><h5>Blind PowerPlay joins</h5><p>A PowerPlay CG may serve a Power you oppose. Check allegiance before committing.</p></div>
+  </div>
+</section>
+
+<!-- ===================== 11 FLEET ===================== -->
+<section id="fleet">
+  <div class="eyebrow">Section 11 — Asset Mapping</div>
+  <h2><span class="secnum">11</span>Your Fleet → CG Role Map</h2>
+  <p>Your fleet already covers every CG category. Pull the right hull from the Ray Gateway hangar and you're ready for whatever goal is live.</p>
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr><th>Ship</th><th>Ident</th><th>CG role</th><th>Best CG type</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Python Mk II</strong></td><td>KA-05P</td><td>Combat flagship — RES &amp; Conflict Zones</td><td class="pct">Combat (priority)</td></tr>
+      <tr><td><strong>Viper Mk IV</strong></td><td>KA-17V</td><td>Fast, cheap assist-tagging at RES</td><td class="pct">Combat (light)</td></tr>
+      <tr><td><strong>Lynx Highliner</strong></td><td>KA-16M</td><td>Bulk passenger ferry / evacuation</td><td class="pct">Passenger</td></tr>
+      <tr><td><strong>Type-9 Heavy</strong></td><td>KA-05T</td><td>Maximum-tonnage commodity runs</td><td class="pct">Cargo / Trade</td></tr>
+      <tr><td><strong>Type-11 Prospector</strong></td><td>KA-05L</td><td>Dedicated mining vessel</td><td class="pct">Mining</td></tr>
+      <tr><td><strong>Mandalay</strong></td><td>—</td><td>Primary explorer / fast travel</td><td class="pct">Exploration / Exobio</td></tr>
+      <tr><td><strong>Asp Explorer</strong></td><td>KA-04A</td><td>Backup explorer &amp; data hauler</td><td class="pct">Exploration / Exobio</td></tr>
+      <tr><td><strong>Cobra Mk V</strong></td><td>KA-05C</td><td>Small-pad multirole stopgap</td><td class="pct">Mixed / small-pad</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout">
+    <span class="lbl">Pre-flight reminder</span>
+    <p>Most of your combat ships carry 0t cargo by design. For a <em>trade</em> or <em>mining</em> CG, take the Type-9 or Type-11 — or fit a cargo rack to a multirole — before leaving. Don't arrive at a hauling CG in a combat fit with nowhere to put the commodity.</p>
+  </div>
+</section>
+
+<!-- ===================== 12 TOOLS ===================== -->
+<section id="tools">
+  <div class="eyebrow">Section 12 — External References</div>
+  <h2><span class="secnum">12</span>Tools &amp; References</h2>
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr><th>Resource</th><th>Use it for</th></tr></thead>
+    <tbody>
+      <tr><td><a class="link" href="https://www.elitedangerous.com/community/goals">Official CG page</a></td><td>Authoritative list of currently-active goals and their full briefs.</td></tr>
+      <tr><td><a class="link" href="https://inara.cz/elite/communitygoals/">INARA — Community Goals</a></td><td>Live global progress, your personal contribution, and estimated bracket boundaries. The single best companion tool.</td></tr>
+      <tr><td><a class="link" href="https://forums.frontier.co.uk/forums/elite-dangerous-community-goals/">Frontier CG forum</a></td><td>Per-goal discussion threads, predictions, completion confirmations, and reward troubleshooting.</td></tr>
+      <tr><td><a class="link" href="https://edcodex.info/?m=tools&entry=454">CG threshold calculator</a></td><td>Estimates how many more runs a bracket jump will cost, by ship size.</td></tr>
+      <tr><td><a class="link" href="https://elite-dangerous.fandom.com/wiki/Community_Goals">Elite Dangerous Wiki — CGs</a></td><td>Reference on mechanics, reward types, and historical CG outcomes.</td></tr>
+      <tr><td>In-game Galaxy Map</td><td>Active CG systems are flagged with a gold marker — fastest way to spot a goal while flying.</td></tr>
+      <tr><td>In-game GalNet (launcher / cockpit)</td><td>Story context and the in-fiction framing for each goal.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ===================== 13 TLDR ===================== -->
+<section id="tldr">
+  <div class="eyebrow">Section 13 — Field Card</div>
+  <h2><span class="secnum">13</span>Quick-Start Checklist</h2>
+  <div class="callout">
+    <span class="lbl">Run this every time</span>
+    <p>① Check INARA / official page for active goals.<br>
+    ② Read the brief — deliverable, faction, host system, distance, reward.<br>
+    ③ <strong>Sign up at the Mission Board → Community Goals tab.</strong><br>
+    ④ Pick the matching hull; fit cargo if it's trade/mining.<br>
+    ⑤ Fly to the host system (signup is remote, earning is local).<br>
+    ⑥ Earn the right currency for the right faction (KWS on for combat).<br>
+    ⑦ Hand in at the host station; bank often.<br>
+    ⑧ Watch your bracket; push the final hours if chasing Top 10%/Top 10.<br>
+    ⑨ Collect rewards — grab special modules in person.</p>
+  </div>
+  <div class="callout fed">
+    <span class="lbl">Federalist's note</span>
+    <p>Favour Federation-aligned host factions, treat each CG as both credits <em>and</em> Federal-rank reputation, finish each rank with its named Federal Navy promotion mission, and keep your Imperial grind on a separate track — they don't conflict. Verify allegiance before joining any PowerPlay CG.</p>
+  </div>
+
+  <footer>
+    <div class="divider-dots">· · · · ·</div>
+    <p>FIELD MANUAL — COMMUNITY GOALS · Compiled for CMDR Ka0s (KA-) · Base: Ray Gateway, Diaguandri · Doctrine: PvE Combat-led, Federation-aligned · Elite Dangerous: Odyssey (PC)</p>
+    <p>Mechanics current as of the live game; CG cadence, tiers and reward types may be tuned by Frontier between updates — always confirm the active goal's brief before committing. <span class="o7">o7</span></p>
+  </footer>
+</section>
+
+</div>
+</body>
+</html>

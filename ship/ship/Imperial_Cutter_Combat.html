@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Imperial Cutter · Combat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#e0463c;
+    --acc-lt:#ff6f64;
+    --acc-deep:#7d1e1a;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1>Imperial Cutter<span class="role">Combat</span></h1>
+    <p class="lede">The unsinkable battleship. The Imperial Cutter wraps a huge hardpoint and seven mounts in <b>the strongest shields in the entire game</b> &mdash; over 700 MJ before engineering &mdash; backed by two military slots, vast internals and surprising straight-line speed. The shield-tank apex: a warship that simply refuses to drop.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Large &middot; Pad L</b></div>
+      <div class="chip"><span>Hardpoints</span><b>1H &middot; 2L &middot; 4M</b></div>
+      <div class="chip"><span>Military</span><b>2 slots</b></div>
+      <div class="chip"><span>Hull</span><b>~200M Cr</b></div>
+      <div class="chip"><span>Role</span><b>Combat</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:91"><div class="num">91<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">Combat Suitability Rating</div>
+        <div class="d">A top-tier large combat ship and the ultimate shield tank. Its shields are unmatched and its firepower formidable; it ranks just below the Federal Corvette only on agility and total alpha (one huge mount versus two). For surviving and grinding the longest, hardest fights, nothing out-tanks it.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Imperial Cutter is Gutamaya's flagship and the Empire's answer to the Federal Corvette. Where the Corvette wins on guns and agility, the Cutter wins on protection: it carries the strongest shields in the game by a wide margin &mdash; over 700 MJ at base, well past 2,500 engineered &mdash; over a 720 armour hull, two military slots and vast internals. It is, quite simply, the hardest ship to destroy.</p>
+    <p>It backs that tank with real teeth: a huge hardpoint, two large and four medium mounts give it a heavy seven-gun battery, and for a 1,100-tonne ship it's surprisingly fast in a straight line. Its weakness is agility &mdash; it turns like the moon it resembles &mdash; so it fights as an immovable shield fortress rather than a duellist. Like the Corvette, it sits at the top of a navy: Imperial Duke.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>Attrition combat and survival: the longest, hardest conflict zones, Thargoid AX, wing tanking and any fight where being impossible to kill matters more than turning quickly. The shield-tank endgame.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">202 / 323 <small>m/s (fast for size)</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1 Huge &middot; 2 Large &middot; 4 Medium</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">1,100 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~703 <small>MJ (highest in game)</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">720</div></div>
+      <div class="cell"><div class="k">Power plant</div><div class="v">Class 8</div></div>
+      <div class="cell"><div class="k">Distributor</div><div class="v">Class 7</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">8&middot;8&middot;6&middot;6&middot;6&middot;5&middot;5&middot;4&middot;3&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">2 <small>(class 5)</small></div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Poor &middot; 4 crew + SLF</div></div>
+      </div>
+    <p>Four things make the Cutter the shield-tank apex:</p>
+    <ul class="clean">
+      <li><b>The strongest shields in the game.</b> Over 700 MJ at base and well past 2,500 engineered with a prismatic generator &mdash; nothing else comes close to its shield tank.</li>
+      <li><b>A huge hardpoint plus six mounts.</b> A heavy seven-gun battery headlined by a huge mount &mdash; formidable firepower behind the unmatched shields.</li>
+      <li><b>Two military slots and vast internals.</b> Dedicated reinforcement plus huge optionals layer a hull tank under the shields and feed massive cell banks.</li>
+      <li><b>Fast for a capital.</b> A 323 m/s boost is brisk for a 1,100-tonne ship &mdash; it can close, reposition and even chase in a straight line.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>Its agility is dreadful &mdash; it cannot turn with anything, so nimble enemies sit in its blind spots and it can't out-duel a Corvette or any agile medium. It needs Imperial Duke rank, a large pad, and ~200M Cr. The Cutter wins fights by outlasting them, not by out-manoeuvring &mdash; in a turning duel it's at a real disadvantage.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <p class="subhd">Same class &mdash; large-pad combat ships</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Imperial Cutter</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Two huge mounts; capital agility; more alpha</span><span class="c">Federal Rear Admiral rank; lower shields</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter <span class="tag r">this</span></td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">91</span><div class="bar"><i style="width:91%"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; no rank gate</span><span class="c">Lower shields; ponderous</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>2L 2M</td><td class="pcc"><span class="p">Far faster and more agile; Imperial sibling</span><span class="c">Only four mounts; far less tank</span></td><td><span class="rscore">79</span><div class="bar"><i style="width:79%"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">Highest armour; superb AX turret tank</span><span class="c">Feeble shields; very slow; no huge mount</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Cutter and Corvette are the two apex warships, with opposite philosophies: the Corvette out-guns and out-turns, the Cutter out-shields and out-lasts. For pure killing the Corvette wins; for surviving the longest, hardest fights and tanking for a wing, the Cutter is unmatched.</p>
+    <p class="subhd">Other classes &mdash; the best mediums</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Imperial Cutter</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Elite agility; medium pad; no rank</span><span class="c">Far less tank and scale</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
+        <tr><td class="mod">Python Mk II</td><td>Medium</td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; medium pad; no rank</span><span class="c">Far less shield and tank</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; agile; medium pad; no rank</span><span class="c">Far less tank</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>3L 3M</td><td class="pcc"><span class="p">Six guns; fast; medium pad; no rank</span><span class="c">Far less shield and scale</span></td><td><span class="rscore">85</span><div class="bar"><i style="width:85%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Tough; cheap; medium pad; no rank</span><span class="c">A fraction of the Cutter's tank</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The top mediums offer agility, medium-pad access and no rank grind. But none can field the Cutter's shields, which are in a category of their own. The Cutter is what you fly when you've earned Imperial Duke and want a warship that essentially cannot be dropped.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~200M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~230M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~290M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Duke</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~200M Cr the Cutter is the priciest hull in this batch, gated behind Imperial Duke &mdash; the top of the Imperial Navy rank ladder. A fully engineered combat fit, especially with a prismatic shield, pushes the all-in figure past 290M Cr.</p>
+    <p>It's the capstone of an Imperial combat career &mdash; and conveniently, the Imperial-rank grind you're already on toward the Achenar permit and Squire is the same ladder that eventually unlocks the Cutter at Duke.</p>
+    <div class="callout amber"><span class="lbl">The Imperial capstone</span>The Cutter sits at Imperial Duke, the top of the Imperial Navy. Your current Imperial-rank work toward Squire is the first stretch of the same ladder that ends here.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no combat-specific ARX pre-built built around the Imperial Cutter; buy and outfit it normally once you hold Duke rank.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A shield-tank combat fit built around the game's best shields. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern with a prismatic-class shield and deep cell banks.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge</td><td class="st">Multi-Cannon 4</td><td class="st">Multi-Cannon 4</td><td class="eng">MC 4 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">Beam Laser 3</td><td class="st">Beam Laser 3</td><td class="eng">Beam 3 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">Multi-Cannon 3</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Multi-Cannon 2</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">Beam Laser 2</td><td class="st">Beam Laser 2</td><td class="eng">Beam 2 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 3</td><td class="st">Multi-Cannon 2</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Medium 4</td><td class="st">Pulse Laser 2</td><td class="st">Pulse Laser 2</td><td class="eng">Pulse 2 &mdash; Efficient</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr><td class="slot">Utility 6</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 7</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 8</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G3)</td></tr>
+        <tr><td class="slot">Life Support (7)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (7)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (6)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (5)</td><td class="st">Hull Reinforcement</td><td class="st">Hull Reinforcement 5</td><td class="eng">HRP 5 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Military 2 (5)</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 5</td><td class="eng">Module Reinforcement 5</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 8</td><td class="st">Shield Generator 8</td><td class="st">Prismatic Shield 8</td><td class="eng">Prismatic 8 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 8</td><td class="st">Cargo Rack 8</td><td class="st">Shield Cell Bank 8</td><td class="eng">SCB 8</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Fighter Hangar 6</td><td class="eng">Fighter Hangar 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 6</td><td class="eng">SCB 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 6</td><td class="eng">HRP 6 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 5</td><td class="eng">HRP 5 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 5</td><td class="eng">Module Reinforcement 5</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 4</td><td class="eng">SCB 4</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 3</td><td class="eng">Module Reinforcement 3</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">Heat Sink storage</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">Prismatic shields are the point</span>The Cutter's identity is its shield tank &mdash; a prismatic generator plus four Heavy-Duty boosters and multiple cell banks push it past 2,500 MJ, beyond anything else in the game. Build around the shield; the huge gun and reinforcement are the supporting cast.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Imperial Duke, buy the hull, and fit the largest shield a class-8 bay allows plus reinforcement &mdash; even basic, it's nearly unkillable.</p>
+    <p>Arm the huge mount with a gimballed multi-cannon and spread beams/multi-cannons across the rest.</p>
+    <p>Load the eight utilities with shield boosters and add the fighter bay; the Cutter fields everything.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for the shield-tank apex:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('Shield Generator &rarr; prismatic', "The Cutter's whole identity; the biggest, best shield is the priority.", '~25M Cr')</li>
+      <li><span class="stepnum">2</span>('Power Plant &rarr; A', 'Power for seven guns, a huge shield, cells, SLF and eight utilities.', '~30M Cr')</li>
+      <li><span class="stepnum">3</span>('Power Distributor &rarr; A', 'Sustain seven guns plus the shield-cell draw.', '~22M Cr')</li>
+      <li><span class="stepnum">4</span>('Thrusters &rarr; A', 'Recover what mobility a 1,100t hull can manage.', '~22M Cr')</li>
+      <li><span class="stepnum">5</span>('FSD &rarr; A', 'Move a vast warship between fights and turn-ins.', '~20M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Shield before guns</span>Unlike most warships, the Cutter is built shield-first &mdash; fit and engineer the biggest prismatic generator you can before touching weapons; the shield <em>is</em> the ship.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern built around a prismatic shield. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Prismatic Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one)</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">Beam Lasers</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Shield generator Resistance-Augmented plus four Heavy-Duty boosters first &mdash; the shield is the ship.</li>
+      <li><span class="stepnum">2</span>Plant and distributor to G5 to power seven guns plus the shield-cell draw.</li>
+      <li><span class="stepnum">3</span>Thrusters to G5 to recover what mobility the vast hull allows.</li>
+      <li><span class="stepnum">4</span>Weapons last: Overcharged huge multi-cannon with Corrosive, Thermal-Vent beams.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Heavy &mdash; G5 across class-8 cores, a prismatic shield, seven weapons and deep reinforcement; one of the largest spends in the fleet. The prismatic generator requires Imperial-faction access to purchase. With a complete inventory it's spend, not farm. Ask for exact per-blueprint counts before committing.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>323 m/s</td><td>323 m/s</td><td class="acc">~380 m/s</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~900</td><td>~1,400</td><td class="acc">~2,500+</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>720</td><td>720</td><td class="acc">~3,500+</td></tr>
+        <tr><td class="mod">Sustained DPS</td><td>very high</td><td>very high</td><td class="acc">elite (huge + 6)</td></tr>
+        <tr><td class="mod">Agility</td><td>poor</td><td>poor</td><td class="acc">poor (vast hull)</td></tr>
+      </tbody>
+    </table>
+    <p>Engineered, the Cutter's shield exceeds 2,500 MJ &mdash; in a class of its own &mdash; over effective armour into the thousands, with seven guns and brisk straight-line speed. It will never turn well; it doesn't need to. It out-lasts everything and hits hard while doing so.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>High-intensity conflict zones.</b> The Cutter sits in the hottest CZ and simply does not drop, grinding combat bonds indefinitely.</li>
+      <li><b>Hazardous RES.</b> It clears the highest-value bounties at total leisure behind its shield wall.</li>
+      <li><b>Pirate massacre stacks.</b> Stack missions and clear them from an essentially unkillable platform.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Thargoid AX combat.</b> Its shields and seven mounts make it a formidable AX tank with the right weapons and guardian modules.</li>
+      <li><b>Wing tanking.</b> As the game's best shield tank it holds aggro and area-denies while wingmates strike &mdash; the ultimate wing anchor.</li>
+      <li><b>Combat-and-cargo.</b> Vast internals let it haul a serious load while still fighting &mdash; capital-scale flexibility behind the shields.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example systems</span>Any high-intensity CZ or Haz RES suits it; for AX, head to Thargoid-active systems. As a Gutamaya hull at the top of the Imperial Navy, it's the eventual endgame of your Imperial-rank journey beyond Squire and the Achenar permit.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>Build shield-first &mdash; a prismatic generator and Heavy-Duty boosters are the whole point; the rest supports them.</li>
+      <li>Accept the agility; play it as an immovable shield fortress that out-lasts and out-guns, never as a duellist.</li>
+      <li>The prismatic shield generator needs Imperial-faction access to buy &mdash; your Imperial standing already provides this.</li>
+      <li>Fully engineering it is a major credit and material commitment; the shield, plant and distributor come first.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Imperial Cutter is the unsinkable battleship: the strongest shields in the game by far, a huge-mount seven-gun battery, and brisk straight-line speed for its size. The Corvette out-fights it and it can't turn to save itself &mdash; but for outlasting the hardest fights and tanking for a wing, nothing in the galaxy comes close. The Imperial combat capstone.</div>
+  </section>
+
+  <footer>
+    <p><b>Imperial Cutter &middot; Combat</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Imperial Cutter &middot; Combat dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>

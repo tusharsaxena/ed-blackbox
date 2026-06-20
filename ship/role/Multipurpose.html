@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multipurpose Role Dossier — Ship Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#d77a2e;        /* per-dossier accent (see conventions table) */
+    --acc-lt:#f4a259;
+    --acc-deep:#7a3f12;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+
+  /* role-dossier additions */
+  td.cnum{font-family:'Chakra Petch',sans-serif;font-size:13.5px;color:var(--ink);text-align:right;white-space:nowrap}
+  td.ceng{font-size:12.5px;color:var(--ink-dim)}
+  td.ceng b{color:var(--acc-lt);font-weight:500}
+  td.led{font-size:12.5px;color:var(--ink-dim);line-height:1.4}
+  table.cmp2{table-layout:fixed}
+  .recgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .rec{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--acc);border-radius:var(--radius);padding:15px 17px}
+  .rec .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--amber);font-weight:600}
+  .rec .pick{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--acc-lt);margin:5px 0 7px;font-weight:600}
+  .rec .pick small{color:var(--ink-faint);font-size:12px;font-weight:400}
+  .rec p{margin:0;font-size:13.5px;color:var(--ink-dim)}
+  .rec .alt{margin-top:8px;font-size:12.5px;color:var(--ink-faint)}
+  .rec .alt b{color:var(--ink-dim);font-weight:500}
+  .anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin-top:14px}
+  .anchors .cell{background:var(--panel);padding:12px 14px}
+  .anchors .s{font-family:'Chakra Petch',sans-serif;font-size:24px;color:var(--acc-lt);font-weight:700}
+  .anchors .n{font-size:13px;color:var(--ink);margin-top:2px}
+  .anchors .n small{color:var(--ink-faint);display:block;font-size:11px}
+  @media(max-width:680px){.recgrid{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Role Dossier <span class="sep">//</span> Multipurpose</div>
+    <h1>Multipurpose<span class="role">Ship Comparison</span></h1>
+    <p class="lede">Every do-everything hull, judged <b>for multipurpose use specifically</b> and ranked on one 1&ndash;100 scale. A multipurpose ship is the opposite of a specialist &mdash; it&rsquo;s the <b>one hull you can re-fit for combat one night, trade or mining the next, and a bit of exploration on the weekend</b>, without owning five ships. The virtues are balance: enough hardpoints to fight, enough internals to haul, enough range to roam, and the flexibility to swap between them cheaply. This dossier groups all <b>11 all-rounders</b> by pad class, ranks them, breaks down buy / A-rate / engineer costs, and closes with picks for every budget.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Ships compared</span><b>11</b></div><div class="chip"><span>Classes</span><b>Small / Medium / Large</b></div><div class="chip"><span>Defining stat</span><b>Internal capacity (cargo proxy)</b></div><div class="chip"><span>Ceiling</span><b>Anaconda 88</b></div><div class="chip"><span>Floor</span><b>Adder 62</b></div>
+    </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:88"><div class="num">88<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">How to read the scale</div>
+        <div class="d">A ship&rsquo;s number is its <b>all-round versatility</b> relative to the field &mdash; how well it balances firepower, capacity, range and flexibility, not how it excels at any single one. The <span class="acc">Anaconda (88)</span> anchors the top; the <span class="acc">Adder (62)</span> the floor. The column shows <b>max cargo</b> as a rough proxy for internal flexibility &mdash; but remember a great all-rounder is judged on balance, not any one number.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 How scored</a>
+    <a href="#s3">03 The full ladder</a>
+    <a href="#s4">04 Small pad</a>
+    <a href="#s5">05 Medium pad</a>
+    <a href="#s6">06 Large pad</a>
+    <a href="#s7">07 Recommendations</a>
+    <a href="#s8">08 Cost &amp; engineering</a>
+    <a href="#s9">09 Field notes</a>
+  </nav>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>The Multipurpose Role</h2></div>
+    <p>A multipurpose ship is the answer to &ldquo;I don&rsquo;t want to own and engineer five specialists.&rdquo; It is a single hull, balanced enough to be re-fitted for whatever tonight&rsquo;s play is &mdash; and good enough at each that you rarely feel the compromise.</p><ul class="clean"><li><b>Mixed-activity sessions.</b> Bounty hunting, then a delivery mission, then a scan of an unexplored system &mdash; all without changing ships.</li><li><b>One-ship commanders.</b> Players who want a single, beloved hull they engineer once and fly forever.</li><li><b>Mission running.</b> The general mission board mixes combat, courier, data and passenger work; an all-rounder clears it all.</li><li><b>Re-roling on the fly.</b> Swap cargo racks for shields and guns in an hour at a station &mdash; the same hull, a new job.</li></ul><div class="callout amber"><span class="lbl">What makes an all-rounder</span>Balance, not peaks. Enough hardpoints to win a fair fight, enough optional internals to haul or fit mining tools, enough jump range to roam, and a hull whose modules you&rsquo;re happy to re-fit often. A specialist beats it at any one job &mdash; but the all-rounder beats owning five specialists.</div>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>How These Ships Are Scored</h2></div>
+    <p>The 1&ndash;100 multipurpose rating weighs <em>balance</em> across, in rough order:</p><ul class="clean"><li><b>Breadth of internals</b> &mdash; the room to fit cargo, mining tools, shields or scanners as the job demands.</li><li><b>Firepower</b> &mdash; enough hardpoints and distributor to hold its own in combat without a dedicated build.</li><li><b>Jump range</b> &mdash; the reach to roam and explore between jobs.</li><li><b>Flexibility &amp; re-fit cost</b> &mdash; how cheaply and quickly it swaps roles, and how few compromises each fit makes.</li><li><b>Survivability &amp; handling</b> &mdash; a tank and agility that suit every role passably.</li></ul><p>The column shows <b>max cargo</b> only as a convenient proxy for internal capacity &mdash; do not read it as the verdict. A ship rates highly here for doing <em>several</em> things well, so a lower-cargo hull with great range and guns can out-rank a bigger hold. Compare within a class first.</p><div class="anchors"><div class="cell"><div class="s">88</div><div class="n">Anaconda<small>the ceiling</small></div></div><div class="cell"><div class="s">86</div><div class="n">Krait Phantom<small>best medium</small></div></div><div class="cell"><div class="s">82</div><div class="n">Cobra Mk V<small>best small</small></div></div><div class="cell"><div class="s">80</div><div class="n">Corsair<small>modern medium</small></div></div><div class="cell"><div class="s">62</div><div class="n">Adder<small>the floor</small></div></div></div><p class="subhd">The three cost figures</p><ul class="clean"><li><b>Hull</b> — the shipyard price of the bare ship.</li><li><b>A-rated fit (no engineering)</b> — an approximate all-in credit total for a full role-appropriate loadout using the best <em>buyable</em> modules. A ballpark; your module choices swing it.</li><li><b>To engineer</b> — engineering costs <b>materials and engineer unlocks, not credits</b>. A fully-engineered ship costs the same credits as its A-rated fit; the extra cost is a materials grind whose <b>tier</b> (Moderate / Heavy / Very heavy) scales with hull size.</li></ul><div class="callout acc"><span class="lbl">The rebuy column</span>The cost tables also list an approximate <b>rebuy</b> (~5% of insured value) — what you pay each time the ship is destroyed. It is the number that really governs how boldly you can fly.</div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>The Full Multipurpose Ladder</h2></div>
+    <p>All 11 all-rounders on one scale, best to worst. The cargo column is a rough capacity proxy, not the ranking &mdash; these ships are judged on balance. Per-class breakdowns and costs follow.</p>
+    <table class="cmp2">
+      <colgroup><col style="width:17%"><col style="width:10%"><col style="width:16%"><col style="width:7%"><col style="width:38%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Dist.</th><th>One-line verdict</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Anaconda</td><td><span class="tag r">Large</span></td><td>470 t</td><td>PD8</td><td class="led">The ultimate do-everything hull &mdash; a fleet in a single ship.</td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+<tr><td class="mod">Krait Phantom</td><td><span class="tag g">Medium</span></td><td>190 t</td><td>PD7</td><td class="led">The best medium all-rounder &mdash; versatility without compromise.</td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+<tr><td class="mod">Python</td><td><span class="tag g">Medium</span></td><td>294 t</td><td>PD7</td><td class="led">The timeless jack-of-all-trades &mdash; the original do-it-all.</td><td><span class="rscore">85</span><div class="bar"><i style="width:85%"></i></div></td></tr>
+<tr><td class="mod">Krait Mk II</td><td><span class="tag g">Medium</span></td><td>230 t</td><td>PD7</td><td class="led">The combat-leaning all-rounder &mdash; the Phantom with bigger guns.</td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+<tr><td class="mod">Cobra Mk V</td><td><span class="tag a">Small</span></td><td>110 t</td><td>PD4</td><td class="led">The best small all-rounder &mdash; punches far above its class.</td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+<tr><td class="mod">Asp Explorer</td><td><span class="tag g">Medium</span></td><td>130 t</td><td>PD4</td><td class="led">The explorer that does a bit of everything &mdash; range-first flexibility.</td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+<tr><td class="mod">Corsair</td><td><span class="tag g">Medium</span></td><td>318 t</td><td>PD7</td><td class="led">The modern medium all-rounder &mdash; a fresh take on the Python&rsquo;s job.</td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+<tr><td class="mod">Mandalay</td><td><span class="tag g">Medium</span></td><td>154 t</td><td>PD5</td><td class="led">The explorer-leaning all-rounder &mdash; roams brilliantly, fights lightly.</td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+<tr><td class="mod">Cobra Mk IV</td><td><span class="tag a">Small</span></td><td>92 t</td><td>PD3</td><td class="led">A roomy budget multirole &mdash; eclipsed by its newer sibling.</td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+<tr><td class="mod">Cobra Mk III</td><td><span class="tag a">Small</span></td><td>64 t</td><td>PD3</td><td class="led">The legendary budget multirole &mdash; where many careers begin.</td><td><span class="rscore">68</span><div class="bar"><i style="width:68%"></i></div></td></tr>
+<tr><td class="mod">Adder</td><td><span class="tag a">Small</span></td><td>30 t</td><td>PD2</td><td class="led">The humble starter all-rounder &mdash; a little of everything, cheaply.</td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>Read it in bands: <b>84&ndash;88</b> is a top-tier do-everything hull; <b>78&ndash;83</b> is an excellent all-rounder; <b>62&ndash;77</b> is a capable budget or starter pick. The scores cluster tightly &mdash; multipurpose is a deep, competitive field, and several hulls a point apart simply lean toward different jobs.</p>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Small-Pad Multipurpose</h2></div>
+    <p>Small all-rounders are the budget commander&rsquo;s best friend &mdash; cheap, agile, land anywhere, and modern enough (in the Cobra Mk V&rsquo;s case) to embarrass ships several classes larger. They cap out on internals, but for mixed light work they&rsquo;re a joy and a rebuy you&rsquo;ll never fear.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons for multipurpose</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Cobra Mk V</td><td>Small</td><td>110 t</td><td class="pcc"><span class="p">An outstanding small all-rounder &mdash; fast, flexible, and lands anywhere</span><span class="p">Modern hull with a great balance of guns, internals and range</span><span class="c">Small-ship internals cap how much it can haul or tank</span></td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+<tr><td class="mod">Cobra Mk IV</td><td>Small</td><td>92 t</td><td class="pcc"><span class="p">A roomy, stable small multirole with decent internals</span><span class="c">Sluggish and dated; outclassed by the Cobra Mk V</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
+<tr><td class="mod">Cobra Mk III</td><td>Small</td><td>64 t</td><td class="pcc"><span class="p">The iconic budget all-rounder &mdash; fast, cheap, and game for anything</span><span class="c">Small internals and a thin tank by modern standards</span></td><td><span class="rscore">68</span><div class="bar"><i style="width:68%"></i></div></td></tr>
+<tr><td class="mod">Adder</td><td>Small</td><td>30 t</td><td class="pcc"><span class="p">Dirt cheap, balanced, and surprisingly capable for its size</span><span class="c">Slow, plain, and very limited internals</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each small hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Cobra Mk V</td><td class="cnum">2.0M</td><td class="cnum amb">~5.4M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~268k</td></tr>
+<tr><td class="mod">Cobra Mk IV</td><td class="cnum">765k</td><td class="cnum amb">~3.5M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~177k</td></tr>
+<tr><td class="mod">Cobra Mk III</td><td class="cnum">350k</td><td class="cnum amb">~3.0M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~152k</td></tr>
+<tr><td class="mod">Adder</td><td class="cnum">88k</td><td class="cnum amb">~1.6M</td><td class="ceng">materials &middot; <b>Moderate</b></td><td class="cnum">~80k</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Small-pad takeaway</span>The <span class="amb">Cobra Mk V (82)</span> is the standout &mdash; a modern small hull with a remarkable balance of guns, internals and range that punches into medium territory. The classic <span class="amb">Cobra Mk III (68)</span> remains the iconic budget multirole, the <span class="amb">Cobra Mk IV (70)</span> a roomier (if dated) cousin, and the <span class="amb">Adder (62)</span> the humble floor.</div>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>Medium-Pad Multipurpose</h2></div>
+    <p>The medium class is the natural home of the all-rounder. A medium balances real firepower, generous internals and good range while still docking almost everywhere &mdash; which is why the genre&rsquo;s most beloved ships, the Krait pair and the Python, all live here.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons for multipurpose</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Krait Phantom</td><td>Medium</td><td>190 t</td><td class="pcc"><span class="p">The best <em>medium</em> all-rounder &mdash; great range, good internals, an SLF bay</span><span class="p">Fast, roomy and equally happy fighting, hauling or exploring</span><span class="c">Lighter weapons than a dedicated combat medium</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+<tr><td class="mod">Python</td><td>Medium</td><td>294 t</td><td class="pcc"><span class="p">The classic jack-of-all-trades &mdash; tanky, roomy, and lands on a medium pad</span><span class="p">Strong enough hardpoints to fight, enough internals to trade or mine</span><span class="c">Slow and a little dated; out-ranged by the Phantom</span></td><td><span class="rscore">85</span><div class="bar"><i style="width:85%"></i></div></td></tr>
+<tr><td class="mod">Krait Mk II</td><td>Medium</td><td>230 t</td><td class="pcc"><span class="p">More firepower than the Phantom, with the same roomy frame and an SLF bay</span><span class="p">A superb combat-leaning all-rounder</span><span class="c">Shorter range and heavier than its Phantom sibling</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+<tr><td class="mod">Asp Explorer</td><td>Medium</td><td>130 t</td><td class="pcc"><span class="p">Famous range and a panoramic canopy, with enough internals and guns to dabble</span><span class="p">Cheap, beloved, and endlessly flexible</span><span class="c">Weak shields and modest firepower limit the combat side</span></td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+<tr><td class="mod">Corsair</td><td>Medium</td><td>318 t</td><td class="pcc"><span class="p">A modern medium with a strong, balanced spread of hardpoints and internals</span><span class="p">Quick and capable across combat, hauling and roaming</span><span class="c">Newer hull; less proven than the Krait/Python pair</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+<tr><td class="mod">Mandalay</td><td>Medium</td><td>154 t</td><td class="pcc"><span class="p">The explorer king moonlights as a fine all-rounder &mdash; superb range and agility</span><span class="p">Cheap hull, cool-running, SCO FSD</span><span class="c">Medium tank and light internals lean it toward exploration</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each medium hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Krait Phantom</td><td class="cnum">37M</td><td class="cnum amb">~91M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~4.5M</td></tr>
+<tr><td class="mod">Python</td><td class="cnum">57M</td><td class="cnum amb">~113M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~5.6M</td></tr>
+<tr><td class="mod">Krait Mk II</td><td class="cnum">46M</td><td class="cnum amb">~101M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~5.1M</td></tr>
+<tr><td class="mod">Asp Explorer</td><td class="cnum">6.7M</td><td class="cnum amb">~13M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~641k</td></tr>
+<tr><td class="mod">Corsair</td><td class="cnum">79M</td><td class="cnum amb">~151M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~7.6M</td></tr>
+<tr><td class="mod">Mandalay</td><td class="cnum">18M</td><td class="cnum amb">~25M</td><td class="ceng">materials &middot; <b>Heavy</b></td><td class="cnum">~1.3M</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Medium-pad takeaway</span>The <span class="amb">Krait Phantom (86)</span> is the best medium all-rounder &mdash; range, room and an SLF bay. The <span class="amb">Python (85)</span> is the timeless tanky default, the <span class="amb">Krait Mk II (84)</span> the combat-leaning sibling, and the <span class="amb">Corsair (80)</span> a strong modern entry. The <span class="amb">Asp X (82)</span> and <span class="amb">Mandalay (80)</span> lean toward range and exploration.</div>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>Large-Pad Multipurpose</h2></div>
+    <p>There&rsquo;s one true large all-rounder, and it&rsquo;s the biggest do-everything hull in the game. A large pad and a heavy rebuy are the price of internals and hardpoints that let a single ship trade like a freighter, fight like a cruiser and roam like an explorer.</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons for multipurpose</th><th>Rating</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Anaconda</td><td>Large</td><td>470 t</td><td class="pcc"><span class="p">Cavernous internals, strong hardpoints and huge range &mdash; it does everything, at scale</span><span class="p">No rank gate; the closest thing to a one-ship fleet</span><span class="c">Large pad, ponderous, and a heavy rebuy for casual use</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">What each large hull costs</p>
+    <table class="cmp2">
+      <colgroup><col style="width:24%"><col style="width:17%"><col style="width:19%"><col style="width:25%"><col style="width:15%"></colgroup>
+      <thead><tr><th>Ship</th><th>Hull</th><th>A-rated fit</th><th>To engineer</th><th>~Rebuy</th></tr></thead>
+      <tbody>
+<tr><td class="mod">Anaconda</td><td class="cnum">147M</td><td class="cnum amb">~354M</td><td class="ceng">materials &middot; <b>Very heavy</b></td><td class="cnum">~18M</td></tr>
+      </tbody>
+    </table>
+    <div class="callout amber"><span class="lbl">Large-pad takeaway</span>The <span class="amb">Anaconda (88)</span> is the ultimate all-rounder &mdash; cavernous internals, strong guns and huge range in one hull, with no rank gate. It is genuinely a fleet in a single ship; the only catches are the large pad, the ponderous handling and a rebuy that makes casual losses sting.</div>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Recommendations By Commander</h2></div>
+    <p>The best all-rounder depends on your budget and which way you want it to lean. Pick the description that fits you.</p><div class="recgrid"><div class="rec"><div class="who">Brand-new · one cheap ship for everything</div><div class="pick">Cobra Mk III <small>· 68 · ~3M all-in</small></div><p>Fast, cheap and game for any job &mdash; the legendary starter that taught generations of commanders to fly. Outgrow it slowly; it stays useful for ages.</p><div class="alt"><b>Also:</b> the <b>Adder</b> if you&rsquo;re truly broke; the <b>Cobra Mk V</b> the moment you can afford it.</div></div><div class="rec"><div class="who">Best small ship, no compromises</div><div class="pick">Cobra Mk V <small>· 82 · ~20M all-in</small></div><p>A modern small hull with medium-class balance &mdash; guns, internals and range in a package that lands anywhere and costs almost nothing to lose.</p><div class="alt"><b>Also:</b> the <b>Krait Phantom</b> when you want to step up to a medium.</div></div><div class="rec"><div class="who">One medium hull for life</div><div class="pick">Krait Phantom <small>· 86 · ~55M all-in</small></div><p>The best all-rounder most commanders will ever need &mdash; great range, roomy internals, an SLF bay, and equally happy fighting, hauling or exploring.</p><div class="alt"><b>Also:</b> the <b>Krait Mk II</b> if you want more guns; the <b>Python</b> if you want more tank.</div></div><div class="rec"><div class="who">Wants it to lean toward combat</div><div class="pick">Krait Mk II <small>· 84 · ~70M all-in</small></div><p>The Phantom&rsquo;s frame with heavier hardpoints and an SLF bay &mdash; an all-rounder that wins fights and still hauls and roams when asked.</p><div class="alt"><b>Also:</b> the <b>Python</b> for a tankier, slower combat-trader.</div></div><div class="rec"><div class="who">Wants it to lean toward roaming</div><div class="pick">Mandalay <small>· 80 · ~25M all-in</small></div><p>The explorer king as a daily driver &mdash; superb range and agility with enough guns and internals to handle mission-board variety on the way to the black.</p><div class="alt"><b>Also:</b> the <b>Asp Explorer</b> for the classic range-first all-rounder.</div></div><div class="rec"><div class="who">A fleet in a single hull</div><div class="pick">Anaconda <small>· 88 · ~290M all-in</small></div><p>Trades like a freighter, fights like a cruiser, roams like an explorer &mdash; the one ship that genuinely does it all at scale, with no rank gate.</p><div class="alt"><b>Also:</b> the <b>Krait Phantom</b> for 90% of the flexibility at a fifth of the cost.</div></div></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>Cost &amp; Engineering Reality</h2></div>
+    <p>The all-rounder&rsquo;s engineering challenge is breadth: you engineer the <em>core</em> modules once, then keep a stock of role modules (cargo racks, mining tools, extra shields) to bolt on as needed. The core tour is shared across every hull here.</p><table><thead><tr><th>Module</th><th>Blueprint (G5)</th><th>Experimental</th><th>Engineer</th></tr></thead><tbody><tr><td class="mod">Frame Shift Drive</td><td>Increased Range</td><td><span class="acc">Mass Manager</span></td><td>Felicity Farseer</td></tr><tr><td class="mod">Power Plant</td><td>Overcharged <span class="muted">(or Low Emissions)</span></td><td>Thermal Spread</td><td>Hera Tani / Tod McQuinn</td></tr><tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning</td><td>Drag Drives</td><td>Felicity Farseer</td></tr><tr><td class="mod">Power Distributor</td><td>Charge Enhanced</td><td>Cluster Capacitor</td><td>The Dweller</td></tr><tr><td class="mod">Shield Generator</td><td>Reinforced <span class="muted">(or Thermal Resist)</span></td><td>Hi-Cap</td><td>Lei Cheung</td></tr></tbody></table><div class="callout"><span class="lbl">Engineer the core, swap the rest</span>The beauty of an all-rounder is that the <b>engineered core</b> (FSD, power plant, thrusters, distributor, shield) serves every role &mdash; you only swap the cheap, often-unengineered role modules on top. Engineering costs <b>materials, not credits</b>; the materials tier is <b>Moderate</b> for the smalls, <b>Heavy</b> for the mediums, and <b>Very heavy</b> for a fully-rolled Anaconda. Because engineered modules move between your own ships, the work compounds across a fleet.</div><p class="subhd">Two practical notes</p><ul class="clean"><li><b>Keep a module locker.</b> The real superpower is owning a set of role modules &mdash; cargo racks, mining tools, a passenger cabin or two &mdash; to re-fit the same hull in minutes at a station.</li><li><b>A balanced fit beats a min-maxed one here.</b> Resist the urge to specialise; the point of the hull is that it does several things well, so leave room for whatever the next job demands.</li></ul>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Field Notes &amp; Verdict</h2></div>
+    <ul class="clean"><li><b>A specialist always wins its own game.</b> The all-rounder&rsquo;s value isn&rsquo;t beating a dedicated miner at mining &mdash; it&rsquo;s saving you from owning a miner, a trader, a fighter and an explorer all at once.</li><li><b>Mediums are the genre&rsquo;s heartland.</b> They balance guns, internals and range while docking almost anywhere &mdash; which is why the Krait pair and the Python define the category.</li><li><b>Lean is a choice, not a flaw.</b> Scores a point or two apart often just mean a hull tilts toward combat (Krait Mk II), hauling (Python) or roaming (Mandalay, Asp X). Pick the lean that matches your week.</li><li><b>The Cobra Mk V rewrote the small class.</b> A modern small ship now does what used to need a medium &mdash; for budget commanders it&rsquo;s a genuine leap.</li><li><b>Engineering compounds.</b> Because modules move between your ships, every core blueprint you roll for an all-rounder pays off across your whole fleet.</li></ul><div class="callout acc"><span class="lbl">Verdict</span>For the ultimate one-ship fleet, the <b>Anaconda (88)</b> does everything at scale. For the best all-rounder most commanders will ever need, the medium <b>Krait Phantom (86)</b> is the sweet spot &mdash; with the <b>Python (85)</b> and <b>Krait Mk II (84)</b> a hair behind on different leans. On a budget, the <b>Cobra Mk V (82)</b> is the finest small all-rounder ever made.</div>
+  </section>
+
+  <footer>
+    <p><b>Multipurpose · Role Comparison Dossier</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data, cross-checked against Inara. The cargo column is a rough internal-capacity proxy, not the ranking basis; multipurpose hulls are judged on balanced versatility. Ratings are role-suitability judgements on a 1&ndash;100 scale, frozen across the roster. Cost figures are approximate. Engineering costs materials and engineer unlocks, not credits.</p>
+  </footer>
+
+</div>
+</body>
+</html>

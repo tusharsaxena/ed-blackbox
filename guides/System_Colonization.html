@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — System Colonisation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0908;
+    --bg2:#120c0b;
+    --panel:#17100e;
+    --panel2:#1d1411;
+    --grid:rgba(122,31,43,0.16);
+    --maroon:#7a1f2b;
+    --maroon-deep:#4a0e16;
+    --maroon-bright:#a8303f;
+    --amber:#e8a33d;
+    --amber-bright:#f5c879;
+    --amber-dim:#9c7434;
+    --ink:#ece1d8;
+    --ink-mute:#a2928a;
+    --ink-faint:#6f615b;
+    --green:#5cbd8a;
+    --red:#cf5048;
+    --blue:#5b9bd1;
+    --line:rgba(232,163,61,0.18);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 600px at 12% -5%, rgba(122,31,43,0.30), transparent 60%),
+      radial-gradient(800px 700px at 95% 8%, rgba(232,163,61,0.10), transparent 55%),
+      radial-gradient(1000px 800px at 50% 120%, rgba(122,31,43,0.18), transparent 60%),
+      linear-gradient(180deg,var(--bg),var(--bg2));
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:'Saira',sans-serif;
+    font-weight:300;
+    line-height:1.62;
+    font-size:16.5px;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse 120% 90% at 50% 30%,#000 55%,transparent 100%);
+    opacity:0.5;
+  }
+  .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 22px 120px;}
+
+  /* ---------- Eyebrow / labels ---------- */
+  .eyebrow{
+    font-family:'Chakra Petch',monospace;
+    text-transform:uppercase;
+    letter-spacing:0.32em;
+    font-size:11px;
+    color:var(--amber);
+    font-weight:600;
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--amber);opacity:0.7;}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    position:relative;
+    margin-top:34px;
+    padding:40px 38px 38px;
+    border:1px solid var(--line);
+    background:
+      linear-gradient(135deg, rgba(74,14,22,0.55), rgba(23,16,14,0.65) 55%),
+      var(--panel);
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;
+    background:radial-gradient(circle,rgba(232,163,61,0.22),transparent 65%);
+    pointer-events:none;
+  }
+  .bracket{position:absolute;width:22px;height:22px;border-color:var(--amber);opacity:0.85;}
+  .bracket.tl{top:10px;left:10px;border-top:2px solid;border-left:2px solid;}
+  .bracket.tr{top:10px;right:10px;border-top:2px solid;border-right:2px solid;}
+  .bracket.bl{bottom:10px;left:10px;border-bottom:2px solid;border-left:2px solid;}
+  .bracket.br{bottom:10px;right:10px;border-bottom:2px solid;border-right:2px solid;}
+  .hero h1{
+    font-family:'Chakra Petch',sans-serif;
+    font-weight:700;
+    font-size:clamp(34px,6vw,58px);
+    line-height:0.98;
+    margin:16px 0 6px;
+    letter-spacing:0.01em;
+    color:var(--ink);
+    text-shadow:0 0 28px rgba(232,163,61,0.18);
+  }
+  .hero h1 span{color:var(--amber);}
+  .hero .sub{
+    font-family:'Saira Condensed',sans-serif;
+    font-weight:500;
+    font-size:19px;
+    letter-spacing:0.04em;
+    color:var(--ink-mute);
+    text-transform:uppercase;
+    margin-top:2px;
+  }
+  .hero .meta{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;
+    font-family:'Chakra Petch',monospace;font-size:11.5px;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--ink-faint);
+    border-top:1px solid var(--line);padding-top:18px;
+  }
+  .hero .meta b{color:var(--amber-bright);font-weight:600;}
+
+  /* ---------- Section ---------- */
+  section{margin-top:54px;scroll-margin-top:20px;}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;}
+  .sec-num{
+    font-family:'Chakra Petch',monospace;font-weight:700;font-size:13px;
+    color:var(--maroon-bright);letter-spacing:0.1em;
+    border:1px solid var(--maroon);padding:3px 9px;border-radius:2px;
+    white-space:nowrap;background:rgba(122,31,43,0.18);
+  }
+  h2{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;
+    font-size:clamp(23px,3.4vw,31px);margin:0;color:var(--ink);letter-spacing:0.005em;
+  }
+  h3{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:19px;
+    color:var(--amber-bright);margin:30px 0 8px;letter-spacing:0.01em;
+  }
+  h4{
+    font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.08em;font-size:15px;color:var(--maroon-bright);margin:22px 0 6px;
+  }
+  p{margin:11px 0;}
+  a{color:var(--amber);text-decoration:none;border-bottom:1px dotted rgba(232,163,61,0.45);}
+  a:hover{color:var(--amber-bright);border-bottom-color:var(--amber-bright);}
+  strong{color:var(--ink);font-weight:600;}
+  em{color:var(--amber-bright);font-style:normal;font-weight:500;}
+  ul,ol{margin:11px 0;padding-left:22px;}
+  li{margin:7px 0;}
+  ul li::marker{color:var(--amber);}
+  ol li::marker{color:var(--amber);font-family:'Chakra Petch';font-weight:700;}
+  code{
+    font-family:'Chakra Petch',monospace;font-size:0.86em;background:rgba(232,163,61,0.10);
+    color:var(--amber-bright);padding:1px 6px;border-radius:2px;border:1px solid rgba(232,163,61,0.18);
+  }
+
+  /* ---------- Panels & callouts ---------- */
+  .panel{
+    background:linear-gradient(160deg,var(--panel2),var(--panel));
+    border:1px solid var(--line);padding:22px 24px;margin:18px 0;position:relative;
+  }
+  .lead{
+    font-size:18.5px;font-weight:400;color:var(--ink);line-height:1.6;
+    border-left:3px solid var(--amber);padding-left:18px;margin:18px 0;
+  }
+  .callout{
+    border-left:3px solid var(--amber);background:rgba(232,163,61,0.06);
+    padding:14px 18px;margin:18px 0;font-size:15.5px;
+  }
+  .callout.warn{border-left-color:var(--red);background:rgba(207,80,72,0.07);}
+  .callout.intel{border-left-color:var(--blue);background:rgba(91,155,209,0.06);}
+  .callout.cmdr{border-left-color:var(--maroon-bright);background:rgba(122,31,43,0.12);}
+  .callout .tag{
+    font-family:'Chakra Petch',monospace;font-size:10.5px;letter-spacing:0.2em;
+    text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px;color:var(--amber);
+  }
+  .callout.warn .tag{color:var(--red);}
+  .callout.intel .tag{color:var(--blue);}
+  .callout.cmdr .tag{color:var(--maroon-bright);}
+
+  /* ---------- Tables ---------- */
+  .tbl-scroll{overflow-x:auto;margin:18px 0;border:1px solid var(--line);}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px;}
+  th{
+    background:linear-gradient(180deg,var(--maroon),var(--maroon-deep));
+    color:#fff;font-family:'Chakra Petch',sans-serif;font-weight:600;
+    text-transform:uppercase;letter-spacing:0.06em;font-size:11.5px;
+    padding:10px 12px;text-align:left;border:1px solid rgba(0,0,0,0.3);
+  }
+  td{padding:9px 12px;border:1px solid rgba(232,163,61,0.10);color:var(--ink-mute);vertical-align:top;}
+  td b,td strong{color:var(--ink);}
+  tr:nth-child(even) td{background:rgba(232,163,61,0.035);}
+  tr:hover td{background:rgba(122,31,43,0.12);}
+  .t-amber{color:var(--amber-bright)!important;font-weight:500;}
+  .t-green{color:var(--green)!important;}
+  .t-red{color:var(--red)!important;}
+
+  /* ---------- Step flow ---------- */
+  .flow{counter-reset:step;margin:22px 0;}
+  .step{
+    position:relative;padding:18px 20px 18px 64px;margin:12px 0;
+    background:linear-gradient(160deg,var(--panel2),var(--panel));
+    border:1px solid var(--line);border-left:3px solid var(--amber);
+  }
+  .step::before{
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    position:absolute;left:16px;top:16px;
+    font-family:'Chakra Petch',monospace;font-weight:700;font-size:20px;color:var(--amber);
+  }
+  .step h4{margin:0 0 5px;color:var(--amber-bright);font-size:16px;
+    font-family:'Chakra Petch';letter-spacing:0;text-transform:none;}
+  .step p{margin:5px 0;font-size:15px;}
+
+  /* ---------- Stat chips ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0;}
+  .chip{
+    flex:1 1 150px;background:var(--panel);border:1px solid var(--line);
+    padding:14px 16px;position:relative;overflow:hidden;
+  }
+  .chip::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--amber);}
+  .chip .k{font-family:'Chakra Petch',monospace;font-size:10px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--ink-faint);}
+  .chip .v{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:22px;color:var(--amber-bright);margin-top:3px;line-height:1.1;}
+  .chip .d{font-size:12.5px;color:var(--ink-mute);margin-top:3px;}
+
+  /* ---------- Role grid ---------- */
+  .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:20px 0;}
+  .role{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);padding:18px;position:relative;}
+  .role .ico{font-family:'Chakra Petch';font-weight:700;font-size:11px;letter-spacing:0.16em;color:var(--maroon-bright);text-transform:uppercase;}
+  .role h4{margin:6px 0 8px;color:var(--amber-bright);font-size:17px;font-family:'Chakra Petch';text-transform:none;letter-spacing:0;}
+  .role p{font-size:14px;margin:6px 0;color:var(--ink-mute);}
+
+  /* ---------- TOC ---------- */
+  .toc{
+    background:var(--panel);border:1px solid var(--line);padding:20px 24px;margin:28px 0;
+  }
+  .toc .eyebrow{margin-bottom:12px;}
+  .toc ol{columns:2;column-gap:36px;padding-left:18px;margin:0;}
+  .toc li{margin:5px 0;font-family:'Saira Condensed';font-weight:500;letter-spacing:0.02em;}
+  .toc a{border:none;color:var(--ink-mute);}
+  .toc a:hover{color:var(--amber-bright);}
+
+  /* ---------- Divider ---------- */
+  .div{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:46px 0;}
+
+  /* ---------- Checklist ---------- */
+  .check li{list-style:none;position:relative;padding-left:30px;margin:9px 0;}
+  .check{padding-left:0;}
+  .check li::before{
+    content:"";position:absolute;left:0;top:4px;width:15px;height:15px;
+    border:1.5px solid var(--amber);border-radius:2px;background:rgba(232,163,61,0.08);
+  }
+  .check li::after{content:"›";position:absolute;left:4px;top:1px;color:var(--amber);font-weight:700;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:70px;border-top:1px solid var(--line);padding-top:24px;
+    font-family:'Chakra Petch',monospace;font-size:11.5px;letter-spacing:0.08em;
+    color:var(--ink-faint);text-transform:uppercase;
+  }
+  footer b{color:var(--amber-dim);}
+  .ref-list{font-family:'Saira',sans-serif;text-transform:none;letter-spacing:0;font-size:14.5px;}
+  .ref-list li{color:var(--ink-mute);}
+
+  @media(max-width:640px){
+    .toc ol{columns:1;}
+    body{font-size:16px;}
+    .hero{padding:30px 22px;}
+    .step{padding-left:58px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <span class="bracket tl"></span><span class="bracket tr"></span>
+    <span class="bracket bl"></span><span class="bracket br"></span>
+    <span class="eyebrow">Fleet Operations Dossier · Frontier Doctrine</span>
+    <h1>SYSTEM <span>COLONISATION</span></h1>
+    <div class="sub">Building the Bubble · A Commander's Complete Guide</div>
+    <div class="meta">
+      <span>DOC&nbsp;CLASS&nbsp;//&nbsp;<b>Field Manual</b></span>
+      <span>SCOPE&nbsp;//&nbsp;<b>Odyssey · PC</b></span>
+      <span>PREPARED&nbsp;FOR&nbsp;//&nbsp;<b>CMDR Ka0s</b></span>
+      <span>BASIS&nbsp;//&nbsp;<b>Trailblazers → Dodec Update</b></span>
+    </div>
+  </header>
+
+  <div class="toc">
+    <span class="eyebrow">Navigation</span>
+    <ol>
+      <li><a href="#what">What Colonisation Is</a></li>
+      <li><a href="#why">Why It Matters &amp; Who It's For</a></li>
+      <li><a href="#benefits">The Payoffs</a></li>
+      <li><a href="#lexicon">Lexicon — Key Terms</a></li>
+      <li><a href="#start">How To Get Started</a></li>
+      <li><a href="#tiers">Tiers &amp; Construction Points</a></li>
+      <li><a href="#economy">Economy: Shaping Your System</a></li>
+      <li><a href="#reference">Build Reference Tables</a></li>
+      <li><a href="#logistics">Logistics &amp; The Haul</a></li>
+      <li><a href="#federation">Federation Alignment &amp; The Corvette</a></li>
+      <li><a href="#blueprint">Your Colony Blueprint</a></li>
+      <li><a href="#pitfalls">Pitfalls &amp; Gotchas</a></li>
+      <li><a href="#tools">Tools &amp; References</a></li>
+      <li><a href="#checklist">Pre-Flight Checklist</a></li>
+    </ol>
+  </div>
+
+  <!-- ============ 1. WHAT ============ -->
+  <section id="what">
+    <div class="sec-head"><span class="sec-num">SEC 01</span><h2>What Colonisation Is</h2></div>
+    <p class="lead">System Colonisation lets you, the Commander, claim an empty star system and build it into a real, permanent, inhabited part of the galaxy — a station, then a whole network of ports, settlements and installations that you designed and own.</p>
+
+    <p>For the entire history of Elite Dangerous, the inhabited galaxy — "the Bubble" — was static. Stations existed where Frontier placed them. You could shift faction influence, win wars, and fight Thargoids, but you could not create new infrastructure. That changed with the <strong>Trailblazers update</strong> (26 February 2025), which introduced colonisation as a player-driven way to make the Bubble grow for the first time.</p>
+
+    <p>The core loop is simple to state and large to execute:</p>
+    <ol>
+      <li>Pay a credit fee to <strong>claim</strong> an unpopulated system near existing space.</li>
+      <li>Fly there and drop a <strong>Colonisation Beacon</strong>, which summons a giant <strong>Colonisation Ship</strong>.</li>
+      <li><strong>Haul commodities</strong> — steel, composites, machinery, food, the lot — to that ship until a long shopping list is filled.</li>
+      <li>Your first starport is built. You become the system's <strong>Architect</strong>.</li>
+      <li>From there you keep building: more ports, planetary settlements, mining outposts, research labs — each one shaping the system's economy, security, wealth and population.</li>
+    </ol>
+
+    <p>It is, at heart, a <strong>logistics and construction</strong> activity wrapped around every other profession in the game. The hauling builds the bones; the choices you make about <em>what</em> to build decide what your system becomes — a mining hub, a tourist haven, a fortress, a trade nexus, or all of them at once.</p>
+
+    <div class="callout cmdr">
+      <span class="tag">Commander Note — Ka0s</span>
+      Be clear-eyed going in: the <em>building</em> phase is trade/hauling heavy, even though your interests skew hard toward combat. The win for a combat-first pilot is the <em>finished</em> system — you get to engineer a permanent backyard playground (military economy, resource rings for RES sites, your own faction to grind against) once the cargo runs are behind you. Section 10 turns this into a concrete plan.
+    </div>
+  </section>
+
+  <!-- ============ 2. WHY ============ -->
+  <section id="why">
+    <div class="sec-head"><span class="sec-num">SEC 02</span><h2>Why It Matters &amp; Who It's For</h2></div>
+    <p>Colonisation is the single largest piece of player agency Frontier has ever shipped. Your colonised system becomes a genuine, persistent feature of the galaxy: it shows on the in-game galaxy map and is catalogued by third-party services like EDSM and INARA. Other Commanders can fly to it, dock at it, trade and fight in it. Your Commander name is stamped on the system as its Architect, effectively forever — the Architect designation does not change hands even if a rival Power later seizes political control.</p>
+
+    <h3>Who should care</h3>
+    <div class="roles">
+      <div class="role"><div class="ico">Profile A</div><h4>The Builder</h4><p>You want to leave a mark — a home system designed exactly how you like it, named, painted, and run on your terms. The deepest motivation, and the one Frontier built this for.</p></div>
+      <div class="role"><div class="ico">Profile B</div><h4>The Logistician</h4><p>You enjoy trade, hauling and route optimisation. Colonisation is the biggest hauling sink in the game and rewards efficient fleets and planning.</p></div>
+      <div class="role"><div class="ico">Profile C</div><h4>The BGS / Power Player</h4><p>A colony seeds a controllable faction into a new system. Useful for Background Simulation play and for pushing a chosen Power's footprint.</p></div>
+      <div class="role"><div class="ico">Profile D</div><h4>The Specialist</h4><p>Miner, combat pilot, passenger jockey or explorer who wants a system tuned to their profession — your own rings, your own RES, your own tourist beacons, your own rearm point in the black.</p></div>
+    </div>
+
+    <div class="callout">
+      <span class="tag">Reality Check</span>
+      Colonisation is optional. Nothing forces you into it, and a single colony can absorb dozens of hours of hauling. It rewards patience and a large-cargo fleet. If you go in expecting a quick build, you'll bounce off it; go in treating it as a multi-week project and it's one of the most satisfying loops in the game.
+    </div>
+  </section>
+
+  <!-- ============ 3. BENEFITS ============ -->
+  <section id="benefits">
+    <div class="sec-head"><span class="sec-num">SEC 03</span><h2>The Payoffs</h2></div>
+    <div class="chips">
+      <div class="chip"><div class="k">Permanence</div><div class="v">Forever</div><div class="d">A real system on the galaxy map, tagged with your name as Architect.</div></div>
+      <div class="chip"><div class="k">Architect Income</div><div class="v">Weekly</div><div class="d">A recurring credit payment from every system you control, scaled by the number and size of its facilities.</div></div>
+      <div class="chip"><div class="k">Designed Economy</div><div class="v">Your Call</div><div class="d">You decide whether the system mines, farms, manufactures, researches or fights.</div></div>
+      <div class="chip"><div class="k">Forward Base</div><div class="v">Strategic</div><div class="d">A home port, rearm/repair point and shipyard exactly where you want it.</div></div>
+    </div>
+
+    <p>Beyond the headline rewards, a finished colony pays off in ways tuned to how <em>you</em> play:</p>
+    <ul>
+      <li><strong>A combat playground you own.</strong> Pick a system with good planetary rings and the Resource Extraction Sites are <em>your</em> RES; build a Military economy and the security/conflict states you can engineer give you bounties and combat bonds in your own backyard.</li>
+      <li><strong>A mission farm.</strong> Your founding faction generates missions. Keep it healthy via the BGS and you have a reliable source of combat, courier and donation missions on tap — directly useful for the navy rank grind.</li>
+      <li><strong>A trade engine.</strong> Build complementary economies (e.g. Extraction + Industrial + High-Tech) and you create profitable supply/demand inside one system or across a small cluster of your colonies.</li>
+      <li><strong>Customisation.</strong> Facilities can be renamed (5 free random rolls, or a custom name for 5,000 ARX) and starport paint jobs apply like ship liveries.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 4. LEXICON ============ -->
+  <section id="lexicon">
+    <div class="sec-head"><span class="sec-num">SEC 04</span><h2>Lexicon — Key Terms</h2></div>
+    <p>Learn these eight terms and the rest of the manual reads easily.</p>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th style="width:200px">Term</th><th>What It Means</th></tr></thead>
+      <tbody>
+        <tr><td><b>Colonisation Contact</b></td><td>An NPC service found in the Contacts panel of station services in populated space. Where you buy (and can cancel) a claim, and learn the basics.</td></tr>
+        <tr><td><b>Colonisation Suite</b></td><td>A module every ship now carries automatically (like the Discovery Scanner). It's what launches your beacon — you don't need to buy or fit it.</td></tr>
+        <tr><td><b>Colonisation Beacon</b></td><td>The object you drop at a preset spot (a flag icon on the system map) in your claimed system. Dropping it commits the claim and calls in the Colonisation Ship.</td></tr>
+        <tr><td><b>Colonisation Ship (CS)</b></td><td>A capital-class vessel — bigger than a Fleet Carrier — that parks at your primary build site. You deliver the primary port's commodities to <em>it</em>. It leaves once the port is finished.</td></tr>
+        <tr><td><b>Primary Port</b></td><td>The first station in the system. Building it is what turns the system "live" and makes you the Architect. Cannot be demolished later.</td></tr>
+        <tr><td><b>System Architect</b></td><td>You, after the primary port completes. You place all future construction, collect weekly income, and keep the title permanently.</td></tr>
+        <tr><td><b>Construction Points</b></td><td>The "currency" of expansion. Tier-1 builds <em>generate</em> points; Tier-2 and Tier-3 builds <em>spend</em> them. See Section 06.</td></tr>
+        <tr><td><b>Economy Influence</b></td><td>Each facility nudges the system toward an economy type (Extraction, Industrial, High-Tech, Agriculture, Military, Tourism, Refinery, Colony). The mix sets what the markets sell and buy.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- ============ 5. START ============ -->
+  <section id="start">
+    <div class="sec-head"><span class="sec-num">SEC 05</span><h2>How To Get Started</h2></div>
+    <p>The end-to-end procedure for your first colony. Read it all once before you claim anything — the early choices (which faction you buy from, which system you pick) are locked in and shape everything after.</p>
+
+    <div class="flow">
+      <div class="step">
+        <h4>Scout a target system first</h4>
+        <p>Open the Galaxy Map and look for an <strong>unpopulated</strong> system within roughly <strong>15 light-years</strong> of existing populated space. (This range started at 10 ly in early beta and has been tuned upward; treat 15 ly as the working figure and confirm in-game.) Visit it and honk/scan it. In the system map you can see the preset primary-port location (a circled flag) and the count of available orbital and surface build slots <em>before</em> committing.</p>
+      </div>
+      <div class="step">
+        <h4>Choose where you buy the claim — this sets your faction</h4>
+        <p>Buy the claim at a Colonisation Contact in a station whose <strong>controlling minor faction is the one you want to found your colony</strong>. That faction is carried into your new system as its native, permanent controlling faction. For your goals, that means buying from a <em>Federation-aligned</em> station (see Section 10).</p>
+      </div>
+      <div class="step">
+        <h4>Pick your primary port type &amp; pay the claim</h4>
+        <p>You select the initial port: an <strong>Outpost</strong> (cheapest, medium pad, ~19k commodities), a <strong>Coriolis</strong> (large pad, ~54k), or a large <strong>Orbis/Ocellus</strong> (~209k). The registration fee is paid in credits — budget on the order of <strong>~25 million CR</strong>; it varies with the port chosen. The claim then locks the system to you for <strong>24 hours</strong>.</p>
+      </div>
+      <div class="step">
+        <h4>Fly out and drop the beacon (within 24h)</h4>
+        <p>Travel to the claimed system, fly to the flagged location, and launch the Colonisation Beacon via the Colonisation Suite. Miss the 24-hour window and the claim is revoked. Once dropped, the Colonisation Ship arrives — <em>note the primary site can be hundreds of light-seconds from the arrival star</em>, so factor in supercruise time per round trip.</p>
+      </div>
+      <div class="step">
+        <h4>Haul the commodity list to the Colonisation Ship</h4>
+        <p>Dock with the CS and open its construction panel to see the required commodities and live progress. Buy these from nearby populated markets and ferry them in. You have a hard deadline — about <strong>28 days (≈4 weeks)</strong> — to deliver the <em>entire</em> primary-port list, or all progress is lost. Plan to begin only when you have the full window available.</p>
+      </div>
+      <div class="step">
+        <h4>Wait for the weekly tick</h4>
+        <p>When the last commodity is delivered, the port appears in a partially-built, services-offline state. It finalises at the next server maintenance tick (<strong>Thursday ~07:00 UTC</strong>). The Colonisation Ship departs, the beacon becomes a permanent nav beacon, and you are now the System Architect.</p>
+      </div>
+      <div class="step">
+        <h4>Expand at your own pace</h4>
+        <p>A Colonisation Contact now lives in your finished port. From the system map (orbital) or by flying to a surface site (planetary), you place new construction. <strong>Orbital ports carry their own ~28-day build timers; many surface settlements have no timer</strong> — handy for slow, chill building between other activities.</p>
+      </div>
+    </div>
+
+    <div class="callout intel">
+      <span class="tag">Intel — Changing Your Mind</span>
+      You can cancel a claim from any Colonisation Contact and re-claim — even from a different faction's station — if you picked the wrong founding faction or system. You forfeit the original ~25M fee and any commodities already delivered, and you may have to wait for the old Colonisation Ship to leave before re-deploying. Cheaper to get it right the first time.
+    </div>
+  </section>
+
+  <!-- ============ 6. TIERS ============ -->
+  <section id="tiers">
+    <div class="sec-head"><span class="sec-num">SEC 06</span><h2>Tiers &amp; Construction Points</h2></div>
+    <p>After the primary port, every build is gated by a points economy. This is the part new architects find confusing, so here it is plainly.</p>
+
+    <h3>The three tiers</h3>
+    <ul>
+      <li><strong>Tier 1 (T1):</strong> Outposts, basic installations, small/medium surface ports and settlements. They cost <em>no</em> construction points and each one <em>awards</em> a Tier-2 point.</li>
+      <li><strong>Tier 2 (T2):</strong> Coriolis starports, Asteroid Bases, hubs, and most "Station"-class installations. They <em>spend</em> T2 points and <em>award</em> T3 points.</li>
+      <li><strong>Tier 3 (T3):</strong> The big stuff — Ocellus, Orbis, large surface ports, and the Dodec. They <em>spend</em> T3 points and award nothing further.</li>
+    </ul>
+
+    <div class="panel">
+      <h4 style="margin-top:0">The points loop in one line</h4>
+      <p style="margin:0;font-size:16px;">Build <span class="t-amber">free T1</span> facilities → bank <span class="t-amber">T2 points</span> → spend them on <span class="t-amber">T2</span> facilities → bank <span class="t-amber">T3 points</span> → spend them on the <span class="t-amber">T3</span> showpieces. Each tier funds the next.</p>
+    </div>
+
+    <h3>Costs that escalate</h3>
+    <p>Base costs are <strong>3 points for a T2 port</strong> and <strong>6 points for a T3 port</strong>. Frontier confirmed (and later documented) that these costs rise as you build more big ports in one system: from the moment your <em>second</em> Tier-2/Tier-3 port begins construction, costs climb — T2 goes 3 → 5 → 7, and T3 goes 6 → 12 → 18 — for each subsequent large port. This is intentional, to make you build out the supporting economy rather than spam mega-stations.</p>
+
+    <div class="callout">
+      <span class="tag">Efficiency Tip</span>
+      <strong>Large surface settlements are the best point source.</strong> A <em>large</em> Tier-2 settlement awards <strong>2× Tier-3 points</strong> for a modest commodity cost (~8,500 t). Stacking a few of these is the standard way to bankroll an Ocellus, Orbis or Dodec.
+    </div>
+
+    <h3>The "go big first" shortcut</h3>
+    <p>The <em>first</em> facility you place in a brand-new system never costs points — so you <strong>can</strong> make a Tier-3 station your primary port and skip the entire points climb. It's wildly resource-intensive (200k+ tonnes) and usually needs a squadron, but it's the move for a system you intend as a true capital with few build slots.</p>
+
+    <div class="callout warn">
+      <span class="tag">Warning — Build Slots Are Finite</span>
+      Every system has a fixed number of orbital and surface slots, shown in the architect view. A system with only ~4 slots may never generate enough points to add a T3 station <em>later</em> — so if you want a large station there, build it primary, or pick a richer system. Check slot counts before you claim.
+    </div>
+  </section>
+
+  <!-- ============ 7. ECONOMY ============ -->
+  <section id="economy">
+    <div class="sec-head"><span class="sec-num">SEC 07</span><h2>Economy: Shaping Your System</h2></div>
+    <p>This is where colonisation becomes <em>design</em>. The facilities you place determine the system's economy, which determines what its markets trade, what missions appear, and what the system is good for.</p>
+
+    <h3>How economy is set</h3>
+    <ul>
+      <li>A fresh system with only a generic primary port shows the <strong>Colony</strong> economy — a placeholder "no specialism yet" state with a limited market.</li>
+      <li>Each facility carries an <strong>economy influence</strong> (Extraction, Industrial, High-Tech, Agriculture, Military, Tourism, Refinery, Contraband). Build mining facilities → the system trends Extraction; build farms → Agriculture; and so on.</li>
+      <li><strong>Planetary body type matters.</strong> The body a port orbits or sits on contributes a base economy — e.g. a rocky body gives a Refinery lean, which (with the right surface port) is how systems produce <strong>CMM Composite</strong>, the notorious bottleneck commodity.</li>
+    </ul>
+
+    <h3>The August 2025 simplification</h3>
+    <p>Early colonisation economy maths was brutal — economies "cannibalised" each other and it was easy to ruin a market by mixing types. On <strong>21 August 2025</strong> Frontier greatly simplified it: in any given market, the <strong>top two economies are each treated as if no other economy were present</strong>. In plain terms — you can now run a couple of strong economies side by side without them dragging each other down, so a mixed Extraction + Industrial system actually works. (Older community economy guides written before this date can mislead you; weight anything pre-Aug-2025 accordingly.)</p>
+
+    <div class="callout intel">
+      <span class="tag">Intel — Economy → Profession Map</span>
+      <strong>Extraction</strong> = mining markets, mineral demand. <strong>Industrial</strong> = manufacturing, machinery, good for trade. <strong>High-Tech</strong> = advanced goods, research missions, often best credit margins. <strong>Agriculture</strong> = food supply, feeds other economies. <strong>Military</strong> = security, weapons, combat-flavoured missions. <strong>Tourism</strong> = passenger &amp; sightseeing demand. <strong>Refinery</strong> = produces CMM Composite &amp; refined metals. <strong>Colony</strong> = generalist starter.
+    </div>
+  </section>
+
+  <!-- ============ 8. REFERENCE ============ -->
+  <section id="reference">
+    <div class="sec-head"><span class="sec-num">SEC 08</span><h2>Build Reference Tables</h2></div>
+    <p>Working figures for planning. Commodity totals are approximate and vary system-to-system; "trips" assume a ~784 t hauler (large engineered cargo ship). Treat these as planning baselines, not contracts.</p>
+
+    <h3>Primary port options (your first build)</h3>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Port</th><th>Tier</th><th>Max Pad</th><th>Base Economy</th><th>~Commodities</th><th>~Trips (784t)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Outpost</b> (Plutus/Vulcan/Vesta/Dysnomia/Prometheus/Nemesis)</td><td>1</td><td>Medium</td><td>Varies by variant</td><td class="t-green">~19,000</td><td class="t-green">~25</td></tr>
+        <tr><td><b>Coriolis Starport</b></td><td>2</td><td>Large</td><td>Colony</td><td class="t-amber">~54,000</td><td class="t-amber">~69</td></tr>
+        <tr><td><b>Ocellus Starport</b></td><td>3</td><td>Large</td><td>Colony</td><td class="t-red">~209,000</td><td class="t-red">~267</td></tr>
+        <tr><td><b>Orbis Starport</b> (Apollo/Artemis)</td><td>3</td><td>Large</td><td>Colony</td><td class="t-red">~209,000</td><td class="t-red">~267</td></tr>
+        <tr><td><b>Dodec Starport</b> (0/5/10-truss)</td><td>3</td><td>Large</td><td>Colony</td><td class="t-red">~236,000 (≈280k+ if primary)</td><td class="t-red">~300+</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:14px;color:var(--ink-faint);">The first facility in a system carries a surcharge: roughly +16% (T1), +32% (T2), +20% (T3) extra commodities versus the same build placed later.</p>
+
+    <h3>Tier-1 orbital outposts (each awards 1× T2 point, no point cost)</h3>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Outpost</th><th>Variant</th><th>Economy Lean</th><th>Use For</th></tr></thead>
+      <tbody>
+        <tr><td><b>Commercial</b></td><td>Plutus</td><td>Colony / Wealth</td><td>Trade-leaning starter, wealth bump</td></tr>
+        <tr><td><b>Industrial</b></td><td>Vulcan</td><td>Industrial</td><td>Manufacturing &amp; tech level</td></tr>
+        <tr><td><b>Civilian</b></td><td>Vesta</td><td>Colony</td><td>Balanced population starter</td></tr>
+        <tr><td><b>Pirate</b></td><td>Dysnomia</td><td>Colony / Contraband</td><td>Black-market flavour, low security</td></tr>
+        <tr><td><b>Scientific</b></td><td>Prometheus</td><td>High-Tech</td><td>Research, tech level</td></tr>
+        <tr><td class="t-amber"><b>Military</b></td><td>Nemesis</td><td>Military</td><td class="t-amber">Combat-flavoured system, security</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>Surface settlements — the point engine (T2)</h3>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Type</th><th>Size</th><th>Point Cost</th><th>Point Reward</th><th>~Commodities</th><th>Economy</th></tr></thead>
+      <tbody>
+        <tr><td>Any (Agri/Extraction/Industrial/Military/Research/Tourism)</td><td>Small</td><td class="t-green">Free</td><td>1× T2</td><td>~2,840</td><td>by type</td></tr>
+        <tr><td>Any</td><td>Medium</td><td class="t-green">Free</td><td>1× T2</td><td>~5,680</td><td>by type</td></tr>
+        <tr><td><b>Any (Large)</b></td><td>Large</td><td>1× T2</td><td class="t-amber"><b>2× T3</b></td><td>~8,530</td><td>by type</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:14px;color:var(--ink-faint);">Large settlements are the efficiency play: pay one T2 point, get two T3 points back. Medium = 2× a small's commodities; large = 3×.</p>
+
+    <h3>Key facilities by profession</h3>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Goal</th><th>Build</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td class="t-amber">Combat / Security</td><td>Military Outpost (Nemesis) · Military Settlement → Military Installation → <b>Military Hub</b> · Security Station</td><td>Military Hub: <b>+10 Security</b>. Drives Military economy &amp; combat-flavoured missions.</td></tr>
+        <tr><td>Passengers / Tourism</td><td>Tourism Settlement (needs a Satellite first) · Tourist Installation · <b>Exploration Hub</b></td><td>Tourism economy &amp; sightseeing demand; Exploration Hub adds +6 Tech.</td></tr>
+        <tr><td>Cargo / Trade</td><td>Industrial Outpost/Port · High-Tech Hub (Janus) · <b>Refinery Hub</b> (Silenus) · Agriculture settlements</td><td>Build 2–3 complementary economies to create real supply/demand. Refinery Hub: +5 Wealth, makes CMM.</td></tr>
+        <tr><td>Mining</td><td><b>Asteroid Base</b> (adopts ring type) · Mining Outpost · Extraction Settlement → <b>Extraction Hub</b> (Tartarus)</td><td>Extraction economy; Extraction Hub: <b>+10 Wealth</b>. Needs a ring-bearing body.</td></tr>
+        <tr><td>Population / Capital</td><td>Ocellus / Orbis / Dodec · Large Surface Port</td><td>Big population, tech, wealth and development gains — the showpiece tier.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout warn">
+      <span class="tag">Data Caveat</span>
+      Some facility variants are bugged (e.g. the <code>Eirene</code> satellite builds as a Scientific Installation; <code>Ichnaea</code> relay builds as Communications), and advertised landing-pad sizes don't always match what you get. Always verify against a live build tool (Section 12) before committing a long haul.
+    </div>
+  </section>
+
+  <!-- ============ 9. LOGISTICS ============ -->
+  <section id="logistics">
+    <div class="sec-head"><span class="sec-num">SEC 09</span><h2>Logistics &amp; The Haul</h2></div>
+    <p>Colonisation lives or dies on hauling efficiency. A Coriolis primary is ~69 trips in a big hauler; a T3 station is ~270+. Minimise distance and maximise cargo.</p>
+
+    <h3>Fleet for the job</h3>
+    <ul>
+      <li><strong>Your Type-9 Heavy (KA-05T)</strong> is the natural workhorse here — bulk cargo with a large pad. This is its moment to shine.</li>
+      <li>An <strong>Imperial Cutter</strong> is the gold standard hauler if you ever pick one up (huge cargo, fast shields), but the Type-9 is plenty.</li>
+      <li>A <strong>Fleet Carrier</strong> is the force-multiplier: park it beside the source market <em>or</em> at the build site, pre-load its 25,000 t hold with commodities bought in bulk, then shuttle short hops. Strongly worth it for any T2+ build.</li>
+    </ul>
+
+    <h3>Sourcing the commodities</h3>
+    <p>The big-ticket items are <strong>Steel, CMM Composite, Aluminium, Titanium, and Ceramic/Liquid materials</strong>. CMM Composite is the classic bottleneck — buy it wherever Refinery/Industrial economies sell it, and consider building a Refinery-leaning surface port in your own system later so the colony produces its own. Use a market finder (INARA / EDDB-style tools) to locate high-supply, low-price sources close to your build site.</p>
+
+    <h3>Time-savers worth learning</h3>
+    <ul>
+      <li><strong>Supercruise Assist drop trick:</strong> with SCA fitted, push to 100% throttle at the right distance and let it yank you out at the pad — shaves several seconds off every single approach, which adds up over 200 trips.</li>
+      <li><strong>Heatsink + fuel-scoop spool:</strong> pop a heatsink while scooping to spool the FSD and cut multi-jump times.</li>
+      <li><strong>Carrier ship-swap loop:</strong> keep two haulers in your carrier's shipyard right by the build site; load one, return, abandon-ship to respawn, swap to the second while the first transfers — halves landing overhead at awkward surface stations.</li>
+      <li><strong>Group up:</strong> any Commander can deliver to your construction site. Split commodity types across squad-mates and the haul collapses dramatically.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="tag">Tool of the Trade</span>
+      <strong>EDColony</strong> and <strong>DaftMav's colonisation construction sheets</strong> track your active depot, total what's still needed, and compute remaining trips for your specific ship. Run one of these from trip one — flying blind on a 270-trip build is how people burn out. Links in Section 12.
+    </div>
+  </section>
+
+  <!-- ============ 10. FEDERATION ============ -->
+  <section id="federation">
+    <div class="sec-head"><span class="sec-num">SEC 10</span><h2>Federation Alignment &amp; The Corvette Path</h2></div>
+    <p>This is the section that ties colonisation to your standing goals. Two things to separate clearly: <strong>(a)</strong> making your colony Federation-flavoured, and <strong>(b)</strong> grinding Federal Navy rank for the Corvette. Colonisation directly enables the first and <em>assists</em> the second — it does not hand you rank.</p>
+
+    <h3>Founding a Federation-aligned colony</h3>
+    <p>Your colony's permanent controlling faction is inherited from <strong>the station where you buy the claim</strong>. So:</p>
+    <ol>
+      <li>Pick a populated station whose <strong>controlling minor faction is aligned to the Federation</strong>.</li>
+      <li>Buy your colonisation claim there. That Federal faction becomes your new system's native controlling faction — and it stays, even through later Powerplay shifts.</li>
+      <li>Your colony is now a Federal system: Federal-flavoured missions, the option to push a Federal Power's influence, and Federal ship access at your shipyard once you build the right ports.</li>
+    </ol>
+    <p>A secondary faction slot can be seeded by your <strong>squadron's</strong> aligned faction, if you fly in one — useful if you want a specific Federal minor faction present alongside the founder. Independent NPC factions may also migrate in over time via the BGS.</p>
+
+    <h3>How this helps the Federal Corvette grind</h3>
+    <p>The Federal Corvette requires <strong>Federal Navy rank: Rear Admiral</strong> (and ~187M CR for the hull). Rank comes from doing missions for Federal factions and taking Navy promotion missions when the rank bar fills — the same pattern as your ongoing Imperial grind, just on the Federal ladder. A Federation-aligned colony you control gives you:</p>
+    <ul>
+      <li><strong>A controllable mission source.</strong> Keep your founding Federal faction in good health (high influence, stable states) via the BGS and it reliably issues missions — including the donation/courier types that fill rank bars fastest and combat missions that suit your fleet.</li>
+      <li><strong>A combat economy on tap.</strong> If you build the system Military-flavoured with good rings, you generate bounties (for your Federal-aligned security forces) and combat opportunities locally.</li>
+      <li><strong>Reputation tailwind.</strong> Federal-aligned stations start you nearer Cordial, compounding faster reputation and rank gains as you work the system.</li>
+    </ul>
+
+    <div class="callout cmdr">
+      <span class="tag">Commander Note — Ka0s</span>
+      You're currently mid Imperial grind (toward Squire / Achenar permit) and Hostile to Lavigny-Duval in Powerplay. The Federation path is a separate ladder — running it doesn't undo Imperial rank, but the two superpowers' reputations are tracked independently, and pushing one Power can cost you with rivals. Practical sequencing: finish the Imperial objective you're on, then stand up a Federal colony as the home base for the Corvette grind so the rank work happens in a system you own and shaped. The Corvette stays a "nice-to-have" capstone — colonisation just makes the grind happen on your turf instead of someone else's.
+    </div>
+
+    <div class="callout warn">
+      <span class="tag">Important Distinction</span>
+      Local minor-faction allegiance and <em>Powerplay</em> are separate systems. A Federal founding faction makes the colony Federal for BGS/mission purposes; whether a Power "controls" the system in Powerplay is a different contest. Don't expect colonising to move your Powerplay standing on its own.
+    </div>
+  </section>
+
+  <!-- ============ 11. BLUEPRINT ============ -->
+  <section id="blueprint">
+    <div class="sec-head"><span class="sec-num">SEC 11</span><h2>Your Colony Blueprint</h2></div>
+    <p>A concrete first-colony plan weighted to your priorities — combat first, then passengers, trade and mining — and flagged Federal.</p>
+
+    <h3>System selection criteria (scout for all of these)</h3>
+    <ul>
+      <li><strong>At least one ring-bearing planet</strong> — ideally metallic/metal-rich rings. This gives you RES sites for combat <em>and</em> mining once live, and lets you build an Asteroid Base.</li>
+      <li><strong>A landable rocky body</strong> — for surface settlements (your point engine) and a Refinery-lean port to self-produce CMM Composite.</li>
+      <li><strong>Generous build-slot count</strong> (check the architect view) — you want room for a Military build-out plus supporting economies, so avoid 4-slot systems.</li>
+      <li><strong>Something scenic</strong> if convenient (notable bodies / nearby nebula) — feeds the later Tourism layer for passenger work.</li>
+      <li><strong>Close to a Federal source market</strong> — keeps both the claim faction Federal and the haul short.</li>
+    </ul>
+
+    <h3>Suggested build order</h3>
+    <div class="flow">
+      <div class="step"><h4>Primary: Coriolis (Federal claim)</h4><p>A Coriolis gives you a large pad (so big ships can dock and you can sell/rearm) at a manageable ~54k-tonne / ~69-trip cost. Bought from a Federal-aligned station so the system is Federal from birth. Cheaper Outpost is fine if you want a faster first win, but the medium pad limits you.</p></div>
+      <div class="step"><h4>Stack large surface settlements for points</h4><p>Drop 2–3 <em>large</em> surface settlements — make them <strong>Military</strong> (your priority) plus one <strong>Industrial</strong> or <strong>Extraction</strong>. Each large settlement banks 2× T3 points while setting your economy mix.</p></div>
+      <div class="step"><h4>Build the Military spine</h4><p>Military Settlement → Military Installation → <strong>Military Hub</strong> (+10 Security), plus a Security Station. This pushes the system to a Military economy: combat-flavoured missions, weapons trade, and a secure base to operate from.</p></div>
+      <div class="step"><h4>Add an Asteroid Base on your best ring</h4><p>Covers your mining interest (Extraction economy, adopts the ring's content) and gives the system a second strong economy alongside Military — viable now that the top-two economies don't cannibalise.</p></div>
+      <div class="step"><h4>Layer Tourism + Refinery later</h4><p>A Satellite → Tourism settlement/installation opens passenger demand; a Refinery-lean surface port lets the colony make its own CMM Composite, easing all future builds. These are the "chill" no-timer surface builds.</p></div>
+      <div class="step"><h4>Capstone: a T3 station when points allow</h4><p>Cash your banked T3 points into an Ocellus, Orbis, or a Dodec for the population/wealth/tech spike and the prestige. By now your own Refinery output and Extraction markets shorten the haul.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 12. PITFALLS ============ -->
+  <section id="pitfalls">
+    <div class="sec-head"><span class="sec-num">SEC 12</span><h2>Pitfalls &amp; Gotchas</h2></div>
+    <ul>
+      <li><strong>The 28-day primary clock is real.</strong> Don't claim before you can commit the time/cargo. Missing it loses everything delivered.</li>
+      <li><strong>Primary ports can't be demolished.</strong> Choose the type and location deliberately — it's permanent.</li>
+      <li><strong>Escalating point costs punish station-spam.</strong> Build supporting facilities (especially large settlements) <em>before</em> reaching for multiple big ports.</li>
+      <li><strong>Few build slots = no late T3.</strong> If you want a mega-station and the system is slot-poor, build it primary or pick a different system.</li>
+      <li><strong>Founding faction is locked at claim.</strong> Buy from the right (Federal) station; fixing it later means forfeiting the fee and re-hauling.</li>
+      <li><strong>Old guides predate the August 2025 economy rework.</strong> Economy advice written earlier may steer you wrong about mixing economies — they no longer cannibalise the top two.</li>
+      <li><strong>Surface ports/settlements can be far apart and far from the star.</strong> Build-site distance is a real time cost — scout the layout before committing.</li>
+      <li><strong>Visual bugs exist.</strong> A finished facility may render as a different model than you chose; the underlying data is what counts.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 13. TOOLS ============ -->
+  <section id="tools">
+    <div class="sec-head"><span class="sec-num">SEC 13</span><h2>Tools &amp; References</h2></div>
+
+    <h4>Official &amp; canonical</h4>
+    <ul class="ref-list">
+      <li><a href="https://www.elitedangerous.com/news/system-colonisation-guide">Frontier — Official System Colonisation Guide</a> (the authoritative procedure)</li>
+      <li><a href="https://elite-dangerous.fandom.com/wiki/System_Colonisation">Elite Dangerous Wiki — System Colonisation</a> (mechanics, patch history, the Aug-2025 economy change &amp; Nov-2025 Dodec update)</li>
+      <li><a href="https://elite-dangerous.fandom.com/wiki/Dodec">Elite Dangerous Wiki — Dodec Starport</a> (the largest buildable port)</li>
+    </ul>
+
+    <h4>Planning &amp; logistics tools</h4>
+    <ul class="ref-list">
+      <li><strong>EDColony</strong> — real-time colony construction logistics companion (tracks depot, remaining commodities, trips per ship)</li>
+      <li><strong>DaftMav's Colonisation Construction Details</strong> — the community spreadsheet most reference tables derive from</li>
+      <li><a href="https://inara.cz/">INARA</a> — commodity markets, nearest sources, faction allegiance lookups (which stations are Federal)</li>
+      <li><a href="https://www.edsm.net/">EDSM</a> — system/body data; confirm your colony appears on the map</li>
+      <li><a href="https://spansh.co.uk/">Spansh</a> — routing &amp; trade plotting for sourcing runs</li>
+    </ul>
+
+    <h4>Practical community guides</h4>
+    <ul class="ref-list">
+      <li><a href="https://aetherwave.co/guides/colonisation-basics/">AetherWave — Colonisation guide series</a> (basics, construction, economy, hauling tips, reference tables)</li>
+      <li><a href="https://ricardosgaming.com/blog/elite-dangerous-space-settlement-guide-trailblazers/">Ricardo's Gaming — Space Settlement Guide</a> (hands-on first-colony walkthrough)</li>
+      <li><a href="https://forums.frontier.co.uk/forums/system-colonisation.439/">Frontier Forums — System Colonisation</a> (live bug reports, point-cost confirmations, meta discussion)</li>
+    </ul>
+
+    <div class="callout intel">
+      <span class="tag">Verification Habit</span>
+      Colonisation has been patched repeatedly — range, economy maths, and the primary-port roster (the Dodec) have all changed since launch. Before any large commitment, cross-check current figures in-game and against a tool dated <em>after</em> the most recent update, rather than trusting any single guide (this one included).
+    </div>
+  </section>
+
+  <!-- ============ 14. CHECKLIST ============ -->
+  <section id="checklist">
+    <div class="sec-head"><span class="sec-num">SEC 14</span><h2>Pre-Flight Checklist</h2></div>
+    <div class="panel">
+      <ul class="check">
+        <li>Identified a target system within ~15 ly: rings present, landable rocky body, plenty of build slots, near a Federal market.</li>
+        <li>Confirmed the claim station's controlling faction is <strong>Federation-aligned</strong>.</li>
+        <li>Decided primary port type (Coriolis recommended for the large pad) and budgeted ~25M CR.</li>
+        <li>Cleared a <strong>28-day window</strong> and prepped the Type-9 (and Fleet Carrier, if available).</li>
+        <li>Located bulk sources for Steel, CMM Composite, Aluminium, Titanium close to the build site.</li>
+        <li>Set up <strong>EDColony / a construction tracker</strong> before the first delivery.</li>
+        <li>Plan banked: large Military settlements for points → Military Hub spine → Asteroid Base → Tourism/Refinery later → T3 capstone.</li>
+        <li>Logged the new colony in your Fleet Tracker once it goes live and the Architect title lands.</li>
+      </ul>
+    </div>
+    <p class="lead">Claim deliberately, haul efficiently, build the economy before the showpiece — and you'll have a permanent, Federal, combat-ready system with your name on it. Fly safe, Architect.</p>
+  </section>
+
+  <footer>
+    <p>Field Manual · <b>System Colonisation</b> · prepared for <b>CMDR Ka0s</b> · Ray Gateway operations</p>
+    <p>Mechanics current to the <b>Dodec Update (Nov 2025)</b> and <b>Aug 2025 economy rework</b> · figures are planning baselines, verify in-game · O7</p>
+  </footer>
+
+</div>
+</body>
+</html>

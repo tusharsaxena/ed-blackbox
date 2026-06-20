@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Powerplay 2.0 — Field Manual | CMDR Ka0s</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0708;
+    --bg2:#0e0a0b;
+    --panel:#140d0f;
+    --panel2:#1a1113;
+    --grid:rgba(180,70,60,.045);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --fed:#4f9fd6;        /* Federation steel-blue, used for the recommended-power material */
+    --fed-lt:#7cc0ee;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(190,120,110,.32);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Saira',sans-serif;
+    font-weight:300;
+    line-height:1.62;
+    letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),
+      radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),
+      radial-gradient(1200px 900px at 50% 120%,rgba(79,159,214,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 22px 120px}
+
+  /* ---------- header ---------- */
+  header.masthead{padding:54px 0 26px;border-bottom:1px solid var(--hair-strong);margin-bottom:8px}
+  .kicker{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;
+    letter-spacing:5px;text-transform:uppercase;color:var(--amber);
+    display:flex;align-items:center;gap:12px;margin-bottom:18px;
+  }
+  .kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
+  .kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
+  h1.title{
+    font-family:'Chakra Petch',sans-serif;font-weight:700;
+    font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:1px;
+    color:var(--ink);text-transform:uppercase;
+  }
+  h1.title span{color:var(--maroon-lt)}
+  .subtitle{
+    margin-top:16px;font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);
+    max-width:760px;font-weight:300;
+  }
+  .masthead-meta{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;
+    font-family:'Saira Condensed',sans-serif;font-size:13px;letter-spacing:1px;
+    text-transform:uppercase;color:var(--ink-faint);
+  }
+  .masthead-meta b{color:var(--amber-lt);font-weight:600}
+
+  /* ---------- verdict hero ---------- */
+  .verdict{
+    margin:34px 0 14px;border:1px solid rgba(79,159,214,.4);border-radius:4px;
+    background:linear-gradient(180deg,rgba(79,159,214,.12),rgba(20,13,15,.6));
+    padding:30px 30px 26px;position:relative;overflow:hidden;
+  }
+  .verdict::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,var(--fed),transparent);
+  }
+  .verdict .v-eyebrow{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;
+    letter-spacing:4px;text-transform:uppercase;color:var(--fed-lt);margin-bottom:10px;
+  }
+  .verdict h2{
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(24px,4vw,34px);
+    line-height:1.05;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:6px;
+  }
+  .verdict h2 em{font-style:normal;color:var(--fed-lt)}
+  .verdict p{font-size:15.5px;color:var(--ink-dim);margin-top:12px;max-width:880px}
+  .verdict .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:22px}
+  .verdict .why div{
+    background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:3px;padding:13px 15px;
+  }
+  .verdict .why h4{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11.5px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--fed-lt);margin-bottom:5px;
+  }
+  .verdict .why p{font-size:13.5px;color:var(--ink-dim);margin:0}
+
+  /* ---------- sections ---------- */
+  section{margin-top:58px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:22px;border-bottom:1px solid var(--hair);padding-bottom:14px}
+  .sec-num{
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;
+    color:var(--bg);background:var(--amber);padding:3px 9px;border-radius:2px;flex:none;
+  }
+  .sec-head h2{
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);
+    text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05;
+  }
+  .sec-head .tag{
+    margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center;
+  }
+  p.lead{font-size:16px;color:var(--ink-dim);margin-bottom:18px}
+  section p{margin-bottom:14px;color:var(--ink-dim);font-size:15px}
+  section p strong, section li strong{color:var(--ink);font-weight:600}
+  section a{color:var(--amber-lt);text-decoration:none;border-bottom:1px solid rgba(224,145,58,.35)}
+  section a:hover{border-bottom-color:var(--amber-lt)}
+  .em-fed{color:var(--fed-lt);font-weight:600}
+  .em-good{color:var(--good);font-weight:600}
+  .em-bad{color:var(--danger);font-weight:600}
+
+  ul.clean{list-style:none;margin:6px 0 18px}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:9px;color:var(--ink-dim);font-size:15px}
+  ul.clean li::before{content:"▸";position:absolute;left:0;top:0;color:var(--amber);font-size:13px}
+
+  /* ---------- panels ---------- */
+  .panel{
+    background:var(--panel);border:1px solid var(--hair);border-radius:4px;
+    padding:22px 24px;margin:18px 0;
+  }
+  .panel.accent{border-left:3px solid var(--amber)}
+  .panel.fed{border-left:3px solid var(--fed)}
+  .panel.good{border-left:3px solid var(--good)}
+  .panel.warn{border-left:3px solid var(--danger)}
+  .panel h3{
+    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:14px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--amber-lt);margin-bottom:12px;
+  }
+  .panel.fed h3{color:var(--fed-lt)}
+  .panel.good h3{color:var(--good)}
+  .panel.warn h3{color:var(--danger)}
+  .panel p:last-child{margin-bottom:0}
+
+  /* ---------- tables ---------- */
+  .tbl-scroll{overflow-x:auto;margin:18px 0;border:1px solid var(--hair);border-radius:4px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px}
+  thead th{
+    background:linear-gradient(180deg,var(--maroon),#5c1721);
+    color:#fff;font-family:'Chakra Petch',sans-serif;font-weight:600;
+    font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;
+    padding:11px 13px;text-align:left;white-space:nowrap;
+  }
+  tbody td{padding:10px 13px;border-top:1px solid var(--hair);color:var(--ink-dim);vertical-align:top}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+  tbody tr:hover{background:rgba(224,145,58,.05)}
+  tbody td b{color:var(--ink);font-weight:600}
+  td .pill{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:.6px;text-transform:uppercase;
+    padding:1px 7px;border-radius:10px;border:1px solid var(--hair-strong);white-space:nowrap;display:inline-block}
+  .pill.fed{color:var(--fed-lt);border-color:rgba(79,159,214,.45);background:rgba(79,159,214,.08)}
+  .pill.emp{color:var(--amber-lt);border-color:rgba(224,145,58,.4);background:rgba(224,145,58,.08)}
+  .pill.all{color:var(--good);border-color:rgba(95,179,122,.4);background:rgba(95,179,122,.08)}
+  .pill.ind{color:var(--ink-dim);border-color:var(--hair-strong)}
+  .pill.combat{color:var(--danger);border-color:rgba(216,66,59,.4);background:rgba(216,66,59,.08)}
+  .pill.fin{color:var(--amber-lt);border-color:rgba(224,145,58,.4);background:rgba(224,145,58,.08)}
+  .pill.soc{color:var(--good);border-color:rgba(95,179,122,.4);background:rgba(95,179,122,.08)}
+  .pill.cov{color:var(--fed-lt);border-color:rgba(79,159,214,.4);background:rgba(79,159,214,.08)}
+  .yes{color:var(--good);font-weight:600}
+  .no{color:var(--ink-faint)}
+  .row-hi{background:rgba(79,159,214,.09) !important}
+  .row-hi td:first-child{box-shadow:inset 3px 0 0 var(--fed)}
+
+  /* ---------- module timeline ---------- */
+  .timeline{margin:20px 0}
+  .tl-item{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--hair)}
+  .tl-item:first-child{border-top:none}
+  .tl-rank{font-family:'Chakra Petch',sans-serif;font-weight:700;text-align:center}
+  .tl-rank .r{font-size:24px;color:var(--fed-lt);line-height:1}
+  .tl-rank .m{font-size:10px;letter-spacing:1px;color:var(--ink-faint);text-transform:uppercase;margin-top:3px}
+  .tl-body h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:15px;color:var(--ink);letter-spacing:.4px;margin-bottom:3px}
+  .tl-body .verdict-tag{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:1px 7px;border-radius:2px;margin-left:8px}
+  .vt-must{background:rgba(95,179,122,.15);color:var(--good);border:1px solid rgba(95,179,122,.4)}
+  .vt-good{background:rgba(224,145,58,.13);color:var(--amber-lt);border:1px solid rgba(224,145,58,.35)}
+  .vt-niche{background:rgba(168,154,147,.1);color:var(--ink-dim);border:1px solid var(--hair-strong)}
+  .vt-skip{background:rgba(216,66,59,.12);color:var(--danger);border:1px solid rgba(216,66,59,.35)}
+  .tl-body p{font-size:13.5px;margin:0;color:var(--ink-dim)}
+
+  /* ---------- callout numbers ---------- */
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0}
+  .stat{background:var(--panel2);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
+  .stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:26px;color:var(--amber-lt);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--ink-dim);margin-top:6px;letter-spacing:.3px}
+
+  /* ---------- step list ---------- */
+  ol.steps{list-style:none;counter-reset:s;margin:14px 0}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 16px 46px;margin-bottom:4px}
+  ol.steps li::before{
+    content:counter(s);position:absolute;left:0;top:-2px;width:30px;height:30px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--bg);
+    background:var(--amber);border-radius:3px;
+  }
+  ol.steps li b{color:var(--ink)}
+  ol.steps li::after{content:"";position:absolute;left:14px;top:30px;bottom:0;width:1px;background:var(--hair)}
+  ol.steps li:last-child::after{display:none}
+
+  /* ---------- refs ---------- */
+  .refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px}
+  .ref{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:14px 16px}
+  .ref h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13px;color:var(--amber-lt);letter-spacing:.6px;margin-bottom:3px}
+  .ref p{font-size:13px;color:var(--ink-dim);margin:0 0 7px}
+  .ref a{font-size:12.5px;word-break:break-all}
+
+  footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--hair-strong);
+    font-family:'Saira Condensed',sans-serif;font-size:12.5px;letter-spacing:1px;
+    text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:8px 20px}
+  footer b{color:var(--amber-lt)}
+
+  @media (max-width:560px){
+    .sec-head .tag{display:none}
+    .tl-item{grid-template-columns:52px 1fr;gap:12px}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Powerplay 2.0 · Strategic Dossier <span class="id">CMDR KA0S · INARA 173082 · KA-</span></div>
+    <h1 class="title">The Powerplay<br><span>Field Manual</span></h1>
+    <p class="subtitle">A complete operator's guide to Powerplay 2.0 — what the system is, how merits and ranks work, what the exclusive modules do, and the optimal pledge for a combat-led, Federation-aligned commander running a role-specialised fleet out of Ray Gateway.</p>
+    <div class="masthead-meta">
+      <span>Platform <b>PC · Odyssey</b></span>
+      <span>Base <b>Ray Gateway, Diaguandri</b></span>
+      <span>Profile <b>PvE Combat ▸ Passenger ▸ Trade ▸ Mining</b></span>
+      <span>Allegiance Goal <b>Federation</b></span>
+      <span>State as of <b>Cycle data 2026</b></span>
+    </div>
+  </header>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <div class="v-eyebrow">Bottom line up front</div>
+    <h2>Pledge to <em>Jerome Archer</em></h2>
+    <p>Of the twelve Powers, Archer is the one purpose-built for your profile. He is the hardline <span class="em-fed">Federation</span> Power (he took over the Federal slot from Zachary Hudson), his signature perk doubles your bounty income, his ethos awards bonus merits for exactly the combat you already do, and his module unlock order front-loads the combat weapons. Felicia Winters is the only other Federation Power and is the better pick for a pure trader — for a combat commander she is second place.</p>
+    <div class="why">
+      <div><h4>Combat ethos ×2</h4><p>His reinforcement <em>and</em> acquisition ethos are both Combat — a +50% merit bonus on bounty hunting, ship hunting and Powerplay combat zones.</p></div>
+      <div><h4>+100% bounty</h4><p>Max perk doubles bounty payouts in his systems, and bounties also feed your Tod McQuinn unlock.</p></div>
+      <div><h4>Guns first</h4><p>Pacifier Frag-Cannons are his rank-34 module — the strongest PP weapon unlocks before anything else.</p></div>
+      <div><h4>Federation-aligned</h4><p>Keeps you on-thesis for the eventual Federal Corvette without blocking your Imperial rank grind.</p></div>
+    </div>
+  </div>
+
+  <!-- 1 WHAT IS POWERPLAY -->
+  <section id="what">
+    <div class="sec-head"><span class="sec-num">01</span><h2>What Powerplay Actually Is</h2><span class="tag">The meta-layer</span></div>
+    <p class="lead">Powerplay is a galaxy-wide territorial war running <em>in parallel</em> with the normal game. You pledge to one of twelve influential leaders ("Powers") and then earn a loyalty currency called <strong>merits</strong> by doing ordinary activities — combat, trade, mining, exploration, on-foot ops — inside the right systems. Merits rank you up inside your Power, and ranks pay out credits, engineering materials, permanent perks, and exclusive modules.</p>
+
+    <div class="panel accent">
+      <h3>Powers ≠ Superpowers</h3>
+      <p>This trips up most newcomers. The three <strong>superpowers</strong> (Federation, Empire, Alliance) are the political backdrop tied to your Navy rank and permits. The twelve <strong>Powers</strong> are individual leaders who each command their own faction <em>within or across</em> those superpowers. Pledging to a Power is a separate choice from your superpower reputation — pledging to a Federation Power does <em>not</em> raise your Federal Navy rank, and it does <em>not</em> stop you grinding Imperial rank for the Achenar permit. They are independent systems.</p>
+    </div>
+
+    <p>The galaxy runs on a <strong>weekly cycle</strong> that ticks over every Thursday at the server reset. Control of systems shifts at each tick based on the aggregate effort of every pledged commander that week. You don't have to care about the macro-war to benefit — you can treat Powerplay purely as a rewards track and let the merits accumulate while you play normally. But understanding the three system states (below) is what lets you earn merits <em>efficiently</em> rather than accidentally.</p>
+
+    <div class="stat-grid">
+      <div class="stat"><div class="n">12</div><div class="l">Powers to pledge to</div></div>
+      <div class="stat"><div class="n">100</div><div class="l">Loyalty ranks per Power</div></div>
+      <div class="stat"><div class="n">12</div><div class="l">Exclusive modules</div></div>
+      <div class="stat"><div class="n">Weekly</div><div class="l">Cycle reset (Thursday tick)</div></div>
+    </div>
+
+    <div class="panel good">
+      <h3>The single most important change from PP1.0</h3>
+      <p>In the old Powerplay, merits <strong>decayed weekly</strong> and forced a constant grind. In Powerplay 2.0 your <strong>rank merits are cumulative and never decay</strong> — every merit you earn is permanent, and the only way to reset to zero is to defect to another Power. (What <em>does</em> decay weekly is the <em>system control score</em> — the macro-war territory state — which is a completely separate number from your personal rank progress. Don't confuse the two; some older guides still do.)</p>
+    </div>
+  </section>
+
+  <!-- 2 THE TWELVE POWERS -->
+  <section id="powers">
+    <div class="sec-head"><span class="sec-num">02</span><h2>The Twelve Powers</h2><span class="tag">Roster &amp; perks</span></div>
+    <p class="lead">Every Power eventually grants every module and the standard rewards — the differences that matter when you pledge are the <strong>permanent perks</strong> (the income/cost bonuses you keep while pledged) and the <strong>ethos</strong> (which activities pay +50% bonus merits). Perks below are shown at their maximum (rank 100+) value, active only inside that Power's controlled systems.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Power</th><th>Allegiance</th><th>Signature perk (max)</th><th>Best for</th></tr></thead>
+        <tbody>
+          <tr class="row-hi"><td><b>Jerome Archer</b></td><td><span class="pill fed">Federation</span></td><td>+100% bounty payouts · −30% weapon costs</td><td><b>Bounty hunting / combat</b></td></tr>
+          <tr><td><b>Felicia Winters</b></td><td><span class="pill fed">Federation</span></td><td>+100% salvage · +100% minor-faction rep · +60% food/medicine trade</td><td>Salvage, trade, rep-farming</td></tr>
+          <tr><td>Arissa Lavigny-Duval</td><td><span class="pill emp">Empire</span></td><td>+100% bounty payouts · −30% weapon costs</td><td>Imperial combat</td></tr>
+          <tr><td>Aisling Duval</td><td><span class="pill emp">Empire</span></td><td>+200% search &amp; rescue · +100% minor-faction rep</td><td>S&amp;R; Prismatics fast</td></tr>
+          <tr><td>Denton Patreus</td><td><span class="pill emp">Empire</span></td><td>+80% bounty · −40% weapon costs · −90% rearm</td><td>Combat with cheap ammo</td></tr>
+          <tr><td>Zemina Torval</td><td><span class="pill emp">Empire</span></td><td>+45% mined commodities · +20% trade · +50% imperial slaves</td><td>Mining / trade</td></tr>
+          <tr><td>Edmund Mahon</td><td><span class="pill all">Alliance</span></td><td>+50% rare goods · +25% trade · +100% minor-faction rep</td><td>Rare-goods trading</td></tr>
+          <tr><td>Nakato Kaine</td><td><span class="pill all">Alliance</span></td><td>+50% mined commodities · +120% S&amp;R · +150% minor-faction rep</td><td>Mining / S&amp;R / rep</td></tr>
+          <tr><td>Yuri Grom</td><td><span class="pill ind">Independent</span></td><td>+60% bounty · +15% explo · +15% trade · −30% weapon costs</td><td>Generalist combat</td></tr>
+          <tr><td>Li Yong-Rui</td><td><span class="pill ind">Independent</span></td><td>+100% exploration · +25% trade · free refuel/repair/rearm</td><td>Explorers &amp; traders</td></tr>
+          <tr><td>Pranav Antal</td><td><span class="pill ind">Independent</span></td><td>+30% exobiology · +50% technology trade · +150% minor-faction rep</td><td>Exobiology</td></tr>
+          <tr><td>Archon Delaine</td><td><span class="pill ind">Independent</span></td><td>+30% black market · no bounty for crimes in his space</td><td>Piracy / criminal play</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel fed">
+      <h3>Your two Federation options, side by side</h3>
+      <p><strong class="em-fed">Jerome Archer</strong> — the security-and-bounty-hunting Power. Combat ethos on both reinforcement and acquisition, a perk that doubles bounty payouts, and an unlock order that puts the combat weapons first. This is the combat commander's Federation pick.</p>
+      <p><strong class="em-fed">Felicia Winters</strong> — the diplomacy-and-welfare Power. Her perks reward salvage, food/medicine trade, and minor-faction reputation; her ethos is Finance/Social. Excellent if your weight were on trading and rep, but she gives you nothing extra for shooting things. Keep her in your back pocket as the "trade-focused Federation" alternative, but for your stated profile she loses to Archer.</p>
+    </div>
+  </section>
+
+  <!-- 3 PLEDGING -->
+  <section id="pledge">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Pledging, Defecting &amp; the One Real Drawback</h2><span class="tag">Commitment</span></div>
+    <p>Pledge from the <strong>Powerplay tab</strong> in the right-hand cockpit panel. It's free and immediate. Once pledged you get the internal rank ladder and start banking merits. There is no waiting period before you can do Powerplay activities — that's a PP1.0 myth.</p>
+    <div class="panel warn">
+      <h3>The drawback: you become enemy to all other Powers</h3>
+      <p>Pledging makes you a declared enemy of the other eleven Powers — <em>including the second Federation Power</em>. In practice this means hostile <strong>Power Security Force</strong> NPCs can attack you without penalty if they scan you in enemy-controlled territory. In <strong>Solo or Private Group</strong> this is a non-issue: those NPCs are rare and easily avoided. In <strong>Open</strong>, expect occasional interdictions from enemy commanders — softened by the universal free-rebuy perk and by the informal non-aggression pacts that same-allegiance players tend to keep.</p>
+    </div>
+    <div class="panel warn">
+      <h3>Defecting wipes your merits</h3>
+      <p>Leaving a Power resets your merit total to <strong>zero</strong> and revokes the perks. Modules you've already unlocked stay yours forever (they're tied to your account, available at any outfitter), but your rank and progress are gone. <strong>Choose once and commit.</strong> Because every Power eventually grants every module anyway, there's no longer any reason to Power-hop — pick the one whose perks and unlock order suit you and stay.</p>
+    </div>
+    <div class="panel">
+      <h3>Does this hurt my Imperial rank grind?</h3>
+      <p>No. Pledging to Archer (Federation) does not change your Imperial reputation or block the Achenar permit grind — Navy ranks come from minor-faction missions, a different system entirely. The only minor friction: as Archer's agent you're an enemy of the Imperial Powers, so in deep Imperial stronghold systems a Power Security Force scan could turn hostile. That's an Open-play edge case; in Solo it's irrelevant. You can run both tracks at once.</p>
+    </div>
+  </section>
+
+  <!-- 4 MERITS & RANKS -->
+  <section id="ranks">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Merits, Ranks &amp; Rewards</h2><span class="tag">The ladder</span></div>
+    <p class="lead">Merits are loyalty points. They rank you up; they are never spent and never decay. Each rank pays a care package, and certain ranks unlock a permanent perk tier or a module. There are 100 ranks; the climb is long and deliberately so.</p>
+
+    <div class="panel accent">
+      <h3>Gate: the first five assignments</h3>
+      <p>When you first pledge you're <strong>Rank 0</strong>. You must complete the <strong>initial set of five weekly assignments</strong> (identical for every Power) before any merits count toward rank. Until then you'll bank merits but stay stuck at 0. Knock these out first — after Rank 1, weekly assignments become optional and can be ignored with no penalty.</p>
+    </div>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Rank</th><th>Cumulative merits</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><b>1</b></td><td>0</td><td>+ complete the five initial assignments</td></tr>
+          <tr><td><b>2</b></td><td>2,000</td><td></td></tr>
+          <tr><td><b>3</b></td><td>5,000</td><td></td></tr>
+          <tr><td><b>4</b></td><td>9,000</td><td></td></tr>
+          <tr><td><b>5</b></td><td>15,000</td><td>First perk tier typically lands around here</td></tr>
+          <tr><td><b>6 – 99</b></td><td>previous + 8,000 each</td><td>Linear climb (R6 = 23k, R7 = 31k …)</td></tr>
+          <tr class="row-hi"><td><b>34</b></td><td>247,000</td><td><b>First module unlock</b></td></tr>
+          <tr><td><b>100</b></td><td>775,000</td><td>Everything maxed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel good">
+      <h3>Care packages — claim them at any Power Contact</h3>
+      <p>Every rank up to 100 grants a <strong>mini care package</strong>: 250,000 credits plus five random stacks of five ship engineering materials and five random stacks of five on-foot materials. Above rank 100 these become full <strong>care packages</strong> (double everything: 500k credits and stacks of ten). Across a full climb to 100 that's a meaningful pile of free materials and ~25M credits in package cash alone — handy even though your fleet is already mostly material-complete.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Weekly salary — a community-goal-style payout</h3>
+      <p>Each cycle you earn at least one merit, you draw a <strong>salary</strong> scaled to how your week's merit total ranks against the other agents of your Power. It is non-cumulative (paid once per cycle) and can be large at the top:</p>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>Your standing this cycle</th><th>Salary</th></tr></thead>
+          <tbody>
+            <tr><td>Top 100% (any participation)</td><td>500,000 CR</td></tr>
+            <tr><td>Top 75%</td><td>2,500,000 CR</td></tr>
+            <tr><td>Top 50%</td><td>5,000,000 CR</td></tr>
+            <tr><td>Top 25%</td><td>10,000,000 CR</td></tr>
+            <tr><td>Top 10%</td><td>50,000,000 CR</td></tr>
+            <tr><td>Top 10 agents</td><td>100,000,000 CR</td></tr>
+            <tr><td>Top agent</td><td>1,000,000,000 CR</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You won't be chasing the billion-credit top spot, but even modest weekly activity reliably banks the 2.5M–5M tier, which adds up over a Corvette-saving campaign.</p>
+    </div>
+  </section>
+
+  <!-- 5 SYSTEM STATES -->
+  <section id="states">
+    <div class="sec-head"><span class="sec-num">05</span><h2>System States &amp; Control Points</h2><span class="tag">Where merits land</span></div>
+    <p class="lead">Merits only count when an activity is done in the right kind of system. There are three that matter for earning, each tied to a different relationship with your Power's territory. Get this wrong and you'll do an hour of bounty hunting for zero merits.</p>
+
+    <div class="panel fed">
+      <h3>The three earning states</h3>
+      <ul class="clean">
+        <li><strong class="em-fed">Reinforcement</strong> — systems your Power already controls. You strengthen them. This is your bread-and-butter state for combat and most activities. <span class="em-bad">Caveat:</span> reinforcement carries a standing <strong>−35% merit penalty</strong> (applied since the April 2025 rebalance) — you still earn, just less per action than acquisition.</li>
+        <li><strong class="em-good">Acquisition</strong> — unoccupied-but-inhabited systems your Power is trying to claim, within 20 Ly of one of your fortified systems (or 30 Ly of an allied stronghold). Carries a small <strong>+5% bonus</strong>. Powerplay combat zones <em>only</em> spawn here, in contested acquisition systems.</li>
+        <li><strong class="em-bad">Undermining</strong> — enemy-controlled systems you weaken. Also +5% merit, but heavily distance/strength-penalised and the territory work is offensive rather than defensive.</li>
+      </ul>
+    </div>
+
+    <p>Behind the scenes, your merits convert into <strong>control points</strong> that move systems between states at the weekly tick. Control points are roughly your merits ÷ 4 for most activities (÷ 6 for exploration/exobiology). Approximate thresholds:</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">~36k</div><div class="l">CP to trigger an acquisition conflict</div></div>
+      <div class="stat"><div class="n">120k</div><div class="l">CP to claim (acquire) a system</div></div>
+      <div class="stat"><div class="n">350k</div><div class="l">CP Exploited → Fortified</div></div>
+      <div class="stat"><div class="n">650k</div><div class="l">CP Fortified → Stronghold</div></div>
+    </div>
+    <div class="panel">
+      <h3>Why you care about Fortified &amp; Stronghold systems</h3>
+      <p>A system can only advance one state per cycle. <strong>Fortified</strong> and <strong>Stronghold</strong> systems extend your Power's acquisition reach and resist undermining — and Stronghold systems host <strong>Stronghold Carriers</strong>, which sell almost the full ship-and-module catalogue like a mini-Jameson Memorial. Pledging to Archer gives you access to his Stronghold Carriers as a forward outfitting base near the front line. Since the July 2025 rebalance, controlled systems also suffer a weekly <strong>control-score decay</strong> above 25% progress, which is why active Powers need constant reinforcement.</p>
+    </div>
+  </section>
+
+  <!-- 6 EARNING MERITS -->
+  <section id="earning">
+    <div class="sec-head"><span class="sec-num">06</span><h2>How You Actually Earn Merits</h2><span class="tag">Activity matrix</span></div>
+    <p class="lead">Nearly every loop in the game feeds Powerplay now — but each activity only counts in specific states. Here's the full matrix, with the column that matters most to you (combat) called out.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Activity</th><th>Reinforce</th><th>Acquire (contested)</th><th>Undermine</th></tr></thead>
+        <tbody>
+          <tr class="row-hi"><td><b>Bounty hunting</b> (merits on kill, not cash-in)</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+          <tr class="row-hi"><td><b>Powerplay combat zones</b> (on kill)</td><td class="no">—</td><td class="yes">✓</td><td class="no">—</td></tr>
+          <tr class="row-hi"><td><b>Enemy Powerplay-ship hunting</b></td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Large-profit trading (≥40% margin)</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+          <tr><td>Low-cost market flooding (&lt;500 CR/t)</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Selling <b>mined commodities</b></td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Powerplay commodity hauling</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Rare-goods trading</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+          <tr><td>Selling exploration data (cartographics)</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td></tr>
+          <tr><td>Selling exobiology data</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td></tr>
+          <tr><td>Odyssey data retrieval / upload</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Scanning ships &amp; wakes</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+          <tr><td>Handing in escape pods &amp; salvage</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Holoscreen hacking</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Donation / humanitarian missions</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+          <tr><td>Megaship uplink scanning</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Committing crimes</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel warn">
+      <h3>Passenger missions earn ZERO merits — note this carefully</h3>
+      <p>Your #2 activity, passenger running, is <strong>not on the merit list</strong>. The Robigo loop on the Lynx Highliner stays an excellent <em>credit</em> earner, but it contributes nothing to Powerplay rank. That's not a reason to stop — it's a reason to keep passenger work and Powerplay work mentally separate. Everything else in your profile (combat, cargo trade, mining) feeds the ladder; passenger is the one outlier.</p>
+    </div>
+
+    <div class="panel accent">
+      <h3>The ethos multiplier — why this favours Archer</h3>
+      <p>Each Power awards roughly <strong>+50% bonus merits</strong> on activities that match its ethos. There are four ethos types — Combat, Finance, Social, Covert — and a Power has a different one for each of reinforcement, acquisition, and undermining. Archer's are <strong class="em-bad">Combat / Combat / Covert</strong>, so your bounty hunting and combat-zone kills in his reinforcement and acquisition systems get the bonus. For a combat main, that bonus lands on your primary loop every time.</p>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>Ethos type</th><th>Activities it boosts</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pill combat">Combat</span></td><td>Bounty hunting, combat zones, Powerplay-ship hunting</td></tr>
+            <tr><td><span class="pill fin">Finance</span></td><td>Trade, mining sales, PP commodity hauling, exploration &amp; exobio data</td></tr>
+            <tr><td><span class="pill soc">Social</span></td><td>Search &amp; rescue, support missions, Odyssey retrieval, settlement reactivation</td></tr>
+            <tr><td><span class="pill cov">Covert</span></td><td>Odyssey data/goods, malware upload, holoscreen hacking, megaship scans, crimes</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel good">
+      <h3>Fastest merit rates (community-measured)</h3>
+      <ul class="clean">
+        <li><strong>Selling mined commodities</strong> — the single fastest method at <strong>25,000–35,000 merits/hr</strong> with a well-tuned mining ship in a system where you mine and sell the same high-value commodity. Merits scale with profit margin.</li>
+        <li><strong>Powerplay combat zones</strong> (contested acquisition systems) — <strong>15,000–25,000 merits/hr</strong> in a proper combat ship. This is your lane, and it stacks with Archer's combat ethos bonus.</li>
+        <li><strong>Bounty hunting</strong> — merits awarded on each kill (roughly proportional to the bounty, on the order of ~1 merit per 1,000 CR), <em>not</em> at cash-in. Slower than the above two but it's your default loop and it double-dips (see §9).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7 MODULES -->
+  <section id="modules">
+    <div class="sec-head"><span class="sec-num">07</span><h2>The Exclusive Modules</h2><span class="tag">The prizes</span></div>
+    <p class="lead">Twelve Powerplay-only modules exist. Every Power grants all twelve eventually (and all of them by rank 97), but the <strong>order</strong> differs. Below is Archer's unlock sequence — note how the combat weapons stack up front. The first one lands at rank 34 (≈247,000 merits).</p>
+
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-rank"><div class="r">34</div><div class="m">247k</div></div>
+        <div class="tl-body"><h4>Pacifier Frag-Cannon<span class="verdict-tag vt-must">Must-have</span></h4><p>Class-3 fixed frag-cannon with more range and tighter spread than stock. The benchmark short-range shred weapon and a staple of meta combat builds — and it's Archer's <em>first</em> unlock. This alone justifies the pledge.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">39</div><div class="m">287k</div></div>
+        <div class="tl-body"><h4>Pulse Disruptor<span class="verdict-tag vt-niche">Niche</span></h4><p>Fixed pulse laser that reliably disrupts the <em>targeted</em> module (unlike random scramble spectrum). Low damage and only works once shields are down — a specialist's tool.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">44</div><div class="m">327k</div></div>
+        <div class="tl-body"><h4>Containment Missile<span class="verdict-tag vt-good">Situational</span></h4><p>Fixed dumbfire that reboots the target's FSD on hit — a longer-lasting FSD-interrupt. Excellent for pinning runners in PvE pirate hunts and ganking-defence.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">50</div><div class="m">375k</div></div>
+        <div class="tl-body"><h4>Enforcer Cannon<span class="verdict-tag vt-good">Good</span></h4><p>Class-1 fixed multicannon hitting like a class-3, at the cost of ammo and reload. Brilliant on small-hardpoint ships — turns your Viper's or Cobra's tiny mounts into real damage. Fixed-only, so best on agile hulls.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">57</div><div class="m">431k</div></div>
+        <div class="tl-body"><h4>Pack-Hound Missiles<span class="verdict-tag vt-good">Fun / good</span></h4><p>Fires a four-missile volley per shot — overwhelms point-defence and looks spectacular. Limited by seeker ammo and poor armour penetration against big hulls.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">63</div><div class="m">479k</div></div>
+        <div class="tl-body"><h4>Concord Cannon<span class="verdict-tag vt-good">Good</span></h4><p>Gimballed cannon firing three rapid projectiles for more total damage. Newest module (Nakato Kaine's signature); early tests rate it a solid gimballed-cannon sidegrade.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">70</div><div class="m">535k</div></div>
+        <div class="tl-body"><h4>Advanced Plasma Accelerator<span class="verdict-tag vt-good">Good</span></h4><p>Class-3 fixed PA firing three projectiles for higher total damage. A near-equivalent sidegrade to the standard APA with extra distributor/heat draw.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">76</div><div class="m">583k</div></div>
+        <div class="tl-body"><h4>Cytoscrambler<span class="verdict-tag vt-good">Sleeper</span></h4><p>Class-1 fixed burst laser doing class-3 damage to shields, at the cost of range and zero armour pen. A "sleeper" anti-shield pick for fast small ships; pairs with long-range engineering.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">83</div><div class="m">639k</div></div>
+        <div class="tl-body"><h4>Prismatic Shield Generator<span class="verdict-tag vt-must">Must-have*</span></h4><p>Strongest shields in the game (one class above a normal generator's strength) at the cost of mass, power and recharge. The community-favourite module — but Archer unlocks it <em>late</em>. <strong>See the trade-off note below.</strong></p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">88</div><div class="m">679k</div></div>
+        <div class="tl-body"><h4>Imperial Hammer<span class="verdict-tag vt-good">Good</span></h4><p>Fixed railgun firing three projectiles per shot for more total damage — at a steep heat cost. A sidegrade to the standard rail for heat-managed builds.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">91</div><div class="m">703k</div></div>
+        <div class="tl-body"><h4>Retributor<span class="verdict-tag vt-skip">Skip</span></h4><p>Heat-inducing beam laser, widely regarded as the weakest PP module — tiny damage and a marginal heat effect. Unlocked almost last for Archer, which is fitting.</p></div></div>
+
+      <div class="tl-item"><div class="tl-rank"><div class="r">97</div><div class="m">751k</div></div>
+        <div class="tl-body"><h4>Mining Lance<span class="verdict-tag vt-skip">Skip</span></h4><p>Beam laser that doubles as a mining tool — poor at both. Last on Archer's list and safe to ignore.</p></div></div>
+    </div>
+
+    <div class="panel warn">
+      <h3>The one real trade-off: Prismatics come late</h3>
+      <p>If your top priority were <strong>Prismatic Shields</strong>, the fastest route is <strong>Aisling Duval</strong> (Empire), who unlocks them at rank 34 instead of Archer's rank 83. For you this doesn't change the recommendation: your combat doctrine runs <strong>bi-weave shields with Resistance Augmented</strong>, not Prismatic shield-tanking, so the Pacifier-first ordering serves you far better than an early Prismatic would. If you later build a dedicated shield-tank, you'll still get Prismatics from Archer — just at rank 83 — or buy them once unlocked on any account that has them. Don't Power-hop for them.</p>
+    </div>
+  </section>
+
+  <!-- 8 WHY ARCHER -->
+  <section id="why">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Power Selection — The Case for Archer</h2><span class="tag">Decision</span></div>
+    <p class="lead">Scoring the twelve Powers against your four priorities and your Federation goal, only two are even in contention, and Archer wins on every axis that matters to a combat main.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Criterion</th><th>Jerome Archer</th><th>Felicia Winters</th><th>Why it matters to you</th></tr></thead>
+        <tbody>
+          <tr class="row-hi"><td><b>Combat ethos bonus</b></td><td class="yes">Combat / Combat</td><td class="no">Finance / Social</td><td>+50% merits on your #1 loop, every time</td></tr>
+          <tr><td><b>Combat income perk</b></td><td class="yes">+100% bounty</td><td class="no">salvage/trade only</td><td>Doubles bounty credits in his space</td></tr>
+          <tr><td><b>Weapon economy</b></td><td class="yes">−30% weapon cost</td><td class="no">none</td><td>Cheaper to re-arm a combat fleet</td></tr>
+          <tr><td><b>Module order</b></td><td class="yes">Pacifier first</td><td class="no">Pulse Disruptor first</td><td>Best combat weapon unlocks at R34</td></tr>
+          <tr><td><b>Federation-aligned</b></td><td class="yes">Yes</td><td class="yes">Yes</td><td>On-thesis for the Federal Corvette</td></tr>
+          <tr><td><b>Cargo trade merits</b></td><td class="yes">Yes (no ethos bonus)</td><td class="yes">+Finance ethos</td><td>Both work; Winters slightly faster for pure trade</td></tr>
+          <tr><td><b>Mining merits</b></td><td class="yes">Yes (no ethos bonus)</td><td class="yes">+Finance ethos</td><td>Both work; mining is universal anyway</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel good">
+      <h3>Verdict</h3>
+      <p>Pledge <strong class="em-fed">Jerome Archer</strong>. Your combat-heavy weighting collides perfectly with his Combat ethos and bounty-doubling perk, the combat modules front-load, and he keeps you Federation-flagged for the Corvette. Your trading and mining still earn merits under him (just without the +50% Finance bonus that Winters would give) — and since mining is the universal fastest method regardless of Power, you lose almost nothing there. The only activity that earns you nothing under <em>any</em> Power is passenger work, and that's a property of Powerplay, not of Archer. <strong>Winters is the correct pick only if you later decide to flip into a trade-first commander.</strong></p>
+    </div>
+  </section>
+
+  <!-- 9 PLAYBOOK -->
+  <section id="playbook">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Your Operational Playbook</h2><span class="tag">Fleet deployment</span></div>
+    <p class="lead">How to run Powerplay across your existing fleet, in order, from pledge day to your first module.</p>
+    <ol class="steps">
+      <li><b>Pledge to Archer</b> from the cockpit Powerplay panel. Pull up his live territory (see references) and identify a cluster of his <b>reinforcement</b> systems and any <b>contested acquisition</b> systems near the bubble — that's where your kills will count.</li>
+      <li><b>Clear the five initial assignments</b> to leave Rank 0. They're a mix of light tasks; the Python Mk II handles the combat ones and the Type-9 / Cobra cover any haul-or-deliver steps. Don't grind merits hard until these are done — they won't bank.</li>
+      <li><b>Set up a forward base</b> at an Archer <b>Stronghold Carrier</b> (in a stronghold system) for re-arm and outfitting near the front, so you're not flying back to Ray Gateway between sorties. The −30% weapon-cost perk applies in his space.</li>
+      <li><b>Run your combat loop in Archer space.</b> Bounty hunting at RES / nav beacons in his <b>reinforcement</b> systems, and Powerplay combat zones in <b>contested acquisition</b> systems — both earn merits on kill, both get the +50% Combat ethos bonus. This is the Python's job; the Viper and Cobra are excellent for the agile small-ship work.</li>
+      <li><b>Bolt on a mining sortie when you want a merit sprint.</b> The Type-11 selling mined commodities in-system is the fastest merit method in the game (25–35k/hr). One good session noticeably accelerates the climb to rank 34.</li>
+      <li><b>Fold cargo runs in.</b> The Type-9 doing ≥40%-margin trades into Archer reinforcement/acquisition systems banks merits on top of normal trade profit — no detour from your trading role.</li>
+      <li><b>Sell exploration data inside Archer reinforcement systems.</b> When the Mandalay / Asp come home from a trip, hand cartographic data to Universal Cartographics in his territory. Note the quirk: hand in <em>per-system</em> (not the bulk-screen method), and the big payers are Water Worlds, Earth-Likes and Ammonia Worlds.</li>
+    </ol>
+
+    <div class="panel accent">
+      <h3>The triple-dip: combat in Archer space feeds three goals at once</h3>
+      <p>This is the synergy that makes the whole plan click. Bounty hunting in Archer-controlled systems simultaneously generates:</p>
+      <ul class="clean">
+        <li><strong>Bounty vouchers</strong> — which count toward your in-progress <strong>Tod McQuinn</strong> unlock (100,000 CR in vouchers). Khun 13 RES remains the venue; just run it inside Archer territory where possible.</li>
+        <li><strong>Doubled bounty credits</strong> — Archer's +100% payout perk turns the same kills into twice the cash.</li>
+        <li><strong>Powerplay merits</strong> — on each kill, with the +50% Combat ethos bonus on top.</li>
+      </ul>
+      <p>One combat loop, three progress bars. Your existing Tod grind and your new Powerplay grind are the <em>same activity</em> — just relocate it into Archer space.</p>
+    </div>
+
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Ship</th><th>Powerplay role</th><th>Earns merits via</th></tr></thead>
+        <tbody>
+          <tr class="row-hi"><td><b>Python Mk II</b> (KA-05P)</td><td>Primary combat platform</td><td>Bounty hunting · PP combat zones (ethos-boosted)</td></tr>
+          <tr><td><b>Cobra Mk V</b> (KA-05C)</td><td>Agile multirole / ship hunting</td><td>Enemy PP-ship hunting · bounties</td></tr>
+          <tr><td><b>Viper Mk IV</b> (KA-17V)</td><td>Small-pad combat</td><td>Bounty hunting · Enforcer Cannon home</td></tr>
+          <tr><td><b>Type-11 Prospector</b> (KA-05L)</td><td>Merit sprint</td><td>Selling mined commodities (fastest rate)</td></tr>
+          <tr><td><b>Type-9 Heavy</b> (KA-05T)</td><td>Trade contribution</td><td>≥40%-margin trading · PP commodity hauling</td></tr>
+          <tr><td><b>Asp Explorer / Mandalay</b></td><td>Exploration contribution</td><td>Cartographic data sales (reinforcement only)</td></tr>
+          <tr><td><b>Lynx Highliner</b> (KA-16M)</td><td><span class="no">No Powerplay role</span></td><td><span class="no">Passenger missions earn no merits</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 10 PITFALLS -->
+  <section id="pitfalls">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Pitfalls &amp; Fine Print</h2><span class="tag">Don't get caught out</span></div>
+    <ul class="clean">
+      <li><strong>Wrong-state grinding.</strong> Bounty hunting in a system that isn't Archer reinforcement or acquisition earns <em>zero</em> merits. Always check the system's Powerplay state before settling in to farm.</li>
+      <li><strong>Reinforcement penalty is permanent.</strong> The −35% merit hit on reinforcement is baked in — acquisition work is more merit-efficient per action, when contested systems are available near you.</li>
+      <li><strong>Merits on kill, not cash-in.</strong> For both bounties and combat bonds, merits register the instant the target dies. You don't need to cash in for the merit (you do still cash in for credits and for the Tod voucher total).</li>
+      <li><strong>Don't defect.</strong> Switching Powers zeroes your merits. Modules you've unlocked are kept, but the rank climb restarts. Commit to Archer.</li>
+      <li><strong>Solo/PG is the low-stress option.</strong> If enemy-CMDR interdictions aren't your thing, run Powerplay in Solo or a Private Group — the macro-war contribution still counts and the hostile-CMDR risk vanishes.</li>
+      <li><strong>Galaxy-map info can lag.</strong> In-game Powerplay panels have historically been unreliable about what counts where. Cross-check current territory with a live external tracker (below) before committing a session.</li>
+      <li><strong>Exploration data: hand in per-system.</strong> Don't use the bulk "sell all" screen for merit purposes — sell the systems containing the high-value bodies individually.</li>
+    </ul>
+  </section>
+
+  <!-- 11 REFERENCES -->
+  <section id="refs">
+    <div class="sec-head"><span class="sec-num">11</span><h2>External References</h2><span class="tag">Source of truth</span></div>
+    <p class="lead">Powerplay is live-service and Frontier rebalances it regularly. These are the current authoritative sources for mechanics and for live territory intel.</p>
+    <div class="refs">
+      <div class="ref"><h4>Inara — Powerplay 2.0 guide</h4><p>The comprehensive mechanics reference (ranks, modules, ethos, activities). Most of this dossier's data is cross-checked against it.</p><a href="https://inara.cz/elite/logbook/84502/">inara.cz/elite/logbook/84502</a></div>
+      <div class="ref"><h4>Inara — live Powerplay state</h4><p>Current galaxy-wide cycle status, control points and conflicts.</p><a href="https://inara.cz/elite/powerplay/">inara.cz/elite/powerplay</a></div>
+      <div class="ref"><h4>Inara — Jerome Archer power page</h4><p>Archer's current priority systems — where reinforcement and undermining effort is most needed this cycle.</p><a href="https://inara.cz/elite/power/12/">inara.cz/elite/power/12</a></div>
+      <div class="ref"><h4>EDPowerPlay — live dashboard</h4><p>Real-time tracker fed by EDDN: per-power control points, vulnerable systems, acquisition conflicts, weekly deltas.</p><a href="https://edpowerplay.com/">edpowerplay.com</a></div>
+      <div class="ref"><h4>Powerplay Tools — Activities Reference Card</h4><p>Ian Doncaster's per-state activity card and supporting-system finder; precise control-point thresholds.</p><a href="https://heatmap.sotl.org.uk/powers">heatmap.sotl.org.uk/powers</a></div>
+      <div class="ref"><h4>EliteMeritTracker (EDMC plugin)</h4><p>Tracks your merits per system live from the journal — session and all-time totals, system state, PP backpack.</p><a href="https://github.com/Fumlop/EliteMeritTracker">github.com/Fumlop/EliteMeritTracker</a></div>
+      <div class="ref"><h4>BGS-Tally (EDMC plugin)</h4><p>Logs your BGS, colonisation, Powerplay and Thargoid activity per session — useful alongside your fleet/engineering trackers.</p><a href="https://github.com/aussig/BGS-Tally">github.com/aussig/BGS-Tally</a></div>
+      <div class="ref"><h4>Frontier — Ascendancy update notes</h4><p>Official Powerplay 2.0 launch notes (perks, Archer replacing Hudson, Kaine added).</p><a href="https://www.elitedangerous.com/update-notes/4-0-19-0">elitedangerous.com/update-notes</a></div>
+      <div class="ref"><h4>Elite Dangerous Wiki — Powerplay</h4><p>Community reference, kept current with rebalance patches and merit-modifier changes.</p><a href="https://elite-dangerous.fandom.com/wiki/Powerplay">elite-dangerous.fandom.com/wiki/Powerplay</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Powerplay 2.0 Field Manual</span>
+    <span>CMDR <b>Ka0s</b></span>
+    <span>Recommended pledge: <b>Jerome Archer</b></span>
+    <span>Mechanics current as of <b>2026 cycle data</b> — verify live territory before each session</span>
+    <span>o7</span>
+  </footer>
+
+</div>
+</body>
+</html>

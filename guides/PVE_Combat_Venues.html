@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PvE Combat Venues — Field Manual | CMDR Ka0s</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0607;
+    --grid:rgba(168,58,70,0.055);
+    --maroon:#7c1f2b;
+    --maroon-bright:#c8424f;
+    --maroon-glow:rgba(160,42,54,0.30);
+    --ink:#ece0e2;
+    --muted:#9c8a8e;
+    --faint:#6f6266;
+    --panel:rgba(22,13,15,0.74);
+    --panel-2:rgba(30,18,21,0.6);
+    --border:rgba(160,60,70,0.22);
+    --border-soft:rgba(160,60,70,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Saira',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-2;
+    background-image:
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:46px 46px;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 12% -5%,var(--maroon-glow),transparent 60%),
+      radial-gradient(800px 700px at 92% 8%,rgba(120,30,42,0.18),transparent 55%),
+      radial-gradient(1000px 800px at 50% 115%,rgba(120,30,42,0.16),transparent 60%);
+  }
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+
+  /* ---------- HEADER ---------- */
+  header{padding:64px 0 30px;position:relative}
+  .eyebrow{
+    font-family:'Chakra Petch',sans-serif;
+    font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--maroon-bright);font-weight:600;
+    display:flex;align-items:center;gap:14px;margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:40px;height:1px;background:var(--maroon-bright);display:inline-block}
+  h1{
+    font-family:'Chakra Petch',sans-serif;
+    font-size:clamp(2.4rem,6vw,4.1rem);
+    font-weight:700;line-height:1.02;letter-spacing:-.01em;
+    text-transform:uppercase;
+  }
+  h1 .sub{display:block;color:var(--maroon-bright);font-weight:500;font-size:.5em;letter-spacing:.04em;margin-top:6px}
+  .deck{max-width:640px;margin-top:20px;color:var(--muted);font-size:1.05rem;font-weight:300}
+  .tagbar{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;
+    font-family:'Chakra Petch',sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  }
+  .tag{
+    border:1px solid var(--border);background:var(--panel-2);
+    padding:6px 12px;color:var(--muted);border-radius:2px;
+  }
+  .tag b{color:var(--ink);font-weight:600}
+
+  /* ---------- SECTION SHELL ---------- */
+  .section-label{
+    font-family:'Chakra Petch',sans-serif;
+    font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--maroon-bright);
+    margin:54px 0 16px;display:flex;align-items:center;gap:14px;font-weight:600;
+  }
+  .section-label::after{content:"";flex:1;height:1px;background:var(--border)}
+
+  /* ---------- MATRIX ---------- */
+  .matrix-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:4px;background:var(--panel)}
+  table.matrix{width:100%;border-collapse:collapse;min-width:760px;font-size:.84rem}
+  table.matrix th,table.matrix td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--border-soft)}
+  table.matrix thead th{
+    font-family:'Chakra Petch',sans-serif;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--maroon-bright);font-weight:600;background:rgba(124,31,43,0.14);
+    border-bottom:1px solid var(--border);
+  }
+  table.matrix tbody tr:hover{background:rgba(124,31,43,0.07)}
+  table.matrix td:first-child{font-family:'Chakra Petch',sans-serif;font-weight:600;color:var(--ink);white-space:nowrap}
+  .pill{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:.62rem;letter-spacing:.08em;
+    padding:2px 8px;border-radius:2px;text-transform:uppercase;font-weight:600}
+  .pill.bty{background:rgba(217,164,65,0.16);color:#e6b95a;border:1px solid rgba(217,164,65,0.35)}
+  .pill.bond{background:rgba(224,71,58,0.15);color:#ef7468;border:1px solid rgba(224,71,58,0.32)}
+  .lvl{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:.78rem}
+  .hi{color:#6cc77d}.mid{color:#e6b95a}.lo{color:#ef7468}.na{color:var(--faint)}
+
+  /* ---------- VENUE CARDS ---------- */
+  .venue{
+    --accent:var(--maroon-bright);
+    border:1px solid var(--border);border-left:3px solid var(--accent);
+    border-radius:4px;background:var(--panel);
+    padding:26px 26px 22px;margin-top:20px;position:relative;overflow:hidden;
+  }
+  .venue::before{
+    content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;
+    background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%);
+    pointer-events:none;
+  }
+  .venue-head{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;position:relative}
+  .venue-num{
+    font-family:'Chakra Petch',sans-serif;font-size:2.1rem;font-weight:700;line-height:1;
+    color:var(--accent);opacity:.55;min-width:48px;
+  }
+  .venue-head h2{
+    font-family:'Chakra Petch',sans-serif;font-size:1.5rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.01em;line-height:1.1;
+  }
+  .venue-tag{
+    font-family:'Chakra Petch',sans-serif;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;display:block;margin-top:5px;
+  }
+  .pays{
+    margin-left:auto;font-family:'Chakra Petch',sans-serif;font-size:.64rem;letter-spacing:.1em;
+    text-transform:uppercase;font-weight:600;padding:6px 11px;border-radius:2px;
+    border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
+    color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);align-self:center;
+  }
+  .lede{margin:16px 0 4px;color:var(--ink);font-size:1rem;font-weight:300;max-width:74ch}
+  .dossier{display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;margin-top:18px}
+  .field h4{
+    font-family:'Chakra Petch',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px;
+  }
+  .field h4::before{content:"▸";font-size:.7rem;opacity:.7}
+  .field p{font-size:.92rem;color:var(--muted);font-weight:300}
+  .field p b{color:var(--ink);font-weight:500}
+
+  .fleet{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+  .ship{border:1px solid var(--border-soft);border-radius:3px;background:var(--panel-2);padding:13px 15px}
+  .ship .name{font-family:'Chakra Petch',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.04em;
+    display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+  .ship.cobra .name{color:#c89a5a}
+  .ship.python .name{color:#5a93c8}
+  .ship p{font-size:.88rem;color:var(--muted);font-weight:300}
+  .rating{font-family:'Chakra Petch',sans-serif;font-size:.58rem;letter-spacing:.1em;font-weight:600;
+    padding:2px 7px;border-radius:2px;white-space:nowrap}
+  .r-prime{background:rgba(108,199,125,0.16);color:#6cc77d;border:1px solid rgba(108,199,125,0.34)}
+  .r-solid{background:rgba(217,164,65,0.16);color:#e6b95a;border:1px solid rgba(217,164,65,0.34)}
+  .r-sit{background:rgba(224,71,58,0.14);color:#ef7468;border:1px solid rgba(224,71,58,0.3)}
+  .r-na{background:rgba(120,110,114,0.14);color:var(--faint);border:1px solid rgba(120,110,114,0.28)}
+
+  /* ---------- CALLOUT ---------- */
+  .callout{
+    border:1px solid var(--border);border-radius:4px;background:var(--panel);
+    padding:22px 24px;margin-top:20px;position:relative;border-top:3px solid var(--maroon-bright);
+  }
+  .callout h3{font-family:'Chakra Petch',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.04em;margin-bottom:10px;color:var(--maroon-bright)}
+  .callout p{color:var(--muted);font-size:.95rem;font-weight:300}
+  .callout p+p{margin-top:10px}
+  .callout p b,.callout li b{color:var(--ink);font-weight:500}
+  .callout ul{list-style:none;margin-top:12px;display:grid;gap:8px}
+  .callout li{padding-left:20px;position:relative;color:var(--muted);font-size:.92rem;font-weight:300}
+  .callout li::before{content:"◆";position:absolute;left:0;color:var(--maroon-bright);font-size:.6rem;top:.35em}
+
+  /* ---------- DOCTRINE TABLE ---------- */
+  .doctrine-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:4px;background:var(--panel)}
+  table.doctrine{width:100%;border-collapse:collapse;min-width:640px;font-size:.86rem}
+  table.doctrine th,table.doctrine td{padding:11px 14px;border-bottom:1px solid var(--border-soft);text-align:left;vertical-align:top}
+  table.doctrine thead th{font-family:'Chakra Petch',sans-serif;font-size:.66rem;letter-spacing:.14em;
+    text-transform:uppercase;font-weight:600;background:rgba(124,31,43,0.14);color:var(--maroon-bright)}
+  table.doctrine td:first-child{font-family:'Chakra Petch',sans-serif;font-weight:600;color:var(--ink);white-space:nowrap}
+  .cobra-col{color:#c89a5a !important}
+  .python-col{color:#5a93c8 !important}
+  table.doctrine td b{color:var(--ink);font-weight:500}
+
+  footer{margin:60px 0 50px;padding-top:22px;border-top:1px solid var(--border);
+    font-family:'Chakra Petch',sans-serif;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--faint);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+
+  @media(max-width:680px){
+    .dossier,.fleet{grid-template-columns:1fr}
+    .venue-num{font-size:1.6rem;min-width:36px}
+    .pays{margin-left:0;width:100%;text-align:center}
+    header{padding-top:44px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Combat Operations // Field Manual</div>
+    <h1>PvE Combat Venues<span class="sub">Where to fight, what it pays, who to fly</span></h1>
+    <p class="deck">A working catalogue of every human-PvE combat venue in the galaxy — what actually happens when you drop in, how to convert it into credits, reputation, and Powerplay merits, and how the KA- fleet handles each one. Built around the Cobra Mk V and Python Mk II.</p>
+    <div class="tagbar">
+      <span class="tag">CMDR <b>Ka0s</b></span>
+      <span class="tag">IDENT <b>KA-</b></span>
+      <span class="tag">BASE <b>Ray Gateway · Diaguandri</b></span>
+      <span class="tag">PLATFORM <b>Odyssey · PC</b></span>
+      <span class="tag">PRIORITY <b>Tod McQuinn unlock</b></span>
+    </div>
+  </header>
+
+  <!-- QUICK MATRIX -->
+  <div class="section-label">Quick-Reference Matrix</div>
+  <div class="matrix-wrap">
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th>Venue</th><th>Pays</th><th>Density</th><th>Risk</th><th>Authority</th><th>PP2 Merits</th><th>Cobra</th><th>Python</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>RES (Low / Std)</td><td><span class="pill bty">Bounties</span></td><td><span class="lvl mid">Medium</span></td><td><span class="lvl hi">Low</span></td><td>Present</td><td>On kill</td><td><span class="lvl hi">Prime</span></td><td><span class="lvl mid">Overkill</span></td></tr>
+        <tr><td>RES (High)</td><td><span class="pill bty">Bounties</span></td><td><span class="lvl hi">High</span></td><td><span class="lvl mid">Medium</span></td><td>Present</td><td>On kill</td><td><span class="lvl mid">Solid</span></td><td><span class="lvl hi">Prime</span></td></tr>
+        <tr><td>RES (Hazardous)</td><td><span class="pill bty">Bounties</span></td><td><span class="lvl hi">High</span></td><td><span class="lvl lo">High</span></td><td><span class="na">None</span></td><td>On kill</td><td><span class="lvl lo">Situational</span></td><td><span class="lvl hi">Prime</span></td></tr>
+        <tr><td>Conflict Zone</td><td><span class="pill bond">Bonds</span></td><td><span class="lvl hi">Very high</span></td><td><span class="lvl mid">Med–High</span></td><td><span class="na">None</span></td><td>On kill (PP CZ)</td><td><span class="lvl mid">Solid (Lo/Mid)</span></td><td><span class="lvl hi">Prime</span></td></tr>
+        <tr><td>Ground CZ</td><td><span class="pill bond">Bonds</span></td><td><span class="lvl hi">High</span></td><td><span class="lvl mid">Medium</span></td><td><span class="na">N/A</span></td><td>On foot</td><td colspan="2" style="text-align:center"><span class="na">Ships are taxis only</span></td></tr>
+        <tr><td>Nav Beacon</td><td><span class="pill bty">Bounties</span></td><td><span class="lvl lo">Low</span></td><td><span class="lvl hi">Low</span></td><td>Present</td><td>On kill</td><td><span class="lvl hi">Prime (casual)</span></td><td><span class="lvl lo">Wasted</span></td></tr>
+        <tr><td>Compromised Nav</td><td><span class="pill bty">Bounties</span></td><td><span class="lvl mid">Med–High</span></td><td><span class="lvl lo">High</span></td><td><span class="na">None</span></td><td>On kill</td><td><span class="lvl mid">Solid</span></td><td><span class="lvl hi">Prime</span></td></tr>
+        <tr><td>USS / Threat</td><td><span class="pill bty">Bounties</span></td><td><span class="lvl mid">Variable</span></td><td><span class="lvl mid">Variable</span></td><td>Varies</td><td>On kill</td><td><span class="lvl mid">Lo-threat</span></td><td><span class="lvl hi">Hi-threat</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- VENUES -->
+  <div class="section-label">Venue Dossiers</div>
+
+  <!-- 01 RES -->
+  <section class="venue" style="--accent:#d9a441">
+    <div class="venue-head">
+      <span class="venue-num">01</span>
+      <div>
+        <h2>Resource Extraction Sites</h2>
+        <span class="venue-tag">RES · Low / Standard / High / Hazardous</span>
+      </div>
+      <span class="pays">Pays: Bounties</span>
+    </div>
+    <p class="lede">A signal source inside a planetary ring where NPC miners work the rocks and pirates spawn to rob them. You scan ships, find the <b>WANTED</b> ones, and kill them for bounty vouchers. Four intensity tiers escalate target count, ship size, and pirate aggression. System security patrols every tier <b>except Hazardous</b>, where you're alone with the wolves.</p>
+    <div class="dossier">
+      <div class="field"><h4>Credits</h4><p>Steady, reliable bounty income — no special system state required, any ringed body with a RES works. Bigger tiers spawn bigger ships (Anacondas, Pythons) worth far more. Highly variable session-to-session: sometimes you drop into a pack of fat Condas, sometimes a ghost town. Fit a <b>Kill Warrant Scanner</b> to multiply each bounty across all factions that want the target.</p></div>
+      <div class="field"><h4>Rep / BGS</h4><p>Cash vouchers in at a controlling-faction station to raise reputation and nudge that faction's influence. The same kills feed pirate massacre missions — see Dossier 07.</p></div>
+      <div class="field"><h4>Powerplay 2.0</h4><p>In a reinforcement or acquisition system for your Power, merits are awarded <b>on the kill</b>, not the cash-in — roughly 1 merit per 1,000 CR of bounty. A Haz RES with a fast-scan KWS is a clean credits-plus-merits loop.</p></div>
+      <div class="field"><h4>Fun factor</h4><p>Low-pressure, "park-and-farm" combat. Excellent for warming up, dialling in a new build, or grinding while half-distracted. Hazardous is the adrenaline tier — genuinely dangerous, no police, real bite.</p></div>
+    </div>
+    <div class="fleet">
+      <div class="ship cobra">
+        <div class="name"><span>Cobra Mk V · KA-05C</span><span class="rating r-prime">Prime · Lo/Std/Hi</span></div>
+        <p>Home turf. Agile enough to pick exactly the target you want before security poaches the kill, and small enough to disengage instantly. In a Haz RES it <b>will</b> get focused — manage aggro, sub-target drives, and bug out early rather than tank a four-ship pile-on.</p>
+      </div>
+      <div class="ship python">
+        <div class="name"><span>Python Mk II · KA-05P</span><span class="rating r-prime">Prime · Hi/Haz</span></div>
+        <p>Built for the heavy tiers. Tanky enough to sit in a Hazardous RES and farm Anacondas indefinitely; G5 Overcharged plant plus corrosive-shell multi-cannons shred armour fast. Slower to swing onto small darting targets than the Cobra, so let it eat the big ones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 CONFLICT ZONE -->
+  <section class="venue" style="--accent:#e0473a">
+    <div class="venue-head">
+      <span class="venue-num">02</span>
+      <div>
+        <h2>Conflict Zones (Space)</h2>
+        <span class="venue-tag">CZ · Low / Medium / High Intensity</span>
+      </div>
+      <span class="pays">Pays: Bonds</span>
+    </div>
+    <p class="lede">Spawn in systems flagged <b>War</b> or <b>Civil War</b>. Pick a side at the zone, and everything wearing the wrong colours is a free target — no scanning. Intensity scales the threat and the special objectives: <b>Captains</b> in big engineered ships (kill the FSD to stop them fleeing, or the powerplant for an instant pop), four-strong <b>Spec Ops</b> wings of elite engineered ships, <b>Correspondents</b> to protect or destroy, and at high intensity a chance of a <b>capital ship</b>.</p>
+    <div class="dossier">
+      <div class="field"><h4>Credits</h4><p>Combat bonds, redeemed at any station in the system. A low-intensity session runs ~500k; a high-intensity session can clear <b>5–20M</b> with good gear and skill. Per-ship value is fixed and scales with hull size — prioritise Anacondas, Cutters, Corvettes, Pythons.</p></div>
+      <div class="field"><h4>Rep / BGS</h4><p>The strongest BGS lever in the game. Winning zones swings the conflict, builds faction rep fast (engineer rep-gates), and drives <b>Federal / Imperial rank</b> via aligned minor factions. This is your tool once you move past Tod McQuinn.</p></div>
+      <div class="field"><h4>Powerplay 2.0</h4><p>Dedicated <b>Power combat zones</b> grant merits on kill. Note they can be buggy (no-spawn relogs) and the ships run tougher than a Haz RES, so merits-per-hour aren't always better — but the combat is denser.</p></div>
+      <div class="field"><h4>Fun factor</h4><p>The most intense, densest dogfighting in the game. No admin, no scanning — just sustained combat with friendlies and enemies swirling. Spec Ops wings are a real "oh no" moment. Use <b>Select Highest Threat</b> to inherit a friendly wingman onto your target.</p></div>
+    </div>
+    <div class="fleet">
+      <div class="ship cobra">
+        <div class="name"><span>Cobra Mk V · KA-05C</span><span class="rating r-solid">Solid · Lo/Mid</span></div>
+        <p>Punches above its weight in low and medium if you fly disciplined — let friendlies soak aggro while you clean up. High intensity is a trap: Spec Ops will delete a small hull that over-commits. Treat it as a skirmisher, not an anchor.</p>
+      </div>
+      <div class="ship python">
+        <div class="name"><span>Python Mk II · KA-05P</span><span class="rating r-prime">Prime · all tiers</span></div>
+        <p>The flagship's natural arena. Tank and sustained DPS let it solo Captains and grind Spec Ops at high intensity. SCBs become worth carrying here for the long burns. This is the ship you bring when you want to <b>win</b> a zone, not just farm it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 GROUND CZ -->
+  <section class="venue" style="--accent:#e8743b">
+    <div class="venue-head">
+      <span class="venue-num">03</span>
+      <div>
+        <h2>Ground Conflict Zones</h2>
+        <span class="venue-tag">On-Foot · Odyssey · Frontline Solutions</span>
+      </div>
+      <span class="pays">Pays: Bonds</span>
+    </div>
+    <p class="lede">Infantry battles at settlements in War / Civil War systems. Enter through <b>Frontline Solutions</b>, pick a side, and grind down the enemy's reinforcement points — both teams start at 1,000 and bleed 5 per casualty. Threat tiers scale the difficulty. Combat bonds plus the game's best on-foot material drops.</p>
+    <div class="dossier">
+      <div class="field"><h4>Credits</h4><p>Ground bonds scale with threat — low sessions ~500k, high sessions <b>5–20M</b> with upgraded suit and weapon grades. Re-deploying via Frontline keeps you in the fight after death, so throughput stays high.</p></div>
+      <div class="field"><h4>Rep / BGS</h4><p>Same BGS / influence swing as space CZs, plus settlement data you can sell for Powerplay merits. The fastest route to high-grade <b>suit and weapon engineering</b> components.</p></div>
+      <div class="field"><h4>Powerplay 2.0</h4><p>On-foot merits and settlement data deliveries count. A change of pace from ship-side merit farming.</p></div>
+      <div class="field"><h4>Fun factor</h4><p>A full FPS pivot — great if you enjoy shooters, and a genuine palette-cleanser from cockpit grinding. Completely separate skill tree from flying.</p></div>
+    </div>
+    <div class="fleet">
+      <div class="ship cobra">
+        <div class="name"><span>Cobra Mk V · KA-05C</span><span class="rating r-na">Taxi</span></div>
+        <p>Just the ride in. Lands easily at the planetary port and gets you to Frontline — nothing more. Does <b>nothing</b> for ship-module engineering or for Tod McQuinn.</p>
+      </div>
+      <div class="ship python">
+        <div class="name"><span>Python Mk II · KA-05P</span><span class="rating r-na">Taxi</span></div>
+        <p>Overqualified hangar queen here — leave it docked. No ship plays a combat role in a ground CZ; this venue is about your suit, not your hull.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 NAV BEACON -->
+  <section class="venue" style="--accent:#4db6c8">
+    <div class="venue-head">
+      <span class="venue-num">04</span>
+      <div>
+        <h2>Nav Beacon</h2>
+        <span class="venue-tag">System Entry Star · Every Populated System</span>
+      </div>
+      <span class="pays">Pays: Bounties</span>
+    </div>
+    <p class="lede">The navigation beacon sits right at the main star of every populated system. Scanning it reveals all system bodies, and WANTED ships drift through on traffic, so you can bounty-hunt the moment you arrive. Security is present and competes for kills.</p>
+    <div class="dossier">
+      <div class="field"><h4>Credits</h4><p>Bounty vouchers, but traffic-dependent and far thinner than a RES — expect lulls. Fine as a casual trickle, not a grind venue.</p></div>
+      <div class="field"><h4>Rep / BGS</h4><p>Bounties cash in for faction rep like any other. The free system body-scan is a small cartographic bonus on the side.</p></div>
+      <div class="field"><h4>Powerplay 2.0</h4><p>Merits on kill if the system matters to your Power — but low density caps your merits-per-hour.</p></div>
+      <div class="field"><h4>Fun factor</h4><p>Zero travel, low pressure, no ring to fly to. The "I just want to shoot something for ten minutes" option.</p></div>
+    </div>
+    <div class="fleet">
+      <div class="ship cobra">
+        <div class="name"><span>Cobra Mk V · KA-05C</span><span class="rating r-prime">Prime · casual</span></div>
+        <p>Perfect fit: arrive, scan, pick off stragglers, leave. The Cobra's speed makes the thin traffic feel less idle.</p>
+      </div>
+      <div class="ship python">
+        <div class="name"><span>Python Mk II · KA-05P</span><span class="rating r-sit">Wasted</span></div>
+        <p>All that firepower with nothing to point it at. The density doesn't justify undocking the flagship.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 COMPROMISED NAV -->
+  <section class="venue" style="--accent:#a96bd6">
+    <div class="venue-head">
+      <span class="venue-num">05</span>
+      <div>
+        <h2>Compromised Nav Beacon</h2>
+        <span class="venue-tag">Faction-State Variant · No System Authority</span>
+      </div>
+      <span class="pays">Pays: Bounties</span>
+    </div>
+    <p class="lede">A nav beacon that appears under certain faction states, behaving like an anarchy beacon: target-rich, packed with wanted ships, and crucially <b>no system security</b> to compete with you or pull you out of trouble. High density, high exposure.</p>
+    <div class="dossier">
+      <div class="field"><h4>Credits</h4><p>Dense bounties with nobody stealing your kills — every wanted pop is yours. Better CR-per-hour than a standard nav beacon, approaching RES rates without needing a ring.</p></div>
+      <div class="field"><h4>Rep / BGS</h4><p>Same bounty-to-rep pipeline; the higher kill rate just accelerates it.</p></div>
+      <div class="field"><h4>Powerplay 2.0</h4><p>Strong on-kill merit farming if it's in a system your Power is contesting — and no authority means no clean-kill bookkeeping to worry about.</p></div>
+      <div class="field"><h4>Fun factor</h4><p>A spicier nav beacon — the no-backup pressure makes target selection matter. Rewarding when you read the swarm correctly.</p></div>
+    </div>
+    <div class="fleet">
+      <div class="ship cobra">
+        <div class="name"><span>Cobra Mk V · KA-05C</span><span class="rating r-solid">Solid</span></div>
+        <p>Viable but exposed — with no police to peel attackers off you, discipline matters. Don't let three ships lock you at once; kite, sub-target, reset.</p>
+      </div>
+      <div class="ship python">
+        <div class="name"><span>Python Mk II · KA-05P</span><span class="rating r-prime">Prime</span></div>
+        <p>Ideal — tanky enough to hold the beacon solo and soak a swarm that would overwhelm the Cobra. The absence of authority backup is exactly what the flagship's hull is for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 USS -->
+  <section class="venue" style="--accent:#5fbf6f">
+    <div class="venue-head">
+      <span class="venue-num">06</span>
+      <div>
+        <h2>USS / Threat Sites</h2>
+        <span class="venue-tag">Unidentified Signal Sources · Ambushes · Distress</span>
+      </div>
+      <span class="pays">Pays: Bounties</span>
+    </div>
+    <p class="lede">Transient signal sources flagged as combat or threat encounters — the threat level roughly indicates difficulty. Pirate ambushes, distress calls, and the natural home of most <b>pirate massacre mission</b> targets. One-and-done: you clear it, it's gone.</p>
+    <div class="dossier">
+      <div class="field"><h4>Credits</h4><p>Bounties on wanted kills, but the real value is as the <b>delivery vehicle for massacre missions</b> (Dossier 07). On their own, returns are streaky.</p></div>
+      <div class="field"><h4>Rep / BGS</h4><p>Mission-driven — the rep comes from the massacre contracts you're completing, not the signal source itself.</p></div>
+      <div class="field"><h4>Powerplay 2.0</h4><p>On-kill merits apply in relevant systems; pairs well with stacked Power-aligned massacre missions.</p></div>
+      <div class="field"><h4>Fun factor</h4><p>Variety and surprise — you don't always know what you're dropping into until the instance loads. The ambush flavour keeps it tense.</p></div>
+    </div>
+    <div class="fleet">
+      <div class="ship cobra">
+        <div class="name"><span>Cobra Mk V · KA-05C</span><span class="rating r-solid">Solid · low threat</span></div>
+        <p>Fast clears on low-threat sites. High-threat ambushes can swarm faster than it can disengage — read the threat rating before you drop.</p>
+      </div>
+      <div class="ship python">
+        <div class="name"><span>Python Mk II · KA-05P</span><span class="rating r-prime">Prime · high threat</span></div>
+        <p>Bring it to the high-threat sites. It absorbs the ambush alpha and grinds through the pack — the right tool when a USS turns into a brawl.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 MASSACRE STACKING -->
+  <section class="venue" style="--accent:#d94f7a">
+    <div class="venue-head">
+      <span class="venue-num">07</span>
+      <div>
+        <h2>Pirate Massacre Stacking</h2>
+        <span class="venue-tag">Meta-Activity · Mission Board + RES/USS</span>
+      </div>
+      <span class="pays">Pays: Bounty + Mission</span>
+    </div>
+    <p class="lede">Not a venue but a <b>force multiplier</b> layered on top of one. Collect a stack of "kill N pirates" massacre missions from multiple minor factions at a hub station, fly to the shared target system, and grind kills at its RES or threat USS. Every qualifying kill ticks <b>multiple missions at once</b> and still pays the raw bounty.</p>
+    <div class="dossier">
+      <div class="field"><h4>Credits</h4><p>The highest CR-per-kill in PvE: bounty + several mission payouts + (in a Power system) merits, all from one trigger pull. This — not raw RES hunting — is the fast lane.</p></div>
+      <div class="field"><h4>Rep / BGS</h4><p>Each completed contract boosts its issuing faction's rep and influence simultaneously. Stack across factions in one hub to spread the gains.</p></div>
+      <div class="field"><h4>Tod McQuinn</h4><p><b>Your current priority.</b> Massacre stacks turn the 100,000 CR bounty-voucher requirement into a handful of sessions instead of dozens. Set the board up at a hub near Khun, then farm the Khun 13 RES — bounties and mission rewards land on the same kills.</p></div>
+      <div class="field"><h4>Fun factor</h4><p>The satisfying "everything counts" loop — one kill, three progress bars tick, the bounty rolls in. Pure efficiency dopamine.</p></div>
+    </div>
+    <div class="fleet">
+      <div class="ship cobra">
+        <div class="name"><span>Cobra Mk V · KA-05C</span><span class="rating r-prime">Prime · throughput</span></div>
+        <p>Fast kills, fast resets — ideal for low/standard RES massacre grinds where target size is small and volume is king.</p>
+      </div>
+      <div class="ship python">
+        <div class="name"><span>Python Mk II · KA-05P</span><span class="rating r-prime">Prime · High RES</span></div>
+        <p>Best total throughput in a High or Haz RES, where massacre targets are big and the Cobra would have to play cautious.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POWERPLAY CALLOUT -->
+  <div class="section-label">Powerplay 2.0 — Reading the Merit Layer</div>
+  <div class="callout">
+    <h3>Merits come on the kill, not the cash-in</h3>
+    <p>The single biggest shift from the old system: for bounty hunting, <b>you earn merits the moment a ship dies</b>, not when you redeem the voucher — at roughly 1 merit per 1,000 CR of bounty. That changes which venue is "best" depending on where the system sits relative to your Power.</p>
+    <ul>
+      <li><b>Reinforcement / acquisition systems:</b> killing wanted ships earns merits directly. In reinforcement systems you can even kill clean ships without consequence; in acquisition or undermining systems that's illegal and earns a bounty but no merits.</li>
+      <li><b>Undermining systems:</b> only kills against ships of the <b>controlling enemy Power</b> grant merits.</li>
+      <li><b>Power combat zones:</b> merits on kill — denser combat, tougher ships, occasionally buggy spawns. Worth it for the fight more than the raw rate.</li>
+      <li><b>Decay:</b> reinforcement systems above 25% progress decay weekly, counted as undermining points. Don't over-invest in one already-secure system.</li>
+    </ul>
+    <p>Net: if you pledge a Power, route your existing RES / nav-beacon / massacre grind <b>through systems your Power is contesting</b> and the same kills that earn credits and rep also bank merits toward module unlocks. Zero extra effort, three currencies.</p>
+  </div>
+
+  <!-- FLEET DOCTRINE -->
+  <div class="section-label">Fleet Doctrine — Cobra vs Python</div>
+  <div class="doctrine-wrap">
+    <table class="doctrine">
+      <thead>
+        <tr><th>Venue</th><th class="cobra-col">Cobra Mk V — KA-05C</th><th class="python-col">Python Mk II — KA-05P</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Low / Std RES</td><td><b>Default pick.</b> Speed and target selection; let security backstop you.</td><td>Capable but over-gunned; small targets waste its alpha.</td></tr>
+        <tr><td>High RES</td><td>Workable; pick fights, avoid pile-ons.</td><td><b>Ideal.</b> Farms Condas without sweating aggro.</td></tr>
+        <tr><td>Hazardous RES</td><td>Risky — no police; bug out early.</td><td><b>Anchor.</b> Built to hold the site solo.</td></tr>
+        <tr><td>Conflict Zone</td><td>Low/Mid only; skirmish, don't anchor.</td><td><b>Flagship arena.</b> Solos Captains, grinds Spec Ops.</td></tr>
+        <tr><td>Nav Beacon</td><td><b>Best casual fit</b> — quick in, quick out.</td><td>Overkill; leave it docked.</td></tr>
+        <tr><td>Compromised Nav</td><td>Viable with discipline; manage aggro.</td><td><b>Holds the swarm</b> where the Cobra can't.</td></tr>
+        <tr><td>USS / Threat</td><td>Low-threat clears.</td><td><b>High-threat brawls.</b></td></tr>
+        <tr><td>Massacre stacking</td><td><b>Volume grinder</b> in small-target RES.</td><td><b>Throughput king</b> in High RES.</td></tr>
+        <tr><td>Ground CZ</td><td>Taxi only.</td><td>Taxi only.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TOD CALLOUT -->
+  <div class="callout">
+    <h3>For Tod McQuinn, right now</h3>
+    <p>His unlock wants <b>100,000 CR in bounty vouchers</b> handed in at Trophy Camp, Wolf 397 — so the venue must pay <b>bounties</b>, which rules out every Conflict Zone (those pay bonds and do nothing for him).</p>
+    <ul>
+      <li><b>Fastest:</b> Pirate massacre stack → farm Khun 13 RES. Bounty + mission rewards on the same kills.</li>
+      <li><b>Reliable:</b> High RES bounty hunting in the Python, KWS fitted to multiply each voucher.</li>
+      <li><b>Casual top-up:</b> Nav beacon or compromised nav beacon between runs.</li>
+      <li><b>Do not bother:</b> Conflict zones — wrong currency entirely.</li>
+    </ul>
+    <p>Once Tod's done, flip the script: Conflict Zones become your primary tool for the rep- and rank-gated engineers ahead, and any Power-aligned system lets the same combat bank merits on the side.</p>
+  </div>
+
+  <footer>
+    <span>KA- Fleet // PvE Combat Doctrine</span>
+    <span>Source of truth: Fleet &amp; Engineering Trackers · Inara 173082</span>
+  </footer>
+
+</div>
+</body>
+</html>

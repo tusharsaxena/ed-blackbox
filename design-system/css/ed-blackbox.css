@@ -1,0 +1,428 @@
+/*! ed-blackbox design system v1.0.0 | CMDR Ka0s field-manual house style
+   Single source of truth. Link this file; never inline or fork per page.
+   Theme a page by overriding the --accent* group in a page-level <style>. */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap');
+
+:root{
+  /* ============================================================
+     ed-blackbox DESIGN TOKENS  ·  v1.0.0
+     Colour + accent are the LOCKED palette (never edit values).
+     Scales below are the system standard — author with these,
+     don't hardcode raw px. Per-page theming = override the ACCENT
+     group only (see docs/02-tokens.md).
+     ============================================================ */
+
+  /* ---- surfaces ---- */
+  --bg:#0a0708;--bg2:#0e0a0b;--panel:#140d0f;--panel2:#1a1113;
+  --grid:rgba(180,70,60,.045);
+  /* ---- brand ---- */
+  --maroon:#8b2332;--maroon-lt:#b13140;--amber:#e0913a;--amber-lt:#f4b15f;
+  --fed:#4f9fd6;--fed-lt:#7cc0ee;
+  /* ---- status ---- */
+  --danger:#d8423b;--good:#5fb37a;--good-lt:#7fce98;
+  /* ---- ink ---- */
+  --ink:#ece4df;--ink-dim:#a89a93;--ink-faint:#6e615c;
+  /* ---- hairlines ---- */
+  --hair:rgba(190,120,110,.16);--hair-strong:rgba(190,120,110,.32);
+
+  /* ---- spacing scale (fine HUD rhythm; lossless) ---- */
+  --space-1:2px;--space-2:4px;--space-3:6px;--space-4:8px;--space-5:10px;--space-6:12px;
+  --space-7:14px;--space-8:16px;--space-9:18px;--space-10:20px;--space-11:22px;--space-12:24px;
+  --space-13:26px;--space-14:30px;--space-section:56px;--space-footer:70px;
+
+  /* ---- radius ---- */
+  --radius-xs:2px;--radius-sm:3px;--radius-md:4px;--radius-lg:6px;--radius-pill:10px;--radius-round:50%;
+  --radius:var(--radius-md);
+
+  /* ---- type scale ---- */
+  --fs-micro:10px;--fs-2xs:10.5px;--fs-xs:11px;--fs-xs2:11.5px;--fs-sm:12px;--fs-sm2:12.5px;
+  --fs-base:13.5px;--fs-body:14px;--fs-md:15px;--fs-md2:15.5px;--fs-lg:16px;--fs-h3:17px;
+  --fs-xl:18px;--fs-2xl:22px;--fs-3xl:26px;--fs-4xl:30px;
+  /* fluid display sizes (responsive clamp) */
+  --fs-title:clamp(34px,6vw,62px);--fs-h2:clamp(21px,3.4vw,30px);--fs-verdict:clamp(22px,4vw,32px);
+  --fs-scope:clamp(15px,2.2vw,18px);
+  --lh-tight:1.1;--lh-body:1.62;
+
+  /* ---- elevation / z-index ---- */
+  --z-base:1;--z-sticky:40;--z-nav:50;--z-overlay:60;
+
+  /* ---- motion ---- */
+  --motion-fast:.14s;--motion-base:.18s;--ease:ease;
+
+  /* ---- layout ---- */
+  --wrap-max:1140px;--gutter:22px;
+  /* breakpoints — documented only (media queries can't read var()):
+     --bp-sm 480px · --bp-md 560px · --bp-lg 720px */
+
+  /* ---- ACCENT (per-page theme — override THESE five) ---- */
+  --accent:var(--amber);--accent-lt:var(--amber-lt);--accent-deep:var(--maroon);
+  --accent-soft:rgba(224,145,58,.4);--accent-glow:rgba(224,145,58,.10);
+
+  /* ---- meta ---- */
+  --ds-version:"1.0.0";
+}
+
+/* ============================================================
+   CMDR KA0S — FIELD MANUAL HOUSE STYLE  ·  v2 template
+   Single-file, self-contained. Copy this whole <style> block
+   verbatim into any new field manual / guide / dossier page.
+   Fonts: Chakra Petch (display + labels), Saira (body),
+          Saira Condensed (meta, tags, footer).
+   Palette: maroon + amber, with a federal-blue secondary accent.
+   ============================================================ */
+
+/* ---- 1. DESIGN TOKENS  (do not edit values; this is the locked palette) ---- */
+
+
+/* ---- 2. BASE / RESET ---- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* grid overlay */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:42px 42px}
+/* radial gradient glows: amber top-right, maroon top-left, fed-blue bottom */
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),radial-gradient(1200px 900px at 50% 120%,rgba(79,159,214,.07),transparent 60%)}
+.wrap{position:relative;z-index:var(--z-base);max-width:1140px;margin:0 auto;padding:0 var(--space-11) 120px}
+a{color:var(--amber-lt)}
+.muted{color:var(--ink-faint)}
+
+/* ---- 3. MASTHEAD ---- */
+header.masthead{padding:54px 0 var(--space-13);border-bottom:1px solid var(--hair-strong);margin-bottom:var(--space-4)}
+.kicker{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:5px;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:var(--space-6);margin-bottom:var(--space-9);flex-wrap:wrap}
+.kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
+.kicker .sep{color:var(--ink-faint);opacity:.8}
+.kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
+h1.title{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+h1.title span{color:var(--maroon-lt)}
+/* optional one-line role suffix on the title (ship × role dossiers) */
+h1.title .role{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:.32em;letter-spacing:3px;text-transform:uppercase;color:var(--accent);vertical-align:middle;margin-left:var(--space-7);border:1px solid var(--accent-soft);border-radius:var(--radius-sm);padding:5px 11px}
+.subtitle,.lede{margin-top:var(--space-8);font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);max-width:840px;font-weight:300}
+.subtitle b,.lede b{color:var(--ink);font-weight:500}
+.masthead-meta{margin-top:var(--space-13);display:flex;flex-wrap:wrap;gap:var(--space-5) var(--space-13);font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm2);letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
+.masthead-meta b{color:var(--amber-lt);font-weight:600}
+
+/* ---- 4. VERDICT / FIELD-BRIEFING CALLOUT ---- */
+.verdict{margin:34px 0 var(--space-7);border:1px solid var(--accent-soft);border-radius:var(--radius-md);background:linear-gradient(180deg,var(--accent-glow),rgba(20,13,15,.6));padding:var(--space-14) var(--space-14) var(--space-13);position:relative;overflow:hidden}
+.verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),transparent)}
+.verdict .v-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:4px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-5)}
+.verdict h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);line-height:1.05;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:var(--space-3)}
+.verdict h2 em{font-style:normal;color:var(--amber-lt)}
+.verdict p{font-size:var(--fs-md2);color:var(--ink-dim);margin-top:var(--space-6);max-width:980px}
+/* optional "why" reason sub-grid inside the verdict box */
+.verdict .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-7);margin-top:var(--space-11)}
+.verdict .why > div{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:var(--radius-sm);padding:13px 15px}
+.verdict .why h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs2);letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:5px}
+.verdict .why p{font-size:var(--fs-base);color:var(--ink-dim);margin:0;max-width:none}
+
+/* ---- 5. STAT GRID ---- */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-7);margin:var(--space-11) 0 var(--space-2)}
+.stat{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
+.stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-3xl);color:var(--amber-lt);line-height:1}
+.stat .n.fed{color:var(--fed-lt)}.stat .n.mar{color:var(--maroon-lt)}.stat .n.good{color:var(--good-lt)}
+.stat .l{font-size:var(--fs-sm2);color:var(--ink-dim);margin-top:var(--space-3);letter-spacing:.3px}
+
+/* ---- 6. SECTION + HEADING ---- */
+section{margin-top:var(--space-section);scroll-margin-top:74px}
+.sec-head{display:flex;align-items:baseline;gap:var(--space-8);margin-bottom:var(--space-4);border-bottom:1px solid var(--hair);padding-bottom:14px}
+.sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm2);letter-spacing:2px;color:var(--bg);background:var(--amber);padding:3px 9px;border-radius:var(--radius-xs);flex:none}
+.sec-head h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05}
+.sec-head .tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm);letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center}
+p.lead{font-size:var(--fs-md);color:var(--ink-dim);margin:var(--space-7) 0 var(--space-2)}
+h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-h3);letter-spacing:.5px;text-transform:uppercase;color:var(--amber-lt);margin:var(--space-13) 0 var(--space-5)}
+/* condensed tracked sub-label (alt to subhead, from ship manuals) */
+.subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:var(--fs-sm2);color:var(--amber);font-weight:600;margin:var(--space-11) 0 var(--space-3)}
+
+/* ---- 7. LEGEND GRID ---- */
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-7);margin-top:var(--space-9)}
+.legend .lg{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
+.legend h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-6)}
+.legend .row{display:flex;align-items:center;gap:var(--space-5);font-size:var(--fs-base);color:var(--ink-dim);margin-bottom:var(--space-4)}
+.legend .row:last-child{margin-bottom:0}.legend .row b{color:var(--ink);font-weight:600}
+.swatch{width:22px;height:10px;border-radius:var(--radius-xs);flex:none}
+.sw-amber{background:var(--amber)}.sw-fed{background:var(--fed)}.sw-maroon{background:var(--maroon-lt)}.sw-good{background:var(--good)}
+
+/* ---- 8. CHIPS ---- */
+.chips{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.chip{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-2xs);letter-spacing:.8px;text-transform:uppercase;padding:var(--space-1) 9px;border-radius:var(--radius-pill);border:1px solid var(--hair-strong);white-space:nowrap;color:var(--ink-dim)}
+.chip.amber{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+.chip.fed{color:var(--fed-lt);border-color:rgba(79,159,214,.4)}
+.chip.maroon{color:var(--maroon-lt);border-color:rgba(177,49,64,.5);background:rgba(177,49,64,.10)}
+.chip.faint{color:var(--ink-faint)}
+
+/* ---- 9. PERMALINK ANCHOR ---- */
+.permalink{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink-faint);text-decoration:none;font-size:var(--fs-md);line-height:1;padding:var(--space-1) var(--space-2);border-radius:var(--radius-sm);flex:none;opacity:.5;transition:opacity var(--motion-fast),color var(--motion-fast)}
+.permalink:hover{opacity:1;color:var(--amber-lt)}
+
+/* ---- 10. RECORD CARD  (generalised from the engineer row card) ----
+   A two-column data record: identity rail (banner + name + chips + meta)
+   on the left, a field grid on the right, with optional note + description
+   strips spanning the full width. Accent edge set per record. */
+.rec-list{display:flex;flex-direction:column;gap:var(--space-7);margin-top:var(--space-10)}
+.rec{display:grid;grid-template-columns:248px 1fr;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:var(--radius-md);overflow:hidden;scroll-margin-top:74px;transition:border-color var(--motion-base),background var(--motion-base)}
+.rec:hover{background:var(--panel2)}
+.rec:target{box-shadow:0 0 0 1px var(--accent-soft),0 0 26px var(--accent-glow)}
+/* accent variants — set the left edge + banner top glow */
+.rec.ac-amber{border-left-color:var(--amber)}
+.rec.ac-fed{border-left-color:var(--fed)}
+.rec.ac-maroon{border-left-color:var(--maroon-lt)}
+.rec.ac-good{border-left-color:var(--good)}
+.rec-id{grid-column:1;grid-row:1;padding:0;border-right:1px solid var(--hair);background:rgba(8,5,6,.55);display:flex;flex-direction:column}
+.rec-banner{position:relative;width:100%;height:148px;overflow:hidden;border-bottom:1px solid var(--hair)}
+.rec-banner img{width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block;filter:saturate(.92) contrast(1.02)}
+.rec-banner::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(8,5,6,.78))}
+.rec.ac-amber .rec-banner{box-shadow:inset 0 3px 0 rgba(224,145,58,.55)}
+.rec.ac-fed .rec-banner{box-shadow:inset 0 3px 0 rgba(79,159,214,.55)}
+.rec.ac-maroon .rec-banner{box-shadow:inset 0 3px 0 rgba(177,49,64,.6)}
+.rec.ac-good .rec-banner{box-shadow:inset 0 3px 0 rgba(95,179,122,.55)}
+/* banner placeholder when no image is supplied */
+.rec-banner.ph{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(139,35,50,.25),rgba(224,145,58,.12));color:var(--ink-faint);font-family:'Chakra Petch',sans-serif;letter-spacing:3px;font-size:var(--fs-xs);text-transform:uppercase}
+.rec-id-body{padding:15px var(--space-9) var(--space-8);display:flex;flex-direction:column;flex:1}
+.rec-name{display:flex;align-items:flex-start;gap:var(--space-4)}
+.rec h3{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-xl);letter-spacing:.4px;color:var(--ink);line-height:1.1;flex:1}
+.rec-head{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:.7px;text-transform:uppercase;color:var(--amber-lt);margin:5px 0 var(--space-6)}
+.rec.ac-fed .rec-head{color:var(--fed-lt)}
+.rec.ac-maroon .rec-head{color:var(--maroon-lt)}
+.rec-id .chips{margin-bottom:var(--space-6)}
+.rec-meta{margin-top:auto;font-size:var(--fs-sm2);color:var(--ink-faint);font-style:italic}
+.rec-meta a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.3)}
+/* right-side field grid — areas are illustrative; relabel per page */
+.rec-body{grid-column:2;grid-row:1;padding:17px var(--space-10);display:grid;grid-template-columns:1fr 1fr 1.15fr;grid-template-areas:"a b e" "c d e";gap:15px var(--space-12);align-content:start}
+.area-a{grid-area:a}.area-b{grid-area:b}.area-c{grid-area:c}.area-d{grid-area:d}.area-e{grid-area:e}
+.rc .rcl{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:var(--space-2)}
+.rc .rcv{font-size:var(--fs-base);color:var(--ink-dim);line-height:1.5}.rc .rcv b{color:var(--ink);font-weight:600}
+.rc .rcv a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.3)}
+/* key/value mini-grid (e.g. Location › System/Body/Settlement) */
+.kvgrid{display:grid;grid-template-columns:auto 1fr;gap:5px 11px;align-items:baseline;margin-top:var(--space-2)}
+.kvgrid .lk{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-5);font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xs2);font-weight:600;letter-spacing:0;text-transform:none;color:var(--fed-lt);white-space:nowrap;text-align:left}
+.kvgrid .lk::after{content:"›";color:var(--ink-faint);font-weight:400}
+.kvgrid .lv{font-size:var(--fs-base);color:var(--ink);line-height:1.4}
+.kvgrid .lv b{color:var(--ink);font-weight:600}
+.kv-tbd{color:var(--ink-faint);font-style:italic;opacity:.7}
+/* bullet list inside a record */
+ul.reclist{list-style:none;margin:0;padding:0}
+ul.reclist li{font-size:var(--fs-base);color:var(--ink-dim);line-height:1.55;padding-left:14px;text-indent:-14px}
+ul.reclist li::before{content:"· ";color:var(--amber-lt);font-weight:600}
+ul.reclist a{color:var(--amber-lt);text-decoration:none;border-bottom:1px solid rgba(244,177,95,.30)}
+ul.reclist a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
+/* full-width note + description strips */
+.rec-note{grid-column:1 / -1;border-top:1px solid var(--hair);padding:13px var(--space-10) var(--space-7);background:rgba(8,5,6,.25)}
+.rec-note .rn-eyebrow{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-micro);font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:7px}
+.rec-note .rn-body{font-size:var(--fs-base);color:var(--ink-dim);line-height:1.55}
+.rec-desc{grid-column:1 / -1;border-top:1px solid var(--hair);padding:13px var(--space-10) var(--space-7);background:rgba(10,7,8,.32)}
+.rec-desc .dq-eyebrow{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-micro);font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:7px}
+.rec-desc .dq{font-size:var(--fs-base);color:var(--ink-dim);font-style:italic;line-height:1.58}
+.rec-desc.nobio .dq{color:var(--ink-faint);opacity:.7}
+@media (max-width:720px){
+  .rec{grid-template-columns:1fr}
+  .rec-id{grid-column:1;border-right:none;border-bottom:1px solid var(--hair)}
+  .rec-body{grid-column:1;grid-template-columns:1fr 1fr;grid-template-areas:"a b" "c d" "e e"}
+  .rec-meta{margin-top:var(--space-4)}
+}
+@media (max-width:480px){.rec-body{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "d" "e"}}
+
+/* ---- 11. DATA / COMPARISON TABLE ---- */
+.tbl-scroll{overflow-x:auto;margin-top:var(--space-9);border:1px solid var(--hair);border-radius:var(--radius-md)}
+table.data{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
+table.data thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:11px var(--space-7);background:rgba(8,5,6,.6);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
+table.data tbody td{padding:var(--space-5) var(--space-7);border-bottom:1px solid var(--hair);color:var(--ink-dim);vertical-align:top}
+table.data tbody tr:hover{background:var(--panel2)}
+table.data tbody tr:last-child td{border-bottom:none}
+table.data td b{color:var(--ink);font-weight:600}
+table.data td.num{font-family:'Chakra Petch',sans-serif;text-align:right;color:var(--ink)}
+table.data .row-rank{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--amber-lt)}
+table.data tr.hl td{background:rgba(224,145,58,.06)}
+
+/* ---- 12. RATING BAR  (linear 1–100 suitability meter) ---- */
+.rating{display:flex;align-items:center;gap:var(--space-6);margin:var(--space-3) 0}
+.rating .score{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-2xl);color:var(--accent);line-height:1;min-width:54px}
+.rating .score small{font-size:var(--fs-sm);color:var(--ink-faint);font-weight:500}
+.bar{flex:1;height:8px;background:rgba(8,5,6,.6);border:1px solid var(--hair);border-radius:var(--radius-md);overflow:hidden}
+.bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent-deep),var(--accent-lt));border-radius:var(--radius-md)}
+.bar.fed > i{background:linear-gradient(90deg,var(--fed),var(--fed-lt))}
+.bar.good > i{background:linear-gradient(90deg,var(--good),var(--good-lt))}
+.bar.mini{height:6px;border:none;flex:none;width:100%;margin-top:5px}
+
+/* ---- 13. CORNER-BRACKET HUD PANEL  (house-style framed box) ---- */
+.hud{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius-md);padding:var(--space-11) var(--space-12);margin-top:var(--space-9)}
+.hud::before,.hud::after{content:"";position:absolute;width:16px;height:16px;border:2px solid var(--accent);pointer-events:none}
+.hud::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+.hud::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.hud .hud-c1,.hud .hud-c2{position:absolute;width:16px;height:16px;border:2px solid var(--accent);pointer-events:none}
+.hud .hud-c1{top:-1px;right:-1px;border-left:none;border-bottom:none}
+.hud .hud-c2{bottom:-1px;left:-1px;border-right:none;border-top:none}
+.hud h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm2);letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-5)}
+.hud p{font-size:var(--fs-body);color:var(--ink-dim)}
+
+/* ---- 14. CALLOUT / ASIDE  (tip / warning / danger) ---- */
+.callout{border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:var(--radius-md);padding:var(--space-8) var(--space-10);margin-top:var(--space-8);background:rgba(10,7,8,.4)}
+.callout.tip{border-left-color:var(--good)}
+.callout.warn{border-left-color:var(--amber)}
+.callout.danger{border-left-color:var(--danger)}
+.callout .co-eyebrow,.callout .lbl{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-2xs);letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:var(--space-3);display:block}
+.callout.tip .co-eyebrow,.callout.tip .lbl{color:var(--good-lt)}
+.callout.warn .co-eyebrow,.callout.warn .lbl{color:var(--amber-lt)}
+.callout.danger .co-eyebrow,.callout.danger .lbl{color:var(--danger)}
+.callout p{font-size:var(--fs-body);color:var(--ink-dim)}
+/* icon variant — leading glyph in the accent colour */
+.callout.icon{position:relative;padding-left:48px}
+.callout.icon::before{content:"\25C8";position:absolute;left:18px;top:15px;font-size:var(--fs-lg);color:var(--accent)}
+.callout.icon.tip::before{content:"\2605";color:var(--good)}
+.callout.icon.warn::before{content:"\25B2";color:var(--amber)}
+.callout.icon.danger::before{content:"\25B2";color:var(--danger)}
+
+/* ---- 15. QUICK-NAV  (sticky searchable jump dropdown) ---- */
+.quicknav{position:sticky;top:0;z-index:var(--z-nav);display:flex;align-items:center;gap:var(--space-7);margin:var(--space-9) 0 var(--space-3);padding:var(--space-5) var(--space-7);background:rgba(10,7,8,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--hair-strong);border-radius:var(--radius-lg)}
+.qn-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-2xs);letter-spacing:3px;text-transform:uppercase;color:var(--amber);flex:none}
+.qn-hint{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:var(--fs-xs2);letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);flex:none}
+.qn-dd{position:relative}
+.qn-field{position:relative;display:inline-flex;align-items:center;min-width:268px;background:var(--panel2);border:1px solid var(--hair-strong);border-radius:var(--radius-md);transition:border-color var(--motion-fast)}
+.qn-field:focus-within{border-color:var(--amber)}
+.qn-ico{position:absolute;left:11px;color:var(--ink-faint);font-size:var(--fs-md);pointer-events:none}
+.qn-input{flex:1;width:100%;background:transparent;border:none;outline:none;color:var(--ink);font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm2);letter-spacing:.4px;padding:var(--space-4) var(--space-4) var(--space-4) 33px}
+.qn-input::placeholder{color:var(--ink-faint);font-weight:500}
+.qn-clear{background:transparent;border:none;color:var(--ink-faint);font-size:var(--fs-xl);line-height:1;cursor:pointer;padding:var(--space-1) 11px;transition:color var(--motion-fast)}
+.qn-clear:hover{color:var(--amber)}
+.qn-panel{position:absolute;top:calc(100% + 6px);left:0;width:310px;max-height:62vh;overflow-y:auto;background:rgba(16,10,12,.99);border:1px solid var(--hair-strong);border-radius:var(--radius-lg);box-shadow:0 20px 56px rgba(0,0,0,.6);padding:var(--space-3);display:none}
+.qn-dd.open .qn-panel{display:block}
+.qn-item{display:flex;align-items:center;gap:var(--space-5);padding:7px var(--space-5);border-radius:var(--radius-md);font-family:'Saira',sans-serif;font-size:var(--fs-base);color:var(--ink-dim);text-decoration:none}
+.qn-item:hover{background:var(--panel2);color:var(--ink)}
+.qn-dot{width:7px;height:7px;border-radius:var(--radius-round);flex:none}
+.qn-dot.amber{background:var(--amber)}.qn-dot.fed{background:var(--fed)}.qn-dot.maroon{background:var(--maroon-lt)}
+.qn-nm{flex:1}
+.qn-side{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-micro);letter-spacing:.8px;text-transform:uppercase;color:var(--ink-faint);flex:none}
+.qn-item.qn-active{background:var(--panel2);color:var(--ink)}
+.qn-empty{padding:var(--space-5) var(--space-6);color:var(--ink-faint);font-size:var(--fs-sm2);font-style:italic}
+.qn-panel::-webkit-scrollbar{width:9px}
+.qn-panel::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:var(--radius-md)}
+@media (max-width:560px){.qn-hint{display:none}.qn-field{min-width:0;flex:1}.qn-eyebrow{display:none}}
+
+/* ============================================================
+   EXTENDED COMPONENT KIT  (drawn from the wider field-manual set
+   — ship × role dossiers, role ladders, activity & site guides —
+   and re-themed onto the locked tokens above)
+   ============================================================ */
+
+/* ---- 16. STICKY TOC  (horizontal section nav) ---- */
+nav.toc{position:sticky;top:0;z-index:var(--z-sticky);display:flex;gap:var(--space-2);overflow-x:auto;flex-wrap:nowrap;margin:var(--space-9) -22px 0;padding:11px var(--space-11);background:rgba(10,7,8,.9);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);border-bottom:1px solid var(--hair-strong)}
+nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xs);font-weight:600;letter-spacing:.4px;color:var(--ink-faint);text-decoration:none;padding:5px 9px;border:1px solid transparent;border-radius:var(--radius-sm);white-space:nowrap;transition:color var(--motion-fast),border-color var(--motion-fast),background var(--motion-fast)}
+nav.toc a:hover,nav.toc a.active{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+nav.toc::-webkit-scrollbar{height:0}
+
+/* ---- 17. RATING DIAL  (conic-gradient suitability gauge) ---- */
+.ratebox{margin-top:var(--space-13);display:flex;align-items:center;gap:var(--space-11);flex-wrap:wrap;border:1px solid var(--hair-strong);border-radius:var(--radius-md);background:linear-gradient(180deg,var(--accent-glow),rgba(20,13,15,.5));padding:var(--space-11) var(--space-12)}
+.dial{--v:78;width:96px;height:96px;border-radius:var(--radius-round);flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;background:conic-gradient(var(--accent) calc(var(--v)*1%),rgba(255,255,255,.06) 0)}
+.dial::after{content:"";position:absolute;inset:9px;border-radius:var(--radius-round);background:var(--bg2);border:1px solid var(--hair)}
+.dial .num{position:relative;z-index:var(--z-base);font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-4xl);color:var(--ink)}
+.dial .num small{font-size:var(--fs-sm2);color:var(--ink-faint);font-weight:500}
+.ratebox .rl{flex:1;min-width:240px}
+.ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--amber);font-weight:600}
+.ratebox .rl .d{font-size:var(--fs-md2);color:var(--ink-dim);margin-top:5px}
+
+/* ---- 18. SPEC GRID  (seamless technical readout, 1px gridlines) ---- */
+.specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius-md);overflow:hidden;margin-top:var(--space-9)}
+.specgrid .cell{background:var(--panel);padding:13px 15px}
+.specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:var(--fs-xs);color:var(--ink-faint)}
+.specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xl);color:var(--ink);margin-top:3px}
+.specgrid .v small{font-size:var(--fs-sm);color:var(--ink-faint);font-weight:400}
+
+/* ---- 19. LOADOUT TABLE  (grouped multi-state build table) ---- */
+table.l3{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
+table.l3 thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--hair-strong)}
+table.l3 td{padding:var(--space-4) var(--space-6);border-bottom:1px solid var(--hair);vertical-align:top}
+table.l3 tr:last-child td{border-bottom:none}
+table.l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--ink-dim);white-space:nowrap}
+table.l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-sm2);color:var(--ink)}
+table.l3 td.eng{font-size:var(--fs-sm2);color:var(--amber-lt)}
+table.l3 .grouprow td{background:linear-gradient(90deg,rgba(139,35,50,.5),rgba(74,14,22,.12) 70%,transparent);color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs2);font-weight:600}
+
+/* ---- 20. COMPARISON TABLE w/ PROS-CONS CELLS ---- */
+table.cmp{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:620px;table-layout:fixed}
+table.cmp thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--hair-strong)}
+table.cmp td{padding:9px var(--space-6);border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink-dim)}
+table.cmp tr:last-child td{border-bottom:none}
+table.cmp td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:var(--fs-base)}
+table.cmp td.pcc{font-size:var(--fs-sm2);line-height:1.45}
+table.cmp td.pcc span{display:block;margin:1px 0}
+table.cmp td.pcc .p{color:var(--good)}
+table.cmp td.pcc .c{color:var(--amber-lt)}
+table.cmp td.pcc .p::before{content:"+ ";font-weight:700}
+table.cmp td.pcc .c::before{content:"\2212 ";font-weight:700}
+table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
+.rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+
+/* ---- 21. CARD GRID ---- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--space-7);margin:var(--space-9) 0}
+.card{border:1px solid var(--hair-strong);border-top:3px solid var(--accent);border-radius:var(--radius-sm);padding:var(--space-8) var(--space-9);background:linear-gradient(180deg,rgba(28,18,20,.55),rgba(10,7,8,.4))}
+.card .ico{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-sm);letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:var(--space-3);display:block}
+.card h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-lg);letter-spacing:.4px;color:var(--ink);margin-bottom:var(--space-3)}
+.card p{font-size:var(--fs-body);color:var(--ink-dim);margin:var(--space-2) 0}
+.card.ac-fed{border-top-color:var(--fed)}.card.ac-maroon{border-top-color:var(--maroon-lt)}.card.ac-good{border-top-color:var(--good)}
+
+/* ---- 22. PICK / RECOMMENDATION CARDS ---- */
+.pickgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-7);margin:var(--space-8) 0}
+.pickcard{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
+.pickcard .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--amber);font-weight:600}
+.pickcard .pick{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xl);color:var(--accent-lt);margin:5px 0 7px;font-weight:600}
+.pickcard .pick small{color:var(--ink-faint);font-size:var(--fs-sm);font-weight:400}
+.pickcard p{margin:0;font-size:var(--fs-base);color:var(--ink-dim)}
+.pickcard .alt{margin-top:var(--space-4);font-size:var(--fs-sm2);color:var(--ink-faint)}
+.pickcard .alt b{color:var(--ink-dim);font-weight:500}
+
+/* ---- 23. STEP TIMELINE  (numbered vertical procedure) ---- */
+ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;padding:0}
+.steps>li{counter-increment:step;position:relative;padding:0 0 var(--space-10) 52px;border-left:1px solid var(--hair);margin-left:var(--space-9)}
+.steps>li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps>li::before{content:counter(step,decimal-leading-zero);position:absolute;left:-18px;top:-4px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-round);background:var(--panel);border:1px solid var(--accent-soft);font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm2);color:var(--accent-lt)}
+.steps>li .st{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-lg);color:var(--ink);display:block;margin-bottom:3px}
+.steps>li p{margin:5px 0;font-size:var(--fs-body);color:var(--ink-dim)}
+
+/* ---- 24. PILLS  (bold status tags w/ severity) ---- */
+.pill{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:var(--fs-xs);letter-spacing:1px;text-transform:uppercase;padding:var(--space-1) var(--space-4);border-radius:var(--radius-xs);white-space:nowrap;display:inline-block}
+.pill.lo{background:rgba(95,179,122,.16);color:var(--good-lt)}
+.pill.md{background:rgba(224,145,58,.16);color:var(--amber-lt)}
+.pill.hi{background:rgba(216,66,59,.16);color:var(--danger)}
+.pill.fed{background:rgba(79,159,214,.16);color:var(--fed-lt)}
+.pill.neutral{background:rgba(190,120,110,.12);color:var(--ink-dim)}
+
+/* ---- 25. KBD  (keyboard / control key cap) ---- */
+.kbd{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xs2);font-weight:600;letter-spacing:.5px;color:var(--ink);background:var(--panel2);border:1px solid var(--hair-strong);border-bottom-width:2px;border-radius:var(--radius-md);padding:var(--space-1) 7px;white-space:nowrap}
+
+/* ---- 26. ACCENT TEXT  (inline emphasis) ---- */
+.acc{color:var(--accent-lt);font-weight:500}
+
+/* ---- 27. LOCATION / COORDINATE READOUT ---- */
+.loc-card{border:1px solid var(--hair-strong);border-radius:var(--radius-lg);background:linear-gradient(180deg,var(--panel),var(--bg2));padding:var(--space-3) var(--space-9);margin-top:var(--space-9)}
+.loc-row{display:flex;justify-content:space-between;align-items:center;gap:var(--space-8);padding:9px 0;border-bottom:1px dashed var(--hair)}
+.loc-row:last-child{border-bottom:none}
+.loc-k{font-family:'Saira Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:var(--fs-sm);color:var(--ink-faint)}
+.loc-v{color:var(--ink);font-weight:400;text-align:right}
+.coord{display:inline-flex;align-items:center;gap:var(--space-4);cursor:pointer;font-family:'Chakra Petch',monospace;font-size:var(--fs-sm2);color:var(--good-lt);background:rgba(95,179,122,.08);border:1px solid rgba(95,179,122,.3);border-radius:var(--radius-md);padding:var(--space-1) 9px;transition:background var(--motion-fast),border-color var(--motion-fast)}
+.coord:hover{background:rgba(95,179,122,.16);border-color:var(--good)}
+.coord .cp{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-micro);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+.coord.copied{background:rgba(95,179,122,.2);border-color:var(--good);color:var(--good)}
+.coord.copied .cp{color:var(--good)}
+
+/* ---- 28. FOOTER ---- */
+footer{margin-top:var(--space-footer);padding-top:24px;border-top:1px solid var(--hair-strong);font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm2);letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:var(--space-4) var(--space-10)}
+footer b{color:var(--amber-lt)}
+
+/* ---- 29. RESPONSIVE / MOTION ---- */
+@media (max-width:560px){.sec-head .tag{display:none}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+/* ---- styleguide-only annotation chrome (delete in real pages) ---- */
+.note-sg{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-xs2);letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);border:1px dashed var(--hair-strong);border-radius:var(--radius-sm);padding:var(--space-3) var(--space-5);margin:var(--space-9) 0 0;display:inline-block}
+.note-sg b{color:var(--amber-lt)}
+
+/* ============================================================
+   ACCESSIBILITY BASELINE  (part of the system, not optional)
+   ============================================================ */
+a:focus-visible,button:focus-visible,.coord:focus-visible,.qn-item:focus-visible,
+nav.toc a:focus-visible,.permalink:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--accent-lt);outline-offset:2px;border-radius:var(--radius-xs)}
+.coord{outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition-duration:.001ms!important;animation-duration:.001ms!important}
+}

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Manual — Krait Mk II · AX Combat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0807;
+    --bg2:#100b0a;
+    --panel:#160f0d;
+    --panel2:#1c1310;
+    --grid:rgba(180,70,60,.05);
+    --maroon:#8b2332;
+    --maroon-lt:#b13140;
+    --maroon-deep:#4a0e16;
+    --amber:#e0913a;
+    --amber-lt:#f4b15f;
+    --amber-dim:#9c7434;
+    --acc:#8fbf3f;
+    --acc-lt:#c0e070;
+    --acc-deep:#46611a;
+    --danger:#d8423b;
+    --good:#5fb37a;
+    --blue:#5b9bd1;
+    --ink:#ece4df;
+    --ink-dim:#a89a93;
+    --ink-faint:#6e615c;
+    --hair:rgba(190,120,110,.16);
+    --hair-strong:rgba(224,70,60,.34);
+    --radius:3px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
+      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
+      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
+
+  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
+  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
+  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
+    letter-spacing:6px;margin-top:8px;font-weight:600}
+  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
+    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
+  .chip span{color:var(--ink-faint);margin-right:7px}
+  .chip b{color:var(--amber-lt);font-weight:600}
+
+  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
+  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
+    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
+  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
+  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
+  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
+  .ratebox .rl{flex:1;min-width:240px}
+  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
+  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
+
+  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
+    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
+  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
+    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
+  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
+
+  section{margin-top:46px;scroll-margin-top:62px}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
+  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
+    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
+  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
+  p{margin:13px 0;color:var(--ink-dim)}
+  p b,li b{color:var(--ink);font-weight:500}
+  .acc{color:var(--acc-lt);font-weight:500}
+  .amb{color:var(--amber-lt);font-weight:500}
+
+  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
+
+  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  .specgrid .cell{background:var(--panel);padding:13px 15px}
+  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
+  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
+  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
+  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
+  tbody tr:hover{background:rgba(224,70,60,.04)}
+  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
+  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
+  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
+  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
+  .star{color:var(--amber-lt)}
+
+  /* 3-state loadout table */
+  .l3 td{font-size:13.5px;padding:8px 10px}
+  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
+  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
+    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
+  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
+  .l3 td.eng{color:var(--ink)}
+  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
+  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
+
+  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
+  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
+
+  table.cmp{table-layout:fixed}
+  td.pcc{font-size:12.5px;line-height:1.45}
+  td.pcc span{display:block;margin:1px 0}
+  td.pcc .p{color:var(--good)}
+  td.pcc .c{color:var(--acc-lt)}
+  td.pcc .p::before{content:"+ ";font-weight:700}
+  td.pcc .c::before{content:"\2212 ";font-weight:700}
+  td.pcc .base{color:var(--ink-faint);font-style:italic}
+
+  ul.clean{list-style:none;margin:12px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
+  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
+
+  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
+  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
+  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
+  .callout.acc .lbl{color:var(--acc-lt)}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
+  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
+
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
+  footer b{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    .twocol{grid-template-columns:1fr}
+    nav.toc{overflow-x:auto;flex-wrap:nowrap}
+    table{font-size:12.5px}
+    th,td{padding:7px 7px}
+    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1>Krait Mk II<span class="role">AX Combat</span></h1>
+    <p class="lede">The high-damage Xeno hunter. The Krait Mk II brings <b>three large hardpoints and a fighter bay to anti-Xeno combat</b> &mdash; the AX ship that hits hardest, melting Interceptor hearts with heavy Gauss and AX guns while an SLF draws fire. Less module-hardened than a Chieftain, but it kills faster.</p>
+
+    <div class="chips">
+      <div class="chip"><span>Class</span><b>Medium &middot; Pad M</b></div>
+      <div class="chip"><span>Hardpoints</span><b>3L 2M + SLF</b></div>
+      <div class="chip"><span>Military</span><b>0</b></div>
+      <div class="chip"><span>Hull</span><b>~44.2M Cr</b></div>
+      <div class="chip"><span>Role</span><b>AX Combat</b></div>
+      </div>
+
+    <div class="ratebox">
+      <div class="dial" style="--v:89"><div class="num">89<small>/100</small></div></div>
+      <div class="rl">
+        <div class="t">AX Combat Suitability Rating</div>
+        <div class="d">A top anti-Xeno ship and the highest-DPS popular choice. Three large hardpoints carry a brutal AX weapon suite and the SLF bay adds a decoy and extra guns; it ranks just behind the Chieftain because it lacks military slots for module hardening &mdash; it kills faster but soaks Thargoid fire less well.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 Why it fits</a>
+    <a href="#s3">03 Comparison</a>
+    <a href="#s4">04 Cost &amp; access</a>
+    <a href="#s5">05 ARX pre-built</a>
+    <a href="#s6">06 3-state loadout</a>
+    <a href="#s7">07 Initial plan</a>
+    <a href="#s8">08 A-rated plan</a>
+    <a href="#s9">09 Engineering</a>
+    <a href="#s10">10 Stat ladder</a>
+    <a href="#s11">11 Activities</a>
+    <a href="#s12">12 Field notes</a>
+  </nav>
+
+  <!-- s1 -->
+  <section id="s1">
+    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Where the Chieftain dodges and endures, the Krait Mk II kills. Its three large hardpoints carry the heaviest AX weapon suite of any popular medium &mdash; multiple Gauss cannons or large AX multi-cannons that melt an Interceptor's exposed hearts fast &mdash; and its ship-launched fighter adds both extra firepower and a decoy to split Thargoid attention. For burning down Interceptors quickly, few ships match it.</p>
+    <p>The trade-off is hardening: it has no military slots, so it can't pack the Guardian Module Reinforcement that lets a Chieftain shrug off the module-stripping lightning. It relies more on dodging and raw speed of kill &mdash; end the fight before the Thargoid ends you. It's also pricier. For an experienced AX pilot who wants maximum damage and a fighter wingman, the Krait Mk II is a superb, aggressive Xeno hunter; for learning or survivability, the Chieftain is gentler.</p>
+    <div class="callout amber"><span class="lbl">Where this hull shines</span>High-damage anti-Xeno combat: burning down Thargoid Interceptors fast with heavy Gauss/AX weapons and an SLF decoy, AXCZ damage-dealing, and aggressive Xeno hunting for pilots who've learned the discipline.</div>
+  </section>
+
+  <!-- s2 -->
+  <section id="s2">
+    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3L &middot; 2M <small>(heavy AX)</small></div></div>
+      <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF decoy + guns)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0 <small>(no module hardening)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">245 / 337 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;5&middot;5&middot;4&middot;3&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>Four things make the Krait Mk II a fearsome Xeno hunter:</p>
+    <ul class="clean">
+      <li><b>Three large hardpoints.</b> The heaviest AX weapon suite of any popular medium &mdash; it melts Interceptor hearts fastest.</li>
+      <li><b>A fighter bay.</b> An SLF adds firepower and, crucially, a decoy to split a Thargoid's attacks away from you.</li>
+      <li><b>Good speed.</b> Quick enough to reposition and dodge between damage windows.</li>
+      <li><b>Deep internals.</b> Room for Guardian hull reinforcement, caustic and heat kit alongside heavy guns.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>It has no military slots, so it can't harden its modules against Thargoid lightning the way a Chieftain or Challenger can &mdash; it loses modules faster and relies on killing quickly and dodging well. It's pricier too. The Krait Mk II's case is maximum AX damage plus a decoy fighter; for module survivability and learning, the Chieftain is safer.</div>
+  </section>
+
+  <!-- s3 -->
+  <section id="s3">
+    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, hardening and heat management matter as much as raw mounts.</p>
+    <p class="subhd">Same class &mdash; medium AX fighters</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Krait Mk II</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">More agile; 3 military slots for hardening</span><span class="c">Lower DPS; no fighter</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II <span class="tag r">this</span></td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">89</span><div class="bar"><i style="width:89%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Tankier; 3 military slots</span><span class="c">Lower large-mount DPS; no fighter</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>3L 3M</td><td class="pcc"><span class="p">Six mounts; modern</span><span class="c">No military slots; weaker shields</span></td><td><span class="rscore">82</span><div class="bar"><i style="width:82%"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Tough; high DPS</span><span class="c">Less agile; no military slots</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Fast; great range to reach sites</span><span class="c">Less firepower; no military slots</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The Krait Mk II is the damage-and-decoy pick of the medium AX fighters. The Chieftain and Challenger harden against module damage with their military slots; the Krait kills faster and brings a fighter instead. For aggressive, experienced AX pilots, it's the high-DPS choice.</p>
+    <p class="subhd">Other classes &mdash; the heavier AX options</p>
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Krait Mk II</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Apex shields; huge firepower</span><span class="c">Imperial rank; far less agile</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Many mounts; tanky</span><span class="c">Ponderous; can't dodge</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 2L 2M</td><td class="pcc"><span class="p">Massive firepower and tank</span><span class="c">Federal rank; poor agility</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+        <tr><td class="mod">Python Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Tanky; strong combat</span><span class="c">No military slots; no fighter</span></td><td><span class="rscore">84</span><div class="bar"><i style="width:84%"></i></div></td></tr>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Agile; module hardening</span><span class="c">Lower DPS</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
+      </tbody>
+    </table>
+    <p>The large AX ships out-tank and out-gun the Krait but can't dodge Thargoid attacks &mdash; and in AX, evasion saves you where armour can't. The Krait Mk II's niche is medium-agility with maximum damage and a decoy fighter; it ends fights fast, which is its own kind of survival.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="s4">
+    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~44.2M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted</div><div class="v">~58M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~75M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+      </div>
+    <p>At ~44.2M Cr the Krait Mk II is pricier than the Chieftain, with no rank gate. An AX fit with heavy Guardian/AX weapons, a fighter and Guardian hull reinforcement brings the all-in figure to around 75M Cr &mdash; again, much of it Guardian-tech unlocks.</p>
+    <p>It's the choice for a committed AX pilot who already knows the discipline and wants to kill Interceptors faster. For learning, the cheaper, more forgiving Chieftain is wiser; the Krait rewards skill with speed of kill.</p>
+    <div class="callout amber"><span class="lbl">Damage costs more</span>Around 75M Cr (plus Guardian unlocks) for the highest-DPS popular AX medium with a decoy fighter &mdash; an experienced pilot's aggressive Xeno hunter.</div>
+  </section>
+
+  <!-- s5 -->
+  <section id="s5">
+    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no AX-specific ARX pre-built built around the Krait Mk II; buy and outfit it normally, then unlock Guardian and AX weapons at the relevant sites.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="s6">
+    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <p>A high-damage anti-Xeno fit: heavy Gauss/AX weapons on the large mounts, a fighter for decoy and extra guns, and Guardian hull reinforcement (no military slots, so hardening goes in optionals). Initial is buy-only; AX-fitted adds the kit; Engineered hardens mobility and survival.</p>
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Gauss Cannon (AX)</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">&mdash;</td><td class="st">Gauss Cannon (AX)</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Large 3</td><td class="st">&mdash;</td><td class="st">Modified AX Multi-Cannon</td><td class="eng">Enhanced AX Multi-Cannon</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">AX Multi-Cannon</td><td class="eng">Enhanced AX Multi-Cannon</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon</td><td class="eng">Guardian Shard Cannon</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Xeno Scanner</td><td class="eng">Xeno Scanner</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Caustic Sink Launcher</td><td class="eng">Caustic Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced</td></tr>
+        <tr><td class="slot">Sensors (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Fighter Hangar 6</td><td class="eng">Fighter Hangar 6 (SLF decoy)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 5</td><td class="eng">Guardian HRP 5</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 5</td><td class="eng">Guardian MRP 5</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Decontamination Limpet Controller</td><td class="eng">Decon Limpet (caustic)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 3</td><td class="eng">Guardian HRP 3</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 3</td><td class="eng">MRP 3</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">Heat Sink storage</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Caustic Sink storage</td><td class="eng">Caustic Sink storage</td></tr>
+      </tbody>
+    </table>
+    <div class="callout acc"><span class="lbl">Kill fast, decoy, harden in optionals</span>With no military slots, the Krait puts Guardian module/hull reinforcement in its optionals &mdash; less than a Chieftain can carry, so it leans on ending the fight quickly. The SLF is a key tool: deploy it to split Thargoid attacks while your three large guns melt the hearts. Manage heat hard.</div>
+  </section>
+
+  <!-- s7 -->
+  <section id="s7">
+    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and unlock Guardian and AX weapons at the relevant sites.</p>
+    <p>Arm the three large mounts with the heaviest AX weapons; fit a fighter bay for the decoy.</p>
+    <p>Put Guardian hull/module reinforcement in the optionals; add caustic and heat kit.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="s8">
+    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority:</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>('AX / Guardian weapons', 'Heavy Gauss and AX guns to melt Interceptors fast.', 'material unlocks')</li>
+      <li><span class="stepnum">2</span>('Guardian reinforcement (optionals)', 'Hull and module hardening without military slots.', 'material unlocks')</li>
+      <li><span class="stepnum">3</span>('Fighter bay', 'An SLF decoy to split Thargoid attacks.', '~5M Cr')</li>
+      <li><span class="stepnum">4</span>('Thrusters &rarr; A', 'Agility to dodge between damage windows.', '~7M Cr')</li>
+      <li><span class="stepnum">5</span>('Caustic + heat utilities', 'Xeno scanner, caustic sink, heat sinks.', '~2M Cr')</li>
+    </ul>
+    <div class="callout amber"><span class="lbl">Speed of kill is survival</span>Without military slots, the Krait survives by ending fights fast &mdash; prioritise the heaviest AX weapons and use the SLF decoy to buy the seconds you need.</div>
+  </section>
+
+  <!-- s9 -->
+  <section id="s9">
+    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens mobility, heat and survival; AX/Guardian weapons have limited engineering. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <table>
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Thermal Resistant (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty / Thermal Resistant</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    <p class="subhd">Recommended order</p>
+    <ul class="clean">
+      <li><span class="stepnum">1</span>Overcharged plant and Charge-Enhanced distributor to feed power-hungry Gauss weapons.</li>
+      <li><span class="stepnum">2</span>Dirty thrusters for the agility to dodge between damage windows.</li>
+      <li><span class="stepnum">3</span>Thermal-resistant shield and HRPs against Thargoid thermal/caustic damage.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and Guardian reinforcement come from unlocks, not blueprints.</li>
+    </ul>
+    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Moderate ship engineering plus heavy Guardian-tech unlocks for weapons and reinforcement &mdash; the Guardian grind is the real cost. Ship blueprints are standard. Ask for exact per-blueprint or unlock counts if needed.</div>
+  </section>
+
+  <!-- s10 -->
+  <section id="s10">
+    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <table>
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">AX firepower</td><td>high</td><td>high</td><td class="acc">highest (popular)</td></tr>
+        <tr><td class="mod">Has a decoy fighter</td><td>yes</td><td>yes</td><td class="acc">yes</td></tr>
+        <tr><td class="mod">Module hardening</td><td>optionals only</td><td>optionals only</td><td class="acc">optionals only</td></tr>
+        <tr><td class="mod">Agility (dodge)</td><td>good</td><td>good</td><td class="acc">good</td></tr>
+        <tr><td class="mod">Speed of kill</td><td>fast</td><td>fast</td><td class="acc">fastest (popular)</td></tr>
+      </tbody>
+    </table>
+    <p>Engineered and Guardian-armed, the Krait Mk II melts Interceptor hearts faster than any popular medium, with an SLF to split Thargoid fire. It hardens its modules less than a Chieftain, so it survives by killing fast and dodging &mdash; an aggressive, expert's Xeno hunter.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="s11">
+    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="twocol">
+      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+      <li><b>Fast Interceptor kills.</b> Burn down Cyclops through Medusa quickly with heavy AX guns.</li>
+      <li><b>AXCZ damage-dealing.</b> A high-DPS fighter for conflict zones alongside hardier ships.</li>
+      <li><b>Decoy tactics.</b> Deploy the SLF to split Thargoid attacks while you deal damage.</li>
+    </ul></div>
+      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <li><b>Aggressive Xeno hunting.</b> For experienced pilots who kill before they're crippled.</li>
+      <li><b>Wing damage role.</b> The high-DPS member of an AX wing, with tankier ships tanking.</li>
+      <li><b>Maelstrom and Titan operations.</b> Fast kills in the most dangerous Thargoid airspace.</li>
+    </ul></div>
+    </div>
+    <div class="callout acc"><span class="lbl">Generic example operations</span>Wherever Thargoids are fought &mdash; Interceptor hunts, AXCZ, Maelstrom and Titan ops. The Krait Mk II is the high-damage spearhead for pilots who've mastered AX.</div>
+  </section>
+
+  <!-- s12 -->
+  <section id="s12">
+    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="clean">
+      <li>Kill fast &mdash; with no military slots, ending the fight quickly is your main survival tool.</li>
+      <li>Use the SLF as a decoy to split Thargoid attacks away from you.</li>
+      <li>Put Guardian reinforcement in the optionals; manage heat hard with Gauss weapons.</li>
+      <li>Learn AX in a Chieftain first &mdash; the Krait rewards skill, not learning.</li>
+    </ul>
+    <div class="callout acc"><span class="lbl">Verdict</span>The Krait Mk II is the high-damage Xeno hunter: three large hardpoints for the heaviest AX weapon suite of any popular medium, plus a fighter bay for decoy and extra guns. Lacking military slots, it hardens less than a Chieftain and survives by killing fast &mdash; an aggressive, expert's anti-Xeno ship that ends Interceptor fights before they end you.</div>
+  </section>
+
+  <footer>
+    <p><b>Krait Mk II &middot; AX Combat</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Krait Mk II &middot; AX Combat dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+  </footer>
+
+</div>
+</body>
+</html>
