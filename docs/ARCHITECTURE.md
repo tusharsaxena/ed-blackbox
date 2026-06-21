@@ -71,7 +71,7 @@ The formal replacement for per-page CSS. Layered:
 ```
 tokens  →  components  →  templates  →  pages
 (:root)    (CSS classes)  (starter +    (link the CSS/JS,
-           + 3 JS modules)  gallery)      set one accent group)
+           + 4 JS modules)  gallery)      set one accent group)
 ```
 
 - **`css/ed-blackbox.css`** — single source of truth. `:root` holds a **locked** token
@@ -123,9 +123,10 @@ guides/
   activities/    6 guides     — "how to play role X"
 ```
 
-**File census:** ~251 files — 112 HTML (108 guides + generated `index.html` + 2
-design-system templates + 1 legacy template), ~113 images (46 ship `.jpg`, 38 engineer
-`.webp`, 29 logo `.png`), 21 Markdown docs, 1 CSS, 1 JS, 1 TSV (`scripts/ship-names.tsv`).
+**File census:** ~355 files — 112 HTML (108 guides + generated `index.html` + 2
+design-system templates + 1 legacy template), 113 images (46 ship `.jpg`, 38 engineer
+`.webp`, 29 logo `.png`), 124 Markdown (20 prose docs + **104 generated per-page
+`*-anchors.md` catalogs**, see §4/§6), 1 CSS, 1 JS, 1 TSV (`scripts/ship-names.tsv`).
 
 **Engineering** (`guides/engineering/`, 7 pages):
 
@@ -152,9 +153,14 @@ passenger=blue, trading=green, AX=lime) and the generated landing page are other
 **Cross-linking contract.** Pages deep-link into each other by stable anchors:
 - Engineer rows: `#eng-<name>` (e.g. `engineers.html#eng-felicity-farseer`).
 - Blueprint groups/cards: `#grp-<module>` / `#bp-<module>-<variant>`.
-- The `*_Anchors.md` files in `guides/engineering/` are a **manually maintained
-  catalog** of these anchors — a contract for other pages and external tools. They are
-  *not* auto-generated; keep ids stable and update the catalog when ids change.
+- Section anchors: `<page>.html#<section-id>` (every numbered `<section>` carries an id).
+- **Anchor catalogs.** Each guide has a sibling **`<basename>-anchors.md`** listing its
+  navigable anchors — a contract for other pages and external tools. These are
+  **generated** from each page's `<section id="…">` by `scripts/generate-anchor-files.sh`
+  (§6); re-run it when ids change. The two **hand-curated** catalogs —
+  `engineering/blueprints-anchors.md` (`#grp-`/`#bp-` cards) and
+  `engineering/engineers-anchors.md` (`#eng-` rows + notes) — carry richer annotations
+  the generator can't derive and are edited by hand. Keep ids stable regardless.
 
 ---
 
@@ -186,11 +192,19 @@ The first step toward "content-as-data". Convention: every task script lives in
   other sections are hand-curated cards inside the script. The output's look is copied
   from `engineers.html` (deliberately not the design system yet). `index.html` is a
   **generated artifact** — edit the generator, not the file.
+- **`generate-anchor-files.sh`** → regenerates the per-page `<basename>-anchors.md`
+  anchor catalogs (§4). For each guide it extracts every `<section id="…">` and the
+  section's title and writes the sibling `.md`; pages with no sectioned nav (the `farms/`
+  pages, `pve-combat-venues.html`) get none, and the two hand-curated catalogs
+  (`blueprints-anchors.md`, `engineers-anchors.md`) are skipped via a `CURATED` list. It
+  only ever touches files carrying its own generated marker, so hand-authored catalogs
+  are safe. Re-run after adding/removing/renaming a guide or any `<section id>`. Baseline:
+  102 generated + 2 curated.
 
 **Future direction (planned, `TODO.md` Phase 2):** extract page content into per-page
-Markdown (`Page_Data.md`), maintain `Page_Anchors.md`, and build generators that
-assemble full pages from Markdown + the design-system template — turning the site from
-hand-authored HTML into rendered-from-data HTML.
+Markdown (`Page_Data.md`) and build generators that assemble full pages from Markdown +
+the design-system template — turning the site from hand-authored HTML into
+rendered-from-data HTML. (The companion anchor catalogs are already generated, above.)
 
 ---
 

@@ -50,13 +50,13 @@ Legend: ✅ done · ☐ not done.
 - ☐ Generate the per-page **Sources & Credits** section for every page during migration — list the authoritative sources each page's facts were verified against (the `.credits` section; see Phase 3)
 - ✅ Reorganize the file hierarchy (`ship/ship/` → `ships/dossiers/`, `role-ship/` → `ships/by-role/`, `role-activities/` → top-level `activities/`, `engineering/farm/` → `farms/`, `templates/` → `design-system/legacy-templates/`)
 - ✅ Consolidate scattered images into the top-level `images/` folder (`engineer-images/` → `images/engineers/`, `ship-images/` → `images/ships/`)
-- ✅ Standardize file names — all content files now lowercase-kebab (`Anaconda_Combat.html` → `anaconda-combat.html`, `Combat_Zones.html` → `combat-zones.html`); root meta-docs stay UPPER (`CREDITS.md`). **Anchors deferred** — `*_Anchors.md` left as-is (tracked separately).
+- ✅ Standardize file names — all content files now lowercase-kebab (`Anaconda_Combat.html` → `anaconda-combat.html`, `Combat_Zones.html` → `combat-zones.html`); root meta-docs stay UPPER (`CREDITS.md`). Anchor catalogs also standardized (`*_Anchors.md` → `<name>-anchors.md`) and now generated — see Phase 2.
 - ☐ Publish on GitHub Pages
 
 ## Phase 2 — Content-as-data tooling
 
 - ☐ `Page_Data.md` — extract page content into per-page Markdown to make rebuilds easy
-- ☐ `Page_Anchors.md` — maintain hyperlink anchors referenceable across the project
+- ✅ Per-page anchor catalogs — `scripts/generate-anchor-files.sh` generates a sibling `<name>-anchors.md` for every guide from its `<section id>`s (2 hand-curated: blueprints, engineers); re-run on guide/section changes
 - ☐ Build skills / generator scripts that assemble pages from Markdown + the template
 - ☐ Build-link generators for Coriolis / EDSY / SLEF (JS to generate & parse loadout links)
 

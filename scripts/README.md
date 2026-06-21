@@ -11,6 +11,7 @@ be re-run later.
 | Script | Docs | What it does |
 |---|---|---|
 | `generate-guides-index.sh` | [generate-guides-index.md](generate-guides-index.md) | Regenerates `guides/index.html`, the "Black Book" landing page linking to every guide. |
+| `generate-anchor-files.sh` | [generate-anchor-files.md](generate-anchor-files.md) | Regenerates the per-page `<basename>-anchors.md` files cataloging each guide's `<section id>` navigation anchors. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.

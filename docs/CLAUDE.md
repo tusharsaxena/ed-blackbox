@@ -17,7 +17,8 @@ sources).
 
 ```
 guides/            108 self-contained HTML guides (inline CSS) + index.html (generated)
-  engineering/     engineers · blueprints · checklist · farms/ (4) + *_Anchors.md
+                   each guide has a sibling <name>-anchors.md (generated; 2 curated in engineering/)
+  engineering/     engineers · blueprints · checklist · farms/ (4)
   systems/         11 game-system guides
   ships/           dossiers/ (77) · by-role/ (7)
   activities/      6 role playbooks (how to fly each role)
@@ -43,10 +44,14 @@ docs/              project docs (this file, architecture, todo, credits)
    inline stylesheet. Existing pages still inline their CSS — when editing one, match
    *that page's own* existing style; don't half-migrate it unless the task is migration.
 4. **Stable anchors.** Other pages and external tools deep-link by id (`#eng-…`,
-   `#grp-…`, `#bp-…`). Don't rename ids casually; if you do, update the relevant
-   `guides/engineering/*_Anchors.md` catalog.
-5. **Generated files are generated.** `guides/index.html` comes from
-   `scripts/generate-guides-index.sh`. Edit the generator, not the output.
+   `#grp-…`, `#bp-…`, section ids). Don't rename ids casually. Every guide has a
+   sibling **`<basename>-anchors.md`** cataloging its anchors; if you add, remove, or
+   rename a `<section id>`, re-run the anchor generator (see *Anchor files* below).
+   The `blueprints-anchors.md` / `engineers-anchors.md` catalogs are **hand-curated** —
+   edit them by hand.
+5. **Generated files are generated.** `guides/index.html` (`generate-guides-index.sh`)
+   and the per-page `<basename>-anchors.md` files (`generate-anchor-files.sh`) are
+   script output — edit the generator, not the output.
 6. **Scripts go in `scripts/`.** Any script used for a task is saved in `scripts/`,
    named specifically for the task, with a sibling `<name>.md` doc and a header comment
    — not left in `/tmp` or run inline-only.
@@ -65,6 +70,8 @@ docs/              project docs (this file, architecture, todo, credits)
    maroon `<span>` word.
 5. Verify facts (rule 1); add it as a `card …` line in
    `scripts/generate-guides-index.sh` and re-run so it appears on the landing page.
+6. Re-run `scripts/generate-anchor-files.sh` so the page gets its sibling
+   `<basename>-anchors.md` anchor catalog (see *Anchor files* below).
 
 ### Regenerate the landing page
 ```bash
@@ -73,10 +80,24 @@ bash scripts/generate-guides-index.sh   # auto-discovers ship dossiers; prints c
 Re-run after adding/removing/renaming a ship dossier, or after adding a card line for a
 new top-level guide. Docs: `scripts/generate-guides-index.md`.
 
+### Anchor files
+Every guide HTML has a sibling **`<basename>-anchors.md`** cataloging its
+`<section id="…">` navigation anchors (label = the section title). They're generated:
+```bash
+bash scripts/generate-anchor-files.sh   # rewrites all *-anchors.md; prints counts
+```
+**Re-run whenever you add/remove/rename a `<section id>`, or add/rename/remove a guide.**
+The script only touches files carrying its generated marker, so the hand-curated
+`blueprints-anchors.md` / `engineers-anchors.md` are safe (edit those by hand). Pages
+with no sectioned nav (the `farms/` pages, `pve-combat-venues.html`) get no file. Docs:
+`scripts/generate-anchor-files.md`.
+
 ### Edit an existing (legacy) guide
 - It's a self-contained HTML file with inline CSS. Match its existing structure and
   palette. Don't introduce the design-system link unless you're doing the migration
   task for that page (a tracked Phase 1 item).
+- If your edit adds, removes, or renames any `<section id>`, re-run
+  `scripts/generate-anchor-files.sh` to refresh that page's `<basename>-anchors.md`.
 
 ### Migrate a page to the design system (Phase 1 work)
 - Replace the inline `<style>` with a link to `ed-blackbox.css`, set the accent group,
@@ -119,5 +140,6 @@ new top-level guide. Docs: `scripts/generate-guides-index.md`.
 
 ```bash
 bash scripts/generate-guides-index.sh    # rebuild the landing page
+bash scripts/generate-anchor-files.sh    # rebuild per-page *-anchors.md catalogs
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```

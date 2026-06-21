@@ -95,6 +95,8 @@ components are present.
 - [ ] Only catalogued components; no invented classes; no raw px where a token fits.
 - [ ] Dial uses `style="--v:NN"`; one headline display, not dial+bar for one metric.
 - [ ] Record ids stable & unique; permalinks present; cross-links resolve.
+- [ ] Anchor catalog refreshed: ran `scripts/generate-anchor-files.sh` if any
+      `<section id>` was added, removed, or renamed (updates `<basename>-anchors.md`).
 - [ ] Facts verified vs authoritative sources; unknowns marked `.kv-tbd`.
 - [ ] Accessibility floor cleared (`05-accessibility.md`).
 - [ ] Links `ed-blackbox.js` (defer) before `</body>`.
