@@ -17,8 +17,8 @@ The record-card identity rail takes either an image or a text placeholder.
 
 | Domain | Folder | Format |
 |---|---|---|
-| Ships | `field-manuals/ship/ship-images/` | `.jpg`, kebab-case (`python-mkii.jpg`) |
-| Engineers | `field-manuals/engineering/engineer-images/` | `.webp`, kebab-case (`felicity-farseer.webp`) |
+| Ships | `images/ships/` | `.jpg`, kebab-case (`python-mkii.jpg`) |
+| Engineers | `images/engineers/` | `.webp`, kebab-case (`felicity-farseer.webp`) |
 | Logos / brand | `images/logos/` | chosen set: `logo.png`, `banner.png`, `favicon.png` (concepts archived in `images/logos/concepts/`) |
 
 Reference art by relative or root-relative path the same way as the stylesheet. Keep the

@@ -20,7 +20,8 @@ Adds site-wide navigation chrome and finalizes the **E:D Black Box** brand.
   `th.center`/`td.center` — header alignment now follows the column's data.
 - **Scroll-to-top button** (`.qn-totop`) in the header quick-nav, between the "On this
   page" eyebrow and the search field: a double-chevron inline SVG that smooth-scrolls to
-  the top (JS module 4, null-safe; respects `prefers-reduced-motion`).
+  the top and clears any leftover `#anchor` from the URL (JS module 4, null-safe; respects
+  `prefers-reduced-motion`).
 - **Per-page Credits section** — the `.cr-rows` source table (`.cr-row`:
   `.cr-src`/`.cr-what`/`.cr-link`) placed in a **normal numbered** `section.credits`
   (`.sec-head` + `p.lead`) as the last section, above the footer: the authoritative data

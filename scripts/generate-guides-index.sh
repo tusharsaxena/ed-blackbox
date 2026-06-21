@@ -19,7 +19,7 @@
 # WHEN TO RE-RUN
 #   - After adding/removing/renaming any ship dossier (ship/ship/*.html) — the
 #     ship grid is rebuilt from the filesystem, so those stay in sync for free.
-#   - After adding a new top-level guide (misc/, farm/, role-*), add a matching
+#   - After adding a new top-level guide (systems/, farm/, role-*), add a matching
 #     `card ...` line in the relevant section below, then re-run.
 #
 # USAGE
@@ -186,9 +186,9 @@ footer b{color:var(--amber-lt)}
   <div class="cards">
 HEAD
 
-card "misc/Docking_Landing_Manual.html" ""       "Docking &amp; Landing"      "Requesting docking, pads, and station/outpost landing procedure."
-card "misc/HUD_Customization.html"      ""       "HUD Customization"        "Retune your cockpit HUD colours with the GraphicsConfig matrix."
-card "misc/Third_Party_Apps_apps.html"  ""       "Third-Party Apps"         "The essential companion apps, planners and tools for commanders."
+card "systems/Docking_Landing_Manual.html" ""       "Docking &amp; Landing"      "Requesting docking, pads, and station/outpost landing procedure."
+card "systems/HUD_Customization.html"      ""       "HUD Customization"        "Retune your cockpit HUD colours with the GraphicsConfig matrix."
+card "systems/Third_Party_Apps_apps.html"  ""       "Third-Party Apps"         "The essential companion apps, planners and tools for commanders."
 
 cat <<'S2'
   </div>
@@ -200,12 +200,12 @@ cat <<'S2'
   <div class="cards">
 S2
 
-card "misc/BGS.html"                 ""        "Background Simulation (BGS)" "How minor factions, influence and states actually work."
-card "misc/Powerplay.html"           ""        "Powerplay"                   "Pledging to a Power, earning merits, and the weekly cycle."
-card "misc/Superpower_Rank.html"     ""        "Superpower Rank Grind"       "Climbing Federation, Empire and Alliance reputation."
-card "misc/Community_Goals.html"     ""        "Community Goals"             "How CGs work and how to land in the top tiers."
-card "misc/System_Colonization.html" "ac-fed"  "System Colonization"         "Claiming systems and building out your own infrastructure."
-card "misc/Fleet_Carrier.html"       "ac-fed"  "Fleet Carriers"              "Buying, financing, fitting and jumping a Fleet Carrier."
+card "systems/BGS.html"                 ""        "Background Simulation (BGS)" "How minor factions, influence and states actually work."
+card "systems/Powerplay.html"           ""        "Powerplay"                   "Pledging to a Power, earning merits, and the weekly cycle."
+card "systems/Superpower_Rank.html"     ""        "Superpower Rank Grind"       "Climbing Federation, Empire and Alliance reputation."
+card "systems/Community_Goals.html"     ""        "Community Goals"             "How CGs work and how to land in the top tiers."
+card "systems/System_Colonization.html" "ac-fed"  "System Colonization"         "Claiming systems and building out your own infrastructure."
+card "systems/Fleet_Carrier.html"       "ac-fed"  "Fleet Carriers"              "Buying, financing, fitting and jumping a Fleet Carrier."
 
 cat <<'S3'
   </div>
@@ -217,8 +217,8 @@ cat <<'S3'
   <div class="cards">
 S3
 
-card "misc/Combat_Zones.html"      "ac-mar" "Combat / Conflict Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
-card "misc/PVE_Combat_Venues.html" "ac-mar" "PVE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
+card "systems/Combat_Zones.html"      "ac-mar" "Combat / Conflict Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
+card "systems/PVE_Combat_Venues.html" "ac-mar" "PVE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
 
 cat <<'S4'
   </div>

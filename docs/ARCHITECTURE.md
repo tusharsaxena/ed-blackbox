@@ -58,8 +58,9 @@ Each legacy guide is a single **self-contained** `.html` file:
 
 Shared look is achieved by **copy-paste**, not by reference — which is why it drifts.
 The visual language (dark gridded HUD, maroon/amber/fed-blue on near-black, the fixed
-42px grid + radial-glow body overlays) is described in `templates/Template.md` (the
-legacy house-style spec and direct precursor to the design system).
+42px grid + radial-glow body overlays) is described in
+`design-system/legacy-templates/Template.md` (the legacy house-style spec and direct
+precursor to the design system).
 
 ---
 
@@ -115,7 +116,7 @@ Pages. **108 self-contained guides** in four areas, plus a generated landing pag
 guides/
   index.html                 ← landing page (generated; see §6)
   engineering/   Engineers · Blueprints · Checklist · farm/ (4)   — 7 pages
-  misc/          11 game-system guides
+  systems/       11 game-system guides
   ship/
     ship/        77 dossiers  — the ship × role matrix (48 ships)
     role-ship/   7  ladders   — "best ship for role X"
@@ -130,12 +131,12 @@ design-system templates + 1 legacy template), ~113 images (46 ship `.jpg`, 38 en
 
 | Page | Purpose |
 |---|---|
-| `Engineers.html` | Engineer database: unlock requirements, location, referrals. Has a footer + quick-nav search; uses `engineer-images/` portraits. |
+| `Engineers.html` | Engineer database: unlock requirements, location, referrals. Has a footer + quick-nav search; uses `images/engineers/` portraits. |
 | `Blueprints.html` | Module blueprint catalog (~3,900 lines). Cards auto-expand/scroll on hash navigation; quick-nav search. |
 | `Checklist.html` | New-player engineering unlock progression; quick-nav search. |
 | `farm/` (4) | Material-farm location guides (`Davs_Hope`, `Crystalline_Shards`, `High_Grade_Emissions`, `Jameson_Crash_Site`) — warmer green/orange palette + coordinate readouts. |
 
-**Miscellaneous** (`guides/misc/`, 11 pages): `BGS`, `Combat_Zones`, `Community_Goals`,
+**Systems** (`guides/systems/`, 11 pages): `BGS`, `Combat_Zones`, `Community_Goals`,
 `Docking_Landing_Manual`, `Fleet_Carrier`, `HUD_Customization`, `PVE_Combat_Venues`,
 `Powerplay`, `Superpower_Rank`, `System_Colonization`, `Third_Party_Apps_apps` — the
 palette closest to the design system.
@@ -158,15 +159,19 @@ AX=lime), and the generated landing page are all different *projections* of that
 
 ## 5. Assets
 
-- `images/logos/` — the **wired** brand assets `logo.png`, `banner.png`, `favicon.png`
-  (used by the design-system templates + the landing-page generator), plus
-  `concepts/` — the 8 archived candidates (`Concept_01`–`08`: Logo/Banner/Favicon each,
-  + two `All_Concept` contact sheets).
-- `guides/ship/ship-images/` — 46 ship renders (`.jpg`, kebab-case, e.g. `cobra-mkiii.jpg`).
-- `guides/engineering/engineer-images/` — 38 engineer portraits (`.webp`, kebab-case).
+All images live under the top-level **`images/`** folder:
 
-Images currently live **next to the guides that use them** (referenced by relative
-path). The roadmap calls for consolidating into the top-level `images/` folder.
+- `images/engineers/` — 38 engineer portraits (`.webp`, kebab-case, e.g. `felicity-farseer.webp`).
+- `images/ships/` — 46 ship renders (`.jpg`, kebab-case, e.g. `cobra-mkiii.jpg`). *(Not yet
+  referenced by the ship dossiers — embedding ship photos is a tracked TODO.)*
+- `images/logos/` — the **wired** brand assets `logo.png`, `banner.png`, `favicon.png`
+  (used by the design-system templates + the landing-page generator), plus `concepts/` —
+  the 8 archived candidates (`Concept_01`–`08`: Logo/Banner/Favicon each, + two
+  `All_Concept` contact sheets).
+
+Images were previously scattered beside the guides that used them (`engineer-images/`,
+`ship-images/`); they have now been **consolidated** here. Legacy guides reference them by
+relative path (e.g. `../../images/engineers/<name>.webp`).
 
 ---
 
@@ -220,9 +225,9 @@ copy-pasted CSS, which drifts:
 
 | Drift | Detail |
 |---|---|
-| Palette fragmentation | 3 variants: engineering (`--bg:#0c0908`, adds `--raw/--man/--enc` material colors, `--maroon-bright`), farm (green/orange story, no `-lt` suffixes), misc/ship (closest to the design system: `--bg:#0a0708`, `--maroon-lt`, `--fed`). |
+| Palette fragmentation | 3 variants: engineering (`--bg:#0c0908`, adds `--raw/--man/--enc` material colors, `--maroon-bright`), farm (green/orange story, no `-lt` suffixes), systems/ship (closest to the design system: `--bg:#0a0708`, `--maroon-lt`, `--fed`). |
 | Naming divergence | `--maroon-bright` vs `--maroon-lt`; `--ink-mute` vs `--ink-dim`. |
-| Layout width | Blueprints 920px · farm 880px · misc/ship 1080–1140px. |
+| Layout width | Blueprints 920px · farm 880px · systems/ship 1080–1140px. |
 | Feature variance | Quick-nav on only 3 pages; footer on only 1; per-role accents only in role-activities. |
 | File naming | Mixed `_` vs `-`, mixed title-case vs kebab-case across files. |
 

@@ -41,7 +41,7 @@ guide cards: 31
 
 - **A ship dossier is added / removed / renamed** under `guides/ship/ship/` — the ship
   grid is rebuilt from the filesystem, so it stays in sync automatically.
-- **A new top-level guide is added** (under `misc/`, `engineering/farm/`,
+- **A new top-level guide is added** (under `systems/`, `engineering/farm/`,
   `ship/role-activities/`, `ship/role-ship/`) — add a matching `card ...` line in the
   relevant section of the script, then re-run.
 

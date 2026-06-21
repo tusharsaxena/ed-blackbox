@@ -21,6 +21,7 @@ design-system/
 ├─ templates/
 │  ├─ starter-page.html       ← copy to begin a new page
 │  └─ component-gallery.html  ← live demo of every component (open in a browser)
+├─ legacy-templates/          ← the precursor Template.html/.md (reference only; see below)
 └─ docs/
    ├─ AGENTS.md               ← read first: architecture + how to generate a page
    ├─ 01-principles.md        ← purpose, philosophy, accuracy
@@ -64,9 +65,9 @@ cargo/index = amber (default), completed = green. Everything else is locked.
 
 ## Relationship to the Template files
 
-The earlier `Template.html` / `Template.md` are the prototype this system was distilled
-from; they remain as a self-contained reference. New and migrated pages should use
-**this** design system (linked CSS/JS), not the inlined Template.
+The earlier `legacy-templates/Template.html` / `Template.md` are the prototype this
+system was distilled from; they remain as a self-contained reference. New and migrated
+pages should use **this** design system (linked CSS/JS), not the inlined Template.
 
 ## Migration
 

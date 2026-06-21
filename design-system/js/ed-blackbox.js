@@ -5,7 +5,7 @@
      1. quick-nav  — filterable record jump menu (needs .header-qn / #qn-*)
      2. toc        — scrollspy that marks the active section (needs nav#toc)
      3. coord-copy — click-to-copy coordinate chips (needs .coord[data-copy])
-     4. to-top     — scroll the page to the top (needs .qn-totop)
+     4. to-top     — scroll the page to the top + clear any URL #anchor (needs .qn-totop)
 */
 
 /* 1 — quick-nav */
@@ -97,6 +97,10 @@
   btns.forEach(function(b){
     b.addEventListener('click',function(e){
       e.preventDefault();
+      // drop any leftover #anchor (e.g. #rec-bravo from a record jump) without re-jumping
+      if(location.hash&&window.history&&history.replaceState){
+        history.replaceState(null,'',location.pathname+location.search);
+      }
       window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
     });
   });

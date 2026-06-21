@@ -18,6 +18,7 @@ design-system/
 ├─ templates/
 │  ├─ starter-page.html     ← copy this to begin a new page
 │  └─ component-gallery.html← live demo of every component (visual + markup reference)
+├─ legacy-templates/        ← precursor Template.html/.md (reference only; don't author from these)
 └─ docs/
    ├─ AGENTS.md             ← you are here
    ├─ 01-principles.md      ← what the system is for; the non-negotiables

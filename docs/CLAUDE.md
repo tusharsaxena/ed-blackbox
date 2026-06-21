@@ -17,12 +17,12 @@ sources).
 
 ```
 guides/            108 self-contained HTML guides (inline CSS) + index.html (generated)
-  engineering/     Engineers · Blueprints · Checklist · farm/ + *_Anchors.md + engineer-images/
-  misc/            11 game-system guides
-  ship/            ship/ (77 dossiers) · role-ship/ (7) · role-activities/ (6) · ship-images/
-design-system/     v1.1.0 — css/ js/ templates/ docs/ (the migration target)
-templates/         LEGACY house-style (Template.html/.md) — precursor, slated for deletion
-images/logos/      logo.png · banner.png · favicon.png (wired) + concepts/ (8 archived candidates)
+  engineering/     Engineers · Blueprints · Checklist · farm/ + *_Anchors.md
+  systems/         11 game-system guides
+  ship/            ship/ (77 dossiers) · role-ship/ (7) · role-activities/ (6)
+design-system/     v1.1.0 — css/ js/ templates/ legacy-templates/ docs/ (the migration target;
+                   legacy-templates/ = the precursor Template.html/.md, reference only)
+images/            engineers/ (38 portraits) · ships/ (46 renders) · logos/ (logo·banner·favicon + concepts/)
 scripts/           reusable task scripts (+ per-script .md docs)
 docs/              project docs (this file, architecture, todo, credits)
 ```

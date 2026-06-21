@@ -49,7 +49,7 @@ Legend: ✅ done · ☐ not done.
 - ☐ Roll the global chrome (header, breadcrumbs, footer, home link back to `guides/index.html`, scroll-to-top) onto all 108 legacy guides — and standardize their `<title>`s
 - ☐ Generate the per-page **Sources & Credits** section for every page during migration — list the authoritative sources each page's facts were verified against (the `.credits` section; see Phase 3)
 - ☐ Reorganize the file hierarchy
-- ☐ Consolidate scattered images into the top-level `images/` folder
+- ✅ Consolidate scattered images into the top-level `images/` folder (`engineer-images/` → `images/engineers/`, `ship-images/` → `images/ships/`)
 - ☐ Standardize file names — lowercase, slugify, settle `-` vs `_`
 - ☐ Publish on GitHub Pages
 
