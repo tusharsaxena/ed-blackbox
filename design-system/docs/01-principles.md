@@ -14,8 +14,10 @@ that 100+ pages read as one publication, not 100 lookalikes that slowly drift ap
   (amber top-right, maroon top-left, fed-blue bottom).
 - **Palette:** maroon + amber brand, federal-blue secondary, green/red status.
 - **Type:** Chakra Petch (display/labels), Saira (body), Saira Condensed (meta/tags).
-- **Author identity:** every page carries `CMDR KA0S · INARA 173082` in the masthead
-  kicker and footer.
+- **Brand & identity:** the site is **E:D Black Box**. A persistent global header
+  (`.site-header`) carries the logo + wordmark and primary nav; the footer credits the
+  author **CMDR Ka0s**. The masthead kicker is a series label only — no commander/INARA
+  id line.
 
 ## The principles that govern changes
 
@@ -41,9 +43,10 @@ Visual consistency is worthless on top of wrong data. Therefore:
 - **Verify, don't recall.** Game facts (ship stats, modules, blueprints, engineers,
   systems) come from authoritative sources, not memory: EDCD `coriolis-data` (ships,
   modules, blueprints — prefer the raw/codeload ZIP over the API), EDCD `FDevIDs`,
-  INARA, EDSM, EDSY. Cite sources in the masthead meta and footer.
+  INARA, EDSM, EDSY (the authoritative list lives in `Credits.md`). Verification is
+  required; per-page sources are listed in the bottom-of-page **`section.credits`** block
+  (the masthead carries no inline `Sources …` line).
 - **Frozen scores.** 1–100 suitability ratings come from the project's `ratings.csv`
   where one exists; don't recompute a score that's already set.
 - **Flag the unknown.** Mark uncertain values with `.kv-tbd` ("unconfirmed") rather
   than guessing. A visible gap is correct; a confident fabrication is not.
-- **Patch label.** State the game version the page is current for (e.g. "Live 4.0").

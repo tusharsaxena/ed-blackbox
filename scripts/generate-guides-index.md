@@ -7,8 +7,12 @@ guide in the project, grouped logically.
 
 - Emits a self-contained `guides/index.html`.
 - Look & feel is copied from `guides/engineering/Engineers.html` (inline CSS, fonts,
-  masthead, sections, footer). It intentionally does **not** use the `design-system/`
-  stylesheet yet.
+  masthead, sections, footer). It intentionally does **not** link the `design-system/`
+  stylesheet yet, but mirrors the v1.1.0 chrome: a global sticky header, a banner hero
+  (`images/logos/banner.png`), and a masthead-meta with an **auto-stamped "Updated"
+  date** and no sources line.
+- The build date is injected after generation via `sed` (the heredocs are single-quoted),
+  replacing the `__BUILD_DATE__` placeholder with `date +%F`.
 - **Hand-curated cards** for the game-system, engineering, farming, activity and role
   guides — each a title + one-line description, set in the `card ...` calls inside the
   script, grouped into 7 themed sections.

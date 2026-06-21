@@ -3,58 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Component Gallery — ed-blackbox design system</title>
+<title>Component Gallery | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
 <!-- The ONLY style/behaviour source. Fonts are pulled in by the CSS @import. -->
 <link rel="stylesheet" href="../css/ed-blackbox.css">
 <!-- Per-page theming, when needed, goes in a tiny page-level <style> that
      overrides ONLY the --accent* group. This gallery uses the amber default. -->
 </head>
 <body>
-<div class="wrap">
+
+<!-- ---- GLOBAL HEADER (v1.1.0) — brand · nav (left) · in-page quick-nav (right).
+     The quick-nav lives IN the header (.header-qn), reusing the #qn-* module
+     wired by ed-blackbox.js. Each .qn-item href matches a record id below. ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../guides/index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../guides/index.html">Home</a>
+      <a href="../../guides/index.html#dossiers">Ships</a>
+      <a href="../../guides/index.html#engineering">Engineering</a>
+      <a href="../../guides/index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a record…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#rec-alpha"><span class="qn-dot amber"></span><span class="qn-nm">Record Alpha</span><span class="qn-side">Group A</span></a>
+          <a class="qn-item" href="#rec-bravo"><span class="qn-dot fed"></span><span class="qn-nm">Record Bravo</span><span class="qn-side">Group B</span></a>
+          <a class="qn-item" href="#rec-charlie"><span class="qn-dot maroon"></span><span class="qn-nm">Record Charlie</span><span class="qn-side">Permit</span></a>
+          <div class="qn-empty" hidden>No matching records</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../guides/index.html">Home</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Component Gallery</span>
+</nav>
 
 <div class="wrap">
 
 <!-- ============================================================
-     MASTHEAD  — top of every page.
-     .kicker  = series label + commander ID (id floats right)
-     h1.title = title; wrap one word in <span> for the maroon accent.
+     MASTHEAD  — top of every page (sits below the global .site-header).
+     .kicker  = series label (no commander id)
+     h1.title = title; wrap one word in <span> for the gold accent.
                 Optional <span class="role"> suffix for ship × role dossiers.
      .subtitle/.lede = one-paragraph scope statement (bold the key phrase)
-     .masthead-meta = pipe-style meta facts (part, sources, patch)
+     .masthead-meta = pipe-style meta facts (part, last-updated)
      ============================================================ -->
 <header class="masthead">
-  <div class="kicker">Series Label <span class="sep">//</span> Part N <span class="sep">//</span> Section<span class="id">CMDR KA0S · INARA 173082</span></div>
+  <div class="kicker">Series Label <span class="sep">//</span> Part N <span class="sep">//</span> Section</div>
   <h1 class="title">Page <span>Title</span><span class="role">Role</span></h1>
   <p class="subtitle">One-sentence scope statement describing exactly what this manual covers and how it is organised — kept under ~840px wide, dimmed ink, with the <b>key phrase</b> in bright ink. No marketing tone.</p>
   <div class="masthead-meta">
     <span>Part <b>N of M</b> · Section name</span>
-    <span>Sources <b>INARA · EDSM · EDCD</b></span>
-    <span>Patch <b>Live 4.0</b></span>
+    <span>Updated <b>2026-06-21</b></span>
   </div>
 </header>
 
-<!-- ============================================================
-     QUICK-NAV  (OPTIONAL) — sticky searchable jump menu.
-     Use only on long index-style pages with many anchored records.
-     Each .qn-item href must match a record id below.
-     ============================================================ -->
-<nav class="quicknav" aria-label="Jump to record">
-  <span class="qn-eyebrow">Quick Nav</span>
-  <div class="qn-dd" id="qn-dd">
-    <div class="qn-field">
-      <span class="qn-ico" aria-hidden="true">⌕</span>
-      <input id="qn-search" class="qn-input" type="text" placeholder="Search or jump to a record…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
-      <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
-    </div>
-    <div class="qn-panel" id="qn-panel" role="listbox">
-      <a class="qn-item" href="#rec-alpha"><span class="qn-dot amber"></span><span class="qn-nm">Record Alpha</span><span class="qn-side">Group A</span></a>
-      <a class="qn-item" href="#rec-bravo"><span class="qn-dot fed"></span><span class="qn-nm">Record Bravo</span><span class="qn-side">Group B</span></a>
-      <a class="qn-item" href="#rec-charlie"><span class="qn-dot maroon"></span><span class="qn-nm">Record Charlie</span><span class="qn-side">Permit</span></a>
-      <div class="qn-empty" hidden>No matching records</div>
-    </div>
-  </div>
-  <span class="qn-hint">N records · A–Z</span>
-</nav>
+<!-- The in-page quick-nav now lives in the global header (.header-qn above);
+     the standalone .quicknav bar has been retired in favour of it. -->
 
 <!-- ============================================================
      STICKY TOC  (OPTIONAL alternative to quick-nav) — horizontal
@@ -72,6 +95,7 @@
   <a href="#cards">07 Cards</a>
   <a href="#procedure">08 Procedure</a>
   <a href="#site">09 Site readout</a>
+  <a href="#credits">10 Credits</a>
 </nav>
 
 <!-- ============================================================
@@ -392,26 +416,37 @@
 </section>
 
 <!-- ============================================================
-     FOOTER — series breadcrumb + provenance.
+     SECTION 10 — PER-PAGE CREDITS / SOURCES. A NORMAL numbered section
+     (standard .sec-head) that is the LAST section on the page, above the
+     footer. Body is the .cr-rows table: one .cr-row per authoritative
+     source for THIS page (name · what it provided · external link).
+     ============================================================ -->
+<section class="credits" id="credits">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Sources &amp; Credits</h2><span class="tag">Provenance</span></div>
+  <p class="lead">Figures on this page are verified against the authoritative sources below. Full project credits: <a href="../../docs/Credits.md">Credits.md</a>.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">EDCD · coriolis-data</span><span class="cr-what">Ship hull &amp; module statistics, hardpoint and slot layout.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data">coriolis-data</a></div>
+    <div class="cr-row"><span class="cr-src">EDSY</span><span class="cr-what">Outfitting reference and the loadout builds.</span><a class="cr-link" href="https://edsy.org">edsy.org</a></div>
+    <div class="cr-row"><span class="cr-src">INARA</span><span class="cr-what">Engineering modifications and market / commander data.</span><a class="cr-link" href="https://inara.cz">inara.cz</a></div>
+    <div class="cr-row"><span class="cr-src">EDSM</span><span class="cr-what">System, station and body data for the location readouts.</span><a class="cr-link" href="https://edsm.net">edsm.net</a></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER — brand + author credit + series part.
      ============================================================ -->
 <footer>
-  <span>CMDR Ka0s · Field Manual</span>
+  <span>E:D Black Box</span>
+  <span>By <b>CMDR Ka0s</b></span>
   <span>Part <b>N</b> · Section name</span>
-  <span><b>N</b> records catalogued</span>
-  <span>Verified vs <b>INARA</b> · Live 4.0</span>
-  <span>Next: <b>Linked manual</b></span>
 </footer>
 
 </div>
 
 <!-- ============================================================
-     SCRIPTS
-     1) Quick-nav dropdown — only if the .quicknav block is present.
-     2) TOC scrollspy — only if the nav.toc block is present.
-     3) Coordinate copy — only if .coord[data-copy] chips are present.
+     SCRIPTS — header quick-nav dropdown, TOC scrollspy, coordinate copy.
      All three are null-safe; drop the ones you don't use.
      ============================================================ -->
-</div>
 <script src="../js/ed-blackbox.js" defer></script>
 </body>
 </html>

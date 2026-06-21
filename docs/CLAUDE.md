@@ -7,9 +7,9 @@ Book**, a static site of Elite Dangerous field manuals by Tushar Saxena (CMDR Ka
 > `docs/`. To have this file picked up automatically, add a root `CLAUDE.md` containing
 > just `@docs/CLAUDE.md`. Until then, read this file at the start of project work.
 
-**Orient yourself first:** [`PROJECT_OVERVIEW.md`](PROJECT_OVERVIEW.md) (what's in the
-repo + roadmap), [`ARCHITECTURE.md`](ARCHITECTURE.md) (how it's built),
-[`TODO.md`](TODO.md) (backlog), [`Credits.md`](Credits.md) (data sources).
+**Orient yourself first:** [`ARCHITECTURE.md`](ARCHITECTURE.md) (what's in the repo +
+how it's built), [`TODO.md`](TODO.md) (backlog), [`Credits.md`](Credits.md) (data
+sources).
 
 ---
 
@@ -20,11 +20,11 @@ guides/            108 self-contained HTML guides (inline CSS) + index.html (gen
   engineering/     Engineers · Blueprints · Checklist · farm/ + *_Anchors.md + engineer-images/
   misc/            11 game-system guides
   ship/            ship/ (77 dossiers) · role-ship/ (7) · role-activities/ (6) · ship-images/
-design-system/     v1.0.0 — css/ js/ templates/ docs/ (the migration target)
+design-system/     v1.1.0 — css/ js/ templates/ docs/ (the migration target)
 templates/         LEGACY house-style (Template.html/.md) — precursor, slated for deletion
-images/logos/      8 brand concepts (none chosen yet)
+images/logos/      logo.png · banner.png · favicon.png (wired) + concepts/ (8 archived candidates)
 scripts/           reusable task scripts (+ per-script .md docs)
-docs/              project docs (this file, overview, architecture, todo, credits)
+docs/              project docs (this file, architecture, todo, credits)
 ```
 
 ---
@@ -96,8 +96,14 @@ new top-level guide. Docs: `scripts/generate-guides-index.md`.
   rename ad hoc.) The stylesheet is `ed-blackbox` (note: differs from repo `ed-blackbook`).
 - **Links:** internal links are **relative**. Whether links open in a new tab is an
   open decision (`TODO.md`) — don't add `target="_blank"` until it's settled.
-- **Identity:** author is CMDR Ka0s (INARA 173082); patch label `Live 4.0`. (Removing
-  "CMDR" from headers and reducing fleet bias are tracked editorial TODOs.)
+- **Identity:** author is CMDR Ka0s (INARA 173082). As of design-system **v1.1.0**, the
+  **masthead no longer displays** the INARA id, a patch label, or an inline `Sources …`
+  line; the masthead-meta carries the series part + a **last-updated** date, and the
+  footer is brand + `By CMDR Ka0s` + part. Per-page **sources** now live in a dedicated
+  bottom-of-page **`section.credits`** block (above the footer; see
+  `design-system/docs/04-page-assembly.md`). Source verification is still required
+  (rule 1). (Removing "CMDR" from headers and reducing fleet bias remain tracked editorial
+  TODOs; legacy inline guides may still carry the old chrome.)
 
 ## Don't
 

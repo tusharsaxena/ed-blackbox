@@ -1,10 +1,11 @@
 /*! ed-blackbox design system v1.0.0 — behaviours
-   Three independent, null-safe modules. Load once per page with
+   Four independent, null-safe modules. Load once per page with
    <script src=".../ed-blackbox.js" defer></script>. Each checks for
    its own markup, so pages without a given component are unaffected:
-     1. quick-nav  — filterable record jump menu (needs .quicknav / #qn-*)
+     1. quick-nav  — filterable record jump menu (needs .header-qn / #qn-*)
      2. toc        — scrollspy that marks the active section (needs nav#toc)
      3. coord-copy — click-to-copy coordinate chips (needs .coord[data-copy])
+     4. to-top     — scroll the page to the top (needs .qn-totop)
 */
 
 /* 1 — quick-nav */
@@ -85,6 +86,18 @@
       var cp=el.querySelector('.cp'), old=cp?cp.textContent:'';
       el.classList.add('copied'); if(cp)cp.textContent='Copied';
       setTimeout(function(){el.classList.remove('copied'); if(cp)cp.textContent=old||'Copy';},1200);
+    });
+  });
+})();
+
+/* 4 — scroll to top (header button) */
+(function(){
+  var btns=document.querySelectorAll('.qn-totop'); if(!btns.length) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  btns.forEach(function(b){
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
     });
   });
 })();

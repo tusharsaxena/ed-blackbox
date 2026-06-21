@@ -8,8 +8,10 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 
 | Component | Class(es) | When to use |
 |---|---|---|
-| Masthead | `header.masthead` + `.kicker` `.title` (`.role`) `.subtitle`/`.lede` `.masthead-meta` | top of every page |
-| Quick-nav | `nav.quicknav` (+ JS module 1) | long anchored **record** index pages |
+| Global header | `header.site-header` > `.hdr-inner` (`.brand` `.nav-sep` `.site-nav` `.header-qn` with `.qn-totop` scroll-to-top button) | sticky brand + nav on every page; outside `.wrap` |
+| Breadcrumbs | `nav.breadcrumbs` (`a` `.sep` `.current`) | trail under the header (`Home › Section › Page`) |
+| Masthead | `header.masthead` + `.kicker` (series label, no id) `.title` (`.role`) `.subtitle`/`.lede` `.masthead-meta` (part, last-updated — no sources/patch) | top of the page body |
+| Quick-nav | `.header-qn` in the global header (+ JS module 1) | searchable jump to anchored records/sections |
 | Sticky TOC | `nav.toc` (+ JS module 2 scrollspy) | long **section**-based guides |
 | Verdict / briefing | `.verdict` (+ optional `.why` grid) | the page's single big idea |
 | Stat grid | `.stat-grid` > `.stat` (`.n` / `.n.fed` / `.n.mar` / `.n.good`) | headline numbers |
@@ -23,7 +25,7 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Record card | `.rec-list` > `.rec` (`.ac-amber/.ac-fed/.ac-maroon/.ac-good`) | the repeating data entry |
 | Key/value mini-grid | `.kvgrid` (`.lk` › `.lv`) | structured sub-fields (e.g. Location) |
 | Record bullet list | `ul.reclist` | lists inside a record |
-| Data table | `.tbl-scroll` > `table.data` | ranked ladders, simple comparisons |
+| Data table | `.tbl-scroll` > `table.data` (`th.num`/`td.num` right-align, `.center`) | ranked ladders, simple comparisons |
 | Loadout table | `.tbl-scroll` > `table.l3` (`.grouprow` `.slot` `.st` `.eng`) | multi-state build tables |
 | Pros/cons table | `.tbl-scroll` > `table.cmp` (`td.pcc` `.p`/`.c`/`.base`, `.rscore`, `.bar.mini`) | comparison w/ pros & cons |
 | Rating bar | `.rating` (`.score` + `.bar` / `.bar.fed` / `.bar.good` / `.bar.mini`) | linear 1–100 meters |
@@ -35,7 +37,8 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | HUD panel | `.hud` (+ `.hud-c1` `.hud-c2` spans) | framed key takeaway / readout |
 | Callout | `.callout` (`.tip` / `.warn` / `.danger`; add `.icon` for a glyph) | asides, caveats, warnings |
 | Location readout | `.loc-card` > `.loc-row` (`.loc-k`/`.loc-v`) + `.coord[data-copy]` (+ JS module 3) | site / coordinate readouts |
-| Footer | `footer` | breadcrumb + provenance |
+| Per-page credits | a normal numbered `section.credits` (`.sec-head` + `p.lead` + `.cr-rows` > `.cr-row`: `.cr-src`/`.cr-what`/`.cr-link`) | the **last** section — this page's authoritative data sources, above the footer |
+| Footer | `footer` | brand (`E:D Black Box`) + author credit (`By CMDR Ka0s`) + part |
 
 ## The record card in detail (`.rec`)
 
@@ -104,7 +107,8 @@ The workhorse repeating entry.
 - **Don't** wrap a markdown-style table in a record card — use `table.data`.
 - **Don't** use the rating **bar** and the rating **dial** for the same metric on one
   page; the dial is the single headline, bars are for ladders/comparisons.
-- **Don't** stack `nav.quicknav` and `nav.toc` together — pick one.
+- **Don't** stack the header `.header-qn` quick-nav and `nav.toc` together — pick one
+  in-page jump mechanism.
 - **Don't** put more than one `.verdict` on a page; it's the single thesis.
 - **Don't** colour body text with status colours for emphasis — use `.acc` (accent) or
   bold; reserve green/amber/red for genuine status.

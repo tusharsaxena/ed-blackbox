@@ -5,7 +5,7 @@ field-manual site. One stylesheet, one behaviour file, one set of tokens and
 components — every page links them, so the whole site stays consistent and a change
 in one place propagates everywhere.
 
-**Version 1.0.0** · house style: dark gridded cockpit-HUD, maroon + amber, Chakra
+**Version 1.1.0** · house style: dark gridded cockpit-HUD, maroon + amber, Chakra
 Petch / Saira.
 
 ## Structure
@@ -17,7 +17,7 @@ design-system/
 ├─ css/
 │  └─ ed-blackbox.css         ← tokens + components + a11y baseline (fonts via @import)
 ├─ js/
-│  └─ ed-blackbox.js          ← 3 null-safe modules: quick-nav, TOC scrollspy, coord-copy
+│  └─ ed-blackbox.js          ← 4 null-safe modules: quick-nav, TOC scrollspy, coord-copy, scroll-to-top
 ├─ templates/
 │  ├─ starter-page.html       ← copy to begin a new page
 │  └─ component-gallery.html  ← live demo of every component (open in a browser)

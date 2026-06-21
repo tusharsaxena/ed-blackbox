@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PAGE TITLE — CMDR Ka0s Field Manual</title>
+<title>Page Title | E:D Black Box</title>
+<link rel="icon" type="image/png" href="/ed-blackbox/images/logos/favicon.png">
 
 <!-- ============================================================
      1. LINK THE DESIGN SYSTEM. This is the ONLY stylesheet.
@@ -28,17 +29,63 @@
 </style>
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER (required) — brand · nav (left) · in-page quick-nav (right) ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="/ed-blackbox/guides/index.html" aria-label="E:D Black Box — home">
+      <img src="/ed-blackbox/images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/ed-blackbox/guides/index.html">Home</a>
+      <a href="/ed-blackbox/guides/index.html#dossiers">Ships</a>
+      <a href="/ed-blackbox/guides/index.html#engineering">Engineering</a>
+      <a href="/ed-blackbox/guides/index.html#systems">Systems</a>
+    </nav>
+    <!-- OPTIONAL in-page jump: keep only on pages with anchored sections/records.
+         Each .qn-item href must match an id on THIS page. -->
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico">⌕</span>
+          <input class="qn-input" id="qn-search" type="text" placeholder="Jump to a section…"
+                 autocomplete="off" role="combobox" aria-expanded="false" aria-controls="qn-panel">
+          <button class="qn-clear" id="qn-clear" hidden aria-label="Clear">×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">First Section</span><span class="qn-side">01</span></a>
+          <div class="qn-empty" hidden>No match.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS (required) — set the trail for THIS page ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/ed-blackbox/guides/index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="/ed-blackbox/guides/index.html#dossiers">Section</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Page Title</span>
+</nav>
+
 <div class="wrap">
 
   <!-- ---- MASTHEAD (required) ---- -->
   <header class="masthead">
-    <div class="kicker">Series Label <span class="sep">//</span> Part N <span class="sep">//</span> Section<span class="id">CMDR KA0S · INARA 173082</span></div>
+    <div class="kicker">Series Label <span class="sep">//</span> Part N <span class="sep">//</span> Section</div>
     <h1 class="title">Page <span>Title</span></h1>
     <p class="subtitle">One-sentence scope statement with the <b>key phrase</b> in bright ink.</p>
     <div class="masthead-meta">
       <span>Part <b>N of M</b></span>
-      <span>Sources <b>INARA · EDSM · EDCD</b></span>
-      <span>Patch <b>Live 4.0</b></span>
+      <span>Updated <b>YYYY-MM-DD</b></span>
     </div>
   </header>
 
@@ -57,12 +104,24 @@
          .ratebox, .specgrid, .cards, .pickgrid, ol.steps, .callout, .loc-card … -->
   </section>
 
+  <!-- ---- PER-PAGE CREDITS (required) — the LAST numbered section, ABOVE the footer.
+       A normal section (.sec-head): set .sec-num to the next running number. List the
+       authoritative sources THIS page's facts were verified against: one .cr-row per
+       source (name · what it provided · link). ---- -->
+  <section class="credits" id="credits">
+    <div class="sec-head"><span class="sec-num">NN</span><h2>Sources &amp; Credits</h2><span class="tag">Provenance</span></div>
+    <p class="lead">Figures on this page are verified against the sources below. Full project credits: <a href="/ed-blackbox/docs/Credits.md">Credits.md</a>.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Source name</span><span class="cr-what">What this source provided for this page.</span><a class="cr-link" href="https://example.com">example.com</a></div>
+      <div class="cr-row"><span class="cr-src">Another source</span><span class="cr-what">What it provided.</span><a class="cr-link" href="https://example.com">example.com</a></div>
+    </div>
+  </section>
+
   <!-- ---- FOOTER (required) ---- -->
   <footer>
-    <span>CMDR Ka0s · Field Manual</span>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
     <span>Part <b>N</b></span>
-    <span>Verified vs <b>INARA</b> · Live 4.0</span>
-    <span>Next: <b>Sibling manual</b></span>
   </footer>
 
 </div>

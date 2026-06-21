@@ -19,23 +19,25 @@ The record-card identity rail takes either an image or a text placeholder.
 |---|---|---|
 | Ships | `field-manuals/ship/ship-images/` | `.jpg`, kebab-case (`python-mkii.jpg`) |
 | Engineers | `field-manuals/engineering/engineer-images/` | `.webp`, kebab-case (`felicity-farseer.webp`) |
-| Logos / brand | `field-manuals/images/logos/` | `Concept_NN_{Logo,Banner,Favicon}.png` |
+| Logos / brand | `images/logos/` | chosen set: `logo.png`, `banner.png`, `favicon.png` (concepts archived in `images/logos/concepts/`) |
 
 Reference art by relative or root-relative path the same way as the stylesheet. Keep the
 naming convention (kebab-case, one file per subject) so links are predictable.
 
-## Logo & favicon
+## Logo, banner & favicon
 
-The `images/logos/` set holds eight brand concepts (`Concept_01`–`08`), each with a
-Logo, Banner and Favicon. Pick **one** concept for the site and use it consistently:
+The site brand is **E:D Black Box**. The chosen assets live at the top of
+`images/logos/` (the eight original concepts are archived in `images/logos/concepts/`):
 
-- **Favicon:** `<link rel="icon" href="/ed-blackbox/.../Concept_0X_Favicon.png">` in the
-  head (add this to the starter once a concept is chosen).
-- **Banner:** optional masthead banner image for landing/index pages only — content
-  dossiers stay text-first.
+- **Logo** — `images/logos/logo.png`. Shown 34px in the global header `.brand`, beside
+  the `E:D Black Box` wordmark (`E:D` gold, `Black Box` ink). Links home.
+- **Favicon** — `images/logos/favicon.png`, linked in every page head:
+  `<link rel="icon" type="image/png" href="/ed-blackbox/images/logos/favicon.png">`.
+- **Banner** — `images/logos/banner.png`. **Landing/index hero only** (`.hero` in the
+  generated `guides/index.html`); content dossiers stay text-first and don't repeat it.
 
-(The system doesn't yet hard-wire a chosen concept; that's a one-line decision to make
-and then bake into the starter + a `--brand-*` note. Until then, pages omit the logo.)
+Reference these by the same root-relative (`/ed-blackbox/images/logos/…`) or
+document-relative path you use for the stylesheet.
 
 ## Glyphs (no icon font — Unicode only)
 
@@ -45,7 +47,7 @@ The system uses a small set of Unicode glyphs; don't introduce an icon library.
 |---|---|---|
 | `//` | masthead kicker `.sep` | series-label separator |
 | `·` (middot) | inline meta, stat separators | item separator |
-| `›` | `.kvgrid .lk::after` | key → value pointer |
+| `›` | `.kvgrid .lk::after`, breadcrumb `.sep` | key → value pointer / crumb separator |
 | `⌕` | quick-nav `.qn-ico` | search |
 | `×` | quick-nav `.qn-clear` | clear |
 | `◈` | `.callout.icon` (default) | note |
@@ -53,9 +55,14 @@ The system uses a small set of Unicode glyphs; don't introduce an icon library.
 | `▲` | `.callout.icon.warn` / `.danger` | caution / warning |
 | `#` | `.permalink` | anchor / permalink |
 | `+` / `−` | `table.cmp td.pcc .p` / `.c` | pro / con |
+| `↗` | `.cr-link::after` | external source link (credits) |
+
+The one **inline SVG** exception is the header `.qn-totop` scroll-to-top button — a
+two-`<path>` double-chevron drawn with `stroke:currentColor` (no fill), so it inherits
+the button colour and stays crisp at any size. Still no icon font.
 
 Glyphs that convey meaning on an icon-only control need an accessible name
-(`05-accessibility.md`).
+(`05-accessibility.md`) — e.g. `.qn-totop` carries `aria-label="Scroll to top"`.
 
 ## Art sourcing
 

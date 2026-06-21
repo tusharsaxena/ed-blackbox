@@ -17,11 +17,13 @@ terse, technical, confident, useful. State the call, then the reason.
 
 ## Identity & attribution
 
-- Author string **`CMDR KA0S · INARA 173082`** appears in the masthead `.kicker .id`
-  and again in the footer.
-- Cite the data lineage in `.masthead-meta` and footer: INARA · EDSM · EDCD · EDSY as
-  applicable.
-- State the patch the page is current for: **Live 4.0** (update when it changes).
+- The brand is **E:D Black Box** — shown as the logo + wordmark in the global
+  `.site-header`. The masthead kicker carries **no** commander/INARA id.
+- Author credit is **`By CMDR Ka0s`** in the footer only.
+- `.masthead-meta` carries the series part and a **last-updated** date (`Updated
+  YYYY-MM-DD`). No sources line and no patch-version line in the masthead. Per-page data
+  lineage is verified per `01-principles.md`, listed in the bottom-of-page
+  **`section.credits`** block, and credited in full in `Credits.md`.
 
 ## Content format conventions
 
@@ -42,8 +44,8 @@ terse, technical, confident, useful. State the call, then the reason.
 
 ## Titles & headings
 
-- `h1.title`: the subject, with exactly one word wrapped in `<span>` (maroon). Optional
+- `h1.title`: the subject, with exactly one word wrapped in `<span>` (gold). Optional
   `<span class="role">` suffix names the role for ship × role dossiers.
 - Section `h2`: short, uppercase by CSS — write in normal case, the style uppercases it.
 - Keep a consistent series label in the kicker across a family of manuals (e.g.
-  "CMDR Field Manual // Ship × Role Dossier // <manufacturer>").
+  "Field Manual // Ship × Role Dossier // <manufacturer>").

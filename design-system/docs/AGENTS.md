@@ -14,7 +14,7 @@ Design-system version: **1.0.0** (see `../CHANGELOG.md`).
 ```
 design-system/
 ├─ css/ed-blackbox.css     ← THE stylesheet. All tokens + components + a11y. Fonts via @import.
-├─ js/ed-blackbox.js        ← THE behaviours. 3 null-safe modules (quick-nav, TOC spy, coord copy).
+├─ js/ed-blackbox.js        ← THE behaviours. 4 null-safe modules (quick-nav, TOC spy, coord copy, scroll-to-top).
 ├─ templates/
 │  ├─ starter-page.html     ← copy this to begin a new page
 │  └─ component-gallery.html← live demo of every component (visual + markup reference)
@@ -52,19 +52,23 @@ updates. Inlining or forking re-introduces drift and is a regression.
 3. **Pick the accent** for the page's domain (`02-tokens.md` → "Per-page accent").
    Combat = maroon, exploration/nav/liners = fed-blue, mining/cargo/index = amber
    (default, delete the override), completed = good.
-4. **Fill the masthead** (kicker with the CMDR ID, title with one maroon `<span>`,
-   scope line, meta) per `04-page-assembly.md`.
-5. **Assemble sections** using only components from `03-components.md` /
+4. **Set the global header & breadcrumbs** (`.site-header` + `nav.breadcrumbs`, outside
+   `.wrap`): brand links home, set the `.active` nav item, build the breadcrumb trail.
+   Standardize the `<title>` as `<Page Name> | E:D Black Box` and link the favicon.
+5. **Fill the masthead** (kicker series label — **no** id; title with one gold `<span>`;
+   scope line; meta = part + last-updated, **no sources line, no patch**) per
+   `04-page-assembly.md`.
+6. **Assemble sections** using only components from `03-components.md` /
    `component-gallery.html`. Number sections `01, 02, …`. Do not invent classes or
    hardcode raw px — use tokens.
-6. **Add navigation** only if the page is long: `nav.quicknav` for record indexes,
-   `nav.toc` for section-based guides — never both. Keep the matching JS (it loads
-   anyway; it's null-safe).
-7. **Write in the house voice** (`06-voice-content.md`) and **verify every fact**
+7. **Add in-page navigation** only if the page is long: the header `.header-qn`
+   quick-nav for record/section jumps, or `nav.toc` for section-based guides — never
+   both, and don't duplicate `#qn-*` ids. The matching JS loads anyway (null-safe).
+8. **Write in the house voice** (`06-voice-content.md`) and **verify every fact**
    against authoritative sources (`01-principles.md` → Accuracy). Flag unknowns with
    `.kv-tbd`, never guess.
-8. **Clear the accessibility floor** (`05-accessibility.md`).
-9. **Self-check** against the checklist at the foot of `04-page-assembly.md`.
+9. **Clear the accessibility floor** (`05-accessibility.md`).
+10. **Self-check** against the checklist at the foot of `04-page-assembly.md`.
 
 ## Linking (path rules)
 

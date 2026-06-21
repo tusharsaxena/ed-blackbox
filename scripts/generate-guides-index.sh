@@ -53,7 +53,8 @@ cat <<'HEAD'
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Black Book — Elite Dangerous Field Manuals | CMDR Ka0s</title>
+<title>The Black Book | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../images/logos/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
@@ -67,12 +68,28 @@ body{background:var(--bg);color:var(--ink);font-family:'Saira',sans-serif;font-w
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:42px 42px}
 body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),radial-gradient(1200px 900px at 50% 120%,rgba(79,159,214,.07),transparent 60%)}
 .wrap{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 22px 120px}
+/* ---- global sticky header + landing hero (v1.1.0) ---- */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--hair-strong)}
+.site-header .hdr-inner{max-width:1140px;margin:0 auto;padding:0 22px;height:62px;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand img{width:34px;height:34px;display:block;filter:drop-shadow(0 0 7px rgba(224,145,58,.35))}
+.brand .wordmark{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.brand .wordmark .hl{color:var(--amber)}
+.brand:hover .wordmark{color:#fff}
+.nav-sep{width:1px;height:26px;background:var(--hair-strong);flex:none;margin:0 6px}
+.site-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:auto}
+.site-nav a{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;padding:8px 4px;position:relative}
+.site-nav a:hover{color:var(--amber-lt)}
+.site-nav a.active{color:var(--amber)}
+.site-nav a.active::after{content:"";position:absolute;left:4px;right:4px;bottom:0;height:2px;background:var(--amber);border-radius:2px}
+.hero{margin-bottom:10px}
+.hero img{display:block;width:100%;max-width:560px;height:auto;border-radius:6px;border:1px solid var(--hair-strong);box-shadow:0 8px 30px rgba(0,0,0,.4)}
 header.masthead{padding:54px 0 26px;border-bottom:1px solid var(--hair-strong);margin-bottom:8px}
 .kicker{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
 .kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
 .kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
 h1.title{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-h1.title span{color:var(--maroon-lt)}
+h1.title span{color:var(--amber)}
 .subtitle{margin-top:16px;font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);max-width:840px;font-weight:300}
 .masthead-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:'Saira Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
 .masthead-meta b{color:var(--amber-lt);font-weight:600}
@@ -88,8 +105,8 @@ h1.title span{color:var(--maroon-lt)}
 .stat .n.fed{color:var(--fed-lt)}.stat .n.mar{color:var(--maroon-lt)}
 .stat .l{font-size:12.5px;color:var(--ink-dim);margin-top:6px;letter-spacing:.3px}
 section{margin-top:56px;scroll-margin-top:20px}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;border-bottom:1px solid var(--hair);padding-bottom:14px}
-.sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;color:var(--bg);background:var(--amber);padding:3px 9px;border-radius:2px;flex:none}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:8px;border-bottom:1px solid var(--hair);padding-bottom:14px}
+.sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);line-height:1;letter-spacing:2px;color:var(--bg);background:var(--amber);padding:.12em .4em;border-radius:2px;flex:none}
 .sec-head h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05}
 .sec-head .tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center}
 p.lead{font-size:15px;color:var(--ink-dim);margin:14px 0 4px}
@@ -125,15 +142,30 @@ footer b{color:var(--amber-lt)}
 </style>
 </head>
 <body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="index.html" aria-label="E:D Black Box — home">
+      <img src="../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#" class="active">Home</a>
+      <a href="#dossiers">Ships</a>
+      <a href="#engineering">Engineering</a>
+      <a href="#systems">Systems</a>
+    </nav>
+  </div>
+</header>
 <div class="wrap">
 <header class="masthead">
-  <div class="kicker">Elite Dangerous Field Manuals<span class="id">CMDR KA0S · INARA 173082</span></div>
+  <div class="hero"><img src="../images/logos/banner.png" alt="E:D Black Box" width="560"></div>
+  <div class="kicker">Elite Dangerous Field Manuals</div>
   <h1 class="title">The Black <span>Book</span></h1>
-  <p class="subtitle">A growing library of operator-grade field manuals for Elite Dangerous: Odyssey — engineering, ships, combat, trade, and the systems that run the galaxy. Verified against INARA, EDSM and EDCD, written commander-to-commander. Pick a manual below.</p>
+  <p class="subtitle">A growing library of operator-grade field manuals for Elite Dangerous: Odyssey — engineering, ships, combat, trade, and the systems that run the galaxy. Written commander-to-commander. Pick a manual below.</p>
   <div class="masthead-meta">
-    <span>Patch <b>Live 4.0</b></span>
-    <span>Sources <b>INARA · EDSM · EDCD · EDSY</b></span>
     <span><b>100+</b> manuals</span>
+    <span>Updated <b>__BUILD_DATE__</b></span>
   </div>
 </header>
 <div class="verdict">
@@ -284,9 +316,9 @@ cat <<'FOOT'
 </section>
 
 <footer>
-  <span>CMDR Ka0s · The Black Book</span>
-  <span>Elite Dangerous: Odyssey · <b>Live 4.0</b></span>
-  <span>Verified vs <b>INARA · EDSM · EDCD</b></span>
+  <span>E:D Black Box</span>
+  <span>By <b>CMDR Ka0s</b></span>
+  <span>Elite Dangerous: Odyssey</span>
   <span><b>Fly safe, commander.</b></span>
 </footer>
 </div>
@@ -305,6 +337,10 @@ cat <<'FOOT'
 </html>
 FOOT
 } > "$OUT"
+
+# Stamp the masthead "Updated" line with the build date (heredocs are single-quoted,
+# so the placeholder is substituted here rather than expanded inline).
+sed -i "s/__BUILD_DATE__/$(date +%F)/" "$OUT"
 
 echo "Wrote $OUT"
 grep -c 'class="ship"' "$OUT" | sed 's/^/ship rows: /'

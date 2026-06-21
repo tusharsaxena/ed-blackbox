@@ -1,11 +1,11 @@
-/*! ed-blackbox design system v1.0.0 | CMDR Ka0s field-manual house style
+/*! ed-blackbox design system v1.1.0 | E:D Black Box field-manual house style
    Single source of truth. Link this file; never inline or fork per page.
    Theme a page by overriding the --accent* group in a page-level <style>. */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap');
 
 :root{
   /* ============================================================
-     ed-blackbox DESIGN TOKENS  ·  v1.0.0
+     ed-blackbox DESIGN TOKENS  ·  v1.1.0
      Colour + accent are the LOCKED palette (never edit values).
      Scales below are the system standard — author with these,
      don't hardcode raw px. Per-page theming = override the ACCENT
@@ -59,11 +59,11 @@
   --accent-soft:rgba(224,145,58,.4);--accent-glow:rgba(224,145,58,.10);
 
   /* ---- meta ---- */
-  --ds-version:"1.0.0";
+  --ds-version:"1.1.0";
 }
 
 /* ============================================================
-   CMDR KA0S — FIELD MANUAL HOUSE STYLE  ·  v2 template
+   E:D BLACK BOX — FIELD MANUAL HOUSE STYLE  ·  v2 template
    Single-file, self-contained. Copy this whole <style> block
    verbatim into any new field manual / guide / dossier page.
    Fonts: Chakra Petch (display + labels), Saira (body),
@@ -86,6 +86,40 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;back
 a{color:var(--amber-lt)}
 .muted{color:var(--ink-faint)}
 
+/* ---- 2b. GLOBAL HEADER + BREADCRUMBS  (v1.1.0) ----
+   Sits OUTSIDE .wrap, directly under <body>. The inner row is .hdr-inner,
+   NOT .bar — the rating progress bar (.bar) is overflow:hidden and would clip
+   the quick-nav dropdown. */
+.site-header{position:sticky;top:0;z-index:var(--z-nav);background:var(--bg);border-bottom:1px solid var(--hair-strong)}
+.site-header .hdr-inner{max-width:1140px;margin:0 auto;padding:0 var(--space-11);height:62px;display:flex;align-items:center;gap:var(--space-9)}
+.brand{display:flex;align-items:center;gap:var(--space-6);text-decoration:none;flex:none}
+.brand img{width:34px;height:34px;display:block;filter:drop-shadow(0 0 7px rgba(224,145,58,.35))}
+.brand .wordmark{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm);letter-spacing:2.5px;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.brand .wordmark .hl{color:var(--amber)}
+.brand:hover .wordmark{color:#fff}
+.nav-sep{width:1px;height:26px;background:var(--hair-strong);flex:none;margin:0 var(--space-3)}
+.site-nav{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap}
+.site-nav a{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;padding:8px 4px;position:relative;transition:color var(--motion-base)}
+.site-nav a:hover{color:var(--amber-lt)}
+.site-nav a.active{color:var(--amber)}
+.site-nav a.active::after{content:"";position:absolute;left:4px;right:4px;bottom:0;height:2px;background:var(--amber);border-radius:2px}
+/* in-page quick-nav, pinned right (reuses the #qn-* component + ed-blackbox.js) */
+.header-qn{margin-left:auto;flex:none;display:flex;align-items:center;gap:var(--space-6)}
+.header-qn .qn-eyebrow{font-size:var(--fs-2xs);white-space:nowrap}
+.header-qn .qn-field{min-width:208px}
+.header-qn .qn-input{padding-top:7px;padding-bottom:7px}
+.header-qn .qn-panel{left:auto;right:0;width:300px;z-index:var(--z-overlay)}
+/* scroll-to-top button — sits in .header-qn between the eyebrow and the search field
+   (double-chevron SVG; behaviour from ed-blackbox.js module 4) */
+.qn-totop{flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--panel2);border:1px solid var(--hair-strong);border-radius:var(--radius-md);color:var(--ink-dim);cursor:pointer;transition:color var(--motion-fast),border-color var(--motion-fast),background var(--motion-fast)}
+.qn-totop:hover{color:var(--amber-lt);border-color:var(--amber);background:var(--panel)}
+.qn-totop svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.breadcrumbs{max-width:1140px;margin:0 auto;padding:var(--space-8) var(--space-11) 0;font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm2);letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap}
+.breadcrumbs a{color:var(--ink-dim);text-decoration:none}
+.breadcrumbs a:hover{color:var(--amber-lt)}
+.breadcrumbs .sep{opacity:.45}
+.breadcrumbs .current{color:var(--amber-lt)}
+
 /* ---- 3. MASTHEAD ---- */
 header.masthead{padding:54px 0 var(--space-13);border-bottom:1px solid var(--hair-strong);margin-bottom:var(--space-4)}
 .kicker{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:5px;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:var(--space-6);margin-bottom:var(--space-9);flex-wrap:wrap}
@@ -93,7 +127,7 @@ header.masthead{padding:54px 0 var(--space-13);border-bottom:1px solid var(--hai
 .kicker .sep{color:var(--ink-faint);opacity:.8}
 .kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
 h1.title{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-h1.title span{color:var(--maroon-lt)}
+h1.title span{color:var(--amber)}
 /* optional one-line role suffix on the title (ship × role dossiers) */
 h1.title .role{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:.32em;letter-spacing:3px;text-transform:uppercase;color:var(--accent);vertical-align:middle;margin-left:var(--space-7);border:1px solid var(--accent-soft);border-radius:var(--radius-sm);padding:5px 11px}
 .subtitle,.lede{margin-top:var(--space-8);font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);max-width:840px;font-weight:300}
@@ -123,8 +157,9 @@ h1.title .role{font-family:'Saira Condensed',sans-serif;font-weight:600;font-siz
 
 /* ---- 6. SECTION + HEADING ---- */
 section{margin-top:var(--space-section);scroll-margin-top:74px}
-.sec-head{display:flex;align-items:baseline;gap:var(--space-8);margin-bottom:var(--space-4);border-bottom:1px solid var(--hair);padding-bottom:14px}
-.sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm2);letter-spacing:2px;color:var(--bg);background:var(--amber);padding:3px 9px;border-radius:var(--radius-xs);flex:none}
+.sec-head{display:flex;align-items:center;gap:var(--space-8);margin-bottom:var(--space-4);border-bottom:1px solid var(--hair);padding-bottom:14px}
+/* box hugs the heading's cap height; the number rides smaller inside it */
+.sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(11px,1.8vw,15px);line-height:1;letter-spacing:1px;color:var(--bg);background:var(--amber);padding:.22em .42em;border-radius:var(--radius-xs);flex:none}
 .sec-head h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05}
 .sec-head .tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm);letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center}
 p.lead{font-size:var(--fs-md);color:var(--ink-dim);margin:var(--space-7) 0 var(--space-2)}
@@ -224,6 +259,9 @@ ul.reclist a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
 .tbl-scroll{overflow-x:auto;margin-top:var(--space-9);border:1px solid var(--hair);border-radius:var(--radius-md)}
 table.data{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
 table.data thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:11px var(--space-7);background:rgba(8,5,6,.6);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
+/* header alignment follows the column's data alignment */
+table.data thead th.num{text-align:right}
+table.data thead th.center,table.data td.center{text-align:center}
 table.data tbody td{padding:var(--space-5) var(--space-7);border-bottom:1px solid var(--hair);color:var(--ink-dim);vertical-align:top}
 table.data tbody tr:hover{background:var(--panel2)}
 table.data tbody tr:last-child td{border-bottom:none}
@@ -270,10 +308,10 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 .callout.icon.warn::before{content:"\25B2";color:var(--amber)}
 .callout.icon.danger::before{content:"\25B2";color:var(--danger)}
 
-/* ---- 15. QUICK-NAV  (sticky searchable jump dropdown) ---- */
-.quicknav{position:sticky;top:0;z-index:var(--z-nav);display:flex;align-items:center;gap:var(--space-7);margin:var(--space-9) 0 var(--space-3);padding:var(--space-5) var(--space-7);background:rgba(10,7,8,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--hair-strong);border-radius:var(--radius-lg)}
+/* ---- 15. QUICK-NAV  (in-page jump module — lives in the global header via
+   .header-qn; the #qn-* dropdown parts below are shared by it. The standalone
+   nav.quicknav bar + its .qn-hint were removed when the header gained the quick-nav.) ---- */
 .qn-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-2xs);letter-spacing:3px;text-transform:uppercase;color:var(--amber);flex:none}
-.qn-hint{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:var(--fs-xs2);letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);flex:none}
 .qn-dd{position:relative}
 .qn-field{position:relative;display:inline-flex;align-items:center;min-width:268px;background:var(--panel2);border:1px solid var(--hair-strong);border-radius:var(--radius-md);transition:border-color var(--motion-fast)}
 .qn-field:focus-within{border-color:var(--amber)}
@@ -294,7 +332,7 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 .qn-empty{padding:var(--space-5) var(--space-6);color:var(--ink-faint);font-size:var(--fs-sm2);font-style:italic}
 .qn-panel::-webkit-scrollbar{width:9px}
 .qn-panel::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:var(--radius-md)}
-@media (max-width:560px){.qn-hint{display:none}.qn-field{min-width:0;flex:1}.qn-eyebrow{display:none}}
+@media (max-width:560px){.qn-field{min-width:0;flex:1}.qn-eyebrow{display:none}}
 
 /* ============================================================
    EXTENDED COMPONENT KIT  (drawn from the wider field-manual set
@@ -406,8 +444,24 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
 footer{margin-top:var(--space-footer);padding-top:24px;border-top:1px solid var(--hair-strong);font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm2);letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:var(--space-4) var(--space-10)}
 footer b{color:var(--amber-lt)}
 
-/* ---- 29. RESPONSIVE / MOTION ---- */
+/* ---- 29. PER-PAGE CREDITS / SOURCES  (the .cr-rows table) ----
+   Drop .cr-rows into a NORMAL numbered <section> as the LAST section on the page, above
+   the footer: `.sec-head` (.sec-num + h2 "Sources & Credits" + .tag) → `p.lead` → .cr-rows.
+   One .cr-row per authoritative source for THIS page: name · what it provided · link.
+   This is where per-page sourcing lives now that the masthead has no Sources line. */
+.cr-rows{margin-top:var(--space-9);border:1px solid var(--hair-strong);border-radius:var(--radius-md);background:linear-gradient(180deg,var(--panel),var(--bg2));padding:var(--space-3) var(--space-9)}
+.cr-row{display:flex;align-items:baseline;gap:var(--space-8);padding:11px 0;border-bottom:1px dashed var(--hair)}
+.cr-row:last-child{border-bottom:none}
+.cr-src{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-md);color:var(--ink);min-width:148px;flex:none}
+.cr-what{font-size:var(--fs-base);color:var(--ink-dim);flex:1}
+.cr-link{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:.6px;text-transform:uppercase;color:var(--amber-lt);text-decoration:none;white-space:nowrap;flex:none}
+.cr-link::after{content:" \2197"}
+.cr-link:hover{color:var(--amber)}
+@media (max-width:560px){.cr-row{flex-direction:column;gap:var(--space-2)}.cr-src{min-width:0}}
+
+/* ---- 30. RESPONSIVE / MOTION ---- */
 @media (max-width:560px){.sec-head .tag{display:none}}
+@media (max-width:820px){.site-header .hdr-inner{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap;gap:var(--space-6)}.header-qn{width:100%}.header-qn .qn-field{flex:1;min-width:0}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 
 /* ---- styleguide-only annotation chrome (delete in real pages) ---- */
