@@ -4,9 +4,7 @@ Working backlog for the project. Items are grouped by theme and tagged with a
 suggested phase so the work has a sensible order: **foundation first, then migrate &
 publish, then tooling, metadata, editorial polish, and new content.**
 
-> The raw original brain-dump is preserved in `docs/TODO_LEGACY.md` (to be deleted
-> once this rework is confirmed complete). See `docs/ARCHITECTURE.md` for the
-> full project map.
+> See `docs/ARCHITECTURE.md` for the full project map.
 
 Legend: ✅ done · ☐ not done.
 
@@ -72,7 +70,6 @@ Legend: ✅ done · ☐ not done.
       sections folded in and removed. Uses the design-system component's class names + a small
       removable inline fallback style; full design-system styling lands when each page migrates
       (Phase 1), at which point the inline `<style>` is dropped and the linked CSS takes over.
-      Brief: `docs/superpowers/specs/2026-06-21-per-page-credits-design.md`.
 - ✅ Link out to INARA where relevant — every ship dossier links its INARA ship page (`inara.cz/elite/ship/<id>`, search-verified); other guides link the relevant INARA database / tracker / guide page where one exists. Lives in each page's **Sources** section (skipped only where INARA has no canonical page for the topic).
 - ☐ "File a ticket" link on every page → GitHub Issues
 

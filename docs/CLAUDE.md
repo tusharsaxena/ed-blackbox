@@ -25,7 +25,7 @@ design-system/     v1.1.0 — css/ js/ templates/ legacy-templates/ docs/ (the m
                    legacy-templates/ = the precursor Template.html/.md, reference only)
 images/            engineers/ (38 portraits) · ships/ (46 renders) · logos/ (logo·banner·favicon + concepts/)
 scripts/           reusable task scripts (+ per-script .md docs)
-docs/              project docs (this file, architecture, todo, credits)
+docs/              project docs (this file, architecture, todo)
 ```
 
 ---
