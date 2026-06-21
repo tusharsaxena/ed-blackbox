@@ -2,7 +2,7 @@
 
 How the site is put together technically — system model, content inventory, and the
 migration gap. For the backlog/roadmap see [`TODO.md`](TODO.md); for working conventions
-see [`CLAUDE.md`](CLAUDE.md); for data sources see [`Credits.md`](Credits.md).
+see [`CLAUDE.md`](CLAUDE.md); for data sources see [`CREDITS.md`](CREDITS.md).
 
 ---
 
@@ -115,41 +115,42 @@ Pages. **108 self-contained guides** in four areas, plus a generated landing pag
 ```
 guides/
   index.html                 ← landing page (generated; see §6)
-  engineering/   Engineers · Blueprints · Checklist · farm/ (4)   — 7 pages
+  engineering/   engineers · blueprints · checklist · farms/ (4)   — 7 pages
   systems/       11 game-system guides
-  ship/
-    ship/        77 dossiers  — the ship × role matrix (48 ships)
-    role-ship/   7  ladders   — "best ship for role X"
-    role-activities/ 6 guides  — "how to play role X"
+  ships/
+    dossiers/    77 dossiers  — the ship × role matrix (48 ships)
+    by-role/     7  ladders   — "best ship for role X"
+  activities/    6 guides     — "how to play role X"
 ```
 
 **File census:** ~251 files — 112 HTML (108 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), ~113 images (46 ship `.jpg`, 38 engineer
-`.webp`, 29 logo `.png`), 22 Markdown docs, 1 CSS, 1 JS.
+`.webp`, 29 logo `.png`), 21 Markdown docs, 1 CSS, 1 JS, 1 TSV (`scripts/ship-names.tsv`).
 
 **Engineering** (`guides/engineering/`, 7 pages):
 
 | Page | Purpose |
 |---|---|
-| `Engineers.html` | Engineer database: unlock requirements, location, referrals. Has a footer + quick-nav search; uses `images/engineers/` portraits. |
-| `Blueprints.html` | Module blueprint catalog (~3,900 lines). Cards auto-expand/scroll on hash navigation; quick-nav search. |
-| `Checklist.html` | New-player engineering unlock progression; quick-nav search. |
-| `farm/` (4) | Material-farm location guides (`Davs_Hope`, `Crystalline_Shards`, `High_Grade_Emissions`, `Jameson_Crash_Site`) — warmer green/orange palette + coordinate readouts. |
+| `engineers.html` | Engineer database: unlock requirements, location, referrals. Has a footer + quick-nav search; uses `images/engineers/` portraits. |
+| `blueprints.html` | Module blueprint catalog (~3,900 lines). Cards auto-expand/scroll on hash navigation; quick-nav search. |
+| `checklist.html` | New-player engineering unlock progression; quick-nav search. |
+| `farms/` (4) | Material-farm location guides (`davs-hope`, `crystalline-shards`, `high-grade-emissions`, `jameson-crash-site`) — warmer green/orange palette + coordinate readouts. |
 
-**Systems** (`guides/systems/`, 11 pages): `BGS`, `Combat_Zones`, `Community_Goals`,
-`Docking_Landing_Manual`, `Fleet_Carrier`, `HUD_Customization`, `PVE_Combat_Venues`,
-`Powerplay`, `Superpower_Rank`, `System_Colonization`, `Third_Party_Apps_apps` — the
+**Systems** (`guides/systems/`, 11 pages): `bgs`, `combat-zones`, `community-goals`,
+`docking-landing-manual`, `fleet-carrier`, `hud-customization`, `pve-combat-venues`,
+`powerplay`, `superpower-rank`, `system-colonization`, `third-party-apps` — the
 palette closest to the design system.
 
-**Ship** (`guides/ship/`, 90 pages) — the core data structure, a **ship × role matrix**:
+**Ships** (`guides/ships/`, 84 pages) — the core data structure, a **ship × role matrix**:
 a sparse grid of (ship, role) pairs spanning **48 ships**. Each populated cell is one
-dossier `Ship_Name_Role.html` (rating dial + spec grid + loadout tables). The
-`role-ship/` ladders ("best ship for role X"), the `role-activities/` how-tos (per-role
-accents: combat=crimson, mining=purple, exploration=teal, passenger=blue, trading=green,
-AX=lime), and the generated landing page are all different *projections* of that grid.
+dossier `dossiers/<ship>-<role>.html` (rating dial + spec grid + loadout tables); the
+`by-role/` ladders ("best ship for role X"). The separate top-level `guides/activities/`
+how-tos (per-role accents: combat=crimson, mining=purple, exploration=teal,
+passenger=blue, trading=green, AX=lime) and the generated landing page are other
+*projections* of that grid.
 
 **Cross-linking contract.** Pages deep-link into each other by stable anchors:
-- Engineer rows: `#eng-<name>` (e.g. `Engineers.html#eng-felicity-farseer`).
+- Engineer rows: `#eng-<name>` (e.g. `engineers.html#eng-felicity-farseer`).
 - Blueprint groups/cards: `#grp-<module>` / `#bp-<module>-<variant>`.
 - The `*_Anchors.md` files in `guides/engineering/` are a **manually maintained
   catalog** of these anchors — a contract for other pages and external tools. They are
@@ -181,9 +182,9 @@ The first step toward "content-as-data". Convention: every task script lives in
 `scripts/`, named for its task, with a sibling `<name>.md` doc (see `scripts/README.md`).
 
 - **`generate-guides-index.sh`** → regenerates `guides/index.html`. The ship-dossier
-  grid is **auto-discovered** from `guides/ship/ship/*.html` (so it self-syncs); the
+  grid is **auto-discovered** from `guides/ships/dossiers/*.html` (so it self-syncs); the
   other sections are hand-curated cards inside the script. The output's look is copied
-  from `Engineers.html` (deliberately not the design system yet). `index.html` is a
+  from `engineers.html` (deliberately not the design system yet). `index.html` is a
   **generated artifact** — edit the generator, not the file.
 
 **Future direction (planned, `TODO.md` Phase 2):** extract page content into per-page
@@ -196,14 +197,14 @@ hand-authored HTML into rendered-from-data HTML.
 ## 7. Data provenance
 
 Game data is **verified against authoritative sources, never written from memory**
-(full list in [`Credits.md`](Credits.md)): EDCD (coriolis-data, FDevIDs), INARA, EDSM,
+(full list in [`CREDITS.md`](CREDITS.md)): EDCD (coriolis-data, FDevIDs), INARA, EDSM,
 EDSY, Spansh, the Fandom wiki. Suitability ratings (1–100) come from a project source
 of truth where one exists; uncertain facts are flagged (`.kv-tbd` / "unconfirmed")
 rather than guessed. Verification is mandatory. As of design-system **v1.1.0** the
 masthead no longer carries an inline `Sources …` line (it shows a last-updated date
 instead); per-page sources are listed in a dedicated **`section.credits`** block at the
 bottom of the page (above the footer), with the full authoritative list in
-[`Credits.md`](Credits.md). (Legacy inline guides may still display the old masthead
+[`CREDITS.md`](CREDITS.md). (Legacy inline guides may still display the old masthead
 `Sources …` line and a `Live 4.0` patch label until migrated.)
 
 ---
@@ -214,7 +215,7 @@ bottom of the page (above the footer), with the full authoritative list in
 - **Shared chrome — design-system pages only.** The design system now provides a global
   header, breadcrumbs, and footer (v1.1.0), and the generated `guides/index.html` carries
   the header. The **108 legacy inline guides** still have no global chrome (quick-nav on
-  only 3, footer on only 1, `Engineers.html`) and don't yet link *back* to the index —
+  only 3, footer on only 1, `engineers.html`) and don't yet link *back* to the index —
   closing that gap is the migration work.
 - **Naming inconsistency** — mixed `_` vs `-`, mixed case across filenames; the
   stylesheet is `ed-blackbo**x**` while the repo is `ed-blackbo**ok**`.
@@ -228,7 +229,7 @@ copy-pasted CSS, which drifts:
 | Palette fragmentation | 3 variants: engineering (`--bg:#0c0908`, adds `--raw/--man/--enc` material colors, `--maroon-bright`), farm (green/orange story, no `-lt` suffixes), systems/ship (closest to the design system: `--bg:#0a0708`, `--maroon-lt`, `--fed`). |
 | Naming divergence | `--maroon-bright` vs `--maroon-lt`; `--ink-mute` vs `--ink-dim`. |
 | Layout width | Blueprints 920px · farm 880px · systems/ship 1080–1140px. |
-| Feature variance | Quick-nav on only 3 pages; footer on only 1; per-role accents only in role-activities. |
+| Feature variance | Quick-nav on only 3 pages; footer on only 1; per-role accents only in `activities/`. |
 | File naming | Mixed `_` vs `-`, mixed title-case vs kebab-case across files. |
 
 Migrating one page: delete the inline `<style>`, link `ed-blackbox.css` + `.js`, set the

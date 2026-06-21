@@ -8,7 +8,7 @@ Book**, a static site of Elite Dangerous field manuals by Tushar Saxena (CMDR Ka
 > just `@docs/CLAUDE.md`. Until then, read this file at the start of project work.
 
 **Orient yourself first:** [`ARCHITECTURE.md`](ARCHITECTURE.md) (what's in the repo +
-how it's built), [`TODO.md`](TODO.md) (backlog), [`Credits.md`](Credits.md) (data
+how it's built), [`TODO.md`](TODO.md) (backlog), [`CREDITS.md`](CREDITS.md) (data
 sources).
 
 ---
@@ -17,9 +17,10 @@ sources).
 
 ```
 guides/            108 self-contained HTML guides (inline CSS) + index.html (generated)
-  engineering/     Engineers · Blueprints · Checklist · farm/ + *_Anchors.md
+  engineering/     engineers · blueprints · checklist · farms/ (4) + *_Anchors.md
   systems/         11 game-system guides
-  ship/            ship/ (77 dossiers) · role-ship/ (7) · role-activities/ (6)
+  ships/           dossiers/ (77) · by-role/ (7)
+  activities/      6 role playbooks (how to fly each role)
 design-system/     v1.1.0 — css/ js/ templates/ legacy-templates/ docs/ (the migration target;
                    legacy-templates/ = the precursor Template.html/.md, reference only)
 images/            engineers/ (38 portraits) · ships/ (46 renders) · logos/ (logo·banner·favicon + concepts/)
@@ -33,7 +34,7 @@ docs/              project docs (this file, architecture, todo, credits)
 
 1. **Accuracy over recall.** Game facts (ship stats, modules, engineers, systems) must
    be **verified against authoritative sources** — EDCD/coriolis-data, FDevIDs, INARA,
-   EDSM, EDSY (see `Credits.md`). Never write game data from memory. Flag anything
+   EDSM, EDSY (see `CREDITS.md`). Never write game data from memory. Flag anything
    uncertain as `unconfirmed` (`.kv-tbd`) rather than guessing.
 2. **Voice: operator-grade.** Terse, factual, commander-to-commander. No marketing
    tone, no hype, no emoji. Lead with the verdict. Bold the one word that matters.

@@ -12,4 +12,7 @@ be re-run later.
 |---|---|---|
 | `generate-guides-index.sh` | [generate-guides-index.md](generate-guides-index.md) | Regenerates `guides/index.html`, the "Black Book" landing page linking to every guide. |
 
+**Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
+names to `generate-guides-index.sh`; extend it when a new ship dossier is added.
+
 Generated files are overwritten on each run — edit the generator, not the output.

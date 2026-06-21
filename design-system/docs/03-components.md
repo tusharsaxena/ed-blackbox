@@ -56,7 +56,7 @@ The workhorse repeating entry.
 - **Accent edge:** `ac-amber/.ac-fed/.ac-maroon/.ac-good` on the `<article>`. Maroon =
   permit-locked/flagged; fed = secondary/on-foot; amber = default; good = complete.
 - **Anchor:** every record gets a stable `id="rec-…"` + matching `.permalink` so other
-  manuals can deep-link (e.g. `Engineers.html#eng-felicity-farseer`).
+  manuals can deep-link (e.g. `engineers.html#eng-felicity-farseer`).
 - **Responsive:** collapses to one column under 720px, stacks fields under 480px — CSS
   handles it, no markup change.
 

@@ -5,7 +5,7 @@
 # Regenerates guides/index.html — the "Black Book" landing page that links to
 # every guide in the project, grouped logically.
 #
-# The look & feel is copied from guides/engineering/Engineers.html (the inline
+# The look & feel is copied from guides/engineering/engineers.html (the inline
 # CSS, fonts, masthead, sections, footer) — it intentionally does NOT use the
 # design-system/ stylesheet yet.
 #
@@ -13,13 +13,13 @@
 #   - Emits a self-contained guides/index.html.
 #   - Hand-curated cards for the game-system, engineering, farming, activity and
 #     role guides (title + one-line description, set in the CARD CALLS below).
-#   - Auto-discovers every ship dossier in guides/ship/ship/*.html and groups
+#   - Auto-discovers every ship dossier in guides/ships/dossiers/*.html and groups
 #     them by ship, with one role link per dossier (colour-coded by role).
 #
 # WHEN TO RE-RUN
-#   - After adding/removing/renaming any ship dossier (ship/ship/*.html) — the
+#   - After adding/removing/renaming any ship dossier (ships/dossiers/*.html) — the
 #     ship grid is rebuilt from the filesystem, so those stay in sync for free.
-#   - After adding a new top-level guide (systems/, farm/, role-*), add a matching
+#   - After adding a new top-level guide (systems/, engineering/farms/, ships/by-role/, activities/), add a matching
 #     `card ...` line in the relevant section below, then re-run.
 #
 # USAGE
@@ -43,8 +43,20 @@ OUT="$GUIDES/index.html"
 # Emit a guide card.  args: href, accentClass, title, desc
 card(){ printf '    <a class="gcard %s" href="%s"><h3>%s</h3><p>%s</p></a>\n' "$2" "$1" "$3" "$4"; }
 
-# Map a role name to a role-chip colour class (used in the ship grid).
-role_class(){ case "$1" in Combat|AX) echo "r-mar";; Exploration|Passenger) echo "r-fed";; Trading) echo "r-good";; *) echo "";; esac; }
+# Map a role slug to a role-chip colour class (used in the ship grid).
+role_class(){ case "$1" in combat|ax) echo "r-mar";; exploration|passenger) echo "r-fed";; trading) echo "r-good";; *) echo "";; esac; }
+
+# Display label for a role slug (AX stays upper-case; others Title-case).
+role_label(){ case "$1" in ax) echo "AX";; *) echo "$(echo "$1" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')";; esac; }
+
+# Display name for a ship slug — looked up in ship-names.tsv (slug<TAB>Name);
+# falls back to Title-casing the slug's words if the ship isn't in the map.
+NAMES="$SCRIPT_DIR/ship-names.tsv"
+ship_name(){
+  local n; n="$(awk -F'\t' -v s="$1" '$1==s{print $2; exit}' "$NAMES")"
+  [ -n "$n" ] && { printf '%s' "$n"; return; }
+  echo "$1" | tr '-' ' ' | awk '{for(i=1;i<=NF;i++)$i=toupper(substr($i,1,1)) substr($i,2)}1'
+}
 
 {
 cat <<'HEAD'
@@ -186,9 +198,9 @@ footer b{color:var(--amber-lt)}
   <div class="cards">
 HEAD
 
-card "systems/Docking_Landing_Manual.html" ""       "Docking &amp; Landing"      "Requesting docking, pads, and station/outpost landing procedure."
-card "systems/HUD_Customization.html"      ""       "HUD Customization"        "Retune your cockpit HUD colours with the GraphicsConfig matrix."
-card "systems/Third_Party_Apps_apps.html"  ""       "Third-Party Apps"         "The essential companion apps, planners and tools for commanders."
+card "systems/docking-landing-manual.html" ""       "Docking &amp; Landing"      "Requesting docking, pads, and station/outpost landing procedure."
+card "systems/hud-customization.html"      ""       "HUD Customization"        "Retune your cockpit HUD colours with the GraphicsConfig matrix."
+card "systems/third-party-apps.html"  ""       "Third-Party Apps"         "The essential companion apps, planners and tools for commanders."
 
 cat <<'S2'
   </div>
@@ -200,12 +212,12 @@ cat <<'S2'
   <div class="cards">
 S2
 
-card "systems/BGS.html"                 ""        "Background Simulation (BGS)" "How minor factions, influence and states actually work."
-card "systems/Powerplay.html"           ""        "Powerplay"                   "Pledging to a Power, earning merits, and the weekly cycle."
-card "systems/Superpower_Rank.html"     ""        "Superpower Rank Grind"       "Climbing Federation, Empire and Alliance reputation."
-card "systems/Community_Goals.html"     ""        "Community Goals"             "How CGs work and how to land in the top tiers."
-card "systems/System_Colonization.html" "ac-fed"  "System Colonization"         "Claiming systems and building out your own infrastructure."
-card "systems/Fleet_Carrier.html"       "ac-fed"  "Fleet Carriers"              "Buying, financing, fitting and jumping a Fleet Carrier."
+card "systems/bgs.html"                 ""        "Background Simulation (BGS)" "How minor factions, influence and states actually work."
+card "systems/powerplay.html"           ""        "Powerplay"                   "Pledging to a Power, earning merits, and the weekly cycle."
+card "systems/superpower-rank.html"     ""        "Superpower Rank Grind"       "Climbing Federation, Empire and Alliance reputation."
+card "systems/community-goals.html"     ""        "Community Goals"             "How CGs work and how to land in the top tiers."
+card "systems/system-colonization.html" "ac-fed"  "System Colonization"         "Claiming systems and building out your own infrastructure."
+card "systems/fleet-carrier.html"       "ac-fed"  "Fleet Carriers"              "Buying, financing, fitting and jumping a Fleet Carrier."
 
 cat <<'S3'
   </div>
@@ -217,8 +229,8 @@ cat <<'S3'
   <div class="cards">
 S3
 
-card "systems/Combat_Zones.html"      "ac-mar" "Combat / Conflict Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
-card "systems/PVE_Combat_Venues.html" "ac-mar" "PVE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
+card "systems/combat-zones.html"      "ac-mar" "Combat / Conflict Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
+card "systems/pve-combat-venues.html" "ac-mar" "PVE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
 
 cat <<'S4'
   </div>
@@ -230,9 +242,9 @@ cat <<'S4'
   <div class="cards">
 S4
 
-card "engineering/Checklist.html"  ""       "Unlock Checklist"   "New-pilot engineering progression — what to unlock, and when."
-card "engineering/Engineers.html"  ""       "The Engineers"      "Every engineer: location, meeting requirement, unlock and referrals."
-card "engineering/Blueprints.html" ""       "Blueprints"         "The module blueprint catalogue across every grade and effect."
+card "engineering/checklist.html"  ""       "Unlock Checklist"   "New-pilot engineering progression — what to unlock, and when."
+card "engineering/engineers.html"  ""       "The Engineers"      "Every engineer: location, meeting requirement, unlock and referrals."
+card "engineering/blueprints.html" ""       "Blueprints"         "The module blueprint catalogue across every grade and effect."
 
 cat <<'S5'
   </div>
@@ -244,10 +256,10 @@ cat <<'S5'
   <div class="cards">
 S5
 
-card "engineering/farm/Davs_Hope.html"           "ac-good" "Dav's Hope"            "The classic manufactured-material loop at Dav's Hope."
-card "engineering/farm/Crystalline_Shards.html"  "ac-good" "Crystalline Shards"    "Surface raw-material farming at Crystalline Shard sites."
-card "engineering/farm/High_Grade_Emissions.html" "ac-good" "High Grade Emissions" "Farming encoded materials from High Grade Emission signals."
-card "engineering/farm/Jameson_Crash_Site.html"  "ac-good" "Jameson Crash Site"    "The Jameson Crash Site encoded-data farm."
+card "engineering/farms/davs-hope.html"           "ac-good" "Dav's Hope"            "The classic manufactured-material loop at Dav's Hope."
+card "engineering/farms/crystalline-shards.html"  "ac-good" "Crystalline Shards"    "Surface raw-material farming at Crystalline Shard sites."
+card "engineering/farms/high-grade-emissions.html" "ac-good" "High Grade Emissions" "Farming encoded materials from High Grade Emission signals."
+card "engineering/farms/jameson-crash-site.html"  "ac-good" "Jameson Crash Site"    "The Jameson Crash Site encoded-data farm."
 
 cat <<'S6'
   </div>
@@ -259,12 +271,12 @@ cat <<'S6'
   <div class="cards">
 S6
 
-card "ship/role-activities/Combat.html"      "ac-mar"  "Combat"       "Bounty hunting, massacre missions and PvE combat."
-card "ship/role-activities/AX.html"          "ac-mar"  "Anti-Xeno (AX)" "Fighting Thargoids — gear, tactics and venues."
-card "ship/role-activities/Exploration.html" "ac-fed"  "Exploration"  "Long-range exploration, scanning and exobiology."
-card "ship/role-activities/Mining.html"      ""        "Mining"       "Laser, core and subsurface mining for profit."
-card "ship/role-activities/Trading.html"     "ac-good" "Trading"      "Cargo trading, loops and reading the market."
-card "ship/role-activities/Passenger.html"   "ac-fed"  "Passenger"    "Passenger missions, tourism and sightseeing runs."
+card "activities/combat.html"      "ac-mar"  "Combat"       "Bounty hunting, massacre missions and PvE combat."
+card "activities/ax.html"          "ac-mar"  "Anti-Xeno (AX)" "Fighting Thargoids — gear, tactics and venues."
+card "activities/exploration.html" "ac-fed"  "Exploration"  "Long-range exploration, scanning and exobiology."
+card "activities/mining.html"      ""        "Mining"       "Laser, core and subsurface mining for profit."
+card "activities/trading.html"     "ac-good" "Trading"      "Cargo trading, loops and reading the market."
+card "activities/passenger.html"   "ac-fed"  "Passenger"    "Passenger missions, tourism and sightseeing runs."
 
 cat <<'S7'
   </div>
@@ -276,13 +288,13 @@ cat <<'S7'
   <div class="cards">
 S7
 
-card "ship/role-ship/Combat.html"       "ac-mar"  "Best for Combat"       "Combat ships ranked, from starter to capital."
-card "ship/role-ship/AX.html"           "ac-mar"  "Best for Anti-Xeno"    "The ships that hold up against Thargoids."
-card "ship/role-ship/Exploration.html"  "ac-fed"  "Best for Exploration"  "Jump range, comfort and the long black, ranked."
-card "ship/role-ship/Mining.html"       ""        "Best for Mining"       "Mining platforms ranked by yield and fit."
-card "ship/role-ship/Trading.html"      "ac-good" "Best for Trading"      "Cargo haulers ranked by tonnage and economy."
-card "ship/role-ship/Passenger.html"    "ac-fed"  "Best for Passenger"    "Cabin capacity and range for the tourism trade."
-card "ship/role-ship/Multipurpose.html" ""        "Best All-Rounders"     "Do-everything ships ranked for the multipurpose pilot."
+card "ships/by-role/combat.html"       "ac-mar"  "Best for Combat"       "Combat ships ranked, from starter to capital."
+card "ships/by-role/ax.html"           "ac-mar"  "Best for Anti-Xeno"    "The ships that hold up against Thargoids."
+card "ships/by-role/exploration.html"  "ac-fed"  "Best for Exploration"  "Jump range, comfort and the long black, ranked."
+card "ships/by-role/mining.html"       ""        "Best for Mining"       "Mining platforms ranked by yield and fit."
+card "ships/by-role/trading.html"      "ac-good" "Best for Trading"      "Cargo haulers ranked by tonnage and economy."
+card "ships/by-role/passenger.html"    "ac-fed"  "Best for Passenger"    "Cabin capacity and range for the tourism trade."
+card "ships/by-role/multipurpose.html" ""        "Best All-Rounders"     "Do-everything ships ranked for the multipurpose pilot."
 
 cat <<'S8'
   </div>
@@ -294,19 +306,21 @@ cat <<'S8'
   <div class="ship-grid">
 S8
 
-# ---- ship dossiers, auto-discovered and grouped by ship ----
-for f in "$GUIDES"/ship/ship/*.html; do
+# ---- ship dossiers, auto-discovered (slug-role.html) and grouped by ship ----
+# Filenames are kebab-case `<ship-slug>-<role>.html`; role = last '-' token,
+# ship-slug = the rest. Display name comes from ship_name() (ship-names.tsv).
+for f in "$GUIDES"/ships/dossiers/*.html; do
   base="$(basename "$f" .html)"
-  role="$(echo "$base" | sed -E 's/.*_([A-Za-z]+)$/\1/')"
-  ship="$(echo "$base" | sed -E 's/_[A-Za-z]+$//' | tr '_' ' ')"
-  echo "$ship|$role|$base.html"
+  role="$(echo "$base" | sed -E 's/.*-([a-z]+)$/\1/')"
+  slug="$(echo "$base" | sed -E 's/-[a-z]+$//')"
+  echo "$(ship_name "$slug")|$role|$base.html"
 done | awk -F'|' '{ships[$1]=ships[$1]$2"="$3";"} END{for(s in ships)print s"|"ships[s]}' | sort | \
 while IFS='|' read -r ship roles; do
   printf '    <div class="ship"><span class="nm">%s</span><span class="roles">' "$ship"
   echo "$roles" | tr ';' '\n' | while IFS='=' read -r role file; do
     [ -z "$role" ] && continue
     cls="$(role_class "$role")"
-    printf '<a class="%s" href="ship/ship/%s">%s</a>' "$cls" "$file" "$role"
+    printf '<a class="%s" href="ships/dossiers/%s">%s</a>' "$cls" "$file" "$(role_label "$role")"
   done
   printf '</span></div>\n'
 done

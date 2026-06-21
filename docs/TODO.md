@@ -48,9 +48,9 @@ Legend: ✅ done · ☐ not done.
 - ☐ Migrate all ~105 existing guides onto the design system (consistent page styling)
 - ☐ Roll the global chrome (header, breadcrumbs, footer, home link back to `guides/index.html`, scroll-to-top) onto all 108 legacy guides — and standardize their `<title>`s
 - ☐ Generate the per-page **Sources & Credits** section for every page during migration — list the authoritative sources each page's facts were verified against (the `.credits` section; see Phase 3)
-- ☐ Reorganize the file hierarchy
+- ✅ Reorganize the file hierarchy (`ship/ship/` → `ships/dossiers/`, `role-ship/` → `ships/by-role/`, `role-activities/` → top-level `activities/`, `engineering/farm/` → `farms/`, `templates/` → `design-system/legacy-templates/`)
 - ✅ Consolidate scattered images into the top-level `images/` folder (`engineer-images/` → `images/engineers/`, `ship-images/` → `images/ships/`)
-- ☐ Standardize file names — lowercase, slugify, settle `-` vs `_`
+- ✅ Standardize file names — all content files now lowercase-kebab (`Anaconda_Combat.html` → `anaconda-combat.html`, `Combat_Zones.html` → `combat-zones.html`); root meta-docs stay UPPER (`CREDITS.md`). **Anchors deferred** — `*_Anchors.md` left as-is (tracked separately).
 - ☐ Publish on GitHub Pages
 
 ## Phase 2 — Content-as-data tooling
@@ -66,7 +66,7 @@ Legend: ✅ done · ☐ not done.
       *(date-only "Updated" is already in the design-system masthead + landing page as of v1.1.0)*
 - ☐ **Per-page Credits section** — a dedicated `.credits` block at the **bottom of every
       page** (above the footer, *not* in it) listing the authoritative data sources *for that
-      page*: source name · what it provided · link, with a pointer to `Credits.md` for the
+      page*: source name · what it provided · link, with a pointer to `CREDITS.md` for the
       full project list. *(The `.credits` **component** now exists in the design system; this
       item tracks populating it on each page — see the Phase 1 migration item.)*
 - ☐ Link out to INARA where relevant
@@ -77,6 +77,7 @@ Legend: ✅ done · ☐ not done.
 - ☐ Add ship photos to ship manuals + manufacturer logos
 - ☐ Remove fleet bias from content
 - ☐ Remove "CMDR" etc. from headers
+- ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
 
 ## Phase 5 — New content / guides
 

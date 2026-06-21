@@ -23,7 +23,7 @@ terse, technical, confident, useful. State the call, then the reason.
 - `.masthead-meta` carries the series part and a **last-updated** date (`Updated
   YYYY-MM-DD`). No sources line and no patch-version line in the masthead. Per-page data
   lineage is verified per `01-principles.md`, listed in the bottom-of-page
-  **`section.credits`** block, and credited in full in `Credits.md`.
+  **`section.credits`** block, and credited in full in `CREDITS.md`.
 
 ## Content format conventions
 
