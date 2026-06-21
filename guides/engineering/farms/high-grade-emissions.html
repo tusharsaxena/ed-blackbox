@@ -405,10 +405,33 @@
     <div class="callout tip"><b>If a system shows no signals:</b> jump out to a neighbour and back to reset the instance, or move to the next same-state system — waiting in place for a respawn is slower than hopping.</div>
   </section>
 
-  <footer>
-    <div class="src">Sources &amp; Notes</div>
-    Method synthesised from the Down to Earth Astronomy 2025 relog guide, the AXI Engineering Materials wiki, NEWP engineering guide, the Frontier farming guide, and community testing. The big variable is the mid-2024 drop-rate buff — older guides understate yields. State/allegiance gating can overlap, so an HGE isn't 100% guaranteed to be the exact mat, but it will always be a G5 manufactured material. CMDR 173082 field manual · compiled for the Elite Dangerous fleet project.
-  </footer>
+  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+<style>
+.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+.credits .cr-rows{display:flex;flex-direction:column}
+.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+.credits .cr-src{font-weight:700;letter-spacing:.3px}
+.credits .cr-what{opacity:.78}
+.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+.credits .cr-link:hover{text-decoration:underline}
+@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+</style>
+<section class="credits" id="credits">
+  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <p class="lead">Figures on this page are verified against the sources below.</p>
+  <p class="lead">Note: the mid-2024 engineering rework hugely buffed HGE drop rates — older guides understate yields. State/allegiance gating can overlap, so a signal isn't guaranteed to be the exact mat, but it is always a G5 manufactured material.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">EDGalaxy (HGE finder)</span><span class="cr-what">Live High Grade Emission signal lookup, sorted by G5 material.</span><a class="cr-link" href="https://edgalaxy.net/hge">edgalaxy.net/hge</a></div>
+    <div class="cr-row"><span class="cr-src">Frontier Forums</span><span class="cr-what">"HGE for Dummies" — the allegiance + state → material gating used in §05.</span><a class="cr-link" href="https://forums.frontier.co.uk/threads/3-3-01-high-grade-emissions-for-dummies.468936/">forums.frontier.co.uk</a></div>
+    <div class="cr-row"><span class="cr-src">AXI Wiki</span><span class="cr-what">Engineering-materials gathering and the over-collect / cross-trade economics.</span><a class="cr-link" href="https://wiki.antixenoinitiative.com/en/engineering-materials">wiki.antixenoinitiative.com</a></div>
+    <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">G5 manufactured-material identities, allegiance/state gating, high-pop spawn rule.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/High_Grade_Emissions">elite-dangerous.fandom.com/wiki/High_Grade_Emissions</a></div>
+    <div class="cr-row"><span class="cr-src">Video guide</span><span class="cr-what">Walkthrough of the relog loop and collector-limpet method.</span><a class="cr-link" href="https://youtu.be/t42QEsuqd7Y">youtu.be/t42QEsuqd7Y</a></div>
+  </div>
+</section>
 
 </div>
 </body>

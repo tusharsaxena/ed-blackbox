@@ -17,3 +17,4 @@ Link format: `python-combat.html#<id>`
 - **Key Stat Upgrades** — `#s10`
 - **Key Activities & Where To Do Them** — `#s11`
 - **Field Notes — What Else To Know** — `#s12`
+- **Sources** — `#credits`

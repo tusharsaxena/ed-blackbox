@@ -14,3 +14,4 @@ Link format: `ax.html#<id>`
 - **Recommendations By AX Pilot** — `#s7`
 - **Cost & Engineering Reality** — `#s8`
 - **Field Notes & Verdict** — `#s9`
+- **Sources** — `#credits`

@@ -14,3 +14,4 @@ Link format: `checklist.html#<id>`
 - **Tier 3 Engineers** — `#phase-04`
 - **Colonia Expedition** — `#phase-05`
 - **Bubble Odyssey** — `#phase-06`
+- **Sources** — `#credits`

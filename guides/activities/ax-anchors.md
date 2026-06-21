@@ -15,3 +15,4 @@ Link format: `ax.html#<id>`
 - **Outcomes, Benefits & Rewards** — `#s8`
 - **How Anti-Xeno Interacts With Other Systems** — `#s9`
 - **Field Notes** — `#s10`
+- **Sources** — `#credits`

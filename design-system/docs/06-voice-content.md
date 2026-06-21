@@ -22,8 +22,8 @@ terse, technical, confident, useful. State the call, then the reason.
 - Author credit is **`By CMDR Ka0s`** in the footer only.
 - `.masthead-meta` carries the series part and a **last-updated** date (`Updated
   YYYY-MM-DD`). No sources line and no patch-version line in the masthead. Per-page data
-  lineage is verified per `01-principles.md`, listed in the bottom-of-page
-  **`section.credits`** block, and credited in full in `CREDITS.md`.
+  lineage is verified per `01-principles.md` and listed in the bottom-of-page
+  **`section.credits`** (Sources) block.
 
 ## Content format conventions
 

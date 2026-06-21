@@ -17,3 +17,4 @@ Link format: `docking-landing-manual.html#<id>`
 - **Assisted vs Manual — Verdict** — `#compare`
 - **Quick-Reference Checklists** — `#checklists`
 - **Pitfalls & Gotchas** — `#pitfalls`
+- **Sources** — `#credits`

@@ -14,3 +14,4 @@ Link format: `trading.html#<id>`
 - **Recommendations By Trader** — `#s7`
 - **Cost & Engineering Reality** — `#s8`
 - **Field Notes & Verdict** — `#s9`
+- **Sources** — `#credits`

@@ -18,3 +18,4 @@ Link format: `superpower-rank.html#<id>`
 - **Getting started — Alliance** — `#sec-start-all`
 - **Fastest method everywhere — station rescues** — `#sec-rescue`
 - **Field notes for a new commander** — `#sec-notes`
+- **Sources** — `#credits`

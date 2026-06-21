@@ -465,6 +465,33 @@ footer b{color:var(--amber-lt)}
   </ul>
 </section>
 
+<!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+<style>
+.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+.credits .cr-rows{display:flex;flex-direction:column}
+.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+.credits .cr-src{font-weight:700;letter-spacing:.3px}
+.credits .cr-what{opacity:.78}
+.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+.credits .cr-link:hover{text-decoration:underline}
+@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+</style>
+<section class="credits" id="credits">
+  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <p class="lead">Figures on this page are verified against the sources below.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">Fandom — Federation/Ranks</span><span class="cr-what">The 14-rank Federal Navy Auxiliary ladder and the ships/permits each Federal tier unlocks.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Federation/Ranks">elite-dangerous.fandom.com/wiki/Federation/Ranks</a></div>
+    <div class="cr-row"><span class="cr-src">Fandom — Empire/Ranks</span><span class="cr-what">The 14-rank Imperial Navy Auxiliary ladder and the Imperial ships/permits each tier unlocks.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Empire/Ranks">elite-dangerous.fandom.com/wiki/Empire/Ranks</a></div>
+    <div class="cr-row"><span class="cr-src">Fandom — Reputation</span><span class="cr-what">Reputation tiers (Allied&rarr;Hostile), the 75% Friendly floor, and how promotion missions unlock.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Reputation">elite-dangerous.fandom.com/wiki/Reputation</a></div>
+    <div class="cr-row"><span class="cr-src">NEWP</span><span class="cr-what">Federation/Empire rank guide — the fastest-method routing (Empire courier loop, station rescues) behind §09&ndash;§12.</span><a class="cr-link" href="https://newp.io/superpowerrank">newp.io/superpowerrank</a></div>
+    <div class="cr-row"><span class="cr-src">Frontier Forums</span><span class="cr-what">Pilots' Federation rank requirements — naval rank ladders and the ships/permits each tier unlocks.</span><a class="cr-link" href="https://forums.frontier.co.uk/threads/pilots-federation-elite-rank-requirements-combat-trade-explorer.117378/">forums.frontier.co.uk/threads/pilots-federation-elite-rank-requirements</a></div>
+  </div>
+</section>
+
 <footer>
   <span>CMDR Ka0s · Field Manual</span>
   <span>Allegiance &amp; Rank · <b>Empire · Federation · Alliance</b></span>

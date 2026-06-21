@@ -15,3 +15,4 @@ Link format: `passenger.html#<id>`
 - **Outcomes, Benefits & Rewards** — `#s8`
 - **How Passenger Interacts With Other Systems** — `#s9`
 - **Field Notes** — `#s10`
+- **Sources** — `#credits`

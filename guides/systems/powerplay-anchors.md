@@ -15,4 +15,4 @@ Link format: `powerplay.html#<id>`
 - **Power Selection — The Case for Archer** — `#why`
 - **Your Operational Playbook** — `#playbook`
 - **Pitfalls & Fine Print** — `#pitfalls`
-- **External References** — `#refs`
+- **Sources** — `#credits`

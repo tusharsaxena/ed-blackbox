@@ -14,3 +14,4 @@ Link format: `mining.html#<id>`
 - **Recommendations By Miner** — `#s7`
 - **Cost & Engineering Reality** — `#s8`
 - **Field Notes & Verdict** — `#s9`
+- **Sources** — `#credits`

@@ -15,4 +15,4 @@ Link format: `bgs.html#<id>`
 - **Conflicts, expansions & retreats** — `#conflict`
 - **System states — quick reference** — `#states`
 - **What you get out of it** — `#payoff`
-- **Tools & authoritative sources** — `#tools`
+- **Sources** — `#credits`

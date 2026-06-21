@@ -17,5 +17,5 @@ Link format: `system-colonization.html#<id>`
 - **Federation Alignment & The Corvette Path** — `#federation`
 - **Your Colony Blueprint** — `#blueprint`
 - **Pitfalls & Gotchas** — `#pitfalls`
-- **Tools & References** — `#tools`
 - **Pre-Flight Checklist** — `#checklist`
+- **Sources** — `#credits`

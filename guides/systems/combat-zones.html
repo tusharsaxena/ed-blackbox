@@ -460,6 +460,33 @@
     </div>
   </section>
 
+  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+  <style>
+  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+  .credits .cr-rows{display:flex;flex-direction:column}
+  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+  .credits .cr-src{font-weight:700;letter-spacing:.3px}
+  .credits .cr-what{opacity:.78}
+  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+  .credits .cr-link:hover{text-decoration:underline}
+  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+  </style>
+  <section class="credits" id="credits">
+    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">Conflict-zone mechanics, intensity tiers, and Spec Ops / Capital Ship details.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Conflict_Zone">elite-dangerous.fandom.com/wiki/Conflict_Zone</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">On-foot (Odyssey) conflict-zone mechanics, infantry roles, and capture-point flow.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Conflict_Zone_(On_Foot)">elite-dangerous.fandom.com/wiki/Conflict_Zone_(On_Foot)</a></div>
+      <div class="cr-row"><span class="cr-src">edtools.cc</span><span class="cr-what">Finds systems in active conflict and the faction states that spawn combat zones, filtered by reference system and range.</span><a class="cr-link" href="https://edtools.cc/pve">edtools.cc/pve</a></div>
+      <div class="cr-row"><span class="cr-src">E:D PvE Combat Wiki</span><span class="cr-what">Community catalogue of known conflict-zone locations and CZ farming venues.</span><a class="cr-link" href="https://sites.google.com/view/ed-pve-combat/location-catalogue/conflict-zones">sites.google.com/view/ed-pve-combat</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Live galaxy-wide tracker of active faction conflicts (wars / civil wars) that spawn conflict zones.</span><a class="cr-link" href="https://inara.cz/galaxy-conflicts/">inara.cz/galaxy-conflicts</a></div>
+    </div>
+  </section>
+
   <div class="footer">
     <span>Fleet Ops · <b>Combat Zone Doctrine</b> · CZ-DOC v1</span>
     <span>CMDR Ka0s · Base: Ray Gateway, Diaguandri</span>

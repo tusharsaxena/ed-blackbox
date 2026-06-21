@@ -279,7 +279,6 @@
       <li><a href="#federation">Federation &amp; Corvette Path</a></li>
       <li><a href="#income">Paying The Upkeep</a></li>
       <li><a href="#pitfalls">Pitfalls &amp; Pro Tips</a></li>
-      <li><a href="#tools">Tools &amp; References</a></li>
     </ol>
   </nav>
 
@@ -652,29 +651,36 @@
   </section>
 
   <!-- 15 TOOLS -->
-  <section id="tools">
-    <div class="sec-head"><span class="sec-num">15</span><h2>Tools &amp; External References</h2><span class="rule"></span></div>
-    <div class="two">
-      <div class="panel">
-        <h4>Planning &amp; calculators</h4>
-        <ul>
-          <li><a href="https://www.spansh.co.uk/fleet-carrier" class="ext">Spansh — Fleet Carrier route planner</a> (multi-jump tritium routing)</li>
-          <li><a href="https://cmdrs-toolbox.com/fleet-carrier-calculator" class="ext">CMDR's Toolbox — upkeep calculator</a></li>
-          <li><a href="https://pilotstradenetwork.com/tools/carrier-calculator/" class="ext">PTN — carrier cost calculator</a></li>
-          <li><a href="https://inara.cz/" class="ext">Inara</a> — tritium prices, vendor &amp; admin systems, nearest services</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h4>Reference reading</h4>
-        <ul>
-          <li><a href="https://elite-dangerous.fandom.com/wiki/Drake-Class_Carrier" class="ext">ED Wiki — Drake-Class Carrier</a> (authoritative spec &amp; service tables)</li>
-          <li><a href="https://pilotstradenetwork.com/guides/fleet-carrier-owner/" class="ext">PTN — Fleet Carrier Owner's Guide</a></li>
-          <li><a href="https://pilotstradenetwork.com/guides/fleet-carrier-trading/" class="ext">PTN — Carrier Owner's Trade Guide</a></li>
-          <li><a href="https://elite-dangerous.fandom.com/wiki/Tritium" class="ext">ED Wiki — Tritium</a></li>
-        </ul>
-      </div>
+  <!-- [§15 "Tools & External References" folded into the Sources block below and removed — numbering now ends at 14] -->
+
+  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+  <style>
+  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+  .credits .cr-rows{display:flex;flex-direction:column}
+  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+  .credits .cr-src{font-weight:700;letter-spacing:.3px}
+  .credits .cr-what{opacity:.78}
+  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+  .credits .cr-link:hover{text-decoration:underline}
+  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+  </style>
+  <section class="credits" id="credits">
+    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <p class="lead">Note: spec figures are verified primarily against the ED Wiki Drake-Class entry and the PTN owner's guide. Service costs, upkeep, and decommission fees are subject to change in future updates — re-verify before a major purchase.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">Authoritative Drake-Class Carrier spec and service / upkeep tables.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Drake-Class_Carrier">elite-dangerous.fandom.com/wiki/Drake-Class_Carrier</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">Tritium reference — sourcing, jump consumption, and depot mechanics.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Tritium">elite-dangerous.fandom.com/wiki/Tritium</a></div>
+      <div class="cr-row"><span class="cr-src">Spansh — FC planner</span><span class="cr-what">Multi-jump fleet-carrier route planning and the per-journey tritium budget.</span><a class="cr-link" href="https://www.spansh.co.uk/fleet-carrier">spansh.co.uk/fleet-carrier</a></div>
+      <div class="cr-row"><span class="cr-src">PTN — owner guides</span><span class="cr-what">Fleet Carrier Owner's Guide and Carrier Owner's Trade Guide — operation and carrier-trade economics.</span><a class="cr-link" href="https://pilotstradenetwork.com/guides/fleet-carrier-owner/">pilotstradenetwork.com/guides</a></div>
+      <div class="cr-row"><span class="cr-src">CMDR's Toolbox</span><span class="cr-what">Per-service weekly upkeep calculator — model the cost of each installed module.</span><a class="cr-link" href="https://cmdrs-toolbox.com/fleet-carrier-calculator">cmdrs-toolbox.com/fleet-carrier-calculator</a></div>
+      <div class="cr-row"><span class="cr-src">Frontier</span><span class="cr-what">Official explainer on how Fleet Carriers work — ownership, upkeep, and jumps.</span><a class="cr-link" href="https://customersupport.frontier.co.uk/hc/en-us/articles/4404350872210-How-do-Fleet-Carriers-work">customersupport.frontier.co.uk/.../How-do-Fleet-Carriers-work</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Galaxy-wide fleet-carrier finder — locate carriers by service, market, and current system.</span><a class="cr-link" href="https://inara.cz/galaxy-fleetcarriers/">inara.cz/galaxy-fleetcarriers</a></div>
     </div>
-    <p class="src">All figures verified against the ED Wiki Drake-Class entry and the PTN owner's guide (last updated March 2026). Service costs, upkeep, and decommission fees are subject to change in future updates — re-verify before a major purchase.</p>
   </section>
 
   <div class="footer">

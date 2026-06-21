@@ -404,6 +404,32 @@
     <div class="callout acc"><span class="lbl">Bottom line</span><p>Mining is the fleet's high-yield production line: a self-contained, low-combat process that — on the right hotspot and the right commodity — rivals any role for credits per hour, advances the trade rank, and supplies the minerals that colonisation and Community Goals demand.</p></div>
   </section>
 
+  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+  <style>
+  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+  .credits .cr-rows{display:flex;flex-direction:column}
+  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+  .credits .cr-src{font-weight:700;letter-spacing:.3px}
+  .credits .cr-what{opacity:.78}
+  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+  .credits .cr-link:hover{text-decoration:underline}
+  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+  </style>
+  <section class="credits" id="credits">
+    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Inara — Commodities</span><span class="cr-what">Commodity demand and sell prices, mining-module sellers, and trade hubs.</span><a class="cr-link" href="https://inara.cz/elite/commodities/">inara.cz/elite/commodities</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Miner</span><span class="cr-what">Mining methods, extraction-tool roles, and the mining-career rank ladder.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Miner">elite-dangerous.fandom.com/wiki/Miner</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Hotspot</span><span class="cr-what">Ring-type, hotspot, and pristine-reserve mechanics plus mineral identities.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Hotspot">elite-dangerous.fandom.com/wiki/Hotspot</a></div>
+      <div class="cr-row"><span class="cr-src">edtools.cc — Hotspot Finder</span><span class="cr-what">Searchable hotspot/ring database (icy/rocky/metallic, pristine systems, overlap density).</span><a class="cr-link" href="https://edtools.cc/hotspot">edtools.cc/hotspot</a></div>
+    </div>
+  </section>
+
   <footer>
     <p><b>Mining — Role &amp; Activities Field Manual</b> · CMDR Ka0s · Inara 173082 · Elite Dangerous Odyssey (PC, Live 4.0). Companion to the per-ship mining manuals and the Mining — Ship Comparison dossier. Living document — one of the role &amp; activities set.</p>
   </footer>

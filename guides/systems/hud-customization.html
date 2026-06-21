@@ -211,12 +211,11 @@ footer b{color:var(--amber-lt)}
       <a class="qn-item" href="#matrix"><span class="qn-dot concept"></span><span class="qn-nm">How the colour matrix works</span><span class="qn-side">04 · Concept</span></a>
       <a class="qn-item" href="#how"><span class="qn-dot hands"></span><span class="qn-nm">How to change it — step by step</span><span class="qn-side">05 · Hands-on</span></a>
       <a class="qn-item" href="#presets"><span class="qn-dot hands"></span><span class="qn-nm">Presets &amp; starter values</span><span class="qn-side">06 · Hands-on</span></a>
-      <a class="qn-item" href="#tools"><span class="qn-dot hands"></span><span class="qn-nm">Tools that do it for you</span><span class="qn-side">07 · Hands-on</span></a>
       <a class="qn-item" href="#gotchas"><span class="qn-dot hands"></span><span class="qn-nm">Odyssey notes &amp; gotchas</span><span class="qn-side">08 · Hands-on</span></a>
       <div class="qn-empty" hidden>No matching sections</div>
     </div>
   </div>
-  <span class="qn-hint">8 sections</span>
+  <span class="qn-hint">7 sections</span>
 </nav>
 
 <div class="verdict">
@@ -427,61 +426,6 @@ footer b{color:var(--amber-lt)}
   <div class="callout note"><div class="co-h">Bigger galleries</div>NEWP's editor ships four image-previewed presets (Light Orange, Kool-Aid, I'm Blue, Lavenderish) at <a href="https://newp.io/hudcolor" target="_blank" rel="noopener">newp.io/hudcolor</a>. Larger community lists with screenshots live on the Steam discussions and the Frontier forums HUD-colour threads — most quote their XML alongside an Arkku preview link.</div>
 </section>
 
-<!-- 07 -->
-<section id="tools">
-  <div class="sec-head"><span class="sec-num fed">07</span><h2>Tools that do it for you</h2><span class="tag">Hands-on</span></div>
-  <p class="lead">Two families: <b>web matrix editors</b> (free, no install, generate the XML from sliders against a live preview) and <b>EDHM</b> (an installed shader mod with per-element control). Web editors are the safe default; EDHM is the power option.</p>
-
-  <div class="tools">
-    <div class="tool">
-      <div class="t-id">
-        <h4>Arkku's HUD editor</h4>
-        <div class="t-kind">Web · Matrix</div>
-        <div class="chips"><span class="chip go">Free</span><span class="chip am">No install</span></div>
-        <div class="t-link"><a href="http://arkku.com/elite/hud_editor/" target="_blank" rel="noopener">arkku.com/elite/hud_editor</a></div>
-      </div>
-      <div class="t-body">The community's long-standing reference editor. Drag sliders against a HUD screenshot, copy the generated XML from the box, paste it over your three matrix lines. Works for both Horizons and Odyssey's ship HUD. The tool most preset links point back to.</div>
-    </div>
-    <div class="tool">
-      <div class="t-id">
-        <h4>NEWP HUD Color Editor</h4>
-        <div class="t-kind">Web · Matrix</div>
-        <div class="chips"><span class="chip go">Free</span><span class="chip am">No install</span><span class="chip am">Presets</span></div>
-        <div class="t-link"><a href="https://newp.io/hudcolor" target="_blank" rel="noopener">newp.io/hudcolor</a></div>
-      </div>
-      <div class="t-body">By CMDR EdBacayo for the New Pilots Initiative. RGB sliders over an Odyssey screenshot, generated code below, step-by-step instructions and four ready-made presets. Clean and beginner-friendly.</div>
-    </div>
-    <div class="tool">
-      <div class="t-id">
-        <h4>Kerudo's editor <span class="muted">(+ Iodred fork)</span></h4>
-        <div class="t-kind">Web · Matrix</div>
-        <div class="chips"><span class="chip go">Free</span><span class="chip am">No install</span></div>
-        <div class="t-link"><a href="http://team2xh.net/elite/" target="_blank" rel="noopener">team2xh.net/elite</a></div>
-      </div>
-      <div class="t-body">An alternative slider editor with a "Copy XML" button. Iodred's CodePen fork adds keyboard controls for faster experimentation. Pick whichever editor's preview you trust most — they all output the same XML format.</div>
-    </div>
-    <div class="tool fedge">
-      <div class="t-id">
-        <h4>EDHM-UI</h4>
-        <div class="t-kind">Mod · Shader</div>
-        <div class="chips"><span class="chip fed">PC only</span><span class="chip fed">Per-element</span><span class="chip fed">Themes</span></div>
-        <div class="t-link"><a href="https://github.com/BlueMystical/EDHM_UI" target="_blank" rel="noopener">github.com/BlueMystical/EDHM_UI</a></div>
-      </div>
-      <div class="t-body">The serious option. EDHM (originally by CMDR Georg, now community-maintained) uses the 3Dmigoto shader injector to recolour <b>individual</b> HUD elements, change cabin lighting (incl. bi-colour) and dim glare. <b>EDHM-UI</b> by CMDR Blue Mystic wraps it in a graphical app with bundled themes — no manual config files. Horizons &amp; Odyssey. Strictly graphical; it doesn't touch game mechanics or server data. <code>[F11]</code> refreshes changes in-game.</div>
-    </div>
-    <div class="tool fedge">
-      <div class="t-id">
-        <h4>EDProfiler</h4>
-        <div class="t-kind">Tool · Profiles</div>
-        <div class="chips"><span class="chip fed">PC</span><span class="chip am">VR + monitor</span></div>
-        <div class="t-link"><a href="http://www.drkaii.com/tools/edprofiler/" target="_blank" rel="noopener">drkaii.com/tools/edprofiler</a></div>
-      </div>
-      <div class="t-body">Manages graphics profiles you can apply before launch — handy if you want one HUD/look for a monitor and another for VR. It writes to the same <code>GraphicsConfigurationOverride.xml</code>, so it plays nicely with the matrix method.</div>
-    </div>
-  </div>
-  <div class="callout tip"><div class="co-h">Recommended path</div>Start with <b>Arkku or NEWP</b> to dial in a colour and confirm the procedure. If you later hit the "everything's one colour / warnings washed out" wall, graduate to <b>EDHM-UI</b> for per-element control. EDHM is widely regarded as one of the most worthwhile QoL mods for the game.</div>
-</section>
-
 <!-- 08 -->
 <section id="gotchas">
   <div class="sec-head"><span class="sec-num fed">08</span><h2>Odyssey notes &amp; gotchas</h2><span class="tag">Hands-on</span></div>
@@ -496,6 +440,36 @@ footer b{color:var(--amber-lt)}
     <li><b>After a big update,</b> re-launch and glance at the HUD — the Override should persist, but verify, and keep your backup/preset handy just in case.</li>
   </ul>
   <div class="callout note"><div class="co-h">Same file, more tricks</div>The <code>GraphicsConfigurationOverride.xml</code> file is also where the community enables other client-side tweaks — e.g. galaxy-map/route colours and skybox/nebula density adjustments. Out of scope here, but worth knowing the one file does double duty.</div>
+</section>
+
+<!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+<style>
+.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+.credits .cr-rows{display:flex;flex-direction:column}
+.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+.credits .cr-src{font-weight:700;letter-spacing:.3px}
+.credits .cr-what{opacity:.78}
+.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+.credits .cr-link:hover{text-decoration:underline}
+@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+</style>
+<section class="credits" id="credits">
+  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <p class="lead">Figures on this page are verified against the sources below.</p>
+  <p class="lead">Note: web matrix editors (Arkku, NEWP, team2xh) all output the same XML format — preview in whichever you trust, then paste the three matrix lines. For per-element control and cabin lighting beyond the global matrix, EDHM is the power option.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">HUD colour-matrix mechanics and the GraphicsConfigurationOverride.xml MatrixRed/Green/Blue reference.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/HUD_Color_Editor">elite-dangerous.fandom.com/wiki/HUD_Color_Editor</a></div>
+    <div class="cr-row"><span class="cr-src">Frontier Forums</span><span class="cr-what">Step-by-step community-canon method for editing HUD panel colours via the override file on Windows.</span><a class="cr-link" href="https://forums.frontier.co.uk/threads/how-to-properly-change-your-hud-panel-colors-colours-in-windows-for-all-versions-of-the-game.217198/">forums.frontier.co.uk/threads/how-to-properly-change-your-hud-panel-colors</a></div>
+    <div class="cr-row"><span class="cr-src">Arkku HUD editor</span><span class="cr-what">Live slider tool to preview the colour-transform matrix and export the values used on this page — the reference editor most presets point back to.</span><a class="cr-link" href="https://arkku.com/elite/hud_editor/">arkku.com/elite/hud_editor</a></div>
+    <div class="cr-row"><span class="cr-src">NEWP</span><span class="cr-what">The HUD anatomy walkthrough behind §01, plus the beginner-friendly colour editor with four image-previewed presets.</span><a class="cr-link" href="https://newp.io/hudcolor">newp.io/hudcolor</a></div>
+    <div class="cr-row"><span class="cr-src">team2xh editor</span><span class="cr-what">Alternative slider editor with a one-click Copy-XML button — same matrix format, different live preview.</span><a class="cr-link" href="https://team2xh.net/elite/">team2xh.net/elite</a></div>
+    <div class="cr-row"><span class="cr-src">EDHM-UI</span><span class="cr-what">The 3Dmigoto shader mod (and its UI wrapper) for per-element HUD recolouring and cabin lighting — the advanced path past the global matrix.</span><a class="cr-link" href="https://github.com/BlueMystical/EDHM_UI">github.com/BlueMystical/EDHM_UI</a></div>
+    <div class="cr-row"><span class="cr-src">EDProfiler</span><span class="cr-what">Manages launch-time graphics profiles (monitor vs VR) that write the same GraphicsConfigurationOverride.xml this page edits.</span><a class="cr-link" href="https://www.drkaii.com/tools/edprofiler/">drkaii.com/tools/edprofiler</a></div>
+  </div>
 </section>
 
 <footer>

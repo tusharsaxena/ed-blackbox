@@ -8,8 +8,7 @@ Book**, a static site of Elite Dangerous field manuals by Tushar Saxena (CMDR Ka
 > just `@docs/CLAUDE.md`. Until then, read this file at the start of project work.
 
 **Orient yourself first:** [`ARCHITECTURE.md`](ARCHITECTURE.md) (what's in the repo +
-how it's built), [`TODO.md`](TODO.md) (backlog), [`CREDITS.md`](CREDITS.md) (data
-sources).
+how it's built), [`TODO.md`](TODO.md) (backlog).
 
 ---
 
@@ -35,7 +34,8 @@ docs/              project docs (this file, architecture, todo, credits)
 
 1. **Accuracy over recall.** Game facts (ship stats, modules, engineers, systems) must
    be **verified against authoritative sources** — EDCD/coriolis-data, FDevIDs, INARA,
-   EDSM, EDSY (see `CREDITS.md`). Never write game data from memory. Flag anything
+   EDSM, EDSY (each page cites its own in the bottom-of-page **Sources** section). Never
+   write game data from memory. Flag anything
    uncertain as `unconfirmed` (`.kv-tbd`) rather than guessing.
 2. **Voice: operator-grade.** Terse, factual, commander-to-commander. No marketing
    tone, no hype, no emoji. Lead with the verdict. Bold the one word that matters.

@@ -45,12 +45,13 @@ Legend: ✅ done · ☐ not done.
 
 ## Phase 1 — Migration & publishing
 
-- ☐ Migrate all ~105 existing guides onto the design system (consistent page styling)
-- ☐ Roll the global chrome (header, breadcrumbs, footer, home link back to `guides/index.html`, scroll-to-top) onto all 108 legacy guides — and standardize their `<title>`s
-- ☐ Generate the per-page **Sources & Credits** section for every page during migration — list the authoritative sources each page's facts were verified against (the `.credits` section; see Phase 3)
+- ✅ Roll the global chrome (header, breadcrumbs, footer, home link back to `guides/index.html`, scroll-to-top) onto all 108 legacy guides — and standardize their `<title>`s
+- ✅ Generate the per-page **Sources** section for every page during migration — list the authoritative sources each page's facts were verified against (the `.credits` section; see Phase 3)
 - ✅ Reorganize the file hierarchy (`ship/ship/` → `ships/dossiers/`, `role-ship/` → `ships/by-role/`, `role-activities/` → top-level `activities/`, `engineering/farm/` → `farms/`, `templates/` → `design-system/legacy-templates/`)
 - ✅ Consolidate scattered images into the top-level `images/` folder (`engineer-images/` → `images/engineers/`, `ship-images/` → `images/ships/`)
-- ✅ Standardize file names — all content files now lowercase-kebab (`Anaconda_Combat.html` → `anaconda-combat.html`, `Combat_Zones.html` → `combat-zones.html`); root meta-docs stay UPPER (`CREDITS.md`). Anchor catalogs also standardized (`*_Anchors.md` → `<name>-anchors.md`) and now generated — see Phase 2.
+- ✅ Standardize file names — all content files now lowercase-kebab (`Anaconda_Combat.html` → `anaconda-combat.html`, `Combat_Zones.html` → `combat-zones.html`); root meta-docs stay UPPER (`ARCHITECTURE.md`, `TODO.md`). Anchor catalogs also standardized (`*_Anchors.md` → `<name>-anchors.md`) and now generated — see Phase 2.
+- ☐ Migrate all ~105 existing guides onto the design system (consistent page styling)
+- ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide)
 - ☐ Publish on GitHub Pages
 
 ## Phase 2 — Content-as-data tooling
@@ -62,14 +63,17 @@ Legend: ✅ done · ☐ not done.
 
 ## Phase 3 — Per-page metadata & engagement
 
-- ☐ "Last updated" on every page — date **and** ED build number
-      *(date-only "Updated" is already in the design-system masthead + landing page as of v1.1.0)*
-- ☐ **Per-page Credits section** — a dedicated `.credits` block at the **bottom of every
-      page** (above the footer, *not* in it) listing the authoritative data sources *for that
-      page*: source name · what it provided · link, with a pointer to `CREDITS.md` for the
-      full project list. *(The `.credits` **component** now exists in the design system; this
-      item tracks populating it on each page — see the Phase 1 migration item.)*
-- ☐ Link out to INARA where relevant
+- ✅ "Last updated" on every page
+- ✅ **Per-page Sources section** — a dedicated `.credits` block (heading **"Sources"**) at
+      the **bottom of every page** (above the footer, *not* in it) listing the authoritative
+      data sources *for that page*: source name · what it provided · link. *Populated on all
+      108 legacy guides* (`index.html` excluded), **mostly 5+ specific sources per page** (deep links,
+      not bare homepages), with each page's pre-existing in-content "Tools/References/Sources"
+      sections folded in and removed. Uses the design-system component's class names + a small
+      removable inline fallback style; full design-system styling lands when each page migrates
+      (Phase 1), at which point the inline `<style>` is dropped and the linked CSS takes over.
+      Brief: `docs/superpowers/specs/2026-06-21-per-page-credits-design.md`.
+- ✅ Link out to INARA where relevant — every ship dossier links its INARA ship page (`inara.cz/elite/ship/<id>`, search-verified); other guides link the relevant INARA database / tracker / guide page where one exists. Lives in each page's **Sources** section (skipped only where INARA has no canonical page for the topic).
 - ☐ "File a ticket" link on every page → GitHub Issues
 
 ## Phase 4 — Editorial polish
@@ -78,6 +82,7 @@ Legend: ✅ done · ☐ not done.
 - ☐ Remove fleet bias from content
 - ☐ Remove "CMDR" etc. from headers
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
+- ☐ Regenerate the index page
 
 ## Phase 5 — New content / guides
 

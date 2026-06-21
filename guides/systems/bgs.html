@@ -172,7 +172,6 @@ footer b{color:var(--amber-lt)}
       <a class="qn-item" href="#conflict"><span class="qn-dot neg"></span><span class="qn-no">08</span><span class="qn-nm">Conflicts, expansions &amp; retreats</span></a>
       <a class="qn-item" href="#states"><span class="qn-dot meta"></span><span class="qn-no">09</span><span class="qn-nm">System states — quick reference</span></a>
       <a class="qn-item" href="#payoff"><span class="qn-dot pos"></span><span class="qn-no">10</span><span class="qn-nm">What you get out of it</span></a>
-      <a class="qn-item" href="#tools"><span class="qn-dot meta"></span><span class="qn-no">11</span><span class="qn-nm">Tools &amp; authoritative sources</span></a>
       <div class="qn-empty" hidden>No matching section</div>
     </div>
   </div>
@@ -508,35 +507,36 @@ footer b{color:var(--amber-lt)}
   </div>
 </section>
 
-<section id="tools">
-  <div class="sec-head"><span class="sec-num meta">11</span><h2>Tools &amp; authoritative sources</h2><span class="tag">Reference</span></div>
-  <p class="lead">BGS is data-driven under the hood, so the right tools turn guesswork into a daily routine. Install a journal connector to publish your activity, then use the trackers to plan.</p>
-  <div class="callout">
-    <div class="co-eyebrow">★ Start here — the definitive guide</div>
-    <p><a href="https://sinc.science/bgsguide.pdf"><b>The Complete Elite Dangerous BGS Guide</b></a> by Cmdr Purrfect (Andrew van der Stock) — 2025 edition, ~90 pages, science-and-experiment driven, covering Odyssey, fleet carriers, PowerPlay 2.0 and Colonization. This manual is built on it; the original goes far deeper on conflict tactics, expansion timetables, anarchy management and the full state reference. The latest revision lives at <a href="https://sinc.science/guide.pdf">sinc.science/guide.pdf</a>.</p>
-  </div>
-  <div class="legend">
-    <div class="lg"><h4>Reference guides</h4>
-      <div class="row"><span class="swatch sw-meta"></span><b><a href="https://sinc.science/bgsguide.pdf">sinc.science BGS Guide</a></b> — the comprehensive, current reference</div>
-      <div class="row"><span class="swatch sw-meta"></span><b><a href="https://novaforce.com/guides/bgs/">Nova Force BGS Guide</a></b> — good on superpowers, Powers &amp; state basics</div>
-      <div class="row"><span class="swatch sw-meta"></span><b><a href="https://cdb.sotl.org.uk/">Colonia Census</a></b> — evidence-based state/mission/trade effects</div>
-    </div>
-    <div class="lg"><h4>Live data &amp; tracking</h4>
-      <div class="row"><span class="swatch sw-pos"></span><b><a href="https://inara.cz">Inara</a></b> — faction overview, fast-movers, trade routes, missions</div>
-      <div class="row"><span class="swatch sw-pos"></span><b><a href="https://elitebgs.app/">EliteBGS</a></b> — BGS history &amp; faction management</div>
-      <div class="row"><span class="swatch sw-pos"></span><b><a href="https://www.edsm.net/">EDSM</a></b> — one of the few sites showing the sliders</div>
-      <div class="row"><span class="swatch sw-pos"></span><b><a href="https://spansh.co.uk/">Spansh</a></b> — Roads to Riches, trade planner, colonization plotter</div>
-    </div>
-    <div class="lg"><h4>Journal connectors &amp; plugins</h4>
-      <div class="row"><span class="swatch sw-core"></span><b>ED Market Connector</b> — publishes your activity to EDDN/Inara</div>
-      <div class="row"><span class="swatch sw-core"></span><b>EDDiscovery</b> — heavier all-in-one, great for explorers</div>
-      <div class="row"><span class="swatch sw-core"></span><b>Aussi's BGS Tally</b> — EDMC plugin that logs your session's BGS work</div>
-      <div class="row"><span class="swatch sw-core"></span><b><a href="https://eddn.edcd.io/">EDDN</a></b> — the network all of the above feed</div>
-    </div>
-  </div>
-  <div class="callout meta">
-    <div class="co-eyebrow">A practical day-one routine</div>
-    <p>Join a player group (NEWP for new pilots; the Squadron Recruitment Center otherwise) → secure an Inara profile and link your Frontier account → install EDMC to publish data → open your faction's Inara overview, find the <b>lowest-influence controlled system</b>, check its state, and do a little of each relevant bucket. Wait for the tick. Congratulations — that's your first BGS boost.</p>
+<!-- [§11 "Tools & authoritative sources" folded into the Sources block below and removed — numbering now ends at 10] -->
+
+<!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+<style>
+.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+.credits .cr-rows{display:flex;flex-direction:column}
+.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+.credits .cr-src{font-weight:700;letter-spacing:.3px}
+.credits .cr-what{opacity:.78}
+.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+.credits .cr-link:hover{text-decoration:underline}
+@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+</style>
+<section class="credits" id="credits">
+  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <p class="lead">Figures on this page are verified against the sources below.</p>
+  <p class="lead">Note: this manual is built primarily on Cmdr Purrfect's <em>Complete BGS Guide</em> (sinc.science) — the definitive, experiment-driven 2025 reference — cross-checked against the Nova Force guide and live mechanics. Thresholds and durations are the community's best current measurements; the BGS is deliberately undocumented by Frontier.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">sinc.science BGS Guide</span><span class="cr-what">Cmdr Purrfect's Complete BGS Guide v3.0 (2025) — the primary reference for influence buckets, conflict tactics, expansion/retreat timetables, and the full state effect chart.</span><a class="cr-link" href="https://sinc.science/bgsguide.pdf">sinc.science/bgsguide.pdf</a></div>
+    <div class="cr-row"><span class="cr-src">Nova Force BGS Guide</span><span class="cr-what">Cross-check on superpowers, Powers, and state basics.</span><a class="cr-link" href="https://novaforce.com/guides/bgs/">novaforce.com/guides/bgs</a></div>
+    <div class="cr-row"><span class="cr-src">Colonia Census</span><span class="cr-what">Evidence-based state / mission / trade effect data (cdb.sotl.org.uk).</span><a class="cr-link" href="https://cdb.sotl.org.uk/about">cdb.sotl.org.uk</a></div>
+    <div class="cr-row"><span class="cr-src">EliteBGS</span><span class="cr-what">Per-faction influence history charts and pending / recovering state tracking.</span><a class="cr-link" href="https://elitebgs.app/about">elitebgs.app</a></div>
+    <div class="cr-row"><span class="cr-src">EDDN</span><span class="cr-what">Community data network aggregating the live BGS data feeds all the trackers consume.</span><a class="cr-link" href="https://eddn.edcd.io">eddn.edcd.io</a></div>
+    <div class="cr-row"><span class="cr-src">Frontier</span><span class="cr-what">Official explainer for how the Background Simulation works, including conflict triggers.</span><a class="cr-link" href="https://customersupport.frontier.co.uk/hc/en-us/articles/4405440213010-What-is-the-Background-Simulation-and-how-does-it-work">customersupport.frontier.co.uk/.../What-is-the-Background-Simulation</a></div>
+    <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Live galaxy / minor-faction overview — system control, faction influence, and current states.</span><a class="cr-link" href="https://inara.cz/elite/galaxy/">inara.cz/elite/galaxy</a></div>
+    <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">Background Simulation overview — how player activity drives faction influence and system states.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Background_Simulation">elite-dangerous.fandom.com/wiki/Background_Simulation</a></div>
   </div>
 </section>
 

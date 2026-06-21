@@ -473,6 +473,33 @@
     <div class="callout acc"><span class="lbl">Bottom line</span><p>Combat is the engine room of the whole fleet plan: it earns the credits, drops the materials, banks the merits, and grinds the rep that everything else — engineering, Powerplay, the Corvette — runs on. Get the four-beat loop and pip discipline right, and every other reward track advances on autopilot.</p></div>
   </section>
 
+  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+  <style>
+  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+  .credits .cr-rows{display:flex;flex-direction:column}
+  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+  .credits .cr-src{font-weight:700;letter-spacing:.3px}
+  .credits .cr-what{opacity:.78}
+  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+  .credits .cr-link:hover{text-decoration:underline}
+  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+  </style>
+  <section class="credits" id="credits">
+    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Inara — Powerplay</span><span class="cr-what">Controlled-system bounty bonuses, RES/CZ venues, bond turn-ins, engineer unlocks, and module sellers.</span><a class="cr-link" href="https://inara.cz/elite/powerplay/">inara.cz/elite/powerplay</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Combat</span><span class="cr-what">Damage-type, pip, and weapon-mechanic cross-checks.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Combat">elite-dangerous.fandom.com/wiki/Combat</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Ranks</span><span class="cr-what">Combat-rank ladder (Harmless → Elite) and progression thresholds.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Ranks">elite-dangerous.fandom.com/wiki/Ranks</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Conflict Zone</span><span class="cr-what">CZ tiers, spec-ops/captain mechanics, and combat-bond payouts.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Conflict_Zone">elite-dangerous.fandom.com/wiki/Conflict_Zone</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Module variants and engineering blueprint data behind the build references.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data">github.com/EDCD/coriolis-data</a></div>
+    </div>
+  </section>
+
   <footer>
     <p><b>Combat — Role &amp; Activities Field Manual</b> · CMDR Ka0s · Inara 173082 · Elite Dangerous Odyssey (PC, Live 4.0). Companion to the per-ship combat manuals and the Combat — Ship Comparison dossier. Scope: human/NPC combat; Anti-Xeno covered separately. Living document — iterate, then replicate across roles.</p>
   </footer>

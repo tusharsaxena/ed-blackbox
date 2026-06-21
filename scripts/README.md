@@ -12,6 +12,8 @@ be re-run later.
 |---|---|---|
 | `generate-guides-index.sh` | [generate-guides-index.md](generate-guides-index.md) | Regenerates `guides/index.html`, the "Black Book" landing page linking to every guide. |
 | `generate-anchor-files.sh` | [generate-anchor-files.md](generate-anchor-files.md) | Regenerates the per-page `<basename>-anchors.md` files cataloging each guide's `<section id>` navigation anchors. |
+| `enrich-credits-ship-sources.sh` | [enrich-credits-ship-sources.md](enrich-credits-ship-sources.md) | One-off enrichment: adds Inara ship-page + Fandom `/wiki/<Ship>` rows to selected ship-dossier Sources tables (idempotent). |
+| `enrich-credits-byrole-sources.sh` | [enrich-credits-byrole-sources.md](enrich-credits-byrole-sources.md) | One-off enrichment: adds Fandom role articles + EDSM/Spansh rows to the by-role ladder Sources tables (idempotent). |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.

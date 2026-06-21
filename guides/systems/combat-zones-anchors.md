@@ -18,3 +18,4 @@ Link format: `combat-zones.html#<id>`
 - **On-Foot Conflict Zones** — `#s11`
 - **Ship & Loadout Doctrine** — `#s12`
 - **Quick Reference** — `#s13`
+- **Sources** — `#credits`

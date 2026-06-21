@@ -2,7 +2,8 @@
 
 How the site is put together technically — system model, content inventory, and the
 migration gap. For the backlog/roadmap see [`TODO.md`](TODO.md); for working conventions
-see [`CLAUDE.md`](CLAUDE.md); for data sources see [`CREDITS.md`](CREDITS.md).
+see [`CLAUDE.md`](CLAUDE.md). Per-page data sources live in each page's bottom-of-page
+**Sources** (`section.credits`) block.
 
 ---
 
@@ -123,9 +124,9 @@ guides/
   activities/    6 guides     — "how to play role X"
 ```
 
-**File census:** ~355 files — 112 HTML (108 guides + generated `index.html` + 2
+**File census:** ~364 files — 112 HTML (108 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), 113 images (46 ship `.jpg`, 38 engineer
-`.webp`, 29 logo `.png`), 124 Markdown (20 prose docs + **104 generated per-page
+`.webp`, 29 logo `.png`), 131 Markdown (22 prose docs + **109 generated per-page
 `*-anchors.md` catalogs**, see §4/§6), 1 CSS, 1 JS, 1 TSV (`scripts/ship-names.tsv`).
 
 **Engineering** (`guides/engineering/`, 7 pages):
@@ -194,12 +195,15 @@ The first step toward "content-as-data". Convention: every task script lives in
   **generated artifact** — edit the generator, not the file.
 - **`generate-anchor-files.sh`** → regenerates the per-page `<basename>-anchors.md`
   anchor catalogs (§4). For each guide it extracts every `<section id="…">` and the
-  section's title and writes the sibling `.md`; pages with no sectioned nav (the `farms/`
-  pages, `pve-combat-venues.html`) get none, and the two hand-curated catalogs
+  section's title and writes the sibling `.md`. Every guide also carries a `#credits`
+  (**Sources**) section anchor, so all 108 now get a catalog; the two hand-curated catalogs
   (`blueprints-anchors.md`, `engineers-anchors.md`) are skipped via a `CURATED` list. It
   only ever touches files carrying its own generated marker, so hand-authored catalogs
   are safe. Re-run after adding/removing/renaming a guide or any `<section id>`. Baseline:
-  102 generated + 2 curated.
+  107 generated + 2 curated.
+- **`enrich-credits-ship-sources.sh` / `enrich-credits-byrole-sources.sh`** → one-off,
+  idempotent helpers used during the sourcing pass to add per-ship / by-role rows to the
+  **Sources** (`section.credits`) tables; kept for re-runs, not part of the routine build.
 
 **Future direction (planned, `TODO.md` Phase 2):** extract page content into per-page
 Markdown (`Page_Data.md`) and build generators that assemble full pages from Markdown +
@@ -210,15 +214,15 @@ rendered-from-data HTML. (The companion anchor catalogs are already generated, a
 
 ## 7. Data provenance
 
-Game data is **verified against authoritative sources, never written from memory**
-(full list in [`CREDITS.md`](CREDITS.md)): EDCD (coriolis-data, FDevIDs), INARA, EDSM,
-EDSY, Spansh, the Fandom wiki. Suitability ratings (1–100) come from a project source
+Game data is **verified against authoritative sources, never written from memory**:
+EDCD (coriolis-data, FDevIDs), INARA, EDSM, EDSY, Spansh, the Fandom wiki, plus
+page-specific community references. Suitability ratings (1–100) come from a project source
 of truth where one exists; uncertain facts are flagged (`.kv-tbd` / "unconfirmed")
 rather than guessed. Verification is mandatory. As of design-system **v1.1.0** the
 masthead no longer carries an inline `Sources …` line (it shows a last-updated date
-instead); per-page sources are listed in a dedicated **`section.credits`** block at the
-bottom of the page (above the footer), with the full authoritative list in
-[`CREDITS.md`](CREDITS.md). (Legacy inline guides may still display the old masthead
+instead); per-page sources are listed in a dedicated **`section.credits`** block (the
+**Sources** section) at the bottom of the page (above the footer), each citing the
+specific sources that page's facts were verified against (mostly 5+ per page; a few hard pages at 4). (Legacy inline guides may still display the old masthead
 `Sources …` line and a `Live 4.0` patch label until migrated.)
 
 ---

@@ -56,7 +56,8 @@ bash scripts/generate-anchor-files.sh        # from anywhere in the repo
 ```
 
 Prints generated / skipped / anchorless counts as a sanity check. Current
-baseline: **102 generated**, **2 curated (skipped)**, **5 anchorless**.
+baseline: **107 generated**, **2 curated (skipped)**, **0 anchorless** (every guide now
+carries at least a `#credits` Sources-section anchor).
 
 ## Adding a curated page
 

@@ -11,5 +11,5 @@ Link format: `hud-customization.html#<id>`
 - **How the colour matrix works** — `#matrix`
 - **How to change it — step by step** — `#how`
 - **Presets & starter values** — `#presets`
-- **Tools that do it for you** — `#tools`
 - **Odyssey notes & gotchas** — `#gotchas`
+- **Sources** — `#credits`

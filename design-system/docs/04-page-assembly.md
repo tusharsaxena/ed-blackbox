@@ -48,8 +48,8 @@ everything else goes inside `.wrap`.
    (`.sec-num` chip + h2 + right `.tag`) then `p.lead`, then any mix of components. The
    first section is usually a legend / "how to read this manual".
 6. **`section.credits`** *(required)* — the **last numbered section**, above the footer.
-   A normal section: `.sec-head` (`.sec-num` + h2 "Sources & Credits" + `.tag`) → `p.lead`
-   (one line pointing at `CREDITS.md`) → `.cr-rows` with one `.cr-row` per authoritative
+   A normal section: `.sec-head` (`.sec-num` + h2 "Sources" + `.tag`) → `p.lead`
+   (one line noting facts are verified against the sources below) → `.cr-rows` with one `.cr-row` per authoritative
    source for **this** page (`.cr-src` name · `.cr-what` what it provided · `.cr-link`
    external link). This is where per-page sourcing lives now that the masthead has no
    `Sources …` line.

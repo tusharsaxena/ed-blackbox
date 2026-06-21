@@ -19,4 +19,4 @@ Link format: `fleet-carrier.html#<id>`
 - **Federation Alignment & The Corvette Path** — `#federation`
 - **Paying The Upkeep — Income Strategies** — `#income`
 - **Pitfalls & Pro Tips** — `#pitfalls`
-- **Tools & External References** — `#tools`
+- **Sources** — `#credits`

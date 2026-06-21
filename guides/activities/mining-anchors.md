@@ -15,3 +15,4 @@ Link format: `mining.html#<id>`
 - **Outcomes, Benefits & Rewards** — `#s8`
 - **How Mining Interacts With Other Systems** — `#s9`
 - **Field Notes** — `#s10`
+- **Sources** — `#credits`

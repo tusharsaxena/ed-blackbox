@@ -43,7 +43,7 @@ Visual consistency is worthless on top of wrong data. Therefore:
 - **Verify, don't recall.** Game facts (ship stats, modules, blueprints, engineers,
   systems) come from authoritative sources, not memory: EDCD `coriolis-data` (ships,
   modules, blueprints — prefer the raw/codeload ZIP over the API), EDCD `FDevIDs`,
-  INARA, EDSM, EDSY (the authoritative list lives in `CREDITS.md`). Verification is
+  INARA, EDSM, EDSY. Verification is
   required; per-page sources are listed in the bottom-of-page **`section.credits`** block
   (the masthead carries no inline `Sources …` line).
 - **Frozen scores.** 1–100 suitability ratings come from the project's `ratings.csv`

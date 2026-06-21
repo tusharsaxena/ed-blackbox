@@ -14,3 +14,4 @@ Link format: `exploration.html#<id>`
 - **Recommendations By Explorer** — `#s7`
 - **Cost & Engineering Reality** — `#s8`
 - **Field Notes & Verdict** — `#s9`
+- **Sources** — `#credits`

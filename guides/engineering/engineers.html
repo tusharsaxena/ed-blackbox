@@ -1028,6 +1028,34 @@ footer b{color:var(--amber-lt)}
   <div class="row-desc nobio"><div class="dq-eyebrow">In-Game Description</div><div class="dq">No biographical record available in-game.</div></div>
 </article></div>
 </section>
+
+<!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
+<style>
+.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
+.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
+.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
+.credits .cr-rows{display:flex;flex-direction:column}
+.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
+.credits .cr-src{font-weight:700;letter-spacing:.3px}
+.credits .cr-what{opacity:.78}
+.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
+.credits .cr-link:hover{text-decoration:underline}
+@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
+</style>
+<section class="credits" id="credits">
+  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <p class="lead">Figures on this page are verified against the sources below.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">Inara — Engineers</span><span class="cr-what">Engineer unlock requirements, meeting prerequisites, hand-in items, locations, and referral chains for all 38.</span><a class="cr-link" href="https://inara.cz/elite/engineers/">inara.cz/elite/engineers</a></div>
+    <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Engineer roster cross-referenced against the open data set; blueprint and modification grades each engineer offers.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data">github.com/EDCD/coriolis-data</a></div>
+    <div class="cr-row"><span class="cr-src">Elite Dangerous Fandom Wiki</span><span class="cr-what">Engineer biographies, lore, in-game descriptions, and unlock-mechanics cross-checks.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Engineers">elite-dangerous.fandom.com/wiki/Engineers</a></div>
+    <div class="cr-row"><span class="cr-src">EDSM</span><span class="cr-what">Engineer base systems &amp; workshop bodies — Deciat, Khun, Wyrd and the rest of the location coordinates.</span><a class="cr-link" href="https://www.edsm.net/en/engineers">edsm.net/en/engineers</a></div>
+    <div class="cr-row"><span class="cr-src">EDEngineer</span><span class="cr-what">Material-cost and unlock-item cross-checks for each engineer&#x27;s hand-in.</span><a class="cr-link" href="https://github.com/msarilar/EDEngineer">github.com/msarilar/EDEngineer</a></div>
+  </div>
+</section>
+
 <footer>
   <span>CMDR Ka0s · Engineering Field Manual</span>
   <span>Part <b>I</b> · The Engineers</span>

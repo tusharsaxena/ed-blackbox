@@ -17,5 +17,5 @@ Link format: `community-goals.html#<id>`
 - **09Federation Alignment Playbook** — `#fed`
 - **10Pitfalls & Gotchas** — `#pitfalls`
 - **11Your Fleet → CG Role Map** — `#fleet`
-- **12Tools & References** — `#tools`
 - **13Quick-Start Checklist** — `#tldr`
+- **Sources** — `#credits`

@@ -14,3 +14,4 @@ Link format: `passenger.html#<id>`
 - **Recommendations By Liner** — `#s7`
 - **Cost & Engineering Reality** — `#s8`
 - **Field Notes & Verdict** — `#s9`
+- **Sources** — `#credits`
