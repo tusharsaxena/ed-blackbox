@@ -3,237 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Third-Party Apps &amp; Websites Directory | Reference Dossier | CMDR Ka0s</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0a0708;
-    --bg2:#0e0a0b;
-    --panel:#140d0f;
-    --panel2:#1a1113;
-    --grid:rgba(180,70,60,.045);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --fed:#4f9fd6;
-    --fed-lt:#7cc0ee;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --good-lt:#7fce98;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(190,120,110,.32);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Saira',sans-serif;
-    font-weight:300;
-    line-height:1.62;
-    letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:
-      linear-gradient(var(--grid) 1px,transparent 1px),
-      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),
-      radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),
-      radial-gradient(1200px 900px at 50% 120%,rgba(79,159,214,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 120px}
-
-  /* ---------- header ---------- */
-  header.masthead{padding:54px 0 26px;border-bottom:1px solid var(--hair-strong);margin-bottom:8px}
-  .kicker{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;
-    letter-spacing:5px;text-transform:uppercase;color:var(--amber);
-    display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;
-  }
-  .kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
-  .kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
-  h1.title{
-    font-family:'Chakra Petch',sans-serif;font-weight:700;
-    font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:1px;
-    color:var(--ink);text-transform:uppercase;
-  }
-  h1.title span{color:var(--maroon-lt)}
-  .subtitle{
-    margin-top:16px;font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);
-    max-width:820px;font-weight:300;
-  }
-  .masthead-meta{
-    margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;
-    font-family:'Saira Condensed',sans-serif;font-size:13px;letter-spacing:1px;
-    text-transform:uppercase;color:var(--ink-faint);
-  }
-  .masthead-meta b{color:var(--amber-lt);font-weight:600}
-
-  /* ---------- hero ---------- */
-  .verdict{
-    margin:34px 0 14px;border:1px solid rgba(224,145,58,.4);border-radius:4px;
-    background:linear-gradient(180deg,rgba(224,145,58,.10),rgba(20,13,15,.6));
-    padding:30px 30px 26px;position:relative;overflow:hidden;
-  }
-  .verdict::before{
-    content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
-    background:linear-gradient(180deg,var(--amber),transparent);
-  }
-  .verdict .v-eyebrow{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;
-    letter-spacing:4px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:10px;
-  }
-  .verdict h2{
-    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);
-    line-height:1.05;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:6px;
-  }
-  .verdict h2 em{font-style:normal;color:var(--amber-lt)}
-  .verdict p{font-size:15.5px;color:var(--ink-dim);margin-top:12px;max-width:940px}
-
-  /* ---------- callout numbers ---------- */
-  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:22px 0 4px}
-  .stat{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
-  .stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:26px;color:var(--amber-lt);line-height:1}
-  .stat .n.good{color:var(--good-lt)}
-  .stat .n.fed{color:var(--fed-lt)}
-  .stat .n.maroon{color:var(--maroon-lt)}
-  .stat .l{font-size:12.5px;color:var(--ink-dim);margin-top:6px;letter-spacing:.3px}
-
-  /* ---------- sections ---------- */
-  section{margin-top:56px;scroll-margin-top:24px}
-  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;border-bottom:1px solid var(--hair);padding-bottom:14px;flex-wrap:wrap}
-  .sec-num{
-    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;
-    color:var(--bg);background:var(--amber);padding:3px 9px;border-radius:2px;flex:none;
-  }
-  .sec-head h2{
-    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);
-    text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05;
-  }
-  .sec-head .tag{
-    margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:2px;
-    text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center;
-  }
-  p.lead{font-size:15px;color:var(--ink-dim);margin:14px 0 4px;max-width:920px}
-
-  /* ---------- tool card grid ---------- */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;margin-top:20px}
-  .card{
-    background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--amber);
-    border-radius:4px;padding:16px 18px 15px;display:flex;flex-direction:column;
-    position:relative;transition:border-color .18s,background .18s,transform .18s;
-  }
-  .card:hover{background:var(--panel2);border-color:var(--hair-strong);transform:translateY(-1px)}
-  .card.ship{border-left-color:var(--amber)}
-  .card.farm{border-left-color:var(--good)}
-  .card.ops{border-left-color:var(--fed)}
-  .card.ref{border-left-color:var(--maroon-lt)}
-  .card.dead{border-left-color:var(--ink-faint);opacity:.78}
-  .card .c-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
-  .card h3{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:.4px;
-    color:var(--ink);line-height:1.18;flex:1;
-  }
-  .card .ident{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:1px;
-    color:var(--ink-faint);text-transform:uppercase;margin-top:2px;display:block}
-  .card p{font-size:13.4px;color:var(--ink-dim);margin:0 0 14px;flex:1}
-  .card p b{color:var(--ink);font-weight:500}
-  .card .c-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
-  .card a.open{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.2px;
-    text-transform:uppercase;color:var(--amber-lt);text-decoration:none;
-    border-bottom:1px solid rgba(224,145,58,.35);padding-bottom:1px;
-  }
-  .card a.open:hover{border-bottom-color:var(--amber-lt)}
-  .card.dead a.open{color:var(--ink-faint);border-bottom-color:rgba(168,154,147,.30);pointer-events:none}
-
-  .pill{font-family:'Saira Condensed',sans-serif;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;
-    padding:2px 8px;border-radius:10px;border:1px solid var(--hair-strong);white-space:nowrap;display:inline-block;flex:none;color:var(--ink-dim)}
-  .pill.web{color:var(--fed-lt);border-color:rgba(79,159,214,.45);background:rgba(79,159,214,.10)}
-  .pill.win{color:var(--amber-lt);border-color:rgba(224,145,58,.40);background:rgba(224,145,58,.08)}
-  .pill.plug{color:var(--good-lt);border-color:rgba(95,179,122,.45);background:rgba(95,179,122,.10)}
-  .pill.api{color:var(--maroon-lt);border-color:rgba(177,49,64,.45);background:rgba(177,49,64,.10)}
-  .pill.dead{color:var(--ink-faint);border-color:var(--hair);background:transparent}
-  .pill.essential{color:var(--amber-lt);border-color:var(--amber);background:rgba(224,145,58,.16);font-weight:600}
-
-  /* ---------- panels ---------- */
-  .panel{
-    background:var(--panel);border:1px solid var(--hair);border-radius:4px;
-    padding:20px 22px;margin:20px 0;
-  }
-  .panel.accent{border-left:3px solid var(--amber)}
-  .panel.good{border-left:3px solid var(--good)}
-  .panel.fed{border-left:3px solid var(--fed)}
-  .panel h3{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:2px;
-    text-transform:uppercase;color:var(--amber-lt);margin-bottom:11px;
-  }
-  .panel.good h3{color:var(--good-lt)}
-  .panel.fed h3{color:var(--fed-lt)}
-  .panel p{font-size:14px;color:var(--ink-dim);margin-bottom:10px}
-  .panel p:last-child{margin-bottom:0}
-  .panel strong{color:var(--ink);font-weight:600}
-
-  /* ---------- compact table for the role->tools matrix ---------- */
-  table.matrix{
-    width:100%;border-collapse:collapse;margin-top:14px;
-    font-size:13.5px;color:var(--ink-dim);
-  }
-  table.matrix th,table.matrix td{
-    padding:10px 12px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;
-  }
-  table.matrix th{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11.5px;letter-spacing:1.6px;
-    text-transform:uppercase;color:var(--amber-lt);border-bottom:1px solid var(--hair-strong);
-  }
-  table.matrix td:first-child{color:var(--ink);font-weight:500;width:30%;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:.4px}
-  table.matrix tr:hover td{background:rgba(255,255,255,.012)}
-
-  /* ---------- toc strip ---------- */
-  nav.toc{
-    margin:22px 0 0;padding:18px 22px;border:1px solid var(--hair);border-radius:4px;background:rgba(10,7,8,.4);
-  }
-  nav.toc .toc-eyebrow{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;letter-spacing:3px;
-    text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;
-  }
-  nav.toc ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px 16px;counter-reset:t}
-  nav.toc li{counter-increment:t;font-size:13.5px}
-  nav.toc li::before{
-    content:counter(t,decimal-leading-zero);font-family:'Chakra Petch',sans-serif;font-weight:700;
-    color:var(--amber);margin-right:8px;font-size:11px;letter-spacing:1px;
-  }
-  nav.toc a{color:var(--ink-dim);text-decoration:none;border-bottom:1px dotted transparent;padding-bottom:1px}
-  nav.toc a:hover{color:var(--amber-lt);border-bottom-color:rgba(224,145,58,.4)}
-
-  footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--hair-strong);
-    font-family:'Saira Condensed',sans-serif;font-size:12.5px;letter-spacing:1px;
-    text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:8px 20px}
-  footer b{color:var(--amber-lt)}
-
-  @media (max-width:560px){.sec-head .tag{display:none}}
-  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style>
+<title>Third-Party Apps &middot; Systems | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#dossiers">Ships</a>
+      <a href="../index.html#engineering">Engineering</a>
+      <a href="../index.html#systems" class="active">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#essentials"><span class="qn-dot amber"></span><span class="qn-nm">The Essentials</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#reference"><span class="qn-dot amber"></span><span class="qn-nm">Galaxy Reference &amp; Databases</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#outfitting"><span class="qn-dot amber"></span><span class="qn-nm">Ship Outfitting &amp; Builds</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#routing"><span class="qn-dot amber"></span><span class="qn-nm">Route Planning &amp; Navigation</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#companion"><span class="qn-dot amber"></span><span class="qn-nm">Companion &amp; Journal Apps</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#engineering"><span class="qn-dot amber"></span><span class="qn-nm">Engineering &amp; Materials</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#exploration"><span class="qn-dot amber"></span><span class="qn-nm">Exploration &amp; Exobiology</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#mining"><span class="qn-dot amber"></span><span class="qn-nm">Mining &amp; Resource Hunting</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#trading"><span class="qn-dot amber"></span><span class="qn-nm">Trading &amp; Commerce</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#carriers"><span class="qn-dot amber"></span><span class="qn-nm">Fleet Carriers &amp; Colonisation</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#powerplay"><span class="qn-dot amber"></span><span class="qn-nm">Powerplay 2.0, BGS &amp; Squadron</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#voice"><span class="qn-dot amber"></span><span class="qn-nm">Voice, AI &amp; Immersion</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#hud"><span class="qn-dot amber"></span><span class="qn-nm">HUD, VR &amp; Hardware Integration</span><span class="qn-side">13</span></a>
+          <a class="qn-item" href="#data"><span class="qn-dot amber"></span><span class="qn-nm">Data Networks &amp; APIs</span><span class="qn-side">14</span></a>
+          <a class="qn-item" href="#rescue"><span class="qn-dot amber"></span><span class="qn-nm">Rescue &amp; Player Groups</span><span class="qn-side">15</span></a>
+          <a class="qn-item" href="#directories"><span class="qn-dot amber"></span><span class="qn-nm">Directories &amp; Aggregators</span><span class="qn-side">16</span></a>
+          <a class="qn-item" href="#defunct"><span class="qn-dot amber"></span><span class="qn-nm">Defunct — with Replacements</span><span class="qn-side">17</span></a>
+          <a class="qn-item" href="#bystyle"><span class="qn-dot amber"></span><span class="qn-nm">By Play-Style — Recommended Stacks</span><span class="qn-side">18</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">19</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#systems">Systems</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Third-Party Apps</span>
+</nav>
+
 <div class="wrap">
 
   <header class="masthead">
-    <div class="kicker">Reference Dossier · Tooling Catalogue <span class="id">CMDR KA0S · INARA 173082</span></div>
+    <div class="kicker">Reference Dossier · Tooling Catalogue<span class="id">CMDR KA0S · INARA 173082</span></div>
     <h1 class="title">Third-Party<br><span>Apps &amp; Sites</span></h1>
     <p class="subtitle">The current, working directory of the Elite Dangerous third-party ecosystem — the websites, journal readers, EDMC plugins, voice copilots, route planners and squadron tools that actually keep the galaxy navigable. Every entry below is verified active as of this revision; the obsolete ones are flagged and the post-EDDB replacements named.</p>
     <div class="masthead-meta">
@@ -257,66 +97,41 @@
     </div>
   </div>
 
-  <!-- TOC -->
-  <nav class="toc">
-    <div class="toc-eyebrow">Sections</div>
-    <ol>
-      <li><a href="#essentials">The Essentials</a></li>
-      <li><a href="#reference">Galaxy Reference &amp; Databases</a></li>
-      <li><a href="#outfitting">Ship Outfitting &amp; Builds</a></li>
-      <li><a href="#routing">Route Planning &amp; Navigation</a></li>
-      <li><a href="#companion">Companion &amp; Journal Apps</a></li>
-      <li><a href="#engineering">Engineering &amp; Materials</a></li>
-      <li><a href="#exploration">Exploration &amp; Exobiology</a></li>
-      <li><a href="#mining">Mining &amp; Resource Hunting</a></li>
-      <li><a href="#trading">Trading &amp; Commerce</a></li>
-      <li><a href="#carriers">Fleet Carriers &amp; Colonisation</a></li>
-      <li><a href="#powerplay">Powerplay 2.0, BGS &amp; Squadron</a></li>
-      <li><a href="#voice">Voice, AI &amp; Immersion</a></li>
-      <li><a href="#hud">HUD, VR &amp; Hardware</a></li>
-      <li><a href="#data">Data Networks &amp; APIs</a></li>
-      <li><a href="#rescue">Rescue &amp; Player Groups</a></li>
-      <li><a href="#directories">Directories &amp; Aggregators</a></li>
-      <li><a href="#defunct">Defunct, with Replacements</a></li>
-      <li><a href="#bystyle">By Play-Style — Recommended Stacks</a></li>
-    </ol>
-  </nav>
-
   <!-- 01 ESSENTIALS -->
   <section id="essentials">
     <div class="sec-head"><span class="sec-num">01</span><h2>The Essentials</h2><span class="tag">Install these first</span></div>
     <p class="lead">If only five tools could exist, these would be them. Everything else in this dossier orbits around this set — they are the foundation the rest of the ecosystem either plugs into or builds on top of.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ref">
-        <div class="c-top"><h3>Inara<span class="ident">inara.cz · Web · Account-linked</span></h3><span class="pill essential">Essential</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Inara</h3><span class="c-eyebrow">inara.cz · Web · Account-linked</span><span class="pill md">Essential</span></div>
         <p>The encyclopedic <b>multitool of Elite Dangerous</b>. Systems, stations, markets, modules, engineers, blueprints, materials, missions, squadrons, Thargoid War, Galnet news, community goals, personal logbooks. Post-EDDB, Inara absorbed most of its functions and is now the de facto answer to "where do I find …?".</p>
-        <div class="c-foot"><a class="open" href="https://inara.cz/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://inara.cz/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDSM — ED Star Map<span class="ident">edsm.net · Web · API</span></h3><span class="pill essential">Essential</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDSM — ED Star Map</h3><span class="c-eyebrow">edsm.net · Web · API</span><span class="pill md">Essential</span></div>
         <p>Community-maintained galaxy database — system coordinates, body data, station info, faction states, flight logs. <b>Powers dozens of other tools through its public API.</b> Submit your journal via EDMC and your travels populate the map.</p>
-        <div class="c-foot"><a class="open" href="https://www.edsm.net/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.edsm.net/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDMC — ED Market Connector<span class="ident">EDCD/EDMarketConnector · Windows · Linux</span></h3><span class="pill essential">Essential</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDMC — ED Market Connector</h3><span class="c-eyebrow">EDCD/EDMarketConnector · Windows · Linux</span><span class="pill md">Essential</span></div>
         <p>The pipe that connects you to the ecosystem. Watches your journal and sends data to EDDN, EDSM, Inara, and any plugin you install. <b>Without EDMC, you are invisible to the community web.</b> Plus a thriving plugin marketplace covering exploration, BGS, materials, overlays.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/EDCD/EDMarketConnector/releases" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/EDCD/EDMarketConnector/releases" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Spansh<span class="ident">spansh.co.uk · Web · API</span></h3><span class="pill essential">Essential</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Spansh</h3><span class="c-eyebrow">spansh.co.uk · Web · API</span><span class="pill md">Essential</span></div>
         <p>The dominant route-planning ecosystem — Neutron Plotter, Galaxy Exact Plotter, Road to Riches, Trade Planner, Tourist Planner, Fleet Carrier Plotter, Body/System/Station search, Powerplay sub-tools. <b>If a route or search exists, Spansh runs it.</b> Used as a library by half the tools in this dossier.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>EDSY (with Coriolis as backup)<span class="ident">edsy.org · coriolis.io · Web</span></h3><span class="pill essential">Essential</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EDSY (with Coriolis as backup)</h3><span class="c-eyebrow">edsy.org · coriolis.io · Web</span><span class="pill md">Essential</span></div>
         <p>Ship outfitting. EDSY is the slot-by-slot build planner with the most complete engineering simulation and is what the project's fleet build links use; <b>Coriolis</b> has a layout closer to the in-game outfitting screen and is friendlier for new commanders. Both encode builds in the URL — share a build by sharing a link.</p>
-        <div class="c-foot"><a class="open" href="https://edsy.org/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edsy.org/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -325,49 +140,49 @@
   <section id="reference">
     <div class="sec-head"><span class="sec-num">02</span><h2>Galaxy Reference &amp; Databases</h2><span class="tag">Encyclopedias</span></div>
     <p class="lead">When you need to know <em>where</em> something is, <em>what</em> something does, or how a mechanic actually works.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ref">
-        <div class="c-top"><h3>Wanderer's Toolbox<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Active 2025</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Wanderer's Toolbox</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Active 2025</span></div>
         <p>The <b>restoration of CMDRs Toolbox</b>. Curated guides on engineering unlocks, Guardian modules, shield mechanics, pre-engineered FSDs and material farming, plus exploration routes (Stratum Boulevard, Billionaire Boulevard), ship builds, and the Fleet Carrier &amp; Plasma Slug calculators. Clean, focused, modern.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDastrometrics (edastro)<span class="ident">edastro.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDastrometrics (edastro)</h3><span class="c-eyebrow">edastro.com · Web</span><span class="pill fed">Web</span></div>
         <p>Galaxy-wide heatmaps and exobiology / biome distribution maps rendered from aggregated EDDN data. The site to consult before a long exploration run — find under-explored regions, body-type concentrations, biological hotspots.</p>
-        <div class="c-foot"><a class="open" href="https://edastro.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edastro.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Roguey's Elite Dangerous<span class="ident">roguey.co.uk · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Roguey's Elite Dangerous</h3><span class="c-eyebrow">roguey.co.uk · Web</span><span class="pill fed">Web</span></div>
         <p>Long-running ship and module database with engineering blueprint lookup. Less polished than Inara, sometimes faster for quick stat comparisons.</p>
-        <div class="c-foot"><a class="open" href="https://roguey.co.uk/elite-dangerous/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://roguey.co.uk/elite-dangerous/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Elite Dangerous Wiki (Fandom)<span class="ident">elite-dangerous.fandom.com · Web</span></h3><span class="pill web">Wiki</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Elite Dangerous Wiki (Fandom)</h3><span class="c-eyebrow">elite-dangerous.fandom.com · Web</span><span class="pill fed">Wiki</span></div>
         <p>Community wiki — strongest on <b>lore, mechanics, ship anatomy, faction history</b>. Weak on real-time market data. The go-to for "how does heat damage scale" or "what is the Far God cult".</p>
-        <div class="c-foot"><a class="open" href="https://elite-dangerous.fandom.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://elite-dangerous.fandom.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Pilots Trade Network<span class="ident">pilotstradenetwork.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Pilots Trade Network</h3><span class="c-eyebrow">pilotstradenetwork.com · Web</span><span class="pill fed">Web</span></div>
         <p>Long-form gameplay guides — fleet carrier ownership, mining hotspots, Thargoid combat, BGS doctrine. Often the most thorough single source on a given topic.</p>
-        <div class="c-foot"><a class="open" href="https://pilotstradenetwork.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://pilotstradenetwork.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Frontier Issue Tracker<span class="ident">issues.frontierstore.net · Web</span></h3><span class="pill web">Official</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Frontier Issue Tracker</h3><span class="c-eyebrow">issues.frontierstore.net · Web</span><span class="pill fed">Official</span></div>
         <p>The only place Frontier consistently responds to bug reports. Search before reporting; <b>vote</b> on existing issues to push them up the queue.</p>
-        <div class="c-foot"><a class="open" href="https://issues.frontierstore.net/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://issues.frontierstore.net/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>r/EliteDangerous Wiki — Great Posts<span class="ident">reddit.com/r/EliteDangerous · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>r/EliteDangerous Wiki — Great Posts</h3><span class="c-eyebrow">reddit.com/r/EliteDangerous · Web</span><span class="pill fed">Web</span></div>
         <p>Reddit-curated archive of community-voted essential posts — guide compilations, tool roundups, gameplay primers. Useful sanity-check on what veteran commanders actually consider important.</p>
-        <div class="c-foot"><a class="open" href="https://www.reddit.com/r/EliteDangerous/wiki/greatposts/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.reddit.com/r/EliteDangerous/wiki/greatposts/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -376,43 +191,43 @@
   <section id="outfitting">
     <div class="sec-head"><span class="sec-num">03</span><h2>Ship Outfitting &amp; Builds</h2><span class="tag">Theorycrafting</span></div>
     <p class="lead">Where you design ships before spending the credits. Build URLs from these tools are the format every other tool understands.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ship">
-        <div class="c-top"><h3>EDSY (Elite Dangerous Shipyard)<span class="ident">edsy.org · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EDSY (Elite Dangerous Shipyard)</h3><span class="c-eyebrow">edsy.org · Web</span><span class="pill fed">Web</span></div>
         <p>The primary slot-by-slot outfitter — full engineering sim, power priority management, live stat readout. The KA-fleet's build links are EDSY URLs.</p>
-        <div class="c-foot"><a class="open" href="https://edsy.org/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edsy.org/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>Coriolis EDCD<span class="ident">coriolis.io · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card">
+        <div class="c-head"><h3>Coriolis EDCD</h3><span class="c-eyebrow">coriolis.io · Web</span><span class="pill fed">Web</span></div>
         <p>The other major outfitter — UI mirrors the in-game outfitting screen. Same engineering simulation, gentler learning curve.</p>
-        <div class="c-foot"><a class="open" href="https://coriolis.io/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://coriolis.io/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>Wanderer's Toolbox — Ship Builds<span class="ident">wanderer-toolbox.com/builds · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card">
+        <div class="c-head"><h3>Wanderer's Toolbox — Ship Builds</h3><span class="c-eyebrow">wanderer-toolbox.com/builds · Web</span><span class="pill fed">Web</span></div>
         <p>Curated reference builds for Exploration, Logistics, Mining, Racing and PvE Combat — opinionated, role-tuned starting points. Thargoid combat builds link out to the AXI wiki.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/builds/exploration" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/builds/exploration" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>Inara — Outfitting / Shipyard search<span class="ident">inara.cz/elite/nearest-shipyard · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card">
+        <div class="c-head"><h3>Inara — Outfitting / Shipyard search</h3><span class="c-eyebrow">inara.cz/elite/nearest-shipyard · Web</span><span class="pill fed">Web</span></div>
         <p>"Where can I buy a 6A Fuel Scoop?" / "Which station has this hull?" — the project's <b>nearest-outfitting</b> links use this.</p>
-        <div class="c-foot"><a class="open" href="https://inara.cz/elite/nearest-outfitting/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://inara.cz/elite/nearest-outfitting/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>AXI Wiki — Thargoid Builds<span class="ident">wiki.antixenoinitiative.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card">
+        <div class="c-head"><h3>AXI Wiki — Thargoid Builds</h3><span class="c-eyebrow">wiki.antixenoinitiative.com · Web</span><span class="pill fed">Web</span></div>
         <p>The authoritative source for anti-Thargoid combat builds — gauss, shard, AX multicannon doctrine, caustic-resistance loadouts, evacuation Belugas. Maintained by the AXI squadron.</p>
-        <div class="c-foot"><a class="open" href="https://wiki.antixenoinitiative.com/en/builds" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wiki.antixenoinitiative.com/en/builds" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>ED Ship Comparison Tool<span class="ident">edcodex.info/?m=tools&amp;entry=211 · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card">
+        <div class="c-head"><h3>ED Ship Comparison Tool</h3><span class="c-eyebrow">edcodex.info/?m=tools&amp;entry=211 · Web</span><span class="pill fed">Web</span></div>
         <p>Side-by-side ship stat comparison for every hull in game — useful before committing to a chassis-class change.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=211" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=211" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -421,79 +236,79 @@
   <section id="routing">
     <div class="sec-head"><span class="sec-num">04</span><h2>Route Planning &amp; Navigation</h2><span class="tag">Get there fast</span></div>
     <p class="lead">The galaxy is 1:1 scale Milky Way. You need a router. Spansh is the trunk; everything else clips into it.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ops">
-        <div class="c-top"><h3>Spansh — Galaxy / Exact Plotter<span class="ident">spansh.co.uk/exact-plotter · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Spansh — Galaxy / Exact Plotter</h3><span class="c-eyebrow">spansh.co.uk/exact-plotter · Web</span><span class="pill fed">Web</span></div>
         <p>Optimal routes matching the in-game "fastest" planner but with <b>no 500 LY cap</b> and full neutron support.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/exact-plotter" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/exact-plotter" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Spansh — Neutron Plotter<span class="ident">spansh.co.uk/plotter · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Spansh — Neutron Plotter</h3><span class="c-eyebrow">spansh.co.uk/plotter · Web</span><span class="pill fed">Web</span></div>
         <p>Routes through neutron stars for jump-range supercharging. Beagle Point in ~3 hours instead of ~30.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/plotter" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/plotter" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Spansh — Road to Riches<span class="ident">spansh.co.uk/riches · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Spansh — Road to Riches</h3><span class="c-eyebrow">spansh.co.uk/riches · Web</span><span class="pill fed">Web</span></div>
         <p>Hops through high-value first-discovery systems, maximising exploration credits per LY. The way to fund a new ship.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/riches" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/riches" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Spansh — Tourist Planner<span class="ident">spansh.co.uk/tourist · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Spansh — Tourist Planner</h3><span class="c-eyebrow">spansh.co.uk/tourist · Web</span><span class="pill fed">Web</span></div>
         <p>Routes visiting points-of-interest (nebulae, neutron fields, Earth-likes, ammonia worlds) — built for passenger sightseeing missions.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/tourist" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/tourist" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Spansh — Trade Planner<span class="ident">spansh.co.uk/trade · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Spansh — Trade Planner</h3><span class="c-eyebrow">spansh.co.uk/trade · Web</span><span class="pill fed">Web</span></div>
         <p>Multi-hop trade routes optimised for profit-per-jump using live EDDN market data.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/trade-router" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/trade-router" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Spansh — Fleet Carrier Plotter<span class="ident">spansh.co.uk/fleet-carrier · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Spansh — Fleet Carrier Plotter</h3><span class="c-eyebrow">spansh.co.uk/fleet-carrier · Web</span><span class="pill fed">Web</span></div>
         <p>500 LY-jump pathfinder for carriers, including tritium top-up stations and uninhabited fuel sources.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/fleet-carrier" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/fleet-carrier" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>SpanshRouter (EDMC plugin)<span class="ident">CMDR-Kiel/EDMC-SpanshRouter · Plugin</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>SpanshRouter (EDMC plugin)</h3><span class="c-eyebrow">CMDR-Kiel/EDMC-SpanshRouter · Plugin</span><span class="pill lo">EDMC plugin</span></div>
         <p>Auto-copies the next Spansh waypoint to your clipboard on each jump. <b>Eliminates the alt-tab grind</b> on long-haul exploration runs.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/CMDR-Kiel42/EDMC_SpanshRouter" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/CMDR-Kiel42/EDMC_SpanshRouter" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Navl's Neutron Dancer<span class="ident">EDMC plugin · 2026</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Navl's Neutron Dancer</h3><span class="c-eyebrow">EDMC plugin · 2026</span><span class="pill lo">EDMC plugin</span></div>
         <p>Newer Spansh route plotter EDMC plugin — supports Neutron, Galaxy, Road to Riches, Expressway to Exomastery, Tourist, and <b>Fleet Carrier plots via CSV import</b>.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=625" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=625" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>GalaxyGPS<span class="ident">EDMC plugin · 2026</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>GalaxyGPS</h3><span class="c-eyebrow">EDMC plugin · 2026</span><span class="pill lo">EDMC plugin</span></div>
         <p>Comprehensive route planning and fleet carrier management plugin — full GPS-style navigation experience for the galaxy.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=626" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=626" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDMRN — Multi-Route Navigation<span class="ident">Windows / EDMC · 2026</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDMRN — Multi-Route Navigation</h3><span class="c-eyebrow">Windows / EDMC · 2026</span><span class="pill md">Windows</span></div>
         <p>Ultra-fast TSP-based multi-waypoint route optimiser. Quoted at <b>~3 seconds Sol&#8594;Beagle Point</b>, plus an Explorer tab integrating EDSM/Spansh data.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=618" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=618" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Wanderer's Multi-Waypoint Planner<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Wanderer's Multi-Waypoint Planner</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>Direct heir to the CMDRs Toolbox planner — paste a list of systems, get the optimal visit order for the route.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/useful-tools/multi-waypoint" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/useful-tools/multi-waypoint" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDNeutronAssistant<span class="ident">Gobidev/EDNeutronAssistant · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDNeutronAssistant</h3><span class="c-eyebrow">Gobidev/EDNeutronAssistant · Windows</span><span class="pill md">Windows</span></div>
         <p>Standalone alternative to SpanshRouter. Calculates routes via Spansh API, copies the next waypoint to the OS clipboard automatically.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/Gobidev/EDNeutronAssistant" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/Gobidev/EDNeutronAssistant" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -502,55 +317,55 @@
   <section id="companion">
     <div class="sec-head"><span class="sec-num">05</span><h2>Companion &amp; Journal Apps</h2><span class="tag">The big desktop tools</span></div>
     <p class="lead">Apps that live next to the game, read the journal, and react. Most commanders run one or two constantly.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDMC — ED Market Connector<span class="ident">EDCD/EDMarketConnector · Windows · Linux</span></h3><span class="pill plug">Plugin host</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDMC — ED Market Connector</h3><span class="c-eyebrow">EDCD/EDMarketConnector · Windows · Linux</span><span class="pill lo">Plugin host</span></div>
         <p>The essential pipe. Sends journal data to EDDN, EDSM, Inara and any plugin you install. Plugin marketplace covers BGS, materials, overlays, voice integration, screenshot management.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/EDCD/EDMarketConnector/releases" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/EDCD/EDMarketConnector/releases" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDDiscovery<span class="ident">EDDiscovery/EDDiscovery · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDDiscovery</h3><span class="c-eyebrow">EDDiscovery/EDDiscovery · Windows</span><span class="pill md">Windows</span></div>
         <p>Captain's log + 3D galaxy map + trip planner — <b>50+ panels</b> for combat, trade, exploration, exobio, ranks, missions, BGS. Steeper learning curve than EDMC, more visual.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/EDDiscovery/EDDiscovery" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/EDDiscovery/EDDiscovery" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDDI<span class="ident">EDCD/EDDI · Windows / VoiceAttack plugin</span></h3><span class="pill plug">Plugin</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDDI</h3><span class="c-eyebrow">EDCD/EDDI · Windows / VoiceAttack plugin</span><span class="pill lo">Plugin</span></div>
         <p>Voice responder — speaks information back on jumps, scans, mission updates, danger alerts. Exposes game-state variables to VoiceAttack for advanced macros.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/EDCD/EDDI/releases" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/EDCD/EDDI/releases" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDCoPilot<span class="ident">razzafrag.com · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDCoPilot</h3><span class="c-eyebrow">razzafrag.com · Windows</span><span class="pill md">Windows</span></div>
         <p>Virtual ship-AI assistant — ambient cockpit chatter, 30+ panel touch UI, route plotting, market lookups. Originally built for VR; works brilliantly on a second monitor or tablet via SpaceDesk.</p>
-        <div class="c-foot"><a class="open" href="https://www.razzafrag.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.razzafrag.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Elite Observatory Core<span class="ident">observatory.xjph.net · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Elite Observatory Core</h3><span class="c-eyebrow">observatory.xjph.net · Windows</span><span class="pill md">Windows</span></div>
         <p>Plugin-based journal monitor — flags "interesting" scans (landable terraformables, shepherd moons, close binaries, high-G landables, atmospherics). Critical for explorers and screenshot hunters.</p>
-        <div class="c-foot"><a class="open" href="https://observatory.xjph.net/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://observatory.xjph.net/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Trade Computer Extension Mk.II<span class="ident">EDCodex/Eventure · Windows overlay</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Trade Computer Extension Mk.II</h3><span class="c-eyebrow">EDCodex/Eventure · Windows overlay</span><span class="pill md">Windows</span></div>
         <p>Multifunctional in-game HUD overlay covering trading, exploration, BGS, logbook and routes. Heavy but powerful — for commanders who want everything on one overlay.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=327" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=327" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>o7 Debrief<span class="ident">EDCodex · 2026</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>o7 Debrief</h3><span class="c-eyebrow">EDCodex · 2026</span><span class="pill md">Windows</span></div>
         <p>Turns your Elite Dangerous journal into a shareable session debrief (HTML / Markdown) — jumps, scans, bounties, trade, exobio, rank progress. Great post-session memento or stream recap.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=633" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=633" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDMD — Monitor Daemon<span class="ident">Linux + experimental Win · 2026</span></h3><span class="pill win">Linux</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDMD — Monitor Daemon</h3><span class="c-eyebrow">Linux + experimental Win · 2026</span><span class="pill md">Linux</span></div>
         <p>Real-time session monitoring dashboard for Elite Dangerous on Linux (GTK4 + terminal). Rare native-Linux option for the Penguin commanders.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=628" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=628" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -559,55 +374,55 @@
   <section id="engineering">
     <div class="sec-head"><span class="sec-num">06</span><h2>Engineering &amp; Materials</h2><span class="tag">The grind tracker</span></div>
     <p class="lead">Ships materials (raw, manufactured, encoded), Odyssey on-foot materials (chemical, manufacturing, data), engineer unlocks and blueprint requirements. <b>Tracking these without a tool is masochism.</b></p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card farm">
-        <div class="c-top"><h3>EDEngineer<span class="ident">msarilar/EDEngineer · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>EDEngineer</h3><span class="c-eyebrow">msarilar/EDEngineer · Windows</span><span class="pill md">Windows</span></div>
         <p>Tracks every ship-side material, data fragment and commodity vs every blueprint, suit upgrade, weapon upgrade and engineer unlock. Progress bars and "next-to-collect" highlights.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/msarilar/EDEngineer/releases" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/msarilar/EDEngineer/releases" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>ED Odyssey Materials Helper<span class="ident">jixxed/ed-odyssey-materials-helper · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>ED Odyssey Materials Helper</h3><span class="c-eyebrow">jixxed/ed-odyssey-materials-helper · Windows</span><span class="pill md">Windows</span></div>
         <p>The Odyssey counterpart — tracks <b>all four material categories</b> (chemical, manufacturing, data, plus ship materials). Suit and handheld blueprints, settlement loot tracking.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/jixxed/ed-odyssey-materials-helper/releases" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/jixxed/ed-odyssey-materials-helper/releases" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Wanderer's Engineering Unlock Guide<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Wanderer's Engineering Unlock Guide</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>Step-by-step unlock paths for every engineer — referrals, location, requirements. Companion to the project's own engineer-unlock chase.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/guides/engineering-unlock" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/guides/engineering-unlock" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Wanderer's Material Farming Guide<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Wanderer's Material Farming Guide</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>Best-in-class farm locations for every material — HGE sectors, crystal shard sites, Dav's Hope, Jameson Crash, settlement loot tables. Complements the project's farm field manuals.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/guides/material-farming" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/guides/material-farming" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Wanderer's Pre-Engineered FSD Guide<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Wanderer's Pre-Engineered FSD Guide</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>The current list of <b>pre-engineered FSDs</b> available via community goal rewards or Powerplay — these skip the FSD grind entirely on supported hulls.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/guides/preengineered-fsd" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/guides/preengineered-fsd" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Wanderer's Guardian Modules<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Wanderer's Guardian Modules</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>Step-by-step unlock procedures for every Guardian module — beacon scan order, blueprint sites, material costs. Required reading before chasing FSD Boosters and Guardian weapons.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/guides/guardian-modules" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/guides/guardian-modules" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Odyssey Pre-Engineered Gear Sharing<span class="ident">EDCodex · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Odyssey Pre-Engineered Gear Sharing</h3><span class="c-eyebrow">EDCodex · Web</span><span class="pill fed">Web</span></div>
         <p>Crowdsourced list of where to find specific pre-engineered <b>suit and weapon</b> gear in settlements — saves you the grind of engineering it yourself.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=607" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=607" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Inara — Engineers &amp; Blueprints<span class="ident">inara.cz/elite/engineers · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Inara — Engineers &amp; Blueprints</h3><span class="c-eyebrow">inara.cz/elite/engineers · Web</span><span class="pill fed">Web</span></div>
         <p>Master engineer-by-engineer breakdown — referral chains, materials per grade, blueprint comparisons. The reference for "what does this engineer actually do".</p>
-        <div class="c-foot"><a class="open" href="https://inara.cz/elite/engineers/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://inara.cz/elite/engineers/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -616,55 +431,55 @@
   <section id="exploration">
     <div class="sec-head"><span class="sec-num">07</span><h2>Exploration &amp; Exobiology</h2><span class="tag">For the Black</span></div>
     <p class="lead">Tools for deep-space exploration, FSS analysis, exobiology scanning, and tracking what you found.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card farm">
-        <div class="c-top"><h3>Elite Observatory Core<span class="ident">observatory.xjph.net · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Elite Observatory Core</h3><span class="c-eyebrow">observatory.xjph.net · Windows</span><span class="pill md">Windows</span></div>
         <p>The exploration alerter — flags interesting bodies during FSS / honk and reads them out via TTS. Plugin architecture supports custom criteria.</p>
-        <div class="c-foot"><a class="open" href="https://observatory.xjph.net/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://observatory.xjph.net/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>EDMC BioScan<span class="ident">Silarn · EDMC plugin</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>EDMC BioScan</h3><span class="c-eyebrow">Silarn · EDMC plugin</span><span class="pill lo">EDMC plugin</span></div>
         <p>Predicts <b>which exobiology species</b> are present on a planet from the body's properties — prioritise targets without driving down to check each one.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=588" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=588" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>EDMC Pioneer<span class="ident">Silarn · EDMC plugin</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>EDMC Pioneer</h3><span class="c-eyebrow">Silarn · EDMC plugin</span><span class="pill lo">EDMC plugin</span></div>
         <p>Highlights high-value bodies in a system and gives a quick total system value estimate — instant call on whether to fully map.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=587" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=587" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>EDMC-Canonn<span class="ident">canonn.science · EDMC plugin</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>EDMC-Canonn</h3><span class="c-eyebrow">canonn.science · EDMC plugin</span><span class="pill lo">EDMC plugin</span></div>
         <p>Submits your codex and biology data to the <b>Canonn Research</b> community database — your exploration finds feed into the community's mystery research.</p>
-        <div class="c-foot"><a class="open" href="https://canonn.science/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://canonn.science/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Artemis Scanner Tracker<span class="ident">Balvald · EDMC plugin</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Artemis Scanner Tracker</h3><span class="c-eyebrow">Balvald · EDMC plugin</span><span class="pill lo">EDMC plugin</span></div>
         <p>Tracks Artemis-suit exobio sampling progress per planet — kills the manual "did I already take three samples here" guesswork.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=567" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=567" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Exploration Buddy<span class="ident">CMDR Panostrede · Web companion · 2026</span></h3><span class="pill web">Companion</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Exploration Buddy</h3><span class="c-eyebrow">CMDR Panostrede · Web companion · 2026</span><span class="pill fed">Companion</span></div>
         <p>Odyssey-live companion that shows real-time route, system, body and biological information at a glance.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=585" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=585" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>EDXD — Exploration Dashboard<span class="ident">Cross-platform · Python · 2026</span></h3><span class="pill web">Cross-platform</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>EDXD — Exploration Dashboard</h3><span class="c-eyebrow">Cross-platform · Python · 2026</span><span class="pill fed">Cross-platform</span></div>
         <p>Cross-platform (Linux / macOS / Windows) real-time explorer dashboard. Provides live system info even for systems not yet in EDSM or Inara.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=608" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=608" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Srv Survey<span class="ident">Grinning2001 · Windows overlay</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Srv Survey</h3><span class="c-eyebrow">Grinning2001 · Windows overlay</span><span class="pill md">Windows</span></div>
         <p>Themed overlay for Colonisation, Exobiology, Human Settlements and Guardian sites. The polished overlay companion for surface gameplay.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=590" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=590" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -673,43 +488,43 @@
   <section id="mining">
     <div class="sec-head"><span class="sec-num">08</span><h2>Mining &amp; Resource Hunting</h2><span class="tag">For the Type-11</span></div>
     <p class="lead">Mining is one of the most data-heavy activities in the game — hotspot prices, ring composition, prospector limpet timing, refinery sorting. These tools make it sane.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card farm">
-        <div class="c-top"><h3>EliteMining<span class="ident">ViperDude · Windows · 2026</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>EliteMining</h3><span class="c-eyebrow">ViperDude · Windows · 2026</span><span class="pill md">Windows</span></div>
         <p>Mining companion with <b>real-time session tracking</b> and a hotspot finder seeded with 61,000+ pre-loaded locations that grows as the community discovers more in-game.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=631" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=631" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Spansh — Body Search<span class="ident">spansh.co.uk/bodies · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Spansh — Body Search</h3><span class="c-eyebrow">spansh.co.uk/bodies · Web</span><span class="pill fed">Web</span></div>
         <p>Find ring hotspots by composition, by overlap (double / triple hotspot), by distance to a station. The default tool for "where do I mine X right now".</p>
-        <div class="c-foot"><a class="open" href="https://spansh.co.uk/bodies" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://spansh.co.uk/bodies" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Inara — Commodities &amp; Markets<span class="ident">inara.cz/elite/commodities · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Inara — Commodities &amp; Markets</h3><span class="c-eyebrow">inara.cz/elite/commodities · Web</span><span class="pill fed">Web</span></div>
         <p>Where to sell — top markets for Painite, LTDs, Platinum, Tritium and the rest. Sort by sell price; filter by pad size and distance.</p>
-        <div class="c-foot"><a class="open" href="https://inara.cz/elite/commodities/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://inara.cz/elite/commodities/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Wanderer's Plasma Slug Calculator<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Wanderer's Plasma Slug Calculator</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>Calculator for the laser-mining plasma-slug experimental effect — how much you need, how often it triggers, useful for AX mining loadouts.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/useful-tools/plasma-slug-calculator" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/useful-tools/plasma-slug-calculator" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>EDG — Tritium Hotspot Finder<span class="ident">CMDR Vasquess · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>EDG — Tritium Hotspot Finder</h3><span class="c-eyebrow">CMDR Vasquess · Web</span><span class="pill fed">Web</span></div>
         <p>Fleet carrier-tuned: find <b>known tritium hotspots</b> close to your current location for refuelling on long carrier journeys.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=593" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=593" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card farm">
-        <div class="c-top"><h3>Wanderer's Mining Build<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-good">
+        <div class="c-head"><h3>Wanderer's Mining Build</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>Tuned, recommended mining loadouts — laser, core, subsurface, deep-core variants. Compatible with the project's Type-11 doctrine.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/builds/mining" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/builds/mining" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -718,49 +533,49 @@
   <section id="trading">
     <div class="sec-head"><span class="sec-num">09</span><h2>Trading &amp; Commerce</h2><span class="tag">Cargo and credits</span></div>
     <p class="lead">For commodity hauling, rare-goods loops, fleet-carrier arbitrage, and pure profit per jump.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ops">
-        <div class="c-top"><h3>Trade Dangerous<span class="ident">eyeonus/Trade-Dangerous · Python</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Trade Dangerous</h3><span class="c-eyebrow">eyeonus/Trade-Dangerous · Python</span><span class="pill md">Windows</span></div>
         <p>The <b>heavy-hitter trade route optimiser</b>. Command-line, complex constraints (cargo, jump range, pad size, illegal goods), supports multi-stop loops. Power-user territory.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/eyeonus/Trade-Dangerous" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/eyeonus/Trade-Dangerous" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDCT — Carrier Trader<span class="ident">Fi0x · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDCT — Carrier Trader</h3><span class="c-eyebrow">Fi0x · Windows</span><span class="pill md">Windows</span></div>
         <p>Tool for <b>large-quantity trades</b> — built for fleet carrier owners shifting 25,000+ tons at a time. Carrier-to-carrier arbitrage support.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=580" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=580" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Spansh — Trade Planner<span class="ident">spansh.co.uk/trade · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Spansh — Trade Planner</h3><span class="c-eyebrow">spansh.co.uk/trade · Web</span><span class="pill fed">Web</span></div>
         <p>Most accessible multi-hop trade tool. Less powerful than Trade Dangerous, immeasurably easier to use.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/trade-router" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/trade-router" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Elite Trade Net (ETN)<span class="ident">Joe113 · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Elite Trade Net (ETN)</h3><span class="c-eyebrow">Joe113 · Web</span><span class="pill fed">Web</span></div>
         <p>Interactive web tool for finding trade routes and loops that maximise profit per hour. Imports your ship loadout from Coriolis or EDSY.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=169" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=169" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Gold Detector<span class="ident">congenial-acorn · Discord bot · 2026</span></h3><span class="pill api">Discord bot</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Gold Detector</h3><span class="c-eyebrow">congenial-acorn · Discord bot · 2026</span><span class="pill hi">Discord bot</span></div>
         <p>Discord bot that finds stations with large stocks of <b>90% discounted gold</b> — a niche arbitrage corner that pays out absurdly.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=622" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=622" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>ED Alerts<span class="ident">Tom Snelling · Web · Discord</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>ED Alerts</h3><span class="c-eyebrow">Tom Snelling · Web · Discord</span><span class="pill fed">Web</span></div>
         <p>Create commodity market price alerts. Get notified via Discord when a specific commodity buys or sells above / below a threshold.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=495" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=495" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Inara — Trade Routes<span class="ident">inara.cz/elite/market-routes · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Inara — Trade Routes</h3><span class="c-eyebrow">inara.cz/elite/market-routes · Web</span><span class="pill fed">Web</span></div>
         <p>The accessible trade-route lookup baked into Inara. Less optimal than Trade Dangerous, but covers the daily "where to sell this" question.</p>
-        <div class="c-foot"><a class="open" href="https://inara.cz/elite/market-routes/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://inara.cz/elite/market-routes/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -769,67 +584,67 @@
   <section id="carriers">
     <div class="sec-head"><span class="sec-num">10</span><h2>Fleet Carriers &amp; Colonisation</h2><span class="tag">Capital ops</span></div>
     <p class="lead">Once you own a carrier or begin a colonisation build, the logistics curve goes vertical. <b>Colonisation tooling is the freshest category in this dossier</b> — these tools are mostly 2025–2026 builds.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDColonisationAsst<span class="ident">Oliver Ernster · Windows · 2026</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDColonisationAsst</h3><span class="c-eyebrow">Oliver Ernster · Windows · 2026</span><span class="pill md">Windows</span></div>
         <p>Tracks colonisation build-site progress and fleet carrier logistics automatically from journal. Construction progress, commodities remaining, carrier inventory. <b>The current best colonisation tracker.</b></p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=634" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=634" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Raven Colonial<span class="ident">Grinning2001 · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Raven Colonial</h3><span class="c-eyebrow">Grinning2001 · Web</span><span class="pill fed">Web</span></div>
         <p>Web tool for <b>planning colonised systems</b>, tracking colonisation construction sites, and pre-loading commodities on fleet carriers. Excellent companion to the project's colonisation doctrine.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=613" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=613" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Elite Cargo Log<span class="ident">CMDR CentrlMax · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Elite Cargo Log</h3><span class="c-eyebrow">CMDR CentrlMax · Web</span><span class="pill fed">Web</span></div>
         <p>Journal-based hauling and offloading calculator. Upload your journal to calculate delivered cargo and freight payouts for fleet carriers and colonisation build sites.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=620" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=620" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>FCMS — Fleet Carrier Management<span class="ident">EDMC plugin</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>FCMS — Fleet Carrier Management</h3><span class="c-eyebrow">EDMC plugin</span><span class="pill lo">EDMC plugin</span></div>
         <p>Auto-reports carrier fuel, cargo, jump schedule and finances. Multi-carrier dashboard. The default carrier management plugin.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/Athanasius/FCMS" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/Athanasius/FCMS" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>CATS — Carrier Administration<span class="ident">mck · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>CATS — Carrier Administration</h3><span class="c-eyebrow">mck · Windows</span><span class="pill md">Windows</span></div>
         <p>Fleet carrier <b>auto-jumper / autopilot</b> + multi-carrier management UI. Schedules sequential jumps along a Spansh route, auto-commits each jump. Multi-day AFK trips done right.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=581" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=581" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>CTS — Carrier Traversal System<span class="ident">congenial-acorn · 2026</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>CTS — Carrier Traversal System</h3><span class="c-eyebrow">congenial-acorn · 2026</span><span class="pill md">Windows</span></div>
         <p>Newer, simpler carrier auto-plotter focused on long carrier journeys. Lighter than CATS.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=621" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=621" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Multi Carrier Manager<span class="ident">mck · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Multi Carrier Manager</h3><span class="c-eyebrow">mck · Windows</span><span class="pill md">Windows</span></div>
         <p>C# WinForms app for managing multiple Fleet Carriers (requires alt accounts). Side-by-side stats view across the fleet.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=574" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=574" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Wanderer's Fleet Carrier Calculator<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Wanderer's Fleet Carrier Calculator</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>Cost calculator for carrier acquisition, services, and ongoing upkeep — sanity-check before you spend 5 billion credits.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/useful-tools/fleet-carrier-calculator" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/useful-tools/fleet-carrier-calculator" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>fleetcarrier.space<span class="ident">Absolver · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>fleetcarrier.space</h3><span class="c-eyebrow">Absolver · Web</span><span class="pill fed">Web</span></div>
         <p>Showcase tool for your fleet carrier — services offered, location, schedule. Lets other commanders find your services.</p>
-        <div class="c-foot"><a class="open" href="https://fleetcarrier.space/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://fleetcarrier.space/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Fleet Carrier Macros<span class="ident">cmdrpin72 · AutoHotkey</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Fleet Carrier Macros</h3><span class="c-eyebrow">cmdrpin72 · AutoHotkey</span><span class="pill md">Windows</span></div>
         <p>Lower-tech hotkey macros (Ctrl+F11 refill from carrier, Ctrl+F9 next jump, Alt+F9 auto-jump remaining route). Quick wins without the autopilot complexity.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=545" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=545" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -838,61 +653,61 @@
   <section id="powerplay">
     <div class="sec-head"><span class="sec-num">11</span><h2>Powerplay 2.0, BGS &amp; Squadron</h2><span class="tag">Meta-game</span></div>
     <p class="lead">Background Simulation and Powerplay 2.0 are the deepest meta-games in Elite. <b>For the Jerome Archer pledge specifically</b>, the Powerplay Assistant below is the single most useful tool in this dossier.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ref">
-        <div class="c-top"><h3>PowerPlay Assistant<span class="ident">elite.niceygy.net · Web · 2025</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>PowerPlay Assistant</h3><span class="c-eyebrow">elite.niceygy.net · Web · 2025</span><span class="pill fed">Web</span></div>
         <p>Web tool covering <b>every Powerplay 2.0 task</b> — select your task and Power, it gives full instructions. Finds nearby anarchy systems for illegal tasks; tracks Megaships (auto-update with the tick); rare-goods finder; system finder by Powerplay requirements. Essential for the Jerome Archer pledge.</p>
-        <div class="c-foot"><a class="open" href="https://elite.niceygy.net/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://elite.niceygy.net/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>BGS-Tally<span class="ident">Aussi · EDMC plugin · 2026</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>BGS-Tally</h3><span class="c-eyebrow">Aussi · EDMC plugin · 2026</span><span class="pill lo">EDMC plugin</span></div>
         <p>The all-in-one tracker — <b>BGS, Colonisation, Powerplay merits and Thargoid War activity</b>. Counts every contribution across the journal and generates squadron-ready reports. Most actively maintained meta-game plugin.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=556" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=556" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>ETN — Elite Tactical Network<span class="ident">NetTrap · Web portal · 2026</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>ETN — Elite Tactical Network</h3><span class="c-eyebrow">NetTrap · Web portal · 2026</span><span class="pill fed">Web</span></div>
         <p>Multi-tenant squadron intelligence portal focused on <b>BGS and Powerplay activity tracking</b>. Aggregates squadron contributions, visualises trends, supports cross-squadron coordination.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=629" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=629" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDMFAT<span class="ident">anthorx · EDMC plugin</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDMFAT</h3><span class="c-eyebrow">anthorx · EDMC plugin</span><span class="pill lo">EDMC plugin</span></div>
         <p>Elite Dangerous Minor Faction Activity Tracker. Auto-records every in-game action affecting minor faction influence — missions, bounties, cartographic sales. Generates BGS reports.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/anthorx/EDMC-MinorFactionActivityTracker" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/anthorx/EDMC-MinorFactionActivityTracker" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Elite Dangerous Dashboard<span class="ident">ED PCGN · Web · 2025</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Elite Dangerous Dashboard</h3><span class="c-eyebrow">ED PCGN · Web · 2025</span><span class="pill fed">Web</span></div>
         <p>Web companion app focused on commander statistics and a powerful <b>squadron dashboard</b>. Activity tracking and leaderboards.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=619" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=619" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Inara — Squadrons<span class="ident">inara.cz/elite/squadrons · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Inara — Squadrons</h3><span class="c-eyebrow">inara.cz/elite/squadrons · Web</span><span class="pill fed">Web</span></div>
         <p>Built-in squadron features — member management, contribution tracking, mission boards, internal communications. The low-friction default for most squadrons.</p>
-        <div class="c-foot"><a class="open" href="https://inara.cz/elite/squadrons/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://inara.cz/elite/squadrons/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Elite Warboard<span class="ident">Mirooz · 2026</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Elite Warboard</h3><span class="c-eyebrow">Mirooz · 2026</span><span class="pill md">Windows</span></div>
         <p>Optimisation tool for combat exploration, colonisation, massacre missions, and mining — focused on stacking the right missions for maximum payout.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=632" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=632" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDR — ED Recon<span class="ident">LeKeno · EDMC plugin</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDR — ED Recon</h3><span class="c-eyebrow">LeKeno · EDMC plugin</span><span class="pill lo">EDMC plugin</span></div>
         <p>Scans other commanders, fetches Inara background plus Karma / past legal records aggregated by other EDR users. <b>Critical for Powerplay PvP encounters</b> and Open-mode situational awareness.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=453" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=453" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>ED Wing Helper<span class="ident">Siegfried-Origin · 2026</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>ED Wing Helper</h3><span class="c-eyebrow">Siegfried-Origin · 2026</span><span class="pill md">Windows</span></div>
         <p>Manages wing invitations from a predefined commander list — monitors the journal to detect when squadmates are online and auto-prompts for invites.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=627" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=627" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -901,55 +716,55 @@
   <section id="voice">
     <div class="sec-head"><span class="sec-num">12</span><h2>Voice, AI &amp; Immersion</h2><span class="tag">Talking copilots</span></div>
     <p class="lead">Voice command and ambient AI. The most fast-moving sub-category in 2025–2026 thanks to the arrival of LLM-driven copilots.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ops">
-        <div class="c-top"><h3>VoiceAttack<span class="ident">voiceattack.com · Windows</span></h3><span class="pill win">Windows · paid</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>VoiceAttack</h3><span class="c-eyebrow">voiceattack.com · Windows</span><span class="pill md">Windows · paid</span></div>
         <p>The platform almost every voice tool builds on. Maps phrases to keybinds, macros, plugin calls. Foundation layer for HCS, EDDI, EDCoPilot integration.</p>
-        <div class="c-foot"><a class="open" href="https://voiceattack.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://voiceattack.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>HCS Voice Packs<span class="ident">hcsvoicepacks.com · VoiceAttack packs</span></h3><span class="pill win">VA pack · paid</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>HCS Voice Packs</h3><span class="c-eyebrow">hcsvoicepacks.com · VoiceAttack packs</span><span class="pill md">VA pack · paid</span></div>
         <p>Commercial voice packs (Astra, Verity, Eli, Orion, more) with theatrical voice actors and Elite-specific scripts. <b>The immersion layer most commanders pair with VoiceAttack.</b></p>
-        <div class="c-foot"><a class="open" href="https://hcsvoicepacks.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://hcsvoicepacks.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDDI<span class="ident">EDCD/EDDI · Plugin or standalone</span></h3><span class="pill plug">VA plugin</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDDI</h3><span class="c-eyebrow">EDCD/EDDI · Plugin or standalone</span><span class="pill lo">VA plugin</span></div>
         <p>Voice responder providing rich in-game event narration — jump destinations, faction states, system economy. Doubles as a VoiceAttack data layer.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/EDCD/EDDI/releases" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/EDCD/EDDI/releases" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDCoPilot<span class="ident">razzafrag.com · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDCoPilot</h3><span class="c-eyebrow">razzafrag.com · Windows</span><span class="pill md">Windows</span></div>
         <p>The most polished virtual ship-AI — ambient chatter, route plotting, market lookups, 30+ panel UI. Works with HCS packs and VR overlays.</p>
-        <div class="c-foot"><a class="open" href="https://www.razzafrag.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.razzafrag.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>COVAS:NEXT<span class="ident">COVAS Labs / Rude · Windows · 2025</span></h3><span class="pill win">AI · LLM</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>COVAS:NEXT</h3><span class="c-eyebrow">COVAS Labs / Rude · Windows · 2025</span><span class="pill md">AI · LLM</span></div>
         <p>Talk to your ship computer in real-time. TOS-compliant, reacts to game events, triggers ship actions and searches, vision capabilities, persistent memory, supports local and online STT/TTS/LLMs. <b>The most ambitious AI copilot in the ecosystem right now.</b></p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=599" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=599" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>Elite Intel<span class="ident">Alex Stone (CMDR Prince of Krondor) · 2026</span></h3><span class="pill win">AI · offline</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>Elite Intel</h3><span class="c-eyebrow">Alex Stone (CMDR Prince of Krondor) · 2026</span><span class="pill md">AI · offline</span></div>
         <p>Sci-fi inspired <b>offline private AI ship computer</b>. Open source, Linux + Windows. The privacy-conscious alternative to cloud-LLM copilots.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=615" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=615" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EliteVA<span class="ident">Somfic · VoiceAttack plugin</span></h3><span class="pill plug">VA plugin</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EliteVA</h3><span class="c-eyebrow">Somfic · VoiceAttack plugin</span><span class="pill lo">VA plugin</span></div>
         <p>VoiceAttack plugin exposing in-game events, variables and keybindings to your macros. The clean modern alternative to older bridging plugins.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=612" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=612" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ops">
-        <div class="c-top"><h3>EDISON<span class="ident">Ashragon · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-fed">
+        <div class="c-head"><h3>EDISON</h3><span class="c-eyebrow">Ashragon · Windows</span><span class="pill md">Windows</span></div>
         <p>Surface and orbital navigator — calculates bearings and headings for surface driving and planetary approach. Excellent for VR commanders.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=431" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=431" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -958,67 +773,67 @@
   <section id="hud">
     <div class="sec-head"><span class="sec-num">13</span><h2>HUD, VR &amp; Hardware Integration</h2><span class="tag">The cockpit</span></div>
     <p class="lead">Things that change what's on your screens, add new screens, or wire physical hardware to the game.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ship">
-        <div class="c-top"><h3>EDHM — HUD Mod<span class="ident">BlueMystical/EDHM-UI · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EDHM — HUD Mod</h3><span class="c-eyebrow">BlueMystical/EDHM-UI · Windows</span><span class="pill md">Windows</span></div>
         <p>Recolour the entire in-game HUD — orange becomes blue, green, white, anything. Reversible, online-safe. Accessibility-critical for some colour-blind commanders.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/BlueMystical/EDHM-UI/releases" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/BlueMystical/EDHM-UI/releases" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>EDMCModernOverlay<span class="ident">SweetJonnySauce · 2026</span></h3><span class="pill plug">EDMC plugin</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EDMCModernOverlay</h3><span class="c-eyebrow">SweetJonnySauce · 2026</span><span class="pill lo">EDMC plugin</span></div>
         <p>Modern replacement for EDMCOverlay / EDMCOverlay2 with backwards compatibility. Custom on-screen placement of plugin HUD elements, Windows + Linux.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=616" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=616" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>Elite VR Cockpit<span class="ident">SteamVR overlay</span></h3><span class="pill win">VR</span></div>
+      <article class="card">
+        <div class="c-head"><h3>Elite VR Cockpit</h3><span class="c-eyebrow">SteamVR overlay</span><span class="pill md">VR</span></div>
         <p>SteamVR overlay adding virtual throttle, joystick and holographic buttons — VR play without HOTAS. Works everywhere except on-foot Odyssey.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=475" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=475" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>MFD Cougar Display<span class="ident">Bionic Bytes · Windows · 2026</span></h3><span class="pill win">Windows</span></div>
+      <article class="card">
+        <div class="c-head"><h3>MFD Cougar Display</h3><span class="c-eyebrow">Bionic Bytes · Windows · 2026</span><span class="pill md">Windows</span></div>
         <p>Extends cockpit instrumentation onto additional monitors (Thrustmaster Cougars, touchscreens). Fleet Carrier, mining, piracy and bounty-hunting extras baked in.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=488" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=488" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>EliteChroma<span class="ident">Elrith · Razer integration</span></h3><span class="pill win">Windows</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EliteChroma</h3><span class="c-eyebrow">Elrith · Razer integration</span><span class="pill md">Windows</span></div>
         <p>Makes Razer Chroma and Chroma-connected RGB devices react to Elite Dangerous in-game events. Cockpit-lighting immersion for desk gear.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=479" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=479" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>Touch Portal<span class="ident">touch-portal.com · iOS / Android</span></h3><span class="pill web">Mobile</span></div>
+      <article class="card">
+        <div class="c-head"><h3>Touch Portal</h3><span class="c-eyebrow">touch-portal.com · iOS / Android</span><span class="pill fed">Mobile</span></div>
         <p>Turns a phone or tablet into a customisable touchscreen control panel. Pages of virtual buttons mapped to Elite keybinds — Stream-Deck-on-glass.</p>
-        <div class="c-foot"><a class="open" href="https://www.touch-portal.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.touch-portal.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>SpaceDesk<span class="ident">spacedesk.net · Wireless display</span></h3><span class="pill web">Windows · tablet</span></div>
+      <article class="card">
+        <div class="c-head"><h3>SpaceDesk</h3><span class="c-eyebrow">spacedesk.net · Wireless display</span><span class="pill fed">Windows · tablet</span></div>
         <p>Turns any tablet into a wireless second monitor for your PC. Many commanders use this to host EDCoPilot's UI on a tablet beside the HOTAS.</p>
-        <div class="c-foot"><a class="open" href="https://www.spacedesk.net/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spacedesk.net/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>EDRefCard<span class="ident">VerticalBlank · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EDRefCard</h3><span class="c-eyebrow">VerticalBlank · Web</span><span class="pill fed">Web</span></div>
         <p>Generates a printable visual reference sheet from your Custom.binds file — keyboard layouts, joystick, HOTAS. Browse other commanders' shared bindings for ideas.</p>
-        <div class="c-foot"><a class="open" href="https://edrefcard.info/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edrefcard.info/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>EDProfiler<span class="ident">Dr. Kaii · Windows</span></h3><span class="pill win">Windows</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EDProfiler</h3><span class="c-eyebrow">Dr. Kaii · Windows</span><span class="pill md">Windows</span></div>
         <p>Multiple graphics, HUD-colour and controls profiles — switch between them before launching Elite. Useful for VR-vs-monitor swaps.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=389" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=389" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ship">
-        <div class="c-top"><h3>Elite G19s Companion<span class="ident">MagicMau · Windows</span></h3><span class="pill win">Logitech G19</span></div>
+      <article class="card">
+        <div class="c-head"><h3>Elite G19s Companion</h3><span class="c-eyebrow">MagicMau · Windows</span><span class="pill md">Logitech G19</span></div>
         <p>Companion app for the Logitech G19 keyboard's secondary display — orrery view, status, market info, news ticker.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=212" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=212" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -1027,55 +842,55 @@
   <section id="data">
     <div class="sec-head"><span class="sec-num">14</span><h2>Data Networks &amp; APIs</h2><span class="tag">The plumbing</span></div>
     <p class="lead">The substrate everything else runs on. You don't talk to these directly — but every tool above does.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDDN — ED Data Network<span class="ident">github.com/EDCD/EDDN · ZeroMQ pub-sub</span></h3><span class="pill api">API · Network</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDDN — ED Data Network</h3><span class="c-eyebrow">github.com/EDCD/EDDN · ZeroMQ pub-sub</span><span class="pill hi">API · Network</span></div>
         <p>The community-run firehose of anonymised journal events — market prices, scans, faction states, shipyard, outfitting. Every EDMC and EDDiscovery commander contributes; every tool subscribes. <b>The single most important piece of infrastructure in the ecosystem.</b></p>
-        <div class="c-foot"><a class="open" href="https://github.com/EDCD/EDDN/wiki" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/EDCD/EDDN/wiki" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDSM API<span class="ident">edsm.net/en/api-v1 · REST</span></h3><span class="pill api">API · REST</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDSM API</h3><span class="c-eyebrow">edsm.net/en/api-v1 · REST</span><span class="pill hi">API · REST</span></div>
         <p>Public read API over the Star Map data — systems, bodies, stations, factions, traffic, ranks. Rate-limited but free.</p>
-        <div class="c-foot"><a class="open" href="https://www.edsm.net/en/api-v1" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.edsm.net/en/api-v1" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Spansh API &amp; Data Dumps<span class="ident">spansh.co.uk/dumps · REST + dumps</span></h3><span class="pill api">API · Dumps</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Spansh API &amp; Data Dumps</h3><span class="c-eyebrow">spansh.co.uk/dumps · REST + dumps</span><span class="pill hi">API · Dumps</span></div>
         <p>Spansh's route-planning REST API plus daily JSON dumps of all EDDN-derived galaxy data. The default heavy-data substrate for tool builders.</p>
-        <div class="c-foot"><a class="open" href="https://www.spansh.co.uk/dumps" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.spansh.co.uk/dumps" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EliteAPI (.NET)<span class="ident">EliteAPI / Somfic · NuGet</span></h3><span class="pill api">API · .NET</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EliteAPI (.NET)</h3><span class="c-eyebrow">EliteAPI / Somfic · NuGet</span><span class="pill hi">API · .NET</span></div>
         <p>Open-source .NET library wrapping journal parsing, in-game state and keybindings. The base under EliteVA, Discord rich presence apps, custom companion tools.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=470" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=470" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDGIS — Galactic Info System<span class="ident">ThArGosu · Web + API</span></h3><span class="pill api">API · Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDGIS — Galactic Info System</h3><span class="c-eyebrow">ThArGosu · Web + API</span><span class="pill hi">API · Web</span></div>
         <p>Performance-first galactic coordinate, 2D vector system maps, 3D galactic neighbourhood, closest neutron star, coordinate prediction. <b>Backup for EDSM</b> when its load is high.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=617" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=617" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDCD FDevIDs<span class="ident">github.com/EDCD/FDevIDs · Reference</span></h3><span class="pill api">Reference</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDCD FDevIDs</h3><span class="c-eyebrow">github.com/EDCD/FDevIDs · Reference</span><span class="pill hi">Reference</span></div>
         <p>Community-collected mapping of FDev internal API identifiers — every ship, module, commodity, suit, weapon by its internal symbol. <b>Required reference for any tool builder.</b></p>
-        <div class="c-foot"><a class="open" href="https://github.com/EDCD/FDevIDs" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/EDCD/FDevIDs" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Coriolis Data<span class="ident">github.com/EDCD/coriolis-data · JSON</span></h3><span class="pill api">Reference</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Coriolis Data</h3><span class="c-eyebrow">github.com/EDCD/coriolis-data · JSON</span><span class="pill hi">Reference</span></div>
         <p>The canonical machine-readable model of every ship hull and module in Elite. Powers Coriolis, EDSY, and most downstream simulation tools.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/EDCD/coriolis-data" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/EDCD/coriolis-data" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDEngineer blueprints.json<span class="ident">github.com/msarilar/EDEngineer · JSON</span></h3><span class="pill api">Reference</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDEngineer blueprints.json</h3><span class="c-eyebrow">github.com/msarilar/EDEngineer · JSON</span><span class="pill hi">Reference</span></div>
         <p>Authoritative blueprint definitions — material costs per grade for every engineering blueprint. Used by EDEngineer itself plus many other material trackers.</p>
-        <div class="c-foot"><a class="open" href="https://github.com/msarilar/EDEngineer/tree/master/EDEngineer.Models/Resources" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://github.com/msarilar/EDEngineer/tree/master/EDEngineer.Models/Resources" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -1084,43 +899,43 @@
   <section id="rescue">
     <div class="sec-head"><span class="sec-num">15</span><h2>Rescue &amp; Player Groups</h2><span class="tag">Community</span></div>
     <p class="lead">Player organisations that have real gameplay impact — fuel rescue, hull repair, science research, anti-Thargoid combat.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ref">
-        <div class="c-top"><h3>Fuel Rats<span class="ident">fuelrats.com · IRC + web</span></h3><span class="pill web">Player group</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Fuel Rats</h3><span class="c-eyebrow">fuelrats.com · IRC + web</span><span class="pill fed">Player group</span></div>
         <p>The search-and-rescue squadron. Stranded out of fuel anywhere in the galaxy → file a request → a Rat is dispatched (typically &lt;15 minutes). Free, 24/7. <b>The Sidewinder insurance fallback's actual backup plan.</b></p>
-        <div class="c-foot"><a class="open" href="https://fuelrats.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://fuelrats.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Hull Seals<span class="ident">hullseals.space · IRC + web</span></h3><span class="pill web">Player group</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Hull Seals</h3><span class="c-eyebrow">hullseals.space · IRC + web</span><span class="pill fed">Player group</span></div>
         <p>The repairs mirror of the Rats — hull repairs, broken canopy rescues, SRV strandings. The Asp Explorer's deep-space insurance.</p>
-        <div class="c-foot"><a class="open" href="https://hullseals.space/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://hullseals.space/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Canonn Research<span class="ident">canonn.science · Discord + web</span></h3><span class="pill web">Player group</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Canonn Research</h3><span class="c-eyebrow">canonn.science · Discord + web</span><span class="pill fed">Player group</span></div>
         <p>The science-and-mystery squadron — Thargoid biology, Guardian sites, anomalies, codex entries. Operates its own megaship (The Gnosis). Pairs with the EDMC-Canonn plugin.</p>
-        <div class="c-foot"><a class="open" href="https://canonn.science/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://canonn.science/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Anti-Xeno Initiative (AXI)<span class="ident">antixenoinitiative.com · Discord</span></h3><span class="pill web">Player group</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Anti-Xeno Initiative (AXI)</h3><span class="c-eyebrow">antixenoinitiative.com · Discord</span><span class="pill fed">Player group</span></div>
         <p>Coordinated anti-Thargoid combat group. Evacuations, AX combat zones, Thargoid Titan ops. Maintains the canonical AX build wiki.</p>
-        <div class="c-foot"><a class="open" href="https://antixenoinitiative.com/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://antixenoinitiative.com/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Hutton Orbital Truckers<span class="ident">huttonorbital.space · Player group</span></h3><span class="pill web">Player group</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Hutton Orbital Truckers</h3><span class="c-eyebrow">huttonorbital.space · Player group</span><span class="pill fed">Player group</span></div>
         <p>The (in)famous community around hauling cargo to Hutton Orbital (6.7 million light-seconds from the entry star). Has its own EDMC plugin (Hutton Helper), podcast, and lore. Run for the meme, stay for the mug.</p>
-        <div class="c-foot"><a class="open" href="https://www.huttonorbital.space/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.huttonorbital.space/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Remlok Industries<span class="ident">remlok-industries.fr · Web</span></h3><span class="pill web">Player group</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Remlok Industries</h3><span class="c-eyebrow">remlok-industries.fr · Web</span><span class="pill fed">Player group</span></div>
         <p>French fan-corporation site — guides, news, lore content. The reference for francophone commanders; deep-lore enthusiasts in any language.</p>
-        <div class="c-foot"><a class="open" href="https://www.remlok-industries.fr/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.remlok-industries.fr/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -1129,43 +944,43 @@
   <section id="directories">
     <div class="sec-head"><span class="sec-num">16</span><h2>Directories &amp; Aggregators</h2><span class="tag">When you don't know what you need</span></div>
     <p class="lead">The starting points for discovery — if you remember nothing else from this dossier, remember EDCodex and Wanderer's.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card ref">
-        <div class="c-top"><h3>EDCodex<span class="ident">edcodex.info · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>EDCodex</h3><span class="c-eyebrow">edcodex.info · Web</span><span class="pill fed">Web</span></div>
         <p>The directory of directories. <b>288 third-party tools</b> catalogued by function (audio, BGS, EDDN, exploration, fighting, graphics, logbook, routes, shipyard, trading, etc). Tool authors submit and update entries themselves.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Wanderer's Toolbox<span class="ident">wanderer-toolbox.com · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Wanderer's Toolbox</h3><span class="c-eyebrow">wanderer-toolbox.com · Web</span><span class="pill fed">Web</span></div>
         <p>Restoration of CMDRs Toolbox — curated guides, exploration routes, ship builds, and useful tools (FC calculator, multi-waypoint planner, plasma slug calc). Also acts as a hand-picked external resources directory.</p>
-        <div class="c-foot"><a class="open" href="https://wanderer-toolbox.com/external-tools" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://wanderer-toolbox.com/external-tools" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>NEWP — New Player tools<span class="ident">newp.io/thirdpartytools · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>NEWP — New Player tools</h3><span class="c-eyebrow">newp.io/thirdpartytools · Web</span><span class="pill fed">Web</span></div>
         <p>Clean, curated short-list of essentials targeted at <b>new commanders</b>. Avoids overwhelm — the recommendation list to give squadmates.</p>
-        <div class="c-foot"><a class="open" href="https://newp.io/thirdpartytools" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://newp.io/thirdpartytools" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>r/EliteDangerous Great Posts<span class="ident">reddit.com/r/EliteDangerous/wiki · Web</span></h3><span class="pill web">Reddit wiki</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>r/EliteDangerous Great Posts</h3><span class="c-eyebrow">reddit.com/r/EliteDangerous/wiki · Web</span><span class="pill fed">Reddit wiki</span></div>
         <p>Reddit-curated archive of vote-promoted essential posts — guide compilations, tool roundups, gameplay primers.</p>
-        <div class="c-foot"><a class="open" href="https://www.reddit.com/r/EliteDangerous/wiki/greatposts/" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://www.reddit.com/r/EliteDangerous/wiki/greatposts/" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Just Elite Dangerous<span class="ident">justabout.com/elite-dangerous · Web</span></h3><span class="pill web">Web</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Just Elite Dangerous</h3><span class="c-eyebrow">justabout.com/elite-dangerous · Web</span><span class="pill fed">Web</span></div>
         <p>Community-driven guide site — curated tool recommendations from community submissions, creator profiles, gameplay deep dives.</p>
-        <div class="c-foot"><a class="open" href="https://justabout.com/elite-dangerous" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://justabout.com/elite-dangerous" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
-      <div class="card ref">
-        <div class="c-top"><h3>Elite Dangerous Add-On Helper<span class="ident">Jimmy White · 2025</span></h3><span class="pill win">Windows</span></div>
+      <article class="card ac-maroon">
+        <div class="c-head"><h3>Elite Dangerous Add-On Helper</h3><span class="c-eyebrow">Jimmy White · 2025</span><span class="pill md">Windows</span></div>
         <p>Lets you choose which apps and websites to launch when you run Elite — a coordinated launcher for your tool stack.</p>
-        <div class="c-foot"><a class="open" href="https://edcodex.info/?m=tools&entry=578" target="_blank" rel="noopener">Open &#9656;</a></div>
-      </div>
+        <p><a href="https://edcodex.info/?m=tools&entry=578" target="_blank" rel="noopener">Open &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -1174,31 +989,31 @@
   <section id="defunct">
     <div class="sec-head"><span class="sec-num">17</span><h2>Defunct — with Replacements</h2><span class="tag">Reference graveyard</span></div>
     <p class="lead">Older guides and YouTube tutorials still link to these. They no longer work — but their functions have all been picked up elsewhere.</p>
-    <div class="grid">
+    <div class="cards">
 
-      <div class="card dead">
-        <div class="c-top"><h3>EDDB — Elite Dangerous Database<span class="ident">eddb.io · Shut down April 2023</span></h3><span class="pill dead">Defunct</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EDDB — Elite Dangerous Database</h3><span class="c-eyebrow">eddb.io · Shut down April 2023</span><span class="pill neutral">Defunct</span></div>
         <p>Was the de facto station / system / commodity database for nearly a decade. Replaced by <b>Inara</b> (markets, stations, trade) and <b>EDSM</b> (systems, bodies, prohibited goods). Both absorbed the data dumps.</p>
-        <div class="c-foot"><a class="open">Closed &#9656;</a></div>
-      </div>
+        <p><a>Closed &#9656;</a></p>
+      </article>
 
-      <div class="card dead">
-        <div class="c-top"><h3>CMDRs Toolbox<span class="ident">cmdrs-toolbox.com · Shut down 2024</span></h3><span class="pill dead">Defunct</span></div>
+      <article class="card">
+        <div class="c-head"><h3>CMDRs Toolbox</h3><span class="c-eyebrow">cmdrs-toolbox.com · Shut down 2024</span><span class="pill neutral">Defunct</span></div>
         <p>Long-running guides and tools site (Shield Tester, Material Finder, multi-waypoint planner). Now actively restored and maintained as <b>Wanderer's Toolbox</b> (wanderer-toolbox.com) — same role in the ecosystem.</p>
-        <div class="c-foot"><a class="open">Closed &#9656;</a></div>
-      </div>
+        <p><a>Closed &#9656;</a></p>
+      </article>
 
-      <div class="card dead">
-        <div class="c-top"><h3>Athanasius Route Planner<span class="ident">Deprecated 2021</span></h3><span class="pill dead">Deprecated</span></div>
+      <article class="card">
+        <div class="c-head"><h3>Athanasius Route Planner</h3><span class="c-eyebrow">Deprecated 2021</span><span class="pill neutral">Deprecated</span></div>
         <p>A* route planner that pre-dated Spansh's Galaxy Plotter. Officially deprecated in favour of <b>Spansh Exact Plotter</b>. Some older Reddit posts still link to it.</p>
-        <div class="c-foot"><a class="open">Closed &#9656;</a></div>
-      </div>
+        <p><a>Closed &#9656;</a></p>
+      </article>
 
-      <div class="card dead">
-        <div class="c-top"><h3>EliteOCR / RegulatedNoise<span class="ident">Obsolete 2016</span></h3><span class="pill dead">Obsolete</span></div>
+      <article class="card">
+        <div class="c-head"><h3>EliteOCR / RegulatedNoise</h3><span class="c-eyebrow">Obsolete 2016</span><span class="pill neutral">Obsolete</span></div>
         <p>Pre-journal-era OCR tools for scraping market prices from screenshots. Made redundant in 2016 when Frontier added the journal log. Listed here only because some legacy guides still reference them.</p>
-        <div class="c-foot"><a class="open">Closed &#9656;</a></div>
-      </div>
+        <p><a>Closed &#9656;</a></p>
+      </article>
 
     </div>
   </section>
@@ -1208,91 +1023,79 @@
     <div class="sec-head"><span class="sec-num">18</span><h2>By Play-Style — Recommended Stacks</h2><span class="tag">Map to the KA- fleet</span></div>
     <p class="lead">Mapping tools to the specific roles in the KA- fleet. The five essentials in §01 are assumed always-on; this layer is what you stack on top.</p>
 
-    <table class="matrix">
+    <div class="tbl-scroll">
+    <table class="data">
       <thead>
         <tr><th>Role / Hull</th><th>Add to the essentials</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td>Insurance / Sidewinder Mk I</td>
+          <td class="mod">Insurance / Sidewinder Mk I</td>
           <td>Fuel Rats &amp; Hull Seals bookmarks. That's it — the disposable hull doesn't need more.</td>
         </tr>
         <tr>
-          <td>Explorer / Asp Explorer · Mandalay</td>
+          <td class="mod">Explorer / Asp Explorer · Mandalay</td>
           <td><b>Elite Observatory Core</b>, EDDiscovery, EDMC-Canonn, EDMC BioScan, EDMC Pioneer, Artemis Scanner Tracker, Hull Seals bookmark, Fuel Rats bookmark.</td>
         </tr>
         <tr>
-          <td>Passenger ferry / Lynx Highliner</td>
+          <td class="mod">Passenger ferry / Lynx Highliner</td>
           <td><b>Spansh Tourist Planner</b>, EDCoPilot or EDDI for ambient narration, EDISON for orbital approach.</td>
         </tr>
         <tr>
-          <td>PvE Combat / Viper Mk IV · Python Mk II</td>
+          <td class="mod">PvE Combat / Viper Mk IV · Python Mk II</td>
           <td><b>EDEngineer</b>, HCS Voice Pack + VoiceAttack, BGS-Tally (for Powerplay merits), EDR for situational awareness, EDHM-UI for HUD visibility.</td>
         </tr>
         <tr>
-          <td>Cargo trader / Type-9 · Type-8</td>
+          <td class="mod">Cargo trader / Type-9 · Type-8</td>
           <td><b>Trade Dangerous</b> or Spansh Trade Planner, EDDI (mission narration), ED Alerts for price thresholds.</td>
         </tr>
         <tr>
-          <td>Mining / Type-11 Prospector</td>
+          <td class="mod">Mining / Type-11 Prospector</td>
           <td><b>EliteMining</b>, Spansh Body Search (ring hotspots), Wanderer's Plasma Slug Calculator, EDG (tritium hotspots).</td>
         </tr>
         <tr>
-          <td>Powerplay 2.0 grind (Jerome Archer pledge)</td>
+          <td class="mod">Powerplay 2.0 grind (Jerome Archer pledge)</td>
           <td><b>PowerPlay Assistant</b> (elite.niceygy.net) — non-negotiable. <b>BGS-Tally</b> for merit tracking. EDR before any encounter.</td>
         </tr>
         <tr>
-          <td>System Colonisation</td>
+          <td class="mod">System Colonisation</td>
           <td><b>EDColonisationAsst</b>, <b>Raven Colonial</b>, Elite Cargo Log, plus the carrier stack below.</td>
         </tr>
         <tr>
-          <td>Fleet Carrier owner</td>
+          <td class="mod">Fleet Carrier owner</td>
           <td><b>FCMS</b> (EDMC plugin), CATS for auto-jump, Spansh Fleet Carrier Plotter, Wanderer's Carrier Calculator, Multi Carrier Manager (if alt-account carriers).</td>
         </tr>
         <tr>
-          <td>BGS / Squadron player</td>
+          <td class="mod">BGS / Squadron player</td>
           <td><b>BGS-Tally</b> (covers everything), EDMFAT for minor-faction work, Inara Squadrons, ETN if running organised ops.</td>
         </tr>
         <tr>
-          <td>Thargoid War combat</td>
+          <td class="mod">Thargoid War combat</td>
           <td><b>AXI Wiki builds</b>, Canonn Research membership (intel), HCS AX voice pack.</td>
         </tr>
         <tr>
-          <td>VR commander</td>
+          <td class="mod">VR commander</td>
           <td><b>EDCoPilot</b> + COVAS:NEXT (or Elite Intel offline), VoiceAttack + HCS, Elite VR Cockpit, EDDI, Touch Portal + tablet.</td>
         </tr>
       </tbody>
     </table>
+    </div>
 
-    <div class="panel fed">
-      <h3>The "if I install one thing" answer</h3>
+    <div class="panel">
+      <h3 class="subhead">The "if I install one thing" answer</h3>
       <p>For someone just starting their tooling journey: install <strong>EDMC</strong>. It's the foundation everything else builds on, and even with no other tools it makes you a contributing member of the data ecosystem. Then bookmark <strong>Inara</strong>, <strong>EDSY</strong> and <strong>Spansh</strong>, and add tools from this directory as specific gameplay needs arise — not before. <strong>The galaxy doesn't reward over-tooling early; it rewards understanding why each tool earns its slot.</strong></p>
     </div>
 
-    <div class="panel accent">
-      <h3>Where this dossier sits in the project</h3>
+    <div class="panel">
+      <h3 class="subhead">Where this dossier sits in the project</h3>
       <p>This is the Reference Dossier entry indexed at <b>§05 Reference Dossiers</b> in the Artifact Index. It is a living document — when new tools displace listed ones (or vice versa), this dossier updates in place to keep the published URL stable. Categories and play-style mappings sync with the field manuals as the fleet evolves.</p>
     </div>
 
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">19</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <p class="lead">Note: this is a directory, so the table lists the foundational apps it profiles — start with EDMC, the data layer everything else builds on.</p>
     <div class="cr-rows">
@@ -1305,13 +1108,13 @@
   </section>
 
   <footer>
-    <span>Third-Party Apps &amp; Websites Directory — Reference Dossier</span>
-    <span>CMDR <b>Ka0s</b> · INARA 173082</span>
-    <span>120+ entries · 18 categories · 5 essentials</span>
-    <span>Verified against EDCodex · Wanderer's Toolbox · Inara · live</span>
-    <span>o7</span>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Systems</span>
   </footer>
 
 </div>
+
+<script src="../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

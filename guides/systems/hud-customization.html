@@ -3,189 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HUD Customization — Field Manual | CMDR Ka0s</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a0708;--bg2:#0e0a0b;--panel:#140d0f;--panel2:#1a1113;--grid:rgba(180,70,60,.045);
---maroon:#8b2332;--maroon-lt:#b13140;--amber:#e0913a;--amber-lt:#f4b15f;--fed:#4f9fd6;--fed-lt:#7cc0ee;
---danger:#d8423b;--good:#5fb37a;--good-lt:#7fce98;--ink:#ece4df;--ink-dim:#a89a93;--ink-faint:#6e615c;
---hair:rgba(190,120,110,.16);--hair-strong:rgba(190,120,110,.32);}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:42px 42px}
-body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),radial-gradient(1200px 900px at 50% 120%,rgba(79,159,214,.07),transparent 60%)}
-.wrap{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 22px 120px}
-header.masthead{padding:54px 0 26px;border-bottom:1px solid var(--hair-strong);margin-bottom:8px}
-.kicker{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
-.kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
-.kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
-h1.title{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-h1.title span{color:var(--maroon-lt)}
-.subtitle{margin-top:16px;font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);max-width:860px;font-weight:300}
-.masthead-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:'Saira Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
-.masthead-meta b{color:var(--amber-lt);font-weight:600}
-.verdict{margin:34px 0 14px;border:1px solid rgba(224,145,58,.4);border-radius:4px;background:linear-gradient(180deg,rgba(224,145,58,.10),rgba(20,13,15,.6));padding:30px 30px 26px;position:relative;overflow:hidden}
-.verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--amber),transparent)}
-.verdict .v-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:10px}
-.verdict h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);line-height:1.08;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:6px}
-.verdict h2 em{font-style:normal;color:var(--amber-lt)}
-.verdict p{font-size:15.5px;color:var(--ink-dim);margin-top:12px;max-width:980px}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:22px 0 4px}
-.stat{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
-.stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:26px;color:var(--amber-lt);line-height:1}
-.stat .n.fed{color:var(--fed-lt)}.stat .n.mar{color:var(--maroon-lt)}.stat .n.good{color:var(--good-lt)}
-.stat .l{font-size:12.5px;color:var(--ink-dim);margin-top:6px;letter-spacing:.3px}
-section{margin-top:56px;scroll-margin-top:74px}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;border-bottom:1px solid var(--hair);padding-bottom:14px}
-.sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;color:var(--bg);background:var(--amber);padding:3px 9px;border-radius:2px;flex:none}
-.sec-num.fed{background:var(--fed)}
-.sec-head h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05}
-.sec-head .tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center}
-p.lead{font-size:15px;color:var(--ink-dim);margin:14px 0 4px}
-.body-copy{font-size:14.6px;color:var(--ink-dim);margin:14px 0}
-.body-copy b{color:var(--ink);font-weight:600}
-.body-copy a,.lead a{color:var(--amber-lt);text-decoration:none;border-bottom:1px solid rgba(244,177,95,.30)}
-.body-copy a:hover,.lead a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
-h3.sub{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:15px;letter-spacing:.6px;text-transform:uppercase;color:var(--amber-lt);margin:26px 0 8px}
-h3.sub.fed{color:var(--fed-lt)}
-.muted{color:var(--ink-faint)}
-a{color:var(--amber-lt)}
-
-/* cards / legend */
-.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
-.legend .lg{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
-.legend .lg.fedge{border-left:3px solid var(--fed)}
-.legend .lg.amedge{border-left:3px solid var(--amber)}
-.legend h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:12px}
-.legend .lg.fedge h4{color:var(--fed-lt)}
-.legend .row{display:flex;gap:10px;font-size:13.5px;color:var(--ink-dim);margin-bottom:9px;line-height:1.5}
-.legend .row:last-child{margin-bottom:0}.legend .row b{color:var(--ink);font-weight:600}
-.legend .row::before{content:"›";color:var(--amber-lt);font-weight:700;flex:none}
-.legend .lg.fedge .row::before{color:var(--fed-lt)}
-
-/* numbered list */
-ol.steps{list-style:none;counter-reset:st;margin:18px 0 4px;padding:0}
-ol.steps>li{counter-increment:st;position:relative;padding:0 0 16px 46px;font-size:14.6px;color:var(--ink-dim);line-height:1.6}
-ol.steps>li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:0;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;color:var(--fed-lt);background:rgba(79,159,214,.12);border:1px solid rgba(79,159,214,.4);border-radius:3px;padding:3px 7px}
-ol.steps>li b{color:var(--ink);font-weight:600}
-ul.bul{list-style:none;margin:12px 0;padding:0}
-ul.bul li{font-size:14.2px;color:var(--ink-dim);line-height:1.58;padding-left:16px;text-indent:-16px;margin-bottom:7px}
-ul.bul li::before{content:"· ";color:var(--amber-lt);font-weight:700}
-ul.bul li b{color:var(--ink);font-weight:600}
-
-/* code box */
-.codebox{position:relative;background:#0c0809;border:1px solid var(--hair-strong);border-radius:5px;margin:16px 0;overflow:hidden}
-.codebox .cb-head{display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--hair);background:rgba(8,5,6,.6);font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-faint)}
-.codebox .cb-head .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex:none}
-.codebox .cb-head .path{margin-left:auto;color:var(--amber-lt);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.4px;text-transform:none}
-.codebox pre{margin:0;padding:15px 16px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:12.6px;line-height:1.62;color:var(--ink)}
-.codebox pre .tag{color:var(--fed-lt)}
-.codebox pre .val{color:var(--amber-lt)}
-.codebox pre .cm{color:var(--ink-faint);font-style:italic}
-
-/* callouts */
-.callout{border-radius:4px;padding:16px 18px;margin:18px 0;font-size:14px;line-height:1.6;border:1px solid var(--hair);background:var(--panel)}
-.callout .co-h{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:9px}
-.callout .co-h::before{content:"";width:18px;height:2px;border-radius:1px}
-.callout.warn{border-color:rgba(216,66,59,.4);background:linear-gradient(180deg,rgba(216,66,59,.10),rgba(20,13,15,.4))}
-.callout.warn .co-h{color:var(--danger)}.callout.warn .co-h::before{background:var(--danger)}
-.callout.tip{border-color:rgba(95,179,122,.36);background:linear-gradient(180deg,rgba(95,179,122,.08),rgba(20,13,15,.4))}
-.callout.tip .co-h{color:var(--good-lt)}.callout.tip .co-h::before{background:var(--good-lt)}
-.callout.note{border-color:rgba(224,145,58,.36);background:linear-gradient(180deg,rgba(224,145,58,.08),rgba(20,13,15,.4))}
-.callout.note .co-h{color:var(--amber-lt)}.callout.note .co-h::before{background:var(--amber-lt)}
-.callout b{color:var(--ink);font-weight:600}.callout code{font-family:'JetBrains Mono',monospace;font-size:12.4px;color:var(--amber-lt);background:rgba(8,5,6,.5);padding:1px 5px;border-radius:3px}
-
-/* matrix visual */
-.mx-wrap{display:grid;grid-template-columns:1fr;gap:18px;margin:20px 0 6px}
-@media(min-width:780px){.mx-wrap{grid-template-columns:1fr 1fr}}
-.mx{background:var(--panel);border:1px solid var(--hair);border-radius:5px;padding:18px}
-.mx .mx-t{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:14px}
-.mx table{border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:13.5px;margin:0 auto}
-.mx td{padding:7px 14px;text-align:center;color:var(--ink)}
-.mx .rowlbl{font-family:'Saira Condensed',sans-serif;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;padding-right:14px}
-.mx .rowlbl.r{color:var(--danger)}.mx .rowlbl.g{color:var(--good-lt)}.mx .rowlbl.b{color:var(--fed-lt)}
-.mx .collbl{font-family:'Saira Condensed',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);padding-bottom:4px}
-.mx .v0{color:var(--ink-faint)}.mx .v1{color:var(--amber-lt);font-weight:700}
-.mx-cap{font-size:13px;color:var(--ink-dim);margin-top:12px;line-height:1.5}
-.mx-cap b{color:var(--ink)}
-
-/* preset table */
-.tbl-scroll{overflow-x:auto;margin:18px 0 6px;border:1px solid var(--hair);border-radius:5px}
-table.ptbl{width:100%;border-collapse:collapse;min-width:620px;font-size:13.4px}
-table.ptbl th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:12px 14px;background:rgba(8,5,6,.55);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
-table.ptbl td{padding:11px 14px;border-bottom:1px solid var(--hair);color:var(--ink-dim);vertical-align:top}
-table.ptbl tr:last-child td{border-bottom:none}
-table.ptbl tr:hover td{background:var(--panel2)}
-table.ptbl .nm{font-family:'Chakra Petch',sans-serif;font-weight:600;color:var(--ink);font-size:13.6px}
-table.ptbl .mono{font-family:'JetBrains Mono',monospace;font-size:11.6px;color:var(--amber-lt);white-space:nowrap}
-table.ptbl .sw{display:inline-block;width:13px;height:13px;border-radius:3px;vertical-align:-2px;margin-right:7px;border:1px solid rgba(255,255,255,.12)}
-
-/* tool cards */
-.tools{display:flex;flex-direction:column;gap:14px;margin-top:18px}
-.tool{display:grid;grid-template-columns:200px 1fr;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--amber);border-radius:4px;overflow:hidden}
-.tool.fedge{border-left-color:var(--fed)}
-.tool .t-id{padding:16px 18px;border-right:1px solid var(--hair);background:rgba(8,5,6,.5);display:flex;flex-direction:column;gap:9px}
-.tool h4{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:16px;letter-spacing:.3px;color:var(--ink);line-height:1.15}
-.tool .t-kind{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--amber-lt)}
-.tool.fedge .t-kind{color:var(--fed-lt)}
-.tool .t-link{margin-top:auto;font-family:'JetBrains Mono',monospace;font-size:10.8px;color:var(--ink-faint);word-break:break-all}
-.tool .t-link a{color:var(--ink-faint);text-decoration:none;border-bottom:1px solid var(--hair-strong)}
-.tool .t-link a:hover{color:var(--amber-lt)}
-.tool .t-body{padding:16px 20px;font-size:14px;color:var(--ink-dim);line-height:1.58}
-.tool .t-body b{color:var(--ink);font-weight:600}
-.tool .chips{margin-top:10px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font-family:'Saira Condensed',sans-serif;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;padding:2px 9px;border-radius:10px;border:1px solid var(--hair-strong);white-space:nowrap;color:var(--ink-dim)}
-.chip.go{color:var(--good-lt);border-color:rgba(95,179,122,.4)}
-.chip.fed{color:var(--fed-lt);border-color:rgba(79,159,214,.4)}
-.chip.am{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-@media(max-width:640px){.tool{grid-template-columns:1fr}.tool .t-id{border-right:none;border-bottom:1px solid var(--hair)}}
-
-/* anatomy list */
-.anat{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:13px;margin-top:18px}
-.anat .a{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:14px 16px}
-.anat .a .ah{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13px;letter-spacing:.4px;color:var(--ink);margin-bottom:5px}
-.anat .a .ad{font-size:13px;color:var(--ink-dim);line-height:1.5}
-.anat .a .ad b{color:var(--amber-lt);font-weight:600}
-
-/* quicknav (section nav) */
-.quicknav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;margin:18px 0 6px;padding:10px 14px;background:rgba(10,7,8,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--hair-strong);border-radius:6px}
-.qn-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);flex:none}
-.qn-hint{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);flex:none}
-.qn-dd{position:relative}
-.qn-field{position:relative;display:inline-flex;align-items:center;min-width:300px;background:var(--panel2);border:1px solid var(--hair-strong);border-radius:5px;transition:border-color .16s}
-.qn-field:focus-within{border-color:var(--amber)}
-.qn-ico{position:absolute;left:11px;color:var(--ink-faint);font-size:15px;pointer-events:none}
-.qn-input{flex:1;width:100%;background:transparent;border:none;outline:none;color:var(--ink);font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13px;letter-spacing:.4px;padding:8px 8px 8px 33px}
-.qn-input::placeholder{color:var(--ink-faint);font-weight:500}
-.qn-clear{background:transparent;border:none;color:var(--ink-faint);font-size:19px;line-height:1;cursor:pointer;padding:2px 11px;transition:color .14s}
-.qn-clear:hover{color:var(--amber)}
-.qn-panel{position:absolute;top:calc(100% + 6px);left:0;width:340px;max-height:62vh;overflow-y:auto;background:rgba(16,10,12,.99);border:1px solid var(--hair-strong);border-radius:7px;box-shadow:0 20px 56px rgba(0,0,0,.6);padding:6px;display:none}
-.qn-dd.open .qn-panel{display:block}
-.qn-item{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:4px;font-family:'Saira',sans-serif;font-size:13.6px;color:var(--ink-dim);text-decoration:none}
-.qn-item:hover{background:var(--panel2);color:var(--ink)}
-.qn-dot{width:7px;height:7px;border-radius:50%;flex:none}
-.qn-dot.concept{background:var(--amber)}
-.qn-dot.hands{background:var(--fed)}
-.qn-nm{flex:1}
-.qn-side{font-family:'Saira Condensed',sans-serif;font-size:9.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--ink-faint);flex:none}
-.qn-item.qn-active{background:var(--panel2);color:var(--ink)}
-.qn-empty{padding:10px 12px;color:var(--ink-faint);font-size:13px;font-style:italic}
-.qn-panel::-webkit-scrollbar{width:9px}
-.qn-panel::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:5px}
-@media (max-width:560px){.qn-hint{display:none}.qn-field{min-width:0;flex:1}.qn-eyebrow{display:none}}
-footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--hair-strong);font-family:'Saira Condensed',sans-serif;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:8px 20px}
-footer b{color:var(--amber-lt)}
-@media (max-width:560px){.sec-head .tag{display:none}}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style>
+<title>HUD Customization &middot; Systems | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#dossiers">Ships</a>
+      <a href="../index.html#engineering">Engineering</a>
+      <a href="../index.html#systems" class="active">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#what"><span class="qn-dot amber"></span><span class="qn-nm">What is the HUD?</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#why"><span class="qn-dot amber"></span><span class="qn-nm">Why you'd care</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#change"><span class="qn-dot amber"></span><span class="qn-nm">What you can (and can't) change</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#matrix"><span class="qn-dot amber"></span><span class="qn-nm">How the colour matrix works</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#how"><span class="qn-dot fed"></span><span class="qn-nm">How to change it — step by step</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#presets"><span class="qn-dot fed"></span><span class="qn-nm">Presets &amp; starter values</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#gotchas"><span class="qn-dot fed"></span><span class="qn-nm">Odyssey notes &amp; gotchas</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">09</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#systems">Systems</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">HUD Customization</span>
+</nav>
+
 <div class="wrap">
 <header class="masthead">
-  <div class="kicker">Pilot's Field Manual · Cockpit Systems<span class="id">CMDR KA0S · INARA 173082</span></div>
+  <div class="kicker">Pilot's Field Manual · Cockpit Systems</div>
   <h1 class="title">HUD <span>Customization</span></h1>
   <p class="subtitle">Everything about the orange glow you stare at for hundreds of hours — what the HUD actually is, what you can re-colour, the colour-matrix maths behind it, the exact file to edit, a rack of tested presets, and the tools (from one-click web editors to the EDHM shader mod) that do the work for you. PC / Odyssey focus.</p>
   <div class="masthead-meta">
@@ -195,28 +71,6 @@ footer b{color:var(--amber-lt)}
     <span>Cost <b>0 CR</b></span>
   </div>
 </header>
-
-<nav class="quicknav" aria-label="Jump to section">
-  <span class="qn-eyebrow">Quick Nav</span>
-  <div class="qn-dd" id="qn-dd">
-    <div class="qn-field">
-      <span class="qn-ico" aria-hidden="true">⌕</span>
-      <input id="qn-search" class="qn-input" type="text" placeholder="Search or jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
-      <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
-    </div>
-    <div class="qn-panel" id="qn-panel" role="listbox">
-      <a class="qn-item" href="#what"><span class="qn-dot concept"></span><span class="qn-nm">What is the HUD?</span><span class="qn-side">01 · Concept</span></a>
-      <a class="qn-item" href="#why"><span class="qn-dot concept"></span><span class="qn-nm">Why you'd care</span><span class="qn-side">02 · Concept</span></a>
-      <a class="qn-item" href="#change"><span class="qn-dot concept"></span><span class="qn-nm">What you can (and can't) change</span><span class="qn-side">03 · Concept</span></a>
-      <a class="qn-item" href="#matrix"><span class="qn-dot concept"></span><span class="qn-nm">How the colour matrix works</span><span class="qn-side">04 · Concept</span></a>
-      <a class="qn-item" href="#how"><span class="qn-dot hands"></span><span class="qn-nm">How to change it — step by step</span><span class="qn-side">05 · Hands-on</span></a>
-      <a class="qn-item" href="#presets"><span class="qn-dot hands"></span><span class="qn-nm">Presets &amp; starter values</span><span class="qn-side">06 · Hands-on</span></a>
-      <a class="qn-item" href="#gotchas"><span class="qn-dot hands"></span><span class="qn-nm">Odyssey notes &amp; gotchas</span><span class="qn-side">08 · Hands-on</span></a>
-      <div class="qn-empty" hidden>No matching sections</div>
-    </div>
-  </div>
-  <span class="qn-hint">7 sections</span>
-</nav>
 
 <div class="verdict">
   <div class="v-eyebrow">Field Briefing</div>
@@ -236,25 +90,25 @@ footer b{color:var(--amber-lt)}
 <section id="what">
   <div class="sec-head"><span class="sec-num">01</span><h2>What is the HUD?</h2><span class="tag">Concept</span></div>
   <p class="lead">The HUD (Heads-Up Display) is the entire holographic interface projected across your cockpit canopy — the gauges, panels and markers the game draws on top of the world. In lore it's the ship's interface; in practice it's the layer you read to fly, fight, trade and navigate.</p>
-  <p class="body-copy">The ship HUD is built from one persistent overlay plus three pull-out panels you summon with the directional keys/stick. Knowing the panels cold is a survival skill — being able to instantly re-route power or pick an escape vector can save a rebuy. The breakdown below follows the NEWP HUD guide's anatomy.</p>
+  <p>The ship HUD is built from one persistent overlay plus three pull-out panels you summon with the directional keys/stick. Knowing the panels cold is a survival skill — being able to instantly re-route power or pick an escape vector can save a rebuy. The breakdown below follows the NEWP HUD guide's anatomy.</p>
 
-  <h3 class="sub">The main flight overlay</h3>
-  <div class="anat">
-    <div class="a"><div class="ah">Comms &amp; info (top-left/top)</div><div class="ad">Chat, mission and NPC messages, friend/wing requests; the GMT game clock and new-contact alerts. <b>NPC interdiction warnings appear here first.</b></div></div>
-    <div class="a"><div class="ah">Status strip</div><div class="ad">Powerplay standing, your ship's <b>signature</b> (noise — more power/heat = easier to lock from range), fuel reserve, and mass-lock / landing-gear / cargo-scoop indicators.</div></div>
-    <div class="a"><div class="ah">PIPs / power distributor</div><div class="ad">The <b>SYS / ENG / WEP</b> capacitor balance. Shields, thruster output and weapon supply respectively; RST resets to 2-2-2.</div></div>
-    <div class="a"><div class="ah">Shields &amp; hull</div><div class="ad">The three rings around your ship silhouette are shield layers; once down, damage eats hull (the percentage bar beneath).</div></div>
-    <div class="a"><div class="ah">Radar / scanner</div><div class="ad">3D contact display. <b>Filled = NPC, hollow = player; green = your faction, yellow = neutral, red = hostile; square = ship, triangle = hardpoints deployed.</b> Heat gauge left, speed/blue optimal-turn band right.</div></div>
-    <div class="a"><div class="ah">Target panels</div><div class="ad">Locked-target shields/hull (right), plus the target/location info block — name, ship, distance, allegiance, or system info when nothing is locked.</div></div>
+  <h3 class="subhead">The main flight overlay</h3>
+  <div class="cards">
+    <article class="card"><div class="c-head"><h3>Comms &amp; info (top-left/top)</h3></div><p>Chat, mission and NPC messages, friend/wing requests; the GMT game clock and new-contact alerts. <b>NPC interdiction warnings appear here first.</b></p></article>
+    <article class="card"><div class="c-head"><h3>Status strip</h3></div><p>Powerplay standing, your ship's <b>signature</b> (noise — more power/heat = easier to lock from range), fuel reserve, and mass-lock / landing-gear / cargo-scoop indicators.</p></article>
+    <article class="card"><div class="c-head"><h3>PIPs / power distributor</h3></div><p>The <b>SYS / ENG / WEP</b> capacitor balance. Shields, thruster output and weapon supply respectively; RST resets to 2-2-2.</p></article>
+    <article class="card"><div class="c-head"><h3>Shields &amp; hull</h3></div><p>The three rings around your ship silhouette are shield layers; once down, damage eats hull (the percentage bar beneath).</p></article>
+    <article class="card"><div class="c-head"><h3>Radar / scanner</h3></div><p>3D contact display. <b>Filled = NPC, hollow = player; green = your faction, yellow = neutral, red = hostile; square = ship, triangle = hardpoints deployed.</b> Heat gauge left, speed/blue optimal-turn band right.</p></article>
+    <article class="card"><div class="c-head"><h3>Target panels</h3></div><p>Locked-target shields/hull (right), plus the target/location info block — name, ship, distance, allegiance, or system info when nothing is locked.</p></article>
   </div>
 
-  <h3 class="sub">The three pull-out panels</h3>
-  <ul class="bul">
+  <h3 class="subhead">The three pull-out panels</h3>
+  <ul class="bullets">
     <li><b>Navigation panel (left)</b> — system contacts, the Transactions tab (active missions, bounties, fines), the Contacts tab (request docking here), and the Target sub-system tab for module sniping. Houses the galaxy-map and system-map buttons — both worth a dedicated keybind.</li>
     <li><b>Comms panel (top)</b> — chat, inbox, social/friends, history, squadron feed, and the text-channel settings.</li>
     <li><b>Systems / ship panel (right)</b> — commander info and rebuy cost, the <b>Modules</b> tab (toggle modules and set power priority), <b>Fire Groups</b>, ship options, inventory (cargo/materials), faction status, and Galnet radio.</li>
   </ul>
-  <div class="callout note"><div class="co-h">Reference</div>The fullest plain-English walkthrough of every panel and indicator is NEWP's HUD guide: <a href="https://newp.io/hud" target="_blank" rel="noopener">newp.io/hud</a>. This manual is about <b>re-skinning</b> that interface, not learning to read it.</div>
+  <div class="callout"><span class="lbl">Reference</span><p>The fullest plain-English walkthrough of every panel and indicator is NEWP's HUD guide: <a href="https://newp.io/hud" target="_blank" rel="noopener">newp.io/hud</a>. This manual is about <b>re-skinning</b> that interface, not learning to read it.</p></div>
 </section>
 
 <!-- 02 -->
@@ -262,18 +116,18 @@ footer b{color:var(--amber-lt)}
   <div class="sec-head"><span class="sec-num">02</span><h2>Why you'd care</h2><span class="tag">Concept</span></div>
   <p class="lead">"Orange fatigue" is a real and widely-shared complaint. Beyond aesthetics, recolouring the HUD has practical and accessibility payoffs.</p>
   <div class="legend">
-    <div class="lg amedge"><h4>Comfort &amp; aesthetics</h4>
+    <div class="lg"><h4>Comfort &amp; aesthetics</h4>
       <div class="row"><span>Break the monotony of the default amber after hundreds of hours.</span></div>
       <div class="row"><span>Match a personal palette, a squadron identity, or a ship's livery.</span></div>
       <div class="row"><span>Cooler tints (blue/teal/green) read as easier on the eyes for long sessions — and in <b>VR</b>, where bright orange can fatigue.</span></div>
     </div>
-    <div class="lg amedge"><h4>Legibility &amp; accessibility</h4>
+    <div class="lg"><h4>Legibility &amp; accessibility</h4>
       <div class="row"><span>Higher contrast against bright skyboxes, station interiors or planet surfaces.</span></div>
       <div class="row"><span><b>Colour-blindness:</b> the default relies on a red/yellow/green contact scheme that can be hard to separate — a custom matrix can widen those differences.</span></div>
       <div class="row"><span>Cleaner, more readable <b>screenshots and video</b>.</span></div>
     </div>
   </div>
-  <div class="callout warn"><div class="co-h">The trade-off</div>Because the standard method recolours <b>everything uniformly</b>, a careless palette can do the opposite of help — washing out red danger warnings or blurring the green-vs-red friend/foe distinction. Good customization is as much about <b>preserving signal</b> as changing colour. More on this in §03 and §08.</div>
+  <div class="callout danger"><span class="lbl">The trade-off</span><p>Because the standard method recolours <b>everything uniformly</b>, a careless palette can do the opposite of help — washing out red danger warnings or blurring the green-vs-red friend/foe distinction. Good customization is as much about <b>preserving signal</b> as changing colour. More on this in §03 and §08.</p></div>
 </section>
 
 <!-- 03 -->
@@ -281,20 +135,20 @@ footer b{color:var(--amber-lt)}
   <div class="sec-head"><span class="sec-num">03</span><h2>What you can (and can't) change</h2><span class="tag">Concept</span></div>
   <p class="lead">There is no setting for HUD layout. You cannot move, resize, hide or re-order panels and gauges — the geometry is fixed. What you <em>can</em> change is colour, and how much control you get depends on the method.</p>
 
-  <h3 class="sub">With the built-in XML matrix (vanilla, no mods)</h3>
-  <ul class="bul">
+  <h3 class="subhead">With the built-in XML matrix (vanilla, no mods)</h3>
+  <ul class="bullets">
     <li><b>You change:</b> the colour of the <b>entire ship HUD at once</b> — panels, gauges, text, radar, the lot — by transforming the game's source colours.</li>
     <li><b>It also affects, like it or not:</b> shield/contact colours, friend/foe markers, warning text, the galaxy &amp; system map, and <b>commander avatar portraits</b> (these always shift, sometimes dramatically).</li>
     <li><b>You cannot:</b> recolour one element independently of the rest. Every HUD pixel runs through the same matrix. You also can't change layout, fonts or sizes.</li>
   </ul>
 
-  <h3 class="sub fed">With the EDHM shader mod (advanced)</h3>
-  <ul class="bul">
+  <h3 class="subhead">With the EDHM shader mod (advanced)</h3>
+  <ul class="bullets">
     <li><b>Per-element colour</b> — set distinct colours for individual HUD components instead of one global transform, avoiding the "everything turns one colour" problem.</li>
     <li><b>Cabin lighting</b> — recolour (even bi-colour) the cockpit ambient light, and dim the dashboard lights that glare into your eyes.</li>
     <li>In <b>Odyssey</b>, EDHM exposes RGB values for many individual HUD/panel elements; in Horizons you can blend XML colours with EDHM's set.</li>
   </ul>
-  <div class="callout note"><div class="co-h">The short version</div>Want a different colour with zero install and zero risk? <b>Edit the XML.</b> Want surgical, per-element control and cabin lighting? <b>Use EDHM.</b> Both are covered below.</div>
+  <div class="callout"><span class="lbl">The short version</span><p>Want a different colour with zero install and zero risk? <b>Edit the XML.</b> Want surgical, per-element control and cabin lighting? <b>Use EDHM.</b> Both are covered below.</p></div>
 </section>
 
 <!-- 04 -->
@@ -302,7 +156,7 @@ footer b{color:var(--amber-lt)}
   <div class="sec-head"><span class="sec-num">04</span><h2>How the colour matrix works</h2><span class="tag">Concept</span></div>
   <p class="lead">The game draws the HUD in a base palette built around its signature "star orange." Before display, every colour is multiplied by a 3&times;3 transform you supply. Understanding the maths means you can read and write presets by hand instead of guessing.</p>
 
-  <p class="body-copy">Each output channel is a <b>weighted mix of the three source channels</b>. The three XML lines are the rows of the matrix:</p>
+  <p>Each output channel is a <b>weighted mix of the three source channels</b>. The three XML lines are the rows of the matrix:</p>
 
   <div class="mx-wrap">
     <div class="mx">
@@ -327,7 +181,7 @@ footer b{color:var(--amber-lt)}
     </div>
   </div>
 
-  <p class="body-copy">Read mathematically, for a source pixel <code style="font-family:'JetBrains Mono',monospace;color:var(--amber-lt)">(R,G,B)</code>:</p>
+  <p>Read mathematically, for a source pixel <code>(R,G,B)</code>:</p>
   <div class="codebox">
     <div class="cb-head"><span class="dot"></span>The transform<span class="path">output = Matrix × source</span></div>
 <pre><span class="cm"># MatrixRed   = r1, r2, r3   →   out.R = r1·R + r2·G + r3·B</span>
@@ -335,7 +189,7 @@ footer b{color:var(--amber-lt)}
 <span class="cm"># MatrixBlue  = b1, b2, b3   →   out.B = b1·R + b2·G + b3·B</span></pre>
   </div>
 
-  <ul class="bul">
+  <ul class="bullets">
     <li><b>Values aren't capped at 0&ndash;1.</b> You can use values above 1 to boost intensity and <b>negative values</b> to subtract a channel — many sharp presets use numbers like <code>1.75</code> or <code>-1</code> to push saturation or carve out a hue. (Some old reports note negatives behaved oddly in early Horizons; they work in current builds.)</li>
     <li><b>Keep warnings legible.</b> The danger reds and info blues run through the same matrix. The clever "purple HUD that keeps red warnings" presets work by leaving a small amount of red in <code>MatrixRed</code> rather than zeroing it.</li>
     <li><b>This is why web editors exist</b> — eyeballing nine numbers against a live preview beats blind trial-and-error. See §07.</li>
@@ -344,22 +198,22 @@ footer b{color:var(--amber-lt)}
 
 <!-- 05 -->
 <section id="how">
-  <div class="sec-head fed-num"><span class="sec-num fed">05</span><h2>How to change it — step by step</h2><span class="tag">Hands-on</span></div>
+  <div class="sec-head"><span class="sec-num">05</span><h2>How to change it — step by step</h2><span class="tag">Hands-on</span></div>
   <p class="lead">The vanilla method: edit one file, restart the game. Always edit <b>GraphicsConfigurationOverride.xml</b>, never the base <code>GraphicsConfiguration.xml</code> — the Override survives game patches and a mistake there is far less likely to break anything.</p>
 
   <ol class="steps">
-    <li><b>Close Elite Dangerous</b> entirely. The file is read at launch.</li>
-    <li><b>Find the file.</b> On Windows it lives at:
-      <div class="codebox" style="margin:10px 0 4px">
+    <li><span class="st">Close Elite Dangerous</span> entirely. The file is read at launch.</li>
+    <li><span class="st">Find the file.</span> On Windows it lives at:
+      <div class="codebox">
         <div class="cb-head"><span class="dot"></span>File location · Windows<span class="path">GraphicsConfigurationOverride.xml</span></div>
 <pre>%LOCALAPPDATA%\Frontier Developments\Elite Dangerous\Options\Graphics\</pre>
       </div>
-      <span class="muted" style="font-size:13px">Paste that path (including <code>%LOCALAPPDATA%</code>) into the Explorer address bar. If your Windows profile is relocated to another drive, it resolves under that profile's <code>AppData\Local</code> instead of <code>C:</code>. macOS: <code>~/Library/Application Support/Frontier Developments/…/Options/Graphics</code>.</span>
+      <span class="muted">Paste that path (including <code>%LOCALAPPDATA%</code>) into the Explorer address bar. If your Windows profile is relocated to another drive, it resolves under that profile's <code>AppData\Local</code> instead of <code>C:</code>. macOS: <code>~/Library/Application Support/Frontier Developments/…/Options/Graphics</code>.</span>
     </li>
-    <li><b>If the file doesn't exist, create it</b> as a plain-text file with exactly that name (watch for a hidden <code>.txt</code> extension), and paste the default block below into it.</li>
-    <li><b>Back it up first.</b> Copy the file (or the default block) somewhere safe before editing. This is the one-line insurance policy everyone recommends.</li>
-    <li><b>Edit the matrix.</b> Inside <code>&lt;GUIColour&gt; → &lt;Default&gt;</code>, replace the three <code>&lt;Matrix…&gt;</code> lines with your chosen values (from a preset or a web editor's output).</li>
-    <li><b>Save, close, launch.</b> The new colours appear the moment you're in the cockpit — no further toggles.</li>
+    <li><span class="st">If the file doesn't exist, create it</span> as a plain-text file with exactly that name (watch for a hidden <code>.txt</code> extension), and paste the default block below into it.</li>
+    <li><span class="st">Back it up first.</span> Copy the file (or the default block) somewhere safe before editing. This is the one-line insurance policy everyone recommends.</li>
+    <li><span class="st">Edit the matrix.</span> Inside <code>&lt;GUIColour&gt; → &lt;Default&gt;</code>, replace the three <code>&lt;Matrix…&gt;</code> lines with your chosen values (from a preset or a web editor's output).</li>
+    <li><span class="st">Save, close, launch.</span> The new colours appear the moment you're in the cockpit — no further toggles.</li>
   </ol>
 
   <div class="codebox">
@@ -377,60 +231,60 @@ footer b{color:var(--amber-lt)}
 <span class="tag">&lt;/GraphicsConfig&gt;</span></pre>
   </div>
 
-  <div class="callout tip"><div class="co-h">To revert</div>Restore the three matrix lines to <code>1,0,0</code> / <code>0,1,0</code> / <code>0,0,1</code>, or simply delete the whole <code>&lt;GUIColour&gt;…&lt;/GUIColour&gt;</code> block (or the Override file itself). Default orange returns on next launch.</div>
-  <div class="callout warn"><div class="co-h">Common failure</div>If colours don't change: you edited the <b>base</b> file instead of the <b>Override</b>; the file has a hidden <code>.txt</code> extension; the XML is malformed (a missing tag or stray character makes the game ignore it); or the game was still running when you saved. Re-check those four.</div>
+  <div class="callout tip"><span class="lbl">To revert</span><p>Restore the three matrix lines to <code>1,0,0</code> / <code>0,1,0</code> / <code>0,0,1</code>, or simply delete the whole <code>&lt;GUIColour&gt;…&lt;/GUIColour&gt;</code> block (or the Override file itself). Default orange returns on next launch.</p></div>
+  <div class="callout danger"><span class="lbl">Common failure</span><p>If colours don't change: you edited the <b>base</b> file instead of the <b>Override</b>; the file has a hidden <code>.txt</code> extension; the XML is malformed (a missing tag or stray character makes the game ignore it); or the game was still running when you saved. Re-check those four.</p></div>
 </section>
 
 <!-- 06 -->
 <section id="presets">
-  <div class="sec-head"><span class="sec-num fed">06</span><h2>Presets &amp; starter values</h2><span class="tag">Hands-on</span></div>
+  <div class="sec-head"><span class="sec-num">06</span><h2>Presets &amp; starter values</h2><span class="tag">Hands-on</span></div>
   <p class="lead">Copy-paste starting points, drawn from long-running community preset collections. Treat the swatches as approximate — the exact result depends on the source palette, so <b>preview in a web editor (§07) before committing</b>. Each row is the three matrix lines in <code>R / G / B</code> order.</p>
 
   <div class="tbl-scroll">
-    <table class="ptbl">
+    <table class="data">
       <thead><tr><th>Preset</th><th>MatrixRed</th><th>MatrixGreen</th><th>MatrixBlue</th><th>Note</th></tr></thead>
       <tbody>
         <tr>
-          <td class="nm"><span class="sw" style="background:#e0913a"></span>Standard (default)</td>
+          <td class="mod"><span class="swatch" style="background:#e0913a"></span>Standard (default)</td>
           <td class="mono">1, 0, 0</td><td class="mono">0, 1, 0</td><td class="mono">0, 0, 1</td>
           <td>The baseline orange. Use to reset.</td>
         </tr>
         <tr>
-          <td class="nm"><span class="sw" style="background:#4f9fd6"></span>Clean blue</td>
+          <td class="mod"><span class="swatch" style="background:#4f9fd6"></span>Clean blue</td>
           <td class="mono">0, 0.4, 0.7</td><td class="mono">0, 0, 0</td><td class="mono">1, 1, 1</td>
           <td>Popular "DARKB1KE" cool blue. Easy on the eyes for long hauls / VR.</td>
         </tr>
         <tr>
-          <td class="nm"><span class="sw" style="background:#9b6cff"></span>Purple (keeps red warnings)</td>
+          <td class="mod"><span class="swatch" style="background:#9b6cff"></span>Purple (keeps red warnings)</td>
           <td class="mono">0.18, 0, 0</td><td class="mono">0, 0, 1</td><td class="mono">0, 1, 1</td>
           <td>Leaves a touch of red so danger text stays visible. Slightly dark overall.</td>
         </tr>
         <tr>
-          <td class="nm"><span class="sw" style="background:#39c0e8"></span>Icy blue + yellow highlight</td>
+          <td class="mod"><span class="swatch" style="background:#39c0e8"></span>Icy blue + yellow highlight</td>
           <td class="mono">0, 0.39, 1</td><td class="mono">1, 1, 0</td><td class="mono">0, 0, 0</td>
           <td>Two-tone: cyan fill with yellow accents — strong contact contrast.</td>
         </tr>
         <tr>
-          <td class="nm"><span class="sw" style="background:#43c46a"></span>Green + white highlight</td>
+          <td class="mod"><span class="swatch" style="background:#43c46a"></span>Green + white highlight</td>
           <td class="mono">0, 0.38, 0</td><td class="mono">0, 0, 0</td><td class="mono">1, 0.64, 1</td>
           <td>"Night-vision" green with near-white accenting.</td>
         </tr>
         <tr>
-          <td class="nm"><span class="sw" style="background:#dfe6ea"></span>Cold white / steel</td>
+          <td class="mod"><span class="swatch" style="background:#dfe6ea"></span>Cold white / steel</td>
           <td class="mono">0.6, 0.6, 0.6</td><td class="mono">0.6, 0.6, 0.6</td><td class="mono">0.7, 0.7, 0.8</td>
           <td>Desaturated mono look. Tune brightness via the shared value.</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="callout note"><div class="co-h">Bigger galleries</div>NEWP's editor ships four image-previewed presets (Light Orange, Kool-Aid, I'm Blue, Lavenderish) at <a href="https://newp.io/hudcolor" target="_blank" rel="noopener">newp.io/hudcolor</a>. Larger community lists with screenshots live on the Steam discussions and the Frontier forums HUD-colour threads — most quote their XML alongside an Arkku preview link.</div>
+  <div class="callout"><span class="lbl">Bigger galleries</span><p>NEWP's editor ships four image-previewed presets (Light Orange, Kool-Aid, I'm Blue, Lavenderish) at <a href="https://newp.io/hudcolor" target="_blank" rel="noopener">newp.io/hudcolor</a>. Larger community lists with screenshots live on the Steam discussions and the Frontier forums HUD-colour threads — most quote their XML alongside an Arkku preview link.</p></div>
 </section>
 
 <!-- 08 -->
 <section id="gotchas">
-  <div class="sec-head"><span class="sec-num fed">08</span><h2>Odyssey notes &amp; gotchas</h2><span class="tag">Hands-on</span></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Odyssey notes &amp; gotchas</h2><span class="tag">Hands-on</span></div>
   <p class="lead">Things specifically worth knowing on PC / Odyssey before and after you change anything.</p>
-  <ul class="bul">
+  <ul class="bullets">
     <li><b>Is it allowed / will it get me banned?</b> No. The effect is purely client-side; Frontier has stated it has no problem with HUD colour mods and has even featured customised HUDs. The XML edit touches no game mechanic and no server data. EDHM is likewise a strictly graphical mod.</li>
     <li><b>On-foot stays orange.</b> The XML matrix transforms the <b>ship</b> HUD. In Odyssey, on-foot terminals and much of the suit HUD largely keep the standard orange/white and aren't recoloured by the matrix. EDHM's Odyssey version reaches more of these elements.</li>
     <li><b>Edit the Override, not the base file.</b> <code>GraphicsConfiguration.xml</code> is overwritten on patches and a mistake can cause issues; <code>GraphicsConfigurationOverride.xml</code> persists across updates and is the safer target. (EDProfiler also writes here.)</li>
@@ -439,26 +293,12 @@ footer b{color:var(--amber-lt)}
     <li><b>VR:</b> cooler/dimmer palettes noticeably reduce eye fatigue; EDHM's cabin-light dimming helps further with headset glare.</li>
     <li><b>After a big update,</b> re-launch and glance at the HUD — the Override should persist, but verify, and keep your backup/preset handy just in case.</li>
   </ul>
-  <div class="callout note"><div class="co-h">Same file, more tricks</div>The <code>GraphicsConfigurationOverride.xml</code> file is also where the community enables other client-side tweaks — e.g. galaxy-map/route colours and skybox/nebula density adjustments. Out of scope here, but worth knowing the one file does double duty.</div>
+  <div class="callout"><span class="lbl">Same file, more tricks</span><p>The <code>GraphicsConfigurationOverride.xml</code> file is also where the community enables other client-side tweaks — e.g. galaxy-map/route colours and skybox/nebula density adjustments. Out of scope here, but worth knowing the one file does double duty.</p></div>
 </section>
 
-<!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-<style>
-.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-.credits .cr-rows{display:flex;flex-direction:column}
-.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-.credits .cr-src{font-weight:700;letter-spacing:.3px}
-.credits .cr-what{opacity:.78}
-.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-.credits .cr-link:hover{text-decoration:underline}
-@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-</style>
+<!-- Sources -->
 <section class="credits" id="credits">
-  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <div class="sec-head"><span class="sec-num">09</span><h2>Sources</h2><span class="tag">Provenance</span></div>
   <p class="lead">Figures on this page are verified against the sources below.</p>
   <p class="lead">Note: web matrix editors (Arkku, NEWP, team2xh) all output the same XML format — preview in whichever you trust, then paste the three matrix lines. For per-element control and cabin lighting beyond the global matrix, EDHM is the power option.</p>
   <div class="cr-rows">
@@ -473,66 +313,12 @@ footer b{color:var(--amber-lt)}
 </section>
 
 <footer>
-  <span>CMDR Ka0s · Pilot's Field Manual</span>
-  <span>Cockpit Systems · <b>HUD Customization</b></span>
-  <span>PC · Odyssey <b>4.x</b></span>
-  <span>Sources <b>NEWP · Arkku · Kerudo · EDHM · ED Wiki · FDev Forums</b></span>
-  <span>Method <b>client-side · FDev-sanctioned</b></span>
+  <span>E:D Black Box</span>
+  <span>By <b>CMDR Ka0s</b></span>
+  <span>Systems</span>
 </footer>
 </div>
 
-<script>
-(function(){
-  var dd=document.getElementById('qn-dd'),
-      inp=document.getElementById('qn-search'),
-      clr=document.getElementById('qn-clear'),
-      panel=document.getElementById('qn-panel'),
-      empty=panel.querySelector('.qn-empty'),
-      items=Array.prototype.slice.call(panel.querySelectorAll('.qn-item'));
-  if(!dd||!inp) return;
-  function open(){dd.classList.add('open');inp.setAttribute('aria-expanded','true');}
-  function close(){dd.classList.remove('open');inp.setAttribute('aria-expanded','false');clearActive();}
-  function clearActive(){items.forEach(function(a){a.classList.remove('qn-active');});}
-  function visible(){return items.filter(function(a){return a.style.display!=='none';});}
-  function filter(){
-    var q=inp.value.trim().toLowerCase(), n=0;
-    items.forEach(function(a){
-      var nm=a.querySelector('.qn-nm').textContent.toLowerCase();
-      var side=a.querySelector('.qn-side').textContent.toLowerCase();
-      var show=!q||nm.indexOf(q)>-1||side.indexOf(q)>-1;
-      a.style.display=show?'':'none';
-      if(show)n++;
-    });
-    empty.hidden=n>0;
-    clr.hidden=!inp.value;
-    clearActive();
-    panel.scrollTop=0;
-  }
-  inp.addEventListener('focus',open);
-  inp.addEventListener('input',function(){open();filter();});
-  inp.addEventListener('keydown',function(e){
-    var vis=visible();
-    if(e.key==='Escape'){ if(inp.value){inp.value='';filter();} else {close();inp.blur();} return; }
-    if(e.key==='Enter'){
-      var cur=panel.querySelector('.qn-item.qn-active')||vis[0];
-      if(cur){e.preventDefault();cur.click();}
-      return;
-    }
-    if(e.key==='ArrowDown'||e.key==='ArrowUp'){
-      e.preventDefault(); open();
-      if(!vis.length) return;
-      var i=vis.indexOf(panel.querySelector('.qn-item.qn-active'));
-      clearActive();
-      i = e.key==='ArrowDown' ? (i+1)%vis.length : (i<=0?vis.length-1:i-1);
-      vis[i].classList.add('qn-active');
-      vis[i].scrollIntoView({block:'nearest'});
-    }
-  });
-  clr.addEventListener('click',function(e){e.preventDefault();inp.value='';filter();inp.focus();open();});
-  items.forEach(function(a){a.addEventListener('click',function(){close();inp.value='';filter();});});
-  document.addEventListener('click',function(e){if(!dd.contains(e.target))close();});
-  filter();
-})();
-</script>
+<script src="../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

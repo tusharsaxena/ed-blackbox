@@ -3,153 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Superpowers &amp; Rank — Field Manual | CMDR Ka0s</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a0708;--bg2:#0e0a0b;--panel:#140d0f;--panel2:#1a1113;--grid:rgba(180,70,60,.045);
---maroon:#8b2332;--maroon-lt:#b13140;--amber:#e0913a;--amber-lt:#f4b15f;--fed:#4f9fd6;--fed-lt:#7cc0ee;
---danger:#d8423b;--good:#5fb37a;--good-lt:#7fce98;--ink:#ece4df;--ink-dim:#a89a93;--ink-faint:#6e615c;
---hair:rgba(190,120,110,.16);--hair-strong:rgba(190,120,110,.32);}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:42px 42px}
-body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),radial-gradient(1200px 900px at 50% 120%,rgba(79,159,214,.07),transparent 60%)}
-.wrap{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 22px 120px}
-header.masthead{padding:54px 0 26px;border-bottom:1px solid var(--hair-strong);margin-bottom:8px}
-.kicker{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
-.kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
-.kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
-h1.title{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-h1.title span{color:var(--maroon-lt)}
-.subtitle{margin-top:16px;font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);max-width:880px;font-weight:300}
-.masthead-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:'Saira Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
-.masthead-meta b{color:var(--amber-lt);font-weight:600}
-.verdict{margin:34px 0 14px;border:1px solid rgba(224,145,58,.4);border-radius:4px;background:linear-gradient(180deg,rgba(224,145,58,.10),rgba(20,13,15,.6));padding:30px 30px 26px;position:relative;overflow:hidden}
-.verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--amber),transparent)}
-.verdict .v-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:10px}
-.verdict h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);line-height:1.05;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:6px}
-.verdict h2 em{font-style:normal;color:var(--amber-lt)}
-.verdict p{font-size:15.5px;color:var(--ink-dim);margin-top:12px;max-width:980px}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:22px 0 4px}
-.stat{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
-.stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:26px;color:var(--amber-lt);line-height:1}
-.stat .n.fed{color:var(--fed-lt)}.stat .n.mar{color:var(--maroon-lt)}.stat .n.good{color:var(--good-lt)}
-.stat .l{font-size:12.5px;color:var(--ink-dim);margin-top:6px;letter-spacing:.3px}
-section{margin-top:56px;scroll-margin-top:74px}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;border-bottom:1px solid var(--hair);padding-bottom:14px}
-.sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;color:var(--bg);background:var(--amber);padding:3px 9px;border-radius:2px;flex:none}
-.sec-num.fed{background:var(--fed)}.sec-num.emp{background:var(--maroon-lt)}.sec-num.all{background:var(--good)}
-.sec-head h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05}
-.sec-head .tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center}
-p.lead{font-size:15px;color:var(--ink-dim);margin:14px 0 4px}
-p.body{font-size:14.6px;color:var(--ink-dim);margin:13px 0}
-p.body b,li b{color:var(--ink);font-weight:600}
-.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
-.legend .lg{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
-.legend h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:12px}
-.legend .row{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-dim);margin-bottom:8px}
-.legend .row:last-child{margin-bottom:0}.legend .row b{color:var(--ink);font-weight:600}
-.swatch{width:22px;height:10px;border-radius:2px;flex:none}
-.sw-fed{background:var(--fed)}.sw-emp{background:var(--maroon-lt)}.sw-all{background:var(--good)}.sw-gen{background:var(--amber)}
-a{color:var(--amber-lt)}
-.muted{color:var(--ink-faint)}
-.permalink{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink-faint);text-decoration:none;font-size:15px;line-height:1;padding:2px 4px;border-radius:3px;flex:none;opacity:.5;transition:opacity .15s,color .15s}
-.permalink:hover{opacity:1;color:var(--amber-lt)}
-
-/* ---- power overview cards ---- */
-.pow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:20px}
-.pow{background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--amber);border-radius:4px;padding:20px 22px 18px;scroll-margin-top:74px}
-.pow.ac-fed{border-left-color:var(--fed)}.pow.ac-emp{border-left-color:var(--maroon-lt)}.pow.ac-all{border-left-color:var(--good)}
-.pow .ph{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:20px;letter-spacing:.4px;color:var(--ink);line-height:1.1}
-.pow .psub{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:var(--amber-lt);margin:5px 0 12px}
-.pow.ac-fed .psub{color:var(--fed-lt)}.pow.ac-emp .psub{color:var(--maroon-lt)}.pow.ac-all .psub{color:var(--good-lt)}
-.pow p{font-size:13.8px;color:var(--ink-dim);margin-bottom:10px}
-.pow .pmeta{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;margin-top:12px;border-top:1px solid var(--hair);padding-top:12px}
-.pow .pk{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap}
-.pow .pv{font-size:13.4px;color:var(--ink)}
-
-/* ---- rank table ---- */
-.tbl-wrap{margin-top:18px;border:1px solid var(--hair);border-radius:6px;overflow:hidden}
-table.rank{width:100%;border-collapse:collapse;font-size:14px}
-table.rank thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;text-align:left;color:var(--ink-faint);background:rgba(8,5,6,.6);padding:11px 16px;border-bottom:1px solid var(--hair-strong)}
-table.rank td{padding:9px 16px;border-bottom:1px solid var(--hair);color:var(--ink-dim);vertical-align:top}
-table.rank tr:last-child td{border-bottom:none}
-table.rank td.no{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink-faint);width:46px;text-align:center}
-table.rank td.rk{font-family:'Chakra Petch',sans-serif;font-weight:600;color:var(--ink);white-space:nowrap;width:190px}
-table.rank tr.reward td{background:rgba(224,145,58,.05)}
-table.rank tr.reward td.rk{color:var(--amber-lt)}
-table.rank.fed tr.reward td.rk{color:var(--fed-lt)}
-table.rank.emp tr.reward td.rk{color:var(--maroon-lt)}
-table.rank td .ship{color:var(--ink);font-weight:600}
-table.rank td .permit{color:var(--maroon-lt)}
-table.rank.fed td .permit{color:var(--fed-lt)}
-table.rank td a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.3)}
-table.rank td .none{color:var(--ink-faint);font-style:italic;opacity:.6}
-
-/* ---- step lists ---- */
-.steps{counter-reset:step;list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
-.steps li{counter-increment:step;position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:14px 18px 14px 56px;font-size:14px;color:var(--ink-dim)}
-.steps li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:0;bottom:0;width:42px;display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--bg);background:var(--amber);border-radius:3px 0 0 3px}
-.steps.fed li::before{background:var(--fed)}.steps.emp li::before{background:var(--maroon-lt)}.steps.all li::before{background:var(--good)}
-.steps li b{color:var(--ink);font-weight:600}
-.steps li .st-h{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--amber-lt);display:block;margin-bottom:3px}
-.steps.fed li .st-h{color:var(--fed-lt)}.steps.emp li .st-h{color:var(--maroon-lt)}.steps.all li .st-h{color:var(--good-lt)}
-
-/* ---- callout / note ---- */
-.note{margin-top:18px;border:1px solid var(--hair);border-left:3px solid var(--amber);border-radius:4px;background:rgba(8,5,6,.4);padding:15px 18px}
-.note.warn{border-left-color:var(--danger)}
-.note .ne{font-family:'Chakra Petch',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:7px}
-.note.warn .ne{color:var(--danger)}
-.note p{font-size:13.6px;color:var(--ink-dim);margin:0}
-.note p+p{margin-top:8px}
-
-ul.bullets{list-style:none;margin:14px 0 0;padding:0}
-ul.bullets li{font-size:14px;color:var(--ink-dim);line-height:1.55;padding-left:16px;text-indent:-16px;margin-bottom:9px}
-ul.bullets li::before{content:"▸ ";color:var(--amber-lt);font-weight:600}
-ul.bullets li b{color:var(--ink);font-weight:600}
-
-.loop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:16px}
-.loop{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
-.loop h4{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:15px;letter-spacing:.3px;color:var(--fed-lt);margin-bottom:3px}
-.loop .lt{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
-.loop p{font-size:13.4px;color:var(--ink-dim);margin:0}
-.loop p b{color:var(--ink);font-weight:600}
-
-/* ---- quick nav (section jump) ---- */
-.quicknav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;margin:18px 0 6px;padding:10px 14px;background:rgba(10,7,8,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--hair-strong);border-radius:6px}
-.qn-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);flex:none}
-.qn-hint{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);flex:none}
-.qn-dd{position:relative}
-.qn-field{position:relative;display:inline-flex;align-items:center;min-width:288px;background:var(--panel2);border:1px solid var(--hair-strong);border-radius:5px;transition:border-color .16s}
-.qn-field:focus-within{border-color:var(--amber)}
-.qn-ico{position:absolute;left:11px;color:var(--ink-faint);font-size:15px;pointer-events:none}
-.qn-input{flex:1;width:100%;background:transparent;border:none;outline:none;color:var(--ink);font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13px;letter-spacing:.4px;padding:8px 8px 8px 33px}
-.qn-input::placeholder{color:var(--ink-faint);font-weight:500}
-.qn-clear{background:transparent;border:none;color:var(--ink-faint);font-size:19px;line-height:1;cursor:pointer;padding:2px 11px;transition:color .14s}
-.qn-clear:hover{color:var(--amber)}
-.qn-panel{position:absolute;top:calc(100% + 6px);left:0;width:340px;max-height:62vh;overflow-y:auto;background:rgba(16,10,12,.99);border:1px solid var(--hair-strong);border-radius:7px;box-shadow:0 20px 56px rgba(0,0,0,.6);padding:6px;display:none}
-.qn-dd.open .qn-panel{display:block}
-.qn-item{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:4px;font-family:'Saira',sans-serif;font-size:13.6px;color:var(--ink-dim);text-decoration:none}
-.qn-item:hover{background:var(--panel2);color:var(--ink)}
-.qn-dot{width:7px;height:7px;border-radius:50%;flex:none}
-.qn-dot.gen{background:var(--amber)}.qn-dot.fed{background:var(--fed)}.qn-dot.emp{background:var(--maroon-lt)}.qn-dot.all{background:var(--good)}
-.qn-nm{flex:1}
-.qn-side{font-family:'Chakra Petch',sans-serif;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--ink-faint);flex:none}
-.qn-item.qn-active{background:var(--panel2);color:var(--ink)}
-.qn-empty{padding:10px 12px;color:var(--ink-faint);font-size:13px;font-style:italic}
-.qn-panel::-webkit-scrollbar{width:9px}
-.qn-panel::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:5px}
-@media (max-width:560px){.qn-hint{display:none}.qn-field{min-width:0;flex:1}.qn-eyebrow{display:none}}
-footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--hair-strong);font-family:'Saira Condensed',sans-serif;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:8px 20px}
-footer b{color:var(--amber-lt)}
-@media (max-width:560px){.sec-head .tag{display:none}}
-@media (max-width:620px){table.rank td.rk{width:auto;white-space:normal}}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style>
+<title>Superpower Rank &middot; Systems | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#dossiers">Ships</a>
+      <a href="../index.html#engineering">Engineering</a>
+      <a href="../index.html#systems" class="active">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#sec-legend"><span class="qn-dot amber"></span><span class="qn-nm">How to read this manual</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#sec-what"><span class="qn-dot amber"></span><span class="qn-nm">What the superpowers are</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#sec-why"><span class="qn-dot amber"></span><span class="qn-nm">Why rank matters — rewards</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#sec-mechanics"><span class="qn-dot amber"></span><span class="qn-nm">Rank vs reputation — mechanics</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#sec-fed-ladder"><span class="qn-dot fed"></span><span class="qn-nm">Federation — rank ladder</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#sec-emp-ladder"><span class="qn-dot maroon"></span><span class="qn-nm">Empire — rank ladder</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#sec-alliance"><span class="qn-dot good"></span><span class="qn-nm">Alliance — reputation, not rank</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#sec-howearned"><span class="qn-dot amber"></span><span class="qn-nm">How rank is earned</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#sec-start-fed"><span class="qn-dot fed"></span><span class="qn-nm">Getting started — Federation</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#sec-start-emp"><span class="qn-dot maroon"></span><span class="qn-nm">Getting started — Empire</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#sec-start-all"><span class="qn-dot good"></span><span class="qn-nm">Getting started — Alliance</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#sec-rescue"><span class="qn-dot amber"></span><span class="qn-nm">Fastest method everywhere — rescues</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#sec-notes"><span class="qn-dot amber"></span><span class="qn-nm">Field notes for a new commander</span><span class="qn-side">13</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">14</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#systems">Systems</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Superpower Rank</span>
+</nav>
+
 <div class="wrap">
 <header class="masthead">
   <div class="kicker">Faction Tracker · Allegiance &amp; Rank<span class="id">CMDR KA0S · INARA 173082</span></div>
@@ -161,34 +76,6 @@ footer b{color:var(--amber-lt)}
     <span>Scope <b>Empire · Federation · Alliance</b></span>
   </div>
 </header>
-
-<nav class="quicknav" aria-label="Jump to section">
-  <span class="qn-eyebrow">Quick Nav</span>
-  <div class="qn-dd" id="qn-dd">
-    <div class="qn-field">
-      <span class="qn-ico" aria-hidden="true">⌕</span>
-      <input id="qn-search" class="qn-input" type="text" placeholder="Search or jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
-      <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
-    </div>
-    <div class="qn-panel" id="qn-panel" role="listbox">
-      <a class="qn-item" href="#sec-legend"><span class="qn-dot gen"></span><span class="qn-nm">How to read this manual</span><span class="qn-side">01</span></a>
-      <a class="qn-item" href="#sec-what"><span class="qn-dot gen"></span><span class="qn-nm">What the superpowers are</span><span class="qn-side">02</span></a>
-      <a class="qn-item" href="#sec-why"><span class="qn-dot gen"></span><span class="qn-nm">Why rank matters — rewards</span><span class="qn-side">03</span></a>
-      <a class="qn-item" href="#sec-mechanics"><span class="qn-dot gen"></span><span class="qn-nm">Rank vs reputation — mechanics</span><span class="qn-side">04</span></a>
-      <a class="qn-item" href="#sec-fed-ladder"><span class="qn-dot fed"></span><span class="qn-nm">Federation — rank ladder</span><span class="qn-side">05</span></a>
-      <a class="qn-item" href="#sec-emp-ladder"><span class="qn-dot emp"></span><span class="qn-nm">Empire — rank ladder</span><span class="qn-side">06</span></a>
-      <a class="qn-item" href="#sec-alliance"><span class="qn-dot all"></span><span class="qn-nm">Alliance — reputation, not rank</span><span class="qn-side">07</span></a>
-      <a class="qn-item" href="#sec-howearned"><span class="qn-dot gen"></span><span class="qn-nm">How rank is earned</span><span class="qn-side">08</span></a>
-      <a class="qn-item" href="#sec-start-fed"><span class="qn-dot fed"></span><span class="qn-nm">Getting started — Federation</span><span class="qn-side">09</span></a>
-      <a class="qn-item" href="#sec-start-emp"><span class="qn-dot emp"></span><span class="qn-nm">Getting started — Empire</span><span class="qn-side">10</span></a>
-      <a class="qn-item" href="#sec-start-all"><span class="qn-dot all"></span><span class="qn-nm">Getting started — Alliance</span><span class="qn-side">11</span></a>
-      <a class="qn-item" href="#sec-rescue"><span class="qn-dot gen"></span><span class="qn-nm">Fastest method everywhere — rescues</span><span class="qn-side">12</span></a>
-      <a class="qn-item" href="#sec-notes"><span class="qn-dot gen"></span><span class="qn-nm">Field notes for a new commander</span><span class="qn-side">13</span></a>
-      <div class="qn-empty" hidden>No matching section.</div>
-    </div>
-  </div>
-  <span class="qn-hint">type to filter · ↵ to jump</span>
-</nav>
 
 <div class="verdict">
   <div class="v-eyebrow">Briefing</div>
@@ -209,9 +96,9 @@ footer b{color:var(--amber-lt)}
   <div class="legend">
     <div class="lg"><h4>Colour code</h4>
       <div class="row"><span class="swatch sw-fed"></span><b>Federation</b> — blue · Federal Navy</div>
-      <div class="row"><span class="swatch sw-emp"></span><b>Empire</b> — maroon · Imperial Navy</div>
-      <div class="row"><span class="swatch sw-all"></span><b>Alliance</b> — green · no navy</div>
-      <div class="row"><span class="swatch sw-gen"></span><b>General</b> — amber · applies to all</div>
+      <div class="row"><span class="swatch sw-maroon"></span><b>Empire</b> — maroon · Imperial Navy</div>
+      <div class="row"><span class="swatch sw-good"></span><b>Alliance</b> — green · no navy</div>
+      <div class="row"><span class="swatch sw-amber"></span><b>General</b> — amber · applies to all</div>
     </div>
     <div class="lg"><h4>Two different bars</h4>
       <div class="row"><b>Rank</b> — your naval grade. Permanent. Gates ships &amp; permits.</div>
@@ -229,37 +116,34 @@ footer b{color:var(--amber-lt)}
 <section id="sec-what">
   <div class="sec-head"><span class="sec-num">02</span><h2>What the superpowers are</h2><span class="tag">Overview</span></div>
   <p class="lead">Three galactic superpowers dominate the inhabited bubble. Each is really an umbrella over hundreds of minor factions; working for those factions is how you build standing with the superpower above them.</p>
-  <div class="pow-grid">
-    <div class="pow ac-fed" id="pow-fed">
-      <div class="ph">The Federation</div>
-      <div class="psub">Democratic · Core Dynamics warships</div>
+  <div class="cards">
+    <article class="card ac-fed" id="pow-fed">
+      <div class="c-head"><h3>The Federation</h3> <span class="c-eyebrow">Democratic · Core Dynamics warships</span></div>
       <p>A sprawling representative democracy centred on Sol, fond of bureaucracy and big combat ships. Its Federal Navy Auxiliary is open to freelancers and rewards the climb with the Dropship line and, at the top, the combat-specialised Federal Corvette.</p>
-      <div class="pmeta">
-        <div class="pk">Capital</div><div class="pv">Sol (permit-locked)</div>
-        <div class="pk">Navy</div><div class="pv">Federal Navy · 14 ranks</div>
-        <div class="pk">Top ship</div><div class="pv">Federal Corvette (Rank 12)</div>
+      <div class="kvgrid">
+        <span class="lk">Capital</span><span class="lv">Sol (permit-locked)</span>
+        <span class="lk">Navy</span><span class="lv">Federal Navy · 14 ranks</span>
+        <span class="lk">Top ship</span><span class="lv">Federal Corvette (Rank 12)</span>
       </div>
-    </div>
-    <div class="pow ac-emp" id="pow-emp">
-      <div class="ph">The Empire</div>
-      <div class="psub">Aristocratic · Gutamaya hulls</div>
+    </article>
+    <article class="card ac-maroon" id="pow-emp">
+      <div class="c-head"><h3>The Empire</h3> <span class="c-eyebrow">Aristocratic · Gutamaya hulls</span></div>
       <p>A rigid, slavery-tolerating aristocracy of Houses, centred on Achenar. Its Imperial Navy Auxiliary uses noble titles for ranks — Outsider up to King — and hands out the elegant Gutamaya ships, ending in the enormous Imperial Cutter.</p>
-      <div class="pmeta">
-        <div class="pk">Capital</div><div class="pv">Achenar (permit-locked)</div>
-        <div class="pk">Navy</div><div class="pv">Imperial Navy · 14 ranks</div>
-        <div class="pk">Top ship</div><div class="pv">Imperial Cutter (Rank 12)</div>
+      <div class="kvgrid">
+        <span class="lk">Capital</span><span class="lv">Achenar (permit-locked)</span>
+        <span class="lk">Navy</span><span class="lv">Imperial Navy · 14 ranks</span>
+        <span class="lk">Top ship</span><span class="lv">Imperial Cutter (Rank 12)</span>
       </div>
-    </div>
-    <div class="pow ac-all" id="pow-all">
-      <div class="ph">The Alliance</div>
-      <div class="psub">Coalition · Lakon ships, no rank</div>
+    </article>
+    <article class="card ac-good" id="pow-all">
+      <div class="c-head"><h3>The Alliance</h3> <span class="c-eyebrow">Coalition · Lakon ships, no rank</span></div>
       <p>A voluntary coalition of independent systems pooling defence. Critically, it runs <b>no naval auxiliary</b> — so none of its ships or systems are locked behind a rank. Alliance ships are Lakon-built (Chieftain, Challenger, Crusader, Type-10) and any pilot can buy them outright.</p>
-      <div class="pmeta">
-        <div class="pk">Capital</div><div class="pv">Alioth (permit via faction rep)</div>
-        <div class="pk">Navy</div><div class="pv">None — reputation only</div>
-        <div class="pk">Ships</div><div class="pv">No rank required</div>
+      <div class="kvgrid">
+        <span class="lk">Capital</span><span class="lv">Alioth (permit via faction rep)</span>
+        <span class="lk">Navy</span><span class="lv">None — reputation only</span>
+        <span class="lk">Ships</span><span class="lv">No rank required</span>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
@@ -273,8 +157,8 @@ footer b{color:var(--amber-lt)}
     <li><b>Better &amp; more frequent missions.</b> Higher superpower standing raises the chance that lucrative superpower-flagged missions spawn for you, and combined with your combat/trade/explore rank it bumps the payouts on those jobs.</li>
     <li><b>Bragging rights &amp; lore.</b> Sol is the birthplace of humanity and Achenar the Imperial throne-world — gated content you simply cannot visit without the rank.</li>
   </ul>
-  <div class="note">
-    <div class="ne">Key fact</div>
+  <div class="callout">
+    <div class="co-eyebrow">Key fact</div>
     <p>Ships and permits are gated on <b>rank</b>, which you never lose. The fluctuating <b>reputation</b> bar does not directly unlock anything — it just makes the aligned factions friendlier and their missions more plentiful, which in turn feeds your rank climb.</p>
   </div>
 </section>
@@ -289,76 +173,76 @@ footer b{color:var(--amber-lt)}
     <li><b>Overflow is never wasted.</b> If the bar caps before a promotion mission appears, progress keeps banking in the background. You can hit 100% across several ranks, then chain promotion missions and jump multiple grades quickly.</li>
     <li><b>Always take the Reputation reward.</b> Rank gained from a mission scales with its REP reward, and the credit/goods alternatives usually give equal or less rep. Take credits/materials only when you specifically need them.</li>
   </ul>
-  <div class="note warn">
-    <div class="ne">Common trap</div>
+  <div class="callout danger">
+    <div class="co-eyebrow">Common trap</div>
     <p>Bounty hunting and combat-bond turn-ins barely move the Navy rank bar — it is fundamentally a <b>mission</b> grind. If your rank reads "None" after hours of pirate-killing, that is why. And if a promotion mission won't appear, you are almost certainly not yet Cordial with any aligned faction in that system; do a few ordinary jobs there first.</p>
   </div>
 </section>
 
 <section id="sec-fed-ladder">
-  <div class="sec-head"><span class="sec-num fed">05</span><h2>Federation — rank ladder</h2><span class="tag">Federal Navy · 14 ranks</span></div>
+  <div class="sec-head"><span class="sec-num">05</span><h2>Federation — rank ladder</h2><span class="tag">Federal Navy · 14 ranks</span></div>
   <p class="lead">Fourteen ranks from Recruit to Admiral. Highlighted rows are the ones with a tangible reward — a ship, a permit, or an engineer.</p>
-  <div class="tbl-wrap">
-    <table class="rank fed">
+  <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>No.</th><th>Rank</th><th>Unlocks</th></tr></thead>
       <tbody>
-        <tr><td class="no">0</td><td class="rk">None</td><td><span class="none">—</span></td></tr>
-        <tr><td class="no">1</td><td class="rk">Recruit</td><td><span class="none">—</span></td></tr>
-        <tr><td class="no">2</td><td class="rk">Cadet</td><td><span class="none">—</span></td></tr>
-        <tr class="reward"><td class="no">3</td><td class="rk">Midshipman</td><td><span class="ship">Federal Dropship</span> · <a href="../engineering/engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a> ("The Sarge") engineer invitation</td></tr>
-        <tr class="reward"><td class="no">4</td><td class="rk">Petty Officer</td><td><span class="permit">Sol</span> permit</td></tr>
-        <tr class="reward"><td class="no">5</td><td class="rk">Chief Petty Officer</td><td><span class="ship">Federal Assault Ship</span> · <span class="permit">Vega</span> + <span class="permit">Beta Hydri</span> permits</td></tr>
-        <tr class="reward"><td class="no">6</td><td class="rk">Warrant Officer</td><td><span class="permit">PLX 695</span> permit</td></tr>
-        <tr class="reward"><td class="no">7</td><td class="rk">Ensign</td><td><span class="ship">Federal Gunship</span> · <span class="permit">Ross 128</span> permit</td></tr>
-        <tr class="reward"><td class="no">8</td><td class="rk">Lieutenant</td><td><span class="permit">Exbeur</span> permit</td></tr>
-        <tr><td class="no">9</td><td class="rk">Lieutenant Commander</td><td><span class="none">—</span></td></tr>
-        <tr class="reward"><td class="no">10</td><td class="rk">Post Commander</td><td><span class="permit">Hors</span> permit</td></tr>
-        <tr><td class="no">11</td><td class="rk">Post Captain</td><td><span class="none">—</span></td></tr>
-        <tr class="reward"><td class="no">12</td><td class="rk">Rear Admiral</td><td><span class="ship">Federal Corvette</span></td></tr>
-        <tr><td class="no">13</td><td class="rk">Vice Admiral</td><td><span class="none">—</span></td></tr>
-        <tr><td class="no">14</td><td class="rk">Admiral</td><td><span class="none">—</span></td></tr>
+        <tr><td class="mod">0</td><td><b>None</b></td><td>—</td></tr>
+        <tr><td class="mod">1</td><td><b>Recruit</b></td><td>—</td></tr>
+        <tr><td class="mod">2</td><td><b>Cadet</b></td><td>—</td></tr>
+        <tr><td class="mod">3</td><td><b>Midshipman</b></td><td><span class="acc">Federal Dropship</span> · <a href="../engineering/engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a> ("The Sarge") engineer invitation</td></tr>
+        <tr><td class="mod">4</td><td><b>Petty Officer</b></td><td><span class="acc">Sol</span> permit</td></tr>
+        <tr><td class="mod">5</td><td><b>Chief Petty Officer</b></td><td><span class="acc">Federal Assault Ship</span> · <span class="acc">Vega</span> + <span class="acc">Beta Hydri</span> permits</td></tr>
+        <tr><td class="mod">6</td><td><b>Warrant Officer</b></td><td><span class="acc">PLX 695</span> permit</td></tr>
+        <tr><td class="mod">7</td><td><b>Ensign</b></td><td><span class="acc">Federal Gunship</span> · <span class="acc">Ross 128</span> permit</td></tr>
+        <tr><td class="mod">8</td><td><b>Lieutenant</b></td><td><span class="acc">Exbeur</span> permit</td></tr>
+        <tr><td class="mod">9</td><td><b>Lieutenant Commander</b></td><td>—</td></tr>
+        <tr><td class="mod">10</td><td><b>Post Commander</b></td><td><span class="acc">Hors</span> permit</td></tr>
+        <tr><td class="mod">11</td><td><b>Post Captain</b></td><td>—</td></tr>
+        <tr><td class="mod">12</td><td><b>Rear Admiral</b></td><td><span class="acc">Federal Corvette</span></td></tr>
+        <tr><td class="mod">13</td><td><b>Vice Admiral</b></td><td>—</td></tr>
+        <tr><td class="mod">14</td><td><b>Admiral</b></td><td>—</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="note">
-    <div class="ne">Milestones that matter</div>
+  <div class="callout">
+    <div class="co-eyebrow">Milestones that matter</div>
     <p><b>Rank 4 (Petty Officer)</b> is the famous one — it grants the Sol permit, so most casual Federation climbs stop here. <b>Rank 12 (Rear Admiral)</b> is the long haul for the Federal Corvette, the strongest pure-combat hull of the "big three". The Dropship, Assault Ship and Gunship at ranks 3/5/7 are useful combat stepping-stones on the way up.</p>
   </div>
 </section>
 
 <section id="sec-emp-ladder">
-  <div class="sec-head"><span class="sec-num emp">06</span><h2>Empire — rank ladder</h2><span class="tag">Imperial Navy · 14 ranks</span></div>
+  <div class="sec-head"><span class="sec-num">06</span><h2>Empire — rank ladder</h2><span class="tag">Imperial Navy · 14 ranks</span></div>
   <p class="lead">Fourteen noble titles from Outsider to King. The Empire front-loads an engineer at the very first rank, which makes it worth a few missions even if you never want a Gutamaya ship.</p>
-  <div class="tbl-wrap">
-    <table class="rank emp">
+  <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>No.</th><th>Rank</th><th>Unlocks</th></tr></thead>
       <tbody>
-        <tr><td class="no">0</td><td class="rk">None</td><td><span class="none">—</span></td></tr>
-        <tr class="reward"><td class="no">1</td><td class="rk">Outsider</td><td><a href="../engineering/engineers.html#eng-hera-tani">Hera Tani</a> engineer invitation</td></tr>
-        <tr><td class="no">2</td><td class="rk">Serf</td><td><span class="none">—</span></td></tr>
-        <tr class="reward"><td class="no">3</td><td class="rk">Master</td><td><span class="ship">Imperial Courier</span></td></tr>
-        <tr class="reward"><td class="no">4</td><td class="rk">Squire</td><td><span class="permit">Achenar</span> permit</td></tr>
-        <tr><td class="no">5</td><td class="rk">Knight</td><td><span class="none">—</span></td></tr>
-        <tr><td class="no">6</td><td class="rk">Lord</td><td><span class="none">—</span></td></tr>
-        <tr class="reward"><td class="no">7</td><td class="rk">Baron</td><td><span class="ship">Imperial Clipper</span> · <span class="permit">Summerland</span> permit</td></tr>
-        <tr><td class="no">8</td><td class="rk">Viscount</td><td><span class="none">—</span></td></tr>
-        <tr><td class="no">9</td><td class="rk">Count</td><td><span class="none">—</span></td></tr>
-        <tr class="reward"><td class="no">10</td><td class="rk">Earl</td><td><span class="permit">Facece</span> permit</td></tr>
-        <tr><td class="no">11</td><td class="rk">Marquis</td><td><span class="none">—</span></td></tr>
-        <tr class="reward"><td class="no">12</td><td class="rk">Duke</td><td><span class="ship">Imperial Cutter</span></td></tr>
-        <tr><td class="no">13</td><td class="rk">Prince</td><td><span class="none">—</span></td></tr>
-        <tr><td class="no">14</td><td class="rk">King</td><td><span class="none">—</span></td></tr>
+        <tr><td class="mod">0</td><td><b>None</b></td><td>—</td></tr>
+        <tr><td class="mod">1</td><td><b>Outsider</b></td><td><a href="../engineering/engineers.html#eng-hera-tani">Hera Tani</a> engineer invitation</td></tr>
+        <tr><td class="mod">2</td><td><b>Serf</b></td><td>—</td></tr>
+        <tr><td class="mod">3</td><td><b>Master</b></td><td><span class="acc">Imperial Courier</span></td></tr>
+        <tr><td class="mod">4</td><td><b>Squire</b></td><td><span class="acc">Achenar</span> permit</td></tr>
+        <tr><td class="mod">5</td><td><b>Knight</b></td><td>—</td></tr>
+        <tr><td class="mod">6</td><td><b>Lord</b></td><td>—</td></tr>
+        <tr><td class="mod">7</td><td><b>Baron</b></td><td><span class="acc">Imperial Clipper</span> · <span class="acc">Summerland</span> permit</td></tr>
+        <tr><td class="mod">8</td><td><b>Viscount</b></td><td>—</td></tr>
+        <tr><td class="mod">9</td><td><b>Count</b></td><td>—</td></tr>
+        <tr><td class="mod">10</td><td><b>Earl</b></td><td><span class="acc">Facece</span> permit</td></tr>
+        <tr><td class="mod">11</td><td><b>Marquis</b></td><td>—</td></tr>
+        <tr><td class="mod">12</td><td><b>Duke</b></td><td><span class="acc">Imperial Cutter</span></td></tr>
+        <tr><td class="mod">13</td><td><b>Prince</b></td><td>—</td></tr>
+        <tr><td class="mod">14</td><td><b>King</b></td><td>—</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="note">
-    <div class="ne">Milestones that matter</div>
+  <div class="callout">
+    <div class="co-eyebrow">Milestones that matter</div>
     <p><b>Rank 1 (Outsider)</b> unlocks the Hera Tani engineer invitation — cheap and worth grabbing early. <b>Rank 4 (Squire)</b> gives the Achenar permit. <b>Rank 7 (Baron)</b> opens the fast, pretty Imperial Clipper, and <b>Rank 12 (Duke)</b> is the Imperial Cutter — the biggest-cargo single-pilot ship in the game. The Empire is also the <em>fastest</em> superpower to grind (see Section 10).</p>
   </div>
 </section>
 
 <section id="sec-alliance">
-  <div class="sec-head"><span class="sec-num all">07</span><h2>The Alliance — reputation, not rank</h2><span class="tag">No navy</span></div>
+  <div class="sec-head"><span class="sec-num">07</span><h2>The Alliance — reputation, not rank</h2><span class="tag">No navy</span></div>
   <p class="lead">The Alliance is the odd one out: there is no Alliance Navy auxiliary, no rank ladder, and no rank-locked ship. So you cannot "grind Alliance rank" — there is nothing to grind <em>to</em>. What you build is plain superpower reputation, which still does useful things.</p>
   <ul class="bullets">
     <li><b>Alliance ships need no rank.</b> The Chieftain, Challenger, Crusader and Type-10 Defender are Lakon hulls — any pilot can buy them with credits alone.</li>
@@ -366,8 +250,8 @@ footer b{color:var(--amber-lt)}
     <li><b>Engineer gate:</b> <a href="../engineering/engineers.html#eng-bill-turner">Bill Turner</a> requires you to be <b>Friendly</b> with the Alliance (and to hold the Alioth permit to reach him). This is the main concrete reason a new commander touches Alliance reputation.</li>
     <li><b>It amplifies minor-faction rep.</b> A high Alliance standing makes your reputation gains and losses with Alliance-aligned minor factions larger, which speeds everything else with those factions.</li>
   </ul>
-  <div class="note">
-    <div class="ne">Bottom line</div>
+  <div class="callout">
+    <div class="co-eyebrow">Bottom line</div>
     <p>Treat "the Alliance grind" as two separate, smaller jobs: (1) build Alliance superpower reputation by doing missions for Alliance factions, and (2) separately grind the Alioth Independents to Allied to earn the Alioth permit. Neither involves a rank ladder. See Section 11 for the steps.</p>
   </div>
 </section>
@@ -382,58 +266,58 @@ footer b{color:var(--amber-lt)}
     <li><b>Donation / charity missions</b> — pure credit sinks for very little effort; they accelerate the climb hard if you are already rich. Worth banking a few million first if you want to burn cash for speed.</li>
     <li><b>Source-and-return missions</b> at repairing stations — slower than evac passengers but the requested commodities are common and risk stays low.</li>
   </ul>
-  <div class="note">
-    <div class="ne">Passenger missions &amp; Powerplay — don't confuse them</div>
+  <div class="callout">
+    <div class="co-eyebrow">Passenger missions &amp; Powerplay — don't confuse them</div>
     <p>Passenger missions <b>do</b> earn superpower reputation and rank. They earn <b>zero Powerplay merits</b>, which is a separate system entirely. So a passenger run is great for Navy rank but useless for a Powerplay pledge — keep the two goals mentally separate.</p>
   </div>
 </section>
 
 <section id="sec-start-fed">
-  <div class="sec-head"><span class="sec-num fed">09</span><h2>Getting started — Federation</h2><span class="tag">Step-by-step</span></div>
+  <div class="sec-head"><span class="sec-num">09</span><h2>Getting started — Federation</h2><span class="tag">Step-by-step</span></div>
   <p class="lead">The Federation has no single overwhelmingly fast system the way the Empire does. Instead there are three classic paired-system "ping-pong" loops — pick whichever is supplying missions well on the day.</p>
-  <ol class="steps fed">
-    <li><span class="st-h">Fit a courier ship</span>Take a small or medium ship with <b>~15 ly+ jump range</b>. Add a <b>Docking Computer</b> and <b>Supercruise Assist</b> so you can run the loop nearly hands-free. No weapons needed; a modest cargo hold helps if you also want cargo missions.</li>
-    <li><span class="st-h">Pick a paired loop</span>Choose one of the three Federation loops below and fly to it. Each works the same way: hoover up missions in one system, jump to its partner, hand in, refill, repeat.</li>
-    <li><span class="st-h">Stack missions from Federal factions</span>At the board, take every <b>data-courier and delivery</b> mission to the partner system from factions flying the <b>Federation insignia</b> — plus any <b>donation</b> jobs if you are flush. Always select the <b>Reputation reward</b>.</li>
-    <li><span class="st-h">Avoid planetary-port destinations</span>Skip missions marked with the planetary/Horizons icon — surface ports sit far from the star and the approach wastes minutes per trip. Stick to orbital stations.</li>
-    <li><span class="st-h">Jump, hand in, refill, repeat</span>Fly to the partner system, hand everything in, take return missions, jump back. A full loop is a few minutes; the rep adds up steadily.</li>
-    <li><span class="st-h">Cash the promotion mission</span>When the rank bar reads 100%, look for a <b>"Federal Navy …"</b> job from a Federal faction you are Cordial+ with, and complete it to actually rank up. Keep grinding even if it hasn't appeared — progress banks in the background.</li>
-    <li><span class="st-h">Know your stops</span>Pause at <b>Petty Officer (4)</b> for the Sol permit; push to <b>Rear Admiral (12)</b> for the Corvette.</li>
+  <ol class="steps">
+    <li><span class="st">Fit a courier ship</span>Take a small or medium ship with <b>~15 ly+ jump range</b>. Add a <b>Docking Computer</b> and <b>Supercruise Assist</b> so you can run the loop nearly hands-free. No weapons needed; a modest cargo hold helps if you also want cargo missions.</li>
+    <li><span class="st">Pick a paired loop</span>Choose one of the three Federation loops below and fly to it. Each works the same way: hoover up missions in one system, jump to its partner, hand in, refill, repeat.</li>
+    <li><span class="st">Stack missions from Federal factions</span>At the board, take every <b>data-courier and delivery</b> mission to the partner system from factions flying the <b>Federation insignia</b> — plus any <b>donation</b> jobs if you are flush. Always select the <b>Reputation reward</b>.</li>
+    <li><span class="st">Avoid planetary-port destinations</span>Skip missions marked with the planetary/Horizons icon — surface ports sit far from the star and the approach wastes minutes per trip. Stick to orbital stations.</li>
+    <li><span class="st">Jump, hand in, refill, repeat</span>Fly to the partner system, hand everything in, take return missions, jump back. A full loop is a few minutes; the rep adds up steadily.</li>
+    <li><span class="st">Cash the promotion mission</span>When the rank bar reads 100%, look for a <b>"Federal Navy …"</b> job from a Federal faction you are Cordial+ with, and complete it to actually rank up. Keep grinding even if it hasn't appeared — progress banks in the background.</li>
+    <li><span class="st">Know your stops</span>Pause at <b>Petty Officer (4)</b> for the Sol permit; push to <b>Rear Admiral (12)</b> for the Corvette.</li>
   </ol>
-  <div class="loop-grid">
-    <div class="loop"><h4>Ceos / Sothis</h4><div class="lt">Closest to a "classic" run</div><p>Mirror of the Imperial method. Downside: just <b>one</b> Federal faction across the pair, so supply depends heavily on its state (boom/outbreak = easy). Multiple stations per system means the suicide-rebuy trick is unreliable here — collect ~20 missions, jump, then work station to station. A Python-class hold lets you grab cargo jobs too.</p></div>
-    <div class="loop"><h4>Ochosi / Chakpa</h4><div class="lt">Most mission supply</div><p><b>Three</b> Federal-aligned factions in each system, so far more missions on the board. The trade-off: their jobs point at a wider spread of nearby systems, so it can be fiddlier to stack neatly into one destination.</p></div>
-    <div class="loop"><h4>Canopus / Exphiay</h4><div class="lt">Highest rep, slowest trips</div><p>Generally higher REP per mission and cargo-biased — bring a big hold (a Cutter is ideal and tanks the NPC pirates). Catch: Canopus stations sit ~42,000 Ls from the star, so each supercruise leg is long. Best once you have a fast, well-shielded hauler.</p></div>
+  <div class="cards">
+    <article class="card"><div class="c-head"><h3>Ceos / Sothis</h3><span class="c-eyebrow">Closest to a "classic" run</span></div><p>Mirror of the Imperial method. Downside: just <b>one</b> Federal faction across the pair, so supply depends heavily on its state (boom/outbreak = easy). Multiple stations per system means the suicide-rebuy trick is unreliable here — collect ~20 missions, jump, then work station to station. A Python-class hold lets you grab cargo jobs too.</p></article>
+    <article class="card"><div class="c-head"><h3>Ochosi / Chakpa</h3><span class="c-eyebrow">Most mission supply</span></div><p><b>Three</b> Federal-aligned factions in each system, so far more missions on the board. The trade-off: their jobs point at a wider spread of nearby systems, so it can be fiddlier to stack neatly into one destination.</p></article>
+    <article class="card"><div class="c-head"><h3>Canopus / Exphiay</h3><span class="c-eyebrow">Highest rep, slowest trips</span></div><p>Generally higher REP per mission and cargo-biased — bring a big hold (a Cutter is ideal and tanks the NPC pirates). Catch: Canopus stations sit ~42,000 Ls from the star, so each supercruise leg is long. Best once you have a fast, well-shielded hauler.</p></article>
   </div>
 </section>
 
 <section id="sec-start-emp">
-  <div class="sec-head"><span class="sec-num emp">10</span><h2>Getting started — Empire</h2><span class="tag">Step-by-step</span></div>
+  <div class="sec-head"><span class="sec-num">10</span><h2>Getting started — Empire</h2><span class="tag">Step-by-step</span></div>
   <p class="lead">The Empire has the single best rank-grind spot in the game: the <b>Mainani ↔ Ngalinn</b> data-courier shuttle. Two Imperial systems, very close together, each packed with Empire factions and offering stacks of data deliveries to the other.</p>
-  <ol class="steps emp">
-    <li><span class="st-h">Bring a small or medium ship</span>Both systems have only a <b>single outpost</b> with small/medium pads — <b>no large ships</b>. A nimble courier with good jump range and a Supercruise Assist is perfect; you don't need cargo space for the core loop.</li>
-    <li><span class="st-h">Dock at Mainani &amp; load up</span>Take every <b>Data Delivery / courier</b> mission to Ngalinn from factions flying the <b>Imperial Eagle</b> insignia, plus any <b>credit-donation</b> jobs if you have spare funds. Always take the <b>Reputation reward</b>. You can hold roughly 20 at a time.</li>
-    <li><span class="st-h">Jump to Ngalinn and hand in</span>Make the short jump, hand in the data, and take a fresh batch of missions back to Mainani.</li>
-    <li><span class="st-h">(Optional) The suicide-rebuy speed trick</span>Because data-delivery missions <b>do not fail on ship destruction</b>, you can self-destruct the instant you arrive in the destination system — you rebuy right at the target and skip the supercruise + landing entirely. Crude, but it roughly doubles loop speed once you have a cheap rebuy.</li>
-    <li><span class="st-h">Overflow at Aitvas</span>If you run low on Mainani↔Ngalinn missions, <b>Flettner Survey in Aitvas</b> has plenty of Imperial factions too — top up there.</li>
-    <li><span class="st-h">Cash the promotion mission</span>At 100%, take an <b>"Imperial Navy …"</b> job from a Cordial+ Imperial faction to advance one rank.</li>
-    <li><span class="st-h">Know your stops</span><b>Outsider (1)</b> = Hera Tani invitation · <b>Master (3)</b> = Imperial Courier · <b>Squire (4)</b> = Achenar permit · <b>Baron (7)</b> = Imperial Clipper · <b>Duke (12)</b> = Imperial Cutter.</li>
+  <ol class="steps">
+    <li><span class="st">Bring a small or medium ship</span>Both systems have only a <b>single outpost</b> with small/medium pads — <b>no large ships</b>. A nimble courier with good jump range and a Supercruise Assist is perfect; you don't need cargo space for the core loop.</li>
+    <li><span class="st">Dock at Mainani &amp; load up</span>Take every <b>Data Delivery / courier</b> mission to Ngalinn from factions flying the <b>Imperial Eagle</b> insignia, plus any <b>credit-donation</b> jobs if you have spare funds. Always take the <b>Reputation reward</b>. You can hold roughly 20 at a time.</li>
+    <li><span class="st">Jump to Ngalinn and hand in</span>Make the short jump, hand in the data, and take a fresh batch of missions back to Mainani.</li>
+    <li><span class="st">(Optional) The suicide-rebuy speed trick</span>Because data-delivery missions <b>do not fail on ship destruction</b>, you can self-destruct the instant you arrive in the destination system — you rebuy right at the target and skip the supercruise + landing entirely. Crude, but it roughly doubles loop speed once you have a cheap rebuy.</li>
+    <li><span class="st">Overflow at Aitvas</span>If you run low on Mainani↔Ngalinn missions, <b>Flettner Survey in Aitvas</b> has plenty of Imperial factions too — top up there.</li>
+    <li><span class="st">Cash the promotion mission</span>At 100%, take an <b>"Imperial Navy …"</b> job from a Cordial+ Imperial faction to advance one rank.</li>
+    <li><span class="st">Know your stops</span><b>Outsider (1)</b> = Hera Tani invitation · <b>Master (3)</b> = Imperial Courier · <b>Squire (4)</b> = Achenar permit · <b>Baron (7)</b> = Imperial Clipper · <b>Duke (12)</b> = Imperial Cutter.</li>
   </ol>
-  <div class="note">
-    <div class="ne">CMDR Ka0s note</div>
+  <div class="callout">
+    <div class="co-eyebrow">CMDR Ka0s note</div>
     <p>You are pledged to <b>Li Yong-Rui</b> (Sirius, Imperial-aligned) for Powerplay — but a Powerplay pledge does <b>not</b> grant Imperial Navy rank. You still climb via Imperial-faction missions above. With Achenar (Squire, Rank 4) as your stated target, the Mainani/Ngalinn loop is the shortest path: four ranks is a short evening's work here.</p>
   </div>
 </section>
 
 <section id="sec-start-all">
-  <div class="sec-head"><span class="sec-num all">11</span><h2>Getting started — Alliance</h2><span class="tag">Step-by-step</span></div>
+  <div class="sec-head"><span class="sec-num">11</span><h2>Getting started — Alliance</h2><span class="tag">Step-by-step</span></div>
   <p class="lead">There is no rank to chase, so the Alliance "grind" is really just two reputation jobs. Do them only if you want Bill Turner or the Alioth permit — otherwise the Alliance ships are buyable with no standing at all.</p>
-  <ol class="steps all">
-    <li><span class="st-h">Pick a convenient Alliance system</span>Find a system with <b>Alliance-aligned minor factions</b> (Alliance insignia on the board) and stations <b>close to the star</b> — short supercruise legs keep the rep-per-hour high.</li>
-    <li><span class="st-h">Run any missions, take Reputation</span>Mission type barely matters for plain superpower rep — couriers, cargo, donations all work. Take the <b>Reputation reward</b> each time to lift your Alliance bar toward Friendly.</li>
-    <li><span class="st-h">For Alioth: grind the Alioth Independents</span>The Alioth permit is separate. Work the <b>Alioth Independents</b> faction specifically — a common spot is <b>78 Ursae Majoris (Rominger Dock)</b>, near Alioth — until you reach <b>Allied</b> with that faction.</li>
-    <li><span class="st-h">Accept the permit mission</span>At Allied, a permit mission referencing <b>"Making Friends and Going Places"</b> appears at a nearby Alioth Independents station. Complete it to receive the Alioth permit. (If it won't show, relog — this one is known to be finicky.)</li>
-    <li><span class="st-h">Then unlock Bill Turner</span>With the Alioth permit in hand and Alliance reputation at <b>Friendly+</b>, you meet <a href="../engineering/engineers.html#eng-bill-turner">Bill Turner</a>'s requirements and can begin his unlock.</li>
+  <ol class="steps">
+    <li><span class="st">Pick a convenient Alliance system</span>Find a system with <b>Alliance-aligned minor factions</b> (Alliance insignia on the board) and stations <b>close to the star</b> — short supercruise legs keep the rep-per-hour high.</li>
+    <li><span class="st">Run any missions, take Reputation</span>Mission type barely matters for plain superpower rep — couriers, cargo, donations all work. Take the <b>Reputation reward</b> each time to lift your Alliance bar toward Friendly.</li>
+    <li><span class="st">For Alioth: grind the Alioth Independents</span>The Alioth permit is separate. Work the <b>Alioth Independents</b> faction specifically — a common spot is <b>78 Ursae Majoris (Rominger Dock)</b>, near Alioth — until you reach <b>Allied</b> with that faction.</li>
+    <li><span class="st">Accept the permit mission</span>At Allied, a permit mission referencing <b>"Making Friends and Going Places"</b> appears at a nearby Alioth Independents station. Complete it to receive the Alioth permit. (If it won't show, relog — this one is known to be finicky.)</li>
+    <li><span class="st">Then unlock Bill Turner</span>With the Alioth permit in hand and Alliance reputation at <b>Friendly+</b>, you meet <a href="../engineering/engineers.html#eng-bill-turner">Bill Turner</a>'s requirements and can begin his unlock.</li>
   </ol>
 </section>
 
@@ -441,13 +325,13 @@ footer b{color:var(--amber-lt)}
   <div class="sec-head"><span class="sec-num">12</span><h2>Fastest method everywhere — station rescues</h2><span class="tag">Universal</span></div>
   <p class="lead">When a starport is attacked (by Thargoids or humans), it catches fire and its population scrambles to evacuate — flooding the passenger board with rescue missions. If the local factions are Federal- or Imperial-aligned, this is the single fastest way to build their reputation, and it works for both.</p>
   <ol class="steps">
-    <li><span class="st-h">Fit for evacuation</span>Bring a ship with as many <b>economy passenger cabins</b> as possible (desperate refugees don't need luxury), plus <b>shields</b> and several <b>heat sinks</b> — burning stations are volatile and hot. Type-7, Python and Anaconda are popular choices.</li>
-    <li><span class="st-h">Approach hot</span>Drop a <b>heat sink</b> as you fly into the burning station to avoid overheating, then dock.</li>
-    <li><span class="st-h">Take the efficient missions</span>At the passenger board, prefer missions with the <b>fewest passengers for the highest REP</b>. Fill your cabins.</li>
-    <li><span class="st-h">Ferry to the rescue megaship</span>Drop another heat sink on the way out, fly to the nearby rescue vessel, hand in, and return. Rinse and repeat — the rep stacks fast.</li>
+    <li><span class="st">Fit for evacuation</span>Bring a ship with as many <b>economy passenger cabins</b> as possible (desperate refugees don't need luxury), plus <b>shields</b> and several <b>heat sinks</b> — burning stations are volatile and hot. Type-7, Python and Anaconda are popular choices.</li>
+    <li><span class="st">Approach hot</span>Drop a <b>heat sink</b> as you fly into the burning station to avoid overheating, then dock.</li>
+    <li><span class="st">Take the efficient missions</span>At the passenger board, prefer missions with the <b>fewest passengers for the highest REP</b>. Fill your cabins.</li>
+    <li><span class="st">Ferry to the rescue megaship</span>Drop another heat sink on the way out, fly to the nearby rescue vessel, hand in, and return. Rinse and repeat — the rep stacks fast.</li>
   </ol>
-  <div class="note warn">
-    <div class="ne">The catch</div>
+  <div class="callout danger">
+    <div class="co-eyebrow">The catch</div>
     <p>You will <b>not</b> find Navy promotion missions at a burning station, so your rank <em>bar</em> fills rapidly but you can't actually advance there. Bank the progress, then pop over to a normal aligned system, pick up the "Federal/Imperial Navy …" mission, and collect all your earned ranks at once.</p>
   </div>
 </section>
@@ -465,23 +349,9 @@ footer b{color:var(--amber-lt)}
   </ul>
 </section>
 
-<!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-<style>
-.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-.credits .cr-rows{display:flex;flex-direction:column}
-.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-.credits .cr-src{font-weight:700;letter-spacing:.3px}
-.credits .cr-what{opacity:.78}
-.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-.credits .cr-link:hover{text-decoration:underline}
-@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-</style>
+<!-- Sources -->
 <section class="credits" id="credits">
-  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <div class="sec-head"><span class="sec-num">14</span><h2>Sources</h2><span class="tag">Provenance</span></div>
   <p class="lead">Figures on this page are verified against the sources below.</p>
   <div class="cr-rows">
     <div class="cr-row"><span class="cr-src">Fandom — Federation/Ranks</span><span class="cr-what">The 14-rank Federal Navy Auxiliary ladder and the ships/permits each Federal tier unlocks.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Federation/Ranks">elite-dangerous.fandom.com/wiki/Federation/Ranks</a></div>
@@ -493,63 +363,12 @@ footer b{color:var(--amber-lt)}
 </section>
 
 <footer>
-  <span>CMDR Ka0s · Field Manual</span>
-  <span>Allegiance &amp; Rank · <b>Empire · Federation · Alliance</b></span>
-  <span>Verified vs <b>ED Wiki · NEWP</b> · Live 4.0</span>
-  <span>Companion: <b>The Engineers</b></span>
+  <span>E:D Black Box</span>
+  <span>By <b>CMDR Ka0s</b></span>
+  <span>Systems</span>
 </footer>
 </div>
-<script>
-(function(){
-  var dd=document.getElementById('qn-dd'),
-      inp=document.getElementById('qn-search'),
-      clr=document.getElementById('qn-clear'),
-      panel=document.getElementById('qn-panel'),
-      empty=panel.querySelector('.qn-empty'),
-      items=Array.prototype.slice.call(panel.querySelectorAll('.qn-item'));
-  if(!dd||!inp) return;
-  function open(){dd.classList.add('open');inp.setAttribute('aria-expanded','true');}
-  function close(){dd.classList.remove('open');inp.setAttribute('aria-expanded','false');clearActive();}
-  function clearActive(){items.forEach(function(a){a.classList.remove('qn-active');});}
-  function visible(){return items.filter(function(a){return a.style.display!=='none';});}
-  function filter(){
-    var q=inp.value.trim().toLowerCase(), n=0;
-    items.forEach(function(a){
-      var nm=a.querySelector('.qn-nm').textContent.toLowerCase();
-      var show=!q||nm.indexOf(q)>-1;
-      a.style.display=show?'':'none';
-      if(show)n++;
-    });
-    empty.hidden=n>0;
-    clr.hidden=!inp.value;
-    clearActive();
-    panel.scrollTop=0;
-  }
-  inp.addEventListener('focus',open);
-  inp.addEventListener('input',function(){open();filter();});
-  inp.addEventListener('keydown',function(e){
-    var vis=visible();
-    if(e.key==='Escape'){ if(inp.value){inp.value='';filter();} else {close();inp.blur();} return; }
-    if(e.key==='Enter'){
-      var cur=panel.querySelector('.qn-item.qn-active')||vis[0];
-      if(cur){e.preventDefault();cur.click();}
-      return;
-    }
-    if(e.key==='ArrowDown'||e.key==='ArrowUp'){
-      e.preventDefault(); open();
-      if(!vis.length) return;
-      var i=vis.indexOf(panel.querySelector('.qn-item.qn-active'));
-      clearActive();
-      i = e.key==='ArrowDown' ? (i+1)%vis.length : (i<=0?vis.length-1:i-1);
-      vis[i].classList.add('qn-active');
-      vis[i].scrollIntoView({block:'nearest'});
-    }
-  });
-  clr.addEventListener('click',function(e){e.preventDefault();inp.value='';filter();inp.focus();open();});
-  items.forEach(function(a){a.addEventListener('click',function(){close();inp.value='';filter();});});
-  document.addEventListener('click',function(e){if(!dd.contains(e.target))close();});
-  filter();
-})();
-</script>
+
+<script src="../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

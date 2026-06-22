@@ -3,267 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Combat Zone Field Manual — CMDR Ka0s</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0a0708;
-    --bg2:#0e0a0b;
-    --panel:#140d0f;
-    --panel2:#1a1113;
-    --grid:rgba(180,70,60,.045);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(190,120,110,.32);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Saira',sans-serif;
-    font-weight:300;
-    line-height:1.62;
-    letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:
-      linear-gradient(var(--grid) 1px,transparent 1px),
-      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),
-      radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),
-      radial-gradient(1200px 900px at 50% 120%,rgba(139,35,50,.10),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 22px 120px}
-
-  /* ---------- header ---------- */
-  header.masthead{padding:54px 0 26px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{
-    font-family:'Saira Condensed',sans-serif;font-weight:600;
-    letter-spacing:5px;text-transform:uppercase;font-size:12px;
-    color:var(--amber);display:flex;gap:14px;align-items:center;flex-wrap:wrap;
-  }
-  .eyebrow::before{content:"";width:34px;height:2px;background:var(--amber)}
-  h1{
-    font-family:'Chakra Petch',sans-serif;font-weight:700;
-    font-size:clamp(34px,6.6vw,62px);line-height:.98;
-    letter-spacing:1px;margin:16px 0 6px;text-transform:uppercase;
-    color:var(--ink);
-  }
-  h1 span{color:var(--maroon-lt)}
-  .subtitle{font-family:'Saira',sans-serif;font-weight:300;color:var(--ink-dim);font-size:clamp(15px,2.3vw,19px);max-width:760px}
-  .tagstrip{
-    display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;
-    font-family:'Saira Condensed',sans-serif;
-  }
-  .tag{
-    font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;
-    padding:5px 12px;border:1px solid var(--hair-strong);border-radius:2px;
-    color:var(--ink-dim);background:rgba(20,13,15,.6);
-  }
-  .tag b{color:var(--amber);font-weight:600}
-
-  /* ---------- HUD signature ---------- */
-  .hud{
-    margin:30px 0 8px;border:1px solid var(--hair-strong);background:linear-gradient(180deg,rgba(26,17,19,.9),rgba(14,10,11,.9));
-    border-radius:4px;padding:20px 22px;position:relative;overflow:hidden;
-  }
-  .hud::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 200px at 85% 120%,rgba(224,145,58,.12),transparent)}
-  .hud-label{font-family:'Saira Condensed',sans-serif;letter-spacing:3px;text-transform:uppercase;font-size:11px;color:var(--ink-faint);position:relative}
-  .hud-bars{display:flex;align-items:center;gap:14px;margin-top:12px;position:relative}
-  .hud-side{flex:1}
-  .hud-side .nm{font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;display:flex;justify-content:space-between}
-  .hud-side .nm .pct{font-weight:700}
-  .bar{height:10px;margin-top:6px;border-radius:1px;background:rgba(255,255,255,.06);overflow:hidden;border:1px solid var(--hair)}
-  .bar i{display:block;height:100%}
-  .ally .nm{color:var(--good)} .ally .bar i{width:62%;background:linear-gradient(90deg,#2f6b45,var(--good))}
-  .enemy .nm{color:var(--danger)} .enemy .bar i{width:41%;background:linear-gradient(90deg,#7a221f,var(--danger))}
-  .hud-vs{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink-faint);font-size:14px}
-
-  /* ---------- nav ---------- */
-  nav.toc{
-    margin:34px 0 10px;padding:18px 20px;border:1px solid var(--hair);border-left:3px solid var(--maroon);
-    background:rgba(20,13,15,.55);border-radius:3px;
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:6px 26px;
-  }
-  nav.toc a{
-    color:var(--ink-dim);text-decoration:none;font-size:14.5px;font-family:'Saira',sans-serif;
-    display:flex;gap:10px;align-items:baseline;padding:3px 0;transition:color .15s,transform .15s;
-  }
-  nav.toc a:hover{color:var(--amber);transform:translateX(3px)}
-  nav.toc a .n{font-family:'Chakra Petch',sans-serif;color:var(--maroon-lt);font-size:12px;min-width:22px;font-weight:600}
-
-  /* ---------- sections ---------- */
-  section{padding:48px 0 8px;border-top:1px solid var(--hair);margin-top:14px}
-  section:first-of-type{border-top:none}
-  .sec-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
-  .sec-num{
-    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;
-    color:var(--bg);background:var(--amber);padding:4px 9px;border-radius:2px;margin-top:6px;white-space:nowrap;
-  }
-  h2{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(22px,3.6vw,30px);
-    letter-spacing:.5px;text-transform:uppercase;color:var(--ink);line-height:1.08;
-  }
-  h2 + .lede{color:var(--ink-dim);font-size:16px;margin-top:4px}
-  h3{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:17px;letter-spacing:.5px;
-    color:var(--amber-lt);text-transform:uppercase;margin:26px 0 8px;
-  }
-  p{margin:10px 0;color:var(--ink)}
-  p.muted{color:var(--ink-dim)}
-  strong{color:var(--ink);font-weight:600}
-  em{color:var(--amber-lt);font-style:normal;font-weight:500}
-  ul{margin:10px 0 10px 2px;list-style:none}
-  ul li{position:relative;padding-left:22px;margin:7px 0;color:var(--ink)}
-  ul li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;background:var(--maroon-lt);transform:rotate(45deg)}
-  ol{margin:10px 0 10px 4px;padding-left:20px}
-  ol li{margin:8px 0;padding-left:6px}
-  ol li::marker{color:var(--amber);font-family:'Chakra Petch',sans-serif;font-weight:700}
-
-  /* ---------- callouts ---------- */
-  .box{border-radius:3px;padding:16px 18px;margin:18px 0;border:1px solid var(--hair-strong);background:rgba(20,13,15,.6);position:relative}
-  .box .bl{font-family:'Saira Condensed',sans-serif;letter-spacing:2.5px;text-transform:uppercase;font-size:11px;font-weight:700;display:block;margin-bottom:6px}
-  .box.warn{border-left:3px solid var(--danger);background:rgba(54,18,18,.4)} .box.warn .bl{color:var(--danger)}
-  .box.tip{border-left:3px solid var(--good);background:rgba(20,40,28,.35)} .box.tip .bl{color:var(--good)}
-  .box.key{border-left:3px solid var(--amber);background:rgba(48,32,12,.4)} .box.key .bl{color:var(--amber)}
-  .box.cmdr{border-left:3px solid var(--maroon-lt);background:rgba(45,16,22,.45)} .box.cmdr .bl{color:var(--maroon-lt)}
-  .box p{margin:6px 0}
-  .box p:last-child{margin-bottom:0}
-
-  /* ---------- tables ---------- */
-  .tbl-wrap{overflow-x:auto;margin:18px 0}
-  table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
-  th{
-    font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-    font-size:12px;color:var(--amber);text-align:left;padding:10px 12px;border-bottom:2px solid var(--maroon);
-    background:rgba(139,35,50,.10);
-  }
-  td{padding:10px 12px;border-bottom:1px solid var(--hair);color:var(--ink);vertical-align:top}
-  tr:hover td{background:rgba(224,145,58,.04)}
-  td b{color:var(--amber-lt);font-weight:600}
-  .pill{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;padding:2px 8px;border-radius:2px;text-transform:uppercase;white-space:nowrap}
-  .pill.lo{background:rgba(95,179,122,.16);color:var(--good)}
-  .pill.md{background:rgba(224,145,58,.16);color:var(--amber)}
-  .pill.hi{background:rgba(216,66,59,.16);color:var(--danger)}
-
-  /* ---------- objective cards ---------- */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:18px 0}
-  .card{border:1px solid var(--hair-strong);border-top:3px solid var(--maroon);border-radius:3px;padding:15px 16px;background:rgba(20,13,15,.6)}
-  .card h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
-  .card .role{font-family:'Saira Condensed',sans-serif;letter-spacing:2px;font-size:10.5px;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:8px}
-  .card p{font-size:14px;color:var(--ink-dim);margin:4px 0}
-
-  .footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:12.5px;font-family:'Saira Condensed',sans-serif;letter-spacing:1px;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  .footer b{color:var(--maroon-lt)}
-  a.inl{color:var(--amber);text-decoration:none;border-bottom:1px dotted var(--amber)}
-
-  @media(max-width:600px){
-    nav.toc{grid-template-columns:1fr}
-    .sec-head{gap:10px}
-    table{font-size:13.5px}
-  }
-  @media (prefers-reduced-motion: reduce){*{transition:none!important}}
-</style>
+<title>Combat Zones &middot; Systems | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
+<style>:root{--accent:var(--maroon-lt);--accent-lt:var(--maroon-lt);--accent-deep:var(--maroon);
+  --accent-soft:rgba(177,49,64,.4);--accent-glow:rgba(177,49,64,.10);}</style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="masthead">
-    <div class="eyebrow">Fleet Operations Dossier · Combat Doctrine</div>
-    <h1>Combat <span>Zones</span></h1>
-    <p class="subtitle">Everything that happens between dropping into a warzone and cashing the bonds: how zones form, how kills are scored, how to leave richer, and how to bend the grind toward Empire rank.</p>
-    <div class="tagstrip">
-      <span class="tag">Scope · <b>Odyssey / Live</b></span>
-      <span class="tag">Ship CZ + <b>On-Foot CZ</b></span>
-      <span class="tag">CMDR · <b>Ka0s</b></span>
-      <span class="tag">Ref · <b>CZ-DOC v1</b></span>
-    </div>
-
-    <div class="hud" aria-hidden="true">
-      <span class="hud-label">// Warzone Status — Victory Tally</span>
-      <div class="hud-bars">
-        <div class="hud-side ally">
-          <div class="nm"><span>Allied (your side)</span><span class="pct">62%</span></div>
-          <div class="bar"><i></i></div>
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#dossiers">Ships</a>
+      <a href="../index.html#engineering">Engineering</a>
+      <a href="../index.html#systems" class="active">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
         </div>
-        <div class="hud-vs">VS</div>
-        <div class="hud-side enemy">
-          <div class="nm"><span class="pct">41%</span><span>Hostile (targets)</span></div>
-          <div class="bar"><i></i></div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">What a combat zone is</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Finding zones &amp; intensity</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">Entering &amp; choosing a side</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Scoring &amp; "kills confirmed"</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">Special objectives</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot good"></span><span class="qn-nm">Combat bonds &amp; credits</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot fed"></span><span class="qn-nm">Superpower rep (Empire)</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">Massacre missions in CZs</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot maroon"></span><span class="qn-nm">Winning the war (BGS)</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot fed"></span><span class="qn-nm">Powerplay conflict zones</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">On-foot conflict zones</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Ship &amp; loadout doctrine</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#s13"><span class="qn-dot fed"></span><span class="qn-nm">Quick reference</span><span class="qn-side">13</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">14</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
         </div>
       </div>
     </div>
-    <p class="muted" style="font-size:13px;margin-top:8px">The top-right HUD bars are the zone's scoreboard. Fill yours first and your side wins the engagement. This manual is about everything feeding those bars.</p>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#systems">Systems</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Combat Zones</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Fleet Operations Dossier · Combat Doctrine</div>
+    <h1 class="title">Combat <span>Zones</span></h1>
+    <p class="subtitle">Everything that happens between dropping into a warzone and cashing the bonds: how zones form, how kills are scored, how to leave richer, and how to bend the grind toward Empire rank.</p>
+    <div class="masthead-meta">
+      <span>Scope · <b>Odyssey / Live</b></span>
+      <span>Ship CZ + <b>On-Foot CZ</b></span>
+      <span>CMDR · <b>Ka0s</b></span>
+      <span>Ref · <b>CZ-DOC v1</b></span>
+    </div>
   </header>
 
-  <nav class="toc" aria-label="Contents">
-    <a href="#s1"><span class="n">01</span>What a combat zone is</a>
-    <a href="#s2"><span class="n">02</span>Finding zones &amp; intensity</a>
-    <a href="#s3"><span class="n">03</span>Entering &amp; choosing a side</a>
-    <a href="#s4"><span class="n">04</span>Scoring &amp; "kills confirmed"</a>
-    <a href="#s5"><span class="n">05</span>Special objectives</a>
-    <a href="#s6"><span class="n">06</span>Combat bonds &amp; credits</a>
-    <a href="#s7"><span class="n">07</span>Superpower rep (Empire)</a>
-    <a href="#s8"><span class="n">08</span>Massacre missions in CZs</a>
-    <a href="#s9"><span class="n">09</span>Winning the war (BGS)</a>
-    <a href="#s10"><span class="n">10</span>Powerplay conflict zones</a>
-    <a href="#s11"><span class="n">11</span>On-foot conflict zones</a>
-    <a href="#s12"><span class="n">12</span>Ship &amp; loadout doctrine</a>
-    <a href="#s13"><span class="n">13</span>Quick reference</a>
-  </nav>
+  <div class="hud" aria-hidden="true">
+    <span class="hud-c1"></span><span class="hud-c2"></span>
+    <h4>// Warzone Status — Victory Tally</h4>
+    <p>Allied (your side) 62% &nbsp;VS&nbsp; 41% Hostile (targets)</p>
+  </div>
+  <p class="muted">The top-right HUD bars are the zone's scoreboard. Fill yours first and your side wins the engagement. This manual is about everything feeding those bars.</p>
 
   <!-- 01 -->
   <section id="s1">
     <div class="sec-head"><span class="sec-num">01</span><div><h2>What a Combat Zone Is</h2><p class="lede">A temporary battle instance, born from a war between two minor factions.</p></div></div>
     <p>A Combat Zone (CZ) is a transient signal source that appears only in systems where two minor factions are in a <strong>War</strong> or <strong>Civil War</strong> state. It is not a permanent feature of a system — when the war ends, the zones vanish. This is the single most important framing fact: a CZ is always tied to <em>two specific factions fighting each other</em>, and everything you do inside it pushes one of them toward winning.</p>
     <p>There are two completely separate kinds, with separate rules, separate rewards, and separate skill demands:</p>
-    <ul>
+    <ul class="bullets">
       <li><strong>Ship CZs</strong> — fought in your ship, in space. Drop in from supercruise, pick a side, destroy enemy ships.</li>
       <li><strong>On-foot CZs</strong> — fought on foot at a planetary settlement, infantry-style, accessed through Frontline Solutions. Covered fully in §11.</li>
     </ul>
     <p>Ships destroyed in a CZ <strong>do not drop materials</strong> — so this is not a place to farm engineering mats. It is a place to make credits, build reputation, swing a war, and rank up combat.</p>
-    <div class="box key"><span class="bl">// Core loop</span><p>Find a system at war → drop into a zone → choose the side opposing your targets → destroy enemy ships (each = a bond + a tick on the score) → optionally clear the special objectives → leave before you die → redeem bonds at a station. Repeat.</p></div>
+    <div class="callout"><span class="lbl">// Core loop</span><p>Find a system at war → drop into a zone → choose the side opposing your targets → destroy enemy ships (each = a bond + a tick on the score) → optionally clear the special objectives → leave before you die → redeem bonds at a station. Repeat.</p></div>
   </section>
 
   <!-- 02 -->
   <section id="s2">
     <div class="sec-head"><span class="sec-num">02</span><div><h2>Finding Zones &amp; Reading Intensity</h2><p class="lede">No war, no zone. Higher intensity, tougher ships, bigger payouts.</p></div></div>
 
-    <h3>Locating a war</h3>
+    <h3 class="subhead">Locating a war</h3>
     <p>Because CZs only exist during active wars, the hunt is really a hunt for a system in War / Civil War. Two reliable approaches:</p>
-    <ul>
+    <ul class="bullets">
       <li><strong>In-game:</strong> jump into a candidate system. If a war is active, conflict zones show up in the <strong>Navigation panel</strong> as signal sources. Supercruise toward one and drop in.</li>
-      <li><strong>Out-of-game:</strong> use <a class="inl" href="https://inara.cz">Inara</a> to search a faction or system and read its current states (War / Civil War), or <a class="inl" href="https://edtools.cc/pve">edtools.cc/pve</a> to find active combat systems. States rotate constantly, so check fresh.</li>
+      <li><strong>Out-of-game:</strong> use <a href="https://inara.cz">Inara</a> to search a faction or system and read its current states (War / Civil War), or <a href="https://edtools.cc/pve">edtools.cc/pve</a> to find active combat systems. States rotate constantly, so check fresh.</li>
     </ul>
 
-    <h3>Reading intensity — it's hidden in your ship</h3>
+    <h3 class="subhead">Reading intensity — it's hidden in your ship</h3>
     <p>The little <strong>+</strong> marks next to a CZ signal in the nav panel are <em>not</em> the intensity rating. To learn a zone's tier before committing:</p>
-    <ul>
+    <ul class="bullets">
       <li>Open the <strong>System Map → planetary map → select the CZ</strong>; it shows a threat number.</li>
       <li>Or dock and talk to <strong>Frontline Solutions</strong>, which lists each zone as Low / Medium / High intensity.</li>
     </ul>
 
-    <div class="tbl-wrap">
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Intensity</th><th>Enemy ships</th><th>Special spawns</th><th>Rough payout (full zone)</th></tr></thead>
       <tbody>
         <tr><td><span class="pill lo">Low</span></td><td>Mostly stock; the odd Elite-ranked pilot, no engineering</td><td>No Spec Ops wings</td><td><b>~500k CR</b></td></tr>
@@ -273,8 +130,8 @@
     </table>
     </div>
 
-    <div class="box warn"><span class="bl">// Difficulty is not linear</span><p>Even Low zones can contain Elite-rank NPCs, and ships are combat-fitted — tougher than the random traffic you meet in the wild. Climb the ladder deliberately: Low → Medium → High. Don't take a glass cannon into a High expecting the rep to carry you.</p></div>
-    <div class="box tip"><span class="bl">// Anti-bully mechanic</span><p>Bringing an over-engineered monster to a Low or Medium will summon hefty enemy Spec Ops wings to even the odds. The zone scales to punish stomping, so match the ship to the tier rather than over-gunning a soft zone.</p></div>
+    <div class="callout warn"><span class="lbl">// Difficulty is not linear</span><p>Even Low zones can contain Elite-rank NPCs, and ships are combat-fitted — tougher than the random traffic you meet in the wild. Climb the ladder deliberately: Low → Medium → High. Don't take a glass cannon into a High expecting the rep to carry you.</p></div>
+    <div class="callout tip"><span class="lbl">// Anti-bully mechanic</span><p>Bringing an over-engineered monster to a Low or Medium will summon hefty enemy Spec Ops wings to even the odds. The zone scales to punish stomping, so match the ship to the tier rather than over-gunning a soft zone.</p></div>
   </section>
 
   <!-- 03 -->
@@ -286,13 +143,13 @@
       <li>Your radar instantly repaints: <strong>green = allies, red = hostiles</strong>. The red ships are now your legal targets and will engage you.</li>
       <li>Only now do you open fire.</li>
     </ol>
-    <div class="box warn"><span class="bl">// Fire before you side and everyone turns on you</span><p>If you shoot a single shot before choosing a faction, the <strong>entire zone</strong> — both sides — treats you as hostile. Bonds won't accrue and you'll be swarmed. Always side first.</p></div>
-    <h3>Two edge cases</h3>
-    <ul>
+    <div class="callout warn"><span class="lbl">// Fire before you side and everyone turns on you</span><p>If you shoot a single shot before choosing a faction, the <strong>entire zone</strong> — both sides — treats you as hostile. Bonds won't accrue and you'll be swarmed. Always side first.</p></div>
+    <h3 class="subhead">Two edge cases</h3>
+    <ul class="bullets">
       <li><strong>"Ceasefire" instead of a side menu:</strong> the war has ended. The zone is a husk, kills won't register, and any mission tied to it is dead. Leave; mission clears at the next daily server tick.</li>
       <li><strong>Purple contacts (in a wing):</strong> a wingmate fired on an ally. Whoever does <em>not</em> have a purple target should leave and re-drop, or the zone may flip everyone hostile. Solo, you won't see this.</li>
     </ul>
-    <div class="box key"><span class="bl">// Picking the RIGHT side for missions</span><p>You destroy the side you did <strong>not</strong> join. For a "Kill Faction X Ships" mission, join X's <em>enemy</em> so that X's ships become the red targets. Side with X by mistake and you'll be killing their opponent — zero mission progress.</p></div>
+    <div class="callout"><span class="lbl">// Picking the RIGHT side for missions</span><p>You destroy the side you did <strong>not</strong> join. For a "Kill Faction X Ships" mission, join X's <em>enemy</em> so that X's ships become the red targets. Side with X by mistake and you'll be killing their opponent — zero mission progress.</p></div>
   </section>
 
   <!-- 04 -->
@@ -300,11 +157,11 @@
     <div class="sec-head"><span class="sec-num">04</span><div><h2>Scoring &amp; "Kills Confirmed"</h2><p class="lede">The score that wins the zone is separate from the bonds in your wallet.</p></div></div>
     <p>Each side has a victory bar shown top-right (the HUD readout at the top of this dossier). Every enemy you destroy adds to your side's score and is relayed in your comms feed — destroyed enemies, lost allies, and warnings as either side nears victory or defeat. Fill your bar before the enemy fills theirs and your side <strong>wins the zone</strong>.</p>
     <p>Crucially, two things happen per kill, and they are independent:</p>
-    <ul>
+    <ul class="bullets">
       <li><strong>The victory tally</strong> — pushes your side toward winning the engagement (BGS effect, see §9). Winning is <em>not</em> required to keep your bonds or your mission kills.</li>
       <li><strong>A combat bond</strong> — the credit voucher that goes in your wallet (see §6).</li>
     </ul>
-    <div class="box tip"><span class="bl">// Why your mission counter sometimes lags the kills</span><p>Mission progress tracks <em>qualifying</em> kills independently of the victory bar. So a kill can pay a bond and move the score yet not tick a mission — usually because the dead ship wasn't the mission's target faction, or because of how stacked missions count (see §8). The zone score, the bonds, and each mission's tally are three separate ledgers.</p></div>
+    <div class="callout tip"><span class="lbl">// Why your mission counter sometimes lags the kills</span><p>Mission progress tracks <em>qualifying</em> kills independently of the victory bar. So a kill can pay a bond and move the score yet not tick a mission — usually because the dead ship wasn't the mission's target faction, or because of how stacked missions count (see §8). The zone score, the bonds, and each mission's tally are three separate ledgers.</p></div>
   </section>
 
   <!-- 05 -->
@@ -312,13 +169,13 @@
     <div class="sec-head"><span class="sec-num">05</span><div><h2>Special Objectives</h2><p class="lede">Optional, but they swing the score hard and pay well. None are required to win.</p></div></div>
     <p>From Medium intensity up, scripted events spawn into the zone. Killing the hostile versions (or protecting the friendly ones) gives bonds plus a big jolt to your side's victory tally.</p>
     <div class="cards">
-      <div class="card"><span class="role">High-value kill</span><h4>Captain</h4><p>A large engineered ship — typically Anaconda, Corvette or Cutter — flown by an Elite pilot. Enemy: hunt it down and kill it. Friendly: keep it alive until it jumps out.</p><p><em>Tip: target the FSD or powerplant to drop it fast.</em></p></div>
-      <div class="card"><span class="role">Elite wing</span><h4>Spec Ops</h4><p>Four heavily engineered medium ships with unique effects. If hostile, kill all four fast — they can wipe your allies and lose you the fight. If friendly, leave them be.</p><p><em>Warning: these do NOT count toward combat-bond / massacre missions.</em></p></div>
-      <div class="card"><span class="role">Escort</span><h4>War Correspondent</h4><p>A non-combat ship that must be protected if it's on your side. Keep hostiles off it until it departs.</p></div>
-      <div class="card"><span class="role">Priority target</span><h4>Propagandist</h4><p>An enemy ship that must be destroyed. Prioritise it when it appears.</p></div>
-      <div class="card"><span class="role">High intensity only</span><h4>Capital Ship</h4><p>Appears only in High zones when the Empire or Federation is a combatant. It cannot be destroyed — disable it by targeting and destroying its <b>heat relays</b> (cycle sub-targets) to force it to flee.</p></div>
+      <article class="card"><div class="c-head"><span class="c-eyebrow">High-value kill</span><h3>Captain</h3></div><p>A large engineered ship — typically Anaconda, Corvette or Cutter — flown by an Elite pilot. Enemy: hunt it down and kill it. Friendly: keep it alive until it jumps out.</p><p><em>Tip: target the FSD or powerplant to drop it fast.</em></p></article>
+      <article class="card"><div class="c-head"><span class="c-eyebrow">Elite wing</span><h3>Spec Ops</h3></div><p>Four heavily engineered medium ships with unique effects. If hostile, kill all four fast — they can wipe your allies and lose you the fight. If friendly, leave them be.</p><p><em>Warning: these do NOT count toward combat-bond / massacre missions.</em></p></article>
+      <article class="card"><div class="c-head"><span class="c-eyebrow">Escort</span><h3>War Correspondent</h3></div><p>A non-combat ship that must be protected if it's on your side. Keep hostiles off it until it departs.</p></article>
+      <article class="card"><div class="c-head"><span class="c-eyebrow">Priority target</span><h3>Propagandist</h3></div><p>An enemy ship that must be destroyed. Prioritise it when it appears.</p></article>
+      <article class="card"><div class="c-head"><span class="c-eyebrow">High intensity only</span><h3>Capital Ship</h3></div><p>Appears only in High zones when the Empire or Federation is a combatant. It cannot be destroyed — disable it by targeting and destroying its <b>heat relays</b> (cycle sub-targets) to force it to flee.</p></article>
     </div>
-    <div class="box key"><span class="bl">// Spec Ops vs Capital — usually one or the other</span><p>In a High zone, if Spec Ops spawns the capital ship typically won't, and vice versa. Neither is mandatory for victory; they're accelerators and paydays, not win conditions.</p></div>
+    <div class="callout"><span class="lbl">// Spec Ops vs Capital — usually one or the other</span><p>In a High zone, if Spec Ops spawns the capital ship typically won't, and vice versa. Neither is mandatory for victory; they're accelerators and paydays, not win conditions.</p></div>
   </section>
 
   <!-- 06 -->
@@ -326,9 +183,9 @@
     <div class="sec-head"><span class="sec-num">06</span><div><h2>Combat Bonds &amp; Making Credits</h2><p class="lede">Vouchers, not instant cash — and they evaporate if you die.</p></div></div>
     <p>Every enemy you destroy after siding awards a <strong>combat bond voucher</strong>. Value is fixed per ship type — heavier ships pay more — and ranges from a few thousand up to roughly <strong>80,000 CR</strong> for the biggest hulls. (Destroy a ship <em>without</em> having chosen a side and it's a flat ~3,000 CR, another reason to side first.)</p>
 
-    <h3>Income expectations</h3>
-    <div class="tbl-wrap">
-    <table>
+    <h3 class="subhead">Income expectations</h3>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Zone</th><th>Per-ship bond</th><th>Realistic full-zone haul</th></tr></thead>
       <tbody>
         <tr><td><span class="pill lo">Low</span></td><td>small</td><td><b>~500k CR</b></td></tr>
@@ -338,18 +195,18 @@
     </table>
     </div>
 
-    <h3>Target priority for income</h3>
-    <ul>
+    <h3 class="subhead">Target priority for income</h3>
+    <ul class="bullets">
       <li>Prioritise the big hulls — <strong>Corvettes, Cutters, Anacondas, Pythons</strong> — for the fattest bonds.</li>
       <li>If none are in range, use <strong>"Select Highest Threat"</strong> targeting. It finds your next kill and tends to put allied NPCs on the same target, giving you a free wingman against tough ships.</li>
     </ul>
 
-    <h3>Redeeming &amp; protecting your bonds</h3>
-    <ul>
+    <h3 class="subhead">Redeeming &amp; protecting your bonds</h3>
+    <ul class="bullets">
       <li>Bonds are redeemed at the <strong>Combat Bond Contact</strong> in a station's Contacts menu, at a station in the system controlled by the faction you fought for.</li>
       <li>They behave like bounty vouchers: <strong>unredeemed bonds are lost if your ship is destroyed</strong>. Bank often — when a fight turns against you, jump out and cash in before re-engaging.</li>
     </ul>
-    <div class="box warn"><span class="bl">// The rebuy maths</span><p>A High zone can pay 10M+, but a single death there forfeits every unbanked bond <em>and</em> charges your rebuy. Net result of a greedy wipe can be deeply negative. Treat "leave to bank" as a core part of the loop, not an interruption to it.</p></div>
+    <div class="callout warn"><span class="lbl">// The rebuy maths</span><p>A High zone can pay 10M+, but a single death there forfeits every unbanked bond <em>and</em> charges your rebuy. Net result of a greedy wipe can be deeply negative. Treat "leave to bank" as a core part of the loop, not an interruption to it.</p></div>
   </section>
 
   <!-- 07 -->
@@ -361,28 +218,28 @@
       <li><strong>Redeeming combat bonds</strong> for an Empire-aligned faction raises your standing with that faction — and anything that raises reputation with an Empire-aligned faction nudges your <strong>Imperial rank bar</strong> upward.</li>
       <li>For the rep/rank to land on <em>Empire</em>, both ends must line up: fight for an <strong>Imperial-aligned minor faction</strong> and cash the bonds at an <strong>Imperial station</strong>. Cash Imperial-earned bonds at a Federal station and the superpower credit can skew the wrong way.</li>
     </ol>
-    <div class="box warn"><span class="bl">// The rank bar still needs a promotion mission</span><p>CZ rep can <em>fill</em> the Imperial rank bar, but reputation and naval rank are separate systems. Once the bar hits 100%, you still must find and complete an <strong>"Imperial Navy"-titled promotion mission</strong> (board-flip to roll one). No amount of CZ grinding promotes you on its own.</p></div>
-    <div class="box cmdr"><span class="bl">// CMDR Ka0s — read this before flying out</span><p>For your Squire → Achenar goal, CZs are a <em>bonus</em> source of Empire rep, not the efficient path. The rank-bar gain from combat is small per action, and the bottleneck is the promotion-mission roll, not rep volume. Use CZs if you're enjoying the combat and banking credits anyway; otherwise courier/transport/donation missions fill the bar faster per minute. Also note the Mandalay is a traveller, not a brawler — for any serious Medium/High zone work, bring the Python Mk II or Cobra Mk V combat builds, not the explorer.</p></div>
+    <div class="callout warn"><span class="lbl">// The rank bar still needs a promotion mission</span><p>CZ rep can <em>fill</em> the Imperial rank bar, but reputation and naval rank are separate systems. Once the bar hits 100%, you still must find and complete an <strong>"Imperial Navy"-titled promotion mission</strong> (board-flip to roll one). No amount of CZ grinding promotes you on its own.</p></div>
+    <div class="callout"><span class="lbl">// CMDR Ka0s — read this before flying out</span><p>For your Squire → Achenar goal, CZs are a <em>bonus</em> source of Empire rep, not the efficient path. The rank-bar gain from combat is small per action, and the bottleneck is the promotion-mission roll, not rep volume. Use CZs if you're enjoying the combat and banking credits anyway; otherwise courier/transport/donation missions fill the bar faster per minute. Also note the Mandalay is a traveller, not a brawler — for any serious Medium/High zone work, bring the Python Mk II or Cobra Mk V combat builds, not the explorer.</p></div>
   </section>
 
   <!-- 08 -->
   <section id="s8">
     <div class="sec-head"><span class="sec-num">08</span><div><h2>Massacre Missions Inside CZs</h2><p class="lede">Stacking works — but only across different mission-givers.</p></div></div>
     <p>"Kill Faction X Ships" missions are completed cleanly in a CZ where X is a combatant: side against X, and X's ships are your legal kills. Three rules govern how the tally fills:</p>
-    <ul>
+    <ul class="bullets">
       <li><strong>Side correctly.</strong> Join X's enemy. Kills only count against the faction you're <em>not</em> fighting for.</li>
       <li><strong>Spec Ops don't count.</strong> Ships spawned by the Spec Ops objective never tick combat-bond/massacre missions — kill the regular combatants for mission credit.</li>
       <li><strong>Stacking is per mission-giver.</strong> One kill counts toward multiple missions <em>only if they were issued by different factions</em>. Two missions from the <strong>same</strong> faction targeting X do not share a kill — you'd grind the full combined total.</li>
     </ul>
-    <div class="box key"><span class="bl">// How to actually stack</span><p>Collect "Kill X" missions against <strong>one</strong> target faction from as many <strong>different</strong> Imperial mission-givers as possible (across stations / nearby systems). Then each qualifying kill ticks one mission from every different giver at once. For same-giver missions, kills tick the <em>oldest accepted</em> mission first, then the next.</p></div>
-    <div class="box tip"><span class="bl">// Tracking aid</span><p>The <strong>EDMC Massacres</strong> plugin (for Elite Dangerous Market Connector) groups accepted massacre missions by giver, shows total kills needed per faction, and flags your largest stack — worth running if you lean into combat farming.</p></div>
+    <div class="callout"><span class="lbl">// How to actually stack</span><p>Collect "Kill X" missions against <strong>one</strong> target faction from as many <strong>different</strong> Imperial mission-givers as possible (across stations / nearby systems). Then each qualifying kill ticks one mission from every different giver at once. For same-giver missions, kills tick the <em>oldest accepted</em> mission first, then the next.</p></div>
+    <div class="callout tip"><span class="lbl">// Tracking aid</span><p>The <strong>EDMC Massacres</strong> plugin (for Elite Dangerous Market Connector) groups accepted massacre missions by giver, shows total kills needed per faction, and flags your largest stack — worth running if you lean into combat farming.</p></div>
   </section>
 
   <!-- 09 -->
   <section id="s9">
     <div class="sec-head"><span class="sec-num">09</span><div><h2>Winning the War (BGS)</h2><p class="lede">Individual zone wins ladder up into the war's outcome.</p></div></div>
     <p>Combat zones are a Background Simulation (BGS) tool. Here's how a zone win becomes a war win:</p>
-    <ul>
+    <ul class="bullets">
       <li>Zone victories and completed war-missions feed a <strong>daily tally</strong> determining which side "won the day."</li>
       <li>The faction that wins the most days takes <strong>Influence</strong> when the war resolves; the loser sheds Influence (and can lose control of assets/stations).</li>
       <li><strong>During</strong> a war the embattled factions' Influence is frozen — combat bonds are effectively the only lever on the outcome until it ends.</li>
@@ -395,52 +252,52 @@
   <section id="s10">
     <div class="sec-head"><span class="sec-num">10</span><div><h2>Powerplay Conflict Zones</h2><p class="lede">A distinct zone type that pays merits — not the same as a BGS war.</p></div></div>
     <p>Under Powerplay 2.0 there are dedicated <strong>Power Conflict Zones</strong>, separate from ordinary faction-war CZs. They look similar but differ in important ways:</p>
-    <ul>
+    <ul class="bullets">
       <li>They reward <strong>Powerplay merits</strong> — ordinary CZs do not. Credits may be a touch lower, but merits drive your Powerplay rating.</li>
       <li>You're auto-assigned to the <strong>Power you're pledged to</strong>. If neither side is your Power, you may choose freely.</li>
       <li>Power bonds are issued under the <strong>Power's literal name</strong> (e.g. a named Power) and redeemed at the <strong>Combat Bond Contact on that Power's Stronghold Carrier</strong>, not a normal station.</li>
       <li>As of the most recent design they appear only in the <strong>Medium</strong> variety.</li>
     </ul>
-    <div class="box cmdr"><span class="bl">// Note vs your Lavigny-Duval standing</span><p>You're currently Hostile to A. Lavigny-Duval, whose Powerplay presence covers systems like Cemiess. Power CZs are a separate consideration from your Empire <em>rank</em> grind — you don't need to touch Powerplay to reach Squire. File this section under "good to know," not "to-do."</p></div>
+    <div class="callout"><span class="lbl">// Note vs your Lavigny-Duval standing</span><p>You're currently Hostile to A. Lavigny-Duval, whose Powerplay presence covers systems like Cemiess. Power CZs are a separate consideration from your Empire <em>rank</em> grind — you don't need to touch Powerplay to reach Squire. File this section under "good to know," not "to-do."</p></div>
   </section>
 
   <!-- 11 -->
   <section id="s11">
     <div class="sec-head"><span class="sec-num">11</span><div><h2>On-Foot Conflict Zones</h2><p class="lede">Infantry warfare — reinforcement attrition and capture points.</p></div></div>
     <p>Accessed on foot at a settlement, ideally via <strong>Frontline Solutions</strong> (which lets you respawn back into the fight). Intensity (Low/Med/High) can't be read in-ship; check the planetary map's threat number or Frontline's listing.</p>
-    <h3>How a battle is won</h3>
-    <ul>
+    <h3 class="subhead">How a battle is won</h3>
+    <ul class="bullets">
       <li>Two teams of <strong>12 fighters</strong>, dropped in by dropship. Each team starts with <strong>1,000 reinforcement points</strong> and loses <strong>5</strong> every time one of its members is killed or critically injured.</li>
       <li>Reduce the enemy to <strong>0 points and eliminate the remaining members</strong> to win.</li>
       <li><strong>Secondary objective — control points</strong> (Alpha, Bravo, Charlie, Delta, Echo, Foxtrot; max three active at once): stand in the zone until the meter hits 100%. Capturing one strips <strong>50 reinforcement points</strong> from the enemy and pays every capturing player a <strong>3,000 CR</strong> bond.</li>
     </ul>
-    <h3>Pay &amp; gear</h3>
-    <ul>
+    <h3 class="subhead">Pay &amp; gear</h3>
+    <ul class="bullets">
       <li>Per-kill bonds run a few thousand up to tens of thousands; a strong High zone can net <strong>~5–20M</strong> in one session.</li>
       <li><strong>Mercenary rank matters:</strong> climbing it (e.g. Defenceless → Soldier) roughly doubles payout. Engineered suit (Maverick/Dominator) and weapons make a large difference.</li>
       <li>Redeem at <strong>Frontline Solutions</strong> or a Combat Voucher Contact in the concourse.</li>
     </ul>
-    <div class="box tip"><span class="bl">// Reset trick</span><p>Entering the zone manually (not via the Frontline dropship) lets you reset it quickly by jumping to supercruise and returning — useful for chaining fresh zones, at the cost of losing the easy respawn.</p></div>
+    <div class="callout tip"><span class="lbl">// Reset trick</span><p>Entering the zone manually (not via the Frontline dropship) lets you reset it quickly by jumping to supercruise and returning — useful for chaining fresh zones, at the cost of losing the easy respawn.</p></div>
   </section>
 
   <!-- 12 -->
   <section id="s12">
     <div class="sec-head"><span class="sec-num">12</span><div><h2>Ship &amp; Loadout Doctrine</h2><p class="lede">Match the hull to the tier, and fly to bank rather than to brag.</p></div></div>
-    <ul>
+    <ul class="bullets">
       <li><strong>Engineering by tier:</strong> Low needs little; Medium wants a solid engineered build; High demands a well-engineered ship or a player wing. NPCs scale to match.</li>
       <li><strong>Weapons:</strong> don't run pure beam lasers for long engagements — heat and sustain become a problem. Mix sustained energy with kinetic (multi-cannons) so you're not fully dependent on either; bring enough ammo for an extended fight.</li>
       <li><strong>Defence:</strong> shield tank with resistance-augmented boosters favours the long, multi-ship slog of a CZ over a glass-cannon gank build. Carry an AFMU for module repair on extended sessions.</li>
       <li><strong>Wingman trick:</strong> "Select Highest Threat" tends to align allied NPCs onto your target — let them tank while you DPS.</li>
       <li><strong>Don't over-gun a soft zone:</strong> a monster build in a Low/Medium triggers extra enemy Spec Ops wings.</li>
     </ul>
-    <div class="box cmdr"><span class="bl">// From the fleet roster</span><p><strong>Python Mk II (KA-05P)</strong> — your medium combat flagship; the natural High-zone choice. <strong>Cobra Mk V (KA-05C)</strong> — capable for Low/Medium. <strong>Mandalay</strong> — leave it parked for CZ work; it's a long-range traveller with no business in a sustained warzone. Standard combat doctrine applies here: G5 Overcharged plant with Thermal Spread, G5 Dirty Drives, Thermal Vent beams, a Corrosive multi-cannon, Heavy Duty boosters/HRPs.</p></div>
+    <div class="callout"><span class="lbl">// From the fleet roster</span><p><strong>Python Mk II (KA-05P)</strong> — your medium combat flagship; the natural High-zone choice. <strong>Cobra Mk V (KA-05C)</strong> — capable for Low/Medium. <strong>Mandalay</strong> — leave it parked for CZ work; it's a long-range traveller with no business in a sustained warzone. Standard combat doctrine applies here: G5 Overcharged plant with Thermal Spread, G5 Dirty Drives, Thermal Vent beams, a Corrosive multi-cannon, Heavy Duty boosters/HRPs.</p></div>
   </section>
 
   <!-- 13 -->
   <section id="s13">
     <div class="sec-head"><span class="sec-num">13</span><div><h2>Quick Reference</h2><p class="lede">The whole manual, compressed for a pre-flight glance.</p></div></div>
-    <div class="tbl-wrap">
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Question</th><th>Answer</th></tr></thead>
       <tbody>
         <tr><td>Where do CZs appear?</td><td>Only in systems in <b>War / Civil War</b>; shown as nav-panel signal sources.</td></tr>
@@ -460,23 +317,9 @@
     </div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">14</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">Conflict-zone mechanics, intensity tiers, and Spec Ops / Capital Ship details.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Conflict_Zone">elite-dangerous.fandom.com/wiki/Conflict_Zone</a></div>
@@ -487,11 +330,14 @@
     </div>
   </section>
 
-  <div class="footer">
-    <span>Fleet Ops · <b>Combat Zone Doctrine</b> · CZ-DOC v1</span>
-    <span>CMDR Ka0s · Base: Ray Gateway, Diaguandri</span>
-  </div>
+<footer>
+  <span>E:D Black Box</span>
+  <span>By <b>CMDR Ka0s</b></span>
+  <span>Systems</span>
+</footer>
 
 </div>
+
+<script src="../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>
