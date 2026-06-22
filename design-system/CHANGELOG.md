@@ -40,6 +40,11 @@ mostly recolouring and spacing.
 - **Card affordances:** `.card-tags` (a left-aligned pill row under the title) and a
   `.card h3 .cb-ext` external-link glyph (↗, inline right after the title). Surfaced by the
   third-party-apps directory rework.
+- **`.rec.pw`** — power-profile record-card variant: three equal columns (Ethos | Signature
+  perk | Best for), gold field labels, and the portrait framed from the top (`object-position:
+  center top`) so the head is never cropped. Surfaced by the Powerplay power cards.
+- **`table.data.matrix`** — fixed-layout tick matrix: a 40% first column + equal-width,
+  centre-aligned check columns. Surfaced by the Powerplay merit-activity matrix.
 - **`.case-hd`** — a sub-section header (smaller than `.subhead`, ink so an inline `.sp-*`
   keeps its colour); `.case-hd.play` adds a gap above. For "The Case for X" / playbook labels.
 - **Superpower allegiance colours** — `.sp-fed` (Federation red) · `.sp-emp` (Empire blue) ·

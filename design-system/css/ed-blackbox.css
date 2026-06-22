@@ -261,6 +261,16 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .kvgrid .lk::after{content:"›";color:var(--ink-faint);font-weight:400}
 .kvgrid .lv{font-size:var(--fs-base);color:var(--ink);line-height:1.4}
 .kvgrid .lv b{color:var(--ink);font-weight:600}
+/* power-profile card variant (.rec.pw): three equal columns — Ethos | Signature perk | Best for —
+   with gold field labels and the portrait framed from the top so the head is never cropped */
+.rec.pw .rec-body{grid-template-columns:1fr 1fr 1fr;grid-template-areas:"c a b"}
+.rec.pw .rc .rcl{color:var(--amber-lt)}
+.rec.pw .rec-banner img{object-position:center top}
+@media (max-width:680px){.rec.pw .rec-body{grid-template-columns:1fr;grid-template-areas:"c" "a" "b"}}
+/* even-width tick-matrix table — equal check columns, centred ticks */
+table.data.matrix{table-layout:fixed}
+table.data.matrix th:first-child,table.data.matrix td:first-child{width:40%}
+table.data.matrix th:not(:first-child),table.data.matrix td:not(:first-child){width:20%;text-align:center}
 .kv-tbd{color:var(--ink-faint);font-style:italic;opacity:.7}
 /* bullet list inside a record */
 ul.reclist{list-style:none;margin:0;padding:0}
