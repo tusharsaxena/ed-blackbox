@@ -19,6 +19,7 @@ be re-run later.
 | `fix-step-tuples.mjs` | [fix-step-tuples.md](fix-step-tuples.md) | One-shot content fix: unpacks malformed `(action, rationale, cost)` tuple text in dossier step lists into readable markup (quote-aware). |
 | `trim-svg.mjs` | [trim-svg.md](trim-svg.md) | Tightens inline diagram `<svg>` viewBoxes to their content + ~5px margin (via Playwright `getBBox`), removing phantom whitespace. |
 | `restructure-app-cards.mjs` | [restructure-app-cards.md](restructure-app-cards.md) | One-shot simplifier for the third-party-apps tool cards: amber accent, stable `id`s, tag row, ↗ open-glyph, drops the decorative eyebrow. |
+| `classify-card-groups.mjs` | [classify-card-groups.md](classify-card-groups.md) | Sets each `.cards` container's width class (`cards` / `cards wide` / `cards extra-wide`) by its largest card's word count. Class-only, gate-neutral, re-runnable. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.
