@@ -141,8 +141,9 @@ h1.title .role{font-family:'Saira Condensed',sans-serif;font-weight:600;font-siz
 header.masthead .chips{margin-top:var(--space-9)}
 
 /* ---- 4. VERDICT / FIELD-BRIEFING CALLOUT ---- */
-.verdict{margin:34px 0 var(--space-7);border:1px solid var(--accent-soft);border-radius:var(--radius-md);background:linear-gradient(180deg,var(--accent-glow),rgba(20,13,15,.6));padding:var(--space-14) var(--space-14) var(--space-13);position:relative;overflow:hidden}
-.verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),transparent)}
+/* Briefing box chrome is always AMBER, independent of the page's --accent group. */
+.verdict{margin:34px 0 var(--space-7);border:1px solid rgba(224,145,58,.4);border-radius:var(--radius-md);background:linear-gradient(180deg,rgba(224,145,58,.12),rgba(20,13,15,.6));padding:var(--space-14) var(--space-14) var(--space-13);position:relative;overflow:hidden}
+.verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--amber),transparent)}
 .verdict .v-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:4px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-5)}
 .verdict h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);line-height:1.05;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:var(--space-3)}
 .verdict h2 em{font-style:normal;color:var(--amber-lt)}
@@ -154,11 +155,16 @@ header.masthead .chips{margin-top:var(--space-9)}
 .verdict .why p{font-size:var(--fs-base);color:var(--ink-dim);margin:0;max-width:none}
 
 /* ---- 5. STAT GRID ---- */
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-7);margin:var(--space-11) 0 var(--space-2)}
-.stat{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-7);margin:var(--space-11) 0 var(--space-2);align-items:stretch}
+.stat{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:var(--radius-md);padding:var(--space-6) var(--space-8);display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;height:100%}
 .stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-3xl);color:var(--amber-lt);line-height:1}
 .stat .n.fed{color:var(--fed-lt)}.stat .n.mar{color:var(--maroon-lt)}.stat .n.good{color:var(--good-lt)}
 .stat .l{font-size:var(--fs-sm2);color:var(--ink-dim);margin-top:var(--space-3);letter-spacing:.3px}
+/* ship-dossier rating card: standard .n number with a smaller dim "/100", plus a
+   ladder rating bar (.bar.mini) as the 2nd row, nudged down onto the label row.
+   Scoped to .stat so the ladder table's own .bar.mini is untouched. */
+.stat .n small{font-size:var(--fs-sm2);font-weight:600;color:var(--ink-dim);margin-left:2px}
+.stat .bar.mini{margin-top:var(--space-6)}
 
 /* ---- 6. SECTION + HEADING ---- */
 section{margin-top:var(--space-section);scroll-margin-top:74px}
