@@ -362,6 +362,9 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 .callout.warn .co-eyebrow,.callout.warn .lbl{color:var(--amber-lt)}
 .callout.danger .co-eyebrow,.callout.danger .lbl{color:var(--danger)}
 .callout p{font-size:var(--fs-body);color:var(--ink-dim)}
+/* a section paragraph that resumes right after a callout — .callout has no
+   bottom margin and section>p has no top margin, so restore the inter-block gap */
+section > .callout + p{margin-top:var(--space-10)}
 /* icon variant — leading glyph in the accent colour */
 .callout.icon{position:relative;padding-left:48px}
 .callout.icon::before{content:"\25C8";position:absolute;left:18px;top:15px;font-size:var(--fs-lg);color:var(--amber)}
