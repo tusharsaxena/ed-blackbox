@@ -201,6 +201,13 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .chip.maroon{color:var(--maroon-lt);border-color:rgba(177,49,64,.5);background:rgba(177,49,64,.10)}
 .chip.good{color:var(--good-lt);border-color:rgba(95,179,122,.45)}
 .chip.faint{color:var(--ink-faint)}
+/* superpower (allegiance) colour-coding — Federation red · Empire blue · Alliance green · Independent amber.
+   .sp-* tints power-name text; .chip.sp-* tints the allegiance chip. */
+.sp-fed{color:var(--maroon-lt)}.sp-emp{color:var(--fed-lt)}.sp-all{color:var(--good-lt)}.sp-ind{color:var(--amber-lt)}
+.chip.sp-fed{color:var(--maroon-lt);border-color:rgba(177,49,64,.45)}
+.chip.sp-emp{color:var(--fed-lt);border-color:rgba(79,159,214,.4)}
+.chip.sp-all{color:var(--good-lt);border-color:rgba(95,179,122,.45)}
+.chip.sp-ind{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
 
 /* ---- 9. PERMALINK ANCHOR ---- */
 .permalink{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink-faint);text-decoration:none;font-size:var(--fs-md);line-height:1;padding:var(--space-1) var(--space-2);border-radius:var(--radius-sm);flex:none;opacity:.5;transition:opacity var(--motion-fast),color var(--motion-fast)}

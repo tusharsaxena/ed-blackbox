@@ -40,6 +40,9 @@ mostly recolouring and spacing.
 - **Card affordances:** `.card-tags` (a left-aligned pill row under the title) and a
   `.card h3 .cb-ext` external-link glyph (↗, inline right after the title). Surfaced by the
   third-party-apps directory rework.
+- **Superpower allegiance colours** — `.sp-fed` (Federation red) · `.sp-emp` (Empire blue) ·
+  `.sp-all` (Alliance green) · `.sp-ind` (Independent amber) text tints, plus matching
+  `.chip.sp-*` chip variants. Surfaced by the Powerplay guide.
 - **`.cards.wide`** (half content width, 2/row) and **`.cards.extra-wide`** (full content
   width, 1/row) card-grid variants for content-heavy cards. Width is chosen by the **largest
   card's word count** and applied to the whole container: **<75 words** → `.cards`;
