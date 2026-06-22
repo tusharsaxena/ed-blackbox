@@ -178,8 +178,18 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-7);margin-top:var(--space-9)}
 .legend .lg{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
 .legend h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-6)}
-.legend .row{display:flex;align-items:center;gap:var(--space-5);font-size:var(--fs-base);color:var(--ink-dim);margin-bottom:var(--space-4)}
+.legend .row{display:flex;align-items:baseline;gap:var(--space-5);font-size:var(--fs-base);color:var(--ink-dim);margin-bottom:var(--space-4)}
 .legend .row:last-child{margin-bottom:0}.legend .row b{color:var(--ink);font-weight:600}
+/* key–value rows (definition list in legend / term cards): a fixed key column + value
+   column with clear separation, top-aligned so multi-line values never push the key around.
+   Markup: .kv-row > .kv-k (optional .swatch + <b>key</b>) + .kv-v (value). */
+.kv-row{display:grid;grid-template-columns:minmax(56px,max-content) 1fr;column-gap:var(--space-7);align-items:baseline;padding:var(--space-4) 0;font-size:var(--fs-base);color:var(--ink-dim);line-height:1.5}
+.kv-row + .kv-row{border-top:1px solid var(--hair)}
+.kv-row .kv-k{display:inline-flex;align-items:center;gap:var(--space-4);color:var(--ink);font-weight:600;white-space:nowrap}
+.kv-row .kv-k b{font-weight:600}
+.kv-row .kv-v{min-width:0}
+/* table description — a table's caption moved below it (bold; sits where a footnote would) */
+.tbl-desc{font-weight:600;font-size:var(--fs-sm2);color:var(--ink-dim);margin:var(--space-5) 0 var(--space-9);line-height:1.5}
 .swatch{display:inline-block;vertical-align:middle;width:22px;height:10px;border-radius:var(--radius-xs);flex:none;margin-right:var(--space-4)}
 .sw-amber{background:var(--amber)}.sw-fed{background:var(--fed)}.sw-maroon{background:var(--maroon-lt)}.sw-good{background:var(--good)}
 

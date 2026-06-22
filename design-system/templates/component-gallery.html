@@ -131,22 +131,22 @@
 <section id="legend">
   <div class="sec-head"><span class="sec-num">01</span><h2>Section Heading</h2><span class="tag">Right Tag · N</span></div>
   <p class="lead">A lead paragraph introducing the section. One or two sentences, dimmed ink, sitting directly under the numbered header.</p>
+  <p class="note-sg">Key–value rows use <code>.kv-row</code> &gt; <code>.kv-k</code> (optional <code>.swatch</code> + <code>&lt;b&gt;</code>) + <code>.kv-v</code>: the key sits in its own column, clearly separated from the value, top-aligned so a multi-line value never shoves the key around.</p>
   <div class="legend">
     <div class="lg"><h4>Colour key</h4>
-      <div class="row"><span class="swatch sw-amber"></span><b>Amber</b> — primary / default accent</div>
-      <div class="row"><span class="swatch sw-fed"></span><b>Fed-blue</b> — secondary accent</div>
-      <div class="row"><span class="swatch sw-maroon"></span><b>Maroon</b> — flag / permit-locked</div>
-      <div class="row"><span class="swatch sw-good"></span><b>Green</b> — positive / complete</div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-amber"></span><b>Amber</b></span><span class="kv-v">primary / default accent</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-fed"></span><b>Fed-blue</b></span><span class="kv-v">secondary accent</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-maroon"></span><b>Maroon</b></span><span class="kv-v">flag / permit-locked</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-good"></span><b>Green</b></span><span class="kv-v">positive / complete</span></div>
     </div>
-    <div class="lg"><h4>Tiers / groups</h4>
-      <div class="row"><b>Group A</b> — short description</div>
-      <div class="row"><b>Group B</b> — short description</div>
-      <div class="row"><b>Group C</b> — short description</div>
+    <div class="lg"><h4>Key–value rows</h4>
+      <div class="kv-row"><span class="kv-k"><b>Influence</b></span><span class="kv-v">a faction's share of a system — the key keeps its own column and the value wraps cleanly beside it, top-aligned, however long it runs.</span></div>
+      <div class="kv-row"><span class="kv-k"><b>Reputation</b></span><span class="kv-v">your personal standing with a faction; clear separation between the term and its definition.</span></div>
     </div>
     <div class="lg"><h4>Card fields</h4>
-      <div class="row"><b>Field one</b> — what it means</div>
-      <div class="row"><b>Field two</b> — what it means</div>
-      <div class="row"><b>Field three</b> — what it means</div>
+      <div class="kv-row"><span class="kv-k"><b>Field one</b></span><span class="kv-v">what it means</span></div>
+      <div class="kv-row"><span class="kv-k"><b>Field two</b></span><span class="kv-v">what it means</span></div>
+      <div class="kv-row"><span class="kv-k"><b>Field three</b></span><span class="kv-v">what it means</span></div>
     </div>
   </div>
 </section>
@@ -229,6 +229,7 @@
       </tbody>
     </table>
   </div>
+  <p class="tbl-desc">A table's descriptive caption goes <b>below</b> the table as a <code>.tbl-desc</code> (bold) — never a centred <code>&lt;caption&gt;</code> at the top.</p>
 </section>
 
 <!-- ============================================================

@@ -93,20 +93,20 @@
   <p class="lead">Sections are colour-coded by what they are about. A coloured left edge or section number tells you whether you are reading core concepts, positive actions, negative actions, or reference material. Thresholds and numbers throughout are the community's best current measurements — the BGS is deliberately undocumented by Frontier, so treat exact figures as well-tested estimates rather than published constants.</p>
   <div class="legend">
     <div class="lg"><h4>Section colour</h4>
-      <div class="row"><span class="swatch sw-amber"></span><b>Core</b> — concepts &amp; the underlying engine</div>
-      <div class="row"><span class="swatch sw-good"></span><b>Positive</b> — actions that boost a faction</div>
-      <div class="row"><span class="swatch sw-maroon"></span><b>Negative</b> — actions that reduce a faction</div>
-      <div class="row"><span class="swatch sw-fed"></span><b>Reference</b> — tables, tools, how-to-read</div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-amber"></span><b>Core</b></span><span class="kv-v">concepts &amp; the underlying engine</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-good"></span><b>Positive</b></span><span class="kv-v">actions that boost a faction</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-maroon"></span><b>Negative</b></span><span class="kv-v">actions that reduce a faction</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-fed"></span><b>Reference</b></span><span class="kv-v">tables, tools, how-to-read</span></div>
     </div>
     <div class="lg"><h4>Two words people confuse</h4>
-      <div class="row"><b>Influence</b> — a <i>faction's</i> share of a system, 0–100%, zero-sum against the other factions there.</div>
-      <div class="row"><b>Reputation</b> — <i>your</i> personal standing with a faction (hostile→allied). It gates which missions you're offered, not the system.</div>
+      <div class="kv-row"><span class="kv-k"><b>Influence</b></span><span class="kv-v">a <i>faction's</i> share of a system, 0–100%, zero-sum against the other factions there.</span></div>
+      <div class="kv-row"><span class="kv-k"><b>Reputation</b></span><span class="kv-v"><i>your</i> personal standing with a faction (hostile→allied). It gates which missions you're offered, not the system.</span></div>
     </div>
     <div class="lg"><h4>Recurring terms</h4>
-      <div class="row"><b>Tick</b> — the daily resolution that applies everyone's actions.</div>
-      <div class="row"><b>Slider</b> — the economy &amp; security bars that set a faction's state.</div>
-      <div class="row"><b>PMF</b> — player minor faction (a squadron's in-game faction).</div>
-      <div class="row"><b>CZ</b> — conflict zone (ground or space) fought during wars.</div>
+      <div class="kv-row"><span class="kv-k"><b>Tick</b></span><span class="kv-v">the daily resolution that applies everyone's actions.</span></div>
+      <div class="kv-row"><span class="kv-k"><b>Slider</b></span><span class="kv-v">the economy &amp; security bars that set a faction's state.</span></div>
+      <div class="kv-row"><span class="kv-k"><b>PMF</b></span><span class="kv-v">player minor faction (a squadron's in-game faction).</span></div>
+      <div class="kv-row"><span class="kv-k"><b>CZ</b></span><span class="kv-v">conflict zone (ground or space) fought during wars.</span></div>
     </div>
   </div>
 </section>
@@ -216,7 +216,7 @@
     </tbody>
   </table>
   </div>
-  <p>Positive vs negative levers, by activity</p>
+  <p class="tbl-desc">Positive vs negative levers, by activity</p>
 
   <h3 class="subhead">Diminishing returns &amp; population</h3>
   <p>Post-4.0, the old hard "soft caps" became smooth <b>diminishing returns</b> on each bucket — your first contribution lands hard, each subsequent identical action lands softer. Community modelling ranks raw impact-per-effort roughly as <b>combat bounties &gt; exploration data &gt; trade &gt; missions</b>, but because each curve flattens fast, the optimal play is a little of each rather than a lot of one.</p>
@@ -233,7 +233,7 @@
     </tbody>
   </table>
   </div>
-  <p>A sane daily contribution per operative, per system (not a hard rule)</p>
+  <p class="tbl-desc">A sane daily contribution per operative, per system (not a hard rule)</p>
   <p class="micro" style="color:var(--ink-faint);font-style:italic;font-size:12.5px;margin-top:6px">Figures from the sinc.science guide's community measurements. Each ship mission gives up to <b style="color:var(--amber-lt);font-style:normal">5</b> influence; each on-foot Odyssey mission up to <b style="color:var(--amber-lt);font-style:normal">4</b>.</p>
 </section>
 
@@ -333,7 +333,6 @@
   <p>A non-native faction below <b>2.5%</b> goes into retreat: 1 pending day, then up to 6 active days. The faction leaves only if it's still below 2.5% on the <b>last day</b> — so the decisive day is the fifth active day going into the sixth. If you know when it went pending, count forward; if not, you'll have to push hard every remaining day.</p>
   <div class="tbl-scroll">
   <table class="data">
-    <caption>Retreat timetable — "the important day"</caption>
     <thead><tr><th>Day</th><th>Phase</th><th>What to do</th></tr></thead>
     <tbody>
       <tr><td class="mod">1</td><td>Pending</td><td>Mark the calendar; line up missions with multi-day timers</td></tr>
@@ -344,6 +343,7 @@
     </tbody>
   </table>
   </div>
+  <p class="tbl-desc">Retreat timetable — "the important day"</p>
 </section>
 
 <section id="states">
@@ -351,7 +351,6 @@
   <p class="lead">States are grouped by where they come from: the <span style="color:var(--good-lt)">economy</span> slider, the <span style="color:var(--fed-lt)">security</span> slider, <span style="color:var(--maroon-lt)">conflict</span>, the <span style="color:var(--amber-lt)">movement</span> (influence) layer, and random <span class="muted">event</span> states. Match your actions to the active state — many states change which buckets even work.</p>
   <div class="tbl-scroll">
   <table class="data">
-    <caption>The states you'll actually meet, and how to move them</caption>
     <thead><tr><th>State</th><th>Group</th><th>What it does</th><th>Get in / get out</th></tr></thead>
     <tbody>
       <tr><td class="mod">Investment</td><td><span style="color:var(--good-lt)">Economy</span></td><td>"Boom 2.0" — even higher demand &amp; prices, happiness up</td><td>In: strong positive trade/missions/data. Out: negative economic actions</td></tr>
@@ -374,6 +373,7 @@
     </tbody>
   </table>
   </div>
+  <p class="tbl-desc">The states you'll actually meet, and how to move them</p>
   <p class="micro" style="color:var(--ink-faint);font-style:italic;font-size:12.5px;margin-top:8px">Conflicts last 4–7 days; expansion 10–14 (with a 2-day cooldown); retreat is 1 pending + 6 active. Exact durations are community measurements — see the <a href="https://sinc.science/bgsguide.pdf" style="color:var(--amber-lt)">sinc.science guide</a> reference section for the full duration tables and the per-action effect chart.</p>
 </section>
 
