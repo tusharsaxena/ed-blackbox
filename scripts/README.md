@@ -16,6 +16,7 @@ be re-run later.
 | `fingerprint.mjs` | [fingerprint.md](fingerprint.md) | Extracts a content fingerprint (masthead text + each `<section id>`/text + all ids) of a guide, chrome excluded; the before/after content-invariance gate for migration. |
 | `fp-diff.mjs` | [fingerprint.md](fingerprint.md) | Compares two fingerprints; exits non-zero if any section text or anchor id changed. Pairs with `fingerprint.mjs`. |
 | `baseline-capture.sh` | [baseline-capture.md](baseline-capture.md) | Captures a pre-migration screenshot + fingerprint for all 108 guides into `_migration/baseline/` (gitignored); the comparison baseline for the migration. |
+| `fix-step-tuples.mjs` | [fix-step-tuples.md](fix-step-tuples.md) | One-shot content fix: unpacks malformed `(action, rationale, cost)` tuple text in dossier step lists into readable markup (quote-aware). |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.
