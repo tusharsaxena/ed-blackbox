@@ -47,9 +47,8 @@ mostly recolouring and spacing.
   below. Gold field labels; unified content text size; portrait framed from the top
   (`object-position:center top`). Surfaced by the Powerplay power cards.
 - **Ethos-type values** (`.et-v` + `.et-combat`/`.et-finance`/`.et-social`/`.et-covert`) — each
-  Powerplay ethos type rendered in a distinct palette colour (Combat maroon · Finance amber ·
-  Social fed-blue · Covert good-green) with a leading glyph (crossed-bars · diamond · speech ·
-  eye) via a CSS mask that inherits the type colour.
+  Powerplay ethos type rendered in a distinct colour: Combat maroon · Finance violet · Social
+  fed-blue · Covert good-green.
 - **`table.data.matrix`** — fixed-layout tick matrix: a 40% first column + equal-width,
   centre-aligned check columns. Surfaced by the Powerplay merit-activity matrix.
 - **`.case-hd`** — a sub-section header (smaller than `.subhead`, ink so an inline `.sp-*`
