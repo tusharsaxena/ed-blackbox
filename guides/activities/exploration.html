@@ -3,224 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exploration — Role &amp; Activities Field Manual | CMDR Ka0s</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#25b0a0;        /* combat crimson */
-    --acc-lt:#63e2d2;
-    --acc-deep:#0f5249;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --good-lt:#7fce98;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:780px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .verdict{margin-top:30px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.10),rgba(20,13,11,.6));padding:22px 24px;position:relative;overflow:hidden}
-  .verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--acc),transparent)}
-  .verdict .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--acc-lt);font-weight:600;margin-bottom:8px}
-  .verdict p{margin:0;font-size:16px;color:var(--ink-dim)}
-  .verdict p b{color:var(--ink);font-weight:600}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:26px -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--acc-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:50px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  h3.sub{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:16px;letter-spacing:.4px;color:var(--ink);margin:24px 0 4px}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-  .gd{color:var(--good-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .tag.b{color:var(--blue);border-color:rgba(91,155,209,.45)}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-  td.rt{white-space:nowrap}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout.good{border-left-color:var(--good);background:linear-gradient(90deg,rgba(95,179,122,.10),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-  .callout.good .lbl{color:var(--good-lt)}
-  .callout p{margin:6px 0 0;color:var(--ink-dim)}
-  .callout p:first-of-type{margin-top:0}
-
-  ol.steps{list-style:none;counter-reset:s;margin:16px 0 2px}
-  ol.steps li{counter-increment:s;position:relative;padding:0 0 16px 44px;color:var(--ink-dim)}
-  ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:28px;height:28px;
-    display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;color:var(--bg);background:var(--acc);border-radius:3px}
-  ol.steps li::after{content:"";position:absolute;left:13px;top:28px;bottom:0;width:1px;background:var(--hair)}
-  ol.steps li:last-child::after{display:none}
-  ol.steps li:last-child{padding-bottom:0}
-  ol.steps li b{color:var(--ink)}
-
-  .recgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
-  .rec{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--acc);border-radius:var(--radius);padding:15px 17px}
-  .rec .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--amber);font-weight:600}
-  .rec .pick{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--acc-lt);margin:5px 0 7px;font-weight:600}
-  .rec .pick small{color:var(--ink-faint);font-size:12px;font-weight:400;display:block;margin-top:2px}
-  .rec p{margin:0;font-size:13.5px;color:var(--ink-dim)}
-  .rec .ref{margin-top:9px;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);text-transform:uppercase}
-  .rec .ref b{color:var(--amber-lt);font-weight:600}
-
-  .anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;margin-top:14px}
-  .anchors .cell{background:var(--panel);padding:14px 15px}
-  .anchors .s{font-family:'Chakra Petch',sans-serif;font-size:22px;color:var(--acc-lt);font-weight:700}
-  .anchors .n{font-size:13px;color:var(--ink);margin-top:3px}
-  .anchors .n small{color:var(--ink-faint);display:block;font-size:11px;margin-top:1px}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:24px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    .recgrid{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-  }
-  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style>
+<title>Exploration &middot; Role &amp; Activities | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Exploration → fed-blue (only permitted page-level CSS) -->
+<style>:root{--accent:var(--fed-lt);--accent-lt:var(--fed-lt);--accent-deep:var(--fed);
+  --accent-soft:rgba(79,159,214,.4);--accent-glow:rgba(79,159,214,.10);}</style>
 </head>
-
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#dossiers">Ships</a>
+      <a href="../index.html#engineering">Engineering</a>
+      <a href="../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">What the Exploration Role Actually Is</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Core Gameplay Mechanics</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">The Exploration Activities</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Getting Started &mdash; Early Game</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">Mid-Game Activities</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">End-Game Activities</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Best Ships for the Role</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">Outcomes, Benefits &amp; Rewards</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">How Exploration Interacts With Other Systems</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">11</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#activities">Activities</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Exploration</span>
+</nav>
+
 <div class="wrap">
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Role &amp; Activities <span class="sep">//</span> Exploration</div>
-    <h1>Exploration<span class="role">Role &amp; Activities</span></h1>
+
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Role &amp; Activities <span class="sep">//</span> Exploration</div>
+    <h1 class="title"><span>Exploration</span><span class="role">Role &amp; Activities</span></h1>
     <p class="lede">A full deep-dive on the <b>exploration role</b> — not which ship to fly (that lives in the companion ship dossiers), but what exploring actually <b>is</b>: the scan-and-jump engine, the venues from the Bubble's edge to Beagle Point, how to start, what to do mid- and end-game, and every reward and system the role plugs into.</p>
 
     <div class="chips">
-      <div class="chip"><span>Scope</span><b>Odyssey · PC · Live 4.0</b></div>
-      <div class="chip"><span>Tempo</span><b>Patient · solo · meditative</b></div>
-      <div class="chip"><span>Core stat</span><b>Jump range + scanners</b></div>
-      <div class="chip"><span>Pays in</span><b>CR · rank · Codex · mats</b></div>
+      <span class="chip kv"><span>Scope</span><b>Odyssey · PC · Live 4.0</b></span>
+      <span class="chip kv"><span>Tempo</span><b>Patient · solo · meditative</b></span>
+      <span class="chip kv"><span>Core stat</span><b>Jump range + scanners</b></span>
+      <span class="chip kv"><span>Pays in</span><b>CR · rank · Codex · mats</b></span>
     </div>
 
-    <div class="verdict">
-      <div class="t">The role in one line</div>
-      <p>Exploration is the <b>quietest, longest-tail role</b> in the game: jump, scoop fuel, honk the system, map the interesting bodies, sample the life on the ground, and sell it all when you come home. Low risk, high patience — and since Odyssey, <b>exobiology has made it one of the most lucrative things a solo pilot can do</b>.</p>
+    <div class="masthead-meta">
+      <span>Role &amp; Activities</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 The Role</a>
-    <a href="#s2">02 Core Mechanics</a>
-    <a href="#s3">03 The Activities</a>
-    <a href="#s4">04 Getting Started</a>
-    <a href="#s5">05 Mid-Game</a>
-    <a href="#s6">06 End-Game</a>
-    <a href="#s7">07 Best Ships</a>
-    <a href="#s8">08 Outcomes &amp; Rewards</a>
-    <a href="#s9">09 System Interactions</a>
-    <a href="#s10">10 Field Notes</a>
-  </nav>
+  <div class="verdict">
+    <div class="v-eyebrow">The role in one line</div>
+    <p>Exploration is the <b>quietest, longest-tail role</b> in the game: jump, scoop fuel, honk the system, map the interesting bodies, sample the life on the ground, and sell it all when you come home. Low risk, high patience — and since Odyssey, <b>exobiology has made it one of the most lucrative things a solo pilot can do</b>.</p>
+  </div>
 
   <!-- 1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>What the Exploration Role Actually Is</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>What the Exploration Role Actually Is</h2></div>
     <p>Exploration is the act of going where the data isn't and bringing it back. There are 400 billion systems in the galaxy and the overwhelming majority have never been visited — every one you scan first carries <span class="acc">your name</span> when it's sold. The role spans everything from a quick out-and-back near the Bubble to months-long expeditions to the galactic core.</p>
 
     <p>The minute-to-minute loop is the same wherever you are:</p>
-    <div class="anchors">
-      <div class="cell"><div class="s">1</div><div class="n">Jump<small>Plot a route, jump, arrive</small></div></div>
-      <div class="cell"><div class="s">2</div><div class="n">Scoop &amp; honk<small>Refuel on the star, discovery-scan</small></div></div>
-      <div class="cell"><div class="s">3</div><div class="n">FSS &amp; map<small>Resolve bodies, probe the good ones</small></div></div>
-      <div class="cell"><div class="s">4</div><div class="n">Sample &amp; sell<small>Land for exobiology, bank it home</small></div></div>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">1</div><div class="l">Jump<small>Plot a route, jump, arrive</small></div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Scoop &amp; honk<small>Refuel on the star, discovery-scan</small></div></div>
+      <div class="stat"><div class="n">3</div><div class="l">FSS &amp; map<small>Resolve bodies, probe the good ones</small></div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Sample &amp; sell<small>Land for exobiology, bank it home</small></div></div>
     </div>
 
     <p>Unlike combat, almost nothing out here is trying to kill you — the dangers are <b>self-inflicted</b>: running out of fuel, cooking yourself on a star, or pancaking an SRV into a mountain. The reward is the inverse of combat's adrenaline: it is the most contemplative, self-paced role in Elite, and the only one where the prize is sometimes simply being the first human to see something.</p>
@@ -228,38 +108,38 @@
 
   <!-- 2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Core Gameplay Mechanics</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Core Gameplay Mechanics</h2></div>
     <p>Five systems carry the whole role. Master the scanner suite and the fuel/heat discipline and the galaxy is open to you.</p>
 
-    <h3 class="sub">2.1 — Jumping &amp; fuel</h3>
+    <h3 class="subhead">2.1 — Jumping &amp; fuel</h3>
     <p>Your <b>jump range</b> is the master stat — it decides how far each hop reaches and how quickly you cross empty space. You refuel by <b>fuel-scooping</b> the corona of a main-sequence star; the scoopable classes are <b>K, G, B, F, O, A, M</b> (mnemonic: "KGB FOAM"). Arrive too fast or dive too deep and you overheat. Always check the system's arrival star is scoopable before you commit to a long route.</p>
 
-    <h3 class="sub">2.2 — The scanner suite</h3>
-    <ul class="clean">
+    <h3 class="subhead">2.2 — The scanner suite</h3>
+    <ul class="bullets">
       <li><b>Discovery Scanner ("the honk")</b> — one press on arrival reveals how many bodies the system holds and roughly where.</li>
       <li><b>FSS (Full Spectrum System Scanner)</b> — tune in each signal to fully scan a body for cartographic data and to flag geological/biological signals worth a closer look.</li>
       <li><b>DSS (Detailed Surface Scanner)</b> — fire probes at a body to <b>map</b> it. Mapping pays a large bonus on top of the scan, banks the <span class="acc">first-mapped</span> tag, and pins the exact locations of surface bio/geo signals.</li>
     </ul>
 
-    <h3 class="sub">2.3 — Exobiology (the Odyssey earner)</h3>
-    <p>On airless and thin-atmosphere worlds, DSS-flagged <b>biological signals</b> can be scanned on foot with the Genetic Sampler. Each species needs <b>three samples</b> taken a minimum distance apart, then sold whole at <span class="amb">Vista Genomics</span>. Rare species — the famous <em>Stratum Tectonicas</em> chief among them — pay <b>millions of credits per sample</b>, and a first-footfall bonus stacks on top. This is now the single most lucrative exploration activity.</p>
+    <h3 class="subhead">2.3 — Exobiology (the Odyssey earner)</h3>
+    <p>On airless and thin-atmosphere worlds, DSS-flagged <b>biological signals</b> can be scanned on foot with the Genetic Sampler. Each species needs <b>three samples</b> taken a minimum distance apart, then sold whole at <span class="acc">Vista Genomics</span>. Rare species — the famous <em>Stratum Tectonicas</em> chief among them — pay <b>millions of credits per sample</b>, and a first-footfall bonus stacks on top. This is now the single most lucrative exploration activity.</p>
 
-    <h3 class="sub">2.4 — Boost jumps &amp; synthesis</h3>
+    <h3 class="subhead">2.4 — Boost jumps &amp; synthesis</h3>
     <p><b>Neutron stars</b> let you fly into the blue jet cone to supercharge the FSD for roughly a <b>4× range</b> jump — the basis of the "neutron highway" used to cross the galaxy fast. White dwarfs give a smaller, riskier boost. You can also <b>synthesise FSD injections</b> (basic/standard/premium "jumponium") from raw materials gathered on planet surfaces for a one-off range boost when a route has a gap.</p>
 
-    <h3 class="sub">2.5 — Planetary ops &amp; survival kit</h3>
-    <div class="twocol">
+    <h3 class="subhead">2.5 — Planetary ops &amp; survival kit</h3>
+    <div class="cols-2">
       <div class="panel">
-        <h3 class="sub" style="margin-top:0">On the ground</h3>
-        <ul class="clean">
+        <h3 class="subhead">On the ground</h3>
+        <ul class="bullets">
           <li><b>SRV</b> — drive the surface for materials, geo sites and to reach bio signals.</li>
           <li><b>On-foot</b> — exobiology sampling and Codex finds in Odyssey.</li>
           <li><b>Gravity &amp; heat</b> — high-g landings and hot bodies will wreck an SRV or hull if you're careless.</li>
         </ul>
       </div>
       <div class="panel">
-        <h3 class="sub" style="margin-top:0">The explorer's kit</h3>
-        <ul class="clean">
+        <h3 class="subhead">The explorer's kit</h3>
+        <ul class="bullets">
           <li><b>Fuel Scoop</b> — the biggest you can fit; it sets your refuel speed.</li>
           <li><b>AFMU</b> — Auto Field-Maintenance Unit repairs modules with no station for hundreds of light-years.</li>
           <li><b>DSS + Guardian FSD Booster</b> — mapping plus a flat range bump.</li>
@@ -267,32 +147,34 @@
         </ul>
       </div>
     </div>
-    <div class="callout acc"><span class="lbl">Fleet doctrine reminder</span><p>The Ka0s explorers run <b>D-rated cores</b> (light = far), <b>stripped hardpoints</b>, and a <b>Guardian FSD Booster</b>. FSD is engineered at Felicity Farseer to G5 with <b>Mass Manager</b> on size-5+ drives (Deep Charge only at size 4 and below). Distributor runs Engine Focused + Stripped Down for travel.</p></div>
+    <div class="callout"><span class="lbl">Fleet doctrine reminder</span><p>The Ka0s explorers run <b>D-rated cores</b> (light = far), <b>stripped hardpoints</b>, and a <b>Guardian FSD Booster</b>. FSD is engineered at Felicity Farseer to G5 with <b>Mass Manager</b> on size-5+ drives (Deep Charge only at size 4 and below). Distributor runs Engine Focused + Stripped Down for travel.</p></div>
   </section>
 
   <!-- 3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>The Exploration Activities</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>The Exploration Activities</h2></div>
     <p>The venues, from a casual evening out to the great expeditions.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <colgroup><col style="width:21%"><col style="width:13%"><col style="width:18%"><col style="width:48%"></colgroup>
       <thead><tr><th>Activity</th><th>Pays in</th><th>Commitment</th><th>What it is</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Bubble-edge runs</td><td>Cartographic CR</td><td><span class="tag g">Casual</span></td><td>Short hops just past inhabited space to scan unvisited systems and sell on the way back. The natural first taste of the role.</td></tr>
-        <tr><td class="mod">Exobiology surveys</td><td>Vista Genomics CR</td><td><span class="tag a">Medium</span></td><td>Find biologically-rich worlds, DSS them, land and sample species on foot. The top exploration income by a wide margin.</td></tr>
-        <tr><td class="mod">Regional surveys</td><td>Cartographic CR</td><td><span class="tag a">Medium</span></td><td>Pick a nebula or sector and map it thoroughly — high-value bodies (ELWs, water worlds, ammonia worlds, terraformables) pay the most.</td></tr>
-        <tr><td class="mod">Codex / first discoveries</td><td>Prestige + Codex</td><td><span class="tag a">Medium</span></td><td>Hunt undiscovered phenomena and species for Codex first-report entries. The collector's and pioneer's game.</td></tr>
-        <tr><td class="mod">Neutron-highway treks</td><td>Cartographic CR</td><td><span class="tag r">Long</span></td><td>Use neutron boosts to cross thousands of light-years fast — to Colonia, Sagittarius A*, or beyond.</td></tr>
-        <tr><td class="mod">Great expeditions</td><td>Everything</td><td><span class="tag r">Epic</span></td><td>Months-long journeys to the galactic core, Beagle Point, or community expeditions — often run from a fleet carrier as a mobile base.</td></tr>
-        <tr><td class="mod">Sightseeing crossover</td><td>Passenger CR</td><td><span class="tag a">Medium</span></td><td>Carry tourists to scenic beacons and distant landmarks — exploration and the passenger role overlap here (see the passenger dossier).</td></tr>
+        <tr><td class="mod">Bubble-edge runs</td><td>Cartographic CR</td><td><span class="pill lo">Casual</span></td><td>Short hops just past inhabited space to scan unvisited systems and sell on the way back. The natural first taste of the role.</td></tr>
+        <tr><td class="mod">Exobiology surveys</td><td>Vista Genomics CR</td><td><span class="pill md">Medium</span></td><td>Find biologically-rich worlds, DSS them, land and sample species on foot. The top exploration income by a wide margin.</td></tr>
+        <tr><td class="mod">Regional surveys</td><td>Cartographic CR</td><td><span class="pill md">Medium</span></td><td>Pick a nebula or sector and map it thoroughly — high-value bodies (ELWs, water worlds, ammonia worlds, terraformables) pay the most.</td></tr>
+        <tr><td class="mod">Codex / first discoveries</td><td>Prestige + Codex</td><td><span class="pill md">Medium</span></td><td>Hunt undiscovered phenomena and species for Codex first-report entries. The collector's and pioneer's game.</td></tr>
+        <tr><td class="mod">Neutron-highway treks</td><td>Cartographic CR</td><td><span class="pill hi">Long</span></td><td>Use neutron boosts to cross thousands of light-years fast — to Colonia, Sagittarius A*, or beyond.</td></tr>
+        <tr><td class="mod">Great expeditions</td><td>Everything</td><td><span class="pill hi">Epic</span></td><td>Months-long journeys to the galactic core, Beagle Point, or community expeditions — often run from a fleet carrier as a mobile base.</td></tr>
+        <tr><td class="mod">Sightseeing crossover</td><td>Passenger CR</td><td><span class="pill md">Medium</span></td><td>Carry tourists to scenic beacons and distant landmarks — exploration and the passenger role overlap here (see the passenger dossier).</td></tr>
       </tbody>
     </table>
+    </div>
     <div class="callout"><span class="lbl">The golden rule of selling</span><p>Cartographic and exobiology data is only worth credits — and only banks the <span class="acc">first-discovered / first-mapped</span> tags — once you <b>sell it at a station</b>. A destroyed ship loses every unsold scan. The whole risk of the role is the long flight home with a full data bank.</p></div>
   </section>
 
   <!-- 4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Getting Started — Early Game</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Getting Started — Early Game</h2></div>
     <p>The goal early on is to learn the scan loop and the survival discipline on a short, safe trip before committing to anything long.</p>
     <ol class="steps">
       <li><b>Fit an explorer.</b> A long-range hull — the fleet's <span class="acc">Asp Explorer</span> — with the biggest fuel scoop you can fit, a DSS, an AFMU, D-rated cores, and <b>no weapons</b>.</li>
@@ -306,17 +188,17 @@
 
   <!-- 5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>Mid-Game Activities</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Mid-Game Activities</h2></div>
     <p>The mid-game is about <b>range, income and reach</b>. Three things change: you engineer the FSD, you start serious exobiology, and you go further from home.</p>
 
-    <h3 class="sub">Engineer for range</h3>
+    <h3 class="subhead">Engineer for range</h3>
     <p>Take the FSD to G5 at Felicity Farseer with the Mass Manager experimental, bolt on a Guardian FSD Booster, and strip every gram you can. A modest hull with a fully-built drive out-reaches a far more expensive ship that hasn't been engineered.</p>
 
-    <h3 class="sub">Make exobiology your income</h3>
+    <h3 class="subhead">Make exobiology your income</h3>
     <p>Learn which worlds carry the valuable species — thin-atmosphere and specific volcanic worlds host the high-payout flora. A single rich planet can hold tens of millions of credits in samples, and a well-chosen survey run rivals any combat or trade income with none of the rebuy risk.</p>
 
-    <h3 class="sub">Go further</h3>
-    <ul class="clean">
+    <h3 class="subhead">Go further</h3>
+    <ul class="bullets">
       <li><b>Regional surveys</b> — claim a whole nebula or sector, mapping the rare body types that pay the most.</li>
       <li><b>The neutron highway</b> — start chaining boost jumps to reach Colonia or the core in a fraction of the normal time.</li>
       <li><b>Codex hunting</b> — chase first-report entries for phenomena and species as a side objective.</li>
@@ -326,9 +208,9 @@
 
   <!-- 6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>End-Game Activities</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>End-Game Activities</h2></div>
     <p>End-game exploration is measured in <b>thousands of light-years and hundreds of millions of credits</b>.</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>The great destinations</b> — Sagittarius A* at the galactic centre, Beagle Point at the far rim, the Colonia region, and the named nebulae. Reaching them is its own achievement; the data pays the way.</li>
       <li><b>Fleet-carrier expeditions</b> — a carrier is a mobile base with repair, restock and a market, turning a months-long trek into a sustainable campaign and a way to cash data in deep space.</li>
       <li><b>Exobiology grand tours</b> — systematically sampling rare species across many worlds; a long survey can bank a fortune in one sell-off.</li>
@@ -339,32 +221,32 @@
 
   <!-- 7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Best Ships for the Role</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Best Ships for the Role</h2></div>
     <p>Full head-to-head ratings, ranges and costs live in the dedicated comparison dossier — this is the shortlist by stage. <em>(References by name for now; hyperlinks to follow.)</em></p>
-    <div class="recgrid">
-      <div class="rec">
+    <div class="pickgrid">
+      <div class="pickcard">
         <div class="who">Workhorse — medium pad</div>
         <div class="pick">Asp Explorer<small>The classic explorer &amp; unlock ship</small></div>
         <p>Long range, panoramic canopy, cheap to run — the hull that carried most of the early engineer-unlock grind.</p>
-        <div class="ref">See <b>Asp Explorer — Exploration Field Manual</b></div>
+        <div class="alt">See <b>Asp Explorer — Exploration Field Manual</b></div>
       </div>
-      <div class="rec">
+      <div class="pickcard">
         <div class="who">Primary — medium pad</div>
         <div class="pick">Mandalay<small>Modern long-range flagship</small></div>
         <p>The planned Asp replacement and primary explorer — built for reach, comfort and the next deep-space campaigns.</p>
-        <div class="ref">See <b>Mandalay — Exploration Field Manual</b></div>
+        <div class="alt">See <b>Mandalay — Exploration Field Manual</b></div>
       </div>
-      <div class="rec">
+      <div class="pickcard">
         <div class="who">Range king — large pad</div>
         <div class="pick">Anaconda<small>Maximum jump range</small></div>
         <p>The traditional long-range record-holder for big internals and the longest engineered jumps — at a far higher cost and rebuy.</p>
-        <div class="ref">See the <b>Exploration — Ship Comparison</b> dossier</div>
+        <div class="alt">See the <b>Exploration — Ship Comparison</b> dossier</div>
       </div>
-      <div class="rec">
+      <div class="pickcard">
         <div class="who">Budget — small pad</div>
         <div class="pick">Diamondback Explorer<small>Cheap, cool-running, long-legged</small></div>
         <p>A superb low-cost entry explorer — excellent range for the price and very heat-friendly near stars.</p>
-        <div class="ref">See the <b>Exploration — Ship Comparison</b> dossier</div>
+        <div class="alt">See the <b>Exploration — Ship Comparison</b> dossier</div>
       </div>
     </div>
     <div class="callout"><span class="lbl">Full ranking</span><p>For every exploration-capable hull scored on one scale with engineered jump ranges and costs, see the <b>Exploration — Ship Comparison</b> role dossier. Ratings there match the per-ship manuals above.</p></div>
@@ -372,9 +254,10 @@
 
   <!-- 8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>Outcomes, Benefits &amp; Rewards</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Outcomes, Benefits &amp; Rewards</h2></div>
     <p>Exploration's rewards are slow to arrive but arrive all at once — most of the payoff lands when you finally sell.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <colgroup><col style="width:22%"><col style="width:30%"><col style="width:48%"></colgroup>
       <thead><tr><th>Reward</th><th>Earned from</th><th>Notes &amp; rough scale</th></tr></thead>
       <tbody>
@@ -386,26 +269,27 @@
         <tr><td class="mod">First-footfall tags</td><td>On-foot landings</td><td>Your name attached to the first human step on a body — and a bonus on the biology sampled there.</td></tr>
       </tbody>
     </table>
+    </div>
   </section>
 
   <!-- 9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>How Exploration Interacts With Other Systems</h2></div>
-    <div class="twocol">
+    <div class="sec-head"><span class="sec-num">09</span><h2>How Exploration Interacts With Other Systems</h2></div>
+    <div class="cols-2">
       <div class="panel">
-        <h3 class="sub" style="margin-top:0">Engineering ↔ Exploration</h3>
+        <h3 class="subhead">Engineering ↔ Exploration</h3>
         <p>The FSD engineer (Felicity Farseer) and the Guardian FSD Booster are what make long range possible; in turn, surface material-gathering on exploration feeds FSD synthesis. The Asp was the fleet's engineer-unlock workhorse precisely because exploration reaches the engineers cheaply.</p>
       </div>
       <div class="panel">
-        <h3 class="sub" style="margin-top:0">Passenger crossover</h3>
+        <h3 class="subhead">Passenger crossover</h3>
         <p>Sightseeing and long-distance VIP missions are exploration with a paying guest aboard — scenic beacons and far landmarks overlap directly with the passenger role's tourist runs.</p>
       </div>
       <div class="panel">
-        <h3 class="sub" style="margin-top:0">Colonisation &amp; the Bubble</h3>
+        <h3 class="subhead">Colonisation &amp; the Bubble</h3>
         <p>New colonies need scouted systems — exploration is the reconnaissance arm of system colonisation, finding the rings, bodies and economies worth claiming.</p>
       </div>
       <div class="panel">
-        <h3 class="sub" style="margin-top:0">Materials &amp; the fleet</h3>
+        <h3 class="subhead">Materials &amp; the fleet</h3>
         <p>Exploration income is low-risk capital that funds combat rebuys, engineering and ships, while planetary mats top up the raw-material grid the rest of the fleet draws on.</p>
       </div>
     </div>
@@ -413,8 +297,8 @@
 
   <!-- 10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Field Notes</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Field Notes</h2></div>
+    <ul class="bullets">
       <li><b>Mass is range.</b> Every kilogram you remove and every grade of FSD you engineer buys reach; strip weapons and over-sized modules without mercy.</li>
       <li><b>Honk, FSS, then DSS only the good ones.</b> Don't waste probes mapping worthless bodies — map high-value worlds and anything with bio/geo signals.</li>
       <li><b>Exobiology is the money.</b> If you're exploring for credits, you're really there for the biology — learn the valuable species and the worlds that host them.</li>
@@ -423,26 +307,12 @@
       <li><b>The flight home is the only real risk.</b> Sell often on long trips — a fleet carrier or a return leg with a full data bank is the one place exploration can lose you a fortune.</li>
       <li><b>Engineer the module, not the ship.</b> The engineered FSD and booster move with you across the fleet — exploration spend is portable.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Bottom line</span><p>Exploration is the low-risk capital engine of the fleet: it funds rebuys and engineering, gathers planetary materials, scouts colonisation targets, and — through exobiology — quietly out-earns most of the dangerous roles. The prize is partly the credits and partly being the first to see what's out there.</p></div>
+    <div class="callout"><span class="lbl">Bottom line</span><p>Exploration is the low-risk capital engine of the fleet: it funds rebuys and engineering, gathers planetary materials, scouts colonisation targets, and — through exobiology — quietly out-earns most of the dangerous roles. The prize is partly the credits and partly being the first to see what's out there.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">11</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Inara — Galaxy</span><span class="cr-what">Galaxy database: system and body records, discovery data, and travel/exploration references.</span><a class="cr-link" href="https://inara.cz/elite/galaxy/">inara.cz/elite/galaxy</a></div>
@@ -455,9 +325,13 @@
   </section>
 
   <footer>
-    <p><b>Exploration — Role &amp; Activities Field Manual</b> · CMDR Ka0s · Inara 173082 · Elite Dangerous Odyssey (PC, Live 4.0). Companion to the per-ship exploration manuals and the Exploration — Ship Comparison dossier. Living document — one of the role &amp; activities set.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Role &amp; Activities</span>
   </footer>
 
 </div>
+
+<script src="../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

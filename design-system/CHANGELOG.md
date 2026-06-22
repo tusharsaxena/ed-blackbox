@@ -5,8 +5,13 @@ backward-compatible tokens/components, **PATCH** fixes without API change.
 
 ## 1.3.0 — visual refinements (gold-first review pass)
 
-Appearance pass from the gold-reference review. No new components, no token-value or
-markup-contract changes; mostly recolouring and spacing.
+Appearance pass from the gold-reference review. No token-value or markup-contract changes;
+mostly recolouring and spacing.
+
+### Added
+- **`.gd`** — semantic-good inline emphasis (green), parallel to `.acc`, for "strong /
+  positive" text in prose and tables (a genuine semantic colour, so not gold). Surfaced by
+  the activity-playbook migration.
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain
