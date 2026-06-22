@@ -29,7 +29,9 @@ mostly recolouring and spacing.
   edges); `scripts/trim-svg.mjs` enforces it. Documented in `docs/07-imagery-icons.md`.
 - **Code / config block** (`.codebox` > `.cb-head` [`.dot` + label + `.path`] + `<pre>`) with
   syntax tints `.tag` (markup/fed) · `.val` (values/green) · `.cm` (comments/faint) · `.str`,
-  plus inline `<code>` and `.mono`. Surfaced by the HUD-customization guide.
+  plus inline `<code>` and `.mono`. Surfaced by the HUD-customization guide. Uses **JetBrains
+  Mono** (added to the font `@import`) for a code-editor feel — no italics; the `.cb-head`
+  `.path` (top-right) renders bold amber.
 - **Colour-matrix grid** (`.mx-wrap`/`.mx`/`.mx-t`/`.collbl`/`.rowlbl.r|g|b`/`.v0`/`.v1`/`.mx-cap`)
   for displaying a small labelled numeric matrix with R/G/B-coded row labels.
 - **`.swatch`** now `display:inline-block` (+ small right margin) so colour swatches render

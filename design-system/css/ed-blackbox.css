@@ -1,7 +1,7 @@
 /*! ed-blackbox design system v1.3.0 | E:D Black Box field-manual house style
    Single source of truth. Link this file; never inline or fork per page.
    Theme a page by overriding the --accent* group in a page-level <style>. */
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap');
 
 :root{
   /* ============================================================
@@ -524,24 +524,24 @@ figcaption b{color:var(--ink);font-weight:600}
    .codebox = framed block w/ a terminal .cb-head (.dot + label + right-aligned .path) and
    a <pre>; syntax tints inside the pre: .tag (markup), .val (values), .cm (comments),
    .str (strings). Inline: <code> / .mono. */
-code,.mono{font-family:ui-monospace,'Cascadia Code','Consolas',monospace;font-size:.92em}
+code,.mono{font-family:'JetBrains Mono',ui-monospace,'Consolas',monospace;font-size:.9em}
 code{color:var(--amber-lt);background:rgba(224,145,58,.09);border:1px solid var(--hair);border-radius:var(--radius-xs);padding:.04em .4em}
 .mono{color:var(--ink)}
 .codebox{margin:var(--space-9) 0;border:1px solid var(--hair-strong);border-radius:var(--radius-md);background:rgba(6,4,5,.78);overflow:hidden}
 .codebox .cb-head{display:flex;align-items:center;gap:var(--space-5);padding:var(--space-5) var(--space-9);border-bottom:1px solid var(--hair);background:rgba(0,0,0,.35);font-family:'Saira Condensed',sans-serif;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-dim)}
 .codebox .cb-head .dot{width:9px;height:9px;border-radius:var(--radius-round);background:var(--amber);flex:none}
-.codebox .cb-head .path{margin-left:auto;text-transform:none;letter-spacing:.3px;color:var(--ink-faint);font-family:ui-monospace,'Consolas',monospace}
-.codebox pre{margin:0;padding:var(--space-9);overflow-x:auto;font-family:ui-monospace,'Cascadia Code','Consolas',monospace;font-size:var(--fs-sm2);line-height:1.65;color:var(--ink-dim)}
+.codebox .cb-head .path{margin-left:auto;text-transform:none;letter-spacing:.3px;color:var(--amber-lt);font-weight:700;font-family:'JetBrains Mono',ui-monospace,'Consolas',monospace}
+.codebox pre{margin:0;padding:var(--space-9);overflow-x:auto;font-family:'JetBrains Mono',ui-monospace,'Cascadia Code','Consolas',monospace;font-size:var(--fs-sm2);line-height:1.7;color:var(--ink-dim)}
 .codebox pre .tag{color:var(--fed-lt)}
 .codebox pre .val{color:var(--good-lt)}
-.codebox pre .cm{color:var(--ink-faint);font-style:italic}
+.codebox pre .cm{color:var(--ink-faint)}
 .codebox pre .str{color:var(--amber-lt)}
 
 /* COLOUR-MATRIX display grid (a small labelled numeric matrix) ---- */
 .mx-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-8);margin:var(--space-9) 0}
 .mx{border:1px solid var(--hair);border-radius:var(--radius-md);background:var(--panel);padding:var(--space-8) var(--space-9)}
 .mx-t{font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs);color:var(--amber-lt);margin-bottom:var(--space-6)}
-.mx table{width:100%;border-collapse:collapse;font-family:ui-monospace,'Consolas',monospace;font-size:var(--fs-sm2)}
+.mx table{width:100%;border-collapse:collapse;font-family:'JetBrains Mono',ui-monospace,'Consolas',monospace;font-size:var(--fs-sm2)}
 .mx td{padding:var(--space-3) var(--space-5);text-align:center;color:var(--ink-dim)}
 .mx .collbl{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-2xs);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
 .mx .rowlbl{text-align:left;font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink)}
