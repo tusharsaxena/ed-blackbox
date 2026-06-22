@@ -59,6 +59,8 @@ mostly recolouring and spacing.
 - **`.legend .row`** now baseline-aligns (was centre) so multi-line legend rows read cleanly,
   and carries the same row padding + hairline divider as `.kv-row` so plain-row and
   key-value legend cards look identical.
+- **`.gd` / `.bad`** are now colour-only (`font-weight` 400, was 500) — the colour carries
+  the positive/negative meaning without bolding the text.
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain
