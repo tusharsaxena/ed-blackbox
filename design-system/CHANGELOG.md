@@ -3,6 +3,29 @@
 Semantic versioning: **MAJOR** breaks existing markup/tokens, **MINOR** adds
 backward-compatible tokens/components, **PATCH** fixes without API change.
 
+## 1.2.0 — migration gap components
+
+Adds the four generic primitives the legacy guide corpus needs so the full migration onto
+the linked system can proceed without any page inlining CSS. Purely additive — no existing
+class, token, or value changes.
+
+### Added
+- **Panel** (`.panel`) — generic bordered info container (panel-gradient fill, hairline
+  border) for grouped notes that aren't a callout, card, or record.
+- **Multi-column** (`.cols-2` / `.cols-3`) — responsive equal-column grid wrapper that
+  collapses to a single column under 680px.
+- **Key-value chip** (`.chip.kv`) — the label+value masthead spec chip (`<span>` faint
+  uppercase label + `<b>` accent value). Plain `.chip` is unchanged.
+- **General bullet list** (`ul.bullets`) — body bullet list with accent ▸ markers, for
+  prose lists in a normal section (distinct from record-scoped `ul.reclist`).
+- Live examples of all four added to `component-gallery.html`; documented in
+  `docs/03-components.md`.
+
+### Notes
+- These exist specifically to retire per-page inline CSS during the legacy-guide
+  migration. The migration itself (all 108 guides onto the linked system) runs on top of
+  this release.
+
 ## 1.1.0 — navigation & branding
 
 Adds site-wide navigation chrome and finalizes the **E:D Black Box** brand.

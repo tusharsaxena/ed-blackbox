@@ -19,18 +19,22 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Subhead | `h3.subhead` (block) / `.subhd` (condensed tracked) | sub-grouping in a section |
 | Legend grid | `.legend` > `.lg` (with `.swatch sw-*`) | "how to read" keys |
 | Chips | `.chip` (`.amber` / `.fed` / `.maroon` / `.faint`) | inline tags / flags |
+| Key-value chip | `.chip.kv` (`span` label › `b` value) | masthead label+value spec chip (e.g. `Class · Small`) |
 | Pills | `.pill` (`.lo` / `.md` / `.hi` / `.fed` / `.neutral`) | bold status / severity tags |
 | Key caps | `.kbd` | keyboard / control references |
 | Accent text | `.acc` | inline emphasis in the page accent |
 | Record card | `.rec-list` > `.rec` (`.ac-amber/.ac-fed/.ac-maroon/.ac-good`) | the repeating data entry |
 | Key/value mini-grid | `.kvgrid` (`.lk` › `.lv`) | structured sub-fields (e.g. Location) |
 | Record bullet list | `ul.reclist` | lists inside a record |
+| Bullet list | `ul.bullets` | general body list (accent markers) — outside a record |
 | Data table | `.tbl-scroll` > `table.data` (`th.num`/`td.num` right-align, `.center`) | ranked ladders, simple comparisons |
 | Loadout table | `.tbl-scroll` > `table.l3` (`.grouprow` `.slot` `.st` `.eng`) | multi-state build tables |
 | Pros/cons table | `.tbl-scroll` > `table.cmp` (`td.pcc` `.p`/`.c`/`.base`, `.rscore`, `.bar.mini`) | comparison w/ pros & cons |
 | Rating bar | `.rating` (`.score` + `.bar` / `.bar.fed` / `.bar.good` / `.bar.mini`) | linear 1–100 meters |
 | Rating dial | `.ratebox` > `.dial` (`style="--v:NN"`) + `.rl` (`.t`/`.d`) | headline suitability gauge |
 | Spec grid | `.specgrid` > `.cell` (`.k`/`.v`) | compact technical readout |
+| Panel | `.panel` | generic bordered info container for grouped notes |
+| Multi-column | `.cols-2` / `.cols-3` | responsive column layout (collapses to 1 under 680px) |
 | Card grid | `.cards` > `.card` (`.ico`, h4, p; `.ac-*` top border) | feature / objective cards |
 | Pick cards | `.pickgrid` > `.pickcard` (`.who`/`.pick`/`.alt`) | "who should use this" recommendations |
 | Step timeline | `ol.steps`/`ul.steps` > `li` (`.st` + p) | numbered procedures |
@@ -88,6 +92,24 @@ The workhorse repeating entry.
   `.coord[data-copy="lat, lon"]` + a `.cp` tag — JS module 3 copies & flashes "Copied".
 - **Verdict "why" grid (`.verdict .why`).** Optional 2–4 reason cells (h4 + one-line p)
   inside the verdict box.
+
+### Generic gap components (v1.2.0)
+
+Four additive primitives introduced for the legacy-guide migration. They fill gaps the
+catalogue lacked; existing classes are unchanged.
+
+- **Panel (`.panel`).** Generic bordered info container (panel-gradient fill, hairline
+  border). For grouped notes that aren't a callout, a card, or a record. The plainest
+  box in the kit — reach for it before inlining any CSS.
+- **Multi-column (`.cols-2` / `.cols-3`).** Responsive grid wrapper; 2 or 3 equal
+  columns that collapse to a single column under 680px. Wrap any blocks (often
+  `.panel`s) to lay them side by side.
+- **Key-value chip (`.chip.kv`).** The label+value masthead spec chip: `<span>` is the
+  uppercase faint label, `<b>` is the accent value (e.g. `Class · Small · Pad S`). Plain
+  `.chip` (a single flag/tag) is unchanged — `.kv` is the two-part variant.
+- **Bullet list (`ul.bullets`).** The general body bullet list (accent ▸ markers), for
+  prose lists in a normal section. Distinct from `ul.reclist`, which stays scoped to
+  lists **inside a record card**.
 
 ## States
 

@@ -78,7 +78,7 @@ Line-height: `--lh-tight` (1.1), `--lh-body` (1.62).
 - **breakpoints (documented; CSS media queries can't read `var()`):**
   `--bp-sm` 480px, `--bp-md` 560px, `--bp-lg` 720px. Use these exact values in
   `@media` rules so breakpoints stay consistent.
-- **`--ds-version`** holds `"1.0.0"` (readable via `getComputedStyle`).
+- **`--ds-version`** holds `"1.2.0"` (readable via `getComputedStyle`).
 
 ## Per-page accent (the one theming knob)
 

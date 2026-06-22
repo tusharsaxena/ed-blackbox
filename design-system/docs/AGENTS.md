@@ -5,7 +5,7 @@ design system for CMDR Ka0s's Elite Dangerous site (`ed-blackbox`). It exists so
 page — ship × role dossiers, role ladders, activity guides, engineering and
 material-farm manuals — shares one locked visual language from one source of truth.
 
-Design-system version: **1.0.0** (see `../CHANGELOG.md`).
+Design-system version: **1.2.0** (see `../CHANGELOG.md`).
 
 ---
 
