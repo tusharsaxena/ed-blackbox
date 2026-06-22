@@ -7,7 +7,13 @@
 <link rel="icon" type="image/png" href="../../images/logos/favicon.png">
 <link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
 <style>:root{--accent:var(--maroon-lt);--accent-lt:var(--maroon-lt);--accent-deep:var(--maroon);
-  --accent-soft:rgba(177,49,64,.4);--accent-glow:rgba(177,49,64,.10);}</style>
+  --accent-soft:rgba(177,49,64,.4);--accent-glow:rgba(177,49,64,.10);}
+  /* cards + callouts use the brand amber accent, not the page's maroon / semantic tints */
+  .card{border-top-color:var(--amber)}
+  .callout.tip,.callout.danger{border-left-color:var(--amber)}
+  .callout.tip .co-eyebrow,.callout.tip .lbl,.callout.danger .co-eyebrow,.callout.danger .lbl{color:var(--amber-lt)}
+  /* gap between the HUD scoreboard and its caption */
+  .hud + .muted{margin-top:var(--space-7)}</style>
 </head>
 <body>
 
@@ -93,16 +99,9 @@
     </div>
   </div>
 
-  <div class="hud" aria-hidden="true">
-    <span class="hud-c1"></span><span class="hud-c2"></span>
-    <h4>// Warzone Status — Victory Tally</h4>
-    <p>Allied (your side) 62% &nbsp;VS&nbsp; 41% Hostile (targets)</p>
-  </div>
-  <p class="muted">The top-right HUD bars are the zone's scoreboard. Fill yours first and your side wins the engagement. This manual is about everything feeding those bars.</p>
-
   <!-- 01 -->
   <section id="s1">
-    <div class="sec-head"><span class="sec-num">01</span><div><h2>What a Combat Zone Is</h2><p class="lede">A temporary battle instance, born from a war between two minor factions.</p></div></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>What a Combat Zone Is</h2></div>
     <p>A Combat Zone (CZ) is a transient signal source that appears only in systems where two minor factions are in a <strong>War</strong> or <strong>Civil War</strong> state. It is not a permanent feature of a system — when the war ends, the zones vanish. This is the single most important framing fact: a CZ is always tied to <em>two specific factions fighting each other</em>, and everything you do inside it pushes one of them toward winning.</p>
     <p>There are two completely separate kinds, with separate rules, separate rewards, and separate skill demands:</p>
     <ul class="bullets">
@@ -115,7 +114,7 @@
 
   <!-- 02 -->
   <section id="s2">
-    <div class="sec-head"><span class="sec-num">02</span><div><h2>Finding Zones &amp; Reading Intensity</h2><p class="lede">No war, no zone. Higher intensity, tougher ships, bigger payouts.</p></div></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Finding Zones &amp; Reading Intensity</h2></div>
 
     <h3 class="subhead">Locating a war</h3>
     <p>Because CZs only exist during active wars, the hunt is really a hunt for a system in War / Civil War. Two reliable approaches:</p>
@@ -148,13 +147,13 @@
 
   <!-- 03 -->
   <section id="s3">
-    <div class="sec-head"><span class="sec-num">03</span><div><h2>Entering &amp; Choosing a Side</h2><p class="lede">The one action that makes everything else count — do it before you fire.</p></div></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Entering &amp; Choosing a Side</h2></div>
     <p>On dropping in, a prompt appears in the <strong>Comms panel (message tab)</strong> asking which faction you want to fight for. This is mandatory:</p>
-    <ol>
-      <li>Open the Comms panel and <strong>select a side</strong>.</li>
-      <li>Your radar instantly repaints: <strong>green = allies, red = hostiles</strong>. The red ships are now your legal targets and will engage you.</li>
-      <li>Only now do you open fire.</li>
-    </ol>
+    <ul class="bullets">
+      <li><b>Select a side</b> in the Comms panel.</li>
+      <li><b>Read the repaint.</b> Your radar instantly recolours: green = allies, red = hostiles. The red ships are now your legal targets and will engage you.</li>
+      <li><b>Then open fire</b> — only now.</li>
+    </ul>
     <div class="callout warn"><span class="lbl">// Fire before you side and everyone turns on you</span><p>If you shoot a single shot before choosing a faction, the <strong>entire zone</strong> — both sides — treats you as hostile. Bonds won't accrue and you'll be swarmed. Always side first.</p></div>
     <h3 class="subhead">Two edge cases</h3>
     <ul class="bullets">
@@ -166,19 +165,26 @@
 
   <!-- 04 -->
   <section id="s4">
-    <div class="sec-head"><span class="sec-num">04</span><div><h2>Scoring &amp; "Kills Confirmed"</h2><p class="lede">The score that wins the zone is separate from the bonds in your wallet.</p></div></div>
-    <p>Each side has a victory bar shown top-right (the HUD readout at the top of this dossier). Every enemy you destroy adds to your side's score and is relayed in your comms feed — destroyed enemies, lost allies, and warnings as either side nears victory or defeat. Fill your bar before the enemy fills theirs and your side <strong>wins the zone</strong>.</p>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Scoring &amp; "Kills Confirmed"</h2></div>
+    <p>Each side has a victory bar shown top-right (the HUD readout below). Every enemy you destroy adds to your side's score and is relayed in your comms feed — destroyed enemies, lost allies, and warnings as either side nears victory or defeat. Fill your bar before the enemy fills theirs and your side <strong>wins the zone</strong>.</p>
     <p>Crucially, two things happen per kill, and they are independent:</p>
     <ul class="bullets">
       <li><strong>The victory tally</strong> — pushes your side toward winning the engagement (BGS effect, see §9). Winning is <em>not</em> required to keep your bonds or your mission kills.</li>
       <li><strong>A combat bond</strong> — the credit voucher that goes in your wallet (see §6).</li>
     </ul>
+    <div class="hud" aria-hidden="true">
+      <span class="hud-c1"></span><span class="hud-c2"></span>
+      <h4>// Warzone Status — Victory Tally</h4>
+      <p>Allied (your side) 62% &nbsp;VS&nbsp; 41% Hostile (targets)</p>
+    </div>
+    <p class="muted">The top-right HUD bars are the zone's scoreboard — fill yours first and your side wins the engagement.</p>
+
     <div class="callout tip"><span class="lbl">// Why your mission counter sometimes lags the kills</span><p>Mission progress tracks <em>qualifying</em> kills independently of the victory bar. So a kill can pay a bond and move the score yet not tick a mission — usually because the dead ship wasn't the mission's target faction, or because of how stacked missions count (see §8). The zone score, the bonds, and each mission's tally are three separate ledgers.</p></div>
   </section>
 
   <!-- 05 -->
   <section id="s5">
-    <div class="sec-head"><span class="sec-num">05</span><div><h2>Special Objectives</h2><p class="lede">Optional, but they swing the score hard and pay well. None are required to win.</p></div></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Special Objectives</h2></div>
     <p>From Medium intensity up, scripted events spawn into the zone. Killing the hostile versions (or protecting the friendly ones) gives bonds plus a big jolt to your side's victory tally.</p>
     <div class="cards">
       <article class="card"><div class="c-head"><span class="c-eyebrow">High-value kill</span><h3>Captain</h3></div><p>A large engineered ship — typically Anaconda, Corvette or Cutter — flown by an Elite pilot. Enemy: hunt it down and kill it. Friendly: keep it alive until it jumps out.</p><p><em>Tip: target the FSD or powerplant to drop it fast.</em></p></article>
@@ -192,7 +198,7 @@
 
   <!-- 06 -->
   <section id="s6">
-    <div class="sec-head"><span class="sec-num">06</span><div><h2>Combat Bonds &amp; Making Credits</h2><p class="lede">Vouchers, not instant cash — and they evaporate if you die.</p></div></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Combat Bonds &amp; Making Credits</h2></div>
     <p>Every enemy you destroy after siding awards a <strong>combat bond voucher</strong>. Value is fixed per ship type — heavier ships pay more — and ranges from a few thousand up to roughly <strong>80,000 CR</strong> for the biggest hulls. (Destroy a ship <em>without</em> having chosen a side and it's a flat ~3,000 CR, another reason to side first.)</p>
 
     <h3 class="subhead">Income expectations</h3>
@@ -223,20 +229,20 @@
 
   <!-- 07 -->
   <section id="s7">
-    <div class="sec-head"><span class="sec-num">07</span><div><h2>Superpower Reputation &amp; Rank (Empire)</h2><p class="lede">CZs do feed Empire rep — but they are not the rank-up itself.</p></div></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Superpower Reputation &amp; Rank (Empire)</h2></div>
     <p>This is the section you actually care about for the Achenar / engineer grind, so here's the honest mechanic, layered:</p>
-    <ol>
+    <ul class="bullets">
       <li><strong>Winning a zone</strong> raises your reputation with the faction you fought for and lowers it with the side you destroyed.</li>
       <li><strong>Redeeming combat bonds</strong> for an Empire-aligned faction raises your standing with that faction — and anything that raises reputation with an Empire-aligned faction nudges your <strong>Imperial rank bar</strong> upward.</li>
-      <li>For the rep/rank to land on <em>Empire</em>, both ends must line up: fight for an <strong>Imperial-aligned minor faction</strong> and cash the bonds at an <strong>Imperial station</strong>. Cash Imperial-earned bonds at a Federal station and the superpower credit can skew the wrong way.</li>
-    </ol>
+      <li><strong>Both ends must line up.</strong> For the rep/rank to land on <em>Empire</em>, fight for an <strong>Imperial-aligned minor faction</strong> and cash the bonds at an <strong>Imperial station</strong>. Cash Imperial-earned bonds at a Federal station and the superpower credit can skew the wrong way.</li>
+    </ul>
     <div class="callout warn"><span class="lbl">// The rank bar still needs a promotion mission</span><p>CZ rep can <em>fill</em> the Imperial rank bar, but reputation and naval rank are separate systems. Once the bar hits 100%, you still must find and complete an <strong>"Imperial Navy"-titled promotion mission</strong> (board-flip to roll one). No amount of CZ grinding promotes you on its own.</p></div>
     <div class="callout"><span class="lbl">// Read this before flying out</span><p>For your Squire → Achenar goal, CZs are a <em>bonus</em> source of Empire rep, not the efficient path. The rank-bar gain from combat is small per action, and the bottleneck is the promotion-mission roll, not rep volume. Use CZs if you're enjoying the combat and banking credits anyway; otherwise courier/transport/donation missions fill the bar faster per minute. Also note the Mandalay is a traveller, not a brawler — for any serious Medium/High zone work, bring the Python Mk II or Cobra Mk V combat builds, not the explorer.</p></div>
   </section>
 
   <!-- 08 -->
   <section id="s8">
-    <div class="sec-head"><span class="sec-num">08</span><div><h2>Massacre Missions Inside CZs</h2><p class="lede">Stacking works — but only across different mission-givers.</p></div></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Massacre Missions Inside CZs</h2></div>
     <p>"Kill Faction X Ships" missions are completed cleanly in a CZ where X is a combatant: side against X, and X's ships are your legal kills. Three rules govern how the tally fills:</p>
     <ul class="bullets">
       <li><strong>Side correctly.</strong> Join X's enemy. Kills only count against the faction you're <em>not</em> fighting for.</li>
@@ -249,7 +255,7 @@
 
   <!-- 09 -->
   <section id="s9">
-    <div class="sec-head"><span class="sec-num">09</span><div><h2>Winning the War (BGS)</h2><p class="lede">Individual zone wins ladder up into the war's outcome.</p></div></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Winning the War (BGS)</h2></div>
     <p>Combat zones are a Background Simulation (BGS) tool. Here's how a zone win becomes a war win:</p>
     <ul class="bullets">
       <li>Zone victories and completed war-missions feed a <strong>daily tally</strong> determining which side "won the day."</li>
@@ -262,7 +268,7 @@
 
   <!-- 10 -->
   <section id="s10">
-    <div class="sec-head"><span class="sec-num">10</span><div><h2>Powerplay Conflict Zones</h2><p class="lede">A distinct zone type that pays merits — not the same as a BGS war.</p></div></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Powerplay Conflict Zones</h2></div>
     <p>Under Powerplay 2.0 there are dedicated <strong>Power Conflict Zones</strong>, separate from ordinary faction-war CZs. They look similar but differ in important ways:</p>
     <ul class="bullets">
       <li>They reward <strong>Powerplay merits</strong> — ordinary CZs do not. Credits may be a touch lower, but merits drive your Powerplay rating.</li>
@@ -275,7 +281,7 @@
 
   <!-- 11 -->
   <section id="s11">
-    <div class="sec-head"><span class="sec-num">11</span><div><h2>On-Foot Conflict Zones</h2><p class="lede">Infantry warfare — reinforcement attrition and capture points.</p></div></div>
+    <div class="sec-head"><span class="sec-num">11</span><h2>On-Foot Conflict Zones</h2></div>
     <p>Accessed on foot at a settlement, ideally via <strong>Frontline Solutions</strong> (which lets you respawn back into the fight). Intensity (Low/Med/High) can't be read in-ship; check the planetary map's threat number or Frontline's listing.</p>
     <h3 class="subhead">How a battle is won</h3>
     <ul class="bullets">
@@ -294,7 +300,7 @@
 
   <!-- 12 -->
   <section id="s12">
-    <div class="sec-head"><span class="sec-num">12</span><div><h2>Ship &amp; Loadout Doctrine</h2><p class="lede">Match the hull to the tier, and fly to bank rather than to brag.</p></div></div>
+    <div class="sec-head"><span class="sec-num">12</span><h2>Ship &amp; Loadout Doctrine</h2></div>
     <ul class="bullets">
       <li><strong>Engineering by tier:</strong> Low needs little; Medium wants a solid engineered build; High demands a well-engineered ship or a player wing. NPCs scale to match.</li>
       <li><strong>Weapons:</strong> don't run pure beam lasers for long engagements — heat and sustain become a problem. Mix sustained energy with kinetic (multi-cannons) so you're not fully dependent on either; bring enough ammo for an extended fight.</li>
@@ -307,7 +313,7 @@
 
   <!-- 13 -->
   <section id="s13">
-    <div class="sec-head"><span class="sec-num">13</span><div><h2>Quick Reference</h2><p class="lede">The whole manual, compressed for a pre-flight glance.</p></div></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Quick Reference</h2></div>
     <div class="tbl-scroll">
     <table class="data">
       <thead><tr><th>Question</th><th>Answer</th></tr></thead>
