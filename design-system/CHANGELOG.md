@@ -40,6 +40,8 @@ mostly recolouring and spacing.
 - **Card affordances:** `.card-tags` (a left-aligned pill row under the title) and a
   `.card h3 .cb-ext` external-link glyph (↗, inline right after the title). Surfaced by the
   third-party-apps directory rework.
+- **`.case-hd`** — a sub-section header (smaller than `.subhead`, ink so an inline `.sp-*`
+  keeps its colour); `.case-hd.play` adds a gap above. For "The Case for X" / playbook labels.
 - **Superpower allegiance colours** — `.sp-fed` (Federation red) · `.sp-emp` (Empire blue) ·
   `.sp-all` (Alliance green) · `.sp-ind` (Independent amber) text tints, plus matching
   `.chip.sp-*` chip variants. Surfaced by the Powerplay guide.

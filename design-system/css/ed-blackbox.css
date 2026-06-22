@@ -169,6 +169,10 @@ section{margin-top:var(--space-section);scroll-margin-top:74px}
 .sec-head .tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm);letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);flex:none;align-self:center}
 p.lead{font-size:var(--fs-md);color:var(--ink-dim);margin:var(--space-7) 0 var(--space-2)}
 h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-h3);letter-spacing:.5px;text-transform:uppercase;color:var(--amber-lt);margin:var(--space-13) 0 var(--space-5)}
+/* sub-section header inside a section block (e.g. "The Case for X" / a playbook label) —
+   smaller than .subhead, ink (so an inline .sp-* keeps its colour); .play adds a gap above. */
+.case-hd{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-md);letter-spacing:.3px;color:var(--ink);margin:var(--space-8) 0 var(--space-5)}
+.case-hd.play{margin-top:var(--space-10)}
 /* condensed tracked sub-label (alt to subhead, from ship manuals) */
 .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:var(--fs-sm2);color:var(--amber);font-weight:600;margin:var(--space-11) 0 var(--space-3)}
 .subhd.fed{color:var(--fed-lt)}
