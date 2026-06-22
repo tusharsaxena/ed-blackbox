@@ -174,9 +174,9 @@
   <p class="note-sg">Inline text emphasis uses <span class="acc">accent text</span>, and control references use key caps like <span class="kbd">Ctrl</span> + <span class="kbd">Tab</span> or <span class="kbd">G</span> (landing gear).</p>
 
   <h3 class="subhead">Rating bars (linear 1–100)</h3>
-  <div class="rating"><span class="score">92<small>/100</small></span><div class="bar"><i style="width:92%"></i></div></div>
-  <div class="rating"><span class="score">64<small>/100</small></span><div class="bar fed"><i style="width:64%"></i></div></div>
-  <div class="rating"><span class="score">38<small>/100</small></span><div class="bar good"><i style="width:38%"></i></div></div>
+  <div class="rating"><span class="score">92<small>/100</small></span><div class="bar"><i style="--pct:92"></i></div></div>
+  <div class="rating"><span class="score">64<small>/100</small></span><div class="bar fed"><i style="--pct:64"></i></div></div>
+  <div class="rating"><span class="score">38<small>/100</small></span><div class="bar good"><i style="--pct:38"></i></div></div>
 
   <h3 class="subhead">Corner-bracket HUD panel</h3>
   <div class="hud"><span class="hud-c1"></span><span class="hud-c2"></span>
@@ -185,6 +185,7 @@
   </div>
 
   <h3 class="subhead">Callouts</h3>
+  <div class="callout"><span class="lbl">Default</span><p>Neutral aside. Gold left edge + gold label (theme-independent — stays gold on any page accent).</p></div>
   <div class="callout tip"><span class="lbl">Tip</span><p>Positive / helpful aside. Green left edge.</p></div>
   <div class="callout warn"><span class="lbl">Note</span><p>Caution or caveat. Amber left edge.</p></div>
   <div class="callout danger"><span class="lbl">Warning</span><p>Hard warning / irreversible action. Red left edge.</p></div>
@@ -357,12 +358,12 @@
         <tr>
           <td class="mod">Subject Alpha</td><td>Medium</td>
           <td class="pcc"><span class="p">Best-in-class at the headline stat; flexible internals</span><span class="c">Thirsty distributor, short jump range</span></td>
-          <td><span class="rscore">93</span><div class="bar mini"><i style="width:93%"></i></div></td>
+          <td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td>
         </tr>
         <tr>
           <td class="mod">Subject Bravo</td><td>Large</td>
           <td class="pcc"><span class="p">Huge capacity and tank</span><span class="c">Sluggish; large pad only</span><span class="base">the durable generalist</span></td>
-          <td><span class="rscore">78</span><div class="bar mini"><i style="width:78%"></i></div></td>
+          <td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td>
         </tr>
       </tbody>
     </table>

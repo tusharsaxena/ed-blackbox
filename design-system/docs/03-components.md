@@ -30,7 +30,7 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Data table | `.tbl-scroll` > `table.data` (`th.num`/`td.num` right-align, `.center`) | ranked ladders, simple comparisons |
 | Loadout table | `.tbl-scroll` > `table.l3` (`.grouprow` `.slot` `.st` `.eng`) | multi-state build tables |
 | Pros/cons table | `.tbl-scroll` > `table.cmp` (`td.pcc` `.p`/`.c`/`.base`, `.rscore`, `.bar.mini`) | comparison w/ pros & cons |
-| Rating bar | `.rating` (`.score` + `.bar` / `.bar.fed` / `.bar.good` / `.bar.mini`) | linear 1–100 meters |
+| Rating bar | `.rating` (`.score` + `.bar` / `.bar.mini`) — fill via `<i style="--pct:NN">` | linear 1–100 meters; colour scales red(100)→yellow(50)→green(0) |
 | Rating dial | `.ratebox` > `.dial` (`style="--v:NN"`) + `.rl` (`.t`/`.d`) | headline suitability gauge |
 | Spec grid | `.specgrid` > `.cell` (`.k`/`.v`) | compact technical readout |
 | Panel | `.panel` | generic bordered info container for grouped notes |

@@ -3,6 +3,35 @@
 Semantic versioning: **MAJOR** breaks existing markup/tokens, **MINOR** adds
 backward-compatible tokens/components, **PATCH** fixes without API change.
 
+## 1.3.0 — visual refinements (gold-first review pass)
+
+Appearance pass from the gold-reference review. No new components, no token-value or
+markup-contract changes; mostly recolouring and spacing.
+
+### Changed
+- **Gold-first text rule.** The per-page accent is now reserved for **role/domain
+  identity** (the masthead role badge and the suitability dial). All other text,
+  emphasis, and inline markers default to **gold**: `.acc`, `.stepnum`, `ul.bullets`
+  markers, `.rating .score`, `.pickcard .pick`, the `ol.steps` number badge. Status
+  colours (good/danger) and record-type accent variants are unchanged.
+- **Plain `.callout`** now uses a **gold** left border + gold label (was page-accent);
+  `.tip`/`.warn`/`.danger` semantic variants unchanged.
+- **`.specgrid .k`** cell labels: faint → **gold**, so each cell's label stands out.
+- **`.ratebox`** background tint → gold (the dial wheel keeps the page accent).
+- **`table.l3 .grouprow`** section bands: maroon gradient → **gold** gradient with bright
+  contrasting text.
+- **Rating bar (`.bar > i`)** is now a single solid colour derived from a `--pct` (0–100)
+  custom property: **red at 100 → yellow at 50 → green at 0**. Bars now take
+  `style="--pct:NN"` (was `style="width:NN%"`); width derives from `--pct`.
+- **`.lede`/`.subtitle`** no longer width-capped (spans the content column).
+- **Spacing:** body paragraphs (`section > p`) get inter-paragraph rhythm; `.tbl-scroll`
+  and `.specgrid` gained bottom margin; `.panel` first/last child margins reset;
+  masthead `.chips` gained top spacing.
+- **Per-page credits (`.cr-row`)** → fixed-column grid (`170px / 1fr / ~220px`) with
+  wrapping cells; the source link's `↗` is now non-breaking so it never orphans.
+- **Quick-nav panel** widened to 380px; on section-based pages the `.qn-item` labels
+  mirror each section's `<h2>` verbatim (and include the Sources section).
+
 ## 1.2.0 — migration gap components
 
 Adds the four generic primitives the legacy guide corpus needs so the full migration onto

@@ -1,11 +1,11 @@
-/*! ed-blackbox design system v1.1.0 | E:D Black Box field-manual house style
+/*! ed-blackbox design system v1.3.0 | E:D Black Box field-manual house style
    Single source of truth. Link this file; never inline or fork per page.
    Theme a page by overriding the --accent* group in a page-level <style>. */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap');
 
 :root{
   /* ============================================================
-     ed-blackbox DESIGN TOKENS  ·  v1.1.0
+     ed-blackbox DESIGN TOKENS  ·  v1.3.0
      Colour + accent are the LOCKED palette (never edit values).
      Scales below are the system standard — author with these,
      don't hardcode raw px. Per-page theming = override the ACCENT
@@ -59,7 +59,7 @@
   --accent-soft:rgba(224,145,58,.4);--accent-glow:rgba(224,145,58,.10);
 
   /* ---- meta ---- */
-  --ds-version:"1.2.0";
+  --ds-version:"1.3.0";
 }
 
 /* ============================================================
@@ -85,6 +85,10 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;back
 .wrap{position:relative;z-index:var(--z-base);max-width:1140px;margin:0 auto;padding:0 var(--space-11) 120px}
 a{color:var(--amber-lt)}
 .muted{color:var(--ink-faint)}
+/* body paragraphs directly in a content section — dim ink, comfortable inter-paragraph
+   rhythm. Scoped to direct children so nested component paragraphs (.callout p, .card p,
+   …) keep their own rules. */
+section > p{margin:0 0 var(--space-10);color:var(--ink-dim);line-height:var(--lh-body)}
 
 /* ---- 2b. GLOBAL HEADER + BREADCRUMBS  (v1.1.0) ----
    Sits OUTSIDE .wrap, directly under <body>. The inner row is .hdr-inner,
@@ -130,10 +134,11 @@ h1.title{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(3
 h1.title span{color:var(--amber)}
 /* optional one-line role suffix on the title (ship × role dossiers) */
 h1.title .role{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:.32em;letter-spacing:3px;text-transform:uppercase;color:var(--accent);vertical-align:middle;margin-left:var(--space-7);border:1px solid var(--accent-soft);border-radius:var(--radius-sm);padding:5px 11px}
-.subtitle,.lede{margin-top:var(--space-8);font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);max-width:840px;font-weight:300}
+.subtitle,.lede{margin-top:var(--space-8);font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);font-weight:300}
 .subtitle b,.lede b{color:var(--ink);font-weight:500}
 .masthead-meta{margin-top:var(--space-13);display:flex;flex-wrap:wrap;gap:var(--space-5) var(--space-13);font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm2);letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
 .masthead-meta b{color:var(--amber-lt);font-weight:600}
+header.masthead .chips{margin-top:var(--space-9)}
 
 /* ---- 4. VERDICT / FIELD-BRIEFING CALLOUT ---- */
 .verdict{margin:34px 0 var(--space-7);border:1px solid var(--accent-soft);border-radius:var(--radius-md);background:linear-gradient(180deg,var(--accent-glow),rgba(20,13,15,.6));padding:var(--space-14) var(--space-14) var(--space-13);position:relative;overflow:hidden}
@@ -256,7 +261,7 @@ ul.reclist a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
 @media (max-width:480px){.rec-body{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "d" "e"}}
 
 /* ---- 11. DATA / COMPARISON TABLE ---- */
-.tbl-scroll{overflow-x:auto;margin-top:var(--space-9);border:1px solid var(--hair);border-radius:var(--radius-md)}
+.tbl-scroll{overflow-x:auto;margin:var(--space-9) 0;border:1px solid var(--hair);border-radius:var(--radius-md)}
 table.data{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
 table.data thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:11px var(--space-7);background:rgba(8,5,6,.6);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
 /* header alignment follows the column's data alignment */
@@ -272,10 +277,12 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 
 /* ---- 12. RATING BAR  (linear 1–100 suitability meter) ---- */
 .rating{display:flex;align-items:center;gap:var(--space-6);margin:var(--space-3) 0}
-.rating .score{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-2xl);color:var(--accent);line-height:1;min-width:54px}
+.rating .score{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-2xl);color:var(--amber-lt);line-height:1;min-width:54px}
 .rating .score small{font-size:var(--fs-sm);color:var(--ink-faint);font-weight:500}
 .bar{flex:1;height:8px;background:rgba(8,5,6,.6);border:1px solid var(--hair);border-radius:var(--radius-md);overflow:hidden}
-.bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent-deep),var(--accent-lt));border-radius:var(--radius-md)}
+/* fill width AND colour both derive from --pct (0–100): a single solid hue per bar,
+   red at 100 → yellow at 50 → green at 0 (hue 0→60→120). */
+.bar > i{display:block;height:100%;width:calc(var(--pct,0)*1%);background:hsl(calc((120 - var(--pct,0)*1.2)*1deg) 70% 48%);border-radius:var(--radius-md)}
 .bar.fed > i{background:linear-gradient(90deg,var(--fed),var(--fed-lt))}
 .bar.good > i{background:linear-gradient(90deg,var(--good),var(--good-lt))}
 .bar.mini{height:6px;border:none;flex:none;width:100%;margin-top:5px}
@@ -292,18 +299,18 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 .hud p{font-size:var(--fs-body);color:var(--ink-dim)}
 
 /* ---- 14. CALLOUT / ASIDE  (tip / warning / danger) ---- */
-.callout{border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:var(--radius-md);padding:var(--space-8) var(--space-10);margin-top:var(--space-8);background:rgba(10,7,8,.4)}
+.callout{border:1px solid var(--hair);border-left:3px solid var(--amber);border-radius:var(--radius-md);padding:var(--space-8) var(--space-10);margin-top:var(--space-8);background:rgba(10,7,8,.4)}
 .callout.tip{border-left-color:var(--good)}
 .callout.warn{border-left-color:var(--amber)}
 .callout.danger{border-left-color:var(--danger)}
-.callout .co-eyebrow,.callout .lbl{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-2xs);letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:var(--space-3);display:block}
+.callout .co-eyebrow,.callout .lbl{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-2xs);letter-spacing:2.5px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-3);display:block}
 .callout.tip .co-eyebrow,.callout.tip .lbl{color:var(--good-lt)}
 .callout.warn .co-eyebrow,.callout.warn .lbl{color:var(--amber-lt)}
 .callout.danger .co-eyebrow,.callout.danger .lbl{color:var(--danger)}
 .callout p{font-size:var(--fs-body);color:var(--ink-dim)}
 /* icon variant — leading glyph in the accent colour */
 .callout.icon{position:relative;padding-left:48px}
-.callout.icon::before{content:"\25C8";position:absolute;left:18px;top:15px;font-size:var(--fs-lg);color:var(--accent)}
+.callout.icon::before{content:"\25C8";position:absolute;left:18px;top:15px;font-size:var(--fs-lg);color:var(--amber)}
 .callout.icon.tip::before{content:"\2605";color:var(--good)}
 .callout.icon.warn::before{content:"\25B2";color:var(--amber)}
 .callout.icon.danger::before{content:"\25B2";color:var(--danger)}
@@ -320,7 +327,7 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 .qn-input::placeholder{color:var(--ink-faint);font-weight:500}
 .qn-clear{background:transparent;border:none;color:var(--ink-faint);font-size:var(--fs-xl);line-height:1;cursor:pointer;padding:var(--space-1) 11px;transition:color var(--motion-fast)}
 .qn-clear:hover{color:var(--amber)}
-.qn-panel{position:absolute;top:calc(100% + 6px);left:0;width:310px;max-height:62vh;overflow-y:auto;background:rgba(16,10,12,.99);border:1px solid var(--hair-strong);border-radius:var(--radius-lg);box-shadow:0 20px 56px rgba(0,0,0,.6);padding:var(--space-3);display:none}
+.qn-panel{position:absolute;top:calc(100% + 6px);left:0;width:380px;max-height:62vh;overflow-y:auto;background:rgba(16,10,12,.99);border:1px solid var(--hair-strong);border-radius:var(--radius-lg);box-shadow:0 20px 56px rgba(0,0,0,.6);padding:var(--space-3);display:none}
 .qn-dd.open .qn-panel{display:block}
 .qn-item{display:flex;align-items:center;gap:var(--space-5);padding:7px var(--space-5);border-radius:var(--radius-md);font-family:'Saira',sans-serif;font-size:var(--fs-base);color:var(--ink-dim);text-decoration:none}
 .qn-item:hover{background:var(--panel2);color:var(--ink)}
@@ -347,7 +354,7 @@ nav.toc a:hover,nav.toc a.active{color:var(--amber-lt);border-color:var(--hair-s
 nav.toc::-webkit-scrollbar{height:0}
 
 /* ---- 17. RATING DIAL  (conic-gradient suitability gauge) ---- */
-.ratebox{margin-top:var(--space-13);display:flex;align-items:center;gap:var(--space-11);flex-wrap:wrap;border:1px solid var(--hair-strong);border-radius:var(--radius-md);background:linear-gradient(180deg,var(--accent-glow),rgba(20,13,15,.5));padding:var(--space-11) var(--space-12)}
+.ratebox{margin-top:var(--space-13);display:flex;align-items:center;gap:var(--space-11);flex-wrap:wrap;border:1px solid var(--hair-strong);border-radius:var(--radius-md);background:linear-gradient(180deg,rgba(224,145,58,.10),rgba(20,13,15,.5));padding:var(--space-11) var(--space-12)}
 .dial{--v:78;width:96px;height:96px;border-radius:var(--radius-round);flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;background:conic-gradient(var(--accent) calc(var(--v)*1%),rgba(255,255,255,.06) 0)}
 .dial::after{content:"";position:absolute;inset:9px;border-radius:var(--radius-round);background:var(--bg2);border:1px solid var(--hair)}
 .dial .num{position:relative;z-index:var(--z-base);font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-4xl);color:var(--ink)}
@@ -357,9 +364,9 @@ nav.toc::-webkit-scrollbar{height:0}
 .ratebox .rl .d{font-size:var(--fs-md2);color:var(--ink-dim);margin-top:5px}
 
 /* ---- 18. SPEC GRID  (seamless technical readout, 1px gridlines) ---- */
-.specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius-md);overflow:hidden;margin-top:var(--space-9)}
+.specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius-md);overflow:hidden;margin:var(--space-9) 0}
 .specgrid .cell{background:var(--panel);padding:13px 15px}
-.specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:var(--fs-xs);color:var(--ink-faint)}
+.specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:var(--fs-xs);color:var(--amber-lt)}
 .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xl);color:var(--ink);margin-top:3px}
 .specgrid .v small{font-size:var(--fs-sm);color:var(--ink-faint);font-weight:400}
 
@@ -371,7 +378,7 @@ table.l3 tr:last-child td{border-bottom:none}
 table.l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--ink-dim);white-space:nowrap}
 table.l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-sm2);color:var(--ink)}
 table.l3 td.eng{font-size:var(--fs-sm2);color:var(--amber-lt)}
-table.l3 .grouprow td{background:linear-gradient(90deg,rgba(139,35,50,.5),rgba(74,14,22,.12) 70%,transparent);color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs2);font-weight:600}
+table.l3 .grouprow td{background:linear-gradient(90deg,rgba(224,145,58,.5),rgba(224,145,58,.12) 70%,transparent);color:var(--ink);font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs2);font-weight:600}
 
 /* ---- 20. COMPARISON TABLE w/ PROS-CONS CELLS ---- */
 table.cmp{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:620px;table-layout:fixed}
@@ -400,7 +407,7 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 .pickgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-7);margin:var(--space-8) 0}
 .pickcard{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
 .pickcard .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--amber);font-weight:600}
-.pickcard .pick{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xl);color:var(--accent-lt);margin:5px 0 7px;font-weight:600}
+.pickcard .pick{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xl);color:var(--amber-lt);margin:5px 0 7px;font-weight:600}
 .pickcard .pick small{color:var(--ink-faint);font-size:var(--fs-sm);font-weight:400}
 .pickcard p{margin:0;font-size:var(--fs-base);color:var(--ink-dim)}
 .pickcard .alt{margin-top:var(--space-4);font-size:var(--fs-sm2);color:var(--ink-faint)}
@@ -410,7 +417,7 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;padding:0}
 .steps>li{counter-increment:step;position:relative;padding:0 0 var(--space-10) 52px;border-left:1px solid var(--hair);margin-left:var(--space-9)}
 .steps>li:last-child{border-left-color:transparent;padding-bottom:0}
-.steps>li::before{content:counter(step,decimal-leading-zero);position:absolute;left:-18px;top:-4px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-round);background:var(--panel);border:1px solid var(--accent-soft);font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm2);color:var(--accent-lt)}
+.steps>li::before{content:counter(step,decimal-leading-zero);position:absolute;left:-18px;top:-4px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-round);background:var(--panel);border:1px solid rgba(224,145,58,.4);font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm2);color:var(--amber-lt)}
 .steps>li .st{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-lg);color:var(--ink);display:block;margin-bottom:3px}
 .steps>li p{margin:5px 0;font-size:var(--fs-body);color:var(--ink-dim)}
 
@@ -426,7 +433,7 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
 .kbd{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xs2);font-weight:600;letter-spacing:.5px;color:var(--ink);background:var(--panel2);border:1px solid var(--hair-strong);border-bottom-width:2px;border-radius:var(--radius-md);padding:var(--space-1) 7px;white-space:nowrap}
 
 /* ---- 26. ACCENT TEXT  (inline emphasis) ---- */
-.acc{color:var(--accent-lt);font-weight:500}
+.acc{color:var(--amber-lt);font-weight:500}
 
 /* ---- 27. LOCATION / COORDINATE READOUT ---- */
 .loc-card{border:1px solid var(--hair-strong);border-radius:var(--radius-lg);background:linear-gradient(180deg,var(--panel),var(--bg2));padding:var(--space-3) var(--space-9);margin-top:var(--space-9)}
@@ -450,12 +457,12 @@ footer b{color:var(--amber-lt)}
    One .cr-row per authoritative source for THIS page: name · what it provided · link.
    This is where per-page sourcing lives now that the masthead has no Sources line. */
 .cr-rows{margin-top:var(--space-9);border:1px solid var(--hair-strong);border-radius:var(--radius-md);background:linear-gradient(180deg,var(--panel),var(--bg2));padding:var(--space-3) var(--space-9)}
-.cr-row{display:flex;align-items:baseline;gap:var(--space-8);padding:11px 0;border-bottom:1px dashed var(--hair)}
+.cr-row{display:grid;grid-template-columns:170px 1fr minmax(180px,220px);align-items:start;gap:var(--space-8);padding:11px 0;border-bottom:1px dashed var(--hair)}
 .cr-row:last-child{border-bottom:none}
-.cr-src{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-md);color:var(--ink);min-width:148px;flex:none}
-.cr-what{font-size:var(--fs-base);color:var(--ink-dim);flex:1}
-.cr-link{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:.6px;text-transform:uppercase;color:var(--amber-lt);text-decoration:none;white-space:nowrap;flex:none}
-.cr-link::after{content:" \2197"}
+.cr-src{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-md);color:var(--ink)}
+.cr-what{font-size:var(--fs-base);color:var(--ink-dim)}
+.cr-link{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:.6px;text-transform:uppercase;color:var(--amber-lt);text-decoration:none;overflow-wrap:anywhere}
+.cr-link::after{content:"\00A0\2197"}
 .cr-link:hover{color:var(--amber)}
 @media (max-width:560px){.cr-row{flex-direction:column;gap:var(--space-2)}.cr-src{min-width:0}}
 
@@ -465,6 +472,8 @@ footer b{color:var(--amber-lt)}
 
 /* PANEL — generic bordered info container */
 .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius-md);padding:var(--space-10) var(--space-11);margin:var(--space-8) 0}
+.panel > :first-child{margin-top:0}
+.panel > :last-child{margin-bottom:0}
 
 /* MULTI-COLUMN LAYOUT — responsive; collapses on narrow */
 .cols-2,.cols-3{display:grid;gap:var(--space-8);margin:var(--space-8) 0}
@@ -480,13 +489,13 @@ footer b{color:var(--amber-lt)}
 /* GENERAL BULLET LIST — body list (.reclist stays record-scoped) */
 ul.bullets{list-style:none;margin:var(--space-6) 0;padding:0}
 ul.bullets li{position:relative;padding:var(--space-3) 0 var(--space-3) 22px;color:var(--ink-dim);line-height:1.55}
-ul.bullets li::before{content:"\25B8";position:absolute;left:2px;top:var(--space-3);color:var(--accent);font-size:var(--fs-sm)}
+ul.bullets li::before{content:"\25B8";position:absolute;left:2px;top:var(--space-3);color:var(--amber);font-size:var(--fs-sm)}
 ul.bullets li b{color:var(--ink);font-weight:500}
 
 /* Minor reconciles (spec §3) surfaced by the gold-reference migration:
    generalize the module-name cell to the data table, and the inline step number. */
 table.data td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:var(--fs-base)}
-.stepnum{font-family:'Chakra Petch',sans-serif;color:var(--accent);font-weight:700;margin-right:var(--space-3)}
+.stepnum{font-family:'Chakra Petch',sans-serif;color:var(--amber);font-weight:700;margin-right:var(--space-3)}
 
 /* ---- 31. RESPONSIVE / MOTION ---- */
 @media (max-width:560px){.sec-head .tag{display:none}}
