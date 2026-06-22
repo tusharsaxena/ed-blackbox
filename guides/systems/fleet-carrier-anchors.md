@@ -13,10 +13,9 @@ Link format: `fleet-carrier.html#<id>`
 - **Services — The Complete Cost Table** — `#services`
 - **Tritium & Jumping — The Fuel Loop** — `#tritium`
 - **Role-Tailored Loadouts** — `#roles`
-- **Recommended Starter Configuration — "KA-" Carrier** — `#starter`
+- **Recommended Starter Configuration** — `#starter`
 - **How To Get Started — Acquisition Checklist** — `#getstarted`
 - **The Progression Roadmap — How To Proceed** — `#roadmap`
-- **Federation Alignment & The Corvette Path** — `#federation`
 - **Paying The Upkeep — Income Strategies** — `#income`
 - **Pitfalls & Pro Tips** — `#pitfalls`
 - **Sources** — `#credits`
