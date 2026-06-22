@@ -13,6 +13,8 @@ be re-run later.
 | `generate-guides-index.sh` | [generate-guides-index.md](generate-guides-index.md) | Regenerates `guides/index.html`, the "Black Book" landing page linking to every guide. |
 | `generate-anchor-files.sh` | [generate-anchor-files.md](generate-anchor-files.md) | Regenerates the per-page `<basename>-anchors.md` files cataloging each guide's `<section id>` navigation anchors. |
 | `shot.mjs` | [shot.md](shot.md) | Generates a full-page PNG screenshot of a local HTML file via Playwright/Chromium; used for before/after visual comparison during design-system migration. |
+| `fingerprint.mjs` | [fingerprint.md](fingerprint.md) | Extracts a content fingerprint (masthead text + each `<section id>`/text + all ids) of a guide, chrome excluded; the before/after content-invariance gate for migration. |
+| `fp-diff.mjs` | [fingerprint.md](fingerprint.md) | Compares two fingerprints; exits non-zero if any section text or anchor id changed. Pairs with `fingerprint.mjs`. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.
