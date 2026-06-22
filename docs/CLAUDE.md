@@ -21,7 +21,7 @@ guides/            108 self-contained HTML guides (inline CSS) + index.html (gen
   systems/         11 game-system guides
   ships/           dossiers/ (77) · by-role/ (7)
   activities/      6 role playbooks (how to fly each role)
-design-system/     v1.1.0 — css/ js/ templates/ legacy-templates/ docs/ (the migration target;
+design-system/     v1.3.0 — css/ js/ templates/ legacy-templates/ docs/ (the migration target;
                    legacy-templates/ = the precursor Template.html/.md, reference only)
 images/            engineers/ (38 portraits) · ships/ (46 renders) · logos/ (logo·banner·favicon + concepts/)
 scripts/           reusable task scripts (+ per-script .md docs)
@@ -124,8 +124,10 @@ with no sectioned nav (the `farms/` pages, `pve-combat-venues.html`) get no file
   footer is brand + `By CMDR Ka0s` + part. Per-page **sources** now live in a dedicated
   bottom-of-page **`section.credits`** block (above the footer; see
   `design-system/docs/04-page-assembly.md`). Source verification is still required
-  (rule 1). (Removing "CMDR" from headers and reducing fleet bias remain tracked editorial
-  TODOs; legacy inline guides may still carry the old chrome.)
+  (rule 1). (The `CMDR KA0S · INARA 173082` identity chrome has been removed site-wide — the
+  footer `By CMDR Ka0s` byline is kept; powerplay has been de-biased to role/ethos-agnostic.
+  Dropping "CMDR" from dossier kickers and reducing fleet bias on the remaining pages continue
+  as editorial polish; legacy inline guides may still carry the old chrome.)
 
 ## Don't
 

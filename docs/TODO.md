@@ -26,7 +26,7 @@ Legend: ✅ done · ☐ not done.
 > to the 108 legacy inline guides is Phase 1 migration, not Phase 0.
 
 ### Design system & shared styling
-- ✅ Confirm the `design-system/` (v1.1.0) is feature-complete for migration needs (tokens, ~29 components, global chrome, a11y baseline, docs)
+- ✅ Confirm the `design-system/` (v1.3.0) is feature-complete for migration needs (tokens, 40+ components, global chrome, a11y baseline, docs)
 - ✅ Finalize the canonical content template (`design-system/templates/starter-page.html`)
 - ✅ Lock a single common design language so every page reads as one publication (single linked stylesheet + locked tokens)
 
@@ -48,8 +48,8 @@ Legend: ✅ done · ☐ not done.
 - ✅ Reorganize the file hierarchy (`ship/ship/` → `ships/dossiers/`, `role-ship/` → `ships/by-role/`, `role-activities/` → top-level `activities/`, `engineering/farm/` → `farms/`, `templates/` → `design-system/legacy-templates/`)
 - ✅ Consolidate scattered images into the top-level `images/` folder (`engineer-images/` → `images/engineers/`, `ship-images/` → `images/ships/`)
 - ✅ Standardize file names — all content files now lowercase-kebab (`Anaconda_Combat.html` → `anaconda-combat.html`, `Combat_Zones.html` → `combat-zones.html`); root meta-docs stay UPPER (`ARCHITECTURE.md`, `TODO.md`). Anchor catalogs also standardized (`*_Anchors.md` → `<name>-anchors.md`) and now generated — see Phase 2.
-- ☐ Migrate all ~105 existing guides onto the design system (consistent page styling)
-- ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide)
+- ☐ Migrate all existing guides onto the design system (consistent page styling) — **101/108 done**; the 7 engineering reference pages (engineers, checklist, blueprints, 4 farms) remain on inline CSS
+- ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide) *(partial: powerplay §08 links each role's pick to its power card, and third-party-apps §18 links each app to its card; broad Ships/Engineers/Blueprints cross-linking pending)*
 - ☐ Publish on GitHub Pages
 
 ## Phase 2 — Content-as-data tooling
@@ -76,8 +76,8 @@ Legend: ✅ done · ☐ not done.
 ## Phase 4 — Editorial polish
 
 - ☐ Add ship photos to ship manuals + manufacturer logos
-- ☐ Remove fleet bias from content
-- ☐ Remove "CMDR" etc. from headers
+- ☐ Remove fleet bias from content *(powerplay.html de-biased to role/ethos-agnostic; remaining pages pending)*
+- ☐ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
 - ☐ Regenerate the index page
 

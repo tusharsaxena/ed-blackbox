@@ -25,14 +25,15 @@ between them is the project's central architectural fact:
 
 | | Legacy guides (today) | Design system (target) |
 |---|---|---|
-| Where | `guides/**/*.html` (108 files) | `design-system/` (v1.1.0) |
+| Where | `guides/**/*.html` (108 files) | `design-system/` (v1.3.0) |
 | CSS | **inlined** in a per-page `<style>` block | **one linked** `ed-blackbox.css` |
 | JS | inlined per page (where present) | **one linked** `ed-blackbox.js` |
 | Consistency | visually similar but drifts (3 palette variants) | single locked token set |
 | Status | content-complete | feature-complete for new pages |
 
-The roadmap (`TODO.md`) is largely about **closing that gap**: migrate the 108 inline
-pages onto the linked design system, then add shared chrome and publish.
+The roadmap (`TODO.md`) is largely about **closing that gap**: migrate the inline
+pages onto the linked design system (**101 of 108 done**; the 7 engineering reference
+pages — engineers, checklist, blueprints, 4 farms — remain), then publish.
 
 ---
 
@@ -76,7 +77,7 @@ tokens  →  components  →  templates  →  pages
 ```
 
 - **`css/ed-blackbox.css`** — single source of truth. `:root` holds a **locked** token
-  set (color, spacing, radius, type, z-index, motion, layout). ~29 components are
+  set (color, spacing, radius, type, z-index, motion, layout). 40+ components are
   defined as classes (`.masthead`, `.rec`, `.ratebox`/`.dial`, `.specgrid`, tables,
   cards, callouts, `.credits`, etc.).
 - **Theming model — one knob.** A page re-themes by overriding only a **five-token
@@ -103,7 +104,7 @@ tokens  →  components  →  templates  →  pages
 
 Naming: classes are mostly unprefixed semantic names; accent variants use `.ac-*`
 (`.ac-amber/.ac-fed/.ac-maroon/.ac-good`); state classes like `.active`, `.copied`,
-`.qn-active`. Versioned via SemVer (currently **1.1.0**), readable at runtime as the
+`.qn-active`. Versioned via SemVer (currently **1.3.0**), readable at runtime as the
 `--ds-version` token.
 
 ---
