@@ -6,7 +6,12 @@ Link format: `pve-combat-venues.html#<id>`
 
 ## Sections
 - **Quick-Reference Matrix** — `#matrix`
-- **Venue Dossiers** — `#venues`
+- **Resource Extraction Sites** — `#res`
+- **Conflict Zones (Space)** — `#cz-space`
+- **Ground Conflict Zones** — `#ground-cz`
+- **Nav Beacon** — `#nav-beacon`
+- **Compromised Nav Beacon** — `#compromised-nav`
+- **USS / Threat Sites** — `#uss`
+- **Pirate Massacre Stacking** — `#massacre`
 - **Powerplay 2.0 — Reading the Merit Layer** — `#powerplay`
-- **Fleet Doctrine — Cobra vs Python** — `#doctrine`
 - **Sources** — `#credits`
