@@ -18,6 +18,10 @@ mostly recolouring and spacing.
 - **Titled card header** on `.card`: `.c-head` (flex header row), `card h3` + right-aligned
   `.c-eyebrow` (accent-tinted per `.ac-*`), and a `.micro` footnote — an alternative to the
   `.ico`+`<h4>` card head. Surfaced by the system-guide migration (BGS).
+- **`.subhd.fed`** — fed-blue variant of the condensed sub-label (for blue-coded sub-headers,
+  e.g. "assisted" vs "manual" paths).
+- **`figure` / `figcaption`** styling — left-aligned (drops the UA 40px indent), vertical
+  rhythm, block diagrams/images, dim caption. Surfaced by the docking-landing manual.
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain

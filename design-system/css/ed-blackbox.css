@@ -171,6 +171,7 @@ p.lead{font-size:var(--fs-md);color:var(--ink-dim);margin:var(--space-7) 0 var(-
 h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-h3);letter-spacing:.5px;text-transform:uppercase;color:var(--amber-lt);margin:var(--space-13) 0 var(--space-5)}
 /* condensed tracked sub-label (alt to subhead, from ship manuals) */
 .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:var(--fs-sm2);color:var(--amber);font-weight:600;margin:var(--space-11) 0 var(--space-3)}
+.subhd.fed{color:var(--fed-lt)}
 
 /* ---- 7. LEGEND GRID ---- */
 .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-7);margin-top:var(--space-9)}
@@ -509,6 +510,12 @@ ul.bullets li b{color:var(--ink);font-weight:500}
    generalize the module-name cell to the data table, and the inline step number. */
 table.data td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:var(--fs-base)}
 .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--amber);font-weight:700;margin-right:var(--space-3)}
+
+/* FIGURE — diagrams/images: left-aligned (no UA 40px indent), vertical rhythm, dim caption */
+figure{margin:var(--space-9) 0}
+figure svg,figure img{display:block;max-width:100%;height:auto}
+figcaption{margin-top:var(--space-5);font-size:var(--fs-sm2);color:var(--ink-dim);line-height:1.55}
+figcaption b{color:var(--ink);font-weight:600}
 
 /* ---- 31. RESPONSIVE / MOTION ---- */
 @media (max-width:560px){.sec-head .tag{display:none}}
