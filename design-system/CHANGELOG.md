@@ -61,6 +61,11 @@ mostly recolouring and spacing.
   key-value legend cards look identical.
 - **`.gd` / `.bad`** are now colour-only (`font-weight` 400, was 500) — the colour carries
   the positive/negative meaning without bolding the text.
+- **`.qn-dot`** (quick-nav dropdown bullet) now defaults to **amber** (the base rule gained
+  `background:var(--amber)`); the `.fed`/`.maroon`/`.good` variants still override when
+  explicitly applied. All existing markup variants were normalised to amber across the
+  corpus, so every "Jump to a section" dropdown is amber unless deliberately changed. This
+  also fixes previously-undefined dot variants (`eng`/`ship`/`ody`/…) that rendered invisible.
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain
