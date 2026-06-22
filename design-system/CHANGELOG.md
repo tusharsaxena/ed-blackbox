@@ -12,6 +12,12 @@ mostly recolouring and spacing.
 - **`.gd`** — semantic-good inline emphasis (green), parallel to `.acc`, for "strong /
   positive" text in prose and tables (a genuine semantic colour, so not gold). Surfaced by
   the activity-playbook migration.
+- **`.bad`** — semantic-bad inline emphasis (red), the negative counterpart to `.gd`.
+- **`.chip.good`** and **`.qn-dot.good`** — green variants completing the existing
+  chip / quick-nav-dot colour sets (amber/fed/maroon/**good**).
+- **Titled card header** on `.card`: `.c-head` (flex header row), `card h3` + right-aligned
+  `.c-eyebrow` (accent-tinted per `.ac-*`), and a `.micro` footnote — an alternative to the
+  `.ico`+`<h4>` card head. Surfaced by the system-guide migration (BGS).
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain

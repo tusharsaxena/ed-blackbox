@@ -187,6 +187,7 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .chip.amber{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
 .chip.fed{color:var(--fed-lt);border-color:rgba(79,159,214,.4)}
 .chip.maroon{color:var(--maroon-lt);border-color:rgba(177,49,64,.5);background:rgba(177,49,64,.10)}
+.chip.good{color:var(--good-lt);border-color:rgba(95,179,122,.45)}
 .chip.faint{color:var(--ink-faint)}
 
 /* ---- 9. PERMALINK ANCHOR ---- */
@@ -332,7 +333,7 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 .qn-item{display:flex;align-items:center;gap:var(--space-5);padding:7px var(--space-5);border-radius:var(--radius-md);font-family:'Saira',sans-serif;font-size:var(--fs-base);color:var(--ink-dim);text-decoration:none}
 .qn-item:hover{background:var(--panel2);color:var(--ink)}
 .qn-dot{width:7px;height:7px;border-radius:var(--radius-round);flex:none}
-.qn-dot.amber{background:var(--amber)}.qn-dot.fed{background:var(--fed)}.qn-dot.maroon{background:var(--maroon-lt)}
+.qn-dot.amber{background:var(--amber)}.qn-dot.fed{background:var(--fed)}.qn-dot.maroon{background:var(--maroon-lt)}.qn-dot.good{background:var(--good)}
 .qn-nm{flex:1}
 .qn-side{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-micro);letter-spacing:.8px;text-transform:uppercase;color:var(--ink-faint);flex:none}
 .qn-item.qn-active{background:var(--panel2);color:var(--ink)}
@@ -402,6 +403,13 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 .card h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-lg);letter-spacing:.4px;color:var(--ink);margin-bottom:var(--space-3)}
 .card p{font-size:var(--fs-body);color:var(--ink-dim);margin:var(--space-2) 0}
 .card.ac-fed{border-top-color:var(--fed)}.card.ac-maroon{border-top-color:var(--maroon-lt)}.card.ac-good{border-top-color:var(--good)}
+/* titled-card header (h3 + right-aligned eyebrow) + micro footnote — alt to .ico+h4 */
+.card .c-head{display:flex;align-items:baseline;gap:var(--space-6);flex-wrap:wrap;margin-bottom:var(--space-2)}
+.card h3{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-h3);letter-spacing:.4px;color:var(--ink);line-height:1.15}
+.card .c-eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);margin-left:auto}
+.card.ac-good .c-eyebrow{color:var(--good-lt)}.card.ac-maroon .c-eyebrow{color:var(--maroon-lt)}.card.ac-fed .c-eyebrow{color:var(--fed-lt)}
+.card .micro{font-size:var(--fs-sm2);color:var(--ink-faint);font-style:italic;margin-top:var(--space-5);border-top:1px solid var(--hair);padding-top:var(--space-5)}
+.card .micro b{color:var(--amber-lt);font-weight:600;font-style:normal}
 
 /* ---- 22. PICK / RECOMMENDATION CARDS ---- */
 .pickgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-7);margin:var(--space-8) 0}
@@ -437,6 +445,8 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
 /* semantic-good inline emphasis (green) — for "strong/positive" callouts in prose/tables.
    A genuine semantic colour (good vs weak), not decorative — hence not gold. */
 .gd{color:var(--good-lt);font-weight:500}
+/* semantic-bad inline emphasis (red) — the negative counterpart to .gd. */
+.bad{color:var(--danger);font-weight:500}
 
 /* ---- 27. LOCATION / COORDINATE READOUT ---- */
 .loc-card{border:1px solid var(--hair-strong);border-radius:var(--radius-lg);background:linear-gradient(180deg,var(--panel),var(--bg2));padding:var(--space-3) var(--space-9);margin-top:var(--space-9)}
