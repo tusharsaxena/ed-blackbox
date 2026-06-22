@@ -61,9 +61,8 @@
 
 <div class="wrap">
 <header class="masthead">
-  <div class="kicker">Pilot's Field Manual · Cockpit Systems</div>
-  <h1 class="title">HUD <span>Customization</span></h1>
-  <p class="subtitle">Everything about the orange glow you stare at for hundreds of hours — what the HUD actually is, what you can re-colour, the colour-matrix maths behind it, the exact file to edit, a rack of tested presets, and the tools (from one-click web editors to the EDHM shader mod) that do the work for you. PC / Odyssey focus.</p>
+  <div class="kicker">Cockpit Systems</div>
+  <h1 class="title"><span>HUD</span> Customization <span class="role">Interface Guide</span></h1>
   <div class="masthead-meta">
     <span>Platform <b>PC · Odyssey 4.x</b></span>
     <span>Sources <b>NEWP · Arkku · EDHM · ED Wiki · FDev Forums</b></span>
@@ -73,17 +72,16 @@
 </header>
 
 <div class="verdict">
-  <div class="v-eyebrow">Field Briefing</div>
-  <h2>It's a <em>nine-number text file</em>, not a settings screen.</h2>
-  <p>Elite has no in-game HUD colour option. Instead, every pixel of the ship HUD is pushed through a 3&times;3 colour-transform matrix defined in a plain XML file. Edit nine numbers and the whole interface re-tints — for free, client-side, and with Frontier's blessing. The catch: the matrix is global, so it recolours friend/foe markers, shields, warnings and even commander portraits along with the pretty bits. This manual covers the maths, the exact procedure, a set of copy-paste presets, and the modern shader mod (EDHM) that breaks past the matrix's limits to recolour elements individually.</p>
-</div>
-
-<div class="stat-grid">
-  <div class="stat"><div class="n">1</div><div class="l">File to edit</div></div>
-  <div class="stat"><div class="n">9</div><div class="l">Matrix values (3&times;3)</div></div>
-  <div class="stat"><div class="n good">0 CR</div><div class="l">Cost &amp; no game files touched</div></div>
-  <div class="stat"><div class="n fed">~2 min</div><div class="l">Basic setup time</div></div>
-  <div class="stat"><div class="n mar">Global</div><div class="l">XML recolours everything at once</div></div>
+  <div class="v-eyebrow">Briefing</div>
+  <h2>It's a <em>nine-number</em> text file, not a settings screen.</h2>
+  <p>Elite has no in-game HUD colour option. Every pixel of the ship HUD is pushed through a 3&times;3 colour-transform matrix defined in a plain XML file. Edit nine numbers and the whole interface re-tints — free, client-side, and FDev-sanctioned. The matrix is global: it recolours friend/foe markers, shields, warnings and commander portraits alongside the decorative elements. For per-element control and cabin lighting, the EDHM shader mod goes further.</p>
+  <div class="stat-grid">
+    <div class="stat"><div class="n">1</div><div class="l">File to edit</div></div>
+    <div class="stat"><div class="n">9</div><div class="l">Matrix values (3&times;3)</div></div>
+    <div class="stat"><div class="n">0 CR</div><div class="l">Cost — no game files modified</div></div>
+    <div class="stat"><div class="n">~2 min</div><div class="l">Basic setup time</div></div>
+    <div class="stat"><div class="n">Global</div><div class="l">XML recolours everything at once</div></div>
+  </div>
 </div>
 
 <!-- 01 -->
