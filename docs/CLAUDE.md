@@ -65,8 +65,10 @@ docs/              project docs (this file, architecture, todo)
    `design-system/docs/AGENTS.md` and its pre-ship checklist.
 2. Fix the CSS/JS link paths to point at `design-system/css|js/ed-blackbox.*`.
 3. Set the page's accent group (5 tokens) for its domain; leave the rest locked.
-4. Fill masthead → numbered sections → footer. Reuse catalogued components only
-   (`component-gallery.html` is the copy-paste reference). Keep one `<h1>` with one
+4. Fill masthead → a **BRIEFING** (`.verdict`) block → numbered sections → footer. Reuse
+   catalogued components only (`component-gallery.html` is the copy-paste reference). The
+   masthead is kicker + `h1.title` (one amber `<span>` word + a `<span class="role">` tag)
+   + `.masthead-meta`, then the briefing box (no `.subtitle`/`.chips`). Keep one `<h1>` with one
    maroon `<span>` word.
 5. Verify facts (rule 1); add it as a `card …` line in
    `scripts/generate-guides-index.sh` and re-run so it appears on the landing page.
@@ -88,9 +90,9 @@ bash scripts/generate-anchor-files.sh   # rewrites all *-anchors.md; prints coun
 ```
 **Re-run whenever you add/remove/rename a `<section id>`, or add/rename/remove a guide.**
 The script only touches files carrying its generated marker, so the hand-curated
-`blueprints-anchors.md` / `engineers-anchors.md` are safe (edit those by hand). Pages
-with no sectioned nav (the `farms/` pages, `pve-combat-venues.html`) get no file. Docs:
-`scripts/generate-anchor-files.md`.
+`blueprints-anchors.md` / `engineers-anchors.md` are safe (edit those by hand). Every
+guide now carries a section-anchored catalog (**107 generated + 2 curated** = 109); only
+those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md`.
 
 ### Edit an existing (legacy) guide
 - It's a self-contained HTML file with inline CSS. Match its existing structure and

@@ -76,7 +76,7 @@ Legend: ✅ done · ☐ not done.
 ## Phase 4 — Editorial polish
 
 - ☐ Add ship photos to ship manuals + manufacturer logos
-- ☐ Remove fleet bias from content *(powerplay.html de-biased to role/ethos-agnostic; remaining pages pending)*
+- ☐ Remove fleet bias from content *(systems pages largely de-biased — powerplay, superpower-rank, community-goals, fleet-carrier, system-colonization, pve-combat-venues; combat-zones plus the ship dossiers / by-role / activities pages still reference the personal fleet (KA-05 ship tags) — ~49 pages pending)*
 - ☐ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
 - ☐ Regenerate the index page

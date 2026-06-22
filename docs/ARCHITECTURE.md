@@ -96,6 +96,14 @@ tokens  →  components  →  templates  →  pages
   `nav.quicknav` bar was retired. The masthead-meta carries a **last-updated** date (no
   sources/patch line); per-page sources move to a `.credits` section (the last numbered
   section, above the footer); the footer is brand + author + part (no "Next:" pointer).
+- **Standard above-the-fold (briefing pass).** Every migrated page now opens with a
+  unified masthead — kicker, an `h1.title` with one amber `<span>` word plus a
+  `<span class="role">` tag, then `.masthead-meta` — immediately followed by a **BRIEFING**
+  (`.verdict`) box: a one-line verdict, a short brief, and the page's headline numbers as a
+  `.stat-grid`. The old per-page `.subtitle`/`.chips` were folded into it, and the verdict
+  box chrome is hardcoded **amber** (independent of the page's accent group). Ship dossiers
+  carry their **0–100 suitability rating as the first stat card** with a `.bar.mini` bar — the
+  earlier `.ratebox`/`.dial` rating dial has been retired (the classes remain defined but unused).
 - **`templates/`** — `starter-page.html` (scaffold for a new page) and
   `component-gallery.html` (live copy-paste reference for every component); both include
   the header + breadcrumb + credits markup.
@@ -127,8 +135,9 @@ guides/
 
 **File census:** ~358 files — 112 HTML (108 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), 113 images (46 ship `.jpg`, 38 engineer
-`.webp`, 29 logo `.png`), 127 Markdown (18 prose docs + **109 generated per-page
-`*-anchors.md` catalogs**, see §4/§6), 1 CSS, 1 JS, 1 TSV (`scripts/ship-names.tsv`).
+`.webp`, 29 logo `.png`), 127 Markdown (18 prose docs + **109 per-page `*-anchors.md`
+catalogs** — 107 generated + 2 curated, see §4/§6), 1 site CSS, 1 site JS, plus the
+`scripts/` tooling (4 `.sh` + 7 `.mjs`) and 1 TSV (`scripts/ship-names.tsv`).
 
 **Engineering** (`guides/engineering/`, 7 pages):
 
@@ -146,7 +155,7 @@ palette closest to the design system.
 
 **Ships** (`guides/ships/`, 84 pages) — the core data structure, a **ship × role matrix**:
 a sparse grid of (ship, role) pairs spanning **48 ships**. Each populated cell is one
-dossier `dossiers/<ship>-<role>.html` (rating dial + spec grid + loadout tables); the
+dossier `dossiers/<ship>-<role>.html` (briefing rating bar + spec grid + loadout tables); the
 `by-role/` ladders ("best ship for role X"). The separate top-level `guides/activities/`
 how-tos (per-role accents: combat=crimson, mining=purple, exploration=teal,
 passenger=blue, trading=green, AX=lime) and the generated landing page are other
@@ -202,6 +211,14 @@ The first step toward "content-as-data". Convention: every task script lives in
   only ever touches files carrying its own generated marker, so hand-authored catalogs
   are safe. Re-run after adding/removing/renaming a guide or any `<section id>`. Baseline:
   107 generated + 2 curated.
+
+Beyond the two generators, `scripts/` also holds the **migration verification harness**
+(`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
+gate, `baseline-capture.sh`) and several **one-off content-migration scripts**
+(`fix-step-tuples`, `trim-svg`, `restructure-app-cards`, `classify-card-groups`,
+`convert-dossier-rating-cards`). The harness `.mjs` use Playwright (the repo's only
+dependency, a dev tool — there is still no build step). All are catalogued in
+`scripts/README.md`.
 
 **Future direction (planned, `TODO.md` Phase 2):** extract page content into per-page
 Markdown (`Page_Data.md`) and build generators that assemble full pages from Markdown +
