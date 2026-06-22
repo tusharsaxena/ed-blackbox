@@ -192,7 +192,7 @@
   <ul class="bullets">
     <li><b>Values aren't capped at 0&ndash;1.</b> You can use values above 1 to boost intensity and <b>negative values</b> to subtract a channel — many sharp presets use numbers like <code>1.75</code> or <code>-1</code> to push saturation or carve out a hue. (Some old reports note negatives behaved oddly in early Horizons; they work in current builds.)</li>
     <li><b>Keep warnings legible.</b> The danger reds and info blues run through the same matrix. The clever "purple HUD that keeps red warnings" presets work by leaving a small amount of red in <code>MatrixRed</code> rather than zeroing it.</li>
-    <li><b>This is why web editors exist</b> — eyeballing nine numbers against a live preview beats blind trial-and-error. See §07.</li>
+    <li><b>This is why web editors exist</b> — eyeballing nine numbers against a live preview beats blind trial-and-error (the NEWP / Arkku editors below).</li>
   </ul>
 </section>
 
@@ -205,8 +205,8 @@
     <li><span class="st">Close Elite Dangerous</span> entirely. The file is read at launch.</li>
     <li><span class="st">Find the file.</span> On Windows it lives at:
       <div class="codebox">
-        <div class="cb-head"><span class="dot"></span>File location · Windows<span class="path">GraphicsConfigurationOverride.xml</span></div>
-<pre>%LOCALAPPDATA%\Frontier Developments\Elite Dangerous\Options\Graphics\</pre>
+        <div class="cb-head"><span class="dot"></span>File location · Windows</div>
+<pre>%LOCALAPPDATA%\Frontier Developments\Elite Dangerous\Options\Graphics\GraphicsConfigurationOverride.xml</pre>
       </div>
       <span class="muted">Paste that path (including <code>%LOCALAPPDATA%</code>) into the Explorer address bar. If your Windows profile is relocated to another drive, it resolves under that profile's <code>AppData\Local</code> instead of <code>C:</code>. macOS: <code>~/Library/Application Support/Frontier Developments/…/Options/Graphics</code>.</span>
     </li>
@@ -238,7 +238,7 @@
 <!-- 06 -->
 <section id="presets">
   <div class="sec-head"><span class="sec-num">06</span><h2>Presets &amp; starter values</h2><span class="tag">Hands-on</span></div>
-  <p class="lead">Copy-paste starting points, drawn from long-running community preset collections. Treat the swatches as approximate — the exact result depends on the source palette, so <b>preview in a web editor (§07) before committing</b>. Each row is the three matrix lines in <code>R / G / B</code> order.</p>
+  <p class="lead">Copy-paste starting points, drawn from long-running community preset collections. Treat the swatches as approximate — the exact result depends on the source palette, so <b>preview in a web editor before committing</b>. Each row is the three matrix lines in <code>R / G / B</code> order.</p>
 
   <div class="tbl-scroll">
     <table class="data">

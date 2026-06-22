@@ -27,6 +27,14 @@ mostly recolouring and spacing.
   emphasis set (`.acc` gold / `.gd` green / `.bad` red / `.bl` blue).
 - **Diagram-SVG spec:** a figure SVG's `viewBox` should hug its content (≤~5px margin all
   edges); `scripts/trim-svg.mjs` enforces it. Documented in `docs/07-imagery-icons.md`.
+- **Code / config block** (`.codebox` > `.cb-head` [`.dot` + label + `.path`] + `<pre>`) with
+  syntax tints `.tag` (markup/fed) · `.val` (values/green) · `.cm` (comments/faint) · `.str`,
+  plus inline `<code>` and `.mono`. Surfaced by the HUD-customization guide.
+- **Colour-matrix grid** (`.mx-wrap`/`.mx`/`.mx-t`/`.collbl`/`.rowlbl.r|g|b`/`.v0`/`.v1`/`.mx-cap`)
+  for displaying a small labelled numeric matrix with R/G/B-coded row labels.
+- **`.swatch`** now `display:inline-block` (+ small right margin) so colour swatches render
+  inline in table cells / prose, not only inside flex legends — used for per-preset result
+  colour previews.
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain
