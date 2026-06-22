@@ -3,222 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Manual — Federal Corvette · Combat</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#e0463c;
-    --acc-lt:#ff6f64;
-    --acc-deep:#7d1e1a;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
-  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
-    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
-  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
-  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
-  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
-  .ratebox .rl{flex:1;min-width:240px}
-  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
-  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:46px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .star{color:var(--amber-lt)}
-
-  /* 3-state loadout table */
-  .l3 td{font-size:13.5px;padding:8px 10px}
-  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
-  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
-    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
-  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
-  .l3 td.eng{color:var(--ink)}
-  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
-  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-
-  table.cmp{table-layout:fixed}
-  td.pcc{font-size:12.5px;line-height:1.45}
-  td.pcc span{display:block;margin:1px 0}
-  td.pcc .p{color:var(--good)}
-  td.pcc .c{color:var(--acc-lt)}
-  td.pcc .p::before{content:"+ ";font-weight:700}
-  td.pcc .c::before{content:"\2212 ";font-weight:700}
-  td.pcc .base{color:var(--ink-faint);font-style:italic}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
-  }
-</style>
+<title>Federal Corvette &middot; Combat | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<style>:root{--accent:var(--maroon-lt);--accent-lt:var(--maroon-lt);--accent-deep:var(--maroon);
+  --accent-soft:rgba(177,49,64,.4);--accent-glow:rgba(177,49,64,.10);}</style>
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers" class="active">Ships</a>
+      <a href="../../index.html#engineering">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#dossiers">Ships</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Federal Corvette · Combat</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Core Dynamics</div>
-    <h1>Federal Corvette<span class="role">Combat</span></h1>
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Core Dynamics</div>
+    <h1 class="title"><span>Federal Corvette</span><span class="role">Combat</span></h1>
     <p class="lede">The combat apex. The Federal Corvette pairs <b>two huge hardpoints, eight total mounts and the best agility of any capital ship</b> with battleship armour, two military slots and a fighter bay &mdash; the most lethal warship in Elite Dangerous, and the reward at the top of the Federal Navy. Nothing out-fights it.</p>
 
     <div class="chips">
-      <div class="chip"><span>Class</span><b>Large &middot; Pad L</b></div>
-      <div class="chip"><span>Hardpoints</span><b>2H &middot; 1L &middot; 2M &middot; 2S</b></div>
-      <div class="chip"><span>Military</span><b>2 slots</b></div>
-      <div class="chip"><span>Hull</span><b>~183M Cr</b></div>
-      <div class="chip"><span>Role</span><b>Combat</b></div>
-      </div>
+      <span class="chip kv"><span>Class</span><b>Large &middot; Pad L</b></span>
+      <span class="chip kv"><span>Hardpoints</span><b>2H &middot; 1L &middot; 2M &middot; 2S</b></span>
+      <span class="chip kv"><span>Military</span><b>2 slots</b></span>
+      <span class="chip kv"><span>Hull</span><b>~183M Cr</b></span>
+      <span class="chip kv"><span>Role</span><b>Combat</b></span>
+    </div>
 
-    <div class="ratebox">
-      <div class="dial" style="--v:98"><div class="num">98<small>/100</small></div></div>
-      <div class="rl">
-        <div class="t">Combat Suitability Rating</div>
-        <div class="d">The best pure combat ship in the game. Two huge hardpoints, eight mounts, capital armour and &mdash; uniquely &mdash; agility that lets a 900-tonne warship turn like a far smaller ship. It tops the combat rankings outright; its only costs are the long Federal rank grind and the large pad.</div>
-      </div>
+    <div class="masthead-meta">
+      <span>Ship &times; Role Dossier</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 Overview</a>
-    <a href="#s2">02 Why it fits</a>
-    <a href="#s3">03 Comparison</a>
-    <a href="#s4">04 Cost &amp; access</a>
-    <a href="#s5">05 ARX pre-built</a>
-    <a href="#s6">06 3-state loadout</a>
-    <a href="#s7">07 Initial plan</a>
-    <a href="#s8">08 A-rated plan</a>
-    <a href="#s9">09 Engineering</a>
-    <a href="#s10">10 Stat ladder</a>
-    <a href="#s11">11 Activities</a>
-    <a href="#s12">12 Field notes</a>
-  </nav>
+  <div class="ratebox">
+    <div class="dial" style="--v:98"><div class="num">98<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Combat Suitability Rating</div>
+      <div class="d">The best pure combat ship in the game. Two huge hardpoints, eight mounts, capital armour and &mdash; uniquely &mdash; agility that lets a 900-tonne warship turn like a far smaller ship. It tops the combat rankings outright; its only costs are the long Federal rank grind and the large pad.</div>
+    </div>
+  </div>
 
   <!-- s1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
     <p>The Federal Corvette is Core Dynamics' masterpiece and the undisputed king of combat. Two huge hardpoints &mdash; a count no other ship in the game can field &mdash; anchor an eight-mount battery, backed by a 666 base armour hull, two military slots, eleven optional internals, eight utilities and a ship-launched-fighter bay. It is a battleship that hits harder than anything else flying.</p>
     <p>What sets it apart from the other capitals is agility. For a 900-tonne warship the Corvette turns astonishingly well, letting it hold its huge guns on target the way a much smaller ship would. The Imperial Cutter out-shields it and the Anaconda is more flexible, but for the single job of destroying other ships, nothing matches the Corvette. The catch is the climb: it sits at the very top of the Federal Navy rank ladder.</p>
-    <div class="callout amber"><span class="lbl">Where this hull shines</span>Elite combat at every scale: the toughest conflict zones, Hazardous RES, pirate massacres, Thargoid AX, PvP and wing fights. Anywhere the goal is simply to out-gun and destroy, the Corvette is the answer.</div>
+    <div class="callout warn"><span class="lbl">Where this hull shines</span><p>Elite combat at every scale: the toughest conflict zones, Hazardous RES, pirate massacres, Thargoid AX, PvP and wing fights. Anywhere the goal is simply to out-gun and destroy, the Corvette is the answer.</p></div>
   </section>
 
   <!-- s2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Top speed / boost</div><div class="v">198 / 257 <small>m/s</small></div></div>
       <div class="cell"><div class="k">Hardpoints</div><div class="v">2 Huge &middot; 1 Large &middot; 2 Medium &middot; 2 Small</div></div>
@@ -231,52 +118,56 @@
       <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;7&middot;7&middot;6&middot;6&middot;5&middot;5&middot;4&middot;4&middot;3&middot;1</div></div>
       <div class="cell"><div class="k">Military slots</div><div class="v">2 <small>(class 5)</small></div></div>
       <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF)</small> &middot; 4 crew</div></div>
-      </div>
+    </div>
     <p>Four things make the Corvette the combat apex:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>Two huge hardpoints.</b> Unique in the game &mdash; a pair of huge mounts plus four more guns delivers alpha and sustained DPS no other ship can equal.</li>
       <li><b>Capital agility.</b> It turns far better than any other large warship, keeping its huge guns on target like a medium &mdash; the single biggest reason it tops the rankings.</li>
       <li><b>Battleship tank with military slots.</b> 666 armour, ~516 MJ shields, two military slots and deep optionals make it as hard to kill as it is to survive.</li>
       <li><b>Eight utilities and an SLF bay.</b> A full defensive utility suite plus a launched fighter make it a one-ship battlefleet.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>The costs are access and scale, not capability. It demands Federal Rear Admiral &mdash; one of the longest rank grinds in the game &mdash; needs a large pad, costs ~183M Cr before outfitting, and is expensive to engineer fully. The Cutter out-shields it and the Anaconda needs no rank. But for pure combat, the Corvette has no superior; the only question is whether you'll do the grind.</div>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The costs are access and scale, not capability. It demands Federal Rear Admiral &mdash; one of the longest rank grinds in the game &mdash; needs a large pad, costs ~183M Cr before outfitting, and is expensive to engineer fully. The Cutter out-shields it and the Anaconda needs no rank. But for pure combat, the Corvette has no superior; the only question is whether you'll do the grind.</p></div>
   </section>
 
   <!-- s3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
     <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
     <p class="subhd">Same class &mdash; large-pad combat ships</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Federal Corvette</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Federal Corvette <span class="tag r">this</span></td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Highest shields in the game; fast for a large ship</span><span class="c">Imperial Duke rank; far worse agility</span></td><td><span class="rscore">91</span><div class="bar"><i style="width:91%"></i></div></td></tr>
-        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; no rank gate</span><span class="c">Ponderous; one fewer huge mount</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>2L 2M</td><td class="pcc"><span class="p">Fastest large ship; agile</span><span class="c">Only four mounts; far less tank</span></td><td><span class="rscore">79</span><div class="bar"><i style="width:79%"></i></div></td></tr>
-        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">Highest armour in the game; superb AX turret tank</span><span class="c">Very slow; feeble shields; no huge mount</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette <span class="pill md">this</span></td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Highest shields in the game; fast for a large ship</span><span class="c">Imperial Duke rank; far worse agility</span></td><td><span class="rscore">91</span><div class="bar mini"><i style="--pct:91"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; no rank gate</span><span class="c">Ponderous; one fewer huge mount</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>2L 2M</td><td class="pcc"><span class="p">Fastest large ship; agile</span><span class="c">Only four mounts; far less tank</span></td><td><span class="rscore">79</span><div class="bar mini"><i style="--pct:79"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">Highest armour in the game; superb AX turret tank</span><span class="c">Very slow; feeble shields; no huge mount</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The Corvette tops the large combat class and the whole game. The Cutter is the shield-tank alternative and the Anaconda the rank-free one, but neither out-fights the Corvette &mdash; two huge hardpoints and capital agility make it the definitive warship.</p>
     <p class="subhd">Other classes &mdash; the best mediums</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Federal Corvette</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Elite duelling agility; medium pad; no rank</span><span class="c">Far less firepower, tank and scale</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
-        <tr><td class="mod">Python Mk II</td><td>Medium</td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; medium pad; no rank</span><span class="c">No huge mount; far less tank</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
-        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; agile; medium pad; no rank</span><span class="c">Far less firepower and tank</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
-        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Agile tank; cheap; no rank</span><span class="c">A fraction of the Corvette's capability</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
-        <tr><td class="mod">Mamba</td><td>Medium</td><td>1H 2L 2S</td><td class="pcc"><span class="p">Fast alpha striker; medium pad; no rank</span><span class="c">Fragile; far less tank</span></td><td><span class="rscore">89</span><div class="bar"><i style="width:89%"></i></div></td></tr>
+        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Elite duelling agility; medium pad; no rank</span><span class="c">Far less firepower, tank and scale</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod">Python Mk II</td><td>Medium</td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; medium pad; no rank</span><span class="c">No huge mount; far less tank</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; agile; medium pad; no rank</span><span class="c">Far less firepower and tank</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Agile tank; cheap; no rank</span><span class="c">A fraction of the Corvette's capability</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Mamba</td><td>Medium</td><td>1H 2L 2S</td><td class="pcc"><span class="p">Fast alpha striker; medium pad; no rank</span><span class="c">Fragile; far less tank</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The top mediums offer agility, medium-pad access and no rank grind, and a skilled pilot can do almost anything in them. But none brings two huge hardpoints, capital armour and an SLF to bear. The Corvette is what you fly when you've earned the right and want the most lethal ship in the game.</p>
   </section>
 
   <!-- s4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Hull</div><div class="v">~183M Cr</div></div>
       <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~210M Cr</div></div>
@@ -284,22 +175,23 @@
       <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">Fed. Rear Admiral</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>At ~183M Cr the Corvette is one of the most expensive hulls in the game, and it sits behind the Federal Rear Admiral rank &mdash; a long grind from the Dropship through the FAS and Gunship. A fully engineered combat fit pushes the all-in figure past 260M Cr.</p>
     <p>It's the capstone of a Federal combat career: you earn it by fighting your way up the navy, and once owned it's the ship you keep for the hardest combat the galaxy offers.</p>
-    <div class="callout amber"><span class="lbl">The Federal capstone</span>The Corvette is the reward at the top of the Federal Navy &mdash; Rear Admiral rank, earned by fighting up the Dropship&rarr;FAS&rarr;Gunship ladder. The grind is the price of the best warship in the game.</div>
+    <div class="callout warn"><span class="lbl">The Federal capstone</span><p>The Corvette is the reward at the top of the Federal Navy &mdash; Rear Admiral rank, earned by fighting up the Dropship&rarr;FAS&rarr;Gunship ladder. The grind is the price of the best warship in the game.</p></div>
   </section>
 
   <!-- s5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
     <p>There is no combat-specific ARX pre-built built around the Federal Corvette; buy and outfit it normally once you hold Rear Admiral rank.</p>
   </section>
 
   <!-- s6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
     <p>An apex combat fit: two huge main guns, deep shields and reinforcement, eight utilities and an SLF bay. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern at battleship scale.</p>
+    <div class="tbl-scroll">
     <table class="l3">
       <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
       <tbody>
@@ -345,12 +237,13 @@
         <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">Heat Sink storage</td></tr>
       </tbody>
     </table>
-    <div class="callout acc"><span class="lbl">Two huge guns define it</span>The Corvette's identity is its pair of huge hardpoints &mdash; huge multi-cannons (one Corrosive) or plasma accelerators deliver alpha nothing else can. Build the rest of the ship to keep those two guns firing and on target.</div>
+    </div>
+    <div class="callout"><span class="lbl">Two huge guns define it</span><p>The Corvette's identity is its pair of huge hardpoints &mdash; huge multi-cannons (one Corrosive) or plasma accelerators deliver alpha nothing else can. Build the rest of the ship to keep those two guns firing and on target.</p></div>
   </section>
 
   <!-- s7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
     <p>Earn Rear Admiral, buy the hull, fit the largest shield a class-7 bay allows plus hull reinforcement &mdash; even basic, it's a fortress.</p>
     <p>Arm the two huge mounts with gimballed multi-cannons and add beams for shield-stripping.</p>
     <p>Add the fighter bay and a full booster suite; the Corvette fields everything at once.</p>
@@ -358,23 +251,24 @@
 
   <!-- s8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
     <p>A-rating priority for the apex warship:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; Two huge guns plus six more and boost demand the class-8 distributor first. <span class="acc">~22M Cr</span></li>
       <li><span class="stepnum">2</span><b>Power Plant &rarr; A</b> &mdash; Power for eight guns, a big shield, cells, SLF and eight utilities. <span class="acc">~28M Cr</span></li>
       <li><span class="stepnum">3</span><b>Thrusters &rarr; A</b> &mdash; Preserve the capital agility that makes the Corvette the apex. <span class="acc">~22M Cr</span></li>
       <li><span class="stepnum">4</span><b>Shield Generator &rarr; bi-weave / prismatic</b> &mdash; A capital-scale shield is the first tank layer. <span class="acc">~18M Cr</span></li>
       <li><span class="stepnum">5</span><b>FSD &rarr; A</b> &mdash; Move a 900t warship between fights and turn-ins. <span class="acc">~18M Cr</span></li>
     </ul>
-    <div class="callout amber"><span class="lbl">Thrusters are the secret</span>The Corvette's edge over other capitals is agility &mdash; A-rate and engineer thrusters so a 900-tonne hull keeps turning like a far smaller ship and holds its huge guns on target.</div>
+    <div class="callout warn"><span class="lbl">Thrusters are the secret</span><p>The Corvette's edge over other capitals is agility &mdash; A-rate and engineer thrusters so a 900-tonne hull keeps turning like a far smaller ship and holds its huge guns on target.</p></div>
   </section>
 
   <!-- s9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
     <p>The full house combat pattern at apex scale. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
       <tbody>
         <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
@@ -387,21 +281,23 @@
         <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="subhd">Recommended order</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; two huge guns plus six more and a fighter are immensely power-hungry.</li>
       <li><span class="stepnum">2</span>Thrusters to G5 to keep the capital agility that defines the ship.</li>
       <li><span class="stepnum">3</span>Shield Resistance-Augmented plus Heavy-Duty boosters; Heavy-Duty reinforcement in the military slots and optionals.</li>
       <li><span class="stepnum">4</span>Weapons last: Overcharged huge multi-cannons with one Corrosive, Thermal-Vent beams.</li>
     </ul>
-    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Heavy &mdash; G5 across class-8 cores, eight weapons (including two huge) and a deep capital defensive suite; among the largest material spends in the fleet. With a complete inventory it's spend, not farm. Ask for exact per-blueprint counts to verify reserves before committing.</div>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Heavy &mdash; G5 across class-8 cores, eight weapons (including two huge) and a deep capital defensive suite; among the largest material spends in the fleet. With a complete inventory it's spend, not farm. Ask for exact per-blueprint counts to verify reserves before committing.</p></div>
   </section>
 
   <!-- s10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
     <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
       <tbody>
         <tr><td class="mod">Top speed (boost)</td><td>257 m/s</td><td>257 m/s</td><td class="acc">~320 m/s</td></tr>
@@ -411,56 +307,43 @@
         <tr><td class="mod">Agility</td><td>good (for capital)</td><td>good</td><td class="acc">excellent (for capital)</td></tr>
       </tbody>
     </table>
+    </div>
     <p>Engineered, the Corvette is the most lethal ship in the game: two huge guns plus six more delivering unmatched DPS, a 2,200 MJ shield, effective armour into the thousands, and capital agility that keeps it all on target. The grind to reach it is long &mdash; the warship at the end is worth it.</p>
   </section>
 
   <!-- s11 -->
   <section id="s11">
-    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
-    <div class="twocol">
-      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cols-2">
+      <div class="panel"><div class="subhd">Getting started</div><ul class="bullets">
       <li><b>High-intensity conflict zones.</b> The Corvette dominates the toughest CZs outright &mdash; the best combat-bond rates in the game.</li>
       <li><b>Hazardous RES.</b> It clears the highest-value bounties effortlessly while shrugging off return fire.</li>
       <li><b>Pirate massacre stacks.</b> Stack missions and clear them from the most lethal platform available.</li>
     </ul></div>
-      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <div class="panel"><div class="subhd">Advanced</div><ul class="bullets">
       <li><b>Thargoid AX combat.</b> With AX/Guardian weapons and its huge mounts, eight utilities and capital tank, the Corvette is a premier anti-Thargoid warship.</li>
       <li><b>PvP and CG combat.</b> Two huge hardpoints and capital agility make it a feared player-combat and community-goal hull.</li>
       <li><b>Wing flagship.</b> As the apex warship with an SLF and full utility suite, it anchors and dominates any wing engagement.</li>
     </ul></div>
     </div>
-    <div class="callout acc"><span class="lbl">Generic example systems</span>Any high-intensity CZ or Haz RES suits it; for AX, head to Thargoid-active systems. As the Federal capstone it's the endgame combat flagship your Dropship&rarr;FAS&rarr;Gunship grind builds toward.</div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any high-intensity CZ or Haz RES suits it; for AX, head to Thargoid-active systems. As the Federal capstone it's the endgame combat flagship your Dropship&rarr;FAS&rarr;Gunship grind builds toward.</p></div>
   </section>
 
   <!-- s12 -->
   <section id="s12">
-    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
       <li>Thrusters first, always &mdash; the Corvette's edge is agility no other capital has; protect it.</li>
       <li>The two huge mounts are the ship &mdash; build everything else to keep them firing and on target.</li>
       <li>Fill both military slots and the deep optionals with reinforcement; layer shield and hull tanks together.</li>
       <li>Fully engineering it is a major credit and material commitment &mdash; prioritise distributor, plant, thrusters, shield and the huge guns.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Verdict</span>The Federal Corvette is the most lethal ship in Elite Dangerous: two huge hardpoints, eight mounts, battleship armour and &mdash; uniquely &mdash; capital agility that keeps it all on target. The Cutter out-shields it and the Anaconda needs no rank, but nothing out-fights it. Earn the Rear Admiral rank, and the best warship in the game is yours.</div>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Federal Corvette is the most lethal ship in Elite Dangerous: two huge hardpoints, eight mounts, battleship armour and &mdash; uniquely &mdash; capital agility that keeps it all on target. The Cutter out-shields it and the Anaconda needs no rank, but nothing out-fights it. Earn the Rear Admiral rank, and the best warship in the game is yours.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/federal_corvette">coriolis.io/outfit/federal_corvette</a></div>
@@ -472,9 +355,13 @@
   </section>
 
   <footer>
-    <p><b>Federal Corvette &middot; Combat</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Federal Corvette &middot; Combat dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Ship &times; Role Dossier</span>
   </footer>
 
 </div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

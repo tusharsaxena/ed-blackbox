@@ -3,222 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Manual — Eagle Mk II · Combat</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#e0463c;
-    --acc-lt:#ff6f64;
-    --acc-deep:#7d1e1a;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
-  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
-    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
-  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
-  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
-  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
-  .ratebox .rl{flex:1;min-width:240px}
-  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
-  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:46px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .star{color:var(--amber-lt)}
-
-  /* 3-state loadout table */
-  .l3 td{font-size:13.5px;padding:8px 10px}
-  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
-  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
-    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
-  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
-  .l3 td.eng{color:var(--ink)}
-  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
-  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-
-  table.cmp{table-layout:fixed}
-  td.pcc{font-size:12.5px;line-height:1.45}
-  td.pcc span{display:block;margin:1px 0}
-  td.pcc .p{color:var(--good)}
-  td.pcc .c{color:var(--acc-lt)}
-  td.pcc .p::before{content:"+ ";font-weight:700}
-  td.pcc .c::before{content:"\2212 ";font-weight:700}
-  td.pcc .base{color:var(--ink-faint);font-style:italic}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
-  }
-</style>
+<title>Eagle Mk II &middot; Combat | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<style>:root{--accent:var(--maroon-lt);--accent-lt:var(--maroon-lt);--accent-deep:var(--maroon);
+  --accent-soft:rgba(177,49,64,.4);--accent-glow:rgba(177,49,64,.10);}</style>
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers" class="active">Ships</a>
+      <a href="../../index.html#engineering">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#dossiers">Ships</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Eagle Mk II · Combat</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Core Dynamics</div>
-    <h1>Eagle Mk II<span class="role">Combat</span></h1>
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Core Dynamics</div>
+    <h1 class="title"><span>Eagle Mk II</span><span class="role">Combat</span></h1>
     <p class="lede">The dogfighter. The Eagle Mk II is a <b>tiny, dirt-cheap, ferociously agile fighter</b> &mdash; three small hardpoints on the most nimble hull at its price. It turns inside almost anything and costs almost nothing, but its eggshell hull means one mistake ends the fight. Pure agility, distilled.</p>
 
     <div class="chips">
-      <div class="chip"><span>Class</span><b>Small &middot; Pad S</b></div>
-      <div class="chip"><span>Hardpoints</span><b>3S</b></div>
-      <div class="chip"><span>Utility</span><b>1</b></div>
-      <div class="chip"><span>Hull</span><b>~11k Cr</b></div>
-      <div class="chip"><span>Role</span><b>Combat</b></div>
-      </div>
+      <span class="chip kv"><span>Class</span><b>Small &middot; Pad S</b></span>
+      <span class="chip kv"><span>Hardpoints</span><b>3S</b></span>
+      <span class="chip kv"><span>Utility</span><b>1</b></span>
+      <span class="chip kv"><span>Hull</span><b>~11k Cr</b></span>
+      <span class="chip kv"><span>Role</span><b>Combat</b></span>
+    </div>
 
-    <div class="ratebox">
-      <div class="dial" style="--v:55"><div class="num">55<small>/100</small></div></div>
-      <div class="rl">
-        <div class="t">Combat Suitability Rating</div>
-        <div class="d">A specialist dogfighter defined by agility and price. Three small guns and the best turn rate in its bracket make it a joy to fly, but the thinnest defences in the class cap its rating &mdash; it's an agility teacher and budget thrill, not a durable platform.</div>
-      </div>
+    <div class="masthead-meta">
+      <span>Ship &times; Role Dossier</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 Overview</a>
-    <a href="#s2">02 Why it fits</a>
-    <a href="#s3">03 Comparison</a>
-    <a href="#s4">04 Cost &amp; access</a>
-    <a href="#s5">05 ARX pre-built</a>
-    <a href="#s6">06 3-state loadout</a>
-    <a href="#s7">07 Initial plan</a>
-    <a href="#s8">08 A-rated plan</a>
-    <a href="#s9">09 Engineering</a>
-    <a href="#s10">10 Stat ladder</a>
-    <a href="#s11">11 Activities</a>
-    <a href="#s12">12 Field notes</a>
-  </nav>
+  <div class="ratebox">
+    <div class="dial" style="--v:55"><div class="num">55<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Combat Suitability Rating</div>
+      <div class="d">A specialist dogfighter defined by agility and price. Three small guns and the best turn rate in its bracket make it a joy to fly, but the thinnest defences in the class cap its rating &mdash; it's an agility teacher and budget thrill, not a durable platform.</div>
+    </div>
+  </div>
 
   <!-- s1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
     <p>The Eagle Mk II is Core Dynamics' featherweight interceptor and the most agile production ship in its class. Three small hardpoints and a turn rate that embarrasses almost everything make it a pure dogfighter &mdash; it sits on a target's tail and never lets go. At around 11,000 credits it's also one of the cheapest ships in the game.</p>
     <p>The price of that agility is everything else. Its hull is an eggshell, its shields minimal, it has just one utility mount and one small military slot, and its three small guns deal little damage. The Eagle is unforgiving: it wins by never being hit and by out-turning opponents into the ground, but a single solid salvo can end it. It's a thrill and a superb teacher of dogfighting, but a glass dart in every sense.</p>
-    <div class="callout amber"><span class="lbl">Where this hull shines</span>Pure dogfighting practice and budget thrills: learning to turn-fight and hold position on a target, low-stakes RES, and cheap, agile fun where being un-hittable matters more than hitting hard.</div>
+    <div class="callout warn"><span class="lbl">Where this hull shines</span><p>Pure dogfighting practice and budget thrills: learning to turn-fight and hold position on a target, low-stakes RES, and cheap, agile fun where being un-hittable matters more than hitting hard.</p></div>
   </section>
 
   <!-- s2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Top speed / boost</div><div class="v">240 / 350 <small>m/s</small></div></div>
       <div class="cell"><div class="k">Hardpoints</div><div class="v">3 Small</div></div>
@@ -231,57 +118,61 @@
       <div class="cell"><div class="k">Military slots</div><div class="v">1 <small>(class 2)</small></div></div>
       <div class="cell"><div class="k">Agility</div><div class="v">Best in class</div></div>
       <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(docks anywhere)</small></div></div>
-      </div>
+    </div>
     <p>Four things define the Eagle as a combat ship:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>Best-in-class agility.</b> It out-turns almost everything &mdash; the core of its dogfighting identity, letting it stay on a target that can't follow.</li>
       <li><b>Three small hardpoints.</b> A surprising three guns for so tiny a hull &mdash; modest damage, but more mounts than many expect.</li>
       <li><b>A military slot.</b> One class-2 bay lets it harden its fragile hull a fraction &mdash; every point counts here.</li>
       <li><b>Almost free.</b> At ~11k credits with a trivial rebuy, it's the cheapest path to a dedicated dogfighter.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>It is extraordinarily fragile &mdash; the thinnest hull and shields in the class, one utility, a class-2 plant and three small guns. It can't tank a single serious salvo, deals little damage, and a moment's mistake is fatal. The Eagle's only virtue is agility; everything else is sacrificed. It's a teacher and a toy, not a platform you keep.</div>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It is extraordinarily fragile &mdash; the thinnest hull and shields in the class, one utility, a class-2 plant and three small guns. It can't tank a single serious salvo, deals little damage, and a moment's mistake is fatal. The Eagle's only virtue is agility; everything else is sacrificed. It's a teacher and a toy, not a platform you keep.</p></div>
   </section>
 
   <!-- s3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
     <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
     <p class="subhd">Same class &mdash; small-pad combat ships</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Eagle Mk II</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Vulture</td><td>Small</td><td>2L</td><td class="pcc"><span class="p">Elite agility plus two large guns and real tank</span><span class="c">Far pricier; power-starved</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>3M 2S</td><td class="pcc"><span class="p">Five guns; tough; fast</span><span class="c">Far pricier; less nimble</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>3M</td><td class="pcc"><span class="p">Far stronger shields; faster</span><span class="c">Imperial rank; paper armour too</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
-        <tr><td class="mod">Viper Mk IV</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Much tougher; more guns</span><span class="c">Less agile; pricier</span></td><td><span class="rscore">66</span><div class="bar"><i style="width:66%"></i></div></td></tr>
-        <tr><td class="mod">Viper Mk III</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Faster; more guns</span><span class="c">Less agile; pricier</span></td><td><span class="rscore">63</span><div class="bar"><i style="width:63%"></i></div></td></tr>
-        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Cool-running; tougher; four utilities</span><span class="c">Less agile; pricier</span></td><td><span class="rscore">60</span><div class="bar"><i style="width:60%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Versatile; cargo; tougher</span><span class="c">Less agile</span></td><td><span class="rscore">58</span><div class="bar"><i style="width:58%"></i></div></td></tr>
-        <tr><td class="mod">Eagle Mk II <span class="tag r">this</span></td><td>Small</td><td>3S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">55</span><div class="bar"><i style="width:55%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Eagle</td><td>Small</td><td>1M 2S</td><td class="pcc"><span class="p">Faster; one medium gun; tougher</span><span class="c">Slightly less agile</span></td><td><span class="rscore">54</span><div class="bar"><i style="width:54%"></i></div></td></tr>
-        <tr><td class="mod">Sidewinder Mk I</td><td>Small</td><td>2S</td><td class="pcc"><span class="p">Free; tougher</span><span class="c">Far less agile; fewer guns</span></td><td><span class="rscore">40</span><div class="bar"><i style="width:40%"></i></div></td></tr>
+        <tr><td class="mod">Vulture</td><td>Small</td><td>2L</td><td class="pcc"><span class="p">Elite agility plus two large guns and real tank</span><span class="c">Far pricier; power-starved</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>3M 2S</td><td class="pcc"><span class="p">Five guns; tough; fast</span><span class="c">Far pricier; less nimble</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>3M</td><td class="pcc"><span class="p">Far stronger shields; faster</span><span class="c">Imperial rank; paper armour too</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Viper Mk IV</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Much tougher; more guns</span><span class="c">Less agile; pricier</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+        <tr><td class="mod">Viper Mk III</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Faster; more guns</span><span class="c">Less agile; pricier</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Cool-running; tougher; four utilities</span><span class="c">Less agile; pricier</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Versatile; cargo; tougher</span><span class="c">Less agile</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+        <tr><td class="mod">Eagle Mk II <span class="pill md">this</span></td><td>Small</td><td>3S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">55</span><div class="bar mini"><i style="--pct:55"></i></div></td></tr>
+        <tr><td class="mod">Imperial Eagle</td><td>Small</td><td>1M 2S</td><td class="pcc"><span class="p">Faster; one medium gun; tougher</span><span class="c">Slightly less agile</span></td><td><span class="rscore">54</span><div class="bar mini"><i style="--pct:54"></i></div></td></tr>
+        <tr><td class="mod">Sidewinder Mk I</td><td>Small</td><td>2S</td><td class="pcc"><span class="p">Free; tougher</span><span class="c">Far less agile; fewer guns</span></td><td><span class="rscore">40</span><div class="bar mini"><i style="--pct:40"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The Eagle is the agility extremist of the small class. Everything pricier out-fights it on tank and firepower, but nothing out-turns it. Buy it to learn dogfighting and for cheap, nimble fun &mdash; not to win durable fights.</p>
     <p class="subhd">Other classes &mdash; the agile step-up</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Eagle Mk II</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Vulture</td><td>Small</td><td>2L</td><td class="pcc"><span class="p">Keeps the agility, adds two large guns and tank</span><span class="c">Far pricier; power-starved</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
-        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Agile duelling king with a huge gun</span><span class="c">Medium pad; vastly pricier</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>3M</td><td class="pcc"><span class="p">Agile, fast, shield-tank skirmisher</span><span class="c">Imperial rank; paper armour</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Eagle</td><td>Small</td><td>1M 2S</td><td class="pcc"><span class="p">The faster, slightly tougher Eagle variant</span><span class="c">Marginally less agile</span></td><td><span class="rscore">54</span><div class="bar"><i style="width:54%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>3M 2S</td><td class="pcc"><span class="p">The do-everything small upgrade</span><span class="c">Far pricier</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
+        <tr><td class="mod">Vulture</td><td>Small</td><td>2L</td><td class="pcc"><span class="p">Keeps the agility, adds two large guns and tank</span><span class="c">Far pricier; power-starved</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Agile duelling king with a huge gun</span><span class="c">Medium pad; vastly pricier</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>3M</td><td class="pcc"><span class="p">Agile, fast, shield-tank skirmisher</span><span class="c">Imperial rank; paper armour</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Imperial Eagle</td><td>Small</td><td>1M 2S</td><td class="pcc"><span class="p">The faster, slightly tougher Eagle variant</span><span class="c">Marginally less agile</span></td><td><span class="rscore">54</span><div class="bar mini"><i style="--pct:54"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>3M 2S</td><td class="pcc"><span class="p">The do-everything small upgrade</span><span class="c">Far pricier</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The Eagle teaches agility; the Vulture is the natural step-up that keeps the nimbleness while adding the firepower and tank the Eagle lacks. Master the Eagle and every more capable agile ship becomes easier to fly.</p>
   </section>
 
   <!-- s4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Hull</div><div class="v">~11k Cr</div></div>
       <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~500k Cr</div></div>
@@ -289,22 +180,23 @@
       <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>At ~11k Cr the Eagle is among the cheapest ships in the game, with no rank gate and a trivial rebuy. Even fully kitted it stays inexpensive, though engineering a hull this fragile yields limited returns.</p>
     <p>It's a pure value-and-learning pick: a near-free dogfighter to master agility in, or a cheap thrill to fly for its own sake. Few pilots keep one long, but many remember theirs fondly.</p>
-    <div class="callout amber"><span class="lbl">Almost free agility</span>Around 11,000 credits for the most agile fighter in its class &mdash; the cheapest possible way to learn to dogfight, at essentially no risk.</div>
+    <div class="callout warn"><span class="lbl">Almost free agility</span><p>Around 11,000 credits for the most agile fighter in its class &mdash; the cheapest possible way to learn to dogfight, at essentially no risk.</p></div>
   </section>
 
   <!-- s5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
     <p>There is no combat-specific ARX pre-built built around the Eagle Mk II; buy and outfit it normally through a shipyard.</p>
   </section>
 
   <!-- s6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
     <p>A pure dogfighting fit &mdash; everything bent toward staying on target and alive. Initial is buy-only; A-rated is the combat-ready baseline; Engineered maximises agility and the thin shield.</p>
+    <div class="tbl-scroll">
     <table class="l3">
       <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
       <tbody>
@@ -333,12 +225,13 @@
         <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">Shield Cell Bank 1</td></tr>
       </tbody>
     </table>
-    <div class="callout acc"><span class="lbl">Agility is the only defence</span>With an eggshell hull, one utility and a minimal shield, the Eagle survives purely by not being hit &mdash; engineer thrusters and a bi-weave, and fly to stay on the enemy's blind side. One solid salvo can end you.</div>
+    </div>
+    <div class="callout"><span class="lbl">Agility is the only defence</span><p>With an eggshell hull, one utility and a minimal shield, the Eagle survives purely by not being hit &mdash; engineer thrusters and a bi-weave, and fly to stay on the enemy's blind side. One solid salvo can end you.</p></div>
   </section>
 
   <!-- s7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
     <p>Buy the hull (~11k Cr) and fit a shield plus the single military-slot reinforcement.</p>
     <p>Arm the three smalls &mdash; multi-cannons for damage, one Corrosive once you have Tod McQuinn.</p>
     <p>Fly to learn the turn fight; stay on tails, never trade blows head-on.</p>
@@ -346,23 +239,24 @@
 
   <!-- s8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
     <p>A-rating priority for a dogfighter:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>Thrusters &rarr; A</b> &mdash; Agility is the Eagle's whole identity; A-rate first. <span class="acc">~250k Cr</span></li>
       <li><span class="stepnum">2</span><b>Power Distributor &rarr; A</b> &mdash; Sustain three guns and boost on a tiny plant. <span class="acc">~150k Cr</span></li>
       <li><span class="stepnum">3</span><b>Power Plant &rarr; A</b> &mdash; Headroom for guns, shield and the booster. <span class="acc">~150k Cr</span></li>
       <li><span class="stepnum">4</span><b>Shield Generator &rarr; bi-weave</b> &mdash; The thin shield needs to regen fast. <span class="acc">~120k Cr</span></li>
       <li><span class="stepnum">5</span><b>FSD &rarr; A</b> &mdash; Reach RES sites and turn-ins. <span class="acc">~150k Cr</span></li>
     </ul>
-    <div class="callout amber"><span class="lbl">Thrusters above all</span>On the Eagle, agility is survival &mdash; A-rate and engineer thrusters before anything; staying on the enemy's blind side is the only defence the hull has.</div>
+    <div class="callout warn"><span class="lbl">Thrusters above all</span><p>On the Eagle, agility is survival &mdash; A-rate and engineer thrusters before anything; staying on the enemy's blind side is the only defence the hull has.</p></div>
   </section>
 
   <!-- s9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
     <p>The house combat pattern bent toward agility. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
       <tbody>
         <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
@@ -375,21 +269,23 @@
         <tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="subhd">Recommended order</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span>Thrusters first, always &mdash; agility is the Eagle's only real defence.</li>
       <li><span class="stepnum">2</span>Distributor and plant to G5 to run three guns on a class-2 plant.</li>
       <li><span class="stepnum">3</span>Bi-weave shield and the single HRP for the barest tank.</li>
       <li><span class="stepnum">4</span>Weapons last: Overcharged multi-cannons with one Corrosive.</li>
     </ul>
-    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Very light &mdash; tiny modules and few of them; the cheapest combat grind in the game. With a complete inventory this is trivial spend. Ask for exact per-blueprint counts if needed.</div>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Very light &mdash; tiny modules and few of them; the cheapest combat grind in the game. With a complete inventory this is trivial spend. Ask for exact per-blueprint counts if needed.</p></div>
   </section>
 
   <!-- s10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
     <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
       <tbody>
         <tr><td class="mod">Top speed (boost)</td><td>350 m/s</td><td>350 m/s</td><td class="acc">~430 m/s</td></tr>
@@ -399,56 +295,43 @@
         <tr><td class="mod">Sustained DPS</td><td>low</td><td>low</td><td class="acc">low-medium</td></tr>
       </tbody>
     </table>
+    </div>
     <p>Engineered, the Eagle is a 430 m/s dart with elite agility and three guns &mdash; but its tank stays minimal even maxed. It wins by never being hit; flown perfectly it's a delight, but it punishes any mistake instantly.</p>
   </section>
 
   <!-- s11 -->
   <section id="s11">
-    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
-    <div class="twocol">
-      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cols-2">
+      <div class="panel"><div class="subhd">Getting started</div><ul class="bullets">
       <li><b>Learning to dogfight.</b> The Eagle is the purest teacher of the turn fight &mdash; staying on tails and holding guns on.</li>
       <li><b>Low-stakes RES.</b> Pick off the weakest bounties while practising agility at near-zero risk.</li>
       <li><b>Cheap thrills.</b> Fly it for the sheer joy of its handling, rebuy be damned (it's tiny).</li>
     </ul></div>
-      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <div class="panel"><div class="subhd">Advanced</div><ul class="bullets">
       <li><b>Agility mastery.</b> Skills learned wringing performance from the fragile Eagle transfer to every more capable ship.</li>
       <li><b>Budget aggression.</b> Its near-zero rebuy lets you fly recklessly and learn from mistakes cheaply.</li>
       <li><b>Wing fighter screen.</b> As a nimble, expendable harasser it can chase and pin targets for tougher wingmates.</li>
     </ul></div>
     </div>
-    <div class="callout acc"><span class="lbl">Generic example systems</span>Any low RES near an outpost suits it &mdash; keep fights small and winnable. Around your Diaguandri / Ray Gateway home it's a near-free way to practise dogfighting.</div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any low RES near an outpost suits it &mdash; keep fights small and winnable. Around your Diaguandri / Ray Gateway home it's a near-free way to practise dogfighting.</p></div>
   </section>
 
   <!-- s12 -->
   <section id="s12">
-    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
       <li>Thrusters and agility are everything &mdash; the Eagle has no other defence; stay where enemy guns can't follow.</li>
       <li>Never trade blows head-on; one solid salvo ends the fight.</li>
       <li>It's a teacher and a toy &mdash; master it, then carry the agility skills to a Vulture or Fer-de-Lance.</li>
       <li>Its sibling the Imperial Eagle is slightly faster and tougher with a medium gun if you want a touch more substance.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Verdict</span>The Eagle Mk II is agility distilled: the most nimble fighter in its class, three small guns, and a price of almost nothing &mdash; wrapped around an eggshell that one mistake will shatter. It's no platform to keep, but as a pure dogfighter, a teacher of the turn fight, and a cheap thrill, few ships are more instructive or more fun.</div>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Eagle Mk II is agility distilled: the most nimble fighter in its class, three small guns, and a price of almost nothing &mdash; wrapped around an eggshell that one mistake will shatter. It's no platform to keep, but as a pure dogfighter, a teacher of the turn fight, and a cheap thrill, few ships are more instructive or more fun.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/eagle">coriolis.io/outfit/eagle</a></div>
@@ -460,9 +343,13 @@
   </section>
 
   <footer>
-    <p><b>Eagle Mk II &middot; Combat</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Eagle Mk II &middot; Combat dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Ship &times; Role Dossier</span>
   </footer>
 
 </div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>
