@@ -40,11 +40,12 @@ mostly recolouring and spacing.
 - **Card affordances:** `.card-tags` (a left-aligned pill row under the title) and a
   `.card h3 .cb-ext` external-link glyph (↗, inline right after the title). Surfaced by the
   third-party-apps directory rework.
-- **`.rec.pw`** — power-profile record-card variant: a top field row (Signature perk · Best for ·
-  Headquarters) over a full-width **Ethos** block (`.ethos-cols` → three `.et` columns, one per
-  Reinforcement / Acquisition / Undermining, each with its type + flavour description), gold
-  field labels, and the portrait framed from the top (`object-position:center top`) so the head
-  is never cropped. Surfaced by the Powerplay power cards.
+- **`.rec.pw`** — power-profile record-card variant: a full-width **Ethos** block on top
+  (`.ethos-cols` → three `.et` columns for Reinforcement / Acquisition / Undermining, each with
+  its type + flavour description in ink/Chakra so they read distinct from the gold "Ethos"
+  label), a 50%-gold separator, then a field row (Signature perk · Best for · Headquarters)
+  below. Gold field labels; unified content text size; portrait framed from the top
+  (`object-position:center top`). Surfaced by the Powerplay power cards.
 - **`table.data.matrix`** — fixed-layout tick matrix: a 40% first column + equal-width,
   centre-aligned check columns. Surfaced by the Powerplay merit-activity matrix.
 - **`.case-hd`** — a sub-section header (smaller than `.subhead`, ink so an inline `.sp-*`
