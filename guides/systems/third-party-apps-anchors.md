@@ -23,4 +23,3 @@ Link format: `third-party-apps.html#<id>`
 - **Directories & Aggregators** — `#directories`
 - **Defunct — with Replacements** — `#defunct`
 - **By Play-Style — Recommended Stacks** — `#bystyle`
-- **Sources** — `#credits`
