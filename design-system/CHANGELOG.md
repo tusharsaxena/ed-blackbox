@@ -37,6 +37,9 @@ mostly recolouring and spacing.
 - **`.swatch`** now `display:inline-block` (+ small right margin) so colour swatches render
   inline in table cells / prose, not only inside flex legends — used for per-preset result
   colour previews.
+- **Card affordances:** `.card-tags` (a left-aligned pill row under the title) and a
+  `.card h3 .cb-ext` external-link glyph (↗, inline right after the title). Surfaced by the
+  third-party-apps directory rework.
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain

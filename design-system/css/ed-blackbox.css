@@ -412,6 +412,11 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 .card.ac-good .c-eyebrow{color:var(--good-lt)}.card.ac-maroon .c-eyebrow{color:var(--maroon-lt)}.card.ac-fed .c-eyebrow{color:var(--fed-lt)}
 .card .micro{font-size:var(--fs-sm2);color:var(--ink-faint);font-style:italic;margin-top:var(--space-5);border-top:1px solid var(--hair);padding-top:var(--space-5)}
 .card .micro b{color:var(--amber-lt);font-weight:600;font-style:normal}
+/* external-link glyph (↗) sitting inline right after a card title */
+.card h3 .cb-ext{color:var(--amber-lt);text-decoration:none;font-weight:400;font-size:.72em;margin-left:.35em;white-space:nowrap}
+.card h3 .cb-ext:hover{color:var(--amber)}
+/* tag row under a card title — left-aligned pills */
+.card-tags{display:flex;flex-wrap:wrap;gap:var(--space-3);margin:0 0 var(--space-5)}
 
 /* ---- 22. PICK / RECOMMENDATION CARDS ---- */
 .pickgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-7);margin:var(--space-8) 0}

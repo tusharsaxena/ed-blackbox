@@ -18,6 +18,7 @@ be re-run later.
 | `baseline-capture.sh` | [baseline-capture.md](baseline-capture.md) | Captures a pre-migration screenshot + fingerprint for all 108 guides into `_migration/baseline/` (gitignored); the comparison baseline for the migration. |
 | `fix-step-tuples.mjs` | [fix-step-tuples.md](fix-step-tuples.md) | One-shot content fix: unpacks malformed `(action, rationale, cost)` tuple text in dossier step lists into readable markup (quote-aware). |
 | `trim-svg.mjs` | [trim-svg.md](trim-svg.md) | Tightens inline diagram `<svg>` viewBoxes to their content + ~5px margin (via Playwright `getBBox`), removing phantom whitespace. |
+| `restructure-app-cards.mjs` | [restructure-app-cards.md](restructure-app-cards.md) | One-shot simplifier for the third-party-apps tool cards: amber accent, stable `id`s, tag row, ↗ open-glyph, drops the decorative eyebrow. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.
