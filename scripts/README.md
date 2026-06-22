@@ -15,6 +15,7 @@ be re-run later.
 | `shot.mjs` | [shot.md](shot.md) | Generates a full-page PNG screenshot of a local HTML file via Playwright/Chromium; used for before/after visual comparison during design-system migration. |
 | `fingerprint.mjs` | [fingerprint.md](fingerprint.md) | Extracts a content fingerprint (masthead text + each `<section id>`/text + all ids) of a guide, chrome excluded; the before/after content-invariance gate for migration. |
 | `fp-diff.mjs` | [fingerprint.md](fingerprint.md) | Compares two fingerprints; exits non-zero if any section text or anchor id changed. Pairs with `fingerprint.mjs`. |
+| `baseline-capture.sh` | [baseline-capture.md](baseline-capture.md) | Captures a pre-migration screenshot + fingerprint for all 108 guides into `_migration/baseline/` (gitignored); the comparison baseline for the migration. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.
