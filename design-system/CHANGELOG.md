@@ -40,6 +40,13 @@ mostly recolouring and spacing.
 - **Card affordances:** `.card-tags` (a left-aligned pill row under the title) and a
   `.card h3 .cb-ext` external-link glyph (↗, inline right after the title). Surfaced by the
   third-party-apps directory rework.
+- **`.cards.wide`** — half-content-width card grid (2 per row) for content-heavy cards.
+  Rule (applied per cards-container / section, not per card): ≤~50-word cards use plain
+  `.cards`; ~50–100-word cards use `.cards.wide`. Surfaced by the BGS guide.
+
+### Changed (1.3.0 cont.)
+- **`.card .c-eyebrow`** sub-label now always sits on its own line under the title,
+  left-aligned (was right-aligned in the title row, where it collided with wrapping titles).
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain
