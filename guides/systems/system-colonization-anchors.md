@@ -14,7 +14,7 @@ Link format: `system-colonization.html#<id>`
 - **Economy: Shaping Your System** — `#economy`
 - **Build Reference Tables** — `#reference`
 - **Logistics & The Haul** — `#logistics`
-- **Federation Alignment & The Corvette Path** — `#federation`
+- **Superpower Alignment** — `#alignment`
 - **Your Colony Blueprint** — `#blueprint`
 - **Pitfalls & Gotchas** — `#pitfalls`
 - **Pre-Flight Checklist** — `#checklist`
