@@ -263,10 +263,14 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .kvgrid .lv b{color:var(--ink);font-weight:600}
 /* power-profile card variant (.rec.pw): three equal columns — Ethos | Signature perk | Best for —
    with gold field labels and the portrait framed from the top so the head is never cropped */
-.rec.pw .rec-body{grid-template-columns:1fr 1fr 1fr;grid-template-areas:"c a b"}
+.rec.pw .rec-body{grid-template-columns:1fr 1fr 1fr;grid-template-areas:"a b c" "e e e";gap:var(--space-7) var(--space-10)}
 .rec.pw .rc .rcl{color:var(--amber-lt)}
 .rec.pw .rec-banner img{object-position:center top}
-@media (max-width:680px){.rec.pw .rec-body{grid-template-columns:1fr;grid-template-areas:"c" "a" "b"}}
+.rec.pw .ethos-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-8);margin-top:var(--space-4)}
+.rec.pw .et-asp{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-size:var(--fs-xs);color:var(--amber-lt)}
+.rec.pw .et-asp b{color:var(--ink);font-weight:600}
+.rec.pw .et p{font-size:var(--fs-sm2);color:var(--ink-dim);line-height:1.5;margin-top:var(--space-3)}
+@media (max-width:680px){.rec.pw .rec-body{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "e"}.rec.pw .ethos-cols{grid-template-columns:1fr;gap:var(--space-6)}}
 /* even-width tick-matrix table — equal check columns, centred ticks */
 table.data.matrix{table-layout:fixed}
 table.data.matrix th:first-child,table.data.matrix td:first-child{width:40%}
