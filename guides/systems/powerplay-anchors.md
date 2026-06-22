@@ -12,7 +12,6 @@ Link format: `powerplay.html#<id>`
 - **System States & Control Points** — `#states`
 - **How You Actually Earn Merits** — `#earning`
 - **The Exclusive Modules** — `#modules`
-- **Power Selection — The Case for Archer** — `#why`
-- **Your Operational Playbook** — `#playbook`
+- **Power Selection** — `#selection`
 - **Pitfalls & Fine Print** — `#pitfalls`
 - **Sources** — `#credits`
