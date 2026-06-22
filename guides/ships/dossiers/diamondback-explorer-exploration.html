@@ -3,222 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Manual — Diamondback Explorer · Exploration</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#25b0a0;
-    --acc-lt:#63e2d2;
-    --acc-deep:#0f5249;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
-  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
-    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
-  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
-  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
-  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
-  .ratebox .rl{flex:1;min-width:240px}
-  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
-  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:46px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .star{color:var(--amber-lt)}
-
-  /* 3-state loadout table */
-  .l3 td{font-size:13.5px;padding:8px 10px}
-  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
-  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
-    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
-  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
-  .l3 td.eng{color:var(--ink)}
-  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
-  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-
-  table.cmp{table-layout:fixed}
-  td.pcc{font-size:12.5px;line-height:1.45}
-  td.pcc span{display:block;margin:1px 0}
-  td.pcc .p{color:var(--good)}
-  td.pcc .c{color:var(--acc-lt)}
-  td.pcc .p::before{content:"+ ";font-weight:700}
-  td.pcc .c::before{content:"\2212 ";font-weight:700}
-  td.pcc .base{color:var(--ink-faint);font-style:italic}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
-  }
-</style>
+<title>Diamondback Explorer &middot; Exploration | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Exploration → fed-blue (only permitted page-level CSS) -->
+<style>:root{--accent:var(--fed-lt);--accent-lt:var(--fed-lt);--accent-deep:var(--fed);
+  --accent-soft:rgba(79,159,214,.4);--accent-glow:rgba(79,159,214,.10);}</style>
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers" class="active">Ships</a>
+      <a href="../../index.html#engineering">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Explore</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#dossiers">Ships</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Diamondback Explorer · Exploration</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
-    <h1>Diamondback Explorer<span class="role">Exploration</span></h1>
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Diamondback Explorer</span><span class="role">Exploration</span></h1>
     <p class="lede">The budget legend. The Diamondback Explorer is the <b>cheapest serious long-range explorer in the game</b> &mdash; a small-pad hull that runs cold, jumps enormously, and costs almost nothing to outfit. For decades it has been the ship that takes new explorers to the edge of the galaxy on a shoestring.</p>
 
     <div class="chips">
-      <div class="chip"><span>Class</span><b>Small &middot; Pad S</b></div>
-      <div class="chip"><span>Max jump</span><b>~68 LY</b></div>
-      <div class="chip"><span>Fuel scoop</span><b>Class 4</b></div>
-      <div class="chip"><span>Hull</span><b>~1.64M Cr</b></div>
-      <div class="chip"><span>Role</span><b>Exploration</b></div>
-      </div>
+      <span class="chip kv"><span>Class</span><b>Small &middot; Pad S</b></span>
+      <span class="chip kv"><span>Max jump</span><b>~68 LY</b></span>
+      <span class="chip kv"><span>Fuel scoop</span><b>Class 4</b></span>
+      <span class="chip kv"><span>Hull</span><b>~1.64M Cr</b></span>
+      <span class="chip kv"><span>Role</span><b>Exploration</b></span>
+    </div>
 
-    <div class="ratebox">
-      <div class="dial" style="--v:88"><div class="num">88<small>/100</small></div></div>
-      <div class="rl">
-        <div class="t">Exploration Suitability Rating</div>
-        <div class="d">One of the great value explorers. Its jump range, cool-running plant and tiny price make it a superb deep-space ship; it ranks just below the premium long-range hulls only because its small size limits the modules and comforts it can carry on the very longest expeditions.</div>
-      </div>
+    <div class="masthead-meta">
+      <span>Ship &times; Role Dossier</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 Overview</a>
-    <a href="#s2">02 Why it fits</a>
-    <a href="#s3">03 Comparison</a>
-    <a href="#s4">04 Cost &amp; access</a>
-    <a href="#s5">05 ARX pre-built</a>
-    <a href="#s6">06 3-state loadout</a>
-    <a href="#s7">07 Initial plan</a>
-    <a href="#s8">08 A-rated plan</a>
-    <a href="#s9">09 Engineering</a>
-    <a href="#s10">10 Stat ladder</a>
-    <a href="#s11">11 Activities</a>
-    <a href="#s12">12 Field notes</a>
-  </nav>
+  <div class="ratebox">
+    <div class="dial" style="--v:88"><div class="num">88<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Exploration Suitability Rating</div>
+      <div class="d">One of the great value explorers. Its jump range, cool-running plant and tiny price make it a superb deep-space ship; it ranks just below the premium long-range hulls only because its small size limits the modules and comforts it can carry on the very longest expeditions.</div>
+    </div>
+  </div>
 
   <!-- s1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
     <p>The Diamondback Explorer is Lakon's compact long-range scout and, for years, the default answer to 'what's the best cheap explorer?' It pairs a strong FSD with light mass and a famously cool-running power plant, producing a jump range that shames ships many times its price &mdash; and it does it from a small pad, so it can land at any outpost on the way out and back.</p>
     <p>Its cool-running nature is a real exploration asset: it scoops fuel and runs modules with minimal heat, which matters on long hauls near stars. Four optional internals of useful size let it carry a fuel scoop, scanner, AFMU and an SRV bay for surface work. It can't match the premium explorers for module space or comfort on the very longest trips, but for the money, nothing takes you further.</p>
-    <div class="callout amber"><span class="lbl">Where this hull shines</span>Affordable deep-space exploration: long-range expeditions, exobiology and planetary surveys, neutron-highway travel, and first expeditions for commanders who don't want to spend a fortune to see the galaxy.</div>
+    <div class="callout warn"><span class="lbl">Where this hull shines</span><p>Affordable deep-space exploration: long-range expeditions, exobiology and planetary surveys, neutron-highway travel, and first expeditions for commanders who don't want to spend a fortune to see the galaxy.</p></div>
   </section>
 
   <!-- s2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~68 <small>LY</small></div></div>
       <div class="cell"><div class="k">Top speed / boost</div><div class="v">251 / 328 <small>m/s</small></div></div>
@@ -230,54 +118,58 @@
       <div class="cell"><div class="k">FSD</div><div class="v">Class 5</div></div>
       <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(lands anywhere)</small></div></div>
       <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
-      </div>
+    </div>
     <p>Four things make the Diamondback Explorer a deep-space favourite:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>Huge jump range for the price.</b> A light hull plus a strong FSD give it ~68 LY engineered &mdash; range that rivals far costlier ships.</li>
       <li><b>Cool-running plant.</b> It scoops and runs modules with minimal heat, easing the long hauls near stars that define exploration.</li>
       <li><b>Small-pad access.</b> It lands at any outpost, so resupply and turn-ins on the way out and back are never blocked by pad size.</li>
       <li><b>Cheap to own and outfit.</b> Under 1.7M Cr hull and inexpensive modules &mdash; a complete explorer for a fraction of the premium hulls' cost.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>Its small size caps module space &mdash; it carries a smaller fuel scoop, fewer comforts and less redundancy than the premium explorers, which tells on the very longest expeditions. It's slow and lightly built too. The DBE's case is unbeatable value and range-per-credit, not the carrying capacity or comfort of a Krait Phantom, Anaconda or Caspian.</div>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Its small size caps module space &mdash; it carries a smaller fuel scoop, fewer comforts and less redundancy than the premium explorers, which tells on the very longest expeditions. It's slow and lightly built too. The DBE's case is unbeatable value and range-per-credit, not the carrying capacity or comfort of a Krait Phantom, Anaconda or Caspian.</p></div>
   </section>
 
   <!-- s3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
     <p>Both tables rate ships <em>for exploration specifically</em>. The role column is the maximum engineered jump range in light-years &mdash; the headline number for deep-space travel.</p>
     <p class="subhd">Same class &mdash; small-pad explorers</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Diamondback Explorer</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Diamondback Explorer <span class="tag r">this</span></td><td>Small</td><td>~68</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
-        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>~55</td><td class="pcc"><span class="p">Even cooler-running; cheaper</span><span class="c">Shorter range; less module space</span></td><td><span class="rscore">74</span><div class="bar"><i style="width:74%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>~55</td><td class="pcc"><span class="p">Faster; superb shields</span><span class="c">Tiny internals; Imperial rank</span></td><td><span class="rscore">73</span><div class="bar"><i style="width:73%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~48</td><td class="pcc"><span class="p">Roomier; faster; multi-role</span><span class="c">Shorter range; hotter</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Versatile; cheap; cargo</span><span class="c">Shorter range; less specialised</span></td><td><span class="rscore">71</span><div class="bar"><i style="width:71%"></i></div></td></tr>
-        <tr><td class="mod">Hauler</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Dirt cheap; light</span><span class="c">Tiny; minimal module space</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
-        <tr><td class="mod">Adder</td><td>Small</td><td>~47</td><td class="pcc"><span class="p">Cheap multi-role with cargo</span><span class="c">Shorter range; cramped</span></td><td><span class="rscore">60</span><div class="bar"><i style="width:60%"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer <span class="pill md">this</span></td><td>Small</td><td>~68</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>~55</td><td class="pcc"><span class="p">Even cooler-running; cheaper</span><span class="c">Shorter range; less module space</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>~55</td><td class="pcc"><span class="p">Faster; superb shields</span><span class="c">Tiny internals; Imperial rank</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~48</td><td class="pcc"><span class="p">Roomier; faster; multi-role</span><span class="c">Shorter range; hotter</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Versatile; cheap; cargo</span><span class="c">Shorter range; less specialised</span></td><td><span class="rscore">71</span><div class="bar mini"><i style="--pct:71"></i></div></td></tr>
+        <tr><td class="mod">Hauler</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Dirt cheap; light</span><span class="c">Tiny; minimal module space</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+        <tr><td class="mod">Adder</td><td>Small</td><td>~47</td><td class="pcc"><span class="p">Cheap multi-role with cargo</span><span class="c">Shorter range; cramped</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>Among small-pad explorers the Diamondback Explorer is the king of range-per-credit. The Scout runs cooler and the Cobras are more versatile, but none jumps as far for the money. It's the definitive budget deep-space ship.</p>
     <p class="subhd">Other classes &mdash; the premium explorers</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Diamondback Explorer</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~85</td><td class="pcc"><span class="p">Far greater range; modern; roomy</span><span class="c">Much pricier</span></td><td><span class="rscore">96</span><div class="bar"><i style="width:96%"></i></div></td></tr>
-        <tr><td class="mod">Caspian Explorer</td><td>Large</td><td>~78</td><td class="pcc"><span class="p">Vast module space and range; flagship</span><span class="c">~189M Cr; large pad</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
-        <tr><td class="mod">Anaconda</td><td>Large</td><td>~78</td><td class="pcc"><span class="p">Huge range and internals; carries everything</span><span class="c">Far pricier; large pad</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
-        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~75</td><td class="pcc"><span class="p">Great range plus carrying capacity</span><span class="c">Much pricier</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
-        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~62</td><td class="pcc"><span class="p">Roomier; great visibility; comfortable</span><span class="c">Pricier; shorter range than the premiums</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
+        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~85</td><td class="pcc"><span class="p">Far greater range; modern; roomy</span><span class="c">Much pricier</span></td><td><span class="rscore">96</span><div class="bar mini"><i style="--pct:96"></i></div></td></tr>
+        <tr><td class="mod">Caspian Explorer</td><td>Large</td><td>~78</td><td class="pcc"><span class="p">Vast module space and range; flagship</span><span class="c">~189M Cr; large pad</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~78</td><td class="pcc"><span class="p">Huge range and internals; carries everything</span><span class="c">Far pricier; large pad</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~75</td><td class="pcc"><span class="p">Great range plus carrying capacity</span><span class="c">Much pricier</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~62</td><td class="pcc"><span class="p">Roomier; great visibility; comfortable</span><span class="c">Pricier; shorter range than the premiums</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The premium explorers carry more, jump further and travel in greater comfort &mdash; but all cost many times the DBE. The Diamondback Explorer's enduring appeal is delivering most of the deep-space experience for a tiny fraction of the price.</p>
   </section>
 
   <!-- s4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Hull</div><div class="v">~1.64M Cr</div></div>
       <div class="cell"><div class="k">A-rated explorer</div><div class="v">~6M Cr</div></div>
@@ -285,22 +177,23 @@
       <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>At ~1.64M Cr the DBE is cheap, and its small modules keep a full explorer fit well under 12M Cr all-in &mdash; a complete, engineered deep-space ship for the price of a single mid-tier weapon on a warship.</p>
     <p>It's the value pick without qualification: the cheapest way to reach the galaxy's edge in comfort enough to enjoy the trip, and an ideal first explorer before committing to a premium hull.</p>
-    <div class="callout amber"><span class="lbl">Cheapest serious explorer</span>A complete engineered long-range explorer for around 12M Cr all-in &mdash; nothing else takes you as far for as little.</div>
+    <div class="callout warn"><span class="lbl">Cheapest serious explorer</span><p>A complete engineered long-range explorer for around 12M Cr all-in &mdash; nothing else takes you as far for as little.</p></div>
   </section>
 
   <!-- s5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
     <p>There is no exploration-specific ARX pre-built built around the Diamondback Explorer; buy and outfit it normally through a shipyard.</p>
   </section>
 
   <!-- s6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
     <p>A classic budget explorer fit: maximum FSD, a Guardian booster, fuel scoop, scanner, AFMU and an SRV bay. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises jump range and reduces heat.</p>
+    <div class="tbl-scroll">
     <table class="l3">
       <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
       <tbody>
@@ -332,12 +225,13 @@
         <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">Heat Sink storage</td></tr>
       </tbody>
     </table>
-    <div class="callout acc"><span class="lbl">Range, scoop, scanner, SRV</span>The four exploration essentials &mdash; a maxed FSD with Guardian booster for range, a class-4 scoop to refuel fast, a Detailed Surface Scanner for mapping payouts, and an SRV bay for exobiology and surface sites. The DBE fits all four with room for a backup AFMU.</div>
+    </div>
+    <div class="callout"><span class="lbl">Range, scoop, scanner, SRV</span><p>The four exploration essentials &mdash; a maxed FSD with Guardian booster for range, a class-4 scoop to refuel fast, a Detailed Surface Scanner for mapping payouts, and an SRV bay for exobiology and surface sites. The DBE fits all four with room for a backup AFMU.</p></div>
   </section>
 
   <!-- s7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
     <p>Buy the hull and fit the largest fuel scoop and an A-rated FSD &mdash; range and refuelling first.</p>
     <p>Add a Detailed Surface Scanner, AFMU and an SRV bay for surveys and surface work.</p>
     <p>Strip weapons; run a heat sink and a small shield for safe landings.</p>
@@ -345,23 +239,24 @@
 
   <!-- s8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
     <p>A-rating priority for an explorer:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>FSD &rarr; A</b> &mdash; Jump range is everything; the A-rated FSD comes first. <span class="acc">~2M Cr</span></li>
       <li><span class="stepnum">2</span><b>Fuel Scoop &rarr; A</b> &mdash; A fast scoop keeps the expedition moving. <span class="acc">~1.5M Cr</span></li>
       <li><span class="stepnum">3</span><b>Detailed Surface Scanner</b> &mdash; Maps planets for huge cartographic payouts. <span class="acc">~250k Cr</span></li>
       <li><span class="stepnum">4</span><b>Guardian FSD Booster</b> &mdash; A flat jump-range bonus &mdash; a few Guardian runs to unlock. <span class="acc">material cost</span></li>
       <li><span class="stepnum">5</span><b>AFMU + SRV bay</b> &mdash; Self-repair and surface access for long trips. <span class="acc">~1M Cr</span></li>
     </ul>
-    <div class="callout amber"><span class="lbl">FSD and scoop define the trip</span>Range gets you there; the scoop keeps you going. A-rate both before anything else, then add the scanner and Guardian booster.</div>
+    <div class="callout warn"><span class="lbl">FSD and scoop define the trip</span><p>Range gets you there; the scoop keeps you going. A-rate both before anything else, then add the scanner and Guardian booster.</p></div>
   </section>
 
   <!-- s9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
     <p>The exploration engineering pattern, weighted to range and heat. Felicity Farseer (maxed) carries the FSD and thrusters; pin blueprints for remote G1&rarr;G5 application.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
       <tbody>
         <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
@@ -372,21 +267,23 @@
         <tr><td class="mod">Power Distributor</td><td>Engine Focused (G3)</td><td>&mdash;</td><td>The Dweller</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="subhd">Recommended order</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span>FSD Increased Range to G5 with Mass Manager &mdash; the single most important blueprint for range.</li>
       <li><span class="stepnum">2</span>Lightweight everything non-essential (life support, sensors) to shed mass and add jump distance.</li>
       <li><span class="stepnum">3</span>Low-Emissions power plant to keep heat down when scooping near stars.</li>
       <li><span class="stepnum">4</span>Clean Drive Tuning thrusters for cool, efficient travel.</li>
     </ul>
-    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Light &mdash; FSD, thrusters and lightweight blueprints on small modules; the Guardian FSD Booster needs a Guardian-site material run. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; FSD, thrusters and lightweight blueprints on small modules; the Guardian FSD Booster needs a Guardian-site material run. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
   </section>
 
   <!-- s10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
     <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
       <tbody>
         <tr><td class="mod">Max jump (LY)</td><td>~32</td><td>~45</td><td class="acc">~68</td></tr>
@@ -396,56 +293,43 @@
         <tr><td class="mod">Cost-efficiency</td><td>excellent</td><td>excellent</td><td class="acc">excellent</td></tr>
       </tbody>
     </table>
+    </div>
     <p>Engineered, the DBE jumps ~68 LY while running cool and costing a pittance &mdash; range that embarrasses far pricier ships. Its module space stays modest, so the very longest trips favour a bigger explorer; for value and reach, it's unmatched.</p>
   </section>
 
   <!-- s11 -->
   <section id="s11">
-    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
-    <div class="twocol">
-      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cols-2">
+      <div class="panel"><div class="subhd">Getting started</div><ul class="bullets">
       <li><b>First expeditions.</b> The cheapest way to reach the galaxy's edge with proper range and scanning.</li>
       <li><b>Exobiology and surveys.</b> Its SRV bay and DSS suit planetary mapping and organic sampling for strong payouts.</li>
       <li><b>Neutron-highway travel.</b> Big jumps make long-distance core or rim runs efficient.</li>
     </ul></div>
-      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <div class="panel"><div class="subhd">Advanced</div><ul class="bullets">
       <li><b>Budget deep-space tourism.</b> See the galaxy without a fortune sunk into the ship.</li>
       <li><b>Guardian and ruins runs.</b> Its SRV bay and cool plant suit visiting Guardian sites for blueprints and data.</li>
       <li><b>Learning to explore.</b> An ideal first explorer before deciding whether a premium hull is worth it.</li>
     </ul></div>
     </div>
-    <div class="callout acc"><span class="lbl">Generic example destinations</span>Any deep-space target suits it &mdash; the galactic core, nebulae, or rim. From your Diaguandri / Ray Gateway base, a maxed-FSD DBE reaches expedition start points in very few jumps.</div>
+    <div class="callout"><span class="lbl">Generic example destinations</span><p>Any deep-space target suits it &mdash; the galactic core, nebulae, or rim. From your Diaguandri / Ray Gateway base, a maxed-FSD DBE reaches expedition start points in very few jumps.</p></div>
   </section>
 
   <!-- s12 -->
   <section id="s12">
-    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
       <li>FSD and fuel scoop first &mdash; range and refuelling define every expedition.</li>
       <li>Carry an AFMU (or two) for self-repair far from any station.</li>
       <li>Its cool-running plant is a genuine asset &mdash; lean into long scooping hauls.</li>
       <li>When module space starts to limit you, a Krait Phantom or Mandalay is the natural step up &mdash; but the DBE will already have shown you the galaxy.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Verdict</span>The Diamondback Explorer is the budget legend of deep space: enormous jump range, a cool-running plant and small-pad access on a hull that costs almost nothing to own and outfit. The premium explorers carry more and travel in greater comfort, but for range-per-credit and first expeditions, nothing has taken more commanders further for less. A classic, deservedly.</div>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Diamondback Explorer is the budget legend of deep space: enormous jump range, a cool-running plant and small-pad access on a hull that costs almost nothing to own and outfit. The premium explorers carry more and travel in greater comfort, but for range-per-credit and first expeditions, nothing has taken more commanders further for less. A classic, deservedly.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/diamondback_explorer">coriolis.io/outfit/diamondback_explorer</a></div>
@@ -457,9 +341,13 @@
   </section>
 
   <footer>
-    <p><b>Diamondback Explorer &middot; Exploration</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Diamondback Explorer &middot; Exploration dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Ship &times; Role Dossier</span>
   </footer>
 
 </div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

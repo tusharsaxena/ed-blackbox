@@ -3,222 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Manual — Anaconda · Combat</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#e0463c;
-    --acc-lt:#ff6f64;
-    --acc-deep:#7d1e1a;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
-  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
-    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
-  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
-  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
-  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
-  .ratebox .rl{flex:1;min-width:240px}
-  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
-  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:46px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .star{color:var(--amber-lt)}
-
-  /* 3-state loadout table */
-  .l3 td{font-size:13.5px;padding:8px 10px}
-  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
-  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
-    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
-  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
-  .l3 td.eng{color:var(--ink)}
-  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
-  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-
-  table.cmp{table-layout:fixed}
-  td.pcc{font-size:12.5px;line-height:1.45}
-  td.pcc span{display:block;margin:1px 0}
-  td.pcc .p{color:var(--good)}
-  td.pcc .c{color:var(--acc-lt)}
-  td.pcc .p::before{content:"+ ";font-weight:700}
-  td.pcc .c::before{content:"\2212 ";font-weight:700}
-  td.pcc .base{color:var(--ink-faint);font-style:italic}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
-  }
-</style>
+<title>Anaconda &middot; Combat | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<style>:root{--accent:var(--maroon-lt);--accent-lt:var(--maroon-lt);--accent-deep:var(--maroon);
+  --accent-soft:rgba(177,49,64,.4);--accent-glow:rgba(177,49,64,.10);}</style>
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers" class="active">Ships</a>
+      <a href="../../index.html#engineering">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#dossiers">Ships</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Anaconda · Combat</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Faulcon DeLacy</div>
-    <h1>Anaconda<span class="role">Combat</span></h1>
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Anaconda</span><span class="role">Combat</span></h1>
     <p class="lede">The do-everything battleship. The Anaconda brings <b>eight hardpoints headlined by a huge mount, vast internals, a fighter bay and battleship armour</b> to any role you ask of it &mdash; and in combat it's a heavily armed, deeply tanked large warship that needs no navy rank to fly. The classic credits-only capital ship.</p>
 
     <div class="chips">
-      <div class="chip"><span>Class</span><b>Large &middot; Pad L</b></div>
-      <div class="chip"><span>Hardpoints</span><b>1H &middot; 3L &middot; 2M &middot; 2S</b></div>
-      <div class="chip"><span>Utility</span><b>8</b></div>
-      <div class="chip"><span>Hull</span><b>~142M Cr</b></div>
-      <div class="chip"><span>Role</span><b>Combat</b></div>
-      </div>
+      <span class="chip kv"><span>Class</span><b>Large &middot; Pad L</b></span>
+      <span class="chip kv"><span>Hardpoints</span><b>1H &middot; 3L &middot; 2M &middot; 2S</b></span>
+      <span class="chip kv"><span>Utility</span><b>8</b></span>
+      <span class="chip kv"><span>Hull</span><b>~142M Cr</b></span>
+      <span class="chip kv"><span>Role</span><b>Combat</b></span>
+    </div>
 
-    <div class="ratebox">
-      <div class="dial" style="--v:88"><div class="num">88<small>/100</small></div></div>
-      <div class="rl">
-        <div class="t">Combat Suitability Rating</div>
-        <div class="d">A top-tier large combat ship and the most versatile capital hull in the game. Eight hardpoints, vast internals and a huge armour base make it formidable; it ranks below the Corvette and Cutter only on raw combat focus and agility, while beating both on flexibility and accessibility &mdash; no rank required.</div>
-      </div>
+    <div class="masthead-meta">
+      <span>Ship &times; Role Dossier</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 Overview</a>
-    <a href="#s2">02 Why it fits</a>
-    <a href="#s3">03 Comparison</a>
-    <a href="#s4">04 Cost &amp; access</a>
-    <a href="#s5">05 ARX pre-built</a>
-    <a href="#s6">06 3-state loadout</a>
-    <a href="#s7">07 Initial plan</a>
-    <a href="#s8">08 A-rated plan</a>
-    <a href="#s9">09 Engineering</a>
-    <a href="#s10">10 Stat ladder</a>
-    <a href="#s11">11 Activities</a>
-    <a href="#s12">12 Field notes</a>
-  </nav>
+  <div class="ratebox">
+    <div class="dial" style="--v:88"><div class="num">88<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Combat Suitability Rating</div>
+      <div class="d">A top-tier large combat ship and the most versatile capital hull in the game. Eight hardpoints, vast internals and a huge armour base make it formidable; it ranks below the Corvette and Cutter only on raw combat focus and agility, while beating both on flexibility and accessibility &mdash; no rank required.</div>
+    </div>
+  </div>
 
   <!-- s1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
     <p>The Anaconda is Faulcon DeLacy's flagship and the game's archetypal do-everything capital ship. In combat it fields eight hardpoints &mdash; a huge mount, three large, two medium and two small &mdash; behind a 945 base armour hull, eight utility mounts, a single military slot, twelve optional internals and a ship-launched-fighter bay. It is, in every sense, a battleship.</p>
     <p>Crucially, it has no rank gate &mdash; unlike the Federal Corvette and Imperial Cutter, anyone with the credits can buy one. That makes it the accessible large warship: not quite as combat-focused or agile as the rank-gated apex pair, but more flexible than either and open to everyone. It fights, hauls, explores and runs missions at a scale only large ships reach.</p>
-    <div class="callout amber"><span class="lbl">Where this hull shines</span>Heavy combat without a rank grind: high-intensity conflict zones, Hazardous RES, pirate massacres, AX work and wing fights &mdash; plus the flexibility to re-role the same hull to hauling or exploration at scale.</div>
+    <div class="callout warn"><span class="lbl">Where this hull shines</span><p>Heavy combat without a rank grind: high-intensity conflict zones, Hazardous RES, pirate massacres, AX work and wing fights &mdash; plus the flexibility to re-role the same hull to hauling or exploration at scale.</p></div>
   </section>
 
   <!-- s2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Top speed / boost</div><div class="v">183 / 244 <small>m/s</small></div></div>
       <div class="cell"><div class="k">Hardpoints</div><div class="v">1 Huge &middot; 3 Large &middot; 2 Medium &middot; 2 Small</div></div>
@@ -231,52 +118,56 @@
       <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;4&middot;4&middot;2&middot;1</div></div>
       <div class="cell"><div class="k">Military slots</div><div class="v">1 <small>(class 5)</small></div></div>
       <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF)</small> &middot; 4 crew</div></div>
-      </div>
+    </div>
     <p>Four things make the Anaconda a formidable combat capital ship:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>Eight hardpoints with a huge mount.</b> A capital-grade battery &mdash; huge plus three large plus four smaller mounts &mdash; that out-guns any medium and rivals the dedicated large warships.</li>
       <li><b>Battleship armour and vast internals.</b> A 945 armour base, twelve optionals and a military slot let it tank to extraordinary levels while still carrying everything it needs.</li>
       <li><b>Eight utility mounts and an SLF bay.</b> A huge defensive utility suite plus a launched fighter make it a force unto itself.</li>
       <li><b>No rank gate.</b> Unlike the Corvette and Cutter, it needs only credits &mdash; the most accessible capital warship in the game.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>It's slow and ponderous &mdash; the worst agility of the large combat ships &mdash; so nimble enemies can work its blind spots, and it's costly to engineer fully. The Federal Corvette out-guns and out-turns it, and the Imperial Cutter out-shields it. The Anaconda's edge is flexibility and accessibility, not peak combat focus; it's the jack-of-all-trades capital, master of none.</div>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's slow and ponderous &mdash; the worst agility of the large combat ships &mdash; so nimble enemies can work its blind spots, and it's costly to engineer fully. The Federal Corvette out-guns and out-turns it, and the Imperial Cutter out-shields it. The Anaconda's edge is flexibility and accessibility, not peak combat focus; it's the jack-of-all-trades capital, master of none.</p></div>
   </section>
 
   <!-- s3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
     <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
     <p class="subhd">Same class &mdash; large-pad combat ships</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Two huge mounts; more agile; the combat apex</span><span class="c">Federal Rear Admiral rank; ~187M Cr</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shields; fast for a large ship</span><span class="c">Imperial Duke rank; poor agility</span></td><td><span class="rscore">91</span><div class="bar"><i style="width:91%"></i></div></td></tr>
-        <tr><td class="mod">Anaconda <span class="tag r">this</span></td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
-        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">The ultimate turret tank; superb AX</span><span class="c">Even slower; no huge mount</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>2L 2M</td><td class="pcc"><span class="p">Very fast for a large ship; agile</span><span class="c">Only four mounts; awkward big-pad-only</span></td><td><span class="rscore">79</span><div class="bar"><i style="width:79%"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Two huge mounts; more agile; the combat apex</span><span class="c">Federal Rear Admiral rank; ~187M Cr</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shields; fast for a large ship</span><span class="c">Imperial Duke rank; poor agility</span></td><td><span class="rscore">91</span><div class="bar mini"><i style="--pct:91"></i></div></td></tr>
+        <tr><td class="mod">Anaconda <span class="pill md">this</span></td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">The ultimate turret tank; superb AX</span><span class="c">Even slower; no huge mount</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>2L 2M</td><td class="pcc"><span class="p">Very fast for a large ship; agile</span><span class="c">Only four mounts; awkward big-pad-only</span></td><td><span class="rscore">79</span><div class="bar mini"><i style="--pct:79"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>Among large combat ships the Anaconda is the versatile, rank-free option. The Corvette and Cutter beat it for pure combat &mdash; more guns, more agility, more shields respectively &mdash; but both demand a long navy grind. The Anaconda gives you a true battleship for credits alone, and re-roles to anything else besides.</p>
     <p class="subhd">Other classes &mdash; the medium contenders</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Python Mk II</td><td>Medium</td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; medium-pad access; far cheaper</span><span class="c">Less tank; no huge mount or SLF</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
-        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; agile; medium-pad; far cheaper</span><span class="c">Less firepower and tank</span></td><td><span class="rscore">90</span><div class="bar"><i style="width:90%"></i></div></td></tr>
-        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Huge mount; elite agility; medium-pad</span><span class="c">Tiny internals; far less tank</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
-        <tr><td class="mod">Corsair</td><td>Medium</td><td>3L 3M</td><td class="pcc"><span class="p">Six guns; fast; medium-pad</span><span class="c">Less tank and firepower than a capital</span></td><td><span class="rscore">85</span><div class="bar"><i style="width:85%"></i></div></td></tr>
-        <tr><td class="mod">Python</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Versatile; tough; medium-pad; cheap</span><span class="c">Far less combat capability than a capital</span></td><td><span class="rscore">83</span><div class="bar"><i style="width:83%"></i></div></td></tr>
+        <tr><td class="mod">Python Mk II</td><td>Medium</td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; medium-pad access; far cheaper</span><span class="c">Less tank; no huge mount or SLF</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; agile; medium-pad; far cheaper</span><span class="c">Less firepower and tank</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Huge mount; elite agility; medium-pad</span><span class="c">Tiny internals; far less tank</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>3L 3M</td><td class="pcc"><span class="p">Six guns; fast; medium-pad</span><span class="c">Less tank and firepower than a capital</span></td><td><span class="rscore">85</span><div class="bar mini"><i style="--pct:85"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Versatile; tough; medium-pad; cheap</span><span class="c">Far less combat capability than a capital</span></td><td><span class="rscore">83</span><div class="bar mini"><i style="--pct:83"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The top mediums match or beat the Anaconda on agility, pad access and price &mdash; the Fer-de-Lance even out-duels it &mdash; but none brings a capital ship's firepower, tank and internal scale. Choose the Anaconda when you want a true battleship that also does everything else; choose a medium when agility, pad access and cost matter more.</p>
   </section>
 
   <!-- s4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Hull</div><div class="v">~142M Cr</div></div>
       <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~180M Cr</div></div>
@@ -284,22 +175,23 @@
       <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>At ~142M Cr the Anaconda is a major investment, but it carries no rank or permit gate &mdash; the most accessible capital warship. A full combat fit with engineered guns, shields and reinforcement pushes the all-in figure past 220M Cr, comparable to the rank-gated apex ships.</p>
     <p>Because it re-roles so completely &mdash; battleship one week, deep-space explorer or bulk hauler the next &mdash; a single engineered Anaconda can replace several specialist ships, spreading its considerable cost across many roles.</p>
-    <div class="callout amber"><span class="lbl">The credits-only capital</span>Unlike the Corvette (Federal Rear Admiral) and Cutter (Imperial Duke), the Anaconda needs only money. If you want a battleship without a navy grind, this is it.</div>
+    <div class="callout warn"><span class="lbl">The credits-only capital</span><p>Unlike the Corvette (Federal Rear Admiral) and Cutter (Imperial Duke), the Anaconda needs only money. If you want a battleship without a navy grind, this is it.</p></div>
   </section>
 
   <!-- s5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
     <p>There is no combat-specific ARX pre-built built around the Anaconda; buy and outfit it normally through a shipyard.</p>
   </section>
 
   <!-- s6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
     <p>A capital-grade combat fit: a huge main gun, deep shields and reinforcement, eight utilities and an SLF bay. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern at battleship scale.</p>
+    <div class="tbl-scroll">
     <table class="l3">
       <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
       <tbody>
@@ -346,12 +238,13 @@
         <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">Heat Sink storage</td></tr>
       </tbody>
     </table>
-    <div class="callout acc"><span class="lbl">A battleship's depth</span>Twelve optionals, a military slot and eight utilities let the Anaconda tank on shields and hull simultaneously while carrying a fighter and a full booster suite. Few ships can field everything at once like this &mdash; use the scale.</div>
+    </div>
+    <div class="callout"><span class="lbl">A battleship's depth</span><p>Twelve optionals, a military slot and eight utilities let the Anaconda tank on shields and hull simultaneously while carrying a fighter and a full booster suite. Few ships can field everything at once like this &mdash; use the scale.</p></div>
   </section>
 
   <!-- s7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
     <p>Buy the hull and fit the largest shield a class-7 bay allows plus hull reinforcement &mdash; even basic, it's a tank.</p>
     <p>Arm the huge and large mounts with gimballed multi-cannons; add beams for shield-stripping.</p>
     <p>Add the fighter bay early; an SLF multiplies a capital ship's already considerable presence.</p>
@@ -359,23 +252,24 @@
 
   <!-- s8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
     <p>A-rating priority for a combat capital ship:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; Eight guns plus boost demand the class-8 distributor first. <span class="acc">~20M Cr</span></li>
       <li><span class="stepnum">2</span><b>Power Plant &rarr; A</b> &mdash; Headroom for guns, a big shield, cells, SLF and eight utilities. <span class="acc">~25M Cr</span></li>
       <li><span class="stepnum">3</span><b>Thrusters &rarr; A</b> &mdash; Recover what agility a 400t-mass capital can manage. <span class="acc">~18M Cr</span></li>
       <li><span class="stepnum">4</span><b>Shield Generator &rarr; bi-weave / prismatic</b> &mdash; A capital-scale shield is the first tank layer. <span class="acc">~15M Cr</span></li>
       <li><span class="stepnum">5</span><b>FSD &rarr; A</b> &mdash; Move a heavy battleship between fights and turn-ins. <span class="acc">~15M Cr</span></li>
     </ul>
-    <div class="callout amber"><span class="lbl">Power for a battleship</span>Eight hardpoints, a fighter and eight utilities draw enormous power &mdash; A-rate the class-8 distributor and plant before anything else or the build can't run at load.</div>
+    <div class="callout warn"><span class="lbl">Power for a battleship</span><p>Eight hardpoints, a fighter and eight utilities draw enormous power &mdash; A-rate the class-8 distributor and plant before anything else or the build can't run at load.</p></div>
   </section>
 
   <!-- s9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
     <p>The full house combat pattern at battleship scale. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
       <tbody>
         <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
@@ -388,21 +282,23 @@
         <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="subhd">Recommended order</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; eight guns and a fighter are enormously power-hungry.</li>
       <li><span class="stepnum">2</span>Thrusters to G5 to recover what agility the heavy hull allows.</li>
       <li><span class="stepnum">3</span>Shield Resistance-Augmented plus Heavy-Duty boosters for the first tank layer; Heavy-Duty reinforcement for the second.</li>
       <li><span class="stepnum">4</span>Weapons last: Overcharged multi-cannons with one Corrosive, Thermal-Vent beams.</li>
     </ul>
-    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Heavy &mdash; G5 across class-8 cores, eight weapons and a deep capital-scale defensive suite; this is one of the larger material spends in the fleet. With a complete inventory it's spend, not farm. Ask for exact per-blueprint counts to verify reserves before committing.</div>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Heavy &mdash; G5 across class-8 cores, eight weapons and a deep capital-scale defensive suite; this is one of the larger material spends in the fleet. With a complete inventory it's spend, not farm. Ask for exact per-blueprint counts to verify reserves before committing.</p></div>
   </section>
 
   <!-- s10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
     <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
       <tbody>
         <tr><td class="mod">Top speed (boost)</td><td>244 m/s</td><td>244 m/s</td><td class="acc">~300 m/s</td></tr>
@@ -412,56 +308,43 @@
         <tr><td class="mod">Agility</td><td>poor</td><td>poor</td><td class="acc">poor (heavy)</td></tr>
       </tbody>
     </table>
+    </div>
     <p>Engineered, the Anaconda is a true battleship: effective armour into the thousands, a 1,600 MJ shield, eight sustained guns and a fighter. It will never be agile &mdash; that's the cost of the scale &mdash; but few ships in the game are harder to kill or hit harder while doing four other jobs besides.</p>
   </section>
 
   <!-- s11 -->
   <section id="s11">
-    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
-    <div class="twocol">
-      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cols-2">
+      <div class="panel"><div class="subhd">Getting started</div><ul class="bullets">
       <li><b>High-intensity conflict zones.</b> A capital battery and battleship tank let the Anaconda dominate the toughest CZs for combat bonds.</li>
       <li><b>Hazardous RES.</b> It clears the highest-value bounties at leisure, soaking everything in return.</li>
       <li><b>Pirate massacre stacks.</b> Stack missions and clear them from a near-immortal platform.</li>
     </ul></div>
-      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <div class="panel"><div class="subhd">Advanced</div><ul class="bullets">
       <li><b>Thargoid AX combat.</b> Its hardpoint count, utilities and tank make it a strong AX capital with the right weapons and guardian modules.</li>
       <li><b>Wing anchor and capital presence.</b> As a battleship with an SLF and eight utilities it anchors any wing and area-denies the field.</li>
       <li><b>Re-role at scale.</b> Swap the loadout to make the same hull a long-range explorer or a bulk hauler &mdash; capital-scale flexibility.</li>
     </ul></div>
     </div>
-    <div class="callout acc"><span class="lbl">Generic example systems</span>Any high-intensity CZ or Haz RES suits it; for AX, head to Thargoid-active systems. As a credits-only capital it's a fine combat flagship to fly while grinding Imperial or Federal rank toward a Cutter or Corvette.</div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any high-intensity CZ or Haz RES suits it; for AX, head to Thargoid-active systems. As a credits-only capital it's a fine combat flagship to fly while grinding Imperial or Federal rank toward a Cutter or Corvette.</p></div>
   </section>
 
   <!-- s12 -->
   <section id="s12">
-    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
       <li>Embrace the scale: tank on shields and hull at once, carry a fighter, and field a full eight-utility booster suite &mdash; few ships can do all three.</li>
       <li>Accept the poor agility; play it as an immovable battleship that out-guns and out-lasts, not a dancer.</li>
       <li>It's the credits-only capital &mdash; the ideal large warship to own while grinding the ranks for a Corvette or Cutter.</li>
       <li>Fully engineering it is a major material spend; prioritise distributor, plant, shield and the huge mount first.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Verdict</span>The Anaconda is the do-everything battleship: eight hardpoints with a huge mount, vast internals, a fighter bay and battleship armour, all with no rank gate. The Corvette and Cutter beat it for pure combat focus, but neither matches its flexibility or accessibility. For a credits-only capital warship that also hauls and explores at scale, the Anaconda is in a class of its own.</div>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Anaconda is the do-everything battleship: eight hardpoints with a huge mount, vast internals, a fighter bay and battleship armour, all with no rank gate. The Corvette and Cutter beat it for pure combat focus, but neither matches its flexibility or accessibility. For a credits-only capital warship that also hauls and explores at scale, the Anaconda is in a class of its own.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/anaconda">coriolis.io/outfit/anaconda</a></div>
@@ -473,9 +356,13 @@
   </section>
 
   <footer>
-    <p><b>Anaconda &middot; Combat</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Anaconda &middot; Combat dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Ship &times; Role Dossier</span>
   </footer>
 
 </div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>
