@@ -3,222 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Manual — Type-9 Heavy · Trading</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#3fa45c;
-    --acc-lt:#74d68c;
-    --acc-deep:#155029;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
-  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
-    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
-  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
-  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
-  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
-  .ratebox .rl{flex:1;min-width:240px}
-  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
-  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:46px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .star{color:var(--amber-lt)}
-
-  /* 3-state loadout table */
-  .l3 td{font-size:13.5px;padding:8px 10px}
-  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
-  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
-    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
-  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
-  .l3 td.eng{color:var(--ink)}
-  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
-  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-
-  table.cmp{table-layout:fixed}
-  td.pcc{font-size:12.5px;line-height:1.45}
-  td.pcc span{display:block;margin:1px 0}
-  td.pcc .p{color:var(--good)}
-  td.pcc .c{color:var(--acc-lt)}
-  td.pcc .p::before{content:"+ ";font-weight:700}
-  td.pcc .c::before{content:"\2212 ";font-weight:700}
-  td.pcc .base{color:var(--ink-faint);font-style:italic}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
-  }
-</style>
+<title>Type-9 Heavy &middot; Trading | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers" class="active">Ships</a>
+      <a href="../../index.html#engineering">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Haul</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#dossiers">Ships</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Type-9 Heavy · Trading</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
-    <h1>Type-9 Heavy<span class="role">Trading</span></h1>
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Type-9 Heavy</span><span class="role">Trading</span></h1>
     <p class="lede">The flying warehouse. The Type-9 Heavy carries more cargo than almost anything in the game &mdash; close to <b>790 tonnes</b> when stripped for hauling &mdash; on a hull that costs a fraction of the Imperial Cutter and needs no rank to fly. It is slow, ponderous and nearly defenceless, but for moving bulk goods at the lowest credits-per-tonne it has no equal short of the Cutter and the new Panther Clipper.</p>
 
     <div class="chips">
-      <div class="chip"><span>Class</span><b>Large &middot; Pad L</b></div>
-      <div class="chip"><span>Max cargo</span><b>~790 t</b></div>
-      <div class="chip"><span>Optionals</span><b>8&middot;8&middot;7&middot;6&middot;5&middot;4&middot;4&middot;3&middot;3&middot;2&middot;1</b></div>
-      <div class="chip"><span>Hull</span><b>72.1M Cr</b></div>
-      <div class="chip"><span>Role</span><b>Bulk Trading</b></div>
-      </div>
+      <span class="chip kv"><span>Class</span><b>Large &middot; Pad L</b></span>
+      <span class="chip kv"><span>Max cargo</span><b>~790 t</b></span>
+      <span class="chip kv"><span>Optionals</span><b>8&middot;8&middot;7&middot;6&middot;5&middot;4&middot;4&middot;3&middot;3&middot;2&middot;1</b></span>
+      <span class="chip kv"><span>Hull</span><b>72.1M Cr</b></span>
+      <span class="chip kv"><span>Role</span><b>Bulk Trading</b></span>
+    </div>
 
-    <div class="ratebox">
-      <div class="dial" style="--v:94"><div class="num">94<small>/100</small></div></div>
-      <div class="rl">
-        <div class="t">Trading Suitability Rating</div>
-        <div class="d">Elite-tier bulk hauler. Beaten on raw capacity and speed only by the Panther Clipper Mk II and the rank-locked Imperial Cutter &mdash; and it undercuts both on cost and access. Docked a few points only for glacial handling and paper defences.</div>
-      </div>
+    <div class="masthead-meta">
+      <span>Ship &times; Role Dossier</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 Overview</a>
-    <a href="#s2">02 Why it fits</a>
-    <a href="#s3">03 Comparison</a>
-    <a href="#s4">04 Cost &amp; access</a>
-    <a href="#s5">05 ARX pre-built</a>
-    <a href="#s6">06 3-state loadout</a>
-    <a href="#s7">07 Initial plan</a>
-    <a href="#s8">08 A-rated plan</a>
-    <a href="#s9">09 Engineering</a>
-    <a href="#s10">10 Stat ladder</a>
-    <a href="#s11">11 Activities</a>
-    <a href="#s12">12 Field notes</a>
-  </nav>
+  <div class="ratebox">
+    <div class="dial" style="--v:94"><div class="num">94<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Trading Suitability Rating</div>
+      <div class="d">Elite-tier bulk hauler. Beaten on raw capacity and speed only by the Panther Clipper Mk II and the rank-locked Imperial Cutter &mdash; and it undercuts both on cost and access. Docked a few points only for glacial handling and paper defences.</div>
+    </div>
+  </div>
 
   <!-- s1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
     <p>The Type-9 Heavy is Lakon's dedicated bulk freighter and, for years, the credits-only answer to 'how do I move the most cargo?'. Eleven optional internals &mdash; topped by two class-8 slots &mdash; let it pack close to 790 tonnes when fully racked, a figure only the Imperial Cutter and the newer Panther Clipper Mk II exceed.</p>
     <p>It earns its keep on volume, not finesse. The hull is slow (132 m/s base), turns like a moon, and carries almost no shield or weaponry in a trading fit. The trade-off is access and economy: no rank gate, a hull cost well under the Cutter's, and the lowest effective cost-per-tonne-hauled of any easily-obtained ship. The community treats it as the workhorse you graduate <em>to</em> from a Type-6/Type-7 and only graduate <em>past</em> if you chase a Cutter or Panther.</p>
-    <div class="callout amber"><span class="lbl">Where this hull shines</span>High-volume trade loops, wing-mission cargo stacking, tritium runs for fleet carriers, and Trailblazers colonisation hauling. Anywhere the job is 'move as much as possible per trip' on routes safe enough that you don't need to fight.</div>
+    <div class="callout warn"><span class="lbl">Where this hull shines</span><p>High-volume trade loops, wing-mission cargo stacking, tritium runs for fleet carriers, and Trailblazers colonisation hauling. Anywhere the job is 'move as much as possible per trip' on routes safe enough that you don't need to fight.</p></div>
   </section>
 
   <!-- s2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Max cargo</div><div class="v">~790 <small>t (all racks)</small></div></div>
       <div class="cell"><div class="k">Top speed / boost</div><div class="v">132 / 202 <small>m/s</small></div></div>
@@ -228,97 +113,104 @@
       <div class="cell"><div class="k">Base armour</div><div class="v">864 <small>(very tough hull)</small></div></div>
       <div class="cell"><div class="k">Optional internals</div><div class="v">8&middot;8&middot;7&middot;6&middot;5&middot;4&middot;4&middot;3&middot;3&middot;2&middot;1</div></div>
       <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
-      <div class="cell"><div class="k">Core sizes</div><div class="v"><span style="font-size:14px;letter-spacing:.4px">PP6 &middot; TH7 &middot; FSD6 &middot; LS5 &middot; PD6 &middot; SS4 &middot; FT6</span></div></div>
+      <div class="cell"><div class="k">Core sizes</div><div class="v"><span>PP6 &middot; TH7 &middot; FSD6 &middot; LS5 &middot; PD6 &middot; SS4 &middot; FT6</span></div></div>
       <div class="cell"><div class="k">Pad</div><div class="v">Large <small>(large-pad only)</small></div></div>
       <div class="cell"><div class="k">Crew seats</div><div class="v">4</div></div>
-      </div>
+    </div>
     <p>Three things make the Type-9 a dedicated trader rather than a multirole that happens to carry cargo:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>Two class-8 optional slots.</b> A pair of 256-tonne cargo racks is the foundation of its ~790-tonne ceiling &mdash; no other credits-only hull has this much rackable volume.</li>
       <li><b>Eleven optional internals.</b> Even after fitting a shield, a Guardian FSD booster and a fuel scoop you're still carrying the bulk &mdash; the slot count absorbs the survival kit without gutting capacity.</li>
       <li><b>A genuinely tough hull.</b> 864 base armour means that even with a light shield it shrugs off the occasional interdiction long enough to high-wake out.</li>
       <li><b>No rank gate, low hull cost.</b> Unlike the Cutter (Imperial Duke) it's a straight credits purchase, so it's the realistic bulk hauler for most commanders.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>It is slow and it cannot fight. A trading Type-9 boosts to ~200 m/s and turns ponderously, so a determined PvP interdictor or a hostile NPC wing is a real threat &mdash; your defence is a shield, a high-wake FSD and route selection, not guns. The Cutter hauls nearly as much <em>and</em> tanks/runs far better; the Panther Clipper out-carries it outright.</div>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It is slow and it cannot fight. A trading Type-9 boosts to ~200 m/s and turns ponderously, so a determined PvP interdictor or a hostile NPC wing is a real threat &mdash; your defence is a shield, a high-wake FSD and route selection, not guns. The Cutter hauls nearly as much <em>and</em> tanks/runs far better; the Panther Clipper out-carries it outright.</p></div>
   </section>
 
   <!-- s3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
     <p>Both tables rate ships <em>for the trading role specifically</em>. The role column is maximum cargo &mdash; the tonnes you can actually move per trip in a sensible (shielded, jump-capable) fit.</p>
     <p class="subhd">Same class &mdash; large-pad traders</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-9</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1000+</td><td class="pcc"><span class="p">The new bulk king &mdash; more cargo than anything; built for hauling</span><span class="c">Newest-hull cost &amp; access; ponderous</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Hauls as much, but fast and shield-tanked &mdash; survives anything</span><span class="c">Imperial Duke rank, ~208M Cr</span></td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
-        <tr><td class="mod">Type-9 Heavy <span class="tag r">this</span></td><td>Large</td><td>~790</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
-        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~440</td><td class="pcc"><span class="p">Cheaper, lighter, longer-jumping medium-volume hauler</span><span class="c">Carries far less; also slow</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
-        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Carries well <em>and</em> jumps far; can defend itself</span><span class="c">Less cargo; far pricier per tonne</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~280</td><td class="pcc"><span class="p">Very fast hauler; outruns trouble</span><span class="c">Much less cargo; large pad on an agile hull</span></td><td><span class="rscore">74</span><div class="bar"><i style="width:74%"></i></div></td></tr>
-        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>~280</td><td class="pcc"><span class="p">Hauls while being a warship; never dies to NPCs</span><span class="c">Federal rank; tiny cargo for its cost</span></td><td><span class="rscore">60</span><div class="bar"><i style="width:60%"></i></div></td></tr>
-        <tr><td class="mod">Beluga Liner</td><td>Large</td><td>~280</td><td class="pcc"><span class="p">Can convert cabins to cargo; fast for its size</span><span class="c">Really a liner; modest cargo as a trader</span></td><td><span class="rscore">60</span><div class="bar"><i style="width:60%"></i></div></td></tr>
+        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1000+</td><td class="pcc"><span class="p">The new bulk king &mdash; more cargo than anything; built for hauling</span><span class="c">Newest-hull cost &amp; access; ponderous</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Hauls as much, but fast and shield-tanked &mdash; survives anything</span><span class="c">Imperial Duke rank, ~208M Cr</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy <span class="pill md">this</span></td><td>Large</td><td>~790</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~440</td><td class="pcc"><span class="p">Cheaper, lighter, longer-jumping medium-volume hauler</span><span class="c">Carries far less; also slow</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Carries well <em>and</em> jumps far; can defend itself</span><span class="c">Less cargo; far pricier per tonne</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~280</td><td class="pcc"><span class="p">Very fast hauler; outruns trouble</span><span class="c">Much less cargo; large pad on an agile hull</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>~280</td><td class="pcc"><span class="p">Hauls while being a warship; never dies to NPCs</span><span class="c">Federal rank; tiny cargo for its cost</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+        <tr><td class="mod">Beluga Liner</td><td>Large</td><td>~280</td><td class="pcc"><span class="p">Can convert cabins to cargo; fast for its size</span><span class="c">Really a liner; modest cargo as a trader</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>On a large pad the hierarchy is simple: the Panther Clipper out-carries everything, the Cutter matches the Type-9's volume while being faster and far tankier, and the Type-9 undercuts both on price and access. The Type-7, Anaconda and Clipper are lighter mid-volume options &mdash; not upgrades, just different points on the speed-vs-capacity curve.</p>
     <p class="subhd">The step down &mdash; medium &amp; small traders</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Why you'd drop down</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~400</td><td class="pcc"><span class="p">Huge cargo for a medium; lands on medium pads; cheap</span><span class="c">Still slow; less volume than the Type-9</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
-        <tr><td class="mod">Python</td><td>Medium</td><td>~280</td><td class="pcc"><span class="p">Hauls well <em>and</em> fights/mines; medium pad</span><span class="c">Less cargo; pricier per tonne</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
-        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~110</td><td class="pcc"><span class="p">Cheap, light, long-jumping starter hauler</span><span class="c">Small volume; the bottom of the trade ladder</span></td><td><span class="rscore">65</span><div class="bar"><i style="width:65%"></i></div></td></tr>
-        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Combat-capable trader; SLF bay</span><span class="c">Cargo is a side gig, not its strength</span></td><td><span class="rscore">64</span><div class="bar"><i style="width:64%"></i></div></td></tr>
-        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~220</td><td class="pcc"><span class="p">Lighter, longer-jumping multirole hauler</span><span class="c">Less cargo than the dedicated freighters</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
-        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~130</td><td class="pcc"><span class="p">Can trade and explore on one hull; long jumps</span><span class="c">Small cargo; explorer at heart</span></td><td><span class="rscore">58</span><div class="bar"><i style="width:58%"></i></div></td></tr>
-        <tr><td class="mod">Keelback</td><td>Medium</td><td>~80</td><td class="pcc"><span class="p">Can carry a fighter to defend its cargo</span><span class="c">Tiny volume; really a combat-trader curiosity</span></td><td><span class="rscore">52</span><div class="bar"><i style="width:52%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~90</td><td class="pcc"><span class="p">Small-pad trader; flexible; lands anywhere</span><span class="c">Small volume; better used as a multirole</span></td><td><span class="rscore">52</span><div class="bar"><i style="width:52%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Classic cheap small-pad hauler</span><span class="c">Tiny cargo; dated</span></td><td><span class="rscore">48</span><div class="bar"><i style="width:48%"></i></div></td></tr>
-        <tr><td class="mod">Hauler</td><td>Small</td><td>~26</td><td class="pcc"><span class="p">Dirt-cheap starter; long jumps for its size</span><span class="c">Minimal cargo; the very bottom rung</span></td><td><span class="rscore">42</span><div class="bar"><i style="width:42%"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~400</td><td class="pcc"><span class="p">Huge cargo for a medium; lands on medium pads; cheap</span><span class="c">Still slow; less volume than the Type-9</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~280</td><td class="pcc"><span class="p">Hauls well <em>and</em> fights/mines; medium pad</span><span class="c">Less cargo; pricier per tonne</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~110</td><td class="pcc"><span class="p">Cheap, light, long-jumping starter hauler</span><span class="c">Small volume; the bottom of the trade ladder</span></td><td><span class="rscore">65</span><div class="bar mini"><i style="--pct:65"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Combat-capable trader; SLF bay</span><span class="c">Cargo is a side gig, not its strength</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~220</td><td class="pcc"><span class="p">Lighter, longer-jumping multirole hauler</span><span class="c">Less cargo than the dedicated freighters</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~130</td><td class="pcc"><span class="p">Can trade and explore on one hull; long jumps</span><span class="c">Small cargo; explorer at heart</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~80</td><td class="pcc"><span class="p">Can carry a fighter to defend its cargo</span><span class="c">Tiny volume; really a combat-trader curiosity</span></td><td><span class="rscore">52</span><div class="bar mini"><i style="--pct:52"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~90</td><td class="pcc"><span class="p">Small-pad trader; flexible; lands anywhere</span><span class="c">Small volume; better used as a multirole</span></td><td><span class="rscore">52</span><div class="bar mini"><i style="--pct:52"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Classic cheap small-pad hauler</span><span class="c">Tiny cargo; dated</span></td><td><span class="rscore">48</span><div class="bar mini"><i style="--pct:48"></i></div></td></tr>
+        <tr><td class="mod">Hauler</td><td>Small</td><td>~26</td><td class="pcc"><span class="p">Dirt-cheap starter; long jumps for its size</span><span class="c">Minimal cargo; the very bottom rung</span></td><td><span class="rscore">42</span><div class="bar mini"><i style="--pct:42"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>You drop to a medium only when you need <b>medium-pad access</b> (outposts, some colonisation depots) &mdash; that's the Type-8's whole pitch. Otherwise none of these is an upgrade for bulk: the Type-9's job is maximum tonnage on large pads, and it does that better than everything except the Cutter and the Panther.</p>
   </section>
 
   <!-- s4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Base hull</div><div class="v">72,116,858 <small>Cr</small></div></div>
       <div class="cell"><div class="k">Shipyard (stock fit)</div><div class="v">76,555,840 <small>Cr</small></div></div>
       <div class="cell"><div class="k">Unlock requirement</div><div class="v">None <small>· large pad</small></div></div>
       <div class="cell"><div class="k">Where to buy</div><div class="v">Most large shipyards</div></div>
-      </div>
+    </div>
     <p>The Type-9 is a straight credits purchase &mdash; <b>no rank, permit or engineer gate</b> &mdash; at most shipyards that stock large ships. At ~72M Cr for the hull it's a serious investment, but it's a fraction of the Imperial Cutter's ~208M and asks for no Imperial rank grind, which is exactly why it's the realistic bulk hauler for most commanders.</p>
     <p>The trading <em>fit</em> is cheap relative to the hull: cargo racks, a Guardian FSD booster and a light shield. Use Inara's commodity and route tools to find loops that pay back the hull quickly &mdash; a well-chosen loop clears the purchase in a handful of runs.</p>
-    <div class="callout amber"><span class="lbl">Budget reality</span>Hull ~72M; a full trading fit of class-8 cargo racks plus a light shield and Guardian booster adds roughly <b>10&ndash;20M Cr</b>. The single most valuable add is the Guardian FSD Booster &mdash; it costs materials, not credits, and buys back range you spend on cargo.</div>
+    <div class="callout warn"><span class="lbl">Budget reality</span><p>Hull ~72M; a full trading fit of class-8 cargo racks plus a light shield and Guardian booster adds roughly <b>10&ndash;20M Cr</b>. The single most valuable add is the Guardian FSD Booster &mdash; it costs materials, not credits, and buys back range you spend on cargo.</p></div>
   </section>
 
   <!-- s5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
     <p>Frontier sells a <b>Type-9 Trading Jumpstart</b> on the ARX store: the hull plus a worked, lightly pre-engineered trading loadout aimed at getting you hauling immediately. It's a fast on-ramp, but the usual pre-built caveats apply &mdash; the stock modules can't be stored or transferred and sell for 0 Cr.</p>
     <p>Treat the Jumpstart as instant access to the role rather than a permanent fit: keep and <em>engineer in place</em> the A-rated cores (engineering a stock core does not void the free rebuy), and simply add cargo racks to the open optional slots.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Slot</th><th>Trading Jumpstart (baseline)</th><th>For bulk trading?</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Frame Shift Drive</td><td>6A (often pre-engineered Range)</td><td><span class="tag g">keep &amp; engineer</span></td></tr>
-        <tr><td class="mod">Power Plant</td><td>6 (A/D)</td><td><span class="tag g">keep</span></td></tr>
-        <tr><td class="mod">Thrusters</td><td>7 (D, light)</td><td><span class="tag g">keep</span></td></tr>
-        <tr><td class="mod">Shield Generator</td><td>Light bi-weave</td><td><span class="tag g">keep &mdash; light is correct</span></td></tr>
-        <tr><td class="mod">Guardian FSD Booster</td><td>Often included</td><td><span class="tag g">keep &mdash; range back</span></td></tr>
-        <tr><td class="mod">Cargo racks</td><td>Partial fill</td><td><span class="tag r">add class-8 racks to fill</span></td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>6A (often pre-engineered Range)</td><td><span class="pill lo">keep &amp; engineer</span></td></tr>
+        <tr><td class="mod">Power Plant</td><td>6 (A/D)</td><td><span class="pill lo">keep</span></td></tr>
+        <tr><td class="mod">Thrusters</td><td>7 (D, light)</td><td><span class="pill lo">keep</span></td></tr>
+        <tr><td class="mod">Shield Generator</td><td>Light bi-weave</td><td><span class="pill lo">keep &mdash; light is correct</span></td></tr>
+        <tr><td class="mod">Guardian FSD Booster</td><td>Often included</td><td><span class="pill lo">keep &mdash; range back</span></td></tr>
+        <tr><td class="mod">Cargo racks</td><td>Partial fill</td><td><span class="pill md">add class-8 racks to fill</span></td></tr>
       </tbody>
     </table>
-    <div class="callout acc"><span class="lbl">Pre-built rebuy rule &mdash; do not break it</span>Stock pre-built modules carry a <b>free rebuy</b> and sell for <b>0 Cr</b> (they can't be stored or transferred). <b>Engineering a stock core in place does NOT void the free rebuy &mdash; replacing it does.</b> So engineer the cores where they sit and only <em>add</em> cargo racks to the empty optional slots. Verify the exact in-game fit after purchase; Frontier occasionally tweaks pre-built baselines.</div>
+    </div>
+    <div class="callout"><span class="lbl">Pre-built rebuy rule &mdash; do not break it</span><p>Stock pre-built modules carry a <b>free rebuy</b> and sell for <b>0 Cr</b> (they can't be stored or transferred). <b>Engineering a stock core in place does NOT void the free rebuy &mdash; replacing it does.</b> So engineer the cores where they sit and only <em>add</em> cargo racks to the empty optional slots. Verify the exact in-game fit after purchase; Frontier occasionally tweaks pre-built baselines.</p></div>
   </section>
 
   <!-- s6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
     <p>The whole build ladder on one screen. <b>Initial</b> is a cheap fightable-to-haul starter; <b>A-Rated</b> is the best buy-only bulk fit; <b>Engineered</b> trims weight for range without losing cargo. Plans and costs follow in sections 07&ndash;09.</p>
+    <div class="tbl-scroll">
     <table class="l3">
       <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
       <tbody>
@@ -352,35 +244,37 @@
         <tr><td class="slot">Size 1</td><td class="empty">empty</td><td class="st">Cargo Rack 1 (2t)</td><td class="eng">Cargo Rack 1 (2t)</td></tr>
       </tbody>
     </table>
-    <div class="callout callout"><span class="lbl">The cargo-vs-range trade</span>Every cargo rack you swap for a shield, scoop or Guardian booster costs tonnage but buys survivability or range. A light bi-weave shield and the Guardian booster are worth their slots; a fuel scoop is optional on short bubble loops but essential for long tritium/colonisation hauls.</div>
+    </div>
+    <div class="callout"><span class="lbl">The cargo-vs-range trade</span><p>Every cargo rack you swap for a shield, scoop or Guardian booster costs tonnage but buys survivability or range. A light bi-weave shield and the Guardian booster are worth their slots; a fuel scoop is optional on short bubble loops but essential for long tritium/colonisation hauls.</p></div>
   </section>
 
   <!-- s7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
     <p>Goal: start hauling bulk immediately for the least extra spend. Fill the two class-8 and the class-7 slots with cargo racks &mdash; that's ~640 tonnes before you do anything else. Add a <b>6A Frame Shift Drive</b> so a laden run still jumps usefully, a <b>light bi-weave shield</b> so an interdiction doesn't instantly kill you, and a <b>Guardian FSD Booster</b> to claw back the range the cargo costs you.</p>
     <p>Keep thrusters and power plant D-rated and light &mdash; you're not dogfighting, you're surviving long enough to high-wake. One shield booster and a heat sink round it out. This buy-only bulk fit adds roughly <b>10&ndash;15M Cr</b> over the hull and immediately moves serious tonnage.</p>
   </section>
 
   <!-- s8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
     <p>To reach the best buy-only bulk-and-range fit before engineering, upgrade in this order:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>Fill every cargo slot.</b> Class-8s first, then work down &mdash; capacity is the entire point of the hull.</li>
       <li><span class="stepnum">2</span><b>FSD to 6A + Guardian FSD Booster.</b> Range is what cargo costs you; buy it back here. The Guardian booster is materials, not credits.</li>
       <li><span class="stepnum">3</span><b>Light bi-weave shield (6D).</b> Cheap to power, regenerates fast, and turns a fatal interdiction into a survivable one.</li>
       <li><span class="stepnum">4</span><b>Power Plant to 6A, lightweight LS &amp; sensors.</b> Power headroom for the shield and booster, and weight off for range.</li>
       <li><span class="stepnum">5</span><b>Point defence + shield booster.</b> Soft defences against missiles and a little extra shield for the run home.</li>
     </ul>
-    <div class="callout amber"><span class="lbl">Total A-rated cost</span>Roughly <b>12&ndash;20M Cr</b> on top of the hull for a full bulk-and-range fit. The Guardian FSD Booster is the highest-impact item and costs materials &mdash; unlock it before you commit to long routes.</div>
+    <div class="callout warn"><span class="lbl">Total A-rated cost</span><p>Roughly <b>12&ndash;20M Cr</b> on top of the hull for a full bulk-and-range fit. The Guardian FSD Booster is the highest-impact item and costs materials &mdash; unlock it before you commit to long routes.</p></div>
   </section>
 
   <!-- s9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
     <p>Trading engineering is light and all about <em>range</em> and <em>weight</em> &mdash; you never engineer for combat on a hauler:</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
       <tbody>
         <tr><td class="mod">Frame Shift Drive</td><td>Increased Range</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
@@ -391,21 +285,23 @@
         <tr><td class="mod">Shield Gen</td><td>Lo-Draw</td><td>&mdash;</td><td>Lei Cheung</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="subhd">Recommended order</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>FSD &mdash; Increased Range + Mass Manager (Farseer).</b> The one roll that matters; it directly raises laden jump and shrinks your route times.</li>
       <li><span class="stepnum">2</span><b>Lightweight the cores &mdash; LS, Sensors (Farseer).</b> Lower optimal mass means more range per laden jump.</li>
       <li><span class="stepnum">3</span><b>Power Plant &mdash; Low Emissions or Armoured (Hera Tani).</b> Cool, efficient power for the shield and booster; Armoured if you want extra module durability.</li>
       <li><span class="stepnum">4</span><b>Shield &mdash; Lo-Draw (Lei Cheung).</b> Keeps the light shield cheap to run so you can spend power on the FSD/booster.</li>
     </ul>
-    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Light &mdash; heavy on <b>encoded</b> for the FSD, a little <b>raw</b> for thrusters and lightweight rolls. Felicity Farseer (maxed in your fleet) does the bulk of the work in one session; no combat materials needed.</div>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; heavy on <b>encoded</b> for the FSD, a little <b>raw</b> for thrusters and lightweight rolls. Felicity Farseer (maxed in your fleet) does the bulk of the work in one session; no combat materials needed.</p></div>
   </section>
 
   <!-- s10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
     <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
       <tbody>
         <tr><td class="mod">Cargo capacity</td><td>~640 t</td><td>~720 t</td><td class="acc">~720 t (shielded)</td></tr>
@@ -416,58 +312,45 @@
         <tr><td class="mod">Power headroom</td><td>Tight</td><td>OK</td><td class="acc">Strong</td></tr>
       </tbody>
     </table>
+    </div>
     <p>The two numbers that decide a trader's earnings are cargo and laden jump, and engineering pushes the Type-9 to ~720 tonnes at ~28&ndash;32 LY laden &mdash; the sweet spot where each run is both huge and reaches the next station without a dozen hops. The FSD roll is, as ever, where the value lives.</p>
   </section>
 
   <!-- s11 -->
   <section id="s11">
-    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
-    <div class="twocol">
-      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cols-2">
+      <div class="panel"><div class="subhd">Getting started</div><ul class="bullets">
       <li><b>Single-commodity trade loops</b> between two nearby stations with a strong buy/sell spread &mdash; the simplest reliable income; fill, fly, sell, repeat.</li>
       <li><b>Stacked delivery / wing cargo missions</b> from a busy hub &mdash; take several haulage missions for the same destination and clear them in one massive load.</li>
       <li><b>Where:</b> use Inara's commodity-and-route tools to find profitable loops near your base &mdash; high-population systems with Industrial/Refinery economies are the classic trade pairs.</li>
     </ul></div>
-      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <div class="panel"><div class="subhd">Advanced</div><ul class="bullets">
       <li><b>Tritium hauling</b> to refuel and reposition fleet carriers &mdash; the Type-9's volume makes it the default carrier tanker.</li>
       <li><b>Trailblazers colonisation supply</b> &mdash; hauling construction commodities to colony depots pays well and consumes bulk volume exactly the way the Type-9 wants.</li>
       <li><b>Rare-goods circuits</b> for high per-tonne margins on longer routes, and bulk Powerplay commodity hauling for merits.</li>
       <li><b>Where:</b> Spansh and Inara for live commodity prices and carrier tritium needs; colonisation depots in frontier systems for construction hauling.</li>
     </ul></div>
     </div>
-    <div class="callout amber"><span class="lbl">Safety note</span>A trading Type-9 is nearly defenceless. Fly <em>laden</em> through high-security space where possible, submit-then-high-wake out of interdictions rather than fighting, and keep the FSD spun up. Your survival kit is a shield, a fast FSD and route choice &mdash; never guns.</div>
+    <div class="callout warn"><span class="lbl">Safety note</span><p>A trading Type-9 is nearly defenceless. Fly <em>laden</em> through high-security space where possible, submit-then-high-wake out of interdictions rather than fighting, and keep the FSD spun up. Your survival kit is a shield, a fast FSD and route choice &mdash; never guns.</p></div>
   </section>
 
   <!-- s12 -->
   <section id="s12">
-    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
       <li><b>It cannot fight &mdash; don't try.</b> A trading Type-9 has no meaningful weapons or agility. Against interdiction, submit, boost away and high-wake; against PvP gankers, prefer Solo or a Private Group for valuable runs.</li>
       <li><b>Large pad only.</b> It can't dock at outposts or many planetary ports &mdash; if a route ends at a medium pad, that's the Type-8's job, not the Type-9's.</li>
       <li><b>The hull is genuinely tough.</b> 864 armour means even a light-shield fit can eat a few hits while you spin up the FSD &mdash; lean on that, not on dogfighting.</li>
       <li><b>Mass-lock matters.</b> Its high mass-lock makes it hard for small ships to mass-lock <em>you</em> into staying &mdash; once your FSD is charged, you leave.</li>
       <li><b>It also mines.</b> The same huge hold makes a strong laser-mining platform &mdash; see the Type-9 Heavy <span class="amb">Mining</span> dossier for that configuration.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Verdict</span>The Type-9 Heavy is the credits-only bulk-trading benchmark: ~720 tonnes of cargo at a sensible laden range, on a tough hull that needs no rank to fly. 94/100 &mdash; out-carried only by the Panther Clipper Mk II and matched-but-out-survived only by the rank-locked Imperial Cutter. If your job is moving the most goods per trip for the least credits-per-tonne, this is the workhorse &mdash; fly it laden, fly it cautious, and let the volume do the earning.</div>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Type-9 Heavy is the credits-only bulk-trading benchmark: ~720 tonnes of cargo at a sensible laden range, on a tough hull that needs no rank to fly. 94/100 &mdash; out-carried only by the Panther Clipper Mk II and matched-but-out-survived only by the rank-locked Imperial Cutter. If your job is moving the most goods per trip for the least credits-per-tonne, this is the workhorse &mdash; fly it laden, fly it cautious, and let the volume do the earning.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/type_9_heavy">coriolis.io/outfit/type_9_heavy</a></div>
@@ -479,9 +362,13 @@
   </section>
 
   <footer>
-    <p><b>Type-9 Heavy &middot; Trading</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Build &amp; engineering: community consensus + standard trading (range/weight) engineer tour. Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Ship &times; Role Dossier</span>
   </footer>
 
 </div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

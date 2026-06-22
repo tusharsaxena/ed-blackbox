@@ -3,222 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Manual — Imperial Cutter · Trading</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#3fa45c;
-    --acc-lt:#74d68c;
-    --acc-deep:#155029;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
-  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
-    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
-  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
-  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
-  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
-  .ratebox .rl{flex:1;min-width:240px}
-  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
-  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:46px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .star{color:var(--amber-lt)}
-
-  /* 3-state loadout table */
-  .l3 td{font-size:13.5px;padding:8px 10px}
-  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
-  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
-    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
-  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
-  .l3 td.eng{color:var(--ink)}
-  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
-  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-
-  table.cmp{table-layout:fixed}
-  td.pcc{font-size:12.5px;line-height:1.45}
-  td.pcc span{display:block;margin:1px 0}
-  td.pcc .p{color:var(--good)}
-  td.pcc .c{color:var(--acc-lt)}
-  td.pcc .p::before{content:"+ ";font-weight:700}
-  td.pcc .c::before{content:"\2212 ";font-weight:700}
-  td.pcc .base{color:var(--ink-faint);font-style:italic}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
-  }
-</style>
+<title>Imperial Cutter &middot; Trading | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers" class="active">Ships</a>
+      <a href="../../index.html#engineering">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Haul</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#dossiers">Ships</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Imperial Cutter · Trading</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Gutamaya</div>
-    <h1>Imperial Cutter<span class="role">Trading</span></h1>
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Imperial Cutter</span><span class="role">Trading</span></h1>
     <p class="lede">The armoured fortune-carrier. The Imperial Cutter hauls <b>nearly 800 tonnes behind the strongest shields in the game</b> &mdash; and it's fast for a large ship. The trader that can carry a fortune through hostile space and outrun or out-tank anything that tries to take it. Bulk cargo with teeth.</p>
 
     <div class="chips">
-      <div class="chip"><span>Class</span><b>Large &middot; Pad L</b></div>
-      <div class="chip"><span>Max cargo</span><b>~794 t</b></div>
-      <div class="chip"><span>Utility</span><b>8</b></div>
-      <div class="chip"><span>Hull</span><b>~200M Cr</b></div>
-      <div class="chip"><span>Role</span><b>Trading</b></div>
-      </div>
+      <span class="chip kv"><span>Class</span><b>Large &middot; Pad L</b></span>
+      <span class="chip kv"><span>Max cargo</span><b>~794 t</b></span>
+      <span class="chip kv"><span>Utility</span><b>8</b></span>
+      <span class="chip kv"><span>Hull</span><b>~200M Cr</b></span>
+      <span class="chip kv"><span>Role</span><b>Trading</b></span>
+    </div>
 
-    <div class="ratebox">
-      <div class="dial" style="--v:95"><div class="num">95<small>/100</small></div></div>
-      <div class="rl">
-        <div class="t">Trading Suitability Rating</div>
-        <div class="d">A superb trading ship and the best <em>defensible</em> hauler in the game. Huge cargo, unmatched shields and surprising speed let it run the most dangerous high-value routes safely; it ranks just below the Panther on raw tonnage, but no hauler is harder to rob or faster to escape.</div>
-      </div>
+    <div class="masthead-meta">
+      <span>Ship &times; Role Dossier</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 Overview</a>
-    <a href="#s2">02 Why it fits</a>
-    <a href="#s3">03 Comparison</a>
-    <a href="#s4">04 Cost &amp; access</a>
-    <a href="#s5">05 ARX pre-built</a>
-    <a href="#s6">06 3-state loadout</a>
-    <a href="#s7">07 Initial plan</a>
-    <a href="#s8">08 A-rated plan</a>
-    <a href="#s9">09 Engineering</a>
-    <a href="#s10">10 Stat ladder</a>
-    <a href="#s11">11 Activities</a>
-    <a href="#s12">12 Field notes</a>
-  </nav>
+  <div class="ratebox">
+    <div class="dial" style="--v:95"><div class="num">95<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Trading Suitability Rating</div>
+      <div class="d">A superb trading ship and the best <em>defensible</em> hauler in the game. Huge cargo, unmatched shields and surprising speed let it run the most dangerous high-value routes safely; it ranks just below the Panther on raw tonnage, but no hauler is harder to rob or faster to escape.</div>
+    </div>
+  </div>
 
   <!-- s1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
     <p>The Imperial Cutter is the rare ship that hauls like a freighter and survives like a warship. Its ten optional internals carry nearly 800 tonnes &mdash; second only to the Panther and Type-9 &mdash; while its shields, the strongest in the game, and eight utility mounts make it almost impossible to rob. And uniquely among big haulers, it's fast: a 323 m/s boost lets it simply outrun pirates a Type-9 would have to fight.</p>
     <p>That combination &mdash; huge cargo, apex shields, real speed &mdash; makes it the premier ship for high-value and dangerous trade routes, where a Type-9 would be a sitting duck. The costs are the Imperial Duke rank and a ~200M Cr price tag. But for a commander hauling a fortune through contested space, the Cutter carries more, more safely, than anything except the slower, flimsier-by-comparison super-haulers.</p>
-    <div class="callout amber"><span class="lbl">Where this hull shines</span>High-value and dangerous-route trading: carrying fortunes through hostile or contested space, smuggling, Community Goal hauling under threat, and any run where surviving (or outrunning) interdiction matters as much as capacity.</div>
+    <div class="callout warn"><span class="lbl">Where this hull shines</span><p>High-value and dangerous-route trading: carrying fortunes through hostile or contested space, smuggling, Community Goal hauling under threat, and any run where surviving (or outrunning) interdiction matters as much as capacity.</p></div>
   </section>
 
   <!-- s2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Max cargo (with shield)</div><div class="v">~700&ndash;794 <small>t</small></div></div>
       <div class="cell"><div class="k">Top speed / boost</div><div class="v">202 / 323 <small>m/s (fast)</small></div></div>
@@ -230,52 +115,56 @@
       <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">Imperial Duke</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>Four things make the Cutter the best defensible hauler:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>Huge cargo.</b> Nearly 800 tonnes &mdash; capacity rivalling the dedicated super-haulers, on a ship that also fights.</li>
       <li><b>The strongest shields in the game.</b> A prismatic Cutter is almost impossible to break &mdash; your cargo is safe even under sustained attack.</li>
       <li><b>Fast for a large ship.</b> A 323 m/s boost lets it outrun pirates other haulers must stand and fight.</li>
       <li><b>Eight utilities.</b> A full shield-booster and point-defence suite makes it a fortress that happens to carry cargo.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>It needs Imperial Duke rank &mdash; a long grind &mdash; costs ~200M Cr, is large-pad-bound, and carries a little less than the Panther or Type-9. A keeping-its-shield trade fit also sacrifices some cargo slots to defence. The Cutter's case is defensible, fast bulk hauling; for pure maximum tonnage or value, the Panther or cheaper Type-9 win.</div>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It needs Imperial Duke rank &mdash; a long grind &mdash; costs ~200M Cr, is large-pad-bound, and carries a little less than the Panther or Type-9. A keeping-its-shield trade fit also sacrifices some cargo slots to defence. The Cutter's case is defensible, fast bulk hauling; for pure maximum tonnage or value, the Panther or cheaper Type-9 win.</p></div>
   </section>
 
   <!-- s3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
     <p>Both tables rate ships <em>for trading specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; the headline number for bulk hauling.</p>
     <p class="subhd">Same class &mdash; large-pad traders</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Imperial Cutter</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1048</td><td class="pcc"><span class="p">More cargo; no rank gate</span><span class="c">Slower; less shield; pricier</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Cutter <span class="tag r">this</span></td><td>Large</td><td>~794</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">95</span><div class="bar"><i style="width:95%"></i></div></td></tr>
-        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Similar cargo; far cheaper; no rank</span><span class="c">Flimsy; slow; easily robbed</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
-        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Cheap; decent capacity</span><span class="c">Far less cargo; lightly defended</span></td><td><span class="rscore">78</span><div class="bar"><i style="width:78%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~250</td><td class="pcc"><span class="p">Even faster</span><span class="c">Far less cargo</span></td><td><span class="rscore">74</span><div class="bar"><i style="width:74%"></i></div></td></tr>
+        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1048</td><td class="pcc"><span class="p">More cargo; no rank gate</span><span class="c">Slower; less shield; pricier</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter <span class="pill md">this</span></td><td>Large</td><td>~794</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Similar cargo; far cheaper; no rank</span><span class="c">Flimsy; slow; easily robbed</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Cheap; decent capacity</span><span class="c">Far less cargo; lightly defended</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~250</td><td class="pcc"><span class="p">Even faster</span><span class="c">Far less cargo</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The Cutter is the defensible, fast large hauler. The Panther and Type-9 carry more, but neither can outrun a pirate or shrug off an attack the way the Cutter can. For valuable cargo through dangerous space, it's the safest big hold in the game.</p>
     <p class="subhd">Other classes &mdash; medium and capital traders</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Imperial Cutter</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Medium pad; far cheaper; no rank</span><span class="c">Far less cargo and shield</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
-        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Versatile; no rank; combat-capable</span><span class="c">Less cargo; weaker shields</span></td><td><span class="rscore">76</span><div class="bar"><i style="width:76%"></i></div></td></tr>
-        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Medium pad; defensible; versatile</span><span class="c">Far less cargo</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
-        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1048</td><td class="pcc"><span class="p">The maximum-tonnage king</span><span class="c">Slower; less shield</span></td><td><span class="rscore">98</span><div class="bar"><i style="width:98%"></i></div></td></tr>
-        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Similar cargo, far cheaper</span><span class="c">Flimsy; slow</span></td><td><span class="rscore">94</span><div class="bar"><i style="width:94%"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Medium pad; far cheaper; no rank</span><span class="c">Far less cargo and shield</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Versatile; no rank; combat-capable</span><span class="c">Less cargo; weaker shields</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Medium pad; defensible; versatile</span><span class="c">Far less cargo</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1048</td><td class="pcc"><span class="p">The maximum-tonnage king</span><span class="c">Slower; less shield</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Similar cargo, far cheaper</span><span class="c">Flimsy; slow</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The medium traders are cheaper and land more flexibly; the Panther hauls more. But the Cutter is the only ship combining near-super-hauler cargo with the best shields and real speed &mdash; the definitive choice for carrying a fortune through danger.</p>
   </section>
 
   <!-- s4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Hull</div><div class="v">~200M Cr</div></div>
       <div class="cell"><div class="k">A-rated trader</div><div class="v">~225M Cr</div></div>
@@ -283,22 +172,23 @@
       <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">Imperial Duke</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>At ~200M Cr and behind the Imperial Duke rank, the Cutter is a major commitment. A defensible trade fit with a prismatic shield pushes the all-in figure past 270M Cr.</p>
     <p>Conveniently, your Imperial-rank journey toward Squire and the Achenar permit is the same ladder that eventually reaches Duke &mdash; so the trading Cutter sits at the far end of a grind you're already on, and the same hull doubles as a combat flagship.</p>
-    <div class="callout amber"><span class="lbl">Imperial endgame, dual-use</span>The Cutter sits at the top of the Imperial Navy you're already climbing &mdash; and the same hull is a combat apex and a fortune-carrier. One ship, two endgame roles.</div>
+    <div class="callout warn"><span class="lbl">Imperial endgame, dual-use</span><p>The Cutter sits at the top of the Imperial Navy you're already climbing &mdash; and the same hull is a combat apex and a fortune-carrier. One ship, two endgame roles.</p></div>
   </section>
 
   <!-- s5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
     <p>There is no trading-specific ARX pre-built built around the Imperial Cutter; buy and outfit it normally once you hold Duke rank.</p>
   </section>
 
   <!-- s6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
     <p>A defensible bulk-trade fit built around the game's best shields. Initial is buy-only; A-rated is the trade baseline; Engineered maximises protected cargo and laden range.</p>
+    <div class="tbl-scroll">
     <table class="l3">
       <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
       <tbody>
@@ -332,12 +222,13 @@
         <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS / spare</td></tr>
       </tbody>
     </table>
-    <div class="callout acc"><span class="lbl">Prismatic shield, then cargo</span>The Cutter's edge is protection &mdash; fit a prismatic generator in a class-8 slot and a full booster suite, then fill the rest with cargo. You lose some tonnage versus a stripped Type-9, but your fortune is genuinely safe and you can outrun what you can't out-tank.</div>
+    </div>
+    <div class="callout"><span class="lbl">Prismatic shield, then cargo</span><p>The Cutter's edge is protection &mdash; fit a prismatic generator in a class-8 slot and a full booster suite, then fill the rest with cargo. You lose some tonnage versus a stripped Type-9, but your fortune is genuinely safe and you can outrun what you can't out-tank.</p></div>
   </section>
 
   <!-- s7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
     <p>Earn Duke, buy the hull, and fit a big shield plus cargo racks &mdash; protected hauling from the start.</p>
     <p>Load the eight utilities with shield boosters and point defence.</p>
     <p>A-rate thrusters and FSD so the laden ship keeps its speed advantage.</p>
@@ -345,23 +236,24 @@
 
   <!-- s8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
     <p>A-rating priority for a defensible hauler:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>Shield Generator &rarr; prismatic</b> &mdash; The Cutter's whole edge; the best shield protects the cargo. <span class="acc">~25M Cr</span></li>
       <li><span class="stepnum">2</span><b>Thrusters &rarr; A</b> &mdash; Keep the speed that lets it outrun pirates. <span class="acc">~20M Cr</span></li>
       <li><span class="stepnum">3</span><b>FSD &rarr; A</b> &mdash; Laden jump range for route efficiency. <span class="acc">~20M Cr</span></li>
       <li><span class="stepnum">4</span><b>Power Plant &rarr; A</b> &mdash; Power for the big shield and utilities. <span class="acc">~25M Cr</span></li>
       <li><span class="stepnum">5</span><b>Power Distributor &rarr; A</b> &mdash; Sustain boost and shield cells. <span class="acc">~18M Cr</span></li>
     </ul>
-    <div class="callout amber"><span class="lbl">Shield and speed protect the cargo</span>Unlike a Type-9, the Cutter survives interdiction &mdash; prioritise the prismatic shield and A-rated thrusters so it can both out-tank and outrun trouble.</div>
+    <div class="callout warn"><span class="lbl">Shield and speed protect the cargo</span><p>Unlike a Type-9, the Cutter survives interdiction &mdash; prioritise the prismatic shield and A-rated thrusters so it can both out-tank and outrun trouble.</p></div>
   </section>
 
   <!-- s9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
     <p>The trading engineering pattern weighted to protection. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
       <tbody>
         <tr><td class="mod">Prismatic Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
@@ -372,21 +264,23 @@
         <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="subhd">Recommended order</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span>Prismatic shield Resistance-Augmented plus Heavy-Duty boosters first &mdash; protection is the Cutter's trading edge.</li>
       <li><span class="stepnum">2</span>Thrusters to G5 to keep the speed that lets it outrun pirates.</li>
       <li><span class="stepnum">3</span>FSD Increased Range for route efficiency; Low-Emissions plant for cool running.</li>
       <li><span class="stepnum">4</span>Fill the rest with the biggest cargo racks.</li>
     </ul>
-    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Moderate &mdash; shield, thruster, FSD and plant blueprints on large modules; the prismatic generator needs Imperial-faction access. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</div>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; shield, thruster, FSD and plant blueprints on large modules; the prismatic generator needs Imperial-faction access. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
   </section>
 
   <!-- s10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
     <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
       <tbody>
         <tr><td class="mod">Max cargo (t)</td><td>~600</td><td>~700</td><td class="acc">~794 (stripped)</td></tr>
@@ -396,56 +290,43 @@
         <tr><td class="mod">Survivability</td><td>high</td><td>very high</td><td class="acc">extreme</td></tr>
       </tbody>
     </table>
+    </div>
     <p>Engineered, the Cutter hauls ~700t behind a 2,500 MJ shield at ~380 m/s &mdash; it can carry a fortune through hostile space and either out-tank or outrun any threat. It carries a little less than the super-haulers; nothing carries it more safely.</p>
   </section>
 
   <!-- s11 -->
   <section id="s11">
-    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
-    <div class="twocol">
-      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cols-2">
+      <div class="panel"><div class="subhd">Getting started</div><ul class="bullets">
       <li><b>High-value commodity runs.</b> Carry fortunes through contested space that would doom a Type-9.</li>
       <li><b>Smuggling and black-market runs.</b> Speed and shields beat security and pirates alike.</li>
       <li><b>Community Goal hauling under threat.</b> Top delivery boards on routes others can't survive.</li>
     </ul></div>
-      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <div class="panel"><div class="subhd">Advanced</div><ul class="bullets">
       <li><b>Dangerous-route specialist.</b> Anarchy systems, pirate lanes and conflict zones &mdash; it hauls where lesser traders won't go.</li>
       <li><b>Dual-role flagship.</b> The same hull is a combat apex &mdash; trade one week, fight the next.</li>
       <li><b>Powerplay logistics.</b> Move fortification and undermining cargo through hostile space safely.</li>
     </ul></div>
     </div>
-    <div class="callout acc"><span class="lbl">Generic example routes</span>Any high-value loop, especially through dangerous space, suits it. As a Gutamaya hull it pairs with your Imperial-rank journey &mdash; the trading Cutter is one reward at the end of the Duke grind.</div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Any high-value loop, especially through dangerous space, suits it. As a Gutamaya hull it pairs with your Imperial-rank journey &mdash; the trading Cutter is one reward at the end of the Duke grind.</p></div>
   </section>
 
   <!-- s12 -->
   <section id="s12">
-    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
       <li>Protection is the point &mdash; a prismatic shield and full booster suite let it carry fortunes safely.</li>
       <li>Keep the speed &mdash; A-rated thrusters mean it outruns what it can't out-tank.</li>
       <li>It carries a bit less than the Panther/Type-9 but is far safer; choose it for dangerous routes.</li>
       <li>Mind the large pad and the Duke rank gate &mdash; both are part of the cost.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Verdict</span>The Imperial Cutter is the armoured fortune-carrier: nearly 800 tonnes of cargo behind the strongest shields in the game, and fast enough to outrun what it can't out-tank. The Panther and Type-9 haul more, but neither can carry a fortune through hostile space and live. For defensible, dangerous-route bulk trading, the Cutter is unmatched &mdash; and it's a combat flagship besides.</div>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Imperial Cutter is the armoured fortune-carrier: nearly 800 tonnes of cargo behind the strongest shields in the game, and fast enough to outrun what it can't out-tank. The Panther and Type-9 haul more, but neither can carry a fortune through hostile space and live. For defensible, dangerous-route bulk trading, the Cutter is unmatched &mdash; and it's a combat flagship besides.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/imperial_cutter">coriolis.io/outfit/imperial_cutter</a></div>
@@ -457,9 +338,13 @@
   </section>
 
   <footer>
-    <p><b>Imperial Cutter &middot; Trading</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Imperial Cutter &middot; Trading dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Ship &times; Role Dossier</span>
   </footer>
 
 </div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

@@ -3,222 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Manual — Imperial Courier · Exploration</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#25b0a0;
-    --acc-lt:#63e2d2;
-    --acc-deep:#0f5249;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
-  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
-    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
-  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
-  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
-  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
-  .ratebox .rl{flex:1;min-width:240px}
-  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
-  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:46px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .star{color:var(--amber-lt)}
-
-  /* 3-state loadout table */
-  .l3 td{font-size:13.5px;padding:8px 10px}
-  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
-  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
-    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
-  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
-  .l3 td.eng{color:var(--ink)}
-  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
-  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-
-  table.cmp{table-layout:fixed}
-  td.pcc{font-size:12.5px;line-height:1.45}
-  td.pcc span{display:block;margin:1px 0}
-  td.pcc .p{color:var(--good)}
-  td.pcc .c{color:var(--acc-lt)}
-  td.pcc .p::before{content:"+ ";font-weight:700}
-  td.pcc .c::before{content:"\2212 ";font-weight:700}
-  td.pcc .base{color:var(--ink-faint);font-style:italic}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
-  }
-</style>
+<title>Imperial Courier &middot; Exploration | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<style>:root{--accent:var(--fed-lt);--accent-lt:var(--fed-lt);--accent-deep:var(--fed);
+  --accent-soft:rgba(79,159,214,.4);--accent-glow:rgba(79,159,214,.10);}</style>
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers" class="active">Ships</a>
+      <a href="../../index.html#engineering">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Explore</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#dossiers">Ships</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Imperial Courier · Exploration</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Gutamaya</div>
-    <h1>Imperial Courier<span class="role">Exploration</span></h1>
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Imperial Courier</span><span class="role">Exploration</span></h1>
     <p class="lede">The featherweight tourer. The Imperial Courier brings <b>blistering speed, strong shields and a light frame</b> to exploration &mdash; a fast, elegant little ship that jumps a respectable distance and zips around systems once it arrives. Cramped on kit, but a stylish, nimble way to see the stars.</p>
 
     <div class="chips">
-      <div class="chip"><span>Class</span><b>Small &middot; Pad S</b></div>
-      <div class="chip"><span>Max jump</span><b>~55 LY</b></div>
-      <div class="chip"><span>Fuel scoop</span><b>Class 3</b></div>
-      <div class="chip"><span>Hull</span><b>~2.48M Cr</b></div>
-      <div class="chip"><span>Role</span><b>Exploration</b></div>
-      </div>
+      <span class="chip kv"><span>Class</span><b>Small &middot; Pad S</b></span>
+      <span class="chip kv"><span>Max jump</span><b>~55 LY</b></span>
+      <span class="chip kv"><span>Fuel scoop</span><b>Class 3</b></span>
+      <span class="chip kv"><span>Hull</span><b>~2.48M Cr</b></span>
+      <span class="chip kv"><span>Role</span><b>Exploration</b></span>
+    </div>
 
-    <div class="ratebox">
-      <div class="dial" style="--v:73"><div class="num">73<small>/100</small></div></div>
-      <div class="rl">
-        <div class="t">Exploration Suitability Rating</div>
-        <div class="d">A characterful light explorer. Its low mass gives a good jump range and its speed and shields make in-system travel a joy; it ranks mid-pack because its tiny internals limit the scoop, scanners and redundancy it can carry &mdash; it's a fast tourer, not a fully-equipped expedition ship.</div>
-      </div>
+    <div class="masthead-meta">
+      <span>Ship &times; Role Dossier</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 Overview</a>
-    <a href="#s2">02 Why it fits</a>
-    <a href="#s3">03 Comparison</a>
-    <a href="#s4">04 Cost &amp; access</a>
-    <a href="#s5">05 ARX pre-built</a>
-    <a href="#s6">06 3-state loadout</a>
-    <a href="#s7">07 Initial plan</a>
-    <a href="#s8">08 A-rated plan</a>
-    <a href="#s9">09 Engineering</a>
-    <a href="#s10">10 Stat ladder</a>
-    <a href="#s11">11 Activities</a>
-    <a href="#s12">12 Field notes</a>
-  </nav>
+  <div class="ratebox">
+    <div class="dial" style="--v:73"><div class="num">73<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Exploration Suitability Rating</div>
+      <div class="d">A characterful light explorer. Its low mass gives a good jump range and its speed and shields make in-system travel a joy; it ranks mid-pack because its tiny internals limit the scoop, scanners and redundancy it can carry &mdash; it's a fast tourer, not a fully-equipped expedition ship.</div>
+    </div>
+  </div>
 
   <!-- s1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
     <p>The Imperial Courier is Gutamaya's elegant speedster, and its exploration appeal is its featherweight build. At just 35 tonnes it's one of the lightest ships in the game, so even a modest FSD pushes it to ~55 LY engineered &mdash; and once in a system, its blistering speed and strong shields make zipping between bodies and skimming planets a genuine pleasure.</p>
     <p>The trade-off is space. Its eight optionals are small, so the fuel scoop, scanner, AFMU and SRV bay all have to be modest, with little room for redundancy or comfort. It also needs Imperial rank. The Courier won't carry a full expedition the way a Phantom or Anaconda does &mdash; but as a fast, light, stylish tourer for shorter trips and in-system exploration, it's a delight, and a natural fit for an Empire-aligned commander.</p>
-    <div class="callout amber"><span class="lbl">Where this hull shines</span>Fast, light exploration: shorter expeditions, in-system surveying and planet-skimming, exobiology hops, and stylish deep-space touring for commanders who value speed and elegance over carrying capacity.</div>
+    <div class="callout warn"><span class="lbl">Where this hull shines</span><p>Fast, light exploration: shorter expeditions, in-system surveying and planet-skimming, exobiology hops, and stylish deep-space touring for commanders who value speed and elegance over carrying capacity.</p></div>
   </section>
 
   <!-- s2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~55 <small>LY</small></div></div>
       <div class="cell"><div class="k">Top speed / boost</div><div class="v">280 / 381 <small>m/s (fast)</small></div></div>
@@ -230,54 +117,58 @@
       <div class="cell"><div class="k">FSD</div><div class="v">Class 3</div></div>
       <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(lands anywhere)</small></div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">Imperial Master</div></div>
-      </div>
+    </div>
     <p>Four things define the Courier as an explorer:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>Light frame, good range.</b> At 35 tonnes, even a class-3 FSD pushes it to ~55 LY &mdash; impressive for so small and cheap a hull.</li>
       <li><b>Blistering in-system speed.</b> 381 m/s boost makes travelling between bodies, skimming planets and reaching surface sites fast and fun.</li>
       <li><b>Strong shields.</b> A 230 MJ base shield gives a real safety margin for planetary landings and skimming.</li>
       <li><b>Four utilities and small-pad access.</b> Room for heat sinks and a booster, and the ability to land at any outpost.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>Its eight optionals are all small, so the scoop (class 3), scanner, AFMU and SRV bay are modest with no room for redundancy &mdash; it can't sustain the longest expeditions self-sufficiently. It needs Imperial rank, and its tiny fuel tank limits jump chains between scoops. The Courier is a fast tourer for shorter trips, not a fully-equipped long-haul ship.</div>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Its eight optionals are all small, so the scoop (class 3), scanner, AFMU and SRV bay are modest with no room for redundancy &mdash; it can't sustain the longest expeditions self-sufficiently. It needs Imperial rank, and its tiny fuel tank limits jump chains between scoops. The Courier is a fast tourer for shorter trips, not a fully-equipped long-haul ship.</p></div>
   </section>
 
   <!-- s3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
     <p>Both tables rate ships <em>for exploration specifically</em>. The role column is the maximum engineered jump range in light-years &mdash; the headline number for deep-space travel.</p>
     <p class="subhd">Same class &mdash; small-pad explorers</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Imperial Courier</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~68</td><td class="pcc"><span class="p">More range, scoop and capacity; cool-running</span><span class="c">Slower in-system; less shield</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
-        <tr><td class="mod">Dolphin</td><td>Small</td><td>~58</td><td class="pcc"><span class="p">Coolest-running; comfortable; roomier</span><span class="c">Slower; cheaper kit</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
-        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>~55</td><td class="pcc"><span class="p">Cooler-running; cheaper; four utilities</span><span class="c">Slower; weaker shields</span></td><td><span class="rscore">74</span><div class="bar"><i style="width:74%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Courier <span class="tag r">this</span></td><td>Small</td><td>~55</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">73</span><div class="bar"><i style="width:73%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~48</td><td class="pcc"><span class="p">Roomier; multi-role</span><span class="c">Shorter range; hotter</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Versatile; cargo</span><span class="c">Slower; hotter</span></td><td><span class="rscore">71</span><div class="bar"><i style="width:71%"></i></div></td></tr>
-        <tr><td class="mod">Hauler</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Dirt cheap</span><span class="c">Slow; tiny; weak shields</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~68</td><td class="pcc"><span class="p">More range, scoop and capacity; cool-running</span><span class="c">Slower in-system; less shield</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Dolphin</td><td>Small</td><td>~58</td><td class="pcc"><span class="p">Coolest-running; comfortable; roomier</span><span class="c">Slower; cheaper kit</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>~55</td><td class="pcc"><span class="p">Cooler-running; cheaper; four utilities</span><span class="c">Slower; weaker shields</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier <span class="pill md">this</span></td><td>Small</td><td>~55</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~48</td><td class="pcc"><span class="p">Roomier; multi-role</span><span class="c">Shorter range; hotter</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Versatile; cargo</span><span class="c">Slower; hotter</span></td><td><span class="rscore">71</span><div class="bar mini"><i style="--pct:71"></i></div></td></tr>
+        <tr><td class="mod">Hauler</td><td>Small</td><td>~50</td><td class="pcc"><span class="p">Dirt cheap</span><span class="c">Slow; tiny; weak shields</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>Among small-pad explorers the Courier is the speed-and-shield pick. The DBE and Dolphin out-range and out-carry it (and run cooler), but none matches its in-system pace or shield strength. Choose it for fast, stylish touring; choose a Diamondback for range and capacity.</p>
     <p class="subhd">Other classes &mdash; the capable rivals</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Imperial Courier</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~85</td><td class="pcc"><span class="p">Far more range and capacity</span><span class="c">Pricier; medium pad</span></td><td><span class="rscore">96</span><div class="bar"><i style="width:96%"></i></div></td></tr>
-        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~75</td><td class="pcc"><span class="p">Premium range plus full kit</span><span class="c">Far pricier; medium pad</span></td><td><span class="rscore">93</span><div class="bar"><i style="width:93%"></i></div></td></tr>
-        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~62</td><td class="pcc"><span class="p">Roomier; great visibility</span><span class="c">Pricier; slower; medium pad</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
-        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~68</td><td class="pcc"><span class="p">More range and capacity; cheaper</span><span class="c">Slower in-system</span></td><td><span class="rscore">88</span><div class="bar"><i style="width:88%"></i></div></td></tr>
-        <tr><td class="mod">Dolphin</td><td>Small</td><td>~58</td><td class="pcc"><span class="p">Cooler; comfortable; roomier</span><span class="c">Slower</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
+        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~85</td><td class="pcc"><span class="p">Far more range and capacity</span><span class="c">Pricier; medium pad</span></td><td><span class="rscore">96</span><div class="bar mini"><i style="--pct:96"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~75</td><td class="pcc"><span class="p">Premium range plus full kit</span><span class="c">Far pricier; medium pad</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~62</td><td class="pcc"><span class="p">Roomier; great visibility</span><span class="c">Pricier; slower; medium pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~68</td><td class="pcc"><span class="p">More range and capacity; cheaper</span><span class="c">Slower in-system</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Dolphin</td><td>Small</td><td>~58</td><td class="pcc"><span class="p">Cooler; comfortable; roomier</span><span class="c">Slower</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>For range, capacity and self-sufficiency, the Diamondbacks and the mediums all beat the Courier. Its case is pure speed and shields on a featherweight, stylish hull &mdash; a fast tourer for shorter trips, and a fine fit for an Imperial-aligned pilot who already flies one.</p>
   </section>
 
   <!-- s4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Hull</div><div class="v">~2.48M Cr</div></div>
       <div class="cell"><div class="k">A-rated explorer</div><div class="v">~7M Cr</div></div>
@@ -285,22 +176,23 @@
       <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">Imperial Master</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>At ~2.48M Cr the Courier is cheap, gated only by the mid-tier Imperial Master rank. Its small modules keep a full explorer fit around 13M Cr all-in.</p>
     <p>It pairs naturally with your Imperial-rank journey &mdash; the same grind toward Squire and the Achenar permit passes the Master rank it needs &mdash; making it a stylish light explorer you may unlock along the way.</p>
-    <div class="callout amber"><span class="lbl">Fast, light, Imperial</span>A quick, shielded featherweight explorer for around 13M Cr all-in, on a modest Imperial rank &mdash; stylish touring for an Empire pilot.</div>
+    <div class="callout warn"><span class="lbl">Fast, light, Imperial</span><p>A quick, shielded featherweight explorer for around 13M Cr all-in, on a modest Imperial rank &mdash; stylish touring for an Empire pilot.</p></div>
   </section>
 
   <!-- s5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
     <p>There is no exploration-specific ARX pre-built built around the Imperial Courier; buy and outfit it normally once you hold the rank.</p>
   </section>
 
   <!-- s6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
     <p>A fast, light touring-explorer fit. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises range and keeps the speed and shields that define it.</p>
+    <div class="tbl-scroll">
     <table class="l3">
       <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
       <tbody>
@@ -332,12 +224,13 @@
         <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
       </tbody>
     </table>
-    <div class="callout acc"><span class="lbl">Light and fast, not deep</span>The Courier's small optionals carry only modest kit &mdash; a class-3 scoop, Guardian booster, small SRV bay, scanner and one AFMU, with no redundancy. Lean on its speed and shields for in-system work; accept that the longest self-sufficient hauls suit a roomier ship.</div>
+    </div>
+    <div class="callout"><span class="lbl">Light and fast, not deep</span><p>The Courier's small optionals carry only modest kit &mdash; a class-3 scoop, Guardian booster, small SRV bay, scanner and one AFMU, with no redundancy. Lean on its speed and shields for in-system work; accept that the longest self-sufficient hauls suit a roomier ship.</p></div>
   </section>
 
   <!-- s7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
     <p>Earn Master, buy the hull, and fit a class-3 scoop and A-rated FSD.</p>
     <p>Add a Guardian booster, scanner, small SRV bay and an AFMU.</p>
     <p>Strip weapons; keep a strong shield for confident planetary skimming.</p>
@@ -345,23 +238,24 @@
 
   <!-- s8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
     <p>A-rating priority for a light tourer:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>FSD &rarr; A</b> &mdash; Jump range is everything; A-rate the drive first. <span class="acc">~1.5M Cr</span></li>
       <li><span class="stepnum">2</span><b>Fuel Scoop &rarr; A (class 3)</b> &mdash; Keeps the light hull topped up between jumps. <span class="acc">~600k Cr</span></li>
       <li><span class="stepnum">3</span><b>Guardian FSD Booster 3</b> &mdash; A flat range bonus &mdash; a Guardian-site run. <span class="acc">material cost</span></li>
       <li><span class="stepnum">4</span><b>Shield Generator &rarr; A</b> &mdash; The Courier's strong shield makes skimming safe. <span class="acc">~600k Cr</span></li>
       <li><span class="stepnum">5</span><b>Scanner + SRV + AFMU</b> &mdash; Surveys, surface access and self-repair. <span class="acc">~1.5M Cr</span></li>
     </ul>
-    <div class="callout amber"><span class="lbl">Range, then keep the shields</span>A-rate the FSD and scoop for range, but don't skimp the shield &mdash; the Courier's confident planetary skimming is half its charm.</div>
+    <div class="callout warn"><span class="lbl">Range, then keep the shields</span><p>A-rate the FSD and scoop for range, but don't skimp the shield &mdash; the Courier's confident planetary skimming is half its charm.</p></div>
   </section>
 
   <!-- s9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
     <p>The exploration engineering pattern on a featherweight. Felicity Farseer (maxed) carries the FSD and thrusters; pin blueprints for remote G1&rarr;G5 application.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
       <tbody>
         <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
@@ -372,21 +266,23 @@
         <tr><td class="mod">Shield Generator</td><td>Lightweight or Reinforced</td><td>&mdash;</td><td>Lei Cheung</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="subhd">Recommended order</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span>FSD Increased Range to G5 with Mass Manager &mdash; the light hull turns it into ~55 LY.</li>
       <li><span class="stepnum">2</span>Lightweight life support and sensors to shed what little mass it has.</li>
       <li><span class="stepnum">3</span>Low-Emissions plant for cool scooping.</li>
       <li><span class="stepnum">4</span>Keep the shield healthy for confident in-system and surface flying.</li>
     </ul>
-    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Very light &mdash; tiny modules and standard exploration blueprints; the Guardian FSD Booster needs a Guardian-site run. With a complete inventory this is trivial spend. Ask for exact per-blueprint counts if needed.</div>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Very light &mdash; tiny modules and standard exploration blueprints; the Guardian FSD Booster needs a Guardian-site run. With a complete inventory this is trivial spend. Ask for exact per-blueprint counts if needed.</p></div>
   </section>
 
   <!-- s10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
     <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
       <tbody>
         <tr><td class="mod">Max jump (LY)</td><td>~32</td><td>~42</td><td class="acc">~55</td></tr>
@@ -396,56 +292,43 @@
         <tr><td class="mod">Self-sufficiency</td><td>low</td><td>low</td><td class="acc">low</td></tr>
       </tbody>
     </table>
+    </div>
     <p>Engineered, the Courier jumps ~55 LY and rockets around systems behind a stout shield &mdash; a fast, confident tourer. Its tiny internals cap kit and redundancy, so the longest hauls favour a roomier ship; for speed, shields and style on shorter trips, it shines.</p>
   </section>
 
   <!-- s11 -->
   <section id="s11">
-    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
-    <div class="twocol">
-      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cols-2">
+      <div class="panel"><div class="subhd">Getting started</div><ul class="bullets">
       <li><b>Shorter expeditions.</b> Fast travel and a good jump range suit trips that don't demand months of self-sufficiency.</li>
       <li><b>In-system surveying.</b> Its speed makes mapping bodies and skimming planets quick and enjoyable.</li>
       <li><b>Exobiology hops.</b> A small SRV bay and strong shield suit confident surface sampling.</li>
     </ul></div>
-      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <div class="panel"><div class="subhd">Advanced</div><ul class="bullets">
       <li><b>Stylish touring.</b> A quick, elegant way to visit nearby wonders without a big investment.</li>
       <li><b>Fast planet-skimming.</b> Its shields and speed make low passes and surface approaches confident and fun.</li>
       <li><b>Imperial-flavour exploration.</b> A natural light explorer for an Empire-aligned commander mid-rank-grind.</li>
     </ul></div>
     </div>
-    <div class="callout acc"><span class="lbl">Generic example destinations</span>Nearby nebulae, scenic systems and surface sites suit fast Courier trips. From your Diaguandri / Ray Gateway base it reaches local points of interest quickly &mdash; ideal for shorter, stylish outings.</div>
+    <div class="callout"><span class="lbl">Generic example destinations</span><p>Nearby nebulae, scenic systems and surface sites suit fast Courier trips. From your Diaguandri / Ray Gateway base it reaches local points of interest quickly &mdash; ideal for shorter, stylish outings.</p></div>
   </section>
 
   <!-- s12 -->
   <section id="s12">
-    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
       <li>Lean on speed and shields &mdash; the Courier tours and skims beautifully; it doesn't haul a deep expedition kit.</li>
       <li>Mind the small fuel tank &mdash; scoop often on long chains.</li>
       <li>Keep the shield strong for confident planetary approaches.</li>
       <li>For range, capacity and self-sufficiency, a Diamondback or a medium is the step up; the Courier is the fast, light stylist.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Verdict</span>The Imperial Courier is the featherweight tourer of exploration: a light frame for a good jump range, blistering in-system speed and a stout shield, all on a cheap, elegant Imperial hull. Its tiny internals keep it from the longest self-sufficient hauls, but for fast, stylish, confident touring &mdash; and as an Empire pilot's light explorer &mdash; it's a real pleasure to fly.</div>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Imperial Courier is the featherweight tourer of exploration: a light frame for a good jump range, blistering in-system speed and a stout shield, all on a cheap, elegant Imperial hull. Its tiny internals keep it from the longest self-sufficient hauls, but for fast, stylish, confident touring &mdash; and as an Empire pilot's light explorer &mdash; it's a real pleasure to fly.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/imperial_courier">coriolis.io/outfit/imperial_courier</a></div>
@@ -457,9 +340,13 @@
   </section>
 
   <footer>
-    <p><b>Imperial Courier &middot; Exploration</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Imperial Courier &middot; Exploration dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Ship &times; Role Dossier</span>
   </footer>
 
 </div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>

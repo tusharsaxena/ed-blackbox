@@ -3,222 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Field Manual — Adder · Multipurpose</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0807;
-    --bg2:#100b0a;
-    --panel:#160f0d;
-    --panel2:#1c1310;
-    --grid:rgba(180,70,60,.05);
-    --maroon:#8b2332;
-    --maroon-lt:#b13140;
-    --maroon-deep:#4a0e16;
-    --amber:#e0913a;
-    --amber-lt:#f4b15f;
-    --amber-dim:#9c7434;
-    --acc:#d77a2e;
-    --acc-lt:#f4a259;
-    --acc-deep:#7a3f12;
-    --danger:#d8423b;
-    --good:#5fb37a;
-    --blue:#5b9bd1;
-    --ink:#ece4df;
-    --ink-dim:#a89a93;
-    --ink-faint:#6e615c;
-    --hair:rgba(190,120,110,.16);
-    --hair-strong:rgba(224,70,60,.34);
-    --radius:3px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse 120% 95% at 50% 28%,#000 55%,transparent 100%);
-  }
-  body::after{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(900px 600px at 80% -8%,rgba(224,70,60,.12),transparent 60%),
-      radial-gradient(1000px 700px at 8% 4%,rgba(139,35,50,.18),transparent 62%),
-      radial-gradient(1200px 900px at 50% 122%,rgba(224,145,58,.07),transparent 60%);
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 22px 90px}
-
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--hair-strong);position:relative}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.42em;
-    text-transform:uppercase;font-size:12.5px;color:var(--amber);margin-bottom:14px}
-  .eyebrow .sep{color:var(--ink-faint);margin:0 10px}
-  h1{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(38px,7vw,72px);
-    line-height:.96;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-  h1 .role{display:block;font-size:clamp(20px,3.4vw,32px);color:var(--acc-lt);
-    letter-spacing:6px;margin-top:8px;font-weight:600}
-  .lede{margin-top:20px;max-width:760px;font-size:18px;color:var(--ink-dim);font-weight:300}
-  .lede b{color:var(--ink);font-weight:500}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .chip{font-family:'Chakra Petch',sans-serif;font-size:12px;letter-spacing:.6px;
-    padding:7px 13px;border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));text-transform:uppercase}
-  .chip span{color:var(--ink-faint);margin-right:7px}
-  .chip b{color:var(--amber-lt);font-weight:600}
-
-  .ratebox{margin-top:30px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(224,70,60,.08),rgba(20,13,11,.6));padding:18px 22px}
-  .dial{--v:78;width:96px;height:96px;border-radius:50%;flex:0 0 auto;position:relative;
-    background:conic-gradient(var(--acc) calc(var(--v)*1%),rgba(255,255,255,.06) 0);display:grid;place-items:center}
-  .dial::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg2);border:1px solid var(--hair)}
-  .dial .num{position:relative;z-index:1;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:30px;color:var(--ink)}
-  .dial .num small{font-size:13px;color:var(--ink-faint);font-weight:500}
-  .ratebox .rl{flex:1;min-width:240px}
-  .ratebox .rl .t{font-family:'Saira Condensed',sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--amber);font-weight:600}
-  .ratebox .rl .d{font-size:15.5px;color:var(--ink-dim);margin-top:5px}
-
-  nav.toc{position:sticky;top:0;z-index:5;margin:0 -22px 0;padding:11px 22px;
-    background:rgba(11,8,7,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);display:flex;gap:6px;flex-wrap:wrap}
-  nav.toc a{font-family:'Chakra Petch',sans-serif;font-size:11px;letter-spacing:.4px;color:var(--ink-faint);
-    text-decoration:none;padding:5px 9px;border-radius:var(--radius);border:1px solid transparent;text-transform:uppercase;transition:.15s}
-  nav.toc a:hover{color:var(--amber-lt);border-color:var(--hair-strong);background:var(--panel)}
-
-  section{margin-top:46px;scroll-margin-top:62px}
-  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--hair);padding-bottom:11px}
-  .secno{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;color:var(--acc-lt);letter-spacing:1px;
-    border:1px solid var(--hair-strong);border-radius:var(--radius);padding:3px 9px;flex:0 0 auto;background:var(--panel)}
-  h2{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:clamp(21px,3.2vw,28px);letter-spacing:.5px;color:var(--ink);text-transform:uppercase}
-  p{margin:13px 0;color:var(--ink-dim)}
-  p b,li b{color:var(--ink);font-weight:500}
-  .acc{color:var(--acc-lt);font-weight:500}
-  .amb{color:var(--amber-lt);font-weight:500}
-
-  .panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:var(--radius);padding:20px 22px;margin:16px 0}
-
-  .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
-  .specgrid .cell{background:var(--panel);padding:13px 15px}
-  .specgrid .k{font-family:'Saira Condensed',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--ink-faint)}
-  .specgrid .v{font-family:'Chakra Petch',sans-serif;font-size:18px;color:var(--ink);margin-top:3px}
-  .specgrid .v small{font-size:12px;color:var(--ink-faint);font-weight:400}
-
-  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
-  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--hair);vertical-align:top}
-  thead th{font-family:'Saira Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--amber);border-bottom:1px solid var(--hair-strong);font-weight:600}
-  tbody tr:hover{background:rgba(224,70,60,.04)}
-  td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:13.5px}
-  .tag{display:inline-block;font-family:'Chakra Petch',sans-serif;font-size:10.5px;padding:1px 7px;border-radius:2px;letter-spacing:.4px;border:1px solid var(--hair-strong)}
-  .tag.g{color:var(--good);border-color:rgba(95,179,122,.4)}
-  .tag.a{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
-  .tag.r{color:var(--acc-lt);border-color:rgba(224,70,60,.45)}
-  .star{color:var(--amber-lt)}
-
-  /* 3-state loadout table */
-  .l3 td{font-size:13.5px;padding:8px 10px}
-  .l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;color:var(--ink-dim);text-transform:uppercase;font-size:12px;white-space:nowrap}
-  .l3 .grouprow td{background:linear-gradient(90deg,var(--maroon-deep),rgba(74,14,22,.15) 70%,transparent);
-    color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:11px;font-weight:600;border-bottom:1px solid var(--hair-strong)}
-  .l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:13px;color:var(--ink)}
-  .l3 td.eng{color:var(--ink)}
-  .l3 td.eng b{color:var(--amber-lt);font-weight:500}
-  .l3 .empty{color:var(--ink-faint);font-style:italic;font-family:'Saira',sans-serif;font-weight:300}
-
-  .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
-  .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:5px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-deep),var(--acc-lt))}
-
-  table.cmp{table-layout:fixed}
-  td.pcc{font-size:12.5px;line-height:1.45}
-  td.pcc span{display:block;margin:1px 0}
-  td.pcc .p{color:var(--good)}
-  td.pcc .c{color:var(--acc-lt)}
-  td.pcc .p::before{content:"+ ";font-weight:700}
-  td.pcc .c::before{content:"\2212 ";font-weight:700}
-  td.pcc .base{color:var(--ink-faint);font-style:italic}
-
-  ul.clean{list-style:none;margin:12px 0}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;color:var(--ink-dim)}
-  ul.clean li::before{content:"\25B8";position:absolute;left:2px;color:var(--acc);font-size:12px;top:9px}
-
-  .callout{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(224,70,60,.09),transparent 80%);padding:13px 18px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0}
-  .callout.amber{border-left-color:var(--amber);background:linear-gradient(90deg,rgba(224,145,58,.09),transparent 80%)}
-  .callout .lbl{font-family:'Saira Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--amber);font-weight:600;display:block;margin-bottom:4px}
-  .callout.acc .lbl{color:var(--acc-lt)}
-
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .stepnum{font-family:'Chakra Petch',sans-serif;color:var(--acc-lt);font-weight:700;margin-right:7px}
-  .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:13px;color:var(--amber);font-weight:600;margin:20px 0 6px}
-
-  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--hair-strong);color:var(--ink-faint);font-size:13px}
-  footer b{color:var(--ink-dim)}
-
-  @media(max-width:680px){
-    .twocol{grid-template-columns:1fr}
-    nav.toc{overflow-x:auto;flex-wrap:nowrap}
-    table{font-size:12.5px}
-    th,td{padding:7px 7px}
-    .l3 th,.l3 td{padding:6px 6px;font-size:12px}
-  }
-</style>
+<title>Adder &middot; Multipurpose | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers" class="active">Ships</a>
+      <a href="../../index.html#engineering">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#s1"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#s2"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Versatile</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#s3"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#s4"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#s5"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#s6"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#s7"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#s8"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#s9"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#s10"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#s11"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#s12"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#dossiers">Ships</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Adder · Multipurpose</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Zorgon Peterson</div>
-    <h1>Adder<span class="role">Multipurpose</span></h1>
+  <header class="masthead">
+    <div class="kicker">CMDR Field Manual <span class="sep">//</span> Ship &times; Role Dossier <span class="sep">//</span> Zorgon Peterson</div>
+    <h1 class="title"><span>Adder</span><span class="role">Multipurpose</span></h1>
     <p class="lede">The tiny jack-of-all-trades. The Adder is a <b>dirt-cheap little hull that hauls, fights, explores and mines a bit</b> &mdash; the budget multi-role starter that does everything modestly for pocket change. Cramped and slow, but versatile and almost free: a fine first do-everything ship.</p>
 
     <div class="chips">
-      <div class="chip"><span>Class</span><b>Small &middot; Pad S</b></div>
-      <div class="chip"><span>Max cargo</span><b>~30 t</b></div>
-      <div class="chip"><span>Hardpoints</span><b>1M &middot; 2S</b></div>
-      <div class="chip"><span>Hull</span><b>~41k Cr</b></div>
-      <div class="chip"><span>Role</span><b>Multipurpose</b></div>
-      </div>
+      <span class="chip kv"><span>Class</span><b>Small &middot; Pad S</b></span>
+      <span class="chip kv"><span>Max cargo</span><b>~30 t</b></span>
+      <span class="chip kv"><span>Hardpoints</span><b>1M &middot; 2S</b></span>
+      <span class="chip kv"><span>Hull</span><b>~41k Cr</b></span>
+      <span class="chip kv"><span>Role</span><b>Multipurpose</b></span>
+    </div>
 
-    <div class="ratebox">
-      <div class="dial" style="--v:62"><div class="num">62<small>/100</small></div></div>
-      <div class="rl">
-        <div class="t">Multipurpose Suitability Rating</div>
-        <div class="d">A modest but genuinely versatile budget all-rounder. It turns its hand to hauling, light combat, exploration and mining cheaply, ranking at the lower end on outright capability &mdash; but for a near-free hull that can do a bit of everything, it's a sensible early choice.</div>
-      </div>
+    <div class="masthead-meta">
+      <span>Ship &times; Role Dossier</span>
+      <span>Updated <b>2026-06-22</b></span>
     </div>
   </header>
 
-  <nav class="toc">
-    <a href="#s1">01 Overview</a>
-    <a href="#s2">02 Why it fits</a>
-    <a href="#s3">03 Comparison</a>
-    <a href="#s4">04 Cost &amp; access</a>
-    <a href="#s5">05 ARX pre-built</a>
-    <a href="#s6">06 3-state loadout</a>
-    <a href="#s7">07 Initial plan</a>
-    <a href="#s8">08 A-rated plan</a>
-    <a href="#s9">09 Engineering</a>
-    <a href="#s10">10 Stat ladder</a>
-    <a href="#s11">11 Activities</a>
-    <a href="#s12">12 Field notes</a>
-  </nav>
+  <div class="ratebox">
+    <div class="dial" style="--v:62"><div class="num">62<small>/100</small></div></div>
+    <div class="rl">
+      <div class="t">Multipurpose Suitability Rating</div>
+      <div class="d">A modest but genuinely versatile budget all-rounder. It turns its hand to hauling, light combat, exploration and mining cheaply, ranking at the lower end on outright capability &mdash; but for a near-free hull that can do a bit of everything, it's a sensible early choice.</div>
+    </div>
+  </div>
 
   <!-- s1 -->
   <section id="s1">
-    <div class="sechead"><span class="secno">01</span><h2>Role &amp; Overview</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
     <p>The Adder is Zorgon Peterson's pocket-sized generalist: a cheap, light little hull that hauls modest cargo, fights off a weak threat, explores respectably for its size, and even dabbles in mining &mdash; all for around 41k credits. It excels at nothing, but its breadth-at-a-tiny-price makes it a sensible step up from a starter ship into doing-a-bit-of-everything.</p>
     <p>It's cramped, slow and lightly built, with a tiny hold and modest guns &mdash; the bigger all-rounders outclass it utterly. But for a new commander who wants one near-free hull that can try every activity, or a cheap flexible runabout for odd jobs, the Adder delivers. It's the budget jack-of-all-trades: master of none, but willing to attempt them all without costing a thing.</p>
-    <div class="callout amber"><span class="lbl">Where this hull shines</span>Near-free budget versatility: a first do-everything ship to try hauling, light combat, exploration and mining cheaply, and a flexible runabout for odd jobs on any budget.</div>
+    <div class="callout warn"><span class="lbl">Where this hull shines</span><p>Near-free budget versatility: a first do-everything ship to try hauling, light combat, exploration and mining cheaply, and a flexible runabout for odd jobs on any budget.</p></div>
   </section>
 
   <!-- s2 -->
   <section id="s2">
-    <div class="sechead"><span class="secno">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Max cargo</div><div class="v">~30 <small>t</small></div></div>
       <div class="cell"><div class="k">Hardpoints</div><div class="v">1M &middot; 2S</div></div>
@@ -230,53 +115,57 @@
       <div class="cell"><div class="k">Hull cost</div><div class="v">~41k Cr</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>Four things make the Adder a sensible budget all-rounder:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><b>It does a bit of everything.</b> Hauling, light combat, exploration and mining &mdash; all modestly, on one near-free hull.</li>
       <li><b>Almost free.</b> ~41k credits with a trivial rebuy &mdash; versatility at zero risk.</li>
       <li><b>Light enough to explore.</b> A respectable ~47 LY jump range for so cheap a ship.</li>
       <li><b>Lands anywhere.</b> A small pad reaches any outpost for any odd job.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">The ceiling, stated honestly</span>It's tiny and slow, with a minuscule hold, weak guns, light shields and just two utilities &mdash; it does nothing beyond modestly, and every other all-rounder outclasses it. The Adder's case is pure breadth at rock-bottom cost; it's a starter and a cheap runabout, not a capable ship by any higher standard.</div>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's tiny and slow, with a minuscule hold, weak guns, light shields and just two utilities &mdash; it does nothing beyond modestly, and every other all-rounder outclasses it. The Adder's case is pure breadth at rock-bottom cost; it's a starter and a cheap runabout, not a capable ship by any higher standard.</p></div>
   </section>
 
   <!-- s3 -->
   <section id="s3">
-    <div class="sechead"><span class="secno">03</span><h2>How It Compares</h2></div>
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
     <p>Both tables rate ships <em>for multipurpose use</em> &mdash; versatility across combat, trade, exploration and more. The role column is the maximum cargo capacity in tonnes as one measure of capacity; versatility is judged across all roles.</p>
     <p class="subhd">Same class &mdash; small all-rounders</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Adder</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~110</td><td class="pcc"><span class="p">Far more of everything; modern</span><span class="c">Pricier</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Far faster; more cargo and guns</span><span class="c">Pricier</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk IV</td><td>Small</td><td>~92</td><td class="pcc"><span class="p">More cargo and hardpoints</span><span class="c">Pricier</span></td><td><span class="rscore">70</span><div class="bar"><i style="width:70%"></i></div></td></tr>
-        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~60</td><td class="pcc"><span class="p">Far better range; cool-running</span><span class="c">Pricier; less versatile</span></td><td><span class="rscore">68</span><div class="bar"><i style="width:68%"></i></div></td></tr>
-        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>~40</td><td class="pcc"><span class="p">Faster; strong shields</span><span class="c">Imperial rank; pricier</span></td><td><span class="rscore">66</span><div class="bar"><i style="width:66%"></i></div></td></tr>
-        <tr><td class="mod">Adder <span class="tag r">this</span></td><td>Small</td><td>~30</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">62</span><div class="bar"><i style="width:62%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~110</td><td class="pcc"><span class="p">Far more of everything; modern</span><span class="c">Pricier</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Far faster; more cargo and guns</span><span class="c">Pricier</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk IV</td><td>Small</td><td>~92</td><td class="pcc"><span class="p">More cargo and hardpoints</span><span class="c">Pricier</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~60</td><td class="pcc"><span class="p">Far better range; cool-running</span><span class="c">Pricier; less versatile</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>~40</td><td class="pcc"><span class="p">Faster; strong shields</span><span class="c">Imperial rank; pricier</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+        <tr><td class="mod">Adder <span class="pill md">this</span></td><td>Small</td><td>~30</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>Among small all-rounders the Adder is the cheapest and least capable &mdash; every rival does more for more money. Its niche is the absolute rock-bottom price: a near-free hull to try a bit of everything before upgrading to a Cobra or a specialist.</p>
     <p class="subhd">Other classes &mdash; what you graduate to</p>
+    <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
       <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Adder</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">The classic cheap upgrade</span><span class="c">Pricier</span></td><td><span class="rscore">72</span><div class="bar"><i style="width:72%"></i></div></td></tr>
-        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~110</td><td class="pcc"><span class="p">The modern small all-rounder</span><span class="c">Pricier</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
-        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Far more capable; medium pad</span><span class="c">Far pricier</span></td><td><span class="rscore">80</span><div class="bar"><i style="width:80%"></i></div></td></tr>
-        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Capital-like medium versatility</span><span class="c">Vastly pricier; medium pad</span></td><td><span class="rscore">86</span><div class="bar"><i style="width:86%"></i></div></td></tr>
-        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~60</td><td class="pcc"><span class="p">Far better explorer</span><span class="c">Pricier</span></td><td><span class="rscore">68</span><div class="bar"><i style="width:68%"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">The classic cheap upgrade</span><span class="c">Pricier</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~110</td><td class="pcc"><span class="p">The modern small all-rounder</span><span class="c">Pricier</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Far more capable; medium pad</span><span class="c">Far pricier</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Capital-like medium versatility</span><span class="c">Vastly pricier; medium pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~60</td><td class="pcc"><span class="p">Far better explorer</span><span class="c">Pricier</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
       </tbody>
     </table>
+    </div>
     <p>The Adder is rung one of the all-rounder ladder. The natural upgrade is a Cobra Mk III for not much more, then the mediums. Its job is to let a brand-new commander try a bit of everything at zero risk, then hand off.</p>
   </section>
 
   <!-- s4 -->
   <section id="s4">
-    <div class="sechead"><span class="secno">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
     <div class="specgrid">
       <div class="cell"><div class="k">Hull</div><div class="v">~41k Cr</div></div>
       <div class="cell"><div class="k">A-rated multirole</div><div class="v">~800k Cr</div></div>
@@ -284,22 +173,23 @@
       <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
       <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
       <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
-      </div>
+    </div>
     <p>At ~41k Cr the Adder is almost free, with no rank gate and a trivial rebuy, and a full multirole fit stays around 3.5M Cr all-in &mdash; a versatile little hull for pocket change.</p>
     <p>It's a pure starter pick. For not much more a Cobra Mk III does everything better; the Adder makes sense only as a near-free first do-everything ship or a cheap throwaway runabout.</p>
-    <div class="callout amber"><span class="lbl">Versatility for nothing</span>A do-a-bit-of-everything hull for around 3.5M Cr all-in (and a 41k hull) &mdash; the cheapest way to try every role before committing.</div>
+    <div class="callout warn"><span class="lbl">Versatility for nothing</span><p>A do-a-bit-of-everything hull for around 3.5M Cr all-in (and a 41k hull) &mdash; the cheapest way to try every role before committing.</p></div>
   </section>
 
   <!-- s5 -->
   <section id="s5">
-    <div class="sechead"><span class="secno">05</span><h2>ARX Pre-Built Option</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
     <p>There is no multipurpose-specific ARX pre-built built around the Adder; buy and outfit it normally through a shipyard.</p>
   </section>
 
   <!-- s6 -->
   <section id="s6">
-    <div class="sechead"><span class="secno">06</span><h2>3-State Loadout</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
     <p>A cheap balanced multirole fit. Initial is buy-only; A-rated is the multirole baseline; Engineered is optional on so cheap a hull but sharpens it if you wish.</p>
+    <div class="tbl-scroll">
     <table class="l3">
       <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
       <tbody>
@@ -328,12 +218,13 @@
         <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">spare</td></tr>
       </tbody>
     </table>
-    <div class="callout acc"><span class="lbl">A little of everything, cheaply</span>The Adder's tiny internals fit modest guns, a small hold, a shield and a scoop or SRV &mdash; re-tune to try any role. It does each only modestly, but it lands anywhere and costs nothing, which is the whole point.</div>
+    </div>
+    <div class="callout"><span class="lbl">A little of everything, cheaply</span><p>The Adder's tiny internals fit modest guns, a small hold, a shield and a scoop or SRV &mdash; re-tune to try any role. It does each only modestly, but it lands anywhere and costs nothing, which is the whole point.</p></div>
   </section>
 
   <!-- s7 -->
   <section id="s7">
-    <div class="sechead"><span class="secno">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
     <p>Buy the hull (~41k Cr) and fit a balanced loadout: a couple of guns, a shield and some cargo.</p>
     <p>A-rate the core internals; swap optionals (fuel scoop, cargo, SRV) to try each role.</p>
     <p>Don't over-invest &mdash; upgrade to a Cobra Mk III when you've found your favourite activities.</p>
@@ -341,23 +232,24 @@
 
   <!-- s8 -->
   <section id="s8">
-    <div class="sechead"><span class="secno">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
     <p>A-rating priority for a cheap all-rounder:</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span><b>Core internals &rarr; A</b> &mdash; Plant, thrusters, FSD and distributor serve every role. <span class="acc">~500k Cr</span></li>
       <li><span class="stepnum">2</span><b>Shield Generator &rarr; bi-weave</b> &mdash; A buffer across all roles. <span class="acc">~300k Cr</span></li>
       <li><span class="stepnum">3</span><b>FSD &rarr; A</b> &mdash; Range for exploration and travel. <span class="acc">~150k Cr</span></li>
       <li><span class="stepnum">4</span><b>Weapons</b> &mdash; A gun or two for light combat. <span class="acc">~200k Cr</span></li>
       <li><span class="stepnum">5</span><b>Role optionals</b> &mdash; Cargo, fuel scoop, SRV to try. <span class="acc">cheap</span></li>
     </ul>
-    <div class="callout amber"><span class="lbl">Don't over-invest</span>The Adder is a stepping-stone &mdash; A-rate the basics cheaply, try every role, then move up to a Cobra; heavy engineering on a 41k hull isn't worth it.</div>
+    <div class="callout warn"><span class="lbl">Don't over-invest</span><p>The Adder is a stepping-stone &mdash; A-rate the basics cheaply, try every role, then move up to a Cobra; heavy engineering on a 41k hull isn't worth it.</p></div>
   </section>
 
   <!-- s9 -->
   <section id="s9">
-    <div class="sechead"><span class="secno">09</span><h2>Engineering Plan</h2></div>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
     <p>Light engineering only &mdash; the Adder rarely warrants more. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote application if you bother.</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
       <tbody>
         <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
@@ -367,21 +259,23 @@
         <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="subhd">Recommended order</p>
-    <ul class="clean">
+    <ul class="bullets">
       <li><span class="stepnum">1</span>A-rate first; engineer only if you plan to keep it a while.</li>
       <li><span class="stepnum">2</span>Increased-Range FSD if you want to explore in it.</li>
       <li><span class="stepnum">3</span>A bi-weave shield for a little survivability.</li>
       <li><span class="stepnum">4</span>Don't sink materials into a starter you'll soon replace.</li>
     </ul>
-    <div class="callout callout"><span class="lbl">Material intensity (qualitative)</span>Negligible &mdash; tiny modules, rarely worth engineering on a starter. Spend nothing you'd regret; upgrade to a Cobra instead. Ask for exact per-blueprint counts if you do bother.</div>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Negligible &mdash; tiny modules, rarely worth engineering on a starter. Spend nothing you'd regret; upgrade to a Cobra instead. Ask for exact per-blueprint counts if you do bother.</p></div>
   </section>
 
   <!-- s10 -->
   <section id="s10">
-    <div class="sechead"><span class="secno">10</span><h2>Key Stat Upgrades</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
     <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
-    <table>
+    <div class="tbl-scroll">
+    <table class="data">
       <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
       <tbody>
         <tr><td class="mod">Max cargo (t)</td><td>~20</td><td>~28</td><td class="acc">~30</td></tr>
@@ -391,56 +285,43 @@
         <tr><td class="mod">Versatility</td><td>broad (modest)</td><td>broad</td><td>broad (modest)</td></tr>
       </tbody>
     </table>
+    </div>
     <p>Even at its best the Adder does a little of everything modestly &mdash; ~30t cargo, weak guns, ~47 LY range &mdash; for almost nothing. Every other all-rounder beats it, but none lets a new commander try every role at zero risk. The tiny, near-free jack-of-all-trades.</p>
   </section>
 
   <!-- s11 -->
   <section id="s11">
-    <div class="sechead"><span class="secno">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
-    <div class="twocol">
-      <div class="panel"><div class="subhd" style="margin-top:0">Getting started</div><ul class="clean">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cols-2">
+      <div class="panel"><div class="subhd">Getting started</div><ul class="bullets">
       <li><b>A first do-everything ship.</b> Try hauling, light combat, exploration and mining at zero risk.</li>
       <li><b>Cheap odd jobs.</b> A flexible runabout for missions and errands on any budget.</li>
       <li><b>Learning the game.</b> A near-free hull to discover which activities you enjoy.</li>
     </ul></div>
-      <div class="panel"><div class="subhd" style="margin-top:0">Advanced</div><ul class="clean">
+      <div class="panel"><div class="subhd">Advanced</div><ul class="bullets">
       <li><b>Risk-free experimentation.</b> Its trivial rebuy means trying anything costs nothing.</li>
       <li><b>Re-role in minutes.</b> Swap tiny optionals to sample each activity.</li>
       <li><b>Throwaway flexibility.</b> Cheap enough to keep around for whatever comes up.</li>
     </ul></div>
     </div>
-    <div class="callout acc"><span class="lbl">Generic example uses</span>Whatever you want to try &mdash; a little hauling, a few bounties, a short hop, a mining dabble. From your Diaguandri / Ray Gateway base, the Adder samples everything for next to nothing.</div>
+    <div class="callout"><span class="lbl">Generic example uses</span><p>Whatever you want to try &mdash; a little hauling, a few bounties, a short hop, a mining dabble. From your Diaguandri / Ray Gateway base, the Adder samples everything for next to nothing.</p></div>
   </section>
 
   <!-- s12 -->
   <section id="s12">
-    <div class="sechead"><span class="secno">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
-    <ul class="clean">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
       <li>It does everything modestly and nothing well &mdash; that's fine for a near-free starter.</li>
       <li>Don't over-invest; upgrade to a Cobra Mk III once you know what you enjoy.</li>
       <li>Lean on its breadth and price &mdash; that's the entire appeal.</li>
       <li>It has exploration and trading manuals too &mdash; this one celebrates the cheap generalist.</li>
     </ul>
-    <div class="callout acc"><span class="lbl">Verdict</span>The Adder is the tiny jack-of-all-trades: a near-free little hull that hauls, fights, explores and mines a bit, lands anywhere, and risks nothing. Every other all-rounder outclasses it utterly &mdash; but none lets a new commander try every role for pocket change. As a first do-everything ship and a cheap flexible runabout, the humble Adder earns its place.</div>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Adder is the tiny jack-of-all-trades: a near-free little hull that hauls, fights, explores and mines a bit, lands anywhere, and risks nothing. Every other all-rounder outclasses it utterly &mdash; but none lets a new commander try every role for pocket change. As a first do-everything ship and a cheap flexible runabout, the humble Adder earns its place.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-  <style>
-  .credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-  .credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-  .credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-  .credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-  .credits .cr-rows{display:flex;flex-direction:column}
-  .credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-  .credits .cr-src{font-weight:700;letter-spacing:.3px}
-  .credits .cr-what{opacity:.78}
-  .credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-  .credits .cr-link:hover{text-decoration:underline}
-  @media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-  </style>
+  <!-- Sources -->
   <section class="credits" id="credits">
-    <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Provenance</span></div>
     <p class="lead">Figures on this page are verified against the sources below.</p>
     <div class="cr-rows">
       <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/adder">coriolis.io/outfit/adder</a></div>
@@ -452,9 +333,13 @@
   </section>
 
   <footer>
-    <p><b>Adder &middot; Multipurpose</b> &mdash; CMDR Ship&times;Role Field Manual series. Hull &amp; slot data: EDCD coriolis-data. Stats cross-checked against Inara. Adder &middot; Multipurpose dossier &middot; CMDR field manual Ratings are role-suitability judgements on a 1&ndash;100 scale, anchored across the full ship roster. Figures marked approximate are representative, not exact rolls.</p>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Ship &times; Role Dossier</span>
   </footer>
 
 </div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>
