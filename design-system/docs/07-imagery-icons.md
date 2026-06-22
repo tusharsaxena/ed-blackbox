@@ -1,5 +1,15 @@
 # 07 · Imagery & icons
 
+## Inline diagram SVGs
+
+Hand-drawn explanatory diagrams use an inline `<figure> <svg>`. The DS styles `figure`
+left-aligned (no UA indent) with `figure svg{display:block;max-width:100%}` and a dim
+`figcaption`. **Spec: an SVG's `viewBox` must hug its content — at most ~5px of empty
+margin on every edge** (so the figure doesn't render with a phantom gap). Author tight, or
+run `scripts/trim-svg.mjs <page> [pad]` to fit the viewBox to the content bounding box.
+Diagram element colours should mirror the in-game UI they depict (e.g. amber pad markers,
+fed-blue assist box, green "locked") — they are not the page's accent coding.
+
 ## Banners / portraits (record cards)
 
 The record-card identity rail takes either an image or a text placeholder.

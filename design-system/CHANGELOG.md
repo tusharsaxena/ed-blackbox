@@ -22,6 +22,11 @@ mostly recolouring and spacing.
   e.g. "assisted" vs "manual" paths).
 - **`figure` / `figcaption`** styling — left-aligned (drops the UA 40px indent), vertical
   rhythm, block diagrams/images, dim caption. Surfaced by the docking-landing manual.
+- **`.subhd.good`** (green) and **`.bl`** (fed-blue inline emphasis) — complete the
+  condensed-sub-label colour variants (`.subhd`/`.subhd.fed`/`.subhd.good`) and the inline
+  emphasis set (`.acc` gold / `.gd` green / `.bad` red / `.bl` blue).
+- **Diagram-SVG spec:** a figure SVG's `viewBox` should hug its content (≤~5px margin all
+  edges); `scripts/trim-svg.mjs` enforces it. Documented in `docs/07-imagery-icons.md`.
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain

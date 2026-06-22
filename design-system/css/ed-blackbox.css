@@ -172,6 +172,7 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 /* condensed tracked sub-label (alt to subhead, from ship manuals) */
 .subhd{font-family:'Saira Condensed',sans-serif;letter-spacing:.24em;text-transform:uppercase;font-size:var(--fs-sm2);color:var(--amber);font-weight:600;margin:var(--space-11) 0 var(--space-3)}
 .subhd.fed{color:var(--fed-lt)}
+.subhd.good{color:var(--good-lt)}
 
 /* ---- 7. LEGEND GRID ---- */
 .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-7);margin-top:var(--space-9)}
@@ -448,6 +449,8 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
 .gd{color:var(--good-lt);font-weight:500}
 /* semantic-bad inline emphasis (red) — the negative counterpart to .gd. */
 .bad{color:var(--danger);font-weight:500}
+/* secondary inline emphasis (fed-blue) — completes the inline set .acc/.gd/.bad/.bl. */
+.bl{color:var(--fed-lt);font-weight:500}
 
 /* ---- 27. LOCATION / COORDINATE READOUT ---- */
 .loc-card{border:1px solid var(--hair-strong);border-radius:var(--radius-lg);background:linear-gradient(180deg,var(--panel),var(--bg2));padding:var(--space-3) var(--space-9);margin-top:var(--space-9)}
