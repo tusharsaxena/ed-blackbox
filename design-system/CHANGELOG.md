@@ -56,7 +56,9 @@ mostly recolouring and spacing.
 ### Changed (1.3.0 cont.)
 - **`.card .c-eyebrow`** sub-label now always sits on its own line under the title,
   left-aligned (was right-aligned in the title row, where it collided with wrapping titles).
-- **`.legend .row`** now baseline-aligns (was centre) so multi-line legend rows read cleanly.
+- **`.legend .row`** now baseline-aligns (was centre) so multi-line legend rows read cleanly,
+  and carries the same row padding + hairline divider as `.kv-row` so plain-row and
+  key-value legend cards look identical.
 
 ### Changed
 - **Gold-first text rule.** The per-page accent is now reserved for **role/domain
