@@ -85,31 +85,23 @@
   <section id="s1">
     <div class="sec-head"><span class="sec-num">01</span><h2>What The Number Means</h2><span class="tag">The scale</span></div>
     <p class="lead">A single <b>1&ndash;100 suitability rating</b> per ship, per role &mdash; not stars, not a tier letter. Higher is a better fit for that job. In practice the field spans roughly <span class="acc">40 to 98</span>: a stock starter at one end, a fully-engineered apex at the other.</p>
-    <p>Dossiers render the score as a headline <b>dial</b>; comparison tables render it as a <b>linear bar</b> beside the figure. Same number, two views &mdash; the dial is the verdict for one ship, the bar lets you eyeball a ladder at a glance.</p>
+    <p>Every dossier and comparison table renders the score the same way &mdash; the <b>number</b> beside a <b>linear bar</b>. The figure is the verdict for one ship; the bar lets you eyeball where it sits on the whole ladder at a glance.</p>
 
-    <div class="cols-2">
-      <div class="panel">
-        <div class="ratebox">
-          <div class="dial" style="--v:98"><div class="num">98<small>/100</small></div></div>
-          <div class="rl"><div class="t">Dial &mdash; the dossier headline</div><div class="d">One ship's verdict, shown in its briefing box. This is the Federal Corvette's combat rating.</div></div>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="rating"><span class="score">98<small>/100</small></span><div class="bar"><i style="--pct:98"></i></div></div>
-        <div class="rating"><span class="score">66<small>/100</small></span><div class="bar"><i style="--pct:66"></i></div></div>
-        <div class="rating"><span class="score">40<small>/100</small></span><div class="bar"><i style="--pct:40"></i></div></div>
-        <p class="tbl-desc">Bars on a ladder &mdash; Corvette (98), Viper Mk IV (66), Sidewinder Mk I (40), all combat.</p>
-      </div>
+    <div class="panel">
+      <div class="rating"><span class="score">98<small>/100</small></span><div class="bar"><i style="--pct:98"></i></div></div>
+      <div class="rating"><span class="score">66<small>/100</small></span><div class="bar"><i style="--pct:66"></i></div></div>
+      <div class="rating"><span class="score">40<small>/100</small></span><div class="bar"><i style="--pct:40"></i></div></div>
+      <p class="tbl-desc">Bars on a ladder &mdash; Corvette (98), Viper Mk IV (66), Sidewinder Mk I (40), all combat.</p>
     </div>
 
-    <p class="subhd">How to read a score in bands</p>
-    <ul class="bullets">
-      <li><b>90+ &mdash; apex.</b> The ceiling of the role; class-leading once engineered. Few ships reach it.</li>
-      <li><b>80&ndash;89 &mdash; top-tier.</b> A genuinely excellent platform with at most one clear weakness.</li>
-      <li><b>65&ndash;79 &mdash; capable.</b> A solid working choice, often a budget or transitional pick.</li>
-      <li><b>50&ndash;64 &mdash; entry / situational.</b> Does the job at the bottom of the field; you will outgrow it.</li>
-      <li><b>Below 50 &mdash; the floor.</b> A starter or a novelty for the role &mdash; useful for learning, not for earning.</li>
-    </ul>
+    <h3 class="subhead">How to read a score in bands</h3>
+    <div class="cards">
+      <div class="card"><span class="ico">90+</span><h4>Apex</h4><p>The ceiling of the role; class-leading once engineered. Few ships reach it.</p></div>
+      <div class="card"><span class="ico">80&ndash;89</span><h4>Top-tier</h4><p>A genuinely excellent platform with at most one clear weakness.</p></div>
+      <div class="card"><span class="ico">65&ndash;79</span><h4>Capable</h4><p>A solid working choice, often a budget or transitional pick.</p></div>
+      <div class="card"><span class="ico">50&ndash;64</span><h4>Entry / situational</h4><p>Does the job at the bottom of the field; you will outgrow it.</p></div>
+      <div class="card"><span class="ico">Below 50</span><h4>The floor</h4><p>A starter or a novelty for the role &mdash; useful for learning, not for earning.</p></div>
+    </div>
     <div class="callout"><span class="lbl">Why no stars</span><p>Five stars cannot separate twenty-eight combat hulls. A <span class="acc">1&ndash;100 scale</span> can hold a whole role on one ladder and show the real distance between, say, an 88 and a 90 &mdash; close rivals &mdash; versus a 90 and a 40.</p></div>
   </section>
 
@@ -131,8 +123,16 @@
 
     <div class="callout warn icon"><span class="lbl">The small-vs-large caveat</span><p>Class is <b>not</b> a handicap baked into the number. A small ship and a large ship on the <em>same</em> score are <b>not</b> equal in absolute power &mdash; the small one is simply excellent <em>for its class</em>. The Kestrel Mk II at 85 is the best small combat ship; the Anaconda at 88 is a heavy. Both are superb for what they are, but the Anaconda out-guns and out-tanks the Kestrel outright. <b>Always compare within a pad class first.</b></p></div>
 
-    <div class="kv-row"><span class="kv-k"><b>So a 90 small ≠ 90 large?</b></span><span class="kv-v">Correct. Each is rated against its own role's whole roster. Same score means &ldquo;equally excellent for its class&rdquo;, not &ldquo;equally powerful in a fight&rdquo;. The pad-class grouping in every table exists precisely so you compare like with like before you compare across classes.</span></div>
-    <div class="kv-row"><span class="kv-k"><b>Why does range/cost not move the score?</b></span><span class="kv-v">Only role-effectiveness moves the rating. Credit cost, rebuy and rank gates are listed alongside as <em>cost</em>, not folded into the number &mdash; a cheap 80 and an expensive 80 are equally good at the job; the cheap one is simply easier to own and fly boldly.</span></div>
+    <div class="cards wide">
+      <article class="card">
+        <div class="c-head"><h3>So a 90 small &ne; 90 large?</h3></div>
+        <p>Correct. Each is rated against its own role's whole roster. Same score means &ldquo;equally excellent for its class&rdquo;, not &ldquo;equally powerful in a fight&rdquo;. The pad-class grouping in every table exists precisely so you compare like with like before you compare across classes.</p>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>Why does range/cost not move the score?</h3></div>
+        <p>Only role-effectiveness moves the rating. Credit cost, rebuy and rank gates are listed alongside as <em>cost</em>, not folded into the number &mdash; a cheap 80 and an expensive 80 are equally good at the job; the cheap one is simply easier to own and fly boldly.</p>
+      </article>
+    </div>
   </section>
 
   <!-- s3 -->
@@ -147,7 +147,7 @@
       <li><span class="st">Resolve the verdict to one number</span><p>The factor judgments collapse into a single 1&ndash;100 figure, then a one-line verdict and pros/cons explain it.</p></li>
     </ol>
 
-    <p class="subhd">What pushes a ship to 90+ vs ~50</p>
+    <h3 class="subhead">What pushes a ship to 90+ vs ~50</h3>
     <div class="cols-2">
       <div class="panel">
         <div class="hud"><span class="hud-c1"></span><span class="hud-c2"></span><h4>Reaches 90+</h4><p>Leads or ties the role's <b>top factor</b> (max hardpoints, biggest hold, longest jump), with <b>no fatal weakness</b> in the supporting factors. The hull defines the ceiling others are measured against.</p></div>
@@ -165,77 +165,93 @@
     <div class="sec-head"><span class="sec-num">04</span><h2>Per-Role Factor Weightings</h2><span class="tag">By role</span></div>
     <p class="lead">The factors below are taken verbatim from each role's <b>&ldquo;How These Ships Are Scored&rdquo;</b> section. Listed in <b>priority order</b> &mdash; the first item is the dominant driver; the last is a tiebreaker. Open a role's dossier for the full ladder.</p>
 
-    <h3 class="subhd">Combat <span class="chip maroon">human PvE</span></h3>
-    <p>Six factors, in roughly this order of importance.</p>
-    <ul class="bullets">
-      <li><b>Hardpoints</b> &mdash; weapon size &amp; count. The single biggest driver of the ceiling.</li>
-      <li><b>Power distributor</b> &mdash; whether the hull can feed those guns under sustained WEP load.</li>
-      <li><b>Shield</b> &mdash; base strength and room for boosters/SCBs; first line of survival.</li>
-      <li><b>Armour &amp; internals</b> &mdash; hull buffer and slots for hull/module reinforcement.</li>
-      <li><b>Agility</b> &mdash; control of range and angle; decides duels, lets thin hulls survive.</li>
-      <li><b>Utility &amp; flexibility</b> &mdash; utility mounts, SLF bays, how easily the fit comes together.</li>
-    </ul>
+    <div class="cards wide">
+      <article class="card">
+        <div class="c-head"><h3>Combat <span class="chip maroon">human PvE</span></h3></div>
+        <p>Six factors, in roughly this order of importance.</p>
+        <ul class="bullets">
+          <li><b>Hardpoints</b> &mdash; weapon size &amp; count. The single biggest driver of the ceiling.</li>
+          <li><b>Power distributor</b> &mdash; whether the hull can feed those guns under sustained WEP load.</li>
+          <li><b>Shield</b> &mdash; base strength and room for boosters/SCBs; first line of survival.</li>
+          <li><b>Armour &amp; internals</b> &mdash; hull buffer and slots for hull/module reinforcement.</li>
+          <li><b>Agility</b> &mdash; control of range and angle; decides duels, lets thin hulls survive.</li>
+          <li><b>Utility &amp; flexibility</b> &mdash; utility mounts, SLF bays, how easily the fit comes together.</li>
+        </ul>
+      </article>
 
-    <h3 class="subhd">Anti-Xeno (AX) <span class="chip maroon">Thargoid</span></h3>
-    <p>A separate discipline from human combat &mdash; shields barely matter; heat and hull do.</p>
-    <ul class="bullets">
-      <li><b>Hardpoints for Gauss</b> &mdash; especially medium mounts; AX firepower is a full Gauss spread.</li>
-      <li><b>Heat capacity &amp; management</b> &mdash; Gauss runs enormously hot; a cool hull fires more before overheating.</li>
-      <li><b>Hull tank &amp; reinforcement room</b> &mdash; internals for Guardian Hull/Module Reinforcement.</li>
-      <li><b>Agility</b> &mdash; dodging Thargoid lightning; the biggest survival skill vs interceptors.</li>
-      <li><b>Caustic handling &amp; support slots</b> &mdash; room for Caustic Sinks, AFMU, Xeno Scanner, Shutdown Field Neutraliser.</li>
-    </ul>
+      <article class="card">
+        <div class="c-head"><h3>Anti-Xeno (AX) <span class="chip maroon">Thargoid</span></h3></div>
+        <p>A separate discipline from human combat &mdash; shields barely matter; heat and hull do.</p>
+        <ul class="bullets">
+          <li><b>Hardpoints for Gauss</b> &mdash; especially medium mounts; AX firepower is a full Gauss spread.</li>
+          <li><b>Heat capacity &amp; management</b> &mdash; Gauss runs enormously hot; a cool hull fires more before overheating.</li>
+          <li><b>Hull tank &amp; reinforcement room</b> &mdash; internals for Guardian Hull/Module Reinforcement.</li>
+          <li><b>Agility</b> &mdash; dodging Thargoid lightning; the biggest survival skill vs interceptors.</li>
+          <li><b>Caustic handling &amp; support slots</b> &mdash; room for Caustic Sinks, AFMU, Xeno Scanner, Shutdown Field Neutraliser.</li>
+        </ul>
+      </article>
 
-    <h3 class="subhd">Exploration <span class="chip fed">deep space</span></h3>
-    <p>An explorer lives or dies on its FSD.</p>
-    <ul class="bullets">
-      <li><b>Engineered jump range</b> &mdash; the single biggest factor; sets how far each jump goes.</li>
-      <li><b>Heat profile</b> &mdash; cool ships scoop safely and survive neutron/white-dwarf boosting.</li>
-      <li><b>Fuel tank &amp; reach</b> &mdash; jumps between stars; big tanks cross sparse regions.</li>
-      <li><b>Canopy &amp; visibility</b> &mdash; quality-of-life for honking, landing and bio-hunting.</li>
-      <li><b>Internals</b> &mdash; room for AFMU, SRV, DSS and a fuel scoop without compromise.</li>
-      <li><b>Comfort &amp; cost</b> &mdash; agility, looks, and how little it hurts to lose far from home.</li>
-    </ul>
+      <article class="card">
+        <div class="c-head"><h3>Exploration <span class="chip fed">deep space</span></h3></div>
+        <p>An explorer lives or dies on its FSD.</p>
+        <ul class="bullets">
+          <li><b>Engineered jump range</b> &mdash; the single biggest factor; sets how far each jump goes.</li>
+          <li><b>Heat profile</b> &mdash; cool ships scoop safely and survive neutron/white-dwarf boosting.</li>
+          <li><b>Fuel tank &amp; reach</b> &mdash; jumps between stars; big tanks cross sparse regions.</li>
+          <li><b>Canopy &amp; visibility</b> &mdash; quality-of-life for honking, landing and bio-hunting.</li>
+          <li><b>Internals</b> &mdash; room for AFMU, SRV, DSS and a fuel scoop without compromise.</li>
+          <li><b>Comfort &amp; cost</b> &mdash; agility, looks, and how little it hurts to lose far from home.</li>
+        </ul>
+      </article>
 
-    <h3 class="subhd">Mining <span class="chip amber">rings</span></h3>
-    <p>Measured on effective payday, not raw tonnage.</p>
-    <ul class="bullets">
-      <li><b>Effective ore capacity</b> &mdash; cargo left <em>after</em> a refinery and limpet controllers take their slots.</li>
-      <li><b>Tool &amp; slot fit</b> &mdash; hardpoints and internals to run a complete laser or core toolkit.</li>
-      <li><b>Survivability</b> &mdash; shield and hull to ride out an interdiction while limpets are out and you are stationary.</li>
-      <li><b>Pad class &amp; access</b> &mdash; mediums dock at more ring-adjacent outposts; larges trade access for capacity.</li>
-      <li><b>Cost &amp; specialisation</b> &mdash; hull tied up, and whether it can re-role afterwards.</li>
-    </ul>
+      <article class="card">
+        <div class="c-head"><h3>Mining <span class="chip amber">rings</span></h3></div>
+        <p>Measured on effective payday, not raw tonnage.</p>
+        <ul class="bullets">
+          <li><b>Effective ore capacity</b> &mdash; cargo left <em>after</em> a refinery and limpet controllers take their slots.</li>
+          <li><b>Tool &amp; slot fit</b> &mdash; hardpoints and internals to run a complete laser or core toolkit.</li>
+          <li><b>Survivability</b> &mdash; shield and hull to ride out an interdiction while limpets are out and you are stationary.</li>
+          <li><b>Pad class &amp; access</b> &mdash; mediums dock at more ring-adjacent outposts; larges trade access for capacity.</li>
+          <li><b>Cost &amp; specialisation</b> &mdash; hull tied up, and whether it can re-role afterwards.</li>
+        </ul>
+      </article>
 
-    <h3 class="subhd">Multipurpose <span class="chip amber">do-everything</span></h3>
-    <p>Rated for <em>balance</em> across roles, not peak in any one. The cargo column is a capacity proxy, not the verdict.</p>
-    <ul class="bullets">
-      <li><b>Breadth of internals</b> &mdash; room to fit cargo, mining tools, shields or scanners as the job demands.</li>
-      <li><b>Firepower</b> &mdash; enough hardpoints and distributor to hold its own without a dedicated build.</li>
-      <li><b>Jump range</b> &mdash; the reach to roam and explore between jobs.</li>
-      <li><b>Flexibility &amp; re-fit cost</b> &mdash; how cheaply and quickly it swaps roles.</li>
-      <li><b>Survivability &amp; handling</b> &mdash; a tank and agility that suit every role passably.</li>
-    </ul>
+      <article class="card">
+        <div class="c-head"><h3>Multipurpose <span class="chip amber">do-everything</span></h3></div>
+        <p>Rated for <em>balance</em> across roles, not peak in any one. The cargo column is a capacity proxy, not the verdict.</p>
+        <ul class="bullets">
+          <li><b>Breadth of internals</b> &mdash; room to fit cargo, mining tools, shields or scanners as the job demands.</li>
+          <li><b>Firepower</b> &mdash; enough hardpoints and distributor to hold its own without a dedicated build.</li>
+          <li><b>Jump range</b> &mdash; the reach to roam and explore between jobs.</li>
+          <li><b>Flexibility &amp; re-fit cost</b> &mdash; how cheaply and quickly it swaps roles.</li>
+          <li><b>Survivability &amp; handling</b> &mdash; a tank and agility that suit every role passably.</li>
+        </ul>
+      </article>
 
-    <h3 class="subhd">Passenger <span class="chip fed">liners</span></h3>
-    <p>The tightest field in the series &mdash; the floor sits at 80, not 40.</p>
-    <ul class="bullets">
-      <li><b>Cabin capacity &amp; class fit</b> &mdash; raw berths for bulk work and large first/luxury suites for VIPs.</li>
-      <li><b>Comfort</b> &mdash; Saud Kruger liners carry a passenger-satisfaction edge that raises payouts.</li>
-      <li><b>Jump range &amp; tank</b> &mdash; long sightseeing tours live or die on reach.</li>
-      <li><b>Shield &amp; safety</b> &mdash; protecting VIPs; a cancelled VIP mission is a total loss.</li>
-      <li><b>Pad class &amp; cost</b> &mdash; mediums reach more destinations; cost sets how freely you operate.</li>
-    </ul>
+      <article class="card">
+        <div class="c-head"><h3>Passenger <span class="chip fed">liners</span></h3></div>
+        <p>The tightest field in the series &mdash; the floor sits at 80, not 40.</p>
+        <ul class="bullets">
+          <li><b>Cabin capacity &amp; class fit</b> &mdash; raw berths for bulk work and large first/luxury suites for VIPs.</li>
+          <li><b>Comfort</b> &mdash; Saud Kruger liners carry a passenger-satisfaction edge that raises payouts.</li>
+          <li><b>Jump range &amp; tank</b> &mdash; long sightseeing tours live or die on reach.</li>
+          <li><b>Shield &amp; safety</b> &mdash; protecting VIPs; a cancelled VIP mission is a total loss.</li>
+          <li><b>Pad class &amp; cost</b> &mdash; mediums reach more destinations; cost sets how freely you operate.</li>
+        </ul>
+      </article>
 
-    <h3 class="subhd">Trading <span class="chip amber">cargo</span></h3>
-    <p>Capacity dominates, but pad class governs which markets you can reach.</p>
-    <ul class="bullets">
-      <li><b>Maximum cargo</b> &mdash; the dominant factor; profit scales directly with tonnage.</li>
-      <li><b>Pad class &amp; market reach</b> &mdash; mediums dock at outposts larges cannot; a slight cargo penalty for far wider access.</li>
-      <li><b>Laden jump range</b> &mdash; how far a full hold travels per jump; sets route length and trips-per-hour.</li>
-      <li><b>Survivability</b> &mdash; shield and hull enough to outlast or outrun a pirate interdiction.</li>
-      <li><b>Speed &amp; cost</b> &mdash; faster supercruise = more loops; cheaper hull = lower risk on a defenceless barge.</li>
-    </ul>
+      <article class="card">
+        <div class="c-head"><h3>Trading <span class="chip amber">cargo</span></h3></div>
+        <p>Capacity dominates, but pad class governs which markets you can reach.</p>
+        <ul class="bullets">
+          <li><b>Maximum cargo</b> &mdash; the dominant factor; profit scales directly with tonnage.</li>
+          <li><b>Pad class &amp; market reach</b> &mdash; mediums dock at outposts larges cannot; a slight cargo penalty for far wider access.</li>
+          <li><b>Laden jump range</b> &mdash; how far a full hold travels per jump; sets route length and trips-per-hour.</li>
+          <li><b>Survivability</b> &mdash; shield and hull enough to outlast or outrun a pirate interdiction.</li>
+          <li><b>Speed &amp; cost</b> &mdash; faster supercruise = more loops; cheaper hull = lower risk on a defenceless barge.</li>
+        </ul>
+      </article>
+    </div>
   </section>
 
   <!-- s5 -->
@@ -243,7 +259,7 @@
     <div class="sec-head"><span class="sec-num">05</span><h2>Worked Examples</h2><span class="tag">Why the number</span></div>
     <p class="lead">Real scores from the dossiers, walked factor-by-factor. For each role, a <b>high</b> example and a <b>low or illustrative</b> one &mdash; so you can see exactly what separates a ceiling from a floor.</p>
 
-    <h3 class="subhd">Combat &mdash; the full spread: 98 vs 66 vs 40</h3>
+    <h3 class="subhead">Combat &mdash; the full spread: 98 vs 66 vs 40</h3>
     <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:15%"><col style="width:47%"><col style="width:12%"></colgroup>
@@ -257,7 +273,7 @@
     </div>
     <p class="tbl-desc">The Corvette wins on the <b>top factor</b> (hardpoints) and carries no fatal weakness &mdash; that is a 98. The Viper trails on every factor but is flyable &mdash; a mid-60s budget pick. The Sidewinder leads on nothing &mdash; the 40 floor.</p>
 
-    <h3 class="subhd">Exploration &mdash; the ceiling vs the benchmark vs the floor</h3>
+    <h3 class="subhead">Exploration &mdash; the ceiling vs the benchmark vs the floor</h3>
     <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:20%"><col style="width:10%"><col style="width:58%"><col style="width:12%"></colgroup>
@@ -271,7 +287,7 @@
     </div>
     <p class="tbl-desc">Range leads the exploration rubric, so the Mandalay's engineered-range lead anchors the 96. The beloved Asp still scores a respectable 72 &mdash; capable, but out-ranged by the modern ceiling. The Adder is the floor at 60.</p>
 
-    <h3 class="subhd">Trading &mdash; capacity ceiling vs the floor</h3>
+    <h3 class="subhead">Trading &mdash; capacity ceiling vs the floor</h3>
     <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:20%"><col style="width:10%"><col style="width:58%"><col style="width:12%"></colgroup>
@@ -285,7 +301,7 @@
     </div>
     <p class="tbl-desc">Cargo dominates trading, so the Panther's record hold anchors the 98. Note the Type-8 at 82 is <b>not</b> &ldquo;worse&rdquo; than a large at 95 &mdash; it carries less but reaches markets the large never can. The Hauler is the 58 floor.</p>
 
-    <h3 class="subhd">Mining &mdash; why the purpose-built hull tops a bigger hold</h3>
+    <h3 class="subhead">Mining &mdash; why the purpose-built hull tops a bigger hold</h3>
     <div class="tbl-scroll">
     <table class="cmp">
       <colgroup><col style="width:20%"><col style="width:10%"><col style="width:58%"><col style="width:12%"></colgroup>
