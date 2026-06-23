@@ -114,7 +114,7 @@ section > p{margin:0 0 var(--space-10);color:var(--ink-dim);line-height:var(--lh
 .header-qn .qn-eyebrow{font-size:var(--fs-2xs);white-space:nowrap}
 .header-qn .qn-field{min-width:208px}
 .header-qn .qn-input{padding-top:7px;padding-bottom:7px}
-.header-qn .qn-panel{left:auto;right:0;width:300px;z-index:var(--z-overlay)}
+.header-qn .qn-panel{left:auto;right:0;width:min(440px,92vw);z-index:var(--z-overlay)}
 /* scroll-to-top button — sits in .header-qn between the eyebrow and the search field
    (double-chevron SVG; behaviour from ed-blackbox.js module 4) */
 .qn-totop{flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--panel2);border:1px solid var(--hair-strong);border-radius:var(--radius-md);color:var(--ink-dim);cursor:pointer;transition:color var(--motion-fast),border-color var(--motion-fast),background var(--motion-fast)}
@@ -687,3 +687,84 @@ nav.toc a:focus-visible,.permalink:focus-visible,[tabindex]:focus-visible{
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important;transition-duration:.001ms!important;animation-duration:.001ms!important}
 }
+
+/* ============================================================
+   BLUEPRINT REFERENCE — collapsible accordion components.
+   A module group (.bp-modgroup) holds blueprint cards (.bp-card) that
+   fold open to reveal a 3-panel context block and a per-grade material
+   table. Amber-accented; raw/man/enc category colours are kept.
+   Used by guides/engineering/blueprints.html.
+   ============================================================ */
+:root{--bp-raw:var(--fed);--bp-man:var(--amber);--bp-enc:#b48ad6;}
+
+/* quick-nav: support the blueprints panel toggle + a clickable group row */
+.qn-panel.open{display:block}
+.qn-item.qn-group{background:rgba(224,145,58,.10);border-bottom:1px solid var(--hair-strong);cursor:pointer}
+.qn-item.qn-group .qn-nm{color:var(--amber-lt);font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:var(--fs-sm2)}
+.qn-item.qn-group .qn-side{color:var(--amber)}
+.qn-item.active{background:var(--panel2);color:var(--ink)}.qn-item.active .qn-nm{color:var(--amber-lt)}
+
+/* legend (raw / manufactured / encoded swatches) */
+.bp-legend{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-9);margin:var(--space-9) 0 var(--space-11);font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm2);letter-spacing:.04em;color:var(--ink-dim)}
+.bp-legend .lg{display:flex;align-items:center;gap:7px;text-transform:uppercase}
+.bp-legend .dot{width:11px;height:11px;border-radius:2px;display:inline-block}
+.bp-legend .dot.raw{background:var(--bp-raw)}.bp-legend .dot.man{background:var(--bp-man)}.bp-legend .dot.enc{background:var(--bp-enc)}
+.bp-legend .lg-note{margin-left:auto;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.1em;font-size:var(--fs-xs)}
+
+/* module group header + per-group expand / collapse controls */
+.bp-modgroup{margin-top:var(--space-11)}
+.bp-mod-head{display:flex;gap:var(--space-5);align-items:center;margin:var(--space-11) 0 var(--space-5);flex-wrap:wrap}
+.bp-mod-label{font-family:'Saira Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.10em;font-size:var(--fs-xl);color:var(--amber);margin:0;flex:1 1 56%;min-width:0;display:flex;align-items:baseline;gap:var(--space-6)}
+.bp-mod-count{color:var(--ink-faint);font-size:var(--fs-xs);letter-spacing:.1em;font-weight:400}
+.bp-grp-bulk{flex:0 1 auto;min-height:24px;background:rgba(10,7,8,.5);color:var(--ink-dim);border:1px solid var(--hair-strong);border-radius:var(--radius-sm);cursor:pointer;font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:var(--fs-2xs);display:flex;align-items:center;justify-content:center;gap:6px;padding:4px 10px;transition:border-color var(--motion-fast),color var(--motion-fast)}
+.bp-grp-bulk:hover{border-color:var(--amber);color:var(--ink)}
+.bp-grp-bulk span{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--amber);font-size:var(--fs-sm);line-height:1}
+
+/* the collapsible card */
+.bp-card{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius-sm);margin:var(--space-4) 0;overflow:hidden}
+.bp-card-head{display:flex;align-items:center;gap:var(--space-6);padding:13px 16px;cursor:pointer;user-select:none;outline:none}
+.bp-card-head:focus-visible{box-shadow:inset 0 0 0 2px var(--amber)}
+.bp-fold{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;flex:none;border-radius:var(--radius-sm);color:var(--amber-lt);font-size:11px;background:rgba(224,145,58,.12);transition:transform .18s ease,background var(--motion-fast)}
+.bp-card.open .bp-fold{transform:rotate(90deg)}
+.bp-card-title{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-h3);color:var(--ink);letter-spacing:.01em;flex:1}
+.bp-card.open .bp-card-title{color:var(--amber-lt)}
+.bp-card-tag{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:var(--fs-xs);color:var(--ink-faint);border:1px solid var(--hair);border-radius:20px;padding:3px 11px;white-space:nowrap}
+.bp-card-body{display:none;padding:0 16px 18px}
+.bp-card.open .bp-card-body{display:block}
+
+.bp-effect{border-top:1px solid var(--hair);padding-top:14px;margin-top:2px;color:var(--ink);font-size:var(--fs-md);line-height:1.55}
+.bp-suit{display:flex;flex-wrap:wrap;gap:var(--space-4);margin:var(--space-6) 0 14px}
+.bp-tag{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:var(--fs-xs);padding:4px 11px;border-radius:20px;border:1px solid var(--hair)}
+.bp-tag.fleet{color:var(--amber);border-color:var(--amber);background:rgba(224,145,58,.08)}
+.bp-tag.ship{color:var(--ink-dim);background:rgba(224,145,58,.07);border-color:var(--hair-strong)}
+
+/* 3-panel context (what it does / who it's for / experimental pick) */
+.bp-ctx{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);margin:var(--space-3) 0 var(--space-2)}
+.bp-ctx .bp-panel{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-top:2px solid var(--amber);border-radius:var(--radius-sm);padding:12px 14px}
+.bp-ctx .bp-panel h6{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-2xs);letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:0 0 6px;font-weight:600;display:flex;align-items:center;gap:7px}
+.bp-ctx .bp-panel h6 .ic{color:var(--amber);font-size:13px}
+.bp-ctx .bp-panel p{margin:0;font-size:var(--fs-sm2);color:var(--ink-dim);line-height:1.55}
+.bp-ctx .bp-panel p b{color:var(--ink);font-weight:500}
+
+/* per-grade material table */
+.bp-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:var(--fs-base);table-layout:fixed}
+.bp-table col.c-num{width:14%}.bp-table col.c-cat{width:18%}.bp-table col.c-mat{width:auto}
+.bp-table thead th{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:var(--fs-2xs);color:var(--amber);text-align:left;padding:6px 10px;border-bottom:1px solid var(--hair);font-weight:600}
+.bp-table thead th.r{text-align:right}
+.bp-table .gh td{background:rgba(224,145,58,.18);border-top:1px solid var(--amber);padding:9px 10px}
+.bp-table .eh td{background:rgba(79,159,214,.18);border-top:1px solid var(--fed);padding:9px 10px}
+.bp-table .gh .gnum{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--amber-lt);font-size:var(--fs-base)}
+.bp-table .eh .enum{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--fed-lt);font-size:var(--fs-base)}
+.bp-table .eng{color:var(--ink-dim);font-size:var(--fs-sm2)}
+.bp-table .eng a{color:var(--amber);font-size:var(--fs-sm2);text-decoration:none;border-bottom:1px dotted var(--amber)}
+.bp-table .eng a:hover{color:var(--amber-lt);border-bottom-color:var(--amber-lt)}
+.bp-rec{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:var(--fs-micro);color:var(--amber-lt);border:1px solid var(--amber);border-radius:12px;padding:1px 7px;margin-left:4px}
+.bp-exp-tag{font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:var(--fs-micro);color:var(--fed-lt);background:rgba(79,159,214,.16);border:1px solid var(--fed);border-radius:var(--radius-xs);padding:1px 6px;margin-right:6px}
+.bp-table .exp-desc{color:var(--ink-dim);font-size:var(--fs-sm2)}
+.bp-table .mr td,.bp-table .er td{padding:6px 10px;border-bottom:1px solid rgba(224,145,58,.07);color:var(--ink)}
+.bp-table td.r{text-align:right;font-variant-numeric:tabular-nums}
+.bp-table td.cat{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:var(--fs-sm)}
+.bp-table td.cat.raw{color:var(--bp-raw)}.bp-table td.cat.man{color:var(--bp-man)}.bp-table td.cat.enc{color:var(--bp-enc)}
+.bp-table .total{color:var(--amber);font-weight:500}
+.bp-table .matname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:680px){.bp-ctx{grid-template-columns:1fr}.bp-card-tag{display:none}.bp-table col.c-num{width:16%}.bp-table col.c-cat{width:22%}}
