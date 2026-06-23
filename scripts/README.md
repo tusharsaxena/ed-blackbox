@@ -20,6 +20,8 @@ be re-run later.
 | `trim-svg.mjs` | [trim-svg.md](trim-svg.md) | Tightens inline diagram `<svg>` viewBoxes to their content + ~5px margin (via Playwright `getBBox`), removing phantom whitespace. |
 | `restructure-app-cards.mjs` | [restructure-app-cards.md](restructure-app-cards.md) | One-shot simplifier for the third-party-apps tool cards: amber accent, stable `id`s, tag row, ↗ open-glyph, drops the decorative eyebrow. |
 | `classify-card-groups.mjs` | [classify-card-groups.md](classify-card-groups.md) | Sets each `.cards` container's width class (`cards` / `cards wide` / `cards extra-wide`) by its largest card's word count. Class-only, gate-neutral, re-runnable. |
+| `sort-compare-tables.py` | [sort-compare-tables.md](sort-compare-tables.md) | Reorders the rows of every "How It Compares" `table.cmp` (ship dossiers + by-role) by `.rscore` rating, descending, with dash (`&mdash;`) ratings last. Reorder-only, stable, idempotent. |
+| `add-ship-render.py` | [add-ship-render.md](add-ship-render.md) | Inserts a framed ship render (`images/ships/`) into each dossier's briefing (`.verdict.has-render` + `.ship-figure`), with a `Name &middot; Manufacturer` caption. Slug→render mapping, idempotent; skips hulls with no render. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.

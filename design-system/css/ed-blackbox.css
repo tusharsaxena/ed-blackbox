@@ -167,6 +167,18 @@ header.masthead .chips{margin-top:var(--space-9)}
    Scoped to .stat so the ladder table's own .bar.mini is untouched. */
 .stat .n small{font-size:var(--fs-sm2);font-weight:600;color:var(--ink-dim);margin-left:2px}
 .stat .bar.mini{margin-top:var(--space-6)}
+/* ship render: framed 16:9 hull image. On a dossier it rides at the right of the
+   briefing (.verdict.has-render) — a two-column grid with the stat-grid spanning full
+   width beneath. Source renders are 160x90, so the frame is shown at native 160px to
+   stay pixel-sharp (upscaling blurs them). */
+.ship-figure{margin:0;border:1px solid rgba(224,145,58,.4);border-radius:var(--radius-md);background:#000;overflow:hidden;line-height:0;box-shadow:0 2px 14px rgba(0,0,0,.4)}
+.ship-figure img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.ship-figure figcaption{line-height:1.3;padding:7px 10px;background:rgba(20,13,15,.85);font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:var(--fs-sm2);color:var(--ink-faint)}
+.ship-figure figcaption b{color:var(--amber-lt);font-weight:600}
+.verdict.has-render{display:grid;grid-template-columns:1fr 160px;column-gap:var(--space-13);align-items:start}
+.verdict.has-render .stat-grid{grid-column:1 / -1}
+.verdict.has-render .ship-figure{width:160px}
+@media(max-width:760px){.verdict.has-render{grid-template-columns:1fr}.verdict.has-render .ship-figure{width:100%;max-width:160px}}
 
 /* ---- 6. SECTION + HEADING ---- */
 section{margin-top:var(--space-section);scroll-margin-top:74px}
@@ -440,7 +452,7 @@ table.l3 tr:last-child td{border-bottom:none}
 table.l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--ink-dim);white-space:nowrap}
 table.l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-sm2);color:var(--ink)}
 table.l3 td.eng{font-size:var(--fs-sm2);color:var(--amber-lt)}
-table.l3 .grouprow td{background:linear-gradient(90deg,rgba(224,145,58,.5),rgba(224,145,58,.12) 70%,transparent);color:var(--ink);font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs2);font-weight:600}
+table.l3 .grouprow td{background:linear-gradient(90deg,rgba(168,109,44,.5),transparent);color:var(--ink);font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs2);font-weight:600}
 
 /* ---- 20. COMPARISON TABLE w/ PROS-CONS CELLS ---- */
 table.cmp{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:620px;table-layout:fixed}

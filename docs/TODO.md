@@ -54,7 +54,6 @@ Legend: ✅ done · ☐ not done.
 - ☐ **Define the Changelog update policy** — the landing-page Changelog (§06 in `generate-guides-index.sh`) is hand-written with FIXED dates and is **not** auto-edited. Decide when/how releases get added (e.g. on publish, per milestone) and document it.
 - ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide) *(partial: powerplay §08 links each role's pick to its power card, and third-party-apps §18 links each app to its card; broad Ships/Engineers/Blueprints cross-linking pending)*
 - ☐ Publish on GitHub Pages
-- ☐ **Delete the `guides.01/` scratch duplicate** — it's an untracked, full copy of `guides/` left over from migration work, currently `.gitignore`d to keep `git status` clean. Physically remove the directory from the filesystem, then **delete the `guides.01/` line from `.gitignore`**.
 
 ## Phase 2 — Content-as-data tooling
 
