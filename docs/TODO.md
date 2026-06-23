@@ -22,8 +22,8 @@ Legend: ✅ done · ☐ not done.
 ## Phase 0 — Foundation & branding
 
 > **Status: complete.** Every Phase 0 *foundation* deliverable is built into the design
-> system (v1.1.0) — chrome, brand assets, and the page template. **Applying** this chrome
-> to the 108 legacy inline guides is Phase 1 migration, not Phase 0.
+> system (v1.1.0) — chrome, brand assets, and the page template. **Applying** that chrome to
+> all 108 guides was Phase 1 migration (now complete — see below).
 
 ### Design system & shared styling
 - ✅ Confirm the `design-system/` (v1.3.0) is feature-complete for migration needs (tokens, 40+ components, global chrome, a11y baseline, docs)
@@ -83,7 +83,7 @@ Legend: ✅ done · ☐ not done.
 - ☐ Remove fleet bias from content *(systems pages largely de-biased — powerplay, superpower-rank, community-goals, fleet-carrier, system-colonization, pve-combat-venues; combat-zones plus the ship dossiers / by-role / activities pages still reference the personal fleet (KA-05 ship tags) — ~49 pages pending)*
 - ☐ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
-- ☐ Regenerate the index page
+- ✅ Regenerate the index page — migrated onto the design system and restructured into Ships/Engineering/Systems + briefing/about/FAQ/changelog (`generate-guides-index.sh`)
 
 ## Phase 5 — New content / guides
 

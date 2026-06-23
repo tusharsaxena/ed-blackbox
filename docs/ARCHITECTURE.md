@@ -1,7 +1,7 @@
 # Architecture — Elite:Dangerous Black Book
 
-How the site is put together technically — system model, content inventory, and the
-migration gap. For the backlog/roadmap see [`TODO.md`](TODO.md); for working conventions
+How the site is put together technically — system model, the shared design system, and the
+content inventory. For the backlog/roadmap see [`TODO.md`](TODO.md); for working conventions
 see [`CLAUDE.md`](CLAUDE.md). Per-page data sources live in each page's bottom-of-page
 **Sources** (`section.credits`) block.
 
@@ -14,55 +14,55 @@ required to view it. Every page is plain HTML/CSS/JS and opens directly in a bro
 or from `file://`. The deployment target is **GitHub Pages** (not yet live).
 
 **Project facts:** authored by **Tushar Saxena** (in-game **CMDR Ka0s**, INARA 173082),
-licensed **MIT** (© 2026); remote `github.com/tusharsaxena/ed-blackbook`. History is
-essentially greenfield (two "Initial commit" commits; the working tree carries
-substantial uncommitted reorg). Current phase: **systems work** — building the design
-system and migrating pages onto it, plus the surrounding scaffolding (landing page,
-navigation, branding, publishing).
+licensed **MIT** (© 2026); remote `github.com/tusharsaxena/ed-blackbook`. Branch:
+`design-system-migration`. Current phase: the design-system migration is **complete** —
+every page links the shared stylesheet — so work has shifted to **publishing and editorial
+polish** (landing-page copy, fleet-bias cleanup, GitHub Pages).
 
-There are intentionally **two styling worlds** in the repo right now, and the gap
-between them is the project's central architectural fact:
+There is now **one styling world**. The design-system migration that was the project's
+central effort is **done (2026-06-23)**: all **108 guides + the generated landing page**
+link the single `design-system/` stylesheet and behaviours.
 
-| | Legacy guides (today) | Design system (target) |
-|---|---|---|
-| Where | `guides/**/*.html` (108 files) | `design-system/` (v1.3.0) |
-| CSS | **inlined** in a per-page `<style>` block | **one linked** `ed-blackbox.css` |
-| JS | inlined per page (where present) | **one linked** `ed-blackbox.js` |
-| Consistency | visually similar but drifts (3 palette variants) | single locked token set |
-| Status | content-complete | feature-complete for new pages |
+| | Every page today |
+|---|---|
+| CSS | **one linked** `ed-blackbox.css` (+ a tiny per-page 5-token accent override `<style>`) |
+| JS | **one linked** `ed-blackbox.js` (a few pages keep a small bespoke script — see §3/§6) |
+| Consistency | a single locked token set; no more palette drift |
 
-The roadmap (`TODO.md`) is largely about **closing that gap**: migrate the inline
-pages onto the linked design system (**101 of 108 done**; the 7 engineering reference
-pages — engineers, checklist, blueprints, 4 farms — remain), then publish.
+A handful of pages also keep one **deliberately-scoped** `<style>`/`<script>`: the bespoke
+Engineer Unlock Map on `checklist.html`, and the guide-/ship-grid styling on the generated
+`index.html`. `blueprints.html` keeps its own accordion + search-and-expand `<script>`.
 
 ---
 
 ## 2. Page anatomy (a guide today)
 
-Each legacy guide is a single **self-contained** `.html` file:
+Each guide is one `.html` file that **links** the shared design system:
 
 ```
 <head>
-  <title>…</title>
-  <link …Google Fonts: Chakra Petch + Saira + Saira Condensed…>
-  <style> /* the ENTIRE stylesheet, inlined (~450–3900 lines) */ </style>
+  <title>… · <Series> | E:D Black Box</title>
+  <link rel="stylesheet" href="…/design-system/css/ed-blackbox.css">
+  <style>:root{--accent:…;--accent-lt:…;…}</style>   ← only the 5-token accent override
 </head>
 <body>
+  <header class="site-header"> brand · site-nav · header-qn (quick-nav + scroll-to-top) </header>
+  <nav class="breadcrumbs"> Home › … › this page </nav>
   <div class="wrap">
-    <header class="masthead"> kicker · h1.title · subtitle · masthead-meta </header>
-    <nav> (optional quick-nav / TOC — only on a few pages) </nav>
-    … numbered <section> blocks: .sec-head + p.lead + components …
-    <footer> breadcrumb · provenance · "Next:" </footer>
+    <header class="masthead"> kicker · h1.title (one accent word + .role tag) · masthead-meta </header>
+    <div class="verdict"> BRIEFING: verdict + brief + .stat-grid </div>
+    … numbered <section> blocks: .sec-head (.sec-num + h2) + p.lead + components …
+    <section class="credits"> Sources </section>
+    <footer> brand · By CMDR Ka0s · series </footer>
   </div>
-  <script> /* inlined behaviours, where present */ </script>
+  <script src="…/design-system/js/ed-blackbox.js" defer></script>
 </body>
 ```
 
-Shared look is achieved by **copy-paste**, not by reference — which is why it drifts.
-The visual language (dark gridded HUD, maroon/amber/fed-blue on near-black, the fixed
-42px grid + radial-glow body overlays) is described in
-`design-system/legacy-templates/Template.md` (the legacy house-style spec and direct
-precursor to the design system).
+Shared look now comes **by reference** (one stylesheet), so it no longer drifts. Fonts are
+`@import`ed by the stylesheet — Chakra Petch (display/labels) + Saira (body) + Saira Condensed
+(meta/tags) + JetBrains Mono (code/console). The legacy house-style spec that preceded the
+system lives at `design-system/legacy-templates/Template.md` (reference only).
 
 ---
 
@@ -77,18 +77,25 @@ tokens  →  components  →  templates  →  pages
 ```
 
 - **`css/ed-blackbox.css`** — single source of truth. `:root` holds a **locked** token
-  set (color, spacing, radius, type, z-index, motion, layout). 40+ components are
-  defined as classes (`.masthead`, `.rec`, `.ratebox`/`.dial`, `.specgrid`, tables,
-  cards, callouts, `.credits`, etc.).
+  set (color, spacing, radius, type, z-index, motion, layout — plus action-type colours
+  `--at-*` and material colours `--bp-raw/man/enc`). 45+ components are defined as classes
+  (`.masthead`, `.rec`, `.specgrid`, tables, cards, callouts, `.credits`, etc.), including
+  the components promoted during the final migration: **`.step-card`** (numbered action-card
+  used by `checklist.html`) and the **`.bp-*`** blueprint accordion set (`.bp-card`,
+  `.bp-modgroup`, `.bp-table`, `.bp-ctx`, `.bp-fold`, `.bp-rec`, `.bp-exp-tag`) used by
+  `blueprints.html`. (`.ratebox`/`.dial` remain defined but unused.)
 - **Theming model — one knob.** A page re-themes by overriding only a **five-token
   accent group** (`--accent`, `--accent-lt`, `--accent-deep`, `--accent-soft`,
   `--accent-glow`) in a tiny page-level `<style>`. The brand frame (grid, glows,
   masthead, title span) never changes. Convention: combat→maroon, exploration/
   liners→fed-blue, mining/default→amber, complete→green.
 - **`js/ed-blackbox.js`** — 4 null-safe vanilla modules, each guards for its own
-  markup so unused ones are inert: (1) quick-nav filter/search, (2) TOC scrollspy via
-  `IntersectionObserver`, (3) click-to-copy coordinates, (4) scroll-to-top (header
-  `.qn-totop` button).
+  markup so unused ones are inert: (1) quick-nav filter/search (matches both the visible
+  name and an optional `data-kw` keyword string, and hides empty `.qn-sec` group headers),
+  (2) TOC scrollspy via `IntersectionObserver`, (3) click-to-copy coordinates, (4) scroll-to-top
+  (header `.qn-totop` button). Two pages keep a **page-local** `<script>` instead of (or
+  alongside) this for behaviour the shared module doesn't cover: `blueprints.html` (accordion
+  fold + search-and-expand-card quick-nav) and `checklist.html` (the unlock-map SVG wiring).
 - **Site chrome (v1.1.0)** — a global sticky header (`.site-header` > `.hdr-inner`:
   `.brand` logo+wordmark, `.site-nav`, optional right-aligned `.header-qn` in-page
   quick-nav with a `.qn-totop` scroll-to-top button) and `nav.breadcrumbs`, both sitting
@@ -120,7 +127,7 @@ Naming: classes are mostly unprefixed semantic names; accent variants use `.ac-*
 ## 4. Content taxonomy & routing
 
 Directory structure **is** the routing — a path maps directly to a URL once on GitHub
-Pages. **108 self-contained guides** in four areas, plus a generated landing page:
+Pages. **108 guides** (all on the design system) in four areas, plus a generated landing page:
 
 ```
 guides/
@@ -143,22 +150,20 @@ catalogs** — 107 generated + 2 curated, see §4/§6), 1 site CSS, 1 site JS, p
 
 | Page | Purpose |
 |---|---|
-| `engineers.html` | Engineer database: unlock requirements, location, referrals. Has a footer + quick-nav search; uses `images/engineers/` portraits. |
-| `blueprints.html` | Module blueprint catalog (~3,900 lines). Cards auto-expand/scroll on hash navigation; quick-nav search. |
-| `checklist.html` | New-player engineering unlock progression; quick-nav search. |
-| `farms/` (4) | Material-farm location guides (`davs-hope`, `crystalline-shards`, `high-grade-emissions`, `jameson-crash-site`) — warmer green/orange palette + coordinate readouts. |
+| `engineers.html` | Engineer database: unlock requirements, location, referrals. Opens with a "What the Engineers Are" primer; header quick-nav; uses `images/engineers/` portraits. |
+| `blueprints.html` | Module blueprint catalog (~3,900 lines) on the `.bp-*` accordion components. Cards fold open; header search jumps to **and** expands a blueprint (page-local `<script>`). |
+| `checklist.html` | "The Unlock Run" — engineering unlock progression as numbered phases + a bespoke SVG **Engineer Unlock Map** (kept page-scoped); `.step-card` components; header quick-nav. |
+| `farms/` (4) | Material-farm location guides (`davs-hope`, `crystalline-shards`, `high-grade-emissions`, `jameson-crash-site`) — DS amber, with click-to-copy coordinate readouts. |
 
 **Systems** (`guides/systems/`, 11 pages): `bgs`, `combat-zones`, `community-goals`,
 `docking-landing-manual`, `fleet-carrier`, `hud-customization`, `pve-combat-venues`,
-`powerplay`, `superpower-rank`, `system-colonization`, `third-party-apps` — the
-palette closest to the design system.
+`powerplay`, `superpower-rank`, `system-colonization`, `third-party-apps`.
 
 **Ships** (`guides/ships/`, 84 pages) — the core data structure, a **ship × role matrix**:
 a sparse grid of (ship, role) pairs spanning **48 ships**. Each populated cell is one
 dossier `dossiers/<ship>-<role>.html` (briefing rating bar + spec grid + loadout tables); the
 `by-role/` ladders ("best ship for role X"). The separate top-level `guides/activities/`
-how-tos (per-role accents: combat=crimson, mining=purple, exploration=teal,
-passenger=blue, trading=green, AX=lime) and the generated landing page are other
+how-tos (each set to its role's DS accent group) and the generated landing page are other
 *projections* of that grid.
 
 **Cross-linking contract.** Pages deep-link into each other by stable anchors:
@@ -198,11 +203,16 @@ relative path (e.g. `../../images/engineers/<name>.webp`).
 The first step toward "content-as-data". Convention: every task script lives in
 `scripts/`, named for its task, with a sibling `<name>.md` doc (see `scripts/README.md`).
 
-- **`generate-guides-index.sh`** → regenerates `guides/index.html`. The ship-dossier
-  grid is **auto-discovered** from `guides/ships/dossiers/*.html` (so it self-syncs); the
-  other sections are hand-curated cards inside the script. The output's look is copied
-  from `engineers.html` (deliberately not the design system yet). `index.html` is a
-  **generated artifact** — edit the generator, not the file.
+- **`generate-guides-index.sh`** → regenerates `guides/index.html`, **on the design system**
+  (links `ed-blackbox.css`/`.js`; only the guide-card/ship grids are a scoped `<style>`). The
+  page is structured into three top-level sections mirroring the header — **Ships / Engineering /
+  Systems** (ids `#dossiers`/`#engineering`/`#systems`, preserved for inbound nav links) — each
+  holding the guide groups as labelled subsections, plus a briefing, a "What Is This Website"
+  intro, an FAQ, and a hand-written **Changelog**. The ship-dossier grid is **auto-discovered**
+  from `guides/ships/dossiers/*.html` (so it self-syncs); the other cards are hand-curated in the
+  script. `index.html` is a **generated artifact** — edit the generator, not the file. The
+  masthead "Updated" line is build-stamped; the **Changelog dates are fixed** and never
+  auto-edited (add a release only when asked).
 - **`generate-anchor-files.sh`** → regenerates the per-page `<basename>-anchors.md`
   anchor catalogs (§4). For each guide it extracts every `<section id="…">` and the
   section's title and writes the sibling `.md`. Every guide also carries a `#credits`
@@ -237,38 +247,32 @@ rather than guessed. Verification is mandatory. As of design-system **v1.1.0** t
 masthead no longer carries an inline `Sources …` line (it shows a last-updated date
 instead); per-page sources are listed in a dedicated **`section.credits`** block (the
 **Sources** section) at the bottom of the page (above the footer), each citing the
-specific sources that page's facts were verified against (mostly 5+ per page; a few hard pages at 4). (Legacy inline guides may still display the old masthead
-`Sources …` line and a `Live 4.0` patch label until migrated.)
+specific sources that page's facts were verified against (mostly 5+ per page; a few hard pages at 4).
 
 ---
 
 ## 8. Known structural debt
 
-- **Migration gap** — 108 pages still inline their CSS (§1).
-- **Shared chrome — design-system pages only.** The design system now provides a global
-  header, breadcrumbs, and footer (v1.1.0), and the generated `guides/index.html` carries
-  the header. The **108 legacy inline guides** still have no global chrome (quick-nav on
-  only 3, footer on only 1, `engineers.html`) and don't yet link *back* to the index —
-  closing that gap is the migration work.
-- **Naming inconsistency** — mixed `_` vs `-`, mixed case across filenames; the
-  stylesheet is `ed-blackbo**x**` while the repo is `ed-blackbo**ok**`.
+The **migration gap is closed** — every page links the design system, carries the global
+chrome (header, breadcrumbs, footer), and links back to the index. The palette fragmentation,
+divergent token names, and per-page layout widths that the inline-CSS era produced are gone
+(one locked token set). What remains:
 
-**The migration gap in detail.** The project has *visual* consistency achieved through
-*structural duplication* — every guide re-implements the same look via inlined,
-copy-pasted CSS, which drifts:
+- **Naming inconsistency** — some asset filenames still mix `_` vs `-` and case; standardizing
+  is a tracked TODO (don't mass-rename ad hoc). Note: the stylesheet is `ed-blackbo**x**`
+  while the repo is `ed-blackbo**ok**`.
+- **Ship renders not embedded** — `images/ships/` (46 `.jpg`) exist but the dossiers don't yet
+  display them (`TODO.md` Phase 4).
+- **Fleet bias** — dossiers / by-role / activities still reference the personal fleet (KA-05
+  ship tags); systems pages are largely de-biased (`TODO.md` Phase 4).
+- **DS version string** — `--ds-version` is still `1.3.0` though the final migration added
+  components (`.step-card`, `.bp-*`) and quick-nav features; bump when convenient.
+- **`guides.01/` scratch copy** — an untracked, `.gitignore`d full duplicate of `guides/`
+  awaiting deletion (`TODO.md` Phase 1).
 
-| Drift | Detail |
-|---|---|
-| Palette fragmentation | 3 variants: engineering (`--bg:#0c0908`, adds `--raw/--man/--enc` material colors, `--maroon-bright`), farm (green/orange story, no `-lt` suffixes), systems/ship (closest to the design system: `--bg:#0a0708`, `--maroon-lt`, `--fed`). |
-| Naming divergence | `--maroon-bright` vs `--maroon-lt`; `--ink-mute` vs `--ink-dim`. |
-| Layout width | Blueprints 920px · farm 880px · systems/ship 1080–1140px. |
-| Feature variance | Quick-nav on only 3 pages; footer on only 1; per-role accents only in `activities/`. |
-| File naming | Mixed `_` vs `-`, mixed title-case vs kebab-case across files. |
-
-Migrating one page: delete the inline `<style>`, link `ed-blackbox.css` + `.js`, set the
-5-token accent override, and map markup onto the catalogued component classes (~70–80%
-CSS reduction per file). Main risk: subtle cascade/specificity differences across 108
-files — diff against `component-gallery.html`. All tracked in [`TODO.md`](TODO.md).
+A few pages keep a single deliberately-scoped `<style>`/`<script>` for genuinely bespoke
+behaviour (the `checklist.html` unlock map; the `blueprints.html` accordion/search; the
+`index.html` grids) — these are intentional, not migration debt. All tracked in [`TODO.md`](TODO.md).
 
 ---
 

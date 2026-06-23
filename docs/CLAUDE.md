@@ -15,18 +15,24 @@ how it's built), [`TODO.md`](TODO.md) (backlog).
 ## Repo layout (quick reference)
 
 ```
-guides/            108 self-contained HTML guides (inline CSS) + index.html (generated)
+guides/            108 HTML guides + index.html (generated) — all on the design system
+                   (link ed-blackbox.css/.js; only a tiny per-page accent-override <style>)
                    each guide has a sibling <name>-anchors.md (generated; 2 curated in engineering/)
   engineering/     engineers · blueprints · checklist · farms/ (4)
   systems/         11 game-system guides
   ships/           dossiers/ (77) · by-role/ (7)
   activities/      6 role playbooks (how to fly each role)
-design-system/     v1.3.0 — css/ js/ templates/ legacy-templates/ docs/ (the migration target;
-                   legacy-templates/ = the precursor Template.html/.md, reference only)
+design-system/     v1.3.0 — css/ js/ templates/ legacy-templates/ docs/ (THE shared system every
+                   page links; legacy-templates/ = the precursor Template.html/.md, reference only)
 images/            engineers/ (38 portraits) · ships/ (46 renders) · logos/ (logo·banner·favicon + concepts/)
 scripts/           reusable task scripts (+ per-script .md docs)
 docs/              project docs (this file, architecture, todo)
 ```
+
+> **Migration complete (2026-06-23):** every guide and the generated landing page now link
+> the design system. No page carries a full inline stylesheet anymore — only the small
+> 5-token accent override the DS expects (plus a couple of deliberately-scoped blocks: the
+> bespoke Engineer Unlock Map on `checklist.html` and the guide/ship grids on `index.html`).
 
 ---
 
@@ -40,9 +46,10 @@ docs/              project docs (this file, architecture, todo)
 2. **Voice: operator-grade.** Terse, factual, commander-to-commander. No marketing
    tone, no hype, no emoji. Lead with the verdict. Bold the one word that matters.
    (Full guidance: `design-system/docs/06-voice-content.md`.)
-3. **Don't fork the look.** New pages use the **design system** (linked CSS), not a new
-   inline stylesheet. Existing pages still inline their CSS — when editing one, match
-   *that page's own* existing style; don't half-migrate it unless the task is migration.
+3. **Don't fork the look.** Every page links the **design system** (`ed-blackbox.css`/`.js`).
+   Don't reintroduce a full inline stylesheet — style with catalogued component classes; the
+   only per-page `<style>` should be the 5-token accent override (or a deliberately-scoped
+   bespoke block like the checklist map / index grids). New components go in the DS, not the page.
 4. **Stable anchors.** Other pages and external tools deep-link by id (`#eng-…`,
    `#grp-…`, `#bp-…`, section ids). Don't rename ids casually. Every guide has a
    sibling **`<basename>-anchors.md`** cataloging its anchors; if you add, remove, or
@@ -94,17 +101,17 @@ The script only touches files carrying its generated marker, so the hand-curated
 guide now carries a section-anchored catalog (**107 generated + 2 curated** = 109); only
 those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md`.
 
-### Edit an existing (legacy) guide
-- It's a self-contained HTML file with inline CSS. Match its existing structure and
-  palette. Don't introduce the design-system link unless you're doing the migration
-  task for that page (a tracked Phase 1 item).
+### Edit an existing guide
+- It links `ed-blackbox.css`/`.js` and styles with component classes. Match the catalogued
+  components (`component-gallery.html`); don't add page-level CSS beyond the accent override.
+  Need something new? Add it to the design system as a reusable component, then use it.
 - If your edit adds, removes, or renames any `<section id>`, re-run
   `scripts/generate-anchor-files.sh` to refresh that page's `<basename>-anchors.md`.
 
-### Migrate a page to the design system (Phase 1 work)
-- Replace the inline `<style>` with a link to `ed-blackbox.css`, set the accent group,
-  map existing markup onto component classes, link `ed-blackbox.js`. Visually diff
-  against `component-gallery.html`. Expect ~70–80% size reduction.
+### Migrate a page to the design system *(done — reference only)*
+- All 108 guides + the landing page are migrated. If you ever need the pattern: replace the
+  inline `<style>` with a link to `ed-blackbox.css`, set the accent group, map markup onto
+  component classes, link `ed-blackbox.js`, visually diff against `component-gallery.html`.
 
 ### Add a script
 - Put it in `scripts/<task-specific-name>.sh`, add `scripts/<same-name>.md`, list it in
@@ -129,13 +136,16 @@ those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md
   (rule 1). (The `CMDR KA0S · INARA 173082` identity chrome has been removed site-wide — the
   footer `By CMDR Ka0s` byline is kept; powerplay has been de-biased to role/ethos-agnostic.
   Dropping "CMDR" from dossier kickers and reducing fleet bias on the remaining pages continue
-  as editorial polish; legacy inline guides may still carry the old chrome.)
+  as editorial polish — see `TODO.md` Phase 4.)
 
 ## Don't
 
 - Don't invent game data or "improve" numbers from memory.
 - Don't re-derive or "improve" the locked design-system tokens/palette.
-- Don't hand-edit `guides/index.html` (regenerate it).
+- Don't hand-edit `guides/index.html` (regenerate it via `generate-guides-index.sh`).
+- Don't auto-edit the landing-page **Changelog** (§06 in `generate-guides-index.sh`) — its
+  entries are hand-written with **fixed** dates (not build-stamped). Add a release only when
+  explicitly asked; routine work (even regenerating `index.html`) leaves it untouched.
 - Don't break or silently rename cross-link anchor ids.
 - Don't add new top-level page chrome/background layers — the grid + glows are global.
 - Don't mass-rename files or restructure folders outside a dedicated, tracked task.
