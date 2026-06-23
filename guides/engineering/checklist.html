@@ -29,7 +29,7 @@
 .band{position:relative;z-index:1}
 .band + .band{margin-top:16px;padding-top:20px}
 .band-head{display:flex;align-items:center;gap:12px;margin:0 0 36px}
-.band-head .bh-num{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);background:var(--maroon-lt);padding:4px 9px;border-radius:3px}
+.band-head .bh-num{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bg);background:var(--amber);padding:4px 9px;border-radius:3px}
 .band-head h3{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:14.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);margin:0}
 .band-head .bh-line{flex:1;height:1px;background:var(--hair)}
 .band-head .bh-tag{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
@@ -97,19 +97,20 @@
       <div class="qn-dd" id="qn-dd">
         <div class="qn-field">
           <span class="qn-ico" aria-hidden="true">⌕</span>
-          <input id="qn-search" class="qn-input" type="text" placeholder="Search engineer, phase, system, item, action…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
           <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
         </div>
         <div class="qn-panel" id="qn-panel" role="listbox">
       <div class="qn-sec">Phases</div>
       <a class="qn-item" href="#unlock-map" data-kw="engineer unlock map flowchart referral tree chart overview"><span class="qn-dot amber"></span><span class="qn-nm">Engineer Unlock Map</span><span class="qn-side">Map</span></a>
-      <a class="qn-item" href="#phase-00" data-kw="prep farms setup srv cargo jameson dav's hope crystalline shards hge"><span class="qn-dot amber"></span><span class="qn-nm">Phase 00 — Prep &amp; Farms</span><span class="qn-side">Phase</span></a>
-      <a class="qn-item" href="#phase-01" data-kw="tier 1 farseer elvira dweller mcquinn liz ryder deciat khun wyrd wolf 397 eurybia"><span class="qn-dot amber"></span><span class="qn-nm">Phase 01 — Tier 1 Engineers</span><span class="qn-side">Phase</span></a>
-      <a class="qn-item" href="#phase-02" data-kw="tier 2 juri ishmaak selene jean hera tani lei cheung marco qwent zacariah nemo"><span class="qn-dot amber"></span><span class="qn-nm">Phase 02 — Tier 2 Engineers</span><span class="qn-side">Phase</span></a>
-      <a class="qn-item" href="#phase-03" data-kw="permits ranks imperial navy federal navy alliance elite achenar sol alioth shinrarta combat rank"><span class="qn-dot amber"></span><span class="qn-nm">Phase 03 — Permits &amp; Ranks</span><span class="qn-side">Phase</span></a>
-      <a class="qn-item" href="#phase-04" data-kw="tier 3 sarge bris dekker didi vatermann bill turner broo tarquin tiana fortune ram tah professor palin lori jameson chloe sedesi"><span class="qn-dot amber"></span><span class="qn-nm">Phase 04 — Tier 3 Engineers</span><span class="qn-side">Phase</span></a>
-      <a class="qn-item" href="#phase-05" data-kw="colonia expedition petra olmanova mel brandon etienne dorn marsha hicks baltanos eleanor bresa rosa dayette yi shen"><span class="qn-dot amber"></span><span class="qn-nm">Phase 05 — Colonia Expedition</span><span class="qn-side">Phase</span></a>
-      <a class="qn-item" href="#phase-06" data-kw="bubble odyssey on foot domino green hero ferrari jude navarro kit fowler wellington beck terra velasquez oden geiger yarden bond uma laszlo"><span class="qn-dot amber"></span><span class="qn-nm">Phase 06 — Bubble Odyssey</span><span class="qn-side">Phase</span></a>
+      <a class="qn-item" href="#legend" data-kw="how to read a step legend action types badges referral mechanic anchors"><span class="qn-dot amber"></span><span class="qn-nm">How to read a step</span><span class="qn-side">Guide</span></a>
+      <a class="qn-item" href="#phase-00" data-kw="prep farms setup srv cargo jameson dav's hope crystalline shards hge"><span class="qn-dot amber"></span><span class="qn-nm">Phase 0 | Prep &amp; Farms</span><span class="qn-side">Phase</span></a>
+      <a class="qn-item" href="#phase-01" data-kw="tier 1 farseer elvira dweller mcquinn liz ryder deciat khun wyrd wolf 397 eurybia"><span class="qn-dot amber"></span><span class="qn-nm">Phase 1 | Tier 1 Engineers</span><span class="qn-side">Phase</span></a>
+      <a class="qn-item" href="#phase-02" data-kw="tier 2 juri ishmaak selene jean hera tani lei cheung marco qwent zacariah nemo"><span class="qn-dot amber"></span><span class="qn-nm">Phase 2 | Tier 2 Engineers</span><span class="qn-side">Phase</span></a>
+      <a class="qn-item" href="#phase-03" data-kw="permits ranks imperial navy federal navy alliance elite achenar sol alioth shinrarta combat rank"><span class="qn-dot amber"></span><span class="qn-nm">Phase 3 | Permits &amp; Ranks</span><span class="qn-side">Phase</span></a>
+      <a class="qn-item" href="#phase-04" data-kw="tier 3 sarge bris dekker didi vatermann bill turner broo tarquin tiana fortune ram tah professor palin lori jameson chloe sedesi"><span class="qn-dot amber"></span><span class="qn-nm">Phase 4 | Tier 3 Engineers</span><span class="qn-side">Phase</span></a>
+      <a class="qn-item" href="#phase-05" data-kw="colonia expedition petra olmanova mel brandon etienne dorn marsha hicks baltanos eleanor bresa rosa dayette yi shen"><span class="qn-dot amber"></span><span class="qn-nm">Phase 5 | Colonia Expedition</span><span class="qn-side">Phase</span></a>
+      <a class="qn-item" href="#phase-06" data-kw="bubble odyssey on foot domino green hero ferrari jude navarro kit fowler wellington beck terra velasquez oden geiger yarden bond uma laszlo"><span class="qn-dot amber"></span><span class="qn-nm">Phase 6 | Bubble Odyssey</span><span class="qn-side">Phase</span></a>
 
       <div class="qn-sec">Engineers · Tier 1</div>
       <a class="qn-item" href="#unlock-felicity-farseer" data-kw="felicity farseer deciat farseer inc meta alloy frame shift drive unlock tier 1 exploration scout"><span class="qn-dot amber"></span><span class="qn-nm">Felicity Farseer</span><span class="qn-side">Unlock</span></a>
@@ -198,7 +199,7 @@
 <div class="verdict">
   <div class="v-eyebrow">Field Briefing</div>
   <h2>Engineering is a <em>referral tree</em>, run as one trip.</h2>
-  <p>You begin with five Tier&nbsp;1 ship engineers who each ask for one simple condition and one hand-in. Climbing any of them to <b>Grade&nbsp;3 (and about one-third into Grade&nbsp;4)</b> triggers referrals to Tier&nbsp;2, and Tier&nbsp;2 referrals open Tier&nbsp;3 — where permits and rank grinds gate the deepest engineers. This manual flattens that tree into a single chronological run of discrete steps: prep and farms first, then each tier in dependency order, the permit/rank grinds, the Colonia expedition, and finally the on-foot Odyssey engineers. Every step names its <b>action type</b> and exactly what to do. Material quantities live in the Engineering Tracker; the routes for each material live in the four farm field manuals linked from Phase 00.</p>
+  <p>You begin with five Tier&nbsp;1 ship engineers who each ask for one simple condition and one hand-in. Climbing any of them to <b>Grade&nbsp;3 (and about one-third into Grade&nbsp;4)</b> triggers referrals to Tier&nbsp;2, and Tier&nbsp;2 referrals open Tier&nbsp;3 — where permits and rank grinds gate the deepest engineers. This manual flattens that tree into a single chronological run of discrete steps: prep and farms first, then each tier in dependency order, the permit/rank grinds, the Colonia expedition, and finally the on-foot Odyssey engineers. Every step names its <b>action type</b> and exactly what to do. Material quantities live in the Engineering Tracker; the routes for each material live in the four farm field manuals linked from Phase 0.</p>
 </div>
 
 <div class="stat-grid">
@@ -211,7 +212,7 @@
 
 <!-- ============ ENGINEER UNLOCK MAP ============ -->
 <section id="unlock-map">
-  <div class="sec-head"><span class="sec-num">Map</span><h2>Engineer Unlock Map</h2><span class="tag">38 nodes</span></div>
+  <div class="sec-head"><span class="sec-num">01</span><h2>Engineer Unlock Map</h2><span class="tag">38 nodes</span></div>
   <p class="lead">The whole referral tree at a glance, read left → right: roots on the left, deeper tiers to the right, grouped by region. Nodes are colour-coded by discipline; permit-gated engineers are tagged. Click any card to jump to its Unlock step below, or the <span class="muted">↗</span> glyph to open that engineer in the Engineers manual.</p>
   <div class="map-legend">
   <div class="ml"><span class="sw sw-ship"></span><span><b>Ship-side</b> — hull &amp; module engineering</span></div>
@@ -469,7 +470,7 @@
 
 <!-- ============ LEGEND ============ -->
 <section id="legend">
-  <div class="sec-head"><span class="sec-num">·</span><h2>How to read a step</h2><span class="tag">Legend</span></div>
+  <div class="sec-head"><span class="sec-num">02</span><h2>How to read a step</h2><span class="tag">Legend</span></div>
   <p class="lead">Every step is one card. The left rail carries a running step number and the card's coloured left edge marks its action type. Engineer names link to the Engineers manual; module and blueprint names link to the Blueprints manual; farm steps link to the matching field guide. Each step (and each phase header) has a permanent <span class="muted">#</span> anchor for deep-linking.</p>
   <div class="legend">
     <div class="lg"><h4>Action types</h4>
@@ -497,7 +498,7 @@
 
 <!-- ============ PHASE 00 ============ -->
 <section id="phase-00">
-  <div class="sec-head"><span class="sec-num">Phase 00</span><h2>Prep &amp; Farms</h2><span class="tag">Setup</span></div>
+  <div class="sec-head"><span class="sec-num">03</span><h2>Phase 0 | Prep &amp; Farms</h2><span class="tag">Setup</span></div>
   <p class="lead">Before chasing engineers, set the ship up for surface work and stand up the four material farms. You do not have to cap everything now — but every "climb a blueprint for the referral" step downstream spends materials, so having the farm routes bookmarked saves a lot of backtracking. The farm field manuals carry the exact sites, coordinates and loops; the Engineering Tracker carries the quantities.</p>
   <div class="phase-meta">In this phase · <b>1 setup</b> + <b>4 farm</b> steps · supports every later climb</div>
 
@@ -573,7 +574,7 @@
 
 <!-- ============ PHASE 01 ============ -->
 <section id="phase-01">
-  <div class="sec-head"><span class="sec-num">Phase 01</span><h2>Tier 1 Engineers</h2><span class="tag">Ship · 5</span></div>
+  <div class="sec-head"><span class="sec-num">04</span><h2>Phase 1 | Tier 1 Engineers</h2><span class="tag">Ship · 5</span></div>
   <p class="lead">The entry tier — no referral or permit gates. Meet a simple condition, hand in one item, and you're in. Each of these five is followed by a <span class="badge b-climb">Climb</span> step: rolling them to Grade&nbsp;3 (a little into Grade&nbsp;4) is what unlocks the Tier&nbsp;2 engineers they refer you to. Two of them (<a href="engineers.html#eng-elvira-martuuk">Martuuk</a>, <a href="engineers.html#eng-liz-ryder">Liz Ryder</a>) are mainly gateways — you climb them only for the referral.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-felicity-farseer">Felicity Farseer</a> · <a href="engineers.html#eng-elvira-martuuk">Elvira Martuuk</a> · <a href="engineers.html#eng-the-dweller">The Dweller</a> · <a href="engineers.html#eng-tod-mcquinn">Tod McQuinn</a> · <a href="engineers.html#eng-liz-ryder">Liz Ryder</a></div>
 
@@ -716,8 +717,8 @@
 
 <!-- ============ STUBBED PHASES 02–06 ============ -->
 <section id="phase-02">
-  <div class="sec-head"><span class="sec-num">Phase 02</span><h2>Tier 2 Engineers</h2><span class="tag">Ship · 6</span></div>
-  <p class="lead">Reached by referral from Tier 1 — no new permits yet, but the hand-ins get larger and a few need a faction invite. Climb the five that branch onward (everyone except <a href="engineers.html#eng-zacariah-nemo">Nemo</a>) to open Tier 3, and let their referrals tell you which Phase 03 grinds to start.</p>
+  <div class="sec-head"><span class="sec-num">05</span><h2>Phase 2 | Tier 2 Engineers</h2><span class="tag">Ship · 6</span></div>
+  <p class="lead">Reached by referral from Tier 1 — no new permits yet, but the hand-ins get larger and a few need a faction invite. Climb the five that branch onward (everyone except <a href="engineers.html#eng-zacariah-nemo">Nemo</a>) to open Tier 3, and let their referrals tell you which Phase 3 grinds to start.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a> · <a href="engineers.html#eng-selene-jean">Selene Jean</a> · <a href="engineers.html#eng-hera-tani">Hera Tani</a> · <a href="engineers.html#eng-lei-cheung">Lei Cheung</a> · <a href="engineers.html#eng-marco-qwent">Marco Qwent</a> · <a href="engineers.html#eng-zacariah-nemo">Zacariah Nemo</a></div>
 
   <div class="step-cards">
@@ -727,7 +728,7 @@
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a> <span class="sub">— hand in Federal combat bonds</span></h3><a class="permalink" href="#unlock-juri-ishmaak" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Giryak</b></div><div class="lk">Body</div><div class="lv">2 A</div><div class="lk">Settlement</div><div class="lv">Pater's Memorial</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Claim <b>50+ Federal combat bonds</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>100,000–1,000,000 CR</b> of Federal combat bonds</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv"><a href="blueprints.html#grp-sensors">sensors</a>, <a href="blueprints.html#grp-mine-launcher">mines</a> &amp; <a href="blueprints.html#grp-fsd-interdictor">FSD interdictor</a></div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> You reach Juri from <a href="engineers.html#eng-felicity-farseer">Farseer</a>’s climb (Phase 01). Federal combat bonds come from <b>Combat Zones</b> — pick a side in a war/civil-war system, fly to the CZ, and destroy enemy ships for that faction; each kill banks a bond. Earn 50+ bonds to meet him, bank the credit value, then redeem at Pater’s Memorial.</div>
+        <div class="step-do"><b class="wd">What to do:</b> You reach Juri from <a href="engineers.html#eng-felicity-farseer">Farseer</a>’s climb (Phase 1). Federal combat bonds come from <b>Combat Zones</b> — pick a side in a war/civil-war system, fly to the CZ, and destroy enemy ships for that faction; each kill banks a bond. Earn 50+ bonds to meet him, bank the credit value, then redeem at Pater’s Memorial.</div>
         <div class="step-flag"><span class="ff">Note</span>INARA notes the exact hand-in varies (<b>100,000–1,000,000 CR</b>) under conditions that aren’t fully documented — carry at least <b>1,000,000 CR</b> of Federal combat bonds to be safe.</div>
       </div>
     </article>
@@ -736,7 +737,7 @@
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Juri Ishmaak to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-the-sarge">The Sarge</a> &amp; <a href="engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a></span></h3><a class="permalink" href="#refer-juri-ishmaak" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Action</div><div class="rcv">Apply <b>any of his blueprints</b> to Grade 3 (+~⅓ into G4)</div></div><div class="rc"><div class="rcl">Refers to</div><div class="rcv"><a href="engineers.html#eng-the-sarge">The Sarge</a> · <a href="engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a></div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Roll any of his sensor/mine/interdictor blueprints to lift reputation. Passing Grade 3 (a little into Grade 4) refers you to two Federal Tier 3 engineers — both permit/rank-gated, so this is also your cue to start the Phase 03 Federal Navy grind.</div>
+        <div class="step-do"><b class="wd">What to do:</b> Roll any of his sensor/mine/interdictor blueprints to lift reputation. Passing Grade 3 (a little into Grade 4) refers you to two Federal Tier 3 engineers — both permit/rank-gated, so this is also your cue to start the Phase 3 Federal Navy grind.</div>
       </div>
     </article>
     <article class="step-card ac-unlock" id="unlock-selene-jean">
@@ -752,7 +753,7 @@
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Selene Jean to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-didi-vatermann">Didi Vatermann</a> &amp; <a href="engineers.html#eng-bill-turner">Bill Turner</a></span></h3><a class="permalink" href="#refer-selene-jean" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Action</div><div class="rcv">Apply <b>armour / hull reinforcement</b> to Grade 3 (+~⅓ into G4)</div></div><div class="rc"><div class="rcl">Refers to</div><div class="rcv"><a href="engineers.html#eng-didi-vatermann">Didi Vatermann</a> · <a href="engineers.html#eng-bill-turner">Bill Turner</a></div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Roll heavy-duty armour or a hull reinforcement (both worth keeping) to Grade 3. The referrals open a trade-ranked engineer and a permit-gated <a href="../systems/superpower-rank.html#pow-all">Alliance</a> engineer — flag the Alioth permit grind for Phase 03.</div>
+        <div class="step-do"><b class="wd">What to do:</b> Roll heavy-duty armour or a hull reinforcement (both worth keeping) to Grade 3. The referrals open a trade-ranked engineer and a permit-gated <a href="../systems/superpower-rank.html#pow-all">Alliance</a> engineer — flag the Alioth permit grind for Phase 3.</div>
       </div>
     </article>
     <article class="step-card ac-unlock" id="unlock-hera-tani">
@@ -760,7 +761,7 @@
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-hera-tani">Hera Tani</a> <span class="sub">— hand in 50× Kamitra Cigars</span></h3><a class="permalink" href="#unlock-hera-tani" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Kuwemaki</b></div><div class="lk">Body</div><div class="lv">A 3 A</div><div class="lk">Settlement</div><div class="lv">The Jet's Hole</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv"><a href="../systems/superpower-rank.html#pow-emp">Empire</a> rank <b>Outsider</b> or higher</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Kamitra Cigars</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-plant">power plant</a>, <a href="blueprints.html#grp-power-distributor">power distributor</a> &amp; <a href="blueprints.html#grp-detailed-surface-scanner">DSS</a></div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-liz-ryder">Liz Ryder</a>’s climb. <b>Outsider</b> is the very first Empire rank — a couple of Imperial missions earns it (see Phase 03). Kamitra Cigars are a rare commodity sold at Kamitra; buy 50 and carry them in cargo to The Jet’s Hole. Hera’s G5 power plant (with Thermal Spread) is essential for combat ships.</div>
+        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-liz-ryder">Liz Ryder</a>’s climb. <b>Outsider</b> is the very first Empire rank — a couple of Imperial missions earns it (see Phase 3). Kamitra Cigars are a rare commodity sold at Kamitra; buy 50 and carry them in cargo to The Jet’s Hole. Hera’s G5 power plant (with Thermal Spread) is essential for combat ships.</div>
       </div>
     </article>
     <article class="step-card ac-climb" id="refer-hera-tani">
@@ -768,7 +769,7 @@
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Hera Tani to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-broo-tarquin">Broo Tarquin</a> &amp; <a href="engineers.html#eng-tiana-fortune">Tiana Fortune</a></span></h3><a class="permalink" href="#refer-hera-tani" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Action</div><div class="rcv">Roll <a href="blueprints.html#grp-power-plant">power plant</a> to Grade 3 (+~⅓ into G4)</div></div><div class="rc"><div class="rcl">Refers to</div><div class="rcv"><a href="engineers.html#eng-broo-tarquin">Broo Tarquin</a> · <a href="engineers.html#eng-tiana-fortune">Tiana Fortune</a></div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Roll an Overcharged power plant (you want this anyway) to Grade 3. Referrals open a combat-ranked laser engineer and a permit-gated Imperial engineer — cue the Achenar permit grind in Phase 03.</div>
+        <div class="step-do"><b class="wd">What to do:</b> Roll an Overcharged power plant (you want this anyway) to Grade 3. Referrals open a combat-ranked laser engineer and a permit-gated Imperial engineer — cue the Achenar permit grind in Phase 3.</div>
       </div>
     </article>
     <article class="step-card ac-unlock" id="unlock-lei-cheung">
@@ -793,7 +794,7 @@
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-marco-qwent">Marco Qwent</a> <span class="sub">— hand in 25× Modular Terminals</span></h3><a class="permalink" href="#unlock-marco-qwent" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Sirius</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">Lucifer</div><div class="lk">Settlement</div><div class="lv">Qwent Research Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from <b>Sirius Corporation</b> (Sirius permit)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Modular Terminals</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-plant">power plant</a> &amp; <a href="blueprints.html#grp-power-distributor">power distributor</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-elvira-martuuk">Elvira Martuuk</a>’s climb. Marco is the gateway to <a href="engineers.html#eng-professor-palin">Palin</a> and <a href="engineers.html#eng-lori-jameson">Lori Jameson</a>, so he’s a priority. <b>Modular Terminals</b> are a mission-reward-only commodity — run missions for factions until you collect 25, then deliver to Qwent Research Base. He needs the <b>Sirius permit</b> first (see note).</div>
-        <div class="step-flag"><span class="ff">Note</span><b>Powerplay 2.0 removed the old shortcut.</b> Pledging to <a href="../systems/powerplay.html#pw-li-yong-rui">Li Yong-Rui</a> no longer grants the Sirius permit. The only route now is to grind the <b>Sirius Corporation</b> minor faction (in the Sirius system) up to <b>Allied</b> via missions until they invite you. Don’t over-build Sirius rep though — <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a> (Phase 06) needs you <b>Unfriendly</b> with Sirius, so unlock Marco first.</div>
+        <div class="step-flag"><span class="ff">Note</span><b>Powerplay 2.0 removed the old shortcut.</b> Pledging to <a href="../systems/powerplay.html#pw-li-yong-rui">Li Yong-Rui</a> no longer grants the Sirius permit. The only route now is to grind the <b>Sirius Corporation</b> minor faction (in the Sirius system) up to <b>Allied</b> via missions until they invite you. Don’t over-build Sirius rep though — <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a> (Phase 6) needs you <b>Unfriendly</b> with Sirius, so unlock Marco first.</div>
       </div>
     </article>
     <article class="step-card ac-climb" id="refer-marco-qwent">
@@ -801,7 +802,7 @@
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Marco Qwent to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-professor-palin">Professor Palin</a> &amp; <a href="engineers.html#eng-lori-jameson">Lori Jameson</a></span></h3><a class="permalink" href="#refer-marco-qwent" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Action</div><div class="rcv">Roll <a href="blueprints.html#grp-power-distributor">power distributor</a> to Grade 3 (+~⅓ into G4)</div></div><div class="rc"><div class="rcl">Refers to</div><div class="rcv"><a href="engineers.html#eng-professor-palin">Professor Palin</a> · <a href="engineers.html#eng-lori-jameson">Lori Jameson</a></div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Roll a power-distributor or power-plant blueprint to Grade 3. The referrals open the two most sought-after Tier 3 engineers — Palin (G5 Dirty Drive thrusters) and Lori Jameson — both gated behind the Phase 03 grinds.</div>
+        <div class="step-do"><b class="wd">What to do:</b> Roll a power-distributor or power-plant blueprint to Grade 3. The referrals open the two most sought-after Tier 3 engineers — Palin (G5 Dirty Drive thrusters) and Lori Jameson — both gated behind the Phase 3 grinds.</div>
       </div>
     </article>
     <article class="step-card ac-unlock" id="unlock-zacariah-nemo">
@@ -816,7 +817,7 @@
   </div>
 </section>
 <section id="phase-03">
-  <div class="sec-head"><span class="sec-num">Phase 03</span><h2>Permits &amp; Ranks</h2><span class="tag">Grind</span></div>
+  <div class="sec-head"><span class="sec-num">06</span><h2>Phase 3 | Permits &amp; Ranks</h2><span class="tag">Grind</span></div>
   <p class="lead">The deepest engineers sit behind faction ranks and system permits. None of this is a single sit-down grind — most of it accrues from the combat, trade and travel you’re already doing. The key distinction: <b>Federal and Imperial</b> rank permits are granted automatically on rank-up, while the <b>Alioth</b> permit needs a specific mission after you max Alliance reputation.</p>
   <div class="phase-meta">Gates · Federal Navy · Imperial Navy · Alioth permit · Elite → Shinrarta · Combat / Trade / Exploration ranks</div>
 
@@ -874,8 +875,8 @@
   </div>
 </section>
 <section id="phase-04">
-  <div class="sec-head"><span class="sec-num">Phase 04</span><h2>Tier 3 Engineers</h2><span class="tag">Ship · 10</span></div>
-  <p class="lead">The deep bench — most are gated behind the Phase 03 permits and ranks, and several want rare commodities or high-grade encoded data. They’re mostly leaves (no onward ship referral), so the order here is just convenience: clear them as their gates come online.</p>
+  <div class="sec-head"><span class="sec-num">07</span><h2>Phase 4 | Tier 3 Engineers</h2><span class="tag">Ship · 10</span></div>
+  <p class="lead">The deep bench — most are gated behind the Phase 3 permits and ranks, and several want rare commodities or high-grade encoded data. They’re mostly leaves (no onward ship referral), so the order here is just convenience: clear them as their gates come online.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-the-sarge">The Sarge</a> · <a href="engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a> · <a href="engineers.html#eng-didi-vatermann">Didi Vatermann</a> · <a href="engineers.html#eng-bill-turner">Bill Turner</a> · <a href="engineers.html#eng-broo-tarquin">Broo Tarquin</a> · <a href="engineers.html#eng-tiana-fortune">Tiana Fortune</a> · <a href="engineers.html#eng-ram-tah">Ram Tah</a> · <a href="engineers.html#eng-professor-palin">Professor Palin</a> · <a href="engineers.html#eng-lori-jameson">Lori Jameson</a> · <a href="engineers.html#eng-chloe-sedesi">Chloe Sedesi</a></div>
 
   <div class="step-cards">
@@ -884,7 +885,7 @@
       <div class="step-rail"><div class="step-no">STEP<b>33</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-the-sarge">The Sarge</a> <span class="sub">— hand in 50× Aberrant Shield Pattern Analysis</span></h3><a class="permalink" href="#unlock-the-sarge" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Beta-3 Tucani</b></div><div class="lk">Body</div><div class="lv">2 B A</div><div class="lk">Settlement</div><div class="lv">The Beach</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Federal Navy rank <b>Midshipman</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Aberrant Shield Pattern Analysis</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-cannon">cannons</a>, <a href="blueprints.html#grp-rail-gun">rail guns</a> &amp; ammo mods</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Beta-3 Tucani</b></div><div class="lk">Body</div><div class="lv">2 B A</div><div class="lk">Settlement</div><div class="lv">The Beach</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Federal Navy rank <b>Midshipman</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Aberrant Shield Pattern Analysis</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-cannon">cannons</a>, <a href="blueprints.html#grp-rail-gun">rail guns</a> &amp; ammo mods</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a>’s climb. <b>Aberrant Shield Pattern Analysis</b> is encoded data dropped by ships you scan/destroy; cap a related encoded data type and <b>trade up</b> for it at an Encoded Material Trader if needed. Deliver at The Beach.</div>
       </div>
     </article>
@@ -892,8 +893,8 @@
       <div class="step-rail"><div class="step-no">STEP<b>34</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a> <span class="sub">— hand in Federal combat bonds</span></h3><a class="permalink" href="#unlock-colonel-bris-dekker" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Sol</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">Iapetus</div><div class="lk">Settlement</div><div class="lv">Dekker's Yard</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Federation <b>Friendly</b> + <b>Sol permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>1,000,000+ CR</b> of Federal combat bonds</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fsd-interdictor">FSD interdictor</a> &amp; <a href="blueprints.html#grp-frame-shift-drive">frame shift drive</a></div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a>’s climb. With the Sol permit from Phase 03, fly to Sol and dock at Dekker’s Yard. Bank a large pile of Federal combat bonds from Combat Zones — sources quote anywhere from 1M to 10M CR, so bring plenty.</div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Sol</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">Iapetus</div><div class="lk">Settlement</div><div class="lv">Dekker's Yard</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Federation <b>Friendly</b> + <b>Sol permit</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>1,000,000+ CR</b> of Federal combat bonds</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fsd-interdictor">FSD interdictor</a> &amp; <a href="blueprints.html#grp-frame-shift-drive">frame shift drive</a></div></div></div>
+        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a>’s climb. With the Sol permit from Phase 3, fly to Sol and dock at Dekker’s Yard. Bank a large pile of Federal combat bonds from Combat Zones — sources quote anywhere from 1M to 10M CR, so bring plenty.</div>
         <div class="step-flag"><span class="ff">Note</span>Reported hand-in varies by source (<b>1M–10M CR</b> of Federal combat bonds). Stockpile generously before flying out so you don’t have to leave Sol and come back.</div>
       </div>
     </article>
@@ -901,7 +902,7 @@
       <div class="step-rail"><div class="step-no">STEP<b>35</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-didi-vatermann">Didi Vatermann</a> <span class="sub">— hand in 50× Lavian Brandy</span></h3><a class="permalink" href="#unlock-didi-vatermann" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Leesti</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Vatermann LLC</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank <b>Merchant</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Lavian Brandy</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-shield-booster">shield boosters</a> &amp; <a href="blueprints.html#grp-bi-weave-shield-generator">bi-weave shields</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Leesti</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Vatermann LLC</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank <b>Merchant</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Lavian Brandy</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-shield-booster">shield boosters</a> &amp; <a href="blueprints.html#grp-bi-weave-shield-generator">bi-weave shields</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-selene-jean">Selene Jean</a>’s climb. <b>Lavian Brandy</b> is a rare commodity sold at Lave (Lave Station / Castellan Station) — buy up to the rare-goods allocation, and you may need a couple of trips or a loop to gather 50. Deliver to Vatermann LLC.</div>
       </div>
     </article>
@@ -909,15 +910,15 @@
       <div class="step-rail"><div class="step-no">STEP<b>36</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-bill-turner">Bill Turner</a> <span class="sub">— hand in 50× Bromellite</span></h3><a class="permalink" href="#unlock-bill-turner" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Alioth</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Turner Metallics Inc</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Alliance <b>Friendly</b> + <b>Alioth permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Bromellite</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">plasma accelerators, <a href="blueprints.html#grp-sensors">scanners</a> &amp; utilities</div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-selene-jean">Selene Jean</a>’s climb. <b>Bromellite</b> is mined from icy rings (laser or core) or bought at some markets — gather 50 t. With the Alioth permit from Phase 03, deliver to Turner Metallics Inc.</div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Alioth</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Turner Metallics Inc</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Alliance <b>Friendly</b> + <b>Alioth permit</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Bromellite</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">plasma accelerators, <a href="blueprints.html#grp-sensors">scanners</a> &amp; utilities</div></div></div>
+        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-selene-jean">Selene Jean</a>’s climb. <b>Bromellite</b> is mined from icy rings (laser or core) or bought at some markets — gather 50 t. With the Alioth permit from Phase 3, deliver to Turner Metallics Inc.</div>
       </div>
     </article>
     <article class="step-card ac-unlock" id="unlock-broo-tarquin">
       <div class="step-rail"><div class="step-no">STEP<b>37</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-broo-tarquin">Broo Tarquin</a> <span class="sub">— hand in 50× Fujin Tea</span></h3><a class="permalink" href="#unlock-broo-tarquin" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Muang</b></div><div class="lk">Body</div><div class="lv">5 A</div><div class="lk">Settlement</div><div class="lv">Broo's Legacy</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Competent</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Fujin Tea</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-pulse-laser">pulse</a>, <a href="blueprints.html#grp-burst-laser">burst</a> &amp; <a href="blueprints.html#grp-beam-laser">beam lasers</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Muang</b></div><div class="lk">Body</div><div class="lv">5 A</div><div class="lk">Settlement</div><div class="lv">Broo's Legacy</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Competent</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Fujin Tea</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-pulse-laser">pulse</a>, <a href="blueprints.html#grp-burst-laser">burst</a> &amp; <a href="blueprints.html#grp-beam-laser">beam lasers</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-hera-tani">Hera Tani</a>’s climb. <b>Fujin Tea</b> is a rare commodity from the Fujin system — buy 50 and carry to Broo’s Legacy. Broo’s laser mods (Efficient + Thermal Vent) are the meta for beam builds.</div>
       </div>
     </article>
@@ -925,15 +926,15 @@
       <div class="step-rail"><div class="step-no">STEP<b>38</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-tiana-fortune">Tiana Fortune</a> <span class="sub">— hand in 50× Decoded Emission Data</span></h3><a class="permalink" href="#unlock-tiana-fortune" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Achenar</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Fortune's Loss</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Empire <b>Friendly</b> + <b>Achenar permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Decoded Emission Data</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-sensors">sensors</a>, <a href="blueprints.html#grp-kill-warrant-scanner">scanners</a> &amp; limpets</div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-hera-tani">Hera Tani</a>’s climb. <b>Decoded Emission Data</b> is encoded data — cap a neighbouring encoded type and trade up if short. With the Achenar permit from Phase 03, deliver to Fortune’s Loss.</div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Achenar</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Fortune's Loss</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Empire <b>Friendly</b> + <b>Achenar permit</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Decoded Emission Data</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-sensors">sensors</a>, <a href="blueprints.html#grp-kill-warrant-scanner">scanners</a> &amp; limpets</div></div></div>
+        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-hera-tani">Hera Tani</a>’s climb. <b>Decoded Emission Data</b> is encoded data — cap a neighbouring encoded type and trade up if short. With the Achenar permit from Phase 3, deliver to Fortune’s Loss.</div>
       </div>
     </article>
     <article class="step-card ac-unlock" id="unlock-ram-tah">
       <div class="step-rail"><div class="step-no">STEP<b>39</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-ram-tah">Ram Tah</a> <span class="sub">— hand in 50× Classified Scan Databanks</span></h3><a class="permalink" href="#unlock-ram-tah" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Meene</b></div><div class="lk">Body</div><div class="lv">AB 5 D</div><div class="lk">Settlement</div><div class="lv">Phoenix Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Surveyor</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Classified Scan Databanks</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv"><a href="blueprints.html#grp-sensors">scanners</a>, limpet controllers &amp; utilities; opens Guardian unlocks</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Meene</b></div><div class="lk">Body</div><div class="lv">AB 5 D</div><div class="lk">Settlement</div><div class="lv">Phoenix Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Surveyor</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Classified Scan Databanks</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv"><a href="blueprints.html#grp-sensors">scanners</a>, limpet controllers &amp; utilities; opens Guardian unlocks</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-lei-cheung">Lei Cheung</a>’s climb. <b>Classified Scan Databanks</b> are high-grade encoded data — farm at a data site or trade up. Deliver to Phoenix Base. Ram Tah also runs the Guardian-technology missions, which leads into the next step.</div>
       </div>
     </article>
@@ -951,15 +952,15 @@
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-professor-palin">Professor Palin</a> <span class="sub">— hand in 25× Sensor Fragments</span></h3><a class="permalink" href="#unlock-professor-palin" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Arque</b></div><div class="lk">Body</div><div class="lv">4 E</div><div class="lk">Settlement</div><div class="lv">Abel Laboratory</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Travelled <b>≥ 5,000 ly</b> from your career start</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Sensor Fragments</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#bp-thrusters-dirty-drive-tuning">Dirty Drive Tuning</a> thrusters &amp; <a href="blueprints.html#grp-frame-shift-drive">FSD</a></div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-marco-qwent">Marco Qwent</a>’s climb. The 5,000 ly is a max-distance-from-start check — a short trip out and back does it (and the Colonia run in Phase 05 obliterates it). <b>Sensor Fragments</b> are scooped from crashed/active Thargoid sites on planet surfaces with an SRV. Deliver to Abel Laboratory. Palin’s G5 Dirty Drive thrusters are best-in-slot.</div>
+        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-marco-qwent">Marco Qwent</a>’s climb. The 5,000 ly is a max-distance-from-start check — a short trip out and back does it (and the Colonia run in Phase 5 obliterates it). <b>Sensor Fragments</b> are scooped from crashed/active Thargoid sites on planet surfaces with an SRV. Deliver to Abel Laboratory. Palin’s G5 Dirty Drive thrusters are best-in-slot.</div>
       </div>
     </article>
     <article class="step-card ac-unlock" id="unlock-lori-jameson">
       <div class="step-rail"><div class="step-no">STEP<b>42</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-lori-jameson">Lori Jameson</a> <span class="sub">— hand in 25× Kongga Ale</span></h3><a class="permalink" href="#unlock-lori-jameson" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Shinrarta Dezhra</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">A 1</div><div class="lk">Settlement</div><div class="lv">Jameson Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Dangerous</b> + <b>Shinrarta permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Kongga Ale</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-distributor">power distributor</a>, <a href="blueprints.html#grp-sensors">scanners</a>, <a href="blueprints.html#grp-auto-field-maintenance-unit">AFMU</a> &amp; more</div></div></div>
-        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-marco-qwent">Marco Qwent</a>’s climb. <b>Kongga Ale</b> is a rare commodity from the Kongga system — buy 25. With Dangerous combat rank and the Shinrarta permit from Phase 03, deliver to Jameson Base on Founders World.</div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Shinrarta Dezhra</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">A 1</div><div class="lk">Settlement</div><div class="lv">Jameson Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Dangerous</b> + <b>Shinrarta permit</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Kongga Ale</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-distributor">power distributor</a>, <a href="blueprints.html#grp-sensors">scanners</a>, <a href="blueprints.html#grp-auto-field-maintenance-unit">AFMU</a> &amp; more</div></div></div>
+        <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-marco-qwent">Marco Qwent</a>’s climb. <b>Kongga Ale</b> is a rare commodity from the Kongga system — buy 25. With Dangerous combat rank and the Shinrarta permit from Phase 3, deliver to Jameson Base on Founders World.</div>
       </div>
     </article>
     <article class="step-card ac-unlock" id="unlock-chloe-sedesi">
@@ -975,7 +976,7 @@
   </div>
 </section>
 <section id="phase-05">
-  <div class="sec-head"><span class="sec-num">Phase 05</span><h2>Colonia Expedition</h2><span class="tag">22 kly · 8</span></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Phase 5 | Colonia Expedition</h2><span class="tag">22 kly · 8</span></div>
   <p class="lead">Eight engineers — four ship, four on-foot — clustered ~22,000 ly away in the Colonia region. Treat it as one expedition: prep, fly out, and clear all eight before heading back (or relocate a carrier). Selling exploration data on the way out does most of the Colonia Council rep work for you.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-petra-olmanova">Petra Olmanova</a> · <a href="engineers.html#eng-mel-brandon">Mel Brandon</a> · <a href="engineers.html#eng-etienne-dorn">Etienne Dorn</a> · <a href="engineers.html#eng-marsha-hicks">Marsha Hicks</a> · <a href="engineers.html#eng-baltanos">Baltanos</a> · <a href="engineers.html#eng-eleanor-bresa">Eleanor Bresa</a> · <a href="engineers.html#eng-rosa-dayette">Rosa Dayette</a> · <a href="engineers.html#eng-yi-shen">Yi Shen</a></div>
 
@@ -1001,7 +1002,7 @@
       <div class="step-rail"><div class="step-no">STEP<b>46</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-petra-olmanova">Petra Olmanova</a> <span class="sub">— hand in 200× Progenitor Cells</span></h3><a class="permalink" href="#unlock-petra-olmanova" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Asura</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Sanctuary</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Expert</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">200× <b>Progenitor Cells</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-hull-reinforcement-package">armour</a>, <a href="blueprints.html#grp-auto-field-maintenance-unit">AFMU</a> &amp; defensive utilities</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Asura</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Sanctuary</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Expert</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">200× <b>Progenitor Cells</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-hull-reinforcement-package">armour</a>, <a href="blueprints.html#grp-auto-field-maintenance-unit">AFMU</a> &amp; defensive utilities</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-tod-mcquinn">Tod McQuinn</a>’s climb. <b>Progenitor Cells</b> are bought at Colonia-region markets — gather 200 and deliver to Sanctuary in Asura.</div>
       </div>
     </article>
@@ -1017,7 +1018,7 @@
       <div class="step-rail"><div class="step-no">STEP<b>48</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-etienne-dorn">Etienne Dorn</a> <span class="sub">— hand in 25× Occupied Escape Pods</span></h3><a class="permalink" href="#unlock-etienne-dorn" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Los</b></div><div class="lk">Body</div><div class="lv">A 2 B</div><div class="lk">Settlement</div><div class="lv">Kraken's Retreat</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank <b>Dealer</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Occupied Escape Pods</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-life-support">life support</a>, <a href="blueprints.html#grp-power-plant">power plant</a> &amp; <a href="blueprints.html#grp-power-distributor">power distributor</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Los</b></div><div class="lk">Body</div><div class="lv">A 2 B</div><div class="lk">Settlement</div><div class="lv">Kraken's Retreat</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank <b>Dealer</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Occupied Escape Pods</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-life-support">life support</a>, <a href="blueprints.html#grp-power-plant">power plant</a> &amp; <a href="blueprints.html#grp-power-distributor">power distributor</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-liz-ryder">Liz Ryder</a>’s climb. <b>Occupied Escape Pods</b> are recovered from a megaship distress signal — fly toward Luchtaine A 1, drop at the distress call, and use Hatch Breaker + Collector limpets to extract 25 pods. Deliver to Kraken’s Retreat in Los.</div>
       </div>
     </article>
@@ -1025,7 +1026,7 @@
       <div class="step-rail"><div class="step-no">STEP<b>49</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-marsha-hicks">Marsha Hicks</a> <span class="sub">— hand in 10 t mined Osmium</span></h3><a class="permalink" href="#unlock-marsha-hicks" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Tir</b></div><div class="lk">Body</div><div class="lv">A 2</div><div class="lk">Settlement</div><div class="lv">The Watchtower</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Surveyor</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10 t <b>Osmium</b> you mined yourself</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fuel-scoop">fuel scoop</a>, <a href="blueprints.html#grp-refinery">refinery</a> &amp; mining tools</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Tir</b></div><div class="lk">Body</div><div class="lv">A 2</div><div class="lk">Settlement</div><div class="lv">The Watchtower</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Surveyor</b> (Phase 3)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10 t <b>Osmium</b> you mined yourself</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fuel-scoop">fuel scoop</a>, <a href="blueprints.html#grp-refinery">refinery</a> &amp; mining tools</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-the-dweller">The Dweller</a>’s climb. The Osmium <b>must be self-mined</b> (laser-mine a metallic ring in the Colonia region), not bought. Refine 10 t and deliver to The Watchtower in Tir.</div>
       </div>
     </article>
@@ -1065,7 +1066,7 @@
   </div>
 </section>
 <section id="phase-06">
-  <div class="sec-head"><span class="sec-num">Phase 06</span><h2>Bubble Odyssey</h2><span class="tag">On-foot · 9</span></div>
+  <div class="sec-head"><span class="sec-num">09</span><h2>Phase 6 | Bubble Odyssey</h2><span class="tag">On-foot · 9</span></div>
   <p class="lead">Nine on-foot (suit &amp; weapon) engineers back in the bubble, reached by selling data/goods to concourse bartenders and running on-foot missions. Three are common-knowledge entry points; the rest come by referral. Since the <b>Aug 2024 buff</b>, the unlock items drop as mission rewards, so this is far lighter than it used to be — take missions that pay the items you need.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-domino-green">Domino Green</a> · <a href="engineers.html#eng-hero-ferrari">Hero Ferrari</a> · <a href="engineers.html#eng-jude-navarro">Jude Navarro</a> · <a href="engineers.html#eng-kit-fowler">Kit Fowler</a> · <a href="engineers.html#eng-wellington-beck">Wellington Beck</a> · <a href="engineers.html#eng-terra-velasquez">Terra Velasquez</a> · <a href="engineers.html#eng-oden-geiger">Oden Geiger</a> · <a href="engineers.html#eng-yarden-bond">Yarden Bond</a> · <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a></div>
 
@@ -1146,7 +1147,7 @@
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a> <span class="sub">— reach Unfriendly with Sirius Corp</span></h3><a class="permalink" href="#unlock-uma-laszlo" title="Permalink">#</a></div>
         <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Xuane</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Laszlo's Resolve</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-wellington-beck">Wellington Beck</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Reach <b>Unfriendly</b> reputation (or lower) with <b>Sirius Corporation</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). No commodity — you just need to be disliked by Sirius Corporation. Take missions against Sirius (or for their enemies) until you drop to Unfriendly, then unlock at Laszlo’s Resolve in Xuane.</div>
-        <div class="step-flag"><span class="ff">Note</span>This <b>conflicts</b> with the Sirius rep you built for <a href="engineers.html#eng-marco-qwent">Marco Qwent</a> (Phase 02). Always unlock <b>Marco first</b>, then deliberately tank your Sirius standing for Uma — doing it in the other order means re-grinding Sirius to Allied again.</div>
+        <div class="step-flag"><span class="ff">Note</span>This <b>conflicts</b> with the Sirius rep you built for <a href="engineers.html#eng-marco-qwent">Marco Qwent</a> (Phase 2). Always unlock <b>Marco first</b>, then deliberately tank your Sirius standing for Uma — doing it in the other order means re-grinding Sirius to Allied again.</div>
       </div>
     </article>
 
@@ -1154,12 +1155,12 @@
 </section>
 
 <section class="credits" id="credits">
-  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <div class="sec-head"><span class="sec-num">10</span><h2>Sources</h2><span class="tag">Provenance</span></div>
   <p class="lead">Figures on this page are verified against the sources below.</p>
   <div class="cr-rows">
     <div class="cr-row"><span class="cr-src">Inara — Engineers</span><span class="cr-what">Engineer unlock requirements, hand-in items, locations, and referral order driving the checklist phases.</span><a class="cr-link" href="https://inara.cz/elite/engineers/">inara.cz/elite/engineers</a></div>
     <div class="cr-row"><span class="cr-src">Elite Dangerous Fandom Wiki</span><span class="cr-what">Engineer unlock mechanics, invite prerequisites, and reputation-tier modifications cross-check for the checklist phases.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Engineers">elite-dangerous.fandom.com/wiki/Engineers</a></div>
-    <div class="cr-row"><span class="cr-src">NEWP — Engineering Guide</span><span class="cr-what">Ship-engineer unlock walkthrough and recommended order — cross-checked against the Phase 02–04 steps.</span><a class="cr-link" href="https://newp.io/engineeringguide">newp.io/engineeringguide</a></div>
+    <div class="cr-row"><span class="cr-src">NEWP — Engineering Guide</span><span class="cr-what">Ship-engineer unlock walkthrough and recommended order — cross-checked against the Phase 2–4 steps.</span><a class="cr-link" href="https://newp.io/engineeringguide">newp.io/engineeringguide</a></div>
     <div class="cr-row"><span class="cr-src">NEWP — Odyssey Engineering</span><span class="cr-what">On-foot engineer unlocks and the post-Aug-2024 mission-reward item drops behind the Odyssey phase.</span><a class="cr-link" href="https://newp.io/ody-engineering">newp.io/ody-engineering</a></div>
     <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Engineer roster, blueprint grades, and unlock prerequisites cross-reference.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data">github.com/EDCD/coriolis-data</a></div>
     <div class="cr-row"><span class="cr-src">EDEngineer</span><span class="cr-what">Material and unlock-item cross-checks for the prep and farm steps.</span><a class="cr-link" href="https://github.com/msarilar/EDEngineer">github.com/msarilar/EDEngineer</a></div>

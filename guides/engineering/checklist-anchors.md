@@ -7,11 +7,11 @@ Link format: `checklist.html#<id>`
 ## Sections
 - **Engineer Unlock Map** — `#unlock-map`
 - **How to read a step** — `#legend`
-- **Prep & Farms** — `#phase-00`
-- **Tier 1 Engineers** — `#phase-01`
-- **Tier 2 Engineers** — `#phase-02`
-- **Permits & Ranks** — `#phase-03`
-- **Tier 3 Engineers** — `#phase-04`
-- **Colonia Expedition** — `#phase-05`
-- **Bubble Odyssey** — `#phase-06`
+- **Phase 0 | Prep & Farms** — `#phase-00`
+- **Phase 1 | Tier 1 Engineers** — `#phase-01`
+- **Phase 2 | Tier 2 Engineers** — `#phase-02`
+- **Phase 3 | Permits & Ranks** — `#phase-03`
+- **Phase 4 | Tier 3 Engineers** — `#phase-04`
+- **Phase 5 | Colonia Expedition** — `#phase-05`
+- **Phase 6 | Bubble Odyssey** — `#phase-06`
 - **Sources** — `#credits`
