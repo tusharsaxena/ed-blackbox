@@ -214,6 +214,7 @@ card "ships/by-role/mining.html"       ""        "Best for Mining"       "Mining
 card "ships/by-role/trading.html"      "" "Best for Trading"      "Cargo haulers ranked by tonnage and economy."
 card "ships/by-role/passenger.html"    ""  "Best for Passenger"    "Cabin capacity and range for the tourism trade."
 card "ships/by-role/multipurpose.html" ""        "Best All-Rounders"     "Do-everything ships ranked for the multipurpose pilot."
+card "ships/rating-methodology.html"   ""  "Rating Methodology"    "How every ship earns its 1–100 suitability rating — the roster-relative, fully-engineered rubric."
 
 cat <<'SHIPS3'
     </div>
@@ -252,22 +253,24 @@ cat <<'ENG'
     <p class="lead">Who modifies your gear, what they grant and the order to unlock them — plus the routes for the materials it eats.</p>
 
     <h3 class="subhead" id="eng-manuals">Engineering Manuals</h3>
-    <p>The full engineering set — engineers, blueprints, and the unlock run.</p>
+    <p>The full engineering set — engineers, blueprints, modules, and the unlock run.</p>
     <div class="gcards">
 ENG
 
 card "engineering/checklist.html"  ""       "Unlock Checklist"   "New-pilot engineering progression — what to unlock, and when."
 card "engineering/engineers.html"  ""       "The Engineers"      "Every engineer: location, meeting requirement, unlock and referrals."
 card "engineering/blueprints.html" ""       "Blueprints"         "The module blueprint catalogue across every grade and effect."
+card "engineering/modules.html"    ""       "Modules"            "Every outfitting slot — core internals, optionals, hardpoints and utilities, the A–E trade-off and what to fit per role."
 
 cat <<'FARM'
     </div>
 
-    <h3 class="subhead" id="farming">Material Farming</h3>
-    <p>Known sites and loops for stocking the materials engineering eats.</p>
+    <h3 class="subhead" id="farming">Materials &amp; Farming</h3>
+    <p>What the materials are, how the trader works, and the known sites and loops for stocking them.</p>
     <div class="gcards">
 FARM
 
+card "engineering/materials.html"                  "" "Materials"            "The three material types, grade ladders and trader exchange ratios — hoard high, trade down."
 card "engineering/farms/davs-hope.html"            "" "Dav's Hope"           "The classic manufactured-material loop at Dav's Hope."
 card "engineering/farms/crystalline-shards.html"   "" "Crystalline Shards"   "Surface raw-material farming at Crystalline Shard sites."
 card "engineering/farms/high-grade-emissions.html" "" "High Grade Emissions" "Farming encoded materials from High Grade Emission signals."

@@ -22,6 +22,7 @@ be re-run later.
 | `classify-card-groups.mjs` | [classify-card-groups.md](classify-card-groups.md) | Sets each `.cards` container's width class (`cards` / `cards wide` / `cards extra-wide`) by its largest card's word count. Class-only, gate-neutral, re-runnable. |
 | `sort-compare-tables.py` | [sort-compare-tables.md](sort-compare-tables.md) | Reorders the rows of every "How It Compares" `table.cmp` (ship dossiers + by-role) by `.rscore` rating, descending, with dash (`&mdash;`) ratings last. Reorder-only, stable, idempotent. |
 | `add-ship-render.py` | [add-ship-render.md](add-ship-render.md) | Inserts a framed ship render (`images/ships/`) into each dossier's briefing (`.verdict.has-render` + `.ship-figure`), with a `Name &middot; Manufacturer` caption. Slug→render mapping, idempotent; skips hulls with no render. |
+| `inject-rating-methodology-links.sh` | [inject-rating-methodology-links.md](inject-rating-methodology-links.md) | Inserts a cross-link to `ships/rating-methodology.html` into every page that shows a 1–100 rating: a `.callout` after each dossier's verdict box (77) and a link line after each by-role "How These Ships Are Scored" section (7). Idempotent; adds no `<section id>`. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.

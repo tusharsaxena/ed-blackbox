@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materials &middot; Engineering | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#dossiers">Ships</a>
+      <a href="../index.html#engineering" class="active">Engineering</a>
+      <a href="../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#types"><span class="qn-dot amber"></span><span class="qn-nm">The Three Material Types</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#grades"><span class="qn-dot amber"></span><span class="qn-nm">Grades &amp; How They Tier</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#raw"><span class="qn-dot amber"></span><span class="qn-nm">Raw Materials</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#manufactured"><span class="qn-dot amber"></span><span class="qn-nm">Manufactured Materials</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#encoded"><span class="qn-dot amber"></span><span class="qn-nm">Encoded Data</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#trader"><span class="qn-dot amber"></span><span class="qn-nm">The Material Trader: Ratios</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#storage"><span class="qn-dot amber"></span><span class="qn-nm">Storage Caps</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#farm"><span class="qn-dot amber"></span><span class="qn-nm">Where to Farm</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">09</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#engineering">Engineering</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Materials</span>
+</nav>
+
+<div class="wrap">
+
+  <!-- ---- MASTHEAD ---- -->
+  <header class="masthead">
+    <div class="kicker">Field Manual<span class="sep">//</span>Engineering<span class="sep">//</span>Materials</div>
+    <h1 class="title">Materials &amp; the Material <span>Trader</span></h1>
+    <p class="subtitle">Every engineer blueprint and synthesis is paid for in materials. Know the three types, the grade ladders, and the <b>trader exchange ratios</b> before you grind.</p>
+    <div class="masthead-meta">
+      <span>Series <b>Engineering</b></span>
+      <span>Updated <b>2026-06-23</b></span>
+    </div>
+  </header>
+
+  <!-- ---- BRIEFING ---- -->
+  <div class="verdict">
+    <div class="v-eyebrow">Field Briefing</div>
+    <h2>Materials are the currency of engineering — and the trader lets you <em>convert what you have into what you need</em>, at a price.</h2>
+    <p>There are three material types — <b>Raw</b>, <b>Manufactured</b>, and <b>Encoded</b> — each farmed differently and each served by its own trader. Within a type you can trade across grades and sub-categories, but you can <b>never</b> trade one type for another. The headline number to memorise: <b>trading up one grade costs 6:1</b>; trading down pays out 1:3. Hoard the high grades, downgrade on demand.</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">3</div><div class="l">Material types</div></div>
+      <div class="stat"><div class="n">23</div><div class="l">Trade lines total</div></div>
+      <div class="stat"><div class="n">6:1</div><div class="l">Cost to upgrade 1 grade</div></div>
+      <div class="stat"><div class="n">1:3</div><div class="l">Payout downgrading 1 grade</div></div>
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <section id="types">
+    <div class="sec-head"><span class="sec-num">01</span><h2>The Three Material Types</h2><span class="tag">Overview</span></div>
+    <p class="lead">Every material in your inventory belongs to exactly one of three types. Each has its own farming method, its own storage pool, and its own dedicated trader. Types do not mix.</p>
+    <div class="cards wide">
+      <div class="card ac-amber">
+        <span class="ico"><span class="chip amber">Raw</span></span>
+        <h4>Raw Materials</h4>
+        <p>Naturally occurring chemical <b>elements</b> — iron, sulphur, polonium and the rest of the periodic table. Used in synthesis (ammo, AFMU refills, jumponium) and many blueprints. Found by SRV prospecting on planet surfaces, in surface signal sources, on crystalline shards, and via asteroid mining.</p>
+      </div>
+      <div class="card ac-amber">
+        <span class="ico"><span class="chip maroon">Manufactured</span></span>
+        <h4>Manufactured Materials</h4>
+        <p>Artificial <b>components</b> salvaged from ships and structures — alloys, capacitors, focus crystals, shielding. The backbone of weapon and module engineering. Earned from combat salvage, ship-debris signal sources, surface settlements, and High-Grade Emissions.</p>
+      </div>
+      <div class="card ac-amber">
+        <span class="ico"><span class="chip fed">Encoded</span></span>
+        <h4>Encoded Data</h4>
+        <p>Pieces of <b>data</b> — scans, intercepted files, decoded emissions. Heavy in sensor, FSD, and shield blueprints. Gathered by scanning ships, wakes, data points, and signal sources; stored in a dedicated data bank.</p>
+      </div>
+    </div>
+    <div class="callout warn icon"><span class="lbl">The hard wall</span><p>You can trade across grades and sub-categories <b>inside</b> a type, but there is <b>no exchange between types</b>. Raw never becomes Manufactured; data never becomes a component. Each type is also collected and stored entirely separately.</p></div>
+  </section>
+
+  <!-- 2 -->
+  <section id="grades">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Grades &amp; How They Tier</h2><span class="tag">Rarity</span></div>
+    <p class="lead">Materials are rated by rarity grade, from common (low grade) to rare (high grade). Higher-grade blueprint rolls demand higher-grade materials — and high grades are far scarcer, which is the whole reason the trader exists.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Grade</th><th>Rarity</th><th>Manufactured / Encoded</th><th>Raw</th></tr></thead>
+        <tbody>
+          <tr><td class="row-rank">G1</td><td>Very Common</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td class="row-rank">G2</td><td>Common</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td class="row-rank">G3</td><td>Standard</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td class="row-rank">G4</td><td>Rare</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td class="row-rank">G5</td><td>Very Rare</td><td>Yes</td><td class="kv-tbd">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-desc">Manufactured and Encoded run a full G1–G5 ladder. <b>Raw materials top out at G4</b> — there is no G5 raw material.</p>
+    <div class="callout tip"><span class="lbl">The core strategy</span><p>Because upgrading is expensive (6:1) and downgrading is cheap (1:3), the efficient play is to <b>collect at the highest grade you can</b> and trade <em>down</em> to fill the lower grades on demand — never the reverse.</p></div>
+  </section>
+
+  <!-- 3 -->
+  <section id="raw">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Raw Materials</h2><span class="tag">Elements</span></div>
+    <p class="lead">Raw materials are organised into <b>7 element groups</b>, each spanning the four grades G1–G4. The trader treats one group as a sub-category: trading <em>within</em> a group (e.g. Iron → Zinc) is the cheapest sideways move.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Group</th><th>G1 · Very Common</th><th>G2 · Common</th><th>G3 · Standard</th><th>G4 · Rare</th></tr></thead>
+        <tbody>
+          <tr><td class="row-rank">1</td><td><b>Carbon</b></td><td>Vanadium</td><td>Niobium</td><td>Yttrium</td></tr>
+          <tr><td class="row-rank">2</td><td><b>Phosphorus</b></td><td>Chromium</td><td>Molybdenum</td><td>Technetium</td></tr>
+          <tr><td class="row-rank">3</td><td><b>Sulphur</b></td><td>Manganese</td><td>Cadmium</td><td>Ruthenium</td></tr>
+          <tr><td class="row-rank">4</td><td><b>Iron</b></td><td>Zinc</td><td>Tin</td><td>Selenium</td></tr>
+          <tr><td class="row-rank">5</td><td><b>Nickel</b></td><td>Germanium</td><td>Tungsten</td><td>Tellurium</td></tr>
+          <tr><td class="row-rank">6</td><td>Rhenium</td><td>Arsenic</td><td>Mercury</td><td>Polonium</td></tr>
+          <tr><td class="row-rank">7</td><td>Lead</td><td>Zirconium</td><td>Boron</td><td>Antimony</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-desc">7 groups × 4 grades = <b>28 raw materials</b>, served by 7 trade lines at the Raw trader.</p>
+    <div class="callout"><span class="lbl">Where they drop</span><p>SRV surface prospecting always yields a fixed spread per body — 1 × G4, 2 × G3, 3 × G2, 5 × G1 from its possible pool. The G1 surface five are always Carbon, Iron, Nickel, Phosphorus and Sulphur; <b>Lead and Rhenium come only from asteroid mining</b>. Crystalline shards are the fastest route to specific high-grade raws.</p></div>
+  </section>
+
+  <!-- 4 -->
+  <section id="manufactured">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Manufactured Materials</h2><span class="tag">Components</span></div>
+    <p class="lead">Manufactured materials split into <b>10 category chains</b>, each climbing G1 → G5. Each chain is a trader sub-category. The named ladders below are representative — and note how the names track the grade.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Chain</th><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th></tr></thead>
+        <tbody>
+          <tr><td><b>Chemical</b></td><td>Chemical Storage Units</td><td>Chemical Processors</td><td>Chemical Distillery</td><td>Chemical Manipulators</td><td>Pharmaceutical Isolators</td></tr>
+          <tr><td><b>Thermic</b></td><td>Tempered Alloys</td><td>Heat Resistant Ceramics</td><td>Precipitated Alloys</td><td>Thermic Alloys</td><td>Military Grade Alloys</td></tr>
+          <tr><td><b>Heat</b></td><td>Heat Conduction Wiring</td><td>Heat Dispersion Plate</td><td>Heat Exchangers</td><td>Heat Vanes</td><td>Proto Heat Radiators</td></tr>
+          <tr><td><b>Conductive</b></td><td>Basic Conductors</td><td>Conductive Components</td><td>Conductive Ceramics</td><td>Conductive Polymers</td><td>Biotech Conductors</td></tr>
+          <tr><td><b>Mechanical Components</b></td><td>Mechanical Scrap</td><td>Mechanical Equipment</td><td>Mechanical Components</td><td>Configurable Components</td><td>Improvised Components</td></tr>
+          <tr><td><b>Capacitors</b></td><td>Grid Resistors</td><td>Hybrid Capacitors</td><td>Electrochemical Arrays</td><td>Polymer Capacitors</td><td>Military Supercapacitors</td></tr>
+          <tr><td><b>Shielding</b></td><td>Worn Shield Emitters</td><td>Shield Emitters</td><td>Shielding Sensors</td><td>Compound Shielding</td><td>Imperial Shielding</td></tr>
+          <tr><td><b>Composite</b></td><td>Compact Composites</td><td>Filament Composites</td><td>High Density Composites</td><td>Proprietary Composites</td><td>Core Dynamics Composites</td></tr>
+          <tr><td><b>Crystals</b></td><td>Crystal Shards</td><td>Flawed Focus Crystals</td><td>Focus Crystals</td><td>Refined Focus Crystals</td><td>Exquisite Focus Crystals</td></tr>
+          <tr><td><b>Alloys</b></td><td>Salvaged Alloys</td><td>Galvanising Alloys</td><td>Phase Alloys</td><td>Proto Light Alloys</td><td>Proto Radiolic Alloys</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-desc">10 chains served by 10 trade lines at the Manufactured trader. G5s for 8 of the 10 chains drop in <b>High-Grade Emissions</b>.</p>
+  </section>
+
+  <!-- 5 -->
+  <section id="encoded">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Encoded Data</h2><span class="tag">Data</span></div>
+    <p class="lead">Encoded data sorts into <b>6 categories</b>, each running G1 → G5. As with the others, each category is a trader sub-category. Representative ladders below.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Category</th><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th></tr></thead>
+        <tbody>
+          <tr><td><b>Emission Data</b></td><td>Exceptional Scrambled Emission Data</td><td>Irregular Emission Data</td><td>Unexpected Emission Data</td><td>Decoded Emission Data</td><td>Abnormal Compact Emissions Data</td></tr>
+          <tr><td><b>Wake Scans</b></td><td>Atypical Disrupted Wake Echoes</td><td>Anomalous FSD Telemetry</td><td>Strange Wake Solutions</td><td>Eccentric Hyperspace Trajectories</td><td>Datamined Wake Exceptions</td></tr>
+          <tr><td><b>Shield Data</b></td><td>Distorted Shield Cycle Recordings</td><td>Inconsistent Shield Soak Analysis</td><td>Untypical Shield Scans</td><td>Aberrant Shield Pattern Analysis</td><td>Peculiar Shield Frequency Data</td></tr>
+          <tr><td><b>Encryption Files</b></td><td>Scrambled Emission Data</td><td>Disrupted Wake Echoes</td><td>Untypical Encryption Archives</td><td>Cracked Industrial Firmware</td><td>Specialised Legacy Firmware</td></tr>
+          <tr><td><b>Data Archives</b></td><td>Open Symmetric Keys</td><td>Atypical Encryption Archives</td><td>Adaptive Encryptors Capture</td><td>Classified Scan Databanks</td><td>Classified Scan Fragment</td></tr>
+          <tr><td><b>Encoded Firmware</b></td><td>Specialised Legacy Firmware</td><td>Modified Consumer Firmware</td><td>Cracked Industrial Firmware</td><td>Security Firmware Patch</td><td>Modified Embedded Firmware</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-desc">6 categories served by 6 trade lines at the Encoded trader. The category names and exact G-bands above are <span class="kv-tbd">approximate where the in-game grouping overlaps</span>; verify the specific material before a trade.</p>
+  </section>
+
+  <!-- 6 -->
+  <section id="trader">
+    <div class="sec-head"><span class="sec-num">06</span><h2>The Material Trader: Exchange Ratios</h2><span class="tag">Conversion</span></div>
+    <p class="lead">A Material Trader converts materials you have into materials you want — at a deliberately punishing rate that rewards upgrading reluctantly and downgrading freely. Three knobs set the price: grade change, sub-category change, and (impossibly) type change.</p>
+
+    <div class="cols-2">
+      <div class="panel">
+        <h4>Grade moves (same sub-category)</h4>
+        <ul class="bullets">
+          <li><b>Down one grade.</b> Pay 1, receive 3 — a <span class="acc">1:3</span> payout.</li>
+          <li><b>Same grade.</b> Straight <span class="acc">1:1</span> swap to another material in the same group.</li>
+          <li><b>Up one grade.</b> Pay 6, receive 1 — a <span class="acc">6:1</span> cost.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>Sub-category &amp; type moves</h4>
+        <ul class="bullets">
+          <li><b>Different sub-category, same grade.</b> A flat <span class="acc">6:1</span> — same whether you jump one group or several.</li>
+          <li><b>Combined moves multiply.</b> Stack the grade and group factors together.</li>
+          <li><b>Different type.</b> <b>Impossible</b> — raw/manufactured/encoded never cross.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="lead">The canonical per-grade ratio table (within one sub-category), where <b>x:1</b> means you spend x to gain 1, and <b>1:y</b> means you spend 1 to gain y:</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Move</th><th class="num">Ratio</th><th>Direction</th></tr></thead>
+        <tbody>
+          <tr><td>Up 4 grades</td><td class="num">1,296 : 1</td><td>Most expensive</td></tr>
+          <tr><td>Up 3 grades</td><td class="num">216 : 1</td><td>Expensive</td></tr>
+          <tr><td>Up 2 grades</td><td class="num">36 : 1</td><td>Expensive</td></tr>
+          <tr class="hl"><td>Up 1 grade</td><td class="num">6 : 1</td><td>Costly</td></tr>
+          <tr class="hl"><td>Same grade, same group</td><td class="num">1 : 1</td><td>Even swap</td></tr>
+          <tr class="hl"><td>Down 1 grade</td><td class="num">1 : 3</td><td>Cheap</td></tr>
+          <tr><td>Down 2 grades</td><td class="num">1 : 9</td><td>Cheaper</td></tr>
+          <tr><td>Down 3 grades</td><td class="num">1 : 27</td><td>Cheapest</td></tr>
+          <tr><td>Down 4 grades</td><td class="num">1 : 81</td><td>Cheapest</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-desc">Each grade step multiplies by ×6 going up or ×⅓ going down. A different-sub-category move adds a flat ×6 on top, applied once regardless of how many groups you cross.</p>
+
+    <div class="callout"><span class="lbl">Worked example</span><p>Trade a G3 component <b>down to G2 in a different sub-category</b>: apply the cross-group ×6 (6 G3 → 1 G3 elsewhere), then the down step ×3 (1 G3 → 3 G2). Net: <b>6 G3 yields 3 G2</b> of the other group — an effective 2:1.</p></div>
+    <div class="callout warn icon"><span class="lbl">Reality check</span><p>Because the trader stays within a <b>type</b>, you can only convert raw-into-raw, manufactured-into-manufactured, encoded-into-encoded. Plan your farming around the <em>type</em> a blueprint needs — the trader fixes grade and group mismatches, never type ones.</p></div>
+  </section>
+
+  <!-- 7 -->
+  <section id="storage">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Storage Caps</h2><span class="tag">Inventory</span></div>
+    <p class="lead">Each material has a per-slot cap that scales with grade — lower grades hold more, higher grades hold less. Caps are per <em>individual</em> material, so the trader's true value is also as overflow management.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Grade</th><th class="num">Per-material cap</th></tr></thead>
+        <tbody>
+          <tr><td class="row-rank">G1</td><td class="num">300</td></tr>
+          <tr><td class="row-rank">G2</td><td class="num">250</td></tr>
+          <tr><td class="row-rank">G3</td><td class="num">200</td></tr>
+          <tr class="hl"><td class="row-rank">G4</td><td class="num">150</td></tr>
+          <tr><td class="row-rank">G5</td><td class="num">100</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-desc">Caps drop by 50 per grade. Raw G4 caps at 150 (no raw G5 exists). Manufactured and Encoded G5 cap at 100 each.</p>
+    <div class="callout tip"><span class="lbl">Why caps matter at the trader</span><p>When a slot is full, the excess is wasted on pickup. Convert near-full high grades <b>down</b> the cheap direction to free space and bank the value as plentiful low grades.</p></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="farm">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Where to Farm</h2><span class="tag">Sourcing</span></div>
+    <p class="lead">Find a trader by economy: <b>Raw</b> at Refinery/Extraction stations, <b>Manufactured</b> at Extraction/Industrial, <b>Encoded</b> at High-Tech/Military — in medium/high-security systems with populations roughly 1–22 million. Filter the galaxy map by Material Trader service, or use INARA's nearest-trader search. Then farm the type you need:</p>
+    <div class="cards wide">
+      <div class="card ac-amber">
+        <span class="ico"><span class="chip amber">Raw</span></span>
+        <h4>Crystalline Shards</h4>
+        <p>The fastest source of specific high-grade raw elements — drive an SRV and shoot the shard clusters. <a href="farms/crystalline-shards.html">Crystalline Shards farm →</a></p>
+      </div>
+      <div class="card ac-amber">
+        <span class="ico"><span class="chip maroon">Manufactured</span></span>
+        <h4>Dav's Hope</h4>
+        <p>An SRV salvage loop that bulk-fills G1–G3 manufactured components fast. <a href="farms/davs-hope.html">Dav's Hope farm →</a></p>
+      </div>
+      <div class="card ac-amber">
+        <span class="ico"><span class="chip fed">Encoded</span></span>
+        <h4>High-Grade Emissions</h4>
+        <p>System-state signal sources that drop G4/G5 manufactured and encoded mats. <a href="farms/high-grade-emissions.html">HGE farm →</a></p>
+      </div>
+      <div class="card ac-amber">
+        <span class="ico"><span class="chip fed">Encoded</span></span>
+        <h4>Jameson Crash Site</h4>
+        <p>A fixed data-point loop for specific encoded data via the SRV Data Link Scanner. <a href="farms/jameson-crash-site.html">Jameson Crash Site farm →</a></p>
+      </div>
+    </div>
+    <div class="callout"><span class="lbl">Spend it on engineering</span><p>Materials only matter for what they buy. See <a href="blueprints.html">Blueprints</a> for what each roll costs, and <a href="engineers.html">Engineers</a> for who unlocks which modifications.</p></div>
+  </section>
+
+  <!-- 9 -->
+  <section class="credits" id="credits">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <p class="lead">Material types, grade ladders, trader ratios, and storage caps on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki — Materials</span><span class="cr-what">The three types, grade-rarity bands, and that raw has no G5.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Materials">elite-dangerous.fandom.com</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki — Material Trader</span><span class="cr-what">Exchange ratios (6:1 up, 1:3 down, cross-group ×6), per-type separation, trader economies.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Material_Trader">elite-dangerous.fandom.com</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki — Raw Materials</span><span class="cr-what">The 7 element groups, G1–G4 names, and surface/mining drop rules.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Raw_Materials">elite-dangerous.fandom.com</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki — Manufactured &amp; Encoded Materials</span><span class="cr-what">The 10 manufactured chains and 6 encoded categories with their G1–G5 ladders.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Manufactured_Materials">elite-dangerous.fandom.com</a></div>
+      <div class="cr-row"><span class="cr-src">INARA — Components / Materials</span><span class="cr-what">Trade-line counts (7 raw, 10 manufactured, 6 encoded = 23) and component grade bands.</span><a class="cr-link" href="https://inara.cz/elite/components/">inara.cz</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Wiki (alioth.net) — Material Trader</span><span class="cr-what">The full per-grade ratio matrix (up to 1,296:1) and the worked cross-grade math.</span><a class="cr-link" href="https://wiki.alioth.net/index.php/Elite:_Dangerous/Material_Trader">wiki.alioth.net</a></div>
+      <div class="cr-row"><span class="cr-src">EDSM — Stations (Material Trader service)</span><span class="cr-what">Locating traders by station service and economy filters.</span><a class="cr-link" href="https://www.edsm.net/en/search/stations/index/service/71">edsm.net</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Field Manual</span>
+  </footer>
+</div>
+
+<script src="../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modules · Engineering | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#dossiers">Ships</a>
+      <a href="../index.html#engineering" class="active">Engineering</a>
+      <a href="../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">&#9906;</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a module…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>&times;</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+<div class="qn-item qn-group" role="option" data-target="about" data-search="sections on this page contents"><span class="qn-nm">Page Sections</span><span class="qn-side">Jump to</span></div>
+<div class="qn-item" role="option" data-target="about" data-search="01 how modules work slots class rating size"><span class="qn-nm">01 · How Modules Work</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="core-internals" data-search="02 core internals power motion jump survival"><span class="qn-nm">02 · Core Internals</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="optional-internals" data-search="03 optional internals defence capacity utility"><span class="qn-nm">03 · Optional Internals</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="hardpoints" data-search="04 hardpoints weapons lasers kinetic missiles plasma"><span class="qn-nm">04 · Hardpoints — Weapons</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="utility-mounts" data-search="05 utility mounts boosters countermeasures scanners"><span class="qn-nm">05 · Utility Mounts</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="by-role" data-search="06 picking modules by role recommendations"><span class="qn-nm">06 · Picking by Role</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="credits" data-search="07 sources provenance references"><span class="qn-nm">07 · Sources</span><span class="qn-side">Section</span></div>
+<div class="qn-item qn-group" role="option" data-target="core-internals" data-search="core internal modules"><span class="qn-nm">Core Internals</span><span class="qn-side">7 modules</span></div>
+<div class="qn-item" role="option" data-target="mod-power-plant" data-search="power plant reactor mw heat"><span class="qn-nm">Power Plant</span><span class="qn-side">Core Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-thrusters" data-search="thrusters speed maneuver optimal mass"><span class="qn-nm">Thrusters</span><span class="qn-side">Core Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-frame-shift-drive" data-search="frame shift drive fsd jump range sco"><span class="qn-nm">Frame Shift Drive</span><span class="qn-side">Core Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-life-support" data-search="life support oxygen canopy breach"><span class="qn-nm">Life Support</span><span class="qn-side">Core Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-power-distributor" data-search="power distributor sys eng wep capacitor pips"><span class="qn-nm">Power Distributor</span><span class="qn-side">Core Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-sensors" data-search="sensors radar scan range targeting"><span class="qn-nm">Sensors</span><span class="qn-side">Core Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-fuel-tank" data-search="fuel tank capacity tonnes jump"><span class="qn-nm">Fuel Tank</span><span class="qn-side">Core Internal</span></div>
+<div class="qn-item qn-group" role="option" data-target="optional-internals" data-search="optional internal modules"><span class="qn-nm">Optional Internals</span><span class="qn-side">14 modules</span></div>
+<div class="qn-item" role="option" data-target="mod-shield-generator" data-search="shield generator bi-weave prismatic mj"><span class="qn-nm">Shield Generator</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-shield-cell-bank" data-search="shield cell bank scb heal heat"><span class="qn-nm">Shield Cell Bank</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-hull-reinforcement" data-search="hull reinforcement package hrp armour resistance"><span class="qn-nm">Hull Reinforcement Package</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-module-reinforcement" data-search="module reinforcement package mrp protect"><span class="qn-nm">Module Reinforcement Package</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-guardian-fsd-booster" data-search="guardian fsd booster jump range additive"><span class="qn-nm">Guardian FSD Booster</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-fuel-scoop" data-search="fuel scoop refuel star scoop rate"><span class="qn-nm">Fuel Scoop</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-detailed-surface-scanner" data-search="detailed surface scanner dss probe map"><span class="qn-nm">Detailed Surface Scanner</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-cargo-rack" data-search="cargo rack capacity tonnes hold"><span class="qn-nm">Cargo Rack</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-passenger-cabin" data-search="passenger cabin economy business first luxury"><span class="qn-nm">Passenger Cabin</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-afmu" data-search="auto field maintenance unit afmu repair"><span class="qn-nm">Auto Field-Maintenance Unit</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-limpet-controllers" data-search="limpet controllers collector prospector repair fuel transfer"><span class="qn-nm">Limpet Controllers</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-refinery" data-search="refinery mining ore bins"><span class="qn-nm">Refinery</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-fsd-interdictor" data-search="fsd interdictor pull pirate piracy"><span class="qn-nm">FSD Interdictor</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item" role="option" data-target="mod-flight-assists" data-search="docking computer supercruise assist fighter hangar"><span class="qn-nm">Flight &amp; Hangar Modules</span><span class="qn-side">Optional Internal</span></div>
+<div class="qn-item qn-group" role="option" data-target="hardpoints" data-search="hardpoint weapon families"><span class="qn-nm">Weapon Families</span><span class="qn-side">6 families</span></div>
+<div class="qn-item" role="option" data-target="wpn-lasers" data-search="lasers beam pulse burst thermal"><span class="qn-nm">Lasers</span><span class="qn-side">Hardpoint</span></div>
+<div class="qn-item" role="option" data-target="wpn-kinetic" data-search="kinetic multi-cannon cannon fragment rail gun"><span class="qn-nm">Kinetic Weapons</span><span class="qn-side">Hardpoint</span></div>
+<div class="qn-item" role="option" data-target="wpn-explosive" data-search="missiles seeker dumbfire torpedo mine explosive"><span class="qn-nm">Missiles, Torpedoes &amp; Mines</span><span class="qn-side">Hardpoint</span></div>
+<div class="qn-item" role="option" data-target="wpn-plasma" data-search="plasma accelerator absolute"><span class="qn-nm">Plasma Accelerator</span><span class="qn-side">Hardpoint</span></div>
+<div class="qn-item" role="option" data-target="wpn-guardian-ax" data-search="guardian ax thargoid gauss shard plasma charger"><span class="qn-nm">Guardian &amp; AX Weapons</span><span class="qn-side">Hardpoint</span></div>
+<div class="qn-item qn-group" role="option" data-target="utility-mounts" data-search="utility mount modules"><span class="qn-nm">Utility Mounts</span><span class="qn-side">9 modules</span></div>
+<div class="qn-item" role="option" data-target="util-shield-booster" data-search="shield booster utility mj resistance"><span class="qn-nm">Shield Booster</span><span class="qn-side">Utility</span></div>
+<div class="qn-item" role="option" data-target="util-countermeasures" data-search="heat sink launcher chaff point defence ecm"><span class="qn-nm">Countermeasures</span><span class="qn-side">Utility</span></div>
+<div class="qn-item" role="option" data-target="util-scanners" data-search="kill warrant manifest wake scanner"><span class="qn-nm">Scanners</span><span class="qn-side">Utility</span></div>
+<div class="qn-item" role="option" data-target="util-xeno" data-search="xeno scanner caustic sink shutdown field neutraliser pulse wave analyser"><span class="qn-nm">Xeno &amp; Mining Utilities</span><span class="qn-side">Utility</span></div>
+          <div class="qn-empty" hidden>No match.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#engineering">Engineering</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Modules</span>
+</nav>
+
+<div class="wrap">
+
+  <!-- ---- MASTHEAD ---- -->
+  <header class="masthead">
+    <div class="kicker">Engineering<span class="sep">//</span>Reference</div>
+    <h1 class="title">Ship <span>Modules</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Engineering</b></span>
+      <span>Updated <b>2026-06-23</b></span>
+    </div>
+  </header>
+
+  <!-- ---- BRIEFING ---- -->
+  <div class="verdict">
+    <div class="v-eyebrow">Briefing</div>
+    <h2>Every slot, every module type — <em>what to fit and why, before you ever roll a blueprint</em></h2>
+    <p>A ship is its modules. This is the outfitting catalog: <b>core internals</b> that must be filled, <b>optional internals</b> for defence and capacity, <b>hardpoints</b> for weapons, and <b>utility mounts</b> for boosters and countermeasures. Each fold opens to what the module does, its class A–E trade-off, and the engineering that matters. Pick the part first, then take it to <a href="blueprints.html">Blueprints</a> and stock the <a href="materials.html">Materials</a> it eats.</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">A–E</div><div class="l">Rating per class</div></div>
+      <div class="stat"><div class="n">1–8</div><div class="l">Module sizes</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Slot families</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Mandatory core internals</div></div>
+    </div>
+  </div>
+
+  <!-- ---- INTRO ---- -->
+  <section id="about">
+    <div class="sec-head"><span class="sec-num">01</span><h2>How Modules Work</h2></div>
+    <p class="lead">A hull is just a frame of <strong>slots</strong>. Outfitting fills them — and almost every slot offers the same part at five <strong>ratings</strong> and several <strong>sizes</strong>.</p>
+    <p>Every ship has four families of slot: <strong>core internals</strong> (the seven systems that must always be fitted — the ship cannot fly without them), <strong>optional internals</strong> (your choice — shields, cargo, scanners, limpets), <strong>hardpoints</strong> (weapons, in four mount classes), and <strong>utility mounts</strong> (small external bolt-ons — boosters, countermeasures, scanners). What a hull can carry is fixed by its <strong>slot layout</strong>: a size-6 optional slot takes any module up to size 6, but never a size-7.</p>
+
+    <div class="callout icon"><span class="lbl">The two numbers on every module</span><p>A module is named like <code>5A Power Plant</code> or <code>Beam Laser 2 — Gimballed</code>. The <strong>digit is the size</strong> (1–8 for internals, 1–4 for hardpoints) and must match the slot. The <strong>letter is the rating</strong> (A best → E worst), and you can always fit a <em>smaller-or-equal</em> size. Class and rating together set the module's mass, power draw, cost and performance.</p></div>
+
+    <p>The rating letter trades <strong>performance against mass, cost and power</strong> on a fixed curve. The shorthand below holds for most core and optional modules — read each module card for the exceptions (FSD, sensors and life support have their own quirks).</p>
+
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9650;</span> A — best</h6><p><b>Top performance and best heat efficiency</b>, slightly lighter than B. The most expensive class. The default "A-rated" build chases this on power, thrust and jump.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9632;</span> B — toughest</h6><p><b>Highest module integrity</b> (survives the most damage) — and the <b>heaviest</b>. Used where survivability beats efficiency, mostly on combat power plants.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9679;</span> C — neutral</h6><p>The midpoint — balanced mass, cost and performance. Rarely optimal, occasionally the cheap-enough compromise.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9660;</span> D — lightest</h6><p><b>The lightest rating</b> for most module types. The explorer's friend: minimum mass means maximum jump range. Cheap, low integrity.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9675;</span> E — cheapest</h6><p><b>Lowest cost and lowest power draw</b>, worst performance. A placeholder for slots you barely use, or for a brand-new commander on a budget.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9888;</span> The trap</h6><p>Heavier modules cut jump range and agility. "Fit the biggest A-rated everything" is wrong for explorers and racers — <b>match the rating to the role</b>, not the wallet.</p></div>
+    </div>
+
+    <div class="bp-legend"><span class="lg"><span class="dot raw"></span>Core internal</span><span class="lg"><span class="dot man"></span>Optional internal</span><span class="lg"><span class="dot enc"></span>Hardpoint / utility</span><span class="lg-note">Click any card to fold it open — or search from the header</span></div>
+  </section>
+
+<!-- ================= 02 CORE INTERNALS ================= -->
+<section id="core-internals"><div class="sec-head"><span class="sec-num">02</span><h2>Core Internals</h2></div><p class="lead">The mandatory spine of every hull — power, motion, jump, survival. Seven slots, always filled, sized by the hull. Strip these too far and the ship literally stops working.</p>
+
+<div class="bp-modgroup" id="grp-core"><div class="bp-mod-head"><div class="bp-mod-label">Core Internals <span class="bp-mod-count">7 modules</span></div><button class="bp-grp-bulk bp-grp-exp" type="button" aria-label="Expand all core internal modules"><span>+</span> Expand all</button><button class="bp-grp-bulk bp-grp-col" type="button" aria-label="Collapse all core internal modules"><span>&minus;</span> Collapse all</button></div>
+
+<div class="bp-card" id="mod-power-plant">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Power Plant</span>
+    <span class="bp-card-tag">Core Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Generates the ship's power budget in megawatts. Every other module draws from it — under-power the plant and modules switch off in priority order.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Powers everything</span><span class="bp-tag ship">Heat source</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Supplies the <b>MW power capacity</b> all modules draw against, and is the ship's main heat generator. If draw exceeds output, modules disable by your priority list.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A = most power for least heat</b>, lightest of the high outputs. <b>B = most integrity</b>, heaviest — the combat pick, since a destroyed power plant ends the fight. D/E save mass and cost but run hot and thin.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-power-plant-overcharged">Overcharged</a> for more output (combat), <a href="blueprints.html#bp-power-plant-low-emissions">Low Emissions</a> for a cold signature (explorers, stealth), <a href="blueprints.html#bp-power-plant-armoured">Armoured</a> for integrity.</p></div>
+    </div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9656;</span> Combat</h6><p><b>A or B-rated</b>, sized to power weapons, shields and boosters at once. Armoured or Overcharged.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9656;</span> Explorer</h6><p><b>A-rated, smallest size</b> that powers the build. Low Emissions for heat and a quiet signature.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9656;</span> Trader</h6><p><b>A-rated</b>, just enough headroom; mass matters less than for explorers but every tonne still costs jump range.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-thrusters">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Thrusters</span>
+    <span class="bp-card-tag">Core Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Normal-space speed, boost and manoeuvrability. Rated for an optimal mass — go over it and performance falls off hard.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Speed &amp; agility</span><span class="bp-tag ship">Optimal mass</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Sets top speed, boost speed and turn rate in normal flight. Each thruster has an <b>optimal mass</b>; the heavier the loaded ship sits above it, the slower and clumsier it flies.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A = highest performance and optimal mass</b> — almost always the combat and PvP pick. D saves weight on light ships that stay well under the mass cap. E is a budget placeholder only.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-thrusters-dirty-drive-tuning">Dirty Drive Tuning</a> is the near-universal speed blueprint; <a href="blueprints.html#bp-thrusters-clean-drive-tuning">Clean Tuning</a> trades top speed for far less heat. <b>Enhanced Performance Thrusters</b> exist for a few small ships.</p></div>
+    </div>
+    <div class="callout tip"><span class="lbl">Mass discipline</span><p>Thruster performance is the strongest argument against over-fitting heavy A-rated modules everywhere — <strong>keep loaded mass near the thruster's optimal mass</strong> and a small ship will out-fly a sloppily-built large one.</p></div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-frame-shift-drive">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Frame Shift Drive</span>
+    <span class="bp-card-tag">Core Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Supercruise and hyperspace jumps. The single biggest lever on your jump range — and the one module explorers obsess over.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Jump range</span><span class="bp-tag ship">Supercruise</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Powers both supercruise and star-to-star jumps. Range is set by the drive's <b>optimal mass</b>, the ship's loaded mass, and fuel per jump. <b>SCO</b> (Supercruise Overcharge) drives add a throttle-boost mode in supercruise.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A = highest optimal mass and best range</b> — the standard pick for everyone who jumps. Lower ratings cut range sharply; only reach for them to free credits, never on an explorer.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-frame-shift-drive-increased-range">Increased Range</a> (G5) is the explorer's mandatory blueprint, with the <b>Mass Manager</b> experimental. <a href="blueprints.html#bp-frame-shift-drive-faster-boot-sequence">Faster Boot</a> helps combat ships re-jump under fire.</p></div>
+    </div>
+    <div class="callout warn"><span class="lbl">SCO &amp; the Guardian booster</span><p>Modern long-range builds pair an A-rated <strong>SCO drive</strong> with Increased Range and a <a href="#mod-guardian-fsd-booster">Guardian FSD Booster</a>, which adds a flat bonus to range. The booster is an <em>optional internal</em>, not part of the drive — see §03.</p></div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-life-support">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Life Support</span>
+    <span class="bp-card-tag">Core Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Your oxygen timer if the canopy is breached. Rating buys you minutes, not power.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Survival</span><span class="bp-tag ship">Canopy breach</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Keeps the commander alive after a canopy breach. The <b>only</b> stat that changes with rating is the emergency oxygen duration — from roughly <b>5 minutes (E)</b> up to <b>25 minutes (A)</b>.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p>Performance here is just air-time. <b>D-rated is the common default</b> — lightest, ~15 min, plenty to limp to a station. Combat ships take A for the longest buffer; explorers run D to save mass.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-life-support-lightweight">Lightweight</a> for explorers; otherwise rarely engineered. Not a performance module — don't overspend the slot.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-power-distributor">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Power Distributor</span>
+    <span class="bp-card-tag">Core Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">The three capacitors — SYS, ENG, WEP — and how fast they refill. This module decides how long you can boost, shoot and tank.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Capacitors &amp; pips</span><span class="bp-tag ship">Boost · fire · tank</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Holds and recharges three energy pools: <b>SYS</b> (shield strength &amp; resistance), <b>ENG</b> (boost &amp; speed), <b>WEP</b> (weapon fire). Pips you assign distribute the recharge; capacity sets how much you bank.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A = largest pools and fastest recharge</b> — non-negotiable for combat (sustained fire and boosting). Explorers/traders can drop to D: you only need enough ENG to boost once.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-power-distributor-charge-enhanced">Charge Enhanced</a> (combat — faster WEP/ENG regen), <a href="blueprints.html#bp-power-distributor-engine-focused">Engine Focused</a> and <a href="blueprints.html#bp-power-distributor-weapon-focused">Weapon Focused</a> for specialised builds.</p></div>
+    </div>
+    <div class="callout icon"><span class="lbl">Why combat lives and dies here</span><p>A weak distributor means your beams flame out mid-fight, your shield stops resisting when SYS empties, and you can't boost away. <strong>A-rated, Charge Enhanced</strong> is the combat standard for a reason.</p></div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-sensors">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Sensors</span>
+    <span class="bp-card-tag">Core Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Radar and target acquisition. Sets how far you detect and resolve contacts — and how heavy that capability is.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Detection range</span><span class="bp-tag ship">Targeting</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Determines detection range and how quickly contacts resolve to full target data. Higher rating = longer reach and faster locks; <b>A-rated sensors are notably heavy</b> for their size.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>D-rated is the default</b> — lightest, with range plenty for normal play. Combat ships take A for early detection and faster locking; explorers stay on D to protect jump range.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-sensors-lightweight">Lightweight</a> for explorers (cut the mass penalty), <a href="blueprints.html#bp-sensors-long-range">Long Range</a> for combat detection and PvP.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-fuel-tank">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Fuel Tank</span>
+    <span class="bp-card-tag">Core Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Hydrogen capacity in tonnes. No rating curve — only a size. More fuel means more jumps between scoops, at the cost of mass.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Fuel capacity</span><span class="bp-tag ship">Single rating per size</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Stores the fuel your FSD burns per jump. Each size doubles capacity — 2t, 4t, 8t, 16t and so on. The only core internal with effectively <b>one rating (C) per size</b>.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Sizing trade-off</h6><p>Bigger tank = fewer refuel stops, but heavier, so slightly shorter jumps. Size it to your FSD's <b>max fuel per jump</b> plus a margin — an oversized tank is dead weight.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p>No standard blueprint — fuel tanks aren't usually engineered. Pair it with a <a href="#mod-fuel-scoop">Fuel Scoop</a> for indefinite range away from stations.</p></div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- ================= 03 OPTIONAL INTERNALS ================= -->
+<section id="optional-internals"><div class="sec-head"><span class="sec-num">03</span><h2>Optional Internals</h2></div><p class="lead">Your build's personality. Defence, capacity and tooling fitted to internal slots — what turns a hull into an explorer, a hauler, a miner or a brawler.</p>
+
+<div class="bp-modgroup" id="grp-optional"><div class="bp-mod-head"><div class="bp-mod-label">Optional Internals <span class="bp-mod-count">14 modules</span></div><button class="bp-grp-bulk bp-grp-exp" type="button" aria-label="Expand all optional internal modules"><span>+</span> Expand all</button><button class="bp-grp-bulk bp-grp-col" type="button" aria-label="Collapse all optional internal modules"><span>&minus;</span> Collapse all</button></div>
+
+<div class="bp-card" id="mod-shield-generator">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Shield Generator</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Your first health bar. Strength scales with hull mass and is capped by the generator's optimal mass band — fit one rated for your ship.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Primary defence</span><span class="bp-tag ship">Bi-Weave · Prismatic</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Projects a shield (in MJ) sized to the hull. Three variants: <b>standard</b> (balanced), <b>Bi-Weave</b> (lower strength, much faster regen), and <b>Prismatic</b> (Powerplay — highest strength, slow regen, high draw).</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A = strongest shield</b> for the slot. The generator must be rated for the ship's mass band — too small a class on a heavy hull gives a feeble shield regardless of rating.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-shield-generator-reinforced">Reinforced</a> for raw MJ, <a href="blueprints.html#bp-shield-generator-enhanced-low-power">Enhanced Low Power</a> to cut draw and heat. Bi-Weave + Reinforced is the durable brawler standard.</p></div>
+    </div>
+    <div class="callout icon"><span class="lbl">Boosters multiply, the generator sets the base</span><p>Hull-mounted <a href="#util-shield-booster">Shield Boosters</a> and SYS pips stack on top of the generator's base MJ. Get the generator class and variant right first — boosters only scale what's already there.</p></div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-shield-cell-bank">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Shield Cell Bank</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">An active shield heal — burst-restores shield MJ on demand, at the cost of a heat spike. The combat ship's panic button.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Active shield heal</span><span class="bp-tag ship">Heat spike</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Carries charges that instantly restore a chunk of shield when triggered. Each use dumps heat into the ship; A-rated banks heal hardest. Useless without a working shield.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A = strongest heal per cell</b>. Size sets the heal amount and charge count. Combat-only — never on an explorer or hauler.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-shield-cell-bank-specialised">Specialised</a> for less heat per use, or <a href="blueprints.html#bp-shield-cell-bank-rapid-charge">Rapid Charge</a> for faster cycling.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-hull-reinforcement">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Hull Reinforcement Package</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Bolt-on armour. Adds raw hull integrity and damage resistance — the foundation of any hull-tank, stacked across multiple slots.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Hull integrity</span><span class="bp-tag ship">Resistances</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Adds flat hull HP and resistances to kinetic/thermal/explosive damage. Stacks across slots (with diminishing resistance returns). Has a single rating curve — sizing and count matter more than letter.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p>Largely about mass vs HP. Combat hull-tanks stack several at the biggest size that fits; the cost is jump range and agility.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-hull-reinforcement-package-heavy-duty">Heavy Duty</a> (more HP) with the <b>Deep Plating</b> experimental is the hull-tank staple; resistance variants tune against a specific threat.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-module-reinforcement">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Module Reinforcement Package</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Protects your internal modules from damage that punches through the hull — keeps your drive, power plant and weapons alive when the shield is gone.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Module protection</span><span class="bp-tag ship">Damage sink</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Absorbs a share of incoming module damage and adds module integrity, so a hull-breach hit is less likely to disable your FSD, thrusters or power plant. Stacks across slots.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p>Higher class protects more. A favourite pairing for serious combat hulls alongside hull reinforcements; light builds skip it to save mass.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p>Limited blueprints; usually fitted unengineered or lightweighted. Most valuable in long PvE engagements and Thargoid combat.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-guardian-fsd-booster">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Guardian FSD Booster</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">A flat additive bonus to jump range, independent of mass. The single best range upgrade after the FSD itself — every explorer fits one.</div>
+    <div class="bp-suit"><span class="bp-tag fleet">★ Explorer staple</span><span class="bp-tag ship">Guardian tech</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Adds a <b>fixed bonus to every jump</b> (e.g. ~+10.5 ly at the largest size), unlocked via Guardian technology. Because it's additive, it helps small ships proportionally even more than large ones.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Sizing trade-off</h6><p>Bigger size = bigger bonus, but more mass and a fixed power draw. Pick the largest you can spare a slot for without crowding out other essentials.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p>Not engineered — it's a Guardian module you unlock and fit. Pair with an Increased-Range FSD and <a href="#mod-fuel-scoop">Fuel Scoop</a> for the canonical exploration drivetrain.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-fuel-scoop">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Fuel Scoop</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Refuels from main-sequence stars. Turns the galaxy into your fuel station — mandatory for any deep-range travel.</div>
+    <div class="bp-suit"><span class="bp-tag fleet">★ Explorer staple</span><span class="bp-tag ship">Scoop rate</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Scoops hydrogen from <b>KGBFOAM</b> stars (the scoopable spectral classes). Rating and size set the <b>scoop rate</b> — how fast you refuel skimming the corona.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A-rated, biggest size you can fit</b> — faster scooping means shorter stops and less heat exposure. Lower ratings work but force longer, hotter loiters.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p>Generally fitted unengineered; A-rating already maximises scoop rate. The one optional internal almost every long-range build carries.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-detailed-surface-scanner">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Detailed Surface Scanner</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">The exploration money-maker. Fire probes to map a body, multiplying its scan payout and revealing surface points of interest.</div>
+    <div class="bp-suit"><span class="bp-tag fleet">★ Explorer staple</span><span class="bp-tag ship">Size 1 · tiny</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Deploys probes to fully map a planet or moon after the FSS pass, boosting the body's exploration value and exposing geological/biological sites for on-foot and SRV work.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Sizing trade-off</h6><p>Only a <b>size-1 module</b>, single rating — costs almost nothing in mass or power. There is no reason an exploration build skips it.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-detailed-surface-scanner-expanded-probe-scanning-radius">Expanded Probe Scanning Radius</a> means fewer probes per body — the only worthwhile DSS blueprint.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-cargo-rack">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Cargo Rack</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Cargo capacity in tonnes. No rating curve — bigger size, more hold. The hauler's and miner's bread and butter.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Cargo capacity</span><span class="bp-tag ship">Single rating per size</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Adds hold space; capacity doubles each size step (4t, 8t, 16t, 32t…). Stack as many as the build allows. <b>Empty racks add no mass</b> — only the cargo inside weighs.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Sizing trade-off</h6><p>Maximise total tonnage for trade/mining, but remember the loaded mass tanks jump range. Reserve at least one slot for a shield if flying anywhere hostile.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-cargo-rack-increased-capacity">Increased Capacity</a> squeezes more tonnes into the same slot — niche, but free hold for dedicated haulers.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-passenger-cabin">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Passenger Cabin</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Seats for paying passengers. Four comfort tiers — the higher the class, the wealthier the clientele and the fatter the fare.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Passenger missions</span><span class="bp-tag ship">Economy → Luxury</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Houses passengers for transport contracts. Four grades — <b>Economy, Business, First, Luxury</b> — each demanding a higher module class for fewer-but-richer seats. Luxury cabins are needed for the top-tier VIP runs.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Sizing trade-off</h6><p>Economy packs the most heads per tonne; Luxury pays most per head but eats the biggest slots. Mix tiers to match the mission board you fly.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p>Not engineered. Pair with a long-range, fast hull (e.g. a passenger-fit Dolphin/Orca/Saud Kruger liner) for the lucrative sightseeing economy.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-afmu">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Auto Field-Maintenance Unit</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">In-flight module repair. Spends stored ammo to mend damaged modules far from any station — the explorer's insurance policy.</div>
+    <div class="bp-suit"><span class="bp-tag fleet">★ Explorer staple</span><span class="bp-tag ship">Module repair</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Repairs damaged modules (one at a time) using a finite repair charge, away from any station. <b>It cannot repair itself</b> — deep-range crews sometimes carry two so they can fix each other.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p>Higher class holds more repair charge and works faster. Size to expedition length; a small AFMU is enough for routine wear.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-auto-field-maintenance-unit-shielded">Shielded</a> hardens the AFMU itself against damage — the only blueprint it offers.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-limpet-controllers">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Limpet Controllers</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Drone dispatchers. Each controller launches single-task limpets — collect, prospect, repair, refuel, hack — drawn from your cargo limpet stock.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Mining &amp; utility drones</span><span class="bp-tag ship">Family of modules</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>A controller commands limpets that consume one cargo slot each. <b>Collector</b> gathers fragments/cargo, <b>Prospector</b> assays asteroids, <b>Repair</b> mends external hull, <b>Fuel Transfer</b> shares fuel, <b>Hatch Breaker</b> forces cargo, plus Recon/Decontamination variants.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p>Higher class controls more limpets at once and extends their range/lifetime. Miners run a Prospector plus several Collectors; rescue/piracy fits pick the matching controller.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-collector-limpet-controller-lightweight">Lightweight</a> to claw back mass on a mining build; Reinforced/Shielded to keep the controller alive under fire.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-refinery">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Refinery</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Turns mined ore fragments into sellable commodities. Class sets how many ore types you can refine in parallel — the miner's throughput.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Mining processing</span><span class="bp-tag ship">Refining bins</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Processes collected fragments into refined cargo. The class determines the number of <b>refining bins</b> — how many different minerals you can stockpile and process at the same time.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A-rated has the most bins</b>, so you waste fewer fragments while juggling several minerals. Small refineries force you to dump unwanted ores.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p>One blueprint exists but the slot is light; most miners run it unengineered and spend their materials on the FSD and thrusters instead.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-fsd-interdictor">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">FSD Interdictor</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Drags a target out of supercruise. The pirate's and bounty-hunter's tool for forcing an unwilling ship into a fight.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Piracy &amp; hunting</span><span class="bp-tag ship">Pull targets down</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Initiates an interdiction in supercruise — a tug-of-war mini-game; win it and the target is yanked to normal space. Class sets the <b>capture arc</b> and <b>pull range</b>.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p>Higher class = wider arc and longer reach, so easier interdictions. Only useful to ships that hunt other ships; everyone else leaves the slot for cargo or defence.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p><a href="blueprints.html#bp-fsd-interdictor-expanded-capture-arc">Expanded Capture Arc</a> or <a href="blueprints.html#bp-fsd-interdictor-longer-range">Longer Range</a> — both make catching targets easier.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="mod-flight-assists">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Flight &amp; Hangar Modules</span>
+    <span class="bp-card-tag">Optional Internal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Quality-of-life and crew tools — Docking Computer, Supercruise Assist and Fighter Hangar. None engineered; all about convenience or carried firepower.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Convenience</span><span class="bp-tag ship">Fighter support</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> Docking / Supercruise Assist</h6><p><b>Docking Computer</b> auto-docks and -launches; <b>Supercruise Assist</b> auto-throttles and lines up arrivals (and enables glide handling). Light size-1 modules — set-and-forget comfort.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Fighter Hangar</h6><p>Carries one or two <b>ship-launched fighters</b> for a multicrew gunner or NPC pilot to fly — extra guns and a decoy in combat. Big, heavy, combat-only.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Engineering</h6><p>None of these are engineered. Choose by role: assists for traders/newer pilots, a hangar for dedicated combat ships with the slots to spare.</p></div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- ================= 04 HARDPOINTS — WEAPONS ================= -->
+<section id="hardpoints"><div class="sec-head"><span class="sec-num">04</span><h2>Hardpoints — Weapons</h2></div><p class="lead">The guns. Hardpoints come in four sizes (small → huge, class 1–4) and three mounts. Pick the <strong>damage type</strong> for the target, then the <strong>mount</strong> for your aim and the <strong>family</strong> for the playstyle.</p>
+
+<div class="callout icon"><span class="lbl">Mounts &amp; sizes — read this first</span><p>Every weapon comes as <strong>Fixed</strong> (aims only where the nose points — most damage, hardest to land), <strong>Gimballed</strong> (tracks a locked target in a cone — slightly less damage, easy to hit, defeated by chaff), or <strong>Turreted</strong> (auto-tracks all around — least damage, multicrew/AFK-friendly). Hardpoint classes run <strong>1 (small) to 4 (huge)</strong>; only Cannon, Multi-Cannon, Pulse, Beam and Plasma Accelerator reach class 4. Match the weapon size to the hardpoint.</p></div>
+
+<div class="bp-modgroup" id="grp-weapons"><div class="bp-mod-head"><div class="bp-mod-label">Weapon Families <span class="bp-mod-count">6 families</span></div><button class="bp-grp-bulk bp-grp-exp" type="button" aria-label="Expand all weapon families"><span>+</span> Expand all</button><button class="bp-grp-bulk bp-grp-col" type="button" aria-label="Collapse all weapon families"><span>&minus;</span> Collapse all</button></div>
+
+<div class="bp-card" id="wpn-lasers">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Lasers — Beam · Pulse · Burst</span>
+    <span class="bp-card-tag">Thermal</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Energy weapons. Unlimited ammo, strong against shields, weak into hull — but they overheat the ship and drain WEP fast.</div>
+    <div class="bp-suit"><span class="bp-tag ship">★ Shield stripper</span><span class="bp-tag ship">Thermal damage</span><span class="bp-tag ship">No ammo</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Beam Laser</h6><p>Continuous beam — <b>highest sustained DPS</b> and shield-strip, but the heaviest WEP drain and heat. Great with a strong distributor; punishing without one.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Pulse Laser</h6><p>Intermittent bolts — <b>lowest draw and heat</b>, lowest raw DPS. The efficient, beginner-friendly, always-on choice.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Burst Laser</h6><p>Short multi-shot salvos — a <b>middle ground</b> between beam and pulse on damage, heat and draw.</p></div>
+    </div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Best for</h6><p>Bursting an enemy's <b>shields</b> down so kinetics can finish the hull. Lasers are the standard "shield half" of a mixed loadout.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9650;</span> Mounts</h6><p>Gimballed for ease, fixed for damage. Pulse/Beam reach class 4; Burst tops out at class 3.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> Engineering</h6><p><a href="blueprints.html#grp-beam-laser">Efficient</a> (cooler, less draw — beams) and <a href="blueprints.html#grp-pulse-laser">Long Range</a> are the staples; <b>Thermal Vent</b> on a beam can even cool your ship.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="wpn-kinetic">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Kinetic — Multi-Cannon · Cannon · Fragment · Rail Gun</span>
+    <span class="bp-card-tag">Kinetic</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Projectile weapons. Ammo-limited, but they run cool, sip WEP, and hit hull far harder than they hit shields.</div>
+    <div class="bp-suit"><span class="bp-tag ship">★ Hull breaker</span><span class="bp-tag ship">Kinetic damage</span><span class="bp-tag ship">Needs ammo</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Multi-Cannon</h6><p>Rapid-fire autocannon — <b>excellent sustained hull DPS</b>, low heat, generous ammo. The default kinetic for almost every combat ship.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Cannon</h6><p>Slow, heavy-hitting single shots with <b>high penetration</b> — punches through hull and can damage internals. Hard to land; rewards fixed aim.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Fragment Cannon</h6><p>A shotgun — devastating <b>point-blank burst</b>, useless at range. Brutal on hull when flown nose-to-nose.</p></div>
+    </div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Rail Gun</h6><p>Charge-and-fire <b>sniper</b> — pinpoint, high-penetration thermal/kinetic shots that wreck modules. Fixed only, heavy WEP draw and heat per shot.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Best for</h6><p>Finishing <b>hull</b> after lasers drop the shield. Multi-cannons + lasers is the classic "shield then hull" pairing.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> Engineering</h6><p><a href="blueprints.html#grp-multi-cannon">Overcharged</a> for damage, with the <b>Corrosive Shell</b> experimental (raises all incoming damage on the target) — a meta multi-cannon pick.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="wpn-explosive">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Missiles, Torpedoes &amp; Mines</span>
+    <span class="bp-card-tag">Explosive</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Explosive munitions. Near-useless against shields, brutal on bare hull — burst tools, not sustained DPS.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Hull burst</span><span class="bp-tag ship">Explosive damage</span><span class="bp-tag ship">Limited ammo</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Missile Racks</h6><p><b>Seeker</b> missiles lock and chase a target; <b>dumbfire</b> fly straight for more damage. Both shred unshielded hull but carry few rounds. Point Defence can shoot seekers down.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Torpedo Pylon</h6><p>Slow, heavy, hard-hitting <b>torpedoes</b> — a handful of rounds that devastate a hull (or a Thargoid heart). Reverski/strike use.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Mine Launcher</h6><p>Drops <b>mines</b> behind you — defensive area denial against tailing attackers, especially in a reverski brawl.</p></div>
+    </div>
+    <div class="callout warn"><span class="lbl">Drop the shield first</span><p>Explosive weapons do <strong>minimal damage to shields</strong> — fire them only once the target's shield is down (or against a hull-tank with none). They're a finisher, not an opener.</p></div>
+  </div>
+</div>
+
+<div class="bp-card" id="wpn-plasma">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Plasma Accelerator</span>
+    <span class="bp-card-tag">Thermal · Kinetic</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">A slug of superheated plasma — massive damage per shot that hits shields and hull equally well. The expert's hard-hitter.</div>
+    <div class="bp-suit"><span class="bp-tag ship">★ All-damage burst</span><span class="bp-tag ship">High skill</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Fires a slow projectile splitting damage across <b>thermal, kinetic and absolute</b> — so it works against shields <em>and</em> hull. Enormous per-hit damage rewards perfect aim.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9888;</span> The catch</h6><p><b>Very high WEP draw and heat</b>, slow projectile, fixed/gimballed only (no turret). Miss and you've spent a fortune in capacitor for nothing.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> Engineering</h6><p><a href="blueprints.html#grp-plasma-accelerator">Efficient</a> or <a href="blueprints.html#bp-plasma-accelerator-focused">Focused</a> tames heat/draw; <b>Plasma Slug</b> trades ammo for fuel-fed shots.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="wpn-guardian-ax">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Guardian &amp; AX Weapons</span>
+    <span class="bp-card-tag">Anti-Xeno</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Anti-Thargoid hardware. Thargoid hulls shrug off normal damage — these deal the special damage types that actually hurt them.</div>
+    <div class="bp-suit"><span class="bp-tag fleet">★ Thargoid combat</span><span class="bp-tag ship">Absolute / AX damage</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Guardian weapons</h6><p>Unlocked Guardian-tech variants: <b>Gauss Cannon</b> (rail-like sniper), <b>Shard Cannon</b> (fragment-like spread) and <b>Plasma Charger</b> (charge-and-release) — all dealing <b>absolute/AX damage</b> to Thargoids.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Human AX weapons</h6><p>AX <b>Multi-Cannons</b> and <b>Missile Racks</b> (incl. the <b>Enzyme Missile Rack</b>) tuned to harm Xeno hulls — the accessible entry into anti-Thargoid combat.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9888;</span> Note</h6><p>Pair with a <a href="#util-xeno">Xeno Scanner, Caustic Sink and Shutdown Field Neutraliser</a>. Caustic Thargoid damage ignores normal resistances — survival gear matters as much as guns.</p></div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- ================= 05 UTILITY MOUNTS ================= -->
+<section id="utility-mounts"><div class="sec-head"><span class="sec-num">05</span><h2>Utility Mounts</h2></div><p class="lead">Small external bolt-ons. Cheap on mass, big on survivability — boosters, countermeasures and scanners that round out almost every build.</p>
+
+<div class="bp-modgroup" id="grp-utility"><div class="bp-mod-head"><div class="bp-mod-label">Utility Modules <span class="bp-mod-count">9 modules</span></div><button class="bp-grp-bulk bp-grp-exp" type="button" aria-label="Expand all utility modules"><span>+</span> Expand all</button><button class="bp-grp-bulk bp-grp-col" type="button" aria-label="Collapse all utility modules"><span>&minus;</span> Collapse all</button></div>
+
+<div class="bp-card" id="util-shield-booster">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Shield Booster</span>
+    <span class="bp-card-tag">Utility</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Multiplies your shield's base strength. Stack several and a modest generator becomes a serious shield tank.</div>
+    <div class="bp-suit"><span class="bp-tag ship">★ Shield multiplier</span><span class="bp-tag ship">Stacks (diminishing)</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> What it does</h6><p>Applies a percentage boost to the <a href="#mod-shield-generator">shield generator's</a> base MJ. Multiple boosters stack with diminishing returns; A-rated boosts most.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Rating trade-off</h6><p><b>A = biggest multiplier</b> per mount, more power and heat. Useless if you have no shield generator fitted.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> Engineering</h6><p><a href="blueprints.html#grp-shield-booster">Resistance Augmented</a> (raises shield resistances) or Heavy Duty (raw MJ) — the core of any shield-tank's utility ring.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="util-countermeasures">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Countermeasures — Heat Sink · Chaff · Point Defence · ECM</span>
+    <span class="bp-card-tag">Utility</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Defensive launchers. Dump heat, break enemy locks, shoot down missiles, or scramble nearby ordnance.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Defensive</span><span class="bp-tag ship">Ammo-limited</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Heat Sink Launcher</h6><p>Ejects a sink that <b>dumps ship heat instantly</b> — saves you from a silent-running or overcharge cook, and hides your signature briefly. Near-mandatory on hot builds and explorers.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Chaff Launcher</h6><p>Scrambles <b>gimballed and turreted</b> tracking for a few seconds — buys breathing room against tracking weapons. Useless against fixed mounts.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Point Defence</h6><p>An auto-turret that <b>shoots down incoming missiles, torpedoes and mines</b>. Cheap insurance for any ship that fears explosives.</p></div>
+    </div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Electronic Countermeasure (ECM)</h6><p>Pulses to <b>disable nearby missiles and disrupt enemy scanners/limpets</b> in a radius — an active button, not a passive turret.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9733;</span> Pick by threat</h6><p>Heat sink for thermals/exploration, chaff vs tracking guns, point defence vs missiles. Most combat ships carry at least heat sink + chaff.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9881;</span> Engineering</h6><p><a href="blueprints.html#grp-heat-sink-launcher">Ammo Capacity</a> for more uses, Lightweight to shave mass. All four are cheap to engineer.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="bp-card" id="util-scanners">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Scanners — Kill Warrant · Manifest · Wake</span>
+    <span class="bp-card-tag">Utility</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Information tools. Read a target's bounties, peek at its cargo, or trace where a ship jumped.</div>
+    <div class="bp-suit"><span class="bp-tag ship">Intel</span><span class="bp-tag ship">Bounty · cargo · tracking</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Kill Warrant Scanner</h6><p>Reveals a target's <b>bounties across all jurisdictions</b>, raising your payout when you collect. The bounty-hunter's profit multiplier.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Manifest Scanner</h6><p>Reads a target's <b>cargo manifest</b> before you commit — pirate's reconnaissance for picking worthwhile marks (and required for some missions).</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Frame Shift Wake Scanner</h6><p>Scans <b>hyperspace wakes</b> to learn a fled ship's destination — for tracking, bounty work and some mission types.</p></div>
+    </div>
+    <div class="bp-panel"><h6><span class="ic">&#9881;</span> Engineering</h6><p>All take <a href="blueprints.html#grp-kill-warrant-scanner">Fast Scan / Long Range</a> blueprints — scan faster, from farther, before the mark flees.</p></div>
+  </div>
+</div>
+
+<div class="bp-card" id="util-xeno">
+  <div class="bp-card-head" role="button" tabindex="0" aria-expanded="false">
+    <span class="bp-fold" aria-hidden="true">&#9654;</span>
+    <span class="bp-card-title">Xeno &amp; Specialist Utilities</span>
+    <span class="bp-card-tag">Utility</span>
+  </div>
+  <div class="bp-card-body">
+    <div class="bp-effect">Anti-Thargoid and mining-survey kit — the utilities that make Xeno combat survivable and mining productive.</div>
+    <div class="bp-suit"><span class="bp-tag fleet">★ Thargoid &amp; mining</span><span class="bp-tag ship">Specialist</span></div>
+    <div class="bp-ctx">
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Xeno Scanner</h6><p>Analyses a <b>Thargoid's subsystems</b>, exposing the hearts you must destroy. The opening move of any Interceptor fight.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Caustic Sink Launcher</h6><p>Ejects a sink that <b>clears caustic damage</b> from a Thargoid acid hit — without it, the corrosion keeps eating your hull. AX survival staple.</p></div>
+      <div class="bp-panel"><h6><span class="ic">&#9889;</span> Shutdown Field Neutraliser</h6><p>Counters a Thargoid <b>shutdown field</b>, keeping your ship powered through the EMP wave (it drains SYS while active).</p></div>
+    </div>
+    <div class="bp-panel"><h6><span class="ic">&#9889;</span> Pulse Wave Analyser</h6><p>The <b>mining survey</b> tool — pulses a ring to highlight resource-rich (core and surface-deposit) asteroids, so you prospect the right rocks. The miner's eyes.</p></div>
+  </div>
+</div>
+
+</section>
+
+<!-- ================= 06 PICKING BY ROLE ================= -->
+<section id="by-role"><div class="sec-head"><span class="sec-num">06</span><h2>Picking Modules by Role</h2></div><p class="lead">The verdict per playstyle. Set the core internals to match the job, fill optionals for the role, then take the build to <a href="blueprints.html">Blueprints</a> and <a href="engineers.html">Engineers</a>.</p>
+
+<div class="pickgrid">
+  <div class="pickcard">
+    <div class="who">Explorer</div>
+    <div class="pick">D-rated everything <small>· except A FSD</small></div>
+    <p>Minimum mass = maximum range. <b>A-rated FSD</b> (Increased Range) + <b>Guardian FSD Booster</b> + <b>Fuel Scoop</b>, then <b>D-rated</b> power plant (Low Emissions), thrusters, sensors and life support. Add a <b>DSS</b>, <b>AFMU</b> and <b>Heat Sink</b>.</p>
+    <div class="alt"><b>Also:</b> drop the shield for range, or run a small Bi-Weave for planet-landing safety.</div>
+  </div>
+  <div class="pickcard">
+    <div class="who">Combat / PvE</div>
+    <div class="pick">A-rated power triangle</div>
+    <p><b>A or B power plant</b> (Armoured/Overcharged), <b>A thrusters</b> (Dirty Drive), <b>A power distributor</b> (Charge Enhanced). Then a tough <b>shield generator + boosters</b>, <b>shield cell banks</b>, and <b>hull/module reinforcements</b>. Lasers to strip, multi-cannons to finish.</p>
+    <div class="alt"><b>Also:</b> chaff + heat sink utilities; module reinforcement for long fights.</div>
+  </div>
+  <div class="pickcard">
+    <div class="who">Trader / Hauler</div>
+    <div class="pick">Max cargo, A FSD</div>
+    <p>Fill optionals with <b>Cargo Racks</b>; keep one slot for a light <b>shield</b>. <b>A-rated FSD</b> for range under load, A power plant for headroom, <b>D distributor/sensors/life support</b> to save mass. A Docking Computer for convenience.</p>
+    <div class="alt"><b>Also:</b> a Frame Shift Wake Scanner is irrelevant here — spend the slot on cargo.</div>
+  </div>
+  <div class="pickcard">
+    <div class="who">Miner</div>
+    <div class="pick">Limpets + Refinery</div>
+    <p><b>Prospector + Collector limpet controllers</b>, an <b>A Refinery</b>, <b>Cargo Racks</b>, plus a <b>Pulse Wave Analyser</b> utility and mining hardpoints. Keep a shield for ring traffic. A-rated FSD to reach hotspots and run loads to market.</p>
+    <div class="alt"><b>Also:</b> a Detailed Surface Scanner is optional; the Pulse Wave Analyser is the must-have.</div>
+  </div>
+  <div class="pickcard">
+    <div class="who">Bounty Hunter / Pirate</div>
+    <div class="pick">Combat core + interdictor</div>
+    <p>Combat power triangle plus an <b>FSD Interdictor</b> to force fights, a <b>Kill Warrant Scanner</b> (hunter) or <b>Manifest Scanner</b> (pirate) utility, and a <b>Wake Scanner</b> to chase runners.</p>
+    <div class="alt"><b>Also:</b> Corrosive multi-cannons stretch your effective DPS against tanky NPCs.</div>
+  </div>
+  <div class="pickcard">
+    <div class="who">Anti-Xeno (Thargoid)</div>
+    <div class="pick">AX weapons + survival kit</div>
+    <p><b>Guardian/AX hardpoints</b>, <b>Xeno Scanner</b>, <b>Caustic Sink</b> and <b>Shutdown Field Neutraliser</b> utilities, heavy <b>module &amp; hull reinforcement</b>, and Guardian-boosted power. Caustic damage ignores normal resistances — bring the sinks.</p>
+    <div class="alt"><b>Also:</b> a Guardian Hull/Module Reinforcement package for Thargoid-specific resistance.</div>
+  </div>
+</div>
+</section>
+
+<!-- ---- Sources ---- -->
+<section class="credits" id="credits">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <p class="lead">Module behaviour, class/rating mechanics and weapon facts on this page are verified against the sources below.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Canonical module definitions and the module/blueprint groupings this page mirrors (cross-checked against the repo's own verified Blueprints reference).</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data">github.com/EDCD/coriolis-data</a></div>
+    <div class="cr-row"><span class="cr-src">Elite Dangerous Fandom Wiki — Outfitting</span><span class="cr-what">Slot families (core/optional/hardpoint/utility), the A–E rating and 1–8 size system, and per-module roles.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Outfitting">elite-dangerous.fandom.com/wiki/Outfitting</a></div>
+    <div class="cr-row"><span class="cr-src">Elite Dangerous Fandom Wiki — Weapons &amp; Thargoid Combat</span><span class="cr-what">Weapon families, fixed/gimballed/turreted mounts, hardpoint sizes 1–4, damage types, and Guardian/AX weapon definitions.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Category:Weapons">elite-dangerous.fandom.com/wiki/Category:Weapons</a></div>
+    <div class="cr-row"><span class="cr-src">Inara — Modules</span><span class="cr-what">Per-module stats and class/rating cross-checks across core, optional, hardpoint and utility modules.</span><a class="cr-link" href="https://inara.cz/elite/galaxy-modules/">inara.cz/elite/galaxy-modules</a></div>
+    <div class="cr-row"><span class="cr-src">EDSM — Outfitting FAQ</span><span class="cr-what">Utility-mount module list (shield booster, countermeasures, scanners, xeno utilities) and slot mechanics.</span><a class="cr-link" href="https://www.edsm.net/en/faq/outfitting">edsm.net/en/faq/outfitting</a></div>
+  </div>
+</section>
+
+  <!-- ---- FOOTER ---- -->
+  <footer>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Engineering</span>
+  </footer>
+
+</div>
+<script>
+(function(){
+  'use strict';
+
+  // ---- Fold / unfold cards ----
+  function setOpen(card, open){
+    card.classList.toggle('open', open);
+    var head = card.querySelector('.bp-card-head');
+    if(head) head.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function toggle(card){ setOpen(card, !card.classList.contains('open')); }
+
+  document.querySelectorAll('.bp-card-head').forEach(function(head){
+    var card = head.closest('.bp-card');
+    head.addEventListener('click', function(){ toggle(card); });
+    head.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(card); }
+    });
+  });
+
+  function openAndScroll(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    if(el.classList.contains('bp-card')) setOpen(el, true);
+    var y = el.getBoundingClientRect().top + window.pageYOffset - 84;
+    window.scrollTo({ top:y, behavior:'smooth' });
+  }
+
+  // Per-group expand / collapse (scoped to the clicked module group only)
+  document.querySelectorAll('.bp-grp-exp').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var g = btn.closest('.bp-modgroup');
+      if(g) g.querySelectorAll('.bp-card').forEach(function(c){ setOpen(c, true); });
+    });
+  });
+  document.querySelectorAll('.bp-grp-col').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var g = btn.closest('.bp-modgroup');
+      if(g) g.querySelectorAll('.bp-card').forEach(function(c){ setOpen(c, false); });
+    });
+  });
+
+  // ---- Quick-nav searchable combobox ----
+  var input = document.getElementById('qn-search');
+  var panel = document.getElementById('qn-panel');
+  var clear = document.getElementById('qn-clear');
+  var items = Array.prototype.slice.call(panel.querySelectorAll('.qn-item'));
+  var activeIdx = -1;
+
+  function visibleItems(){ return items.filter(function(it){ return it.style.display !== 'none'; }); }
+
+  function openPanel(){ panel.classList.add('open'); input.setAttribute('aria-expanded','true'); }
+  function closePanel(){ panel.classList.remove('open'); input.setAttribute('aria-expanded','false'); clearActive(); }
+
+  function clearActive(){
+    items.forEach(function(it){ it.classList.remove('active'); });
+    activeIdx = -1;
+  }
+  function setActive(idx){
+    var vis = visibleItems();
+    if(!vis.length){ clearActive(); return; }
+    if(idx < 0) idx = vis.length - 1;
+    if(idx >= vis.length) idx = 0;
+    items.forEach(function(it){ it.classList.remove('active'); });
+    vis[idx].classList.add('active');
+    activeIdx = idx;
+    vis[idx].scrollIntoView({ block:'nearest' });
+  }
+
+  function filter(){
+    var q = input.value.trim().toLowerCase();
+    clear.hidden = q.length === 0;
+    var shown = 0;
+    items.forEach(function(it){
+      var match = q === '' || it.getAttribute('data-search').indexOf(q) !== -1;
+      it.style.display = match ? '' : 'none';
+      if(match) shown++;
+    });
+    var empty = panel.querySelector('.qn-empty');
+    if(shown === 0){
+      if(!empty){ empty = document.createElement('div'); empty.className = 'qn-empty';
+        empty.textContent = 'No matching modules.'; panel.appendChild(empty); }
+      empty.hidden = false; empty.style.display = '';
+    } else if(empty){ empty.hidden = true; empty.style.display = 'none'; }
+    clearActive();
+    openPanel();
+  }
+
+  function jump(it){
+    var id = it.getAttribute('data-target');
+    closePanel();
+    input.value = '';
+    clear.hidden = true;
+    items.forEach(function(x){ x.style.display = ''; });
+    var em = panel.querySelector('.qn-empty'); if(em){ em.hidden = true; em.style.display = 'none'; }
+    openAndScroll(id);
+    history.replaceState(null, '', '#' + id);
+  }
+
+  function openIfItems(){ if(panel.querySelectorAll('.qn-item').length) openPanel(); }
+  input.addEventListener('focus', openIfItems);
+  input.addEventListener('click', openIfItems);
+  input.addEventListener('input', filter);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowDown'){ e.preventDefault(); if(!panel.classList.contains('open')) openPanel(); setActive(activeIdx + 1); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); if(!panel.classList.contains('open')) openPanel(); setActive(activeIdx - 1); }
+    else if(e.key === 'Enter'){
+      e.preventDefault();
+      var vis = visibleItems();
+      if(!vis.length) return;
+      jump(activeIdx >= 0 ? vis[activeIdx] : vis[0]);
+    }
+    else if(e.key === 'Escape'){
+      if(input.value){ input.value = ''; filter(); input.value=''; clear.hidden = true;
+        items.forEach(function(x){ x.style.display=''; }); var em=panel.querySelector('.qn-empty'); if(em){ em.hidden=true; em.style.display='none'; } }
+      closePanel(); input.blur();
+    }
+  });
+
+  items.forEach(function(it){
+    it.addEventListener('click', function(){ jump(it); });
+    it.addEventListener('mousemove', function(){
+      var vis = visibleItems(); var i = vis.indexOf(it);
+      if(i !== -1){ items.forEach(function(x){ x.classList.remove('active'); }); it.classList.add('active'); activeIdx = i; }
+    });
+  });
+
+  clear.addEventListener('click', function(){
+    input.value = ''; clear.hidden = true;
+    items.forEach(function(x){ x.style.display = ''; });
+    var em = panel.querySelector('.qn-empty'); if(em){ em.hidden = true; em.style.display = 'none'; }
+    clearActive(); input.focus(); openPanel();
+  });
+
+  document.addEventListener('click', function(e){
+    if(!document.getElementById('qn-dd').contains(e.target)) closePanel();
+  });
+
+  // ---- Open card targeted by URL hash on load ----
+  if(location.hash){
+    var id = location.hash.slice(1);
+    setTimeout(function(){ openAndScroll(id); }, 60);
+  }
+  window.addEventListener('hashchange', function(){
+    if(location.hash) openAndScroll(location.hash.slice(1));
+  });
+
+  // header scroll-to-top button
+  document.querySelectorAll('.qn-totop').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault();
+      if(location.hash && history.replaceState) history.replaceState(null,'',location.pathname+location.search);
+      window.scrollTo({top:0,behavior:'smooth'}); });
+  });
+})();
+</script>
+</body>
+</html>
