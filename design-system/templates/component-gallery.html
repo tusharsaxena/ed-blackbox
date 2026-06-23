@@ -432,6 +432,24 @@
     <li><span class="st">Second action</span><p>The next step, kept to one or two lines. Use <span class="acc">accent text</span> for the critical detail.</p></li>
     <li><span class="st">Third action</span><p>The final step. The connector line stops at the last node.</p></li>
   </ol>
+
+  <h3 class="subhead">Step cards — richer task cards</h3>
+  <p class="lead">For a long, action-typed run (an engineer-unlock checklist, a multi-phase build), use <code>.step-cards &gt; article.step-card.ac-&lt;type&gt;</code>. A numbered rail + action badge, an action heading, a row of labelled fields (<code>.rc</code> &rarr; amber <code>.rcl</code> label + <code>.rcv</code> value), and a "what to do" block. Accent the rail/badge with <code>ac-prep|farm|travel|grind|unlock|climb|build</code>.</p>
+  <div class="step-cards">
+    <article class="step-card ac-unlock" id="demo-step">
+      <div class="step-rail"><div class="step-no">STEP<b>01</b></div><span class="badge b-unlock">Unlock</span></div>
+      <div class="step-body">
+        <div class="step-head"><h3 class="step-action">Short action title <span class="sub">— optional subtitle</span></h3><a class="permalink" href="#demo-step" title="Permalink">#</a></div>
+        <div class="step-fields">
+          <div class="rc"><div class="rcl">Where</div><div class="rcv"><b>System</b> · Settlement</div></div>
+          <div class="rc"><div class="rcl">Requirement</div><div class="rcv">The condition to meet</div></div>
+          <div class="rc"><div class="rcl">Hand-in</div><div class="rcv">What you turn in</div></div>
+        </div>
+        <div class="step-do"><b class="wd">What to do:</b> a paragraph of supporting prose. <b>Key terms</b> bold; cross-links underline on the accent.</div>
+        <div class="step-flag"><span class="ff">Note</span>An optional flagged caveat or correction.</div>
+      </div>
+    </article>
+  </div>
 </section>
 
 <!-- ============================================================

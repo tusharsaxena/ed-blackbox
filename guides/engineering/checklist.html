@@ -4,108 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Unlock Run — Engineer Checklist | E:D Black Box</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
 <style>
-:root{--bg:#0a0708;--bg2:#0e0a0b;--panel:#140d0f;--panel2:#1a1113;--grid:rgba(180,70,60,.045);
---maroon:#8b2332;--maroon-lt:#b13140;--amber:#e0913a;--amber-lt:#f4b15f;--fed:#4f9fd6;--fed-lt:#7cc0ee;
---rose:#d98aa0;--teal:#46b3b0;--ink-em:#c8b6aa;
---at-prep:#c0564e;--at-farm:#cf8649;--at-travel:#c6a94f;--at-grind:#5fa86f;--at-unlock:#4f93cf;--at-climb:#7866cc;--at-build:#a868c0;
---danger:#d8423b;--good:#5fb37a;--good-lt:#7fce98;--ink:#ece4df;--ink-dim:#a89a93;--ink-faint:#6e615c;
---hair:rgba(190,120,110,.16);--hair-strong:rgba(190,120,110,.32);}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Saira',sans-serif;font-weight:300;line-height:1.62;letter-spacing:.2px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:42px 42px}
-body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px 600px at 78% -8%,rgba(224,145,58,.10),transparent 60%),radial-gradient(1000px 700px at 10% 4%,rgba(139,35,50,.16),transparent 62%),radial-gradient(1200px 900px at 50% 120%,rgba(79,159,214,.07),transparent 60%)}
-.wrap{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 22px 120px}
-header.masthead{padding:54px 0 26px;border-bottom:1px solid var(--hair-strong);margin-bottom:8px}
-.kicker{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
-.kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
-.kicker .id{margin-left:auto;color:var(--ink-faint);letter-spacing:3px;font-weight:500}
-h1.title{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
-h1.title span{color:var(--maroon-lt)}
-.subtitle{margin-top:16px;font-size:clamp(15px,2.2vw,18px);color:var(--ink-dim);max-width:880px;font-weight:300}
-.masthead-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:'Saira Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
-.masthead-meta b{color:var(--amber-lt);font-weight:600}
-.verdict{margin:34px 0 14px;border:1px solid rgba(224,145,58,.4);border-radius:4px;background:linear-gradient(180deg,rgba(224,145,58,.10),rgba(20,13,15,.6));padding:30px 30px 26px;position:relative;overflow:hidden}
-.verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--amber),transparent)}
-.verdict .v-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:10px}
-.verdict h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(22px,4vw,32px);line-height:1.05;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:6px}
-.verdict h2 em{font-style:normal;color:var(--amber-lt)}
-.verdict p{font-size:15.5px;color:var(--ink-dim);margin-top:12px;max-width:980px}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:22px 0 4px}
-.stat{background:rgba(10,7,8,.5);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
-.stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:26px;color:var(--amber-lt);line-height:1}
-.stat .n.fed{color:var(--fed-lt)}.stat .n.mar{color:var(--maroon-lt)}.stat .n.good{color:var(--good-lt)}
-.stat .l{font-size:12.5px;color:var(--ink-dim);margin-top:6px;letter-spacing:.3px}
-section{margin-top:56px;scroll-margin-top:74px}
-.sec-head{display:flex;align-items:center;gap:15px;margin-bottom:8px;border-bottom:1px solid var(--hair);padding-bottom:14px}
-.sec-num{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--bg);background:var(--amber);padding:6px 11px;border-radius:3px;flex:none;line-height:1;display:inline-flex;align-items:center;justify-content:center}
-.sec-head h2{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(21px,3.4vw,30px);text-transform:uppercase;letter-spacing:.6px;color:var(--ink);line-height:1.05}
-.sec-head .tag{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);flex:none}
-p.lead{font-size:15px;color:var(--ink-dim);margin:14px 0 4px}
-p.lead a{color:var(--amber-lt);text-decoration:none;border-bottom:1px solid rgba(224,145,58,.3)}
+/* page-specific styles kept out of the design system: the bespoke Engineer Unlock
+   Map below + a few checklist-only chrome bits. Everything else (chrome, step cards,
+   quick-nav, legend, badges) now comes from ed-blackbox.css. */
 .phase-meta{margin:9px 0 2px;font-family:'Saira Condensed',sans-serif;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
 .phase-meta b{color:var(--amber-lt);font-weight:600}
 .phase-meta a{color:var(--amber-lt);text-decoration:none;border-bottom:1px solid rgba(224,145,58,.32)}
-.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
-.legend .lg{background:var(--panel);border:1px solid var(--hair);border-radius:4px;padding:16px 18px}
-.legend h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:12px}
-.legend .row{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-dim);margin-bottom:9px}
-.legend .row:last-child{margin-bottom:0}.legend .row b{color:var(--ink);font-weight:600}
-.legend .row.tx{display:block;line-height:1.5}
-.badge{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:10px;border:1px solid;line-height:1.1;flex:none;white-space:nowrap}
-.b-prep{color:#d97f78;border-color:rgba(192,86,78,.6);background:rgba(192,86,78,.13)}
-.b-farm{color:#dba06a;border-color:rgba(207,134,73,.6);background:rgba(207,134,73,.13)}
-.b-travel{color:#d6c074;border-color:rgba(198,169,79,.6);background:rgba(198,169,79,.13)}
-.b-grind{color:#80c493;border-color:rgba(95,168,111,.6);background:rgba(95,168,111,.13)}
-.b-unlock{color:#79b3e0;border-color:rgba(79,147,207,.6);background:rgba(79,147,207,.13)}
-.b-climb{color:#9b8cdb;border-color:rgba(120,102,204,.6);background:rgba(120,102,204,.13)}
-.b-build{color:#c089d4;border-color:rgba(168,104,192,.6);background:rgba(168,104,192,.13)}
-.permalink{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink-faint);text-decoration:none;font-size:15px;line-height:1;padding:2px 4px;border-radius:3px;flex:none;opacity:.5;transition:opacity .15s,color .15s}
-.permalink:hover{opacity:1;color:var(--amber-lt)}
-.muted{color:var(--ink-faint)}
-a{color:var(--amber-lt)}
-
-/* ---- step cards ---- */
-.steps{display:flex;flex-direction:column;gap:12px;margin-top:20px}
-.stepB{display:grid;grid-template-columns:104px 1fr;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--amber);border-radius:4px;overflow:hidden;scroll-margin-top:74px;transition:border-color .18s,background .18s}
-.stepB:hover{background:var(--panel2)}
-.stepB:target{box-shadow:0 0 0 1px rgba(224,145,58,.32),0 0 26px rgba(224,145,58,.12)}
-.stepB.ac-prep{border-left-color:var(--at-prep)}
-.stepB.ac-farm{border-left-color:var(--at-farm)}
-.stepB.ac-travel{border-left-color:var(--at-travel)}
-.stepB.ac-grind{border-left-color:var(--at-grind)}
-.stepB.ac-unlock{border-left-color:var(--at-unlock)}
-.stepB.ac-climb{border-left-color:var(--at-climb)}
-.stepB.ac-build{border-left-color:var(--at-build)}
-.step-rail{background:rgba(8,5,6,.5);border-right:1px solid var(--hair);display:flex;flex-direction:column;align-items:center;gap:9px;padding:15px 8px}
-.step-no{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;color:var(--ink-faint);line-height:1;text-align:center}
-.step-no b{display:block;font-size:24px;color:var(--ink);letter-spacing:0;margin-top:2px}
-.step-body{padding:15px 19px 16px;min-width:0}
-.step-head{display:flex;align-items:flex-start;gap:10px}
-.step-action{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:.2px;color:var(--ink);line-height:1.32;flex:1}
-.step-action a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.45)}
-.step-action .sub{color:var(--ink-dim);font-weight:400}
-.step-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:13px 24px;margin-top:14px;align-items:start}
-.rc .rcl{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:4px}
-.rc .rcv{font-size:13.4px;color:var(--ink-dim);line-height:1.5}.rc .rcv b{color:var(--ink);font-weight:600}
-.rc .rcv a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.3)}
-.locgrid{display:grid;grid-template-columns:auto 1fr;gap:5px 11px;align-items:baseline}
-.locgrid .lk{display:flex;justify-content:space-between;align-items:baseline;gap:9px;font-family:'Chakra Petch',sans-serif;font-size:11.5px;font-weight:600;color:var(--fed-lt);white-space:nowrap}
-.locgrid .lk::after{content:"›";color:var(--ink-faint);font-weight:400}
-.locgrid .lv{font-size:13.5px;color:var(--ink);line-height:1.4}
-.locgrid .lv b{color:var(--ink);font-weight:600}
-.locgrid .pmt{font-family:'Saira Condensed',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--maroon-lt);border:1px solid rgba(177,49,64,.5);border-radius:3px;padding:1px 5px;margin-left:5px;vertical-align:middle;white-space:nowrap}
-.step-do{margin-top:14px;font-size:13.5px;color:var(--ink-dim);line-height:1.62;border-top:1px solid var(--hair);padding-top:12px}
-.step-do b{color:var(--ink-em);font-weight:600}
-.step-do b.wd{color:var(--ink)}
-.step-do a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.35)}
-.step-flag{display:block;margin-top:12px;font-size:12.8px;color:var(--ink-dim);background:rgba(224,145,58,.06);border:1px solid rgba(224,145,58,.22);border-radius:4px;padding:10px 13px;line-height:1.58}
-.step-flag .ff{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);display:block;margin-bottom:5px}
-.step-flag b{color:var(--ink-em);font-weight:600}
-.step-flag a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.35)}
 .phase-stub{border:1px dashed var(--hair-strong);border-radius:4px;padding:20px 22px;margin-top:18px;background:rgba(10,7,8,.3)}
 .phase-stub .ps-t{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13px;letter-spacing:.5px;color:var(--ink-dim);margin-bottom:8px;line-height:1.7}
 .phase-stub .ps-t a{color:var(--amber-lt);text-decoration:none;border-bottom:1px solid rgba(224,145,58,.28)}
@@ -113,34 +20,6 @@ a{color:var(--amber-lt)}
 .phase-stub .ps-b a{color:var(--ink-dim)}
 .mock-banner{margin:22px 0 0;border:1px solid var(--maroon-lt);border-radius:4px;background:rgba(177,49,64,.08);padding:14px 18px;font-size:13.5px;color:var(--ink-dim)}
 .mock-banner b{color:var(--maroon-lt);font-family:'Chakra Petch',sans-serif;letter-spacing:1px;text-transform:uppercase;font-size:11px}
-@media(max-width:680px){.stepB{grid-template-columns:1fr}.step-rail{flex-direction:row;justify-content:flex-start;border-right:none;border-bottom:1px solid var(--hair);padding:9px 14px}.step-no b{display:inline;font-size:15px;margin-left:4px;margin-top:0}}
-
-/* ---- quick nav ---- */
-.quicknav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;margin:18px 0 6px;padding:10px 14px;background:rgba(10,7,8,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--hair-strong);border-radius:6px}
-.qn-eyebrow{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);flex:none}
-.qn-hint{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);flex:none}
-.qn-dd{position:relative;flex:1}
-.qn-field{position:relative;display:inline-flex;align-items:center;width:100%;max-width:360px;background:var(--panel2);border:1px solid var(--hair-strong);border-radius:5px;transition:border-color .16s}
-.qn-field:focus-within{border-color:var(--amber)}
-.qn-ico{position:absolute;left:11px;color:var(--ink-faint);font-size:15px;pointer-events:none}
-.qn-input{flex:1;width:100%;background:transparent;border:none;outline:none;color:var(--ink);font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:13px;letter-spacing:.4px;padding:8px 8px 8px 33px}
-.qn-input::placeholder{color:var(--ink-faint);font-weight:500}
-.qn-clear{background:transparent;border:none;color:var(--ink-faint);font-size:19px;line-height:1;cursor:pointer;padding:2px 11px;transition:color .14s}
-.qn-clear:hover{color:var(--amber)}
-.qn-panel{position:absolute;top:calc(100% + 6px);left:0;width:360px;max-height:64vh;overflow-y:auto;background:rgba(16,10,12,.99);border:1px solid var(--hair-strong);border-radius:7px;box-shadow:0 20px 56px rgba(0,0,0,.6);padding:6px;display:none}
-.qn-dd.open .qn-panel{display:block}
-.qn-sec{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);padding:9px 10px 4px}
-.qn-item{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:4px;font-family:'Saira',sans-serif;font-size:13.6px;color:var(--ink-dim);text-decoration:none}
-.qn-item:hover{background:var(--panel2);color:var(--ink)}
-.qn-dot{width:7px;height:7px;border-radius:50%;flex:none}
-.qn-dot.phase{background:var(--amber)}.qn-dot.eng{background:var(--ink-dim)}.qn-dot.farm{background:var(--at-farm)}.qn-dot.grind{background:var(--maroon-lt)}.qn-dot.travel{background:var(--fed)}
-.qn-nm{flex:1}
-.qn-side{font-family:'Saira Condensed',sans-serif;font-size:9.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--ink-faint);flex:none}
-.qn-item.qn-active{background:var(--panel2);color:var(--ink)}
-.qn-empty{padding:10px 12px;color:var(--ink-faint);font-size:13px;font-style:italic}
-.qn-panel::-webkit-scrollbar{width:9px}
-.qn-panel::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:5px}
-@media (max-width:560px){.qn-hint{display:none}.qn-eyebrow{display:none}.qn-panel{width:88vw}}
 
 /* ===== Engineer Unlock Map (transposed · left-aligned · horizontal nodes) ===== */
 .emap-wrap{margin-top:14px}
@@ -148,9 +27,9 @@ a{color:var(--amber-lt)}
 .emap-inner{position:relative;width:100%;margin:0}
 .wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
 .band{position:relative;z-index:1}
-.band + .band{margin-top:16px;padding-top:20px;border-top:1px solid var(--hair)}
-.band-head{display:flex;align-items:center;gap:12px;margin:0 0 16px}
-.band-head .bh-num{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bg);background:var(--maroon-lt);padding:4px 9px;border-radius:3px}
+.band + .band{margin-top:16px;padding-top:20px}
+.band-head{display:flex;align-items:center;gap:12px;margin:0 0 36px}
+.band-head .bh-num{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);background:var(--maroon-lt);padding:4px 9px;border-radius:3px}
 .band-head h3{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:14.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);margin:0}
 .band-head .bh-line{flex:1;height:1px;background:var(--hair)}
 .band-head .bh-tag{font-family:'Saira Condensed',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
@@ -195,30 +74,33 @@ a{color:var(--amber-lt)}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="masthead">
-  <div class="kicker">Engineering Tracker · Part III</div>
-  <h1 class="title">The <span>Unlock</span> Run</h1>
-  <p class="subtitle">A start-to-finish, galaxy-wide route to unlocking every engineer in <em>Elite Dangerous</em> — worked top to bottom as one chronological run. Each step is its own card with an action type and exactly what to do; engineer names jump to the <a href="engineers.html">Engineers</a> manual, blueprints to the <a href="blueprints.html">Blueprints</a> manual, and every farm step to its field guide.</p>
-  <div class="masthead-meta">
-    <span>Part <b>III of III</b> · Unlock Run</span>
-    <span>Engineers <b>38 total</b></span>
-    <span>Sources <b>INARA · newp.io · Fox's Guide · EDSM</b></span>
-    <span>Patch <b>Live 4.0</b></span>
-  </div>
-</header>
 
-
-
-<nav class="quicknav" aria-label="Jump to phase, engineer, farm or step">
-  <span class="qn-eyebrow">Quick Nav</span>
-  <div class="qn-dd" id="qn-dd">
-    <div class="qn-field">
-      <span class="qn-ico" aria-hidden="true">⌕</span>
-      <input id="qn-search" class="qn-input" type="text" placeholder="Search engineer, phase, system, item, action…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
-      <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
-    </div>
-    <div class="qn-panel" id="qn-panel" role="listbox">
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#dossiers">Ships</a>
+      <a href="../index.html#engineering" class="active">Engineering</a>
+      <a href="../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Search engineer, phase, system, item, action…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
       <div class="qn-sec">Phases</div>
       <a class="qn-item" href="#unlock-map" data-kw="engineer unlock map flowchart referral tree chart overview"><span class="qn-dot amber"></span><span class="qn-nm">Engineer Unlock Map</span><span class="qn-side">Map</span></a>
       <a class="qn-item" href="#phase-00" data-kw="prep farms setup srv cargo jameson dav's hope crystalline shards hge"><span class="qn-dot amber"></span><span class="qn-nm">Phase 00 — Prep &amp; Farms</span><span class="qn-side">Phase</span></a>
@@ -286,10 +168,32 @@ a{color:var(--amber-lt)}
       <a class="qn-item" href="#farm-crystalline" data-kw="crystalline shards raw materials g4 hip 36601 outotz hr 3230 farm"><span class="qn-dot amber"></span><span class="qn-nm">Crystalline Shards (Raw G4)</span><span class="qn-side">Farm</span></a>
       <a class="qn-item" href="#farm-hge" data-kw="high grade emissions hge manufactured g5 imperial shielding farm supercruise"><span class="qn-dot amber"></span><span class="qn-nm">High Grade Emissions (G4–G5)</span><span class="qn-side">Farm</span></a>
       <div class="qn-empty" hidden>No matches</div>
+        </div>
+      </div>
     </div>
   </div>
-  <span class="qn-hint">7 phases · search anything</span>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#engineering">Engineering</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">The Unlock Run</span>
 </nav>
+
+<div class="wrap">
+
+  <!-- ---- MASTHEAD ---- -->
+  <header class="masthead">
+    <div class="kicker">Engineering<span class="sep">//</span>Unlock Run</div>
+    <h1 class="title">The <span>Unlock</span> Run <span class="role">Engineer Checklist</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Engineering</b></span>
+      <span>Updated <b>2026-06-23</b></span>
+    </div>
+  </header>
 
 <div class="verdict">
   <div class="v-eyebrow">Field Briefing</div>
@@ -597,9 +501,9 @@ a{color:var(--amber-lt)}
   <p class="lead">Before chasing engineers, set the ship up for surface work and stand up the four material farms. You do not have to cap everything now — but every "climb a blueprint for the referral" step downstream spends materials, so having the farm routes bookmarked saves a lot of backtracking. The farm field manuals carry the exact sites, coordinates and loops; the Engineering Tracker carries the quantities.</p>
   <div class="phase-meta">In this phase · <b>1 setup</b> + <b>4 farm</b> steps · supports every later climb</div>
 
-  <div class="steps">
+  <div class="step-cards">
 
-    <article class="stepB ac-prep" id="prep-srv-cargo">
+    <article class="step-card ac-prep" id="prep-srv-cargo">
       <div class="step-rail"><div class="step-no">STEP<b>01</b></div><span class="badge b-prep">Prep</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Fit a Planetary Vehicle Hangar (SRV) and keep some cargo racks free</h3><a class="permalink" href="#prep-srv-cargo" title="Permalink">#</a></div>
@@ -612,12 +516,12 @@ a{color:var(--amber-lt)}
       </div>
     </article>
 
-    <article class="stepB ac-farm" id="farm-jameson">
+    <article class="step-card ac-farm" id="farm-jameson">
       <div class="step-rail"><div class="step-no">STEP<b>02</b></div><span class="badge b-farm">Farm</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Stand up the <a href="farms/jameson-crash-site.html">Encoded</a> farm <span class="sub">— Jameson Crash Site</span></h3><a class="permalink" href="#farm-jameson" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>HIP 12099</b></div><div class="lk">Body</div><div class="lv">1 B</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>HIP 12099</b></div><div class="lk">Body</div><div class="lv">1 B</div></div></div>
           <div class="rc"><div class="rcl">Supplies</div><div class="rcv">Encoded data — FSD wake, firmware, shield &amp; scan data</div></div>
           <div class="rc"><div class="rcl">Method</div><div class="rcv">SRV-scan the data points, relog to respawn them</div></div>
         </div>
@@ -625,12 +529,12 @@ a{color:var(--amber-lt)}
       </div>
     </article>
 
-    <article class="stepB ac-farm" id="farm-davs-hope">
+    <article class="step-card ac-farm" id="farm-davs-hope">
       <div class="step-rail"><div class="step-no">STEP<b>03</b></div><span class="badge b-farm">Farm</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Stand up the <a href="farms/davs-hope.html">Manufactured</a> farm <span class="sub">— Dav's Hope</span></h3><a class="permalink" href="#farm-davs-hope" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Hyades Sector DR-V c2-23</b></div><div class="lk">Body</div><div class="lv">A 5</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Hyades Sector DR-V c2-23</b></div><div class="lk">Body</div><div class="lv">A 5</div></div></div>
           <div class="rc"><div class="rcl">Supplies</div><div class="rcv">Manufactured G1–G3 (alloys, capacitors, composites…)</div></div>
           <div class="rc"><div class="rcl">Method</div><div class="rcv">SRV the ruins loop, relog to respawn</div></div>
         </div>
@@ -638,12 +542,12 @@ a{color:var(--amber-lt)}
       </div>
     </article>
 
-    <article class="stepB ac-farm" id="farm-crystalline">
+    <article class="step-card ac-farm" id="farm-crystalline">
       <div class="step-rail"><div class="step-no">STEP<b>04</b></div><span class="badge b-farm">Farm</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Stand up the <a href="farms/crystalline-shards.html">Raw</a> farm <span class="sub">— Crystalline Shards</span></h3><a class="permalink" href="#farm-crystalline" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">Systems</div><div class="lv"><b>HIP 36601</b> · Outotz LS-K D8-3 · HR 3230</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">Systems</div><div class="lv"><b>HIP 36601</b> · Outotz LS-K D8-3 · HR 3230</div></div></div>
           <div class="rc"><div class="rcl">Supplies</div><div class="rcv">The seven Grade-4 raw "category-tops"</div></div>
           <div class="rc"><div class="rcl">Method</div><div class="rcv">DSS the shard sites, SRV the clusters, trade down</div></div>
         </div>
@@ -651,12 +555,12 @@ a{color:var(--amber-lt)}
       </div>
     </article>
 
-    <article class="stepB ac-farm" id="farm-hge">
+    <article class="step-card ac-farm" id="farm-hge">
       <div class="step-rail"><div class="step-no">STEP<b>05</b></div><span class="badge b-farm">Farm</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Stand up the <a href="farms/high-grade-emissions.html">rare-Manufactured</a> farm <span class="sub">— High Grade Emissions</span></h3><a class="permalink" href="#farm-hge" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv">No fixed system — find live signals</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv">No fixed system — find live signals</div></div></div>
           <div class="rc"><div class="rcl">Supplies</div><div class="rcv">G4–G5 manufactured (Imperial Shielding, Core Dynamics Composites…)</div></div>
           <div class="rc"><div class="rcl">Method</div><div class="rcv">Collector limpets vacuum the signal source; relog to refill</div></div>
         </div>
@@ -673,15 +577,15 @@ a{color:var(--amber-lt)}
   <p class="lead">The entry tier — no referral or permit gates. Meet a simple condition, hand in one item, and you're in. Each of these five is followed by a <span class="badge b-climb">Climb</span> step: rolling them to Grade&nbsp;3 (a little into Grade&nbsp;4) is what unlocks the Tier&nbsp;2 engineers they refer you to. Two of them (<a href="engineers.html#eng-elvira-martuuk">Martuuk</a>, <a href="engineers.html#eng-liz-ryder">Liz Ryder</a>) are mainly gateways — you climb them only for the referral.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-felicity-farseer">Felicity Farseer</a> · <a href="engineers.html#eng-elvira-martuuk">Elvira Martuuk</a> · <a href="engineers.html#eng-the-dweller">The Dweller</a> · <a href="engineers.html#eng-tod-mcquinn">Tod McQuinn</a> · <a href="engineers.html#eng-liz-ryder">Liz Ryder</a></div>
 
-  <div class="steps">
+  <div class="step-cards">
 
     <!-- Farseer -->
-    <article class="stepB ac-unlock" id="unlock-felicity-farseer">
+    <article class="step-card ac-unlock" id="unlock-felicity-farseer">
       <div class="step-rail"><div class="step-no">STEP<b>06</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-felicity-farseer">Felicity Farseer</a> <span class="sub">— hand in 1× Meta Alloy</span></h3><a class="permalink" href="#unlock-felicity-farseer" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Deciat</b></div><div class="lk">Body</div><div class="lv">6 A</div><div class="lk">Settlement</div><div class="lv">Farseer Inc</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Deciat</b></div><div class="lk">Body</div><div class="lv">6 A</div><div class="lk">Settlement</div><div class="lv">Farseer Inc</div></div></div>
           <div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Scout</b> or higher</div></div>
           <div class="rc"><div class="rcl">Hand-in</div><div class="rcv">1× <b>Meta Alloy</b></div></div>
           <div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-frame-shift-drive">Frame Shift Drive</a>, G3 <a href="blueprints.html#grp-thrusters">thrusters</a>/<a href="blueprints.html#grp-sensors">sensors</a>, more</div></div>
@@ -691,7 +595,7 @@ a{color:var(--amber-lt)}
         <div class="step-flag"><span class="ff">Note</span>Farseer moved to <b>Deciat</b> during the Thargoid War (older guides still say Maia). The Meta Alloy is still sold at <b>Darnielle's Progress</b> in Maia (~80k CR), but you can now also scoop one free from any <b>Titan wreck</b> debris field, or buy one from a fleet carrier parked in Deciat.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-felicity-farseer">
+    <article class="step-card ac-climb" id="refer-felicity-farseer">
       <div class="step-rail"><div class="step-no">STEP<b>07</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Farseer to Grade 3 <span class="sub">→ earn the referral to <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a></span></h3><a class="permalink" href="#refer-felicity-farseer" title="Permalink">#</a></div>
@@ -704,12 +608,12 @@ a{color:var(--amber-lt)}
     </article>
 
     <!-- Elvira Martuuk -->
-    <article class="stepB ac-unlock" id="unlock-elvira-martuuk">
+    <article class="step-card ac-unlock" id="unlock-elvira-martuuk">
       <div class="step-rail"><div class="step-no">STEP<b>08</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-elvira-martuuk">Elvira Martuuk</a> <span class="sub">— hand in 3× Soontill Relics</span></h3><a class="permalink" href="#unlock-elvira-martuuk" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Khun</b></div><div class="lk">Body</div><div class="lv">5</div><div class="lk">Settlement</div><div class="lv">Long Sight Base</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Khun</b></div><div class="lk">Body</div><div class="lv">5</div><div class="lk">Settlement</div><div class="lv">Long Sight Base</div></div></div>
           <div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Travelled <b>300 ly</b> from your career start (long done)</div></div>
           <div class="rc"><div class="rcl">Hand-in</div><div class="rcv">3× <b>Soontill Relics</b></div></div>
           <div class="rc"><div class="rcl">Role</div><div class="rcv">Gateway — climb only for the referral</div></div>
@@ -717,7 +621,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> the meeting requirement (300&nbsp;ly travelled in total) you almost certainly already meet. The hand-in is the fiddly part: <b>Soontill Relics</b> have a single seller in the entire galaxy — <b>Garry's Reclamations</b> at <b>Cheranovsky City</b> in the <b>Ngurii</b> system. Fly there, buy 3 off the commodity market, carry them to <b>Long Sight Base</b> in Khun, and hand them in. She offers the same Grade&nbsp;5 FSD as Farseer, so you don't need her for the mod itself — unlock her purely because climbing her opens three downstream engineers (see next step).</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-elvira-martuuk">
+    <article class="step-card ac-climb" id="refer-elvira-martuuk">
       <div class="step-rail"><div class="step-no">STEP<b>09</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Martuuk to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-marco-qwent">Qwent</a>, <a href="engineers.html#eng-zacariah-nemo">Nemo</a> &amp; <a href="engineers.html#eng-mel-brandon">Mel Brandon</a></span></h3><a class="permalink" href="#refer-elvira-martuuk" title="Permalink">#</a></div>
@@ -730,12 +634,12 @@ a{color:var(--amber-lt)}
     </article>
 
     <!-- The Dweller -->
-    <article class="stepB ac-unlock" id="unlock-the-dweller">
+    <article class="step-card ac-unlock" id="unlock-the-dweller">
       <div class="step-rail"><div class="step-no">STEP<b>10</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-the-dweller">The Dweller</a> <span class="sub">— pay 500,000 CR</span></h3><a class="permalink" href="#unlock-the-dweller" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Wyrd</b></div><div class="lk">Body</div><div class="lv">A 2</div><div class="lk">Settlement</div><div class="lv">Black Hide</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Wyrd</b></div><div class="lk">Body</div><div class="lv">A 2</div><div class="lk">Settlement</div><div class="lv">Black Hide</div></div></div>
           <div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Have dealt at <b>5 different black markets</b></div></div>
           <div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Pay <b>500,000 CR</b> (no commodity)</div></div>
           <div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-distributor">Power Distributor</a>, <a href="blueprints.html#grp-pulse-laser">pulse</a>/<a href="blueprints.html#grp-burst-laser">burst</a>/<a href="blueprints.html#grp-beam-laser">beam</a> lasers</div></div>
@@ -743,7 +647,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> the meeting requirement is to have sold at <b>five different black markets</b>. Black markets live at stations in <b>Anarchy</b>-controlled systems — dock at one, open <b>Contacts → Black Market</b>, sell 1t of any cargo (a cheap commodity is fine), then repeat in four more different Anarchy systems. Once that's done, fly to <b>Black Hide</b> in <b>Wyrd</b> and pay the <b>500,000 CR</b> fee — no commodity needed. His <a href="blueprints.html#bp-power-distributor-charge-enhanced">Charge Enhanced</a> Power Distributor is a blueprint you'll use on almost every ship.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-the-dweller">
+    <article class="step-card ac-climb" id="refer-the-dweller">
       <div class="step-rail"><div class="step-no">STEP<b>11</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb The Dweller to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-lei-cheung">Lei Cheung</a> &amp; <a href="engineers.html#eng-marsha-hicks">Marsha Hicks</a></span></h3><a class="permalink" href="#refer-the-dweller" title="Permalink">#</a></div>
@@ -756,12 +660,12 @@ a{color:var(--amber-lt)}
     </article>
 
     <!-- Tod McQuinn -->
-    <article class="stepB ac-unlock" id="unlock-tod-mcquinn">
+    <article class="step-card ac-unlock" id="unlock-tod-mcquinn">
       <div class="step-rail"><div class="step-no">STEP<b>12</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-tod-mcquinn">Tod McQuinn</a> <span class="sub">— hand in 100,000 CR of bounty vouchers</span></h3><a class="permalink" href="#unlock-tod-mcquinn" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Wolf 397</b></div><div class="lk">Body</div><div class="lv">Trus Madi</div><div class="lk">Settlement</div><div class="lv">Trophy Camp</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Wolf 397</b></div><div class="lk">Body</div><div class="lv">Trus Madi</div><div class="lk">Settlement</div><div class="lv">Trophy Camp</div></div></div>
           <div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Earn <b>15+ bounty vouchers</b></div></div>
           <div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>100,000 CR</b> of bounty vouchers (any faction)</div></div>
           <div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-multi-cannon">Multi-Cannon</a> &amp; <a href="blueprints.html#grp-rail-gun">Rail Gun</a></div></div>
@@ -769,7 +673,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> both the meeting requirement and the hand-in are covered by a short bounty-hunting session. Head to a <b>Resource Extraction Site</b> (RES) in a planetary ring, or a system's <b>Nav Beacon</b>, scan ships and destroy any marked <b>WANTED</b> — each kill banks a bounty voucher. Around 30 minutes nets the 15-voucher requirement and well over 100,000 CR in vouchers. Then dock at <b>Trophy Camp</b> in <b>Wolf 397</b> and redeem the vouchers there (any faction's bounties count). His <a href="blueprints.html#bp-multi-cannon-overcharged">Multi-Cannon Overcharged</a> is the staple PvE weapon blueprint.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-tod-mcquinn">
+    <article class="step-card ac-climb" id="refer-tod-mcquinn">
       <div class="step-rail"><div class="step-no">STEP<b>13</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Tod McQuinn to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-selene-jean">Selene Jean</a> &amp; <a href="engineers.html#eng-petra-olmanova">Petra Olmanova</a></span></h3><a class="permalink" href="#refer-tod-mcquinn" title="Permalink">#</a></div>
@@ -782,12 +686,12 @@ a{color:var(--amber-lt)}
     </article>
 
     <!-- Liz Ryder -->
-    <article class="stepB ac-unlock" id="unlock-liz-ryder">
+    <article class="step-card ac-unlock" id="unlock-liz-ryder">
       <div class="step-rail"><div class="step-no">STEP<b>14</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-liz-ryder">Liz Ryder</a> <span class="sub">— hand in 200× Landmines</span></h3><a class="permalink" href="#unlock-liz-ryder" title="Permalink">#</a></div>
         <div class="step-fields">
-          <div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Eurybia</b></div><div class="lk">Body</div><div class="lv">Makalu</div><div class="lk">Settlement</div><div class="lv">Demolition Unlimited</div></div></div>
+          <div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Eurybia</b></div><div class="lk">Body</div><div class="lv">Makalu</div><div class="lk">Settlement</div><div class="lv">Demolition Unlimited</div></div></div>
           <div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv"><b>Cordial+</b> with the Eurybia Blue Mafia</div></div>
           <div class="rc"><div class="rcl">Hand-in</div><div class="rcv">200× <b>Landmines</b> (buy at Eurybia / Lave / Diaguandri)</div></div>
           <div class="rc"><div class="rcl">Role</div><div class="rcv">Gateway — climb only for the referral</div></div>
@@ -795,7 +699,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> first raise your reputation with the <b>Eurybia Blue Mafia</b> faction to <b>Cordial</b> or better — run a few of their missions in the <b>Eurybia</b> system (selling exploration data there also nudges it). Then buy <b>200 Landmines</b> from a commodity market (Eurybia, Lave or Diaguandri all stock them); you may need two markets to gather 200, and they ride in your cargo hold. Carry them to <b>Demolition Unlimited</b> on Makalu and hand them in. Liz is mainly a gateway — unlock her for the referrals to Hera Tani and Etienne Dorn.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-liz-ryder">
+    <article class="step-card ac-climb" id="refer-liz-ryder">
       <div class="step-rail"><div class="step-no">STEP<b>15</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Liz Ryder to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-hera-tani">Hera Tani</a> &amp; <a href="engineers.html#eng-etienne-dorn">Etienne Dorn</a></span></h3><a class="permalink" href="#refer-liz-ryder" title="Permalink">#</a></div>
@@ -816,18 +720,18 @@ a{color:var(--amber-lt)}
   <p class="lead">Reached by referral from Tier 1 — no new permits yet, but the hand-ins get larger and a few need a faction invite. Climb the five that branch onward (everyone except <a href="engineers.html#eng-zacariah-nemo">Nemo</a>) to open Tier 3, and let their referrals tell you which Phase 03 grinds to start.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a> · <a href="engineers.html#eng-selene-jean">Selene Jean</a> · <a href="engineers.html#eng-hera-tani">Hera Tani</a> · <a href="engineers.html#eng-lei-cheung">Lei Cheung</a> · <a href="engineers.html#eng-marco-qwent">Marco Qwent</a> · <a href="engineers.html#eng-zacariah-nemo">Zacariah Nemo</a></div>
 
-  <div class="steps">
+  <div class="step-cards">
 
-    <article class="stepB ac-unlock" id="unlock-juri-ishmaak">
+    <article class="step-card ac-unlock" id="unlock-juri-ishmaak">
       <div class="step-rail"><div class="step-no">STEP<b>16</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a> <span class="sub">— hand in Federal combat bonds</span></h3><a class="permalink" href="#unlock-juri-ishmaak" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Giryak</b></div><div class="lk">Body</div><div class="lv">2 A</div><div class="lk">Settlement</div><div class="lv">Pater's Memorial</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Claim <b>50+ Federal combat bonds</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>100,000–1,000,000 CR</b> of Federal combat bonds</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv"><a href="blueprints.html#grp-sensors">sensors</a>, <a href="blueprints.html#grp-mine-launcher">mines</a> &amp; <a href="blueprints.html#grp-fsd-interdictor">FSD interdictor</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Giryak</b></div><div class="lk">Body</div><div class="lv">2 A</div><div class="lk">Settlement</div><div class="lv">Pater's Memorial</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Claim <b>50+ Federal combat bonds</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>100,000–1,000,000 CR</b> of Federal combat bonds</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv"><a href="blueprints.html#grp-sensors">sensors</a>, <a href="blueprints.html#grp-mine-launcher">mines</a> &amp; <a href="blueprints.html#grp-fsd-interdictor">FSD interdictor</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> You reach Juri from <a href="engineers.html#eng-felicity-farseer">Farseer</a>’s climb (Phase 01). Federal combat bonds come from <b>Combat Zones</b> — pick a side in a war/civil-war system, fly to the CZ, and destroy enemy ships for that faction; each kill banks a bond. Earn 50+ bonds to meet him, bank the credit value, then redeem at Pater’s Memorial.</div>
         <div class="step-flag"><span class="ff">Note</span>INARA notes the exact hand-in varies (<b>100,000–1,000,000 CR</b>) under conditions that aren’t fully documented — carry at least <b>1,000,000 CR</b> of Federal combat bonds to be safe.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-juri-ishmaak">
+    <article class="step-card ac-climb" id="refer-juri-ishmaak">
       <div class="step-rail"><div class="step-no">STEP<b>17</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Juri Ishmaak to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-the-sarge">The Sarge</a> &amp; <a href="engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a></span></h3><a class="permalink" href="#refer-juri-ishmaak" title="Permalink">#</a></div>
@@ -835,15 +739,15 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Roll any of his sensor/mine/interdictor blueprints to lift reputation. Passing Grade 3 (a little into Grade 4) refers you to two Federal Tier 3 engineers — both permit/rank-gated, so this is also your cue to start the Phase 03 Federal Navy grind.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-selene-jean">
+    <article class="step-card ac-unlock" id="unlock-selene-jean">
       <div class="step-rail"><div class="step-no">STEP<b>18</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-selene-jean">Selene Jean</a> <span class="sub">— hand in 10× Painite</span></h3><a class="permalink" href="#unlock-selene-jean" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Kuk</b></div><div class="lk">Body</div><div class="lv">B 3</div><div class="lk">Settlement</div><div class="lv">Prospector's Rest</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Mine <b>500 t of ore</b> (any type, cumulative)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10× <b>Painite</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-hull-reinforcement-package">hull reinforcement</a> &amp; <a href="blueprints.html#grp-bulkheads">armour</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Kuk</b></div><div class="lk">Body</div><div class="lv">B 3</div><div class="lk">Settlement</div><div class="lv">Prospector's Rest</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Mine <b>500 t of ore</b> (any type, cumulative)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10× <b>Painite</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-hull-reinforcement-package">hull reinforcement</a> &amp; <a href="blueprints.html#grp-bulkheads">armour</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-tod-mcquinn">Tod McQuinn</a>’s climb. Fit a mining laser, refinery and a <a href="blueprints.html#grp-prospector-limpet-controller">Prospector</a>/<a href="blueprints.html#grp-collector-limpet-controller">Collector</a> limpet setup, then laser- or core-mine asteroids until you’ve refined 500 t total — Painite itself counts, so mine 10+ Painite (laser-mineable in metallic rings, or core-mine) and you clear both the requirement and the hand-in together. Deliver at Prospector’s Rest. Selene’s armour is the backbone of any combat build.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-selene-jean">
+    <article class="step-card ac-climb" id="refer-selene-jean">
       <div class="step-rail"><div class="step-no">STEP<b>19</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Selene Jean to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-didi-vatermann">Didi Vatermann</a> &amp; <a href="engineers.html#eng-bill-turner">Bill Turner</a></span></h3><a class="permalink" href="#refer-selene-jean" title="Permalink">#</a></div>
@@ -851,15 +755,15 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Roll heavy-duty armour or a hull reinforcement (both worth keeping) to Grade 3. The referrals open a trade-ranked engineer and a permit-gated <a href="../systems/superpower-rank.html#pow-all">Alliance</a> engineer — flag the Alioth permit grind for Phase 03.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-hera-tani">
+    <article class="step-card ac-unlock" id="unlock-hera-tani">
       <div class="step-rail"><div class="step-no">STEP<b>20</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-hera-tani">Hera Tani</a> <span class="sub">— hand in 50× Kamitra Cigars</span></h3><a class="permalink" href="#unlock-hera-tani" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Kuwemaki</b></div><div class="lk">Body</div><div class="lv">A 3 A</div><div class="lk">Settlement</div><div class="lv">The Jet's Hole</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv"><a href="../systems/superpower-rank.html#pow-emp">Empire</a> rank <b>Outsider</b> or higher</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Kamitra Cigars</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-plant">power plant</a>, <a href="blueprints.html#grp-power-distributor">power distributor</a> &amp; <a href="blueprints.html#grp-detailed-surface-scanner">DSS</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Kuwemaki</b></div><div class="lk">Body</div><div class="lv">A 3 A</div><div class="lk">Settlement</div><div class="lv">The Jet's Hole</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv"><a href="../systems/superpower-rank.html#pow-emp">Empire</a> rank <b>Outsider</b> or higher</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Kamitra Cigars</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-plant">power plant</a>, <a href="blueprints.html#grp-power-distributor">power distributor</a> &amp; <a href="blueprints.html#grp-detailed-surface-scanner">DSS</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-liz-ryder">Liz Ryder</a>’s climb. <b>Outsider</b> is the very first Empire rank — a couple of Imperial missions earns it (see Phase 03). Kamitra Cigars are a rare commodity sold at Kamitra; buy 50 and carry them in cargo to The Jet’s Hole. Hera’s G5 power plant (with Thermal Spread) is essential for combat ships.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-hera-tani">
+    <article class="step-card ac-climb" id="refer-hera-tani">
       <div class="step-rail"><div class="step-no">STEP<b>21</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Hera Tani to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-broo-tarquin">Broo Tarquin</a> &amp; <a href="engineers.html#eng-tiana-fortune">Tiana Fortune</a></span></h3><a class="permalink" href="#refer-hera-tani" title="Permalink">#</a></div>
@@ -867,15 +771,15 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Roll an Overcharged power plant (you want this anyway) to Grade 3. Referrals open a combat-ranked laser engineer and a permit-gated Imperial engineer — cue the Achenar permit grind in Phase 03.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-lei-cheung">
+    <article class="step-card ac-unlock" id="unlock-lei-cheung">
       <div class="step-rail"><div class="step-no">STEP<b>22</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-lei-cheung">Lei Cheung</a> <span class="sub">— hand in 200× Gold</span></h3><a class="permalink" href="#unlock-lei-cheung" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Laksak</b></div><div class="lk">Body</div><div class="lv">A 1</div><div class="lk">Settlement</div><div class="lv">Trader's Rest</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade at <b>50 different markets</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">200× <b>Gold</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-shield-generator">shield generators</a> &amp; <a href="blueprints.html#grp-shield-booster">shield boosters</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Laksak</b></div><div class="lk">Body</div><div class="lv">A 1</div><div class="lk">Settlement</div><div class="lv">Trader's Rest</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade at <b>50 different markets</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">200× <b>Gold</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-shield-generator">shield generators</a> &amp; <a href="blueprints.html#grp-shield-booster">shield boosters</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-the-dweller">The Dweller</a>’s climb. “Trade at 50 markets” just means buy or sell a commodity at 50 different station markets — it accrues naturally, or speed it up with a loop of cheap buy/sell stops. Buy 200 Gold (cheap, widely stocked) and carry it to Trader’s Rest. Lei’s shields pair with Thermo Block / Enhanced Low Power experimentals.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-lei-cheung">
+    <article class="step-card ac-climb" id="refer-lei-cheung">
       <div class="step-rail"><div class="step-no">STEP<b>23</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Lei Cheung to Grade 3 <span class="sub">→ referral to <a href="engineers.html#eng-ram-tah">Ram Tah</a></span></h3><a class="permalink" href="#refer-lei-cheung" title="Permalink">#</a></div>
@@ -883,16 +787,16 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Roll a Reinforced shield generator (a keeper) to Grade 3 to earn the referral to Ram Tah, who also opens Guardian module unlocks.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-marco-qwent">
+    <article class="step-card ac-unlock" id="unlock-marco-qwent">
       <div class="step-rail"><div class="step-no">STEP<b>24</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-marco-qwent">Marco Qwent</a> <span class="sub">— hand in 25× Modular Terminals</span></h3><a class="permalink" href="#unlock-marco-qwent" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Sirius</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">Lucifer</div><div class="lk">Settlement</div><div class="lv">Qwent Research Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from <b>Sirius Corporation</b> (Sirius permit)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Modular Terminals</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-plant">power plant</a> &amp; <a href="blueprints.html#grp-power-distributor">power distributor</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Sirius</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">Lucifer</div><div class="lk">Settlement</div><div class="lv">Qwent Research Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from <b>Sirius Corporation</b> (Sirius permit)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Modular Terminals</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-plant">power plant</a> &amp; <a href="blueprints.html#grp-power-distributor">power distributor</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-elvira-martuuk">Elvira Martuuk</a>’s climb. Marco is the gateway to <a href="engineers.html#eng-professor-palin">Palin</a> and <a href="engineers.html#eng-lori-jameson">Lori Jameson</a>, so he’s a priority. <b>Modular Terminals</b> are a mission-reward-only commodity — run missions for factions until you collect 25, then deliver to Qwent Research Base. He needs the <b>Sirius permit</b> first (see note).</div>
         <div class="step-flag"><span class="ff">Note</span><b>Powerplay 2.0 removed the old shortcut.</b> Pledging to <a href="../systems/powerplay.html#pw-li-yong-rui">Li Yong-Rui</a> no longer grants the Sirius permit. The only route now is to grind the <b>Sirius Corporation</b> minor faction (in the Sirius system) up to <b>Allied</b> via missions until they invite you. Don’t over-build Sirius rep though — <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a> (Phase 06) needs you <b>Unfriendly</b> with Sirius, so unlock Marco first.</div>
       </div>
     </article>
-    <article class="stepB ac-climb" id="refer-marco-qwent">
+    <article class="step-card ac-climb" id="refer-marco-qwent">
       <div class="step-rail"><div class="step-no">STEP<b>25</b></div><span class="badge b-climb">Climb</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Climb Marco Qwent to Grade 3 <span class="sub">→ referrals to <a href="engineers.html#eng-professor-palin">Professor Palin</a> &amp; <a href="engineers.html#eng-lori-jameson">Lori Jameson</a></span></h3><a class="permalink" href="#refer-marco-qwent" title="Permalink">#</a></div>
@@ -900,11 +804,11 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Roll a power-distributor or power-plant blueprint to Grade 3. The referrals open the two most sought-after Tier 3 engineers — Palin (G5 Dirty Drive thrusters) and Lori Jameson — both gated behind the Phase 03 grinds.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-zacariah-nemo">
+    <article class="step-card ac-unlock" id="unlock-zacariah-nemo">
       <div class="step-rail"><div class="step-no">STEP<b>26</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-zacariah-nemo">Zacariah Nemo</a> <span class="sub">— hand in 25× Xihe Companions</span></h3><a class="permalink" href="#unlock-zacariah-nemo" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Yoru</b></div><div class="lk">Body</div><div class="lv">4</div><div class="lk">Settlement</div><div class="lv">Nemo Cyber Party Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from the <b>Party of Yoru</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Xihe Companions</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fragment-cannon">fragment cannons</a> &amp; <a href="blueprints.html#grp-multi-cannon">multi-cannons</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Yoru</b></div><div class="lk">Body</div><div class="lv">4</div><div class="lk">Settlement</div><div class="lv">Nemo Cyber Party Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from the <b>Party of Yoru</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Xihe Companions</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fragment-cannon">fragment cannons</a> &amp; <a href="blueprints.html#grp-multi-cannon">multi-cannons</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-elvira-martuuk">Elvira Martuuk</a>’s climb. Earn the Party of Yoru invite by running missions for them in the Yoru system. <b>Xihe Companions</b> are a rare commodity from the Xihe system — buy 25 and carry to Nemo Cyber Party Base. Nemo is a leaf (no onward referral); unlock him only if you want his fragment-cannon mods.</div>
       </div>
     </article>
@@ -916,9 +820,9 @@ a{color:var(--amber-lt)}
   <p class="lead">The deepest engineers sit behind faction ranks and system permits. None of this is a single sit-down grind — most of it accrues from the combat, trade and travel you’re already doing. The key distinction: <b>Federal and Imperial</b> rank permits are granted automatically on rank-up, while the <b>Alioth</b> permit needs a specific mission after you max Alliance reputation.</p>
   <div class="phase-meta">Gates · Federal Navy · Imperial Navy · Alioth permit · Elite → Shinrarta · Combat / Trade / Exploration ranks</div>
 
-  <div class="steps">
+  <div class="step-cards">
 
-    <article class="stepB ac-grind" id="grind-federal-navy">
+    <article class="step-card ac-grind" id="grind-federal-navy">
       <div class="step-rail"><div class="step-no">STEP<b>27</b></div><span class="badge b-grind">Grind</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Rank up the <b>Federal Navy</b> <span class="sub">→ Sol permit &amp; Midshipman</span></h3><a class="permalink" href="#grind-federal-navy" title="Permalink">#</a></div>
@@ -926,7 +830,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Run missions for <a href="../systems/superpower-rank.html#pow-fed">Federation</a>-aligned factions to raise your Federal Navy rank; “Navy promotion” (Ascension) missions appear once you’re close to the next rank. <b>The Sarge</b> needs rank <b>Midshipman</b>; the <b>Sol permit</b> (for Bris Dekker) is granted automatically at the required Federal rank — no separate permit mission. Sothis/Ceos courier missions are a fast rank route.</div>
       </div>
     </article>
-    <article class="stepB ac-grind" id="grind-imperial-navy">
+    <article class="step-card ac-grind" id="grind-imperial-navy">
       <div class="step-rail"><div class="step-no">STEP<b>28</b></div><span class="badge b-grind">Grind</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Rank up the <b>Imperial Navy</b> <span class="sub">→ Achenar permit &amp; Outsider</span></h3><a class="permalink" href="#grind-imperial-navy" title="Permalink">#</a></div>
@@ -934,7 +838,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Run missions for Empire-aligned factions. <b>Outsider</b> (for Hera Tani) is the first Imperial rank and comes almost instantly. Keep going for the <b>Achenar permit</b> (for Tiana Fortune), which is granted automatically on reaching the required Imperial rank. Imperial donation/charity missions (e.g. around Ngalinn/Aitvas) rank you fast.</div>
       </div>
     </article>
-    <article class="stepB ac-grind" id="grind-alliance-alioth">
+    <article class="step-card ac-grind" id="grind-alliance-alioth">
       <div class="step-rail"><div class="step-no">STEP<b>29</b></div><span class="badge b-grind">Grind</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Earn the <b>Alioth permit</b> <span class="sub">→ Alliance reputation + permit mission</span></h3><a class="permalink" href="#grind-alliance-alioth" title="Permalink">#</a></div>
@@ -942,7 +846,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Reach <b>Friendly</b> with the Alliance and max reputation (<b>Allied</b>) with the <b>Alioth Independents</b> faction by running their missions. Unlike Federal/Imperial permits, the Alioth permit is <b>not</b> auto-granted — once you’re Allied, head to <b>78 Ursae Majoris / Rominger Dock</b> and accept the permit-grant mission from the Alioth Independents representatives.</div>
       </div>
     </article>
-    <article class="stepB ac-grind" id="grind-elite-shinrarta">
+    <article class="step-card ac-grind" id="grind-elite-shinrarta">
       <div class="step-rail"><div class="step-no">STEP<b>30</b></div><span class="badge b-grind">Grind</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Reach <b>Elite</b> → Shinrarta permit <span class="sub">→ Founders World access</span></h3><a class="permalink" href="#grind-elite-shinrarta" title="Permalink">#</a></div>
@@ -950,7 +854,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Reach rank <b>Elite</b> (grade I) in <b>any single career</b> — Combat, Trade or Exploration. Doing so grants the <b>Shinrarta Dezhra</b> (Founders World) permit automatically, which is where Lori Jameson lives. Exploration tends to be the quickest career to Elite via long data-selling expeditions.</div>
       </div>
     </article>
-    <article class="stepB ac-grind" id="grind-combat-ranks">
+    <article class="step-card ac-grind" id="grind-combat-ranks">
       <div class="step-rail"><div class="step-no">STEP<b>31</b></div><span class="badge b-grind">Grind</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Push your <b>Combat rank</b> <span class="sub">→ Competent → Dangerous → Expert</span></h3><a class="permalink" href="#grind-combat-ranks" title="Permalink">#</a></div>
@@ -958,7 +862,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> These three combat-rank gates come naturally from the bounty hunting and Combat-Zone work you already do for Tod McQuinn and Juri Ishmaak. Keep ratting RES sites and CZs until you’re at least <b>Expert</b> and all three are covered.</div>
       </div>
     </article>
-    <article class="stepB ac-grind" id="grind-trade-exploration">
+    <article class="step-card ac-grind" id="grind-trade-exploration">
       <div class="step-rail"><div class="step-no">STEP<b>32</b></div><span class="badge b-grind">Grind</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Tick over <b>Trade &amp; Exploration</b> ranks <span class="sub">→ Merchant, Dealer &amp; Surveyor</span></h3><a class="permalink" href="#grind-trade-exploration" title="Permalink">#</a></div>
@@ -974,66 +878,66 @@ a{color:var(--amber-lt)}
   <p class="lead">The deep bench — most are gated behind the Phase 03 permits and ranks, and several want rare commodities or high-grade encoded data. They’re mostly leaves (no onward ship referral), so the order here is just convenience: clear them as their gates come online.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-the-sarge">The Sarge</a> · <a href="engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a> · <a href="engineers.html#eng-didi-vatermann">Didi Vatermann</a> · <a href="engineers.html#eng-bill-turner">Bill Turner</a> · <a href="engineers.html#eng-broo-tarquin">Broo Tarquin</a> · <a href="engineers.html#eng-tiana-fortune">Tiana Fortune</a> · <a href="engineers.html#eng-ram-tah">Ram Tah</a> · <a href="engineers.html#eng-professor-palin">Professor Palin</a> · <a href="engineers.html#eng-lori-jameson">Lori Jameson</a> · <a href="engineers.html#eng-chloe-sedesi">Chloe Sedesi</a></div>
 
-  <div class="steps">
+  <div class="step-cards">
 
-    <article class="stepB ac-unlock" id="unlock-the-sarge">
+    <article class="step-card ac-unlock" id="unlock-the-sarge">
       <div class="step-rail"><div class="step-no">STEP<b>33</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-the-sarge">The Sarge</a> <span class="sub">— hand in 50× Aberrant Shield Pattern Analysis</span></h3><a class="permalink" href="#unlock-the-sarge" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Beta-3 Tucani</b></div><div class="lk">Body</div><div class="lv">2 B A</div><div class="lk">Settlement</div><div class="lv">The Beach</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Federal Navy rank <b>Midshipman</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Aberrant Shield Pattern Analysis</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-cannon">cannons</a>, <a href="blueprints.html#grp-rail-gun">rail guns</a> &amp; ammo mods</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Beta-3 Tucani</b></div><div class="lk">Body</div><div class="lv">2 B A</div><div class="lk">Settlement</div><div class="lv">The Beach</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Federal Navy rank <b>Midshipman</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Aberrant Shield Pattern Analysis</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-cannon">cannons</a>, <a href="blueprints.html#grp-rail-gun">rail guns</a> &amp; ammo mods</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a>’s climb. <b>Aberrant Shield Pattern Analysis</b> is encoded data dropped by ships you scan/destroy; cap a related encoded data type and <b>trade up</b> for it at an Encoded Material Trader if needed. Deliver at The Beach.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-colonel-bris-dekker">
+    <article class="step-card ac-unlock" id="unlock-colonel-bris-dekker">
       <div class="step-rail"><div class="step-no">STEP<b>34</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-colonel-bris-dekker">Colonel Bris Dekker</a> <span class="sub">— hand in Federal combat bonds</span></h3><a class="permalink" href="#unlock-colonel-bris-dekker" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Sol</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">Iapetus</div><div class="lk">Settlement</div><div class="lv">Dekker's Yard</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Federation <b>Friendly</b> + <b>Sol permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>1,000,000+ CR</b> of Federal combat bonds</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fsd-interdictor">FSD interdictor</a> &amp; <a href="blueprints.html#grp-frame-shift-drive">frame shift drive</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Sol</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">Iapetus</div><div class="lk">Settlement</div><div class="lv">Dekker's Yard</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Federation <b>Friendly</b> + <b>Sol permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>1,000,000+ CR</b> of Federal combat bonds</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fsd-interdictor">FSD interdictor</a> &amp; <a href="blueprints.html#grp-frame-shift-drive">frame shift drive</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-juri-ishmaak">Juri Ishmaak</a>’s climb. With the Sol permit from Phase 03, fly to Sol and dock at Dekker’s Yard. Bank a large pile of Federal combat bonds from Combat Zones — sources quote anywhere from 1M to 10M CR, so bring plenty.</div>
         <div class="step-flag"><span class="ff">Note</span>Reported hand-in varies by source (<b>1M–10M CR</b> of Federal combat bonds). Stockpile generously before flying out so you don’t have to leave Sol and come back.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-didi-vatermann">
+    <article class="step-card ac-unlock" id="unlock-didi-vatermann">
       <div class="step-rail"><div class="step-no">STEP<b>35</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-didi-vatermann">Didi Vatermann</a> <span class="sub">— hand in 50× Lavian Brandy</span></h3><a class="permalink" href="#unlock-didi-vatermann" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Leesti</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Vatermann LLC</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank <b>Merchant</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Lavian Brandy</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-shield-booster">shield boosters</a> &amp; <a href="blueprints.html#grp-bi-weave-shield-generator">bi-weave shields</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Leesti</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Vatermann LLC</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank <b>Merchant</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Lavian Brandy</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-shield-booster">shield boosters</a> &amp; <a href="blueprints.html#grp-bi-weave-shield-generator">bi-weave shields</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-selene-jean">Selene Jean</a>’s climb. <b>Lavian Brandy</b> is a rare commodity sold at Lave (Lave Station / Castellan Station) — buy up to the rare-goods allocation, and you may need a couple of trips or a loop to gather 50. Deliver to Vatermann LLC.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-bill-turner">
+    <article class="step-card ac-unlock" id="unlock-bill-turner">
       <div class="step-rail"><div class="step-no">STEP<b>36</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-bill-turner">Bill Turner</a> <span class="sub">— hand in 50× Bromellite</span></h3><a class="permalink" href="#unlock-bill-turner" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Alioth</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Turner Metallics Inc</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Alliance <b>Friendly</b> + <b>Alioth permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Bromellite</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">plasma accelerators, <a href="blueprints.html#grp-sensors">scanners</a> &amp; utilities</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Alioth</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Turner Metallics Inc</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Alliance <b>Friendly</b> + <b>Alioth permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Bromellite</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">plasma accelerators, <a href="blueprints.html#grp-sensors">scanners</a> &amp; utilities</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-selene-jean">Selene Jean</a>’s climb. <b>Bromellite</b> is mined from icy rings (laser or core) or bought at some markets — gather 50 t. With the Alioth permit from Phase 03, deliver to Turner Metallics Inc.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-broo-tarquin">
+    <article class="step-card ac-unlock" id="unlock-broo-tarquin">
       <div class="step-rail"><div class="step-no">STEP<b>37</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-broo-tarquin">Broo Tarquin</a> <span class="sub">— hand in 50× Fujin Tea</span></h3><a class="permalink" href="#unlock-broo-tarquin" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Muang</b></div><div class="lk">Body</div><div class="lv">5 A</div><div class="lk">Settlement</div><div class="lv">Broo's Legacy</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Competent</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Fujin Tea</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-pulse-laser">pulse</a>, <a href="blueprints.html#grp-burst-laser">burst</a> &amp; <a href="blueprints.html#grp-beam-laser">beam lasers</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Muang</b></div><div class="lk">Body</div><div class="lv">5 A</div><div class="lk">Settlement</div><div class="lv">Broo's Legacy</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Competent</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Fujin Tea</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-pulse-laser">pulse</a>, <a href="blueprints.html#grp-burst-laser">burst</a> &amp; <a href="blueprints.html#grp-beam-laser">beam lasers</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-hera-tani">Hera Tani</a>’s climb. <b>Fujin Tea</b> is a rare commodity from the Fujin system — buy 50 and carry to Broo’s Legacy. Broo’s laser mods (Efficient + Thermal Vent) are the meta for beam builds.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-tiana-fortune">
+    <article class="step-card ac-unlock" id="unlock-tiana-fortune">
       <div class="step-rail"><div class="step-no">STEP<b>38</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-tiana-fortune">Tiana Fortune</a> <span class="sub">— hand in 50× Decoded Emission Data</span></h3><a class="permalink" href="#unlock-tiana-fortune" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Achenar</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Fortune's Loss</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Empire <b>Friendly</b> + <b>Achenar permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Decoded Emission Data</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-sensors">sensors</a>, <a href="blueprints.html#grp-kill-warrant-scanner">scanners</a> &amp; limpets</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Achenar</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Fortune's Loss</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Empire <b>Friendly</b> + <b>Achenar permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Decoded Emission Data</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-sensors">sensors</a>, <a href="blueprints.html#grp-kill-warrant-scanner">scanners</a> &amp; limpets</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-hera-tani">Hera Tani</a>’s climb. <b>Decoded Emission Data</b> is encoded data — cap a neighbouring encoded type and trade up if short. With the Achenar permit from Phase 03, deliver to Fortune’s Loss.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-ram-tah">
+    <article class="step-card ac-unlock" id="unlock-ram-tah">
       <div class="step-rail"><div class="step-no">STEP<b>39</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-ram-tah">Ram Tah</a> <span class="sub">— hand in 50× Classified Scan Databanks</span></h3><a class="permalink" href="#unlock-ram-tah" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Meene</b></div><div class="lk">Body</div><div class="lv">AB 5 D</div><div class="lk">Settlement</div><div class="lv">Phoenix Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Surveyor</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Classified Scan Databanks</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv"><a href="blueprints.html#grp-sensors">scanners</a>, limpet controllers &amp; utilities; opens Guardian unlocks</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Meene</b></div><div class="lk">Body</div><div class="lv">AB 5 D</div><div class="lk">Settlement</div><div class="lv">Phoenix Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Surveyor</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">50× <b>Classified Scan Databanks</b> (encoded)</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv"><a href="blueprints.html#grp-sensors">scanners</a>, limpet controllers &amp; utilities; opens Guardian unlocks</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-lei-cheung">Lei Cheung</a>’s climb. <b>Classified Scan Databanks</b> are high-grade encoded data — farm at a data site or trade up. Deliver to Phoenix Base. Ram Tah also runs the Guardian-technology missions, which leads into the next step.</div>
       </div>
     </article>
-    <article class="stepB ac-build" id="build-guardian-fsd-booster">
+    <article class="step-card ac-build" id="build-guardian-fsd-booster">
       <div class="step-rail"><div class="step-no">STEP<b>40</b></div><span class="badge b-build">Build</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Build the <b>Guardian FSD Booster</b> <span class="sub">— Guardian site + Tech Broker</span></h3><a class="permalink" href="#build-guardian-fsd-booster" title="Permalink">#</a></div>
@@ -1042,27 +946,27 @@ a{color:var(--amber-lt)}
         <div class="step-flag"><span class="ff">Note</span>This is a <b>Tech Broker module unlock</b>, not an engineer blueprint — included here because it shares Ram Tah’s Guardian site work. No engineer reputation is involved.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-professor-palin">
+    <article class="step-card ac-unlock" id="unlock-professor-palin">
       <div class="step-rail"><div class="step-no">STEP<b>41</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-professor-palin">Professor Palin</a> <span class="sub">— hand in 25× Sensor Fragments</span></h3><a class="permalink" href="#unlock-professor-palin" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Arque</b></div><div class="lk">Body</div><div class="lv">4 E</div><div class="lk">Settlement</div><div class="lv">Abel Laboratory</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Travelled <b>≥ 5,000 ly</b> from your career start</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Sensor Fragments</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#bp-thrusters-dirty-drive-tuning">Dirty Drive Tuning</a> thrusters &amp; <a href="blueprints.html#grp-frame-shift-drive">FSD</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Arque</b></div><div class="lk">Body</div><div class="lv">4 E</div><div class="lk">Settlement</div><div class="lv">Abel Laboratory</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Travelled <b>≥ 5,000 ly</b> from your career start</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Sensor Fragments</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#bp-thrusters-dirty-drive-tuning">Dirty Drive Tuning</a> thrusters &amp; <a href="blueprints.html#grp-frame-shift-drive">FSD</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-marco-qwent">Marco Qwent</a>’s climb. The 5,000 ly is a max-distance-from-start check — a short trip out and back does it (and the Colonia run in Phase 05 obliterates it). <b>Sensor Fragments</b> are scooped from crashed/active Thargoid sites on planet surfaces with an SRV. Deliver to Abel Laboratory. Palin’s G5 Dirty Drive thrusters are best-in-slot.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-lori-jameson">
+    <article class="step-card ac-unlock" id="unlock-lori-jameson">
       <div class="step-rail"><div class="step-no">STEP<b>42</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-lori-jameson">Lori Jameson</a> <span class="sub">— hand in 25× Kongga Ale</span></h3><a class="permalink" href="#unlock-lori-jameson" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Shinrarta Dezhra</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">A 1</div><div class="lk">Settlement</div><div class="lv">Jameson Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Dangerous</b> + <b>Shinrarta permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Kongga Ale</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-distributor">power distributor</a>, <a href="blueprints.html#grp-sensors">scanners</a>, <a href="blueprints.html#grp-auto-field-maintenance-unit">AFMU</a> &amp; more</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Shinrarta Dezhra</b> <span class="pmt">permit</span></div><div class="lk">Body</div><div class="lv">A 1</div><div class="lk">Settlement</div><div class="lv">Jameson Base</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Dangerous</b> + <b>Shinrarta permit</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Kongga Ale</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-power-distributor">power distributor</a>, <a href="blueprints.html#grp-sensors">scanners</a>, <a href="blueprints.html#grp-auto-field-maintenance-unit">AFMU</a> &amp; more</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-marco-qwent">Marco Qwent</a>’s climb. <b>Kongga Ale</b> is a rare commodity from the Kongga system — buy 25. With Dangerous combat rank and the Shinrarta permit from Phase 03, deliver to Jameson Base on Founders World.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-chloe-sedesi">
+    <article class="step-card ac-unlock" id="unlock-chloe-sedesi">
       <div class="step-rail"><div class="step-no">STEP<b>43</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-chloe-sedesi">Chloe Sedesi</a> <span class="sub">— hand in 25× Sensor Fragments</span></h3><a class="permalink" href="#unlock-chloe-sedesi" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Shenve (Witch Head)</b></div><div class="lk">Body</div><div class="lv">A 6</div><div class="lk">Settlement</div><div class="lv">Cinder Dock</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Travelled <b>≥ 5,000 ly</b> from your career start</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Sensor Fragments</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-thrusters">thrusters</a> — identical to Palin</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Shenve (Witch Head)</b></div><div class="lk">Body</div><div class="lv">A 6</div><div class="lk">Settlement</div><div class="lv">Cinder Dock</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Travelled <b>≥ 5,000 ly</b> from your career start</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Sensor Fragments</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-thrusters">thrusters</a> — identical to Palin</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Located at Cinder Dock in the Witch Head Nebula (~700 ly from the bubble). Same requirement and hand-in as <a href="engineers.html#eng-professor-palin">Palin</a> and the <b>same thruster blueprints</b>.</div>
         <div class="step-flag"><span class="ff">Note</span>Chloe offers the <b>exact same G5 thrusters</b> as <a href="engineers.html#eng-professor-palin">Professor Palin</a> — unlocking Palin already covers them. Only bother with Chloe if you’re passing the Witch Head Nebula anyway, or want a second workshop closer to that region.</div>
       </div>
@@ -1075,9 +979,9 @@ a{color:var(--amber-lt)}
   <p class="lead">Eight engineers — four ship, four on-foot — clustered ~22,000 ly away in the Colonia region. Treat it as one expedition: prep, fly out, and clear all eight before heading back (or relocate a carrier). Selling exploration data on the way out does most of the Colonia Council rep work for you.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-petra-olmanova">Petra Olmanova</a> · <a href="engineers.html#eng-mel-brandon">Mel Brandon</a> · <a href="engineers.html#eng-etienne-dorn">Etienne Dorn</a> · <a href="engineers.html#eng-marsha-hicks">Marsha Hicks</a> · <a href="engineers.html#eng-baltanos">Baltanos</a> · <a href="engineers.html#eng-eleanor-bresa">Eleanor Bresa</a> · <a href="engineers.html#eng-rosa-dayette">Rosa Dayette</a> · <a href="engineers.html#eng-yi-shen">Yi Shen</a></div>
 
-  <div class="steps">
+  <div class="step-cards">
 
-    <article class="stepB ac-prep" id="prep-colonia-cargo">
+    <article class="step-card ac-prep" id="prep-colonia-cargo">
       <div class="step-rail"><div class="step-no">STEP<b>44</b></div><span class="badge b-prep">Prep</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Stage the Colonia unlock cargo &amp; materials</h3><a class="permalink" href="#prep-colonia-cargo" title="Permalink">#</a></div>
@@ -1085,7 +989,7 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> The four ship engineers here are ~22,000 ly away, so do them in one expedition. Outfit a long-range, big-scoop ship with an SRV. Most unlock goods (Progenitor Cells, Occupied Escape Pods, on-foot data) can be sourced in Colonia, but bring the <b>engineering materials</b> you’ll want to actually roll modules there (Colonia outfitting is limited), and consider carrying <b>10 t of mined Osmium</b> for <a href="engineers.html#eng-marsha-hicks">Marsha Hicks</a> so you don’t have to mine on arrival. For <a href="engineers.html#eng-etienne-dorn">Etienne Dorn</a> you’ll need a Hatch Breaker + Collector limpet setup and ≥25 t of free cargo.</div>
       </div>
     </article>
-    <article class="stepB ac-travel" id="travel-colonia">
+    <article class="step-card ac-travel" id="travel-colonia">
       <div class="step-rail"><div class="step-no">STEP<b>45</b></div><span class="badge b-travel">Travel</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Fly to <b>Colonia</b> (~22,000 ly) <span class="sub">→ rep the Colonia Council en route</span></h3><a class="permalink" href="#travel-colonia" title="Permalink">#</a></div>
@@ -1093,67 +997,67 @@ a{color:var(--amber-lt)}
         <div class="step-do"><b class="wd">What to do:</b> Plot the route and make the run. Honk every system and sell the exploration data at the Colonia Connection Highway waypoints and at Colonia hubs like <b>Dove Enigma</b> — this pushes <b>Colonia Council</b> reputation to max. That single act satisfies <a href="engineers.html#eng-baltanos">Baltanos</a>’s Friendly requirement and triggers <a href="engineers.html#eng-mel-brandon">Mel Brandon</a>’s <b>Engineer Invitation Contract</b> mission (deliver data to Whirling Station in Ogmar).</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-petra-olmanova">
+    <article class="step-card ac-unlock" id="unlock-petra-olmanova">
       <div class="step-rail"><div class="step-no">STEP<b>46</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-petra-olmanova">Petra Olmanova</a> <span class="sub">— hand in 200× Progenitor Cells</span></h3><a class="permalink" href="#unlock-petra-olmanova" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Asura</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Sanctuary</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Expert</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">200× <b>Progenitor Cells</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-hull-reinforcement-package">armour</a>, <a href="blueprints.html#grp-auto-field-maintenance-unit">AFMU</a> &amp; defensive utilities</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Asura</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Sanctuary</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank <b>Expert</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">200× <b>Progenitor Cells</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-hull-reinforcement-package">armour</a>, <a href="blueprints.html#grp-auto-field-maintenance-unit">AFMU</a> &amp; defensive utilities</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-tod-mcquinn">Tod McQuinn</a>’s climb. <b>Progenitor Cells</b> are bought at Colonia-region markets — gather 200 and deliver to Sanctuary in Asura.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-mel-brandon">
+    <article class="step-card ac-unlock" id="unlock-mel-brandon">
       <div class="step-rail"><div class="step-no">STEP<b>47</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-mel-brandon">Mel Brandon</a> <span class="sub">— hand in 100,000 CR bounty vouchers</span></h3><a class="permalink" href="#unlock-mel-brandon" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Luchtaine</b></div><div class="lk">Body</div><div class="lv">A 1 C</div><div class="lk">Settlement</div><div class="lv">The Brig</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from the <b>Colonia Council</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>100,000 CR</b> of bounty vouchers</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">lasers, shields, <a href="blueprints.html#grp-thrusters">thrusters</a> &amp; <a href="blueprints.html#grp-shield-cell-bank">SCB</a> — a one-stop 9-module engineer</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Luchtaine</b></div><div class="lk">Body</div><div class="lv">A 1 C</div><div class="lk">Settlement</div><div class="lv">The Brig</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from the <b>Colonia Council</b></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv"><b>100,000 CR</b> of bounty vouchers</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">lasers, shields, <a href="blueprints.html#grp-thrusters">thrusters</a> &amp; <a href="blueprints.html#grp-shield-cell-bank">SCB</a> — a one-stop 9-module engineer</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-elvira-martuuk">Elvira Martuuk</a>’s climb. Complete the <b>Engineer Invitation Contract</b> the Colonia Council offered after you maxed their rep (deliver data to Whirling Station, Ogmar). Then bank 100,000 CR of bounty vouchers from local RES/CZ work and deliver to The Brig. Mel covers nine module types in one stop — a Colonia must-do.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-etienne-dorn">
+    <article class="step-card ac-unlock" id="unlock-etienne-dorn">
       <div class="step-rail"><div class="step-no">STEP<b>48</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-etienne-dorn">Etienne Dorn</a> <span class="sub">— hand in 25× Occupied Escape Pods</span></h3><a class="permalink" href="#unlock-etienne-dorn" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Los</b></div><div class="lk">Body</div><div class="lv">A 2 B</div><div class="lk">Settlement</div><div class="lv">Kraken's Retreat</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank <b>Dealer</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Occupied Escape Pods</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-life-support">life support</a>, <a href="blueprints.html#grp-power-plant">power plant</a> &amp; <a href="blueprints.html#grp-power-distributor">power distributor</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Los</b></div><div class="lk">Body</div><div class="lv">A 2 B</div><div class="lk">Settlement</div><div class="lv">Kraken's Retreat</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank <b>Dealer</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">25× <b>Occupied Escape Pods</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-life-support">life support</a>, <a href="blueprints.html#grp-power-plant">power plant</a> &amp; <a href="blueprints.html#grp-power-distributor">power distributor</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-liz-ryder">Liz Ryder</a>’s climb. <b>Occupied Escape Pods</b> are recovered from a megaship distress signal — fly toward Luchtaine A 1, drop at the distress call, and use Hatch Breaker + Collector limpets to extract 25 pods. Deliver to Kraken’s Retreat in Los.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-marsha-hicks">
+    <article class="step-card ac-unlock" id="unlock-marsha-hicks">
       <div class="step-rail"><div class="step-no">STEP<b>49</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-marsha-hicks">Marsha Hicks</a> <span class="sub">— hand in 10 t mined Osmium</span></h3><a class="permalink" href="#unlock-marsha-hicks" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Tir</b></div><div class="lk">Body</div><div class="lv">A 2</div><div class="lk">Settlement</div><div class="lv">The Watchtower</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Surveyor</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10 t <b>Osmium</b> you mined yourself</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fuel-scoop">fuel scoop</a>, <a href="blueprints.html#grp-refinery">refinery</a> &amp; mining tools</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Tir</b></div><div class="lk">Body</div><div class="lv">A 2</div><div class="lk">Settlement</div><div class="lv">The Watchtower</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank <b>Surveyor</b> (Phase 03)</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10 t <b>Osmium</b> you mined yourself</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">G5 <a href="blueprints.html#grp-fuel-scoop">fuel scoop</a>, <a href="blueprints.html#grp-refinery">refinery</a> &amp; mining tools</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> Reached from <a href="engineers.html#eng-the-dweller">The Dweller</a>’s climb. The Osmium <b>must be self-mined</b> (laser-mine a metallic ring in the Colonia region), not bought. Refine 10 t and deliver to The Watchtower in Tir.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-baltanos">
+    <article class="step-card ac-unlock" id="unlock-baltanos">
       <div class="step-rail"><div class="step-no">STEP<b>50</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-baltanos">Baltanos</a> <span class="sub">— hand in 10× Faction Associates data</span></h3><a class="permalink" href="#unlock-baltanos" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Deriso</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">The Divine Apparatus</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv"><b>Friendly</b> with the Colonia Council</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10× <b>Faction Associates</b> data</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit &amp; weapon mods; refers <a href="engineers.html#eng-yi-shen">Yi Shen</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Deriso</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">The Divine Apparatus</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv"><b>Friendly</b> with the Colonia Council</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10× <b>Faction Associates</b> data</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit &amp; weapon mods; refers <a href="engineers.html#eng-yi-shen">Yi Shen</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). Your maxed Colonia Council rep covers the requirement. <b>Faction Associates</b> data is downloaded from CMD data ports in settlement command rooms — grab 10 (Anarchy settlements are easiest, no crime). Deliver to The Divine Apparatus in Deriso. Baltanos refers you to <a href="engineers.html#eng-yi-shen">Yi Shen</a>.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-eleanor-bresa">
+    <article class="step-card ac-unlock" id="unlock-eleanor-bresa">
       <div class="step-rail"><div class="step-no">STEP<b>51</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-eleanor-bresa">Eleanor Bresa</a> <span class="sub">— visit 5 Colonia settlements</span></h3><a class="permalink" href="#unlock-eleanor-bresa" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Desy</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Bresa Modifications</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">—</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Visit <b>5 different settlements</b> in the Colonia region</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit &amp; weapon mods; refers <a href="engineers.html#eng-yi-shen">Yi Shen</a> (10 Digital Designs)</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Desy</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Bresa Modifications</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">—</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Visit <b>5 different settlements</b> in the Colonia region</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit &amp; weapon mods; refers <a href="engineers.html#eng-yi-shen">Yi Shen</a> (10 Digital Designs)</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). Simply disembark at five different Colonia-region settlements — you’ll tick most off just travelling between the other engineers. Then she unlocks at Bresa Modifications in Desy. Her referral to <a href="engineers.html#eng-yi-shen">Yi Shen</a> wants 10 <b>Digital Designs</b> (HAB data-port data).</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-rosa-dayette">
+    <article class="step-card ac-unlock" id="unlock-rosa-dayette">
       <div class="step-rail"><div class="step-no">STEP<b>52</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-rosa-dayette">Rosa Dayette</a> <span class="sub">— hand in 10× Culinary / Cocktail Recipes</span></h3><a class="permalink" href="#unlock-rosa-dayette" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Kojeara</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Rosa's Shop</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">—</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10× total <b>Culinary Recipes</b> and/or <b>Cocktail Recipes</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit &amp; weapon mods; refers <a href="engineers.html#eng-yi-shen">Yi Shen</a> (10 Manufacturing Instructions)</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Kojeara</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Rosa's Shop</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">—</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10× total <b>Culinary Recipes</b> and/or <b>Cocktail Recipes</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit &amp; weapon mods; refers <a href="engineers.html#eng-yi-shen">Yi Shen</a> (10 Manufacturing Instructions)</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). Culinary/Cocktail Recipes are data from settlement data ports — collect 10 total and hand in at Rosa’s Shop in Kojeara. Her referral to <a href="engineers.html#eng-yi-shen">Yi Shen</a> wants 10 <b>Manufacturing Instructions</b>.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-yi-shen">
+    <article class="step-card ac-unlock" id="unlock-yi-shen">
       <div class="step-rail"><div class="step-no">STEP<b>53</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-yi-shen">Yi Shen</a> <span class="sub">— complete the three referrals</span></h3><a class="permalink" href="#unlock-yi-shen" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Einheriar</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Eidolon Hold</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Referred by <a href="engineers.html#eng-baltanos">Baltanos</a>, <a href="engineers.html#eng-eleanor-bresa">Bresa</a> &amp; <a href="engineers.html#eng-rosa-dayette">Dayette</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10 Faction Associates + 10 Digital Designs + 10 Manufacturing Instructions</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — the deepest Colonia suit/weapon engineer</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Einheriar</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Eidolon Hold</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Referred by <a href="engineers.html#eng-baltanos">Baltanos</a>, <a href="engineers.html#eng-eleanor-bresa">Bresa</a> &amp; <a href="engineers.html#eng-rosa-dayette">Dayette</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">10 Faction Associates + 10 Digital Designs + 10 Manufacturing Instructions</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — the deepest Colonia suit/weapon engineer</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). Yi Shen opens only after you complete the referral task for each of the other three Colonia on-foot engineers: give <a href="engineers.html#eng-baltanos">Baltanos</a> 10 Faction Associates, <a href="engineers.html#eng-rosa-dayette">Rosa Dayette</a> 10 Manufacturing Instructions, and <a href="engineers.html#eng-eleanor-bresa">Eleanor Bresa</a> 10 Digital Designs. Then unlock at Eidolon Hold in Einheriar.</div>
       </div>
     </article>
@@ -1165,82 +1069,82 @@ a{color:var(--amber-lt)}
   <p class="lead">Nine on-foot (suit &amp; weapon) engineers back in the bubble, reached by selling data/goods to concourse bartenders and running on-foot missions. Three are common-knowledge entry points; the rest come by referral. Since the <b>Aug 2024 buff</b>, the unlock items drop as mission rewards, so this is far lighter than it used to be — take missions that pay the items you need.</p>
   <div class="phase-meta">Unlocks · <a href="engineers.html#eng-domino-green">Domino Green</a> · <a href="engineers.html#eng-hero-ferrari">Hero Ferrari</a> · <a href="engineers.html#eng-jude-navarro">Jude Navarro</a> · <a href="engineers.html#eng-kit-fowler">Kit Fowler</a> · <a href="engineers.html#eng-wellington-beck">Wellington Beck</a> · <a href="engineers.html#eng-terra-velasquez">Terra Velasquez</a> · <a href="engineers.html#eng-oden-geiger">Oden Geiger</a> · <a href="engineers.html#eng-yarden-bond">Yarden Bond</a> · <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a></div>
 
-  <div class="steps">
+  <div class="step-cards">
 
-    <article class="stepB ac-unlock" id="unlock-domino-green">
+    <article class="step-card ac-unlock" id="unlock-domino-green">
       <div class="step-rail"><div class="step-no">STEP<b>54</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-domino-green">Domino Green</a> <span class="sub">— hand in 5× Push</span></h3><a class="permalink" href="#unlock-domino-green" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Orishis</b></div><div class="lk">Body</div><div class="lv">4</div><div class="lk">Settlement</div><div class="lv">The Jackrabbit</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Common knowledge</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Travel <b>≥100 ly in Apex shuttles</b> + provide 5× <b>Push</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-kit-fowler">Kit Fowler</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Orishis</b></div><div class="lk">Body</div><div class="lv">4</div><div class="lk">Settlement</div><div class="lv">The Jackrabbit</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Common knowledge</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Travel <b>≥100 ly in Apex shuttles</b> + provide 5× <b>Push</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-kit-fowler">Kit Fowler</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey), known from the start. Take Apex Interstellar shuttle rides between stations until you’ve ridden ≥100 ly (cheap and passive). <b>Push</b> is an asset looted from settlements. Hand in at The Jackrabbit in Orishis.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-hero-ferrari">
+    <article class="step-card ac-unlock" id="unlock-hero-ferrari">
       <div class="step-rail"><div class="step-no">STEP<b>55</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-hero-ferrari">Hero Ferrari</a> <span class="sub">— hand in 15× Settlement Defence Plans</span></h3><a class="permalink" href="#unlock-hero-ferrari" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Siris</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Nevermore Terrace</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Common knowledge</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Complete <b>10 on-foot Conflict Zones</b> + provide 15× <b>Settlement Defence Plans</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-wellington-beck">Wellington Beck</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Siris</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Nevermore Terrace</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Common knowledge</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Complete <b>10 on-foot Conflict Zones</b> + provide 15× <b>Settlement Defence Plans</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-wellington-beck">Wellington Beck</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey), known from the start. Fight in 10 on-foot Conflict Zones (pick a side at a contested settlement). <b>Settlement Defence Plans</b> are high-value data — with the Aug 2024 buff they now appear as mission rewards, so grab missions that pay them. Hand in at Nevermore Terrace in Siris.</div>
         <div class="step-flag"><span class="ff">Note</span>The tracker listed <b>5</b> Settlement Defence Plans; current sources require <b>15</b>. Using the higher figure here.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-jude-navarro">
+    <article class="step-card ac-unlock" id="unlock-jude-navarro">
       <div class="step-rail"><div class="step-no">STEP<b>56</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-jude-navarro">Jude Navarro</a> <span class="sub">— hand in 5× Genetic Repair Meds</span></h3><a class="permalink" href="#unlock-jude-navarro" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Aurai</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Marshall's Drift</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Common knowledge</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Complete <b>10 Restore/Reactivation missions</b> + provide 5× <b>Genetic Repair Meds</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-terra-velasquez">Terra Velasquez</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Aurai</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Marshall's Drift</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">Common knowledge</div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Complete <b>10 Restore/Reactivation missions</b> + provide 5× <b>Genetic Repair Meds</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-terra-velasquez">Terra Velasquez</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey), known from the start. Run 10 Restore or Reactivation missions (power up dormant settlements). <b>Genetic Repair Meds</b> are looted from medical-bay lockers or come as mission rewards. Hand in at Marshall’s Drift in Aurai.</div>
         <div class="step-flag"><span class="ff">Note</span>Do Jude <b>early</b> — his suit upgrades (extra ammo, faster handling) make every other on-foot grind in this phase noticeably easier and safer.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-kit-fowler">
+    <article class="step-card ac-unlock" id="unlock-kit-fowler">
       <div class="step-rail"><div class="step-no">STEP<b>57</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-kit-fowler">Kit Fowler</a> <span class="sub">— sell 20 Opinion Polls to bartenders</span></h3><a class="permalink" href="#unlock-kit-fowler" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Capoya</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">The Last Call</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-domino-green">Domino Green</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Sell <b>20× Opinion Polls</b> to bartenders + provide 5× <b>Surveillance Equipment</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-yarden-bond">Yarden Bond</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Capoya</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">The Last Call</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-domino-green">Domino Green</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Sell <b>20× Opinion Polls</b> to bartenders + provide 5× <b>Surveillance Equipment</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-yarden-bond">Yarden Bond</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). <b>Opinion Polls</b> are data downloaded from settlement data ports — sell 20 to any concourse bartender. <b>Surveillance Equipment</b> is a looted asset. Hand in at The Last Call in Capoya.</div>
         <div class="step-flag"><span class="ff">Note</span>The tracker listed ~5 Opinion Polls; current sources require selling <b>20</b>. Using the higher figure.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-wellington-beck">
+    <article class="step-card ac-unlock" id="unlock-wellington-beck">
       <div class="step-rail"><div class="step-no">STEP<b>58</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-wellington-beck">Wellington Beck</a> <span class="sub">— sell 25 entertainment data to bartenders</span></h3><a class="permalink" href="#unlock-wellington-beck" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Jolapa</b></div><div class="lk">Body</div><div class="lv">6 A</div><div class="lk">Settlement</div><div class="lv">Beck Facility</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-hero-ferrari">Hero Ferrari</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Sell <b>25× total</b> Multimedia / Classic Entertainment / Cat Media + provide 5× <b>Insight Entertainment Suites</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Jolapa</b></div><div class="lk">Body</div><div class="lv">6 A</div><div class="lk">Settlement</div><div class="lv">Beck Facility</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-hero-ferrari">Hero Ferrari</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Sell <b>25× total</b> Multimedia / Classic Entertainment / Cat Media + provide 5× <b>Insight Entertainment Suites</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). Collect any mix of Multimedia Entertainment, Classic Entertainment and Cat Media (data-port data) totalling 25 and sell to bartenders. <b>Insight Entertainment Suites</b> are HAB data. Hand in at Beck Facility in Jolapa.</div>
         <div class="step-flag"><span class="ff">Note</span>The tracker listed <b>15</b> entertainment data; current sources require <b>25 total</b>. Using the higher figure.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-terra-velasquez">
+    <article class="step-card ac-unlock" id="unlock-terra-velasquez">
       <div class="step-rail"><div class="step-no">STEP<b>59</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-terra-velasquez">Terra Velasquez</a> <span class="sub">— hand in 15× Financial Projections</span></h3><a class="permalink" href="#unlock-terra-velasquez" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Shou Xing</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Rascal's Choice</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-jude-navarro">Jude Navarro</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Complete <b>6 Covert Theft/Heist missions</b> + provide 15× <b>Financial Projections</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-oden-geiger">Oden Geiger</a></div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Shou Xing</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Rascal's Choice</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-jude-navarro">Jude Navarro</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Complete <b>6 Covert Theft/Heist missions</b> + provide 15× <b>Financial Projections</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods; refers <a href="engineers.html#eng-oden-geiger">Oden Geiger</a></div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). Run 6 Covert Theft or Covert Heist missions (sneak in, grab the goods, avoid alarms — a Maverick suit helps). <b>Financial Projections</b> are data from CMD data ports, also a mission reward. Hand in at Rascal’s Choice in Shou Xing.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-oden-geiger">
+    <article class="step-card ac-unlock" id="unlock-oden-geiger">
       <div class="step-rail"><div class="step-no">STEP<b>60</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-oden-geiger">Oden Geiger</a> <span class="sub">— sell 20 bio data to bartenders</span></h3><a class="permalink" href="#unlock-oden-geiger" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Candiaei</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Ankh's Promise</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-terra-velasquez">Terra Velasquez</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Sell <b>20× total</b> Biological Sample / Employee Genetic Data / Genetic Research</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Candiaei</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Ankh's Promise</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-terra-velasquez">Terra Velasquez</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Sell <b>20× total</b> Biological Sample / Employee Genetic Data / Genetic Research</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). Gather any mix of Biological Sample, Employee Genetic Data and Genetic Research (data-port data and looted samples) totalling 20 and sell to bartenders. Hand in at Ankh’s Promise in Candiaei.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-yarden-bond">
+    <article class="step-card ac-unlock" id="unlock-yarden-bond">
       <div class="step-rail"><div class="step-no">STEP<b>61</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-yarden-bond">Yarden Bond</a> <span class="sub">— sell 8 Smear Campaign Plans to bartenders</span></h3><a class="permalink" href="#unlock-yarden-bond" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Bayan</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Salamander Bank</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-kit-fowler">Kit Fowler</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Sell <b>8× Smear Campaign Plans</b> to bartenders</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Bayan</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Salamander Bank</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-kit-fowler">Kit Fowler</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Sell <b>8× Smear Campaign Plans</b> to bartenders</div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). <b>Smear Campaign Plans</b> are data from CMD data ports (Anarchy settlements avoid the crime) — sell 8 to bartenders. Hand in at Salamander Bank in Bayan.</div>
         <div class="step-flag"><span class="ff">Note</span>The tracker listed ~5 Smear Campaign Plans; current sources require <b>8</b>. Using the higher figure.</div>
       </div>
     </article>
-    <article class="stepB ac-unlock" id="unlock-uma-laszlo">
+    <article class="step-card ac-unlock" id="unlock-uma-laszlo">
       <div class="step-rail"><div class="step-no">STEP<b>62</b></div><span class="badge b-unlock">Unlock</span></div>
       <div class="step-body">
         <div class="step-head"><h3 class="step-action">Unlock <a href="engineers.html#eng-uma-laszlo">Uma Laszlo</a> <span class="sub">— reach Unfriendly with Sirius Corp</span></h3><a class="permalink" href="#unlock-uma-laszlo" title="Permalink">#</a></div>
-        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="locgrid"><div class="lk">System</div><div class="lv"><b>Xuane</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Laszlo's Resolve</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-wellington-beck">Wellington Beck</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Reach <b>Unfriendly</b> reputation (or lower) with <b>Sirius Corporation</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods</div></div></div>
+        <div class="step-fields"><div class="rc"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Xuane</b></div><div class="lk">Body</div><div class="lv"><span class="muted">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Laszlo's Resolve</div></div></div><div class="rc"><div class="rcl">Meeting requirement</div><div class="rcv">From <a href="engineers.html#eng-wellington-beck">Wellington Beck</a></div></div><div class="rc"><div class="rcl">Hand-in</div><div class="rcv">Reach <b>Unfriendly</b> reputation (or lower) with <b>Sirius Corporation</b></div></div><div class="rc"><div class="rcl">Grants</div><div class="rcv">On-foot — suit/weapon mods</div></div></div>
         <div class="step-do"><b class="wd">What to do:</b> On-foot (Odyssey). No commodity — you just need to be disliked by Sirius Corporation. Take missions against Sirius (or for their enemies) until you drop to Unfriendly, then unlock at Laszlo’s Resolve in Xuane.</div>
         <div class="step-flag"><span class="ff">Note</span>This <b>conflicts</b> with the Sirius rep you built for <a href="engineers.html#eng-marco-qwent">Marco Qwent</a> (Phase 02). Always unlock <b>Marco first</b>, then deliberately tank your Sirius standing for Uma — doing it in the other order means re-grinding Sirius to Allied again.</div>
       </div>
@@ -1249,21 +1153,6 @@ a{color:var(--amber-lt)}
   </div>
 </section>
 
-<!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-<style>
-.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-.credits .cr-rows{display:flex;flex-direction:column}
-.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-.credits .cr-src{font-weight:700;letter-spacing:.3px}
-.credits .cr-what{opacity:.78}
-.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-.credits .cr-link:hover{text-decoration:underline}
-@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-</style>
 <section class="credits" id="credits">
   <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
   <p class="lead">Figures on this page are verified against the sources below.</p>
@@ -1278,62 +1167,17 @@ a{color:var(--amber-lt)}
   </div>
 </section>
 
+  <!-- ---- FOOTER ---- -->
+  <footer>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Engineering</span>
+  </footer>
+
+
 </div>
 
-<script>
-(function(){
-  var dd=document.getElementById('qn-dd'),
-      inp=document.getElementById('qn-search'),
-      clr=document.getElementById('qn-clear'),
-      panel=document.getElementById('qn-panel'),
-      empty=panel.querySelector('.qn-empty'),
-      items=Array.prototype.slice.call(panel.querySelectorAll('.qn-item')),
-      secs=Array.prototype.slice.call(panel.querySelectorAll('.qn-sec'));
-  if(!dd||!inp) return;
-  function open(){dd.classList.add('open');inp.setAttribute('aria-expanded','true');}
-  function close(){dd.classList.remove('open');inp.setAttribute('aria-expanded','false');clearActive();}
-  function clearActive(){items.forEach(function(a){a.classList.remove('qn-active');});}
-  function visible(){return items.filter(function(a){return a.style.display!=='none';});}
-  // Searches the visible name AND the data-kw keywords (engineers, systems, items, action types).
-  function filter(){
-    var q=inp.value.trim().toLowerCase(), n=0;
-    items.forEach(function(a){
-      var nm=a.querySelector('.qn-nm').textContent.toLowerCase();
-      var kw=(a.getAttribute('data-kw')||'').toLowerCase();
-      var show=!q||nm.indexOf(q)>-1||kw.indexOf(q)>-1;
-      a.style.display=show?'':'none';
-      if(show)n++;
-    });
-    secs.forEach(function(s){
-      var any=false,el=s.nextElementSibling;
-      while(el&&el.classList.contains('qn-item')){ if(el.style.display!=='none'){any=true;break;} el=el.nextElementSibling; }
-      s.style.display=any?'':'none';
-    });
-    empty.hidden=n>0;
-    clr.hidden=!inp.value;
-    clearActive();
-    panel.scrollTop=0;
-  }
-  inp.addEventListener('focus',open);
-  inp.addEventListener('input',function(){open();filter();});
-  inp.addEventListener('keydown',function(e){
-    var vis=visible();
-    if(e.key==='Escape'){ if(inp.value){inp.value='';filter();} else {close();inp.blur();} return; }
-    if(e.key==='Enter'){ var cur=panel.querySelector('.qn-item.qn-active')||vis[0]; if(cur){e.preventDefault();cur.click();} return; }
-    if(e.key==='ArrowDown'||e.key==='ArrowUp'){
-      e.preventDefault(); open(); if(!vis.length) return;
-      var i=vis.indexOf(panel.querySelector('.qn-item.qn-active'));
-      clearActive();
-      i = e.key==='ArrowDown' ? (i+1)%vis.length : (i<=0?vis.length-1:i-1);
-      vis[i].classList.add('qn-active'); vis[i].scrollIntoView({block:'nearest'});
-    }
-  });
-  clr.addEventListener('click',function(e){e.preventDefault();inp.value='';filter();inp.focus();open();});
-  items.forEach(function(a){a.addEventListener('click',function(){close();inp.value='';filter();});});
-  document.addEventListener('click',function(e){if(!dd.contains(e.target))close();});
-  filter();
-})();
-</script>
+<script src="../../design-system/js/ed-blackbox.js" defer></script>
 <script>
 const EDGES=[["n-elvira-martuuk", "n-marco-qwent"], ["n-elvira-martuuk", "n-zacariah-nemo"], ["n-the-dweller", "n-lei-cheung"], ["n-felicity-farseer", "n-juri-ishmaak"], ["n-tod-mcquinn", "n-selene-jean"], ["n-liz-ryder", "n-hera-tani"], ["n-marco-qwent", "n-professor-palin"], ["n-marco-qwent", "n-lori-jameson"], ["n-marco-qwent", "n-chloe-sedesi"], ["n-lei-cheung", "n-ram-tah"], ["n-juri-ishmaak", "n-colonel-bris-dekker"], ["n-juri-ishmaak", "n-the-sarge"], ["n-selene-jean", "n-didi-vatermann"], ["n-selene-jean", "n-bill-turner"], ["n-hera-tani", "n-broo-tarquin"], ["n-hera-tani", "n-tiana-fortune"], ["c-elvira-martuuk", "n-mel-brandon"], ["c-the-dweller", "n-marsha-hicks"], ["c-tod-mcquinn", "n-petra-olmanova"], ["c-liz-ryder", "n-etienne-dorn"], ["n-baltanos", "n-yi-shen"], ["n-eleanor-bresa", "n-yi-shen"], ["n-rosa-dayette", "n-yi-shen"], ["n-domino-green", "n-kit-fowler"], ["n-kit-fowler", "n-yarden-bond"], ["n-hero-ferrari", "n-wellington-beck"], ["n-wellington-beck", "n-uma-laszlo"], ["n-jude-navarro", "n-terra-velasquez"], ["n-terra-velasquez", "n-oden-geiger"]];const SVGNS='http://www.w3.org/2000/svg';
 function drawWires(){

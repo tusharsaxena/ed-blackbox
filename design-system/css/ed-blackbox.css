@@ -18,6 +18,8 @@
   /* ---- brand ---- */
   --maroon:#8b2332;--maroon-lt:#b13140;--amber:#e0913a;--amber-lt:#f4b15f;
   --fed:#4f9fd6;--fed-lt:#7cc0ee;
+  /* ---- action types (step-card rails & badges) ---- */
+  --at-prep:#c0564e;--at-farm:#cf8649;--at-travel:#c6a94f;--at-grind:#5fa86f;--at-unlock:#4f93cf;--at-climb:#7866cc;--at-build:#a868c0;
   /* ---- status ---- */
   --danger:#d8423b;--good:#5fb37a;--good-lt:#7fce98;
   /* ---- ink ---- */
@@ -190,6 +192,7 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .legend h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-6)}
 .legend .row{display:flex;align-items:baseline;gap:var(--space-5);font-size:var(--fs-base);color:var(--ink-dim);padding:var(--space-4) 0}
 .legend .row + .row{border-top:1px solid var(--hair)}.legend .row b{color:var(--ink);font-weight:600}
+.legend .row.tx{display:block;line-height:1.5}
 /* key–value rows (definition list in legend / term cards): a fixed key column + value
    column with clear separation, top-aligned so multi-line values never push the key around.
    Markup: .kv-row > .kv-k (optional .swatch + <b>key</b>) + .kv-v (value). */
@@ -267,6 +270,7 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .kvgrid .lk::after{content:"›";color:var(--ink-faint);font-weight:400}
 .kvgrid .lv{font-size:var(--fs-base);color:var(--ink);line-height:1.4}
 .kvgrid .lv b{color:var(--ink);font-weight:600}
+.kvgrid .pmt{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-micro);font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--maroon-lt);border:1px solid rgba(177,49,64,.5);border-radius:var(--radius-xs);padding:1px 5px;margin-left:5px;vertical-align:middle;white-space:nowrap}
 /* power-profile card variant (.rec.pw): three equal columns — Ethos | Signature perk | Best for —
    with gold field labels and the portrait framed from the top so the head is never cropped */
 /* Ethos block on top, then a 50%-gold split line, then the three fields below */
@@ -393,6 +397,7 @@ section > .callout + p{margin-top:var(--space-10)}
 .qn-nm{flex:1}
 .qn-side{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-micro);letter-spacing:.8px;text-transform:uppercase;color:var(--ink-faint);flex:none}
 .qn-item.qn-active{background:var(--panel2);color:var(--ink)}
+.qn-sec{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:var(--fs-micro);letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);padding:var(--space-5) var(--space-5) var(--space-2)}
 .qn-empty{padding:var(--space-5) var(--space-6);color:var(--ink-faint);font-size:var(--fs-sm2);font-style:italic}
 .qn-panel::-webkit-scrollbar{width:9px}
 .qn-panel::-webkit-scrollbar-thumb{background:var(--hair-strong);border-radius:var(--radius-md)}
@@ -497,6 +502,48 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
 .steps>li::before{content:counter(step,decimal-leading-zero);position:absolute;left:-18px;top:-4px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-round);background:var(--panel);border:1px solid rgba(224,145,58,.4);font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm2);color:var(--amber-lt)}
 .steps>li .st{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-lg);color:var(--ink);display:block;margin-bottom:3px}
 .steps>li p{margin:5px 0;font-size:var(--fs-body);color:var(--ink-dim)}
+
+/* ---- step cards — a numbered, action-typed task card (rail + fields + what-to-do).
+   Container .step-cards > article.step-card.ac-<type>. Accent the left rail/badge with
+   ac-prep|farm|travel|grind|unlock|climb|build. Field labels (.rcl) render amber here. ---- */
+.step-cards{display:flex;flex-direction:column;gap:var(--space-6);margin-top:var(--space-10)}
+.step-card{display:grid;grid-template-columns:104px 1fr;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--amber);border-radius:var(--radius-sm);overflow:hidden;scroll-margin-top:74px;transition:border-color .18s,background .18s}
+.step-card:hover{background:var(--panel2)}
+.step-card:target{box-shadow:0 0 0 1px rgba(224,145,58,.32),0 0 26px rgba(224,145,58,.12)}
+.step-card.ac-prep{border-left-color:var(--at-prep)}
+.step-card.ac-farm{border-left-color:var(--at-farm)}
+.step-card.ac-travel{border-left-color:var(--at-travel)}
+.step-card.ac-grind{border-left-color:var(--at-grind)}
+.step-card.ac-unlock{border-left-color:var(--at-unlock)}
+.step-card.ac-climb{border-left-color:var(--at-climb)}
+.step-card.ac-build{border-left-color:var(--at-build)}
+.step-rail{background:rgba(8,5,6,.5);border-right:1px solid var(--hair);display:flex;flex-direction:column;align-items:center;gap:9px;padding:15px 8px}
+.step-no{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm2);letter-spacing:1px;color:var(--ink-faint);line-height:1;text-align:center}
+.step-no b{display:block;font-size:var(--fs-2xl);color:var(--ink);letter-spacing:0;margin-top:2px}
+.step-body{padding:15px 19px 16px;min-width:0}
+.step-head{display:flex;align-items:flex-start;gap:var(--space-5)}
+.step-action{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-lg);letter-spacing:.2px;color:var(--ink);line-height:1.32;flex:1}
+.step-action a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.45)}
+.step-action .sub{color:var(--ink-dim);font-weight:400}
+.step-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:13px 24px;margin-top:14px;align-items:start}
+.step-card .rcl{color:var(--amber-lt)}
+.step-do{margin-top:14px;font-size:var(--fs-base);color:var(--ink-dim);line-height:1.62;border-top:1px solid var(--hair);padding-top:12px}
+.step-do b{color:var(--ink-em);font-weight:600}.step-do b.wd{color:var(--ink)}
+.step-do a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.35)}
+.step-flag{display:block;margin-top:12px;font-size:var(--fs-sm2);color:var(--ink-dim);background:rgba(224,145,58,.06);border:1px solid rgba(224,145,58,.22);border-radius:var(--radius-sm);padding:10px 13px;line-height:1.58}
+.step-flag .ff{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-micro);letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);display:block;margin-bottom:5px}
+.step-flag b{color:var(--ink-em);font-weight:600}
+.step-flag a{text-decoration:none;border-bottom:1px solid rgba(224,145,58,.35)}
+/* action badges — used on step rails and in the legend */
+.badge{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:var(--fs-2xs);letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:10px;border:1px solid;line-height:1.1;flex:none;white-space:nowrap}
+.b-prep{color:#d97f78;border-color:rgba(192,86,78,.6);background:rgba(192,86,78,.13)}
+.b-farm{color:#dba06a;border-color:rgba(207,134,73,.6);background:rgba(207,134,73,.13)}
+.b-travel{color:#d6c074;border-color:rgba(198,169,79,.6);background:rgba(198,169,79,.13)}
+.b-grind{color:#80c493;border-color:rgba(95,168,111,.6);background:rgba(95,168,111,.13)}
+.b-unlock{color:#79b3e0;border-color:rgba(79,147,207,.6);background:rgba(79,147,207,.13)}
+.b-climb{color:#9b8cdb;border-color:rgba(120,102,204,.6);background:rgba(120,102,204,.13)}
+.b-build{color:#c089d4;border-color:rgba(168,104,192,.6);background:rgba(168,104,192,.13)}
+@media(max-width:680px){.step-card{grid-template-columns:1fr}.step-rail{flex-direction:row;justify-content:flex-start;border-right:none;border-bottom:1px solid var(--hair);padding:9px 14px}.step-no b{display:inline;font-size:var(--fs-md);margin-left:4px;margin-top:0}}
 
 /* ---- 24. PILLS  (bold status tags w/ severity) ---- */
 .pill{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:var(--fs-xs);letter-spacing:1px;text-transform:uppercase;padding:var(--space-1) var(--space-4);border-radius:var(--radius-xs);white-space:nowrap;display:inline-block}
