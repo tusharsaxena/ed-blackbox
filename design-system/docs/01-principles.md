@@ -9,7 +9,7 @@ that 100+ pages read as one publication, not 100 lookalikes that slowly drift ap
 
 ## The design language (fixed identity)
 
-- **Mood:** operator-grade field manual. Terse, technical, confident. No marketing.
+- **Mood:** operator-grade guide. Terse, technical, confident. No marketing.
 - **Surface:** near-black panels over a fixed 42px grid, with soft radial glows
   (amber top-right, maroon top-left, fed-blue bottom).
 - **Palette:** maroon + amber brand, federal-blue secondary, green/red status.

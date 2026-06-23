@@ -65,9 +65,9 @@
 }
 
 /* ============================================================
-   E:D BLACK BOX — FIELD MANUAL HOUSE STYLE  ·  v2 template
+   E:D BLACK BOX — GUIDE HOUSE STYLE  ·  v2 template
    Single-file, self-contained. Copy this whole <style> block
-   verbatim into any new field manual / guide / dossier page.
+   verbatim into any new guide / dossier page.
    Fonts: Chakra Petch (display + labels), Saira (body),
           Saira Condensed (meta, tags, footer).
    Palette: maroon + amber, with a federal-blue secondary accent.
@@ -592,9 +592,14 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
 .coord.copied{background:rgba(95,179,122,.2);border-color:var(--good);color:var(--good)}
 .coord.copied .cp{color:var(--good)}
 
-/* ---- 28. FOOTER ---- */
-footer{margin-top:var(--space-footer);padding-top:24px;border-top:1px solid var(--hair-strong);font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm2);letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:var(--space-4) var(--space-10)}
-footer b{color:var(--amber-lt)}
+/* ---- 28. FOOTER ----
+   Three stacked fine-print lines (.ft-fine): copyright + byline→INARA · part label +
+   issue-tracker link · Frontier fan-content disclaimer. */
+footer{margin-top:var(--space-footer);padding-top:24px;border-top:1px solid var(--hair-strong)}
+footer .ft-fine{font-family:'Saira',sans-serif;font-weight:300;font-size:var(--fs-xs);letter-spacing:.3px;line-height:1.6;color:var(--ink-faint);display:flex;flex-direction:column;gap:var(--space-2)}
+footer .ft-fine a{color:var(--ink-dim);text-decoration:underline;text-underline-offset:2px;transition:color var(--motion-fast)}
+footer .ft-fine a:hover{color:var(--amber-lt)}
+footer b{color:var(--amber-lt);font-weight:700}
 
 /* ---- 29. PER-PAGE CREDITS / SOURCES  (the .cr-rows table) ----
    Drop .cr-rows into a NORMAL numbered <section> as the LAST section on the page, above

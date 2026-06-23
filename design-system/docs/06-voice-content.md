@@ -2,7 +2,7 @@
 
 ## Voice
 
-Operator-grade field manual. Write like a veteran commander briefing another:
+Operator-grade guide. Write like a veteran commander briefing another:
 terse, technical, confident, useful. State the call, then the reason.
 
 - **No marketing.** No hype, no exclamation, no emoji, no "amazing/ultimate/game-changing".
@@ -48,4 +48,4 @@ terse, technical, confident, useful. State the call, then the reason.
   `<span class="role">` suffix names the role for ship × role dossiers.
 - Section `h2`: short, uppercase by CSS — write in normal case, the style uppercases it.
 - Keep a consistent series label in the kicker across a family of manuals (e.g.
-  "Field Manual // Ship × Role Dossier // <manufacturer>").
+  "Guide // Ship × Role Dossier // <manufacturer>").

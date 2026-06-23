@@ -41,8 +41,8 @@
           <a class="qn-item" href="#matrix"><span class="qn-dot amber"></span><span class="qn-nm">How the colour matrix works</span><span class="qn-side">04</span></a>
           <a class="qn-item" href="#how"><span class="qn-dot amber"></span><span class="qn-nm">How to change it — step by step</span><span class="qn-side">05</span></a>
           <a class="qn-item" href="#presets"><span class="qn-dot amber"></span><span class="qn-nm">Presets &amp; starter values</span><span class="qn-side">06</span></a>
-          <a class="qn-item" href="#gotchas"><span class="qn-dot amber"></span><span class="qn-nm">Odyssey notes &amp; gotchas</span><span class="qn-side">08</span></a>
-          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#gotchas"><span class="qn-dot amber"></span><span class="qn-nm">Odyssey notes &amp; gotchas</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">08</span></a>
           <div class="qn-empty" hidden>No matching sections</div>
         </div>
       </div>
@@ -125,7 +125,7 @@
       <div class="row"><span>Cleaner, more readable <b>screenshots and video</b>.</span></div>
     </div>
   </div>
-  <div class="callout danger"><span class="lbl">The trade-off</span><p>Because the standard method recolours <b>everything uniformly</b>, a careless palette can do the opposite of help — washing out red danger warnings or blurring the green-vs-red friend/foe distinction. Good customization is as much about <b>preserving signal</b> as changing colour. More on this in §03 and §08.</p></div>
+  <div class="callout danger"><span class="lbl">The trade-off</span><p>Because the standard method recolours <b>everything uniformly</b>, a careless palette can do the opposite of help — washing out red danger warnings or blurring the green-vs-red friend/foe distinction. Good customization is as much about <b>preserving signal</b> as changing colour. More on this in <a href="#change">Section 3</a> and <a href="#gotchas">Section 7</a>.</p></div>
 </section>
 
 <!-- 03 -->
@@ -280,7 +280,7 @@
 
 <!-- 08 -->
 <section id="gotchas">
-  <div class="sec-head"><span class="sec-num">08</span><h2>Odyssey notes &amp; gotchas</h2><span class="tag">Hands-on</span></div>
+  <div class="sec-head"><span class="sec-num">07</span><h2>Odyssey notes &amp; gotchas</h2><span class="tag">Hands-on</span></div>
   <p class="lead">Things specifically worth knowing on PC / Odyssey before and after you change anything.</p>
   <ul class="bullets">
     <li><b>Is it allowed / will it get me banned?</b> No. The effect is purely client-side; Frontier has stated it has no problem with HUD colour mods and has even featured customised HUDs. The XML edit touches no game mechanic and no server data. EDHM is likewise a strictly graphical mod.</li>
@@ -296,14 +296,14 @@
 
 <!-- Sources -->
 <section class="credits" id="credits">
-  <div class="sec-head"><span class="sec-num">09</span><h2>Sources</h2><span class="tag">Provenance</span></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Sources</h2></div>
   <p class="lead">Figures on this page are verified against the sources below.</p>
   <p class="lead">Note: web matrix editors (Arkku, NEWP, team2xh) all output the same XML format — preview in whichever you trust, then paste the three matrix lines. For per-element control and cabin lighting beyond the global matrix, EDHM is the power option.</p>
   <div class="cr-rows">
     <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">HUD colour-matrix mechanics and the GraphicsConfigurationOverride.xml MatrixRed/Green/Blue reference.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/HUD_Color_Editor">elite-dangerous.fandom.com/wiki/HUD_Color_Editor</a></div>
     <div class="cr-row"><span class="cr-src">Frontier Forums</span><span class="cr-what">Step-by-step community-canon method for editing HUD panel colours via the override file on Windows.</span><a class="cr-link" href="https://forums.frontier.co.uk/threads/how-to-properly-change-your-hud-panel-colors-colours-in-windows-for-all-versions-of-the-game.217198/">forums.frontier.co.uk/threads/how-to-properly-change-your-hud-panel-colors</a></div>
     <div class="cr-row"><span class="cr-src">Arkku HUD editor</span><span class="cr-what">Live slider tool to preview the colour-transform matrix and export the values used on this page — the reference editor most presets point back to.</span><a class="cr-link" href="https://arkku.com/elite/hud_editor/">arkku.com/elite/hud_editor</a></div>
-    <div class="cr-row"><span class="cr-src">NEWP</span><span class="cr-what">The HUD anatomy walkthrough behind §01, plus the beginner-friendly colour editor with four image-previewed presets.</span><a class="cr-link" href="https://newp.io/hudcolor">newp.io/hudcolor</a></div>
+    <div class="cr-row"><span class="cr-src">NEWP</span><span class="cr-what">The HUD anatomy walkthrough behind <a href="#what">Section 1</a>, plus the beginner-friendly colour editor with four image-previewed presets.</span><a class="cr-link" href="https://newp.io/hudcolor">newp.io/hudcolor</a></div>
     <div class="cr-row"><span class="cr-src">team2xh editor</span><span class="cr-what">Alternative slider editor with a one-click Copy-XML button — same matrix format, different live preview.</span><a class="cr-link" href="https://team2xh.net/elite/">team2xh.net/elite</a></div>
     <div class="cr-row"><span class="cr-src">EDHM-UI</span><span class="cr-what">The 3Dmigoto shader mod (and its UI wrapper) for per-element HUD recolouring and cabin lighting — the advanced path past the global matrix.</span><a class="cr-link" href="https://github.com/BlueMystical/EDHM_UI">github.com/BlueMystical/EDHM_UI</a></div>
     <div class="cr-row"><span class="cr-src">EDProfiler</span><span class="cr-what">Manages launch-time graphics profiles (monitor vs VR) that write the same GraphicsConfigurationOverride.xml this page edits.</span><a class="cr-link" href="https://www.drkaii.com/tools/edprofiler/">drkaii.com/tools/edprofiler</a></div>
@@ -311,9 +311,10 @@
 </section>
 
 <footer>
-  <span>E:D Black Box</span>
-  <span>By <b>CMDR Ka0s</b></span>
-  <span>Systems</span>
+  <div class="ft-fine">
+    <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Systems &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+    <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+  </div>
 </footer>
 </div>
 
