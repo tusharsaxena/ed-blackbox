@@ -28,6 +28,7 @@ be re-run later.
 | `rebuild-footers.py` | [rebuild-footers.md](rebuild-footers.md) | Rewrites every guide's `<footer>` to the design-system two-tier footer (brand · byline→INARA · part · issue tracker, over a copyright + Frontier fan-content disclaimer line). Preserves each page's part label; idempotent. Keep the templates + `generate-guides-index.sh` footer in sync. |
 | `linkify-section-refs.py` | [linkify-section-refs.md](linkify-section-refs.md) | Converts inline `§NN` prose references into readable, clickable `Section N` links targeting the matching on-page `<section>`. Protects HTML comments + existing `<a>` spans; idempotent. Run `audit-section-numbers.py` first. |
 | `audit-section-numbers.py` | [audit-section-numbers.md](audit-section-numbers.md) | Read-only gate: verifies each guide's `sec-num` values are continuous `1..N` (standard 2-digit form) and that numeric `qn-side` quick-nav numbers match. Exits non-zero on any gap/dup/mismatch. |
+| `depersonalize-home-base.sh` | [depersonalize-home-base.md](depersonalize-home-base.md) | One-shot editorial pass removing the author's personal "your Diaguandri / Ray Gateway base/home" framing (52 dossiers + 3 systems pages) and reworking each into role-neutral phrasing. Leaves factual Diaguandri/Ray Gateway mentions (Landmines market, Jameson nearest trader) and the kept `CMDR Ka0s` byline alone. Idempotent. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.
