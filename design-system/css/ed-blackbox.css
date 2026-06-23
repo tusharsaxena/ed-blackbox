@@ -525,6 +525,8 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
 .loc-row:last-child{border-bottom:none}
 .loc-k{font-family:'Saira Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:var(--fs-sm);color:var(--ink-faint)}
 .loc-v{color:var(--ink);font-weight:400;text-align:right}
+/* loc-card has no bottom margin and section>p has no top margin, so restore the gap before following prose */
+.loc-card + p{margin-top:var(--space-10)}
 .coord{display:inline-flex;align-items:center;gap:var(--space-4);cursor:pointer;font-family:'Chakra Petch',monospace;font-size:var(--fs-sm2);color:var(--good-lt);background:rgba(95,179,122,.08);border:1px solid rgba(95,179,122,.3);border-radius:var(--radius-md);padding:var(--space-1) 9px;transition:background var(--motion-fast),border-color var(--motion-fast)}
 .coord:hover{background:rgba(95,179,122,.16);border-color:var(--good)}
 .coord .cp{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-micro);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}

@@ -3,202 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jameson Crash Site — Encoded Material Field Manual</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#08080f;
-    --bg2:#0c0c16;
-    --panel:#10111d;
-    --line:#242539;
-    --orange:#ff7a18;
-    --amber:#ffb24d;
-    --amber-dim:#5a4a8a;
-    --ink:#dcdcec;
-    --ink-dim:#8786a6;
-    --green:#46d39a;
-    --green-bg:rgba(70,211,154,.09);
-    --red:#ff5a52;
-    --red-bg:rgba(255,90,82,.09);
-    --warn:#ffcf5c;
-    --warn-bg:rgba(255,207,92,.08);
-    --violet:#9d8cff;
-    --violet-bg:rgba(157,140,255,.08);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Saira',sans-serif;
-    font-weight:300;
-    line-height:1.62;
-    font-size:16.5px;
-    letter-spacing:.1px;
-    -webkit-font-smoothing:antialiased;
-    background-image:
-      radial-gradient(circle at 16% 10%, rgba(157,140,255,.08), transparent 42%),
-      radial-gradient(circle at 86% 6%, rgba(255,122,24,.045), transparent 38%),
-      linear-gradient(rgba(255,255,255,.014) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
-    background-size:auto,auto,46px 46px,46px 46px;
-    background-attachment:fixed;
-  }
-  .wrap{max-width:880px;margin:0 auto;padding:0 22px 90px}
-
-  /* HEADER */
-  header{padding:64px 0 30px;border-bottom:1px solid var(--line);margin-bottom:42px;position:relative}
-  .kicker{
-    font-family:'Saira Semi Condensed',sans-serif;text-transform:uppercase;letter-spacing:.42em;
-    font-size:11.5px;font-weight:600;color:var(--violet);margin-bottom:18px;display:flex;align-items:center;gap:12px;
-  }
-  .kicker::before{content:"";width:34px;height:1px;background:var(--violet);display:inline-block}
-  h1{
-    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(33px,6vw,54px);
-    line-height:1.02;letter-spacing:-.5px;color:#fff;text-transform:uppercase;
-  }
-  h1 .sub{display:block;color:var(--amber);font-size:.46em;letter-spacing:.06em;margin-top:12px;font-weight:500}
-  .lede{margin-top:24px;color:var(--ink-dim);font-size:17px;max-width:66ch}
-  .meta-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-  .chip{
-    font-family:'Saira Semi Condensed',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-    font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink-dim);padding:6px 12px;border-radius:3px;
-  }
-  .chip b{color:var(--amber);font-weight:600}
-
-  section{margin-bottom:50px;scroll-margin-top:24px}
-  h2{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:24px;text-transform:uppercase;letter-spacing:.5px;
-    color:#fff;display:flex;align-items:baseline;gap:14px;margin-bottom:20px;
-  }
-  h2 .num{
-    font-family:'Chakra Petch',sans-serif;color:var(--violet);font-size:15px;font-weight:700;
-    border:1px solid var(--amber-dim);border-radius:3px;padding:2px 9px;letter-spacing:0;flex:none;
-  }
-  h3{font-family:'Saira Semi Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:16px;color:var(--amber);margin:26px 0 10px}
-  p{margin-bottom:14px}
-  strong{color:#fff;font-weight:600}
-  em{color:var(--violet);font-style:normal}
-  a{color:var(--violet);text-decoration:none;border-bottom:1px solid rgba(157,140,255,.3)}
-  a:hover{border-bottom-color:var(--violet)}
-
-  .panel{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:6px;padding:22px 24px;margin:18px 0;position:relative}
-  .panel::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;background:var(--violet);border-radius:2px}
-
-  ul.clean{list-style:none;margin:6px 0}
-  ul.clean li{position:relative;padding-left:22px;margin-bottom:8px}
-  ul.clean li::before{content:"›";position:absolute;left:2px;top:-1px;color:var(--violet);font-weight:700;font-size:18px}
-
-  ol.steps{list-style:none;counter-reset:s;margin:8px 0}
-  ol.steps li{
-    counter-increment:s;position:relative;padding:13px 16px 13px 56px;border:1px solid var(--line);
-    border-radius:5px;margin-bottom:9px;background:var(--panel);transition:border-color .2s,transform .2s;
-  }
-  ol.steps li:hover{border-color:var(--amber-dim);transform:translateX(3px)}
-  ol.steps li::before{
-    content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;bottom:0;width:42px;
-    display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;
-    font-size:15px;color:var(--violet);border-right:1px solid var(--line);background:var(--bg2);
-  }
-
-  /* LOCATION CARD */
-  .loc-card{
-    border:1px solid var(--line);border-radius:6px;background:linear-gradient(180deg,var(--panel),var(--bg2));
-    padding:20px 22px;margin:18px 0;
-  }
-  .loc-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.06);flex-wrap:wrap}
-  .loc-row:last-child{border-bottom:none}
-  .loc-k{font-family:'Saira Semi Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:12.5px;color:var(--ink-dim)}
-  .loc-v{color:#fff;font-weight:400;text-align:right}
-  .coord{
-    display:inline-flex;align-items:center;gap:8px;cursor:pointer;
-    font-family:'JetBrains Mono',monospace;font-weight:500;font-size:14px;color:var(--violet);
-    background:rgba(157,140,255,.07);border:1px solid rgba(157,140,255,.22);border-radius:4px;
-    padding:4px 10px;transition:background .15s,border-color .15s;user-select:all;
-  }
-  .coord:hover{background:rgba(157,140,255,.14);border-color:var(--violet)}
-  .coord .cp{font-family:'Saira Semi Condensed',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim)}
-  .coord.legacy{color:var(--ink-dim);background:rgba(255,255,255,.03);border-color:var(--line)}
-  .coord.copied{background:var(--green-bg);border-color:var(--green);color:var(--green)}
-  .coord.copied .cp{color:var(--green)}
-  .tagL{font-family:'Saira Semi Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:3px;margin-left:8px}
-  .tagL.live{background:var(--green-bg);color:var(--green);border:1px solid rgba(70,211,154,.3)}
-  .tagL.leg{background:rgba(255,255,255,.04);color:var(--ink-dim);border:1px solid var(--line)}
-
-  /* DROP TAGS */
-  .drops{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 4px}
-  .drop{
-    font-family:'Saira Semi Condensed',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.02em;
-    padding:5px 10px;border-radius:4px;border:1px solid var(--line);background:var(--panel);color:var(--ink);
-  }
-  .drop b{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--ink-dim);margin-left:5px;font-weight:700}
-  .drop.fuel{border-color:rgba(157,140,255,.4);background:var(--violet-bg);color:#fff}
-  .drop.fuel b{color:var(--violet)}
-
-  /* CATEGORY GRID */
-  .cats{display:grid;grid-template-columns:1fr;gap:8px;margin:14px 0}
-  @media(min-width:600px){.cats{grid-template-columns:1fr 1fr}}
-  .cat{border:1px solid var(--line);border-radius:5px;background:var(--panel);padding:11px 14px;font-family:'Saira Semi Condensed',sans-serif;font-size:13.5px}
-  .cat .cn{font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.04em;font-size:12.5px;display:block;margin-bottom:2px}
-  .cat .g5{color:#fff;font-weight:600}
-  .cat .g5 b{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--ink-dim);margin-left:5px}
-
-  .callout{border:1px solid rgba(157,140,255,.3);background:var(--violet-bg);border-radius:6px;padding:16px 20px;margin:18px 0;font-size:15px}
-  .callout b{color:var(--violet)}
-  .callout.warn{border-color:rgba(255,207,92,.35);background:var(--warn-bg)}
-  .callout.warn b{color:var(--warn)}
-  .callout.green{border-color:rgba(70,211,154,.3);background:var(--green-bg)}
-  .callout.green b{color:var(--green)}
-
-  footer{margin-top:60px;padding-top:26px;border-top:1px solid var(--line);color:var(--ink-dim);font-size:13px}
-  footer .src{font-family:'Saira Semi Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);font-size:12px;margin-bottom:8px}
-
-  .toast{
-    position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
-    background:var(--green);color:#04130c;font-family:'Saira Semi Condensed',sans-serif;font-weight:700;
-    text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;padding:9px 18px;border-radius:5px;
-    opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50;
-  }
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-  .fade{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
-  @keyframes rise{to{opacity:1;transform:none}}
-  section:nth-of-type(1){animation-delay:.08s}
-  section:nth-of-type(2){animation-delay:.14s}
-  section:nth-of-type(3){animation-delay:.2s}
-</style>
+<title>Jameson Crash Site &middot; Material Farms | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers">Ships</a>
+      <a href="../../index.html#engineering" class="active">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#what"><span class="qn-dot amber"></span><span class="qn-nm">What the Site Is</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#outfit"><span class="qn-dot amber"></span><span class="qn-nm">Outfitting</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#where"><span class="qn-dot amber"></span><span class="qn-nm">Where to Go</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#loop"><span class="qn-dot amber"></span><span class="qn-nm">The Scan Loop</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#drops"><span class="qn-dot amber"></span><span class="qn-nm">What You Get &amp; The Trade Run</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">06</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#engineering">Engineering</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Jameson Crash Site</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="fade">
-    <div class="kicker">Field Manual</div>
-    <h1>Jameson Crash Site<span class="sub">Encoded Material Data Farming</span></h1>
-    <p class="lede">The crashed Cobra of CMDR John Jameson sits ringed by data points that hand you the game's fastest-filling encoded materials. Scan, relog, repeat — then trade that one abundant data type for the entire encoded grid.</p>
-    <div class="meta-strip">
-      <span class="chip">System · <b>HIP 12099</b></span>
-      <span class="chip">Body · <b>1 B</b></span>
-      <span class="chip">Data points · <b>9 (2025 overhaul)</b></span>
-      <span class="chip">Trade fuel · <b>Adaptive Encryptors Capture</b></span>
+  <!-- ---- MASTHEAD ---- -->
+  <header class="masthead">
+    <div class="kicker">Engineering<span class="sep">//</span>Material Farms</div>
+    <h1 class="title">Jameson Crash <span>Site</span> <span class="role">Material Farm</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Engineering</b></span>
+      <span>Updated <b>2026-06-23</b></span>
     </div>
   </header>
 
+  <!-- ---- BRIEFING ---- -->
+  <div class="verdict">
+    <div class="v-eyebrow">Briefing</div>
+    <h2>The crashed Cobra of CMDR John Jameson sits ringed by data points that hand you the game's <em>fastest-filling encoded materials</em></h2>
+    <p>Scan the cluster with your SRV turret, relog on "storage full," repeat — then trade that one abundant data type for the entire encoded grid. A 2025 overhaul expanded the site from 4 scan points to <b>nine</b> and boosted the yield, so you can fill the headline drops in a single session.</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">HIP 12099</div><div class="l">System</div></div>
+      <div class="stat"><div class="n">1 B</div><div class="l">Orbital body</div></div>
+      <div class="stat"><div class="n">9</div><div class="l">Data points (2025 overhaul)</div></div>
+      <div class="stat"><div class="n">G5</div><div class="l">Trade fuel — Adaptive Encryptors Capture</div></div>
+    </div>
+  </div>
+
   <!-- 1 -->
-  <section class="fade">
-    <h2><span class="num">01</span>What the Site Is</h2>
+  <section id="what">
+    <div class="sec-head"><span class="sec-num">01</span><h2>What the Site Is</h2></div>
     <p>On planet <strong>1 B</strong> in <strong>HIP 12099</strong> lies the wreck of the Cobra Mk III flown by the ill-fated CMDR John Jameson (ship ID JJ-386). Surrounding it is a cluster of <strong>data points</strong> you scan with your SRV turret for <strong>encoded materials</strong> — the third material type, used heavily in FSD, sensor, shield and core-internal engineering.</p>
     <p>A 2025 overhaul expanded the site from 4 scan points to <strong>nine</strong> and boosted the yield, so you can now fill the headline drops in a single session. The strategy mirrors the HGE play: farm the one data type that fills fastest — <strong>Adaptive Encryptors Capture (G5)</strong> — and cross-trade it for everything else. It's reportedly about twice as fast to trade these for, say, Datamined Wake Exceptions than to gather those directly.</p>
-    <div class="callout"><b>Completes the set.</b> This is the encoded counterpart to your HGE (manufactured G5) and Crystalline Shard (raw G4) runs. Together the three cover all three material types.</div>
+    <div class="callout"><span class="lbl">Completes the set</span><p>This is the encoded counterpart to your HGE (manufactured G5) and Crystalline Shard (raw G4) runs. Together the three cover all three material types.</p></div>
   </section>
 
   <!-- 2 -->
-  <section class="fade">
-    <h2><span class="num">02</span>Outfitting</h2>
+  <section id="outfit">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Outfitting</h2></div>
     <p>Same low bar as the other surface runs — your <strong>Asp Explorer</strong> already has it all:</p>
     <div class="panel">
-      <ul class="clean">
+      <ul class="bullets">
         <li><strong>Planetary Vehicle Hangar + SRV</strong> — the SRV's turret does all the scanning.</li>
         <li><strong>Detailed Surface Scanner</strong> — locates the site on your <em>first</em> visit only.</li>
         <li><strong>Supercruise Assist</strong> (optional) — auto-orbits the planet so you can line up the drop.</li>
@@ -206,109 +103,113 @@
         <li><strong>No cargo / limpets</strong> — encoded data is weightless and goes to your data inventory.</li>
       </ul>
     </div>
+    <p>No weapons, shields, or combat fit required — the wreck is abandoned and non-hostile. Land, drop the SRV, scan.</p>
   </section>
 
   <!-- 3 -->
-  <section class="fade">
-    <h2><span class="num">03</span>Where to Go</h2>
+  <section id="where">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Where to Go</h2></div>
     <div class="loc-card">
       <div class="loc-row"><span class="loc-k">System</span><span class="loc-v">HIP 12099</span></div>
       <div class="loc-row"><span class="loc-k">Orbital Body</span><span class="loc-v">1 B (second moon of the first planet)</span></div>
-      <div class="loc-row"><span class="loc-k">Site Coordinates</span><span class="loc-v"><span class="coord" data-copy="-54.37, -50.35"><span>-54.37, -50.35</span><span class="cp">Copy</span></span><span class="tagL live">Live 4.0</span></span></div>
-      <div class="loc-row"><span class="loc-k">Classic coordinate</span><span class="loc-v"><span class="coord legacy" data-copy="-54.38, -50.36"><span>-54.38, -50.36</span><span class="cp">Copy</span></span><span class="tagL leg">pre-4.0</span></span></div>
+      <div class="loc-row"><span class="loc-k">Site Coordinates</span><span class="loc-v"><span class="coord" data-copy="-54.37, -50.35"><span>-54.37, -50.35</span><span class="cp">Copy</span></span> <span class="pill lo">Live 4.0</span></span></div>
       <div class="loc-row"><span class="loc-k">Nearest Encoded Trader</span><span class="loc-v">Ray Gateway · Diaguandri · ~2 jumps</span></div>
     </div>
-    <p>The two coordinates are only a hair apart here (unlike Dav's Hope) — use the <strong>Live</strong> figure and you'll be on top of it. After your first visit, <strong>"Jameson Crash Site"</strong> appears in your left Nav panel, so you never coordinate-hunt again.</p>
+    <div class="callout"><span class="lbl">A one-time chore</span><p>After your <em>first</em> visit, <strong>"Jameson Crash Site"</strong> appears in your left Nav panel, so you never coordinate-hunt again.</p></div>
   </section>
 
   <!-- 4 -->
-  <section class="fade">
-    <h2><span class="num">04</span>The Scan Loop</h2>
+  <section id="loop">
+    <div class="sec-head"><span class="sec-num">04</span><h2>The Scan Loop</h2></div>
     <ol class="steps">
-      <li><strong>Jump &amp; honk.</strong> Arrive in HIP 12099, discovery-scan, and head to planet <strong>1 B</strong>.</li>
-      <li><strong>Find it (first visit only).</strong> Drop a DSS probe on 1 B, then fly to <strong>-54.37, -50.35</strong>. Later visits: just select "Jameson Crash Site" in the Nav panel.</li>
-      <li><strong>Land &amp; deploy SRV.</strong> Park <strong>right behind the crashed Cobra</strong> — from there your turret reaches the main cluster of data points without repositioning.</li>
-      <li><strong>Scan everything.</strong> Sweep the turret across the data points. After the overhaul there are <strong>9</strong> — you may need to nudge forward for the farthest few.</li>
-      <li><strong>Reset on "storage full."</strong> When you hit <strong>"unable to receive data — storage full,"</strong> exit to the main menu, switch game mode (Open / Private / Solo), and scan again.</li>
-      <li><strong>The 9th point is the ship itself</strong> — scanning it plays Jameson's final logs. Worth doing once for the story.</li>
-      <li><strong>Fill the trade fuel:</strong> max out <strong>Atypical Encryption Archives (G4)</strong> and <strong>Adaptive Encryptors Capture (G5)</strong>, then head to Ray Gateway.</li>
+      <li><span class="st">Jump &amp; honk</span><p>Arrive in HIP 12099, discovery-scan, and head to planet <strong>1 B</strong>.</p></li>
+      <li><span class="st">Find it (first visit only)</span><p>Drop a DSS probe on 1 B, then fly to <strong>-54.37, -50.35</strong>. Later visits: just select "Jameson Crash Site" in the Nav panel.</p></li>
+      <li><span class="st">Land &amp; deploy SRV</span><p>Park <strong>right behind the crashed Cobra</strong> — from there your turret reaches the main cluster of data points without repositioning.</p></li>
+      <li><span class="st">Scan everything</span><p>Sweep the turret across the data points. After the overhaul there are <strong>9</strong> — you may need to nudge forward for the farthest few.</p></li>
+      <li><span class="st">Reset on "storage full"</span><p>When you hit <strong>"unable to receive data — storage full,"</strong> exit to the main menu, switch game mode (Open / Private / Solo), and scan again.</p></li>
+      <li><span class="st">The 9th point is the ship itself</span><p>Scanning it plays Jameson's final logs. Worth doing once for the story.</p></li>
+      <li><span class="st">Fill the trade fuel</span><p>Max out <strong>Atypical Encryption Archives (G4)</strong> and <strong>Adaptive Encryptors Capture (G5)</strong>, then head to Ray Gateway.</p></li>
     </ol>
+    <figure>
+      <img src="../../../images/farms/jameson-crash-site.webp" alt="Top-down map of the Jameson crash site: the wrecked blue Cobra at top with data points scattered around it, red arrows tracing an efficient SRV path that sweeps every point." loading="lazy">
+      <figcaption><b>An efficient sweep.</b> Park behind the wreck (top) and follow a loop like this to reach every data point with minimal repositioning. Map via the <a href="https://www.reddit.com/r/EliteDangerous/comments/1ib3pp5/the_most_efficient_way_to_collect_data/">r/EliteDangerous thread</a>.</figcaption>
+    </figure>
   </section>
 
   <!-- 5 -->
-  <section class="fade">
-    <h2><span class="num">05</span>What You Get &amp; The Trade Run</h2>
-    <h3>The four direct drops</h3>
+  <section id="drops">
+    <div class="sec-head"><span class="sec-num">05</span><h2>What You Get &amp; The Trade Run</h2></div>
+    <h3 class="subhead">The four direct drops</h3>
     <p>Scanning hands you four encoded types. The two Encryption Files are your trade currency — fill them to the cap:</p>
-    <div class="drops">
-      <span class="drop fuel">Adaptive Encryptors Capture<b>ENCRYPTION · G5</b></span>
-      <span class="drop fuel">Atypical Encryption Archives<b>ENCRYPTION · G4</b></span>
-      <span class="drop">Cracked Industrial Firmware<b>FIRMWARE · G3</b></span>
-      <span class="drop">Modified Consumer Firmware<b>FIRMWARE · G2</b></span>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Material</th><th class="center">Grade</th><th>Category</th></tr></thead>
+        <tbody>
+          <tr><td>Adaptive Encryptors Capture</td><td class="center">G5</td><td><span class="pill lo">Encryption · fuel</span></td></tr>
+          <tr><td>Atypical Encryption Archives</td><td class="center">G4</td><td><span class="pill lo">Encryption · fuel</span></td></tr>
+          <tr><td>Cracked Industrial Firmware</td><td class="center">G3</td><td><span class="pill md">Firmware</span></td></tr>
+          <tr><td>Modified Consumer Firmware</td><td class="center">G2</td><td><span class="pill md">Firmware</span></td></tr>
+        </tbody>
+      </table>
     </div>
-    <h3>Trade at Ray Gateway (Diaguandri)</h3>
+    <h3 class="subhead">Trade at Ray Gateway (Diaguandri)</h3>
     <p>Carry your Encryption Files ~2 jumps to the Encoded Material Trader and convert them into whatever you're short on. Two mechanics drive the math:</p>
-    <div class="callout"><b>Down is cheap, sideways is steep.</b> Trading <em>down</em> a grade within a category yields more units; trading <em>sideways</em> (same grade, different category) costs at a worse ratio. Since you don't need more Encryption, you'll mostly do <strong>sideways-then-down</strong> hops out of your Encryption fuel into the categories you actually want.</p>
-    <h3>The six encoded categories you can fill</h3>
-    <div class="cats">
-      <div class="cat"><span class="cn">Encryption Files</span><span class="g5">Adaptive Encryptors Capture<b>G5 · your fuel</b></span></div>
-      <div class="cat"><span class="cn">Encoded Firmware</span><span class="g5">Modified Embedded Firmware<b>G5</b></span></div>
-      <div class="cat"><span class="cn">Wake Scans</span><span class="g5">Datamined Wake Exceptions<b>G5 · FSD</b></span></div>
-      <div class="cat"><span class="cn">Shield Data</span><span class="g5">Peculiar Shield Frequency Data<b>G5</b></span></div>
-      <div class="cat"><span class="cn">Emission Data</span><span class="g5">Abnormal Compact Emissions<b>G5</b></span></div>
-      <div class="cat"><span class="cn">Data Archives</span><span class="g5">Classified Scan Fragment<b>G5</b></span></div>
+    <div class="callout"><span class="lbl">Down is cheap, sideways is steep</span><p>Trading <em>down</em> a grade within a category yields more units; trading <em>sideways</em> (same grade, different category) costs at a worse ratio. Since you don't need more Encryption, you'll mostly do <strong>sideways-then-down</strong> hops out of your Encryption fuel into the categories you actually want.</p></div>
+    <h3 class="subhead">The six encoded categories you can fill</h3>
+    <div class="cards">
+      <div class="card ac-amber">
+        <span class="ico">Encryption Files</span>
+        <p>Adaptive Encryptors Capture <small>— G5 · your fuel</small></p>
+      </div>
+      <div class="card">
+        <span class="ico">Encoded Firmware</span>
+        <p>Modified Embedded Firmware <small>— G5</small></p>
+      </div>
+      <div class="card">
+        <span class="ico">Wake Scans</span>
+        <p>Datamined Wake Exceptions <small>— G5 · FSD</small></p>
+      </div>
+      <div class="card">
+        <span class="ico">Shield Data</span>
+        <p>Peculiar Shield Frequency Data <small>— G5</small></p>
+      </div>
+      <div class="card">
+        <span class="ico">Emission Data</span>
+        <p>Abnormal Compact Emissions <small>— G5</small></p>
+      </div>
+      <div class="card">
+        <span class="ico">Data Archives</span>
+        <p>Classified Scan Fragment <small>— G5</small></p>
+      </div>
     </div>
-    <div class="callout green"><b>Skip the trade for Wake Scans entirely.</b> Fit a <strong>Frame Shift Wake Scanner</strong> and scan ship wakes at any busy station or RES as you fly around — the whole Wake Scans category stockpiles passively, so you never have to spend Encryption fuel on it.</div>
-    <div class="callout warn"><b>Pace it.</b> Three or four 30-minute sessions comfortably max everything out. It's repetitive — stop the moment it stops being fun rather than grinding it in one sitting.</div>
+    <div class="callout"><span class="lbl">Skip the trade for Wake Scans entirely</span><p>Fit a <strong>Frame Shift Wake Scanner</strong> and scan ship wakes at any busy station or RES as you fly around — the whole Wake Scans category stockpiles passively, so you never have to spend Encryption fuel on it.</p></div>
+    <div class="callout warn"><span class="lbl">Pace it</span><p>Three or four 30-minute sessions comfortably max everything out. It's repetitive — stop the moment it stops being fun rather than grinding it in one sitting.</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-<style>
-.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-.credits .cr-rows{display:flex;flex-direction:column}
-.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-.credits .cr-src{font-weight:700;letter-spacing:.3px}
-.credits .cr-what{opacity:.78}
-.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-.credits .cr-link:hover{text-decoration:underline}
-@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-</style>
-<section class="credits" id="credits">
-  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
-  <p class="lead">Figures on this page are verified against the sources below.</p>
-  <p class="lead">Note: a 2025 overhaul expanded the site to nine data points and boosted yields; the Live coordinate (-54.37, -50.35) supersedes the older pre-4.0 figure.</p>
-  <div class="cr-rows">
-    <div class="cr-row"><span class="cr-src">Redshift</span><span class="cr-what">Encoded-data farming walkthrough — SRV turret scan routine and relog reset.</span><a class="cr-link" href="https://redshiftlogistics.online/2020/02/15/data-farm-1.html">redshiftlogistics.online</a></div>
-    <div class="cr-row"><span class="cr-src">Texter</span><span class="cr-what">Jameson crashed-Cobra data-farming reference — scan points and the four encoded drops.</span><a class="cr-link" href="https://texter.family/post/2020/05/12/encoded-data-farming-at-jamesons-crashed-cobra">texter.family</a></div>
-    <div class="cr-row"><span class="cr-src">Inara logbook</span><span class="cr-what">Commander writeup of farming encoded engineering mats at the crash site.</span><a class="cr-link" href="https://inara.cz/elite/logbook/56357/">inara.cz/elite/logbook/56357</a></div>
-    <div class="cr-row"><span class="cr-src">AXI Wiki</span><span class="cr-what">Encoded-material gathering and the trade-down / sideways conversion method.</span><a class="cr-link" href="https://wiki.antixenoinitiative.com/en/engineering-materials">wiki.antixenoinitiative.com</a></div>
-    <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">John Jameson crash site (HIP 12099 1 B), data points, and encoded-material salvage.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/John_Jameson">elite-dangerous.fandom.com/wiki/John_Jameson</a></div>
-  </div>
-</section>
+  <!-- ---- SOURCES ---- -->
+  <section class="credits" id="credits">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <p class="lead">Note: a 2025 overhaul expanded the site to nine data points and boosted yields; the Live coordinate (-54.37, -50.35) supersedes the older pre-4.0 figure.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">r/EliteDangerous</span><span class="cr-what">Overhead scan-path map of the crash site reproduced in §04 — most efficient SRV route across the data points.</span><a class="cr-link" href="https://www.reddit.com/r/EliteDangerous/comments/1ib3pp5/the_most_efficient_way_to_collect_data/">reddit.com/r/EliteDangerous</a></div>
+      <div class="cr-row"><span class="cr-src">Redshift</span><span class="cr-what">Encoded-data farming walkthrough — SRV turret scan routine and relog reset.</span><a class="cr-link" href="https://redshiftlogistics.online/2020/02/15/data-farm-1.html">redshiftlogistics.online</a></div>
+      <div class="cr-row"><span class="cr-src">Texter</span><span class="cr-what">Jameson crashed-Cobra data-farming reference — scan points and the four encoded drops.</span><a class="cr-link" href="https://texter.family/post/2020/05/12/encoded-data-farming-at-jamesons-crashed-cobra">texter.family</a></div>
+      <div class="cr-row"><span class="cr-src">Inara logbook</span><span class="cr-what">Commander writeup of farming encoded engineering mats at the crash site.</span><a class="cr-link" href="https://inara.cz/elite/logbook/56357/">inara.cz/elite/logbook/56357</a></div>
+      <div class="cr-row"><span class="cr-src">AXI Wiki</span><span class="cr-what">Encoded-material gathering and the trade-down / sideways conversion method.</span><a class="cr-link" href="https://wiki.antixenoinitiative.com/en/engineering-materials">wiki.antixenoinitiative.com</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">John Jameson crash site (HIP 12099 1 B), data points, and encoded-material salvage.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/John_Jameson">elite-dangerous.fandom.com/wiki/John_Jameson</a></div>
+    </div>
+  </section>
+
+  <!-- ---- FOOTER ---- -->
+  <footer>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Engineering</span>
+  </footer>
 
 </div>
 
-<div class="toast" id="toast">Coordinate copied</div>
-
-<script>
-  (function(){
-    var toast=document.getElementById('toast');
-    function flash(){toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(function(){toast.classList.remove('show');},1300);}
-    function fallback(text){try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();document.execCommand('copy');document.body.removeChild(ta);return true;}catch(e){return false;}}
-    document.querySelectorAll('.coord').forEach(function(el){
-      el.addEventListener('click',function(){
-        var text=el.getAttribute('data-copy');
-        var done=function(){el.classList.add('copied');flash();setTimeout(function(){el.classList.remove('copied');},1100);};
-        if(navigator.clipboard&&navigator.clipboard.writeText){
-          navigator.clipboard.writeText(text).then(done).catch(function(){if(fallback(text))done();});
-        }else{if(fallback(text))done();}
-      });
-    });
-  })();
-</script>
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>
