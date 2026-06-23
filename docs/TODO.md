@@ -52,7 +52,7 @@ Legend: ✅ done · ☐ not done.
 - ☐ **Refine the landing-page "What Is This Website" intro** — currently placeholder copy in `scripts/generate-guides-index.sh` (§01); rewrite to explain what the site is, who it's for, and how it's maintained, then regenerate.
 - ☐ **Refine the landing-page FAQ** — currently placeholder Q&A in `scripts/generate-guides-index.sh` (§05); write real answers (affiliation, currency of data, corrections/contributions), then regenerate.
 - ☐ **Define the Changelog update policy** — the landing-page Changelog (§06 in `generate-guides-index.sh`) is hand-written with FIXED dates and is **not** auto-edited. Decide when/how releases get added (e.g. on publish, per milestone) and document it.
-- ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide) *(partial: powerplay §08 links each role's pick to its power card, and third-party-apps §18 links each app to its card; broad Ships/Engineers/Blueprints cross-linking pending)*
+- ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide) *(partial: powerplay §08 links each role's pick to its power card, and third-party-apps §18 links each app to its card; the Rating Methodology callout now links all 77 dossiers + 7 by-role pages, and Materials/Modules cross-link Blueprints & Engineers; broad Ships/Engineers/Blueprints cross-linking still pending)*
 - ☐ Publish on GitHub Pages
 
 ## Phase 2 — Content-as-data tooling
@@ -78,7 +78,7 @@ Legend: ✅ done · ☐ not done.
 
 ## Phase 4 — Editorial polish
 
-- ☐ Add ship photos to ship manuals + manufacturer logos
+- ☐ Add ship photos to ship manuals + manufacturer logos *(ship renders **done** — framed hull render in all 77 dossiers via `add-ship-render.py`; manufacturer logos still pending)*
 - ☐ Remove fleet bias from content *(systems pages largely de-biased — powerplay, superpower-rank, community-goals, fleet-carrier, system-colonization, pve-combat-venues; combat-zones plus the ship dossiers / by-role / activities pages still reference the personal fleet (KA-05 ship tags) — ~49 pages pending)*
 - ☐ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
@@ -86,7 +86,9 @@ Legend: ✅ done · ☐ not done.
 
 ## Phase 5 — New content / guides
 
-- ☐ Modules & upgrades guide (ref: <https://newp.io/shipyard>)
+- ✅ Modules guide — `guides/engineering/modules.html` (core internals · optional internals · hardpoints · utility mounts; A–E class & size system; per-role picks) (ref: <https://newp.io/shipyard>)
+- ✅ Materials & material-trader guide — `guides/engineering/materials.html` (the three types, grade ladders, the trader exchange-ratio matrix, storage caps, where-to-farm links, tracking tools)
+- ✅ Ship Rating Methodology — `guides/ships/rating-methodology.html` (how the 1–100 suitability score is derived: per-role factors + worked examples), cross-linked from all 77 dossiers + 7 by-role pages
 - ☐ ED glossary — pick a better name (ref: <https://newp.io/glossary>)
 - ☐ On-foot / Odyssey blueprints
 - ☐ Guardian mods

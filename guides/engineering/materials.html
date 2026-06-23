@@ -6,6 +6,59 @@
 <title>Materials &middot; Engineering | E:D Black Box</title>
 <link rel="icon" type="image/png" href="../../images/logos/favicon.png">
 <link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
+
+<!-- Bespoke, page-scoped block (cf. the checklist Unlock Map / index grids): material-table
+     column parity + the trader ratio heat-matrix. Not a style fork — accent stays amber default. -->
+<style>
+  /* Consistent columns across the three material catalogs */
+  #raw table.data, #manufactured table.data, #encoded table.data{table-layout:fixed;width:100%;}
+  #raw table.data th, #raw table.data td,
+  #manufactured table.data th, #manufactured table.data td,
+  #encoded table.data th, #encoded table.data td{width:16.6%;overflow-wrap:anywhere;font-size:.86rem;}
+  #raw table.data th:first-child, #raw table.data td:first-child,
+  #manufactured table.data th:first-child, #manufactured table.data td:first-child,
+  #encoded table.data th:first-child, #encoded table.data td:first-child{width:17%;}
+
+  /* Grades table — balanced column widths */
+  #grades table.data{table-layout:fixed;width:100%;}
+  #grades table.data th:nth-child(1),#grades table.data td:nth-child(1){width:14%;}
+  #grades table.data th:nth-child(2),#grades table.data td:nth-child(2){width:30%;}
+  #grades table.data th:nth-child(3),#grades table.data td:nth-child(3){width:32%;}
+  #grades table.data th:nth-child(4),#grades table.data td:nth-child(4){width:24%;}
+
+  /* §1 type cards — title tinted to each card's accent (section-scoped) */
+  #types .card.ac-amber h4{color:var(--amber-lt,#e0a838);}
+  #types .card.ac-maroon h4{color:var(--maroon-lt,#d36b78);}
+  #types .card.ac-fed h4{color:var(--fed-lt,#5fa8dc);}
+
+  /* Trader ratio heat-matrix */
+  .ratio-legend{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:6px 0 16px;font-size:.8rem;color:var(--ink-2,#b9c0c8);}
+  .ratio-legend .rl-title{font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink,#e7ebef);margin-right:2px;}
+  .ratio-legend .rl-bar{display:inline-block;width:220px;height:11px;border-radius:3px;border:1px solid rgba(255,255,255,.12);
+    background:linear-gradient(90deg,rgba(146,66,72,.85) 0%,rgba(146,66,72,.34) 26%,rgba(150,156,162,.12) 50%,rgba(86,140,104,.31) 74%,rgba(86,140,104,.78) 100%);}
+  .ratio-legend .rl-end{font-size:.76rem;opacity:.85;}
+  .mx-title{margin:20px 0 6px;}
+  .mx-title .mx-sub{font-weight:400;opacity:.7;}
+  table.data.mx{table-layout:fixed;width:100%;text-align:center;}
+  table.data.mx th{text-align:center;font-size:.9rem;}
+  table.data.mx tbody th{font-weight:700;color:var(--accent-lt,#e0a838);}
+  table.data.mx td{font-weight:600;font-variant-numeric:tabular-nums;}
+  /* per-ratio gradient stops — green = you gain, red = you pay; each ratio unique */
+  .m-even{background:rgba(150,156,162,.06);opacity:.55;}
+  .m-g1{background:rgba(86,140,104,.14);}
+  .m-g2{background:rgba(86,140,104,.22);}
+  .m-g3{background:rgba(86,140,104,.31);}
+  .m-g4{background:rgba(86,140,104,.41);}
+  .m-g5{background:rgba(86,140,104,.52);}
+  .m-g6{background:rgba(86,140,104,.64);}
+  .m-g7{background:rgba(86,140,104,.78);}
+  .m-r0{background:rgba(146,66,72,.12);}
+  .m-r1{background:rgba(146,66,72,.24);}
+  .m-r2{background:rgba(146,66,72,.38);}
+  .m-r3{background:rgba(146,66,72,.54);}
+  .m-r4{background:rgba(146,66,72,.70);}
+  .m-r5{background:rgba(146,66,72,.85);}
+</style>
 </head>
 <body>
 
@@ -42,7 +95,7 @@
           <a class="qn-item" href="#encoded"><span class="qn-dot amber"></span><span class="qn-nm">Encoded Data</span><span class="qn-side">05</span></a>
           <a class="qn-item" href="#trader"><span class="qn-dot amber"></span><span class="qn-nm">The Material Trader: Ratios</span><span class="qn-side">06</span></a>
           <a class="qn-item" href="#storage"><span class="qn-dot amber"></span><span class="qn-nm">Storage Caps</span><span class="qn-side">07</span></a>
-          <a class="qn-item" href="#farm"><span class="qn-dot amber"></span><span class="qn-nm">Where to Farm</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#tracking"><span class="qn-dot amber"></span><span class="qn-nm">Tracking Your Materials</span><span class="qn-side">08</span></a>
           <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">09</span></a>
           <div class="qn-empty" hidden>No matching sections</div>
         </div>
@@ -92,22 +145,20 @@
     <p class="lead">Every material in your inventory belongs to exactly one of three types. Each has its own farming method, its own storage pool, and its own dedicated trader. Types do not mix.</p>
     <div class="cards wide">
       <div class="card ac-amber">
-        <span class="ico"><span class="chip amber">Raw</span></span>
         <h4>Raw Materials</h4>
         <p>Naturally occurring chemical <b>elements</b> — iron, sulphur, polonium and the rest of the periodic table. Used in synthesis (ammo, AFMU refills, jumponium) and many blueprints. Found by SRV prospecting on planet surfaces, in surface signal sources, on crystalline shards, and via asteroid mining.</p>
       </div>
-      <div class="card ac-amber">
-        <span class="ico"><span class="chip maroon">Manufactured</span></span>
+      <div class="card ac-maroon">
         <h4>Manufactured Materials</h4>
         <p>Artificial <b>components</b> salvaged from ships and structures — alloys, capacitors, focus crystals, shielding. The backbone of weapon and module engineering. Earned from combat salvage, ship-debris signal sources, surface settlements, and High-Grade Emissions.</p>
       </div>
-      <div class="card ac-amber">
-        <span class="ico"><span class="chip fed">Encoded</span></span>
+      <div class="card ac-fed">
         <h4>Encoded Data</h4>
         <p>Pieces of <b>data</b> — scans, intercepted files, decoded emissions. Heavy in sensor, FSD, and shield blueprints. Gathered by scanning ships, wakes, data points, and signal sources; stored in a dedicated data bank.</p>
       </div>
     </div>
-    <div class="callout warn icon"><span class="lbl">The hard wall</span><p>You can trade across grades and sub-categories <b>inside</b> a type, but there is <b>no exchange between types</b>. Raw never becomes Manufactured; data never becomes a component. Each type is also collected and stored entirely separately.</p></div>
+    <div class="callout"><span class="lbl">The hard wall</span><p>You can trade across grades and sub-categories <b>inside</b> a type, but there is <b>no exchange between types</b>. Raw never becomes Manufactured; data never becomes a component. Each type is also collected and stored entirely separately.</p></div>
+    <div class="callout"><span class="lbl">Spend it on engineering</span><p>Materials only matter for what they buy. See <a href="blueprints.html">Blueprints</a> for what each roll costs, and <a href="engineers.html">Engineers</a> for who unlocks which modifications.</p></div>
   </section>
 
   <!-- 2 -->
@@ -127,7 +178,7 @@
       </table>
     </div>
     <p class="tbl-desc">Manufactured and Encoded run a full G1–G5 ladder. <b>Raw materials top out at G4</b> — there is no G5 raw material.</p>
-    <div class="callout tip"><span class="lbl">The core strategy</span><p>Because upgrading is expensive (6:1) and downgrading is cheap (1:3), the efficient play is to <b>collect at the highest grade you can</b> and trade <em>down</em> to fill the lower grades on demand — never the reverse.</p></div>
+    <div class="callout"><span class="lbl">The core strategy</span><p>Because upgrading is expensive (6:1) and downgrading is cheap (1:3), the efficient play is to <b>collect at the highest grade you can</b> and trade <em>down</em> to fill the lower grades on demand — never the reverse.</p></div>
   </section>
 
   <!-- 3 -->
@@ -136,20 +187,20 @@
     <p class="lead">Raw materials are organised into <b>7 element groups</b>, each spanning the four grades G1–G4. The trader treats one group as a sub-category: trading <em>within</em> a group (e.g. Iron → Zinc) is the cheapest sideways move.</p>
     <div class="tbl-scroll">
       <table class="data">
-        <thead><tr><th>Group</th><th>G1 · Very Common</th><th>G2 · Common</th><th>G3 · Standard</th><th>G4 · Rare</th></tr></thead>
+        <thead><tr><th>Group</th><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th></th></tr></thead>
         <tbody>
-          <tr><td class="row-rank">1</td><td><b>Carbon</b></td><td>Vanadium</td><td>Niobium</td><td>Yttrium</td></tr>
-          <tr><td class="row-rank">2</td><td><b>Phosphorus</b></td><td>Chromium</td><td>Molybdenum</td><td>Technetium</td></tr>
-          <tr><td class="row-rank">3</td><td><b>Sulphur</b></td><td>Manganese</td><td>Cadmium</td><td>Ruthenium</td></tr>
-          <tr><td class="row-rank">4</td><td><b>Iron</b></td><td>Zinc</td><td>Tin</td><td>Selenium</td></tr>
-          <tr><td class="row-rank">5</td><td><b>Nickel</b></td><td>Germanium</td><td>Tungsten</td><td>Tellurium</td></tr>
-          <tr><td class="row-rank">6</td><td>Rhenium</td><td>Arsenic</td><td>Mercury</td><td>Polonium</td></tr>
-          <tr><td class="row-rank">7</td><td>Lead</td><td>Zirconium</td><td>Boron</td><td>Antimony</td></tr>
+          <tr><td><b>Group 1</b></td><td>Carbon</td><td>Vanadium</td><td>Niobium</td><td>Yttrium</td><td></td></tr>
+          <tr><td><b>Group 2</b></td><td>Phosphorus</td><td>Chromium</td><td>Molybdenum</td><td>Technetium</td><td></td></tr>
+          <tr><td><b>Group 3</b></td><td>Sulphur</td><td>Manganese</td><td>Cadmium</td><td>Ruthenium</td><td></td></tr>
+          <tr><td><b>Group 4</b></td><td>Iron</td><td>Zinc</td><td>Tin</td><td>Selenium</td><td></td></tr>
+          <tr><td><b>Group 5</b></td><td>Nickel</td><td>Germanium</td><td>Tungsten</td><td>Tellurium</td><td></td></tr>
+          <tr><td><b>Group 6</b></td><td>Rhenium</td><td>Arsenic</td><td>Mercury</td><td>Polonium</td><td></td></tr>
+          <tr><td><b>Group 7</b></td><td>Lead</td><td>Zirconium</td><td>Boron</td><td>Antimony</td><td></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="tbl-desc">7 groups × 4 grades = <b>28 raw materials</b>, served by 7 trade lines at the Raw trader.</p>
-    <div class="callout"><span class="lbl">Where they drop</span><p>SRV surface prospecting always yields a fixed spread per body — 1 × G4, 2 × G3, 3 × G2, 5 × G1 from its possible pool. The G1 surface five are always Carbon, Iron, Nickel, Phosphorus and Sulphur; <b>Lead and Rhenium come only from asteroid mining</b>. Crystalline shards are the fastest route to specific high-grade raws.</p></div>
+    <p class="tbl-desc">7 groups × 4 grades = <b>28 raw materials</b>, served by 7 trade lines at the Raw trader. The <b>G5 column is intentionally empty</b> — there is no G5 raw material; the column is kept only so all three catalogs line up.</p>
+    <div class="callout"><span class="lbl">Where they drop &amp; farm</span><p>SRV surface prospecting always yields a fixed spread per body — 1 × G4, 2 × G3, 3 × G2, 5 × G1 from its possible pool. The G1 surface five are always Carbon, Iron, Nickel, Phosphorus and Sulphur; <b>Lead and Rhenium come only from asteroid mining</b>. For specific high-grade raws the fastest route is <b>Crystalline Shards</b> — drive an SRV and shoot the shard clusters. <a href="farms/crystalline-shards.html">Crystalline Shards farm →</a></p></div>
   </section>
 
   <!-- 4 -->
@@ -174,6 +225,7 @@
       </table>
     </div>
     <p class="tbl-desc">10 chains served by 10 trade lines at the Manufactured trader. G5s for 8 of the 10 chains drop in <b>High-Grade Emissions</b>.</p>
+    <div class="callout"><span class="lbl">Where to farm manufactured</span><p><b>Dav's Hope</b> bulk-fills G1–G3 components on a fast SRV salvage loop; <b>High-Grade Emissions</b> drop the G4/G5 chains. <a href="farms/davs-hope.html">Dav's Hope farm →</a> · <a href="farms/high-grade-emissions.html">HGE farm →</a></p></div>
   </section>
 
   <!-- 5 -->
@@ -194,53 +246,72 @@
       </table>
     </div>
     <p class="tbl-desc">6 categories served by 6 trade lines at the Encoded trader. The category names and exact G-bands above are <span class="kv-tbd">approximate where the in-game grouping overlaps</span>; verify the specific material before a trade.</p>
+    <div class="callout"><span class="lbl">Where to farm encoded</span><p><b>High-Grade Emissions</b> drop high-grade data by system state; the <b>Jameson Crash Site</b> is a fixed data-point loop via the SRV Data Link Scanner. <a href="farms/high-grade-emissions.html">HGE farm →</a> · <a href="farms/jameson-crash-site.html">Jameson Crash Site farm →</a></p></div>
   </section>
 
   <!-- 6 -->
   <section id="trader">
     <div class="sec-head"><span class="sec-num">06</span><h2>The Material Trader: Exchange Ratios</h2><span class="tag">Conversion</span></div>
-    <p class="lead">A Material Trader converts materials you have into materials you want — at a deliberately punishing rate that rewards upgrading reluctantly and downgrading freely. Three knobs set the price: grade change, sub-category change, and (impossibly) type change.</p>
+    <p class="lead">A Material Trader converts materials you have into materials you want — at a deliberately punishing rate that rewards upgrading reluctantly and downgrading freely. Read the matrix as <b>have ↓</b> against <b>want →</b>: <span class="acc">x:1</span> means you spend x to gain 1; <span class="acc">1:y</span> means you spend 1 to gain y.</p>
 
-    <div class="cols-2">
-      <div class="panel">
-        <h4>Grade moves (same sub-category)</h4>
+    <div class="ratio-legend">
+      <span class="rl-title">give : get</span>
+      <span class="rl-end">steep cost</span>
+      <span class="rl-bar" aria-hidden="true"></span>
+      <span class="rl-end">big gain</span>
+    </div>
+
+    <h4 class="mx-title">Within the same sub-category</h4>
+    <div class="tbl-scroll">
+      <table class="data mx">
+        <thead><tr><th>have ↓ &nbsp;·&nbsp; want →</th><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th></tr></thead>
+        <tbody>
+          <tr><th>G1</th><td class="m-even">–</td><td class="m-r1">6:1</td><td class="m-r2">36:1</td><td class="m-r3">216:1</td><td class="m-r4">1,296:1</td></tr>
+          <tr><th>G2</th><td class="m-g2">1:3</td><td class="m-even">–</td><td class="m-r1">6:1</td><td class="m-r2">36:1</td><td class="m-r3">216:1</td></tr>
+          <tr><th>G3</th><td class="m-g4">1:9</td><td class="m-g2">1:3</td><td class="m-even">–</td><td class="m-r1">6:1</td><td class="m-r2">36:1</td></tr>
+          <tr><th>G4</th><td class="m-g6">1:27</td><td class="m-g4">1:9</td><td class="m-g2">1:3</td><td class="m-even">–</td><td class="m-r1">6:1</td></tr>
+          <tr><th>G5</th><td class="m-g7">1:81</td><td class="m-g6">1:27</td><td class="m-g4">1:9</td><td class="m-g2">1:3</td><td class="m-even">–</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mx-title">Across sub-categories <span class="mx-sub">(same trader type only)</span></h4>
+    <div class="tbl-scroll">
+      <table class="data mx">
+        <thead><tr><th>have ↓ &nbsp;·&nbsp; want →</th><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th></tr></thead>
+        <tbody>
+          <tr><th>G1</th><td class="m-r1">6:1</td><td class="m-r2">36:1</td><td class="m-r3">216:1</td><td class="m-r4">1,296:1</td><td class="m-r5">7,776:1</td></tr>
+          <tr><th>G2</th><td class="m-r0">2:1</td><td class="m-r1">6:1</td><td class="m-r2">36:1</td><td class="m-r3">216:1</td><td class="m-r4">1,296:1</td></tr>
+          <tr><th>G3</th><td class="m-g1">2:3</td><td class="m-r0">2:1</td><td class="m-r1">6:1</td><td class="m-r2">36:1</td><td class="m-r3">216:1</td></tr>
+          <tr><th>G4</th><td class="m-g3">2:9</td><td class="m-g1">2:3</td><td class="m-r0">2:1</td><td class="m-r1">6:1</td><td class="m-r2">36:1</td></tr>
+          <tr><th>G5</th><td class="m-g5">2:27</td><td class="m-g3">2:9</td><td class="m-g1">2:3</td><td class="m-r0">2:1</td><td class="m-r1">6:1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-desc">Each grade step multiplies by ×6 going up or ×⅓ going down. Crossing into a different sub-category adds a flat <b>×6</b> on top — applied once, regardless of how many groups you jump. The two effects stack, which is how the corners reach 7,776:1.</p>
+
+    <div class="cards wide">
+      <article class="card">
+        <div class="c-head"><h3>Grade moves</h3><span class="c-eyebrow">Same sub-category</span></div>
         <ul class="bullets">
           <li><b>Down one grade.</b> Pay 1, receive 3 — a <span class="acc">1:3</span> payout.</li>
           <li><b>Same grade.</b> Straight <span class="acc">1:1</span> swap to another material in the same group.</li>
           <li><b>Up one grade.</b> Pay 6, receive 1 — a <span class="acc">6:1</span> cost.</li>
         </ul>
-      </div>
-      <div class="panel">
-        <h4>Sub-category &amp; type moves</h4>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>Sub-category &amp; type moves</h3><span class="c-eyebrow">Crossing groups</span></div>
         <ul class="bullets">
           <li><b>Different sub-category, same grade.</b> A flat <span class="acc">6:1</span> — same whether you jump one group or several.</li>
           <li><b>Combined moves multiply.</b> Stack the grade and group factors together.</li>
           <li><b>Different type.</b> <b>Impossible</b> — raw/manufactured/encoded never cross.</li>
         </ul>
-      </div>
+      </article>
     </div>
 
-    <p class="lead">The canonical per-grade ratio table (within one sub-category), where <b>x:1</b> means you spend x to gain 1, and <b>1:y</b> means you spend 1 to gain y:</p>
-    <div class="tbl-scroll">
-      <table class="data">
-        <thead><tr><th>Move</th><th class="num">Ratio</th><th>Direction</th></tr></thead>
-        <tbody>
-          <tr><td>Up 4 grades</td><td class="num">1,296 : 1</td><td>Most expensive</td></tr>
-          <tr><td>Up 3 grades</td><td class="num">216 : 1</td><td>Expensive</td></tr>
-          <tr><td>Up 2 grades</td><td class="num">36 : 1</td><td>Expensive</td></tr>
-          <tr class="hl"><td>Up 1 grade</td><td class="num">6 : 1</td><td>Costly</td></tr>
-          <tr class="hl"><td>Same grade, same group</td><td class="num">1 : 1</td><td>Even swap</td></tr>
-          <tr class="hl"><td>Down 1 grade</td><td class="num">1 : 3</td><td>Cheap</td></tr>
-          <tr><td>Down 2 grades</td><td class="num">1 : 9</td><td>Cheaper</td></tr>
-          <tr><td>Down 3 grades</td><td class="num">1 : 27</td><td>Cheapest</td></tr>
-          <tr><td>Down 4 grades</td><td class="num">1 : 81</td><td>Cheapest</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="tbl-desc">Each grade step multiplies by ×6 going up or ×⅓ going down. A different-sub-category move adds a flat ×6 on top, applied once regardless of how many groups you cross.</p>
-
-    <div class="callout"><span class="lbl">Worked example</span><p>Trade a G3 component <b>down to G2 in a different sub-category</b>: apply the cross-group ×6 (6 G3 → 1 G3 elsewhere), then the down step ×3 (1 G3 → 3 G2). Net: <b>6 G3 yields 3 G2</b> of the other group — an effective 2:1.</p></div>
-    <div class="callout warn icon"><span class="lbl">Reality check</span><p>Because the trader stays within a <b>type</b>, you can only convert raw-into-raw, manufactured-into-manufactured, encoded-into-encoded. Plan your farming around the <em>type</em> a blueprint needs — the trader fixes grade and group mismatches, never type ones.</p></div>
+    <div class="callout"><span class="lbl">Worked example</span><p>Trade a G3 component <b>down to G2 in a different sub-category</b>: apply the cross-group ×6 (6 G3 → 1 G3 elsewhere), then the down step ×3 (1 G3 → 3 G2). Net: <b>6 G3 yields 3 G2</b> of the other group — an effective 2:1, exactly the across-category G3→G2 cell.</p></div>
+    <div class="callout"><span class="lbl">Finding a trader</span><p>Traders sit in stations by economy: <b>Raw</b> at Refinery/Extraction, <b>Manufactured</b> at Extraction/Industrial, <b>Encoded</b> at High-Tech/Military — in medium/high-security systems of roughly 1–22 million population. Filter the galaxy map by the Material Trader service, or use <a href="https://inara.cz/elite/nearest-stations/?formbrief=1&amp;ps1=LTT+16522&amp;pi13=&amp;pi14=0&amp;pi16=&amp;pi1=0&amp;pi18=0&amp;pi19=0&amp;pi17=0&amp;pa1%5B%5D=25&amp;ps2=&amp;pi25=0&amp;pi8=&amp;pi9=0&amp;pi26=0&amp;pi3=&amp;pi4=0&amp;pi5=0&amp;pi7=0&amp;pi23=0&amp;pi6=0&amp;pi20=0&amp;ps3=&amp;pi24=0">INARA's nearest-trader search</a>.</p></div>
+    <div class="callout"><span class="lbl">Reality check</span><p>Because the trader stays within a <b>type</b>, you can only convert raw-into-raw, manufactured-into-manufactured, encoded-into-encoded. Plan your farming around the <em>type</em> a blueprint needs — the trader fixes grade and group mismatches, never type ones.</p></div>
   </section>
 
   <!-- 7 -->
@@ -254,42 +325,45 @@
           <tr><td class="row-rank">G1</td><td class="num">300</td></tr>
           <tr><td class="row-rank">G2</td><td class="num">250</td></tr>
           <tr><td class="row-rank">G3</td><td class="num">200</td></tr>
-          <tr class="hl"><td class="row-rank">G4</td><td class="num">150</td></tr>
+          <tr><td class="row-rank">G4</td><td class="num">150</td></tr>
           <tr><td class="row-rank">G5</td><td class="num">100</td></tr>
         </tbody>
       </table>
     </div>
     <p class="tbl-desc">Caps drop by 50 per grade. Raw G4 caps at 150 (no raw G5 exists). Manufactured and Encoded G5 cap at 100 each.</p>
-    <div class="callout tip"><span class="lbl">Why caps matter at the trader</span><p>When a slot is full, the excess is wasted on pickup. Convert near-full high grades <b>down</b> the cheap direction to free space and bank the value as plentiful low grades.</p></div>
+    <div class="callout"><span class="lbl">Why caps matter at the trader</span><p>When a slot is full, the excess is wasted on pickup. Convert near-full high grades <b>down</b> the cheap direction to free space and bank the value as plentiful low grades.</p></div>
   </section>
 
   <!-- 8 -->
-  <section id="farm">
-    <div class="sec-head"><span class="sec-num">08</span><h2>Where to Farm</h2><span class="tag">Sourcing</span></div>
-    <p class="lead">Find a trader by economy: <b>Raw</b> at Refinery/Extraction stations, <b>Manufactured</b> at Extraction/Industrial, <b>Encoded</b> at High-Tech/Military — in medium/high-security systems with populations roughly 1–22 million. Filter the galaxy map by Material Trader service, or use INARA's nearest-trader search. Then farm the type you need:</p>
-    <div class="cards wide">
-      <div class="card ac-amber">
-        <span class="ico"><span class="chip amber">Raw</span></span>
-        <h4>Crystalline Shards</h4>
-        <p>The fastest source of specific high-grade raw elements — drive an SRV and shoot the shard clusters. <a href="farms/crystalline-shards.html">Crystalline Shards farm →</a></p>
+  <section id="tracking">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Tracking Your Materials</h2><span class="tag">Tools</span></div>
+    <p class="lead">You can't manage 100+ materials from the in-game panel alone. Commanders track stock, set wishlists from blueprints, and find the nearest trader using community apps that read your game journal. Three are worth installing.</p>
+    <ul class="bullets">
+      <li><b>ED Odyssey Materials Helper</b> <span class="acc">(desktop · most complete)</span>. Reads your journal for exact raw, manufactured, encoded and on-foot stock, builds wishlists from engineer blueprints, points you to the nearest material trader, and bundles a ship-builder. <a href="https://github.com/jixxed/ed-odyssey-materials-helper">EDOMH on GitHub →</a></li>
+      <li><b>ED Engineer</b> <span class="acc">(desktop · overlay)</span>. Ties your material inventory directly to engineer blueprint requirements — at a glance, what a roll needs and whether you can afford it. <a href="https://github.com/msarilar/edengineer">ED Engineer on GitHub →</a></li>
+      <li><b>INARA</b> <span class="acc">(web · plan anywhere)</span>. Mirrors your inventory once an uploader is linked; best for checking from a browser what you can safely sell versus need to keep. <a href="https://inara.cz/elite/cmdr-info/">inara.cz →</a></li>
+    </ul>
+
+    <h3 class="subhead">Getting started</h3>
+    <div class="cols-2">
+      <div class="panel">
+        <h4>EDOMH / ED Engineer <span class="acc">(desktop)</span></h4>
+        <ol class="steps">
+          <li><span class="st">Download &amp; run</span><p>Grab the latest release from the GitHub link above and launch it alongside the game.</p></li>
+          <li><span class="st">Point it at your journal</span><p>It auto-detects the <span class="mono">Saved Games\Frontier Developments\Elite Dangerous</span> journal folder; your stock populates from play history.</p></li>
+          <li><span class="st">Build a wishlist</span><p>Add the blueprints and grades you're chasing — the app tallies what you're short and flags the nearest trader to top up.</p></li>
+        </ol>
       </div>
-      <div class="card ac-amber">
-        <span class="ico"><span class="chip maroon">Manufactured</span></span>
-        <h4>Dav's Hope</h4>
-        <p>An SRV salvage loop that bulk-fills G1–G3 manufactured components fast. <a href="farms/davs-hope.html">Dav's Hope farm →</a></p>
-      </div>
-      <div class="card ac-amber">
-        <span class="ico"><span class="chip fed">Encoded</span></span>
-        <h4>High-Grade Emissions</h4>
-        <p>System-state signal sources that drop G4/G5 manufactured and encoded mats. <a href="farms/high-grade-emissions.html">HGE farm →</a></p>
-      </div>
-      <div class="card ac-amber">
-        <span class="ico"><span class="chip fed">Encoded</span></span>
-        <h4>Jameson Crash Site</h4>
-        <p>A fixed data-point loop for specific encoded data via the SRV Data Link Scanner. <a href="farms/jameson-crash-site.html">Jameson Crash Site farm →</a></p>
+      <div class="panel">
+        <h4>INARA <span class="acc">(web, via EDMC)</span></h4>
+        <ol class="steps">
+          <li><span class="st">Install ED Market Connector</span><p><b>EDMC</b> is the companion uploader that reads your journal and pushes data to web services.</p></li>
+          <li><span class="st">Link your account</span><p>In EDMC settings, paste the API key from your INARA profile to connect the two.</p></li>
+          <li><span class="st">Fly &amp; sync</span><p>EDMC uploads as you play; INARA's materials page then shows current stock and keep/sell guidance from any browser.</p></li>
+        </ol>
       </div>
     </div>
-    <div class="callout"><span class="lbl">Spend it on engineering</span><p>Materials only matter for what they buy. See <a href="blueprints.html">Blueprints</a> for what each roll costs, and <a href="engineers.html">Engineers</a> for who unlocks which modifications.</p></div>
+    <div class="callout"><span class="lbl">Pick one</span><p>Desktop trackers (EDOMH, ED Engineer) are best <b>while flying</b>; INARA is best for planning <b>away from the game</b>. Most commanders run EDMC plus one desktop tracker.</p></div>
   </section>
 
   <!-- 9 -->
@@ -304,6 +378,10 @@
       <div class="cr-row"><span class="cr-src">INARA — Components / Materials</span><span class="cr-what">Trade-line counts (7 raw, 10 manufactured, 6 encoded = 23) and component grade bands.</span><a class="cr-link" href="https://inara.cz/elite/components/">inara.cz</a></div>
       <div class="cr-row"><span class="cr-src">Elite Wiki (alioth.net) — Material Trader</span><span class="cr-what">The full per-grade ratio matrix (up to 1,296:1) and the worked cross-grade math.</span><a class="cr-link" href="https://wiki.alioth.net/index.php/Elite:_Dangerous/Material_Trader">wiki.alioth.net</a></div>
       <div class="cr-row"><span class="cr-src">EDSM — Stations (Material Trader service)</span><span class="cr-what">Locating traders by station service and economy filters.</span><a class="cr-link" href="https://www.edsm.net/en/search/stations/index/service/71">edsm.net</a></div>
+      <div class="cr-row"><span class="cr-src">ED Odyssey Materials Helper</span><span class="cr-what">Desktop material tracker — inventory, wishlists, nearest-trader, ship-builder.</span><a class="cr-link" href="https://github.com/jixxed/ed-odyssey-materials-helper">github.com/jixxed</a></div>
+      <div class="cr-row"><span class="cr-src">ED Engineer</span><span class="cr-what">Overlay tracker tying material stock to engineer blueprint requirements.</span><a class="cr-link" href="https://github.com/msarilar/edengineer">github.com/msarilar</a></div>
+      <div class="cr-row"><span class="cr-src">ED Market Connector (EDCD)</span><span class="cr-what">Companion uploader that syncs the journal to INARA and other web services.</span><a class="cr-link" href="https://github.com/EDCD/EDMarketConnector">github.com/EDCD</a></div>
+      <div class="cr-row"><span class="cr-src">INARA — Commander materials</span><span class="cr-what">Web inventory mirror and keep/sell guidance once an uploader is linked.</span><a class="cr-link" href="https://inara.cz/elite/cmdr-info/">inara.cz</a></div>
     </div>
   </section>
 

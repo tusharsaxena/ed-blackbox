@@ -12,5 +12,5 @@ Link format: `materials.html#<id>`
 - **Encoded Data** — `#encoded`
 - **The Material Trader: Exchange Ratios** — `#trader`
 - **Storage Caps** — `#storage`
-- **Where to Farm** — `#farm`
+- **Tracking Your Materials** — `#tracking`
 - **Sources** — `#credits`

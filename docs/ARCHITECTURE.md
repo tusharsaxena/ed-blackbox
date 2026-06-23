@@ -20,8 +20,10 @@ every page links the shared stylesheet — so work has shifted to **publishing a
 polish** (landing-page copy, fleet-bias cleanup, GitHub Pages).
 
 There is now **one styling world**. The design-system migration that was the project's
-central effort is **done (2026-06-23)**: all **108 guides + the generated landing page**
-link the single `design-system/` stylesheet and behaviours.
+central effort is **done (2026-06-23)**: all **111 guides + the generated landing page**
+link the single `design-system/` stylesheet and behaviours. (108 were migrated; the three
+pages added since — **Materials**, **Modules**, **Ship Rating Methodology** — were authored
+on the system from the start.)
 
 | | Every page today |
 |---|---|
@@ -83,7 +85,7 @@ tokens  →  components  →  templates  →  pages
   the components promoted during the final migration: **`.step-card`** (numbered action-card
   used by `checklist.html`) and the **`.bp-*`** blueprint accordion set (`.bp-card`,
   `.bp-modgroup`, `.bp-table`, `.bp-ctx`, `.bp-fold`, `.bp-rec`, `.bp-exp-tag`) used by
-  `blueprints.html`. (`.ratebox`/`.dial` remain defined but unused.)
+  `blueprints.html`. (`.ratebox`/`.dial` are now used only by `ships/rating-methodology.html`.)
 - **Theming model — one knob.** A page re-themes by overriding only a **five-token
   accent group** (`--accent`, `--accent-lt`, `--accent-deep`, `--accent-soft`,
   `--accent-glow`) in a tiny page-level `<style>`. The brand frame (grid, glows,
@@ -110,7 +112,8 @@ tokens  →  components  →  templates  →  pages
   `.stat-grid`. The old per-page `.subtitle`/`.chips` were folded into it, and the verdict
   box chrome is hardcoded **amber** (independent of the page's accent group). Ship dossiers
   carry their **0–100 suitability rating as the first stat card** with a `.bar.mini` bar — the
-  earlier `.ratebox`/`.dial` rating dial has been retired (the classes remain defined but unused).
+  earlier `.ratebox`/`.dial` rating dial was retired from dossiers (the classes remain defined,
+  now reused by the worked examples on `ships/rating-methodology.html`).
 - **`templates/`** — `starter-page.html` (scaffold for a new page) and
   `component-gallery.html` (live copy-paste reference for every component); both include
   the header + breadcrumb + credits markup.
@@ -127,44 +130,50 @@ Naming: classes are mostly unprefixed semantic names; accent variants use `.ac-*
 ## 4. Content taxonomy & routing
 
 Directory structure **is** the routing — a path maps directly to a URL once on GitHub
-Pages. **108 guides** (all on the design system) in four areas, plus a generated landing page:
+Pages. **111 guides** (all on the design system) in four areas, plus a generated landing page:
 
 ```
 guides/
   index.html                 ← landing page (generated; see §6)
-  engineering/   engineers · blueprints · checklist · farms/ (4)   — 7 pages
+  engineering/   engineers · blueprints · checklist · materials · modules · farms/ (4)   — 9 pages
   systems/       11 game-system guides
   ships/
+    rating-methodology.html  — how the 1–100 suitability score is derived
     dossiers/    77 dossiers  — the ship × role matrix (48 ships)
     by-role/     7  ladders   — "best ship for role X"
   activities/    6 guides     — "how to play role X"
 ```
 
-**File census:** ~358 files — 112 HTML (108 guides + generated `index.html` + 2
-design-system templates + 1 legacy template), 113 images (46 ship `.jpg`, 38 engineer
-`.webp`, 29 logo `.png`), 127 Markdown (18 prose docs + **109 per-page `*-anchors.md`
-catalogs** — 107 generated + 2 curated, see §4/§6), 1 site CSS, 1 site JS, plus the
-`scripts/` tooling (4 `.sh` + 7 `.mjs`) and 1 TSV (`scripts/ship-names.tsv`).
+**File census:** ~365 files — 115 HTML (111 guides + generated `index.html` + 2
+design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
+3 wired logos + concept candidates under `logos/concepts/`), 148 Markdown (prose docs +
+**112 per-page `*-anchors.md` catalogs** — 110 generated + 2 curated, see §4/§6), 1 site CSS,
+1 site JS, plus the `scripts/` tooling (5 `.sh` + 2 `.py` + 7 `.mjs`) and 1 TSV
+(`scripts/ship-names.tsv`).
 
-**Engineering** (`guides/engineering/`, 7 pages):
+**Engineering** (`guides/engineering/`, 9 pages):
 
 | Page | Purpose |
 |---|---|
 | `engineers.html` | Engineer database: unlock requirements, location, referrals. Opens with a "What the Engineers Are" primer; header quick-nav; uses `images/engineers/` portraits. |
 | `blueprints.html` | Module blueprint catalog (~3,900 lines) on the `.bp-*` accordion components. Cards fold open; header search jumps to **and** expands a blueprint (page-local `<script>`). |
 | `checklist.html` | "The Unlock Run" — engineering unlock progression as numbered phases + a bespoke SVG **Engineer Unlock Map** (kept page-scoped); `.step-card` components; header quick-nav. |
+| `materials.html` | Materials primer: the three types, grade ladders, the material-trader exchange-ratio heat-matrix, storage caps, where-to-farm links, and tracking tools. Bespoke page-scoped `<style>` for the table column-parity + ratio matrix. |
+| `modules.html` | Outfitting catalog (core internals · optional internals · hardpoints · utility mounts) on the `.bp-*` accordion (sibling of `blueprints.html`); A–E class & size system; per-role picks. Self-contained inline `<script>`. |
 | `farms/` (4) | Material-farm location guides (`davs-hope`, `crystalline-shards`, `high-grade-emissions`, `jameson-crash-site`) — DS amber, with click-to-copy coordinate readouts. |
 
 **Systems** (`guides/systems/`, 11 pages): `bgs`, `combat-zones`, `community-goals`,
 `docking-landing-manual`, `fleet-carrier`, `hud-customization`, `pve-combat-venues`,
 `powerplay`, `superpower-rank`, `system-colonization`, `third-party-apps`.
 
-**Ships** (`guides/ships/`, 84 pages) — the core data structure, a **ship × role matrix**:
+**Ships** (`guides/ships/`, 85 pages) — the core data structure, a **ship × role matrix**:
 a sparse grid of (ship, role) pairs spanning **48 ships**. Each populated cell is one
-dossier `dossiers/<ship>-<role>.html` (briefing rating bar + spec grid + loadout tables); the
-`by-role/` ladders ("best ship for role X"). The separate top-level `guides/activities/`
-how-tos (each set to its role's DS accent group) and the generated landing page are other
-*projections* of that grid.
+dossier `dossiers/<ship>-<role>.html` (briefing hull render + rating bar + spec grid + loadout
+tables); the `by-role/` ladders ("best ship for role X"); and `rating-methodology.html`, the
+explainer for the 1–100 suitability score the dossiers and ladders display (cross-linked from
+all 77 dossiers + 7 by-role pages). The separate top-level `guides/activities/` how-tos (each
+set to its role's DS accent group) and the generated landing page are other *projections* of
+that grid.
 
 **Cross-linking contract.** Pages deep-link into each other by stable anchors:
 - Engineer rows: `#eng-<name>` (e.g. `engineers.html#eng-felicity-farseer`).
@@ -185,8 +194,8 @@ how-tos (each set to its role's DS accent group) and the generated landing page 
 All images live under the top-level **`images/`** folder:
 
 - `images/engineers/` — 38 engineer portraits (`.webp`, kebab-case, e.g. `felicity-farseer.webp`).
-- `images/ships/` — 46 ship renders (`.jpg`, kebab-case, e.g. `cobra-mkiii.jpg`). *(Not yet
-  referenced by the ship dossiers — embedding ship photos is a tracked TODO.)*
+- `images/ships/` — 48 ship renders (`.jpg`, kebab-case, e.g. `cobra-mkiii.jpg`). *(Now
+  embedded in every dossier briefing as a framed hull render via `add-ship-render.py`.)*
 - `images/logos/` — the **wired** brand assets `logo.png`, `banner.png`, `favicon.png`
   (used by the design-system templates + the landing-page generator), plus `concepts/` —
   the 8 archived candidates (`Concept_01`–`08`: Logo/Banner/Favicon each, + two
@@ -216,11 +225,11 @@ The first step toward "content-as-data". Convention: every task script lives in
 - **`generate-anchor-files.sh`** → regenerates the per-page `<basename>-anchors.md`
   anchor catalogs (§4). For each guide it extracts every `<section id="…">` and the
   section's title and writes the sibling `.md`. Every guide also carries a `#credits`
-  (**Sources**) section anchor, so all 108 now get a catalog; the two hand-curated catalogs
+  (**Sources**) section anchor, so all 111 now get a catalog; the two hand-curated catalogs
   (`blueprints-anchors.md`, `engineers-anchors.md`) are skipped via a `CURATED` list. It
   only ever touches files carrying its own generated marker, so hand-authored catalogs
   are safe. Re-run after adding/removing/renaming a guide or any `<section id>`. Baseline:
-  107 generated + 2 curated.
+  110 generated + 2 curated.
 
 Beyond the two generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
@@ -261,8 +270,8 @@ divergent token names, and per-page layout widths that the inline-CSS era produc
 - **Naming inconsistency** — some asset filenames still mix `_` vs `-` and case; standardizing
   is a tracked TODO (don't mass-rename ad hoc). Note: the stylesheet is `ed-blackbo**x**`
   while the repo is `ed-blackbo**ok**`.
-- **Ship renders not embedded** — `images/ships/` (46 `.jpg`) exist but the dossiers don't yet
-  display them (`TODO.md` Phase 4).
+- **Manufacturer logos** — ship hull renders are now embedded in all 77 dossiers
+  (`add-ship-render.py`); manufacturer logos are still pending (`TODO.md` Phase 4).
 - **Fleet bias** — dossiers / by-role / activities still reference the personal fleet (KA-05
   ship tags); systems pages are largely de-biased (`TODO.md` Phase 4).
 - **DS version string** — `--ds-version` is still `1.3.0` though the final migration added
