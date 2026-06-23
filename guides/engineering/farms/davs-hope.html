@@ -3,360 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dav's Hope — Manufactured Material Field Manual</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Saira:wght@300;400;500;600&family=Saira+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#080a08;
-    --bg2:#0d110c;
-    --panel:#10160f;
-    --line:#28301f;
-    --orange:#ff7a18;
-    --amber:#ffb24d;
-    --amber-dim:#7a5320;
-    --ink:#dde6d6;
-    --ink-dim:#8a9a7e;
-    --green:#7ed957;
-    --green-bg:rgba(126,217,87,.09);
-    --red:#ff5a52;
-    --red-bg:rgba(255,90,82,.09);
-    --warn:#ffcf5c;
-    --warn-bg:rgba(255,207,92,.08);
-    --rust:#d9803f;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Saira',sans-serif;
-    font-weight:300;
-    line-height:1.62;
-    font-size:16.5px;
-    letter-spacing:.1px;
-    -webkit-font-smoothing:antialiased;
-    background-image:
-      radial-gradient(circle at 16% 10%, rgba(217,128,63,.07), transparent 42%),
-      radial-gradient(circle at 86% 6%, rgba(126,217,87,.05), transparent 38%),
-      linear-gradient(rgba(255,255,255,.014) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
-    background-size:auto,auto,46px 46px,46px 46px;
-    background-attachment:fixed;
-  }
-  .wrap{max-width:880px;margin:0 auto;padding:0 22px 90px}
-
-  /* HEADER */
-  header{padding:64px 0 30px;border-bottom:1px solid var(--line);margin-bottom:42px;position:relative}
-  .kicker{
-    font-family:'Saira Semi Condensed',sans-serif;text-transform:uppercase;letter-spacing:.42em;
-    font-size:11.5px;font-weight:600;color:var(--rust);margin-bottom:18px;display:flex;align-items:center;gap:12px;
-  }
-  .kicker::before{content:"";width:34px;height:1px;background:var(--rust);display:inline-block}
-  h1{
-    font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(33px,6vw,54px);
-    line-height:1.02;letter-spacing:-.5px;color:#fff;text-transform:uppercase;
-  }
-  h1 .sub{display:block;color:var(--amber);font-size:.46em;letter-spacing:.06em;margin-top:12px;font-weight:500}
-  .lede{margin-top:24px;color:var(--ink-dim);font-size:17px;max-width:66ch}
-  .meta-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-  .chip{
-    font-family:'Saira Semi Condensed',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-    font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink-dim);padding:6px 12px;border-radius:3px;
-  }
-  .chip b{color:var(--amber);font-weight:600}
-
-  section{margin-bottom:50px;scroll-margin-top:24px}
-  h2{
-    font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:24px;text-transform:uppercase;letter-spacing:.5px;
-    color:#fff;display:flex;align-items:baseline;gap:14px;margin-bottom:20px;
-  }
-  h2 .num{
-    font-family:'Chakra Petch',sans-serif;color:var(--rust);font-size:15px;font-weight:700;
-    border:1px solid var(--amber-dim);border-radius:3px;padding:2px 9px;letter-spacing:0;flex:none;
-  }
-  h3{font-family:'Saira Semi Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:16px;color:var(--amber);margin:26px 0 10px}
-  p{margin-bottom:14px}
-  strong{color:#fff;font-weight:600}
-  em{color:var(--green);font-style:normal}
-  a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(217,128,63,.3)}
-  a:hover{border-bottom-color:var(--rust)}
-
-  .panel{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:6px;padding:22px 24px;margin:18px 0;position:relative}
-  .panel::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;background:var(--rust);border-radius:2px}
-
-  ul.clean{list-style:none;margin:6px 0}
-  ul.clean li{position:relative;padding-left:22px;margin-bottom:8px}
-  ul.clean li::before{content:"›";position:absolute;left:2px;top:-1px;color:var(--rust);font-weight:700;font-size:18px}
-
-  ol.steps{list-style:none;counter-reset:s;margin:8px 0}
-  ol.steps li{
-    counter-increment:s;position:relative;padding:13px 16px 13px 56px;border:1px solid var(--line);
-    border-radius:5px;margin-bottom:9px;background:var(--panel);transition:border-color .2s,transform .2s;
-  }
-  ol.steps li:hover{border-color:var(--amber-dim);transform:translateX(3px)}
-  ol.steps li::before{
-    content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;bottom:0;width:42px;
-    display:flex;align-items:center;justify-content:center;font-family:'Chakra Petch',sans-serif;font-weight:700;
-    font-size:15px;color:var(--rust);border-right:1px solid var(--line);background:var(--bg2);
-  }
-
-  /* LOCATION CARD */
-  .loc-card{
-    border:1px solid var(--line);border-radius:6px;background:linear-gradient(180deg,var(--panel),var(--bg2));
-    padding:20px 22px;margin:18px 0;
-  }
-  .loc-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.06);flex-wrap:wrap}
-  .loc-row:last-child{border-bottom:none}
-  .loc-k{font-family:'Saira Semi Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:12.5px;color:var(--ink-dim)}
-  .loc-v{color:#fff;font-weight:400;text-align:right}
-  .coord{
-    display:inline-flex;align-items:center;gap:8px;cursor:pointer;
-    font-family:'JetBrains Mono',monospace;font-weight:500;font-size:14px;color:var(--green);
-    background:rgba(126,217,87,.07);border:1px solid rgba(126,217,87,.22);border-radius:4px;
-    padding:4px 10px;transition:background .15s,border-color .15s;user-select:all;
-  }
-  .coord:hover{background:rgba(126,217,87,.14);border-color:var(--green)}
-  .coord .cp{font-family:'Saira Semi Condensed',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim)}
-  .coord.legacy{color:var(--ink-dim);background:rgba(255,255,255,.03);border-color:var(--line)}
-  .coord.copied{background:var(--green-bg);border-color:var(--green);color:var(--green)}
-  .coord.copied .cp{color:var(--green)}
-  .tagL{font-family:'Saira Semi Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:3px;margin-left:8px}
-  .tagL.live{background:var(--green-bg);color:var(--green);border:1px solid rgba(126,217,87,.3)}
-  .tagL.leg{background:rgba(255,255,255,.04);color:var(--ink-dim);border:1px solid var(--line)}
-
-  /* CHECKLIST GRID */
-  .check-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}
-  @media(min-width:680px){.check-grid{grid-template-columns:1fr 1fr 1fr}}
-  .cl{
-    border:1px solid var(--line);border-radius:6px;padding:18px 18px 20px;
-    background:linear-gradient(180deg,var(--panel),var(--bg2));position:relative;overflow:hidden;
-  }
-  .cl-head{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-  .cl-sub{font-size:12.5px;color:var(--ink-dim);margin-bottom:14px;min-height:50px}
-  .cl.green{border-top:2px solid var(--green)}
-  .cl.green .cl-head{color:var(--green)}
-  .cl.warn{border-top:2px solid var(--warn)}
-  .cl.warn .cl-head{color:var(--warn)}
-  .cl.red{border-top:2px solid var(--red)}
-  .cl.red .cl-head{color:var(--red)}
-  .cl ul{list-style:none}
-  .cl li{font-family:'Saira Semi Condensed',sans-serif;font-weight:500;font-size:14px;padding:6px 0 6px 22px;position:relative;border-bottom:1px dashed rgba(255,255,255,.05)}
-  .cl li:last-child{border-bottom:none}
-  .cl li::before{position:absolute;left:0;top:6px;font-size:13px}
-  .cl.green li::before{content:"▼";color:var(--green);font-size:10px;top:8px}
-  .cl.warn li::before{content:"↔";color:var(--warn)}
-  .cl.red li::before{content:"▲";color:var(--red);font-size:10px;top:8px}
-  .cl li small{display:block;font-family:'Saira',sans-serif;font-weight:300;font-size:11.5px;color:var(--ink-dim);text-transform:none;letter-spacing:0}
-
-  /* DROP TAGS */
-  .drops{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 4px}
-  .drop{
-    font-family:'Saira Semi Condensed',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.02em;
-    padding:5px 10px;border-radius:4px;border:1px solid var(--line);background:var(--panel);color:var(--ink);
-  }
-  .drop b{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--ink-dim);margin-left:5px;font-weight:700}
-  .drop.hot{border-color:rgba(126,217,87,.35);background:var(--green-bg)}
-  .drop.med{border-color:rgba(255,207,92,.3);background:var(--warn-bg)}
-
-  .callout{border:1px solid rgba(217,128,63,.3);background:rgba(217,128,63,.07);border-radius:6px;padding:16px 20px;margin:18px 0;font-size:15px}
-  .callout b{color:var(--rust)}
-  .callout.warn{border-color:rgba(255,207,92,.35);background:var(--warn-bg)}
-  .callout.warn b{color:var(--warn)}
-  .callout.green{border-color:rgba(126,217,87,.3);background:var(--green-bg)}
-  .callout.green b{color:var(--green)}
-
-  footer{margin-top:60px;padding-top:26px;border-top:1px solid var(--line);color:var(--ink-dim);font-size:13px}
-  footer .src{font-family:'Saira Semi Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);font-size:12px;margin-bottom:8px}
-
-  .toast{
-    position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
-    background:var(--green);color:#06170a;font-family:'Saira Semi Condensed',sans-serif;font-weight:700;
-    text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;padding:9px 18px;border-radius:5px;
-    opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50;
-  }
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-  .fade{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
-  @keyframes rise{to{opacity:1;transform:none}}
-  section:nth-of-type(1){animation-delay:.08s}
-  section:nth-of-type(2){animation-delay:.14s}
-  section:nth-of-type(3){animation-delay:.2s}
-</style>
+<title>Dav's Hope &middot; Material Farms | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
 </head>
 <body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#dossiers">Ships</a>
+      <a href="../../index.html#engineering" class="active">Engineering</a>
+      <a href="../../index.html#systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#what"><span class="qn-dot amber"></span><span class="qn-nm">What Dav's Hope Is</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#outfit"><span class="qn-dot amber"></span><span class="qn-nm">Outfitting</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#where"><span class="qn-dot amber"></span><span class="qn-nm">Where to Go</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#loop"><span class="qn-dot amber"></span><span class="qn-nm">The Salvage Loop</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#drops"><span class="qn-dot amber"></span><span class="qn-nm">What Drops &amp; Smart Trading</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#verdict"><span class="qn-dot amber"></span><span class="qn-nm">Dav's Hope vs. HGE</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">07</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#engineering">Engineering</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Dav's Hope</span>
+</nav>
+
 <div class="wrap">
 
-  <header class="fade">
-    <div class="kicker">Field Manual</div>
-    <h1>Dav's Hope<span class="sub">Manufactured Material Salvage Loop</span></h1>
-    <p class="lede">An abandoned mining settlement that scatters manufactured-material canisters across ten drop points. Drive an SRV circuit, relog to respawn, repeat. The fastest way to bulk-fill the <em>lower</em> manufactured grades and feed the material trader.</p>
-    <div class="meta-strip">
-      <span class="chip">System · <b>Hyades Sector DR-V c2-23</b></span>
-      <span class="chip">Body · <b>A 5</b></span>
-      <span class="chip">Best for · <b>G1–G3 manufactured</b></span>
-      <span class="chip">Per lap · <b>~30 items · avg G2.6</b></span>
+  <!-- ---- MASTHEAD ---- -->
+  <header class="masthead">
+    <div class="kicker">Engineering<span class="sep">//</span>Material Farms</div>
+    <h1 class="title">Dav's <span>Hope</span> <span class="role">Material Farm</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Engineering</b></span>
+      <span>Updated <b>2026-06-23</b></span>
     </div>
   </header>
 
+  <!-- ---- BRIEFING ---- -->
+  <div class="verdict">
+    <div class="v-eyebrow">Briefing</div>
+    <h2>An abandoned mining settlement that scatters manufactured-material canisters — the fastest way to <em>bulk-fill the lower grades</em></h2>
+    <p>Ten drop points ring the ruins, each holding free canisters of <b>manufactured materials</b>. Drive an SRV circuit, relog to respawn, repeat. It's a <b>G1–G3 powerhouse</b> with a steady G4 trickle — the perfect companion to the HGE farm, which owns the G4/G5 end.</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">~30</div><div class="l">Items per lap</div></div>
+      <div class="stat"><div class="n">G2.6</div><div class="l">Average grade</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">Drop points</div></div>
+      <div class="stat"><div class="n">G1–G3</div><div class="l">Best for</div></div>
+    </div>
+  </div>
+
   <!-- 1 -->
-  <section class="fade">
-    <h2><span class="num">01</span>What Dav's Hope Is</h2>
+  <section id="what">
+    <div class="sec-head"><span class="sec-num">01</span><h2>What Dav's Hope Is</h2></div>
     <p>Dav's Hope is a derelict surface settlement on planet <strong>A 5</strong> in <strong>Hyades Sector DR-V c2-23</strong>. Ten material drop points (plus one data point for an encoded mat) sit around the ruins, each holding free canisters of <strong>manufactured materials</strong>. You drive an SRV around the perimeter scooping them, then re-instance the site to respawn the lot.</p>
     <p>Every pickup is worth <strong>3 units</strong>, and a full clockwise lap nets roughly <strong>30 items averaging around grade 2.6</strong> — which tells you exactly what this farm is for: it's a <strong>G1–G3 powerhouse</strong> (plus a steady trickle of G4s). It's the perfect companion to the HGE farm, which owns the G4/G5 end.</p>
-    <div class="callout green"><b>The division of labour:</b> Dav's Hope fills the bottom of the manufactured grid fast and feeds the trader; the HGE run fills the top (G5) fast. Run both and you never want for manufactured mats again.</div>
+    <div class="callout tip"><span class="lbl">The division of labour</span><p>Dav's Hope fills the bottom of the manufactured grid fast and feeds the trader; the HGE run fills the top (G5) fast. Run both and you never want for manufactured mats again.</p></div>
   </section>
 
   <!-- 2 -->
-  <section class="fade">
-    <h2><span class="num">02</span>Outfitting</h2>
+  <section id="outfit">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Outfitting</h2></div>
     <p>Minimal. Any landing-capable ship with an SRV works — your <strong>Asp Explorer</strong> already carries everything:</p>
     <div class="panel">
-      <ul class="clean">
-        <li><strong>Planetary Vehicle Hangar + SRV</strong> — the whole loop is driven on the surface.</li>
-        <li><strong>Detailed Surface Scanner</strong> — only needed to locate the site on your <em>first</em> visit (see §03).</li>
-        <li><strong>No cargo racks, no limpets</strong> — manufactured materials go straight into your weightless materials inventory, never the cargo hold.</li>
+      <ul class="bullets">
+        <li><b>Planetary Vehicle Hangar + SRV</b> — the whole loop is driven on the surface.</li>
+        <li><b>Detailed Surface Scanner</b> — only needed to locate the site on your <em>first</em> visit (see §03).</li>
+        <li><b>No cargo racks, no limpets</b> — manufactured materials go straight into your weightless materials inventory, never the cargo hold.</li>
       </ul>
     </div>
     <p>No weapons, shields, or combat fit required — the site is abandoned and non-hostile. Land, drop the SRV, drive.</p>
   </section>
 
   <!-- 3 -->
-  <section class="fade">
-    <h2><span class="num">03</span>Where to Go</h2>
+  <section id="where">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Where to Go</h2></div>
     <div class="loc-card">
       <div class="loc-row"><span class="loc-k">System</span><span class="loc-v">Hyades Sector DR-V c2-23</span></div>
       <div class="loc-row"><span class="loc-k">Orbital Body</span><span class="loc-v">A 5</span></div>
-      <div class="loc-row"><span class="loc-k">Site Coordinates</span><span class="loc-v"><span class="coord" data-copy="50.5322, 137.4363"><span>50.5322, 137.4363</span><span class="cp">Copy</span></span><span class="tagL live">Live 4.0</span></span></div>
-      <div class="loc-row"><span class="loc-k">Old coordinate</span><span class="loc-v"><span class="coord legacy" data-copy="44.818, -31.389"><span>44.818, -31.389</span><span class="cp">Copy</span></span><span class="tagL leg">Legacy 3.8</span></span></div>
+      <div class="loc-row"><span class="loc-k">Site Coordinates</span><span class="loc-v"><span class="coord" data-copy="50.5322, 137.4363"><span>50.5322, 137.4363</span><span class="cp">Copy</span></span> <span class="pill lo">Live 4.0</span></span></div>
       <div class="loc-row"><span class="loc-k">Nearest Mat Trader</span><span class="loc-v">Vaucanson Gateway · HIP 12067 · ~43 Ly</span></div>
     </div>
-    <div class="callout warn"><b>Use the Live coordinate.</b> The planet-generation change in the 4.0 engine moved the site. On the Live game you play, head to <strong>50.5322, 137.4363</strong> — the old <strong>44.818, -31.389</strong> is the Legacy/Horizons location and will drop you in the wrong place.</div>
-    <p>After your <em>first</em> visit the site is saved as a "Dav's Hope" entry in your left Nav panel, so the coordinate hunt is a one-time chore.</p>
+    <div class="callout"><span class="lbl">A one-time chore</span><p>After your <em>first</em> visit the site is saved as a "Dav's Hope" entry in your left Nav panel, so the coordinate hunt is a one-time chore.</p></div>
   </section>
 
   <!-- 4 -->
-  <section class="fade">
-    <h2><span class="num">04</span>The Salvage Loop</h2>
+  <section id="loop">
+    <div class="sec-head"><span class="sec-num">04</span><h2>The Salvage Loop</h2></div>
     <ol class="steps">
-      <li><strong>Scan &amp; approach.</strong> Drop into the system, scan it, and head for planet <strong>A 5</strong>.</li>
-      <li><strong>Find the site (first visit only).</strong> Drop a DSS probe on A 5 to get a HUD nav marker, then fly to <strong>50.5322, 137.4363</strong>. On later visits just select "Dav's Hope" in the Nav panel.</li>
-      <li><strong>Land &amp; deploy the SRV.</strong> Set down beside the ruins and drop the buggy.</li>
-      <li><strong>Drive the circuit.</strong> Loop the settlement <strong>clockwise</strong>, collecting each material canister (cargo scoop deployed). There are <strong>10 drop points</strong> plus one data point you can scan for an encoded mat.</li>
-      <li><strong>Respawn.</strong> Once you've completed the lap, <strong>mode-switch</strong> — or log out and back into the <strong>same game mode</strong> (Solo is fastest) — to reset the instance and respawn every canister.</li>
-      <li><strong>Repeat</strong> until you've got what you need, then hop ~43 Ly to Vaucanson Gateway to trade.</li>
+      <li><span class="st">Scan &amp; approach</span><p>Drop into the system, scan it, and head for planet <strong>A 5</strong>.</p></li>
+      <li><span class="st">Find the site (first visit only)</span><p>Drop a DSS probe on A 5 to get a HUD nav marker, then fly to <strong>50.5322, 137.4363</strong>. On later visits just select "Dav's Hope" in the Nav panel.</p></li>
+      <li><span class="st">Land &amp; deploy the SRV</span><p>Set down beside the ruins and drop the buggy.</p></li>
+      <li><span class="st">Drive the circuit</span><p>Loop the settlement <strong>clockwise</strong>, collecting each material canister (cargo scoop deployed). There are <strong>10 drop points</strong> plus one data point you can scan for an encoded mat.</p></li>
+      <li><span class="st">Respawn</span><p>Once you've completed the lap, <strong>mode-switch</strong> — or log out and back into the <strong>same game mode</strong> (Solo is fastest) — to reset the instance and respawn every canister.</p></li>
+      <li><span class="st">Repeat</span><p>Keep looping until you've got what you need, then hop ~43 Ly to Vaucanson Gateway to trade.</p></li>
     </ol>
-    <div class="callout"><b>Why it stays fast:</b> the high-rate drops refill every single relog, so a few laps stockpiles huge quantities of the low-grade rows you'd otherwise grind for hours.</div>
+    <figure>
+      <img src="../../../images/farms/davs-hope-map.png" alt="Annotated overhead map of Dav's Hope, numbering the ten material drop points around the ruins and listing what spawns at each." loading="lazy">
+      <figcaption><b>The ten drop points at a glance.</b> Each numbered spot lists the manufactured materials that can spawn there; bold entries are the rarer rolls. Map by CMDR Loch147 — see the <a href="https://www.reddit.com/r/EliteDangerous/comments/80rgfy/davs_hope_new_map_for_30/">r/EliteDangerous thread</a>.</figcaption>
+    </figure>
+    <div class="callout"><span class="lbl">Why it stays fast</span><p>The high-rate drops refill every single relog, so a few laps stockpiles huge quantities of the low-grade rows you'd otherwise grind for hours.</p></div>
   </section>
 
   <!-- 5 -->
-  <section class="fade">
-    <h2><span class="num">05</span>What Drops &amp; Smart Trading</h2>
-    <h3>Abundant — trade these to zero every visit</h3>
-    <p>High drop rate; they refill fast, so empty them at the trader each run.</p>
-    <div class="drops">
-      <span class="drop hot">Flawed Focus Crystals<b>G2</b></span>
-      <span class="drop hot">Galvanising Alloys<b>G2</b></span>
-      <span class="drop hot">Phase Alloys<b>G3</b></span>
-      <span class="drop hot">High Density Composites<b>G3</b></span>
-      <span class="drop hot">Worn Shield Emitters<b>G1</b></span>
+  <section id="drops">
+    <div class="sec-head"><span class="sec-num">05</span><h2>What Drops &amp; Smart Trading</h2></div>
+    <h3 class="subhead">Picked up directly — empty these every visit</h3>
+    <p>High-rate drops refill fast, so trade them to zero each run; the G4 rows come through as a steadier trickle.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Material</th><th class="center">Grade</th><th>Drop rate</th></tr></thead>
+        <tbody>
+          <tr><td>Worn Shield Emitters</td><td class="center">G1</td><td><span class="pill lo">Abundant</span></td></tr>
+          <tr><td>Flawed Focus Crystals</td><td class="center">G2</td><td><span class="pill lo">Abundant</span></td></tr>
+          <tr><td>Galvanising Alloys</td><td class="center">G2</td><td><span class="pill lo">Abundant</span></td></tr>
+          <tr><td>Phase Alloys</td><td class="center">G3</td><td><span class="pill lo">Abundant</span></td></tr>
+          <tr><td>High Density Composites</td><td class="center">G3</td><td><span class="pill lo">Abundant</span></td></tr>
+          <tr><td>Chemical Manipulators</td><td class="center">G4</td><td><span class="pill md">Medium</span></td></tr>
+          <tr><td>Configurable Components</td><td class="center">G4</td><td><span class="pill md">Medium</span></td></tr>
+          <tr><td>Heat Vanes</td><td class="center">G4</td><td><span class="pill md">Medium</span></td></tr>
+          <tr><td>Polymer Capacitors</td><td class="center">G4</td><td><span class="pill md">Medium</span></td></tr>
+          <tr><td>Refined Focus Crystals</td><td class="center">G4</td><td><span class="pill md">Medium</span></td></tr>
+        </tbody>
+      </table>
     </div>
-    <h3>Medium rate — the G4 trickle</h3>
-    <div class="drops">
-      <span class="drop med">Chemical Manipulators<b>G4</b></span>
-      <span class="drop med">Configurable Components<b>G4</b></span>
-      <span class="drop med">Heat Vanes<b>G4</b></span>
-      <span class="drop med">Polymer Capacitors<b>G4</b></span>
-      <span class="drop med">Refined Focus Crystals<b>G4</b></span>
-    </div>
-    <h3>At the trader — the 7 rows you don't pick up directly</h3>
+    <h3 class="subhead">At the trader — the 7 rows you don't pick up directly</h3>
     <p>The closest Manufactured Material Trader is <strong>Vaucanson Gateway (HIP 12067)</strong>. Three kinds of conversion fill the gaps:</p>
-    <div class="check-grid">
-      <div class="cl green">
-        <div class="cl-head">▼ Trade Down</div>
-        <div class="cl-sub">Cheap. Convert surplus G2/G3 down to fill the two missing G1 rows.</div>
-        <ul>
-          <li>Surplus G2/G3 → G1<small>The two G1s you never collect directly</small></li>
+    <div class="cards wide">
+      <div class="card ac-good">
+        <span class="ico">▼ Trade Down</span>
+        <p>Cheap. Convert surplus G2/G3 down to fill the two missing G1 rows.</p>
+        <ul class="bullets"><li>Surplus G2/G3 → G1 <small>— the two G1s you never collect directly</small></li></ul>
+      </div>
+      <div class="card">
+        <span class="ico">↔ Trade Sideways</span>
+        <p>Same-grade swap. Use your abundant Alloys to make the two Thermic rows.</p>
+        <ul class="bullets">
+          <li>Galvanising Alloys → Heat Resistant Ceramics <small>— G2 ↔ G2</small></li>
+          <li>Phase Alloys → Precipitated Alloys <small>— G3 ↔ G3</small></li>
         </ul>
       </div>
-      <div class="cl warn">
-        <div class="cl-head">↔ Trade Sideways</div>
-        <div class="cl-sub">Same-grade swap. Use your abundant Alloys to make the two Thermic rows.</div>
-        <ul>
-          <li>Galvanising Alloys → Heat Resistant Ceramics<small>G2 ↔ G2</small></li>
-          <li>Phase Alloys → Precipitated Alloys<small>G3 ↔ G3</small></li>
-        </ul>
-      </div>
-      <div class="cl red">
-        <div class="cl-head">▲ Trade Up (slow)</div>
-        <div class="cl-sub">6× a G4 per unit. Fine for a few; bulk belongs to the HGE run.</div>
-        <ul>
-          <li>Pharmaceutical Isolators<small>from Chemical Manipulators</small></li>
-          <li>Military Supercapacitors<small>from Polymer Capacitors</small></li>
-          <li>Exquisite Focus Crystals<small>from Refined Focus Crystals</small></li>
+      <div class="card ac-maroon">
+        <span class="ico">▲ Trade Up (slow)</span>
+        <p>6× a G4 per unit. Fine for a few; bulk belongs to the HGE run.</p>
+        <ul class="bullets">
+          <li>Pharmaceutical Isolators <small>— from Chemical Manipulators</small></li>
+          <li>Military Supercapacitors <small>— from Polymer Capacitors</small></li>
+          <li>Exquisite Focus Crystals <small>— from Refined Focus Crystals</small></li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- 6 -->
-  <section class="fade">
-    <h2><span class="num">06</span>Dav's Hope vs. HGE — Honest Verdict</h2>
+  <section id="verdict">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Dav's Hope vs. HGE — Honest Verdict</h2></div>
     <p>A candid efficiency note so you pick the right tool:</p>
-    <div class="callout"><b>Dav's Hope wins for G1–G3</b> (and a steady G4 trickle) — nothing fills the bottom of the manufactured grid faster, and it's your sideways-trade fuel for the Thermic rows.</div>
-    <div class="callout warn"><b>HGE wins for bulk G4/G5.</b> The three trade-ups here — Pharmaceutical Isolators, Military Supercapacitors, Exquisite Focus Crystals — cost <strong>6 G4 each</strong> and are slow. If you only need a handful for one build, trade up here; if you need them in bulk, anchor on the HGE farm instead (and remember Biotech Conductors &amp; Exquisite Focus Crystals never spawn in HGEs — those are mission/trade only).</div>
+    <div class="callout"><span class="lbl">Dav's Hope wins for G1–G3</span><p>(and a steady G4 trickle) — nothing fills the bottom of the manufactured grid faster, and it's your sideways-trade fuel for the Thermic rows.</p></div>
+    <div class="callout warn"><span class="lbl">HGE wins for bulk G4/G5</span><p>The three trade-ups here — Pharmaceutical Isolators, Military Supercapacitors, Exquisite Focus Crystals — cost <strong>6 G4 each</strong> and are slow. If you only need a handful for one build, trade up here; if you need them in bulk, anchor on the <a href="high-grade-emissions.html">HGE farm</a> instead (and remember Biotech Conductors &amp; Exquisite Focus Crystals never spawn in HGEs — those are mission/trade only).</p></div>
   </section>
 
-  <!-- Sources — fallback styling; removed when this page links ed-blackbox.css -->
-<style>
-.credits{margin:46px 0 8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
-.credits .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.credits h2{font-size:17px;letter-spacing:.6px;text-transform:uppercase;margin:0}
-.credits .tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;opacity:.55;border:1px solid currentColor;border-radius:4px;padding:1px 7px}
-.credits .lead{font-size:13px;opacity:.7;margin:0 0 16px}
-.credits .cr-rows{display:flex;flex-direction:column}
-.credits .cr-row{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;font-size:13px;padding:9px 0;border-top:1px solid rgba(255,255,255,.07)}
-.credits .cr-src{font-weight:700;letter-spacing:.3px}
-.credits .cr-what{opacity:.78}
-.credits .cr-link{white-space:nowrap;text-decoration:none;color:var(--accent-lt,var(--maroon-lt,var(--amber,var(--fed,#c9a24b))))}
-.credits .cr-link:hover{text-decoration:underline}
-@media(max-width:600px){.credits .cr-row{grid-template-columns:1fr;gap:2px}}
-</style>
-<section class="credits" id="credits">
-  <div class="sec-head"><h2>Sources</h2><span class="tag">Provenance</span></div>
-  <p class="lead">Figures on this page are verified against the sources below.</p>
-  <p class="lead">Note: the 4.0 engine moved the site — use the Live coordinate (50.5322, 137.4363); the old 44.818, -31.389 is the Legacy/Horizons location.</p>
-  <div class="cr-rows">
-    <div class="cr-row"><span class="cr-src">Frontier Forums</span><span class="cr-what">Pictorial drop-point list — which Manufactured Material sits at each of the ten salvage points.</span><a class="cr-link" href="https://forums.frontier.co.uk/threads/updated-list-of-materials-at-davs-hope-pictorial.368279/">forums.frontier.co.uk</a></div>
-    <div class="cr-row"><span class="cr-src">Redshift</span><span class="cr-what">Dav's Hope farming walkthrough — clockwise SRV loop and relog reset routine.</span><a class="cr-link" href="https://redshiftlogistics.online/2020/04/25/manufactured-material-farm-1.html">redshiftlogistics.online</a></div>
-    <div class="cr-row"><span class="cr-src">Lars Bodin</span><span class="cr-what">Material-farming reference cross-checking the site location and trade structure.</span><a class="cr-link" href="https://lars-bodin.dk/?page_id=3985">lars-bodin.dk</a></div>
-    <div class="cr-row"><span class="cr-src">AXI Wiki</span><span class="cr-what">Manufactured-material gathering and the trade-down / sideways conversion method.</span><a class="cr-link" href="https://wiki.antixenoinitiative.com/en/engineering-materials">wiki.antixenoinitiative.com</a></div>
-    <div class="cr-row"><span class="cr-src">Video guide</span><span class="cr-what">Video reference for the SRV circuit and relog routine.</span><a class="cr-link" href="https://www.youtube.com/watch?v=kKoAf135wn0">youtube.com/watch?v=kKoAf135wn0</a></div>
-    <div class="cr-row"><span class="cr-src">Inara — Dav's Hope</span><span class="cr-what">Database station entry for Dav's Hope in Hyades Sector DR-V c2-23 — the settlement location itself.</span><a class="cr-link" href="https://inara.cz/elite/station/228006/">inara.cz/elite/station/228006</a></div>
-    <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">Dav's Hope settlement layout and salvageable Manufactured Materials.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Dav's_Hope">elite-dangerous.fandom.com/wiki/Dav's_Hope</a></div>
-  </div>
-</section>
+  <!-- ---- SOURCES ---- -->
+  <section class="credits" id="credits">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Sources</h2><span class="tag">Provenance</span></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <p class="lead">Note: the 4.0 engine moved the site — use the Live coordinate (50.5322, 137.4363); the old 44.818, -31.389 is the Legacy/Horizons location.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">r/EliteDangerous (CMDR Loch147)</span><span class="cr-what">Annotated overhead map of the ten drop points and what spawns at each — the image reproduced in §04.</span><a class="cr-link" href="https://www.reddit.com/r/EliteDangerous/comments/80rgfy/davs_hope_new_map_for_30/">reddit.com/r/EliteDangerous</a></div>
+      <div class="cr-row"><span class="cr-src">Frontier Forums</span><span class="cr-what">Pictorial drop-point list — which Manufactured Material sits at each of the ten salvage points.</span><a class="cr-link" href="https://forums.frontier.co.uk/threads/updated-list-of-materials-at-davs-hope-pictorial.368279/">forums.frontier.co.uk</a></div>
+      <div class="cr-row"><span class="cr-src">Redshift</span><span class="cr-what">Dav's Hope farming walkthrough — clockwise SRV loop and relog reset routine.</span><a class="cr-link" href="https://redshiftlogistics.online/2020/04/25/manufactured-material-farm-1.html">redshiftlogistics.online</a></div>
+      <div class="cr-row"><span class="cr-src">Lars Bodin</span><span class="cr-what">Material-farming reference cross-checking the site location and trade structure.</span><a class="cr-link" href="https://lars-bodin.dk/?page_id=3985">lars-bodin.dk</a></div>
+      <div class="cr-row"><span class="cr-src">AXI Wiki</span><span class="cr-what">Manufactured-material gathering and the trade-down / sideways conversion method.</span><a class="cr-link" href="https://wiki.antixenoinitiative.com/en/engineering-materials">wiki.antixenoinitiative.com</a></div>
+      <div class="cr-row"><span class="cr-src">Video guide</span><span class="cr-what">Video reference for the SRV circuit and relog routine.</span><a class="cr-link" href="https://www.youtube.com/watch?v=kKoAf135wn0">youtube.com/watch?v=kKoAf135wn0</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Dav's Hope</span><span class="cr-what">Database station entry for Dav's Hope in Hyades Sector DR-V c2-23 — the settlement location itself.</span><a class="cr-link" href="https://inara.cz/elite/station/228006/">inara.cz/elite/station/228006</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">Dav's Hope settlement layout and salvageable Manufactured Materials.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Dav's_Hope">elite-dangerous.fandom.com/wiki/Dav's_Hope</a></div>
+    </div>
+  </section>
+
+  <!-- ---- FOOTER ---- -->
+  <footer>
+    <span>E:D Black Box</span>
+    <span>By <b>CMDR Ka0s</b></span>
+    <span>Engineering</span>
+  </footer>
 
 </div>
 
-<div class="toast" id="toast">Coordinate copied</div>
-
-<script>
-  (function(){
-    var toast=document.getElementById('toast');
-    function flash(){toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(function(){toast.classList.remove('show');},1300);}
-    function fallback(text){try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();document.execCommand('copy');document.body.removeChild(ta);return true;}catch(e){return false;}}
-    document.querySelectorAll('.coord').forEach(function(el){
-      el.addEventListener('click',function(){
-        var text=el.getAttribute('data-copy');
-        var done=function(){el.classList.add('copied');flash();setTimeout(function(){el.classList.remove('copied');},1100);};
-        if(navigator.clipboard&&navigator.clipboard.writeText){
-          navigator.clipboard.writeText(text).then(done).catch(function(){if(fallback(text))done();});
-        }else{if(fallback(text))done();}
-      });
-    });
-  })();
-</script>
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
 </body>
 </html>
