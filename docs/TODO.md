@@ -51,6 +51,7 @@ Legend: ✅ done · ☐ not done.
 - ☐ Migrate all existing guides onto the design system (consistent page styling) — **101/108 done**; the 7 engineering reference pages (engineers, checklist, blueprints, 4 farms) remain on inline CSS
 - ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide) *(partial: powerplay §08 links each role's pick to its power card, and third-party-apps §18 links each app to its card; broad Ships/Engineers/Blueprints cross-linking pending)*
 - ☐ Publish on GitHub Pages
+- ☐ **Delete the `guides.01/` scratch duplicate** — it's an untracked, full copy of `guides/` left over from migration work, currently `.gitignore`d to keep `git status` clean. Physically remove the directory from the filesystem, then **delete the `guides.01/` line from `.gitignore`**.
 
 ## Phase 2 — Content-as-data tooling
 
