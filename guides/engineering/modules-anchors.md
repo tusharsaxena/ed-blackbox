@@ -6,8 +6,9 @@ Link format: `modules.html#<id>`
 
 ## Sections
 - **How Modules Work** — `#about`
-- **&#9881; What it does** — `#core-internals`
-- **&#9881; What it does** — `#optional-internals`
-- **&#9889; Beam Laser** — `#hardpoints`
-- **&#9881; What it does** — `#utility-mounts`
+- **What it does** — `#core-internals`
+- **What it does** — `#optional-internals`
+- **Beam Laser** — `#hardpoints`
+- **What it does** — `#utility-mounts`
+- **Station Outfitting** — `#getting-modules`
 - **Sources** — `#credits`
