@@ -91,7 +91,7 @@
   <p>The ship HUD is built from one persistent overlay plus three pull-out panels you summon with the directional keys/stick. Knowing the panels cold is a survival skill — being able to instantly re-route power or pick an escape vector can save a rebuy. The breakdown below follows the NEWP HUD guide's anatomy.</p>
 
   <h3 class="subhead">The main flight overlay</h3>
-  <div class="cards four">
+  <div class="cards three">
     <article class="card"><div class="c-head"><h3>Comms &amp; info (top-left/top)</h3></div><p>Chat, mission and NPC messages, friend/wing requests; the GMT game clock and new-contact alerts. <b>NPC interdiction warnings appear here first.</b></p></article>
     <article class="card"><div class="c-head"><h3>Status strip</h3></div><p>Powerplay standing, your ship's <b>signature</b> (noise — more power/heat = easier to lock from range), fuel reserve, and mass-lock / landing-gear / cargo-scoop indicators.</p></article>
     <article class="card"><div class="c-head"><h3>PIPs / power distributor</h3></div><p>The <b>SYS / ENG / WEP</b> capacitor balance. Shields, thruster output and weapon supply respectively; RST resets to 2-2-2.</p></article>
@@ -125,7 +125,7 @@
       <div class="row"><span>Cleaner, more readable <b>screenshots and video</b>.</span></div>
     </div>
   </div>
-  <div class="callout danger"><span class="lbl">The trade-off</span><p>Because the standard method recolours <b>everything uniformly</b>, a careless palette can do the opposite of help — washing out red danger warnings or blurring the green-vs-red friend/foe distinction. Good customization is as much about <b>preserving signal</b> as changing colour. More on this in <a href="#section-change">Section 3</a> and <a href="#section-gotchas">Section 7</a>.</p></div>
+  <div class="callout"><span class="lbl">The trade-off</span><p>Because the standard method recolours <b>everything uniformly</b>, a careless palette can do the opposite of help — washing out red danger warnings or blurring the green-vs-red friend/foe distinction. Good customization is as much about <b>preserving signal</b> as changing colour. More on this in <a href="#section-change">Section 3</a> and <a href="#section-gotchas">Section 7</a>.</p></div>
 </section>
 
 <!-- 03 -->
@@ -229,8 +229,8 @@
 <span class="tag">&lt;/GraphicsConfig&gt;</span></pre>
   </div>
 
-  <div class="callout tip"><span class="lbl">To revert</span><p>Restore the three matrix lines to <code>1,0,0</code> / <code>0,1,0</code> / <code>0,0,1</code>, or simply delete the whole <code>&lt;GUIColour&gt;…&lt;/GUIColour&gt;</code> block (or the Override file itself). Default orange returns on next launch.</p></div>
-  <div class="callout danger"><span class="lbl">Common failure</span><p>If colours don't change: you edited the <b>base</b> file instead of the <b>Override</b>; the file has a hidden <code>.txt</code> extension; the XML is malformed (a missing tag or stray character makes the game ignore it); or the game was still running when you saved. Re-check those four.</p></div>
+  <div class="callout"><span class="lbl">To revert</span><p>Restore the three matrix lines to <code>1,0,0</code> / <code>0,1,0</code> / <code>0,0,1</code>, or simply delete the whole <code>&lt;GUIColour&gt;…&lt;/GUIColour&gt;</code> block (or the Override file itself). Default orange returns on next launch.</p></div>
+  <div class="callout"><span class="lbl">Common failure</span><p>If colours don't change: you edited the <b>base</b> file instead of the <b>Override</b>; the file has a hidden <code>.txt</code> extension; the XML is malformed (a missing tag or stray character makes the game ignore it); or the game was still running when you saved. Re-check those four.</p></div>
 </section>
 
 <!-- 06 -->
