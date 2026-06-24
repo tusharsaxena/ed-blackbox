@@ -16,7 +16,7 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Verdict / briefing | `.verdict` (+ optional `.why` grid) | the page's single big idea |
 | Stat grid | `.stat-grid` > `.stat` (`.n` / `.n.fed` / `.n.mar` / `.n.good`) | headline numbers |
 | Numbered section | `section` > `.sec-head` (`.sec-num`, h2, `.tag`) + `p.lead` | every content block |
-| Subhead | `h3.subhead` (block) / `.subhd` (condensed tracked) | sub-grouping in a section |
+| Subhead | `h3.subhead` (block) | sub-grouping in a section |
 | Legend grid | `.legend` > `.lg` (with `.swatch sw-*`) | "how to read" keys |
 | Chips | `.chip` (`.amber` / `.fed` / `.maroon` / `.faint`) | inline tags / flags |
 | Key-value chip | `.chip.kv` (`span` label › `b` value) | masthead label+value spec chip (e.g. `Class · Small`) |
