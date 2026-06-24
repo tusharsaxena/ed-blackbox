@@ -80,11 +80,19 @@ Line-height: `--lh-tight` (1.1), `--lh-body` (1.62).
   `@media` rules so breakpoints stay consistent.
 - **`--ds-version`** holds `"1.3.0"` (readable via `getComputedStyle`).
 
-## Per-page accent (the one theming knob)
+## Page accent vs component accent (two separate knobs)
 
-Re-theme a whole page by overriding the five accent tokens in a page-level `<style>`.
-The locked palette above never changes. `--accent-lt` / `--accent-deep` feed gauges,
-bar fills and gradients, so set all five.
+There are **two** accent channels, and they are deliberately independent:
+
+- **Page accent** — `--accent` (+ `-lt` / `-deep` / `-soft` / `-glow`). The per-page theme
+  colour. **It themes exactly one thing: the masthead `.role` title tag** (e.g. the maroon
+  *ROLE & ACTIVITIES* on combat pages). Nothing else on the page follows it by default.
+- **Component accent** — `--c-accent` (+ `-lt` / `-soft` / `-glow`). What **every** design-
+  system component paints its accent with. It is **brand amber on every page** and never
+  follows the page accent unless you opt a specific element in (below).
+
+Re-theme a page by overriding the five page-accent tokens in a page-level `<style>`
+(the locked palette above never changes). Only the `.role` tag changes colour:
 
 ```css
 /* Combat — maroon */
@@ -100,15 +108,27 @@ bar fills and gradients, so set all five.
        --accent-soft:rgba(95,179,122,.4); --accent-glow:rgba(95,179,122,.10); }
 ```
 
-| Domain | accent |
+| Domain | `.role` tag accent |
 |---|---|
 | Combat | maroon |
 | Exploration / navigation / liners | fed-blue |
 | Mining / cargo / default / index | amber (default — omit the override) |
 | Completed / positive status | green |
 
-`--accent` (with `-lt`/`-deep`) drives: verdict edge, record-card target glow, rating
-bars, pros/cons mini-bars, the conic rating dial, HUD corner brackets, card top
-borders, pick-card edges, step nodes, the icon-callout glyph, `.acc` text, and the
-focus ring. The masthead `.sec-num` chip and `h1.title span` stay amber/maroon by
-design — that's the fixed brand frame.
+### Opting a component into the page accent — `class="accent-page"`
+
+Every component (`.card`, `.callout`, `.rec`, `.pickcard`, `.hud`, `.dial`, the focus ring,
+…) paints with `--c-accent` and is therefore **amber by default**. To make a specific usage
+follow the page accent, add **`class="accent-page"`** to that element — or to any ancestor
+(the `.cards`/`.rec-list` container, even a `<section>`). No page-level CSS, no per-component
+rule: the class re-points `--c-accent*` at `--accent*` for that subtree.
+
+```html
+<div class="cards three accent-page"> … </div>   <!-- all three cards take the page accent -->
+<article class="rec ac-fed"> … </article>          <!-- explicit colour still wins over both -->
+```
+
+Per-element colour overrides still work and take precedence over `.accent-page`: cards take
+`.ac-amber` / `.ac-fed` / `.ac-maroon` / `.ac-good`; callouts take `.tip` / `.warn` /
+`.danger`. The masthead `.sec-num` chip and `h1.title span` stay amber by design — fixed
+brand frame. **Don't re-tie a component to `--accent` in page CSS — use `.accent-page`.**

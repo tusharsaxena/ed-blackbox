@@ -125,6 +125,15 @@ those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md
 - **Naming:** prefer lowercase-kebab for new asset files. (Existing files are
   inconsistent — `_` vs `-`, mixed case; standardizing is a tracked TODO, so don't mass-
   rename ad hoc.) The stylesheet is `ed-blackbox` (note: differs from repo `ed-blackbook`).
+- **Page accent themes only the `.role` title tag; everything else is amber.** The per-page
+  accent (`--accent`, maroon/fed/green) colours **only** the masthead `.role` tag. Every
+  design-system component (cards, callouts, `.rec`, pick cards, `.hud`, `.dial`, focus ring)
+  paints with the **component accent** (`--c-accent`) — **amber on every page**, treated as
+  neutral brand chrome. To make a specific component usage follow the page accent, add
+  **`class="accent-page"`** to it or any ancestor — never re-tie a component to `--accent`
+  in page CSS. Per-element overrides still win (`.ac-amber/.ac-fed/.ac-maroon/.ac-good` on
+  cards/recs; `.tip/.warn/.danger` on callouts). (See `design-system/docs/02-tokens.md` →
+  *Page accent vs component accent*.)
 - **Links:** internal links are **relative**. Whether links open in a new tab is an
   open decision (`TODO.md`) — don't add `target="_blank"` until it's settled.
 - **Identity:** author is CMDR Ka0s (INARA 173082). As of design-system **v1.1.0**, the

@@ -56,13 +56,23 @@
   /* breakpoints — documented only (media queries can't read var()):
      --bp-sm 480px · --bp-md 560px · --bp-lg 720px */
 
-  /* ---- ACCENT (per-page theme — override THESE five) ---- */
+  /* ---- PAGE ACCENT (per-page theme — override THESE five) ----
+     The page accent themes ONLY the masthead .role title tag. Every component paints with
+     the COMPONENT ACCENT below (brand amber); flip one to the page accent — without any
+     page-level CSS — by adding class="accent-page" to it (or any ancestor). */
   --accent:var(--amber);--accent-lt:var(--amber-lt);--accent-deep:var(--maroon);
   --accent-soft:rgba(224,145,58,.4);--accent-glow:rgba(224,145,58,.10);
+
+  /* ---- COMPONENT ACCENT (brand amber — what every DS component paints with) ---- */
+  --c-accent:var(--amber);--c-accent-lt:var(--amber-lt);
+  --c-accent-soft:rgba(224,145,58,.4);--c-accent-glow:rgba(224,145,58,.10);
 
   /* ---- meta ---- */
   --ds-version:"1.3.0";
 }
+/* Opt any component or subtree into the page accent — no page-level CSS required.
+   Re-points the component-accent tokens at the page accent for this element's subtree. */
+.accent-page{--c-accent:var(--accent);--c-accent-lt:var(--accent-lt);--c-accent-soft:var(--accent-soft);--c-accent-glow:var(--accent-glow)}
 
 /* ============================================================
    E:D BLACK BOX — GUIDE HOUSE STYLE  ·  v2 template
@@ -243,9 +253,9 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
    on the left, a field grid on the right, with optional note + description
    strips spanning the full width. Accent edge set per record. */
 .rec-list{display:flex;flex-direction:column;gap:var(--space-7);margin-top:var(--space-10)}
-.rec{display:grid;grid-template-columns:248px 1fr;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:var(--radius-md);overflow:hidden;scroll-margin-top:74px;transition:border-color var(--motion-base),background var(--motion-base)}
+.rec{display:grid;grid-template-columns:248px 1fr;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--c-accent);border-radius:var(--radius-md);overflow:hidden;scroll-margin-top:74px;transition:border-color var(--motion-base),background var(--motion-base)}
 .rec:hover{background:var(--panel2)}
-.rec:target{box-shadow:0 0 0 1px var(--accent-soft),0 0 26px var(--accent-glow)}
+.rec:target{box-shadow:0 0 0 1px var(--c-accent-soft),0 0 26px var(--c-accent-glow)}
 /* accent variants — set the left edge + banner top glow */
 .rec.ac-amber{border-left-color:var(--amber)}
 .rec.ac-fed{border-left-color:var(--fed)}
@@ -359,21 +369,21 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 
 /* ---- 13. CORNER-BRACKET HUD PANEL  (house-style framed box) ---- */
 .hud{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius-md);padding:var(--space-11) var(--space-12);margin-top:var(--space-9)}
-.hud::before,.hud::after{content:"";position:absolute;width:16px;height:16px;border:2px solid var(--accent);pointer-events:none}
+.hud::before,.hud::after{content:"";position:absolute;width:16px;height:16px;border:2px solid var(--c-accent);pointer-events:none}
 .hud::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
 .hud::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
-.hud .hud-c1,.hud .hud-c2{position:absolute;width:16px;height:16px;border:2px solid var(--accent);pointer-events:none}
+.hud .hud-c1,.hud .hud-c2{position:absolute;width:16px;height:16px;border:2px solid var(--c-accent);pointer-events:none}
 .hud .hud-c1{top:-1px;right:-1px;border-left:none;border-bottom:none}
 .hud .hud-c2{bottom:-1px;left:-1px;border-right:none;border-top:none}
 .hud h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm2);letter-spacing:2px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-5)}
 .hud p{font-size:var(--fs-body);color:var(--ink-dim)}
 
 /* ---- 14. CALLOUT / ASIDE  (tip / warning / danger) ---- */
-.callout{border:1px solid var(--hair);border-left:3px solid var(--amber);border-radius:var(--radius-md);padding:var(--space-8) var(--space-10);margin-top:var(--space-8);background:rgba(10,7,8,.4)}
+.callout{border:1px solid var(--hair);border-left:3px solid var(--c-accent);border-radius:var(--radius-md);padding:var(--space-8) var(--space-10);margin-top:var(--space-8);background:rgba(10,7,8,.4)}
 .callout.tip{border-left-color:var(--good)}
 .callout.warn{border-left-color:var(--amber)}
 .callout.danger{border-left-color:var(--danger)}
-.callout .co-eyebrow,.callout .lbl{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-2xs);letter-spacing:2.5px;text-transform:uppercase;color:var(--amber-lt);margin-bottom:var(--space-3);display:block}
+.callout .co-eyebrow,.callout .lbl{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-2xs);letter-spacing:2.5px;text-transform:uppercase;color:var(--c-accent-lt);margin-bottom:var(--space-3);display:block}
 .callout.tip .co-eyebrow,.callout.tip .lbl{color:var(--good-lt)}
 .callout.warn .co-eyebrow,.callout.warn .lbl{color:var(--amber-lt)}
 .callout.danger .co-eyebrow,.callout.danger .lbl{color:var(--danger)}
@@ -383,7 +393,7 @@ table.data tr.hl td{background:rgba(224,145,58,.06)}
 section > .callout + p{margin-top:var(--space-10)}
 /* icon variant — leading glyph in the accent colour */
 .callout.icon{position:relative;padding-left:48px}
-.callout.icon::before{content:"\25C8";position:absolute;left:18px;top:15px;font-size:var(--fs-lg);color:var(--amber)}
+.callout.icon::before{content:"\25C8";position:absolute;left:18px;top:15px;font-size:var(--fs-lg);color:var(--c-accent)}
 .callout.icon.tip::before{content:"\2605";color:var(--good)}
 .callout.icon.warn::before{content:"\25B2";color:var(--amber)}
 .callout.icon.danger::before{content:"\25B2";color:var(--danger)}
@@ -429,7 +439,7 @@ nav.toc::-webkit-scrollbar{height:0}
 
 /* ---- 17. RATING DIAL  (conic-gradient suitability gauge) ---- */
 .ratebox{margin-top:var(--space-13);display:flex;align-items:center;gap:var(--space-11);flex-wrap:wrap;border:1px solid var(--hair-strong);border-radius:var(--radius-md);background:linear-gradient(180deg,rgba(224,145,58,.10),rgba(20,13,15,.5));padding:var(--space-11) var(--space-12)}
-.dial{--v:78;width:96px;height:96px;border-radius:var(--radius-round);flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;background:conic-gradient(var(--accent) calc(var(--v)*1%),rgba(255,255,255,.06) 0)}
+.dial{--v:78;width:96px;height:96px;border-radius:var(--radius-round);flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;background:conic-gradient(var(--c-accent) calc(var(--v)*1%),rgba(255,255,255,.06) 0)}
 .dial::after{content:"";position:absolute;inset:9px;border-radius:var(--radius-round);background:var(--bg2);border:1px solid var(--hair)}
 .dial .num{position:relative;z-index:var(--z-base);font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-4xl);color:var(--ink)}
 .dial .num small{font-size:var(--fs-sm2);color:var(--ink-faint);font-weight:500}
@@ -481,11 +491,14 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 .cards.one{grid-template-columns:1fr}
 @media (max-width:980px){.cards.four,.cards.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){.cards.four,.cards.three,.cards.two{grid-template-columns:1fr}}
-.card{border:1px solid var(--hair-strong);border-top:3px solid var(--accent);border-radius:var(--radius-sm);padding:var(--space-8) var(--space-9);background:linear-gradient(180deg,rgba(28,18,20,.55),rgba(10,7,8,.4))}
+/* Cards paint with the component accent — amber on every page (NOT the page accent).
+   Override one card's top border with .ac-fed / .ac-maroon / .ac-good / .ac-amber, or use
+   the page accent with class="accent-page" on the card (or its .cards container). */
+.card{border:1px solid var(--hair-strong);border-top:3px solid var(--c-accent);border-radius:var(--radius-sm);padding:var(--space-8) var(--space-9);background:linear-gradient(180deg,rgba(28,18,20,.55),rgba(10,7,8,.4))}
 .card .ico{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-sm);letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:var(--space-3);display:block}
 .card h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-lg);letter-spacing:.4px;color:var(--ink);margin-bottom:var(--space-3)}
 .card p{font-size:var(--fs-body);color:var(--ink-dim);margin:var(--space-2) 0}
-.card.ac-fed{border-top-color:var(--fed)}.card.ac-maroon{border-top-color:var(--maroon-lt)}.card.ac-good{border-top-color:var(--good)}
+.card.ac-amber{border-top-color:var(--amber)}.card.ac-fed{border-top-color:var(--fed)}.card.ac-maroon{border-top-color:var(--maroon-lt)}.card.ac-good{border-top-color:var(--good)}
 /* titled-card header (h3 + right-aligned eyebrow) + micro footnote — alt to .ico+h4 */
 .card .c-head{display:flex;align-items:baseline;gap:var(--space-6);flex-wrap:wrap;margin-bottom:var(--space-2)}
 .card h3{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-h3);letter-spacing:.4px;color:var(--ink);line-height:1.15}
@@ -503,7 +516,7 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 
 /* ---- 22. PICK / RECOMMENDATION CARDS ---- */
 .pickgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-7);margin:var(--space-8) 0}
-.pickcard{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--accent);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
+.pickcard{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--c-accent);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
 .pickcard .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--amber);font-weight:600}
 .pickcard .pick{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xl);color:var(--amber-lt);margin:5px 0 7px;font-weight:600}
 .pickcard .pick small{color:var(--ink-faint);font-size:var(--fs-sm);font-weight:400}
@@ -523,7 +536,7 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
    Container .step-cards > article.step-card.ac-<type>. Accent the left rail/badge with
    ac-prep|farm|travel|grind|unlock|climb|build. Field labels (.rcl) render amber here. ---- */
 .step-cards{display:flex;flex-direction:column;gap:var(--space-6);margin-top:var(--space-10)}
-.step-card{display:grid;grid-template-columns:104px 1fr;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--amber);border-radius:var(--radius-sm);overflow:hidden;scroll-margin-top:74px;transition:border-color .18s,background .18s}
+.step-card{display:grid;grid-template-columns:104px 1fr;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--c-accent);border-radius:var(--radius-sm);overflow:hidden;scroll-margin-top:74px;transition:border-color .18s,background .18s}
 .step-card:hover{background:var(--panel2)}
 .step-card:target{box-shadow:0 0 0 1px rgba(224,145,58,.32),0 0 26px rgba(224,145,58,.12)}
 .step-card.ac-prep{border-left-color:var(--at-prep)}
@@ -701,7 +714,7 @@ code{color:var(--amber-lt);background:rgba(224,145,58,.09);border:1px solid var(
    ============================================================ */
 a:focus-visible,button:focus-visible,.coord:focus-visible,.qn-item:focus-visible,
 nav.toc a:focus-visible,.permalink:focus-visible,[tabindex]:focus-visible{
-  outline:2px solid var(--accent-lt);outline-offset:2px;border-radius:var(--radius-xs)}
+  outline:2px solid var(--c-accent-lt);outline-offset:2px;border-radius:var(--radius-xs)}
 .coord{outline-offset:2px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0}

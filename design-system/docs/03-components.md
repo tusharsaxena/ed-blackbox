@@ -35,11 +35,11 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Spec grid | `.specgrid` > `.cell` (`.k`/`.v`) | compact technical readout |
 | Panel | `.panel` | generic bordered info container for grouped notes |
 | Multi-column | `.cols-2` / `.cols-3` | responsive column layout (collapses to 1 under 680px) |
-| Card grid | `.cards.<count>` > `.card` (`.ico`, h4, p; `.ac-*` top border) | feature / objective cards; `.four`/`.three`/`.two`/`.one` sets cards-per-row |
+| Card grid | `.cards.<count>` > `.card` (`.ico`, h4, p; **amber top border by default**, `.ac-amber/.ac-fed/.ac-maroon/.ac-good` to override) | feature / objective cards; `.four`/`.three`/`.two`/`.one` sets cards-per-row |
 | Pick cards | `.pickgrid` > `.pickcard` (`.who`/`.pick`/`.alt`) | "who should use this" recommendations |
 | Step timeline | `ol.steps`/`ul.steps` > `li` (`.st` + p) | numbered procedures |
 | HUD panel | `.hud` (+ `.hud-c1` `.hud-c2` spans) | framed key takeaway / readout |
-| Callout | `.callout` (`.tip` / `.warn` / `.danger`; add `.icon` for a glyph) | asides, caveats, warnings |
+| Callout | `.callout` (**amber edge by default**; `.tip` / `.warn` / `.danger`; add `.icon` for a glyph) | asides, caveats, warnings |
 | Location readout | `.loc-card` > `.loc-row` (`.loc-k`/`.loc-v`) + `.coord[data-copy]` (+ JS module 3) | site / coordinate readouts |
 | Per-page credits | a normal numbered `section.credits` (`.sec-head` + `p.lead` + `.cr-rows` > `.cr-row`: `.cr-src`/`.cr-what`/`.cr-link`) | the **last** section — this page's authoritative data sources, above the footer |
 | Footer | `footer` | brand (`E:D Black Box`) + author credit (`By CMDR Ka0s`) + part |
@@ -78,10 +78,17 @@ The workhorse repeating entry.
 - **Pros/cons table (`table.cmp`).** `td.pcc` stacks `.p` (green, leading `+`), `.c`
   (amber, leading `−`), `.base` (dim italic). Rating cell = `.rscore` + `.bar.mini`.
   Set widths via `<colgroup>`.
-- **Cards (`.cards`) & pick cards (`.pickgrid`).** Cards = feature tiles, coloured
-  **top** border (`.ac-*`), `.ico` eyebrow + h4 + prose. Pick cards = recommendations,
-  coloured **left** edge: `.who` (reader profile), `.pick` (+ score/cost in `<small>`),
-  prose, `.alt` "Also:" line.
+- **Cards (`.cards`) & pick cards (`.pickgrid`).** Cards = feature tiles, **amber top
+  border by default** (override per-card with `.ac-amber/.ac-fed/.ac-maroon/.ac-good`),
+  `.ico` eyebrow + h4 + prose. Pick cards = recommendations, coloured **left** edge:
+  `.who` (reader profile), `.pick` (+ score/cost in `<small>`), prose, `.alt` "Also:" line.
+- **Amber by default; `.accent-page` to opt in.** Every component (cards, callouts, `.rec`,
+  pick cards, `.hud`, `.dial`, the focus ring) paints with the **component accent** — amber
+  on every page, *not* the per-page accent. The page accent themes only the masthead `.role`
+  tag. To make one usage follow the page accent, add **`class="accent-page"`** to it or any
+  ancestor (e.g. the `.cards`/`.rec-list` container) — no page CSS needed. Per-element colour
+  classes (`.ac-*` on cards/recs, `.tip`/`.warn`/`.danger` on callouts) still win. See
+  `02-tokens.md` → *Page accent vs component accent*.
 - **Step timeline (`ol.steps`).** Auto-numbered vertical procedure with a connector
   line; each `li` has a bold `.st` title + prose. Use `<ol>` for true sequences.
 - **Pills / kbd / accent text.** `.pill` is bolder/squarer than `.chip`, with severity
