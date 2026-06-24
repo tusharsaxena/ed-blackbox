@@ -35,7 +35,7 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Spec grid | `.specgrid` > `.cell` (`.k`/`.v`) | compact technical readout |
 | Panel | `.panel` | generic bordered info container for grouped notes |
 | Multi-column | `.cols-2` / `.cols-3` | responsive column layout (collapses to 1 under 680px) |
-| Card grid | `.cards` > `.card` (`.ico`, h4, p; `.ac-*` top border) | feature / objective cards |
+| Card grid | `.cards.<count>` > `.card` (`.ico`, h4, p; `.ac-*` top border) | feature / objective cards; `.four`/`.three`/`.two`/`.one` sets cards-per-row |
 | Pick cards | `.pickgrid` > `.pickcard` (`.who`/`.pick`/`.alt`) | "who should use this" recommendations |
 | Step timeline | `ol.steps`/`ul.steps` > `li` (`.st` + p) | numbered procedures |
 | HUD panel | `.hud` (+ `.hud-c1` `.hud-c2` spans) | framed key takeaway / readout |
