@@ -340,14 +340,18 @@ ul.reclist a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
 .tbl-scroll{overflow-x:auto;margin:var(--space-9) 0;border:1px solid var(--hair);border-radius:var(--radius-md)}
 table.data{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
 table.data thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:11px var(--space-7);background:rgba(8,5,6,.6);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
-/* header alignment follows the column's data alignment */
-table.data thead th.num{text-align:right}
-table.data thead th.center,table.data td.center{text-align:center}
+/* Header alignment follows the column's data alignment: a right-aligned (.num) or
+   centered (.center) column carries that class on BOTH its <td> and its <th>, so the
+   header sits over the figures it labels. Applies to every table family — data, l3, cmp.
+   Sweep that keeps headers in sync: scripts/align-table-headers.py */
+table.data thead th.num,table.l3 thead th.num,table.cmp thead th.num{text-align:right}
+table.data thead th.center,table.l3 thead th.center,table.cmp thead th.center,
+table.data td.center,table.l3 td.center,table.cmp td.center{text-align:center}
 table.data tbody td{padding:var(--space-5) var(--space-7);border-bottom:1px solid var(--hair);color:var(--ink-dim);vertical-align:top}
 table.data tbody tr:hover{background:var(--panel2)}
 table.data tbody tr:last-child td{border-bottom:none}
 table.data td b{color:var(--ink);font-weight:600}
-table.data td.num{font-family:'Chakra Petch',sans-serif;text-align:right;color:var(--ink)}
+table.data td.num,table.l3 td.num,table.cmp td.num{font-family:'Chakra Petch',sans-serif;text-align:right;color:var(--ink)}
 table.data .row-rank{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--amber-lt)}
 table.data tr.hl td{background:rgba(224,145,58,.06)}
 

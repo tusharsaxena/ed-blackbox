@@ -27,7 +27,7 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Key/value mini-grid | `.kvgrid` (`.lk` › `.lv`) | structured sub-fields (e.g. Location) |
 | Record bullet list | `ul.reclist` | lists inside a record |
 | Bullet list | `ul.bullets` | general body list (accent markers) — outside a record |
-| Data table | `.tbl-scroll` > `table.data` (`th.num`/`td.num` right-align, `.center`) | ranked ladders, simple comparisons |
+| Data table | `.tbl-scroll` > `table.data` (`.num` right-align, `.center` — put the **same class on the `<th>` and the column's `<td>`s**) | ranked ladders, simple comparisons |
 | Loadout table | `.tbl-scroll` > `table.l3` (`.grouprow` `.slot` `.st` `.eng`) | multi-state build tables |
 | Pros/cons table | `.tbl-scroll` > `table.cmp` (`td.pcc` `.p`/`.c`/`.base`, `.rscore`, `.bar.mini`) | comparison w/ pros & cons |
 | Rating bar | `.rating` (`.score` + `.bar` / `.bar.mini`) — fill via `<i style="--pct:NN">` | linear 1–100 meters; colour scales red(100)→yellow(50)→green(0) |
@@ -71,6 +71,12 @@ The workhorse repeating entry.
   the masthead, in place of the stat-grid.
 - **Spec grid (`.specgrid`).** Seamless k/v readout (1px gridlines). `.k` condensed
   uppercase label, `.v` Chakra value (units in `<small>`). Pairs under the dial.
+- **Column alignment (`.num` / `.center`) — header follows the data.** A right-aligned
+  (`.num`) or centred (`.center`) column carries that class on **both** its `<td>`s **and**
+  its `<th>`, so the header sits over the figures it labels — never a left header above a
+  right column. Holds for all three table families (`data` / `l3` / `cmp`). Tables that
+  re-align in page CSS (the modules `table.spec.cD`, `.matrix`, `.mx`) own their alignment
+  and are exempt. `scripts/align-table-headers.py` sweeps the guides to keep `<th>`s in sync.
 - **Loadout table (`table.l3`).** Multi-state build. `.grouprow` spans columns as a
   maroon section header; rows use `.slot` / `.st` (a state) / `.eng` (engineered, in
   accent). Usually Initial / A-rated / Engineered.

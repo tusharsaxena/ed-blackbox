@@ -4,8 +4,8 @@ Operating guidance for AI agents (and humans) working on the **Elite:Dangerous B
 Book**, a static site of Elite Dangerous field manuals by Tushar Saxena (CMDR Ka0s).
 
 > **Loading note:** Claude Code auto-loads `CLAUDE.md` from the repo **root**, not from
-> `docs/`. To have this file picked up automatically, add a root `CLAUDE.md` containing
-> just `@docs/CLAUDE.md`. Until then, read this file at the start of project work.
+> `docs/`. The root `CLAUDE.md` is a one-line shim (`@docs/CLAUDE.md`) that pulls this file
+> in automatically, so it loads at the start of every session.
 
 **Orient yourself first:** [`ARCHITECTURE.md`](ARCHITECTURE.md) (what's in the repo +
 how it's built), [`TODO.md`](TODO.md) (backlog).

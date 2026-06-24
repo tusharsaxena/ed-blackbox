@@ -15,7 +15,7 @@ or from `file://`. The deployment target is **GitHub Pages** (not yet live).
 
 **Project facts:** authored by **Tushar Saxena** (in-game **CMDR Ka0s**, INARA 173082),
 licensed **MIT** (© 2026); remote `github.com/tusharsaxena/ed-blackbook`. Branch:
-`design-system-migration`. Current phase: the design-system migration is **complete** —
+`master`. Current phase: the design-system migration is **complete** —
 every page links the shared stylesheet — so work has shifted to **publishing and editorial
 polish** (landing-page copy, fleet-bias cleanup, GitHub Pages).
 
@@ -146,9 +146,9 @@ guides/
 
 **File census:** ~375 files — 115 HTML (111 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
-3 wired logos + concept candidates under `logos/concepts/`), 160 Markdown (prose docs +
+3 wired logos + concept candidates under `logos/concepts/`), 162 Markdown (prose docs +
 **112 per-page `*-anchors.md` catalogs** — 110 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 7 `.py` + 8 `.mjs`) and 1 TSV
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 9 `.py` + 8 `.mjs`) and 1 TSV
 (`scripts/ship-names.tsv`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
@@ -239,7 +239,10 @@ Beyond the two generators, `scripts/` also holds the **migration verification ha
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
 gate, `baseline-capture.sh`) and several **one-off content-migration scripts**
 (`fix-step-tuples`, `trim-svg`, `restructure-app-cards`, `classify-card-groups`,
-`convert-dossier-rating-cards`). The **anchor-standardization toolchain** lives here too —
+`convert-dossier-rating-cards`). Idempotent **table-maintenance sweeps** keep guide markup
+in sync with the design system — `sort-compare-tables.py` (orders comparison-table rows) and
+`align-table-headers.py` (puts each `<th>` on its column's `.num`/`.center` alignment, so a
+right/centre column's header sits over its figures). The **anchor-standardization toolchain** lives here too —
 `standardize-anchors.py` (renames every navigable id onto the `<family>-<slug>` scheme and
 rewrites all internal links, including the `data-target` JS quick-nav) and `verify-links.py`
 (a full internal-link + quick-nav resolution audit) — alongside read-only gates such as
@@ -284,8 +287,6 @@ divergent token names, and per-page layout widths that the inline-CSS era produc
   ship tags); systems pages are largely de-biased (`TODO.md` Phase 4).
 - **DS version string** — `--ds-version` is still `1.3.0` though the final migration added
   components (`.step-card`, `.bp-*`) and quick-nav features; bump when convenient.
-- **`guides.01/` scratch copy** — an untracked, `.gitignore`d full duplicate of `guides/`
-  awaiting deletion (`TODO.md` Phase 1).
 
 A few pages keep a single deliberately-scoped `<style>`/`<script>` for genuinely bespoke
 behaviour (the `checklist.html` unlock map; the `blueprints.html` accordion/search; the
