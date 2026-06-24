@@ -80,7 +80,8 @@ tokens  →  components  →  templates  →  pages
 
 - **`css/ed-blackbox.css`** — single source of truth. `:root` holds a **locked** token
   set (color, spacing, radius, type, z-index, motion, layout — plus action-type colours
-  `--at-*` and material colours `--bp-raw/man/enc`). 45+ components are defined as classes
+  `--at-*`, material colours `--bp-raw/man/enc`, and ship-role chip colours `--role-*`
+  (one distinct hue per role, used by the index ship grid)). 45+ components are defined as classes
   (`.masthead`, `.rec`, `.specgrid`, tables, cards, callouts, `.credits`, etc.), including
   the components promoted during the final migration: **`.step-card`** (numbered action-card
   used by `checklist.html`) and the **`.bp-*`** blueprint accordion set (`.bp-card`,

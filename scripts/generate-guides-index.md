@@ -18,8 +18,10 @@ guide in the project, grouped logically.
   script, grouped into 7 themed sections.
 - **Auto-discovered ship grid:** every dossier in `guides/ships/dossiers/*.html` is found
   on disk (filenames are `<ship-slug>-<role>.html`), grouped by ship, with one role link
-  per dossier (colour-coded by role — maroon for Combat/AX, blue for Exploration/Passenger,
-  green for Trading).
+  per dossier (colour-coded by role — one distinct hue per role, RED→VIOLET: Combat red,
+  AX orange, Mining yellow, Trading green, Exploration blue, Passenger indigo, Multipurpose
+  violet; `role_class()` maps each role to an `r-<role>` class painted from the
+  design-system `--role-*` tokens).
 - **Ship display names** come from `scripts/ship-names.tsv` (`slug<TAB>Name`); a slug not
   listed falls back to Title-casing its words. Extend the TSV when a new ship is added.
 - Adds a back-to-top button (small inline script).

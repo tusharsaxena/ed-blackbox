@@ -48,8 +48,9 @@ OUT="$GUIDES/index.html"
 # Emit a guide card.  args: href, accentClass, title, desc
 card(){ printf '    <a class="gcard %s" href="%s"><h3>%s</h3><p>%s</p></a>\n' "$2" "$1" "$3" "$4"; }
 
-# Map a role slug to a role-chip colour class (used in the ship grid).
-role_class(){ case "$1" in combat|ax) echo "r-mar";; exploration|passenger) echo "r-fed";; trading) echo "r-good";; *) echo "";; esac; }
+# Map a role slug to its role-chip colour class (used in the ship grid). Each role gets a
+# distinct hue (RED→VIOLET); the colours resolve from the design-system --role-* tokens.
+role_class(){ case "$1" in combat) echo "r-combat";; ax) echo "r-ax";; mining) echo "r-mining";; trading) echo "r-trading";; exploration) echo "r-exploration";; passenger) echo "r-passenger";; multipurpose) echo "r-multipurpose";; *) echo "";; esac; }
 
 # Display label for a role slug (AX stays upper-case; others Title-case).
 role_label(){ case "$1" in ax) echo "AX";; *) echo "$(echo "$1" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')";; esac; }
@@ -90,9 +91,13 @@ cat <<'HEAD'
 .ship .roles{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
 .ship .roles a{font-family:'Saira Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--amber-lt);text-decoration:none;border:1px solid var(--hair-strong);border-radius:10px;padding:2px 10px;transition:.14s;white-space:nowrap}
 .ship .roles a:hover{color:var(--bg);background:var(--amber-lt);border-color:var(--amber-lt)}
-.ship .roles a.r-fed{color:var(--fed-lt)}.ship .roles a.r-fed:hover{background:var(--fed-lt);border-color:var(--fed-lt);color:var(--bg)}
-.ship .roles a.r-mar{color:var(--maroon-lt)}.ship .roles a.r-mar:hover{background:var(--maroon-lt);border-color:var(--maroon-lt);color:var(--ink)}
-.ship .roles a.r-good{color:var(--good-lt)}.ship .roles a.r-good:hover{background:var(--good-lt);border-color:var(--good-lt);color:var(--bg)}
+.ship .roles a.r-combat{color:var(--role-combat)}.ship .roles a.r-combat:hover{background:var(--role-combat);border-color:var(--role-combat);color:var(--ink)}
+.ship .roles a.r-ax{color:var(--role-ax)}.ship .roles a.r-ax:hover{background:var(--role-ax);border-color:var(--role-ax);color:var(--bg)}
+.ship .roles a.r-mining{color:var(--role-mining)}.ship .roles a.r-mining:hover{background:var(--role-mining);border-color:var(--role-mining);color:var(--bg)}
+.ship .roles a.r-trading{color:var(--role-trading)}.ship .roles a.r-trading:hover{background:var(--role-trading);border-color:var(--role-trading);color:var(--bg)}
+.ship .roles a.r-exploration{color:var(--role-exploration)}.ship .roles a.r-exploration:hover{background:var(--role-exploration);border-color:var(--role-exploration);color:var(--bg)}
+.ship .roles a.r-passenger{color:var(--role-passenger)}.ship .roles a.r-passenger:hover{background:var(--role-passenger);border-color:var(--role-passenger);color:var(--bg)}
+.ship .roles a.r-multipurpose{color:var(--role-multipurpose)}.ship .roles a.r-multipurpose:hover{background:var(--role-multipurpose);border-color:var(--role-multipurpose);color:var(--bg)}
 </style>
 </head>
 <body>
