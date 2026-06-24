@@ -96,9 +96,12 @@ tokens  →  components  →  templates  →  pages
   markup so unused ones are inert: (1) quick-nav filter/search (matches both the visible
   name and an optional `data-kw` keyword string, and hides empty `.qn-sec` group headers),
   (2) TOC scrollspy via `IntersectionObserver`, (3) click-to-copy coordinates, (4) scroll-to-top
-  (header `.qn-totop` button). Two pages keep a **page-local** `<script>` instead of (or
-  alongside) this for behaviour the shared module doesn't cover: `blueprints.html` (accordion
-  fold + search-and-expand-card quick-nav) and `checklist.html` (the unlock-map SVG wiring).
+  (header `.qn-totop` button). Several engineering pages keep a **page-local** `<script>`
+  instead of (or alongside) this for behaviour the shared module doesn't cover:
+  `blueprints.html` (accordion fold + search-and-expand-card quick-nav), `checklist.html`
+  (the unlock-map SVG wiring), and `modules.html` / `engineers.html` — both fully
+  self-contained, driving a richer quick-nav (`.qn-item[data-target]` rows + clickable
+  `.qn-item.qn-group` coloured headers, filtered by `data-search`; engineers grouped by tier).
 - **Site chrome (v1.1.0)** — a global sticky header (`.site-header` > `.hdr-inner`:
   `.brand` logo+wordmark, `.site-nav`, optional right-aligned `.header-qn` in-page
   quick-nav with a `.qn-totop` scroll-to-top button) and `nav.breadcrumbs`, both sitting
@@ -156,7 +159,7 @@ design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 sh
 
 | Page | Purpose |
 |---|---|
-| `engineers.html` | Engineer database: unlock requirements, location, referrals. Opens with a "What the Engineers Are" primer; header quick-nav; uses `images/engineers/` portraits. |
+| `engineers.html` | Engineer database: unlock requirements, location, referrals. Opens with a "What the Engineers Are" primer; modules-style grouped header quick-nav (page sections + 38 engineers grouped by tier; page-local `<script>`); uses `images/engineers/` portraits. |
 | `blueprints.html` | Module blueprint catalog (~3,900 lines) on the `.bp-*` accordion components. Cards fold open; header search jumps to **and** expands a blueprint (page-local `<script>`). |
 | `checklist.html` | "The Unlock Run" — engineering unlock progression as numbered phases + a bespoke SVG **Engineer Unlock Map** (kept page-scoped); `.step-card` components; header quick-nav. |
 | `materials.html` | Materials primer: the three types, grade ladders, the material-trader exchange-ratio heat-matrix, storage caps, where-to-farm links, and tracking tools. Bespoke page-scoped `<style>` for the table column-parity + ratio matrix. |
