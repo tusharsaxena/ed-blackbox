@@ -501,6 +501,10 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 .card h4{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-lg);letter-spacing:.4px;color:var(--ink);margin-bottom:var(--space-3)}
 .card p{font-size:var(--fs-body);color:var(--ink-dim);margin:var(--space-2) 0}
 .card.ac-amber{border-top-color:var(--amber)}.card.ac-fed{border-top-color:var(--fed)}.card.ac-maroon{border-top-color:var(--maroon-lt)}.card.ac-good{border-top-color:var(--good)}
+/* ship-role accents — top border + eyebrow/title follow the per-role --role-* hue (same
+   palette as the index ship-grid role tags). Use .ac-role-<role> to colour a card by role. */
+.card.ac-role-combat{border-top-color:var(--role-combat)}.card.ac-role-ax{border-top-color:var(--role-ax)}.card.ac-role-mining{border-top-color:var(--role-mining)}.card.ac-role-trading{border-top-color:var(--role-trading)}.card.ac-role-exploration{border-top-color:var(--role-exploration)}.card.ac-role-passenger{border-top-color:var(--role-passenger)}.card.ac-role-multipurpose{border-top-color:var(--role-multipurpose)}
+.card.ac-role-combat .c-eyebrow,.card.ac-role-combat .ico{color:var(--role-combat)}.card.ac-role-ax .c-eyebrow,.card.ac-role-ax .ico{color:var(--role-ax)}.card.ac-role-mining .c-eyebrow,.card.ac-role-mining .ico{color:var(--role-mining)}.card.ac-role-trading .c-eyebrow,.card.ac-role-trading .ico{color:var(--role-trading)}.card.ac-role-exploration .c-eyebrow,.card.ac-role-exploration .ico{color:var(--role-exploration)}.card.ac-role-passenger .c-eyebrow,.card.ac-role-passenger .ico{color:var(--role-passenger)}.card.ac-role-multipurpose .c-eyebrow,.card.ac-role-multipurpose .ico{color:var(--role-multipurpose)}
 /* titled-card header (h3 + right-aligned eyebrow) + micro footnote — alt to .ico+h4 */
 .card .c-head{display:flex;align-items:baseline;gap:var(--space-6);flex-wrap:wrap;margin-bottom:var(--space-2)}
 .card h3{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-h3);letter-spacing:.4px;color:var(--ink);line-height:1.15}
