@@ -24,9 +24,9 @@
     <span class="nav-sep" aria-hidden="true"></span>
     <nav class="site-nav" aria-label="Primary">
       <a href="../../guides/index.html">Home</a>
-      <a href="../../guides/index.html#dossiers">Ships</a>
-      <a href="../../guides/index.html#engineering">Engineering</a>
-      <a href="../../guides/index.html#systems">Systems</a>
+      <a href="../../guides/index.html#section-dossiers">Ships</a>
+      <a href="../../guides/index.html#section-engineering">Engineering</a>
+      <a href="../../guides/index.html#section-systems">Systems</a>
     </nav>
     <div class="header-qn">
       <span class="qn-eyebrow muted">On this page</span>
@@ -86,16 +86,16 @@
      the scrollspy script highlights the active one.
      ============================================================ -->
 <nav class="toc" id="toc" aria-label="Sections">
-  <a href="#legend">01 Legend</a>
-  <a href="#components">02 Inline</a>
-  <a href="#table">03 Tables</a>
-  <a href="#records">04 Records</a>
-  <a href="#displays">05 Displays</a>
-  <a href="#buildtables">06 Build tables</a>
-  <a href="#cards">07 Cards</a>
-  <a href="#procedure">08 Procedure</a>
-  <a href="#site">09 Site readout</a>
-  <a href="#credits">10 Credits</a>
+  <a href="#section-legend">01 Legend</a>
+  <a href="#section-components">02 Inline</a>
+  <a href="#section-table">03 Tables</a>
+  <a href="#section-records">04 Records</a>
+  <a href="#section-displays">05 Displays</a>
+  <a href="#section-buildtables">06 Build tables</a>
+  <a href="#section-cards">07 Cards</a>
+  <a href="#section-procedure">08 Procedure</a>
+  <a href="#section-site">09 Site readout</a>
+  <a href="#section-credits">10 Credits</a>
 </nav>
 
 <!-- ============================================================
@@ -128,7 +128,7 @@
 <!-- ============================================================
      SECTION 01 — legend / how-to-read. Numbered head + lead + legend grid.
      ============================================================ -->
-<section id="legend">
+<section id="section-legend">
   <div class="sec-head"><span class="sec-num">01</span><h2>Section Heading</h2><span class="tag">Right Tag · N</span></div>
   <p class="lead">A lead paragraph introducing the section. One or two sentences, dimmed ink, sitting directly under the numbered header.</p>
   <p class="note-sg">Key–value rows use <code>.kv-row</code> &gt; <code>.kv-k</code> (optional <code>.swatch</code> + <code>&lt;b&gt;</code>) + <code>.kv-v</code>: the key sits in its own column, clearly separated from the value, top-aligned so a multi-line value never shoves the key around.</p>
@@ -155,7 +155,7 @@
      SECTION 02 — inline components: chips, pills, kbd, accent text,
      rating bars, HUD panel, callouts (incl. icon variant).
      ============================================================ -->
-<section id="components">
+<section id="section-components">
   <div class="sec-head"><span class="sec-num">02</span><h2>Inline Components</h2><span class="tag">Kit</span></div>
 
   <h3 class="subhead">Chips &amp; pills</h3>
@@ -215,7 +215,7 @@
 <!-- ============================================================
      SECTION 03 — data / comparison table (simple ranked ladder).
      ============================================================ -->
-<section id="table">
+<section id="section-table">
   <div class="sec-head"><span class="sec-num">03</span><h2>Data Table</h2><span class="tag">Tabular</span></div>
   <p class="lead">Use for ranked ladders and simple comparisons. Wrap in .tbl-scroll for mobile. Right-align numerics with td.num; highlight a row with tr.hl.</p>
   <div class="tbl-scroll">
@@ -236,7 +236,7 @@
      Accent variants: ac-amber / ac-fed / ac-maroon / ac-good.
      Relabel .rcl field labels + .rec-head per page domain.
      ============================================================ -->
-<section id="records">
+<section id="section-records">
   <div class="sec-head"><span class="sec-num">04</span><h2>Record Cards</h2><span class="tag">Catalogue · 3</span></div>
   <p class="lead">The repeating data record. Identity rail on the left (banner, name, role line, chips, meta); a relabelable field grid on the right; optional full-width Note and Description strips beneath.</p>
 
@@ -314,7 +314,7 @@
      The dial reads its value from style="--v:NN". Spec grid is a
      seamless k/v readout for technical stats.
      ============================================================ -->
-<section id="displays">
+<section id="section-displays">
   <div class="sec-head"><span class="sec-num">05</span><h2>Rating Dial &amp; Spec Grid</h2><span class="tag">Displays</span></div>
   <p class="lead">The circular dial is the headline suitability gauge for a ship × role dossier; the spec grid is the compact technical readout beneath it.</p>
 
@@ -340,7 +340,7 @@
      SECTION 06 — build tables: 3-state loadout (l3, grouped) and
      pros/cons comparison (cmp, with inline rscore + mini bar).
      ============================================================ -->
-<section id="buildtables">
+<section id="section-buildtables">
   <div class="sec-head"><span class="sec-num">06</span><h2>Build &amp; Comparison Tables</h2><span class="tag">Tabular</span></div>
 
   <h3 class="subhead">3-state loadout (table.l3)</h3>
@@ -382,7 +382,7 @@
      SECTION 07 — card grids: feature/objective cards (.cards>.card)
      and pick/recommendation cards (.pickgrid>.pickcard).
      ============================================================ -->
-<section id="cards">
+<section id="section-cards">
   <div class="sec-head"><span class="sec-num">07</span><h2>Cards &amp; Recommendations</h2><span class="tag">Cards</span></div>
 
   <h3 class="subhead">Feature / objective cards</h3>
@@ -429,7 +429,7 @@
      SECTION 08 — step timeline (numbered vertical procedure).
      Use <ol class="steps"> for ordered procedures.
      ============================================================ -->
-<section id="procedure">
+<section id="section-procedure">
   <div class="sec-head"><span class="sec-num">08</span><h2>Step Procedure</h2><span class="tag">Sequence</span></div>
   <p class="lead">A numbered vertical timeline for procedures — docking, an unlock sequence, a farm loop. Each step has a bold .st title and supporting prose.</p>
   <ol class="steps">
@@ -461,7 +461,7 @@
      SECTION 09 — site / coordinate readout. Location card with
      dashed k/v rows and a click-to-copy coordinate chip.
      ============================================================ -->
-<section id="site">
+<section id="section-site">
   <div class="sec-head"><span class="sec-num">09</span><h2>Site Readout</h2><span class="tag">Location</span></div>
   <p class="lead">For material-farm and point-of-interest sites: a location card with a copyable coordinate chip (click to copy via the script below).</p>
   <div class="loc-card">
@@ -477,7 +477,7 @@
      footer. Body is the .cr-rows table: one .cr-row per authoritative
      source for THIS page (name · what it provided · external link).
      ============================================================ -->
-<section class="credits" id="credits">
+<section class="credits" id="section-credits">
   <div class="sec-head"><span class="sec-num">10</span><h2>Sources</h2></div>
   <p class="lead">Figures on this page are verified against the authoritative sources below.</p>
   <div class="cr-rows">

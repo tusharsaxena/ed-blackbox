@@ -50,12 +50,19 @@ docs/              project docs (this file, architecture, todo)
    Don't reintroduce a full inline stylesheet — style with catalogued component classes; the
    only per-page `<style>` should be the 5-token accent override (or a deliberately-scoped
    bespoke block like the checklist map / index grids). New components go in the DS, not the page.
-4. **Stable anchors.** Other pages and external tools deep-link by id (`#eng-…`,
-   `#grp-…`, `#bp-…`, section ids). Don't rename ids casually. Every guide has a
-   sibling **`<basename>-anchors.md`** cataloging its anchors; if you add, remove, or
-   rename a `<section id>`, re-run the anchor generator (see *Anchor files* below).
-   The `blueprints-anchors.md` / `engineers-anchors.md` catalogs are **hand-curated** —
-   edit them by hand.
+4. **Stable anchors.** Other pages and external tools deep-link by id. All ids follow the
+   standardized `<family>-<slug>` scheme (`#section-…` for every section, plus
+   `#engineer-…`, `#blueprint-…`/`#blueprint-group-…`, `#module-…`/`#module-group-…`,
+   `#powerplay-…`, `#superpower-…`, `#engineer-unlock-…`/`#engineer-refer-…`, `#step-…`,
+   `#app-…`). **Use these prefixes for any new ids** — never the retired `s1`/`eng-`/`grp-`/
+   `bp-`/`pw-`/`pow-`/`mod-` forms. The functional ids `qn-*` (quick-nav), `toc`, and
+   checklist.html's `n-*`/`c-*`/`emap-inner`/`wires` are **not** navigation anchors —
+   leave them alone. Don't rename ids casually; if you must, run
+   `scripts/standardize-anchors.py --verify` to confirm zero links break (scheme + tooling:
+   `scripts/standardize-anchors.md`). Every guide has a sibling **`<basename>-anchors.md`**
+   cataloging its anchors; if you add, remove, or rename a `<section id>`, re-run the anchor
+   generator (see *Anchor files* below). The `blueprints-anchors.md` / `engineers-anchors.md`
+   catalogs are **hand-curated** — edit them by hand.
 5. **Generated files are generated.** `guides/index.html` (`generate-guides-index.sh`)
    and the per-page `<basename>-anchors.md` files (`generate-anchor-files.sh`) are
    script output — edit the generator, not the output.
