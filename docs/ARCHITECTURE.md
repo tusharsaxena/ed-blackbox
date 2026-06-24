@@ -28,7 +28,7 @@ on the system from the start.)
 | | Every page today |
 |---|---|
 | CSS | **one linked** `ed-blackbox.css` (+ a tiny per-page 5-token accent override `<style>`) |
-| JS | **one linked** `ed-blackbox.js` (a few pages keep a small bespoke script — see §3/§6) |
+| JS | **one linked** `ed-blackbox.js` (4 engineering pages are self-contained with their own script instead — see §3) |
 | Consistency | a single locked token set; no more palette drift |
 
 A handful of pages also keep one **deliberately-scoped** `<style>`/`<script>`: the bespoke
@@ -96,12 +96,14 @@ tokens  →  components  →  templates  →  pages
   markup so unused ones are inert: (1) quick-nav filter/search (matches both the visible
   name and an optional `data-kw` keyword string, and hides empty `.qn-sec` group headers),
   (2) TOC scrollspy via `IntersectionObserver`, (3) click-to-copy coordinates, (4) scroll-to-top
-  (header `.qn-totop` button). Several engineering pages keep a **page-local** `<script>`
-  instead of (or alongside) this for behaviour the shared module doesn't cover:
-  `blueprints.html` (accordion fold + search-and-expand-card quick-nav), `checklist.html`
-  (the unlock-map SVG wiring), and `modules.html` / `engineers.html` — both fully
-  self-contained, driving a richer quick-nav (`.qn-item[data-target]` rows + clickable
-  `.qn-item.qn-group` coloured headers, filtered by `data-search`; engineers grouped by tier).
+  (header `.qn-totop` button). **Four engineering pages are fully self-contained** — instead
+  of linking the shared file they run a **page-local** `<script>`: `modules.html`,
+  `engineers.html`, `checklist.html`, `blueprints.html`. Each drives the richer quick-nav
+  dialect (`.qn-item[data-target]` rows + clickable `.qn-item.qn-group` coloured headers,
+  filtered by `data-search`). `engineers.html` / `checklist.html` group their entries
+  (engineers by tier; checklist by phase / engineer-tier / gate / farm — **each group header
+  matching its section heading**); `blueprints.html` adds accordion fold + search-and-expand-card
+  behaviour; `checklist.html` also wires its bespoke unlock-map SVG in that same script.
 - **Site chrome (v1.1.0)** — a global sticky header (`.site-header` > `.hdr-inner`:
   `.brand` logo+wordmark, `.site-nav`, optional right-aligned `.header-qn` in-page
   quick-nav with a `.qn-totop` scroll-to-top button) and `nav.breadcrumbs`, both sitting
@@ -161,7 +163,7 @@ design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 sh
 |---|---|
 | `engineers.html` | Engineer database: unlock requirements, location, referrals. Opens with a "What the Engineers Are" primer; modules-style grouped header quick-nav (page sections + 38 engineers grouped by tier; page-local `<script>`); uses `images/engineers/` portraits. |
 | `blueprints.html` | Module blueprint catalog (~3,900 lines) on the `.bp-*` accordion components. Cards fold open; header search jumps to **and** expands a blueprint (page-local `<script>`). |
-| `checklist.html` | "The Unlock Run" — engineering unlock progression as numbered phases + a bespoke SVG **Engineer Unlock Map** (kept page-scoped); `.step-card` components; header quick-nav. |
+| `checklist.html` | "The Unlock Run" — engineering unlock progression as numbered phases + a bespoke SVG **Engineer Unlock Map** (kept page-scoped); `.step-card` components; modules-style grouped header quick-nav (phases · engineer tiers · permit gates · material farms; page-local `<script>`). |
 | `materials.html` | Materials primer: the three types, grade ladders, the material-trader exchange-ratio heat-matrix, storage caps, where-to-farm links, and tracking tools. Bespoke page-scoped `<style>` for the table column-parity + ratio matrix. |
 | `modules.html` | Outfitting catalog (core internals · optional internals · hardpoints · utility mounts) on the `.bp-*` accordion (sibling of `blueprints.html`); A–E class & size system; per-role picks. Self-contained inline `<script>`. |
 | `farms/` (4) | Material-farm location guides (`davs-hope`, `crystalline-shards`, `high-grade-emissions`, `jameson-crash-site`) — DS amber, with click-to-copy coordinate readouts. |
