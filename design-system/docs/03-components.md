@@ -33,7 +33,6 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Rating bar | `.rating` (`.score` + `.bar` / `.bar.mini`) — fill via `<i style="--pct:NN">` | linear 1–100 meters; colour scales red(100)→yellow(50)→green(0) |
 | Rating dial | `.ratebox` > `.dial` (`style="--v:NN"`) + `.rl` (`.t`/`.d`) | headline suitability gauge |
 | Spec grid | `.specgrid` > `.cell` (`.k`/`.v`) | compact technical readout |
-| Panel | `.panel` | generic bordered info container for grouped notes |
 | Multi-column | `.cols-2` / `.cols-3` | responsive column layout (collapses to 1 under 680px) |
 | Card grid | `.cards.<count>` > `.card` (`.ico`, h4, p; **amber top border by default**, `.ac-amber/.ac-fed/.ac-maroon/.ac-good` to override) | feature / objective cards; `.four`/`.three`/`.two`/`.one` sets cards-per-row |
 | Pick cards | `.pickgrid` > `.pickcard` (`.who`/`.pick`/`.alt`) | "who should use this" recommendations |
@@ -106,12 +105,9 @@ The workhorse repeating entry.
 Four additive primitives introduced for the legacy-guide migration. They fill gaps the
 catalogue lacked; existing classes are unchanged.
 
-- **Panel (`.panel`).** Generic bordered info container (panel-gradient fill, hairline
-  border). For grouped notes that aren't a callout, a card, or a record. The plainest
-  box in the kit — reach for it before inlining any CSS.
 - **Multi-column (`.cols-2` / `.cols-3`).** Responsive grid wrapper; 2 or 3 equal
-  columns that collapse to a single column under 680px. Wrap any blocks (often
-  `.panel`s) to lay them side by side.
+  columns that collapse to a single column under 680px. Wrap any blocks (cards, huds,
+  prose) to lay them side by side.
 - **Key-value chip (`.chip.kv`).** The label+value masthead spec chip: `<span>` is the
   uppercase faint label, `<b>` is the accent value (e.g. `Class · Small · Pad S`). Plain
   `.chip` (a single flag/tag) is unchanged — `.kv` is the two-part variant.

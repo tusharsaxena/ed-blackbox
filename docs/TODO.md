@@ -79,7 +79,7 @@ Legend: ✅ done · ☐ not done.
 ## Phase 4 — Editorial polish
 
 - ☐ Add ship photos to ship manuals + manufacturer logos *(ship renders **done** — framed hull render in all 77 dossiers via `add-ship-render.py`; manufacturer logos still pending)*
-- ☐ Remove fleet bias from content *(systems pages largely de-biased — powerplay, superpower-rank, community-goals, fleet-carrier, system-colonization, pve-combat-venues; combat-zones plus the ship dossiers / by-role / activities pages still reference the personal fleet (KA-05 ship tags) — ~49 pages pending)*
+- ☐ Remove fleet bias from content *(largely done — systems pages, the 6 activities role pages, the material-farm pages, combat-zones (incl. the last KA-05 ship tags) and the combat dossiers are now de-biased to role-neutral phrasing ("the fleet's Python Mk II" → "a medium combat ship such as the Python Mk II"); "Fleet Carrier" the game feature is kept. Remaining: the **"Fleet Operations Dossier"** masthead kicker still appears on combat-zones + system-colonization — decide whether that series branding stays)*
 - ☐ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
 - ✅ Regenerate the index page — migrated onto the design system and restructured into Ships/Engineering/Systems + briefing/about/FAQ/changelog (`generate-guides-index.sh`)
