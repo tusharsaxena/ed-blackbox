@@ -171,5 +171,7 @@ those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md
 ```bash
 bash scripts/generate-guides-index.sh    # rebuild the landing page
 bash scripts/generate-anchor-files.sh    # rebuild per-page *-anchors.md catalogs
+python3 scripts/verify-links.py          # audit every internal link + quick-nav anchor resolves
+python3 scripts/standardize-anchors.py --verify   # confirm anchors resolve + no old-scheme ids
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```

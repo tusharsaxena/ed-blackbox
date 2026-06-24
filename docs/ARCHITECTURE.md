@@ -144,11 +144,11 @@ guides/
   activities/    6 guides     — "how to play role X"
 ```
 
-**File census:** ~365 files — 115 HTML (111 guides + generated `index.html` + 2
+**File census:** ~375 files — 115 HTML (111 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
-3 wired logos + concept candidates under `logos/concepts/`), 148 Markdown (prose docs +
+3 wired logos + concept candidates under `logos/concepts/`), 160 Markdown (prose docs +
 **112 per-page `*-anchors.md` catalogs** — 110 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (5 `.sh` + 2 `.py` + 7 `.mjs`) and 1 TSV
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 7 `.py` + 8 `.mjs`) and 1 TSV
 (`scripts/ship-names.tsv`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
@@ -175,16 +175,20 @@ all 77 dossiers + 7 by-role pages). The separate top-level `guides/activities/` 
 set to its role's DS accent group) and the generated landing page are other *projections* of
 that grid.
 
-**Cross-linking contract.** Pages deep-link into each other by stable anchors:
-- Engineer rows: `#eng-<name>` (e.g. `engineers.html#eng-felicity-farseer`).
-- Blueprint groups/cards: `#grp-<module>` / `#bp-<module>-<variant>`.
-- Section anchors: `<page>.html#<section-id>` (every numbered `<section>` carries an id).
+**Cross-linking contract.** Pages deep-link into each other by stable anchors, all on one
+standardized `<family>-<slug>` scheme (migration + rules: `scripts/standardize-anchors.md`):
+- Engineer rows: `#engineer-<name>` (e.g. `engineers.html#engineer-felicity-farseer`).
+- Blueprint groups/cards: `#blueprint-group-<module>` / `#blueprint-<module>-<variant>`.
+- Section anchors: `<page>.html#section-<slug>` (every `<section>` carries a `section-` id).
+- Other families: `module-`/`module-group-`, `powerplay-`, `superpower-`,
+  `engineer-unlock-`/`engineer-refer-`, `step-`, `app-`. Functional ids (`qn-*` quick-nav,
+  `toc`, the checklist unlock-map diagram) are **not** anchors and are left untouched.
 - **Anchor catalogs.** Each guide has a sibling **`<basename>-anchors.md`** listing its
   navigable anchors — a contract for other pages and external tools. These are
   **generated** from each page's `<section id="…">` by `scripts/generate-anchor-files.sh`
   (§6); re-run it when ids change. The two **hand-curated** catalogs —
-  `engineering/blueprints-anchors.md` (`#grp-`/`#bp-` cards) and
-  `engineering/engineers-anchors.md` (`#eng-` rows + notes) — carry richer annotations
+  `engineering/blueprints-anchors.md` (`#blueprint-group-`/`#blueprint-` cards) and
+  `engineering/engineers-anchors.md` (`#engineer-` rows + notes) — carry richer annotations
   the generator can't derive and are edited by hand. Keep ids stable regardless.
 
 ---
@@ -215,7 +219,7 @@ The first step toward "content-as-data". Convention: every task script lives in
 - **`generate-guides-index.sh`** → regenerates `guides/index.html`, **on the design system**
   (links `ed-blackbox.css`/`.js`; only the guide-card/ship grids are a scoped `<style>`). The
   page is structured into three top-level sections mirroring the header — **Ships / Engineering /
-  Systems** (ids `#dossiers`/`#engineering`/`#systems`, preserved for inbound nav links) — each
+  Systems** (ids `#section-dossiers`/`#section-engineering`/`#section-systems`) — each
   holding the guide groups as labelled subsections, plus a briefing, a "What Is This Website"
   intro, an FAQ, and a hand-written **Changelog**. The ship-dossier grid is **auto-discovered**
   from `guides/ships/dossiers/*.html` (so it self-syncs); the other cards are hand-curated in the
@@ -235,7 +239,11 @@ Beyond the two generators, `scripts/` also holds the **migration verification ha
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
 gate, `baseline-capture.sh`) and several **one-off content-migration scripts**
 (`fix-step-tuples`, `trim-svg`, `restructure-app-cards`, `classify-card-groups`,
-`convert-dossier-rating-cards`). The harness `.mjs` use Playwright (the repo's only
+`convert-dossier-rating-cards`). The **anchor-standardization toolchain** lives here too —
+`standardize-anchors.py` (renames every navigable id onto the `<family>-<slug>` scheme and
+rewrites all internal links, including the `data-target` JS quick-nav) and `verify-links.py`
+(a full internal-link + quick-nav resolution audit) — alongside read-only gates such as
+`audit-section-numbers.py`. The harness `.mjs` use Playwright (the repo's only
 dependency, a dev tool — there is still no build step). All are catalogued in
 `scripts/README.md`.
 

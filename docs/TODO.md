@@ -59,6 +59,7 @@ Legend: ✅ done · ☐ not done.
 
 - ☐ `Page_Data.md` — extract page content into per-page Markdown to make rebuilds easy
 - ✅ Per-page anchor catalogs — `scripts/generate-anchor-files.sh` generates a sibling `<name>-anchors.md` for every guide from its `<section id>`s (2 hand-curated: blueprints, engineers); re-run on guide/section changes
+- ✅ Standardize in-page anchors — every navigable id put onto one `<family>-<slug>` scheme (`section-`/`engineer-`/`engineer-unlock-`/`engineer-refer-`/`blueprint-`/`blueprint-group-`/`module-`/`module-group-`/`powerplay-`/`superpower-`/`step-`/`app-`), and all internal links rewritten — `href` fragments *and* the `data-target` JS quick-nav on blueprints/modules. Tooling: `scripts/standardize-anchors.py` (the migration) + `scripts/verify-links.py` (full link + quick-nav audit). Functional ids (`qn-*`, `toc`, checklist unlock-map diagram) left intact
 - ☐ Build skills / generator scripts that assemble pages from Markdown + the template
 - ☐ Build-link generators for Coriolis / EDSY / SLEF (JS to generate & parse loadout links)
 
