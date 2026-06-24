@@ -81,7 +81,8 @@ The workhorse repeating entry.
 - **Cards (`.cards`) & pick cards (`.pickgrid`).** Cards = feature tiles, **amber top
   border by default** (override per-card with `.ac-amber/.ac-fed/.ac-maroon/.ac-good`),
   `.ico` eyebrow + h4 + prose. Pick cards = recommendations, coloured **left** edge:
-  `.who` (reader profile), `.pick` (+ score/cost in `<small>`), prose, `.alt` "Also:" line.
+  `.who` (reader profile), `.pick` (the name — white like a card title, with the score/cost
+  `<small>` on its own row beneath), prose, `.alt` "Also:" line.
 - **Amber by default; `.accent-page` to opt in.** Every component (cards, callouts, `.rec`,
   pick cards, `.hud`, `.dial`, the focus ring) paints with the **component accent** — amber
   on every page, *not* the per-page accent. The page accent themes only the masthead `.role`

@@ -518,8 +518,9 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 .pickgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-7);margin:var(--space-8) 0}
 .pickcard{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-left:3px solid var(--c-accent);border-radius:var(--radius-md);padding:var(--space-8) var(--space-9)}
 .pickcard .who{font-family:'Saira Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--amber);font-weight:600}
-.pickcard .pick{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xl);color:var(--amber-lt);margin:5px 0 7px;font-weight:600}
-.pickcard .pick small{color:var(--ink-faint);font-size:var(--fs-sm);font-weight:400}
+/* Ship name reads like a card title (white, .ink); the score/cost <small> drops to its own row. */
+.pickcard .pick{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xl);color:var(--ink);margin:5px 0 7px;font-weight:600}
+.pickcard .pick small{display:block;margin-top:var(--space-2);color:var(--ink-faint);font-size:var(--fs-sm);font-weight:400}
 .pickcard p{margin:0;font-size:var(--fs-base);color:var(--ink-dim)}
 .pickcard .alt{margin-top:var(--space-4);font-size:var(--fs-sm2);color:var(--ink-faint)}
 .pickcard .alt b{color:var(--ink-dim);font-weight:500}
