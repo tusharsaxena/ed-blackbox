@@ -128,26 +128,21 @@ cat <<'HEAD'
           <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>&times;</button>
         </div>
         <div class="qn-panel" id="qn-panel" role="listbox">
-          <div class="qn-sec">Start</div>
-          <a class="qn-item" href="#section-about-site"><span class="qn-dot amber"></span><span class="qn-nm">What Is This Website</span><span class="qn-side">Intro</span></a>
-          <div class="qn-sec">Ships</div>
-          <a class="qn-item" href="#section-dossiers"><span class="qn-dot amber"></span><span class="qn-nm">Ships</span><span class="qn-side">Section</span></a>
+          <a class="qn-item qn-group" href="#section-about-site"><span class="qn-nm">What Is This Website</span><span class="qn-side">Intro</span></a>
+          <a class="qn-item qn-group" href="#section-dossiers"><span class="qn-nm">Ships</span><span class="qn-side">3 guides</span></a>
           <a class="qn-item" href="#section-general"><span class="qn-dot amber"></span><span class="qn-nm">General</span><span class="qn-side">Ships</span></a>
           <a class="qn-item" href="#section-best-ships"><span class="qn-dot amber"></span><span class="qn-nm">Best Ships by Role</span><span class="qn-side">Ships</span></a>
           <a class="qn-item" href="#section-ship-dossiers"><span class="qn-dot amber"></span><span class="qn-nm">Ship Dossiers</span><span class="qn-side">Ships</span></a>
-          <div class="qn-sec">Engineering</div>
-          <a class="qn-item" href="#section-engineering"><span class="qn-dot amber"></span><span class="qn-nm">Engineering</span><span class="qn-side">Section</span></a>
+          <a class="qn-item qn-group" href="#section-engineering"><span class="qn-nm">Engineering</span><span class="qn-side">2 guides</span></a>
           <a class="qn-item" href="#section-eng-manuals"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Manuals</span><span class="qn-side">Engineering</span></a>
           <a class="qn-item" href="#section-farming"><span class="qn-dot amber"></span><span class="qn-nm">Material Farming</span><span class="qn-side">Engineering</span></a>
-          <div class="qn-sec">Systems</div>
-          <a class="qn-item" href="#section-systems"><span class="qn-dot amber"></span><span class="qn-nm">Systems</span><span class="qn-side">Section</span></a>
+          <a class="qn-item qn-group" href="#section-systems"><span class="qn-nm">Systems</span><span class="qn-side">4 guides</span></a>
           <a class="qn-item" href="#section-new-pilot"><span class="qn-dot amber"></span><span class="qn-nm">New Pilot &amp; Interface</span><span class="qn-side">Systems</span></a>
           <a class="qn-item" href="#section-galaxy"><span class="qn-dot amber"></span><span class="qn-nm">Galaxy &amp; Power Systems</span><span class="qn-side">Systems</span></a>
           <a class="qn-item" href="#section-activities"><span class="qn-dot amber"></span><span class="qn-nm">Activity Guides</span><span class="qn-side">Systems</span></a>
           <a class="qn-item" href="#section-combat-venues"><span class="qn-dot amber"></span><span class="qn-nm">Combat Venues</span><span class="qn-side">Systems</span></a>
-          <div class="qn-sec">More</div>
-          <a class="qn-item" href="#section-faq"><span class="qn-dot amber"></span><span class="qn-nm">FAQ</span><span class="qn-side">Info</span></a>
-          <a class="qn-item" href="#section-changelog"><span class="qn-dot amber"></span><span class="qn-nm">Changelog</span><span class="qn-side">Info</span></a>
+          <a class="qn-item qn-group" href="#section-faq"><span class="qn-nm">FAQ</span><span class="qn-side">Info</span></a>
+          <a class="qn-item qn-group" href="#section-changelog"><span class="qn-nm">Changelog</span><span class="qn-side">Releases</span></a>
           <div class="qn-empty" hidden>No matching sections</div>
         </div>
       </div>
