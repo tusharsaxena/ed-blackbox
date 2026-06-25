@@ -132,6 +132,7 @@ cat <<'HEAD'
           <a class="qn-item" href="#section-about-site"><span class="qn-dot amber"></span><span class="qn-nm">What Is This Website</span><span class="qn-side">Intro</span></a>
           <div class="qn-sec">Ships</div>
           <a class="qn-item" href="#section-dossiers"><span class="qn-dot amber"></span><span class="qn-nm">Ships</span><span class="qn-side">Section</span></a>
+          <a class="qn-item" href="#section-general"><span class="qn-dot amber"></span><span class="qn-nm">General</span><span class="qn-side">Ships</span></a>
           <a class="qn-item" href="#section-best-ships"><span class="qn-dot amber"></span><span class="qn-nm">Best Ships by Role</span><span class="qn-side">Ships</span></a>
           <a class="qn-item" href="#section-ship-dossiers"><span class="qn-dot amber"></span><span class="qn-nm">Ship Dossiers</span><span class="qn-side">Ships</span></a>
           <div class="qn-sec">Engineering</div>
@@ -192,10 +193,20 @@ cat <<'HEAD'
     <div class="sec-head"><span class="sec-num">02</span><h2>Ships</h2><span class="tag">Fly the right hull</span></div>
     <p class="lead">How each career plays, which hull wins each role, and a dossier for every viable ship &times; role pairing.</p>
 
+    <h3 class="subhead" id="section-general">General</h3>
+    <p>The methodology behind every ship rating.</p>
+    <div class="gcards">
+HEAD
+
+card "ships/rating-methodology.html"   ""  "Rating Methodology"    "How every ship earns its 1–100 suitability rating — the roster-relative, fully-engineered rubric."
+
+cat <<'SHIPS_BEST'
+    </div>
+
     <h3 class="subhead" id="section-best-ships">Best Ships by Role</h3>
     <p>"What should I fly for this?" — ships ranked head-to-head for each role.</p>
     <div class="gcards">
-HEAD
+SHIPS_BEST
 
 card "ships/by-role/combat.html"       ""  "Combat"       "Combat ships ranked, from starter to capital."
 card "ships/by-role/ax.html"           ""  "Anti-Xeno (AX)"    "The ships that hold up against Thargoids."
@@ -204,7 +215,6 @@ card "ships/by-role/mining.html"       ""        "Mining"       "Mining platform
 card "ships/by-role/trading.html"      "" "Trading"      "Cargo haulers ranked by tonnage and economy."
 card "ships/by-role/passenger.html"    ""  "Passenger"    "Cabin capacity and range for the tourism trade."
 card "ships/by-role/multipurpose.html" ""        "Multipurpose"     "Do-everything ships ranked for the multipurpose pilot."
-card "ships/rating-methodology.html"   ""  "Rating Methodology"    "How every ship earns its 1–100 suitability rating — the roster-relative, fully-engineered rubric."
 
 cat <<'SHIPS3'
     </div>
