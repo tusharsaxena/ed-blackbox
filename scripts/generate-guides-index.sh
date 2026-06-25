@@ -45,13 +45,14 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 GUIDES="$REPO_ROOT/guides"
 OUT="$GUIDES/index.html"
 
-# Hero stat-card counts — computed so they never drift (substituted into the
-# HEAD heredoc's __TOKENS__ after generation). ENG_COUNT is curated (the
-# engineering "manuals" set isn't a flat file count); update it if that changes.
-DOSSIER_COUNT=$(find "$GUIDES/ships/dossiers" -maxdepth 1 -name '*.html' | wc -l | tr -d ' ')
-SYSTEM_COUNT=$(find "$GUIDES/systems" -maxdepth 1 -name '*.html' | wc -l | tr -d ' ')
-ROLEACT_COUNT=$(( $(find "$GUIDES/ships/by-role" -maxdepth 1 -name '*.html' | wc -l) + $(find "$GUIDES/activities" -maxdepth 1 -name '*.html' | wc -l) ))
-ENG_COUNT=7
+# Hero stat-card + masthead counts — computed from the filesystem so they never
+# drift (substituted into the HEAD heredoc's __TOKENS__ after generation). One card
+# per top-level namespace; activities count under Systems. TOTAL = every guide HTML
+# minus index.html, and equals SHIPS + ENG + SYSTEMS by construction.
+SHIPS_COUNT=$(find "$GUIDES/ships" -name '*.html' | wc -l | tr -d ' ')
+ENG_COUNT=$(find "$GUIDES/engineering" -name '*.html' | wc -l | tr -d ' ')
+SYSTEMS_COUNT=$(( $(find "$GUIDES/systems" -name '*.html' | wc -l) + $(find "$GUIDES/activities" -name '*.html' | wc -l) ))
+TOTAL_COUNT=$(( $(find "$GUIDES" -name '*.html' | wc -l) - 1 ))
 
 # Emit a guide card.  args: href, accentClass, title, desc
 card(){ printf '    <a class="gcard %s" href="%s"><h3>%s</h3><p>%s</p></a>\n' "$2" "$1" "$3" "$4"; }
@@ -170,7 +171,7 @@ cat <<'HEAD'
     <div class="kicker">Elite: Dangerous <span class="sep">//</span> Guides</div>
     <h1 class="title">Elite:Dangerous <span>Black Box</span></h1>
     <div class="masthead-meta">
-      <span><b>100+</b> guides</span>
+      <span><b>__TOTAL__</b> guides</span>
       <span>Updated <b>__BUILD_DATE__</b></span>
     </div>
   </header>
@@ -181,10 +182,9 @@ cat <<'HEAD'
     <h2>Everything a commander needs, in <em>one shelf</em></h2>
     <p>The Black Box collects operator-grade guides for Elite Dangerous into a single index: the engineering referral tree and blueprint catalogue, material-farm routes, activity playbooks, "best ship for the job" ladders, and a full set of ship &times; role dossiers. New here? Read <a href="#section-about-site">What Is This Website</a>, then dive into Ships, Engineering or Systems.</p>
     <div class="stat-grid">
-      <div class="stat"><div class="n">__GS__</div><div class="l">Game-system guides</div></div>
-      <div class="stat"><div class="n">__ENG__</div><div class="l">Engineering manuals</div></div>
-      <div class="stat"><div class="n fed">__DOSS__</div><div class="l">Ship dossiers</div></div>
-      <div class="stat"><div class="n mar">__RA__</div><div class="l">Role &amp; activity guides</div></div>
+      <div class="stat"><div class="n">__SHIPS__</div><div class="l">Ship guides</div></div>
+      <div class="stat"><div class="n">__ENG__</div><div class="l">Engineering guides</div></div>
+      <div class="stat"><div class="n">__SYSTEMS__</div><div class="l">Systems guides</div></div>
     </div>
   </div>
 
@@ -393,8 +393,8 @@ FOOT
 sed -i "s/__BUILD_DATE__/$(date +%F)/" "$OUT"
 
 # Substitute the computed hero stat-card counts.
-sed -i -e "s/__GS__/$SYSTEM_COUNT/" -e "s/__ENG__/$ENG_COUNT/" \
-       -e "s/__DOSS__/$DOSSIER_COUNT/" -e "s/__RA__/$ROLEACT_COUNT/" "$OUT"
+sed -i -e "s/__SHIPS__/$SHIPS_COUNT/" -e "s/__ENG__/$ENG_COUNT/" \
+       -e "s/__SYSTEMS__/$SYSTEMS_COUNT/" -e "s/__TOTAL__/$TOTAL_COUNT/" "$OUT"
 
 echo "Wrote $OUT"
 grep -c 'class="ship"' "$OUT" | sed 's/^/ship rows: /'

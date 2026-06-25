@@ -96,6 +96,14 @@ bash scripts/generate-guides-index.sh   # auto-discovers ship dossiers; prints c
 Re-run after adding/removing/renaming a ship dossier, or after adding a card line for a
 new top-level guide. Docs: `scripts/generate-guides-index.md`.
 
+> **Counts auto-update — always re-run after adding/removing ANY guide page.** The hero
+> stat cards (**Ship / Engineering / Systems guides** — one per namespace; `activities/`
+> counts under Systems) and the masthead **`N guides`** total are computed by the generator
+> from the filesystem: each card = `find guides/<ns> -name '*.html'` and the total =
+> `(all guides/**/*.html) − 1` (index.html isn't a guide), which equals the three cards
+> summed. They only refresh when this script runs, so **re-run it whenever a page is added
+> or removed** so both the cards and the total stay accurate.
+
 ### Anchor files
 Every guide HTML has a sibling **`<basename>-anchors.md`** cataloging its
 `<section id="…">` navigation anchors (label = the section title). They're generated:
