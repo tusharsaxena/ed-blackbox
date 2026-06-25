@@ -115,6 +115,29 @@ those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md
 - If your edit adds, removes, or renames any `<section id>`, re-run
   `scripts/generate-anchor-files.sh` to refresh that page's `<basename>-anchors.md`.
 
+### Change a ship rating (keep the data + HTML in sync)
+**`data/ship-ratings/<role>.json` is the source of truth for the 1–100 suitability
+ratings** — the same rating is otherwise repeated across a ship's dossier headline, the
+dossier peer tables, and the by-role ladder/per-class tables, and those copies drift. The
+**dossier headline** (`<div class="n">N<small>/100`) is the authoritative input.
+When you add/remove a dossier or change any rating, reconcile so every copy matches:
+```bash
+python3 scripts/compute-ship-ratings.py        # rebuild data/ship-ratings/ from the dossiers
+python3 scripts/reconcile-ratings-html.py       # push canonical values into the by-role pages (+resort, drop unrated)
+python3 scripts/audit-ratings-consistency.py    # verify 0 mismatches across all pages
+```
+- `reconcile-ratings-html.py` edits **tables only**. If it reports an **emptied** table
+  (a subsection whose every hull was dropped), do the **prose** pass by hand: mirror the
+  existing `kv-tbd` placeholder-row pattern and revise the section intro/callout — keep it
+  **truthful** (don't claim "no hull fills this role" where hulls actually exist). Ratings
+  quoted in prose (callouts, pick cards, stat tiles) must also be updated to match the data.
+- A hull with **no dossier** is only rated if every page already agrees on its value;
+  otherwise `compute-ship-ratings.py` excludes it and `reconcile` drops it from the ladders
+  and peer tables. Add a dossier (or a consistent value) to bring it back.
+- These ratings are **editorial judgement** (see `rating-methodology.html`), *not*
+  coriolis game data — that is why they live in `data/ship-ratings/`, separate from the
+  imported `data/ships|modules`.
+
 ### Migrate a page to the design system *(done — reference only)*
 - All 108 guides + the landing page are migrated. If you ever need the pattern: replace the
   inline `<style>` with a link to `ed-blackbox.css`, set the accent group, map markup onto
@@ -176,5 +199,8 @@ bash scripts/generate-guides-index.sh    # rebuild the landing page
 bash scripts/generate-anchor-files.sh    # rebuild per-page *-anchors.md catalogs
 python3 scripts/verify-links.py          # audit every internal link + quick-nav anchor resolves
 python3 scripts/standardize-anchors.py --verify   # confirm anchors resolve + no old-scheme ids
+python3 scripts/audit-ratings-consistency.py      # check ship ratings agree across dossiers + by-role pages
+python3 scripts/compute-ship-ratings.py  # rebuild data/ship-ratings/ (source of truth) from dossiers
+python3 scripts/reconcile-ratings-html.py         # push data/ship-ratings/ into the by-role pages (+resort)
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```
