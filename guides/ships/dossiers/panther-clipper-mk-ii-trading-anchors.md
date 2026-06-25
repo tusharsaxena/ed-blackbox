@@ -9,7 +9,6 @@ Link format: `panther-clipper-mk-ii-trading.html#<id>`
 - **Key Stats & What Makes It Haul** — `#section-key-stats-what-makes-it-haul`
 - **How It Compares** — `#section-how-it-compares`
 - **Cost & Access** — `#section-cost-access`
-- **ARX Pre-Built Option** — `#section-arx-pre-built-option`
 - **3-State Loadout** — `#section-3-state-loadout`
 - **Initial Loadout — Buy-Only Plan** — `#section-initial-loadout-buy-only-plan`
 - **A-Rated Loadout — Upgrade Plan** — `#section-a-rated-loadout-upgrade-plan`

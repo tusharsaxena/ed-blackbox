@@ -9,7 +9,6 @@ Link format: `adder-multipurpose.html#<id>`
 - **Key Stats & What Makes It Versatile** — `#section-key-stats-what-makes-it-versatile`
 - **How It Compares** — `#section-how-it-compares`
 - **Cost & Access** — `#section-cost-access`
-- **ARX Pre-Built Option** — `#section-arx-pre-built-option`
 - **3-State Loadout** — `#section-3-state-loadout`
 - **Initial Loadout — Buy-Only Plan** — `#section-initial-loadout-buy-only-plan`
 - **A-Rated Loadout — Upgrade Plan** — `#section-a-rated-loadout-upgrade-plan`

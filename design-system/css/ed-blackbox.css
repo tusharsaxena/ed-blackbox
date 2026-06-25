@@ -175,6 +175,10 @@ header.masthead .chips{margin-top:var(--space-9)}
 .stat .n{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-3xl);color:var(--amber-lt);line-height:1}
 .stat .n.fed{color:var(--fed-lt)}.stat .n.mar{color:var(--maroon-lt)}.stat .n.good{color:var(--good-lt)}
 .stat .l{font-size:var(--fs-sm2);color:var(--ink-dim);margin-top:var(--space-3);letter-spacing:.3px}
+/* roster stat tiles (by-role §02): bold name on the first line, descriptor on its
+   own line below, left-aligned. Only affects .l tiles that carry a <small>. */
+.stat .l b{font-weight:700;color:var(--ink)}
+.stat .l small{display:block;margin-top:2px;font-weight:400;color:var(--ink-dim)}
 /* ship-dossier rating card: standard .n number with a smaller dim "/100", plus a
    ladder rating bar (.bar.mini) as the 2nd row, nudged down onto the label row.
    Scoped to .stat so the ladder table's own .bar.mini is untouched. */
@@ -593,6 +597,10 @@ ol.steps,ul.steps{counter-reset:step;list-style:none;margin:var(--space-10) 0;pa
 .pill.hi{background:rgba(216,66,59,.16);color:var(--danger)}
 .pill.fed{background:rgba(79,159,214,.16);color:var(--fed-lt)}
 .pill.neutral{background:rgba(190,120,110,.12);color:var(--ink-dim)}
+/* ship pad-class tags: Large=red · Medium=amber/yellow · Small=green */
+.pill.pad-large{background:rgba(216,66,59,.16);color:var(--danger)}
+.pill.pad-medium{background:rgba(224,145,58,.16);color:var(--amber-lt)}
+.pill.pad-small{background:rgba(95,179,122,.16);color:var(--good-lt)}
 
 /* ---- 25. KBD  (keyboard / control key cap) ---- */
 .kbd{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-xs2);font-weight:600;letter-spacing:.5px;color:var(--ink);background:var(--panel2);border:1px solid var(--hair-strong);border-bottom-width:2px;border-radius:var(--radius-md);padding:var(--space-1) 7px;white-space:nowrap}
