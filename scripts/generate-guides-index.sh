@@ -71,7 +71,7 @@ cat <<'HEAD'
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite:Dangerous Black Box</title>
+<title>Home | E:D Black Box</title>
 <link rel="icon" type="image/png" href="../images/logos/favicon.png">
 <link rel="stylesheet" href="../design-system/css/ed-blackbox.css">
 <style>
@@ -158,7 +158,7 @@ cat <<'HEAD'
 
   <!-- ---- MASTHEAD ---- -->
   <header class="masthead">
-    <div class="kicker">Elite Dangerous<span class="sep">//</span>Guides</div>
+    <div class="kicker">Elite: Dangerous <span class="sep">//</span> Guides</div>
     <h1 class="title">Elite:Dangerous <span>Black Box</span></h1>
     <div class="masthead-meta">
       <span><b>100+</b> guides</span>
@@ -198,7 +198,7 @@ cat <<'HEAD'
 HEAD
 
 card "activities/combat.html"      ""  "Combat"       "Bounty hunting, massacre missions and PvE combat."
-card "activities/ax.html"          ""  "Anti-Xeno (AX)" "Fighting Thargoids — gear, tactics and venues."
+card "activities/ax.html"          ""  "Anti-Xeno" "Fighting Thargoids — gear, tactics and venues."
 card "activities/exploration.html" ""  "Exploration"  "Long-range exploration, scanning and exobiology."
 card "activities/mining.html"      ""        "Mining"       "Laser, core and subsurface mining for profit."
 card "activities/trading.html"     "" "Trading"      "Cargo trading, loops and reading the market."
@@ -212,13 +212,13 @@ cat <<'SHIPS2'
     <div class="gcards">
 SHIPS2
 
-card "ships/by-role/combat.html"       ""  "Best for Combat"       "Combat ships ranked, from starter to capital."
-card "ships/by-role/ax.html"           ""  "Best for Anti-Xeno"    "The ships that hold up against Thargoids."
-card "ships/by-role/exploration.html"  ""  "Best for Exploration"  "Jump range, comfort and the long black, ranked."
-card "ships/by-role/mining.html"       ""        "Best for Mining"       "Mining platforms ranked by yield and fit."
-card "ships/by-role/trading.html"      "" "Best for Trading"      "Cargo haulers ranked by tonnage and economy."
-card "ships/by-role/passenger.html"    ""  "Best for Passenger"    "Cabin capacity and range for the tourism trade."
-card "ships/by-role/multipurpose.html" ""        "Best All-Rounders"     "Do-everything ships ranked for the multipurpose pilot."
+card "ships/by-role/combat.html"       ""  "Combat"       "Combat ships ranked, from starter to capital."
+card "ships/by-role/ax.html"           ""  "Anti-Xeno (AX)"    "The ships that hold up against Thargoids."
+card "ships/by-role/exploration.html"  ""  "Exploration"  "Jump range, comfort and the long black, ranked."
+card "ships/by-role/mining.html"       ""        "Mining"       "Mining platforms ranked by yield and fit."
+card "ships/by-role/trading.html"      "" "Trading"      "Cargo haulers ranked by tonnage and economy."
+card "ships/by-role/passenger.html"    ""  "Passenger"    "Cabin capacity and range for the tourism trade."
+card "ships/by-role/multipurpose.html" ""        "Multipurpose"     "Do-everything ships ranked for the multipurpose pilot."
 card "ships/rating-methodology.html"   ""  "Rating Methodology"    "How every ship earns its 1–100 suitability rating — the roster-relative, fully-engineered rubric."
 
 cat <<'SHIPS3'
@@ -263,7 +263,7 @@ cat <<'ENG'
 ENG
 
 card "engineering/checklist.html"  ""       "Unlock Checklist"   "New-pilot engineering progression — what to unlock, and when."
-card "engineering/engineers.html"  ""       "The Engineers"      "Every engineer: location, meeting requirement, unlock and referrals."
+card "engineering/engineers.html"  ""       "Engineers"      "Every engineer: location, meeting requirement, unlock and referrals."
 card "engineering/blueprints.html" ""       "Blueprints"         "The module blueprint catalogue across every grade and effect."
 card "engineering/modules.html"    ""       "Modules"            "Every outfitting slot — core internals, optionals, hardpoints and utilities, the A–E trade-off and what to fit per role."
 
@@ -307,12 +307,12 @@ cat <<'SYS2'
     <div class="gcards">
 SYS2
 
-card "systems/bgs.html"                 ""        "Background Simulation (BGS)" "How minor factions, influence and states actually work."
+card "systems/bgs.html"                 ""        "Background Simulation" "How minor factions, influence and states actually work."
 card "systems/powerplay.html"           ""        "Powerplay"                   "Pledging to a Power, earning merits, and the weekly cycle."
-card "systems/superpower-rank.html"     ""        "Superpower Rank Grind"       "Climbing Federation, Empire and Alliance reputation."
+card "systems/superpower-rank.html"     ""        "Superpower Rank"       "Climbing Federation, Empire and Alliance reputation."
 card "systems/community-goals.html"     ""        "Community Goals"             "How CGs work and how to land in the top tiers."
-card "systems/system-colonization.html" ""  "System Colonization"         "Claiming systems and building out your own infrastructure."
-card "systems/fleet-carrier.html"       ""  "Fleet Carriers"              "Buying, financing, fitting and jumping a Fleet Carrier."
+card "systems/system-colonization.html" ""  "System Colonisation"         "Claiming systems and building out your own infrastructure."
+card "systems/fleet-carrier.html"       ""  "Fleet Carrier"              "Buying, financing, fitting and jumping a Fleet Carrier."
 
 cat <<'SYS3'
     </div>
@@ -322,8 +322,8 @@ cat <<'SYS3'
     <div class="gcards">
 SYS3
 
-card "systems/combat-zones.html"      "" "Combat / Conflict Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
-card "systems/pve-combat-venues.html" "" "PVE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
+card "systems/combat-zones.html"      "" "Combat Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
+card "systems/pve-combat-venues.html" "" "PvE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
 
 cat <<'FOOT'
     </div>
