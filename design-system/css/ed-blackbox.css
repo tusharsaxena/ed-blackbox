@@ -24,6 +24,7 @@
   --danger:#d8423b;--good:#5fb37a;--good-lt:#7fce98;
   /* ---- ship-role chips (one distinct hue per role, RED→VIOLET; used by the index ship grid) ---- */
   --role-combat:#b13140;--role-ax:#e07d3c;--role-mining:#e1cb5c;--role-trading:#7fce98;--role-exploration:#7cc0ee;--role-passenger:#8f8ce0;--role-multipurpose:#c386d8;
+  --role-combat-soft:rgba(177,49,64,.45);--role-ax-soft:rgba(224,125,60,.45);--role-mining-soft:rgba(225,203,92,.45);--role-trading-soft:rgba(127,206,152,.45);--role-exploration-soft:rgba(124,192,238,.45);--role-passenger-soft:rgba(143,140,224,.45);--role-multipurpose-soft:rgba(195,134,216,.45);
   /* ---- ink ---- */
   --ink:#ece4df;--ink-dim:#a89a93;--ink-faint:#6e615c;
   /* ---- hairlines ---- */
@@ -505,6 +506,8 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
    palette as the index ship-grid role tags). Use .ac-role-<role> to colour a card by role. */
 .card.ac-role-combat{border-top-color:var(--role-combat)}.card.ac-role-ax{border-top-color:var(--role-ax)}.card.ac-role-mining{border-top-color:var(--role-mining)}.card.ac-role-trading{border-top-color:var(--role-trading)}.card.ac-role-exploration{border-top-color:var(--role-exploration)}.card.ac-role-passenger{border-top-color:var(--role-passenger)}.card.ac-role-multipurpose{border-top-color:var(--role-multipurpose)}
 .card.ac-role-combat .c-eyebrow,.card.ac-role-combat .ico{color:var(--role-combat)}.card.ac-role-ax .c-eyebrow,.card.ac-role-ax .ico{color:var(--role-ax)}.card.ac-role-mining .c-eyebrow,.card.ac-role-mining .ico{color:var(--role-mining)}.card.ac-role-trading .c-eyebrow,.card.ac-role-trading .ico{color:var(--role-trading)}.card.ac-role-exploration .c-eyebrow,.card.ac-role-exploration .ico{color:var(--role-exploration)}.card.ac-role-passenger .c-eyebrow,.card.ac-role-passenger .ico{color:var(--role-passenger)}.card.ac-role-multipurpose .c-eyebrow,.card.ac-role-multipurpose .ico{color:var(--role-multipurpose)}
+/* role-coloured masthead h1 .role tag — same palette as the index ship-grid role tags. Add .ac-role-<role> beside .role. */
+h1.title .role.ac-role-combat{color:var(--role-combat);border-color:var(--role-combat-soft)}h1.title .role.ac-role-ax{color:var(--role-ax);border-color:var(--role-ax-soft)}h1.title .role.ac-role-mining{color:var(--role-mining);border-color:var(--role-mining-soft)}h1.title .role.ac-role-trading{color:var(--role-trading);border-color:var(--role-trading-soft)}h1.title .role.ac-role-exploration{color:var(--role-exploration);border-color:var(--role-exploration-soft)}h1.title .role.ac-role-passenger{color:var(--role-passenger);border-color:var(--role-passenger-soft)}h1.title .role.ac-role-multipurpose{color:var(--role-multipurpose);border-color:var(--role-multipurpose-soft)}
 /* titled-card header (h3 + right-aligned eyebrow) + micro footnote — alt to .ico+h4 */
 .card .c-head{display:flex;align-items:baseline;gap:var(--space-6);flex-wrap:wrap;margin-bottom:var(--space-2)}
 .card h3{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-h3);letter-spacing:.4px;color:var(--ink);line-height:1.15}

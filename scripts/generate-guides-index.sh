@@ -132,7 +132,6 @@ cat <<'HEAD'
           <a class="qn-item" href="#section-about-site"><span class="qn-dot amber"></span><span class="qn-nm">What Is This Website</span><span class="qn-side">Intro</span></a>
           <div class="qn-sec">Ships</div>
           <a class="qn-item" href="#section-dossiers"><span class="qn-dot amber"></span><span class="qn-nm">Ships</span><span class="qn-side">Section</span></a>
-          <a class="qn-item" href="#section-activities"><span class="qn-dot amber"></span><span class="qn-nm">Activity Guides</span><span class="qn-side">Ships</span></a>
           <a class="qn-item" href="#section-best-ships"><span class="qn-dot amber"></span><span class="qn-nm">Best Ships by Role</span><span class="qn-side">Ships</span></a>
           <a class="qn-item" href="#section-ship-dossiers"><span class="qn-dot amber"></span><span class="qn-nm">Ship Dossiers</span><span class="qn-side">Ships</span></a>
           <div class="qn-sec">Engineering</div>
@@ -143,6 +142,7 @@ cat <<'HEAD'
           <a class="qn-item" href="#section-systems"><span class="qn-dot amber"></span><span class="qn-nm">Systems</span><span class="qn-side">Section</span></a>
           <a class="qn-item" href="#section-new-pilot"><span class="qn-dot amber"></span><span class="qn-nm">New Pilot &amp; Interface</span><span class="qn-side">Systems</span></a>
           <a class="qn-item" href="#section-galaxy"><span class="qn-dot amber"></span><span class="qn-nm">Galaxy &amp; Power Systems</span><span class="qn-side">Systems</span></a>
+          <a class="qn-item" href="#section-activities"><span class="qn-dot amber"></span><span class="qn-nm">Activity Guides</span><span class="qn-side">Systems</span></a>
           <a class="qn-item" href="#section-combat-venues"><span class="qn-dot amber"></span><span class="qn-nm">Combat Venues</span><span class="qn-side">Systems</span></a>
           <div class="qn-sec">More</div>
           <a class="qn-item" href="#section-faq"><span class="qn-dot amber"></span><span class="qn-nm">FAQ</span><span class="qn-side">Info</span></a>
@@ -192,25 +192,10 @@ cat <<'HEAD'
     <div class="sec-head"><span class="sec-num">02</span><h2>Ships</h2><span class="tag">Fly the right hull</span></div>
     <p class="lead">How each career plays, which hull wins each role, and a dossier for every viable ship &times; role pairing.</p>
 
-    <h3 class="subhead" id="section-activities">Activity Guides</h3>
-    <p>How each career actually plays — the loop, the gear, and the money.</p>
-    <div class="gcards">
-HEAD
-
-card "activities/combat.html"      ""  "Combat"       "Bounty hunting, massacre missions and PvE combat."
-card "activities/ax.html"          ""  "Anti-Xeno" "Fighting Thargoids — gear, tactics and venues."
-card "activities/exploration.html" ""  "Exploration"  "Long-range exploration, scanning and exobiology."
-card "activities/mining.html"      ""        "Mining"       "Laser, core and subsurface mining for profit."
-card "activities/trading.html"     "" "Trading"      "Cargo trading, loops and reading the market."
-card "activities/passenger.html"   ""  "Passenger"    "Passenger missions, tourism and sightseeing runs."
-
-cat <<'SHIPS2'
-    </div>
-
     <h3 class="subhead" id="section-best-ships">Best Ships by Role</h3>
     <p>"What should I fly for this?" — ships ranked head-to-head for each role.</p>
     <div class="gcards">
-SHIPS2
+HEAD
 
 card "ships/by-role/combat.html"       ""  "Combat"       "Combat ships ranked, from starter to capital."
 card "ships/by-role/ax.html"           ""  "Anti-Xeno (AX)"    "The ships that hold up against Thargoids."
@@ -317,10 +302,25 @@ card "systems/fleet-carrier.html"       ""  "Fleet Carrier"              "Buying
 cat <<'SYS3'
     </div>
 
+    <h3 class="subhead" id="section-activities">Activity Guides</h3>
+    <p>How each career actually plays — the loop, the gear, and the money.</p>
+    <div class="gcards">
+SYS3
+
+card "activities/combat.html"      ""  "Combat"       "Bounty hunting, massacre missions and PvE combat."
+card "activities/ax.html"          ""  "Anti-Xeno" "Fighting Thargoids — gear, tactics and venues."
+card "activities/exploration.html" ""  "Exploration"  "Long-range exploration, scanning and exobiology."
+card "activities/mining.html"      ""        "Mining"       "Laser, core and subsurface mining for profit."
+card "activities/trading.html"     "" "Trading"      "Cargo trading, loops and reading the market."
+card "activities/passenger.html"   ""  "Passenger"    "Passenger missions, tourism and sightseeing runs."
+
+cat <<'SYS4'
+    </div>
+
     <h3 class="subhead" id="section-combat-venues">Combat Venues</h3>
     <p>The places you go looking for a fight, and what each pays.</p>
     <div class="gcards">
-SYS3
+SYS4
 
 card "systems/combat-zones.html"      "" "Combat Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
 card "systems/pve-combat-venues.html" "" "PvE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
