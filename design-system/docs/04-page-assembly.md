@@ -52,9 +52,53 @@ everything else goes inside `.wrap`.
    (one line noting facts are verified against the sources below) → `.cr-rows` with one `.cr-row` per authoritative
    source for **this** page (`.cr-src` name · `.cr-what` what it provided · `.cr-link`
    external link). This is where per-page sourcing lives now that the masthead has no
-   `Sources …` line.
+   `Sources …` line. See **Sources conventions** below for the link-specificity and
+   video-source rules every `.cr-row` must follow.
 7. **`footer`** — brand (`E:D Black Box`) + author credit (`By CMDR Ka0s`) + series
    part. No "Next:" pointer, no patch/provenance line.
+
+## Sources conventions (`section.credits`)
+
+Each `.cr-row` is a citation. Two standing rules govern what goes in the block — both
+have been swept across the existing pages, and **new pages must follow them from the
+start**.
+
+**1. Link the specific resource, not a home page.** Every `.cr-link` points at the exact
+page/file the figures came from — never a site or repo **root**.
+
+- A ship dossier citing EDCD/coriolis-data links `…/coriolis-data/blob/master/ships/<ship>.json`;
+  a multi-ship/role page links `…/tree/master/ships` (or `…/modules`); a
+  blueprint/engineering page links `…/modifications/blueprints.json` — not the repo root.
+- A data network or live dashboard links its canonical project page (e.g. EDDN →
+  `github.com/EDCD/EDDN`), not a transient status URL.
+- A tool/app **home that *is* the named resource** (coriolis.io, edsy.org, EDEngineer,
+  BGS-Tally, …) already is the specific resource — keep it.
+- If no specific target exists, **drop the row** — don't fall back to a root.
+- Display text keeps the domain + enough path to identify the target
+  (`coriolis-data/ships/`, `inara.cz/elite/commodities`), shortened with `…` if long.
+- Sweeping existing pages: `scripts/fix-generic-sources.py` (idempotent; `--check`
+  re-verifies all URLs resolve; audited decisions in `source-audit.xlsx`).
+
+**2. Video sources are trusted-channel YouTube, cited like any other source.** Vetted
+creators may be added as extra `.cr-row`s — **up to 3 per page**, and only when they
+clear the bar.
+
+- **Trusted channels only:** Obsidian Ant, Down to Earth Astronomy, Ricardos Gaming,
+  Mile 13 Gaming, TheYamiks, The Buur Pit. Reject every other channel, however good.
+- **Row shape:** `.cr-src` = `YouTube — <Channel>`; `.cr-what` = a terse, operator-grade
+  one-liner describing what the video **covers** (≈10–22 words, one sentence, no hype,
+  no ALL-CAPS even if the title shouts, **no "matches this page" meta-commentary**);
+  `.cr-link` href = the canonical `https://www.youtube.com/watch?v=<id>` watch URL, with
+  display text `youtube.com/watch?v=<id>`.
+- **Relevance + currency bar:** the video's title/description must match the page (title +
+  breadcrumb + briefing), and it must be current for the live game — Powerplay 2.0,
+  Colonisation, and recent-ship topics need a **post-2024** video; stable mechanics
+  (engineer locations, classic material farms like Dav's Hope / Jameson) tolerate older
+  ones. Flag uncertain currency rather than guess (rule 1, Accuracy).
+- **Verify before adding:** the link must resolve **and** the uploader must really be that
+  channel. The YouTube oEmbed endpoint — `https://www.youtube.com/oembed?url=<watch-url>&format=json`
+  — returns the canonical title + `author_name` for a live video and a `4xx` for a dead
+  one; use it to confirm existence and channel, never hand-build a video id.
 
 ## Behaviours
 
@@ -100,5 +144,5 @@ components are present.
 - [ ] Facts verified vs authoritative sources; unknowns marked `.kv-tbd`.
 - [ ] Accessibility floor cleared (`05-accessibility.md`).
 - [ ] Links `ed-blackbox.js` (defer) before `</body>`.
-- [ ] Per-page `section.credits` above the footer lists this page's sources (`.cr-row`: name · what it provided · link).
+- [ ] Per-page `section.credits` above the footer lists this page's sources (`.cr-row`: name · what it provided · link), following **Sources conventions**: every `.cr-link` targets the specific resource (no site/repo root); any YouTube rows are trusted-channel only, `YouTube — <Channel>`, oEmbed-verified, with a terse non-hype `.cr-what`.
 - [ ] Footer: `E:D Black Box` + `By CMDR Ka0s` + part (no "Next:" pointer).

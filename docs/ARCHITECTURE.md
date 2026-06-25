@@ -154,8 +154,8 @@ guides/
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
 3 wired logos + concept candidates under `logos/concepts/`), 162 Markdown (prose docs +
 **112 per-page `*-anchors.md` catalogs** — 110 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 9 `.py` + 8 `.mjs`) and 1 TSV
-(`scripts/ship-names.tsv`).
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 16 `.py` + 8 `.mjs`) and its data
+(`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
 
@@ -252,8 +252,11 @@ right/centre column's header sits over its figures). The **anchor-standardizatio
 `standardize-anchors.py` (renames every navigable id onto the `<family>-<slug>` scheme and
 rewrites all internal links, including the `data-target` JS quick-nav) and `verify-links.py`
 (a full internal-link + quick-nav resolution audit) — alongside read-only gates such as
-`audit-section-numbers.py`. The harness `.mjs` use Playwright (the repo's only
-dependency, a dev tool — there is still no build step). All are catalogued in
+`audit-section-numbers.py`. A **Sources-hygiene** sweep lives here too: `fix-generic-sources.py`
+(data-driven from `fix-generic-sources.ops.json`, `--check` re-verifies HTTP 200) repoints any
+bottom-of-page `.cr-link` that cited a website/repo **home** at the specific resource the
+figures came from, and drops rows with no specific target. The harness `.mjs` use Playwright
+(the repo's only dependency, a dev tool — there is still no build step). All are catalogued in
 `scripts/README.md`.
 
 **Future direction (planned, `TODO.md` Phase 2):** extract page content into per-page
@@ -274,6 +277,12 @@ masthead no longer carries an inline `Sources …` line (it shows a last-updated
 instead); per-page sources are listed in a dedicated **`section.credits`** block (the
 **Sources** section) at the bottom of the page (above the footer), each citing the
 specific sources that page's facts were verified against (mostly 5+ per page; a few hard pages at 4).
+Two conventions govern that block (full rules: `design-system/docs/04-page-assembly.md` →
+*Sources conventions*): every `.cr-link` points at the **specific** resource the figures came
+from — never a site/repo **root** (swept by `scripts/fix-generic-sources.py`, §6) — and a short
+list of **trusted-channel YouTube videos** (Obsidian Ant, Down to Earth Astronomy, Ricardos
+Gaming, Mile 13 Gaming, TheYamiks, The Buur Pit) may be cited as extra rows where relevant and
+version-current (oEmbed-verified, ≤3 per page; present on 68 pages).
 
 ---
 

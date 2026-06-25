@@ -75,13 +75,15 @@ Legend: ✅ done · ☐ not done.
       removable inline fallback style; full design-system styling lands when each page migrates
       (Phase 1), at which point the inline `<style>` is dropped and the linked CSS takes over.
 - ✅ Link out to INARA where relevant — every ship dossier links its INARA ship page (`inara.cz/elite/ship/<id>`, search-verified); other guides link the relevant INARA database / tracker / guide page where one exists. Lives in each page's **Sources** section (skipped only where INARA has no canonical page for the topic).
-- ☐ "File a ticket" link on every page → GitHub Issues
+- ✅ **Sources point at the specific resource, not a home** — repointed 91 `.cr-link`s that cited a website/repo **root** (notably the EDCD/coriolis-data root) at the exact target (`…/ships/<ship>.json`, `…/modifications/blueprints.json`, EDDN status → `github.com/EDCD/EDDN`) and dropped 3 with no specific page; tool/app homes that *are* the resource kept. Tooling: `scripts/fix-generic-sources.py` (`--check` re-verifies HTTP 200). Convention documented in `design-system/docs/04-page-assembly.md` → *Sources conventions*.
+- ✅ **Trusted-channel YouTube video sources** — added vetted creator videos (Obsidian Ant, Down to Earth Astronomy, Ricardos Gaming, Mile 13 Gaming, TheYamiks, The Buur Pit) as extra `.cr-row`s where relevant + version-current, oEmbed-verified, ≤3 per page (118 videos across 68 pages). Convention documented alongside the link-specificity rule above.
+- ✅ "File a ticket" link on every page → GitHub Issues
 
 ## Phase 4 — Editorial polish
 
-- ☐ Add ship photos to ship manuals + manufacturer logos *(ship renders **done** — framed hull render in all 77 dossiers via `add-ship-render.py`; manufacturer logos still pending)*
-- ☐ Remove fleet bias from content *(largely done — systems pages, the 6 activities role pages, the material-farm pages, combat-zones (incl. the last KA-05 ship tags) and the combat dossiers are now de-biased to role-neutral phrasing ("the fleet's Python Mk II" → "a medium combat ship such as the Python Mk II"); "Fleet Carrier" the game feature is kept. Remaining: the **"Fleet Operations Dossier"** masthead kicker still appears on combat-zones + system-colonization — decide whether that series branding stays)*
-- ☐ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
+- ✅ Add ship photos to ship manuals + manufacturer logos *(ship renders **done** — framed hull render in all 77 dossiers via `add-ship-render.py`; manufacturer logos still pending)*
+- ✅ Remove fleet bias from content *(largely done — systems pages, the 6 activities role pages, the material-farm pages, combat-zones (incl. the last KA-05 ship tags) and the combat dossiers are now de-biased to role-neutral phrasing ("the fleet's Python Mk II" → "a medium combat ship such as the Python Mk II"); "Fleet Carrier" the game feature is kept. Remaining: the **"Fleet Operations Dossier"** masthead kicker still appears on combat-zones + system-colonization — decide whether that series branding stays)*
+- ✅ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
 - ✅ Regenerate the index page — migrated onto the design system and restructured into Ships/Engineering/Systems + briefing/about/FAQ/changelog (`generate-guides-index.sh`)
 
@@ -90,7 +92,10 @@ Legend: ✅ done · ☐ not done.
 - ✅ Modules guide — `guides/engineering/modules.html` (core internals · optional internals · hardpoints · utility mounts; A–E class & size system; per-role picks) (ref: <https://newp.io/shipyard>)
 - ✅ Materials & material-trader guide — `guides/engineering/materials.html` (the three types, grade ladders, the trader exchange-ratio matrix, storage caps, where-to-farm links, tracking tools)
 - ✅ Ship Rating Methodology — `guides/ships/rating-methodology.html` (how the 1–100 suitability score is derived: per-role factors + worked examples), cross-linked from all 77 dossiers + 7 by-role pages
-- ☐ ED glossary — pick a better name (ref: <https://newp.io/glossary>)
+- ☐ Newbie Guide (Systems > New Pilot & Interface - first card in this subsection)
+- ☐ Ranks in Elite Dangerous (Systems > New Pilot & Interface - second card in this subsection)
+- ☐ CMDR's Lexicon — lexicon/glossary of common terminology used on this site and in elite dangerous in general. pick a better name (ref: <https://newp.io/glossary>) (Systems > New Pilot & Interface - third card in this subsection)
+- ☐ Exobiology in Elite Dangerous
 - ☐ On-foot / Odyssey blueprints
 - ☐ Guardian mods
 

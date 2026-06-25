@@ -67,7 +67,10 @@ updates. Inlining or forking re-introduces drift and is a regression.
    both, and don't duplicate `#qn-*` ids. The matching JS loads anyway (null-safe).
 8. **Write in the house voice** (`06-voice-content.md`) and **verify every fact**
    against authoritative sources (`01-principles.md` → Accuracy). Flag unknowns with
-   `.kv-tbd`, never guess.
+   `.kv-tbd`, never guess. Build the `section.credits` block per **Sources conventions**
+   in `04-page-assembly.md`: each `.cr-link` targets the specific resource (never a
+   site/repo root), and any video sources are trusted-channel YouTube only, `YouTube —
+   <Channel>`, oEmbed-verified, with a terse non-hype one-line `.cr-what`.
 9. **Clear the accessibility floor** (`05-accessibility.md`).
 10. **Self-check** against the checklist at the foot of `04-page-assembly.md`.
 

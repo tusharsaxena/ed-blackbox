@@ -147,9 +147,12 @@ those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md
   **masthead no longer displays** the INARA id, a patch label, or an inline `Sources …`
   line; the masthead-meta carries the series part + a **last-updated** date, and the
   footer is brand + `By CMDR Ka0s` + part. Per-page **sources** now live in a dedicated
-  bottom-of-page **`section.credits`** block (above the footer; see
-  `design-system/docs/04-page-assembly.md`). Source verification is still required
-  (rule 1). (The `CMDR KA0S · INARA 173082` identity chrome has been removed site-wide — the
+  bottom-of-page **`section.credits`** block (above the footer). Building that block follows
+  the **Sources conventions** in `design-system/docs/04-page-assembly.md`: every `.cr-link`
+  targets the **specific** resource (never a site/repo root — sweep with
+  `scripts/fix-generic-sources.py`), and any video sources are **trusted-channel YouTube**
+  only (`YouTube — <Channel>`, oEmbed-verified, terse non-hype `.cr-what`, ≤3 per page).
+  Source verification is still required (rule 1). (The `CMDR KA0S · INARA 173082` identity chrome has been removed site-wide — the
   footer `By CMDR Ka0s` byline is kept; powerplay has been de-biased to role/ethos-agnostic.
   Dropping "CMDR" from dossier kickers and reducing fleet bias on the remaining pages continue
   as editorial polish — see `TODO.md` Phase 4.)
