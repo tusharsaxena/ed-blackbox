@@ -175,7 +175,7 @@ cat <<'HEAD'
     <div class="stat-grid">
       <div class="stat"><div class="n">11</div><div class="l">Game-system guides</div></div>
       <div class="stat"><div class="n">7</div><div class="l">Engineering manuals</div></div>
-      <div class="stat"><div class="n fed">77</div><div class="l">Ship dossiers</div></div>
+      <div class="stat"><div class="n fed">86</div><div class="l">Ship dossiers</div></div>
       <div class="stat"><div class="n mar">13</div><div class="l">Role &amp; activity guides</div></div>
     </div>
   </div>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federal Corvette &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: AX → good-green (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight-thargoids"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight Thargoids</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Federal Corvette · AX Combat</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Core Dynamics</div>
+    <h1 class="title"><span>Federal Corvette</span><span class="role ac-role-ax">AX Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The combat king turned on the Thargoids &mdash; a battleship AX <em>tank</em></h2>
+      <p>The same 666-armour, ~516 MJ-shield warship that tops the combat ladder makes a near-unkillable anti-Xeno platform: two military slots for Guardian module hardening, eight utilities, deep internals and capital agility that holds Gauss on an Interceptor's hearts. It loses points only because no <em>huge</em> AX weapon exists &mdash; its signature huge mounts run oversized &mdash; and because a 900-tonne hull still can't dodge Thargoid lightning like a medium can. Behind that sits the Federal Rear Admiral grind.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/federal-corvette.jpg" alt="Federal Corvette" width="160" height="90">
+      <figcaption><b>Federal Corvette</b> &middot; Core Dynamics</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">86<small>/100</small></div><div class="bar mini"><i style="--pct:86"></i></div></div>
+      <div class="stat"><div class="n">2H+6</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Military slots</div></div>
+      <div class="stat"><div class="n">198 m/s</div><div class="l">Top speed</div></div>
+      <div class="stat"><div class="n">~188M</div><div class="l">Hull price (Cr)</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Point the best combat hull in the game at the Thargoids and you get one of the toughest AX warships flying. The Federal Corvette brings 666 battleship armour, a ~516 MJ shield, <b>two military slots</b> for Guardian Module Reinforcement, eight utility mounts and eleven optional internals &mdash; everything you need to soak caustic damage, ride out Interceptor lightning, and keep firing while lighter ships are already running for repair. Its surprising agility for a 900-tonne hull lets it hold Gauss cannons on an exposed heart far better than the other capitals.</p>
+    <p>The reason it sits at <b>86</b> rather than the top of the AX ladder is specific and honest: <b>no huge AX weapon exists</b>. The Corvette's defining pair of huge hardpoints can only mount large-or-smaller AX/Guardian guns, so its signature firepower advantage shrinks against a foe its big slots can't fully exploit. And while it turns well for a capital, it still cannot dodge a Thargoid's lightning and swarm the way a Chieftain or Krait can. It out-tanks every AX medium and matches the Type-10 for sheer durability &mdash; the Cutter just out-shields it, and the agile mediums score higher on survivable evasion.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Attritional anti-Xeno work: standing in AX Conflict Zones, anchoring a wing as the immovable damage-soak, Titan and Maelstrom operations where staying power matters, and any fight you intend to <em>win by outlasting</em> rather than out-dodging.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight-thargoids">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2H &middot; 1L &middot; 2M &middot; 2S <small>(no huge AX gun)</small></div></div>
+      <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF decoy + guns)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">2 <small>(class 5 &mdash; Guardian MRP)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">198 / 257 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;7&middot;7&middot;6&middot;6&middot;5&middot;5&middot;4&middot;4&middot;3&middot;1</div></div>
+      <div class="cell"><div class="k">Base armour / shield</div><div class="v">666 / ~516 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Fed. Rear Admiral</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Corvette a battleship-grade Xeno hunter:</p>
+    <ul class="bullets">
+      <li><b>Two military slots.</b> Room for two Guardian Module Reinforcement packages &mdash; the hardening that lets it shrug off the lightning that strips lesser ships' modules.</li>
+      <li><b>Capital tank.</b> 666 armour and a ~516 MJ shield, doubled and tripled with Guardian HRP and bi-weave, keep it on station while others retreat.</li>
+      <li><b>Eight utilities.</b> Xeno scanner, caustic sinks, heat sinks <em>and</em> a full shield-booster suite all at once &mdash; no compromises on the defensive kit.</li>
+      <li><b>Capital agility plus an SLF.</b> It turns well enough to keep guns on a heart, and the fighter bay adds a decoy to split Thargoid attention.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>There is <b>no huge AX weapon</b>, so the Corvette's two huge hardpoints carry large-class AX/Guardian guns &mdash; powerful, but not the dominating huge mounts that win it the conventional combat crown. It also demands Federal Rear Admiral, needs a large pad, costs ~188M Cr before kit, and &mdash; for all its agility &mdash; is still too heavy to truly dodge an Interceptor's lightning. Its case is survivability and firepower-by-attrition, not evasion.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, hardening and heat management matter as much as raw mounts.</p>
+    <h3 class="subhead">Same class &mdash; large-pad AX ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Federal Corvette</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Highest shield tank in the game; faster</span><span class="c">Imperial Duke rank; even worse at dodging</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; no rank gate</span><span class="c">Less tank; one fewer military slot</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette <span class="pill md">this</span></td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">More mounts; even higher armour; no rank</span><span class="c">Far slower; feeble shields</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among the large AX hulls the Corvette is the balanced warship: shy of the Cutter's enormous shield, tougher and more agile than the Anaconda, and matching the Type-10 for staying power while turning far better than that turret barge. The Rear Admiral grind and the missing huge AX gun are what hold it a few points back.</p>
+    <h3 class="subhead">Other classes &mdash; the agile AX mediums</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Federal Corvette</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Agile; dodges lightning; cheap; no rank</span><span class="c">A fraction of the tank and utility count</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">High DPS; SLF; agile; no rank</span><span class="c">No military slots; far less tank</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Agile tank; 3 military slots; no rank</span><span class="c">Less raw tank and utility room</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Fast skirmisher; long reach; no rank</span><span class="c">Fewer mounts; no military slots</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Federal Gunship</td><td>Medium</td><td>1L 4M 2S</td><td class="pcc"><span class="p">Maximum Gauss mounts; tough; lower rank</span><span class="c">Slow and clumsy; less tank</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The agile mediums score higher because in AX, evasion is survival &mdash; a Chieftain dodges the lightning a Corvette must absorb. What the Corvette offers instead is the ability to <em>stand in the fire</em>: two military slots, capital armour and eight utilities mean it outlasts anything when the fight turns into a slugging match or a held position in an AXCZ.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~188M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted (A-rated)</div><div class="v">~435M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~480M+ Cr</div></div>
+      <div class="cell"><div class="k">Rebuy (eng.)</div><div class="v">~22M Cr</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Fed. Rear Admiral</div></div>
+      <div class="cell"><div class="k">Pad / Permit</div><div class="v">Large / None</div></div>
+    </div>
+    <p>At ~188M Cr the Corvette is one of the most expensive hulls in the game, and it sits behind the <b>Federal Rear Admiral</b> rank &mdash; a long climb up the Dropship&rarr;FAS&rarr;Gunship ladder. A full AX fit with Guardian/AX weapons, capital shields and double-layered reinforcement runs to ~435M Cr A-rated, rising past ~480M Cr engineered, with a rebuy near ~22M to budget for.</p>
+    <p>It is an endgame AX ship, not a starter. If you've already earned the rank for a combat Corvette, converting one to AX is the natural next step &mdash; you get a Thargoid platform that almost never dies. If you're learning AX, do it in a cheaper, more forgiving Chieftain first.</p>
+    <div class="callout"><span class="lbl">Survivability costs more</span><p>~480M Cr engineered plus the Guardian-tech grind buys the toughest AX warship short of the Cutter. The Rear Admiral rank and the ~22M rebuy are the real price of admission &mdash; this is a capstone hull, flown by commanders who already own the rank.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no AX-specific ARX pre-built built around the Federal Corvette; earn Rear Admiral, buy the hull, then unlock Guardian and AX weapons at the relevant sites and outfit it normally.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A battleship AX tank: large AX multi-cannons on the huge mounts (no huge AX gun exists), Gauss cannons on the mediums for heart damage, Guardian reinforcement filling both military slots and the deep optionals, eight utilities and an SLF decoy. Initial is buy-only; AX-fitted adds the unlocked kit; Engineered hardens shields, hull and mobility.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge 1</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon (L)</td><td class="eng">Enhanced AX MC &mdash; in huge mount</td></tr>
+        <tr><td class="slot">Huge 2</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon (L)</td><td class="eng">Enhanced AX MC &mdash; in huge mount</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Modified AX Multi-Cannon</td><td class="eng">Enhanced AX Multi-Cannon</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon</td><td class="eng">Guardian Shard Cannon</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon</td><td class="eng">Guardian Shard Cannon</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Xeno Scanner</td><td class="eng">Xeno Scanner</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Caustic Sink Launcher</td><td class="eng">Caustic Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Utility 6</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Utility 7</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 8</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (6)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (5)</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 5</td><td class="eng">Guardian MRP 5</td></tr>
+        <tr><td class="slot">Military 2 (5)</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 5</td><td class="eng">Guardian MRP 5</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">&mdash;</td><td class="st">Shield Generator 7 (bi-weave)</td><td class="eng">Bi-Weave 7 &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 7</td><td class="eng">SCB 7</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">&mdash;</td><td class="st">Fighter Hangar 7</td><td class="eng">Fighter Hangar 7 (SLF decoy)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 6</td><td class="eng">SCB 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Decontamination Limpet Controller 5</td><td class="eng">Decon Limpet (caustic)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 5</td><td class="eng">Guardian HRP 5</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 5</td><td class="eng">Guardian MRP 5</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 4</td><td class="eng">Guardian HRP 4</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 4</td><td class="eng">HRP 4 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 3</td><td class="eng">Guardian HRP 3</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Caustic Sink storage</td><td class="eng">Caustic Sink storage</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Stand in the fire, harden everything</span><p>Unlike the AX mediums, the Corvette fills <em>both</em> military slots and several optionals with Guardian reinforcement &mdash; it survives by absorbing the lightning, not dodging it. Put Gauss on the mediums for heart damage, large AX multi-cannons in the huge slots (no huge AX gun exists), and run caustic and heat kit hard. The SLF decoy buys time when a swarm piles on.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Rear Admiral, buy the hull, and unlock Guardian and AX weapons at the relevant sites.</p>
+    <p>Arm the mediums with Gauss for heart damage and the huge/large mounts with AX multi-cannons.</p>
+    <p>Fill both military slots with Guardian Module Reinforcement; add caustic, heat and shield kit across the eight utilities.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority for the warship:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>AX / Guardian weapons</b> &mdash; Gauss on the mediums, AX multi-cannons on the big mounts, Guardian shards on the smalls. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">2</span><b>Guardian reinforcement</b> &mdash; Two Guardian MRP in the military slots plus Guardian HRP in the optionals; this is the Corvette's edge. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">3</span><b>Power Distributor &amp; Plant &rarr; A</b> &mdash; Gauss and a capital shield are immensely power- and capacitor-hungry. <span class="acc">~50M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield Generator &amp; boosters</b> &mdash; A capital-scale bi-weave with thermal-resistant boosters against caustic and thermal damage. <span class="acc">~25M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Thrusters &rarr; A</b> &mdash; Preserve the agility that holds Gauss on a heart. <span class="acc">~22M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Hardening is the case</span><p>The Corvette earns its rating by surviving &mdash; prioritise the two Guardian MRP and a layered shield/hull tank over chasing DPS its missing huge AX gun can't deliver anyway.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens shields, hull, heat and mobility; AX/Guardian weapons have limited engineering. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Thermal Resistant (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty / Thermal Resistant</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; Gauss and a capital shield are immensely power- and capacitor-hungry.</li>
+      <li><span class="stepnum">2</span>Thermal-resistant bi-weave and HRPs against Thargoid thermal and caustic damage.</li>
+      <li><span class="stepnum">3</span>Dirty thrusters to keep the capital agility that holds guns on a heart.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and all Guardian reinforcement come from unlocks, not blueprints.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Very heavy &mdash; G5 across class-8 cores and a deep capital defensive suite, on top of the substantial Guardian-tech grind for weapons and reinforcement. The Guardian unlocks are the real cost; ship blueprints are standard. Ask for exact per-blueprint or unlock counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Shield (MJ)</td><td>~516</td><td>~1,000</td><td class="acc">~2,000+</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>666</td><td>666</td><td class="acc">~4,000+ (Guardian HRP)</td></tr>
+        <tr><td class="mod">Module hardening</td><td>none</td><td>2 Guardian MRP</td><td class="acc">2 MRP + optionals</td></tr>
+        <tr><td class="mod">AX firepower</td><td>high</td><td>high</td><td class="acc">high (no huge AX gun)</td></tr>
+        <tr><td class="mod">Agility (dodge)</td><td>fair (capital)</td><td>fair</td><td class="acc">good (for capital)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Corvette is the toughest AX warship short of the Cutter: a shield into the low thousands, effective armour into the thousands, two Guardian MRP soaking the lightning, and Gauss-and-AX firepower that ends Interceptors steadily. It cannot dodge like a medium, so it wins by refusing to die &mdash; an attrition platform for the held position.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>AX Conflict Zones.</b> Stand in the thick of an AXCZ and out-last the swarm while lighter ships cycle out.</li>
+      <li><b>Interceptor kills.</b> Hold Gauss on a heart through Cyclops to Medusa; the tank buys the time the kill takes.</li>
+      <li><b>Decoy tactics.</b> Deploy the SLF to split a Thargoid's attacks while you keep firing.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Wing anchor.</b> The immovable damage-soak that holds the line while agile mediums dart and harass.</li>
+      <li><b>Maelstrom &amp; Titan operations.</b> Staying power for the most dangerous Thargoid airspace and extended sorties.</li>
+      <li><b>Hydra and Basilisk hunts.</b> The tank to survive the toughest Interceptor variants' sustained fire.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example operations</span><p>Wherever Thargoids are fought &mdash; AXCZ, Interceptor hunts, Maelstrom and Titan ops. The Corvette is the warship you bring when the plan is to outlast the fight, not run from it.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Fill both military slots with Guardian Module Reinforcement &mdash; module hardening is the Corvette's whole AX case.</li>
+      <li>There is no huge AX weapon: run Gauss on the mediums and large AX multi-cannons in the huge mounts.</li>
+      <li>You can't dodge the lightning like a medium &mdash; layer shield and Guardian hull tank and plan to absorb it.</li>
+      <li>Manage heat hard with Gauss, and keep the SLF ready as a decoy when a swarm converges.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Federal Corvette is the battleship of anti-Xeno combat: 666 armour, a capital shield, two military slots for Guardian hardening and eight utilities make it nearly unkillable in a held AXCZ. It scores 86 &mdash; behind the Cutter's bigger shield and the agile mediums' survivable evasion &mdash; because no huge AX gun matches its signature mounts and a 900-tonne hull can't dodge the lightning. Earn the Rear Admiral rank, and you have a Thargoid warship that wins by attrition.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to validate the AX loadout, hardpoint sizes and power/capacitor budget.</span><a class="cr-link" href="https://coriolis.io/outfit/federal_corvette">coriolis.io/outfit/federal_corvette</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Federal Corvette ship page &mdash; manufacturer specs, hull/shield figures, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/federal-corvette">elitedangerous.com/.../federal-corvette</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, military-slot count and module-variant data behind the AX reinforcement plan.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/federal_corvette.json">coriolis-data/ships/federal_corvette.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Federal Corvette</span><span class="cr-what">Ship overview: base stats, internals layout, hardpoints, price, and the Federal Rear Admiral rank requirement.</span><a class="cr-link" href="https://inara.cz/elite/ship/80/">inara.cz/elite/ship/80</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Federal Corvette hull profile and combat notes, cross-referenced against AX weapon class limits (no huge AX gun).</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Federal_Corvette">elite-dangerous.fandom.com/wiki/Federal_Corvette</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

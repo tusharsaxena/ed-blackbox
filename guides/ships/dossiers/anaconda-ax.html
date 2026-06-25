@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaconda &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: AX → good-green (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight-thargoids"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight Thargoids</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Anaconda · AX Combat</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Anaconda</span><span class="role ac-role-ax">AX Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The heavy Gauss gunship — it <em>out-guns</em> and out-lasts, but cannot dodge</h2>
+      <p>A huge mount plus three large hardpoints carry the heaviest Gauss battery any rank-free hull can field, and twelve optionals swallow deep Guardian reinforcement against Thargoid lightning. It ranks just behind the Chieftain, Cutter and Krait because it is ponderous &mdash; firepower and bulk over agility, and too slow to reliably dodge an Interceptor's lightning strike.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/anaconda.jpg" alt="Anaconda" width="160" height="90">
+      <figcaption><b>Anaconda</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">88<small>/100</small></div><div class="bar mini"><i style="--pct:88"></i></div></div>
+      <div class="stat"><div class="n">1H 3L 2M 2S</div><div class="l">Hardpoints + SLF</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">Military slots</div></div>
+      <div class="stat"><div class="n">183 m/s</div><div class="l">Top speed</div></div>
+      <div class="stat"><div class="n">~147M</div><div class="l">Hull price (Cr)</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Where the Chieftain dodges and the Krait kills fast, the Anaconda <em>endures while it pounds</em>. Its huge mount and three large hardpoints field the heaviest Gauss battery of any rank-free hull, and a 945 armour base with twelve optionals and eight utilities lets it carry a wall of Guardian hull and module reinforcement, caustic kit and a fighter all at once. It is a battleship turned on the Thargoids, and it has no rank gate &mdash; anyone with the credits can fly one against the Maelstroms.</p>
+    <p>The trade-off is agility. At 183 m/s base and 400t of mass, the Anaconda is the most ponderous of the popular AX hulls &mdash; it cannot reliably side-step an Interceptor's lightning the way a Chieftain or Krait can, so it eats more module damage and leans hard on its deep reinforcement and shields to absorb what it can't avoid. For a pilot who wants maximum sustained AX firepower from a credits-only platform and is willing to tank rather than dance, it is a superb heavy gunship; for evasion-based AX, the medium hulls are sharper.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Heavy sustained anti-Xeno work: a deep-tanked Gauss platform for AXCZ, Cyclops-through-Medusa Interceptor kills, swarm clearance, and wing anchoring &mdash; with no rank grind and the internal room to harden against caustic and lightning at battleship scale.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight-thargoids">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1H 3L &middot; 2M 2S <small>(heavy Gauss)</small></div></div>
+      <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF decoy + guns)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">1 <small>(class 5 hardening)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">183 / 244 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;4&middot;4&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">3</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Anaconda a fearsome heavy Xeno hunter:</p>
+    <ul class="bullets">
+      <li><b>A huge mount plus three large.</b> The heaviest Gauss/AX battery any rank-free hull can field &mdash; sustained DPS that melts Interceptor hearts and clears swarms.</li>
+      <li><b>Battleship internals.</b> Twelve optionals plus a military slot swallow deep Guardian hull <em>and</em> module reinforcement, shields, cells and caustic kit at once.</li>
+      <li><b>Eight utility mounts and an SLF bay.</b> Room for the full xeno-scanner, caustic-sink and heat-sink suite, plus a launched fighter to split Thargoid attention.</li>
+      <li><b>No rank gate.</b> Unlike the Cutter or Corvette, it needs only credits &mdash; the most accessible heavy AX platform in the game.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It is slow and ponderous &mdash; the worst agility of the popular AX hulls. It cannot reliably dodge an Interceptor's lightning, so it takes more module strikes and survives by reinforcement and shields rather than evasion. It is also costly to engineer fully. The Anaconda's case is maximum sustained firepower and tank from a credits-only hull; for dodging the lightning, a Chieftain or Krait is sharper.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, hardening and heat management matter as much as raw mounts.</p>
+    <h3 class="subhead">Same class &mdash; large-pad AX ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shields; outlasts anything in AX</span><span class="c">Imperial Duke rank; even less agile</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Anaconda <span class="pill md">this</span></td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Two huge mounts; more agile for a large</span><span class="c">Federal Rear Admiral rank; heavier rebuy</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">More hardpoints; swarm/AXCZ fortress</span><span class="c">Even slower; no huge mount</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among the large AX hulls the Anaconda is the rank-free middle ground: more guns and tank than the Type-10's turret wall in a single-target fight, more accessible than the rank-gated Cutter and Corvette. The Cutter out-shields it and the Corvette out-guns and out-turns it, but both demand a long navy grind; the Anaconda gives you a heavy Gauss battleship for credits alone.</p>
+    <h3 class="subhead">Other classes &mdash; the agile medium AX options</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Far more agile; dodges the lightning</span><span class="c">Less firepower, tank and internal room</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Highest medium DPS; agile; SLF; cheap</span><span class="c">No military slots; far less tank</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Three military slots; tanky; agile</span><span class="c">Lower large-mount DPS; far less internal room</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Fast skirmisher; great reach to Maelstroms</span><span class="c">Fewer mounts; less tank; no military slots</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The medium AX hulls match or beat the Anaconda on the one stat that matters most against Thargoids &mdash; agility to dodge the lightning &mdash; at a fraction of the cost. None brings a capital ship's sustained firepower, deep reinforcement or internal scale. Choose the Anaconda when you want maximum heavy Gauss firepower and tank from a credits-only hull and intend to absorb hits; choose a medium when dodging, reach and price matter more.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~147M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted (A-rated)</div><div class="v">~383M Cr</div></div>
+      <div class="cell"><div class="k">~Rebuy (engineered)</div><div class="v">~19M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~147M Cr the Anaconda is a major investment, but it carries no rank or permit gate &mdash; the most accessible heavy AX platform. A full AX fit with the Gauss battery, Guardian reinforcement, shields and an SLF brings the all-in figure to roughly 383M Cr, much of it the Guardian-tech unlocks the weapons and reinforcement demand. Rebuy on the engineered hull lands near 19M Cr.</p>
+    <p>Because it re-roles so completely, a single engineered Anaconda can also haul, explore or run missions between Thargoid deployments &mdash; spreading its considerable cost across many jobs while it doubles as your AX flagship.</p>
+    <div class="callout"><span class="lbl">The credits-only heavy gunship</span><p>Roughly 383M Cr all-in (plus the Guardian grind) for a rank-free heavy Gauss battleship that tanks the Thargoid lightning instead of dodging it &mdash; firepower and bulk for credits, no navy rank required.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no AX-specific ARX pre-built built around the Anaconda; buy and outfit it normally, then unlock Guardian and AX weapons at the relevant sites.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A heavy anti-Xeno fit: Gauss cannons on the huge and large mounts, AX/Guardian guns on the smaller ones, a fighter for decoy, and deep Guardian hull/module reinforcement across the military slot and twelve optionals. Initial is buy-only; AX-fitted adds the kit; Engineered hardens mobility and survival.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge</td><td class="st">&mdash;</td><td class="st">Modified AX Multi-Cannon</td><td class="eng">Enhanced AX Multi-Cannon</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Gauss Cannon (AX)</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">&mdash;</td><td class="st">Gauss Cannon (AX)</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Large 3</td><td class="st">&mdash;</td><td class="st">Gauss Cannon (AX)</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">AX Multi-Cannon</td><td class="eng">Enhanced AX Multi-Cannon</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon</td><td class="eng">Guardian Shard Cannon</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon</td><td class="eng">Guardian Gauss Cannon</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">AX Multi-Cannon</td><td class="eng">AX Multi-Cannon</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Xeno Scanner</td><td class="eng">Xeno Scanner</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Caustic Sink Launcher</td><td class="eng">Caustic Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Utility 6</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Utility 7</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 8</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (8)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (5)</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 5</td><td class="eng">Guardian MRP 5</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">&mdash;</td><td class="st">Shield Generator 7 (bi-weave)</td><td class="eng">Bi-Weave 7 &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Fighter Hangar 6 (SLF decoy)</td><td class="eng">Fighter Hangar 6 (SLF decoy)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 6</td><td class="eng">Guardian HRP 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 6</td><td class="eng">Guardian MRP 6</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 5</td><td class="eng">Guardian HRP 5</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 5</td><td class="eng">Guardian MRP 5</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Decontamination Limpet Controller</td><td class="eng">Decon Limpet (caustic)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 4</td><td class="eng">Guardian HRP 4</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 4</td><td class="eng">HRP 4 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 4</td><td class="eng">Module Reinforcement 4</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">Heat Sink storage</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Caustic Sink storage</td><td class="eng">Caustic Sink storage</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Tank, decoy, pour on fire</span><p>With a military slot plus twelve optionals, the Anaconda hardens deeper than any medium &mdash; Guardian hull and module reinforcement everywhere, plus shields and caustic kit. The SLF splits Thargoid attention while four Gauss mounts melt the hearts. Manage heat hard with Gauss; you cannot dodge, so reinforcement and heat discipline are your survival.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and unlock Guardian and AX weapons at the relevant sites.</p>
+    <p>Arm the huge and large mounts with the heaviest Gauss/AX weapons; fit a fighter bay for the decoy.</p>
+    <p>Fill the military slot and optionals with Guardian hull/module reinforcement; add caustic and heat kit.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>AX / Guardian weapons</b> &mdash; A huge plus three large Gauss battery to melt Interceptors. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">2</span><b>Power Distributor &amp; Plant &rarr; A</b> &mdash; The class-8 distributor and plant feed power-hungry Gauss and a big shield. <span class="acc">~45M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Guardian reinforcement (military + optionals)</b> &mdash; Deep hull and module hardening against the lightning. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">4</span><b>Fighter bay</b> &mdash; An SLF decoy to split Thargoid attacks. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Thrusters &rarr; A + caustic/heat utilities</b> &mdash; Recover what agility the heavy hull allows; xeno scanner, caustic and heat sinks. <span class="acc">~20M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Power and tank, not speed</span><p>Eight mounts, a fighter and eight utilities draw enormous power &mdash; A-rate the class-8 distributor and plant before anything else. The Anaconda cannot out-dodge the lightning, so prioritise the Gauss battery and Guardian reinforcement to win by firepower and absorption.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens mobility, heat and survival at battleship scale; AX/Guardian weapons have limited engineering. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Thermal Resistant (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty / Thermal Resistant</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Overcharged plant and Charge-Enhanced distributor to feed power-hungry Gauss weapons and a capital-scale shield.</li>
+      <li><span class="stepnum">2</span>Dirty thrusters to recover what agility the heavy hull allows &mdash; every degree of turn helps when you can't dodge.</li>
+      <li><span class="stepnum">3</span>Thermal-resistant shield and HRPs against Thargoid thermal/caustic damage.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and Guardian reinforcement come from unlocks, not blueprints.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Very heavy &mdash; G5 across class-8 cores plus heavy Guardian-tech unlocks for the weapon battery and deep reinforcement; this is one of the larger material spends for any AX hull. Ship blueprints are standard; the Guardian grind is the real cost. Ask for exact per-blueprint or unlock counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">AX firepower</td><td>very high</td><td>very high</td><td class="acc">highest (rank-free)</td></tr>
+        <tr><td class="mod">Has a decoy fighter</td><td>yes</td><td>yes</td><td class="acc">yes</td></tr>
+        <tr><td class="mod">Module hardening</td><td>military + optionals</td><td>military + optionals</td><td class="acc">deepest (capital scale)</td></tr>
+        <tr><td class="mod">Agility (dodge)</td><td>poor</td><td>poor</td><td class="acc">poor (heavy)</td></tr>
+        <tr><td class="mod">Survivability</td><td>high (tank)</td><td>high (tank)</td><td class="acc">very high (absorb, not dodge)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered and Guardian-armed, the Anaconda pours out the heaviest sustained AX fire any rank-free hull can manage and hardens its modules deeper than any medium, with an SLF to split Thargoid fire. It will never be agile &mdash; that is the cost of the scale &mdash; so it absorbs the lightning rather than dodging it: a heavy, immovable Xeno gunship.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Sustained Interceptor kills.</b> Burn down Cyclops through Medusa with a heavy four-mount Gauss battery.</li>
+      <li><b>AXCZ damage-dealing.</b> A high-DPS, deep-tanked fortress for conflict zones and swarm clearance.</li>
+      <li><b>Decoy tactics.</b> Deploy the SLF to split Thargoid attacks while you pour on fire.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Wing anchor.</b> The heavy tank-and-damage member of an AX wing, soaking attention for lighter hulls.</li>
+      <li><b>Maelstrom and Titan operations.</b> Sustained firepower and deep reinforcement in the most dangerous Thargoid airspace.</li>
+      <li><b>Re-role between deployments.</b> The same hull hauls or explores at scale between Thargoid fights &mdash; capital-scale flexibility.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example operations</span><p>Wherever Thargoids are fought &mdash; Interceptor hunts, AXCZ, Maelstrom and Titan ops. The Anaconda is the rank-free heavy gunship: it anchors the field, tanks the lightning, and out-guns the medium hulls in sustained fire.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>You cannot dodge &mdash; reinforcement, shields and heat discipline are your survival, not agility.</li>
+      <li>Use the SLF as a decoy to split Thargoid attacks away from you.</li>
+      <li>Fill the military slot and optionals with Guardian hull/module reinforcement; manage heat hard with Gauss weapons.</li>
+      <li>It's the credits-only heavy AX platform &mdash; a fine Xeno flagship to own while grinding rank toward a Cutter or Corvette.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Anaconda is the heavy Gauss gunship: a huge mount plus three large hardpoints for the heaviest AX battery any rank-free hull can field, twelve optionals of Guardian reinforcement, and a fighter bay for decoy. Too ponderous to dodge the lightning, it survives by tanking and out-shooting rather than dancing &mdash; a credits-only heavy Xeno hunter that anchors the field and out-lasts the swarm.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to validate the AX Gauss/Guardian fit, power budget and reinforcement layout.</span><a class="cr-link" href="https://coriolis.io/outfit/anaconda">coriolis.io/outfit/anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Anaconda ship page &mdash; manufacturer specs, hardpoint/utility counts, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/anaconda">elitedangerous.com/.../anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, military/optional internals, and engineering blueprint data behind the AX loadout tables.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/anaconda.json">coriolis-data/ships/anaconda.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Anaconda shipyard page &mdash; hull stats and price, plus AX weapon tech-brokers and Guardian material traders.</span><a class="cr-link" href="https://inara.cz/elite/ship/70/">inara.cz/elite/ship/70</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Anaconda hull profile, fighter-hangar capability, and role notes backing the AX write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Anaconda">elite-dangerous.fandom.com/wiki/Anaconda</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

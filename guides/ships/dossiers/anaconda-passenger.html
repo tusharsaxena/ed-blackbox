@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaconda &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-a-liner"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It a Liner</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Anaconda · Passenger</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Anaconda</span><span class="role ac-role-passenger">Passenger</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The long-range generalist — <em>range</em> is the edge</h2>
+      <p>A strong passenger hull without the dedicated-liner polish. Big cabin capacity and the longest jump range of any passenger ship let it run far-flung sightseeing tours other liners can't reach in one hop &mdash; and the same airframe doubles as your explorer, hauler and warship. No rank gate, no liner comfort bonus: it earns on reach and flexibility, not on luxury pay-per-seat.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/anaconda.jpg" alt="Anaconda" width="160" height="90">
+      <figcaption><b>Anaconda</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">82<small>/100</small></div><div class="bar mini"><i style="--pct:82"></i></div></div>
+      <div class="stat"><div class="n">~170</div><div class="l">Max passengers (econ)</div></div>
+      <div class="stat"><div class="n">~78 LY</div><div class="l">Max jump (light fit)</div></div>
+      <div class="stat"><div class="n">8</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">~147M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Anaconda carries passengers the way it does everything else &mdash; competently, at scale, and over enormous distances. Twelve optional internals fit a deep cabin suite for ~170 economy berths, and its class-leading jump range means it reaches distant scenic destinations in fewer hops than any dedicated liner. For long-range sightseeing tours that wander far off the bubble's edge, that reach is the whole case: where a Beluga or Orca needs a string of jumps, the Anaconda often gets there in one.</p>
+    <p>Its great virtues are <b>reach</b> and double duty: no rank gate, no permit, and the same hull you already own as an explorer or hauler. The costs are real, though &mdash; it has no liner comfort bonus, so passengers pay standard rates rather than the premiums a dedicated liner commands; it's a large pad; and the rebuy is heavy. As a passenger ship it's the generalist that goes furthest, not the luxury specialist that earns most per seat.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Long-range sightseeing tours to distant, scattered beacons where jump range beats cabin polish; mixed VIP-and-economy runs that need depth of berths; and any commander who wants one hull that flies passengers this week and explores or hauls the next.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-a-liner">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It a Liner</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max passengers (econ)</div><div class="v">~170</div></div>
+      <div class="cell"><div class="k">Max jump</div><div class="v">~78 <small>LY (light fit)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;4&middot;4&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">1 (class 5)</div></div>
+      <div class="cell"><div class="k">Liner comfort bonus</div><div class="v">No <small>(Faulcon DeLacy)</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Anaconda a capable passenger hull:</p>
+    <ul class="bullets">
+      <li><b>Class-leading reach.</b> The longest jump range of any passenger ship &mdash; distant sightseeing beacons in fewer hops than any dedicated liner.</li>
+      <li><b>Deep cabin capacity.</b> Twelve optionals fit ~170 economy berths, or a mixed economy/first/luxury suite for VIP boards.</li>
+      <li><b>No rank gate.</b> Anyone with the credits can fly one &mdash; no Imperial or Federal rank, no permit.</li>
+      <li><b>Doubles as everything.</b> The same hull is your explorer, hauler and warship; swap cabins for cargo at a station.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It has <b>no</b> liner comfort bonus, so its passengers pay standard rates &mdash; a Beluga, Orca or Lynx earns more per seat in equal cabins, and the Imperial Cutter both out-shields it and out-berths it. It's a large pad and the rebuy is heavy. The Anaconda's case is reach and flexibility, not luxury pay; for maximum earnings-per-seat the dedicated liners win.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for passenger work specifically</em>. The role column is the maximum economy passenger capacity &mdash; but note that dedicated liners earn comfort bonuses (more profit per seat) the Anaconda does not, while its jump range reaches distant boards no liner can.</p>
+    <h3 class="subhead">Same class &mdash; large passenger ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Beluga Liner</td><td>Large</td><td>~184</td><td class="pcc"><span class="p">Most cabins; liner comfort bonus</span><span class="c">Far shorter range; slower; pricier to fill</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~340</td><td class="pcc"><span class="p">Most berths; warship shields; faster</span><span class="c">Imperial Duke rank; shorter range; costlier</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Orca</td><td>Large</td><td>~96</td><td class="pcc"><span class="p">Liner comfort bonus; fastest large</span><span class="c">Fewer cabins; shorter range</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Anaconda <span class="pill md">this</span></td><td>Large</td><td>~170</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Every large liner above out-earns the Anaconda per seat &mdash; the Beluga and Orca through the comfort bonus, the Cutter through raw berths and shields. The Anaconda's distinction is range: it carries a deep cabin suite to scenic destinations the dedicated liners can't reach in one hop, and it does so without a rank gate. The reach pick, not the luxury pick.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated and medium options</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Lynx Highliner</td><td>Medium</td><td>~100</td><td class="pcc"><span class="p">Medium pad; dedicated liner; Robigo-ready</span><span class="c">Fewer cabins; shorter range</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Dolphin</td><td>Small</td><td>~42</td><td class="pcc"><span class="p">Cheap; lands anywhere; comfort bonus</span><span class="c">Far fewer cabins; far less range</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Lynx and Dolphin carry their comfort bonus and land on medium and outpost pads the Anaconda can't use. The Anaconda's edge over both is depth of berths and reach &mdash; the more your tours wander to distant, scattered beacons, the more its jump range justifies the large pad and the missing liner bonus.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~147M Cr</div></div>
+      <div class="cell"><div class="k">A-rated passenger</div><div class="v">~366M Cr</div></div>
+      <div class="cell"><div class="k">Rebuy</div><div class="v">~18M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~147M Cr the hull is a major purchase, and a passenger fit drives the bill higher than it looks &mdash; first-class and luxury cabins are expensive, so an A-rated suite with shields and a long-range FSD runs to around ~366M Cr all-in. Budget a ~18M rebuy.</p>
+    <p>The saving grace is that it isn't a single-role outlay: the cabins swap out for cargo racks or an explorer suite at a station, so the same engineered hull pays its way across passenger work, hauling and exploration. For a commander who already owns an Anaconda, adding a cabin set is far cheaper than buying a dedicated liner.</p>
+    <div class="callout"><span class="lbl">One hull, many roles</span><p>Around ~366M Cr all-in for the passenger fit &mdash; no rank gate, and the cabins swap for cargo or an explorer suite, so the spend isn't locked to one job.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no passenger-specific ARX pre-built built around the Anaconda; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A long-range passenger fit &mdash; a deep cabin suite, a protective shield and a high-range FSD, with hardpoints left mostly clean. Initial is buy-only; A-rated is the passenger baseline; Engineered maximises range and keeps the cabins safe.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge 1</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash; (run clean)</td></tr>
+        <tr><td class="slot">Large 1&ndash;3</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
+        <tr><td class="slot">Medium 1&ndash;2 / Small 1&ndash;2</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1&ndash;3</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 6&ndash;8</td><td class="st">&mdash;</td><td class="st">Shield Booster / spare</td><td class="eng">flexible</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (8)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (5)</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 5</td><td class="eng">HRP 5 &mdash; Lightweight</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">Economy Cabin 7</td><td class="st">Economy Cabin 7</td><td class="eng">Economy / Business Cabin 7</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Economy Cabin 6</td><td class="st">Economy Cabin 6</td><td class="eng">Economy / First Cabin 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">First Class Cabin 6</td><td class="eng">First / Luxury Cabin 6 (VIP)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Economy Cabin 5</td><td class="st">Economy Cabin 5</td><td class="eng">Economy / Business Cabin 5</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">First Class Cabin 5</td><td class="eng">First Class Cabin 5</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Economy Cabin 5</td><td class="eng">Economy / Luxury Cabin 5 (VIP)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Economy Cabin 4</td><td class="eng">Economy / Business Cabin 4</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Economy Cabin 4</td><td class="eng">Cabin / spare</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 4</td><td class="eng">SCB 4</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Luxury Cabin 2 (VIP)</td><td class="eng">Luxury Cabin 2 (VIP)</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS / spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Cabins for the board, range for the run</span><p>Fit the cabin mix the board demands &mdash; economy for bulk sightseeing, first/luxury for VIP fares &mdash; and lean on the Anaconda's reach to take boards that target distant beacons. Keep a real shield and point defence for threatened routes. With no liner bonus to lean on, range and capacity are what set the Anaconda apart; swap cabins for cargo racks when the week turns to hauling.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit a cabin suite &mdash; economy for bulk, plus some first/luxury for VIP boards.</p>
+    <p>Keep a shield and load the utilities with boosters and point defence.</p>
+    <p>A-rate the FSD and thrusters first to protect the long-range reach that defines the build.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a long-range passenger hull:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>FSD &rarr; A</b> &mdash; The defining stat; range reaches distant boards no liner can. <span class="acc">~10M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Cabin suite</b> &mdash; The payload; fit the economy/first/luxury mix the board demands. <span class="acc">varies</span></li>
+      <li><span class="stepnum">3</span><b>Shield Generator &rarr; bi-weave</b> &mdash; Passenger safety on threatened routes. <span class="acc">~12M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Thrusters &rarr; A</b> &mdash; Mobility for the heavy loaded hull. <span class="acc">~9M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Power Plant &rarr; A</b> &mdash; Power for cabins, shield and modules. <span class="acc">~9M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Range first, then cabins</span><p>The Anaconda earns on reach, not on a comfort bonus &mdash; A-rate the FSD before anything so it takes the distant boards, then build out the cabin suite and shield. Add a Guardian FSD booster to stretch the range further.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The passenger engineering pattern, range-weighted. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>FSD Increased Range first &mdash; the Anaconda's reach is its identity in this role; add a Guardian booster.</li>
+      <li><span class="stepnum">2</span>Dirty thrusters to move the heavy loaded hull.</li>
+      <li><span class="stepnum">3</span>Bi-weave shield and Heavy-Duty boosters for passenger safety.</li>
+      <li><span class="stepnum">4</span>Cabins aren't engineered &mdash; just fit the right classes for the board.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light-to-moderate for the passenger role &mdash; FSD, thruster, plant and shield blueprints; no weapon grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max passengers</td><td>~110</td><td>~150</td><td class="acc">~170</td></tr>
+        <tr><td class="mod">Max jump (loaded, LY)</td><td>~30</td><td>~45</td><td class="acc">~60</td></tr>
+        <tr><td class="mod">Liner comfort bonus</td><td>no</td><td>no</td><td class="acc">no</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~500</td><td>~800</td><td class="acc">~1,200+</td></tr>
+        <tr><td class="mod">Tour reach</td><td>long</td><td>longer</td><td class="acc">longest</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Anaconda carries ~170 passengers and jumps further between systems than any rival liner, reaching scattered scenic beacons in fewer hops. It earns less per seat than the dedicated liners &mdash; no comfort bonus &mdash; but on distant, far-flung tours its reach lets it take boards they simply can't service. The passenger ship that goes furthest.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Long-range sightseeing tours.</b> Reach distant, scattered beacons in fewer hops than any liner.</li>
+      <li><b>Mixed VIP-and-economy boards.</b> A deep cabin suite handles big, varied passenger manifests.</li>
+      <li><b>Bulk economy runs.</b> ~170 berths make ordinary tourist hauls profitable per trip.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Far-flung scenic work.</b> Tours to the bubble's edge and beyond where range is the gate.</li>
+      <li><b>Dual-purpose cruising.</b> Swap cabins for cargo or an explorer suite as the week demands.</li>
+      <li><b>Carrier-supported tours.</b> A long-range liner that docks on carriers for distant operations.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Distant, scattered sightseeing destinations suit it best, where its jump range reaches beacons dedicated liners can't service in one hop. From your home base, the Anaconda takes the boards that wander furthest.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>A-rate and engineer the FSD first &mdash; range is what the Anaconda brings to passenger work; add a Guardian booster.</li>
+      <li>There's no liner comfort bonus &mdash; it earns less per seat than a Beluga, Orca or Lynx; pick distant boards where reach pays.</li>
+      <li>Match cabin classes to the board &mdash; economy for volume, first/luxury for VIP fares.</li>
+      <li>Mind the large pad and heavy rebuy &mdash; plan around stations or a carrier, keep a buffer.</li>
+      <li>Swap the cabins for cargo or an explorer suite and the same hull changes roles &mdash; it has those manuals too.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Anaconda is the long-range passenger generalist: a deep cabin suite and the best jump range in the role, reaching scenic destinations no dedicated liner can service in one hop. It earns less per seat &mdash; it has no comfort bonus, a large pad and a heavy rebuy &mdash; but on far-flung tours its reach takes boards the liners can't, and the same hull doubles as your explorer and hauler. Not the luxury pick; the one that goes furthest.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to size the cabin suite, shield and FSD.</span><a class="cr-link" href="https://coriolis.io/outfit/anaconda">coriolis.io/outfit/anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Anaconda ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/anaconda">elitedangerous.com/.../anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout and passenger-cabin module sizes underpinning the loadout and berth count.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/anaconda.json">coriolis-data/ships/anaconda.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Anaconda shipyard page &mdash; hull stats, passenger-cabin capacity, and shipyard pricing.</span><a class="cr-link" href="https://inara.cz/elite/ship/70/">inara.cz/elite/ship/70</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Anaconda lore, manufacturer, and role overview backing the passenger write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Anaconda">elite-dangerous.fandom.com/wiki/Anaconda</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

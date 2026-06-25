@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperial Cutter &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-a-liner"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It a Liner</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Imperial Cutter · Passenger</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Imperial Cutter</span><span class="role ac-role-passenger">Passenger</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The armoured megaliner — <em>capacity</em> and safety over charm</h2>
+      <p>The most economy berths of any ship in the game, carried behind the strongest shields in the game, on a hull fast enough for a large. It moves more bodies, more safely, than any dedicated liner &mdash; the pick when raw volume and VIP protection matter more than luxury polish. The catch: it has no passenger-comfort bonus, costs a fortune to fit out, and needs Imperial Duke rank.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/imperial-cutter.jpg" alt="Imperial Cutter" width="160" height="90">
+      <figcaption><b>Imperial Cutter</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">89<small>/100</small></div><div class="bar mini"><i style="--pct:89"></i></div></div>
+      <div class="stat"><div class="n">~340</div><div class="l">Max passengers (econ)</div></div>
+      <div class="stat"><div class="n">323 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">8</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">~209M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Imperial Cutter is the rare passenger ship that carries like a freighter and protects like a warship. Its ten optional internals pack the most economy cabins in the game &mdash; roughly 340 berths, well past a Beluga &mdash; while its shields, the strongest in the game, and eight utility mounts make a VIP run all but impossible to interrupt. And uniquely among the giants, it's quick: a 323 m/s boost lets it outrun threats a liner would have to sit and take.</p>
+    <p>What it does <b>not</b> carry is a liner comfort bonus. Gutamaya never built it as a tourist ship, so it earns less per seat than a Beluga, Lynx or Orca of equal class. The Cutter's case is therefore volume and safety, not luxury: when the contract is sheer headcount, or when the passenger is a target, nothing moves more people through more danger and lands them all. The costs are the Imperial Duke rank and a price tag that, fully cabined, dwarfs every dedicated liner.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>High-volume and high-risk passenger work: mass economy transport on busy tourist hubs, protected VIP and high-threat evacuation runs through contested space, and any board where raw berth count or surviving interdiction beats per-seat comfort pay.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-a-liner">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It a Liner</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max passengers (econ)</div><div class="v">~340 <small>(most in game)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">202 / 323 <small>m/s (fast for a large)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">1,100 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~703 <small>MJ (highest in game)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">8&middot;8&middot;6&middot;6&middot;6&middot;5&middot;5&middot;4&middot;3&middot;1</div></div>
+      <div class="cell"><div class="k">Liner comfort bonus</div><div class="v kv-tbd">No <small>(not a liner line)</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Duke</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Cutter the megaliner:</p>
+    <ul class="bullets">
+      <li><b>The most berths in the game.</b> Around 340 economy seats &mdash; more raw capacity than any dedicated liner, including the Beluga.</li>
+      <li><b>The strongest shields in the game.</b> A prismatic Cutter keeps its passengers safe even under sustained attack &mdash; the safest VIP transport flying.</li>
+      <li><b>Fast for a large ship.</b> A 323 m/s boost lets it outrun interdictors a liner must stand and absorb.</li>
+      <li><b>Eight utilities.</b> A full shield-booster and point-defence suite turns it into a fortress that happens to carry tourists.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It has <b>no</b> comfort bonus, so per-seat pay trails the dedicated liners &mdash; it wins on volume and protection, not luxury rates. It needs Imperial Duke rank, is large-pad-bound, and a full luxury/first cabin fit makes it the most expensive passenger ship to outfit by a wide margin. For premium per-seat earnings or pad flexibility, the Beluga and the medium Lynx respectively serve better.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for passenger work specifically</em>. The role column is the maximum economy passenger capacity &mdash; but note that dedicated liners earn comfort bonuses, so on premium routes they out-earn the Cutter per seat despite its larger raw headcount.</p>
+    <h3 class="subhead">Same class &mdash; large passenger ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Imperial Cutter</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Beluga Liner</td><td>Large</td><td>~184</td><td class="pcc"><span class="p">Liner comfort bonus; more profit per seat; no rank</span><span class="c">Fewer raw berths; far slower; thin shields</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter <span class="pill md">this</span></td><td>Large</td><td>~340</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Orca</td><td>Large</td><td>~96</td><td class="pcc"><span class="p">Liner comfort bonus; fastest large; cheaper</span><span class="c">Far fewer berths; thin hull; no shield to speak of</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~170</td><td class="pcc"><span class="p">No rank gate; long range; versatile</span><span class="c">Fewer berths; weaker shields; no comfort bonus</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Cutter carries the most bodies of any large ship and protects them best, but the Beluga's comfort bonus earns more per seat and the Orca turns trips around faster. The Cutter wins on volume and safety: for mass transport, or for VIPs through danger, nothing else lands this many passengers this reliably.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated and medium options</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Imperial Cutter</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Beluga Liner</td><td>Large</td><td>~184</td><td class="pcc"><span class="p">Comfort bonus; the premium-earnings king</span><span class="c">Fewer raw berths; far slower</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Lynx Highliner</td><td>Medium</td><td>~100</td><td class="pcc"><span class="p">Medium pad; dedicated liner; comfort bonus; Robigo-ready</span><span class="c">Far fewer berths; no real shield</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Dolphin</td><td>Small</td><td>~42</td><td class="pcc"><span class="p">Cheap; lands anywhere; comfort bonus; efficient</span><span class="c">Tiny capacity; no protection</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Lynx and Dolphin land more flexibly and earn comfort bonuses per seat; the Beluga banks the most premium pay. The Cutter's distinction is sheer scale plus the only warship shield in the role &mdash; the choice when the job is moving a crowd, or keeping a high-value passenger alive.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~209M Cr</div></div>
+      <div class="cell"><div class="k">A-rated liner</div><div class="v">~451M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~480M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Duke</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~209M Cr and behind the Imperial Duke rank, the hull alone is a major commitment &mdash; and the cabins are where it gets expensive. Luxury and first-class suites in the Cutter's big slots cost a fortune, so a fully fitted passenger Cutter lands near ~451M Cr, the priciest liner to outfit in the game. Rebuy runs ~23M Cr.</p>
+    <p>Conveniently, the same Imperial-rank ladder you climb toward Squire and the Achenar permit eventually reaches Duke &mdash; so the passenger Cutter sits at the end of a grind you may already be on, and the same hull doubles as a combat flagship and a bulk hauler.</p>
+    <div class="callout"><span class="lbl">Imperial endgame, dual-use</span><p>The most expensive liner to fit, but the same Gutamaya hull is a combat apex and a fortune-hauler. One ship, three endgame roles &mdash; passengers among them.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no passenger-specific ARX pre-built built around the Imperial Cutter; buy and outfit it normally once you hold Duke rank.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A high-capacity liner fit built around the game's best shields. Initial is buy-only economy seating; A-rated adds a prismatic shield and a VIP cabin mix; Engineered preserves speed and protection while maximising berths.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Hardpoints</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash; (run clean / point defence)</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 6&ndash;8</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (7)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (6)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 8</td><td class="st">Economy Cabin 8</td><td class="st">Prismatic Shield 8</td><td class="eng">Prismatic 8 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 8</td><td class="st">Economy Cabin 8</td><td class="st">Economy Cabin 8</td><td class="eng">Economy Cabin 8</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Economy Cabin 6</td><td class="st">Economy Cabin 6</td><td class="eng">Economy Cabin 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Economy Cabin 6</td><td class="eng">Economy Cabin 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">First Class Cabin 6 (VIP)</td><td class="eng">First / Luxury Cabin 6 (VIP)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Economy Cabin 5</td><td class="eng">Economy / Business Cabin 5</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Business Cabin 5</td><td class="eng">Business Cabin 5</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Economy Cabin 4</td><td class="eng">Economy Cabin 4</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 3</td><td class="eng">SCB 3</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS / spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Shield first, then cabins</span><p>The Cutter's edge over the dedicated liners is protection &mdash; fit a prismatic generator in a class-8 slot and a full booster suite, then fill the rest with cabins. Run all-economy for mass transport, or mix in first/luxury suites for VIP boards. Either way the passengers are genuinely safe, and you can outrun what you can't out-tank.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Duke, buy the hull, and fill the big slots with economy cabins &mdash; high-volume seating from the start.</p>
+    <p>Keep a shield and load the eight utilities with boosters and point defence.</p>
+    <p>A-rate the FSD and thrusters so the laden ship keeps its speed advantage.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a high-capacity liner:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Shield Generator &rarr; prismatic</b> &mdash; The Cutter's whole edge over a liner; the best shield protects the passengers. <span class="acc">~25M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Cabin suite</b> &mdash; The payload; economy for volume, first/luxury for VIP boards. <span class="acc">varies</span></li>
+      <li><span class="stepnum">3</span><b>Thrusters &rarr; A</b> &mdash; Keep the speed that lets it outrun trouble. <span class="acc">~20M Cr</span></li>
+      <li><span class="stepnum">4</span><b>FSD &rarr; A</b> &mdash; Range to reach scenic and distant destinations. <span class="acc">~20M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Power Plant &rarr; A</b> &mdash; Power for the big shield, cabins and utilities. <span class="acc">~25M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Shield and speed protect the passengers</span><p>Unlike a Beluga or Orca, the Cutter survives interdiction &mdash; prioritise the prismatic shield and A-rated thrusters so it can both out-tank and outrun any threat to the board.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The passenger engineering pattern weighted to protection. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Prismatic Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Prismatic shield Resistance-Augmented plus Heavy-Duty boosters first &mdash; protection is the Cutter's liner edge.</li>
+      <li><span class="stepnum">2</span>Thrusters to G5 to keep the speed that lets it outrun threats to the board.</li>
+      <li><span class="stepnum">3</span>FSD Increased Range to reach distant destinations; Low-Emissions plant for cool running.</li>
+      <li><span class="stepnum">4</span>Cabins aren't engineered &mdash; just fit the right classes for the board.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; shield, thruster, FSD and plant blueprints on large modules; the prismatic generator needs Imperial-faction access. No weapon grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max passengers (econ)</td><td>~280</td><td>~320</td><td class="acc">~340</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~900</td><td>~1,400</td><td class="acc">~2,500+</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>323 m/s</td><td>323 m/s</td><td class="acc">~360 m/s</td></tr>
+        <tr><td class="mod">Comfort bonus</td><td class="kv-tbd">no</td><td class="kv-tbd">no</td><td class="kv-tbd">no</td></tr>
+        <tr><td class="mod">Max jump (LY)</td><td>~16</td><td>~20</td><td class="acc">~26</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Cutter seats ~340 passengers behind a 2,500 MJ shield at ~360 m/s &mdash; the most berths in the game, protected better than any liner can manage. It earns less per seat for lack of a comfort bonus, but no rival lands this many bodies, or this valuable a passenger, through this much danger.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Mass economy transport.</b> Clear bulk passenger boards in a single run with ~340 seats.</li>
+      <li><b>Protected VIP runs.</b> First and luxury suites behind the best shields for high-value fares.</li>
+      <li><b>Tourist-hub loops.</b> High volume on busy passenger routes where headcount is the payout.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>High-threat evacuation.</b> Move crowds out of contested or hostile space and land them all.</li>
+      <li><b>Dual-role flagship.</b> The same hull is a combat apex and a bulk hauler &mdash; carry passengers one week, cargo or guns the next.</li>
+      <li><b>Carrier-supported cruising.</b> A protected megaliner that docks on carriers for distant operations.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Any high-volume passenger loop suits it, especially through dangerous space where its shield and speed keep the board safe. As a Gutamaya hull it pairs with your Imperial-rank journey &mdash; the passenger Cutter is one reward at the end of the Duke grind.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Volume and safety are the point &mdash; the most berths in the game behind the best shields, not luxury per-seat pay.</li>
+      <li>No comfort bonus &mdash; on premium routes a Beluga or Lynx earns more per seat; the Cutter wins on headcount and survival.</li>
+      <li>Keep the speed &mdash; A-rated thrusters mean it outruns what it can't out-tank.</li>
+      <li>Mind the large pad, the Duke rank gate, and the steep cabin cost &mdash; all part of the price.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Imperial Cutter is the armoured megaliner: the most economy berths of any ship, carried behind the strongest shields in the game, fast enough to outrun what it can't out-tank. It lacks a liner's comfort bonus, so it earns less per seat than a Beluga &mdash; but for mass transport, or for keeping a high-value passenger alive through hostile space, nothing else carries this many, this safely.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; cabin layout and passenger fits.</span><a class="cr-link" href="https://coriolis.io/outfit/imperial_cutter">coriolis.io/outfit/imperial_cutter</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Imperial Cutter ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/imperial-cutter">elitedangerous.com/.../imperial-cutter</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, passenger-cabin module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_cutter.json">coriolis-data/ships/imperial_cutter.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Imperial Cutter</span><span class="cr-what">Ship reference page: stat block, passenger-cabin capacity, module slot layout, sell locations.</span><a class="cr-link" href="https://inara.cz/elite/ship/75/">inara.cz/elite/ship/75</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Imperial Cutter ship article: role profile, Gutamaya manufacture, Duke rank requirement.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Imperial_Cutter">fandom.com/wiki/Imperial_Cutter</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

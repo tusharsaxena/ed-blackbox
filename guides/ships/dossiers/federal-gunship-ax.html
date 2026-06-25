@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federal Gunship &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: AX → good-green (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight-thargoids"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight Thargoids</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Federal Gunship · AX Combat</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Core Dynamics</div>
+    <h1 class="title"><span>Federal Gunship</span><span class="role ac-role-ax">AX Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The most AX mounts on a medium hull &mdash; it brings a wall of guns to the Thargoid fight, and the least grace to <em>land</em> them.</h2>
+      <p>Seven hardpoints take two small Guardian Gauss, a row of medium AX multi-cannons and shard cannons, and a class-7 distributor feeds them all without throttling. Three military slots stack Guardian Module Reinforcement &mdash; the hardening that shrugs off Thargoid lightning &mdash; over a battleship-grade hull. The catch is grace: the Gunship is slow and turns like a barge, so it struggles to track an Interceptor with fixed Gauss and cannot dodge the way a Chieftain does. It out-tanks the medium field but kills and survives the hard way.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/federal-gunship.jpg" alt="Federal Gunship" width="160" height="90">
+      <figcaption><b>Federal Gunship</b> &middot; Core Dynamics</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">82<small>/100</small></div><div class="bar mini"><i style="--pct:82"></i></div></div>
+      <div class="stat"><div class="n">1L 4M 2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Military slots</div></div>
+      <div class="stat"><div class="n">171 m/s</div><div class="l">Top speed</div></div>
+      <div class="stat"><div class="n">~36M</div><div class="l">Hull price (Cr)</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Federal Gunship comes to anti-Xeno work the way it comes to everything: by being a wall. Seven hardpoints (one large, four medium, two small) carry more individual AX mounts than any other popular medium &mdash; two small Guardian Gauss cannons, medium AX multi-cannons and Guardian shard cannons across the rest &mdash; and the oversized class-7 power distributor feeds those power-hungry weapons without ever browning out. Three military slots and a 630 armour base let it pack the Guardian Module Reinforcement that turns Thargoid lightning into a nuisance instead of a death sentence.</p>
+    <p>What it lacks is mobility. The Gunship is slow and turns badly, and AX rewards the opposite &mdash; tracking an Interceptor's exposed hearts with fixed Gauss, then dodging the lightning and missile swarm. The Gunship anchors instead: it plants in front of the Thargoid, soaks the punishment behind hardened modules, and grinds it down with sustained fire. It is a <b>tank</b>, not a duellist. For pilots who would rather out-last an Interceptor than out-fly it, it's a tough, forgiving AX platform &mdash; just never a graceful one.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Stand-and-grind anti-Xeno work: AX conflict zones, holding ground against Scouts and Interceptors, and Maelstrom-edge operations where Guardian-hardened modules and a deep hull matter more than agility.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight-thargoids">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1L 4M 2S <small>(seven mounts)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">3 <small>(class 4 — module hardening)</small></div></div>
+      <div class="cell"><div class="k">Distributor</div><div class="v">Class 7 <small>(feeds Gauss/shard)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">171 / 282 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">630 <small>(battleship-grade)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;5&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Fed. Chief Petty Officer</div></div>
+    </div>
+    <p>Four things make the Gunship a credible Xeno hunter:</p>
+    <ul class="bullets">
+      <li><b>Seven AX mounts.</b> Two small Guardian Gauss plus medium AX multi-cannons and shard cannons &mdash; the widest mix of AX weapons on a popular medium.</li>
+      <li><b>Class-7 power distributor.</b> Oversized for the hull, it sustains the brutal weapon-capacitor drain of Gauss and shard fire that throttles smaller ships.</li>
+      <li><b>Three military slots over a deep hull.</b> Room for Guardian Module Reinforcement, the single best defence against Thargoid lightning &mdash; few mediums harden their modules better.</li>
+      <li><b>It can carry a fighter.</b> Deep optionals fit an SLF hangar, adding a remote gun and a decoy to split Thargoid attention.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It is slow and turns badly. Fixed Gauss &mdash; the AX meta weapon &mdash; needs to be tracked onto moving hearts, and the Gunship struggles to keep an Interceptor in its sights or dodge the swarm. Its mounts are mostly medium and small, so its <em>per-mount</em> firepower trails the large-hardpoint kraits. It survives by hardening and out-lasting, not by evasion or burst &mdash; a tank's path through an AX fight, not a striker's.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, module hardening and heat management matter as much as raw mounts.</p>
+    <h3 class="subhead">Same class &mdash; medium AX fighters</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Federal Gunship</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Far more agile; dodges lightning; 3 military slots</span><span class="c">Fewer total mounts; smaller distributor</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Bigger guns; SLF bay; much faster</span><span class="c">No military slots; less module hardening</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Agile; 3 military slots; tanky</span><span class="c">Fewer mounts; smaller distributor</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Fast skirmisher; great range to distant Maelstroms</span><span class="c">No military slots; far less tank</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>3L 3M</td><td class="pcc"><span class="p">Six big mounts; modern; faster</span><span class="c">No military slots; weaker shields</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod">Federal Gunship <span class="pill md">this</span></td><td>Medium</td><td>1L 4M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Bigger mounts; high DPS</span><span class="c">No military slots; clumsy too</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Alliance Crusader</td><td>Medium</td><td>1L 2M 3S</td><td class="pcc"><span class="p">SLF bay; agile; no rank</span><span class="c">Fewer mounts; smaller distributor</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Gunship is the tank of the medium AX field: more mounts and harder modules than the kraits, but slower and clumsier than every ship above it. The agile mediums &mdash; Chieftain, Challenger, Phantom &mdash; dodge the lightning and track hearts the Gunship can't. Its case is hardened survival and weapon variety, not the evasion that AX rewards most; hence it sits mid-pack.</p>
+    <h3 class="subhead">Other classes &mdash; the heavier AX options</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Federal Gunship</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Immovable tank; brawls Titan runs indefinitely</span><span class="c">Imperial Duke rank; huge cost; large pad</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Heavy Gauss; deep Guardian reinforcement; no rank</span><span class="c">Ponderous; costly; large pad</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Warship hull; devastating Gauss broadside; agile-for-a-large</span><span class="c">Rear Admiral rank; heavy rebuy; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">Vast tank; many hardpoints; AXCZ fortress</span><span class="c">Even slower; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Type-10 Defender is the Gunship's philosophy on a large hull &mdash; more mounts, more tank, even less grace. The large AX ships out-tank and out-gun the Gunship outright, but they need a large pad and (for two of them) a deep rank grind. The Gunship is the medium-pad, no-Imperial-rank version of the same stand-and-grind idea: docks anywhere, costs a fraction, and reaches a fight sooner.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~36M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted</div><div class="v">~83M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~110M+ Cr</div></div>
+      <div class="cell"><div class="k">Rebuy (eng.)</div><div class="v">~4.1M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Fed. Chief Petty Officer</div></div>
+    </div>
+    <p>At ~36M Cr the hull is mid-priced, but it carries a Federal rank gate &mdash; Chief Petty Officer &mdash; that the kraits and Alliance hulls don't. A full AX fit with Guardian/AX weapons, Guardian module and hull reinforcement and a shield brings the all-in figure to around 110M Cr, much of it locked behind Guardian-tech unlocks rather than credits.</p>
+    <p>The low <b>rebuy</b> &mdash; about 4.1M Cr engineered &mdash; is a quiet advantage: AX fights end in death often, and the Gunship is cheap to re-buy compared with the large hulls. It's a forgiving ship to learn the discipline in, provided you accept its weight.</p>
+    <div class="callout"><span class="lbl">Cheap to lose, dear to unlock</span><p>The credits are modest; the Guardian grind is the real cost. Budget for Guardian weapon and module-reinforcement blueprints before you budget for the hull &mdash; the rebuy itself is among the lightest in the AX field.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no AX-specific ARX pre-built built around the Federal Gunship; buy and outfit it normally once you hold the rank, then unlock Guardian and AX weapons at the relevant sites.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A hardened AX tank fit: a wide AX weapon mix fed by the class-7 distributor, Guardian module reinforcement in the three military slots, and caustic/heat kit in the utilities. Initial is buy-only; AX-fitted adds the Guardian/AX kit; Engineered hardens mobility, heat and shield.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon 3</td><td class="eng">Enhanced AX Multi-Cannon 3</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon 2</td><td class="eng">Enhanced AX Multi-Cannon 2</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon 2</td><td class="eng">Enhanced AX Multi-Cannon 2</td></tr>
+        <tr><td class="slot">Medium 3</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon 2</td><td class="eng">Guardian Shard Cannon 2</td></tr>
+        <tr><td class="slot">Medium 4</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon 2</td><td class="eng">Guardian Shard Cannon 2</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon 1</td><td class="eng">Guardian Gauss Cannon 1</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon 1</td><td class="eng">Guardian Gauss Cannon 1</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Xeno Scanner</td><td class="eng">Xeno Scanner</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Caustic Sink Launcher</td><td class="eng">Caustic Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (4)</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 4</td><td class="eng">Guardian MRP 4</td></tr>
+        <tr><td class="slot">Military 2 (4)</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 4</td><td class="eng">Guardian MRP 4</td></tr>
+        <tr><td class="slot">Military 3 (4)</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 4</td><td class="eng">Guardian HRP 4</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Fighter Hangar 6 (SLF decoy)</td><td class="eng">Fighter Hangar 6 (SLF decoy)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 5</td><td class="eng">Guardian HRP 5</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Decontamination Limpet Controller</td><td class="eng">Decon Limpet (caustic)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">Heat Sink storage</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Caustic Sink storage</td><td class="eng">Caustic Sink storage</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Distributor first, then harden the modules</span><p>Gauss and shard cannons drain the weapon capacitor brutally &mdash; A-rate the class-7 distributor before anything else or the guns stutter. Then fill the military slots with Guardian Module Reinforcement: it is the difference between losing a thruster to Thargoid lightning and shrugging it off. Manage heat hard.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Chief Petty Officer, buy the hull, and unlock Guardian and AX weapons at the relevant sites &mdash; AX weapons cannot be bought outright.</p>
+    <p>Spread AX multi-cannons and Guardian shard cannons across the medium and large mounts; put a Guardian Gauss cannon in each small mount.</p>
+    <p>Fill the three military slots with Guardian reinforcement, and add caustic and heat kit before your first sortie.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; The class-7 unit must feed Gauss and shard drain; A-rate it first. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">2</span><b>AX / Guardian weapons</b> &mdash; AX multi-cannons, shard cannons and small Guardian Gauss across the mounts. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">3</span><b>Guardian Module Reinforcement</b> &mdash; Fill the military slots; this is the anti-lightning hardening. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">4</span><b>Power Plant &amp; Shield &rarr; A</b> &mdash; Power for the wall of guns and a buffer over the hull. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Caustic + heat utilities</b> &mdash; Xeno scanner, caustic sink, heat sinks, decon limpet. <span class="acc">~2M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Hardening is survival</span><p>The Gunship can't dodge, so it survives by hardening &mdash; prioritise the distributor that keeps the guns firing and the Guardian module reinforcement that keeps the thrusters and weapons alive under Thargoid lightning.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens mobility, heat and survival; AX/Guardian weapons have limited engineering. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Thermal Resistant (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty / Thermal Resistant</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Charge-Enhanced distributor and Overcharged plant to feed power-hungry Gauss and shard cannons.</li>
+      <li><span class="stepnum">2</span>Dirty thrusters to claw back what little agility the heavy hull allows.</li>
+      <li><span class="stepnum">3</span>Thermal-resistant shield and HRPs against Thargoid thermal and caustic damage.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and Guardian reinforcement come from unlocks, not blueprints.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate ship engineering plus heavy Guardian-tech unlocks for weapons and reinforcement &mdash; the Guardian grind is the real cost. Ship blueprints are standard. Ask for exact per-blueprint or unlock counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">AX firepower</td><td>high</td><td>high</td><td class="acc">high (widest mix)</td></tr>
+        <tr><td class="mod">Module hardening</td><td>military + optionals</td><td>military + optionals</td><td class="acc">strong (Guardian MRP)</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>630</td><td>630</td><td class="acc">~3,800+</td></tr>
+        <tr><td class="mod">Agility (dodge)</td><td>poor</td><td>poor</td><td class="acc">poor (by design)</td></tr>
+        <tr><td class="mod">Has a decoy fighter</td><td>no</td><td>yes</td><td class="acc">yes</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered and Guardian-armed, the Gunship is a hardened AX anchor: effective armour into the thousands, three Guardian-reinforced military slots resisting lightning, and seven mounts of sustained AX fire. It never becomes nimble &mdash; that's the deal &mdash; so it kills by grinding from a hardened position rather than by dodging and bursting.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>AX conflict zones.</b> Plant the Gunship in an AXCZ and grind Scouts and Interceptors from behind hardened modules.</li>
+      <li><b>Scout clearing.</b> The wide mount mix shreds Thargoid Scout swarms while the hull soaks return fire.</li>
+      <li><b>Learning the discipline.</b> A low rebuy and deep tank make it forgiving for new AX pilots who'd rather out-last than out-fly.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Interceptor hunts.</b> Slower kills than the kraits, but Guardian-hardened modules let it stay in the fight through the lightning.</li>
+      <li><b>Wing anchor.</b> Hold aggro and area-deny as the immovable tank while faster wingmates strike the hearts.</li>
+      <li><b>Maelstrom-edge operations.</b> A medium pad and modest rebuy let it operate near Titans without a large-pad logistics tail.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example operations</span><p>Wherever Thargoids are fought &mdash; AXCZ, Scout swarms, Interceptor hunts and Maelstrom-edge ops. The Gunship is the medium-pad tank that holds the line rather than the spearhead that breaks it.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Fill all three military slots with Guardian Module Reinforcement &mdash; it is the Gunship's signature defence against Thargoid lightning.</li>
+      <li>A-rate the class-7 distributor first; Gauss and shard cannons stutter on anything less.</li>
+      <li>Don't try to dodge like a Chieftain &mdash; anchor, harden, and grind the Interceptor down.</li>
+      <li>Manage heat hard and carry caustic kit; the slow hull spends a long time in the danger close range.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Federal Gunship is the medium-pad AX tank: seven mounts of mixed Guardian and AX weapons, a class-7 distributor to feed them, and three military slots of Guardian reinforcement over a battleship hull. It is slow and graceless, so it can't track and dodge the way the top mediums do &mdash; but for a pilot who'd rather out-last an Interceptor than out-fly it, it's a tough, cheap-to-rebuy anti-Xeno workhorse.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to validate the AX weapon mix, distributor draw and reinforcement fit.</span><a class="cr-link" href="https://coriolis.io/outfit/federal_gunship">coriolis.io/outfit/federal_gunship</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Federal Gunship ship page &mdash; manufacturer specs, hardpoint count, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/federal-gunship">elitedangerous.com/.../federal-gunship</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, military-slot sizing, and the module/blueprint data behind the AX loadout and engineering tables.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/federal_gunship.json">coriolis-data/ships/federal_gunship.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Federal Gunship</span><span class="cr-what">Per-ship page: base stats, hull price, Federal rank requirement, and outfitting reference for the AX fit.</span><a class="cr-link" href="https://inara.cz/elite/ship/52/">inara.cz/elite/ship/52</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Federal Gunship hull profile, seven-hardpoint layout, fighter-hangar capability, and combat-tank role notes relevant to anti-Xeno work.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Federal_Gunship">fandom.com/wiki/Federal_Gunship</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>
