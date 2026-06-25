@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperial Courier &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-versatile"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Versatile</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Imperial Courier · Multipurpose</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Imperial Courier</span><span class="role ac-role-multipurpose">Multipurpose</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A fast, shielded <em>dabbler</em> — does a bit of everything, masters nothing for lack of room</h2>
+      <p>The Courier will skirmish, run small courier jobs, dip into exploration and carry a modest hold &mdash; all on one cheap, blistering-fast hull. But its internals top out at class 3, so every role is small-scale: no real cargo, modest jump range, no military slots. It's a delightful light multi-tool for the early Imperial career, not a do-everything ship.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/imperial-courier.jpg" alt="Imperial Courier" width="160" height="90">
+      <figcaption><b>Imperial Courier</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">66<small>/100</small></div><div class="bar mini"><i style="--pct:66"></i></div></div>
+      <div class="stat"><div class="n">3M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">~92 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">~38 LY</div><div class="l">Max jump range</div></div>
+      <div class="stat"><div class="n">~2.5M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Small</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>As a multipurpose hull the Imperial Courier trades on its two real strengths &mdash; speed and shields &mdash; and asks you to forgive everything else. At 35 tonnes it boosts past anything in its price bracket, its four utility mounts let it carry a shield far heavier than its size, and three medium hardpoints give it a credible bite. Bolt on a couple of cargo racks, a fuel scoop, an SRV bay or a passenger cabin and it'll dabble in trade, exploration, courier work or light bounty hunting without complaint.</p>
+    <p>The ceiling is the airframe. Optional internals top out at class 3, there are only eight of them, and there are no military slots, so every role is the small-scale version: a hold measured in tens of tonnes, a jump range short of a dedicated explorer, and a hull too thin to brawl. The Courier is a versatile <em>small</em> ship, not a versatile ship &mdash; a charming, fast all-rounder for the early Imperial career rather than a one-hull fleet.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>A light, fast Imperial runabout: short courier and data jobs, casual RES skirmishing, a quick exploration jaunt or a small trade loop &mdash; switching between them cheaply for a commander climbing the Imperial ranks who wants one stylish ship to do a little of everything.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-versatile">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">280 / 380 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3 Medium</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~92 <small>t (all racks)</small></div></div>
+      <div class="cell"><div class="k">Max jump</div><div class="v">~38 <small>LY (light fit)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">3&middot;3&middot;2&middot;2&middot;2&middot;1&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">1</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Master</div></div>
+    </div>
+    <p>Four things shape the Courier as an all-rounder:</p>
+    <ul class="bullets">
+      <li><b>Blistering speed.</b> 380 m/s boost stock and well past 500 engineered &mdash; whatever role you fly, it gets there fast and leaves trouble behind.</li>
+      <li><b>Disproportionate shields.</b> Four utility mounts and a light mass give it a shield far beyond its class, so even its trade and explorer fits are survivable.</li>
+      <li><b>Three medium hardpoints.</b> A genuine three-gun bite means the multipurpose fit can actually fight when a job turns hostile.</li>
+      <li><b>Cheap and small-pad.</b> ~2.5M Cr and it docks at outposts everywhere &mdash; an accessible jack-of-all-trades for the Imperial career.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Class-3 internals, only eight of them, and no military slots cap every role hard: cargo in the tens of tonnes, jump range short of a real explorer, and a hull too thin to take a beating. It also needs Imperial Master rank and seats only one. The Courier dabbles in everything competently; it's a versatile small ship, not a ship that replaces a fleet.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for multipurpose use</em> &mdash; versatility across combat, trade, exploration and more. The role column is the maximum cargo capacity in tonnes as one measure of capacity; versatility is judged across all roles.</p>
+    <h3 class="subhead">Same class &mdash; small all-rounders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Imperial Courier</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~144</td><td class="pcc"><span class="p">More internals; tougher; more cargo</span><span class="c">Pricier; not as fast</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~90</td><td class="pcc"><span class="p">Classic all-rounder; cheap; no rank</span><span class="c">Weaker shields; slower</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk IV</td><td>Small</td><td>~114</td><td class="pcc"><span class="p">More slots; more cargo; no rank</span><span class="c">Sluggish; weaker shields</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer</td><td>Small</td><td>~36</td><td class="pcc"><span class="p">Cool-running; longer range; tougher</span><span class="c">Less cargo; slower; explorer-leaning</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier <span class="pill md">this</span></td><td>Small</td><td>~92</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+        <tr><td class="mod">Adder</td><td>Small</td><td>~74</td><td class="pcc"><span class="p">No rank; cheaper; decent range</span><span class="c">Slow; weak shields; ugly</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among small all-rounders the Courier is the fast, shield-strong option, but the Cobras out-carry and out-tank it with more and bigger internals, which matters more for true do-everything work. Pick the Courier for speed, shields and Imperial style; pick a Cobra if you want the most cargo and capability per credit.</p>
+    <h3 class="subhead">Other classes &mdash; the real generalists</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Imperial Courier</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Does everything at capital scale; no rank</span><span class="c">Large pad; vastly pricier; slow</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~284</td><td class="pcc"><span class="p">Big internals; tanky; very rounded</span><span class="c">Medium pad; far pricier; slow</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Great range; roomy; cheap to run</span><span class="c">Medium pad; weaker shields</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~144</td><td class="pcc"><span class="p">Huge jump range; modern; efficient</span><span class="c">Medium pad; explorer-leaning</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~280</td><td class="pcc"><span class="p">Fast for its size; roomy; Imperial</span><span class="c">Large pad; awkward hardpoints</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Step up a class and the gap is stark: the real generalists carry several times the Courier's load, jump further and tank far more. The Courier's only edge over them is pace and price &mdash; it does a little of everything cheaply and quickly, where the bigger hulls do all of it properly. It earns its place as a light early-game multi-tool, not as a destination ship.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~2.5M Cr</div></div>
+      <div class="cell"><div class="k">A-rated multirole</div><div class="v">~8M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~18M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Master</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~2.5M Cr the Courier is one of the cheapest multipurpose hulls going, gated only by the mid-tier Imperial Master rank. A solid A-rated multirole fit lands near 8M Cr, and a fully engineered build &mdash; shield, thrusters, FSD and guns &mdash; sits around 18M+ Cr, still pocket change beside a real generalist.</p>
+    <p>Because every module is small-class, role-swapping is cheap too: a spare set of cargo racks, a fuel scoop or an SRV bay costs little to keep in storage. The Courier pairs naturally with the Imperial-rank grind &mdash; the climb toward Squire and the Achenar permit runs straight through the Master rank it needs.</p>
+    <div class="callout"><span class="lbl">Cheap, fast, and Imperial</span><p>Under 20M Cr buys a fully engineered light all-rounder on a modest Imperial rank &mdash; a stylish, inexpensive runabout for a commander still building toward a true generalist.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no multipurpose-specific ARX pre-built built around the Imperial Courier; buy and outfit it normally through a shipyard once you hold the rank.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A balanced light multirole fit &mdash; three guns for self-defence, a strong shield, a small hold and a fuel scoop so it can switch tasks on the move. Initial is buy-only; A-rated is the multirole baseline; Engineered makes the shield and speed excellent for a hull this cheap.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Pulse Laser 2</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">Pulse Laser 2</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Medium 3</td><td class="st">&mdash;</td><td class="st">Beam Laser 2</td><td class="eng">Beam 2 &mdash; Thermal Vent</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1&ndash;2</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (1)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced</td></tr>
+        <tr><td class="slot">Sensors (2)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (3)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">Shield Generator 3</td><td class="st">Shield Generator 3 (bi-weave)</td><td class="eng">Bi-Weave 3 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">Cargo Rack 3 (32t)</td><td class="st">Cargo Rack 3 (32t)</td><td class="eng">Cargo / Fuel Scoop (role swap)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Fuel Scoop 2</td><td class="eng">Fuel Scoop 2 (or Cargo)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Cargo Rack 2 (8t)</td><td class="eng">Cargo / SRV (role swap)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 2</td><td class="eng">SCB 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 1</td><td class="eng">HRP 1 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">Heat Sink storage / spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Built to re-tune</span><p>This is one balanced configuration; the Courier's small modules make role-swaps cheap &mdash; fill the optionals with cargo racks to run a trade loop, drop in a fuel scoop and DSS to explore, or swap an SRV bay for surface work. Keep a spare set or two in storage and re-tune at any outpost.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Master, buy the hull (~2.5M Cr) and fit the biggest shield you can plus a booster &mdash; survivability comes first on this thin hull.</p>
+    <p>Arm two of the three mediums for self-defence and fit a single cargo rack so it can carry while you learn it.</p>
+    <p>A-rate the core internals next &mdash; they serve every role you'll swap into.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a light all-rounder:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Thrusters &amp; FSD &rarr; A</b> &mdash; Speed and range serve every role; A-rate the mobility first. <span class="acc">~2.5M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Shield Generator &rarr; bi-weave</b> &mdash; The thin hull lives on shields across combat, trade and exploration. <span class="acc">~1M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Power Plant &amp; Distributor &rarr; A</b> &mdash; Headroom for guns, shields and boosters at once. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Weapons</b> &mdash; A gimballed multi-cannon pair plus a beam for self-defence. <span class="acc">~1M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Role module sets</b> &mdash; Cargo racks, fuel scoop, SRV and DSS to swap in. <span class="acc">varies</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Mobility and shields first</span><p>The Courier's all-round value is speed plus a strong shield &mdash; A-rate the thrusters, FSD and shield first, then keep cheap role-specific module sets in storage to swap between trade, exploration and skirmishing.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The house all-rounder pattern, scaled to a featherweight hull &mdash; mobility, range, shields and a little firepower. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one)</td><td>Tod McQuinn</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Mobility first &mdash; Dirty thrusters and Increased-Range FSD serve every role and exploit the light hull.</li>
+      <li><span class="stepnum">2</span>Bi-weave shield Resistance-Augmented plus Heavy-Duty boosters for survivability across roles.</li>
+      <li><span class="stepnum">3</span>Overcharged plant for headroom, then Overcharged multi-cannons (one Corrosive) for self-defence.</li>
+      <li><span class="stepnum">4</span>Engineer once; the small modules carry their mods between role swaps.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; small-class modules throughout, with the thruster, FSD and shield blueprints mattering most. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>380 m/s</td><td>380 m/s</td><td class="acc">~520 m/s</td></tr>
+        <tr><td class="mod">Max jump (LY)</td><td>~18</td><td>~26</td><td class="acc">~38</td></tr>
+        <tr><td class="mod">Max cargo (t)</td><td>~32</td><td>~48</td><td class="acc">~92 (cargo fit)</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~380</td><td>~560</td><td class="acc">~900+</td></tr>
+        <tr><td class="mod">Versatility</td><td>modest</td><td>good</td><td class="acc">good (small-scale)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Courier is a ~520 m/s all-rounder with a 900+ MJ shield that can fight, run a small hold, scoop and explore &mdash; everything done at small scale. It's a delightful light multi-tool for the price, but its class-3 internals keep it firmly below the true generalists. That balance &mdash; genuinely versatile, genuinely small &mdash; is exactly what the 66 rating reflects.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Courier &amp; data runs.</b> Speed and a small hold make short delivery and data jobs quick and profitable.</li>
+      <li><b>Casual RES skirmishing.</b> Three medium guns and a strong shield handle light bounty hunting between other tasks.</li>
+      <li><b>Imperial errands.</b> Run jobs for the <a href="../../systems/superpower-rank.html#superpower-emp">Empire</a> to earn credits and Imperial rank together.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Quick exploration jaunts.</b> A fuel scoop and DSS turn it into a fast, fun short-range explorer.</li>
+      <li><b>Small trade loops.</b> Fill the optionals with cargo racks for a nimble outpost-to-outpost hauler.</li>
+      <li><b>Carrier runabout.</b> Cheap and fast, it makes a stylish shuttle and odd-jobs ship parked on a fleet carrier.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example uses</span><p>Whatever a light week demands &mdash; a courier contract, a RES session, a scooping jaunt, a short trade loop. From your Imperial home base, one Courier covers them all at small scale.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>A-rate mobility and the shield first &mdash; they serve every role; then keep cheap module sets to swap.</li>
+      <li>It's versatile at small scale only &mdash; class-3 internals and no military slots cap every job.</li>
+      <li>The hull is thin; lean on the shield and speed in any role, and disengage when shields drop.</li>
+      <li>It has combat and exploration manuals too &mdash; this one is for the do-a-bit-of-everything build.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Imperial Courier is a fast, shielded dabbler: it will skirmish, courier, scoop and haul on one cheap hull, switching cheaply between them. But its class-3 internals and missing military slots keep every role small, so it can't approach the real generalists. That's why it lands at <b>66</b> &mdash; genuinely versatile and a joy to fly for the price, but a light early-Imperial multi-tool rather than a one-hull fleet. Buy it for speed, shields and style; step up to a Cobra or a medium when you want to do everything properly.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to validate the multirole slot fit, cargo and jump figures for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/imperial_courier">coriolis.io/outfit/imperial_courier</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Imperial Courier ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/imperial-courier">elitedangerous.com/.../imperial-courier</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Hardpoint sizes, optional-internal slot layout and engineering blueprint data behind the loadout and peer tables.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_courier.json">coriolis-data/ships/imperial_courier.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Imperial Courier</span><span class="cr-what">Ship reference page cross-checked for hull stats, module slot layout and the Imperial Master rank requirement.</span><a class="cr-link" href="https://inara.cz/elite/ship/32/">inara.cz/elite/ship/32</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Imperial Courier ship article: role profile, Gutamaya manufacture, and rank gating backing the write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Imperial_Courier">fandom.com/wiki/Imperial_Courier</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

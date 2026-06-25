@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asp Explorer &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Mining → amber (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-mine"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Mine</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Asp Explorer · Mining</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Asp Explorer</span><span class="role ac-role-mining">Mining</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The cheap, long-legged starter miner &mdash; <em>limited hold</em>, but it gets anywhere</h2>
+      <p>A competent budget miner that mounts the full mining toolkit and reaches distant hotspots its long FSD makes trivial. But its cargo room is modest and its defence is thin &mdash; it carries far less ore than a Type-8 and can't trade blows with pirates the way a Python can. A fine first miner; outgrown the moment you can afford a dedicated hull.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/asp-explorer.jpg" alt="Asp Explorer" width="160" height="90">
+      <figcaption><b>Asp Explorer</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">64<small>/100</small></div><div class="bar mini"><i style="--pct:64"></i></div></div>
+      <div class="stat"><div class="n">~128 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">2M · 4S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad class</div></div>
+      <div class="stat"><div class="n">~6.1M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Asp Explorer is a deep-space hull first and a miner second, but the two overlap more than you'd think. Its two medium and four small hardpoints fit a complete mining toolkit &mdash; lasers, a seismic charge launcher, an abrasion blaster, sub-surface missiles &mdash; and its long, easily-engineered FSD means the remote painite or void-opal hotspot that everyone else has to grind toward is one or two jumps away for you.</p>
+    <p>Where it falls down is everything after the rocks crack. Its optional internals top out at one class-6 and one class-5 slot, so once you've fitted a refinery, limpet controllers, a scanner and a light shield there isn't much room left for ore &mdash; a practical hold around 70t, a fraction of a Type-8 or a capital miner. Its shield is modest and there's little space to harden it, so a determined pirate is a real threat rather than a nuisance. The Asp mines well enough to learn the loop and bankroll a better hull; it isn't where a serious miner stays.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>A first miner, or a second job for an explorer's spare hull: laser and core mining at distant or out-of-the-way hotspots where its jump range saves the long haul out, and any session where you value getting <em>there</em> over how much you bring back.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-mine">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Ore hold (practical)</div><div class="v">~64&ndash;80 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~128 <small>t</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2M &middot; 4S <small>(tools + a gun)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">140 <small>MJ (modest)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;3&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Self-defence</div><div class="v">Limited <small>(thin shield)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Three things make the Asp a serviceable miner &mdash; and one thing holds it back:</p>
+    <ul class="bullets">
+      <li><b>Mounts the whole toolkit.</b> Two medium hardpoints take mining lasers and a seismic charge launcher; the four small mounts cover an abrasion blaster, sub-surface missiles and a defensive gun.</li>
+      <li><b>It reaches the rocks.</b> A class-5 FSD that engineers long means distant painite, platinum and void-opal hotspots are a hop away &mdash; no slow plod out to the ring.</li>
+      <li><b>Cheap and rank-free.</b> ~6.1M Cr, no permit, no rank &mdash; the easiest serious miner to put in the black.</li>
+      <li><b>But the hold is small.</b> One class-6 and one class-5 optional, shared with refinery, limpets, scanner and shield, leaves only ~70t for ore &mdash; well short of the dedicated miners.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The Asp carries roughly a quarter of what a capital miner or a stripped Type-8 hauls per trip, and its thin shield means it can't shrug off a pirate interdiction the way a Python can. It mines competently and cheaply; it does not out-haul or out-fight a purpose-built miner. The 64 rating reflects exactly that &mdash; a capable budget option, not a contender.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite (refinery, limpet controllers) is fitted.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Asp Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Vastly bigger ore hold; cheap per tonne</span><span class="c">Can't fight; shorter legs to remote rings</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">Bigger hold; SLF and real self-defence</span><span class="c">Pricier; shorter range; heavier</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Bigger hold; comparable range</span><span class="c">Pricier; also thin on defence</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">Cheaper; SLF bay for defence</span><span class="c">Slower; shorter legs; smaller hold</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer <span class="pill md">this</span></td><td>Medium</td><td>~128</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~108</td><td class="pcc"><span class="p">Cheaper; light and cheap to run</span><span class="c">Tiny shield; minimal defence; no gun room</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk V</td><td>Medium</td><td>~140</td><td class="pcc"><span class="p">Modern; flexible; SCO drive</span><span class="c">Built for flex, not a deep mining hold</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among mediums the Asp sits in the middle: it out-ranges and undercuts the Kraits but holds far less and can't fight, while the Type-8 buries it on tonnage. Its edge over the cheaper Type-6 and Cobra Mk V is the full tool set and the long legs to the rocks &mdash; not the haul home.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated and capital miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Why you'd move (or not)</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-11 Prospector</td><td>Large</td><td>~288</td><td class="pcc"><span class="p">Dedicated miner; exclusive Mk II mining modules</span><span class="c">Large pad; far pricier</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Vast hold; strong shields; fast</span><span class="c">Large pad; Imperial rank; very pricey</span></td><td><span class="rscore">92</span><div class="bar mini"><i style="--pct:92"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Much bigger hold; fights off pirates; still medium-pad</span><span class="c">~9&times; the price; shorter range</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Vast hold; cheap-ish per tonne</span><span class="c">Large pad; flimsy; can't fight</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Big hold; also a warship; long range</span><span class="c">Large pad; far pricier; ponderous</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Every hull here out-hauls the Asp several times over &mdash; that's the whole point of upgrading. The natural next step is the medium-pad Python: it keeps the same pad access, holds twice the ore, and actually fights pirates. The Asp's case is purely price and reach; once credits allow, you move up.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~6.1M Cr</div></div>
+      <div class="cell"><div class="k">A-rated miner</div><div class="v">~18M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~25M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~6.1M Cr the Asp is the cheapest credible miner on a medium pad &mdash; no rank, no permit, no expansion gate. A full mining fit (tools, refinery, limpet controllers, ore racks, a light shield) brings the all-in figure to roughly 18M A-rated, ~25M with engineering &mdash; a fraction of what a Python costs to outfit.</p>
+    <p>That low buy-in is the entire argument for mining in an Asp: it pays for itself in a session or two and bankrolls the dedicated hull you'll actually want. Per tonne of ore it is not cheap &mdash; the small hold means more trips &mdash; but the entry cost is unbeatable.</p>
+    <div class="callout"><span class="lbl">A starter, not an endpoint</span><p>~25M Cr all-in for a miner that reaches anywhere but carries little. Treat it as the cheap on-ramp to mining; reinvest the early returns into a Python or a capital miner the moment you can.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no mining-specific ARX pre-built built around the Asp Explorer; buy the bare hull and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A complete mining fit for laser and core work that keeps a gun and a light shield for self-defence. Initial is buy-only; A-rated is the mining baseline; Engineered focuses on range, mobility and what shield the hull will carry &mdash; the mining tools themselves are not meaningfully engineered.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints &mdash; 2 Medium + 4 Small</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Mining Laser 1</td><td class="st">Mining Laser 2</td><td class="eng">Mining Laser 2</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Seismic Charge Launcher</td><td class="eng">Seismic Charge Launcher (core)</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster</td><td class="eng">Abrasion Blaster</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr><td class="slot">Small 3</td><td class="st">&mdash;</td><td class="st">Mining Laser 1</td><td class="eng">Mining Laser 1</td></tr>
+        <tr><td class="slot">Small 4</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 1</td><td class="eng">MC 1 &mdash; Overcharged (pirate defence)</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts &mdash; 4</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="empty">empty</td><td class="empty">empty</td><td class="eng">empty <small>(or 2nd booster)</small></td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A (SCO)</td><td class="eng">A SCO &mdash; Increased Range (G5) + Mass Mgr</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals &mdash; 6&middot;5&middot;3&middot;3&middot;3&middot;2&middot;2&middot;1</td></tr>
+        <tr><td class="slot">Size 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6 (64t ore)</td><td class="eng">Cargo Rack 6 (64t ore)</td></tr>
+        <tr><td class="slot">Size 5</td><td class="st">&mdash;</td><td class="st">Shield Generator 5 (bi-weave)</td><td class="eng">Bi-Weave 5 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Size 3</td><td class="st">&mdash;</td><td class="st">Refinery 3</td><td class="eng">Refinery 3 (deep bins)</td></tr>
+        <tr><td class="slot">Size 3</td><td class="st">&mdash;</td><td class="st">Cargo Rack 3 (8t ore)</td><td class="eng">Cargo Rack 3 (8t ore)</td></tr>
+        <tr><td class="slot">Size 3</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 3</td><td class="eng">Collector Controller 3 (multi)</td></tr>
+        <tr><td class="slot">Size 2</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Controller 1</td><td class="eng">Prospector Controller 1</td></tr>
+        <tr><td class="slot">Size 2</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS (find hotspots)</td></tr>
+        <tr><td class="slot">Size 1</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 1</td><td class="eng">Collector Controller 1</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Tools fit; ore room is tight</span><p>The Asp mounts a complete suite &mdash; lasers and a seismic launcher for both styles, a Pulse Wave Analyser to find rocks, a refinery and a small collector swarm, plus a gun and a light bi-weave to discourage casual pirates. The squeeze is the hold: with shield and suite fitted you're left around 72t of ore. Drop the shield for more racks only if you're confident the ring is quiet.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull, fit one mining laser and a class-6 cargo rack, and go laser-mine a nearby hotspot &mdash; the cheapest way to learn the loop and earn the rest.</p>
+    <p>Add a refinery and a prospector/collector controller as soon as you can; an Abrasion Blaster and the Pulse Wave Analyser turn surface deposits and hotspot-hunting on.</p>
+    <p>A-rate the power plant and distributor early so the lasers and limpets run without browning out, and keep one small mount free for a multi-cannon.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget miner that has to reach the rocks:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; Lasers and limpets are power-hungry; A-rate first so the suite runs. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power Plant &rarr; A</b> &mdash; Run tools, limpets, shield and a gun together. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">3</span><b>FSD &rarr; A (SCO)</b> &mdash; The Asp's signature: long jumps to distant hotspots, faster in-system travel. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield + refinery + controllers</b> &mdash; A light bi-weave for survival and the heart of the mining loop. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Thrusters &rarr; A</b> &mdash; Reposition on a rock and run when a pirate is too much. <span class="acc">~2M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Power first, then range</span><p>A-rate the distributor and plant so the whole suite runs, then the FSD &mdash; the Asp earns its keep by reaching rings other miners have to slog out to. The shield is light by necessity; treat running as a valid defence.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is light and focuses on the ship, not the tools &mdash; the mining hardware itself isn't meaningfully engineered. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Engine Focused (G3)</td><td>&mdash;</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>FSD Increased Range first &mdash; the Asp's whole edge as a miner is reaching distant hotspots, so maximise range.</li>
+      <li><span class="stepnum">2</span>Low-Emissions plant keeps heat down through long mining sessions and frees power for the suite.</li>
+      <li><span class="stepnum">3</span>Bi-weave + Heavy Duty boosters &mdash; squeeze what defence the hull will hold; it can't be a tank, only survivable.</li>
+      <li><span class="stepnum">4</span>Leave the mining lasers, limpet controllers and refinery stock &mdash; they don't benefit meaningfully from engineering.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; mostly the FSD range roll plus the ship's mobility and defence blueprints; the mining tools are left stock, so there's no weapon-style grind. Farseer covers the bulk. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Ore per trip (t)</td><td>~40</td><td>~64</td><td class="acc">~72</td></tr>
+        <tr><td class="mod">Laden jump (LY)</td><td>~30</td><td>~42</td><td class="acc">~55+</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~140</td><td>~280</td><td class="acc">~450</td></tr>
+        <tr><td class="mod">Tool mounts</td><td>laser only</td><td>full suite</td><td class="acc">full suite</td></tr>
+        <tr><td class="mod">Pad access</td><td>medium</td><td>medium</td><td class="acc">medium</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Asp mines a ~72t hold and jumps 55+ LY to reach the rocks &mdash; the range is where it pulls ahead of cheaper rivals, not the haul. Its shield climbs to a survivable ~450 MJ but never to a Python's level; treat the FSD, not the hull, as the reason to fly it.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Laser mining nearby hotspots.</b> Painite or platinum rings close to your base &mdash; learn the loop, fill the small hold, bank credits.</li>
+      <li><b>Core mining with the seismic launcher.</b> Crack void opals and low-temperature diamonds; the high per-unit value suits a small hold.</li>
+      <li><b>Surface deposits.</b> Abrasion Blaster plus a collector limpet for quick supplementary income on every prospected rock.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Remote / out-of-the-way hotspots.</b> Use the long FSD to mine rings far from the crowds &mdash; less competition, same ore.</li>
+      <li><b>Mine on the way to anything.</b> The same hull explores and trades, so detour through a ring mid-expedition for a quick top-up.</li>
+      <li><b>Bankroll the upgrade.</b> Use early hauls to fund a Python or capital miner &mdash; the Asp is the cheapest path into the trade.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example sites</span><p>Any pristine metallic or icy ring works. Because range is its edge, look past the obvious bubble hotspots to quieter rings a few jumps out &mdash; you reach them faster than rivals and mine in peace, just bring less back each run.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Mine high-value materials &mdash; void opals, painite, low-temperature diamonds. With a small hold, value per tonne matters more than raw tonnage.</li>
+      <li>Don't engineer the mining tools &mdash; they don't benefit; put the materials into FSD range and what shield the hull will carry.</li>
+      <li>A-rate the distributor and plant so lasers, limpets and a gun all run together.</li>
+      <li>Treat running as a defence. The shield is light; if a pirate is too strong, high-wake out rather than trade blows.</li>
+      <li>It re-roles instantly &mdash; the same hull explores or trades, so a mining detour costs you nothing but a module swap.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Asp Explorer is the cheap, long-legged starter miner: it mounts the full toolkit and reaches distant rocks better than anything in its price bracket, but its modest hold and thin shield keep it well short of the dedicated hulls. 64/100 &mdash; not higher because it hauls a fraction of a Type-8's ore and can't fight pirates the way a Python can; not lower because it mines competently, costs almost nothing, and gets anywhere. A fine first miner and a fine spare job for an explorer's hull &mdash; outgrown the moment you can afford better.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Outfitting planner used to validate the mining loadout &mdash; hardpoint sizes, optional-internal room for refinery/limpets/racks, and the practical ore hold.</span><a class="cr-link" href="https://coriolis.io/outfit/asp_explorer">coriolis.io/outfit/asp_explorer</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Asp Explorer ship page &mdash; manufacturer, hull specs, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/asp-explorer">elitedangerous.com/.../asp-explorer</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Authoritative hull data &mdash; hardpoint counts/sizes, optional-internal layout, base shield and mass used in the spec grid and peer tables.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/asp.json">coriolis-data/ships/asp.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Asp Explorer shipyard page &mdash; hull pricing and mining-module sellers cross-checked for the cost &amp; access figures.</span><a class="cr-link" href="https://inara.cz/elite/ship/35/">inara.cz/elite/ship/35</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Asp Explorer lore and manufacturer background, plus its standing as a budget mining platform.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Asp_Explorer">elite-dangerous.fandom.com/wiki/Asp_Explorer</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

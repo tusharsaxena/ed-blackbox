@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asp Explorer &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Passenger (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-a-liner"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It a Liner</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Asp Explorer · Passenger</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Asp Explorer</span><span class="role ac-role-passenger">Passenger</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The cheap, long-legged tourer — <em>reach</em> on a medium pad, not luxury</h2>
+      <p>A capable budget passenger hull that does honest sightseeing work on a medium pad and long legs. It carries economy boards cheaply and reaches scenic beacons most small liners can't &mdash; but it has no liner comfort bonus, and only its top two slots take premium cabins, so it earns less per seat than a dedicated tourer. The first passenger ship most commanders already own, not the one that earns most.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/asp-explorer.jpg" alt="Asp Explorer" width="160" height="90">
+      <figcaption><b>Asp Explorer</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">60<small>/100</small></div><div class="bar mini"><i style="--pct:60"></i></div></div>
+      <div class="stat"><div class="n">~32</div><div class="l">Max passengers (econ)</div></div>
+      <div class="stat"><div class="n">~45 LY</div><div class="l">Max jump (loaded)</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad size</div></div>
+      <div class="stat"><div class="n">6.1M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Asp Explorer is a deep-space hull first and a passenger ship second &mdash; but the same traits that make it a great explorer make it a serviceable tourer. Its long FSD reach takes sightseeing boards to scattered scenic beacons in fewer hops than a small liner, it lands on a medium pad (and outposts) the dedicated large liners can't use, and it's cheap enough that most commanders already have one in the hangar. For a first passenger ship, or a part-time tourer that doubles as your explorer, it earns its keep.</p>
+    <p>The limits are real, though. The Asp has <b>no liner comfort bonus</b>, so passengers pay standard rates rather than the premium a Dolphin, Orca or Beluga commands; and only its two largest internals (class 6 and class 5) can hold first or luxury cabins, so it can't stack the high-value VIP berths that make passenger work lucrative. It carries a modest economy board well and far, but it isn't a money-printer per seat. The reach-and-access budget pick, not the luxury earner.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Cheap economy sightseeing runs to scattered or distant beacons; outpost-and-medium-pad tourist boards the large liners can't reach; and any explorer-owner who wants to fly the occasional passenger contract without buying a second hull.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-a-liner">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It a Liner</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max passengers (econ)</div><div class="v">~32</div></div>
+      <div class="cell"><div class="k">Max jump (loaded)</div><div class="v">~45 <small>LY (w/ Guardian booster)</small></div></div>
+      <div class="cell"><div class="k">Premium-cabin slots</div><div class="v">2 <small>(class 5&ndash;6 only)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;3&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Liner comfort bonus</div><div class="v">No <small>(Lakon)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">250 / 340 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Rank / Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things shape the Asp as a passenger hull &mdash; two strengths, two ceilings:</p>
+    <ul class="bullets">
+      <li><b>Long reach for a medium.</b> The explorer-grade FSD takes sightseeing boards to scattered, distant beacons most small liners can't service in one hop.</li>
+      <li><b>Medium-pad and outpost access.</b> Lands where the big liners can't &mdash; opens up tourist boards routed through smaller stations.</li>
+      <li><b>No comfort bonus.</b> A Lakon hull, not a luxury liner &mdash; passengers pay standard rates, so per-seat earnings trail every dedicated tourer.</li>
+      <li><b>Limited premium berths.</b> Only the class 6 and class 5 slots take first/luxury cabins, so it can't stack the high-value VIP fares that make passenger work pay.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The Asp isn't really a liner &mdash; it's an explorer running tourist boards. With no comfort bonus and only two slots that fit premium cabins, a Dolphin earns far more per seat on a small pad, and the dedicated large liners out-berth and out-earn it many times over. Its case is cheap reach and medium-pad access, not luxury pay.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for passenger work specifically</em>. The role column is the approximate maximum economy passenger capacity &mdash; but note that dedicated liners earn comfort bonuses (more profit per seat) the Asp does not, while the Asp's reach and medium pad open boards some rivals can't take.</p>
+    <h3 class="subhead">Same class &mdash; medium passenger ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Asp Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Lynx Highliner</td><td>Medium</td><td>~100</td><td class="pcc"><span class="p">Dedicated liner; comfort bonus; Robigo-ready; far more berths</span><span class="c">Pricier; less jump reach</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~52</td><td class="pcc"><span class="p">More internal room; tankier; more premium-cabin slots</span><span class="c">No comfort bonus; heavier; shorter range; pricier</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~40</td><td class="pcc"><span class="p">Faster; sleeker; comparable range</span><span class="c">No comfort bonus; fewer cabin slots</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer <span class="pill md">this</span></td><td>Medium</td><td>~32</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Medium</td><td>~64</td><td class="pcc"><span class="p">Most economy berths in class; cheap</span><span class="c">Slow; fragile; no comfort bonus; clumsy for tours</span></td><td><span class="rscore">56</span><div class="bar mini"><i style="--pct:56"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among mediums the Lynx is the real liner &mdash; its comfort bonus and berth count out-earn the Asp many times over. The Python and Krait Phantom edge it on room and pace; the Type-7 packs more economy seats but is too slow and fragile to tour comfortably. The Asp's distinction here is reach and price: it goes furthest for the least money, even if it earns least per seat.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated and large options</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Asp Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Beluga Liner</td><td>Large</td><td>~184</td><td class="pcc"><span class="p">Most cabins; liner comfort bonus; premium berths galore</span><span class="c">Large pad; far costlier; shorter range</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~340</td><td class="pcc"><span class="p">Most berths; warship shields; fast</span><span class="c">Imperial Duke rank; large pad; far costlier</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~170</td><td class="pcc"><span class="p">Deep cabin suite; best jump range in the role</span><span class="c">Large pad; heavy rebuy; no comfort bonus</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod">Dolphin</td><td>Small</td><td>~42</td><td class="pcc"><span class="p">Comfort bonus; sips fuel; lands anywhere; great per-seat pay</span><span class="c">Fewer cabins; less reach</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~36</td><td class="pcc"><span class="p">Very fast; stylish cruiser</span><span class="c">Large pad; Imperial rank; no comfort bonus</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The dedicated liners all out-earn the Asp per seat &mdash; the Beluga, Cutter and Dolphin through the comfort bonus, the Anaconda through reach and depth. The Dolphin is the instructive one: a small hull with fewer berths than rivals, yet rated far above the Asp because its comfort bonus and cheap operation make every fare pay. The Asp's edge over all of them is a medium pad and the lowest cost of entry &mdash; the budget tourer, not the earner.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">6.1M Cr</div></div>
+      <div class="cell"><div class="k">A-rated passenger</div><div class="v">~30M Cr</div></div>
+      <div class="cell"><div class="k">Rebuy</div><div class="v">~1.5M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~6.1M Cr the hull is among the cheapest credible passenger ships, with <b>no permit, rank or engineer gate</b> and no expansion requirement. A sensible passenger fit &mdash; a premium cabin in the top slot, economy below, a bi-weave shield and a long-range FSD &mdash; runs to around ~30M Cr all-in. The rebuy is light at roughly ~1.5M Cr, the lowest of any ship in this dossier set.</p>
+    <p>The real saving is double duty: the cabins swap out for an exploration suite at a station, so the same engineered hull flies tourists this week and the black the next. For a commander who already owns an Asp explorer, adding a cabin set is the cheapest possible entry into passenger work.</p>
+    <div class="callout"><span class="lbl">Cheapest entry, smallest premium</span><p>Around ~30M Cr all-in &mdash; no gates, a featherweight rebuy, and the cabins swap for an explorer suite. You pay least to start; you also earn least per seat, with no comfort bonus to lean on.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is <b>no passenger-specific ARX pre-built</b> of the Asp Explorer &mdash; it's a credits-only classic. Buy the bare hull through a shipyard and fit the cabin suite below yourself.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A budget tourer fit &mdash; a premium cabin up top, economy below, a real shield and a long-range FSD, hardpoints clean. Initial is buy-only; A-rated is the passenger baseline; Engineered maximises reach and keeps the board safe. The Asp has no military slots.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints &mdash; 2 Medium + 4 Small (run clean for passenger)</td></tr>
+        <tr><td class="slot">Medium 1&ndash;2</td><td class="empty">empty</td><td class="empty">empty</td><td class="eng">empty <small>(or 1 PD weapon)</small></td></tr>
+        <tr><td class="slot">Small 1&ndash;4</td><td class="empty">empty</td><td class="empty">empty</td><td class="empty">empty</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts &mdash; 4</td></tr>
+        <tr><td class="slot">Utility 1&ndash;2</td><td class="st">Shield Booster</td><td class="st">Shield Booster 0A</td><td class="eng">Shield Booster &middot; <b>Heavy Duty</b></td></tr>
+        <tr><td class="slot">Utility 3</td><td class="empty">empty</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="empty">empty</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (5)</td><td class="st">5E</td><td class="st">5A</td><td class="eng">5A &middot; <b>Low Emissions</b></td></tr>
+        <tr><td class="slot">Thrusters (5)</td><td class="st">5E</td><td class="st">5A</td><td class="eng">5A &middot; <b>Dirty Drive Tuning</b></td></tr>
+        <tr><td class="slot">Frame Shift Drive (5)</td><td class="st">5A (SCO)</td><td class="st">5A (SCO)</td><td class="eng">5A SCO &middot; <b>Increased Range + Mass Mgr</b></td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">4E</td><td class="st">4D</td><td class="eng">4D &middot; <b>Lightweight</b></td></tr>
+        <tr><td class="slot">Power Distributor (4)</td><td class="st">4E</td><td class="st">4A</td><td class="eng">4A &middot; <b>Engine Focused</b></td></tr>
+        <tr><td class="slot">Sensors (5)</td><td class="st">5E</td><td class="st">5D</td><td class="eng">5D &middot; <b>Lightweight</b></td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">5C</td><td class="st">5C</td><td class="eng">5C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals &mdash; 6&middot;5&middot;3&middot;3&middot;3&middot;2&middot;2&middot;1</td></tr>
+        <tr><td class="slot">Size 6</td><td class="st">Economy Cabin 6</td><td class="st">First Class Cabin 6 (VIP)</td><td class="eng">First / Luxury Cabin 6 (VIP)</td></tr>
+        <tr><td class="slot">Size 5</td><td class="st">Shield Generator 5D</td><td class="st">Bi-Weave Shield 5</td><td class="eng">Bi-Weave 5 &middot; <b>Resistance Augmented</b> <small>(or Luxury 5)</small></td></tr>
+        <tr><td class="slot">Size 3</td><td class="st">Economy Cabin 3</td><td class="st">Business Class Cabin 3</td><td class="eng">Business Class Cabin 3</td></tr>
+        <tr><td class="slot">Size 3</td><td class="st">Economy Cabin 3</td><td class="st">Economy Cabin 3</td><td class="eng">Economy Cabin 3</td></tr>
+        <tr><td class="slot">Size 3</td><td class="empty">empty</td><td class="st">Economy Cabin 3</td><td class="eng">Economy Cabin 3</td></tr>
+        <tr><td class="slot">Size 2</td><td class="empty">empty</td><td class="st">Economy Cabin 2</td><td class="eng">Economy Cabin 2</td></tr>
+        <tr><td class="slot">Size 2</td><td class="empty">empty</td><td class="st">Economy Cabin 2</td><td class="eng">Economy Cabin 2</td></tr>
+        <tr><td class="slot">Size 1</td><td class="st">Det. Surface Scanner</td><td class="st">Economy Cabin 1</td><td class="eng">Economy Cabin 1 <small>(or DSS)</small></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Premium up top, economy below</span><p>Put your one high-value first/luxury cabin in the class 6 slot &mdash; it's where the per-seat money lives &mdash; and fill the rest with economy. Keep the class 5 as a bi-weave shield on threatened routes; swap it for a second luxury cabin only when the run is safe and escorted. With no comfort bonus, range and access are what the Asp brings; swap the cabins for an explorer suite when the week turns.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit a starter cabin suite &mdash; an economy cabin in the big slot, a couple more below, and a light shield for safety.</p>
+    <p>Fit the <b>5A SCO Frame Shift Drive</b> first; range and in-system speed are what let the Asp take scattered sightseeing boards.</p>
+    <p>Keep a shield generator and a shield booster for passenger safety, and you have a cheap, expedition-ready tourer for well under 20M Cr all-in.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget passenger hull:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>FSD &rarr; 5A (SCO)</b> &mdash; The defining stat; reach takes the distant boards. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Premium cabin (class 6)</b> &mdash; One first/luxury cabin up top is where the per-seat money is. <span class="acc">varies</span></li>
+      <li><span class="stepnum">3</span><b>Bi-Weave shield (class 5)</b> &mdash; Passenger safety on threatened routes. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Thrusters &rarr; A</b> &mdash; Mobility for the loaded hull. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Power Plant &amp; Distributor &rarr; A</b> &mdash; Power and pips for cabins, shield and boost. <span class="acc">~4M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Range first, then the cabin mix</span><p>The Asp earns on reach and price, not a comfort bonus &mdash; A-rate the FSD before anything, then fit the one premium cabin it can carry and pack economy below. Add a Guardian FSD booster to stretch the range further.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The passenger engineering pattern, range-weighted. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>FSD Increased Range first &mdash; reach is the Asp's case in this role; add a Guardian booster.</li>
+      <li><span class="stepnum">2</span>Lightweight the cores (Life Support, Sensors, Power Plant) &mdash; lower mass compounds with the FSD for more range per hop.</li>
+      <li><span class="stepnum">3</span>Bi-weave shield and Heavy-Duty boosters for passenger safety.</li>
+      <li><span class="stepnum">4</span>Cabins aren't engineered &mdash; just fit the right classes for the board.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light for the passenger role &mdash; an FSD roll, lightweight cores, thrusters and a shield; no weapon grind. Felicity Farseer (your maxed engineer) covers most of it; the FSD roll is the bulk of the value. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max passengers</td><td>~16</td><td>~28</td><td class="acc">~32</td></tr>
+        <tr><td class="mod">Max jump (loaded, LY)</td><td>~30</td><td>~38</td><td class="acc">~45</td></tr>
+        <tr><td class="mod">Premium cabins</td><td>0&ndash;1</td><td>1</td><td class="acc">1&ndash;2</td></tr>
+        <tr><td class="mod">Liner comfort bonus</td><td>no</td><td>no</td><td class="acc">no</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~140</td><td>~250</td><td class="acc">~400+</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Asp carries a small economy board ~45 LY a hop and lands on pads the big liners can't &mdash; cheap, capable, and far-reaching. But it earns less per seat than any dedicated tourer: no comfort bonus, and at most two premium cabins. The budget passenger ship that goes furthest for the least money, not the one that earns most.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Economy sightseeing tours.</b> Cheap tourist boards to scenic beacons &mdash; the bread-and-butter the Asp does well.</li>
+      <li><b>Medium-pad &amp; outpost boards.</b> Tourist contracts routed through smaller stations the large liners can't dock at.</li>
+      <li><b>Part-time passenger runs.</b> Slot a cabin set into your explorer Asp when a lucrative board appears.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Distant-beacon tours.</b> Far-flung sightseeing destinations where the Asp's reach beats a small liner's range.</li>
+      <li><b>VIP single-cabin runs.</b> Carry one high-value first/luxury passenger up top while economy fills the rest.</li>
+      <li><b>Dual-purpose cruising.</b> Swap cabins for an explorer suite mid-trip as the week demands.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Tourist-beacon boards that wander to scattered or distant systems suit it best, where reach and medium-pad access matter more than per-seat luxury. From your home base, the Asp takes the cheap, far-flung tours a small liner can't reach.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>A-rate and engineer the FSD first &mdash; reach is what the Asp brings to passenger work; add a Guardian booster.</li>
+      <li>There's no liner comfort bonus &mdash; it earns less per seat than a Dolphin, Orca or Lynx; lean on cheap reach and medium-pad access instead.</li>
+      <li>Only the class 6 and class 5 slots take first/luxury cabins &mdash; put your one premium cabin up top and pack economy below.</li>
+      <li>Keep a real shield on threatened routes; passenger boards can spawn pirate interdictions.</li>
+      <li>Swap the cabins for an explorer suite and the same hull changes roles &mdash; see the Asp Explorer <span class="amb">Exploration</span> and <span class="amb">Multipurpose</span> dossiers.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Asp Explorer is the budget passenger pick: cheapest entry, a featherweight rebuy, long reach and a medium pad that takes boards the large liners can't. 60/100 &mdash; held back, fairly, by having no liner comfort bonus and only two slots that fit premium cabins, so it earns less per seat than any dedicated tourer. Not the earner; the one most commanders already own and can fly far for next to nothing.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to size the cabin suite, shield and FSD for the passenger fit.</span><a class="cr-link" href="https://coriolis.io/outfit/asp_explorer">coriolis.io/outfit/asp_explorer</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Asp Explorer ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/asp-explorer">elitedangerous.com/.../asp-explorer</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout and passenger-cabin module sizes underpinning the loadout and berth count.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/asp.json">coriolis-data/ships/asp.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Asp Explorer shipyard page &mdash; hull stats, passenger-cabin capacity, and shipyard pricing.</span><a class="cr-link" href="https://inara.cz/elite/ship/35/">inara.cz/elite/ship/35</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Asp Explorer lore, manufacturer, and passenger-role context backing the dossier write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Asp_Explorer">elite-dangerous.fandom.com/wiki/Asp_Explorer</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

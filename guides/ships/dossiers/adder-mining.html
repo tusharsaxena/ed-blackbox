@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adder &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Mining → yellow (role tag only; no other page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-mine"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Mine</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Adder · Mining</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Zorgon Peterson</div>
+    <h1 class="title"><span>Adder</span><span class="role ac-role-mining">Mining</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>It <em>can</em> mine &mdash; on a shoestring, and barely</h2>
+      <p>The Adder mounts a full core-mining hardpoint set on a small pad, so it genuinely cracks rocks for next to nothing. But its seven tiny optionals leave room for only a sliver of ore once the refinery and limpet controllers are aboard, and it can't defend the haul. It's the cheapest way to learn the mining loop, not a way to earn from it &mdash; a starter tool, well behind every purpose-built miner.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/adder.jpg" alt="Adder" width="160" height="90">
+      <figcaption><b>Adder</b> &middot; Zorgon Peterson</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">48<small>/100</small></div><div class="bar mini"><i style="--pct:48"></i></div></div>
+      <div class="stat"><div class="n">~30 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">1M · 2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">Small</div><div class="l">Pad class</div></div>
+      <div class="stat"><div class="n">~41k Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Mining rewards two things the Adder doesn't have much of: ore capacity and the muscle to keep pirates off a laden, stationary ship. What it <em>does</em> have is a medium and two small hardpoints &mdash; enough to fit a seismic charge launcher, an abrasion blaster and a sub-surface displacement missile, the complete core-mining toolset, on a hull that costs ~41k Cr. So it can prospect a metallic ring, crack a core, and refine the fragments. The problem is what comes after: its seven small optionals barely hold the refinery, prospector and collector controllers, leaving only a few tonnes for the ore itself.</p>
+    <p>As a small-pad ship it lands anywhere and reaches any ring, and the buy-in is trivial. But its base 60 MJ shield and light hull mean an interdicting pirate ends the session, and a typical run nets a handful of tonnes before you have to dock. The Adder mines the way it does everything &mdash; cheaply and a little of everything &mdash; but here that breadth runs straight into a hold too small to make the trip pay.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Learning to mine for pocket change: a first prospector-and-collector loop, cracking a core to see how it's done, and topping up materials or a few tonnes of ore between other jobs &mdash; never a dedicated earner.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-mine">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo (all racks)</div><div class="v">~30 <small>t</small></div></div>
+      <div class="cell"><div class="k">Ore hold (practical)</div><div class="v">~16&ndash;24 <small>t</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1M &middot; 2S <small>(tools)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">60 <small>MJ (weak)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">3&middot;3&middot;2&middot;2&middot;1&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(lands anywhere)</small></div></div>
+      <div class="cell"><div class="k">Self-defence</div><div class="v">No <small>(flee, don't fight)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>The handful of points the Adder earns as a miner come from:</p>
+    <ul class="bullets">
+      <li><b>It fits the whole core toolset.</b> One medium plus two small hardpoints take a seismic charge launcher, abrasion blaster and sub-surface missile &mdash; the Adder really can crack cores.</li>
+      <li><b>Rank-free and almost free.</b> ~41k Cr, no rank or permit gate, trivial rebuy &mdash; the cheapest entry to mining there is.</li>
+      <li><b>Lands anywhere.</b> A small pad reaches every outpost and surface port near a ring, so resupply is never a problem.</li>
+      <li><b>Light support modules fit.</b> A class-1 refinery, prospector and collector controllers and a DSS all squeeze in &mdash; just not alongside much ore.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The hold is the killer: once the mining suite is aboard, only ~16&ndash;24 t is left for ore, a fraction of any real miner. The 60 MJ base shield and frail hull mean you flee, not fight, every interdiction. It mines, but a few tonnes per trip behind a paper shield is why it sits near the bottom of the role.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite (refinery, limpet controllers) is fitted.</p>
+    <h3 class="subhead">Same class &mdash; small-pad miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Adder</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~152</td><td class="pcc"><span class="p">Far larger hold; better shield; combat-capable</span><span class="c">Much pricier</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Bigger hold; can fight back; roomier</span><span class="c">Pricier</span></td><td><span class="rscore">52</span><div class="bar mini"><i style="--pct:52"></i></div></td></tr>
+        <tr><td class="mod">Adder <span class="pill md">this</span></td><td>Small</td><td>~30</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">48</span><div class="bar mini"><i style="--pct:48"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among small-pad miners the Adder is the cheapest and the weakest. Both Cobras hold more ore and can defend the haul; the Adder's only edge is price. If you intend to actually earn from a small ship, a Cobra is the pick &mdash; the Adder is purely the budget-learner option.</p>
+    <h3 class="subhead">Other classes &mdash; the real miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Adder</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-11 Prospector</td><td>Large</td><td>~288</td><td class="pcc"><span class="p">Dedicated miner; exclusive Mk II mining modules</span><span class="c">Large pad; vastly pricier</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Huge ore hold for the money</span><span class="c">Medium pad; can't fight</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">Bigger hold; SLF for defence</span><span class="c">Medium pad; slower</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Bigger hold; versatile; good view</span><span class="c">Medium pad; pricier</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~112</td><td class="pcc"><span class="p">Far more ore; cheap-ish</span><span class="c">Medium pad; can't fight</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Step up one pad class and the gap is stark: even the budget Type-6 and Keelback carry three-to-four times the ore, and the dedicated Type-11 and Type-8 are in another league. The Adder's small pad isn't even an advantage here &mdash; mining rings don't need it. It survives this table only as the learner's first tool.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~41k Cr</div></div>
+      <div class="cell"><div class="k">A-rated miner</div><div class="v">~1.5M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~4M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~41k Cr the Adder is almost free, with no rank or permit gate. A full mining fit &mdash; seismic launcher, abrasion blaster, refinery, prospector and collector controllers, DSS and a token shield &mdash; comes in around 1.5M Cr A-rated, and a few million engineered. The whole loop costs less than a single decent ore find on a bigger ship.</p>
+    <p>That cheapness is the entire case. The Adder lets you try mining without committing to a real miner; the moment you want to earn from it, the price difference to a Cobra or a Type-6 is a few hours of any other activity &mdash; and they pay it back in a single trip.</p>
+    <div class="callout"><span class="lbl">Cheap to start, not to earn</span><p>Under 2M Cr to learn the entire mining loop &mdash; prospect, crack, refine, collect. Just don't expect the ore it holds to fund the next ship; that's what the upgrade is for.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no mining-specific ARX pre-built built around the Adder; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A complete (if tiny) core-mining fit on the cheapest hull that takes one. Initial is buy-only; A-rated is the working baseline; Engineered focuses on range and cool running so the small frame travels well. The mining tools themselves are not meaningfully engineered. For pure laser mining, swap the seismic launcher for a mining laser and drop the missile.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Mining Laser</td><td class="st">Seismic Charge Launcher</td><td class="eng">Seismic Charge Launcher (core)</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster</td><td class="eng">Abrasion Blaster</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">Heat Sink Launcher</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Clean Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (1)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (2)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (3)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">Cargo Rack 3</td><td class="st">Cargo Rack 3 (8t ore)</td><td class="eng">Cargo Rack 3 (8t ore)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Cargo Rack 3 (8t ore)</td><td class="eng">Cargo Rack 3 (8t ore)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 2 (multi)</td><td class="eng">Collector Controller 2 (multi)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Shield Generator 2 (bi-weave)</td><td class="eng">Bi-Weave 2 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Refinery 1</td><td class="eng">Refinery 1</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Controller 1</td><td class="eng">Prospector Controller 1</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS (find hotspots)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">A whole loop, almost no hold</span><p>This fits the complete cycle &mdash; prospector to find the rock, seismic launcher and abrasion blaster to crack it, collector limpets to gather, refinery to process &mdash; into seven small slots. What it can't fit is much ore: two class-3 racks leave ~16&nbsp;t after the suite, so you'll dock often. Strip the shield and collector for ~30&nbsp;t max if you only laser-mine in safe space.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <ul class="bullets">
+      <li>Buy the hull (~41k Cr) and fit a single mining laser to learn the basic laser loop cheaply.</li>
+      <li>Add a refinery, one prospector and one collector controller, plus a DSS to find hotspots.</li>
+      <li>Fill the remaining small slots with cargo racks; A-rate the plant and distributor so the tools and limpets run together.</li>
+    </ul>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget core miner:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; Mining tools and limpets are power-hungry; A-rate first. <span class="acc">~250k Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power Plant &rarr; A</b> &mdash; Run the tools, limpets and a token shield together. <span class="acc">~300k Cr</span></li>
+      <li><span class="stepnum">3</span><b>Refinery + limpet controllers</b> &mdash; The heart of the loop; multi-collector if it fits. <span class="acc">~150k Cr</span></li>
+      <li><span class="stepnum">4</span><b>Add the core toolset</b> &mdash; Seismic launcher, abrasion blaster, sub-surface missile for cores. <span class="acc">~200k Cr</span></li>
+      <li><span class="stepnum">5</span><b>FSD &rarr; A + bi-weave shield</b> &mdash; Reach distant rings; survive a clumsy landing. <span class="acc">~300k Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Power runs the loop</span><p>The small power plant and class-2 distributor are the tight spot &mdash; A-rate both so lasers or a seismic launcher and the limpet swarm don't brown out. Don't expect to run a real combat shield as well.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is light and targets the ship, not the tools &mdash; the mining hardware isn't meaningfully engineered. On the Adder it's mostly about travel and a little survivability. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Engine Focused (G3)</td><td>&mdash;</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Clean Drive Tuning (G5)</td><td>Drag Drives</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>FSD Increased Range so the light hull reaches distant rings and carries ore home in fewer hops.</li>
+      <li><span class="stepnum">2</span>Low-Emissions plant keeps heat down through long mining sessions.</li>
+      <li><span class="stepnum">3</span>A small bi-weave plus a booster &mdash; modest, but enough to survive a clumsy landing.</li>
+      <li><span class="stepnum">4</span>Leave the mining lasers, limpet controllers and refinery stock &mdash; they don't benefit from engineering.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Very light &mdash; tiny modules and standard mobility blueprints; among the cheapest grinds in the game. With a complete inventory this is trivial spend, not a farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Ore per trip (t)</td><td>~8</td><td>~16</td><td class="acc">~24</td></tr>
+        <tr><td class="mod">Survives pirates</td><td>no</td><td>barely</td><td class="acc">flee only</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~60</td><td>~120</td><td class="acc">~250</td></tr>
+        <tr><td class="mod">Tool mounts</td><td>laser</td><td>full core set</td><td class="acc">full core set</td></tr>
+        <tr><td class="mod">Pad access</td><td>small</td><td>small</td><td class="acc">small</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Adder runs the whole mining loop &mdash; prospect, crack, refine, collect &mdash; but brings home barely two dozen tonnes behind a shield that still won't survive a determined pirate. It teaches mining perfectly and earns from it poorly; the moment the loop clicks, move the kit to a bigger hull.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Learn the laser loop.</b> Mine a metallic ring with a laser, collector swarm and refinery to learn the cycle cheaply.</li>
+      <li><b>Crack a first core.</b> Use the seismic launcher and abrasion blaster on a low-temperature-diamond or void-opal core to see how it's done.</li>
+      <li><b>Top up materials.</b> A quick prospect-and-collect run for engineering mats or a few tonnes of ore between other jobs.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Safe-ring practice.</b> Work pristine rings away from pirate traffic, where the weak shield doesn't matter.</li>
+      <li><b>Cheap-loss prospecting.</b> Scout new hotspots in dangerous space where you'd hate to risk an expensive miner.</li>
+      <li><b>Graduate the kit.</b> Once the loop is second nature, move the suite to a Cobra or Type-6 that actually holds ore.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example sites</span><p>Any nearby pristine metallic or icy ring suits it &mdash; pick one close to a small outpost so the short hold means a short trip back. The Adder is for the ring you can reach quickly, not the long expedition.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Treat it as a trainer &mdash; the loop transfers directly to a bigger miner, the ore income doesn't.</li>
+      <li>Don't engineer the mining tools; they don't benefit. Spend the mats on FSD and a token shield instead.</li>
+      <li>A-rate the small plant and distributor first, or the tools and limpets brown out together.</li>
+      <li>Pick rings near a small outpost &mdash; the tiny hold means frequent docking, so keep the round trip short.</li>
+      <li>Flee every interdiction; the 60 MJ base shield can't trade blows with a pirate.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Adder mines &mdash; it fits the complete core toolset and runs the full loop for pocket change &mdash; but it earns from it poorly: ~16&ndash;24 t of ore per trip behind a shield that won't survive a pirate puts it near the bottom of the role. The 48 reflects exactly that: real capability to learn the craft, almost no capacity to profit from it. Buy one to learn mining cheaply, then graduate the kit to a Cobra, Type-6 or a proper miner.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to size the mining suite into the Adder's slots and confirm the ~30&nbsp;t cargo ceiling.</span><a class="cr-link" href="https://coriolis.io/outfit/adder">coriolis.io/outfit/adder</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Adder ship page — manufacturer, hull stats, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/adder">elitedangerous.com/.../adder</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Hardpoint sizes (1M·2S), optional-internal layout (3·3·2·2·1·1·1) and shield/hull figures cited for the mining fit.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/adder.json">coriolis-data/ships/adder.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Adder shipyard page &mdash; hull price, module sellers and refinery/limpet availability for the mining build.</span><a class="cr-link" href="https://inara.cz/elite/ship/15/">inara.cz/elite/ship/15</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Adder lore, Zorgon Peterson manufacturer and multi-role overview backing the dossier write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Adder">elite-dangerous.fandom.com/wiki/Adder</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperial Clipper &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-mine"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Mine</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Imperial Clipper · Mining</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Imperial Clipper</span><span class="role ac-role-mining">Mining</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The miner that <em>outruns</em> the pirates it can't outgun</h2>
+      <p>A workable, stylish part-time miner &mdash; not a specialist. Only four hardpoints and modest internals make for a cramped mining suite and a middling ore hold, and it's large-pad-only. But it's cheap (~21M Cr) on a low Imperial rank, and its signature speed means it escapes the pirates that prey on laden miners rather than standing to fight them. A mid-pack pick: fine if you already fly one, never the ship you buy for mining alone.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/imperial-clipper.jpg" alt="Imperial Clipper" width="160" height="90">
+      <figcaption><b>Imperial Clipper</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">70<small>/100</small></div><div class="bar mini"><i style="--pct:70"></i></div></div>
+      <div class="stat"><div class="n">~250 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">2L · 2M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad class</div></div>
+      <div class="stat"><div class="n">~21.1M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Mining is slow, stationary work that makes you a target for pirates &mdash; and the Clipper answers that not by fighting but by leaving. Its two large and two medium hardpoints carry a mining suite (lasers plus the core tools), its internals fit a refinery, limpet controllers and an ore hold, and when a pirate interdicts a laden Clipper, its class-leading speed lets it simply boost away with the haul intact.</p>
+    <p>The catch is that it does nothing in mining better than a dedicated rig. Four hardpoints is tight for a full core-and-laser kit, the internals step down sharply after the first two slots so the ore hold is only middling, and the large-pad footprint blocks the outpost refineries some commanders sell to. It mines competently and stylishly, but the Python out-defends it, the Type-8 out-hauls it for less, and the capital miners dwarf its hold. Fly it to mine if you already own one for trading or rank; don't buy it as a miner first.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Fast, casual mining: laser or core sessions in pirate-prone rings where outrunning interdiction beats out-tanking it, and a stylish do-anything Imperial hull that mines on the side between trade and rank runs.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-mine">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Ore hold (practical)</div><div class="v">~150&ndash;180 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~250 <small>t</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2L &middot; 2M <small>(tools + guns)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">300 / 380 <small>m/s (fastest large)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;4&middot;4&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~180 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large <small>(no outposts)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Baron</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Three things shape the Clipper as a miner &mdash; one good, two limiting:</p>
+    <ul class="bullets">
+      <li><b>Speed is the defence.</b> The fastest large hull in the game outruns the pirates that pin laden miners, so it survives the exposed minutes of a session by escaping, not slugging it out.</li>
+      <li><b>Only four hardpoints.</b> A full core kit (laser, seismic launcher, sub-surface missile, abrasion blaster) uses every mount, leaving no room for a defensive gun &mdash; one reason it runs rather than fights.</li>
+      <li><b>Modest, top-heavy internals.</b> The class-7 and class-6 slots are good, but the layout drops to 4&middot;4&middot;3 after that, so the refinery, limpets and ore racks all compete and the practical hold stays middling.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The Clipper carries less ore than the Python, far less than a Type-8 or the capital miners, and its cramped hardpoints make a complete core suite a squeeze. Large-pad-only blocks outpost selling. Its case is speed, low cost and Imperial style &mdash; not capacity, suite depth or self-defence. For any of those, another miner wins.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite (refinery, limpet controllers) is fitted.</p>
+    <h3 class="subhead">Same class &mdash; large-pad miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Imperial Clipper</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-11 Prospector</td><td>Large</td><td>~288</td><td class="pcc"><span class="p">Dedicated miner; exclusive Mk II mining modules</span><span class="c">Slow; pricier</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Vast ore hold; shields; also fast</span><span class="c">Imperial Duke rank; far pricier</span></td><td><span class="rscore">92</span><div class="bar mini"><i style="--pct:92"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Vast ore hold; cheap-ish</span><span class="c">Slow; flimsy; can't fight</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Big hold; deep internals; also a warship</span><span class="c">Slow; far pricier</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper <span class="pill md">this</span></td><td>Large</td><td>~250</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>~512</td><td class="pcc"><span class="p">Big hold; tanky; many mounts</span><span class="c">Very slow; sluggish</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among large miners the Clipper sits mid-pack, tied with the Type-10 and behind the dedicated and capital rigs. It out-flies all of them, but they out-haul or out-specialise it. Its niche is being fast and cheap &mdash; not the best big miner, just the quickest off the mark.</p>
+    <h3 class="subhead">Other classes &mdash; the medium-pad miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Imperial Clipper</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">More cargo; medium pad; fights pirates; 3L mounts</span><span class="c">Slower; pricier</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Far bigger hold; medium pad; cheaper</span><span class="c">Slower; can't fight</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">Medium pad; SLF; combat-capable</span><span class="c">Slower; smaller hold</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Medium pad; great range</span><span class="c">Smaller hold; weaker defence</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">Cheap; medium pad; SLF</span><span class="c">Far smaller hold</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Tellingly, several medium miners outscore the Clipper while landing at outposts it can't. The Python carries more, fights and uses three large mounts; the Type-8 hauls far more for less. The Clipper's only advantage over them is raw pace &mdash; useful for fleeing, not for filling the hold.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~21.1M Cr</div></div>
+      <div class="cell"><div class="k">A-rated miner</div><div class="v">~32M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~45M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Baron</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~21.1M Cr the Clipper is cheap for a large hull, gated only by the modest Imperial Baron rank. A mining fit &mdash; tools, refinery, limpet controllers, ore racks and a defensive shield &mdash; brings the all-in figure to around 45M Cr, undercutting the Python and the capital miners.</p>
+    <p>Low cost is the real draw here: the same hull mines, trades, fights and explores, and it pairs naturally with an Imperial-rank journey. But for a buyer choosing a ship <em>to mine</em>, the savings don't outweigh a Python's defence or a Type-8's far larger hold per credit. Treat mining as a bonus the Clipper does adequately, not a reason to own it.</p>
+    <div class="callout"><span class="lbl">Cheap, fast, versatile</span><p>Around 45M Cr all-in for a fast Imperial hull that mines on the side &mdash; you pay for speed, low rank and versatility, not for mining capability.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no mining-specific ARX pre-built built around the Imperial Clipper; buy and outfit it normally once you hold the rank.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A complete mining fit for laser and core work that relies on speed, not guns, for safety &mdash; the full tool kit uses all four hardpoints, leaving none for a weapon. Initial is buy-only; A-rated is the mining baseline; Engineered focuses on speed, shield and heat &mdash; the mining tools themselves are not meaningfully engineered.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">Mining Laser</td><td class="st">Mining Laser 2</td><td class="eng">Mining Laser 2</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster</td><td class="eng">Abrasion Blaster</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Seismic Charge Launcher</td><td class="eng">Seismic Charge Launcher (core)</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">Cargo Rack 7</td><td class="st">Cargo Rack 7 (128t ore)</td><td class="eng">Cargo Rack 7 (128t ore)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6 (64t ore)</td><td class="eng">Cargo Rack 6 (64t ore)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Generator 4 (bi-weave)</td><td class="eng">Bi-Weave 4 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Refinery 4</td><td class="eng">Refinery 4 (deep bins)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 3</td><td class="eng">Collector Controller 3 (multi)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Controller 3</td><td class="eng">Prospector Controller 3</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 2</td><td class="eng">Collector Controller 2</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Cargo Rack 2 (4t ore)</td><td class="eng">Cargo Rack 2 (4t ore)</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS (find hotspots)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Tools fill every mount</span><p>A complete miner: a laser plus the three core tools take all four hardpoints, a Pulse Wave Analyser finds rocks, and a refinery, prospector and collector controllers work the field. There's no slot left for a gun &mdash; so the bi-weave buffer plus the Clipper's speed cover the escape when a pirate arrives.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Baron, buy the hull (~21M Cr), and fit the mining suite: a laser and the core tools, a refinery and limpet controllers.</p>
+    <p>Fit a bi-weave shield in a class-4 slot for the buffer you need while boosting away.</p>
+    <p>Fill the big class-7 and class-6 optionals with ore racks; A-rate the plant and distributor so the tools and limpets run without browning out.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a fast, escape-based miner:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Thrusters &rarr; A</b> &mdash; Speed is the Clipper's defence; A-rate first so it always outruns interdiction. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power Distributor &rarr; A</b> &mdash; Mining tools, limpets and boost all draw heavily. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Power Plant &rarr; A</b> &mdash; Run tools, limpets and shield together. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield Generator &rarr; bi-weave</b> &mdash; A buffer for the seconds before you escape. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Refinery + limpet controllers</b> &mdash; The heart of the mining loop. <span class="acc">~3M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Outrun, don't out-tank</span><p>The Clipper can't fight with its hardpoints full of tools, so A-rate thrusters and the distributor first &mdash; it leaves any interdiction with the ore aboard rather than trying to win the fight.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is light and focuses on the ship, not the tools &mdash; the mining hardware itself isn't meaningfully engineered. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Engine Focused (G3)</td><td>&mdash;</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Thrusters first &mdash; the Clipper's speed is its identity and, full of mining tools, its only defence.</li>
+      <li><span class="stepnum">2</span>Low-Emissions plant keeps heat down across long mining sessions.</li>
+      <li><span class="stepnum">3</span>Bi-weave buffer and boosters for the seconds before you boost clear.</li>
+      <li><span class="stepnum">4</span>Leave the mining lasers, limpet controllers and refinery stock &mdash; they don't benefit meaningfully from engineering.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; only the ship's mobility and defence blueprints; the mining tools are left stock, so there's no weapon-style grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Ore per trip (t)</td><td>~120</td><td>~170</td><td class="acc">~190</td></tr>
+        <tr><td class="mod">Escapes pirates</td><td>yes</td><td>yes</td><td class="acc">decisively</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~220</td><td>~340</td><td class="acc">~600+</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>380 m/s</td><td>380 m/s</td><td class="acc">~460 m/s</td></tr>
+        <tr><td class="mod">Pad access</td><td>large</td><td>large</td><td class="acc">large</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Clipper mines a ~190t hold at over 450 m/s &mdash; it works a ring and simply leaves when a pirate comes, ore aboard. It carries less than the Python and far less than the capital miners, and its full hardpoints mean it can't fight; speed and low cost are why you'd mine in one at all.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Laser mining hotspots.</b> Work platinum, tritium or painite hotspots with a collector swarm and a full ore hold.</li>
+      <li><b>Core mining in pirate rings.</b> Crack high-value cores (void opals, low-temperature diamonds) and boost away if interdicted.</li>
+      <li><b>Mine-and-run loops.</b> Mine until a pirate arrives, then outrun it rather than fight.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Quick ring hops.</b> Its pace shortens the travel between hotspots and the sell market.</li>
+      <li><b>Re-role on demand.</b> The same hull mines, trades, fights or explores &mdash; mining is one mode of many.</li>
+      <li><b>Imperial-flavour mining.</b> A stylish cheap rig for an <a href="../../systems/superpower-rank.html#superpower-emp">Empire</a> pilot mid-rank-grind.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example sites</span><p>Any pristine metallic or icy ring suits it &mdash; but sell to a station with a large pad, since the Clipper can't dock at the outpost refineries some miners use. Its speed makes the trip between ring and market quick.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>A full core kit uses all four hardpoints &mdash; you can't carry a defensive gun, so plan to outrun pirates, not fight them.</li>
+      <li>A-rate thrusters and the distributor first; speed is the Clipper's only protection once the mounts are full of tools.</li>
+      <li>Don't engineer the mining tools &mdash; they don't benefit; engineer the ship's speed and defence instead.</li>
+      <li>Large-pad-only: sell ore at large stations, not the outposts some miners refine at.</li>
+      <li>For more ore, defence or suite depth, the Python, Type-8 or a capital miner all beat it &mdash; fly the Clipper to mine only if you already own one.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Imperial Clipper mines competently but specialises in nothing: a middling ore hold, only four hardpoints for the whole tool kit, large-pad-only, and no spare mount for a gun. What it brings is the highest speed of any large hull &mdash; enough to escape the pirates that hunt laden miners &mdash; at a low price on a low Imperial rank. That earns a solid mid-pack <b>70</b>: a fine part-time miner for a commander who already flies one, never the ship you buy for mining alone.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to lay out and validate the mining fit (tools, refinery, limpets, ore racks).</span><a class="cr-link" href="https://coriolis.io/outfit/imperial_clipper">coriolis.io/outfit/imperial_clipper</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Imperial Clipper ship page — manufacturer specs, speed figures, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/imperial-clipper">elitedangerous.com/.../imperial-clipper</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Hardpoint sizes, optional &amp; core internal slot layout, and engineering blueprint data behind the loadout tables.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_clipper.json">coriolis-data/ships/imperial_clipper.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Imperial Clipper</span><span class="cr-what">Ship reference: cargo capacity, slot layout and shipyard pricing cross-checked for the mining build.</span><a class="cr-link" href="https://inara.cz/elite/ship/45/">inara.cz/elite/ship/45</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Imperial Clipper article: Gutamaya manufacture, rank requirement and role profile referenced for this dossier.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Imperial_Clipper">fandom.com/wiki/Imperial_Clipper</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

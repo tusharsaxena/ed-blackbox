@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alliance Crusader &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: AX → good-green (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight-thargoids"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight Thargoids</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Alliance Crusader · AX Combat</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Alliance Crusader</span><span class="role ac-role-ax">AX Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The Alliance bruiser turned Xeno-hunter &mdash; <em>three</em> military slots of Guardian hardening on a budget medium</h2>
+      <p>The Crusader brings the one stat AX rewards most: <b>three military slots</b>, the most of any medium, all of them taking Guardian Module Reinforcement &mdash; the hardening that keeps your modules alive through Thargoid lightning. Add the Alliance tank hull, a fighter-bay decoy and no rank gate, and you have a cheap, durable anti-Xeno platform. It sits a few points behind the Chieftain because it is the slowest Alliance medium, carries the lowest base shield, and has only <b>four utility mounts</b> &mdash; a real squeeze once the Xeno scanner, caustic sink and heat sink are fitted.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/alliance-crusader.jpg" alt="Alliance Crusader" width="160" height="90">
+      <figcaption><b>Alliance Crusader</b> &middot; Lakon / Alliance</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">79<small>/100</small></div><div class="bar mini"><i style="--pct:79"></i></div></div>
+      <div class="stat"><div class="n">1L 2M 3S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Military slots</div></div>
+      <div class="stat"><div class="n">180 / 300</div><div class="l">Speed / boost m/s</div></div>
+      <div class="stat"><div class="n">~22M</div><div class="l">Hull price Cr</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Take the Alliance trio's tank chassis and count military slots: the Crusader has <b>three</b> &mdash; one more than the Challenger, two more than most mediums &mdash; and every one of them accepts Guardian Module Reinforcement. In anti-Xeno work that matters more than almost anything: Thargoid lightning strips and disables modules, and a stack of Guardian MRP is what keeps your thrusters, distributor and weapons online when lesser ships are flying home crippled. On top of that the Crusader keeps the tough Alliance hull, adds a ship-launched-fighter bay you can deploy as a decoy to split a swarm, and gates behind no rank at all. Arm the large mount with an AX multi-cannon, the two mediums with Guardian Gauss for heart damage, and you have a cheap, hard-to-kill Xeno hunter.</p>
+    <p>It rates <b>79</b> rather than joining the Chieftain at the top of the medium AX ladder for three honest reasons. It is the <b>slowest</b> Alliance medium with the <b>lowest base shield</b>, so it cannot weave out of a Cyclops' lightning the way a Chieftain can &mdash; and in AX, evasion <em>is</em> survival. It carries only <b>four utility mounts</b>, which a Xeno scanner, caustic sink and heat sink fill almost completely, leaving little room for the shield-booster suite. And with a single large hardpoint its raw AX firepower trails the heavier hulls. What it offers in return is module hardening and a fighter decoy no other budget medium matches.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Attritional, hardening-first AX: holding a position in an AX Conflict Zone, surviving the module-stripping lightning of Cyclops and Basilisk hunts, and any sortie where a deployed fighter splitting Thargoid attention buys the time a kill takes.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight-thargoids">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1L &middot; 2M &middot; 3S <small>(Gauss on mediums)</small></div></div>
+      <div class="cell"><div class="k">Fighter bay</div><div class="v">Yes <small>(SLF decoy)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">3 <small>(class 4 &mdash; Guardian MRP)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">180 / 300 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4 <small>(tight for AX kit)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Base armour / shield</div><div class="v">540 / ~126 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Crusader a credible Xeno hunter:</p>
+    <ul class="bullets">
+      <li><b>Three military slots.</b> Room for three Guardian Module Reinforcement packages &mdash; the most of any medium, and the hardening that keeps modules alive through Thargoid lightning.</li>
+      <li><b>The Alliance tank hull.</b> 540 effective armour layered with Guardian Hull Reinforcement keeps it on station while lighter mediums break off to repair.</li>
+      <li><b>A fighter-bay decoy.</b> Deploy an SLF to split a Thargoid's attention &mdash; a force the Chieftain and Challenger don't have.</li>
+      <li><b>No gate.</b> No rank, no permit, ~22M Cr, medium pad &mdash; the cheapest serious AX-hardening platform a new Xeno pilot can buy.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The Crusader is the <b>slowest</b> Alliance medium with the <b>lowest base shield</b>, so it cannot dodge an Interceptor's lightning like a Chieftain &mdash; and AX rewards evasion. Its <b>four utility mounts</b> barely fit the mandatory Xeno scanner, caustic sink and heat sink, leaving almost no room for shield boosters. With one large hardpoint, raw AX firepower also trails the heavier hulls. Its case is module hardening and a decoy, not speed or shields.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, hardening and heat management matter as much as raw mounts.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad AX ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Alliance Crusader</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Far more agile; dodges lightning; bigger guns</span><span class="c">One fewer military slot; no SLF bay</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">High DPS; SLF bay; agile</span><span class="c">No military slots; less module hardening</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Faster; more Gauss mounts; higher shield</span><span class="c">No SLF bay; same 3 military slots</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Federal Gunship</td><td>Medium</td><td>1L 4M 2S</td><td class="pcc"><span class="p">Maximum Gauss mounts; SLF bay; tough</span><span class="c">Federal rank; even slower and clumsier</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">More mounts; roomy internals; SLF-capable</span><span class="c">No military slots; less hull hardening</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Alliance Crusader <span class="pill md">this</span></td><td>Medium</td><td>1L 2M 3S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">79</span><div class="bar mini"><i style="--pct:79"></i></div></td></tr>
+        <tr><td class="mod">Federal Assault Ship</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Fast, agile Federal brawler; dodges well</span><span class="c">Federal rank; no military slots; no SLF</span></td><td><span class="rscore">77</span><div class="bar mini"><i style="--pct:77"></i></div></td></tr>
+        <tr><td class="mod">Mamba</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Very fast in a straight line</span><span class="c">Poor turning for AX; no military slots</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among the medium AX hulls the Crusader is the hardening specialist: three military slots and a fighter decoy, but the slowest hull and lowest shield of the family. The Chieftain out-dodges it, the Challenger out-shields and out-guns it with the same military count, and the Krait out-damages it &mdash; which is why all three rate higher. Where the Crusader wins is keeping its modules alive and splitting a swarm with an SLF.</p>
+    <h3 class="subhead">Other classes &mdash; the large AX platforms</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Alliance Crusader</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shield tank; far more firepower</span><span class="c">Imperial rank; ~200M Cr; large pad; worse dodging</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; no rank</span><span class="c">Ponderous; costly; large pad</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Battleship tank; eight utilities; two military slots</span><span class="c">Fed. Rear Admiral; ~188M Cr; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">Huge armour; nine mounts; SLF bay</span><span class="c">Very slow; feeble shields; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The large AX platforms out-tank and out-gun the Crusader outright, but each demands a large pad and most demand a rank grind and ten times the credits. The Crusader is the medium-pad, no-rank, ~22M-Cr way to get serious Guardian module hardening into an AX fight &mdash; not the toughest Xeno hull, but the cheapest one that hardens like the big ships do.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~22M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted (A-rated)</div><div class="v">~45M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~65M+ Cr</div></div>
+      <div class="cell"><div class="k">Rebuy (eng.)</div><div class="v">~3M Cr</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Pad / Permit</div><div class="v">Medium / None</div></div>
+    </div>
+    <p>At ~22M Cr the Crusader is one of the cheapest hulls that can field a full Guardian-hardened AX fit, and it sits behind <b>no rank or permit</b> &mdash; only the Guardian and AX weapon unlocks every Xeno hull needs. A complete AX fit with three Guardian MRP, Gauss and AX multi-cannons, a bi-weave shield and a fighter bay runs to roughly ~45M Cr A-rated, rising past ~65M Cr engineered, with a low ~3M rebuy that makes mistakes cheap to learn from.</p>
+    <p>That cheap rebuy and the absence of any rank gate make the Crusader a strong <b>first dedicated AX ship</b>: hard enough to survive the learning curve, cheap enough that a death costs little. The real price of admission is the Guardian-tech grind for the weapons and reinforcement &mdash; the same toll every AX hull pays.</p>
+    <div class="callout"><span class="lbl">Hardening on a budget</span><p>~65M Cr engineered plus the Guardian unlocks buys three military slots of module hardening on a medium pad with no rank gate &mdash; AX survivability the budget Chieftain can't quite match. Factor the Guardian-tech grind, not the credits, as the real cost.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no AX-specific ARX pre-built built around the Alliance Crusader; buy the hull, unlock Guardian and AX weapons at the relevant sites, and outfit it normally.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A hardened AX gunboat: an AX multi-cannon on the large mount, Guardian Gauss on the mediums for heart damage, Guardian shards on the smalls, all three military slots filled with Guardian reinforcement, and a fighter-bay decoy. Initial is buy-only; AX-fitted adds the unlocked kit; Engineered hardens the shield, hull and mobility. The four utilities are the tight spot &mdash; scanner, caustic sink and heat sink leave one slot for a booster.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">AX Multi-Cannon (L)</td><td class="eng">Enhanced AX Multi-Cannon (L)</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon</td><td class="eng">Guardian Gauss Cannon</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon</td><td class="eng">Guardian Gauss Cannon</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon</td><td class="eng">Guardian Shard Cannon</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon</td><td class="eng">Guardian Shard Cannon</td></tr>
+        <tr><td class="slot">Small 3</td><td class="st">&mdash;</td><td class="st">AX Multi-Cannon (S)</td><td class="eng">Enhanced AX Multi-Cannon (S)</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Xeno Scanner</td><td class="eng">Xeno Scanner</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Caustic Sink Launcher</td><td class="eng">Caustic Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (4)</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 4</td><td class="eng">Guardian MRP 4</td></tr>
+        <tr><td class="slot">Military 2 (4)</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 4</td><td class="eng">Guardian MRP 4</td></tr>
+        <tr><td class="slot">Military 3 (4)</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 4</td><td class="eng">Guardian MRP 4</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Fighter Hangar 5</td><td class="eng">Fighter Hangar 5 (SLF decoy)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 3</td><td class="eng">Guardian HRP 3</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 3</td><td class="eng">SCB 3</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Decontamination Limpet Controller 2</td><td class="eng">Decon Limpet (caustic)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 2</td><td class="eng">Guardian HRP 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Caustic Sink storage</td><td class="eng">Caustic Sink storage</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Harden, then decoy</span><p>The Crusader's whole AX case is its three military slots &mdash; fill all three with Guardian Module Reinforcement so the lightning can't disable you. Put Gauss on the mediums for heart damage, an AX multi-cannon on the large mount, and a Guardian HRP or two in the optionals. The four utilities are tight: scanner, caustic and heat kit come first, then one shield booster. Run the SLF as a decoy when a swarm converges.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull, then unlock Guardian and AX weapons at the relevant sites &mdash; there is no rank to grind first.</p>
+    <p>Arm the large mount with an AX multi-cannon and the two mediums with Guardian Gauss for heart damage; fill the smalls with Guardian shards.</p>
+    <p>Fill all three military slots with Guardian Module Reinforcement, fit a shield and the fighter bay, and load the scanner, caustic sink and heat sink across the four utilities.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority for the gunboat:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>AX / Guardian weapons</b> &mdash; Gauss on the mediums, AX multi-cannon on the large mount, Guardian shards on the smalls. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">2</span><b>Guardian reinforcement</b> &mdash; Three Guardian MRP in the military slots plus Guardian HRP in the optionals; this is the Crusader's edge. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">3</span><b>Power Distributor &amp; Plant &rarr; A</b> &mdash; Gauss and a shield are immensely power- and capacitor-hungry. <span class="acc">~7M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield Generator &amp; booster</b> &mdash; A bi-weave with a thermal-resistant booster over the low base shield. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Thrusters &rarr; A</b> &mdash; Recover what agility the heavy hull allows; you'll need every bit to dodge. <span class="acc">~4M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Hardening is the case</span><p>The Crusader earns its rating by surviving the lightning, not dodging it &mdash; prioritise the three Guardian MRP and a layered shield/hull tank over chasing DPS its single large mount can't deliver anyway.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens shields, hull, heat and mobility; AX/Guardian weapons have limited engineering. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Thermal Resistant (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">HRPs / Booster</td><td>Heavy Duty / Thermal Resistant</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; Gauss and a shield are immensely power- and capacitor-hungry.</li>
+      <li><span class="stepnum">2</span>Thermal-resistant bi-weave and HRPs against Thargoid thermal and caustic damage.</li>
+      <li><span class="stepnum">3</span>Dirty thrusters to claw back the agility the heavy hull allows &mdash; it needs every bit to dodge.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and all Guardian reinforcement come from unlocks, not blueprints.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; standard G5s across class-6 cores plus a thermal-resistant defensive suite, on top of the substantial Guardian-tech grind for weapons and reinforcement. The Guardian unlocks are the real cost; ship blueprints are standard. Ask for exact per-blueprint or unlock counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Shield (MJ)</td><td>~126</td><td>~270</td><td class="acc">~600</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>540</td><td>540</td><td class="acc">~2,500+ (Guardian HRP)</td></tr>
+        <tr><td class="mod">Module hardening</td><td>none</td><td>3 Guardian MRP</td><td class="acc">3 MRP + optionals</td></tr>
+        <tr><td class="mod">AX firepower</td><td>medium</td><td>medium</td><td class="acc">medium (one large mount)</td></tr>
+        <tr><td class="mod">Agility (dodge)</td><td>poor</td><td>fair</td><td class="acc">fair (slowest Alliance)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Crusader is a hard little Xeno gunboat: a usable shield buffer, effective armour into the thousands, and &mdash; the point &mdash; three Guardian MRP soaking the lightning that disables lesser ships. It cannot dodge like a Chieftain, so it leans on hardening and a fighter decoy to outlast the fight rather than out-fly it.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>AX Conflict Zones.</b> Hold a position with hardened modules while the SLF splits the swarm and lighter ships dart.</li>
+      <li><b>Cyclops &amp; Basilisk hunts.</b> Hold Gauss on a heart; three Guardian MRP keep your modules online through the lightning.</li>
+      <li><b>Decoy tactics.</b> Deploy the fighter to draw a Thargoid's attacks while you keep firing.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Wing AX support.</b> The hardened anchor that stays online while agile mediums dodge and harass.</li>
+      <li><b>Maelstrom &amp; Titan sorties.</b> Module hardening and a low rebuy make extended, dangerous runs cheap to repeat.</li>
+      <li><b>Crewed AX.</b> A gunner can run the SLF and a turret while you focus on hearts &mdash; the Alliance crew chassis pays off in AX too.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example operations</span><p>Wherever Thargoids are fought &mdash; AXCZ, Interceptor hunts, Maelstrom and Titan ops. The Crusader is the budget hull you bring when the plan is to harden up and outlast the lightning rather than dodge it.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Fill all three military slots with Guardian Module Reinforcement &mdash; module hardening is the Crusader's whole AX case.</li>
+      <li>Only four utilities: scanner, caustic sink and heat sink come first, leaving room for just one shield booster.</li>
+      <li>You can't dodge the lightning like a Chieftain &mdash; lean on hardening, the tank hull, and the fighter decoy instead.</li>
+      <li>Manage heat hard with Gauss, and keep the SLF ready to split a swarm; a high-rank NPC pilot makes the decoy far more useful.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Alliance Crusader is the budget AX hardening platform: three military slots of Guardian Module Reinforcement &mdash; the most of any medium &mdash; on a tough hull with a fighter-bay decoy and no rank gate. It scores 79, a few points behind the Chieftain and Challenger, because it is the slowest Alliance medium with the lowest base shield and only four utility mounts, so it can't dodge the lightning the way the role rewards. Buy it when you want serious module hardening cheap, and fight by outlasting the swarm rather than out-flying it.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to validate the AX loadout, military-slot fit and power/capacitor budget.</span><a class="cr-link" href="https://coriolis.io/outfit/alliance_crusader">coriolis.io/outfit/alliance_crusader</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Alliance Crusader ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/alliance-crusader">elitedangerous.com/.../alliance-crusader</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, the three military-slot count and module-variant data behind the AX reinforcement plan.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/alliance_crusader.json">coriolis-data/ships/alliance_crusader.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Alliance Crusader shipyard page &mdash; hull stats, hardpoints, price, and the no-rank access used in the AX cost section.</span><a class="cr-link" href="https://inara.cz/elite/ship/47/">inara.cz/elite/ship/47</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Alliance Crusader hull profile and SLF/role overview, cross-referenced against AX weapon class limits.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Alliance_Crusader">elite-dangerous.fandom.com/wiki/Alliance_Crusader</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

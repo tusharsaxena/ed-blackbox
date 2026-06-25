@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamondback Explorer &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Multipurpose → maroon (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-versatile"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Versatile</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Diamondback Explorer · Multipurpose</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Diamondback Explorer</span><span class="role ac-role-multipurpose">Multipurpose</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A <em>cheap, small-pad</em> jack-of-most-trades — long legs and low cost, but a light combat and cargo ceiling</h2>
+      <p>The Diamondback Explorer turns out to be a surprisingly handy generalist: explorer-grade jump range, small-pad access to any outpost, a cool-running plant and one large plus two medium hardpoints for self-defence and light combat. Its small internals, modest cargo and thin shields keep it well below the do-everything mediums, but for a commander who wants one affordable hull to roam, scan, dabble in bounties and shift a little cargo, it punches above its price.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/diamondback-explorer.jpg" alt="Diamondback Explorer" width="160" height="90">
+      <figcaption><b>Diamondback Explorer</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">68<small>/100</small></div><div class="bar mini"><i style="--pct:68"></i></div></div>
+      <div class="stat"><div class="n">1L 2M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">~60 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">~62 LY</div><div class="l">Max jump (multirole)</div></div>
+      <div class="stat"><div class="n">~1.64M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Small</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Diamondback Explorer is best known as Lakon's budget deep-space scout, but as a multipurpose hull it earns its keep too. It pairs a strong FSD and light mass for explorer-grade range with a large hardpoint, two mediums and four utility mounts &mdash; enough for self-defence, light bounty work and the odd cargo or passenger run. Crucially it does all of this from a small pad, so it lands at any outpost the bigger generalists are locked out of.</p>
+    <p>What it offers the all-rounder is reach and economy rather than capacity. Its cool-running plant and four optional internals let it carry a flexible mix &mdash; a small shield, a cargo rack or two, a fuel scoop, an SRV bay, a scanner &mdash; and re-tune between light combat, a survey trip or a courier loop at a station. What it can't do is fight or haul at the level of a Cobra Mk V, Asp Explorer or Python; its small internals, thin armour and modest shields cap the heavy end of every role.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>An affordable, small-pad do-most-things ship: roaming and scanning, low-intensity bounty hunting, light hauling and courier work, exobiology side-trips, and a first generalist for commanders who want range and flexibility without a large outlay.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-versatile">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~60 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max jump</div><div class="v">~62 <small>LY (multirole)</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1L &middot; 2M</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">4&middot;4&middot;3&middot;3&middot;2&middot;2&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(lands anywhere)</small></div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">1</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Diamondback Explorer a useful generalist:</p>
+    <ul class="bullets">
+      <li><b>Explorer-grade range.</b> A light hull and strong FSD give ~62 LY even multirole-loaded &mdash; far more reach than any other generalist near its price.</li>
+      <li><b>Small-pad access.</b> It lands at any outpost, so resupply, turn-ins and missions are never blocked by pad size &mdash; an advantage the do-everything mediums and larges don't share.</li>
+      <li><b>Real (if light) hardpoints.</b> One large and two mediums plus four utilities arm it for self-defence and low-intensity bounty work, not just scanning.</li>
+      <li><b>Cheap to own and run.</b> Under 1.7M Cr hull and inexpensive modules &mdash; a flexible ship that costs a fraction of a true multirole medium.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's small, lightly built and short on internals: thin armour, modest shields, no military slot and only ~60t of cargo. It defends itself and dabbles, but it can't fight, haul or tank like a Cobra Mk V, Asp Explorer or Python. The DBE's multipurpose case is range, small-pad reach and value &mdash; a do-most-things budget ship, not a do-everything one.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for multipurpose use</em> &mdash; versatility across combat, trade, exploration and more. The role column is the maximum cargo capacity in tonnes as one measure of capacity; versatility is judged across all roles.</p>
+    <h3 class="subhead">Same class &mdash; small-pad all-rounders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Diamondback Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Cobra Mk V</td><td>Small</td><td>~140</td><td class="pcc"><span class="p">Far more cargo and hardpoints; roomier; tougher</span><span class="c">Hotter; shorter range; pricier</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Cheaper; faster; cargo-friendly</span><span class="c">Shorter range; thinner internals</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk IV</td><td>Small</td><td>~84</td><td class="pcc"><span class="p">More internals and cargo</span><span class="c">Heavier; shorter range; less common</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer <span class="pill md">this</span></td><td>Small</td><td>~60</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>~28</td><td class="pcc"><span class="p">Faster; superb shields; agile</span><span class="c">Tiny internals; Imperial rank; less cargo</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+        <tr><td class="mod">Adder</td><td>Small</td><td>~36</td><td class="pcc"><span class="p">Dirt cheap; decent cargo for size</span><span class="c">Slow; weak; shorter range</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among small-pad all-rounders the Diamondback Explorer sits in the middle: the Cobras out-haul and out-fight it, but none matches its jump range, and only the Courier outclasses it on speed and shields. Its niche is the long-legged generalist &mdash; the small ship that does a bit of everything <em>and</em> reaches the far systems.</p>
+    <h3 class="subhead">Other classes &mdash; the do-everything mediums and larges</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Diamondback Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Does everything at capital scale</span><span class="c">Far pricier; large pad; ponderous</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~284</td><td class="pcc"><span class="p">Vastly more firepower, cargo and shields</span><span class="c">Pricier; shorter range; medium pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Roomier; more cargo; great visibility</span><span class="c">Pricier; medium pad; hotter</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Greater range and internals; modern</span><span class="c">Pricier; medium pad</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~250</td><td class="pcc"><span class="p">Far faster; more capable all-round</span><span class="c">Imperial rank; large pad; pricier</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The do-everything mediums and larges carry, fight and tank far beyond the DBE &mdash; but each costs many times more and most need a larger pad. The Diamondback Explorer's multipurpose appeal is delivering a workable slice of all-round capability, with explorer-grade range and small-pad access, for a tiny fraction of their cost.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~1.64M Cr</div></div>
+      <div class="cell"><div class="k">A-rated multirole</div><div class="v">~8M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~15M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~1.64M Cr the DBE is cheap, and its small modules keep a balanced multirole fit &mdash; weapons, a shield, cargo, scoop and scanner &mdash; well under 15M Cr engineered. That is a complete, flexible ship for less than the price of a single weapon on a warship.</p>
+    <p>It's the value generalist with no gates: no rank, no permit, small pad. For a commander who wants one affordable hull to roam and dabble across roles, it's cheaper than committing to a multirole medium &mdash; and it goes further on every tank of fuel.</p>
+    <div class="callout"><span class="lbl">Cheap, flexible, long-legged</span><p>A complete engineered multirole DBE runs around 15M Cr all-in &mdash; a do-most-things ship with explorer range for a fraction of a medium's cost.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no multipurpose-specific ARX pre-built built around the Diamondback Explorer; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A balanced multirole fit &mdash; light guns, a small shield, some cargo and a fuel scoop, with the FSD kept strong so it still roams. Initial is buy-only; A-rated is the multirole baseline; Engineered makes it capable across the board for the size.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Pulse Laser 2</td><td class="eng">Pulse 2 &mdash; Efficient</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced</td></tr>
+        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Generator 4 (bi-weave)</td><td class="eng">Bi-Weave 4 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo / Fuel Scoop (role swap)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Cargo Rack 3 (8t)</td><td class="eng">Cargo / SRV (role swap)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Fuel Scoop 3</td><td class="eng">Fuel Scoop 3 / AFMU</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 2</td><td class="eng">HRP 2 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Cargo Rack 2 (4t)</td><td class="eng">Cargo / AFMU (role swap)</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Built to re-tune</span><p>This is one balanced configuration; the DBE's strength as a generalist is swapping its few optionals at a station &mdash; strip the guns and HRP for a bigger scoop, SRV and scanner to explore; fill with cargo racks for a courier loop; keep the shield and weapons for a light bounty session. Keep role-specific modules in storage and switch as the week demands.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit a balanced multirole loadout: light guns, a small shield, cargo and a fuel scoop.</p>
+    <p>A-rate the core internals first &mdash; the FSD, plant and thrusters serve every role.</p>
+    <p>Build role-specific module sets (explorer scoop/SRV, cargo racks) in storage to swap in as needed.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget all-rounder:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>FSD &rarr; A</b> &mdash; Range is this hull's signature edge; A-rate it first. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power plant + distributor &rarr; A</b> &mdash; Run the guns and shield, and serve every role. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Thrusters &rarr; A</b> &mdash; Mobility for combat and quick station turns. <span class="acc">~1.5M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield + weapons</b> &mdash; A bi-weave and a gimballed gun set for self-defence and light combat. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Role module sets</b> &mdash; Fuel scoop, SRV, cargo racks and scanner to swap. <span class="acc">varies</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">A-rate the cores, then specialise</span><p>The DBE's cores power every role &mdash; A-rate the FSD, plant, distributor and thrusters first, then build and store the few role-specific modules to swap between roaming, light combat and hauling.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>A light all-rounder engineering pattern &mdash; range, mobility, shields and guns all touched on a small hull. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Felicity Farseer / Professor Palin</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one)</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">HRP / Boosters</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>FSD Increased Range to G5 with Mass Manager &mdash; preserve the hull's defining reach.</li>
+      <li><span class="stepnum">2</span>Overcharged plant and Dirty thrusters for power and mobility across every role.</li>
+      <li><span class="stepnum">3</span>Bi-weave Resistance-Augmented shield plus Heavy-Duty boosters and an HRP for survivability.</li>
+      <li><span class="stepnum">4</span>Overcharged multi-cannons (one Corrosive) for light combat capability; engineer once and reuse across role swaps.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light-to-moderate &mdash; small modules across FSD, mobility, shields and guns; nothing capital-scale. Each module is engineered once and reused across role swaps. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Combat capability</td><td>light</td><td>light</td><td class="acc">light&ndash;moderate</td></tr>
+        <tr><td class="mod">Max jump (LY)</td><td>~30</td><td>~42</td><td class="acc">~62</td></tr>
+        <tr><td class="mod">Max cargo (t)</td><td>~40</td><td>~52</td><td class="acc">~60</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~90</td><td>~190</td><td class="acc">~350</td></tr>
+        <tr><td class="mod">Versatility</td><td>good</td><td>good</td><td class="acc">good</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the DBE roams at ~62 LY, defends itself with a corrosive multi-cannon set, carries a small cargo run and surveys with a scanner and SRV &mdash; all from a small pad for almost nothing. Its small internals and thin defences keep it well short of the do-everything mediums, but as a long-legged budget generalist it earns its rating.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>One cheap ship to roam.</b> Scan, dabble in bounties and shift a little cargo, re-tuned as needed.</li>
+      <li><b>Long-legged generalist.</b> ~62 LY multirole means far systems and missions stay in easy reach.</li>
+      <li><b>Light bounty and mission work.</b> One large and two medium hardpoints handle low-intensity combat and delivery runs.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Outpost-only theatres.</b> Its small pad reaches stations the multirole mediums and larges can't dock at.</li>
+      <li><b>Exobiology side-trips.</b> Swap in an SRV and scanner to survey and sample between other jobs.</li>
+      <li><b>Budget first generalist.</b> A flexible all-rounder before committing to a costly multirole medium.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example uses</span><p>Whatever the week demands at a budget &mdash; a light bounty session, a survey detour, a courier loop, a long hop to a new region. From your home base, one DBE covers a slice of them all.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>A-rate the FSD and cores first &mdash; range is this hull's edge over every other budget generalist.</li>
+      <li>It's a do-most-things ship, not a do-everything one &mdash; a Cobra Mk V, Asp Explorer or Python beats it at the heavy end of every role.</li>
+      <li>Lean on the small pad &mdash; it docks where the multirole mediums and larges can't.</li>
+      <li>It has a dedicated exploration manual too &mdash; this one is for the flexible, do-a-bit-of-everything build.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Diamondback Explorer is a budget generalist that earns a <b>68</b>: explorer-grade range, small-pad access, light hardpoints and a flexible loadout, all for under 15M Cr engineered. It rates below the do-everything mediums and larges &mdash; its small internals, thin armour and modest cargo cap the heavy end of combat and hauling &mdash; but it sits comfortably above the weaker small all-rounders thanks to its reach and value. Not higher because it can't carry or fight at their scale; not lower because nothing this cheap roams as far while still doing a bit of everything.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to validate the multirole slot fit, jump range and cargo figures for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/diamondback_explorer">coriolis.io/outfit/diamondback_explorer</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Diamondback Explorer ship page — manufacturer, hardpoint/feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/diamondback-explorer">elitedangerous.com/.../diamondback-explorer</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Authoritative hardpoint sizes, optional-internal slots, hull mass and core stats backing the specgrid and peer tables.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/diamondback_explorer.json">coriolis-data/ships/diamondback_explorer.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Diamondback Explorer</span><span class="cr-what">Ship overview cross-checked for internals layout, hardpoints, hull price and shipyard availability used in the multipurpose write-up.</span><a class="cr-link" href="https://inara.cz/elite/ship/31/">inara.cz/elite/ship/31</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Diamondback Explorer lore, manufacturer and design notes (range, heat profile) informing the role overview.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Diamondback_Explorer">elite-dangerous.fandom.com/wiki/Diamondback_Explorer</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Opinionated review of the Diamondback Explorer's strengths and limits as an affordable, flexible hull beyond pure exploration.</span><a class="cr-link" href="https://www.youtube.com/watch?v=XFspnEnExB4">youtube.com/watch?v=XFspnEnExB4</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

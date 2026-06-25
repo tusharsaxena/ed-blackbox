@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Type-6 Transporter &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-mine"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Mine</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Type-6 Transporter · Mining</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Type-6 Transporter</span><span class="role ac-role-mining">Mining</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The <em>cheapest</em> way into mining — a tool-cramped budget laser miner</h2>
+      <p>The Type-6 Transporter is the most affordable medium hull you can turn into a working miner: a refinery, limpet controllers, ore racks and a small shield all fit, and it lands at most ring systems on a medium pad for under a million credits. But it has only two small hardpoints &mdash; no room for the full core-mining trio &mdash; and a small ore hold. It's a laser-mining starter that teaches the loop cheaply, not a hull you keep once the credits roll in.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/type-6-transporter.jpg" alt="Type-6 Transporter" width="160" height="90">
+      <figcaption><b>Type-6 Transporter</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">62<small>/100</small></div><div class="bar mini"><i style="--pct:62"></i></div></div>
+      <div class="stat"><div class="n">~110 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad class</div></div>
+      <div class="stat"><div class="n">~867k Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Mining is the trade where a cheap hull can still earn well, and the Type-6 is the cheapest medium ship that fits a real mining suite. Its eight optional internals take a refinery, a prospector controller, collector controllers, a detailed surface scanner and a couple of ore racks, while a class-3 shield slot keeps a small bubble of protection around you during the exposed minutes of working a rock. On a medium pad it reaches almost every ring system, and its good laden range gets you out to the pristine hotspots that pay.</p>
+    <p>The catch is its hardpoints: just two small mounts. That fits a mining laser and an abrasion blaster for surface and laser mining comfortably, but there is no room for the full seismic-charge-plus-sub-surface-missile-plus-abrasion-blaster trio that efficient core cracking wants. The ore hold is small too &mdash; a fraction of what a Type-8 or a capital miner carries. The Type-6's case is simple: get mining cheaply, learn the loop, and bank the profit toward a hull built for it.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Budget laser mining: a first dedicated miner, learning prospecting and refining, working accessible painite/platinum/tritium hotspots on a medium pad, and building capital toward a Type-8 or a capital miner.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-mine">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Ore hold (practical)</div><div class="v">~64 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~110 <small>t</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2S <small>(tools only)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">3</div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~90 <small>MJ (light)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;5&middot;4&middot;4&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Self-defence</div><div class="v">Minimal <small>(flee, don't fight)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Type-6 a workable budget miner:</p>
+    <ul class="bullets">
+      <li><b>Cheapest way into mining.</b> Under a million credits and no rank gate &mdash; the most affordable medium hull that fits a real mining suite.</li>
+      <li><b>Internals for a full laser suite.</b> Eight optional slots take a refinery, prospector and collector controllers, a surface scanner and ore racks.</li>
+      <li><b>Medium-pad and good range.</b> Reaches almost every ring system and lands at outposts; the laden jump gets you to the paying hotspots.</li>
+      <li><b>Light and nimble.</b> Quick to line up on rocks and quick to high-wake away when a pirate interdicts the haul.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Two small hardpoints mean no full core-mining trio &mdash; this is a laser miner first. The ~64t practical ore hold is a fraction of a Type-8's, and a ~90 MJ base shield with no real guns means you run from pirates, you don't fight them. It earns honestly while you learn, but it's outclassed the moment you can afford a purpose-built miner.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite (refinery, limpet controllers) is fitted.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-6 Transporter</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">All tool mounts; big hold; defends itself</span><span class="c">Far pricier</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Far larger ore hold; tougher</span><span class="c">Far pricier</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">More tool mounts; great range; bigger hold</span><span class="c">Far pricier</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">SLF for defence; similar budget</span><span class="c">Smaller hold; fewer mounts</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter <span class="pill md">this</span></td><td>Medium</td><td>~110</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among medium miners the Type-6 is the budget floor. Everything above it carries more ore, mounts more tools, or defends itself &mdash; but all cost several times as much. The Keelback edges ahead on its fighter bay for defence; for the cheapest functional laser miner, the Type-6 is the entry point, then you graduate.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated and capital miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Type-6 Transporter</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-11 Prospector</td><td>Large</td><td>~288</td><td class="pcc"><span class="p">Dedicated miner; exclusive Mk II mining modules</span><span class="c">Large pad; far pricier</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Vast ore hold; strong shields; fast</span><span class="c">Large pad; Imperial rank; far pricier</span></td><td><span class="rscore">92</span><div class="bar mini"><i style="--pct:92"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Vast ore hold; cheap-ish per tonne</span><span class="c">Large pad; flimsy; slow</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Bigger hold; good range</span><span class="c">Large pad; pricier</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Cheaper; lands anywhere; nimble</span><span class="c">Smaller hold; fewer internals</span></td><td><span class="rscore">52</span><div class="bar mini"><i style="--pct:52"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The dedicated and capital miners out-haul and out-specialise the Type-6 by a wide margin, but all need a large pad and far deeper pockets. The Type-6's only real rival below it is the small-pad Cobra Mk III &mdash; cheaper and lands anywhere, but smaller still. The Type-6 is rung one of the mining ladder: the cheapest medium miner, then you scale up.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~867k Cr</div></div>
+      <div class="cell"><div class="k">A-rated miner</div><div class="v">~3M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~6M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~867k Cr the Type-6 is cheap, with no rank gate. A working mining fit &mdash; tools, refinery, prospector and collector controllers, ore racks and a small shield &mdash; brings the all-in figure to around 6M Cr, less than a bare Python hull.</p>
+    <p>That low cost is the whole point: mining profits in a Type-6 compound fast into a Type-8 or a capital miner. For maximum ore per trip or any real self-defence, a purpose-built miner wins easily; for getting into mining for almost nothing, nothing is cheaper.</p>
+    <div class="callout"><span class="lbl">The first miner</span><p>Around 6M Cr all-in for a functional laser miner &mdash; the ship that teaches prospecting and refining and banks the credits toward a hull built for the job.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no mining-specific ARX pre-built built around the Type-6 Transporter; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A complete laser-mining fit on a budget, with a small shield to survive a pirate long enough to flee. Initial is buy-only; A-rated is the mining baseline; Engineered focuses on range, mobility and a tougher shield &mdash; the mining tools themselves are not meaningfully engineered.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">Mining Laser</td><td class="st">Mining Laser</td><td class="eng">Mining Laser</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster</td><td class="eng">Abrasion Blaster</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (2)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (3)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (2)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Cargo Rack 5</td><td class="st">Cargo Rack 5 (32t ore)</td><td class="eng">Cargo Rack 5 (32t ore)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t ore)</td><td class="eng">Cargo Rack 5 (32t ore)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Refinery 4 (deep bins)</td><td class="eng">Refinery 4 (deep bins)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 4 (multi)</td><td class="eng">Collector Controller 4 (multi)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Generator 3 (bi-weave)</td><td class="eng">Bi-Weave 3 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Controller 2</td><td class="eng">Prospector Controller 2</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 2</td><td class="eng">Collector Controller 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS (find hotspots)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">A laser suite plus a small shield</span><p>Two small hardpoints fit a mining laser and an abrasion blaster &mdash; a clean laser-mining setup. A Pulse Wave Analyser finds the rocks, a refinery and prospector/collector limpets work the loop, and a class-3 bi-weave keeps a small shield up. Core mining is possible by swapping a seismic launcher in, but with only two mounts you give up another tool to do it.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~867k Cr) and fit the laser-mining suite: a mining laser and abrasion blaster, refinery, prospector and collector controllers.</p>
+    <p>Keep one class-3 slot for a small bi-weave shield, and a Pulse Wave Analyser on a utility mount to spot rocks.</p>
+    <p>Fill remaining optionals with ore racks; A-rate the plant and distributor so the lasers and limpets run without browning out.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget miner:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; Mining lasers and limpets are power-hungry; A-rate first. <span class="acc">~600k Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power Plant &rarr; A</b> &mdash; Run lasers, limpets and a shield together. <span class="acc">~800k Cr</span></li>
+      <li><span class="stepnum">3</span><b>FSD &rarr; A</b> &mdash; Reach the distant hotspots that pay and haul ore home. <span class="acc">~1M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield Generator &rarr; bi-weave</b> &mdash; Survive the exposed minutes of working a rock. <span class="acc">~400k Cr</span></li>
+      <li><span class="stepnum">5</span><b>Thrusters &rarr; A</b> &mdash; Reposition fast and flee when a pirate interdicts. <span class="acc">~800k Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Power runs the mining loop</span><p>Mining lasers and limpets draw heavily on a small class-3 plant and distributor &mdash; A-rate both first so the suite runs without browning out, then add the FSD for range and a small shield for survival.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is light and focuses on the ship, not the tools &mdash; the mining hardware itself isn't meaningfully engineered. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Engine Focused (G3)</td><td>&mdash;</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>FSD Increased Range first &mdash; reach the paying hotspots and haul ore home efficiently.</li>
+      <li><span class="stepnum">2</span>Low-Emissions plant keeps heat down through long mining sessions.</li>
+      <li><span class="stepnum">3</span>Small bi-weave shield and a booster so you survive long enough to flee a pirate.</li>
+      <li><span class="stepnum">4</span>Leave the mining laser, abrasion blaster, limpet controllers and refinery stock &mdash; they don't benefit meaningfully from engineering.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; only the ship's range, mobility and defence blueprints on modest medium modules; the mining tools are left stock, so there's no weapon-style grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Ore per trip (t)</td><td>~32</td><td>~56</td><td class="acc">~64</td></tr>
+        <tr><td class="mod">Survives pirates</td><td>barely</td><td>flees</td><td class="acc">flees reliably</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~80</td><td>~140</td><td class="acc">~300</td></tr>
+        <tr><td class="mod">Tool mounts</td><td>2S</td><td>2S</td><td class="acc">2S</td></tr>
+        <tr><td class="mod">Pad access</td><td>medium</td><td>medium</td><td class="acc">medium</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Type-6 laser-mines a ~64t ore hold behind a modest shield, for almost nothing &mdash; a profitable first miner that reaches the hotspots and gets the haul home. Its hold stays small and its two hardpoints cap the tools it can carry; its job is to earn cheaply and fund a real miner.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Laser mining hotspots.</b> Work painite, platinum or tritium hotspots with a laser, abrasion blaster and a collector swarm.</li>
+      <li><b>Learning the loop.</b> Prospect, fire, refine and stow &mdash; the full mining rhythm on a forgiving budget hull.</li>
+      <li><b>Building mining capital.</b> Bank early ore profits toward a Type-8 or a capital miner.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Accessible cores.</b> Swap in a seismic launcher for occasional core cracking in quieter rings &mdash; one tool at a time.</li>
+      <li><b>Tritium top-ups.</b> Mine a modest fuel load for a fleet carrier on a starter budget.</li>
+      <li><b>Quiet-ring runs.</b> Lightly defended &mdash; work calmer systems and high-wake out the moment a pirate arrives.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example sites</span><p>Any accessible pristine metallic or icy ring suits it. From your home base it reaches mining systems easily; pick quieter rings while you learn, prospect, refine, and wake out if a pirate interdicts the haul.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Run it as a laser miner &mdash; two small hardpoints can't carry the full core-mining trio.</li>
+      <li>Keep a small bi-weave shield; the Type-6 is lightly built and pirates target laden miners.</li>
+      <li>A-rate the distributor and plant so lasers and limpets run together without browning out.</li>
+      <li>Don't engineer the mining tools &mdash; they don't benefit; engineer range, mobility and the shield instead.</li>
+      <li>It's a starter, not a keeper &mdash; bank the ore profit toward a Type-8 or a capital miner.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Type-6 Transporter is the cheapest functional miner: a refinery, limpets, ore racks and a small shield on a medium pad for under a million credits. Two small hardpoints cap it to laser mining, the ore hold is small, and it flees pirates rather than fighting them &mdash; which is why it rates <b>62</b>, ahead of the small-pad hulls but well below the real medium miners and the capital haulers. As a first miner that teaches the loop and funds the next ship, it earns its place; as a destination, it doesn't.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to verify the mining loadout, slot sizes and power budget for this hull.</span><a class="cr-link" href="https://coriolis.io/outfit/type_6_transporter">coriolis.io/outfit/type_6_transporter</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Type-6 Transporter ship page — manufacturer specs and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/type-6-transporter">elitedangerous.com/.../type-6-transporter</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Authoritative hardpoint count, optional-internal slot sizes and base hull stats behind the mining build on this page.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/type_6_transporter.json">coriolis-data/ships/type_6_transporter.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Type-6 Transporter</span><span class="cr-what">Ship specification, base stats and shipyard pricing cross-checked for the cost figures here.</span><a class="cr-link" href="https://inara.cz/elite/ship/30/">inara.cz/elite/ship/30</a></div>
+      <div class="cr-row"><span class="cr-src">ED Wiki &mdash; Type-6 Transporter</span><span class="cr-what">Hull role, Lakon background and hardpoint / internal layout used to frame its mining limits.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Type-6_Transporter">elite-dangerous.fandom.com/wiki/Type-6_Transporter</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

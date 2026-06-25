@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperial Clipper &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-versatile"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Versatile</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Imperial Clipper · Multipurpose</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Imperial Clipper</span><span class="role ac-role-multipurpose">Multipurpose</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A fast, cheap large hull that turns its hand to most things &mdash; <em>capable</em> across roles, but no true all-rounder</h2>
+      <p>The Imperial Clipper is the speed merchant of the large class, and that pace serves every job: hauling, fast travel, light combat, even casual exploration. Nine optional slots give it real room for the price. But only four hardpoints, no military slot, a modest jump range and ~250 t of cargo keep it behind the genuine generalists &mdash; and the large-pad-only footprint stings for a ship that handles like a medium. A stylish, affordable jack-of-trades, not a master of any.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/imperial-clipper.jpg" alt="Imperial Clipper" width="160" height="90">
+      <figcaption><b>Imperial Clipper</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">73<small>/100</small></div><div class="bar mini"><i style="--pct:73"></i></div></div>
+      <div class="stat"><div class="n">2L 2M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">~250 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">~34 LY</div><div class="l">Max jump range</div></div>
+      <div class="stat"><div class="n">~21M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>As a multipurpose hull the Imperial Clipper leans on the one thing it does better than any other large ship &mdash; speed. It boosts to nearly 380 m/s, turns far better than its size suggests, and that pace pays off in every role: it hauls a decent load quickly, reaches distant signals fast, escapes trouble it can't out-fight, and crosses systems at a clip. Nine optional internals give it genuine room for the price &mdash; cargo racks, a strong shield, an exploration kit or a reinforcement stack as the job demands.</p>
+    <p>But it is a generalist held back at the edges. Only two large and two medium hardpoints, no military slot, a class-5 FSD and ~250 t of cargo mean it trails the true all-rounders in firepower, jump range and capacity alike. It needs a large pad despite medium-ship handling, and it needs Imperial rank to buy. The Clipper's multipurpose case is being a fast, affordable, characterful hull that can do a bit of everything &mdash; not a hull that does everything well.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>A fast, low-cost large ship for the commander who wants one stylish airframe to dabble across hauling, light combat, fast errands and casual exploration &mdash; and who values pace and looks over maximum capacity. A natural companion while climbing Imperial rank.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-versatile">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~250 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max jump</div><div class="v">~34 <small>LY (as explorer)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">300 / 380 <small>m/s (fastest large)</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2 Large &middot; 2 Medium</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;4&middot;4&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Baron</div></div>
+    </div>
+    <p>Four things shape the Clipper as an all-rounder:</p>
+    <ul class="bullets">
+      <li><b>Speed across every role.</b> The fastest large ship in the game &mdash; 380 m/s boost stock, past 450 engineered &mdash; pays off whether you're hauling, running errands or escaping a fight.</li>
+      <li><b>Roomy for the money.</b> Nine optional slots take cargo racks, a strong shield, or an exploration kit; few large hulls offer this flexibility so cheaply.</li>
+      <li><b>Agile and accessible.</b> It flies like a heavy medium and needs only the modest Imperial Baron rank &mdash; no Duke gate, no fortune to buy.</li>
+      <li><b>Style and value.</b> A handsome Gutamaya hull cheaper than many mediums &mdash; an inexpensive way into a large ship that does a bit of everything.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Only four hardpoints, no military slot, a class-5 FSD and ~250 t of cargo cap it below the real generalists at every job: an Anaconda or Python out-fights, out-hauls and out-jumps it, and the large pad shuts it out of outpost work. It also needs Imperial rank. The Clipper is the fast, cheap dabbler &mdash; capable everywhere, best nowhere but speed.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for multipurpose use</em> &mdash; versatility across combat, trade, exploration and more. The role column is the maximum cargo capacity in tonnes as one measure of capacity; versatility is judged across all roles.</p>
+    <h3 class="subhead">Same class &mdash; large all-rounders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Imperial Clipper</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Eight mounts; vast internals; long range; no rank</span><span class="c">Ponderous; far pricier</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Best shields; huge cargo; also fast</span><span class="c">Imperial Duke rank; poor agility; far pricier</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>~618</td><td class="pcc"><span class="p">Apex combat; tanky; big internals</span><span class="c">Federal rank; poor jump range; far pricier</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper <span class="pill md">this</span></td><td>Large</td><td>~250</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among large all-rounders the Clipper is the cheapest and fastest, but also the least capable across the board &mdash; the others carry more cargo, more guns and more internals. Its pitch is doing a little of everything quickly and affordably, on a low Imperial rank, where the rivals demand a fortune or a steep rank for greater capability.</p>
+    <h3 class="subhead">Other classes &mdash; the versatile mediums</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Imperial Clipper</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~284</td><td class="pcc"><span class="p">Medium pad; more cargo; very rounded; no rank</span><span class="c">Slower; pricier</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Medium pad; great range &amp; view; cheap; no rank</span><span class="c">Less cargo and firepower</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Tiny, nimble, dirt-cheap; any pad; no rank</span><span class="c">Far less of everything</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer</td><td>Medium</td><td>~28</td><td class="pcc"><span class="p">Huge range; cool-running; cheap; no rank</span><span class="c">Tiny cargo; light firepower</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>~36</td><td class="pcc"><span class="p">Even faster; nimble; any pad; cheap</span><span class="c">Tiny internals; Imperial rank</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The versatile mediums and smalls cost less, land on any pad, and match or beat the Clipper at most individual jobs &mdash; the Python on cargo, the Asp and DBX on range. The Clipper's distinction is being a <em>large</em> hull that flies this fast; if pad size and looks don't sway you, a rounded medium is usually the more sensible multipurpose buy.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~21M Cr</div></div>
+      <div class="cell"><div class="k">A-rated multirole</div><div class="v">~32M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~50M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Baron</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~21M Cr the Clipper is remarkably cheap for a large ship &mdash; less than many mediums &mdash; and gated only by the modest Imperial Baron rank. A balanced multirole fit lands around ~32M Cr, and engineering it across mobility, shields and a few guns runs past ~50M Cr.</p>
+    <p>That low entry price is the heart of its multipurpose case: it's an affordable way to fly a large, fast hull that can dabble across roles while you climb Imperial rank toward the Cutter &mdash; the same grind unlocks and then surpasses the Baron rank it needs.</p>
+    <div class="callout"><span class="lbl">Cheap, fast, flexible</span><p>A large multirole hull for the price of a medium, gated only by a low Imperial rank &mdash; an inexpensive jack-of-trades that doubles as a stepping stone up the Imperial ladder.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no multipurpose-specific ARX pre-built built around the Imperial Clipper; buy and outfit it normally once you hold the rank.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A balanced multirole fit &mdash; a couple of guns, a bi-weave buffer, cargo room and a usable range, ready to re-tune for any role. Initial is buy-only; A-rated is the multirole baseline; Engineered weights the house pattern toward speed and shields.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">Pulse Laser 3</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">Multi-Cannon 3</td><td class="st">Beam Laser 3</td><td class="eng">Beam 3 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Pulse Laser 2</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced</td></tr>
+        <tr><td class="slot">Sensors (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">Cargo Rack 7 (128t)</td><td class="st">Cargo Rack 7 (128t)</td><td class="eng">Cargo / Fuel Scoop (role swap)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Shield Generator 6</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo / SRV (role swap)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 4</td><td class="eng">HRP 4 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Cargo Rack 3 (8t)</td><td class="eng">Cargo / AFMU (role swap)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 3</td><td class="eng">SCB 3</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 2</td><td class="eng">HRP 2 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Built to re-tune</span><p>This is one balanced configuration; the Clipper's flexibility is swapping module sets at a station &mdash; strip guns and reinforcement for a fuel scoop, SRV and a DSS to explore; fill the slots with cargo racks to haul; lean back into shields and guns for combat. Keep role-specific sets in storage and switch as the week demands &mdash; just remember its room and range are smaller than a true generalist's.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Baron, buy the hull (~21M Cr), and fit a balanced multirole loadout: a couple of guns, a shield and a big cargo rack.</p>
+    <p>A-rate the core internals first &mdash; thrusters, plant, distributor and FSD serve every role and protect the speed.</p>
+    <p>Build role-specific module sets (explorer kit, more cargo racks, a heavier combat fit) in storage to swap in as needed.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a fast all-rounder:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Thrusters &rarr; A</b> &mdash; Speed is the Clipper's whole edge; A-rate thrusters first. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power Plant + Distributor &rarr; A</b> &mdash; Headroom for guns, shields and boost across roles. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">3</span><b>FSD &rarr; A</b> &mdash; Range for travel, errands and casual exploration. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield Generator &rarr; bi-weave</b> &mdash; A fast-regen buffer that suits combat, hauling and mining alike. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Role module sets</b> &mdash; Cargo racks, fuel scoop, SRV, light combat kit to swap. <span class="acc">varies</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">A-rate the cores, then specialise</span><p>The Clipper's core internals power every role &mdash; A-rate them first (thrusters above all), then build and store role-specific module sets so one cheap hull covers hauling, light combat and exploration.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The house all-rounder pattern weighted to speed and range &mdash; mobility, FSD, shields and a couple of guns. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one)</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Thrusters first &mdash; the Clipper's identity is speed; maximise it for every role.</li>
+      <li><span class="stepnum">2</span>Increased-Range FSD plus a Guardian booster to lift the modest jump range.</li>
+      <li><span class="stepnum">3</span>Plant and distributor to G5, then a bi-weave shield with Heavy-Duty boosters.</li>
+      <li><span class="stepnum">4</span>Overcharged multi-cannons (one Corrosive) last; the modules carry their mods between role swaps.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; mobility, FSD and shields plus only four guns, lighter than the heavy warships. Each module is engineered once and reused across roles. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>380 m/s</td><td>380 m/s</td><td class="acc">~460 m/s</td></tr>
+        <tr><td class="mod">Max jump (LY)</td><td>~17</td><td>~24</td><td class="acc">~34</td></tr>
+        <tr><td class="mod">Max cargo (t)</td><td>~200</td><td>~250</td><td class="acc">~250</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~250</td><td>~340</td><td class="acc">~620</td></tr>
+        <tr><td class="mod">Versatility</td><td>good</td><td>good</td><td class="acc">good</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Clipper boosts past 450 m/s, jumps ~34 LY, hauls ~250 t and fights well enough for light combat &mdash; a quick, affordable hull that turns its hand to most things. Its room, range and firepower stay middling, so the true generalists out-do it at every job; what it offers is doing a bit of everything fast and cheap.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>One fast hull for errands.</b> Hauling, light bounty work, fast travel and casual exploration in a single cheap airframe.</li>
+      <li><b>Imperial rank climbing.</b> Fly it while earning rank toward <a href="../../systems/superpower-rank.html#superpower-emp">the Empire</a>'s Cutter &mdash; combat, trade and missions all count.</li>
+      <li><b>Quick trade loops.</b> ~250 t moved fast on short, profitable routes between large pads.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Fast response and patrol.</b> Its speed makes it ideal for reaching distant signals, threats and missions quickly.</li>
+      <li><b>Casual exploration.</b> Engineered for range with a fuel scoop and DSS, it makes a stylish weekend explorer.</li>
+      <li><b>Stepping-stone hull.</b> A cheap, capable all-rounder to carry you until a larger generalist or a specialist replaces it.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example uses</span><p>Whatever the week demands at modest scale &mdash; a trade loop, a bounty session, a fast errand, a short expedition. From an Imperial-aligned base, one cheap Clipper covers them all while you climb the rank ladder.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>A-rate the cores first &mdash; thrusters above all; the speed is what makes it useful in every role.</li>
+      <li>It's a fast dabbler, not a true generalist &mdash; an Anaconda or Python out-hauls, out-jumps and out-fights it.</li>
+      <li>Mind the large-pad-only footprint despite medium-ship handling &mdash; plan docking around large pads or a carrier.</li>
+      <li>It has combat and trading manuals too &mdash; this one is for the do-a-bit-of-everything build.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Imperial Clipper is the fast, cheap multipurpose hull: the quickest large ship in the game, roomy for the price, agile and handsome, and gated only by a low Imperial rank. But only four hardpoints, no military slot, a class-5 FSD and ~250 t of cargo keep it a notch below the genuine all-rounders &mdash; hence <span class="rscore">73</span>, not higher. Pick it as an affordable, stylish jack-of-trades and an Imperial-rank companion; choose an Anaconda or Python when you want one hull that truly does it all.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, used to validate the multirole loadout, cargo capacity and engineered jump range.</span><a class="cr-link" href="https://coriolis.io/outfit/imperial_clipper">coriolis.io/outfit/imperial_clipper</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Imperial Clipper ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/imperial-clipper">elitedangerous.com/.../imperial-clipper</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Hardpoint sizes, optional &amp; core slot layout and engineering blueprint data behind the spec grid and loadout table.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_clipper.json">coriolis-data/ships/imperial_clipper.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Imperial Clipper</span><span class="cr-what">Ship reference page cross-checked for hull stats, module slot layout and the Imperial Baron rank requirement.</span><a class="cr-link" href="https://inara.cz/elite/ship/45/">inara.cz/elite/ship/45</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Imperial Clipper article: role profile, Gutamaya manufacture and rank gate backing the multipurpose write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Imperial_Clipper">fandom.com/wiki/Imperial_Clipper</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-a-liner"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It a Liner</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Python · Passenger</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Python</span><span class="role ac-role-passenger">Passenger</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The tough, flexible medium liner — <em>safety</em> over per-seat pay</h2>
+      <p>A capable passenger hull, not a dedicated liner. Deep internals fit a real cabin suite for big economy boards or VIP fares, a strong shield and three large hardpoints keep the manifest safe through threatened space, and a medium pad lands at most stations. It has no liner comfort bonus &mdash; so it earns less per seat than a Beluga, Orca or Lynx &mdash; but it survives runs they can't and doubles as the all-rounder you already own.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/python.jpg" alt="Python" width="160" height="90">
+      <figcaption><b>Python</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">70<small>/100</small></div><div class="bar mini"><i style="--pct:70"></i></div></div>
+      <div class="stat"><div class="n">~146</div><div class="l">Max passengers (econ)</div></div>
+      <div class="stat"><div class="n">~30 LY</div><div class="l">Max jump (cabin fit)</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">~55.3M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Python carries passengers the way it carries everything else &mdash; competently, in volume, and with enough teeth to fight off whatever the route throws at it. Its deep internals fit a cabin suite of roughly ~146 economy berths, or a mixed economy/first/luxury board for VIP fares, while a strong base shield and three large hardpoints make it the safest medium passenger hull in the game. On a medium pad it docks at the vast majority of stations &mdash; flexibility the large dedicated liners can't match.</p>
+    <p>Its costs are real, though. The Python is a Faulcon DeLacy hull, not a liner, so it earns <b>no</b> comfort bonus &mdash; passengers pay standard rates rather than the premiums an Orca, Beluga or Lynx commands. Its jump range under a full cabin load is modest, so it doesn't reach the far-flung scenic beacons an Anaconda does. As a passenger ship it's the durable, accessible all-rounder doing passenger duty, not the luxury specialist that earns most per seat.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Defensible sightseeing and VIP runs through threatened or pirate-heavy space where the manifest needs a real shield and guns; medium-pad boards the large liners can't service; and any commander who wants one tough hull that flies passengers this week and trades, mines or fights the next.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-a-liner">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It a Liner</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max passengers (econ)</div><div class="v">~146</div></div>
+      <div class="cell"><div class="k">Max jump</div><div class="v">~30 <small>LY (cabin fit)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;6&middot;5&middot;5&middot;4&middot;3&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~260 <small>MJ (strong)</small></div></div>
+      <div class="cell"><div class="k">Liner comfort bonus</div><div class="v">No <small>(Faulcon DeLacy)</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Python a capable passenger hull &mdash; even without a dedicated liner's polish:</p>
+    <ul class="bullets">
+      <li><b>Defensible by design.</b> A strong base shield and three large hardpoints &mdash; it protects the manifest through space the unarmed liners avoid.</li>
+      <li><b>Deep cabin capacity.</b> Ten optionals fit ~146 economy berths, or a mixed economy/first/luxury suite for VIP boards.</li>
+      <li><b>Medium-pad access.</b> Lands at most stations and outposts &mdash; far more reach into the network than the large liners.</li>
+      <li><b>Doubles as everything.</b> The same hull is your warship, trader and miner; swap cabins for cargo or guns at a station.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It has <b>no</b> liner comfort bonus, so its passengers pay standard rates &mdash; a Beluga, Orca, Lynx or Dolphin earns more per seat in equal cabins. Under a full cabin load its jump range is modest (~30 LY), so it can't chase the distant beacons an Anaconda reaches. The Python's case is safety, capacity and medium-pad flexibility, not luxury pay; for maximum earnings-per-seat the dedicated liners win.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for passenger work specifically</em>. The role column is the maximum economy passenger capacity &mdash; but note that dedicated liners earn comfort bonuses (more profit per seat) the Python does not, while the Python carries a real shield and guns the liners lack.</p>
+    <h3 class="subhead">Same class &mdash; medium passenger ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Python</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Lynx Highliner</td><td>Medium</td><td>~100</td><td class="pcc"><span class="p">Dedicated liner; comfort bonus; Robigo-ready</span><span class="c">No real shield or guns; weaker hull</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Python <span class="pill md">this</span></td><td>Medium</td><td>~146</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~70</td><td class="pcc"><span class="p">Far better range; faster</span><span class="c">Fewer cabins; weaker shield; no comfort bonus</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~30</td><td class="pcc"><span class="p">Cheaper; better range</span><span class="c">Far fewer cabins; far weaker hull</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Lynx is the dedicated medium liner &mdash; its comfort bonus out-earns the Python per seat on the milk runs, but it can't defend itself. The Python carries more cabins than any other armed medium and survives routes the Lynx avoids; the Kraits and Asp are faster and longer-ranged but carry far fewer passengers. The Python is the tough, high-capacity medium, not the per-seat earner.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated liners and small option</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Python</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Beluga Liner</td><td>Large</td><td>~184</td><td class="pcc"><span class="p">Most cabins; comfort bonus; luxury fares</span><span class="c">Large pad; pricier; no real guns</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Orca</td><td>Large</td><td>~96</td><td class="pcc"><span class="p">Comfort bonus; fast; luxury appeal</span><span class="c">Large pad; weaker hull; fewer cabins</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Dolphin</td><td>Small</td><td>~42</td><td class="pcc"><span class="p">Cheap; lands anywhere; comfort bonus</span><span class="c">Far fewer cabins; weak hull</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~72</td><td class="pcc"><span class="p">Fast; long range; stylish</span><span class="c">Large pad; no comfort bonus; fewer cabins</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~50</td><td class="pcc"><span class="p">Cheap; big holds for cargo</span><span class="c">Large pad; slow; weak hull; no comfort bonus</span></td><td><span class="rscore">56</span><div class="bar mini"><i style="--pct:56"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The dedicated liners out-earn the Python per seat through their comfort bonus, and the Beluga out-berths it &mdash; but all three need large pads (or, for the Dolphin, give up most of the cabins). The Python's edge is the combination: high cabin capacity, a real shield and guns, and a medium pad. The more your routes pass through threatened space or medium-only stations, the more that combination justifies the missing comfort bonus.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~55.3M Cr</div></div>
+      <div class="cell"><div class="k">A-rated passenger</div><div class="v">~80M Cr</div></div>
+      <div class="cell"><div class="k">Rebuy</div><div class="v">~4M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~55.3M Cr the hull is a solid purchase with no rank gate, and a passenger fit doesn't blow the budget the way a large liner does &mdash; an A-rated cabin suite with a shield and a decent FSD runs to around ~80M Cr all-in. Budget a ~4M rebuy, far lighter than the large liners' double-digit hits.</p>
+    <p>The saving grace is that it isn't a single-role outlay: the cabins swap for cargo racks, a mining suite or hardpoints at a station, so the same engineered hull pays its way across passenger work, trading, mining and combat. For a commander who already owns a Python, adding a cabin set is far cheaper than buying a dedicated liner.</p>
+    <div class="callout"><span class="lbl">One hull, many roles</span><p>Around ~80M Cr all-in for the passenger fit &mdash; no rank gate, a light rebuy, and cabins that swap for cargo, mining or guns, so the spend isn't locked to one job.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no passenger-specific ARX pre-built built around the Python; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A defensible passenger fit &mdash; a deep cabin suite, a strong shield and a clean FSD, with hardpoints kept light for self-defence. Initial is buy-only; A-rated is the passenger baseline; Engineered keeps the cabins safe and stretches the range. The Python has no military slots, so all reinforcement and cabins share the ten optionals.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1&ndash;2</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 3 (gimballed)</td><td class="eng">MC 3 &mdash; Efficient (self-defence)</td></tr>
+        <tr><td class="slot">Large 3</td><td class="st">&mdash;</td><td class="st">&mdash; (run clean)</td><td class="eng">&mdash; or Beam 3 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 1&ndash;2</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1&ndash;2</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (6)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Economy Cabin 6</td><td class="st">Economy Cabin 6</td><td class="eng">Economy / Business Cabin 6</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Economy Cabin 6</td><td class="st">First Class Cabin 6 (VIP)</td><td class="eng">First / Luxury Cabin 6 (VIP)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Economy Cabin 5</td><td class="st">Economy Cabin 5</td><td class="eng">Economy / Business Cabin 5</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">First Class Cabin 5 (VIP)</td><td class="eng">First Class Cabin 5 (VIP)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Economy Cabin 4</td><td class="eng">Economy / Business Cabin 4</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 3</td><td class="eng">SCB 3</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Economy Cabin 3</td><td class="eng">Cabin / spare</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Economy Cabin 2</td><td class="eng">Cabin / spare</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS / spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Cabins for the board, a shield for the run</span><p>Fit the cabin mix the board demands &mdash; economy for bulk sightseeing, first/luxury for VIP fares &mdash; and keep a real bi-weave shield and point defence, because the Python's whole case is taking passengers through routes the unarmed liners avoid. With no comfort bonus to lean on, safety and capacity are what set it apart; swap cabins for cargo or guns when the week turns.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit a cabin suite &mdash; economy for bulk, plus some first/luxury for VIP boards.</p>
+    <p>Keep a shield and load the utilities with boosters and point defence.</p>
+    <p>A-rate the core internals first &mdash; thrusters, FSD and distributor protect both the range and the shield that keep the manifest safe.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a defensible passenger hull:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Shield Generator &rarr; bi-weave</b> &mdash; The Python's defining edge; keep the manifest alive on threatened routes. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Cabin suite</b> &mdash; The payload; fit the economy/first/luxury mix the board demands. <span class="acc">varies</span></li>
+      <li><span class="stepnum">3</span><b>Core internals &rarr; A</b> &mdash; Plant, thrusters, FSD and distributor for range and survivability. <span class="acc">~18M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Self-defence guns</b> &mdash; One or two large gimballed multi-cannons to fight off interdictors. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Shield Cell Bank</b> &mdash; A reserve to ride out a sustained attack while loaded. <span class="acc">~2M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Shield first, then cabins</span><p>The Python earns on safety and capacity, not a comfort bonus &mdash; A-rate the shield and cores before anything so the manifest survives the runs the liners can't, then build out the cabin suite. Add a Guardian FSD booster to ease the modest loaded range.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The passenger engineering pattern, safety-weighted. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Bi-weave shield Resistance-Augmented plus Heavy-Duty boosters first &mdash; passenger safety is the Python's identity in this role.</li>
+      <li><span class="stepnum">2</span>FSD Increased Range to ease the modest loaded jump; add a Guardian booster.</li>
+      <li><span class="stepnum">3</span>Dirty thrusters and a Low-Emissions plant to move and run the laden hull cool.</li>
+      <li><span class="stepnum">4</span>Cabins aren't engineered &mdash; just fit the right classes for the board.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light-to-moderate for the passenger role &mdash; shield, FSD, thruster and plant blueprints; minimal weapon grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max passengers</td><td>~96</td><td>~120</td><td class="acc">~146</td></tr>
+        <tr><td class="mod">Max jump (loaded, LY)</td><td>~18</td><td>~24</td><td class="acc">~30</td></tr>
+        <tr><td class="mod">Liner comfort bonus</td><td>no</td><td>no</td><td class="acc">no</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~300</td><td>~520</td><td class="acc">~900+</td></tr>
+        <tr><td class="mod">Passenger safety</td><td>good</td><td>strong</td><td class="acc">strongest in class</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Python carries a deep cabin suite behind a 900+ MJ shield with guns to fight off interdictors &mdash; the safest medium passenger hull there is. It earns less per seat than the dedicated liners &mdash; no comfort bonus &mdash; but on threatened routes and medium-only stations it takes boards they can't safely run. The durable passenger all-rounder, not the per-seat earner.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Defensible sightseeing tours.</b> Carry tourist boards through pirate-heavy space behind a real shield.</li>
+      <li><b>Mixed VIP-and-economy boards.</b> A deep cabin suite handles big, varied passenger manifests.</li>
+      <li><b>Bulk economy runs.</b> ~146 berths make ordinary tourist hauls profitable per trip.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>High-threat VIP transfers.</b> Wanted or hunted passengers who attract interdictions the liners can't survive.</li>
+      <li><b>Dual-purpose cruising.</b> Swap cabins for cargo, a mining suite or guns as the week demands.</li>
+      <li><b>Medium-pad networks.</b> Outpost and medium-only stations the large liners simply can't dock at.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Tourist and VIP boards that pass through threatened space or terminate at medium-only stations suit it best, where its shield, guns and pad reach earn their keep. From your home base, the Python takes the boards the unarmed liners avoid.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>A-rate and engineer the shield first &mdash; safety is what the Python brings to passenger work; keep point defence and a self-defence gun.</li>
+      <li>There's no liner comfort bonus &mdash; it earns less per seat than a Beluga, Orca, Lynx or Dolphin; pick threatened or medium-pad boards where its strengths pay.</li>
+      <li>Loaded jump range is modest (~30 LY) &mdash; it can't chase distant beacons like an Anaconda; favour boards within the bubble.</li>
+      <li>Match cabin classes to the board &mdash; economy for volume, first/luxury for VIP fares.</li>
+      <li>Swap the cabins for cargo, a mining suite or guns and the same hull changes roles &mdash; it has those manuals too.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Python is the tough, flexible medium passenger hull: a deep cabin suite behind a strong shield and three large hardpoints, on a pad that lands almost anywhere. The <b>70</b> rating sits below the dedicated liners and the Anaconda because it has no comfort bonus and only a modest loaded range &mdash; it earns less per seat and can't reach the far beacons. But it rates above the weaker mediums because nothing its size carries as many passengers as safely, and the same hull trades, mines and fights when the week turns. Not the per-seat earner; the one that survives the run.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to size the cabin suite, shield and FSD for the passenger fit.</span><a class="cr-link" href="https://coriolis.io/outfit/python">coriolis.io/outfit/python</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Python ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/python">elitedangerous.com/.../python</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout and passenger-cabin module sizes underpinning the loadout and berth count.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/python.json">coriolis-data/ships/python.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Python</span><span class="cr-what">Python shipyard page &mdash; hull stats, internal layout, passenger-cabin capacity, and shipyard pricing.</span><a class="cr-link" href="https://inara.cz/elite/ship/60/">inara.cz/elite/ship/60</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Python</span><span class="cr-what">Faulcon DeLacy lore, role overview, and the spec reference backing the passenger write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Python">fandom.com/wiki/Python</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

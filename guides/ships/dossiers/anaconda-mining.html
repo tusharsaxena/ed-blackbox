@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaconda &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-mine"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Mine</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Anaconda · Mining</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Anaconda</span><span class="role ac-role-mining">Mining</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The capital miner that <em>fights back</em></h2>
+      <p>A big-hold miner that no pirate can bully. Vast internals carry a full mining suite plus a deep ore hold, while a battleship's hardpoints and strong shields mean it destroys the pirate that interdicts it mid-session. It holds less ore than a stripped Cutter or Type-9 and demands a large pad &mdash; but among the capital miners only the Anaconda mines a rich ring and never has to run.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/anaconda.jpg" alt="Anaconda" width="160" height="90">
+      <figcaption><b>Anaconda</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">86<small>/100</small></div><div class="bar mini"><i style="--pct:86"></i></div></div>
+      <div class="stat"><div class="n">~470 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">1H 3L 2M 2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad class</div></div>
+      <div class="stat"><div class="n">~142M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Mining is a slow, stationary business that makes you a magnet for pirates &mdash; and the Anaconda answers that better than any other capital miner. Its huge and large hardpoints mount every mining tool you need (lasers, sub-surface missiles, a seismic charge launcher for core mining, an abrasion blaster), its twelve optional slots carry a full refinery, several limpet controllers and a deep ore hold, and crucially it keeps the shields and guns to turn and destroy the pirate that interdicts you mid-session.</p>
+    <p>Where the trade-miners and navy capitals out-haul it, the Anaconda answers with self-defence and no rank gate: a Cutter or Type-9 holds more ore, but the Cutter needs Imperial rank and the Type-9 folds the moment a pirate arrives. The Anaconda mines a deep hold, fights off the attention, and needs nothing but credits to fly. The costs are the large pad, ponderous handling, and a fit that runs well into nine figures &mdash; but for working valuable cores in pirate-heavy rings without an escort, it's the safe capital choice.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Defensible capital mining: core and laser mining in pirate-prone rings, painite/platinum/tritium hotspots, and any session where surviving the pirates who hunt laden miners matters as much as the haul &mdash; without an Imperial rank gate.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-mine">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Ore hold (practical)</div><div class="v">~320&ndash;400 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~470 <small>t</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1H &middot; 3L &middot; 2M &middot; 2S <small>(tools + guns)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~350 <small>MJ (strong)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;4&middot;4&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large <small>(no outposts)</small></div></div>
+      <div class="cell"><div class="k">Self-defence</div><div class="v">Yes <small>(battleship-grade)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Anaconda a superb miner:</p>
+    <ul class="bullets">
+      <li><b>Mounts every mining tool.</b> A huge and three large hardpoints fit lasers, sub-surface missiles and a seismic charge launcher for laser <em>and</em> core mining at once &mdash; with mounts to spare for guns.</li>
+      <li><b>Vast internals for a full suite.</b> Twelve optionals hold a refinery, prospector and several collector controllers, a detailed surface scanner and a deep ore hold all together.</li>
+      <li><b>It defends itself decisively.</b> Strong shields, a class-5 military slot and battleship hardpoints mean it destroys the pirates that interdict laden miners, rather than fleeing.</li>
+      <li><b>No rank gate.</b> Unlike the Cutter, anyone with the credits can fly one &mdash; capital-scale mining with self-defence and no navy grind.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Its ore hold trails the dedicated trade-miners &mdash; a stripped Cutter or Type-9 carries far more &mdash; and at ~142M Cr the hull alone is a major outlay before the mining kit. It also needs a large pad, so no outpost ring bases. The Anaconda's case is a deep hold plus genuine self-defence on a rank-free hull; for sheer tonnage per trip or lowest cost, other miners win.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite (refinery, limpet controllers) is fitted.</p>
+    <h3 class="subhead">Same class &mdash; large-pad miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Anaconda <span class="pill md">this</span></td><td>Large</td><td>~470</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Type-11 Prospector</td><td>Large</td><td>~288</td><td class="pcc"><span class="p">Dedicated miner; exclusive Mk II mining modules</span><span class="c">Weaker self-defence; less rounded</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Vast ore hold; shields; fast</span><span class="c">Imperial rank; pricier</span></td><td><span class="rscore">92</span><div class="bar mini"><i style="--pct:92"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Vast ore hold; cheaper</span><span class="c">Flimsy; can't fight pirates</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Cheaper; decent hold</span><span class="c">Can't fight; far weaker shield</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>~618</td><td class="pcc"><span class="p">Best self-defence of any miner</span><span class="c">Federal rank; less internal room for ore</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among large miners the Anaconda is the rank-free middle ground: a deeper hold than the dedicated Type-11 and far more self-defence than the Type-9 or Type-7, without the Cutter's Imperial gate. The trade-miners out-haul it and the Type-11 out-specialises it, but none combines this much hold with battleship-grade defence on a hull anyone can buy.</p>
+    <h3 class="subhead">Other classes &mdash; the medium miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Medium pad; cheaper; defends itself</span><span class="c">Smaller hold; less firepower</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Medium pad; big hold; cheaper</span><span class="c">Can't fight pirates; weaker shield</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">Medium pad; SLF; combat-capable</span><span class="c">Smaller hold; fewer tool mounts</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom</td><td>Medium</td><td>~190</td><td class="pcc"><span class="p">Medium pad; great range</span><span class="c">Smaller hold; weaker defence</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">Cheap; SLF for defence</span><span class="c">Far smaller hold</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The medium miners land on outpost pads, cost far less and defend themselves nearly as well at smaller scale &mdash; the Python in particular is the standout medium. The Anaconda's edge is the deep capital hold behind a battleship's shields and guns; the more ore you want per trip while staying safe, the more it justifies the large pad and price.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~142M Cr</div></div>
+      <div class="cell"><div class="k">A-rated miner</div><div class="v">~175M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~210M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~142M Cr the Anaconda is a major purchase &mdash; pricier than every dedicated trade-miner &mdash; but it carries no rank gate. A mining fit (tools, refinery, limpet controllers, deep ore racks and a defensible shield) brings the A-rated figure to around 175M Cr, and an engineered defence-and-mobility build runs past 210M Cr.</p>
+    <p>Its versatility offsets the cost: the same hull mines, hauls, fights or explores by swapping modules at a station. For pure tonnage per credit a Type-8 or Type-9 is cheaper; for a deep-hold miner that also defends itself decisively and re-roles to anything, the Anaconda earns its price.</p>
+    <div class="callout"><span class="lbl">Capability and safety</span><p>Around 210M Cr all-in for a capital miner that fights off pirates and re-roles to anything &mdash; you pay for a deep hold plus survival and rank-free access, not the absolute most tonnage per credit.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no mining-specific ARX pre-built built around the Anaconda; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A complete mining fit for laser and core work that keeps real guns and a strong shield for self-defence. Initial is buy-only; A-rated is the mining baseline; Engineered focuses on mobility, defence and heat &mdash; the mining tools themselves are not meaningfully engineered.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge 1</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 4</td><td class="eng">MC 4 &mdash; Overcharged (pirate defence)</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">Mining Laser</td><td class="st">Mining Laser 2</td><td class="eng">Mining Laser 2</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">&mdash;</td><td class="st">Seismic Charge Launcher</td><td class="eng">Seismic Charge Launcher (core)</td></tr>
+        <tr><td class="slot">Large 3</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster</td><td class="eng">Abrasion Blaster</td></tr>
+        <tr><td class="slot">Medium 2 / Small 1&ndash;2</td><td class="st">&mdash;</td><td class="st">Mining Laser / spare</td><td class="eng">flexible</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2&ndash;4</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 6&ndash;8</td><td class="st">&mdash;</td><td class="st">Chaff / Point Defence</td><td class="eng">flexible</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (8)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (5)</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 5</td><td class="eng">SCB 5 / HRP 5 &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">Cargo Rack 7</td><td class="st">Cargo Rack 7 (128t ore)</td><td class="eng">Cargo Rack 7 (128t ore)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Cargo Rack 6 (64t ore)</td><td class="eng">Cargo Rack 6 (64t ore)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Cargo Rack 6 (64t ore)</td><td class="eng">Cargo Rack 6 (64t ore)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Refinery 4</td><td class="eng">Refinery 4 (deep bins)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 5 (multi)</td><td class="eng">Collector Controller 5 (multi)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t ore)</td><td class="eng">Cargo Rack 5 (32t ore)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 4</td><td class="eng">Collector Controller 4 (multi)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Controller 3</td><td class="eng">Prospector Controller 3</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t ore)</td><td class="eng">Cargo Rack 4 (16t ore)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS (find hotspots)</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 1</td><td class="eng">Collector Controller 1</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Tools, limpets, defence</span><p>A complete capital miner: lasers and a seismic launcher for both mining styles, a Pulse Wave Analyser to find rocks, a refinery, prospector and several collector controllers to work fast, a deep ore hold &mdash; and, the Anaconda's signature, real guns plus a strong shield so the pirate who interdicts you regrets it. Ore fills the rest.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit the mining suite: lasers, a seismic launcher, refinery and limpet controllers.</p>
+    <p>Keep the huge and a large mount for guns and fit a strong bi-weave shield for self-defence.</p>
+    <p>Fill remaining optionals with ore racks; A-rate the plant and distributor to run tools and guns together.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a defensible capital miner:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; Mining tools, limpets and guns are power-hungry; A-rate first. <span class="acc">~18M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power Plant &rarr; A</b> &mdash; Run tools, limpets, a strong shield and guns together. <span class="acc">~20M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Shield Generator &rarr; bi-weave</b> &mdash; Survive the exposed minutes of cracking a core. <span class="acc">~12M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Refinery + limpet controllers</b> &mdash; The heart of the mining loop. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Thrusters &rarr; A</b> &mdash; Reposition and fight when pirates arrive on this heavy hull. <span class="acc">~16M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Power runs the mining loop</span><p>Mining lasers, limpets and battleship guns all draw heavily &mdash; A-rate the distributor and plant first so the whole suite runs without browning out, then add the shield.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is light and focuses on the ship, not the tools &mdash; the mining hardware itself isn't meaningfully engineered. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Distributor</td><td>Engine Focused (G3)</td><td>&mdash;</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Engineer the ship for defence and mobility &mdash; bi-weave shield, boosters, thrusters &mdash; not the mining tools.</li>
+      <li><span class="stepnum">2</span>Low-Emissions plant keeps heat down during long mining sessions on this heat-prone hull.</li>
+      <li><span class="stepnum">3</span>FSD Increased Range for reaching distant hotspots and hauling a deep ore hold home.</li>
+      <li><span class="stepnum">4</span>Leave the mining lasers, limpet controllers and refinery stock &mdash; they don't benefit meaningfully from engineering.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light-to-moderate &mdash; only the ship's mobility and defence blueprints; the mining tools are left stock, so there's no weapon-style grind beyond an optional gun. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Ore per trip (t)</td><td>~220</td><td>~340</td><td class="acc">~400</td></tr>
+        <tr><td class="mod">Survives pirates</td><td>yes</td><td>yes</td><td class="acc">decisively</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~600</td><td>~900</td><td class="acc">~1,600+</td></tr>
+        <tr><td class="mod">Tool mounts</td><td>all</td><td>all</td><td class="acc">all</td></tr>
+        <tr><td class="mod">Pad access</td><td>large</td><td>large</td><td class="acc">large</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Anaconda mines a ~400t ore hold behind a 1,600 MJ shield and battleship guns &mdash; it cracks cores in dangerous rings and destroys the pirates that come for the haul. It carries less than a stripped Cutter or Type-9, but none of them mines as safely without a rank gate.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Core mining in pirate rings.</b> Crack high-value cores (painite, void opals, low-temperature diamonds) and survive the attention.</li>
+      <li><b>Laser mining hotspots.</b> Work platinum, tritium or painite hotspots with a full collector swarm and a deep hold.</li>
+      <li><b>Mixed mine-and-defend.</b> Mine until interdicted, then turn the battleship guns on the pirate.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Solo deep-ring expeditions.</b> Strong self-defence and good range mean no escort needed in dangerous systems.</li>
+      <li><b>Re-role on demand.</b> The same hull mines, hauls, fights or explores by swapping modules.</li>
+      <li><b>Tritium mining for carriers.</b> Mine a deep load of fuel for a fleet carrier and defend the haul.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example sites</span><p>Any pristine metallic or icy ring suits it &mdash; provided the base has a large pad. From your home base it reaches mining systems easily and works them without fear of pirates &mdash; mine, refine, and defend a deep ore hold home.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Keep real guns and a strong shield &mdash; the Anaconda's edge over the Type-9 and Type-7 is surviving the pirates that hunt laden miners.</li>
+      <li>Don't engineer the mining tools &mdash; they don't benefit; engineer the ship's defence and mobility instead.</li>
+      <li>A-rate the distributor and plant so lasers, limpets and guns all run together on this power-hungry hull.</li>
+      <li>Mind the large pad &mdash; outpost-only ring bases are out; plan around large-pad stations or a carrier.</li>
+      <li>For maximum tonnage a stripped Cutter or Type-9 holds more; choose the Anaconda for a deep hold plus safety and no rank gate.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Anaconda is the capital miner that fights back: every mining tool, a full limpet-and-refinery suite, a deep ore hold and no rank gate &mdash; plus battleship shields and guns to destroy the pirates that prey on laden miners. It earns its <b>86</b> rather than higher because the dedicated Type-11 and the trade-miners out-haul or out-specialise it, and the large pad locks out outpost rings; it sits above the rank-gated Cutter and the defenceless Type-9 because nothing else mines a hold this deep while defending itself on a hull anyone can buy. For working valuable cores in dangerous rings without an escort or a navy grind, the Anaconda is the standout capital choice.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to verify the mining suite fits the slots and the power budget runs tools, limpets and guns.</span><a class="cr-link" href="https://coriolis.io/outfit/anaconda">coriolis.io/outfit/anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Anaconda ship page — manufacturer specs and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/anaconda">elitedangerous.com/.../anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Hardpoint sizes, optional and military internal slot layout, and base shield/hull figures behind the mining build.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/anaconda.json">coriolis-data/ships/anaconda.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Anaconda shipyard page &mdash; hull price, slot layout, and module sellers for the mining and limpet kit.</span><a class="cr-link" href="https://inara.cz/elite/ship/70/">inara.cz/elite/ship/70</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Anaconda lore, manufacturer, and capacity reference backing the mining write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Anaconda">elite-dangerous.fandom.com/wiki/Anaconda</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

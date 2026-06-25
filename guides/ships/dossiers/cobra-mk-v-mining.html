@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cobra Mk V &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-mine"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Mine</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Cobra Mk V · Mining</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Cobra Mk V</span><span class="role ac-role-mining">Mining</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A capable <em>small-pad</em> miner that out-tools every rival its size</h2>
+      <p>The Cobra Mk V mounts a full mining suite &mdash; lasers, a seismic launcher, an abrasion blaster &mdash; on a fast small hull that docks at any outpost. What it can't do is haul: shallow class-5-max internals cap the ore hold well below the dedicated trade-miners. As a small-pad starter miner it's the best of its bracket; against the real haulers it's a niche pick, not a tonnage leader.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/cobra-mkv.jpg" alt="Cobra Mk V" width="160" height="90">
+      <figcaption><b>Cobra Mk V</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">58<small>/100</small></div><div class="bar mini"><i style="--pct:58"></i></div></div>
+      <div class="stat"><div class="n">~110 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">3M · 2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">Small</div><div class="l">Pad class</div></div>
+      <div class="stat"><div class="n">~1.48M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Cobra Mk V is the modern heir to the Cobra line, and as a miner it punches above its size in capability while falling short on volume. Three medium and two small hardpoints comfortably carry every mining tool &mdash; mining lasers for surface deposits, a seismic charge launcher and sub-surface missile for core work, an abrasion blaster for surface deposits &mdash; and four utility mounts find room for a pulse wave analyser to spot rocks. Few small ships can mount a complete laser-and-core suite at all; the Mk V does it with mounts to spare.</p>
+    <p>The catch is the hold. Its deepest optional slot is a class 5, and after the refinery, prospector and collector controllers there is little room left for ore racks &mdash; you mine in short trips and dock often. Where it earns its place is small-pad access and speed: it reaches outpost-only ring systems and high-value hotspots that lock out medium and large miners, and it gets there and back fast. It is a starter and specialist miner, not a tonnage machine.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Small-pad and low-budget mining: learning the mining loop, working high-value core hotspots (painite, void opals, low-temperature diamonds) where a few rich rocks fill a small hold fast, and any ring served only by an outpost.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-mine">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Ore hold (practical)</div><div class="v">~48&ndash;64 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~110 <small>t (no mining suite)</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3M &middot; 2S <small>(tools)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~160 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;4&middot;4&middot;4&middot;3&middot;3&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">291 / 412 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(docks anywhere)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things define the Mk V as a miner &mdash; for better and worse:</p>
+    <ul class="bullets">
+      <li><b>Mounts a full mining suite.</b> Three mediums and two smalls fit lasers, a seismic launcher, a sub-surface missile and an abrasion blaster &mdash; complete laser <em>and</em> core capability, rare on a small hull.</li>
+      <li><b>Small-pad access and speed.</b> 412 m/s boost and universal outpost docking reach ring systems and hotspots bigger miners can't, and shuttle ore home quickly.</li>
+      <li><b>Shallow hold.</b> A class-5 deepest slot means that after the refinery and limpet controllers the ore racks are small &mdash; short trips, frequent docking.</li>
+      <li><b>Cheap and rank-free.</b> Under 1.5M Cr for the hull, no rank or permit gate &mdash; the lowest barrier to entry of any capable miner.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Capability isn't the limit here &mdash; capacity is. Even a stripped Type-6 or Keelback hauls more ore per trip, and the trade-miners carry several times the Mk V's hold. Its modest 160 MJ base shield also means it should mine valuable cores carefully and run from a determined pirate rather than trade blows. The Mk V's case is reach, speed and price, not tonnage.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite (refinery, limpet controllers) is fitted.</p>
+    <h3 class="subhead">Same class &mdash; small-pad miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Cobra Mk V</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Cobra Mk V <span class="pill md">this</span></td><td>Small</td><td>~110</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~62</td><td class="pcc"><span class="p">Classic; cheaper; fits a basic suite</span><span class="c">Smaller hold; fewer tool mounts</span></td><td><span class="rscore">52</span><div class="bar mini"><i style="--pct:52"></i></div></td></tr>
+        <tr><td class="mod">Adder</td><td>Small</td><td>~36</td><td class="pcc"><span class="p">Dirt cheap; honest starter</span><span class="c">Tiny hold; slow; minimal suite</span></td><td><span class="rscore">48</span><div class="bar mini"><i style="--pct:48"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among true small-pad miners the Mk V leads: it carries the most ore, mounts the fullest mining suite, and is fast enough to shuttle it home. The Cobra Mk III and Adder are cheaper but smaller and less capable &mdash; the Mk V is the small-pad miner to graduate to once you outgrow them.</p>
+    <h3 class="subhead">Other classes &mdash; the haulers you graduate to</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Cobra Mk V</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~112</td><td class="pcc"><span class="p">Similar hold for less; cheap to run</span><span class="c">Medium pad; weak defence</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Bigger hold; great range; versatile</span><span class="c">Medium pad; pricier to outfit</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod">Keelback</td><td>Medium</td><td>~98</td><td class="pcc"><span class="p">SLF for defence; tougher</span><span class="c">Medium pad; slow</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Far larger hold; cheap per tonne</span><span class="c">Medium pad; can't fight pirates</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Big hold; defends itself; full suite</span><span class="c">Medium pad; far pricier</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">Vast hold; strong shields; fast</span><span class="c">Large pad; Imperial rank; far pricier</span></td><td><span class="rscore">92</span><div class="bar mini"><i style="--pct:92"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Step up a pad class and the volume gap is stark: a Type-6 matches the Mk V's hold on a medium pad, and the dedicated trade-miners carry several times more. The Mk V's lasting niche is the small pad &mdash; the miner that reaches outpost-only rings the haulers can't dock at.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~1.48M Cr</div></div>
+      <div class="cell"><div class="k">A-rated miner</div><div class="v">~6M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~12M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~1.48M Cr the hull is among the cheapest capable miners in the game, with no rank or permit gate. A full mining fit &mdash; lasers, seismic launcher, refinery, limpet controllers, ore racks and a shield &mdash; brings the all-in figure to roughly 6M Cr A-rated, well under most medium miners.</p>
+    <p>That low cost is the real argument for it: a complete mining platform for the price of one good run, with a negligible rebuy. For learning the loop or mining a few rich cores from an outpost base, it pays for itself quickly &mdash; you just won't out-earn a big hauler per trip.</p>
+    <div class="callout"><span class="lbl">Cheapest way into mining</span><p>A complete, capable miner for a few million credits all-in, with a trivial rebuy. The Mk V lets you learn mining and work outpost rings without risking real capital.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no mining-specific ARX pre-built built around the Cobra Mk V; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A complete small-ship mining fit for laser and core work. Initial is buy-only; A-rated is the mining baseline; Engineered focuses on mobility, range and a tougher shield &mdash; the mining tools themselves are not meaningfully engineered. The shallow internals force hard trade-offs between ore racks and the suite.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Mining Laser</td><td class="st">Mining Laser 2</td><td class="eng">Mining Laser 2</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Seismic Charge Launcher</td><td class="eng">Seismic Charge Launcher (core)</td></tr>
+        <tr><td class="slot">Medium 3</td><td class="st">&mdash;</td><td class="st">Sub-surface Displacement Missile</td><td class="eng">Sub-surface Displacement Missile</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Abrasion Blaster</td><td class="eng">Abrasion Blaster</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Mining Laser 1</td><td class="eng">Mining Laser 1</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Pulse Wave Analyser</td><td class="eng">Pulse Wave Analyser</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">Cargo Rack 5</td><td class="st">Cargo Rack 5 (32t ore)</td><td class="eng">Cargo Rack 5 (32t ore)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t ore)</td><td class="eng">Cargo Rack 4 (16t ore)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Refinery 4</td><td class="eng">Refinery 4 (deep bins)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Generator 4 (bi-weave)</td><td class="eng">Bi-Weave 4 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 3</td><td class="eng">Collector Controller 3 (multi)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Prospector Limpet Controller 3</td><td class="eng">Prospector Controller 3</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Cargo Rack 3 (8t ore)</td><td class="eng">Cargo Rack 3 (8t ore)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Collector Limpet Controller 1</td><td class="eng">Collector Controller 1</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS (find hotspots)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Suite vs. hold &mdash; the small-ship trade-off</span><p>Nine optionals sound generous, but the refinery, prospector and collector controllers eat most of them &mdash; the ore racks that remain total only ~56t. Drop the bi-weave for a fourth rack if you mine somewhere quiet; keep it where pirates roam. Either way, plan on short trips and frequent dockings.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~1.48M Cr) and fit a single mining laser, a refinery, a prospector and a collector controller &mdash; enough to laser-mine surface deposits from the first session.</p>
+    <p>Use the class-5 slot for a cargo rack and keep a detailed surface scanner to map hotspots.</p>
+    <p>A-rate the power plant and distributor early so the lasers and limpets run without browning out the small class-4 cores.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a small-pad miner:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; Mining lasers and limpets are power-hungry on a class-4 distributor; A-rate first. <span class="acc">~600k Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power Plant &rarr; A</b> &mdash; Run the full tool suite, shield and limpets together. <span class="acc">~700k Cr</span></li>
+      <li><span class="stepnum">3</span><b>Refinery + limpet controllers</b> &mdash; The heart of the mining loop; fit before more ore racks. <span class="acc">~1M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield Generator &rarr; bi-weave</b> &mdash; Cheap insurance for the exposed minutes cracking a core. <span class="acc">~400k Cr</span></li>
+      <li><span class="stepnum">5</span><b>FSD &rarr; A</b> &mdash; Reach distant hotspots and shuttle ore home faster. <span class="acc">~600k Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Power runs the mining loop</span><p>The class-4 plant and distributor are the bottleneck &mdash; A-rate both before adding tools, or the lasers and collector limpets will starve each other mid-session.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is light and focuses on the ship, not the tools &mdash; the mining hardware itself isn't meaningfully engineered. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Distributor</td><td>Engine Focused (G3)</td><td>&mdash;</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Engineer the ship for range and defence &mdash; FSD, bi-weave shield, thrusters &mdash; not the mining tools.</li>
+      <li><span class="stepnum">2</span>Low-Emissions plant keeps heat down through long mining sessions on a small hull.</li>
+      <li><span class="stepnum">3</span>FSD Increased Range matters most: a small fuel tank and shallow hold mean you live on jump range to reach hotspots.</li>
+      <li><span class="stepnum">4</span>Leave the mining lasers, limpet controllers and refinery stock &mdash; they don't benefit meaningfully from engineering.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; small-class modules and only the ship's mobility and defence blueprints; the mining tools are left stock, so there's no weapon-style grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Ore per trip (t)</td><td>~32</td><td>~56</td><td class="acc">~56</td></tr>
+        <tr><td class="mod">Jump range (laden)</td><td>~14 ly</td><td>~20 ly</td><td class="acc">~30 ly</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~160</td><td>~280</td><td class="acc">~550</td></tr>
+        <tr><td class="mod">Tool mounts</td><td>partial</td><td>all</td><td class="acc">all</td></tr>
+        <tr><td class="mod">Pad access</td><td>small (anywhere)</td><td>small</td><td class="acc">small</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Mk V mines a full ~56t hold behind a respectable shield and reaches distant hotspots on ~30 ly jumps &mdash; a fast, cheap, go-anywhere miner. The hold stays small, so it never out-earns a hauler per trip; what engineering buys is reach and survivability, not tonnage.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Learn the mining loop.</b> Cheap hull and rebuy make it the ideal ship to practise prospecting, refining and limpet management.</li>
+      <li><b>High-value core mining.</b> Crack painite, void opals or low-temperature diamonds &mdash; a few rich rocks fill the small hold fast.</li>
+      <li><b>Outpost-ring hotspots.</b> Its small pad reaches ring systems served only by outposts that medium miners can't dock at.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Quick high-grade runs.</b> Mine a hold of the most valuable cores and shuttle home rather than chasing bulk tonnage.</li>
+      <li><b>Re-role on demand.</b> The same cheap hull mines, fights, hauls small cargo or explores between sessions.</li>
+      <li><b>Scout new hotspots.</b> Long jump range and a DSS make it a fast prospecting ship for mapping rings before bringing a hauler.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example sites</span><p>Any pristine metallic or icy ring suits it &mdash; favour high-value core hotspots where a small hold of premium ore still pays. From an outpost base it reaches rings the haulers can't dock near.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Mine high-value cores, not bulk ore &mdash; with a ~56t hold the Mk V earns by quality per tonne, not volume.</li>
+      <li>Don't engineer the mining tools &mdash; they don't benefit; spend on FSD range and the shield instead.</li>
+      <li>A-rate the class-4 plant and distributor before adding tools &mdash; they're the bottleneck on a small hull.</li>
+      <li>Use the small pad deliberately: it reaches outpost-only rings the haulers can't, which is the whole reason to pick it over a Type-6.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Cobra Mk V is the best small-pad miner you can buy and a fine first mining ship &mdash; it mounts a complete laser-and-core suite, costs almost nothing, and docks anywhere. Its 58 rating reflects the hard ceiling: a class-5-max hold caps ore well below the dedicated trade-miners, so it never competes on tonnage. Pick it to learn mining, work high-value cores cheaply, or reach outpost rings the haulers can't &mdash; not to fill a fleet carrier.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to verify the mining loadout, ore-rack capacity and power budget for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/cobra_mk_v">coriolis.io/outfit/cobra_mk_v</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout (hardpoint sizes, optional-internal sizes) and module variants behind the mining-fit tables.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/cobra_mk_v.json">coriolis-data/ships/cobra_mk_v.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Cobra Mk V</span><span class="cr-what">Stock hull stats, internal layout and module sellers used to size the refinery, limpet controllers and cargo racks.</span><a class="cr-link" href="https://inara.cz/elite/ship/29/">inara.cz/elite/ship/29</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Cobra Mk V</span><span class="cr-what">Manufacturer (Faulcon DeLacy), multirole assessment and release history informing the role overview.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Cobra_Mk_V">elite-dangerous.fandom.com/wiki/Cobra_Mk_V</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Cobra Mk V ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/cobra-mk-v">elitedangerous.com/.../cobra-mk-v</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">In-depth review of the Cobra Mk V covering cargo capacity, jump range and its trading/mining potential.</span><a class="cr-link" href="https://www.youtube.com/watch?v=ByfyTDgpPtY">youtube.com/watch?v=ByfyTDgpPtY</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

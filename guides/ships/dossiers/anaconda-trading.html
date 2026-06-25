@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaconda &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-haul"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Haul</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Anaconda · Trading</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Anaconda</span><span class="role ac-role-trading">Trading</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A capable hauler that <em>defends itself</em> — but no dedicated freighter</h2>
+      <p>Around 470 tonnes of cargo, no rank gate, and enough guns and shields to make a pirate think twice. It hauls more safely than a Type-9 and needs no Imperial rank like the Cutter &mdash; but it carries less than either dedicated freighter, costs more to outfit, and is slow and ponderous. A fine trader if you already own one; rarely the ship you buy <em>for</em> trading.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/anaconda.jpg" alt="Anaconda" width="160" height="90">
+      <figcaption><b>Anaconda</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">76<small>/100</small></div><div class="bar mini"><i style="--pct:76"></i></div></div>
+      <div class="stat"><div class="n">~470 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">8</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">240 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">~142M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad requirement</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Anaconda hauls the way it does everything &mdash; well, but as a generalist. Strip it for cargo and it carries around 470 tonnes; fit a shield and a few guns and it still moves a respectable load behind real protection. Twelve optional internals, a class-5 military slot and eight utility mounts give it room for a proper trade fit, and unlike the Imperial Cutter it needs no rank &mdash; anyone with the credits can fly one.</p>
+    <p>Its trading case is the do-everything hull that also happens to haul: a defensible freighter that can fight back, with no rank gate and a huge jump range for long, efficient loops. The costs are real, though &mdash; it carries less than a Type-9 or Cutter, costs more than the cheap Type-9 to buy and outfit, and is slow and ponderous in the bins. As a trader it's a strong all-rounder, not a specialist.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Trading for the commander who already owns an Anaconda: defensible hauling on contested routes, long high-jump trade loops, and any run where carrying a self-protecting load on a rank-free hull matters more than maxing raw tonnage.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-haul">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo (stripped)</div><div class="v">~470 <small>t</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">180 / 240 <small>m/s (slow)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">400 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">350 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;4&middot;4&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Military slot</div><div class="v">1 (class 5)</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Three things make the Anaconda a credible trader:</p>
+    <ul class="bullets">
+      <li><b>Solid cargo, no rank.</b> Around 470 tonnes stripped &mdash; less than the dedicated freighters, but with no Imperial-rank grind to unlock it.</li>
+      <li><b>It can defend itself.</b> A huge hardpoint, three large mounts and eight utilities mean a pirate that interdicts you may regret it &mdash; a Type-9 can only run.</li>
+      <li><b>Big shields and long range.</b> Strong shields protect the load, and a capital jump range makes long, high-value loops efficient.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's slow (240 m/s boost), large-pad-bound, and carries clearly less than a Type-9 (~790t) or Cutter (~794t). Outfitting it well costs more than the cheap Type-9, and a cargo fit must sacrifice the guns and shields that are its only real edge over a Type-9. The Anaconda's trading case is a defensible, rank-free hauler you likely already own &mdash; for pure tonnage the Type-9 wins, and for defensible bulk the Cutter wins.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for trading specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; the headline number for bulk hauling.</p>
+    <h3 class="subhead">Same class &mdash; large-pad traders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1048</td><td class="pcc"><span class="p">Vastly more cargo; no rank</span><span class="c">Far slower; single-role; pricier</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">More cargo; best shields; faster</span><span class="c">Imperial Duke rank; pricier</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">Far more cargo; far cheaper</span><span class="c">Flimsy; can't fight back</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Much cheaper; decent capacity</span><span class="c">Less cargo; lightly defended</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Anaconda <span class="pill md">this</span></td><td>Large</td><td>~470</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~250</td><td class="pcc"><span class="p">Far faster</span><span class="c">Imperial rank; far less cargo</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Against the dedicated large freighters the Anaconda simply carries less, and against the cheap Type-9 it costs more for the privilege. What it offers is the ability to fight back and a rank-free hull &mdash; useful, but the Cutter does defensible hauling better and the Type-9 does cheap bulk better.</p>
+    <h3 class="subhead">Other classes &mdash; medium traders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">Medium pad; far cheaper; defensible</span><span class="c">Less cargo; shorter range</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Medium pad; nimble; cheaper</span><span class="c">Less cargo</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~112</td><td class="pcc"><span class="p">Cheap starter hauler; medium pad</span><span class="c">Far less cargo and defence</span></td><td><span class="rscore">65</span><div class="bar mini"><i style="--pct:65"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">Medium pad; combat-capable</span><span class="c">Less cargo; no rank edge</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer</td><td>Medium</td><td>~128</td><td class="pcc"><span class="p">Cheap; medium pad; good range</span><span class="c">Far less cargo</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The mediums land at more stations and cost far less, but carry less and can't match the Anaconda's shields and firepower. The Anaconda's slot here is the large-pad, defensible, rank-free hauler &mdash; respectable, but bracketed above by dedicated freighters and below by cheaper, more flexible mediums.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~142M Cr</div></div>
+      <div class="cell"><div class="k">A-rated trader</div><div class="v">~165M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~200M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~142M Cr the Anaconda is a major purchase &mdash; far more than a Type-9, which hauls more for a fraction of the price. It needs no rank, though, so it has no grind behind it the way the Cutter does.</p>
+    <p>The case for trading in an Anaconda is rarely to buy one for the job &mdash; it's that you already own one. A multirole or combat Anaconda re-tunes into a defensible hauler by swapping in cargo racks at a station, spreading its cost across roles instead of paying full price for a single-role freighter.</p>
+    <div class="callout"><span class="lbl">Better as a second job than a first buy</span><p>Don't buy an Anaconda to trade &mdash; buy a Type-9 for cheap bulk or a Cutter for defensible bulk. But if you already fly an Anaconda, fitting it for cargo is a cheap, capable way to haul on a hull you own.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no trading-specific ARX pre-built built around the Anaconda; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A defensible trade fit that keeps a shield and a token weapon while filling the rest with cargo. Initial is buy-only; A-rated is the trade baseline; Engineered maximises protected cargo and laden range.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge 1</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 4 (deterrent)</td><td class="eng">MC 4 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Large 1&ndash;3 / Medium / Small</td><td class="st">&mdash;</td><td class="st">&mdash; (run clean)</td><td class="eng">&mdash; (optional turrets)</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1&ndash;4</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 6</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 7&ndash;8</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (8)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (5)</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 5</td><td class="eng">SCB 5 / HRP 5 (route-dependent)</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">Cargo Rack 7</td><td class="st">Shield Generator 7 (bi-weave)</td><td class="eng">Bi-Weave 7 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6 (64t)</td><td class="eng">Cargo Rack 6 (64t)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6 (64t)</td><td class="eng">Cargo Rack 6 (64t)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Cargo Rack 6 (64t)</td><td class="eng">Cargo Rack 6 (64t)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo Rack 4 (16t)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo Rack 4 (16t)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 4</td><td class="eng">SCB 4 / Cargo</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Cargo Rack 2 (4t)</td><td class="eng">Cargo Rack 2 (4t)</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS / spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Shield first, then fill with cargo</span><p>The Anaconda's trade edge over a Type-9 is that it survives and fights back &mdash; keep a bi-weave shield, a booster suite and a single deterrent multi-cannon, then fill every remaining slot with cargo. Strip the shield and guns and it pushes toward ~470t, but then a Type-9 simply does it cheaper and bigger.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fill the big optionals with cargo racks plus a shield &mdash; protected hauling from day one.</p>
+    <p>Load the utilities with shield boosters and point defence to deter interdictors.</p>
+    <p>A-rate thrusters and FSD so the laden ship keeps usable speed and jump range.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a defensible hauler:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Shield Generator &rarr; bi-weave</b> &mdash; Protect the cargo; the Anaconda's edge over a Type-9. <span class="acc">~12M Cr</span></li>
+      <li><span class="stepnum">2</span><b>FSD &rarr; A</b> &mdash; Laden jump range for efficient long loops. <span class="acc">~14M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Thrusters &rarr; A</b> &mdash; Keep the ponderous hull as mobile as possible. <span class="acc">~12M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Power Plant &rarr; A</b> &mdash; Power for the shield, boosters and a deterrent gun. <span class="acc">~18M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Power Distributor &rarr; A</b> &mdash; Sustain boost and shield cells under attack. <span class="acc">~12M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Defence is the differentiator</span><p>A Type-9 carries more for less &mdash; the only reason to haul in an Anaconda is that it survives and bites back. Prioritise the shield, distributor and plant so it can actually weather an interdiction rather than just out-tonne nothing.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The trading engineering pattern weighted to range and protection. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>FSD Increased Range first &mdash; the Anaconda's standout trading asset is its long laden reach.</li>
+      <li><span class="stepnum">2</span>Bi-weave shield Resistance-Augmented plus Heavy-Duty boosters to protect the cargo.</li>
+      <li><span class="stepnum">3</span>Dirty thrusters to keep the heavy hull as mobile as it can be; Low-Emissions plant for cool, quiet running.</li>
+      <li><span class="stepnum">4</span>Lightweight life support and sensors, then fill the rest with the biggest cargo racks.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; FSD, shield, thruster and plant blueprints on large modules; no faction-locked parts since it skips the prismatic shield. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max cargo (t)</td><td>~320</td><td>~430</td><td class="acc">~470 (stripped)</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~500</td><td>~750</td><td class="acc">~1,200+</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>240 m/s</td><td>240 m/s</td><td class="acc">~290 m/s</td></tr>
+        <tr><td class="mod">Laden jump (LY)</td><td>~20</td><td>~28</td><td class="acc">~36</td></tr>
+        <tr><td class="mod">Survivability</td><td>moderate</td><td>good</td><td class="acc">high</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, a defensible Anaconda hauls ~430t behind a ~1,200 MJ shield with a long laden jump and a deterrent gun &mdash; safe and self-sufficient on long loops. Strip it for cargo and it nears ~470t, but at that point it carries less than a Type-9 for more money. Its trading value is range and self-defence, not raw tonnage.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Defensible commodity runs.</b> Haul valuable cargo on contested routes where a Type-9 would be helpless.</li>
+      <li><b>Long high-jump loops.</b> Capital jump range makes distant, profitable A&rarr;B routes efficient.</li>
+      <li><b>Re-tuned multirole hauling.</b> Swap cargo racks into a hull you already own when the credits call.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Trade-and-defend.</b> Carry cargo while able to win, not just survive, an interdiction.</li>
+      <li><b>Community Goal hauling.</b> Move volume on busy, sometimes-contested CG routes under your own guns.</li>
+      <li><b>Powerplay logistics.</b> Run fortification and merit cargo on a self-protecting, rank-free hull.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Any high-value loop suits it, especially longer routes where its jump range and self-defence earn their keep. As a Faulcon DeLacy hull it needs no rank &mdash; pick it up the moment you can afford it, then re-tune for cargo.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Keep a shield and a deterrent gun &mdash; self-defence is the only reason to haul in this hull over a Type-9.</li>
+      <li>Its real trading edge is jump range &mdash; engineer the FSD first for long, efficient loops.</li>
+      <li>For pure tonnage buy a Type-9; for defensible bulk buy a Cutter &mdash; the Anaconda trades best as a hull you already own.</li>
+      <li>Mind the large pad and the ponderous handling &mdash; it's slow in and out of the bins.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Anaconda earns its <b>76</b> as a competent, defensible, rank-free hauler &mdash; it carries a respectable load, survives and bites back where a Type-9 can only run, and jumps far on long loops. But it sits below the dedicated freighters because it carries clearly less than a Type-9 or Cutter, costs more to buy and outfit, and is slow. It's not the ship you buy <em>for</em> trading; it's a strong hauler if you already fly one.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, used to validate the cargo-fit slot layout and laden range for this trade build.</span><a class="cr-link" href="https://coriolis.io/outfit/anaconda">coriolis.io/outfit/anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Anaconda ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/anaconda">elitedangerous.com/.../anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Authoritative optional-internal and military slot sizes that set this hull's maximum cargo capacity.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/anaconda.json">coriolis-data/ships/anaconda.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Anaconda shipyard page &mdash; hull stats, cargo capacity, module sellers, and where to buy and outfit it.</span><a class="cr-link" href="https://inara.cz/elite/ship/70/">inara.cz/elite/ship/70</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Anaconda article &mdash; Faulcon DeLacy manufacture, role profile, and the no-rank availability noted for trading.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Anaconda">elite-dangerous.fandom.com/wiki/Anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Review of the Anaconda as a large hull, weighing its capacity and versatility against dedicated freighters.</span><a class="cr-link" href="https://www.youtube.com/watch?v=BdTnshu3o7c">youtube.com/watch?v=BdTnshu3o7c</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

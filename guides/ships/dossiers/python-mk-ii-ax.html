@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Mk II &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: AX → good-green (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight-thargoids"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight Thargoids</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Python Mk II · AX Combat</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Python Mk II</span><span class="role ac-role-ax">AX Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The four-large-mount medium turned on the Thargoids &mdash; most AX <em>firepower</em> on a medium pad</h2>
+      <p>No rank gate, a medium pad, and four large hardpoints &mdash; a big-gun count usually reserved for capitals &mdash; make the Python Mk II the hardest-hitting AX medium credits can buy. Two Gauss on the mediums and four large Guardian/AX guns put more heart-and-hull damage downrange than any other mid-pad hull. It scores 84 rather than higher because it carries <em>zero military slots</em> and only six optionals: Guardian Module Reinforcement, hull, shield and caustic kit all fight over the same six bays, so the module hardening that AX demands comes at the cost of the tank. It out-guns the agile leaders but can't both dodge like a Chieftain and harden like a Corvette.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/python-mkii.jpg" alt="Python Mk II" width="160" height="90">
+      <figcaption><b>Python Mk II</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">84<small>/100</small></div><div class="bar mini"><i style="--pct:84"></i></div></div>
+      <div class="stat"><div class="n">4L · 2M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">Military slots</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">~64.7M</div><div class="l">Hull price (Cr)</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Point the best credit-bought medium gunship at the Thargoids and you get the hardest-hitting AX medium flying. The Python Mk II keeps the Python name but is a focused warship: <b>four large hardpoints</b> &mdash; a big-mount count most mediums never see &mdash; plus two mediums, six utilities, and a class-6 plant and distributor sized to run all of it. Since no huge AX weapon exists, four large mounts is effectively the practical AX firepower ceiling, and the Mk II reaches it from a medium pad with no rank grind.</p>
+    <p>The reason it sits at <b>84</b> rather than the top of the AX ladder is specific and honest: it has <b>zero military slots</b> and only six optional internals, by design. In AX, Thargoid lightning strips modules, so Guardian Module Reinforcement is near-mandatory &mdash; but on the Mk II it competes for the same six bays as the shield generator, hull reinforcement, caustic kit and decon limpets. You cannot both harden like a military-slotted hull and stay light enough to dodge like a Chieftain. The agile mediums with military slots (Chieftain, Challenger) and the high-DPS Krait Mk II edge ahead on that survivability balance; the Mk II answers with raw firepower and pad-and-credit access.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Firepower-led AX work: ending Interceptors fast with four large guns and two Gauss, AX Conflict Zones where you kill the Scout swarm quickly, and any commander who wants top-tier anti-Xeno damage without a navy rank grind. Fly it aggressively &mdash; speed and alpha, not attrition.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight-thargoids">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">4L &middot; 2M <small>(no huge AX gun exists)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0 <small>(by design)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">256 / 345 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">6</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;4&middot;3&middot;2&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Base armour / shield</div><div class="v">280 / 335 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">450 <small>t</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Mk II a top-tier AX medium:</p>
+    <ul class="bullets">
+      <li><b>Four large hardpoints.</b> Four large Guardian/AX guns plus two mediums &mdash; the biggest AX weapon array of any medium, and since no huge AX gun exists, the practical firepower ceiling.</li>
+      <li><b>Two Gauss-capable mediums.</b> The Guardian Gauss Cannon is a medium-class fixed weapon; two of them on the mediums supply the heart damage that ends Interceptors.</li>
+      <li><b>Power to run it.</b> A class-6 plant and class-6 distributor fire the whole array and boost without the brown-outs that cripple thirstier Gauss boats.</li>
+      <li><b>Speed and agility.</b> 256/345 m/s and medium handling let it reposition and partly dodge lightning &mdash; far more evasion than any AX capital.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p><b>Zero military slots and only six optionals</b> is the real constraint. Guardian Module Reinforcement &mdash; the hardening that keeps modules alive under Thargoid lightning &mdash; competes for the same bays as the shield, hull reinforcement, caustic sink storage and decon limpets. You cannot field a deep module-hardened tank <em>and</em> stay as light as a Chieftain. The Mk II's case is firepower and evasion, not the attritional module-tank a Corvette or Challenger brings.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, module hardening and heat management matter as much as raw mounts.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad AX ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Python Mk II</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Alliance Chieftain</td><td>Medium</td><td>2L 1M 3S</td><td class="pcc"><span class="p">Superb agility dodges lightning; military slot; cheap</span><span class="c">Fewer big mounts; lower raw firepower</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">High DPS; SLF bay; more internal room and range</span><span class="c">One fewer large mount; no military slot either</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Agile tank; three military slots for hardening</span><span class="c">Only one large mount; less alpha</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Python Mk II <span class="pill md">this</span></td><td>Medium</td><td>4L 2M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>3L 3M</td><td class="pcc"><span class="p">Six mounts; modern hull; strong all-rounder</span><span class="c">Newer; AX build knowledge still maturing</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Federal Gunship</td><td>Medium</td><td>1L 4M 2S</td><td class="pcc"><span class="p">Maximum Gauss mounts; very tough; military slot</span><span class="c">Sluggish; Federal rank gate; less alpha</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among AX mediums the Mk II is the firepower pick. The Chieftain, Krait Mk II and Challenger rate higher because in AX evasion and module hardening are survival &mdash; and they bring military slots and lighter hulls the Mk II lacks. What the Mk II offers instead is four large mounts: the biggest AX gun array a medium can carry, killing Interceptors faster than any of them. The missing military slots are exactly what hold it a few points back.</p>
+    <h3 class="subhead">Other classes &mdash; the large AX warships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Python Mk II</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Highest shield tank in the game; many mounts</span><span class="c">Imperial Duke rank; large pad; can't dodge</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; military slots; no rank</span><span class="c">Ponderous; large pad; far costlier</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Capital tank; two military slots; eight utilities</span><span class="c">Federal Rear Admiral rank; large pad; ~188M Cr</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">More mounts; huge armour; military slots; no rank</span><span class="c">Very slow; feeble shields; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The large warships out-tank and out-harden the Mk II &mdash; military slots, capital armour and deep internals let them absorb the lightning the Mk II must dodge or out-pace. What they cannot do is land on a medium pad or skip the rank and credit grind. For most of a large ship's AX killing power, from a medium pad, with no rank gate, the Python Mk II is the value play.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~64.7M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted (A-rated)</div><div class="v">~95M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~120M+ Cr</div></div>
+      <div class="cell"><div class="k">Rebuy (eng.)</div><div class="v">~6M Cr</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Pad / Permit</div><div class="v">Medium / None</div></div>
+    </div>
+    <p>The hull is ~64.7M Cr &mdash; not cheap &mdash; but it carries <b>no rank or permit gate</b>, so it's open to any commander with the credits. A full AX fit with Guardian/AX weapons, a capable bi-weave and Guardian reinforcement runs to ~95M Cr A-rated, rising past ~120M Cr engineered, with a modest ~6M rebuy to budget for. The real cost beyond credits is the Guardian-tech and AX-weapon unlock grind shared by every anti-Xeno ship.</p>
+    <p>That makes it the most accessible top-tier AX platform: no Federal or Imperial grind, just money. If you want elite anti-Xeno firepower without a navy ladder, this is the medium &mdash; though new AX pilots should still learn the dance in a cheaper, more forgiving Chieftain before committing this much.</p>
+    <div class="callout"><span class="lbl">No rank gate</span><p>Unlike the Corvette (Federal Rear Admiral) and Cutter (Imperial Duke), the Python Mk II asks only for credits and the standard Guardian/AX unlocks. The medium pad and modest rebuy make it the easy-access big-firepower AX hull.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>Faulcon DeLacy offers the Python Mk II as an ARX pre-built package, but no variant is AX-specific. If you took one, never strip the stock cores &mdash; add to open slots and engineer the cores in place &mdash; then unlock Guardian and AX weapons at the relevant sites and outfit it for anti-Xeno work normally. For most commanders, simply buying the hull and fitting it AX is cleaner.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A firepower-led AX medium working within the hard six-optional / zero-military constraint. Gauss on the two mediums for heart damage; four large mounts carry Guardian/AX guns; the six optionals split between a bi-weave shield and the Guardian reinforcement that has nowhere else to go. Initial is buy-only; AX-fitted adds the unlocked kit; Engineered hardens shields, hull and mobility.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon (L)</td><td class="eng">Enhanced AX MC &mdash; in large mount</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon (L)</td><td class="eng">Enhanced AX MC &mdash; in large mount</td></tr>
+        <tr><td class="slot">Large 3</td><td class="st">&mdash;</td><td class="st">Guardian Plasma Charger (L)</td><td class="eng">Guardian Plasma Charger (L)</td></tr>
+        <tr><td class="slot">Large 4</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon (L)</td><td class="eng">Guardian Shard Cannon (L)</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon (M)</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon (M)</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Xeno Scanner</td><td class="eng">Xeno Scanner</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Caustic Sink Launcher</td><td class="eng">Caustic Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Utility 6</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5)</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (5)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 4</td><td class="eng">Guardian HRP 4</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 3</td><td class="eng">Guardian MRP 3</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 2</td><td class="eng">Guardian HRP 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 1</td><td class="eng">Guardian MRP 1</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Decontamination Limpet Controller 1</td><td class="eng">Decon Limpet (caustic)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Six bays, no military &mdash; harden where you can</span><p>With no military slots, Guardian Module Reinforcement has to live in the civilian optionals alongside the shield and hull kit. Put two Gauss on the mediums for heart damage, four large Guardian/AX guns on the big mounts (no huge AX gun exists), and run caustic and heat kit hard. Fly it to dodge &mdash; you cannot stack the module-tank a Corvette or Challenger can.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull &mdash; no rank needed &mdash; then unlock Guardian and AX weapons at the relevant sites; there is no off-the-shelf AX gun to slot first.</p>
+    <p>Arm the two mediums with Gauss for heart damage and the four large mounts with Guardian/AX guns (Enhanced AX multi-cannons, a plasma charger, a shard cannon).</p>
+    <p>Fit the largest bi-weave the class-6 bay allows, then split the remaining optionals between Guardian hull and module reinforcement; load xeno scanner, caustic and heat kit across the six utilities.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority for a firepower-led medium:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>AX / Guardian weapons</b> &mdash; Gauss on the mediums, large Guardian/AX guns on the four big mounts. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">2</span><b>Power Distributor &amp; Plant &rarr; A</b> &mdash; Gauss and four large guns are immensely capacitor- and power-hungry; this comes before tank. <span class="acc">~22M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Shield Generator &rarr; bi-weave + boosters</b> &mdash; Fast-regen bi-weave with thermal-resistant boosters against caustic and thermal damage. <span class="acc">~12M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Guardian reinforcement</b> &mdash; Pack Guardian module and hull reinforcement into the remaining optionals; with no military slots, this is the only hardening you get. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">5</span><b>Thrusters &rarr; A</b> &mdash; Preserve the speed and agility that let it dodge lightning instead of soaking it. <span class="acc">~9M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Distributor before tank</span><p>Four large guns plus two Gauss will brown out anything less than an A-rated, Charge-Enhanced distributor. A-rate and engineer it before chasing reinforcement &mdash; the firepower is the Mk II's whole AX case.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens shields, hull, heat and mobility; AX/Guardian weapons have limited engineering. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Thermal Resistant (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty / Thermal Resistant</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; Gauss and four large guns are immensely capacitor- and power-hungry.</li>
+      <li><span class="stepnum">2</span>Thermal-resistant bi-weave and HRPs against Thargoid thermal and caustic damage.</li>
+      <li><span class="stepnum">3</span>Dirty thrusters to keep the speed and agility that let it dodge lightning.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and all Guardian reinforcement come from unlocks, not blueprints.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Heavy &mdash; G5 across class-6 cores and a thermal-resistant defensive suite, on top of the substantial Guardian-tech grind for weapons and reinforcement. The Guardian unlocks are the real cost; ship blueprints are standard. Ask for exact per-blueprint or unlock counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Shield (MJ)</td><td>~470</td><td>~620</td><td class="acc">~1,100+</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>280</td><td>280</td><td class="acc">~1,500+ (Guardian HRP)</td></tr>
+        <tr><td class="mod">Module hardening</td><td>none</td><td>some Guardian MRP</td><td class="acc">Guardian MRP (no military slots)</td></tr>
+        <tr><td class="mod">AX firepower</td><td>very high</td><td>very high</td><td class="acc">very high (4 large mounts)</td></tr>
+        <tr><td class="mod">Agility (dodge)</td><td>good</td><td>good</td><td class="acc">very good (for the firepower)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Python Mk II pairs the biggest AX gun array a medium can field with a shield into the low thousands of effective points and enough speed to dodge much of the lightning. What it can't do is stack module hardening the way a military-slotted hull does &mdash; so it wins by killing fast and staying mobile, not by standing in the fire.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>AX Conflict Zones.</b> Four large guns and two Gauss clear the Scout swarm fast, then turn on the Interceptors.</li>
+      <li><b>Interceptor kills.</b> Hold Gauss on a heart through Cyclops to Medusa; the alpha shortens every kill.</li>
+      <li><b>Dodge, don't soak.</b> Use the speed to break line-of-sight from lightning rather than tanking it &mdash; you lack the module-tank to absorb it.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Wing damage-dealer.</b> Bring the firepower while a tankier hull anchors and holds aggro.</li>
+      <li><b>Maelstrom &amp; Titan operations.</b> Fast, hard-hitting sorties where you kill and reposition rather than hold a fixed line.</li>
+      <li><b>Hydra and Basilisk hunts.</b> The four-large array shortens the toughest Interceptor fights &mdash; fly aggressively and keep moving.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example operations</span><p>Wherever Thargoids are fought &mdash; AXCZ, Interceptor hunts, Maelstrom and Titan ops. The Mk II is the medium you bring when the plan is to out-damage the fight, from a pad and rank anyone can reach.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>No military slots: Guardian Module Reinforcement competes with the shield and hull for the six optionals &mdash; decide your harden-vs-firepower split before you build.</li>
+      <li>Gauss is a medium-class weapon, so you get two of them; the four large mounts carry Enhanced AX multi-cannons, a plasma charger and a shard cannon.</li>
+      <li>You can't out-tank a Corvette or Challenger &mdash; use the 256/345 m/s speed to break from lightning rather than absorb it.</li>
+      <li>Manage heat hard with Gauss, run caustic sinks and a decon limpet, and keep the distributor topped &mdash; it's the only thing feeding six AX guns.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Python Mk II is the hardest-hitting AX medium credits can buy: four large mounts and two Gauss put more anti-Xeno damage downrange than any other mid-pad hull, with no rank gate to earn it. It scores 84 &mdash; behind the agile, military-slotted Chieftain, Krait Mk II and Challenger &mdash; because zero military slots and only six optionals mean the module hardening AX demands always costs the tank. Fly it for firepower and evasion, not attrition, and it's an outstanding anti-Xeno choice.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to validate the AX loadout, hardpoint sizes and power/capacitor budget across four large mounts.</span><a class="cr-link" href="https://coriolis.io/outfit/python_nx">coriolis.io/outfit/python_nx</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Python Mk II ship page &mdash; manufacturer specs, hull/shield figures, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/python-mk-ii">elitedangerous.com/.../python-mk-ii</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, the zero-military-slot internal layout and module-variant data behind the AX reinforcement plan.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/python_nx.json">coriolis-data/ships/python_nx.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Python Mk II</span><span class="cr-what">Ship overview: base stats, internals layout, hardpoints, price, and confirmation of no rank requirement.</span><a class="cr-link" href="https://inara.cz/elite/ship/61/">inara.cz/elite/ship/61</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Python Mk II hull profile, cross-referenced against AX weapon class limits (no huge AX gun; medium-class Gauss).</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Python_Mk_II">elite-dangerous.fandom.com/wiki/Python_Mk_II</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

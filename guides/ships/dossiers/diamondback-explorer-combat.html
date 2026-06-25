@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamondback Explorer &middot; Combat Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Combat → maroon (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Diamondback Explorer · Combat</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Diamondback Explorer</span><span class="role ac-role-combat">Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A <em>capable</em> budget brawler — cool-running and agile, but lightly armed</h2>
+      <p>The Diamondback Explorer is best known as a deep-space scout, yet it fights better than its size suggests: a low heat signature, decent agility and a roomy utility/optional layout let it run a tough, hard-to-overheat little gunship. It only carries three mounts (one Large, two Medium) and a light hull, so it can't trade blows with dedicated combat ships &mdash; but for cheap low-to-mid threat work from any pad, it punches above its price.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/diamondback-explorer.jpg" alt="Diamondback Explorer" width="160" height="90">
+      <figcaption><b>Diamondback Explorer</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">65<small>/100</small></div><div class="bar mini"><i style="--pct:65"></i></div></div>
+      <div class="stat"><div class="n">1L+2</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">Military slots</div></div>
+      <div class="stat"><div class="n">260<small>m/s</small></div><div class="l">Top speed</div></div>
+      <div class="stat"><div class="n">150</div><div class="l">Base armour</div></div>
+      <div class="stat"><div class="n">~1.64M</div><div class="l">Hull price (Cr)</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Diamondback Explorer is Lakon's compact long-range scout, but the same traits that make it a good explorer &mdash; light mass, a cool-running plant and tidy handling &mdash; also make it a surprisingly serviceable budget combat ship. One Large and two Medium hardpoints give it a real main gun plus a pair of support weapons, four utility mounts carry a full defensive suite, and eight optional internals (two class-4) leave room for a proper shield, cells and hull reinforcement.</p>
+    <p>Its standout combat asset is heat. The DBE barely warms up, which lets it run beams and pulse lasers hard, silent-run to break missile locks, and shrug off the thermal weapons that punish hotter hulls. The catch is scale: with no huge hardpoint, no military slots and only 150 base armour, it can't sustain a fight against a dedicated warship. It's a cheap, cool, nimble skirmisher &mdash; not a frontline brawler.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Low-to-mid threat combat on a budget: low/medium conflict zones, low/high RES bounty hunting, pirate-massacre missions against small and medium targets, and any combat that needs small-pad access. A second career for a ship most commanders already own.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">260 / 340 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1 Large &middot; 2 Medium</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">260 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">150 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">150 <small>(hardness 42)</small></div></div>
+      <div class="cell"><div class="k">Power plant</div><div class="v">Class 4</div></div>
+      <div class="cell"><div class="k">Distributor</div><div class="v">Class 4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">4&middot;4&middot;3&middot;3&middot;2&middot;2&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(lands anywhere)</small></div></div>
+    </div>
+    <p>Four things make the Diamondback Explorer fight above its weight:</p>
+    <ul class="bullets">
+      <li><b>Very low heat.</b> A cool plant lets it run thermal weapons hard, silent-run on demand and resist heat-based attacks &mdash; a real combat edge no other budget hull matches.</li>
+      <li><b>One Large + two Medium mounts.</b> A genuine main gun plus two supports gives it more bite than the small-hardpoint skirmishers it sits beside.</li>
+      <li><b>Two class-4 optionals.</b> Enough room for a strong shield, a cell bank and hull reinforcement &mdash; it tanks far better than its 150 base armour implies.</li>
+      <li><b>Cheap, agile, small-pad.</b> Under 1.7M Cr, nimble enough to hold guns on target, and able to rearm at any outpost.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It has no huge hardpoint, no military slots, a class-4 power plant and distributor, and only 150 base armour &mdash; so against dedicated combat ships its DPS and survivability run out fast. Rated <b>65</b>, it's a competent budget skirmisher that out-fights the small-pad fighters around it, not a hull that contests high-intensity zones. For that, step up to a Vulture, Chieftain or Krait.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <h3 class="subhead">Same class &mdash; small-pad combat ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Diamondback Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Courier</td><td>Small</td><td>3M</td><td class="pcc"><span class="p">Superb shields; very fast; three matched mediums</span><span class="c">Imperial rank; thinner hull</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod">Viper Mk IV</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Tougher hull; four mounts</span><span class="c">No Large mount; hotter; slower</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Explorer <span class="pill md">this</span></td><td>Small</td><td>1L 2M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">65</span><div class="bar mini"><i style="--pct:65"></i></div></td></tr>
+        <tr><td class="mod">Viper Mk III</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Fast interceptor; cheap</span><span class="c">No Large mount; fragile; hotter</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Scout</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Even cooler-running; cheaper</span><span class="c">No Large mount; less firepower and tank</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>2M 2S</td><td class="pcc"><span class="p">Versatile; roomy; cargo</span><span class="c">No Large mount; hotter; less combat-focused</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among small-pad combat ships the DBE sits mid-pack: the Imperial Courier out-shields it and the Viper Mk IV is tougher, but the DBE's Large mount and cool plant put it clear of the Vipers, the Scout and the Cobra. It's the cool, cheap pick when you want a real main gun on a small pad.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated combat hulls</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Diamondback Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Fer-de-Lance</td><td>Medium</td><td>1H 4M</td><td class="pcc"><span class="p">Huge mount; elite agility; far more firepower and tank</span><span class="c">Pricier; medium pad; thirsty distributor</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">Five mounts; SLF bay; far tougher</span><span class="c">Pricier; medium pad; hotter</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Federal Assault Ship</td><td>Medium</td><td>2L 1M 2S</td><td class="pcc"><span class="p">Heavy armour; five mounts; great agility</span><span class="c">Federal rank; medium pad; pricier</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Vulture</td><td>Medium</td><td>2L</td><td class="pcc"><span class="p">Two Large mounts; brutal agility and tank for its size</span><span class="c">Power-starved; medium pad; pricier</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The dedicated combat hulls bring huge or paired Large mounts, military slots and far deeper tanks &mdash; everything the DBE lacks. The trade is cost, pad size and (often) a rank grind. The Diamondback Explorer's pitch is not matching them; it's delivering honest combat capability for a fraction of the price, from any pad, on a ship you likely already own.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~1.64M Cr</div></div>
+      <div class="cell"><div class="k">A-rated combat</div><div class="v">~7M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~13M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~1.64M Cr the DBE is one of the cheapest hulls that can field a Large mount, and a complete A-rated combat fit stays around 7M Cr &mdash; engineered, roughly 13M. No rank, no permit, and it lands at any outpost, so the only barrier to a combat DBE is a few engineer unlocks.</p>
+    <p>That makes it an ideal first combat ship and a low-stakes platform for learning conflict zones, RES hunting and pip management before sinking credits into a dedicated warship.</p>
+    <div class="callout"><span class="lbl">Cheapest hull with a Large mount</span><p>For under 2M Cr the DBE carries a real main gun and a full defensive suite &mdash; an unmatched price of entry to capable combat, with no rank or permit gate.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no combat-specific ARX pre-built built around the Diamondback Explorer; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A cool-running budget combat fit: a Large multi-cannon main gun, two support lasers, a full booster suite and a shield/cell/hull tank in the optionals. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies a heat-light combat pattern.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">Multi-Cannon 3</td><td class="st">Multi-Cannon 3</td><td class="eng">MC 3 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">Pulse Laser 2</td><td class="st">Beam Laser 2</td><td class="eng">Beam 2 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">Multi-Cannon 2</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G3)</td></tr>
+        <tr><td class="slot">Life Support (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">Shield Generator 4</td><td class="st">Shield Generator 4 (bi-weave)</td><td class="eng">Bi-Weave 4 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">Cargo Rack 4</td><td class="st">Shield Cell Bank 4</td><td class="eng">SCB 4</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 3</td><td class="eng">HRP 3 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 3</td><td class="eng">SCB 3</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 2</td><td class="eng">HRP 2 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 2</td><td class="eng">Module Reinforcement 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 1</td><td class="eng">HRP 1 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">Heat Sink storage</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Run cool, hit clean</span><p>The DBE's combat identity is heat. Pair a Large overcharged multi-cannon (one Corrosive) with thermal-vent beams and the ship stays cold enough to fire continuously and silent-run when pressed. Build the optionals as a layered shield-plus-hull tank to make up for the light base armour.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit a Large multi-cannon plus two support weapons &mdash; a real main gun first.</p>
+    <p>Add a class-4 shield generator and a single shield booster; the DBE tanks through shields, not armour.</p>
+    <p>Fit a heat sink launcher and keep weapons gimballed; the cool plant lets you fire without overheating from the start.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget combat fit:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Power Distributor &rarr; A</b> &mdash; Weapon fire and boost both lean on the class-4 distributor; A-rate it first. <span class="acc">~1.3M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Power Plant &rarr; A</b> &mdash; Headroom for guns, shield and boosters while staying cool. <span class="acc">~1.3M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Thrusters &rarr; A</b> &mdash; Agility keeps the main gun on target and lets you dictate range. <span class="acc">~1.2M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Shield Generator &rarr; A / bi-weave</b> &mdash; The first tank layer on a light hull. <span class="acc">~1M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Shield boosters + cell bank</b> &mdash; Deepen and recover the shield to survive sustained fire. <span class="acc">~600k Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Distributor and shield carry it</span><p>On a hull this light, the distributor (to keep guns firing and boost ready) and the shield stack (to soak damage the armour can't) matter most. A-rate those before touching weapons.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern, kept heat-light to play to the hull's strength. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (Large)</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">Beam Laser</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Shield Generator</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; sustained fire, boost and a strong shield all draw on them.</li>
+      <li><span class="stepnum">2</span>Thrusters to G5 so a light hull dictates range and holds its Large mount on target.</li>
+      <li><span class="stepnum">3</span>Shield Resistance-Augmented plus Heavy-Duty boosters; Heavy-Duty reinforcement in the optionals to offset the thin armour.</li>
+      <li><span class="stepnum">4</span>Weapons last: Overcharged multi-cannons with one Corrosive on the Large, thermal-vent beam for free cooling.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; G5 on class-4 cores, three weapons and a modest defensive suite; far lighter than a large warship's spend. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts to verify reserves before committing.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>340 m/s</td><td>340 m/s</td><td class="acc">~400 m/s</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~180</td><td>~260</td><td class="acc">~550+</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>150</td><td>150</td><td class="acc">~700+</td></tr>
+        <tr><td class="mod">Sustained DPS</td><td>modest</td><td>solid (Large MC)</td><td class="acc">good for class</td></tr>
+        <tr><td class="mod">Heat under fire</td><td>very low</td><td>very low</td><td class="acc">very low</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the DBE becomes a genuinely tough little skirmisher: a ~550 MJ shield layered over reinforced armour, a Large overcharged main gun and an almost unflappable heat profile. It still lacks the firepower and tank to contest a high-intensity zone &mdash; the honest ceiling behind its <b>65</b> &mdash; but for the credits, no small-pad combat ship gives more.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Resource Extraction Sites.</b> Low and high RES bounty hunting suit the DBE &mdash; pick targets, use the cool plant to fire freely, and bank steady bonds.</li>
+      <li><b>Low/medium conflict zones.</b> It holds its own against small and medium opposition for solid combat-bond income.</li>
+      <li><b>Pirate-massacre missions.</b> Stack low-threat massacre missions and clear them cheaply from any pad.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Learning combat.</b> A low-cost platform to practise pip management, range control and weapon mixes before a dedicated warship.</li>
+      <li><b>Anti-pirate patrol on the move.</b> Its range and small pad let it fight, scoop and rearm anywhere &mdash; good for combat far from the bubble.</li>
+      <li><b>Heat-edge skirmishing.</b> Silent-run and thermal-vent beams make it slippery against missile and laser boats above its weight.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any system with a RES or low/medium CZ suits it. Treat the DBE as the cheap combat ship you take to learn the trade and earn the credits for a Vulture, Chieftain or Krait.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Lead with the Large mount &mdash; an overcharged multi-cannon with Corrosive is the ship's real damage; the mediums are support.</li>
+      <li>Lean on the heat profile &mdash; thermal-vent beams and silent running are advantages most budget hulls don't have.</li>
+      <li>Tank through shields and the optionals; the 150 base armour won't carry you, so layer a cell bank and Heavy-Duty reinforcement.</li>
+      <li>Know when to disengage &mdash; against a dedicated warship the DBE's job is to pick its fights and run, not to slug it out.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Diamondback Explorer is a better combat ship than its reputation suggests: cool-running, agile and able to mount a real Large gun with a full defensive suite for under 2M Cr. The <b>65</b> rating is honest &mdash; no huge hardpoint, no military slots and only 150 base armour keep it out of high-intensity work &mdash; but it out-fights the small-pad skirmishers around it and makes an excellent cheap, no-rank first combat ship. Buy it to learn the trade; graduate to a warship when its ceiling starts to bite.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to validate the combat loadout, power budget and shield/hull tank on this hull.</span><a class="cr-link" href="https://coriolis.io/outfit/diamondback_explorer">coriolis.io/outfit/diamondback_explorer</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Diamondback Explorer ship page — manufacturer specs and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/diamondback-explorer">elitedangerous.com/.../diamondback-explorer</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Authoritative hardpoint sizes (1 Large, 2 Medium), optional-internal slots, base shield/armour and class-4 cores cited in the stat tables.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/diamondback_explorer.json">coriolis-data/ships/diamondback_explorer.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Diamondback Explorer</span><span class="cr-what">Ship overview cross-checked for hardpoint layout, internals, hull price and the absence of any rank or pad gate for combat fits.</span><a class="cr-link" href="https://inara.cz/elite/ship/31/">inara.cz/elite/ship/31</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Diamondback Explorer lore, manufacturer, and its low heat-signature profile relevant to the combat heat-edge discussion.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Diamondback_Explorer">elite-dangerous.fandom.com/wiki/Diamondback_Explorer</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

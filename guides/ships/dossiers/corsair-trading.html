@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corsair &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-haul"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Haul</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Corsair · Trading</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Corsair</span><span class="role ac-role-trading">Trading</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A capacious, fast medium hauler &mdash; <em>big hold, no rank,</em> modest shield</h2>
+      <p>Gutamaya's Corsair packs ~318 tonnes into a medium-pad hull that boosts past 350 m/s, so it carries more than a Python and outpaces every dedicated freighter. For a commander hauling on medium pads with no rank to grind, it's one of the best holds you can land at a small station. The limits are a modest base shield and a poor laden jump range &mdash; it carries a fraction of what the large freighters do, and it isn't the safest place for a fortune.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/corsair.jpg" alt="Corsair" width="160" height="90">
+      <figcaption><b>Corsair</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">74<small>/100</small></div><div class="bar mini"><i style="--pct:74"></i></div></div>
+      <div class="stat"><div class="n">~318 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">355 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">~76.9M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad requirement</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Corsair is a modern medium all-rounder, and its ten optional internals make it a genuinely capable hauler. Fill them with cargo and it carries ~318 tonnes &mdash; more than a Python and within reach of the dedicated medium transporters &mdash; on a hull that lands on a medium pad anywhere and boosts past 350 m/s. There's no rank gate; anyone can fly one off the shipyard floor.</p>
+    <p>For trading specifically, that combination of a big hold, real speed and medium-pad access is its whole case: it hauls a serious load to and from stations the large freighters can't reach, and it gets there faster. The catch is that it isn't a freight specialist &mdash; its base shield is modest, its laden jump range is poor, and it carries a fraction of what a Type-9 or Cutter does. The Corsair is the trader for medium-pad runs where pace and access matter; for raw tonnage or defended fortunes, the large hulls win.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Fast medium-pad bulk trade: a big hold landing at outposts large freighters can't use, brisk shuttle loops, and commanders who want serious cargo without an Imperial rank grind or a large-pad requirement.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-haul">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo (with shield)</div><div class="v">~256&ndash;318 <small>t</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">280 / 355 <small>m/s (fast)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">265 <small>t (light)</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">235 <small>MJ (modest)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Power plant</div><div class="v">Class 7</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Corsair a strong medium hauler:</p>
+    <ul class="bullets">
+      <li><b>Big hold for a medium.</b> ~318 tonnes stripped &mdash; more cargo than a Python, on a medium pad.</li>
+      <li><b>Fast and light.</b> A 355 m/s boost on a 265 t frame &mdash; quick station-to-station and quick to escape an interdiction.</li>
+      <li><b>Medium-pad access.</b> Lands at outposts and surface ports the large freighters are locked out of.</li>
+      <li><b>Rank-free, deep internals.</b> Ten optionals to load with cargo and a shield; no Imperial grind to fly one.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The base shield is only 235 MJ and there are just four utilities, so a defended trade fit is decent, not apex. Laden jump range is poor &mdash; expect short hops, not long hauls. And at ~318 t it carries a fraction of a Type-9 (~790 t) or Cutter (~794 t). The Corsair's case is fast medium-pad capacity; for maximum tonnage or a defended fortune, the large freighters win.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for trading specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; the headline number for bulk hauling.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad traders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Corsair</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Type-8 Transporter</td><td>Medium</td><td>~406</td><td class="pcc"><span class="p">More cargo; cheaper; tougher hull</span><span class="c">Slower; less versatile</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+        <tr><td class="mod">Corsair <span class="pill md">this</span></td><td>Medium</td><td>~318</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Stronger shields; proven</span><span class="c">Slower; slightly less cargo</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod">Type-6 Transporter</td><td>Medium</td><td>~112</td><td class="pcc"><span class="p">Far cheaper; great range; light</span><span class="c">Far less cargo; fragile</span></td><td><span class="rscore">65</span><div class="bar mini"><i style="--pct:65"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">SLF bay; combat-capable</span><span class="c">Less cargo; trade is secondary</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Corsair is the fast, big-hold medium trader. The Type-8 carries more for less money, and the Python shields better, but neither matches the Corsair's speed-plus-capacity blend on a medium pad &mdash; a strong pick when you want a large hold that still lands at outposts.</p>
+    <h3 class="subhead">Other classes &mdash; large and small traders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Corsair</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Panther Clipper Mk II</td><td>Large</td><td>~1048</td><td class="pcc"><span class="p">The maximum-tonnage king</span><span class="c">Large pad; far slower; pricier</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod">Type-9 Heavy</td><td>Large</td><td>~790</td><td class="pcc"><span class="p">~2.5&times; the cargo; cheap per tonne</span><span class="c">Large pad; slow; easily robbed</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod">Type-7 Transporter</td><td>Large</td><td>~310</td><td class="pcc"><span class="p">Similar cargo; cheaper</span><span class="c">Large pad; slow; lightly defended</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~250</td><td class="pcc"><span class="p">Even faster; stylish</span><span class="c">Large pad; less cargo; Imperial rank</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
+        <tr><td class="mod">Cobra Mk III</td><td>Small</td><td>~64</td><td class="pcc"><span class="p">Far cheaper; lands anywhere</span><span class="c">A fraction of the cargo</span></td><td><span class="rscore">48</span><div class="bar mini"><i style="--pct:48"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The large freighters out-haul the Corsair several times over, but every one of them needs a large pad and most are slow. The Corsair matches the Type-7's hold while landing on medium pads and moving far faster &mdash; the capacity of a large trader, the access and pace of a medium.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~76.9M Cr</div></div>
+      <div class="cell"><div class="k">A-rated trader</div><div class="v">~90M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~105M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~76.9M Cr the Corsair is the priciest of the medium traders &mdash; a Type-8 hauls more for less &mdash; but there's no rank gate and no large-pad requirement. A trade-rigged hull with a shield and cargo racks lands around 90M Cr.</p>
+    <p>The premium buys speed and a big hold in one medium-pad package, and the same Corsair re-roles into a hard-hitting combat or mining ship by swapping modules &mdash; spreading the cost across your whole fleet of one.</p>
+    <div class="callout"><span class="lbl">Premium medium, no gates</span><p>~90M Cr for a fast medium hauler with a near-large hold and no rank or large-pad requirement &mdash; pricier than the dedicated transporters, but quicker and more flexible.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no trading-specific ARX pre-built built around the Corsair; buy and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A fast, defended bulk-trade fit. Initial is buy-only; A-rated is the trade baseline; Engineered maximises protected cargo and laden pace.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Hardpoints</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash; (run clean / point defence)</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Low Emissions (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Engine Focused</td></tr>
+        <tr><td class="slot">Sensors (6)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Shield Generator 6 (bi-weave)</td><td class="eng">Bi-Weave 6 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6 (64t)</td><td class="eng">Cargo Rack 6 (64t)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">Cargo Rack 6</td><td class="st">Cargo Rack 6 (64t)</td><td class="eng">Cargo Rack 6 (64t)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo Rack 5 (32t)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo Rack 4 (16t)</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 3</td><td class="eng">SCB 3</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Cargo Rack 2 (4t)</td><td class="eng">Cargo Rack 2 (4t)</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS / spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Shield, then fill with cargo</span><p>Drop a bi-weave generator into one class-6 slot, add boosters and point defence, then pack every remaining internal with cargo. You lose ~60 t to the shield, but an interdicting pirate can't crack you before you boost clear &mdash; and the Corsair's speed means most won't catch it at all.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fill the optionals with the biggest cargo racks for maximum tonnage from day one.</p>
+    <p>Fit a shield booster and keep one utility free for point defence as funds allow.</p>
+    <p>A-rate thrusters and FSD early so the laden ship keeps its speed and reach.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a fast medium hauler:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Thrusters &rarr; A</b> &mdash; Speed is the Corsair's main defence; keep it laden. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">2</span><b>FSD &rarr; A</b> &mdash; Stretch a poor laden range so routes stay efficient. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Shield Generator &rarr; bi-weave</b> &mdash; Survive interdiction long enough to boost away. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Power Plant &rarr; A</b> &mdash; Power for shield, boosters and distributor. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Power Distributor &rarr; A</b> &mdash; Sustain boost to outrun trouble. <span class="acc">~5M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Speed is the defence</span><p>The Corsair can't out-tank a freighter's shields, so it outruns the threat instead &mdash; prioritise A-rated thrusters and distributor so a laden hull still boosts clear of an interdiction.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The trading engineering pattern weighted to range and pace. Felicity Farseer (maxed) carries the FSD; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+        <tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+        <tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>&mdash;</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Increased-Range FSD plus lightweight core modules first &mdash; the Corsair's range is its weakest trait, so claw it back.</li>
+      <li><span class="stepnum">2</span>Dirty thrusters next to keep the speed that lets it escape interdiction.</li>
+      <li><span class="stepnum">3</span>Bi-weave Resistance-Augmented shield and Heavy-Duty boosters for survivable hauling.</li>
+      <li><span class="stepnum">4</span>Low-Emissions plant for cool running; fill the rest with the biggest cargo racks.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light&ndash;moderate &mdash; FSD, thruster, shield and plant blueprints on medium modules, each done once. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max cargo (t)</td><td>~318 (no shield)</td><td>~256</td><td class="acc">~256 (defended)</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~280</td><td>~420</td><td class="acc">~700+</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>355 m/s</td><td>355 m/s</td><td class="acc">~420 m/s</td></tr>
+        <tr><td class="mod">Laden jump (LY)</td><td>~10</td><td>~14</td><td class="acc">~20</td></tr>
+        <tr><td class="mod">Survivability</td><td>low</td><td>moderate</td><td class="acc">good (via speed)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Corsair hauls ~256 t behind a ~700 MJ bi-weave at ~420 m/s &mdash; a defended, fast medium hold that lands where freighters can't. It carries a fraction of the large haulers and its laden range stays short, but for quick medium-pad runs it punches above the dedicated transporters.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Medium-pad commodity runs.</b> A near-large hold landing at outposts and surface ports freighters can't reach.</li>
+      <li><b>Fast shuttle loops.</b> Short, high-frequency runs where the 355 m/s boost saves real time.</li>
+      <li><b>Rare-goods circuits.</b> Light, valuable cargo over multi-stop loops suits its speed and range.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Community Goal hauling.</b> Top delivery boards on routes where pace and pad access beat raw tonnage.</li>
+      <li><b>Defended trade in contested space.</b> A bi-weave and 420 m/s boost let it run anarchy lanes a Type-6 can't.</li>
+      <li><b>Re-role on demand.</b> Swap the cargo set for guns or a mining suite without buying another ship.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Any medium-pad trade loop where speed and access matter &mdash; outpost runs, rare-goods circuits, CG deliveries. As a Gutamaya hull it doubles as a combat or mining ship, so one Corsair covers more than the haul.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Speed is the defence &mdash; A-rated thrusters and distributor let a laden hull boost clear of interdiction.</li>
+      <li>Engineer the FSD first &mdash; the Corsair's poor laden range is its weakest trait for trading.</li>
+      <li>It out-hauls a Python and matches a Type-7's hold while landing on medium pads, but carries a fraction of the large freighters.</li>
+      <li>A premium pick &mdash; pricier than the dedicated transporters, justified by speed, pad access and re-role flexibility.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Corsair is the fast, big-hold medium trader: ~318 tonnes on a medium pad with a 355 m/s boost and no rank gate. It rates <b>74</b> &mdash; held below the large freighters because it carries a fraction of their tonnage and below a defended Cutter because its shield is modest, but lifted above the slower medium transporters by its speed, capacity and pad access. For quick medium-pad bulk runs, it's one of the best holds you can land at an outpost.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to size the cargo-and-shield trade fit and confirm slot capacities.</span><a class="cr-link" href="https://coriolis.io/outfit/corsair">coriolis.io/outfit/corsair</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Corsair ship page &mdash; manufacturer, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/corsair">elitedangerous.com/.../corsair</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Authoritative hull data: optional-internal slot sizes, hardpoint count, base shield/mass and speed used for the cargo and stat figures.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_corsair.json">coriolis-data/ships/imperial_corsair.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Corsair</span><span class="cr-what">Ship reference cross-checked for cargo capacity, internals layout, hull price and shipyard availability.</span><a class="cr-link" href="https://inara.cz/elite/ship/44/">inara.cz/elite/ship/44</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Corsair role profile, Gutamaya manufacture, and rank-free / medium-pad access notes.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Corsair">elite-dangerous.fandom.com/wiki/Corsair</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — The Buur Pit</span><span class="cr-what">Full specifications overview &mdash; cargo capacity, internals, speed and pad class drawn on for the hauling assessment.</span><a class="cr-link" href="https://www.youtube.com/watch?v=23iXokkr5aY">youtube.com/watch?v=23iXokkr5aY</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

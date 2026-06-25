@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mamba &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: AX → good-green (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight-thargoids"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight Thargoids</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Mamba · AX Combat</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Zorgon Peterson</div>
+    <h1 class="title"><span>Mamba</span><span class="role ac-role-ax">AX Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The fastest medium turned Xeno skirmisher &mdash; it <em>kites</em>, it doesn't tank</h2>
+      <p>The Mamba brings the highest medium speed in the game to anti-Xeno work: it dictates range, outruns swarms, and slides clear of caustic clouds at will. Two small mounts carry Gauss for heart damage, the huge and large mounts take AX multi-cannons. But its case is narrow &mdash; no military slots means feeble module hardening against the lightning, its small internals starve the tank, and its poor turn rate fights you when you try to hold fixed Gauss on a moving heart. A capable fast skirmisher, but the most demanding and least forgiving AX hull on the ladder.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/mamba.jpg" alt="Mamba" width="160" height="90">
+      <figcaption><b>Mamba</b> &middot; Zorgon Peterson</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">70<small>/100</small></div><div class="bar mini"><i style="--pct:70"></i></div></div>
+      <div class="stat"><div class="n">1H · 2L · 2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">380 m/s</div><div class="l">Boost speed (stock)</div></div>
+      <div class="stat"><div class="n">~55M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Point the fastest medium in the game at the Thargoids and you get a skirmisher, not a warship. The Mamba's defining trait &mdash; 380 m/s boost stock, pushing ~490 engineered &mdash; lets it dictate range against an Interceptor, run down Scouts and Thargons, and pull clear of a caustic cloud before it eats the hull. Its two small hardpoints carry Gauss cannons (the meta heart-stripper, a small-class fixed weapon), while the huge and two large mounts take AX multi-cannons or Guardian shard cannons for swarm and structure work.</p>
+    <p>The reasons it sits at <b>70</b> &mdash; the lowest of the rated AX hulls &mdash; are structural and honest. The Mamba has <b>no military slots</b>, so the Guardian Module Reinforcement that lets dedicated AX ships shrug off Thargoid lightning has to come out of its already-cramped optional internals (5&middot;4&middot;3&middot;2&middot;2&middot;1). Those same small internals limit the shield, hull and decontamination kit you can carry. And its <b>poor turn rate</b> &mdash; the price of all that straight-line speed &mdash; fights you every time you try to keep fixed Gauss on a heart that is drifting. It survives by speed, not by standing in the fire.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Fast, mobile AX skirmishing: Scout and Thargon clearing where speed clears the field quickly, Gauss firing-passes on an exposed heart, kiting a single Interceptor while a wing does the heavy work, and any fight where the option to disengage at will keeps you alive.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight-thargoids">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1H &middot; 2L &middot; 2S <small>(no medium &mdash; Gauss on the smalls)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0 <small>(no module hardening slot)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">310 / 380 <small>m/s (highest medium)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">6</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;4&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Base armour / shield</div><div class="v">230 / ~270 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">250 <small>t</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank / Permit</div><div class="v">None / None</div></div>
+    </div>
+    <p>Three things keep the Mamba in the AX fight &mdash; and one keeps it out of the top tier:</p>
+    <ul class="bullets">
+      <li><b>Highest medium speed.</b> 380 m/s boost stock, ~490 engineered &mdash; it controls range, runs down Scouts and Thargons, and pulls clear of caustic clouds and swarms at will.</li>
+      <li><b>Two small Gauss mounts.</b> Gauss is a small-class fixed weapon, so the Mamba's two smalls run the meta heart-stripper; the huge and large mounts add AX multi-cannons or Guardian shards.</li>
+      <li><b>Six utilities.</b> Enough for a Xeno scanner, caustic sink, heat sinks and shield boosters &mdash; a complete defensive kit despite the small frame.</li>
+      <li><b>No military slot, cramped internals.</b> The one that hurts: Guardian Module Reinforcement must eat optional slots, the tank is shallow, and the low turn rate makes holding fixed Gauss hard.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The Mamba has <b>no military slots</b>, so module hardening against Thargoid lightning competes with shields, hull and decon for its six small optionals &mdash; you cannot have all of it. Its turn rate is poor, which makes fixed Gauss on a drifting heart genuinely hard, and its shield/armour are light for the role. Its case is speed and the ability to disengage &mdash; a fast skirmisher that kites the fight, not a hull that absorbs it.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, hardening and heat management matter as much as raw mounts.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad AX ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Mamba</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>3L 2M</td><td class="pcc"><span class="p">More mounts; SLF decoy; deeper internals; agile</span><span class="c">Slower; can't kite clouds like the Mamba</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod">Alliance Challenger</td><td>Medium</td><td>1L 3M 3S</td><td class="pcc"><span class="p">Agile tank; 3 military slots for hardening</span><span class="c">Far slower; no straight-line escape</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Alliance Crusader</td><td>Medium</td><td>1L 2M 3S</td><td class="pcc"><span class="p">SLF bay; military slots; agile and tough</span><span class="c">Slower; less raw alpha</span></td><td><span class="rscore">79</span><div class="bar mini"><i style="--pct:79"></i></div></td></tr>
+        <tr><td class="mod">Federal Assault Ship</td><td>Medium</td><td>2L 2M</td><td class="pcc"><span class="p">Agile brawler; military slot; cheap</span><span class="c">Slower; Federal rank gate; less Gauss room</span></td><td><span class="rscore">77</span><div class="bar mini"><i style="--pct:77"></i></div></td></tr>
+        <tr><td class="mod">Federal Dropship</td><td>Medium</td><td>1L 4M</td><td class="pcc"><span class="p">Four medium mounts; tough; military slot</span><span class="c">Slow and clumsy; Federal rank gate</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+        <tr><td class="mod">Mamba <span class="pill md">this</span></td><td>Medium</td><td>1H 2L 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among the AX mediums the Mamba is the outlier: every hull above it either hardens its modules with military slots (Challenger, Crusader, the Federal brawlers) or carries deeper internals and more Gauss mounts. The Mamba trades all of that for speed no other medium can touch &mdash; valuable for kiting and disengaging, but not enough to lift it past hulls that simply survive the lightning better.</p>
+    <h3 class="subhead">Other classes &mdash; the AX battleships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Mamba</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shield tank; many mounts; also fast for a large</span><span class="c">Imperial Duke rank; large pad; can't kite</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; no rank gate</span><span class="c">Ponderous; large pad; slow to reposition</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Federal Corvette</td><td>Large</td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Battleship tank; two military slots; eight utilities</span><span class="c">Rear Admiral rank; ~188M Cr; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Type-10 Defender</td><td>Large</td><td>4L 3M 2S</td><td class="pcc"><span class="p">Most mounts; huge armour; no rank gate</span><span class="c">Far slower; feeble shields; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The large AX battleships out-gun, out-tank and out-harden the Mamba completely &mdash; they win by standing in the fire. What the Mamba offers that none of them can is pace: it picks its range, runs down Scouts, and leaves a fight whenever it likes. That is a real edge for skirmishing and cloud-dodging, but in AX, survivability decides the ladder, and the battleships simply do not die.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~55M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted (A-rated)</div><div class="v">~75M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~95M+ Cr</div></div>
+      <div class="cell"><div class="k">Rebuy (eng.)</div><div class="v">~5M Cr</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Pad / Permit</div><div class="v">Medium / None</div></div>
+    </div>
+    <p>At ~55M Cr the Mamba is a premium medium with no rank or permit gate. Its small internals keep the module bill modest, so a full AX fit &mdash; Gauss, AX multi-cannons, a bi-weave shield and what hardening the optionals allow &mdash; lands around ~75M Cr A-rated, rising past ~95M Cr engineered, with a low ~5M rebuy. The real cost is the Guardian and AX weapon-tech grind, which is the same for every AX hull.</p>
+    <p>That accessibility is the Mamba's strongest AX argument: it needs only credits and the weapon unlocks, and it fits a medium pad. But spend the same money on a Krait Mk II or an Alliance Challenger and you get a more survivable, more forgiving AX platform. The Mamba is a sidegrade for pilots who already own and love its speed &mdash; not the medium to buy <em>for</em> AX.</p>
+    <div class="callout"><span class="lbl">Cheap to fly, dear to learn</span><p>No rank gate and a ~5M rebuy make the Mamba an inexpensive AX hull to own. The price is paid in difficulty: thin hardening, a shallow tank and a low turn rate mean it punishes mistakes a tankier medium would forgive. Bring it because you fly it well, not because it's affordable.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no AX-specific ARX pre-built built around the Mamba; buy the hull, unlock Guardian and AX weapons at the relevant sites, and outfit it normally through a shipyard.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A fast Gauss skirmisher: two Gauss cannons on the small mounts for heart damage, AX multi-cannons in the huge and large mounts (no huge AX gun exists), and module hardening squeezed from the optionals since there is no military slot. Initial is buy-only; AX-fitted adds the unlocked kit; Engineered leans into speed, shields and what hardening the frame allows.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon (L)</td><td class="eng">Enhanced AX MC &mdash; in huge mount</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Enhanced AX Multi-Cannon</td><td class="eng">Guardian Shard Cannon</td></tr>
+        <tr><td class="slot">Large 2</td><td class="st">&mdash;</td><td class="st">Guardian Shard Cannon</td><td class="eng">Guardian Shard Cannon</td></tr>
+        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">Guardian Gauss Cannon</td><td class="eng">Gauss Cannon &mdash; Thermal Vent</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1</td><td class="st">&mdash;</td><td class="st">Xeno Scanner</td><td class="eng">Xeno Scanner</td></tr>
+        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Caustic Sink Launcher</td><td class="eng">Caustic Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 3</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Utility 6</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G3)</td></tr>
+        <tr><td class="slot">Life Support (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced (G5)</td></tr>
+        <tr><td class="slot">Sensors (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (3)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Shield Generator 5 (bi-weave)</td><td class="eng">Bi-Weave 5 &mdash; Thermal Resistant</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 4</td><td class="eng">Guardian HRP 4</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Decontamination Limpet Controller 3</td><td class="eng">Decon Limpet (caustic)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Guardian Module Reinforcement 2</td><td class="eng">Guardian MRP 2 (module hardening)</td></tr>
+        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Guardian Hull Reinforcement 2</td><td class="eng">Guardian HRP 2</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Caustic Sink storage</td><td class="eng">Guardian MRP 1 (module hardening)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Kite the fight, harden what you can</span><p>With no military slot, the Mamba's module hardening has to come from its optionals &mdash; a Guardian MRP or two competing with shields, hull and decon for six small bays. Run Gauss on the smalls, AX multi-cannons in the big mounts (no huge AX gun exists), and lean on speed: control range, alpha the heart on a pass, and pull clear of clouds and swarms rather than absorbing them.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull, then unlock Gauss, AX multi-cannons and Guardian shards at the relevant sites &mdash; none can simply be bought off the shelf.</p>
+    <p>Arm the two small mounts with Gauss for heart damage and the huge/large mounts with AX multi-cannons or Guardian shards.</p>
+    <p>Fit the largest bi-weave the class-5 bay allows; spread a Xeno scanner, caustic sink, heat sinks and shield boosters across the six utilities.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority for a fast skirmisher:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Thrusters &rarr; A</b> &mdash; Speed is the Mamba's only real defence; A-rate and engineer thrusters before anything else. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">2</span><b>AX / Guardian weapons</b> &mdash; Gauss on the smalls, AX multi-cannons in the big mounts, a Guardian shard for swarm work. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">3</span><b>Power Distributor &amp; Plant &rarr; A</b> &mdash; Gauss and the bi-weave are power- and capacitor-hungry on a 250t hull. <span class="acc">~13M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Bi-weave shield &amp; boosters</b> &mdash; Thermal-resistant padding for a frame that can't out-turn return fire. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Guardian reinforcement</b> &mdash; What MRP/HRP the optionals will spare; module hardening matters even when slots are scarce. <span class="acc">material unlocks</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Speed is the defence</span><p>Unlike the AX battleships, the Mamba survives by leaving &mdash; A-rate and engineer thrusters first, then weapons, then shield. With no military slot you cannot out-harden the lightning, so fit the speed that lets you escape it.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens shields, hull, heat and mobility; AX/Guardian weapons have limited engineering. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Power Distributor</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Thermal Resistant (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty / Thermal Resistant</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G3)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Thrusters to G5 first &mdash; the Mamba's whole AX game is speed and disengagement.</li>
+      <li><span class="stepnum">2</span>Distributor and plant to G5 to sustain Gauss and the bi-weave on a small hull.</li>
+      <li><span class="stepnum">3</span>Thermal-resistant bi-weave and HRPs against Thargoid thermal and caustic damage.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and all Guardian reinforcement come from unlocks, not blueprints.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; standard core G5s on class-6-and-smaller modules, lighter than a battleship's grind. The real cost is the Guardian and AX weapon-tech unlocks, which every AX hull shares. Ask for exact per-blueprint or unlock counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>380 m/s</td><td>380 m/s</td><td class="acc">~490 m/s</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~270</td><td>~450</td><td class="acc">~800+</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>230</td><td>230</td><td class="acc">~1,200+ (Guardian HRP)</td></tr>
+        <tr><td class="mod">Module hardening</td><td>none</td><td>1 Guardian MRP</td><td class="acc">1&ndash;2 MRP (no military slot)</td></tr>
+        <tr><td class="mod">Agility (dodge)</td><td>low</td><td>low</td><td class="acc">low (by design)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Mamba boosts toward 490 m/s &mdash; untouchable among mediums &mdash; with shields into the high hundreds and Guardian HRP lifting effective armour past a thousand. But module hardening stays thin (one or two MRP from the optionals, no military slot) and the turn rate stays low. It is a fast, lightly-hardened AX skirmisher: it wins by controlling range and leaving, not by tanking the lightning.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Scout &amp; Thargon clearing.</b> Use speed to sweep Scouts and Thargons quickly, where its agility-light frame is least exposed.</li>
+      <li><b>Gauss firing-passes.</b> Line up Gauss on an exposed heart, alpha on the pass, and boost out before the swarm converges.</li>
+      <li><b>Cloud and swarm kiting.</b> Pull clear of caustic clouds and Interceptor swarms that a slower AX hull must sit and absorb.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Solo Interceptor harassment.</b> Kite a single Cyclops or Basilisk, controlling range and chipping hearts between heart-phase resets.</li>
+      <li><b>Wing skirmisher.</b> Dart and harass while tankier wingmates anchor; let speed keep you out of the lightning.</li>
+      <li><b>AXCZ hit-and-run.</b> Strike priority targets and withdraw rather than holding ground &mdash; the Mamba can't out-last an AXCZ, only out-pace it.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example operations</span><p>Wherever Thargoids are fought &mdash; AX Conflict Zones, Scout swarms and Interceptor hunts. The Mamba is the hull you bring to dictate range and disengage at will, not to hold a position.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>No military slot &mdash; module hardening has to come from the optionals, so fit one or two Guardian MRP and accept the trade against shields and hull.</li>
+      <li>Gauss is a small-class weapon, so the Mamba's two smalls run the meta heart-stripper; the huge and large mounts take AX multi-cannons or Guardian shards.</li>
+      <li>You can't tank the lightning like a battleship &mdash; lean on speed to control range and leave when the swarm piles on.</li>
+      <li>The low turn rate makes fixed Gauss on a drifting heart hard; commit to passes and resets rather than circling.</li>
+      <li>Manage heat hard with Gauss and carry two heat sinks; budget a caustic sink and decon limpet for cloud and corrosion damage.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Mamba is the fastest medium turned anti-Xeno skirmisher: it controls range, runs down Scouts, kites clouds and disengages at will. It scores 70 &mdash; the lowest of the rated AX hulls &mdash; because it has no military slot for module hardening, its small internals starve the tank, and its poor turn rate fights you on the heart. Bring it because you fly its speed well, not because it's the safe AX choice; for a forgiving medium, a Krait Mk II or Alliance Challenger survives the lightning far better.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to validate the AX loadout, hardpoint sizes and power/capacitor budget on the small frame.</span><a class="cr-link" href="https://coriolis.io/outfit/mamba">coriolis.io/outfit/mamba</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Mamba ship page &mdash; manufacturer specs, top-speed figure, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/mamba">elitedangerous.com/.../mamba</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout and module-variant data &mdash; confirms the 1H/2L/2S hardpoints, six optional internals and absence of military slots behind the AX hardening plan.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/mamba.json">coriolis-data/ships/mamba.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Mamba</span><span class="cr-what">Ship overview: base stats, internals layout, hardpoints, price, and confirmation of no rank or permit gate.</span><a class="cr-link" href="https://inara.cz/elite/ship/59/">inara.cz/elite/ship/59</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Mamba hull profile and speed/agility notes, cross-referenced against AX weapon class limits (Gauss is small-class; no huge AX gun).</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Mamba">elite-dangerous.fandom.com/wiki/Mamba</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federal Corvette &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-versatile"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Versatile</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-dossiers">Ships</a>
+  <span class="sep">›</span>
+  <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">Federal Corvette · Multipurpose</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Core Dynamics</div>
+    <h1 class="title"><span>Federal Corvette</span><span class="role ac-role-multipurpose">Multipurpose</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A battleship that can <em>moonlight</em> &mdash; tanky and capable, but rank-gated and short on range</h2>
+      <p>The same 900-tonne hull that tops the combat rankings also tanks like nothing else, hauls ~618 tonnes and mines a ring &mdash; swap modules at a station and the warship does other work. What it doesn't do is range or flexibility: a class-6 FSD on a heavy hull keeps jumps short, and the Anaconda is a more rounded all-rounder. It earns the role on tank and firepower, not on being a do-everything ship.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/federal-corvette.jpg" alt="Federal Corvette" width="160" height="90">
+      <figcaption><b>Federal Corvette</b> &middot; Core Dynamics</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">78<small>/100</small></div><div class="bar mini"><i style="--pct:78"></i></div></div>
+      <div class="stat"><div class="n">2H+5</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">~618 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">~31 LY</div><div class="l">Max jump range</div></div>
+      <div class="stat"><div class="n">~183M</div><div class="l">Hull price (Cr)</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Federal Corvette is built to fight, but it carries enough hull around its guns to moonlight as a multipurpose capital. Two huge hardpoints anchor an eight-mount battery, and behind them sit eleven optional internals, two military slots, eight utilities and a fighter bay. Strip the war-fit and that volume becomes ~618 tonnes of cargo, a mining suite, or a fortress-tanked hauler that fears nothing in open space &mdash; switchable by swapping modules at a station.</p>
+    <p>The case for it as an all-rounder is tank and teeth: nothing else generalist-fit survives a hot zone like a Corvette, and it keeps real combat power in every configuration. The case against is range and balance. A class-6 FSD on a 900-tonne hull means short jumps even engineered, the large pad locks out outposts, and the Federal Rear Admiral rank gates ownership entirely. The Anaconda does the same jobs more evenly with no rank; the Corvette is the multipurpose hull you pick when survivability and firepower matter more than reach.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>The combat commander who wants one hull for everything: bounty sessions, hauling and mining runs through dangerous space, and any work where being un-killable matters more than jump range. A warship that earns its keep between fights.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-versatile">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~618 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max jump</div><div class="v">~31 <small>LY (as explorer)</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2H &middot; 1L &middot; 2M &middot; 2S</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;7&middot;7&middot;6&middot;6&middot;5&middot;5&middot;4&middot;4&middot;3&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">2 (class 5)</div></div>
+      <div class="cell"><div class="k">Base shield / armour</div><div class="v">~555 MJ / 370</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">4 <small>(SLF bay)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Fed. Rear Admiral</div></div>
+    </div>
+    <p>Four things shape the Corvette as an all-rounder:</p>
+    <ul class="bullets">
+      <li><b>Best tank in any role.</b> 900-tonne hull, two military slots and deep optionals make a generalist fit harder to kill than most ships' dedicated combat builds.</li>
+      <li><b>Combat that never leaves.</b> Two huge hardpoints stay mounted in every configuration &mdash; the hauler and miner still bite back.</li>
+      <li><b>Real capacity.</b> Eleven optionals carry ~618 t of cargo, a full mining suite, or a mixed fit &mdash; capital-scale room behind the guns.</li>
+      <li><b>Module-swap flexibility.</b> Strip the war-fit for cargo racks, a fuel scoop and an SRV at a station; the hull re-tunes between jobs.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Range and access are the limits. The class-6 FSD on a heavy hull caps jumps near ~31 LY even engineered, so it's a poor explorer; the large pad bars outposts; and Federal Rear Admiral is one of the longest rank grinds in the game. The Anaconda is the more balanced all-rounder and needs no rank. The Corvette's multipurpose case is tank and firepower, not reach &mdash; which is why it rates 78, not higher.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">03</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for multipurpose use</em> &mdash; versatility across combat, trade, exploration and more. The role column is the maximum cargo capacity in tonnes as one measure of capacity; versatility is judged across all roles.</p>
+    <h3 class="subhead">Same class &mdash; large all-rounders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Federal Corvette</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Federal Corvette <span class="pill md">this</span></td><td>Large</td><td>~618</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Anaconda</td><td>Large</td><td>~470</td><td class="pcc"><span class="p">Far better range; more rounded; no rank</span><span class="c">Less tank and firepower</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Imperial Cutter</td><td>Large</td><td>~794</td><td class="pcc"><span class="p">More cargo; highest shields; faster</span><span class="c">Imperial rank; ponderous; less firepower</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper</td><td>Large</td><td>~250</td><td class="pcc"><span class="p">Far faster; cheaper; better range</span><span class="c">Imperial rank; far less tank and capacity</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among large all-rounders the Corvette is the tank-and-firepower pick, not the balanced one. The Anaconda out-ranges and out-rounds it with no rank, and the Cutter out-hauls and out-shields it; the Corvette wins only where survivability and guns lead. For a do-everything large hull, the Anaconda is the cleaner choice &mdash; the Corvette suits the combat commander who wants one ship.</p>
+    <h3 class="subhead">Other classes &mdash; the versatile mediums</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Federal Corvette</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Python</td><td>Medium</td><td>~294</td><td class="pcc"><span class="p">Medium pad; cheaper; very rounded; no rank</span><span class="c">Far less tank and firepower</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Krait Mk II</td><td>Medium</td><td>~230</td><td class="pcc"><span class="p">Medium pad; SLF; agile; no rank</span><span class="c">Less cargo and tank</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Corsair</td><td>Medium</td><td>~318</td><td class="pcc"><span class="p">Medium pad; modern; rounded; no rank</span><span class="c">Less tank and firepower</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod">Mandalay</td><td>Medium</td><td>~104</td><td class="pcc"><span class="p">Far better range; light; cheap; no rank</span><span class="c">A fraction of the capacity and tank</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The versatile mediums are cheaper, land on outposts, jump further and need no rank &mdash; and do most general work the Corvette does at smaller scale. The Corvette's only edge over them is sheer tank and firepower in one hull. If you don't need that, a medium is the easier all-rounder; if you do, the Corvette is unmatched in its weight class.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~183M Cr</div></div>
+      <div class="cell"><div class="k">A-rated multirole</div><div class="v">~210M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~260M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Fed. Rear Admiral</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~183M Cr the Corvette is one of the most expensive hulls in the game, and it sits behind Federal Rear Admiral &mdash; a long grind up the Dropship&rarr;FAS&rarr;Gunship ladder. As a multipurpose hull that cost is hard to justify on capacity alone; you take the Corvette because you earned it for combat and want it to do everything else too.</p>
+    <p>Outfitting it well across roles &mdash; and keeping module sets to swap between them &mdash; pushes the practical investment past 260M Cr. That's steep for a generalist, but a Corvette commander already owns the hull; the multipurpose fit is about making one expensive warship do the rest of the week's work.</p>
+    <div class="callout"><span class="lbl">A warship that earns between fights</span><p>If you've already ground to Rear Admiral and own the hull, a second module set turns the Corvette into a tanky hauler and miner for almost no extra hull cost &mdash; it works the days you're not fighting.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">05</span><h2>ARX Pre-Built Option</h2></div>
+    <p>There is no multipurpose-specific ARX pre-built built around the Federal Corvette; buy and outfit it normally once you hold Rear Admiral rank.</p>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A balanced multirole fit &mdash; the two huge guns kept, a capital shield, deep reinforcement and real cargo room, ready to re-tune for any job. Initial is buy-only; A-rated is the multirole baseline; Engineered makes it a fortress that hauls.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
+        <tr><td class="slot">Huge 1</td><td class="st">Multi-Cannon 4</td><td class="st">Multi-Cannon 4</td><td class="eng">MC 4 &mdash; Overcharged + Corrosive</td></tr>
+        <tr><td class="slot">Huge 2</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 4</td><td class="eng">MC 4 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Large 1</td><td class="st">&mdash;</td><td class="st">Beam Laser 3</td><td class="eng">Beam 3 &mdash; Thermal Vent</td></tr>
+        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">Multi-Cannon 2</td><td class="eng">MC 2 &mdash; Overcharged</td></tr>
+        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">Mining Laser / flexible</td><td class="eng">flexible (role swap)</td></tr>
+        <tr><td class="slot">Small 1&ndash;2</td><td class="st">&mdash;</td><td class="st">Pulse Laser / utility</td><td class="eng">flexible</td></tr>
+        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
+        <tr><td class="slot">Utility 1&ndash;3</td><td class="st">Shield Booster</td><td class="st">Shield Booster</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Utility 4</td><td class="st">&mdash;</td><td class="st">Chaff Launcher</td><td class="eng">Chaff Launcher</td></tr>
+        <tr><td class="slot">Utility 5</td><td class="st">&mdash;</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
+        <tr><td class="slot">Utility 6</td><td class="st">&mdash;</td><td class="st">Point Defence</td><td class="eng">Point Defence</td></tr>
+        <tr><td class="slot">Utility 7&ndash;8</td><td class="st">&mdash;</td><td class="st">Shield Booster / spare</td><td class="eng">Shield Booster &mdash; Heavy Duty</td></tr>
+        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
+        <tr><td class="slot">Power Plant (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Overcharged (G5)</td></tr>
+        <tr><td class="slot">Thrusters (7)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Dirty Drive Tuning (G5)</td></tr>
+        <tr><td class="slot">FSD (6)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
+        <tr><td class="slot">Life Support (5)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Power Distributor (8)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Charge Enhanced</td></tr>
+        <tr><td class="slot">Sensors (8)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
+        <tr><td class="slot">Fuel Tank (5)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
+        <tr class="grouprow"><td colspan="4">Military Slots</td></tr>
+        <tr><td class="slot">Military 1 (5)</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 5</td><td class="eng">HRP 5 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Military 2 (5)</td><td class="st">&mdash;</td><td class="st">Module Reinforcement 5</td><td class="eng">Module Reinforcement 5</td></tr>
+        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">Shield Generator 7</td><td class="st">Shield Generator 7 (bi-weave)</td><td class="eng">Bi-Weave 7 &mdash; Resistance Augmented</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">&mdash;</td><td class="st">Cargo Rack 7 (128t)</td><td class="eng">Cargo / Fuel Scoop (role swap)</td></tr>
+        <tr><td class="slot">Optional 7</td><td class="st">&mdash;</td><td class="st">Cargo Rack 7 (128t)</td><td class="eng">Cargo / Fighter Hangar (role swap)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Cargo Rack 6 (64t)</td><td class="eng">Cargo / SRV (role swap)</td></tr>
+        <tr><td class="slot">Optional 6</td><td class="st">&mdash;</td><td class="st">Shield Cell Bank 6</td><td class="eng">SCB 6</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 5</td><td class="eng">HRP 5 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 5</td><td class="st">&mdash;</td><td class="st">Cargo Rack 5 (32t)</td><td class="eng">Cargo / AFMU (role swap)</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Cargo Rack 4 (16t)</td><td class="eng">Cargo / Collector Limpet</td></tr>
+        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Hull Reinforcement 4</td><td class="eng">HRP 4 &mdash; Heavy Duty</td></tr>
+        <tr><td class="slot">Optional 3</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS</td></tr>
+        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">spare</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Built to re-tune</span><p>This is one balanced configuration. The Corvette's all-rounder trick is the module swap: keep the two huge guns and the tank, then trade the optionals between cargo racks (hauling), a mining suite and limpets (mining), or a fuel scoop and SRV (planetary work). Store role sets at your home base and switch as the week demands &mdash; just don't expect explorer range.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Rear Admiral, buy the hull, and fit the largest shield the class-7 bay allows plus hull reinforcement &mdash; even basic, the Corvette is a fortress.</p>
+    <p>Arm one huge mount with a gimballed multi-cannon and keep enough cargo room to start earning; A-rate the cores as credits allow.</p>
+    <p>Build role-specific module sets (hauler, miner) in storage to swap in once the cores are sorted.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a multirole Corvette:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Power Distributor &amp; Plant &rarr; A</b> &mdash; The class-8 cores feed guns, a big shield and boost in every role; A-rate first. <span class="acc">~50M Cr</span></li>
+      <li><span class="stepnum">2</span><b>Thrusters &rarr; A</b> &mdash; Keep the agility that makes a 900t hull manageable loaded or in a fight. <span class="acc">~22M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Shield Generator &rarr; bi-weave</b> &mdash; Capital survivability across combat, mining and hauling. <span class="acc">~18M Cr</span></li>
+      <li><span class="stepnum">4</span><b>FSD &rarr; A</b> &mdash; Squeeze what range a heavy hull allows for transit between jobs. <span class="acc">~18M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Role module sets</b> &mdash; Cargo racks, mining suite, limpets, fuel scoop to swap. <span class="acc">varies</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">A-rate the cores, then specialise</span><p>The Corvette's cores power every role &mdash; A-rate the distributor, plant and thrusters first, then build and store role-specific module sets to swap between warship, hauler and miner. The FSD is a fixed limit; don't chase range it can't reach.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The house all-rounder pattern at battleship scale &mdash; mobility, shields, tank and weapons covered; range pushed as far as a class-6 FSD allows. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Power Plant</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani / Marsha Hicks</td></tr>
+        <tr><td class="mod">Thrusters</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+        <tr><td class="mod">Frame Shift Drive</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+        <tr><td class="mod">Bi-Weave Shield</td><td>Resistance Augmented (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+        <tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one)</td><td>Tod McQuinn</td></tr>
+        <tr><td class="mod">HRPs / Boosters</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean / Didi Vatermann</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Cores first &mdash; Overcharged plant, Charge-Enhanced distributor, Dirty thrusters serve every role and feed the guns.</li>
+      <li><span class="stepnum">2</span>Bi-weave shield Resistance-Augmented plus Heavy-Duty boosters and HRPs &mdash; the Corvette's tank is its selling point.</li>
+      <li><span class="stepnum">3</span>Increased-Range FSD with Mass Manager to claw back what range the heavy hull permits.</li>
+      <li><span class="stepnum">4</span>Overcharged huge multi-cannons (one Corrosive) last; engineer once and the mods carry across role swaps.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Heavy &mdash; G5 across class-8 cores, a capital defensive suite and the huge guns; among the larger material spends for any hull. But each module is engineered once and reused across roles. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Combat capability</td><td>strong</td><td>strong</td><td class="acc">elite</td></tr>
+        <tr><td class="mod">Max jump (LY)</td><td>~17</td><td>~22</td><td class="acc">~31</td></tr>
+        <tr><td class="mod">Max cargo (t)</td><td>~400</td><td>~520</td><td class="acc">~618</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~700</td><td>~1,000</td><td class="acc">~2,000+</td></tr>
+        <tr><td class="mod">Versatility</td><td>good</td><td>good</td><td class="acc">good</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Corvette fights like a battleship, tanks like nothing else, and hauls or mines a ring &mdash; all in one hull, switchable at a station. What it never gains is reach: ~31 LY is the ceiling, and that range gap is most of why it rates 78 against the Anaconda's 88. As an all-rounder it's the survivable, lethal one &mdash; not the balanced one.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>One hull for combat and earning.</b> Bounty sessions, then a hauling or mining run on the same airframe, re-tuned at a station.</li>
+      <li><b>Hauling through danger.</b> ~618 t behind capital armour and shields &mdash; piracy and pirate interdictions are no threat.</li>
+      <li><b>Core or laser mining.</b> A mining suite in the deep optionals turns the warship into an un-killable ring miner.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Combat-zone logistics.</b> Run materials or cargo into hot systems where lighter haulers die &mdash; the Corvette shrugs it off.</li>
+      <li><b>Endgame combat flagship that earns.</b> Keep it war-fit most weeks; swap to cargo or mining when the credits call.</li>
+      <li><b>Wing anchor.</b> The SLF bay and full utility suite make it the durable centrepiece of a mixed-role wing.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example uses</span><p>A bounty session in a Haz RES, then a trade loop or a mining run through contested space &mdash; the Corvette covers them from one home base. Just plan around the large pad and short jumps; long expeditions belong to another hull.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>A-rate the cores first &mdash; they power every role; then build storable module sets to swap.</li>
+      <li>It's the tank-and-firepower all-rounder, not the balanced one &mdash; the Anaconda is the cleaner generalist and needs no rank.</li>
+      <li>Range is the hard limit &mdash; a class-6 FSD on 900 tonnes caps jumps near ~31 LY; don't pick it to explore.</li>
+      <li>Mind the large pad &mdash; plan around stations or a carrier; outposts are out.</li>
+      <li>It has a dedicated combat manual too &mdash; this one is for the do-everything build.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Federal Corvette is the warship that moonlights: a 900-tonne fortress with two huge guns that also hauls ~618 t and mines a ring, switchable by swapping modules. It rates 78, not higher, because range and access hold it back &mdash; short jumps, a large pad and the Rear Admiral grind &mdash; and the Anaconda does the same jobs more evenly with no rank. But if you've earned the hull and want one ship that's lethal, un-killable and still earns between fights, the Corvette is a compelling all-rounder.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner &mdash; used to verify the multirole slot fit, cargo capacity and engineered jump range.</span><a class="cr-link" href="https://coriolis.io/outfit/federal_corvette">coriolis.io/outfit/federal_corvette</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Federal Corvette ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/federal-corvette">elitedangerous.com/.../federal-corvette</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, optional + military internal sizes and hardpoint counts behind the multirole loadout and peer table.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/federal_corvette.json">coriolis-data/ships/federal_corvette.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Federal Corvette</span><span class="cr-what">Ship overview cross-check &mdash; hull price, internals layout, and the Federal rank requirement noted in Cost &amp; Access.</span><a class="cr-link" href="https://inara.cz/elite/ship/80/">inara.cz/elite/ship/80</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Federal Corvette lore, Core Dynamics manufacturer, and role notes backing the multipurpose write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Federal_Corvette">elite-dangerous.fandom.com/wiki/Federal_Corvette</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — The Buur Pit</span><span class="cr-what">In-depth Federal Corvette review covering its tank, handling and versatility beyond pure combat.</span><a class="cr-link" href="https://www.youtube.com/watch?v=FpQs2AL-DXw">youtube.com/watch?v=FpQs2AL-DXw</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>
