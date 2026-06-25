@@ -202,11 +202,12 @@ cat <<'HEAD'
     <p class="lead">How each career plays, which hull wins each role, and a dossier for every viable ship &times; role pairing.</p>
 
     <h3 class="subhead" id="section-general">General</h3>
-    <p>The methodology behind every ship rating.</p>
+    <p>How every ship is rated — and how the whole fleet stacks up across all seven roles.</p>
     <div class="gcards">
 HEAD
 
 card "ships/rating-methodology.html"   ""  "Rating Methodology"    "How every ship earns its 1–100 suitability rating — the roster-relative, fully-engineered rubric."
+card "ships/ship-role-matrix.html"      ""  "Ship × Role Matrix"    "Every published ship-role suitability score on one sortable grid — 48 hulls across seven roles, each cell linked straight to its dossier."
 
 cat <<'SHIPS_BEST'
     </div>
