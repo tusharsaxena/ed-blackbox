@@ -150,6 +150,11 @@ cat <<'HEAD'
   </div>
 </header>
 
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a class="current" aria-current="page" href="index.html">Home</a>
+</nav>
+
 <div class="wrap">
 
   <!-- ---- MASTHEAD ---- -->
