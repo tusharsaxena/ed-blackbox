@@ -176,9 +176,15 @@ def load_dict():
         if slug not in ships:
             print(f"  WARN ship alias '{form}' -> unknown hull {slug}", file=sys.stderr)
 
+    # verification-driven corrections (optional keys in link-aliases.json)
+    block_forms = {f.lower() for f in al.get("block_forms", [])}        # never link these
+    prefer_module = {f.lower() for f in al.get("prefer_module_forms", [])}  # drop blueprint-group candidate
+    ship_default = {k: v for k, v in al.get("ship_default_role", {}).items()}
+
     return dict(by_anchor=by_anchor, ships=ships, forms=forms, surfaces=surfaces,
                 ctx=al["context"], effect_count=effect_count, alias_bp=alias_bp,
-                soft_modules=soft_modules)
+                soft_modules=soft_modules, block_forms=block_forms,
+                prefer_module=prefer_module, ship_default=ship_default)
 
 
 # ---------------------------------------------------------------- matcher
@@ -214,6 +220,8 @@ def rel_href(cur_file: Path, target_rel: str, anchor: str) -> str:
 
 def resolve(matched, key, candidates, window, cur_file, D):
     """Return (kind,target_rel,anchor,family,label,conf,reason) or None to skip."""
+    if key in D["block_forms"]:
+        return None
     wl = window.lower()
     bp_ctx = any(k in wl for k in D["ctx"]["blueprint_keywords"])
     rank_ctx = any(k in wl for k in D["ctx"]["rank_keywords"])
@@ -235,7 +243,8 @@ def resolve(matched, key, candidates, window, cur_file, D):
         if not role and cur_role and cur_role in m["roles"]:
             role = cur_role
         if not role:
-            role = m["default_role"]
+            override = D["ship_default"].get(slug)
+            role = override if override in m["roles"] else m["default_role"]
             conf = 0.78
         is_alias = ship[2].lower() != m["name"].lower()
         if is_alias:
@@ -247,6 +256,11 @@ def resolve(matched, key, candidates, window, cur_file, D):
 
     # ---- anchor candidates ----
     anchors = [c for c in candidates if c[0] == "anchor"]
+    # verification fix: bare component names in fit/loadout prose -> module, not blueprint group
+    if key in D["prefer_module"]:
+        non_bp = [a for a in anchors if D["by_anchor"].get(a[1], {}).get("family") != "blueprint-group"]
+        if non_bp:
+            anchors = non_bp
     fams = {D["by_anchor"][a[1]]["family"] for a in anchors if a[1] in D["by_anchor"]}
 
     def pick(anchor):

@@ -68,7 +68,14 @@
     "Chaff": "module-countermeasures",
     "Point Defence": "module-countermeasures",
     "KWS": "module-scanners",
-    "Kill Warrant Scanner": "module-scanners"
+    "Kill Warrant Scanner": "module-scanners",
+    "Manifest Scanner": "module-scanners",
+    "Fuel Scoop": "module-fuel-scoop",
+    "Cargo Rack": "module-cargo-rack",
+    "Collector Limpet Controller": "module-limpet-controllers",
+    "Prospector Limpet Controller": "module-limpet-controllers",
+    "Fuel Transfer Limpet Controller": "module-limpet-controllers",
+    "Limpet Controller": "module-limpet-controllers"
   },
 
   "blueprint_group_aliases": {
@@ -100,6 +107,15 @@
     "Nakato": "powerplay-nakato-kaine",
     "Kaine": "powerplay-nakato-kaine"
   },
+
+  "_corrections": "Applied after the 2026-06-26 adversarial verification pass (verify-hyperlinks workflow). block_forms = never link (generic English / false positives). prefer_module_forms = bare component names that, in fit/loadout prose, should target the module not the blueprint group. ship_default_role = override the default role dossier for a bare ship mention.",
+  "block_forms": ["longer range", "specialised", "cannon"],
+  "prefer_module_forms": [
+    "fuel scoop", "cargo rack", "collector limpet controller",
+    "prospector limpet controller", "fuel transfer limpet controller",
+    "limpet controller", "heat sink launcher", "point defence", "manifest scanner"
+  ],
+  "ship_default_role": { "asp-explorer": "exploration" },
 
   "context": {
     "blueprint_keywords": ["blueprint", "blueprints", "grade", "g1", "g2", "g3", "g4", "g5", "engineer", "engineered", "engineering", "roll", "rolled", "modification", "experimental", "mass manager", "deep charge", "drag drives"],
