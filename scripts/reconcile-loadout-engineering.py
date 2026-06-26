@@ -50,6 +50,15 @@ def norm_eng(n):
     return fix_eng_name(n).lower()
 
 
+def _dedup(names):
+    seen, out = set(), []
+    for n in names:
+        if n.lower() not in seen:
+            seen.add(n.lower())
+            out.append(n)
+    return out
+
+
 # ---- A. enrichment maps ----
 # marginal: grp -> (blueprint_fdname, grade, experimental_edname|None, note)
 MARGINAL = {
@@ -114,8 +123,8 @@ MODNAME_TO_GROUP = {
     "power plant": "pp", "thrusters": "t", "frame shift drive": "fsd", "fsd": "fsd",
     "life support": "ls", "power distributor": "pd", "distributor": "pd", "sensors": "s",
     "shield generator": "sg", "shields": "sg", "bi-weave shield generator": "sg",
-    "shield booster": "sb", "shield boosters": "sb",
-    "hull reinforcement": "hr", "hull reinforcement package": "hr", "hrp": "hr",
+    "shield booster": "sb", "shield boosters": "sb", "boosters": "sb",
+    "hull reinforcement": "hr", "hull reinforcement package": "hr", "hrp": "hr", "hrps": "hr",
     "multi-cannon": "mc", "multi-cannons": "mc", "beam laser": "bl", "beam lasers": "bl",
     "pulse laser": "pl", "pulse lasers": "pl", "beam & pulse lasers": "bl",
     "burst laser": "ubl", "burst lasers": "ubl", "fragment cannon": "fc", "cannon": "c",
@@ -153,7 +162,7 @@ def reconcile(spec_path):
     edbb = eng_build["header"]["appCustomProperties"].get("edbb", {})
     role = edbb.get("role", "")
     notes = edbb.setdefault("notes", {})
-    changes = {"enriched": [], "core": [], "engineer_fixes": [], "flags": []}
+    changes = {"enriched": [], "core": [], "engineer_fixes": [], "initial": [], "flags": []}
 
     # --- A. enrich ---
     for m in eng_build.get("data", {}).get("Modules", []):
@@ -179,33 +188,60 @@ def reconcile(spec_path):
             changes["enriched"].append(f"{m['Slot']} ({g}) -> {fd} G{grade}")
         # groups not in any map: leave -> "(No blueprint available)"
 
-    # --- B. engineer attributions ---
+    # --- B. engineer attributions (combined rows + invalid co-engineer removal) ---
     for e in edbb.get("engineeringPlan", []):
-        grp = MODNAME_TO_GROUP.get((e.get("module") or "").strip().lower())
-        if not grp:
-            continue
-        fd = bp_name_to_fdname(grp, e.get("blueprint"))
-        if not fd:
-            changes["flags"].append(f"engplan '{e.get('module')}': blueprint '{e.get('blueprint')}' not valid for group {grp}")
+        parts = [(p.strip(), MODNAME_TO_GROUP.get(p.strip().lower()))
+                 for p in _re.split(r"\s*/\s*", e.get("module") or "")]
+        parts = [(lbl, g) for lbl, g in parts if g]
+        if not parts:
             continue
         try:
             grade = int(str(e.get("grade", "")).lstrip("Gg") or 0)
         except ValueError:
             continue
-        valid = valid_engineers(grp, fd, grade)
+        bp = e.get("blueprint") or ""
+        bp_cands = [bp] + [x for x in _re.split(r"\s*/\s*", bp) if x.strip()]
+        per_part, bad = [], False
+        for lbl, grp in parts:
+            fd = next((bp_name_to_fdname(grp, c) for c in bp_cands if bp_name_to_fdname(grp, c)), None)
+            if not fd:
+                changes["flags"].append(f"engplan '{e.get('module')}': blueprint '{bp}' not valid for {lbl} ({grp})")
+                bad = True
+                break
+            per_part.append(valid_engineers(grp, fd, grade))
+        if bad or not per_part or not all(per_part):
+            continue
+        inter = set.intersection(*[{v.lower() for v in vs} for vs in per_part])
+        valid = [n for n in per_part[0] if n.lower() in inter] or _dedup([n for vs in per_part for n in vs])
         if not valid:
             continue
         valid_keys = {v.lower() for v in valid}
         listed = [x for x in _re.split(r"\s*/\s*", e.get("engineer") or "") if x.strip()]
-        # CONSERVATIVE: only fix when NOT ONE listed engineer can reach this blueprint/grade.
-        if any(norm_eng(x) in valid_keys for x in listed):
-            continue
-        repl = " / ".join(valid[:2])
-        changes["engineer_fixes"].append(
-            f"{e['module']} {e['blueprint']} G{grade}: '{e.get('engineer')}' -> '{repl}'")
-        e["engineer"] = repl
+        filtered = _dedup([x for x in listed if norm_eng(x) in valid_keys])
+        if filtered and [norm_eng(x) for x in listed] == [norm_eng(x) for x in filtered]:
+            continue  # all listed engineers already valid
+        new_str = " / ".join(filtered if filtered else valid[:2])
+        if new_str != (e.get("engineer") or ""):
+            changes["engineer_fixes"].append(f"{e['module']} {bp} G{grade}: '{e.get('engineer')}' -> '{new_str}'")
+            e["engineer"] = new_str
 
-    touched = any(changes[k] for k in ("enriched", "core", "engineer_fixes"))
+    # --- C. initial-state sanity ---
+    init_build = next((b for b in arr if b.get("header", {}).get("appCustomProperties", {}).get("state") == "initial"), None)
+    if init_build:
+        imods = init_build.get("data", {}).get("Modules", [])
+        for m in imods:
+            it = m.get("Item", "")
+            if "hyperdrive_overcharge" in it and R.resolve_item(it.replace("_overcharge", "")):
+                changes["initial"].append(f"{m['Slot']}: SCO FSD -> regular (buy-only cannot use the unlock-gated SCO drive)")
+                m["Item"] = it.replace("_overcharge", "")
+        has_sg = any("Shield Generator" in (R.resolve_item(m.get("Item", "")) or {}).get("name", "") for m in imods)
+        if not has_sg:
+            kept = [m for m in imods if grp_of(m.get("Item", "")) != "sb"]
+            if len(kept) != len(imods):
+                changes["initial"].append(f"removed {len(imods) - len(kept)} inert shield booster(s) from initial (no shield generator fitted)")
+                init_build["data"]["Modules"] = kept
+
+    touched = any(changes[k] for k in ("enriched", "core", "engineer_fixes", "initial"))
     return arr if touched else None, changes
 
 
@@ -215,18 +251,19 @@ def main():
     specs = sorted(DATA_DIR.glob("*.json"))
     if args:
         specs = [s for s in specs if any(a in s.stem for a in args)]
-    tot = {"enriched": 0, "core": 0, "engineer_fixes": 0, "flags": 0, "files": 0}
+    tot = {"enriched": 0, "core": 0, "engineer_fixes": 0, "initial": 0, "flags": 0, "files": 0}
     for s in specs:
         res = reconcile(s)
         if res is None:
             continue
         arr, ch = res
-        n = sum(len(ch[k]) for k in ("enriched", "core", "engineer_fixes"))
+        n = sum(len(ch[k]) for k in ("enriched", "core", "engineer_fixes", "initial"))
         if n or ch["flags"]:
             tot["files"] += 1 if arr else 0
-            for k in ("enriched", "core", "engineer_fixes", "flags"):
+            for k in ("enriched", "core", "engineer_fixes", "initial", "flags"):
                 tot[k] += len(ch[k])
-            head = f"{s.stem}: +{len(ch['enriched'])} marginal, +{len(ch['core'])} core, {len(ch['engineer_fixes'])} eng-fix"
+            head = (f"{s.stem}: +{len(ch['enriched'])} marginal, +{len(ch['core'])} core, "
+                    f"{len(ch['engineer_fixes'])} eng-fix, {len(ch['initial'])} init")
             if ch["flags"]:
                 head += f", {len(ch['flags'])} FLAG"
             print(head)
@@ -234,12 +271,15 @@ def main():
                 print(f"    core: {f}")
             for f in ch["engineer_fixes"]:
                 print(f"    eng:  {f}")
+            for f in ch["initial"]:
+                print(f"    init: {f}")
             for f in ch["flags"]:
                 print(f"    FLAG: {f}")
         if apply and arr:
             s.write_text(json.dumps(arr, indent=2, ensure_ascii=False) + "\n")
     print(f"\n{'APPLIED' if apply else 'DRY RUN'} — files changed: {tot['files']}, "
-          f"marginal+{tot['enriched']}, core+{tot['core']}, eng-fixes {tot['engineer_fixes']}, flags {tot['flags']}")
+          f"marginal+{tot['enriched']}, core+{tot['core']}, eng-fixes {tot['engineer_fixes']}, "
+          f"init {tot['initial']}, flags {tot['flags']}")
 
 
 if __name__ == "__main__":

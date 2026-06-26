@@ -213,27 +213,6 @@ def validate(builds):
 
 # ---------- splicing ----------
 
-def _find_close(html, start, open_tag, close_tag):
-    """Index just past the matching close_tag for the open_tag opened at/after `start`,
-    honouring nesting."""
-    depth = 0
-    i = start
-    while i < len(html):
-        no = html.find(open_tag, i)
-        nc = html.find(close_tag, i)
-        if nc == -1:
-            return -1
-        if no != -1 and no < nc:
-            depth += 1
-            i = no + len(open_tag)
-        else:
-            if depth == 0:
-                return nc + len(close_tag)
-            depth -= 1
-            i = nc + len(close_tag)
-    return -1
-
-
 def splice(html, builds, editorial):
     """Minimal string surgery — replace ONLY the two target regions, leaving the rest of
     the document byte-for-byte intact (so diffs stay small and reviewable)."""
@@ -264,10 +243,10 @@ def splice(html, builds, editorial):
         ep = html.find('<section id="section-engineering-plan">')
         if ep != -1:
             tbl = html.find('<table class="data">', ep)
-            if tbl != -1:
-                tbl_end = _find_close(html, tbl, "<table", "</table>")
-                if tbl_end != -1:
-                    html = html[:tbl] + render_eng_plan_table(editorial["engineeringPlan"]) + html[tbl_end:]
+            close = html.find("</table>", tbl) if tbl != -1 else -1
+            if close != -1:
+                tbl_end = close + len("</table>")
+                html = html[:tbl] + render_eng_plan_table(editorial["engineeringPlan"]) + html[tbl_end:]
     return html
 
 
