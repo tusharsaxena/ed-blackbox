@@ -60,14 +60,14 @@ def build_section(num: int, role: str, rating: int, weights: dict, sc: dict) -> 
         w = weights[name]
         pct = round(earned / w * 100)
         rows.append(
-            f'      <tr><td class="mod">{esc(name)}</td>'
-            f'<td class="sc"><span class="rscore">{earned}</span><span class="den">/{w}</span>'
+            f'      <tr><td class="fct">{esc(name)}</td>'
+            f'<td class="sc"><span class="scval">{earned}</span><span class="den">/{w}</span>'
             f'<div class="bar mini"><i style="--pct:{pct}"></i></div></td>'
             f'<td class="wcell">{esc(f["why"])}</td></tr>'
         )
     total = (
-        f'      <tr class="hl totalrow"><td class="mod"><b>Weighted total</b></td>'
-        f'<td class="sc"><span class="rscore">{rating}</span><span class="den">/100</span>'
+        f'      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td>'
+        f'<td class="sc"><span class="scval">{rating}</span><span class="den">/100</span>'
         f'<div class="bar mini"><i style="--pct:{rating}"></i></div></td>'
         f'<td class="wcell"><em>Matches the headline suitability rating for this ship '
         f'in this role.</em></td></tr>'

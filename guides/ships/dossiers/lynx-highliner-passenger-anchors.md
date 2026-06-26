@@ -7,6 +7,7 @@ Link format: `lynx-highliner-passenger.html#<id>`
 ## Sections
 - **Role & Overview** — `#section-role-overview`
 - **Key Stats & What Makes It a Liner** — `#section-key-stats-what-makes-it-a-liner`
+- **Why This Rating** — `#section-why-this-rating`
 - **How It Compares** — `#section-how-it-compares`
 - **Cost & Access** — `#section-cost-access`
 - **ARX Pre-Built Option** — `#section-arx-pre-built-option`

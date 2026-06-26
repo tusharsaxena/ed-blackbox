@@ -497,16 +497,21 @@ table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 /* rating-rationale SCORECARD — a table.data variant used by the dossier "Why This
    Rating" section. Columns: Role factor | Score (earned/weight + .bar.mini) | Why.
    Widths come from an inline <colgroup> (190px / 150px / auto). The amber .totalrow
-   shows the weighted total, which equals the ship's headline suitability rating. */
+   shows the weighted total, which equals the ship's headline suitability rating.
+   NOTE: uses its OWN classes (td.fct / span.scval), never the rating-table classes
+   (td.mod / span.rscore), so the ratings tooling (compute/reconcile/audit) ignores it. */
 table.data.scorecard{table-layout:fixed}
+table.data.scorecard td.fct{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:var(--fs-base)}
 table.data.scorecard th.sc,table.data.scorecard td.sc{text-align:center}
 table.data.scorecard td.sc{white-space:nowrap;vertical-align:middle}
+table.data.scorecard .scval{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
 table.data.scorecard td.sc .bar.mini{margin:6px auto 0;max-width:120px}
 table.data.scorecard td.wcell{font-size:var(--fs-sm2);line-height:1.5;color:var(--ink-dim)}
 .scorecard .den{color:var(--ink-faint);font-weight:400;font-size:.78em;margin-left:1px}
+table.data.scorecard tr.totalrow td{background:rgba(224,145,58,.06)}
 table.data.scorecard tr.totalrow td,
-table.data.scorecard tr.totalrow td.mod b,
-table.data.scorecard tr.totalrow .rscore,
+table.data.scorecard tr.totalrow td.fct b,
+table.data.scorecard tr.totalrow .scval,
 table.data.scorecard tr.totalrow em{color:var(--amber-lt)}
 table.data.scorecard tr.totalrow .den{color:var(--amber);opacity:.7}
 

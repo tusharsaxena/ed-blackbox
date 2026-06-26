@@ -7,6 +7,7 @@ Link format: `mandalay-exploration.html#<id>`
 ## Sections
 - **Role & Overview** — `#section-role-overview`
 - **Key Stats & What Makes It Explore** — `#section-key-stats-what-makes-it-explore`
+- **Why This Rating** — `#section-why-this-rating`
 - **How It Compares** — `#section-how-it-compares`
 - **Cost & Access** — `#section-cost-access`
 - **ARX Pre-Built Option** — `#section-arx-pre-built-option`

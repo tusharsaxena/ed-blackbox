@@ -7,6 +7,7 @@ Link format: `python-mk-ii-combat.html#<id>`
 ## Sections
 - **Role & Overview** — `#section-role-overview`
 - **Key Stats & What Makes It Fight** — `#section-key-stats-what-makes-it-fight`
+- **Why This Rating** — `#section-why-this-rating`
 - **How It Compares** — `#section-how-it-compares`
 - **Cost & Access** — `#section-cost-access`
 - **ARX Pre-Built Option** — `#section-arx-pre-built-option`
