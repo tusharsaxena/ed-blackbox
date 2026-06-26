@@ -88,6 +88,8 @@ docs/              project docs (this file, architecture, todo)
    `scripts/generate-guides-index.sh` and re-run so it appears on the landing page.
 6. Re-run `scripts/generate-anchor-files.sh` so the page gets its sibling
    `<basename>-anchors.md` anchor catalog (see *Anchor files* below).
+7. **Cross-link it** — run the hyperlink pass so references on the new page link out
+   (and follow the link-open policy). See *Cross-link a page (hyperlinks)* below.
 
 ### Regenerate the landing page
 ```bash
@@ -115,6 +117,29 @@ The script only touches files carrying its generated marker, so the hand-curated
 `blueprints-anchors.md` / `engineers-anchors.md` are safe (edit those by hand). Every
 guide now carries a section-anchored catalog (**165 generated + 2 curated** = 167); only
 those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md`.
+
+### Cross-link a page (hyperlinks)
+Every guide cross-links references to the "source" pages (engineers · blueprints · modules ·
+materials · powers · superpowers · ship dossiers). **Any new or substantially edited page
+must be run through the same pass** so its references become links and its links follow the
+open policy:
+```bash
+python3 scripts/build-link-dictionary.py            # only if you added a source element
+python3 scripts/apply-hyperlinks.py <path|dir>      # wrap references in internal <a> (>=0.75)
+python3 scripts/normalize-link-targets.py <path|dir> # internal=same tab, external=new tab
+python3 scripts/verify-links.py                      # 0 broken targets/anchors
+```
+- `apply-hyperlinks.py` links **every occurrence** in prose/callouts/lists/**table cells**,
+  never in headings/nav/stat-tiles/scorecard/credits/existing `<a>`/`<script|style|svg>`;
+  fuzzy + context-aware (`FSD`→Frame Shift Drive; module vs blueprint group by context; ship
+  name→role dossier). Confidence **≥ 0.75 applied**; every candidate (incl. below-bar) is
+  logged to `data/links/link-candidates.csv` and rolled up by `build-link-report.py` into
+  `data/links/hyperlink-opportunities.xlsx` for review. The rewrite is byte-preserving.
+- **Excluded as link sources** (never edited): `guides/activities/**`,
+  `guides/ships/by-role/**`, generated `guides/index.html`.
+- The fuzzy/alias layer is **hand-curated** in `data/links/link-aliases.json` (abbreviations,
+  nicknames, disambiguation keyword sets) — extend it there, not in the applier. Full guide:
+  `scripts/apply-hyperlinks.md` / `scripts/build-link-dictionary.md`.
 
 ### Edit an existing guide
 - It links `ed-blackbox.css`/`.js` and styles with component classes. Match the catalogued
@@ -216,8 +241,10 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
   in page CSS. Per-element overrides still win (`.ac-amber/.ac-fed/.ac-maroon/.ac-good` on
   cards/recs; `.tip/.warn/.danger` on callouts). (See `design-system/docs/02-tokens.md` →
   *Page accent vs component accent*.)
-- **Links:** internal links are **relative**. Whether links open in a new tab is an
-  open decision (`TODO.md`) — don't add `target="_blank"` until it's settled.
+- **Links:** internal links are **relative** and open in the **same tab**; external links
+  open in a **new tab** (`target="_blank" rel="noopener noreferrer"`). This is settled —
+  enforce it with `scripts/normalize-link-targets.py` (byte-preserving, idempotent; run it
+  on any new/edited page). Don't hand-add `target="_blank"` to an internal link.
 - **Keep the lexicon current.** `guides/systems/cmdrs-lexicon.html` (the *CMDR's Lexicon*) is the
   site's **canonical terminology reference**. Whenever you add a new guide, or introduce or
   redefine an Elite Dangerous term, acronym, or site-specific phrase in any page, **add or
