@@ -155,7 +155,7 @@ guides/
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
 3 wired logos + concept candidates under `logos/concepts/`), 235 Markdown (prose docs +
 **167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 26 `.py` + 8 `.mjs`) and its data
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 34 `.py` + 8 `.mjs`) and its data
 (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
@@ -251,7 +251,11 @@ The first step toward "content-as-data". Convention: every task script lives in
   source of truth) from the dossier headlines, `reconcile-ratings-html.py` pushes those
   canonical values into the by-role ladder/peer tables (re-sorting, dropping unrated hulls),
   and `audit-ratings-consistency.py` verifies every page agrees (0 mismatches). Run in that
-  order whenever a dossier or rating changes.
+  order whenever a dossier or rating changes. The same `data/ship-ratings/` files also hold the
+  **scorecard** (`scorecard_weights` per role + per-ship `scorecard`); `build-ship-scorecards.py`
+  renders these into each dossier's §"Why This Rating" section (weighted factor table whose
+  points sum to the headline rating), and `apply-scorecard-authoring.py` bulk-merges authored
+  rationales into the data.
 - **Loadouts pipeline** — `build-ship-loadouts.py` (+ shared resolver `slef_resolve.py`) builds
   each dossier's **3-State Loadout** (`table.l3` + Notes) and **Engineering Plan** (`table.data`)
   tables from `data/ship-loadouts/<basename>.json`, the **canonical source of truth** (one file
@@ -261,7 +265,12 @@ The first step toward "content-as-data". Convention: every task script lives in
   display strings (`8E Power Plant`, `4A Multi-Cannon (Gimballed)`, `G5 Overcharged + Corrosive
   Shell`). A **minimal-diff** string splice replaces only the two tables (no whole-file reformat);
   symbols + Core sizes are validated against `data/modules/` + `data/ships/`. Edit the SLEF, never
-  the tables; re-run after edits.
+  the tables; re-run after edits. It also renders three **export** footer rows per state —
+  **Open in Coriolis / Open in EDSY / Copy SLEF** — via `slef_to_url.py` (encodes a Journal
+  `Loadout` event into the planner import URLs; display name → FDev journal symbol via the
+  vendored `data/fdev/shipyard.csv`). `audit-ship-loadouts.py` is the deterministic completeness
+  check over all SLEF builds (missing core slots incl. **Bulkheads**, sizing, symbol validity,
+  state drift, engineering/experimental coverage).
 
 Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance

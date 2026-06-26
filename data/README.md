@@ -6,7 +6,16 @@ game stats (modules, ships, engineering modifications). Re-import by re-cloning 
 copying `modules/`, `ships/`, `modifications/` here.
 
 - `modules/`  — `standard/` (core internals), `internal/` (optional internals), `hardpoints/` (weapons + utilities)
-- `ships/`    — per-ship hull definitions
+- `ships/`    — per-ship hull definitions (incl. the `bulkheads` armour variants)
 - `modifications/` — engineering blueprints, modifications, specials
+
+The subdirs below are **project-authored** (NOT coriolis-data):
+
+- `ship-ratings/`  — canonical 1–100 suitability ratings **and** the "Why This Rating" scorecard
+  data (per-role `scorecard_weights` + per-ship `scorecard`); editorial judgement — see its README.
+- `ship-loadouts/` — per-dossier **SLEF** loadouts (3 states each); source of truth for the
+  dossier 3-State Loadout / Engineering Plan tables and the Coriolis/EDSY/SLEF exports.
+- `fdev/`          — `shipyard.csv`, vendored from **[EDCD/FDevIDs](https://github.com/EDCD/FDevIDs)**:
+  ship display name → FDev journal symbol, used to build the planner export URLs.
 
 License: see EDCD/coriolis-data — All Data and [associated JSON](https://github.com/EDCD/coriolis-data) files are intellectual property and copyright of Frontier Developments plc ('Frontier', 'Frontier Developments') and are subject to their
