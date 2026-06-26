@@ -494,6 +494,22 @@ table.cmp td.pcc .c::before{content:"\2212 ";font-weight:700}
 table.cmp td.pcc .base{color:var(--ink-faint);font-style:italic}
 .rscore{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink)}
 
+/* rating-rationale SCORECARD — a table.data variant used by the dossier "Why This
+   Rating" section. Columns: Role factor | Score (earned/weight + .bar.mini) | Why.
+   Widths come from an inline <colgroup> (190px / 150px / auto). The amber .totalrow
+   shows the weighted total, which equals the ship's headline suitability rating. */
+table.data.scorecard{table-layout:fixed}
+table.data.scorecard th.sc,table.data.scorecard td.sc{text-align:center}
+table.data.scorecard td.sc{white-space:nowrap;vertical-align:middle}
+table.data.scorecard td.sc .bar.mini{margin:6px auto 0;max-width:120px}
+table.data.scorecard td.wcell{font-size:var(--fs-sm2);line-height:1.5;color:var(--ink-dim)}
+.scorecard .den{color:var(--ink-faint);font-weight:400;font-size:.78em;margin-left:1px}
+table.data.scorecard tr.totalrow td,
+table.data.scorecard tr.totalrow td.mod b,
+table.data.scorecard tr.totalrow .rscore,
+table.data.scorecard tr.totalrow em{color:var(--amber-lt)}
+table.data.scorecard tr.totalrow .den{color:var(--amber);opacity:.7}
+
 /* ---- 21. CARD GRID ---- */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--space-7);margin:var(--space-9) 0}
 /* Column count — how many cards share one content-width row, set on the whole container.

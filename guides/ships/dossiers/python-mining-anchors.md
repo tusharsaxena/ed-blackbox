@@ -7,6 +7,7 @@ Link format: `python-mining.html#<id>`
 ## Sections
 - **Role & Overview** — `#section-role-overview`
 - **Key Stats & What Makes It Mine** — `#section-key-stats-what-makes-it-mine`
+- **Why This Rating** — `#section-why-this-rating`
 - **How It Compares** — `#section-how-it-compares`
 - **Cost & Access** — `#section-cost-access`
 - **3-State Loadout** — `#section-3-state-loadout`
