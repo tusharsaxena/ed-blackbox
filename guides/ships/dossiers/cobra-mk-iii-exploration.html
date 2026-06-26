@@ -191,37 +191,32 @@
     <p>A versatile explorer fit that keeps cargo room. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises range while preserving the Cobra's flexibility.</p>
     <div class="tbl-scroll">
     <table class="l3">
-      <thead><tr><th>Slot</th><th>Initial &middot; buy-only</th><th>A-Rated &middot; no eng</th><th>Engineered</th></tr></thead>
-      <tbody>
-        <tr class="grouprow"><td colspan="4">Hardpoints</td></tr>
-        <tr><td class="slot">Medium 1</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash; (run clean)</td></tr>
-        <tr><td class="slot">Medium 2</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
-        <tr><td class="slot">Small 1</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
-        <tr><td class="slot">Small 2</td><td class="st">&mdash;</td><td class="st">&mdash;</td><td class="eng">&mdash;</td></tr>
-        <tr class="grouprow"><td colspan="4">Utility Mounts</td></tr>
-        <tr><td class="slot">Utility 1</td><td class="st">Heat Sink Launcher</td><td class="st">Heat Sink Launcher</td><td class="eng">Heat Sink Launcher</td></tr>
-        <tr><td class="slot">Utility 2</td><td class="st">&mdash;</td><td class="st">Shield Booster</td><td class="eng">Shield Booster (landings)</td></tr>
-        <tr class="grouprow"><td colspan="4">Core Internals</td></tr>
-        <tr><td class="slot">Power Plant (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Low Emissions (G5)</td></tr>
-        <tr><td class="slot">Thrusters (4)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Clean Drive Tuning (G5)</td></tr>
-        <tr><td class="slot">FSD (4)</td><td class="st">E</td><td class="st">A</td><td class="eng">A &mdash; Increased Range (G5) + Mass Manager</td></tr>
-        <tr><td class="slot">Life Support (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
-        <tr><td class="slot">Power Distributor (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Engine Focused</td></tr>
-        <tr><td class="slot">Sensors (3)</td><td class="st">E</td><td class="st">D</td><td class="eng">D &mdash; Lightweight</td></tr>
-        <tr><td class="slot">Fuel Tank (4)</td><td class="st">C</td><td class="st">C</td><td class="eng">C</td></tr>
-        <tr class="grouprow"><td colspan="4">Optional Internals</td></tr>
-        <tr><td class="slot">Optional 4</td><td class="st">Fuel Scoop 4</td><td class="st">Fuel Scoop 4A</td><td class="eng">Fuel Scoop 4A</td></tr>
-        <tr><td class="slot">Optional 4</td><td class="st">Cargo Rack 4</td><td class="st">Guardian FSD Booster 4</td><td class="eng">Guardian FSD Booster 4</td></tr>
-        <tr><td class="slot">Optional 4</td><td class="st">&mdash;</td><td class="st">Planetary Vehicle Hangar 4</td><td class="eng">SRV Hangar 4</td></tr>
-        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Auto Field-Maintenance 2</td><td class="eng">AFMU 2</td></tr>
-        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Shield Generator 2</td><td class="eng">Bi-Weave 2 (landings)</td></tr>
-        <tr><td class="slot">Optional 2</td><td class="st">&mdash;</td><td class="st">Cargo Rack 2</td><td class="eng">Cargo / AFMU backup</td></tr>
-        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Detailed Surface Scanner</td><td class="eng">DSS</td></tr>
-        <tr><td class="slot">Optional 1</td><td class="st">&mdash;</td><td class="st">Heat Sink storage</td><td class="eng">Heat Sink storage</td></tr>
-      </tbody>
-    </table>
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0I Heat Sink Launcher</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Heavy Duty multiplies raw shield strength.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">4E Power Plant</td><td class="st">4D Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">D-rate to save mass; Low Emissions runs the plant cool so you can sit deep in a star's corona and scoop.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">4E Thrusters</td><td class="st">4D Thrusters</td><td class="eng">G5 Clean Drive Tuning + Stripped Down</td><td class="note">D-rated thrusters move a 180t hull easily; Clean Drive Tuning with Stripped Down trims heat and mass for range.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">4E Frame Shift Drive</td><td class="st">4A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rate this FIRST and max Increased Range with Mass Manager — jump range is the whole point of the build.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">3E Life Support</td><td class="st">3D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate and Lightweight to save every kilo; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">3E Power Distributor</td><td class="st">3D Power Distributor</td><td class="eng">G3 Engine Focused (no experimental effect)</td><td class="note">D-rate is enough with no guns to feed; Engine Focused keeps the boost charging for fast scooping turns.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">3E Sensors</td><td class="st">3D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; exploration needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Class-4 (16t) tank balances scoop interval against mass; fuel capacity cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">4E Fuel Scoop</td><td class="st">4A Fuel Scoop</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">4E Cargo Rack</td><td class="st">4H Guardian FSD Booster</td><td class="eng">(No blueprint available)</td><td class="note">Guardian FSD Booster adds a flat jump-range bonus on top of the engineered drive; Guardian tech carries no blueprint.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4G Planetary Vehicle Hangar</td><td class="eng">(No blueprint available)</td><td class="note">A big size-4 SRV Hangar opens surface prospecting and exobiology; hangars are not engineerable.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2C Bi-Weave Shield Generator</td><td class="eng">G5 Enhanced Low Power (no experimental effect)</td><td class="note">Enhanced Low Power keeps the shield light and low-draw for the long haul.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+</tbody>
+</table>
     </div>
-    <div class="callout"><span class="lbl">Explore fast, haul if you like</span><p>The Cobra's eight optionals fit a class-4 scoop, Guardian booster, big SRV bay, AFMU and scanner &mdash; with room for cargo. Its speed makes in-system work brisk; swap optionals to turn the explorer into a hauler whenever the trip changes.</p></div>
+    <div class="callout"><span class="lbl">Explore fast, haul if you like</span><p>The Cobra's eight optionals fit a class-4 scoop, Guardian booster, big SRV bay, AFMU and scanner — with room for cargo. Its speed makes in-system work brisk; swap optionals to turn the explorer into a hauler whenever the trip changes.</p></div>
   </section>
 
   <!-- s7 -->

@@ -263,9 +263,9 @@
             "TinyHardpoint2": "Stacked Heavy-Duty booster — the cheapest large gain in shield strength.",
             "TinyHardpoint3": "Third Heavy-Duty booster; diminishing returns set in but it still pays.",
             "TinyHardpoint4": "Fourth booster rounds out the shield stack before utilities turn to defence.",
-            "TinyHardpoint5": "Chaff spoils gimballed and turreted fire; countermeasures carry no blueprint.",
-            "TinyHardpoint6": "Heat Sink dumps heat for silent running and Thermal-Vent resets; not engineerable.",
-            "TinyHardpoint7": "Point Defence shoots down incoming missiles and torpedoes; not engineerable.",
+            "TinyHardpoint5": "Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.",
+            "TinyHardpoint6": "Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.",
+            "TinyHardpoint7": "Optional / low-priority — Ammo Capacity adds rounds. Point Defence shoots down incoming missiles and torpedoes.",
             "TinyHardpoint8": "Fifth Heavy-Duty booster in the last utility once credits allow.",
             "PowerPlant": "Powers eight guns, SLF, a big shield and cells; Overcharged adds headroom, Thermal Spread bleeds the extra heat.",
             "MainEngines": "A-rated + Dirty Drives preserve the capital agility that defines the Corvette.",
@@ -277,16 +277,16 @@
             "Military01": "Heavy-Duty hull reinforcement is the cheapest large multiplier on effective armour.",
             "Military02": "Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.",
             "Slot01_Size7": "Bi-weave regenerates fast under fire; Reinforced maximises its MJ and Hi-Cap adds more.",
-            "Slot02_Size7": "Swap the starter cargo rack for a cell bank; SCBs give burst shield healing and cannot be engineered.",
+            "Slot02_Size7": "Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.",
             "Slot03_Size7": "SLF bay adds a second gun platform that draws fire; hangars are not engineerable.",
             "Slot04_Size6": "Hull reinforcement caps at size 5, so a 5D HRP under-fills this size-6 slot for max effective armour.",
             "Slot05_Size6": "Second 5D HRP (HRP's largest) under-filling a size-6 slot — armour stacks linearly.",
-            "Slot06_Size5": "Second cell bank for sustained shield tanking in long fights.",
+            "Slot06_Size5": "Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.",
             "Slot07_Size5": "Module Reinforcement protects the cores; not engineerable.",
             "Slot08_Size4": "More Heavy-Duty hull where the slot allows.",
             "Slot09_Size4": "More internal protection for the modules that keep you flying.",
-            "Slot10_Size3": "Third small cell bank tops up the shield reservoir between cells.",
-            "Slot11_Size1": "Class-1 slot — a Detailed Surface Scanner for utility; swap for an AX/Guardian module or leave for mass."
+            "Slot10_Size3": "Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.",
+            "Slot11_Size1": "Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data."
           },
           "engineeringPlan": [
             {
@@ -468,15 +468,30 @@
         },
         {
           "Slot": "TinyHardpoint5",
-          "Item": "hpt_chafflauncher_tiny"
+          "Item": "hpt_chafflauncher_tiny",
+          "Engineering": {
+            "BlueprintName": "Misc_ChaffCapacity",
+            "Level": 1,
+            "Quality": 1.0
+          }
         },
         {
           "Slot": "TinyHardpoint6",
-          "Item": "hpt_heatsinklauncher_turret_tiny"
+          "Item": "hpt_heatsinklauncher_turret_tiny",
+          "Engineering": {
+            "BlueprintName": "Misc_HeatSinkCapacity",
+            "Level": 1,
+            "Quality": 1.0
+          }
         },
         {
           "Slot": "TinyHardpoint7",
-          "Item": "hpt_plasmapointdefence_turret_tiny"
+          "Item": "hpt_plasmapointdefence_turret_tiny",
+          "Engineering": {
+            "BlueprintName": "Misc_PointDefenseCapacity",
+            "Level": 1,
+            "Quality": 1.0
+          }
         },
         {
           "Slot": "TinyHardpoint8",
@@ -576,7 +591,12 @@
         },
         {
           "Slot": "Slot02_Size7",
-          "Item": "int_shieldcellbank_size7_class5"
+          "Item": "int_shieldcellbank_size7_class5",
+          "Engineering": {
+            "BlueprintName": "ShieldCellBank_Specialised",
+            "Level": 4,
+            "Quality": 1.0
+          }
         },
         {
           "Slot": "Slot03_Size7",
@@ -604,7 +624,12 @@
         },
         {
           "Slot": "Slot06_Size5",
-          "Item": "int_shieldcellbank_size5_class5"
+          "Item": "int_shieldcellbank_size5_class5",
+          "Engineering": {
+            "BlueprintName": "ShieldCellBank_Specialised",
+            "Level": 4,
+            "Quality": 1.0
+          }
         },
         {
           "Slot": "Slot07_Size5",
@@ -626,11 +651,21 @@
         },
         {
           "Slot": "Slot10_Size3",
-          "Item": "int_shieldcellbank_size3_class5"
+          "Item": "int_shieldcellbank_size3_class5",
+          "Engineering": {
+            "BlueprintName": "ShieldCellBank_Specialised",
+            "Level": 4,
+            "Quality": 1.0
+          }
         },
         {
           "Slot": "Slot11_Size1",
-          "Item": "int_detailedsurfacescanner_tiny"
+          "Item": "int_detailedsurfacescanner_tiny",
+          "Engineering": {
+            "BlueprintName": "Sensor_Expanded",
+            "Level": 5,
+            "Quality": 1.0
+          }
         }
       ]
     }

@@ -135,7 +135,8 @@ def module_index():
                     continue
                 idx[sym.lower()] = {
                     "size": e.get("class"), "rating": e.get("rating"),
-                    "mount": e.get("mount"), "name": _humanize(base), "file": base}
+                    "mount": e.get("mount"), "name": _humanize(base), "file": base,
+                    "grp": e.get("grp")}
     _module_idx = idx
     return idx
 
