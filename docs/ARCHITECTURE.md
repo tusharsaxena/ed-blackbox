@@ -20,10 +20,10 @@ every page links the shared stylesheet — so work has shifted to **publishing a
 polish** (landing-page copy, fleet-bias cleanup, GitHub Pages).
 
 There is now **one styling world**. The design-system migration that was the project's
-central effort is **done (2026-06-23)**: all **111 guides + the generated landing page**
-link the single `design-system/` stylesheet and behaviours. (108 were migrated; the three
-pages added since — **Materials**, **Modules**, **Ship Rating Methodology** — were authored
-on the system from the start.)
+central effort is **done (2026-06-23)**: all **166 guides + the generated landing page**
+link the single `design-system/` stylesheet and behaviours. (The migration moved the 108
+legacy pages; everything added since — the later ship×role dossiers, the **Ship × Role
+Matrix**, and the **New Pilot & Interface** guides — was authored on the system from the start.)
 
 | | Every page today |
 |---|---|
@@ -136,25 +136,26 @@ Naming: classes are mostly unprefixed semantic names; accent variants use `.ac-*
 ## 4. Content taxonomy & routing
 
 Directory structure **is** the routing — a path maps directly to a URL once on GitHub
-Pages. **111 guides** (all on the design system) in four areas, plus a generated landing page:
+Pages. **166 guides** (all on the design system) in four areas, plus a generated landing page:
 
 ```
 guides/
   index.html                 ← landing page (generated; see §6)
   engineering/   engineers · blueprints · checklist · materials · modules · farms/ (4)   — 9 pages
-  systems/       11 game-system guides
+  systems/       14 game-system guides
   ships/
     rating-methodology.html  — how the 1–100 suitability score is derived
-    dossiers/    77 dossiers  — the ship × role matrix (48 ships)
+    ship-role-matrix.html    — the full ship × role grid on one page (generated; see §6)
+    dossiers/    128 dossiers — the ship × role matrix (48 ships)
     by-role/     7  ladders   — "best ship for role X"
   activities/    6 guides     — "how to play role X"
 ```
 
-**File census:** ~375 files — 115 HTML (111 guides + generated `index.html` + 2
+**File census:** ~770 files — 170 HTML (166 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
-3 wired logos + concept candidates under `logos/concepts/`), 162 Markdown (prose docs +
-**112 per-page `*-anchors.md` catalogs** — 110 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 16 `.py` + 8 `.mjs`) and its data
+3 wired logos + concept candidates under `logos/concepts/`), 235 Markdown (prose docs +
+**167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 26 `.py` + 8 `.mjs`) and its data
 (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
@@ -168,16 +169,20 @@ design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 sh
 | `modules.html` | Outfitting catalog (core internals · optional internals · hardpoints · utility mounts) on the `.bp-*` accordion (sibling of `blueprints.html`); A–E class & size system; per-role picks. Self-contained inline `<script>`. |
 | `farms/` (4) | Material-farm location guides (`davs-hope`, `crystalline-shards`, `high-grade-emissions`, `jameson-crash-site`) — DS amber, with click-to-copy coordinate readouts. |
 
-**Systems** (`guides/systems/`, 11 pages): `bgs`, `combat-zones`, `community-goals`,
-`docking-landing-manual`, `fleet-carrier`, `hud-customization`, `pve-combat-venues`,
-`powerplay`, `superpower-rank`, `system-colonization`, `third-party-apps`.
+**Systems** (`guides/systems/`, 14 pages): `bgs`, `cmdrs-lexicon`, `combat-zones`,
+`community-goals`, `docking-landing-manual`, `fleet-carrier`, `hud-customization`,
+`new-cmdr-guide`, `pilots-federation`, `powerplay`, `pve-combat-venues`, `superpower-rank`,
+`system-colonization`, `third-party-apps`. (The last three of the new trio —
+`new-cmdr-guide`, `pilots-federation`, `cmdrs-lexicon` — are the **New Pilot & Interface**
+subsection.)
 
-**Ships** (`guides/ships/`, 85 pages) — the core data structure, a **ship × role matrix**:
+**Ships** (`guides/ships/`, 137 pages) — the core data structure, a **ship × role matrix**:
 a sparse grid of (ship, role) pairs spanning **48 ships**. Each populated cell is one
 dossier `dossiers/<ship>-<role>.html` (briefing hull render + rating bar + spec grid + loadout
-tables); the `by-role/` ladders ("best ship for role X"); and `rating-methodology.html`, the
+tables); the `by-role/` ladders ("best ship for role X"); `rating-methodology.html`, the
 explainer for the 1–100 suitability score the dossiers and ladders display (cross-linked from
-all 77 dossiers + 7 by-role pages). The separate top-level `guides/activities/` how-tos (each
+all 128 dossiers + 7 by-role pages); and `ship-role-matrix.html`, the whole grid rendered on
+one page (generated; see §6). The separate top-level `guides/activities/` how-tos (each
 set to its role's DS accent group) and the generated landing page are other *projections* of
 that grid.
 
@@ -235,13 +240,20 @@ The first step toward "content-as-data". Convention: every task script lives in
 - **`generate-anchor-files.sh`** → regenerates the per-page `<basename>-anchors.md`
   anchor catalogs (§4). For each guide it extracts every `<section id="…">` and the
   section's title and writes the sibling `.md`. Every guide also carries a `#credits`
-  (**Sources**) section anchor, so all 111 now get a catalog; the two hand-curated catalogs
+  (**Sources**) section anchor, so all 166 now get a catalog; the two hand-curated catalogs
   (`blueprints-anchors.md`, `engineers-anchors.md`) are skipped via a `CURATED` list. It
   only ever touches files carrying its own generated marker, so hand-authored catalogs
   are safe. Re-run after adding/removing/renaming a guide or any `<section id>`. Baseline:
-  110 generated + 2 curated.
+  165 generated + 2 curated.
+- **`generate-ship-role-matrix.py`** → regenerates `guides/ships/ship-role-matrix.html`, the
+  whole ship × role grid on one page, from the dossiers + the canonical suitability ratings.
+- **Ratings pipeline** — `compute-ship-ratings.py` rebuilds `data/ship-ratings/` (the 1–100
+  source of truth) from the dossier headlines, `reconcile-ratings-html.py` pushes those
+  canonical values into the by-role ladder/peer tables (re-sorting, dropping unrated hulls),
+  and `audit-ratings-consistency.py` verifies every page agrees (0 mismatches). Run in that
+  order whenever a dossier or rating changes.
 
-Beyond the two generators, `scripts/` also holds the **migration verification harness**
+Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
 gate, `baseline-capture.sh`) and several **one-off content-migration scripts**
 (`fix-step-tuples`, `trim-svg`, `restructure-app-cards`, `classify-card-groups`,
@@ -282,7 +294,7 @@ Two conventions govern that block (full rules: `design-system/docs/04-page-assem
 from — never a site/repo **root** (swept by `scripts/fix-generic-sources.py`, §6) — and a short
 list of **trusted-channel YouTube videos** (Obsidian Ant, Down to Earth Astronomy, Ricardos
 Gaming, Mile 13 Gaming, TheYamiks, The Buur Pit) may be cited as extra rows where relevant and
-version-current (oEmbed-verified, ≤3 per page; present on 68 pages).
+version-current (oEmbed-verified, ≤3 per page; present on 77 pages).
 
 ---
 
@@ -296,7 +308,7 @@ divergent token names, and per-page layout widths that the inline-CSS era produc
 - **Naming inconsistency** — some asset filenames still mix `_` vs `-` and case; standardizing
   is a tracked TODO (don't mass-rename ad hoc). Note: the stylesheet is `ed-blackbo**x**`
   while the repo is `ed-blackbo**ok**`.
-- **Manufacturer logos** — ship hull renders are now embedded in all 77 dossiers
+- **Manufacturer logos** — ship hull renders are now embedded in all 128 dossiers
   (`add-ship-render.py`); manufacturer logos are still pending (`TODO.md` Phase 4).
 - **Fleet bias** — dossiers / by-role / activities still reference the personal fleet (KA-05
   ship tags); systems pages are largely de-biased (`TODO.md` Phase 4).

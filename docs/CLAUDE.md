@@ -15,12 +15,12 @@ how it's built), [`TODO.md`](TODO.md) (backlog).
 ## Repo layout (quick reference)
 
 ```
-guides/            111 HTML guides + index.html (generated) — all on the design system
+guides/            166 HTML guides + index.html (generated) — all on the design system
                    (link ed-blackbox.css/.js; only a tiny per-page accent-override <style>)
                    each guide has a sibling <name>-anchors.md (generated; 2 curated in engineering/)
   engineering/     engineers · blueprints · checklist · materials · modules · farms/ (4)
-  systems/         11 game-system guides
-  ships/           rating-methodology · dossiers/ (77) · by-role/ (7)
+  systems/         14 game-system guides
+  ships/           rating-methodology · ship-role-matrix · dossiers/ (128) · by-role/ (7)
   activities/      6 role playbooks (how to fly each role)
 design-system/     v1.3.0 — css/ js/ templates/ legacy-templates/ docs/ (THE shared system every
                    page links; legacy-templates/ = the precursor Template.html/.md, reference only)
@@ -113,7 +113,7 @@ bash scripts/generate-anchor-files.sh   # rewrites all *-anchors.md; prints coun
 **Re-run whenever you add/remove/rename a `<section id>`, or add/rename/remove a guide.**
 The script only touches files carrying its generated marker, so the hand-curated
 `blueprints-anchors.md` / `engineers-anchors.md` are safe (edit those by hand). Every
-guide now carries a section-anchored catalog (**110 generated + 2 curated** = 112); only
+guide now carries a section-anchored catalog (**165 generated + 2 curated** = 167); only
 those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md`.
 
 ### Edit an existing guide
@@ -147,7 +147,8 @@ python3 scripts/audit-ratings-consistency.py    # verify 0 mismatches across all
   imported `data/ships|modules`.
 
 ### Migrate a page to the design system *(done — reference only)*
-- All 108 guides + the landing page are migrated. If you ever need the pattern: replace the
+- Every guide + the landing page are migrated (the original 108 legacy pages plus everything
+  authored since, all on the design system). If you ever need the pattern: replace the
   inline `<style>` with a link to `ed-blackbox.css`, set the accent group, map markup onto
   component classes, link `ed-blackbox.js`, visually diff against `component-gallery.html`.
 

@@ -52,7 +52,7 @@ Legend: ✅ done · ☐ not done.
 - ☐ **Refine the landing-page "What Is This Website" intro** — currently placeholder copy in `scripts/generate-guides-index.sh` (§01); rewrite to explain what the site is, who it's for, and how it's maintained, then regenerate.
 - ☐ **Refine the landing-page FAQ** — currently placeholder Q&A in `scripts/generate-guides-index.sh` (§05); write real answers (affiliation, currency of data, corrections/contributions), then regenerate.
 - ☐ **Define the Changelog update policy** — the landing-page Changelog (§06 in `generate-guides-index.sh`) is hand-written with FIXED dates and is **not** auto-edited. Decide when/how releases get added (e.g. on publish, per milestone) and document it.
-- ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide) *(partial: powerplay §08 links each role's pick to its power card, and third-party-apps §18 links each app to its card; the Rating Methodology callout now links all 77 dossiers + 7 by-role pages, and Materials/Modules cross-link Blueprints & Engineers; broad Ships/Engineers/Blueprints cross-linking still pending)*
+- ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide) *(partial: powerplay §08 links each role's pick to its power card, and third-party-apps §18 links each app to its card; the Rating Methodology callout now links all 128 dossiers + 7 by-role pages, and Materials/Modules cross-link Blueprints & Engineers; broad Ships/Engineers/Blueprints cross-linking still pending)*
 - ☐ Publish on GitHub Pages
 
 ## Phase 2 — Content-as-data tooling
@@ -76,12 +76,12 @@ Legend: ✅ done · ☐ not done.
       (Phase 1), at which point the inline `<style>` is dropped and the linked CSS takes over.
 - ✅ Link out to INARA where relevant — every ship dossier links its INARA ship page (`inara.cz/elite/ship/<id>`, search-verified); other guides link the relevant INARA database / tracker / guide page where one exists. Lives in each page's **Sources** section (skipped only where INARA has no canonical page for the topic).
 - ✅ **Sources point at the specific resource, not a home** — repointed 91 `.cr-link`s that cited a website/repo **root** (notably the EDCD/coriolis-data root) at the exact target (`…/ships/<ship>.json`, `…/modifications/blueprints.json`, EDDN status → `github.com/EDCD/EDDN`) and dropped 3 with no specific page; tool/app homes that *are* the resource kept. Tooling: `scripts/fix-generic-sources.py` (`--check` re-verifies HTTP 200). Convention documented in `design-system/docs/04-page-assembly.md` → *Sources conventions*.
-- ✅ **Trusted-channel YouTube video sources** — added vetted creator videos (Obsidian Ant, Down to Earth Astronomy, Ricardos Gaming, Mile 13 Gaming, TheYamiks, The Buur Pit) as extra `.cr-row`s where relevant + version-current, oEmbed-verified, ≤3 per page (118 videos across 68 pages). Convention documented alongside the link-specificity rule above.
+- ✅ **Trusted-channel YouTube video sources** — added vetted creator videos (Obsidian Ant, Down to Earth Astronomy, Ricardos Gaming, Mile 13 Gaming, TheYamiks, The Buur Pit) as extra `.cr-row`s where relevant + version-current, oEmbed-verified, ≤3 per page (127 videos across 77 pages). Convention documented alongside the link-specificity rule above.
 - ✅ "File a ticket" link on every page → GitHub Issues
 
 ## Phase 4 — Editorial polish
 
-- ✅ Add ship photos to ship manuals + manufacturer logos *(ship renders **done** — framed hull render in all 77 dossiers via `add-ship-render.py`; manufacturer logos still pending)*
+- ✅ Add ship photos to ship manuals + manufacturer logos *(ship renders **done** — framed hull render in all 128 dossiers via `add-ship-render.py`; manufacturer logos still pending)*
 - ✅ Remove fleet bias from content *(largely done — systems pages, the 6 activities role pages, the material-farm pages, combat-zones (incl. the last KA-05 ship tags) and the combat dossiers are now de-biased to role-neutral phrasing ("the fleet's Python Mk II" → "a medium combat ship such as the Python Mk II"); "Fleet Carrier" the game feature is kept. Remaining: the **"Fleet Operations Dossier"** masthead kicker still appears on combat-zones + system-colonization — decide whether that series branding stays)*
 - ✅ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
@@ -91,10 +91,11 @@ Legend: ✅ done · ☐ not done.
 
 - ✅ Modules guide — `guides/engineering/modules.html` (core internals · optional internals · hardpoints · utility mounts; A–E class & size system; per-role picks) (ref: <https://newp.io/shipyard>)
 - ✅ Materials & material-trader guide — `guides/engineering/materials.html` (the three types, grade ladders, the trader exchange-ratio matrix, storage caps, where-to-farm links, tracking tools)
-- ✅ Ship Rating Methodology — `guides/ships/rating-methodology.html` (how the 1–100 suitability score is derived: per-role factors + worked examples), cross-linked from all 77 dossiers + 7 by-role pages
-- ☐ Newbie Guide (Systems > New Pilot & Interface - first card in this subsection) - Imagine you're a new commander just getting started with ELite Dangerous. What do i need to know? What do i do? Where do i go? What should be my key objectives? You can refer to other guides and sections in this project to learn more, but whenever you are doing that, do drop a small summary in this page.
-- ☐ Ranks in Elite Dangerous (Systems > New Pilot & Interface - second card in this subsection). What they are, how they're earned, what do i get out of them, some basic getting started tips for each career track, and anything else that may be important.
-- ☐ CMDR's Lexicon — lexicon/glossary of common terminology used on this site and in elite dangerous in general. (ref: <https://newp.io/glossary>) (Systems > New Pilot & Interface - third card in this subsection). Also add an instruction to the projects documentation to add new terminology to the lexicon when new content is added, or when content is updated. 
+- ✅ Ship Rating Methodology — `guides/ships/rating-methodology.html` (how the 1–100 suitability score is derived: per-role factors + worked examples), cross-linked from all 128 dossiers + 7 by-role pages
+- ✅ Ship × Role Matrix — `guides/ships/ship-role-matrix.html` (the full ship × role grid on one page: which hull wins each role, with 1–100 ratings), generated by `scripts/generate-ship-role-matrix.py`
+- ✅ Newbie Guide — `guides/systems/new-cmdr-guide.html` (**New CMDR's Guide**: first-hours onboarding index — game mode, controls, learning to fly/dock, the core loop, career tracks, first credits, what to buy early, and a getting-started checklist) (Systems > New Pilot & Interface, first card)
+- ✅ Ranks in Elite Dangerous — `guides/systems/pilots-federation.html` (**Pilots Federation**: the six pilot rank ladders — how each is earned and what it unlocks; the superpower navy ladders cross-link out to `superpower-rank.html`) (Systems > New Pilot & Interface, second card)
+- ✅ CMDR's Lexicon — `guides/systems/cmdrs-lexicon.html` (site terminology glossary — ED terms, acronyms and community slang, defined and cross-linked) (ref: <https://newp.io/glossary>) (Systems > New Pilot & Interface, third card). The standing instruction to keep it current lives in `docs/CLAUDE.md` → Conventions → *"Keep the lexicon current"*.
 - ☐ Exobiology in Elite Dangerous
 - ☐ On-foot / Odyssey blueprints
 - ☐ Guardian mods
