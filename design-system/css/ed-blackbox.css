@@ -188,7 +188,7 @@ header.masthead .chips{margin-top:var(--space-9)}
    briefing (.verdict.has-render) — a two-column grid with the stat-grid spanning full
    width beneath. Source renders are 160x90, so the frame is shown at native 160px to
    stay pixel-sharp (upscaling blurs them). */
-.ship-figure{margin:0;border:1px solid rgba(224,145,58,.4);border-radius:var(--radius-md);background:#000;overflow:hidden;line-height:0;box-shadow:0 2px 14px rgba(0,0,0,.4)}
+.ship-figure{margin:0;border:1px solid var(--hair);border-radius:var(--radius-md);background:#000;overflow:hidden;line-height:0;box-shadow:0 2px 14px rgba(0,0,0,.4)}
 .ship-figure img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .ship-figure figcaption{line-height:1.3;padding:7px 10px;background:rgba(20,13,15,.85);font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:var(--fs-sm2);color:var(--ink-faint)}
 .ship-figure figcaption b{color:var(--amber-lt);font-weight:600}
@@ -344,9 +344,16 @@ ul.reclist a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
 @media (max-width:480px){.rec-body{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "d" "e"}}
 
 /* ---- 11. DATA / COMPARISON TABLE ---- */
-.tbl-scroll{overflow-x:auto;margin:var(--space-9) 0;border:1px solid var(--hair);border-radius:var(--radius-md)}
+/* The wrapper is NOT a scroll container on desktop — that lets the header pin to the
+   viewport on PAGE scroll (a scroll container would trap position:sticky). Horizontal
+   scroll is added only on narrow viewports, mirroring ship-role-matrix's .mx-wrap. */
+.tbl-scroll{position:relative;margin:var(--space-9) 0;border:1px solid var(--hair);border-radius:var(--radius-md)}
+@media(max-width:920px){.tbl-scroll{overflow-x:auto}}
+/* DS default: pinned table headers, sticky UNDER the 62px site-header. Each table family's
+   thead th carries an opaque background (var(--bg2)) so scrolled rows don't bleed through. */
+.tbl-scroll thead th{position:sticky;top:62px;z-index:var(--z-sticky)}
 table.data{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
-table.data thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:11px var(--space-7);background:rgba(8,5,6,.6);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
+table.data thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:11px var(--space-7);background:var(--bg2);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
 /* Header alignment follows the column's data alignment: a right-aligned (.num) or
    centered (.center) column carries that class on BOTH its <td> and its <th>, so the
    header sits over the figures it labels. Applies to every table family — data, l3, cmp.
@@ -462,18 +469,19 @@ nav.toc::-webkit-scrollbar{height:0}
 .specgrid .v small{font-size:var(--fs-sm);color:var(--ink-faint);font-weight:400}
 
 /* ---- 19. LOADOUT TABLE  (grouped multi-state build table) ---- */
-table.l3{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
-table.l3 thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--hair-strong)}
+table.l3{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:680px}
+table.l3 thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:var(--space-5) var(--space-6);background:var(--bg2);border-bottom:1px solid var(--hair-strong)}
 table.l3 td{padding:var(--space-4) var(--space-6);border-bottom:1px solid var(--hair);vertical-align:top}
 table.l3 tr:last-child td{border-bottom:none}
 table.l3 td.slot{font-family:'Saira Condensed',sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:var(--fs-sm);color:var(--ink-dim);white-space:nowrap}
 table.l3 td.st{font-family:'Chakra Petch',sans-serif;font-size:var(--fs-sm2);color:var(--ink)}
 table.l3 td.eng{font-size:var(--fs-sm2);color:var(--amber-lt)}
+table.l3 td.note{font-size:var(--fs-xs2);color:var(--ink-dim);line-height:1.5;min-width:200px}
 table.l3 .grouprow td{background:linear-gradient(90deg,rgba(168,109,44,.5),transparent);color:var(--ink);font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs2);font-weight:600}
 
 /* ---- 20. COMPARISON TABLE w/ PROS-CONS CELLS ---- */
 table.cmp{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:620px;table-layout:fixed}
-table.cmp thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--hair-strong)}
+table.cmp thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:var(--space-5) var(--space-6);background:var(--bg2);border-bottom:1px solid var(--hair-strong)}
 table.cmp td{padding:9px var(--space-6);border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink-dim)}
 table.cmp tr:last-child td{border-bottom:none}
 table.cmp td.mod{font-family:'Chakra Petch',sans-serif;color:var(--ink);font-size:var(--fs-base)}

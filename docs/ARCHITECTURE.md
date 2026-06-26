@@ -252,6 +252,16 @@ The first step toward "content-as-data". Convention: every task script lives in
   canonical values into the by-role ladder/peer tables (re-sorting, dropping unrated hulls),
   and `audit-ratings-consistency.py` verifies every page agrees (0 mismatches). Run in that
   order whenever a dossier or rating changes.
+- **Loadouts pipeline** — `build-ship-loadouts.py` (+ shared resolver `slef_resolve.py`) builds
+  each dossier's **3-State Loadout** (`table.l3` + Notes) and **Engineering Plan** (`table.data`)
+  tables from `data/ship-loadouts/<basename>.json`, the **canonical source of truth** (one file
+  per dossier, mirroring the ratings pipeline). Each file is a **SLEF** array (Ship Loadout Export
+  Format) of three importable builds (Initial / A-Rated / Engineered) with editorial prose in
+  `appCustomProperties.edbb`; `slef_resolve.py` maps FDev `Item`/blueprint/experimental symbols to
+  display strings (`8E Power Plant`, `4A Multi-Cannon (Gimballed)`, `G5 Overcharged + Corrosive
+  Shell`). A **minimal-diff** string splice replaces only the two tables (no whole-file reformat);
+  symbols + Core sizes are validated against `data/modules/` + `data/ships/`. Edit the SLEF, never
+  the tables; re-run after edits.
 
 Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
@@ -283,8 +293,11 @@ rendered-from-data HTML. (The companion anchor catalogs are already generated, a
 Game data is **verified against authoritative sources, never written from memory**:
 EDCD (coriolis-data, FDevIDs), INARA, EDSM, EDSY, Spansh, the Fandom wiki, plus
 page-specific community references. Suitability ratings (1–100) come from a project source
-of truth where one exists; uncertain facts are flagged (`.kv-tbd` / "unconfirmed")
-rather than guessed. Verification is mandatory. As of design-system **v1.1.0** the
+of truth where one exists (`data/ship-ratings/`); dossier **loadouts** likewise come from a
+project source of truth, `data/ship-loadouts/<basename>.json` — **SLEF** (Ship Loadout Export
+Format) builds whose FDev symbols are resolved and verified against `data/ships/` + `data/modules/`
+and built into the dossier tables by `scripts/build-ship-loadouts.py`. Uncertain facts are flagged
+(`.kv-tbd` / "unconfirmed") rather than guessed. Verification is mandatory. As of design-system **v1.1.0** the
 masthead no longer carries an inline `Sources …` line (it shows a last-updated date
 instead); per-page sources are listed in a dedicated **`section.credits`** block (the
 **Sources** section) at the bottom of the page (above the footer), each citing the

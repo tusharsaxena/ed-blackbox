@@ -146,6 +146,32 @@ python3 scripts/audit-ratings-consistency.py    # verify 0 mismatches across all
   coriolis game data — that is why they live in `data/ship-ratings/`, separate from the
   imported `data/ships|modules`.
 
+### Change a ship loadout (3-State Loadout / Engineering Plan tables)
+**`data/ship-loadouts/<dossier-basename>.json` is the canonical source of truth for every
+dossier's loadout** — one file per dossier (e.g. `federal-corvette-combat.json`), stored in
+**SLEF** (Ship Loadout Export Format). The **3-State Loadout** (`table.l3`) and **Engineering
+Plan** (`table.data`) tables are *generated* from it, like the `data/ship-ratings/` pipeline.
+**Edit the SLEF JSON, never the generated tables.**
+```bash
+python3 scripts/build-ship-loadouts.py            # build all dossiers from data
+python3 scripts/build-ship-loadouts.py corvette   # only matching basenames
+python3 scripts/build-ship-loadouts.py --check    # preview, write nothing
+python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find an Item symbol
+```
+- Each file is a **SLEF array of 3 builds** (Initial / A-Rated / Engineered), tagged in
+  `header.appCustomProperties.state`; each build is standalone, importable SLEF. Editorial prose
+  (intro, callout, per-slot `notes`, `engineeringPlan`) lives in the engineered build's
+  `header.appCustomProperties.edbb`. Canonical example + schema:
+  `data/ship-loadouts/federal-corvette-combat.json`; full guide: `scripts/build-ship-loadouts.md`.
+- Modules use FDev `Item` symbols, blueprints `fdname`, experimentals edname — `slef_resolve.py`
+  maps them to display (`8E Power Plant`, `4A Multi-Cannon (Gimballed)`, engineered =
+  `G5 Overcharged + Corrosive Shell`; `(No blueprint available)` / `(no experimental effect)`).
+- **Accuracy (rule 1):** symbols are validated against `data/modules/` and Core sizes against
+  `data/ships/<ship>.json`; the generator warns on any mismatch and on a blueprint applied to a
+  slot empty in A-Rated. Loadouts are **ship × role specific**. Use `slef_resolve.py find` to get
+  exact symbols so the build resolves cleanly.
+- Design: `docs/superpowers/specs/2026-06-26-ship-loadout-data-design.md`.
+
 ### Migrate a page to the design system *(done — reference only)*
 - Every guide + the landing page are migrated (the original 108 legacy pages plus everything
   authored since, all on the design system). If you ever need the pattern: replace the
@@ -218,5 +244,6 @@ python3 scripts/standardize-anchors.py --verify   # confirm anchors resolve + no
 python3 scripts/audit-ratings-consistency.py      # check ship ratings agree across dossiers + by-role pages
 python3 scripts/compute-ship-ratings.py  # rebuild data/ship-ratings/ (source of truth) from dossiers
 python3 scripts/reconcile-ratings-html.py         # push data/ship-ratings/ into the by-role pages (+resort)
+python3 scripts/build-ship-loadouts.py            # build dossier 3-State Loadout + Engineering Plan tables from data/ship-loadouts/ (canonical)
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```
