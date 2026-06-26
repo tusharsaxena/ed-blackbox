@@ -381,11 +381,11 @@ def editable_files(args):
     if args:
         files = []
         for a in args:
-            p = Path(a)
-            if p.is_absolute() and p.is_file():
+            p = Path(a) if Path(a).is_absolute() else (ROOT / a)
+            if p.is_dir():
+                files.extend(sorted(p.rglob("*.html")))
+            elif p.is_file():
                 files.append(p)
-            elif (ROOT / a).is_file():
-                files.append(ROOT / a)
             else:
                 files.extend(sorted(ROOT.glob(a)))
         cand = [f for f in files if f.suffix == ".html"]
@@ -411,9 +411,11 @@ def main():
     files = editable_files(args)
 
     DATA.mkdir(parents=True, exist_ok=True)
-    new_log = "--reset-log" in flags or not LOG.exists()
+    # --check writes to a throwaway log so it can never pollute the live candidate log
+    log_path = LOG if apply else DATA / "link-candidates.check.csv"
+    new_log = "--reset-log" in flags or not log_path.exists()
     mode = "w" if new_log else "a"
-    with LOG.open(mode, newline="", encoding="utf-8") as fh:
+    with log_path.open(mode, newline="", encoding="utf-8") as fh:
         writer = csv.writer(fh)
         if new_log:
             writer.writerow(["source_file", "line", "matched_text", "surface_form",
@@ -428,7 +430,7 @@ def main():
                 print(f"  {'[check] ' if not apply else ''}{f.relative_to(ROOT)}: "
                       f"{a} applied / {l} candidates")
     print(f"\n{'[CHECK] ' if not apply else ''}{nfiles} files; "
-          f"{tot_a} links applied, {tot_l} candidates logged -> {LOG.relative_to(ROOT)}")
+          f"{tot_a} links applied, {tot_l} candidates logged -> {log_path.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
