@@ -479,6 +479,18 @@ table.l3 td.eng{font-size:var(--fs-sm2);color:var(--amber-lt)}
 table.l3 td.note{font-size:var(--fs-xs2);color:var(--ink-dim);line-height:1.5;min-width:200px}
 table.l3 .grouprow td{background:linear-gradient(90deg,rgba(168,109,44,.5),transparent);color:var(--ink);font-family:'Saira Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs2);font-weight:600}
 
+/* loadout EXPORT rows (§3-State Loadout footer): per-state "Open in Coriolis / EDSY" links
+   + "Copy SLEF" clipboard button. Cells are left-aligned (table.l3 default). The lex-* classes
+   are export-specific so no rating/loadout tooling parses these rows. Toast is global chrome. */
+table.l3 tr.lex-foot td{background:linear-gradient(90deg,rgba(79,159,214,.32),transparent)}
+table.l3 td.lex-lbl{font-family:'Chakra Petch',sans-serif;color:var(--ink);white-space:nowrap}
+.lex-btn{display:inline-flex;align-items:center;gap:5px;font-family:'Chakra Petch',sans-serif;font-size:var(--fs-sm2);color:var(--amber-lt);text-decoration:none;background:none;border:1px solid var(--hair-strong);border-radius:var(--radius-md);padding:3px 9px;cursor:pointer;transition:border-color var(--motion-base),color var(--motion-base)}
+.lex-btn:hover{border-color:var(--amber);color:var(--amber-lt)}
+.lex-ico{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.lex-toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,16px);background:var(--panel);border:1px solid var(--hair-strong);border-left:3px solid var(--good);color:var(--ink);font-size:var(--fs-sm);padding:11px 18px;border-radius:var(--radius-lg);box-shadow:0 8px 30px rgba(0,0,0,.5);opacity:0;transition:opacity var(--motion-base),transform var(--motion-base);z-index:200;display:flex;align-items:center;gap:9px}
+.lex-toast.show{opacity:1;transform:translate(-50%,0)}
+.lex-toast svg{width:16px;height:16px;fill:none;stroke:var(--good);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
 /* ---- 20. COMPARISON TABLE w/ PROS-CONS CELLS ---- */
 table.cmp{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:620px;table-layout:fixed}
 table.cmp thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:var(--space-5) var(--space-6);background:var(--bg2);border-bottom:1px solid var(--hair-strong)}

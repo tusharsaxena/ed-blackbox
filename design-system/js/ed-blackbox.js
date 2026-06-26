@@ -6,6 +6,7 @@
      2. toc        — scrollspy that marks the active section (needs nav#toc)
      3. coord-copy — click-to-copy coordinate chips (needs .coord[data-copy])
      4. to-top     — scroll the page to the top + clear any URL #anchor (needs .qn-totop)
+     5. loadout-export — Copy SLEF to clipboard + toast (needs .lex-copy[data-slef])
 */
 
 /* 1 — quick-nav */
@@ -111,5 +112,37 @@
       }
       window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
     });
+  });
+})();
+
+/* 5. loadout-export — Copy SLEF to clipboard + toast (needs .lex-copy[data-slef]) */
+(function(){
+  function toast(msg){
+    var t=document.createElement('div'); t.className='lex-toast';
+    t.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>';
+    t.appendChild(document.createTextNode(' '+msg));   // textNode: never inject copied data
+    document.body.appendChild(t);
+    requestAnimationFrame(function(){t.classList.add('show');});
+    setTimeout(function(){
+      t.classList.remove('show');
+      setTimeout(function(){ if(t.parentNode) t.parentNode.removeChild(t); },300);
+    },1900);
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('.lex-copy'); if(!b) return;
+    e.preventDefault();
+    var data=b.getAttribute('data-slef')||'';
+    var ok=function(){toast('SLEF copied to clipboard');};
+    var fail=function(){toast('Copy failed — select and copy manually');};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(data).then(ok,fail);
+    }else{
+      try{
+        var ta=document.createElement('textarea');
+        ta.value=data; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta); ok();
+      }catch(_){ fail(); }
+    }
   });
 })();

@@ -26,6 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import slef_resolve as R  # noqa: E402
+import slef_to_url as U  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "ship-loadouts"
@@ -134,9 +135,61 @@ def render_l3_table(builds, notes):
             f'<td class="eng">{esc(eng)}</td>'
             f'<td class="note">{esc(note)}</td></tr>'
         )
+    lines.append(render_export_rows(builds))
     lines.append("</tbody>")
     lines.append("</table>")
     return "\n".join(lines)
+
+
+# Export footer rows (Variant B): per-state "Open in Coriolis / EDSY / Copy SLEF".
+# Classes are export-specific (lex-*) so no other tooling parses these rows.
+_STATE_LABELS = [("initial", "Initial"), ("arated", "A-Rated"), ("engineered", "Engineered")]
+_OPEN_ICO = ('<svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true">'
+             '<path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg>')
+_COPY_ICO = ('<svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true">'
+             '<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>')
+
+
+def _attr(s):
+    return (str(s).replace("&", "&amp;").replace('"', "&quot;")
+            .replace("<", "&lt;").replace(">", "&gt;"))
+
+
+def render_export_rows(builds):
+    states = [(lbl, builds.get(k)) for k, lbl in _STATE_LABELS]
+
+    def open_cells(urlfn, target):
+        out = []
+        for lbl, b in states:
+            if not b:
+                out.append(f'<td class="lex-cell">{MDASH}</td>')
+                continue
+            url = urlfn(b["data"])
+            out.append(f'<td class="lex-cell"><a class="lex-btn" href="{esc(url)}" '
+                       f'target="_blank" rel="noopener" title="Open the {lbl} build in {target}">'
+                       f'{_OPEN_ICO}<span>open</span></a></td>')
+        return "".join(out)
+
+    def copy_cells():
+        out = []
+        for lbl, b in states:
+            if not b:
+                out.append(f'<td class="lex-cell">{MDASH}</td>')
+                continue
+            out.append(f'<td class="lex-cell"><button type="button" class="lex-btn lex-copy" '
+                       f'data-slef="{_attr(U.slef_state_json(b))}" '
+                       f'title="Copy the {lbl} SLEF to clipboard">{_COPY_ICO}<span>copy</span></button></td>')
+        return "".join(out)
+
+    return "\n".join([
+        '<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>',
+        f'<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td>'
+        f'{open_cells(U.coriolis_url, "Coriolis")}<td class="note">One-click open at coriolis.io.</td></tr>',
+        f'<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td>'
+        f'{open_cells(U.edsy_url, "EDSY")}<td class="note">One-click open at edsy.org.</td></tr>',
+        f'<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td>'
+        f'{copy_cells()}<td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>',
+    ])
 
 
 def render_eng_plan_table(plan):

@@ -69,3 +69,16 @@ python3 scripts/build-ship-loadouts.py --check    # report would-change / warnin
 Re-run after editing any `data/ship-loadouts/*.json`. Authoring a new dossier? Write its SLEF
 file (use `slef_resolve.py find …` to get exact `Item` symbols) and run this script. The two
 tables are generated output — edit the SLEF, never the HTML.
+
+## Loadout export rows
+
+The §3-State Loadout table also carries three footer rows — **Open in Coriolis**, **Open in
+EDSY**, **Copy SLEF** — one link per state, rendered by `render_export_rows()` via
+**`slef_to_url.py`**. Both planners import a raw Journal `Loadout` event from a URL:
+`percent_escape(base64(gzip(compact_json(loadout))))` → `coriolis.io/import?data=…` /
+`edsy.org/#/I=…`. The converter maps our SLEF `.data.Ship` (display name) → the FDev journal
+symbol via **`data/fdev/shipyard.csv`** (vendored from EDCD/FDevIDs) and lower-cases module
+`Item`s; planners recompute engineered stats from blueprint/grade, so no `Modifiers` are
+emitted. **Copy SLEF** copies the one-state SLEF array to the clipboard (DS JS module 5,
+`.lex-copy[data-slef]`) with a toast. Styling = `lex-*` classes in `ed-blackbox.css`
+(export-specific, so no other tooling parses these rows).
