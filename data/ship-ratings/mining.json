@@ -1,6 +1,28 @@
 {
   "role": "mining",
-  "_comment": "Canonical 1-100 suitability ratings for this role \u2014 the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py \u00b7 push to HTML: scripts/reconcile-ratings-html.py \u00b7 verify: scripts/audit-ratings-consistency.py",
+  "_comment": "Canonical 1-100 suitability ratings for this role — the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py · push to HTML: scripts/reconcile-ratings-html.py · verify: scripts/audit-ratings-consistency.py",
+  "scorecard_weights": [
+    {
+      "factor": "Effective ore capacity",
+      "weight": 35
+    },
+    {
+      "factor": "Tool & slot fit",
+      "weight": 25
+    },
+    {
+      "factor": "Survivability",
+      "weight": 15
+    },
+    {
+      "factor": "Pad class & access",
+      "weight": 15
+    },
+    {
+      "factor": "Cost & specialisation",
+      "weight": 10
+    }
+  ],
   "count": 19,
   "ratings": [
     {
@@ -16,7 +38,37 @@
     {
       "ship": "Python",
       "rating": 90,
-      "dossier": "python-mining.html"
+      "dossier": "python-mining.html",
+      "scorecard": {
+        "verdict": "The one miner that defends itself — a full toolkit and a ~1,100 MJ engineered shield with a gun, on a rank-free medium pad — held off the apex only by a hold the dedicated and capital miners beat.",
+        "factors": [
+          {
+            "factor": "Effective ore capacity",
+            "earned": 27,
+            "why": "~294 t maximum and roughly ~200–260 t of practical ore hold after refinery and limpet controllers — solid for a medium, but well short of the Type-11, the capital holds (Cutter/Type-9 ~790 t) and even the medium Type-8 (~406 t)."
+          },
+          {
+            "factor": "Tool & slot fit",
+            "earned": 25,
+            "why": "3×Large 2×Medium hardpoints plus deep internals run a complete laser-and-core toolkit at once — lasers, seismic and sub-surface launchers, abrasion blaster, refinery, multiple controllers and a scanner with no compromise."
+          },
+          {
+            "factor": "Survivability",
+            "earned": 15,
+            "why": "The defining edge: an engineered shield past ~1,100 MJ and a multi-cannon let it destroy the pirates that interdict laden miners rather than flee — near-unique in a field of defenceless barges."
+          },
+          {
+            "factor": "Pad class & access",
+            "earned": 15,
+            "why": "A medium pad reaches the ring-adjacent outposts that lock out the large capital miners, with no rank or permit gate."
+          },
+          {
+            "factor": "Cost & specialisation",
+            "earned": 8,
+            "why": "~55M Cr hull (~88M all-in) is pricier per tonne than the trade-miners, but it's rank-free and the same hull re-roles to trade, combat or exploration when the session ends."
+          }
+        ]
+      }
     },
     {
       "ship": "Type-9 Heavy",

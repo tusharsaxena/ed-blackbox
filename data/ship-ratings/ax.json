@@ -1,12 +1,64 @@
 {
   "role": "ax",
-  "_comment": "Canonical 1-100 suitability ratings for this role \u2014 the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py \u00b7 push to HTML: scripts/reconcile-ratings-html.py \u00b7 verify: scripts/audit-ratings-consistency.py",
+  "_comment": "Canonical 1-100 suitability ratings for this role — the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py · push to HTML: scripts/reconcile-ratings-html.py · verify: scripts/audit-ratings-consistency.py",
+  "scorecard_weights": [
+    {
+      "factor": "Hardpoints for Gauss",
+      "weight": 25
+    },
+    {
+      "factor": "Heat capacity & management",
+      "weight": 20
+    },
+    {
+      "factor": "Hull tank & reinforcement room",
+      "weight": 20
+    },
+    {
+      "factor": "Agility",
+      "weight": 25
+    },
+    {
+      "factor": "Caustic handling & support slots",
+      "weight": 10
+    }
+  ],
   "count": 16,
   "ratings": [
     {
       "ship": "Alliance Chieftain",
       "rating": 90,
-      "dossier": "alliance-chieftain-ax.html"
+      "dossier": "alliance-chieftain-ax.html",
+      "scorecard": {
+        "verdict": "It wins the Thargoid fight by evasion, not brute force — best-in-class agility plus three military slots for Guardian reinforcement — and ties the Cutter at the top without leading any firepower or tank axis.",
+        "factors": [
+          {
+            "factor": "Hardpoints for Gauss",
+            "earned": 21,
+            "why": "2×Large 1×Medium 3×Small; Gauss fits only small/medium, so one medium plus the small mounts carry it while the Large mounts take Enhanced AX Multi-Cannons — lighter on the role's key medium mount than a Krait Mk II (2×Medium)."
+          },
+          {
+            "factor": "Heat capacity & management",
+            "earned": 18,
+            "why": "Heat is the limiter on any Gauss boat; an Overcharged + Thermal Spread plant and a Heat Sink Launcher keep it in check, but the hull holds no special heat advantage over the field."
+          },
+          {
+            "factor": "Hull tank & reinforcement room",
+            "earned": 17,
+            "why": "Three class-4 military slots for Guardian Hull/Module Reinforcement — a survival edge rare on a medium — though internals of 6·5·4·2·2·1 cap how high the stack goes versus the Challenger and the larges."
+          },
+          {
+            "factor": "Agility",
+            "earned": 25,
+            "why": "235/338 m/s and the tightest handling in the field — agile enough to physically dodge Interceptor lightning, the single most important AX survival skill."
+          },
+          {
+            "factor": "Caustic handling & support slots",
+            "earned": 9,
+            "why": "Four utility mounts and enough internal room for the full kit — Xeno Scanner, Caustic Sink, Heat Sink, AFMU and a shield booster — with Guardian reinforcement adding caustic resistance."
+          }
+        ]
+      }
     },
     {
       "ship": "Imperial Cutter",

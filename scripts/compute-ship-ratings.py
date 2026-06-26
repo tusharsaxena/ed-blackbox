@@ -133,6 +133,20 @@ def main(argv):
     grand = 0
     for role in roles:
         ratings, excluded = compute_role(role)
+        # Preserve authored SCORECARD data across rebuilds. The rating-rationale
+        # scorecard (per-role factor weights + each ship's factor breakdown) is
+        # authored editorial data that lives in these files but is NOT derived
+        # from the dossier HTML, so a from-scratch rebuild must carry it over.
+        # scorecard_weights -> top-level; each ship's `scorecard` -> by ship name.
+        prev = {}
+        prev_path = OUT / f"{role}.json"
+        if prev_path.exists():
+            prev = json.loads(prev_path.read_text(encoding="utf-8"))
+        prev_cards = {r["ship"]: r["scorecard"]
+                      for r in prev.get("ratings", []) if r.get("scorecard")}
+        for r in ratings:
+            if r["ship"] in prev_cards:
+                r["scorecard"] = prev_cards[r["ship"]]
         doc = {
             "role": role,
             "_comment": ("Canonical 1-100 suitability ratings for this role — the SOURCE OF "
@@ -141,12 +155,15 @@ def main(argv):
                          "Rebuild: scripts/compute-ship-ratings.py · "
                          "push to HTML: scripts/reconcile-ratings-html.py · "
                          "verify: scripts/audit-ratings-consistency.py"),
-            "count": len(ratings),
-            "ratings": ratings,
         }
+        if prev.get("scorecard_weights"):
+            doc["scorecard_weights"] = prev["scorecard_weights"]
+        doc["count"] = len(ratings)
+        doc["ratings"] = ratings
         if excluded:
             doc["excluded_no_dossier_conflict"] = excluded
-        (OUT / f"{role}.json").write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
+        (OUT / f"{role}.json").write_text(
+            json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         grand += len(ratings)
         exc = f"  (excluded {len(excluded)}: {', '.join(e['ship'] for e in excluded)})" if excluded else ""
         print(f"  {role:<13} {len(ratings):>3} ships{exc}")

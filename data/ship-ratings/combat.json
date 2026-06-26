@@ -1,6 +1,32 @@
 {
   "role": "combat",
-  "_comment": "Canonical 1-100 suitability ratings for this role \u2014 the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py \u00b7 push to HTML: scripts/reconcile-ratings-html.py \u00b7 verify: scripts/audit-ratings-consistency.py",
+  "_comment": "Canonical 1-100 suitability ratings for this role — the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py · push to HTML: scripts/reconcile-ratings-html.py · verify: scripts/audit-ratings-consistency.py",
+  "scorecard_weights": [
+    {
+      "factor": "Hardpoints",
+      "weight": 30
+    },
+    {
+      "factor": "Power distributor",
+      "weight": 10
+    },
+    {
+      "factor": "Shield",
+      "weight": 15
+    },
+    {
+      "factor": "Armour & internals",
+      "weight": 15
+    },
+    {
+      "factor": "Agility",
+      "weight": 20
+    },
+    {
+      "factor": "Utility & flexibility",
+      "weight": 10
+    }
+  ],
   "count": 30,
   "ratings": [
     {
@@ -11,7 +37,42 @@
     {
       "ship": "Fer-de-Lance",
       "rating": 93,
-      "dossier": "fer-de-lance-combat.html"
+      "dossier": "fer-de-lance-combat.html",
+      "scorecard": {
+        "verdict": "A unique huge hardpoint, an oversized distributor and class-leading agility make it the best duellist below the Corvette; only its shallow internals keep it off the role ceiling.",
+        "factors": [
+          {
+            "factor": "Hardpoints",
+            "earned": 29,
+            "why": "One Huge plus four Medium mounts — the single biggest gun on any medium, alpha that ends fights. Only the large, rank-gated Corvette (2×Huge) and Cutter field more."
+          },
+          {
+            "factor": "Power distributor",
+            "earned": 9,
+            "why": "A class-6 distributor, oversized for the hull, feeds the huge gun, four mediums and boost without brown-outs; only full-energy loadouts ever strain it."
+          },
+          {
+            "factor": "Shield",
+            "earned": 14,
+            "why": "~271 MJ base is exceptional on a medium; six utility mounts stack four Heavy-Duty boosters and the bi-weave engineers past 1,100 MJ."
+          },
+          {
+            "factor": "Armour & internals",
+            "earned": 12,
+            "why": "405 base armour, but only six optional slots topping out at class 5 — it can't tank as deeply as a Krait or stack cell banks like a Python Mk II. Its one real limit."
+          },
+          {
+            "factor": "Agility",
+            "earned": 20,
+            "why": "Best-in-class — it turns and holds a target better than any other medium, 265/357 m/s rising past ~480 boost engineered. The trait that decides duels."
+          },
+          {
+            "factor": "Utility & flexibility",
+            "earned": 9,
+            "why": "Six utility mounts and no rank or permit gate, but no fighter bay and a short jump range — a duelling scalpel, not an all-purpose grinder."
+          }
+        ]
+      }
     },
     {
       "ship": "Imperial Cutter",

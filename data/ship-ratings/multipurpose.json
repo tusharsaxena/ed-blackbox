@@ -1,12 +1,64 @@
 {
   "role": "multipurpose",
-  "_comment": "Canonical 1-100 suitability ratings for this role \u2014 the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py \u00b7 push to HTML: scripts/reconcile-ratings-html.py \u00b7 verify: scripts/audit-ratings-consistency.py",
+  "_comment": "Canonical 1-100 suitability ratings for this role — the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py · push to HTML: scripts/reconcile-ratings-html.py · verify: scripts/audit-ratings-consistency.py",
+  "scorecard_weights": [
+    {
+      "factor": "Breadth of internals",
+      "weight": 30
+    },
+    {
+      "factor": "Firepower",
+      "weight": 20
+    },
+    {
+      "factor": "Jump range",
+      "weight": 20
+    },
+    {
+      "factor": "Flexibility & re-fit cost",
+      "weight": 15
+    },
+    {
+      "factor": "Survivability & handling",
+      "weight": 15
+    }
+  ],
   "count": 17,
   "ratings": [
     {
       "ship": "Anaconda",
       "rating": 88,
-      "dossier": "anaconda-multipurpose.html"
+      "dossier": "anaconda-multipurpose.html",
+      "scorecard": {
+        "verdict": "It tops the ladder by doing every job at capital scale in one rank-free hull, but stays top-tier rather than apex — specialists out-fight, out-haul and out-jump it, and the large pad and very-heavy cost weigh on flexibility.",
+        "factors": [
+          {
+            "factor": "Breadth of internals",
+            "earned": 30,
+            "why": "Twelve optional internals (7·6·6·6·5·5·5·4·4·4·2·1), a military slot and eight utility mounts — no other multipurpose hull carries this much room, feeding ~470 t of cargo or any role's full kit."
+          },
+          {
+            "factor": "Firepower",
+            "earned": 19,
+            "why": "Eight hardpoints (1×Huge 3×Large 2×Medium 2×Small) fed by a class-8 distributor — a genuine warship battery; only a dedicated Corvette out-fights it."
+          },
+          {
+            "factor": "Jump range",
+            "earned": 19,
+            "why": "~78 LY engineered as an explorer — capital reach few hulls match; only the lighter Mandalay out-jumps it, and without the cargo or guns."
+          },
+          {
+            "factor": "Flexibility & re-fit cost",
+            "earned": 10,
+            "why": "No rank or permit gate and free module swaps at any station, but ~200M+ Cr to outfit and a very heavy materials bill make re-roling the costliest in the field."
+          },
+          {
+            "factor": "Survivability & handling",
+            "earned": 10,
+            "why": "Engineered shields past ~1,600 MJ over stacked hull reinforcement — a heavy tank for any job — offset by slow, ponderous handling and a large pad that locks out outposts."
+          }
+        ]
+      }
     },
     {
       "ship": "Python",

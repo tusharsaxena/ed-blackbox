@@ -1,6 +1,32 @@
 {
   "role": "exploration",
-  "_comment": "Canonical 1-100 suitability ratings for this role \u2014 the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py \u00b7 push to HTML: scripts/reconcile-ratings-html.py \u00b7 verify: scripts/audit-ratings-consistency.py",
+  "_comment": "Canonical 1-100 suitability ratings for this role — the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py · push to HTML: scripts/reconcile-ratings-html.py · verify: scripts/audit-ratings-consistency.py",
+  "scorecard_weights": [
+    {
+      "factor": "Engineered jump range",
+      "weight": 35
+    },
+    {
+      "factor": "Heat profile",
+      "weight": 15
+    },
+    {
+      "factor": "Fuel tank & reach",
+      "weight": 10
+    },
+    {
+      "factor": "Canopy & visibility",
+      "weight": 10
+    },
+    {
+      "factor": "Internals",
+      "weight": 20
+    },
+    {
+      "factor": "Comfort & cost",
+      "weight": 10
+    }
+  ],
   "count": 20,
   "ratings": [
     {
@@ -21,7 +47,42 @@
     {
       "ship": "Krait Phantom",
       "rating": 93,
-      "dossier": "krait-phantom-exploration.html"
+      "dossier": "krait-phantom-exploration.html",
+      "scorecard": {
+        "verdict": "Near-apex engineered range paired with nine deep internals and medium-pad access, with almost no weak axis — a step behind only the Mandalay's longer legs and the capital explorers' module space.",
+        "factors": [
+          {
+            "factor": "Engineered jump range",
+            "earned": 32,
+            "why": "~75–80 LY engineered on a 270 t hull with an SCO drive and Guardian booster — among the best in the game, a step behind only the Mandalay (~85 LY) and the capital explorers."
+          },
+          {
+            "factor": "Heat profile",
+            "earned": 14,
+            "why": "A Low-Emissions plant and clean drives keep it cool enough to scoop and neutron-boost safely, though it isn't the ice-cold outlier the Diamondback or Dolphin are."
+          },
+          {
+            "factor": "Fuel tank & reach",
+            "earned": 9,
+            "why": "A fixed medium fuel tank and a class-6-capped scoop mean refuelling a touch earlier than a capital — fine, but more hops across the sparsest regions."
+          },
+          {
+            "factor": "Canopy & visibility",
+            "earned": 9,
+            "why": "A good, open canopy for honking and bio-hunting — just shy of the Asp's wrap-around glass and the Mandalay's panorama."
+          },
+          {
+            "factor": "Internals",
+            "earned": 20,
+            "why": "Nine optional slots carry a class-6 scoop, the Guardian booster, an SRV bay, dual AFMUs, a bi-weave and a scanner all at once — few explorers fit this much without sacrificing range."
+          },
+          {
+            "factor": "Comfort & cost",
+            "earned": 9,
+            "why": "Fast (256/358 m/s) and re-roles freely with no gates, but a ~36M Cr hull (~70M all-in, ~4.4M rebuy) is a real loss far from the bubble."
+          }
+        ]
+      }
     },
     {
       "ship": "Diamondback Explorer",

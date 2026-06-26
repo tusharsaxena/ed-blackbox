@@ -16,10 +16,22 @@ that role. **These files are the source of truth for ship ratings** — the HTML
 {
   "role": "passenger",
   "_comment": "…how to rebuild / push / verify…",
+  "scorecard_weights": [
+    { "factor": "Cabin capacity & class fit", "weight": 35 },
+    { "factor": "Comfort", "weight": 20 }
+  ],
   "count": 8,
   "ratings": [
-    { "ship": "Beluga Liner", "rating": 95, "dossier": "beluga-liner-passenger.html" },
-    { "ship": "Python",       "rating": 70, "dossier": null }
+    { "ship": "Beluga Liner", "rating": 95, "dossier": "beluga-liner-passenger.html",
+      "scorecard": {
+        "verdict": "The role ceiling: largest premium cabin loadout + Saud Kruger comfort…",
+        "factors": [
+          { "factor": "Cabin capacity & class fit", "earned": 35, "why": "Twelve optional internals…" },
+          { "factor": "Comfort", "earned": 20, "why": "A purpose-built Saud Kruger liner…" }
+        ]
+      }
+    },
+    { "ship": "Python", "rating": 70, "dossier": null }
   ],
   "excluded_no_dossier_conflict": [
     { "ship": "Anaconda", "values": [74, 82] }
@@ -30,6 +42,17 @@ that role. **These files are the source of truth for ship ratings** — the HTML
 - `ratings` — sorted by `rating` descending. `dossier` is the backing dossier filename,
   or `null` for a hull that has no dedicated dossier but whose rating is consistent
   everywhere it appears.
+- `scorecard_weights` *(per-role; rating-rationale feature)* — the role's factors in
+  **priority order**, each with an integer **weight** (its share of 100; weights are
+  multiples of 5 and **sum to 100**). An *editorial decomposition* of the role's stated
+  priority order (see `guides/ships/rating-methodology.html`), **not** an in-game formula.
+- `ratings[].scorecard` *(optional; rating-rationale feature)* — a ship's "show-your-work"
+  breakdown: a one-line `verdict` plus a `factors` array (same factors/order as
+  `scorecard_weights`). Each factor's `earned` points are `0..weight`, and **`earned`
+  across all factors sums to the ship's `rating`**. Rendered into the dossier's
+  *§ Why This Rating* section by `scripts/build-ship-scorecards.py`. This is **authored
+  editorial data** — `compute-ship-ratings.py` preserves it across rebuilds rather than
+  deriving it from the HTML.
 - `excluded_no_dossier_conflict` *(optional)* — hulls dropped because they have **no
   dossier** *and* the pages disagreed on their rating, so there was no authority to pick
   a value. They are not rated and were removed from the ladders and peer tables.

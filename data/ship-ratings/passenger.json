@@ -1,12 +1,64 @@
 {
   "role": "passenger",
-  "_comment": "Canonical 1-100 suitability ratings for this role \u2014 the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py \u00b7 push to HTML: scripts/reconcile-ratings-html.py \u00b7 verify: scripts/audit-ratings-consistency.py",
+  "_comment": "Canonical 1-100 suitability ratings for this role — the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py · push to HTML: scripts/reconcile-ratings-html.py · verify: scripts/audit-ratings-consistency.py",
+  "scorecard_weights": [
+    {
+      "factor": "Cabin capacity & class fit",
+      "weight": 35
+    },
+    {
+      "factor": "Comfort",
+      "weight": 20
+    },
+    {
+      "factor": "Jump range & tank",
+      "weight": 20
+    },
+    {
+      "factor": "Shield & safety",
+      "weight": 15
+    },
+    {
+      "factor": "Pad class & cost",
+      "weight": 10
+    }
+  ],
   "count": 11,
   "ratings": [
     {
       "ship": "Beluga Liner",
       "rating": 95,
-      "dossier": "beluga-liner-passenger.html"
+      "dossier": "beluga-liner-passenger.html",
+      "scorecard": {
+        "verdict": "The role ceiling: the largest premium cabin loadout in the game paired with the Saud Kruger comfort bonus for the highest gross per trip — short only on range and large-pad-only reach.",
+        "factors": [
+          {
+            "factor": "Cabin capacity & class fit",
+            "earned": 35,
+            "why": "Twelve optional internals carry ~184 economy berths plus a full first/business/luxury suite — the largest premium cabin loadout in the game for high-value VIP work."
+          },
+          {
+            "factor": "Comfort",
+            "earned": 20,
+            "why": "A purpose-built Saud Kruger liner carries the passenger-comfort bonus: fares pay more, complain less and rate the trip higher than any converted freighter — the highest gross per run."
+          },
+          {
+            "factor": "Jump range & tank",
+            "earned": 16,
+            "why": "~40 LY engineered is the clear weak axis — a poor traveller to the most distant scenic spots, where the longer-legged Anaconda wins."
+          },
+          {
+            "factor": "Shield & safety",
+            "earned": 15,
+            "why": "Six utility mounts stack Heavy-Duty boosters on a fast-charging bi-weave plus point defence to keep VIPs safe — strong, just short of the Cutter's warship shield."
+          },
+          {
+            "factor": "Pad class & cost",
+            "earned": 9,
+            "why": "Large-pad only (no outposts), slow and ponderous at 197/276 m/s, ~115M Cr fully fitted — the medium Lynx Highliner reaches outpost loops it can't."
+          }
+        ]
+      }
     },
     {
       "ship": "Lynx Highliner",

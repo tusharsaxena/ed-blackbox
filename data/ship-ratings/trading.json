@@ -1,6 +1,28 @@
 {
   "role": "trading",
-  "_comment": "Canonical 1-100 suitability ratings for this role \u2014 the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py \u00b7 push to HTML: scripts/reconcile-ratings-html.py \u00b7 verify: scripts/audit-ratings-consistency.py",
+  "_comment": "Canonical 1-100 suitability ratings for this role — the SOURCE OF TRUTH. HTML (dossier headlines + by-role ladders + peer tables) must match. Editorial judgement, not coriolis game data. Rebuild: scripts/compute-ship-ratings.py · push to HTML: scripts/reconcile-ratings-html.py · verify: scripts/audit-ratings-consistency.py",
+  "scorecard_weights": [
+    {
+      "factor": "Maximum cargo",
+      "weight": 35
+    },
+    {
+      "factor": "Pad class & market reach",
+      "weight": 20
+    },
+    {
+      "factor": "Laden jump range",
+      "weight": 15
+    },
+    {
+      "factor": "Survivability",
+      "weight": 20
+    },
+    {
+      "factor": "Speed & cost",
+      "weight": 10
+    }
+  ],
   "count": 19,
   "ratings": [
     {
@@ -11,7 +33,37 @@
     {
       "ship": "Imperial Cutter",
       "rating": 95,
-      "dossier": "imperial-cutter-trading.html"
+      "dossier": "imperial-cutter-trading.html",
+      "scorecard": {
+        "verdict": "Near-Panther tonnage wrapped in the strongest shields in the game and warship speed — the safest big hold there is, a hair shy of the Panther's raw-cargo apex.",
+        "factors": [
+          {
+            "factor": "Maximum cargo",
+            "earned": 33,
+            "why": "~794 t — second only to the Panther Clipper (1046 t) and a hair above the Type-9 (~790 t). At the very top of the field on the dominant factor, though not its leader; a keep-the-shield fit trims it toward ~700 t."
+          },
+          {
+            "factor": "Pad class & market reach",
+            "earned": 19,
+            "why": "Large-pad only, so it's locked out of the outposts mediums can reach — a structural limit, even though the role's highest-capacity haulers are all large-pad."
+          },
+          {
+            "factor": "Laden jump range",
+            "earned": 14,
+            "why": "~28 LY laden fully engineered (from ~16 stock) — respectable for an ~1,100 t hull, but mid-pack utility rather than a strength."
+          },
+          {
+            "factor": "Survivability",
+            "earned": 20,
+            "why": "The strongest shields in the game — ~703 MJ base, past ~2,500 MJ engineered across eight utility mounts, plus point defence and a cell bank — making it almost impossible to rob."
+          },
+          {
+            "factor": "Speed & cost",
+            "earned": 9,
+            "why": "323 m/s boost (~380 engineered) outruns the pirates a Type-9 must fight, but it sits behind the Imperial Duke rank, a ~209M Cr hull (~432M all-in) and a ~22M rebuy."
+          }
+        ]
+      }
     },
     {
       "ship": "Type-9 Heavy",
