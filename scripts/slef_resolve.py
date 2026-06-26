@@ -86,7 +86,11 @@ BLUEPRINT_NAME_OVERRIDES = {
 MOUNT_DISPLAY = {"F": "Fixed", "G": "Gimballed", "T": "Turreted"}
 
 # core/standard + special slot names -> (group, label)
+ARMOUR_NAME = {"grade1": "Lightweight Alloy", "grade2": "Reinforced Alloy",
+               "grade3": "Military Grade Composite", "mirrored": "Mirrored Surface Composite",
+               "reactive": "Reactive Surface Composite"}
 CORE_SLOTS = {
+    "armour": "Bulkheads",
     "powerplant": "Power Plant",
     "mainengines": "Thrusters",
     "frameshiftdrive": "Frame Shift Drive",
@@ -95,6 +99,8 @@ CORE_SLOTS = {
     "radar": "Sensors",
     "fueltank": "Fuel Tank",
 }
+# CORE_ORDER is the 7 STANDARD cores only (also used to index ship.slots.standard for
+# size validation) — Bulkheads is ordered separately in parse_slot (it has no standard size).
 CORE_ORDER = ["Power Plant", "Thrusters", "Frame Shift Drive", "Life Support",
               "Power Distributor", "Sensors", "Fuel Tank"]
 HP_SIZE_ORDER = {"huge": 0, "large": 1, "medium": 2, "small": 3}
@@ -161,8 +167,15 @@ def special_index():
 
 
 def resolve_item(symbol):
-    """SLEF Item symbol -> {size, rating, mount, name} (or None)."""
-    return module_index().get((symbol or "").lower())
+    """SLEF Item symbol -> {size, rating, mount, name} (or None).
+    Bulkheads (<ship>_armour_<grade>) are ship-specific and live in data/ships, not
+    data/modules, so resolve them by the grade suffix to the shared armour name."""
+    s = (symbol or "").lower()
+    m = re.match(r".+_armour_(grade1|grade2|grade3|mirrored|reactive)$", s)
+    if m:
+        return {"size": None, "rating": None, "mount": None,
+                "name": ARMOUR_NAME[m.group(1)], "grp": "bh", "file": "armour"}
+    return module_index().get(s)
 
 
 def find_symbol(filebase, size=None, rating=None, mount=None):
@@ -204,8 +217,8 @@ def parse_slot(slot):
         return {"group": "Utility Mounts", "label": f"Utility {n}", "g": 1, "o": (n,)}
     if s in CORE_SLOTS:
         label = CORE_SLOTS[s]
-        return {"group": "Core Internals", "label": label, "g": 2,
-                "o": (CORE_ORDER.index(label),)}
+        order = -1 if label == "Bulkheads" else CORE_ORDER.index(label)  # Bulkheads sorts first
+        return {"group": "Core Internals", "label": label, "g": 2, "o": (order,)}
     m = re.match(r"military(\d+)$", s)
     if m:
         n = int(m.group(1))
