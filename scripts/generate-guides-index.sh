@@ -295,10 +295,13 @@ cat <<'SYS'
     <p class="lead">Getting started, the big persistent systems that run the galaxy, and where to go looking for a fight.</p>
 
     <h3 class="subhead" id="section-new-pilot">New Pilot &amp; Interface</h3>
-    <p>Get off the ground: docking, the cockpit HUD, and the companion apps every commander runs.</p>
+    <p>Start here — what to do as a new commander, how ranks work, and the site lexicon — then docking, the cockpit HUD, and the companion apps every commander runs.</p>
     <div class="gcards">
 SYS
 
+card "systems/new-cmdr-guide.html"          ""  "New CMDR's Guide"   "Your first hours in the black — controls, the core loop, the career tracks, first credits, and a getting-started checklist."
+card "systems/pilots-federation.html"       ""  "Pilots Federation" "What the Pilots Federation is, and every pilot rank ladder — how each is earned and what it unlocks."
+card "systems/cmdrs-lexicon.html"            ""  "CMDR's Lexicon"        "The site glossary — Elite Dangerous terminology, acronyms and community slang, defined and cross-linked."
 card "systems/docking-landing-manual.html" ""  "Docking &amp; Landing" "Requesting docking, pads, and station/outpost landing procedure."
 card "systems/hud-customization.html"      ""  "HUD Customization"     "Retune your cockpit HUD colours with the GraphicsConfig matrix."
 card "systems/third-party-apps.html"       ""  "Third-Party Apps"      "The essential companion apps, planners and tools for commanders."

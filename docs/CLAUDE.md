@@ -174,6 +174,13 @@ python3 scripts/audit-ratings-consistency.py    # verify 0 mismatches across all
   *Page accent vs component accent*.)
 - **Links:** internal links are **relative**. Whether links open in a new tab is an
   open decision (`TODO.md`) — don't add `target="_blank"` until it's settled.
+- **Keep the lexicon current.** `guides/systems/cmdrs-lexicon.html` (the *CMDR's Lexicon*) is the
+  site's **canonical terminology reference**. Whenever you add a new guide, or introduce or
+  redefine an Elite Dangerous term, acronym, or site-specific phrase in any page, **add or
+  update the matching lexicon entry** — correct category, terse 1–2-sentence definition, and a
+  relative cross-link to the guide that covers it (keep entries alphabetical within their
+  category). Verify the term against an authoritative source (rule 1), and re-run
+  `scripts/generate-anchor-files.sh` if you add/rename a `<section id>` (i.e. a category).
 - **Identity:** author is CMDR Ka0s (INARA 173082). As of design-system **v1.1.0**, the
   **masthead no longer displays** the INARA id, a patch label, or an inline `Sources …`
   line; the masthead-meta carries the series part + a **last-updated** date, and the

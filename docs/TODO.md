@@ -92,9 +92,9 @@ Legend: ✅ done · ☐ not done.
 - ✅ Modules guide — `guides/engineering/modules.html` (core internals · optional internals · hardpoints · utility mounts; A–E class & size system; per-role picks) (ref: <https://newp.io/shipyard>)
 - ✅ Materials & material-trader guide — `guides/engineering/materials.html` (the three types, grade ladders, the trader exchange-ratio matrix, storage caps, where-to-farm links, tracking tools)
 - ✅ Ship Rating Methodology — `guides/ships/rating-methodology.html` (how the 1–100 suitability score is derived: per-role factors + worked examples), cross-linked from all 77 dossiers + 7 by-role pages
-- ☐ Newbie Guide (Systems > New Pilot & Interface - first card in this subsection)
-- ☐ Ranks in Elite Dangerous (Systems > New Pilot & Interface - second card in this subsection)
-- ☐ CMDR's Lexicon — lexicon/glossary of common terminology used on this site and in elite dangerous in general. pick a better name (ref: <https://newp.io/glossary>) (Systems > New Pilot & Interface - third card in this subsection)
+- ☐ Newbie Guide (Systems > New Pilot & Interface - first card in this subsection) - Imagine you're a new commander just getting started with ELite Dangerous. What do i need to know? What do i do? Where do i go? What should be my key objectives? You can refer to other guides and sections in this project to learn more, but whenever you are doing that, do drop a small summary in this page.
+- ☐ Ranks in Elite Dangerous (Systems > New Pilot & Interface - second card in this subsection). What they are, how they're earned, what do i get out of them, some basic getting started tips for each career track, and anything else that may be important.
+- ☐ CMDR's Lexicon — lexicon/glossary of common terminology used on this site and in elite dangerous in general. (ref: <https://newp.io/glossary>) (Systems > New Pilot & Interface - third card in this subsection). Also add an instruction to the projects documentation to add new terminology to the lexicon when new content is added, or when content is updated. 
 - ☐ Exobiology in Elite Dangerous
 - ☐ On-foot / Odyssey blueprints
 - ☐ Guardian mods

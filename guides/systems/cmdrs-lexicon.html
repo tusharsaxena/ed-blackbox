@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMDR's Lexicon &middot; New Pilots &amp; Interface | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../index.html" aria-label="E:D Black Box — home">
+      <img src="../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#section-dossiers">Ships</a>
+      <a href="../index.html#section-engineering">Engineering</a>
+      <a href="../index.html#section-systems" class="active">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <span class="qn-eyebrow muted">On this page</span>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-core"><span class="qn-dot amber"></span><span class="qn-nm">Core Concepts &amp; the Game Loop</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-modes"><span class="qn-dot amber"></span><span class="qn-nm">Game Modes &amp; Multiplayer</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-flight"><span class="qn-dot amber"></span><span class="qn-nm">Flight &amp; Navigation</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-combat"><span class="qn-dot amber"></span><span class="qn-nm">Combat</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-ax"><span class="qn-dot amber"></span><span class="qn-nm">Anti-Xeno &amp; Thargoids</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-trade"><span class="qn-dot amber"></span><span class="qn-nm">Trading &amp; Economy</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-eng"><span class="qn-dot amber"></span><span class="qn-nm">Engineering, Modules &amp; Materials</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-explore"><span class="qn-dot amber"></span><span class="qn-nm">Exploration &amp; Exobiology</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-politics"><span class="qn-dot amber"></span><span class="qn-nm">Powerplay, BGS &amp; Politics</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-places"><span class="qn-dot amber"></span><span class="qn-nm">Stations, Ports &amp; Locations</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-ships"><span class="qn-dot amber"></span><span class="qn-nm">Ships &amp; Hull Nicknames</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-onfoot"><span class="qn-dot amber"></span><span class="qn-nm">On-Foot (Odyssey)</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-ui"><span class="qn-dot amber"></span><span class="qn-nm">UI, HUD &amp; Units</span><span class="qn-side">13</span></a>
+          <a class="qn-item" href="#section-slang"><span class="qn-dot amber"></span><span class="qn-nm">Community Slang &amp; Salutes</span><span class="qn-side">14</span></a>
+          <a class="qn-item" href="#section-tools"><span class="qn-dot amber"></span><span class="qn-nm">Tools &amp; Third-Party Ecosystem</span><span class="qn-side">15</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">16</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ---- BREADCRUMBS ---- -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#section-systems">Systems</a>
+  <span class="sep">›</span>
+  <a href="../index.html#section-new-pilot">New Pilot &amp; Interface</a>
+  <span class="sep">›</span>
+  <span class="current" aria-current="page">CMDR's Lexicon</span>
+</nav>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">New Pilots &amp; Interface <span class="sep">//</span> Reference · Terminology</div>
+    <h1 class="title">CMDR's <span>Lexicon</span> <span class="role">Glossary</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Systems</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <!-- HERO / VERDICT -->
+  <div class="verdict">
+    <div class="v-eyebrow">Field Briefing</div>
+    <h2>Every acronym a pilot hits in the first thousand hours, <em>decoded in one line</em></h2>
+    <p>From <b>FSD</b> to <b>FA-off</b>, <b>HazRES</b> to <b>o7</b> — this is the site's single source of truth for what the words mean, and each term is wired to the guide that goes deep. Definitions are verified against the community glossaries and Frontier's own guides cited at the foot of the page; where a term describes content that has since changed or retired, it is flagged in place. Terms are grouped by domain and run alphabetically inside each group; community slang is labelled as such — it is not official Frontier nomenclature.</p>
+    <div class="why">
+      <div><h4>One line, one link</h4><p>A plain-English definition, then the single deepest guide on the topic. No over-linking.</p></div>
+      <div><h4>Era-flagged</h4><p>Retired war-state and Trailblazers-era terms are marked, not silently presented as live.</p></div>
+      <div><h4>Slang labelled</h4><p>Community jargon is separated from official terms so new pilots know which is which.</p></div>
+    </div>
+  </div>
+
+  <!-- 01 CORE -->
+  <section id="section-core">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Core Concepts &amp; the Game Loop</h2><span class="tag">Foundations</span></div>
+    <p class="lead">The words that frame the whole game — who you are, where you fly, and what you are chasing.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">CMDR / Commander</td><td>Your <b>player character</b>. Every pilot is a Commander; the friendly salute between them is <a href="#section-slang">o7</a>.</td></tr>
+          <tr><td class="mod">The Bubble</td><td>The <b>human-inhabited core</b> of the galaxy around Sol — the original starting region and where the <a href="bgs.html">Background Simulation</a> runs hottest.</td></tr>
+          <tr><td class="mod">Colonia</td><td>The player-built <b>second hub</b>, ~22,000 ly from Sol, anchored by Jaques Station. See <a href="system-colonization.html">system colonisation</a>.</td></tr>
+          <tr><td class="mod">Credits (CR)</td><td>The galactic <b>currency</b>. Large sums abbreviate as kCr (thousand), MCr (million), GCr (billion).</td></tr>
+          <tr><td class="mod">FDev</td><td><b>Frontier Developments</b> — the studio that makes Elite Dangerous.</td></tr>
+          <tr><td class="mod">Galnet</td><td>The in-game <b>news network</b> that drives the live-story narrative and signposts community events.</td></tr>
+          <tr><td class="mod">Loop / Game loop</td><td>A <b>repeatable</b> money or progression cycle — a trade loop, a bounty loop, a mat-farm loop.</td></tr>
+          <tr><td class="mod">Meta</td><td>The community-agreed <b>optimal</b> build or tactic for a given task at the current patch.</td></tr>
+          <tr><td class="mod">NPC</td><td><b>Non-Player Character</b> — any AI ship, station contact or on-foot actor.</td></tr>
+          <tr><td class="mod">PvE</td><td><b>Player vs Environment</b>: fighting and interacting with the game's NPCs and world.</td></tr>
+          <tr><td class="mod">PvP</td><td><b>Player vs Player</b>: direct interaction or combat between two commanders.</td></tr>
+          <tr><td class="mod">Rebuy</td><td>The insurance cost to recover a destroyed ship — <b>5% of the ship + modules value</b>. You cannot fly until it is covered, so never carry less than your rebuy in liquid credits.</td></tr>
+          <tr><td class="mod">Sol</td><td>Earth's system and <b>Federation capital</b> — permit-locked, not freely accessible.</td></tr>
+          <tr><td class="mod">Squadron</td><td>An in-game <b>player organisation</b> (up to 500 members) with shared comms, ranks and a faction allegiance.</td></tr>
+          <tr><td class="mod">Wing</td><td>A group of <b>up to 4 ships</b> flying together with shared comms and objectives — the basic co-op unit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 02 MODES -->
+  <section id="section-modes">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Game Modes &amp; Multiplayer</h2><span class="tag">Modes</span></div>
+    <p class="lead">The same galaxy, three ways to play it — and the crime layer that follows you across all three.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">Open / Open Play</td><td>Shared instances with <b>any other commander</b> present; PvP is possible anywhere.</td></tr>
+          <tr><td class="mod">Solo</td><td>A private session with <b>no other players</b> — but your actions still move the shared <a href="bgs.html">BGS</a>.</td></tr>
+          <tr><td class="mod">Private Group (PG)</td><td>An <b>invite-only</b> session. The large PvE-only group <b>Mobius</b> is the classic example.</td></tr>
+          <tr><td class="mod">Block</td><td>Preventing a specific player from <b>instancing</b> with you again.</td></tr>
+          <tr><td class="mod">Instance</td><td>The local <b>server slice</b> you currently share with nearby players and NPCs.</td></tr>
+          <tr><td class="mod">C&amp;P / Crime &amp; Punishment</td><td>The <b>crime system</b>: offences generate bounties, fines and Notoriety. Tied into the <a href="bgs.html">BGS</a>.</td></tr>
+          <tr><td class="mod">Notoriety</td><td>A <b>0–10 heat level</b> earned by committing crimes. High values summon <a href="#section-combat">ATR</a> and block paying bounties via Interstellar Factors until it decays.</td></tr>
+          <tr><td class="mod">Gank / Ganker</td><td>Community term for a player killed — or the killer — while <b>not seeking PvP</b>, typically near a busy hub.</td></tr>
+          <tr><td class="mod">Combat Logging / Clogging</td><td>Disconnecting to <b>escape a fight</b>. Menu-logging is tolerated; task-killing the process to dodge damage is against the rules.</td></tr>
+          <tr><td class="mod">PMF</td><td><b>Player Minor Faction</b> — a minor faction created and run by a player group inside the <a href="bgs.html">BGS</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 03 FLIGHT -->
+  <section id="section-flight">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Flight &amp; Navigation</h2><span class="tag">Flight</span></div>
+    <p class="lead">Getting from A to B without bouncing off a star. Distances, drives and the supercruise dance.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">Boost</td><td>Dumping <b>ENG distributor energy</b> for a short burst of speed past your normal top.</td></tr>
+          <tr><td class="mod">c</td><td>The <b>speed of light</b>. Supercruise speed is quoted in multiples of c.</td></tr>
+          <tr><td class="mod">Clicks</td><td>Slang for <b>kilometres</b> — "5 clicks" = 5 km.</td></tr>
+          <tr><td class="mod">Drop</td><td>Leaving supercruise into <b>normal space</b>.</td></tr>
+          <tr><td class="mod">FA / Flight Assist</td><td>The flight-assist system that <b>auto-dampens momentum</b>, holding your ship to your throttle and stick.</td></tr>
+          <tr><td class="mod">FA-Off</td><td>Flying with Flight Assist <b>off</b> — full Newtonian manual control, used for the tightest combat manoeuvres. See <a href="../activities/combat.html">the combat playbook</a>.</td></tr>
+          <tr><td class="mod">FSD / Frame Shift Drive</td><td>The drive that powers <b>both</b> supercruise and hyperspace jumps. The single most engineered <a href="../engineering/modules.html">module</a> in the game.</td></tr>
+          <tr><td class="mod">Fuel Scoop</td><td>A module that <b>skims hydrogen</b> from a star's corona to refuel for free — mandatory kit for <a href="../activities/exploration.html">exploration</a>.</td></tr>
+          <tr><td class="mod">High Wake</td><td>The wake left when a ship hyperspaces to <b>another system</b>. Trackable, but it leaves the instance.</td></tr>
+          <tr><td class="mod">Honk</td><td>The Discovery Scanner's <b>system-wide ping</b> on arrival, mapping the body count. Core of the <a href="../activities/exploration.html">explorer loop</a>.</td></tr>
+          <tr><td class="mod">Hyperspace</td><td>FSD travel <b>between</b> star systems — the "witchspace" tunnel.</td></tr>
+          <tr><td class="mod">Interdiction / Interdict</td><td>Forcibly pulling a ship <b>out of supercruise</b> into normal space. Win the tug-of-war to evade, or submit to recharge faster. See <a href="../activities/combat.html">combat</a>.</td></tr>
+          <tr><td class="mod">Jet Cone / Neutron Boost</td><td>Charging through a star's jet cone to <b>supercharge FSD range</b> — <b>~4×</b> at a neutron star, a smaller, riskier boost at a white dwarf — at the cost of FSD damage. An <a href="../activities/exploration.html">exploration</a> staple.</td></tr>
+          <tr><td class="mod">Loop of Shame</td><td>The long supercruise <b>turn-around</b> after overshooting your target — the price of too much speed on approach.</td></tr>
+          <tr><td class="mod">Low Wake</td><td>The wake left when a ship drops into <b>supercruise</b> within the same system.</td></tr>
+          <tr><td class="mod">Ls (light-second)</td><td>The in-system <b>distance unit</b>; 1 Ls ≈ 300,000 km. Stations are quoted at "N Ls from arrival".</td></tr>
+          <tr><td class="mod">Ly (light-year)</td><td>The inter-system distance and <b>jump-range</b> unit.</td></tr>
+          <tr><td class="mod">Mass Lock</td><td>Being held <b>out of FSD charge</b> by a nearby large body or ship — kill the lock to jump.</td></tr>
+          <tr><td class="mod">Pip</td><td>One of the distributor's <b>power allocations</b> split across SYS / ENG / WEP — max 4 to a system, 6 total to spend.</td></tr>
+          <tr><td class="mod">SCA / Supercruise Assist</td><td>A <a href="../engineering/modules.html">module</a> that <b>auto-throttles</b> in supercruise and drops you at a chosen target.</td></tr>
+          <tr><td class="mod">SCO / Supercruise Overcharge</td><td>A recent FSD mode (Update 18) for <b>sustained high-speed</b> in-system supercruise. <span class="kv-tbd">Era-sensitive — recent live mechanic; not yet covered in depth elsewhere on the site.</span></td></tr>
+          <tr><td class="mod">Supercruise (SC)</td><td>Faster-than-light travel <b>within</b> a system, up to multiples of c.</td></tr>
+          <tr><td class="mod">The 7-second rule</td><td>Community shorthand for a clean supercruise approach: be under ~30 km/s with the timer reading <b>~7 seconds</b> to target for a smooth drop.</td></tr>
+          <tr><td class="mod">Throttle Blue Zone</td><td>The optimal-speed <b>band on the throttle</b> that gives the tightest supercruise turns.</td></tr>
+          <tr><td class="mod">Wake Scanner</td><td>A utility that <b>reads a high wake</b> to learn where a ship jumped. Catalogued under <a href="../engineering/modules.html">modules</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 04 COMBAT -->
+  <section id="section-combat">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Combat</h2><span class="tag">Combat</span></div>
+    <p class="lead">The vocabulary of ship-to-ship fighting — pips, tanks and the kit that keeps you alive. Deep dive: <a href="../activities/combat.html">the combat playbook</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">ATR / Advanced Tactical Response</td><td>Elite <b>security units</b> deployed against high-Notoriety criminals — heavy, engineered, and lethal.</td></tr>
+          <tr><td class="mod">Banking</td><td>Using a <b>Shield Cell Bank</b> to recharge shields mid-fight.</td></tr>
+          <tr><td class="mod">Boost Bleeding</td><td>Cancelling forward thrust during a boost to <b>orbit a target</b> while keeping speed.</td></tr>
+          <tr><td class="mod">Broken / Shield Down</td><td>A ship whose <b>shields have collapsed</b> — hull is now exposed to damage.</td></tr>
+          <tr><td class="mod">Chaff</td><td>A utility that <b>spoofs</b> enemy gimballed and turreted weapon lock for a few seconds.</td></tr>
+          <tr><td class="mod">ECM / Electronic Countermeasures</td><td>A utility that <b>detonates</b> incoming missiles and mines in a radius.</td></tr>
+          <tr><td class="mod">Gimballed / Fixed / Turreted</td><td>The three hardpoint <b>aiming types</b>: track-on-lock, manual-aim, and auto-aim respectively.</td></tr>
+          <tr><td class="mod">Heatsink</td><td>A consumable utility that <b>dumps ship heat</b> — also breaks heat-seeking locks and enables silent-running tricks.</td></tr>
+          <tr><td class="mod">Hull Tank</td><td>A build that absorbs damage in <b>reinforced hull</b> rather than shields.</td></tr>
+          <tr><td class="mod">Hybrid Tank</td><td>A build that tanks in <b>both</b> shields and hull.</td></tr>
+          <tr><td class="mod">KWS / Kill Warrant Scanner</td><td>A utility that reveals a target's <b>bounties in other jurisdictions</b> for a larger payout. See <a href="../activities/combat.html">combat</a>.</td></tr>
+          <tr><td class="mod">Peel</td><td>Drawing an attacker <b>off a wingmate</b> to relieve pressure.</td></tr>
+          <tr><td class="mod">Plasma Ram</td><td>Landing plasma-accelerator hits then <b>ramming</b> for burst kill damage.</td></tr>
+          <tr><td class="mod">Reboot/Repair</td><td>An emergency shutdown that <b>restores malfunctioning modules</b> to working order by redistributing integrity — a last-ditch recovery that briefly drops everything offline.</td></tr>
+          <tr><td class="mod">SCB / Shield Cell Bank</td><td>A <a href="../engineering/modules.html">module</a> that <b>injects a shield recharge</b> on demand.</td></tr>
+          <tr><td class="mod">Silent Running</td><td>Closing the heat vents to <b>hide from sensors</b> — at the cost of overheating fast.</td></tr>
+          <tr><td class="mod">Tanking</td><td>Deliberately <b>absorbing damage</b> — shield-tank or hull-tank — rather than evading it.</td></tr>
+          <tr><td class="mod">Wanted</td><td>A pilot carrying an <b>active bounty</b> — a lawful target for any bounty hunter.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 05 ANTI-XENO -->
+  <section id="section-ax">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Anti-Xeno &amp; Thargoids</h2><span class="tag">Anti-Xeno</span></div>
+    <p class="lead">The language of fighting the Thargoids. Deep dive: <a href="../activities/ax.html">the AX playbook</a> · ship picks: <a href="../ships/by-role/ax.html">AX role ladder</a>.</p>
+    <div class="callout"><span class="lbl">Era note</span><p>The <b>Second Thargoid War ended 18 Dec 3310</b> with the destruction of the last Titan, <b>Cocijo</b>, in Sol. Maelstroms and living Titans are <b>no longer accessible live content</b> — the war-state terms below are kept as lore and historical reference.</p></div>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">AX / Anti-Xeno</td><td>Combat against <b>Thargoids</b>, which requires specialist AX weapons (Guardian, Gauss, AX multicannon and the like).</td></tr>
+          <tr><td class="mod">AXI / Anti-Xeno Initiative</td><td>The major <b>player group</b> that coordinates AX combat doctrine and builds.</td></tr>
+          <tr><td class="mod">Basi (Basilisk)</td><td>An interceptor variant — the <b>fastest</b> type, third in the toughness ladder.</td></tr>
+          <tr><td class="mod">Caustic</td><td>A Thargoid <b>damage-over-time</b> effect that eats hull; cleared with a caustic sink or decontamination limpet.</td></tr>
+          <tr><td class="mod">Clops (Cyclops)</td><td>The most common and <b>weakest</b> interceptor variant.</td></tr>
+          <tr><td class="mod">Cold Orbit</td><td>A <b>low-heat orbiting</b> technique to stay off an interceptor's targeting and dodge fire.</td></tr>
+          <tr><td class="mod">Dusa (Medusa)</td><td>The <b>second-toughest</b> interceptor variant.</td></tr>
+          <tr><td class="mod">EMP</td><td>A Thargoid pulse that <b>shuts down</b> human ship systems — countered by the SFN.</td></tr>
+          <tr><td class="mod">Exert / Heart</td><td>A Thargoid heart becomes <b>exertable</b> (vulnerable) after enough hull damage; destroying the hearts kills an interceptor.</td></tr>
+          <tr><td class="mod">Goid</td><td>Slang for a <b>Thargoid</b>.</td></tr>
+          <tr><td class="mod">Hydra</td><td>The <b>largest, toughest</b> interceptor — eight hearts to kill.</td></tr>
+          <tr><td class="mod">Interceptor</td><td>The class of <b>large Thargoid combat ships</b>, scaling Cyclops → Basilisk → Medusa → Hydra.</td></tr>
+          <tr><td class="mod">Maelstrom</td><td>A Thargoid Titan's <b>corrosive storm zone</b> — a war-state feature, retired with the end of the Second War.</td></tr>
+          <tr><td class="mod">NHSS / Non-Human Signal Source</td><td>A signal source that <b>spawns Thargoid contacts</b>. Catalogued among <a href="pve-combat-venues.html">PvE combat venues</a>.</td></tr>
+          <tr><td class="mod">Scout</td><td>Small, aggressive Thargoid <b>drones</b> that swarm in groups — soft targets compared to interceptors.</td></tr>
+          <tr><td class="mod">SFN / Shutdown Field Neutraliser</td><td>A <a href="../engineering/modules.html">module</a> that <b>protects against</b> the Thargoid EMP shutdown.</td></tr>
+          <tr><td class="mod">Spire Site</td><td>A Thargoid <b>surface structure</b> — a source of high-value materials, a war-era feature.</td></tr>
+          <tr><td class="mod">Titan</td><td>One of the <b>eight massive Thargoid motherships</b> of the Second War — all destroyed by 3310.</td></tr>
+          <tr><td class="mod">Xeno</td><td>Generic prefix for <b>Thargoid-related</b> — anti-xeno, xeno scanner, and so on.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 06 TRADE -->
+  <section id="section-trade">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Trading &amp; Economy</h2><span class="tag">Trade</span></div>
+    <p class="lead">Moving goods for profit, and the simulation that sets the prices. Deep dive: <a href="../activities/trading.html">the trading playbook</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">BGS / Background Simulation</td><td>The galaxy-wide <b>economy and politics engine</b> behind markets, states and factions. Full manual: <a href="bgs.html">BGS</a>.</td></tr>
+          <tr><td class="mod">Commodity</td><td>Any <b>tradeable good</b> with a buy and sell price at a market.</td></tr>
+          <tr><td class="mod">CG / Community Goal</td><td>A time-limited, galaxy-wide objective with <b>tiered rewards</b>. Full manual: <a href="community-goals.html">community goals</a>.</td></tr>
+          <tr><td class="mod">Demand / Supply</td><td>Market quantities that set price and cap <b>how much</b> you can sell or buy in one place.</td></tr>
+          <tr><td class="mod">Gold Rush</td><td>Any temporary <b>high-profit</b> money-making method — a lucrative mining or trade boom before it is patched or saturated.</td></tr>
+          <tr><td class="mod">Hauling</td><td>Bulk <b>cargo transport</b> between markets.</td></tr>
+          <tr><td class="mod">Loop / Trade Loop</td><td>A two-port or multi-hop route, <b>bought low / sold high</b>, run repeatedly. See <a href="../activities/trading.html">trading</a>.</td></tr>
+          <tr><td class="mod">Rare Goods</td><td>Limited-supply local commodities that <b>gain value</b> the further they are carried from source.</td></tr>
+          <tr><td class="mod">Smuggling</td><td>Carrying <b>stolen or illegal cargo</b> past station scans to a black market.</td></tr>
+          <tr><td class="mod">WMM / Wing Mining Mission</td><td>A money method: stack <b>wing mining missions</b>, then buy the commodities elsewhere to deliver against them.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 07 ENGINEERING -->
+  <section id="section-eng">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Engineering, Modules &amp; Materials</h2><span class="tag">Engineering</span></div>
+    <p class="lead">Upgrading your ship. Deep dives: <a href="../engineering/engineers.html">engineers</a> · <a href="../engineering/blueprints.html">blueprints</a> · <a href="../engineering/modules.html">modules</a> · <a href="../engineering/materials.html">materials</a> · <a href="../engineering/checklist.html">unlock checklist</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">A–E Rating</td><td>Module <b>quality grades</b>: A is best performance, E is cheapest and lightest-tier. See <a href="../engineering/modules.html">modules</a>.</td></tr>
+          <tr><td class="mod">AFMU</td><td><b>Auto Field-Maintenance Unit</b> — repairs other modules in flight, deep-space lifeline.</td></tr>
+          <tr><td class="mod">Core Internals</td><td>The <b>mandatory</b> ship slots: power plant, thrusters, FSD, life support, distributor, sensors, fuel tank.</td></tr>
+          <tr><td class="mod">Dirty Drives (DD)</td><td>The common <b>Dirty Drive Tuning</b> thruster blueprint, traded for raw speed.</td></tr>
+          <tr><td class="mod">Distro / Power Distributor</td><td>The core module managing <b>power flow</b> to SYS / ENG / WEP. See <a href="../engineering/modules.html">modules</a>.</td></tr>
+          <tr><td class="mod">Engineer</td><td>An NPC who applies <b>module modifications</b> at their workshop, once unlocked. See <a href="../engineering/engineers.html">engineers</a>.</td></tr>
+          <tr><td class="mod">Engineering</td><td><b>Modifying modules</b> to change their stats — the core ship-progression layer.</td></tr>
+          <tr><td class="mod">Experimental Effect (Exp / Special)</td><td>A <b>secondary effect</b> added on top of a blueprint (e.g. Thermal Vent, Reverb Cascade). See <a href="../engineering/blueprints.html">blueprints</a>.</td></tr>
+          <tr><td class="mod">FSD Booster</td><td>A Guardian module adding <b>flat jump-range</b>. Catalogued under <a href="../engineering/modules.html">modules</a>.</td></tr>
+          <tr><td class="mod">G1–G5</td><td>Engineering modification <b>grades 1–5</b> (the term also covers material grades). See <a href="../engineering/blueprints.html">blueprints</a>.</td></tr>
+          <tr><td class="mod">G5 Dirty Drag</td><td>Shorthand combo: <b>Grade-5 Dirty Drives</b> plus the Drag Drives experimental, for maximum speed.</td></tr>
+          <tr><td class="mod">HGE / High Grade Emission</td><td>A USS that drops high-grade <b>encoded and manufactured</b> materials. Farm guide: <a href="../engineering/farms/high-grade-emissions.html">high-grade emissions</a>.</td></tr>
+          <tr><td class="mod">LR / Long Range</td><td>The <b>Long-Range</b> weapon blueprint — extends damage falloff distance.</td></tr>
+          <tr><td class="mod">Mat Trader / Material Trader</td><td>An NPC who <b>exchanges materials</b> across grades and types at a ratio. See <a href="../engineering/materials.html">materials</a>.</td></tr>
+          <tr><td class="mod">Materials</td><td><b>Raw / Manufactured / Encoded</b> crafting components for engineering and synthesis. See <a href="../engineering/materials.html">materials</a>.</td></tr>
+          <tr><td class="mod">MRP</td><td><b>Module Reinforcement Package</b> — soaks module damage; <b>GMRP</b> is the Guardian variant. See <a href="../engineering/modules.html">modules</a>.</td></tr>
+          <tr><td class="mod">Optionals</td><td>The <b>non-mandatory</b> internal slots — cargo, shields, SCBs, scanners and the rest.</td></tr>
+          <tr><td class="mod">Pin / Pinned Blueprint</td><td><b>Pinning</b> an engineer's blueprint to apply G1 rolls <b>remotely</b> at any workshop.</td></tr>
+          <tr><td class="mod">Reverb Cascade</td><td>An experimental effect that damages a target's <b>shield generator</b> directly.</td></tr>
+          <tr><td class="mod">Synthesis</td><td><b>Field-crafting</b> ammo, fuel, AFMU refills and SRV repairs from raw materials. See <a href="../engineering/materials.html">materials</a>.</td></tr>
+          <tr><td class="mod">Tech Broker</td><td>An NPC who <b>unlocks Human and Guardian tech</b> modules for materials plus commodities. See <a href="../engineering/modules.html">modules</a>.</td></tr>
+          <tr><td class="mod">Thermal Vent (TV)</td><td>A beam-laser experimental effect that <b>dumps heat</b> — the enabler for cold builds.</td></tr>
+          <tr><td class="mod">Utility Mounts</td><td>Small external slots for <b>chaff, heatsinks, scanners and point defence</b>.</td></tr>
+          <tr><td class="mod">Material Farm</td><td>A repeatable location for <b>grinding materials</b> — e.g. <a href="../engineering/farms/davs-hope.html">Dav's Hope</a>, <a href="../engineering/farms/crystalline-shards.html">Crystalline Shards</a>, the <a href="../engineering/farms/jameson-crash-site.html">Jameson Crash Site</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 08 EXPLORATION -->
+  <section id="section-explore">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Exploration &amp; Exobiology</h2><span class="tag">Exploration</span></div>
+    <p class="lead">The long black — scanners, body classes and the genetic-sampling trade. Deep dive: <a href="../activities/exploration.html">the exploration playbook</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">Beagle Point</td><td>An iconic system near the <b>far galactic rim</b>, ~65,000 ly from Sol — a deep-range pilgrimage.</td></tr>
+          <tr><td class="mod">The Black</td><td>Slang for <b>uninhabited deep space</b> — everything beyond the Bubble's lights.</td></tr>
+          <tr><td class="mod">Codex</td><td>The in-game <b>discovery log</b>; the first to log a species or feature for a region is credited.</td></tr>
+          <tr><td class="mod">DSS / Detailed Surface Scanner</td><td>A <a href="../engineering/modules.html">module</a> that <b>maps a body's surface</b> and pinpoints bio/geo signals for bonus credits. See <a href="../activities/exploration.html">exploration</a>.</td></tr>
+          <tr><td class="mod">ELW / Earth-Like World</td><td>A rare, high-value <b>Earth-like planet class</b> (a natural Earthlike Body, distinct from terraformable worlds) — a prized scan.</td></tr>
+          <tr><td class="mod">Exobiology</td><td>Scanning <b>surface flora</b> (three samples per species) and selling the genetic data. See <a href="../activities/exploration.html">exploration</a>.</td></tr>
+          <tr><td class="mod">FD / First Discovered</td><td>Being the <b>first commander to scan</b> a body — your name attaches to it.</td></tr>
+          <tr><td class="mod">First Footfall / First Mapped</td><td>Being first to <b>land on</b> or map a body. First footfall stacks a <b>sizeable bonus</b> onto the exobiology sampled there.</td></tr>
+          <tr><td class="mod">FSS / Full Spectrum System Scanner</td><td>The in-system scanner used to <b>resolve every body</b> and find signal sources. See <a href="../activities/exploration.html">exploration</a>.</td></tr>
+          <tr><td class="mod">HMC</td><td><b>High Metal Content</b> world — common and material-rich, a reliable surface-prospecting target.</td></tr>
+          <tr><td class="mod">Sag A*</td><td><b>Sagittarius A*</b>, the supermassive black hole at the galactic centre — the symbolic core destination.</td></tr>
+          <tr><td class="mod">Tourist Beacon</td><td>A scannable POI describing a <b>historical or lore</b> event.</td></tr>
+          <tr><td class="mod">Vista Genomics</td><td>The station contact that <b>buys exobiology</b> genetic samples. See <a href="../activities/exploration.html">exploration</a>.</td></tr>
+          <tr><td class="mod">WW / Water World</td><td>A high-value <b>ocean planet</b> class.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 09 POLITICS -->
+  <section id="section-politics">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Powerplay, BGS &amp; Politics</h2><span class="tag">Politics</span></div>
+    <p class="lead">Factions, influence and the weekly cycle. Deep dives: <a href="powerplay.html">Powerplay</a> · <a href="bgs.html">BGS</a> · <a href="superpower-rank.html">superpower rank</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">BGS State</td><td>A minor faction's current <b>condition</b> — Boom, War, Famine, Lockdown and the rest — driving its markets and missions. See <a href="bgs.html">BGS</a>.</td></tr>
+          <tr><td class="mod">CC / Command Capital</td><td>Powerplay's per-cycle <b>budget resource</b> for controlling systems. See <a href="powerplay.html">Powerplay</a>.</td></tr>
+          <tr><td class="mod">Cycle</td><td>Powerplay's <b>weekly reset</b> (Thursday), when merits, control and undermining tally. See <a href="powerplay.html">Powerplay</a>.</td></tr>
+          <tr><td class="mod">Empire / Imps</td><td>The <b>Imperial</b> superpower and its aligned players and NPCs. See <a href="superpower-rank.html">superpower rank</a>.</td></tr>
+          <tr><td class="mod">Federation / Feds</td><td>The <b>Federal</b> superpower and its aligned players and NPCs. See <a href="superpower-rank.html">superpower rank</a>.</td></tr>
+          <tr><td class="mod">Fortify / Undermine / Expand</td><td>The three core <b>Powerplay actions</b> on controlled and contested systems. See <a href="powerplay.html">Powerplay</a>.</td></tr>
+          <tr><td class="mod">Influence (INF)</td><td>The <b>percentage stake</b> a minor faction holds in a system — the lever BGS players push. See <a href="bgs.html">BGS</a>.</td></tr>
+          <tr><td class="mod">Merit</td><td>Reward points earned for Powerplay actions, <b>gating module access</b> and standing. See <a href="powerplay.html">Powerplay</a>.</td></tr>
+          <tr><td class="mod">Pledge</td><td><b>Committing to a Power</b> to earn merits and unlock its modules. See <a href="powerplay.html">Powerplay</a>.</td></tr>
+          <tr><td class="mod">Power</td><td>One of the named <b>galactic leaders</b> you pledge to in Powerplay (Aisling Duval, Zachary Hudson and others). See <a href="powerplay.html">Powerplay</a>.</td></tr>
+          <tr><td class="mod">Powerplay Module</td><td>A pledged-Power weapon or module — e.g. <b>Prismo</b> (Prismatic Shields), <b>Paci</b> (Pacifier Frag Cannon), <b>Hammer</b> (Imperial Hammer), <b>Grom Bomb</b> (Containment Missile). See <a href="powerplay.html">Powerplay</a>.</td></tr>
+          <tr><td class="mod">Tick</td><td>The roughly <b>daily BGS update</b> when influence and states recalculate. See <a href="bgs.html">BGS</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 10 PLACES -->
+  <section id="section-places">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Stations, Ports &amp; Locations</h2><span class="tag">Places</span></div>
+    <p class="lead">Where commanders dock, scan and get shot at. Deep dives: <a href="docking-landing-manual.html">docking</a> · <a href="pve-combat-venues.html">PvE venues</a> · <a href="combat-zones.html">combat zones</a> · <a href="system-colonization.html">colonisation</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">CNB / Compromised Nav Beacon</td><td>A nav beacon <b>overrun by pirates</b> — a combat and scan site. See <a href="pve-combat-venues.html">PvE venues</a>.</td></tr>
+          <tr><td class="mod">CZ / Conflict Zone</td><td>An active <b>battle site</b> between two factions; pick a side for combat bonds. See <a href="combat-zones.html">combat zones</a>.</td></tr>
+          <tr><td class="mod">HazRES</td><td><b>Hazardous Resource Extraction Site</b> — best bounties, no system-security backup. See <a href="pve-combat-venues.html">PvE venues</a>.</td></tr>
+          <tr><td class="mod">HighRES</td><td>A <b>high-intensity RES</b> with system-security support on hand. See <a href="pve-combat-venues.html">PvE venues</a>.</td></tr>
+          <tr><td class="mod">Hotspot</td><td>A ring overlay marking <b>concentrated mineable material</b> (Painite, LTD and the like). See <a href="../activities/mining.html">mining</a>.</td></tr>
+          <tr><td class="mod">Mailslot</td><td>The <b>letterbox entrance</b> to an enclosed starport. See <a href="docking-landing-manual.html">docking</a>.</td></tr>
+          <tr><td class="mod">Nav Beacon</td><td>An in-system POI at the main star that <b>downloads system data</b> on scan.</td></tr>
+          <tr><td class="mod">Outpost</td><td>A small orbital port — <b>medium pad maximum</b>, no large ships. See <a href="docking-landing-manual.html">docking</a>.</td></tr>
+          <tr><td class="mod">POI</td><td><b>Point of Interest</b> — a surface or space location worth investigating.</td></tr>
+          <tr><td class="mod">RES / Resource Extraction Site</td><td>An asteroid-belt zone for <b>mining and bounty hunting</b>. See <a href="pve-combat-venues.html">PvE venues</a>.</td></tr>
+          <tr><td class="mod">Starport</td><td>A large orbital station <b>accepting any ship size</b> (Coriolis, Orbis, Ocellus). See <a href="docking-landing-manual.html">docking</a>.</td></tr>
+          <tr><td class="mod">Toastrack</td><td>The exterior <b>framework</b> around a starport's mailslot — the bit you scrape on a bad approach.</td></tr>
+          <tr><td class="mod">USS / Unidentified Signal Source</td><td>A transient supercruise contact — <b>cargo, combat, materials or Thargoids</b> until resolved.</td></tr>
+          <tr><td class="mod">System Colonisation</td><td>Trailblazers-era system claiming: pick an unpopulated system <b>within 15 ly</b>, deploy a Colonisation Beacon <b>within 24 h</b> to become System Architect. See <a href="system-colonization.html">colonisation</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 11 SHIPS -->
+  <section id="section-ships">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Ships &amp; Hull Nicknames</h2><span class="tag">Ships</span></div>
+    <p class="lead">The slang names for the fleet, each linked to its dossier. Full picks: <a href="../ships/ship-role-matrix.html">ship-role matrix</a> · <a href="../ships/rating-methodology.html">rating methodology</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">AspX</td><td><b>Asp Explorer</b> — the classic mid-range explorer. <a href="../ships/dossiers/asp-explorer-exploration.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">AspS</td><td><b>Asp Scout</b> — the cheaper, weaker sibling. <a href="../ships/dossiers/asp-scout-exploration.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Chally</td><td><b>Alliance Challenger</b> — the tankiest of the Alliance trio. <a href="../ships/dossiers/alliance-challenger-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Chief</td><td><b>Alliance Chieftain</b> — the agile AX workhorse. <a href="../ships/dossiers/alliance-chieftain-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Conda</td><td><b>Anaconda</b> — the long-serving big-three multipurpose hull. <a href="../ships/dossiers/anaconda-multipurpose.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Corvette / Vette</td><td><b>Federal Corvette</b> — the Federal capital-grade combat ship. <a href="../ships/dossiers/federal-corvette-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Cutter</td><td><b>Imperial Cutter</b> — the Imperial flagship, fast and huge. <a href="../ships/dossiers/imperial-cutter-trading.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">DBX</td><td><b>Diamondback Explorer</b> — the cold, long-range budget explorer. <a href="../ships/dossiers/diamondback-explorer-exploration.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">DBS</td><td><b>Diamondback Scout</b> — the small, cool combat hull. <a href="../ships/dossiers/diamondback-scout-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">FAS</td><td><b>Federal Assault Ship</b> — the hard-hitting Federal medium. <a href="../ships/dossiers/federal-assault-ship-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">FDL</td><td><b>Fer-de-Lance</b> — the dedicated dogfighter with a huge hardpoint. <a href="../ships/dossiers/fer-de-lance-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">FDS</td><td><b>Federal Dropship</b> — the Federal medium combat/transport base. <a href="../ships/dossiers/federal-dropship-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">FGS</td><td><b>Federal Gunship</b> — the turret-heavy Federal brawler. <a href="../ships/dossiers/federal-gunship-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Krait / K2</td><td><b>Krait Mk II</b> — the versatile multipurpose favourite. <a href="../ships/dossiers/krait-mk-ii-multipurpose.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Phantom</td><td><b>Krait Phantom</b> — the long-range exploration variant of the Krait. <a href="../ships/dossiers/krait-phantom-exploration.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Python</td><td><b>Python</b> (Mk I); <b>PMk2</b> is the newer Python Mk II. <a href="../ships/dossiers/python-multipurpose.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Sidey</td><td><b>Sidewinder Mk I</b> — the free starter ship. <a href="../ships/dossiers/sidewinder-mk-i-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">Suicidewinder</td><td>Using a cheap Sidewinder to <b>self-destruct</b> back to the Bubble — a fast (if undignified) trip home.</td></tr>
+          <tr><td class="mod">T6 / T7 / T9 / T10</td><td><b>Type-6 Transporter / Type-7 Transporter / Type-9 Heavy / Type-10 Defender</b> — the Lakon haulers and the T10 gunship. <a href="../ships/dossiers/type-9-heavy-trading.html">Type-9 dossier</a>.</td></tr>
+          <tr><td class="mod">Vulture</td><td><b>Vulture</b> — the small, agile heavy fighter. <a href="../ships/dossiers/vulture-combat.html">Dossier</a>.</td></tr>
+          <tr><td class="mod">SLF</td><td><b>Ship-Launched Fighter</b> — a small craft deployed from a fighter bay.</td></tr>
+          <tr><td class="mod">SRV</td><td><b>Surface Recon Vehicle</b> — the Scarab or Scorpion surface buggy.</td></tr>
+          <tr><td class="mod">FC</td><td><b>Fleet Carrier</b> — a player-owned capital ship and mobile base. See <a href="fleet-carrier.html">fleet carrier</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 12 ON-FOOT -->
+  <section id="section-onfoot">
+    <div class="sec-head"><span class="sec-num">12</span><h2>On-Foot (Odyssey)</h2><span class="tag">On-Foot</span></div>
+    <p class="lead">Leaving the cockpit — suits, tools and the settlement loop introduced by Odyssey.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">Apex Interstellar</td><td>The on-foot <b>shuttle / taxi</b> service for getting around without your own ship.</td></tr>
+          <tr><td class="mod">Artemis Suit</td><td>The <b>exploration suit</b>, built around the Genetic Sampler for on-foot scanning.</td></tr>
+          <tr><td class="mod">Concourse</td><td>The walkable <b>interior hub</b> of a station — bar, vendors, mission board.</td></tr>
+          <tr><td class="mod">Dominator Suit</td><td>The <b>combat suit</b> — extra weapon slots and grenade capacity.</td></tr>
+          <tr><td class="mod">Energylink</td><td>An on-foot tool to <b>power or drain</b> settlement devices and recharge them.</td></tr>
+          <tr><td class="mod">Frontline Solutions</td><td>The sign-up vendor for on-foot <b>Conflict Zones</b> — mercenary infantry work.</td></tr>
+          <tr><td class="mod">Genetic Sampler</td><td>The Artemis-suit tool used for on-foot <b>exobiology sampling</b>.</td></tr>
+          <tr><td class="mod">Maverick Suit</td><td>The <b>scavenger suit</b> — Arc Cutter and the biggest backpack, built for settlement raiding.</td></tr>
+          <tr><td class="mod">On-Foot CZ</td><td>An on-foot <b>Conflict Zone</b> — a settlement infantry battle between two factions.</td></tr>
+          <tr><td class="mod">Profile Analyser</td><td>An on-foot tool to <b>clone access permissions</b> from NPCs for restricted areas.</td></tr>
+          <tr><td class="mod">Settlement</td><td>A planetary <b>surface base</b> you explore, raid or defend on foot.</td></tr>
+          <tr><td class="mod">Flight Suit</td><td>The default <b>starter suit</b> worn in the cockpit — no upgrade slots.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 13 UI -->
+  <section id="section-ui">
+    <div class="sec-head"><span class="sec-num">13</span><h2>UI, HUD &amp; Units</h2><span class="tag">Cockpit</span></div>
+    <p class="lead">Reading the cockpit — panels, pips and the units on your readouts. Deep dive: <a href="hud-customization.html">HUD colours</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">Auto-Dock</td><td>A module that <b>auto-docks and launches</b> the ship for you.</td></tr>
+          <tr><td class="mod">Codex (UI)</td><td>The in-game <b>discovery and knowledge</b> database panel.</td></tr>
+          <tr><td class="mod">GraphicsConfig / HUD Matrix</td><td>The XML <b>colour matrix</b> used to re-tint the HUD. Full walkthrough: <a href="hud-customization.html">HUD customisation</a>.</td></tr>
+          <tr><td class="mod">HUD</td><td>The <b>Heads-Up Display</b> — the whole cockpit interface. See <a href="hud-customization.html">HUD customisation</a>.</td></tr>
+          <tr><td class="mod">kCr / MCr / GCr</td><td><b>Thousand / million / billion</b> credits.</td></tr>
+          <tr><td class="mod">Mm (Mega-metre)</td><td>A distance unit of <b>1,000,000 m</b>, used at close in-system ranges.</td></tr>
+          <tr><td class="mod">Panels</td><td>The four cockpit UI panels: <b>Nav/Target</b> (left), <b>Comms/Contacts</b> (top), <b>Internal/Systems</b> (right), <b>Role</b> (bottom).</td></tr>
+          <tr><td class="mod">Pips (UI)</td><td>The <b>SYS / ENG / WEP</b> power bars in the bottom-left panel.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 14 SLANG -->
+  <section id="section-slang">
+    <div class="sec-head"><span class="sec-num">14</span><h2>Community Slang &amp; Salutes</h2><span class="tag">Slang</span></div>
+    <p class="lead">How commanders actually talk. These are <b>community usage</b>, not official Frontier nomenclature.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">o7 / o7o</td><td>The <b>salute</b> emote — "o" is the head, "7" the raised arm. The standard friendly sign-off.</td></tr>
+          <tr><td class="mod">&lt;o / &lt;0 / ZO</td><td><b>Alternate salute</b> variants typed in chat.</td></tr>
+          <tr><td class="mod">Fly Safe</td><td>The standard community <b>farewell</b>.</td></tr>
+          <tr><td class="mod">Git Gud</td><td>A tongue-in-cheek <b>"improve your skill"</b> reply, mostly from the PvP scene.</td></tr>
+          <tr><td class="mod">Grind</td><td>Repetitive activity for <b>rank, credits or materials</b>.</td></tr>
+          <tr><td class="mod">Murderwinder / Murder-X</td><td>A cheap, stripped hull built purely to <b>gank</b>.</td></tr>
+          <tr><td class="mod">Noobula</td><td>Slang for the new-player <b>restricted starter region</b>.</td></tr>
+          <tr><td class="mod">Salt</td><td>Community term for player <b>frustration or complaint</b>, especially after a gank.</td></tr>
+          <tr><td class="mod">Space Legs</td><td>Community nickname for <b>on-foot / Odyssey</b> gameplay.</td></tr>
+          <tr><td class="mod">Thargoid Hug</td><td>Sarcastic term for being caught in <b>caustic / Thargoid</b> damage.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 15 TOOLS -->
+  <section id="section-tools">
+    <div class="sec-head"><span class="sec-num">15</span><h2>Tools &amp; Third-Party Ecosystem</h2><span class="tag">Tools</span></div>
+    <p class="lead">The apps commanders run alongside the game. Full directory: <a href="third-party-apps.html">third-party apps</a>.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="mod">Coriolis / EDSY</td><td>Browser <b>ship-outfitting</b> planners — design a build, share it as a URL. See <a href="third-party-apps.html">third-party apps</a>.</td></tr>
+          <tr><td class="mod">EDDB / Inara market tools</td><td><b>Trade-route, commodity and station</b> finders (EDDB now folded into Inara). See <a href="third-party-apps.html">third-party apps</a>.</td></tr>
+          <tr><td class="mod">EDDiscovery / EDMC</td><td>Companion apps that <b>read your journal</b> for exploration and market data. See <a href="third-party-apps.html">third-party apps</a>.</td></tr>
+          <tr><td class="mod">EDSM</td><td><b>Elite Dangerous Star Map</b> — the crowd-sourced system and exploration database. See <a href="third-party-apps.html">third-party apps</a>.</td></tr>
+          <tr><td class="mod">INARA</td><td>The community <b>hub</b> — profiles, market data, engineer and material references. See <a href="third-party-apps.html">third-party apps</a>.</td></tr>
+          <tr><td class="mod">Journal / Player Journal</td><td>The local <b>log file</b> Frontier writes that every third-party app parses.</td></tr>
+          <tr><td class="mod">Spansh</td><td>The dominant <b>route plotter</b> — neutron highway, exobiology, road-to-riches. See <a href="third-party-apps.html">third-party apps</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 16 SOURCES -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">16</span><h2>Sources</h2><span class="tag">Verification</span></div>
+    <p class="lead">Definitions on this page are verified against the references below; era-sensitive terms (SCO, Titan/Maelstrom war-state) are flagged in place.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">newp.io — ED Glossary</span><span class="cr-what">Primary community glossary — ship nicknames, flight/combat/AX/trade slang, units, signal sources and POIs.</span><a class="cr-link" href="https://newp.io/glossary">newp.io/glossary</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Acronyms &amp; Slang</span><span class="cr-what">Canonical community acronym and slang list, cross-checked term by term.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Acronyms_%26_Slang">elite-dangerous.fandom.com/wiki/Acronyms_%26_Slang</a></div>
+      <div class="cr-row"><span class="cr-src">Frontier — Odyssey Guide</span><span class="cr-what">On-foot suits (Maverick, Artemis, Dominator), Apex Interstellar and Frontline Solutions.</span><a class="cr-link" href="https://www.elitedangerous.com/en-US/news/odyssey-guide">elitedangerous.com/en-US/news/odyssey-guide</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Systems &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>
