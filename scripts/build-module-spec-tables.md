@@ -10,8 +10,8 @@ node scripts/build-module-spec-tables.mjs
 
 ## What it does
 
-For each of the **30 stable `.bp-card` ids** on the page (matched by the baked-in
-`CARD_MAP`), the script:
+For each of the **33 stable `.bp-card` ids** on the page (matched by the baked-in
+`CARD_MAP`, keyed by the live `module-*` id), the script:
 
 1. **Strips** any existing spec block(s) it (or a prior build) appended — the
    `<p class="spec-label">` labels and `<div class="spec-wrap">` tables — plus any
@@ -74,7 +74,7 @@ are absent. Verify with `diff` across two runs.
 After a run:
 
 ```bash
-# all 30 cards report a table; ≤11 cols each
+# all 33 cards report a table; ≤11 cols each
 node scripts/build-module-spec-tables.mjs
 # no stale panels
 grep -c '>Availability<\|>Core stats<' guides/engineering/modules.html   # → 0
