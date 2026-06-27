@@ -356,7 +356,8 @@ def render_table(data):
         padcls = PAD_CLASS.get(pad, "")
         attrs = [f'data-ship="{s}"', f'data-pad="{pad}"']
         cells = [
-            f'<td class="col-ship"><span class="shipname">{s}</span></td>',
+            # nolink: the Ship column is never hyperlinked (apply-hyperlinks skips it)
+            f'<td class="col-ship nolink"><span class="shipname">{s}</span></td>',
             f'<td class="col-class"><span class="pill {padcls}">{pad}</span></td>',
         ]
         for key, label in ROLES:
@@ -503,21 +504,30 @@ def build_page(data, date="2026-06-25"):
     <div class="callout"><span class="lbl">Drive it from the headers</span><p>Every column title carries a <b>sort</b> glyph (⇅&nbsp;→&nbsp;▲&nbsp;→&nbsp;▼) and a <b>funnel</b>. Sort by any role to rank the field; search a hull by name; gate the table by pad class; or set a minimum score on one or more roles &mdash; the role minimums <b>stack</b>, so &ldquo;Combat&nbsp;≥&nbsp;85 and Trading&nbsp;≥&nbsp;70&rdquo; finds the hulls that do both.</p></div>
   </section>"""
 
-    champ_rows = "".join(
-        f'<tr><td class="mod">{lbl}</td><td><b>{ship}</b></td>'
-        f'<td><span class="rscore">{rat}</span><div class="bar mini"><i style="--pct:{rat}"></i></div></td></tr>'
-        for lbl, ship, rat in [
-            ("Combat", "Federal Corvette", 98), ("AX", "Alliance Chieftain", 90),
-            ("Mining", "Type-11 Prospector", 95), ("Trading", "Panther Clipper Mk II", 98),
-            ("Exploration", "Mandalay", 96), ("Passenger", "Beluga Liner", 95),
-            ("Multipurpose", "Anaconda", 88),
-        ])
+    # Each champion's "Top hull" links to the dossier for THAT role (column A) —
+    # sourced from the matrix data so it can never drift to the hull's default role.
+    label_to_key = {label: key for key, label in ROLES}
+    champions = [
+        ("Combat", "Federal Corvette", 98), ("AX", "Alliance Chieftain", 90),
+        ("Mining", "Type-11 Prospector", 95), ("Trading", "Panther Clipper Mk II", 98),
+        ("Exploration", "Mandalay", 96), ("Passenger", "Beluga Liner", 95),
+        ("Multipurpose", "Anaconda", 88),
+    ]
+    champ_parts = []
+    for lbl, ship, rat in champions:
+        cell = data.get(ship, {}).get(label_to_key[lbl])
+        hull = (f'<b><a href="dossiers/{cell["dossier"]}">{ship}</a></b>'
+                if cell and cell.get("dossier") else f'<b>{ship}</b>')
+        champ_parts.append(
+            f'<tr><td class="mod">{lbl}</td><td>{hull}</td>'
+            f'<td><span class="rscore">{rat}</span><div class="bar mini"><i style="--pct:{rat}"></i></div></td></tr>')
+    champ_rows = "".join(champ_parts)
 
     concl = f"""  <section id="section-what-the-grid-reveals">
     <div class="sec-head"><span class="sec-num">03</span><h2>What the Grid Reveals</h2><span class="tag">Patterns</span></div>
     <p class="lead">Read down the columns and a few truths fall out of the board &mdash; about who can do everything, who owns each role, and how little a landing pad actually decides.</p>
 
-    <div class="cards two">
+    <div class="cards two nolink">
       <div class="card">
         <div class="c-head"><h3>The true generalists</h3><span class="c-eyebrow">a verdict in all 7</span></div>
         <p>Only two hulls carry a rating in <b>every role</b>: the <b>Anaconda</b> and the <b>Python</b>. The Anaconda never drops below <b>76</b> (trading) and peaks at <b>94</b> (exploration) &mdash; the definitive do-everything, at a Large-pad price and a Large-pad bankroll. The Python repeats the trick on a <b>Medium</b> pad for a fraction of the cost: the working commander's one-ship answer.</p>

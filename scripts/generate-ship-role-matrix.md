@@ -47,12 +47,26 @@ python3 scripts/generate-ship-role-matrix.py --page     # write guides/ships/shi
 
 `--mockups` (design iteration only) writes a throwaway `guides/ships/_mockup-matrix-a3.html`.
 
+## Cross-linking
+
+The matrix **cells** link to their `<ship>-<role>` dossiers directly (built here). The
+**Role champions** table links each "Top hull" to *that role's* dossier (column A), sourced
+from the matrix data so it can never drift to the hull's default role. The **Ship column**
+and the **What the Grid Reveals** cards are emitted with `class="nolink"` so the site-wide
+`apply-hyperlinks.py` pass leaves them link-free. Everything else (the briefing, the intro
+cards, the "Specialists" callout) is cross-linked by that pass — so **after regenerating, re-run
+the hyperlink pass** to restore those prose links (regeneration wipes them; the
+cells/champions/nolink areas are self-contained).
+
 ## After running
 
 1. `bash scripts/generate-guides-index.sh` — the page already has its card line in the Ships ›
    General sub-section; this refreshes the landing page + auto-counts.
 2. `bash scripts/generate-anchor-files.sh` — regenerate the sibling `ship-role-matrix-anchors.md`.
-3. `python3 scripts/verify-links.py` — confirm every dossier link + anchor resolves.
+3. `python3 scripts/apply-hyperlinks.py guides/ships/ship-role-matrix.html` then
+   `python3 scripts/normalize-link-targets.py guides/ships/ship-role-matrix.html` — restore the
+   prose cross-links the regeneration wiped (Ship column + cards stay `nolink`).
+4. `python3 scripts/verify-links.py` — confirm every dossier link + anchor resolves.
 
 Editorial ratings are **not** changed here — to alter a score, edit the dossier and run the
 `compute-ship-ratings.py` → `reconcile-ratings-html.py` → `audit-ratings-consistency.py`
