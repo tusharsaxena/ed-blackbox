@@ -230,7 +230,7 @@ def resolve(matched, key, candidates, window, cur_file, D):
     rank_ctx = any(k in wl for k in D["ctx"]["rank_keywords"])
     cur_rel = cur_file.relative_to(G).as_posix()
     cur_base = cur_file.stem
-    cur_role = next((r for r in ROLES if cur_base.endswith("-" + r)), None)
+    cur_role = next((r for r in ROLES if cur_base == r or cur_base.endswith("-" + r)), None)
 
     # ---- ship candidates ----
     ship = next((c for c in candidates if c[0] == "ship"), None)

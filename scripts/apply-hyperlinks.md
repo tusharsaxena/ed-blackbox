@@ -46,7 +46,11 @@ python3 scripts/apply-hyperlinks.py                         # apply to all edita
 ```
 
 **Excluded as link sources** (never edited): `guides/activities/**`,
-`guides/ships/by-role/**`, and the generated `guides/index.html`.
+`guides/ships/by-role/**`, and the generated `guides/index.html`. The first two get
+their role-correct links from dedicated passes — `link-by-role-pages.py` and
+`link-activity-pages.py` (the latter reuses *this* engine; the page-role detection
+(`cur_role`) matches both a `<hull>-<role>` stem and a stem that **is** a role, e.g.
+`combat.html`).
 
 **Never linked within a page:** headings, nav, stat tiles, the scorecard, `.credits`, existing
 `<a>`/`<script|style|svg>`, and any element carrying **`class="nolink"`** — add that class to a

@@ -109,7 +109,7 @@
   <!-- 2 — CORE MECHANICS -->
   <section id="section-core-gameplay-mechanics">
     <div class="sec-head"><span class="sec-num">02</span><h2>Core Gameplay Mechanics</h2></div>
-    <p>Six mechanical systems decide every fight. Internalise these and the activities in <a href="#section-the-combat-activities">Section 3</a> become variations on a theme.</p>
+    <p>Six mechanical systems decide every fight. Internalise these and the activities in <a href="#section-the-combat-activities">The Combat Activities</a> become variations on a theme.</p>
 
     <h3 class="subhead">The damage triangle (the most important thing)</h3>
     <p>Every fight has two phases — <b>shield</b>, then <b>hull</b> — and they want opposite damage types. This is the single biggest source of "why am I taking forever to kill things."</p>
@@ -118,19 +118,19 @@
       <colgroup><col style="width:18%"><col style="width:30%"><col style="width:26%"><col style="width:26%"></colgroup>
       <thead><tr><th>Damage type</th><th>Weapons</th><th>vs Shields</th><th>vs Hull</th></tr></thead>
       <tbody>
-        <tr><td class="mod">Thermal</td><td>Lasers — beam, burst, pulse</td><td class="gd">Strong (shields are weak to heat)</td><td><span class="acc">Weak</span> — bounces off armour</td></tr>
+        <tr><td class="mod">Thermal</td><td><a href="../engineering/modules.html#module-lasers">Lasers</a> — beam, burst, pulse</td><td class="gd">Strong (shields are weak to heat)</td><td><span class="acc">Weak</span> — bounces off armour</td></tr>
         <tr><td class="mod">Kinetic</td><td>Multi-cannons, cannons, frag cannons, railguns</td><td><span class="acc">Resisted</span> by shields</td><td class="gd">Strong — armour is weak to it</td></tr>
         <tr><td class="mod">Explosive</td><td>Missiles, torpedoes, mines, plasma (part)</td><td><span class="acc">Resisted</span></td><td class="gd">Strong vs hull &amp; modules</td></tr>
         <tr><td class="mod">Absolute</td><td>Plasma accelerators (part), some special FX</td><td>Ignores resistances</td><td>Ignores resistances</td></tr>
       </tbody>
     </table>
     </div>
-    <div class="callout"><span class="lbl">The lesson the Python taught</span><p>A ship that's all kinetic guns (multi-cannons) spends the entire shield phase doing almost nothing, because shields resist kinetic. You need <b>enough thermal to break shields quickly</b>, then your kinetic does the real killing on hull. A balanced bird carries both; an unbalanced one feels "slow to kill" even with big guns.</p></div>
+    <div class="callout"><span class="lbl">The lesson the <a href="../ships/dossiers/python-combat.html">Python</a> taught</span><p>A ship that's all kinetic guns (multi-cannons) spends the entire shield phase doing almost nothing, because shields resist kinetic. You need <b>enough thermal to break shields quickly</b>, then your kinetic does the real killing on hull. A balanced bird carries both; an unbalanced one feels "slow to kill" even with big guns.</p></div>
 
     <h3 class="subhead">Weapon mounts</h3>
     <ul class="bullets">
       <li><b>Fixed</b> — highest DPS and best projectile speed, but you must aim. Rewards skill; the PvP standard.</li>
-      <li><b>Gimballed</b> — auto-track inside a cone. Lower DPS, easiest to land, but <b>chaff breaks the lock</b>. The PvE workhorse.</li>
+      <li><b>Gimballed</b> — auto-track inside a cone. Lower DPS, easiest to land, but <b><a href="../engineering/modules.html#module-countermeasures">chaff</a> breaks the lock</b>. The PvE workhorse.</li>
       <li><b>Turreted</b> — track almost any angle, lowest DPS, fire-and-forget. Best on big slow hulls and for gunner-crewed fighters.</li>
     </ul>
 
@@ -144,10 +144,10 @@
     <p>The combat rhythm is <b>pip-flipping</b>: 4 pips to WEP while you're on target and dealing damage, snap to 4-SYS the instant an enemy is hammering your shield. Doing this well is worth more than any single module upgrade.</p>
 
     <h3 class="subhead">Heat</h3>
-    <p>Firing and charging generate heat. Above 100% your ship takes thermal damage; above ~150% modules start to break. <b>Heat sink launchers</b> dump heat instantly; the <span class="acc">Thermal Vent</span> experimental on beam lasers dumps your heat into the target every time you fire — the standard fix for hot energy builds. Running cold also makes you harder to target and lets you hide (silent running).</p>
+    <p>Firing and charging generate heat. Above 100% your ship takes thermal damage; above ~150% modules start to break. <b><a href="../engineering/modules.html#module-countermeasures">Heat sink</a> launchers</b> dump heat instantly; the <span class="acc">Thermal Vent</span> experimental on beam <a href="../engineering/modules.html#module-lasers">lasers</a> dumps your heat into the target every time you fire — the standard fix for hot energy builds. Running cold also makes you harder to target and lets you hide (silent running).</p>
 
     <h3 class="subhead">Subsystem targeting</h3>
-    <p>Sub-target an enemy's modules to cripple rather than just delete: kill the <b>Power Plant</b> (forces a malfunction or outright kill), <b>Drives</b> (immobilise), <b>FSD</b> (stop it fleeing), or <b>Power Distributor</b> (starve its guns and shields). Cannons and railguns with high per-shot damage are best for this; it's how you stop a fleeing assassination target or disable a piracy mark without destroying its cargo.</p>
+    <p>Sub-target an enemy's modules to cripple rather than just delete: kill the <b><a href="../engineering/modules.html#module-power-plant">Power Plant</a></b> (forces a malfunction or outright kill), <b>Drives</b> (immobilise), <b><a href="../engineering/modules.html#module-frame-shift-drive">FSD</a></b> (stop it fleeing), or <b><a href="../engineering/modules.html#module-power-distributor">Power Distributor</a></b> (starve its guns and shields). Cannons and railguns with high per-shot damage are best for this; it's how you stop a fleeing assassination target or disable a piracy mark without destroying its cargo.</p>
 
     <h3 class="subhead">Defences &amp; utilities</h3>
     <div class="cards two">
@@ -155,25 +155,25 @@
         <span class="ico">Survival modules</span>
         <ul class="bullets">
           <li><b>Shields</b> — Bi-Weave (fast regen, lower buffer) for sustained PvE; Reinforced/Prismatic (big buffer) for spikes and PvP.</li>
-          <li><b>Shield Boosters</b> — Heavy Duty for raw buffer; Resistance Augmented to plug resist holes.</li>
+          <li><b>Shield Boosters</b> — Heavy Duty for raw buffer; <a href="../engineering/blueprints.html#blueprint-shield-booster-resistance-augmented">Resistance Augmented</a> to plug resist holes.</li>
           <li><b>SCBs</b> — Shield Cell Banks instantly restore a chunk; ammo-limited and generate heat.</li>
-          <li><b>HRP / MRP</b> — Hull and Module Reinforcement Packages; your second life when shields drop.</li>
+          <li><b><a href="../engineering/modules.html#module-hull-reinforcement">HRP</a> / <a href="../engineering/modules.html#module-module-reinforcement">MRP</a></b> — Hull and <a href="../engineering/modules.html#module-module-reinforcement">Module Reinforcement</a> Packages; your second life when shields drop.</li>
         </ul>
       </div>
       <div class="card">
         <span class="ico">Utility mounts</span>
         <ul class="bullets">
-          <li><b>Chaff</b> — breaks enemy gimbal/turret lock for a few seconds. Huge survivability.</li>
-          <li><b>Heat Sink</b> — instant heat dump; also escapes some lock-ons.</li>
-          <li><b>Point Defence</b> — shoots down incoming missiles &amp; hatch-breaker limpets.</li>
-          <li><b>Kill Warrant Scanner (KWS)</b> — reveals bounties from other jurisdictions and <b>stacks the payout</b>. Near-mandatory for bounty hunting.</li>
+          <li><b><a href="../engineering/modules.html#module-countermeasures">Chaff</a></b> — breaks enemy gimbal/turret lock for a few seconds. Huge survivability.</li>
+          <li><b><a href="../engineering/modules.html#module-countermeasures">Heat Sink</a></b> — instant heat dump; also escapes some lock-ons.</li>
+          <li><b><a href="../engineering/modules.html#module-countermeasures">Point Defence</a></b> — shoots down incoming missiles &amp; hatch-breaker limpets.</li>
+          <li><b><a href="../engineering/modules.html#module-scanners">Kill Warrant Scanner</a> (<a href="../engineering/modules.html#module-scanners">KWS</a>)</b> — reveals bounties from other jurisdictions and <b>stacks the payout</b>. Near-mandatory for bounty hunting.</li>
         </ul>
       </div>
     </div>
 
     <h3 class="subhead">NPC rank &amp; the opposition</h3>
-    <p>NPCs carry their own combat rank ladder — <b>Harmless → Mostly Harmless → Novice → Competent → Expert → Master → Dangerous → Deadly → Elite</b>. Higher-ranked NPCs fly better-built ships and pip-flip against you. The reward for a kill scales with the target's danger, so a Deadly Anaconda is both harder and far more lucrative than a Harmless Sidewinder.</p>
-    <div class="callout"><span class="lbl">Doctrine reminder</span><p>The combat engineering pattern: <b>G5 Overcharged power plant</b> (Thermal Spread), <b>G5 Overcharged multi-cannons</b>, exactly <b>one Corrosive Shell</b> multi-cannon per ship (it debuffs the target so <em>all</em> your weapons hit harder), <b>Auto Loader</b> on the rest, <b>Dirty Drives</b> thrusters, <b>Heavy Duty</b> boosters &amp; HRPs. Apply experimentals last, in a single in-person engineer visit.</p></div>
+    <p>NPCs carry their own combat rank ladder — <b>Harmless → Mostly Harmless → Novice → Competent → Expert → Master → Dangerous → Deadly → Elite</b>. Higher-ranked NPCs fly better-built ships and pip-flip against you. The reward for a kill scales with the target's danger, so a Deadly <a href="../ships/dossiers/anaconda-combat.html">Anaconda</a> is both harder and far more lucrative than a Harmless <a href="../ships/dossiers/sidewinder-mk-i-combat.html">Sidewinder</a>.</p>
+    <div class="callout"><span class="lbl">Doctrine reminder</span><p>The combat engineering pattern: <b>G5 <a href="../engineering/blueprints.html#blueprint-power-plant-overcharged">Overcharged</a> <a href="../engineering/blueprints.html#blueprint-group-power-plant">power plant</a></b> (Thermal Spread), <b>G5 Overcharged multi-cannons</b>, exactly <b>one Corrosive Shell</b> multi-cannon per ship (it debuffs the target so <em>all</em> your weapons hit harder), <b>Auto Loader</b> on the rest, <b><a href="../engineering/blueprints.html#blueprint-thrusters-dirty-drive-tuning">Dirty Drives</a></b> <a href="../engineering/modules.html#module-thrusters">thrusters</a>, <b>Heavy Duty</b> boosters &amp; HRPs. Apply experimentals last, in a single in-person engineer visit.</p></div>
   </section>
 
   <!-- 3 — THE ACTIVITIES -->
@@ -186,10 +186,10 @@
       <colgroup><col style="width:21%"><col style="width:13%"><col style="width:18%"><col style="width:48%"></colgroup>
       <thead><tr><th>Activity</th><th>Pays in</th><th>Difficulty</th><th>What it is</th></tr></thead>
       <tbody>
-        <tr><td class="mod">RES (Resource Extraction)</td><td>Bounty vouchers</td><td><span class="pill lo">Entry</span></td><td>Bounty hunting in metallic/rocky rings. Low/Std/High have system security backing you up; <b>Hazardous</b> does not. The bread-and-butter loop — scan with KWS, kill the wanted, collect.</td></tr>
+        <tr><td class="mod">RES (Resource Extraction)</td><td>Bounty vouchers</td><td><span class="pill lo">Entry</span></td><td>Bounty hunting in metallic/rocky rings. Low/Std/High have system security backing you up; <b>Hazardous</b> does not. The bread-and-butter loop — scan with <a href="../engineering/modules.html#module-scanners">KWS</a>, kill the wanted, collect.</td></tr>
         <tr><td class="mod">Nav Beacon</td><td>Bounty vouchers</td><td><span class="pill lo">Entry</span></td><td>Scan the main-star nav beacon and ships warp in. Lower density than RES but no ring to navigate. A <b>Compromised</b> nav beacon has richer targets and no security.</td></tr>
         <tr><td class="mod">Massacre / pirate-kill missions</td><td>Mission CR (big)</td><td><span class="pill md">Mid</span></td><td><b>Stack</b> several kill missions from a hub bordering an anarchy system, then farm the kills in one place. The classic high-credit combat earner when stacked correctly.</td></tr>
-        <tr><td class="mod">Assassination missions</td><td>Mission CR</td><td><span class="pill md">Mid</span></td><td>Hunt a single named target who arrives by interdiction or at a USS. Sub-target their FSD so they can't flee. Higher skill, clean payout.</td></tr>
+        <tr><td class="mod">Assassination missions</td><td>Mission CR</td><td><span class="pill md">Mid</span></td><td>Hunt a single named target who arrives by interdiction or at a USS. Sub-target their <a href="../engineering/modules.html#module-frame-shift-drive">FSD</a> so they can't flee. Higher skill, clean payout.</td></tr>
         <tr><td class="mod">Conflict Zones (space)</td><td>Combat bonds</td><td><span class="pill md">Mid</span></td><td>Faction battles, Low/Med/High intensity. Pick a side, kill enemies for bonds, complete objectives (capture ships, kill specialists). <b>High-intensity CZs punish thin hulls</b> — this is where tank + sustained DPS matter most.</td></tr>
         <tr><td class="mod">On-foot CZ (Odyssey)</td><td>Bonds + merits</td><td><span class="pill md">Mid</span></td><td>Frontline Solutions infantry battles — combat suits, ground weapons, dropships. A whole separate skill set, but stacks influence and Powerplay merits like space CZs.</td></tr>
         <tr><td class="mod">Piracy</td><td>Stolen cargo</td><td><span class="pill md">Mid</span></td><td>Interdict a hauler, hatch-breaker its cargo loose (or threaten until it drops), scoop and fence. A combat/trade hybrid — see the trading dossier for the selling side.</td></tr>
@@ -199,7 +199,7 @@
     </table>
     </div>
 
-    <div class="callout"><span class="lbl">Powerplay caveat (from the playbook)</span><p>Only <b>combat-type</b> Powerplay actions bank merits — kills in contested space. <b>Passenger missions earn zero Powerplay merits under any Power.</b> The recommended pledge is <span class="acc"><a href="../systems/powerplay.html#powerplay-jerome-archer">Jerome Archer</a></span> (<a href="../systems/superpower-rank.html#superpower-fed">Federation</a>, combat ethos): bounty hunting in his territory simultaneously doubles bounty credits, banks merits, <em>and</em> advances the Tod McQuinn unlock.</p></div>
+    <div class="callout"><span class="lbl">Powerplay caveat (from the playbook)</span><p>Only <b>combat-type</b> Powerplay actions bank merits — kills in contested space. <b>Passenger missions earn zero Powerplay merits under any Power.</b> The recommended pledge is <span class="acc"><a href="../systems/powerplay.html#powerplay-jerome-archer">Jerome Archer</a></span> (<a href="../systems/superpower-rank.html#superpower-fed">Federation</a>, combat ethos): bounty hunting in his territory simultaneously doubles bounty credits, banks merits, <em>and</em> advances the <a href="../engineering/engineers.html#engineer-tod-mcquinn">Tod McQuinn</a> unlock.</p></div>
   </section>
 
   <!-- 4 — GETTING STARTED -->
@@ -207,11 +207,11 @@
     <div class="sec-head"><span class="sec-num">04</span><h2>Getting Started &mdash; Early Game</h2></div>
     <p>The goal of the early game is to learn the loop cheaply, in a hull you can afford to rebuy, before you sink engineering into anything.</p>
     <ol class="steps">
-      <li><b>Pick a cheap, tough small hull.</b> A small-pad combat ship such as the <span class="acc">Viper Mk IV</span> is fast, durable and cheap to rebuy. Don't engineer it yet; learn in it.</li>
-      <li><b>Fit the bounty-hunting kit.</b> A mix of thermal (a couple of pulse/burst lasers) and kinetic (multi-cannons), a Bi-Weave shield, two shield boosters, a chaff launcher, and a <b>Kill Warrant Scanner</b>. The KWS pays for itself in one session.</li>
+      <li><b>Pick a cheap, tough small hull.</b> A small-pad combat ship such as the <span class="acc"><a href="../ships/dossiers/viper-mk-iv-combat.html">Viper Mk IV</a></span> is fast, durable and cheap to rebuy. Don't engineer it yet; learn in it. The <a href="../ships/by-role/combat.html">Combat — Ship Comparison</a> page will help you pick an appropriate combat ship.</li>
+      <li><b>Fit the bounty-hunting kit.</b> A mix of thermal (a couple of pulse/burst <a href="../engineering/modules.html#module-lasers">lasers</a>) and kinetic (multi-cannons), a Bi-Weave shield, two shield boosters, a <a href="../engineering/blueprints.html#blueprint-group-chaff-launcher">chaff launcher</a>, and a <b><a href="../engineering/modules.html#module-scanners">Kill Warrant Scanner</a></b>. The <a href="../engineering/modules.html#module-scanners">KWS</a> pays for itself in one session.</li>
       <li><b>Go to a Low or Standard RES.</b> Drop into a ringed planet's RES; system security ships fight alongside you. Let them tank while you learn to land shots and flip pips.</li>
       <li><b>Scan before you shoot.</b> Target a ship, scan it — only engage <span class="acc">WANTED</span> ships, or you'll earn a bounty on your own head. KWS-scan to stack the voucher value.</li>
-      <li><b>Practise pip discipline.</b> 4 WEP on the attack, snap to 4 SYS when shields drop. Chaff when a gimballed NPC is tearing you up. Boost away to reset if you're losing.</li>
+      <li><b>Practise pip discipline.</b> 4 WEP on the attack, snap to 4 SYS when shields drop. <a href="../engineering/modules.html#module-countermeasures">Chaff</a> when a gimballed NPC is tearing you up. Boost away to reset if you're losing.</li>
       <li><b>Bank often.</b> Bounty vouchers are only paid when redeemed at a station (or any Interstellar Factors contact). Don't hoard a fortune in a ship that can be destroyed.</li>
     </ol>
     <div class="callout"><span class="lbl">Don't die broke</span><p>An undestroyed ship carries unredeemed vouchers; a destroyed one loses them. Cash out every couple of runs, and never fly a fit you can't afford to rebuy. Respawn happens at the <b>nearest rebuy-capable port to where you died</b> — including a fleet carrier — not your last dock.</p></div>
@@ -223,16 +223,16 @@
     <p>The mid-game is where combat stops being "can I win this fight" and becomes "how fast can I clear the site." Three things change: you <b>engineer</b>, you move to a <b>medium hull</b>, and you start <b>stacking</b> rewards.</p>
 
     <h3 class="subhead">Engineer the guns and the tank</h3>
-    <p>Run the standard pattern: Felicity Farseer (FSD, done), then <span class="acc">Tod McQuinn</span> for G5 Overcharged multi-cannons, a G5 Overcharged power plant with Thermal Spread, Dirty Drives, and Heavy Duty boosters/HRPs. Engineer the <b>module, not the ship</b> — an engineered gun keeps its mods when you move it between hulls, so the spend is portable.</p>
+    <p>Run the standard pattern: <a href="../engineering/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (<a href="../engineering/modules.html#module-frame-shift-drive">FSD</a>, done), then <span class="acc"><a href="../engineering/engineers.html#engineer-tod-mcquinn">Tod McQuinn</a></span> for G5 <a href="../engineering/blueprints.html#blueprint-power-plant-overcharged">Overcharged</a> multi-cannons, a G5 <a href="../engineering/blueprints.html#blueprint-power-plant-overcharged">Overcharged</a> <a href="../engineering/blueprints.html#blueprint-group-power-plant">power plant</a> with Thermal Spread, <a href="../engineering/blueprints.html#blueprint-thrusters-dirty-drive-tuning">Dirty Drives</a>, and Heavy Duty boosters/HRPs. Engineer the <b>module, not the ship</b> — an engineered gun keeps its mods when you move it between hulls, so the spend is portable.</p>
 
     <h3 class="subhead">Graduate to a medium gun platform</h3>
-    <p>Step up to a medium-pad flagship such as the <span class="acc">Python Mk II</span>, which carries roughly 84% of a Corvette's hardpoint tonnage but lands on a medium pad and rebuys for far less. This is the workhorse for High RES and medium-intensity CZs.</p>
+    <p>Step up to a medium-pad flagship such as the <span class="acc"><a href="../ships/dossiers/python-mk-ii-combat.html">Python Mk II</a></span>, which carries roughly 84% of a <a href="../ships/dossiers/federal-corvette-combat.html">Corvette</a>'s hardpoint tonnage but lands on a medium pad and rebuys for far less. This is the workhorse for High RES and medium-intensity CZs.</p>
 
     <h3 class="subhead">Start stacking rewards</h3>
     <ul class="bullets">
       <li><b>Massacre mission stacking</b> — pull multiple kill missions targeting the same anarchy faction from a hub system, then farm the kills once. Every kill ticks several missions at once.</li>
       <li><b>Conflict zone bond farming</b> — pick the winning side, focus high-value targets and specialists, and turn bonds in to the controlling faction for the influence bonus.</li>
-      <li><b>Rank missions</b> — combat reputation surfaces Federal/Imperial Navy missions; this is where the long Navy-rank grind toward the capstone ships actually happens (see <a href="#section-how-combat-interacts-with-other-systems">Section 9</a>).</li>
+      <li><b>Rank missions</b> — combat reputation surfaces <a href="../systems/superpower-rank.html#superpower-fed">Federal</a>/<a href="../systems/superpower-rank.html#superpower-emp">Imperial</a> Navy missions; this is where the long Navy-rank grind toward the capstone ships actually happens (see <a href="#section-how-combat-interacts-with-other-systems">How Combat Interacts With Other Systems</a>).</li>
     </ul>
 
     <div class="callout"><span class="lbl">Throughput beats alpha</span><p>Mid-game earnings are a <b>kills-per-hour</b> game, not a damage-per-shot game. Exploiting allied security/wing ships to skip the shield phase, clean pip discipline, and not chasing fleeing targets matter more than a marginally bigger gun.</p></div>
@@ -244,47 +244,47 @@
     <p>End-game combat is about <b>sustained throughput in the hardest venues</b> and the prestige ladders.</p>
     <ul class="bullets">
       <li><b>High-intensity Conflict Zones</b> — the densest combat-bond farm in the game for a fully-engineered large hull. A geared ship clears bonds continuously; thin hulls get deleted.</li>
-      <li><b>The capstone gunship</b> — the <span class="acc">Federal Corvette</span> (Rear Admiral-gated, ~187M CR) or Imperial Cutter as the tanky alternative. The whole Federal thesis builds toward this.</li>
+      <li><b>The capstone gunship</b> — the <span class="acc"><a href="../ships/dossiers/federal-corvette-combat.html">Federal Corvette</a></span> (Rear Admiral-gated, ~187M CR) or <a href="../ships/dossiers/imperial-cutter-combat.html">Imperial Cutter</a> as the tanky alternative. The whole Federal thesis builds toward this.</li>
       <li><b>Combat Elite</b> — grinding the combat rank to Elite (and Elite I–V beyond) is a long-tail prestige goal, achieved naturally through everything above.</li>
       <li><b>Top-tier Powerplay</b> — high merit standing unlocks Power-specific modules (e.g. prismatic shields, Powerplay weapons) that feed straight back into your combat builds.</li>
       <li><b>PvP &amp; Community Goal combat</b> — the skill ceiling: FA-off, fixed-weapon convergence, min-maxed defensive fits.</li>
     </ul>
-    <div class="callout"><span class="lbl">The endgame</span><p>The end-game combat arc is explicit: finish the engineering spend across your combat ships, grind <b>Federal Navy rank to Rear Admiral</b>, and stand up the Corvette as the large-pad flagship — with a medium hull like the Python Mk II remaining the daily driver.</p></div>
+    <div class="callout"><span class="lbl">The endgame</span><p>The end-game combat arc is explicit: finish the engineering spend across your combat ships, grind <b><a href="../systems/superpower-rank.html#superpower-fed">Federal</a> Navy rank to Rear Admiral</b>, and stand up the <a href="../ships/dossiers/federal-corvette-combat.html">Corvette</a> as the large-pad flagship — with a medium hull like the <a href="../ships/dossiers/python-mk-ii-combat.html">Python Mk II</a> remaining the daily driver.</p></div>
   </section>
 
   <!-- 7 — BEST SHIPS -->
   <section id="section-best-ships-for-the-role">
     <div class="sec-head"><span class="sec-num">07</span><h2>Best Ships for the Role</h2></div>
-    <p>Full head-to-head ratings, costs and per-class breakdowns live in the dedicated comparison dossier — this is just the shortlist by stage. <em>(References by name for now; hyperlinks to follow.)</em></p>
+    <p>Full head-to-head ratings, costs and per-class breakdowns live in the dedicated comparison dossier — this is just the shortlist by stage.</p>
 
     <div class="cards four">
       <div class="card">
         <span class="ico">Entry — small pad</span>
         <h4>Viper Mk IV</h4>
         <p><b>Cheap, fast, tough learner.</b> The small-pad interceptor for RES and nav-beacon work while you build toward the heavier platforms.</p>
-        <div class="micro">See <b>Viper Mk IV — Combat Dossier</b></div>
+        <div class="micro">See <b><a href="../ships/dossiers/viper-mk-iv-combat.html">Viper Mk IV</a> — Combat Dossier</b></div>
       </div>
       <div class="card">
         <span class="ico">Flexible — small pad</span>
         <h4>Cobra Mk V</h4>
         <p><b>Multirole all-rounder.</b> Combat plus light utility in a small footprint — for missions that demand a small pad but still want teeth.</p>
-        <div class="micro">See <b>Cobra Mk V — Combat Dossier</b></div>
+        <div class="micro">See <b><a href="../ships/dossiers/cobra-mk-v-combat.html">Cobra Mk V</a> — Combat Dossier</b></div>
       </div>
       <div class="card">
         <span class="ico">Mid — medium pad</span>
         <h4>Python Mk II</h4>
-        <p><b>Medium combat flagship.</b> Six-internal dedicated gun platform, ~84% of Corvette hardpoint tonnage on a medium pad. The doctrine centrepiece.</p>
-        <div class="micro">See <b>Python Mk II — Combat Dossier</b></div>
+        <p><b>Medium combat flagship.</b> Six-internal dedicated gun platform, ~84% of <a href="../ships/dossiers/federal-corvette-combat.html">Corvette</a> hardpoint tonnage on a medium pad. The doctrine centrepiece.</p>
+        <div class="micro">See <b><a href="../ships/dossiers/python-mk-ii-combat.html">Python Mk II</a> — Combat Dossier</b></div>
       </div>
       <div class="card">
         <span class="ico">End — large pad</span>
         <h4>Federal Corvette</h4>
         <p><b>Capstone gunship.</b> Rear-Admiral-gated ~187M CR endgame large combat ship — the top of the combat ladder and the long-term goal.</p>
-        <div class="micro">See <b>Federal Corvette — Combat Dossier</b></div>
+        <div class="micro">See <b><a href="../ships/dossiers/federal-corvette-combat.html">Federal Corvette</a> — Combat Dossier</b></div>
       </div>
     </div>
 
-    <div class="callout"><span class="lbl">Full ranking</span><p>For every combat-capable hull in the game scored on one scale, grouped by pad class, with cost and engineering-grind figures, see the <b>Combat — Ship Comparison</b> role dossier. The ratings there match the per-ship manuals above.</p></div>
+    <div class="callout"><span class="lbl">Full ranking</span><p>For every combat-capable hull in the game scored on one scale, grouped by pad class, with cost and engineering-grind figures, see the <a href="../ships/by-role/combat.html"><b>Combat — Ship Comparison</b></a> role dossier. The ratings there match the per-ship manuals above.</p></div>
   </section>
 
   <!-- 8 — OUTCOMES -->
@@ -302,7 +302,7 @@
         <tr><td class="mod">BGS influence</td><td>Bonds/bounties handed to a faction</td><td>Combat directly shifts the background-simulation balance of power in a system — the lever for player factions and CG outcomes.</td></tr>
         <tr><td class="mod">Powerplay merits</td><td>Kills in contested/acquisition space</td><td>Bank toward Power rewards: Power-specific weapons, prismatic shields, rank perks. (Combat-type actions only.)</td></tr>
         <tr><td class="mod">Engineering materials</td><td>Ship-kill drops, USS/threat sites, HGEs</td><td>Manufactured materials and encoded data drop from kills — combat <em>feeds</em> the engineering that makes combat better.</td></tr>
-        <tr><td class="mod">Navy rank</td><td>Navy missions surfaced by combat rep</td><td>The path to the Federal Corvette (Rear Admiral) and Imperial Cutter (Duke). The two ladders are independent.</td></tr>
+        <tr><td class="mod">Navy rank</td><td>Navy missions surfaced by combat rep</td><td>The path to the <a href="../ships/dossiers/federal-corvette-combat.html">Federal Corvette</a> (Rear Admiral) and <a href="../ships/dossiers/imperial-cutter-combat.html">Imperial Cutter</a> (Duke). The two ladders are independent.</td></tr>
       </tbody>
     </table>
     </div>
@@ -315,11 +315,11 @@
     <div class="cards three">
       <div class="card">
         <h4>Engineering ↔ Combat</h4>
-        <p>A circular dependency: engineered guns and tanks make combat fast and survivable, and combat (kills, threat USS, HGEs) drops the manufactured materials and encoded data that engineering consumes. Tod McQuinn's unlock is itself a combat task.</p>
+        <p>A circular dependency: engineered guns and tanks make combat fast and survivable, and combat (kills, threat USS, HGEs) drops the manufactured materials and encoded data that engineering consumes. <a href="../engineering/engineers.html#engineer-tod-mcquinn">Tod McQuinn</a>'s unlock is itself a combat task.</p>
       </div>
       <div class="card">
         <h4>Powerplay ↔ Combat</h4>
-        <p>Pledging a combat Power (Jerome Archer) turns bounty hunting into a triple-dip: credits, merits, and unlock progress. Merit rewards then loop back as combat modules.</p>
+        <p>Pledging a combat Power (<a href="../systems/powerplay.html#powerplay-jerome-archer">Jerome Archer</a>) turns bounty hunting into a triple-dip: credits, merits, and unlock progress. Merit rewards then loop back as combat modules.</p>
       </div>
       <div class="card">
         <h4>BGS &amp; Conflict Zones</h4>
@@ -327,7 +327,7 @@
       </div>
       <div class="card">
         <h4>Navy Ranks ↔ Endgame Ships</h4>
-        <p>Combat reputation surfaces Federal/Imperial Navy missions; Navy rank gates the capstone hulls. Combat is both the means (rep, credits) and the motive (the Corvette) for the rank grind.</p>
+        <p>Combat reputation surfaces <a href="../systems/superpower-rank.html#superpower-fed">Federal</a>/<a href="../systems/superpower-rank.html#superpower-emp">Imperial</a> Navy missions; Navy rank gates the capstone hulls. Combat is both the means (rep, credits) and the motive (the <a href="../ships/dossiers/federal-corvette-combat.html">Corvette</a>) for the rank grind.</p>
       </div>
       <div class="card">
         <h4>Materials &amp; Trading</h4>
@@ -348,12 +348,12 @@
       <li><b>One Corrosive Shell, never two.</b> The debuff doesn't stack usefully — one multi-cannon with Corrosive Shell boosts <em>all</em> your weapons against that target; everything else runs Auto Loader.</li>
       <li><b>Pip-flipping is free DPS and free tank.</b> No module upgrade matches the value of disciplined 4-WEP / 4-SYS swapping.</li>
       <li><b>Let allies eat the shield phase.</b> In Low/Std RES and CZs, let security or your faction's wing strip shields, then you cash the hull-phase kill. Throughput, not heroics.</li>
-      <li><b>KWS pays the rent.</b> A Kill Warrant Scanner stacks bounty value across jurisdictions — never bounty-hunt without one.</li>
+      <li><b><a href="../engineering/modules.html#module-scanners">KWS</a> pays the rent.</b> A <a href="../engineering/modules.html#module-scanners">Kill Warrant Scanner</a> stacks bounty value across jurisdictions — never bounty-hunt without one.</li>
       <li><b>Bank vouchers and bonds often.</b> They're only worth anything redeemed; a rebuy wipes the unbanked ones.</li>
-      <li><b>Sub-target to control the fight.</b> FSD to stop a runner, Drives to pin, Power Plant to finish — high-alpha cannons and rails do this best.</li>
+      <li><b>Sub-target to control the fight.</b> <a href="../engineering/modules.html#module-frame-shift-drive">FSD</a> to stop a runner, Drives to pin, <a href="../engineering/modules.html#module-power-plant">Power Plant</a> to finish — high-alpha cannons and rails do this best.</li>
       <li><b>Engineer modules, not ships.</b> Mods travel with the module across your hulls, so combat spend is portable — build for reuse.</li>
     </ul>
-    <div class="callout"><span class="lbl">Bottom line</span><p>Combat is the engine room of the whole progression plan: it earns the credits, drops the materials, banks the merits, and grinds the rep that everything else — engineering, Powerplay, the Corvette — runs on. Get the four-beat loop and pip discipline right, and every other reward track advances on autopilot.</p></div>
+    <div class="callout"><span class="lbl">Bottom line</span><p>Combat is the engine room of the whole progression plan: it earns the credits, drops the materials, banks the merits, and grinds the rep that everything else — engineering, Powerplay, the <a href="../ships/dossiers/federal-corvette-combat.html">Corvette</a> — runs on. Get the four-beat loop and pip discipline right, and every other reward track advances on autopilot.</p></div>
   </section>
 
   <!-- Sources -->
