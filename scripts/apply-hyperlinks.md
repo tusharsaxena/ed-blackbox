@@ -30,6 +30,11 @@ is resolved by surrounding context:
   adjectives (`Heavy Duty`, `Lightweight`, `Overcharged`) and effects shared across modules
   are **logged below-bar** unless their module is named nearby.
 - **superpowers** (`Federation`/`Empire`/`Alliance`) link only near rank context.
+- **plurals** — each non-ship surface form auto-registers a simple `+s` plural, so a
+  singular alias/label (`Shield Booster`, `SCB`, `Heat Sink Launcher`, `Beam Laser`) also
+  matches the plural prose (`Shield Boosters`, `SCBs`, …). `block_forms` are honoured for
+  the singular too, so a blocked term (`cannon`) stays blocked in the plural (`cannons`).
+  Ship proper nouns stay singular-only.
 
 Confidence **≥ 0.75 is applied**; **every** candidate (incl. below-bar) is written to
 `data/links/link-candidates.csv` (one row per occurrence: target, confidence, reason,

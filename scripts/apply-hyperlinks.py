@@ -143,6 +143,16 @@ def load_dict():
         forms.setdefault(form.lower(), []).append((kind, key, form))
         cs = kind == "ship" or is_acronym(form)
         surfaces.append((form, cs))
+        # English-plural variant so a singular surface ("Shield Booster", "SCB",
+        # "Heat Sink Launcher", "Beam Laser") also matches plural prose ("Shield
+        # Boosters", "SCBs", …). The matcher is exact AND the resolver looks the
+        # matched text up by exact key, so the plural must be registered in BOTH
+        # `forms` and `surfaces`. Ship proper nouns stay singular-only (plurals
+        # are vanishingly rare in prose and risk false common-noun hits).
+        if kind != "ship" and not form.lower().endswith("s"):
+            plural = form + "s"
+            forms.setdefault(plural.lower(), []).append((kind, key, plural))
+            surfaces.append((plural, cs))
 
     for e in base["entries"]:
         for sf in e.get("surface_forms", []):
@@ -223,7 +233,10 @@ def rel_href(cur_file: Path, target_rel: str, anchor: str) -> str:
 
 def resolve(matched, key, candidates, window, cur_file, D):
     """Return (kind,target_rel,anchor,family,label,conf,reason) or None to skip."""
-    if key in D["block_forms"]:
+    # honour block_forms for the matched text AND its singular (the plural
+    # surfaces registered in load_dict must not bypass a curated block, e.g.
+    # "cannon" blocked -> "cannons" must stay blocked too)
+    if key in D["block_forms"] or (key.endswith("s") and key[:-1] in D["block_forms"]):
         return None
     wl = window.lower()
     bp_ctx = any(k in wl for k in D["ctx"]["blueprint_keywords"])
