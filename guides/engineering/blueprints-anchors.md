@@ -53,9 +53,6 @@ Each module type now has its own anchor (`#blueprint-group-…`) in addition to 
 - **Reinforced** — `#blueprint-bi-weave-shield-generator-reinforced`
 - **Thermal Resistant** — `#blueprint-bi-weave-shield-generator-thermal-resistant`
 
-## Cargo Rack — `#blueprint-group-cargo-rack`
-- **Increased Capacity** — `#blueprint-cargo-rack-increased-capacity`
-
 ## Collector Limpet Controller — `#blueprint-group-collector-limpet-controller`
 - **Lightweight** — `#blueprint-collector-limpet-controller-lightweight`
 - **Reinforced** — `#blueprint-collector-limpet-controller-reinforced`
