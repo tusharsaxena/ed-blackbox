@@ -87,6 +87,9 @@ tokens  →  components  →  templates  →  pages
   used by `checklist.html`) and the **`.bp-*`** blueprint accordion set (`.bp-card`,
   `.bp-modgroup`, `.bp-table`, `.bp-ctx`, `.bp-fold`, `.bp-rec`, `.bp-exp-tag`) used by
   `blueprints.html`. (`.ratebox`/`.dial` are now used only by `ships/rating-methodology.html`.)
+  The **`.vchips`** strip (per-role `.vchip.r-<role>` pills carrying a `.vrole` label + a
+  `.vrate` `NN/100`) backs the cross-variant "Other role builds of this ship" block injected
+  into dossiers (§6).
 - **Theming model — one knob.** A page re-themes by overriding only a **five-token
   accent group** (`--accent`, `--accent-lt`, `--accent-deep`, `--accent-soft`,
   `--accent-glow`) in a tiny page-level `<style>`. The brand frame (grid, glows,
@@ -158,9 +161,9 @@ guides/
 
 **File census:** ~770 files — 170 HTML (166 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
-3 wired logos + concept candidates under `logos/concepts/`), 253 Markdown (prose docs +
+3 wired logos + concept candidates under `logos/concepts/`), 256 Markdown (prose docs +
 **167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 43 `.py` + 8 `.mjs`) and its data
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 44 `.py` + 8 `.mjs`) and its data
 (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
@@ -276,6 +279,11 @@ The first step toward "content-as-data". Convention: every task script lives in
   vendored `data/fdev/shipyard.csv`). `audit-ship-loadouts.py` is the deterministic completeness
   check over all SLEF builds (missing core slots incl. **Bulkheads**, sizing, symbol validity,
   state drift, engineering/experimental coverage).
+- **Variant pills** — `add-variant-builds.py` appends an *"Other role builds of this ship"* pill
+  block to the end of each dossier's §Role & Overview, linking the same hull's sibling-role
+  dossiers with their `NN/100` ratings (the `.vchips`/`.vchip` component, §3). Ratings are read
+  live from the sibling headlines; idempotent, and singleton hulls are skipped — so it lands on
+  the **115 multi-variant dossiers** (of 128).
 
 Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance

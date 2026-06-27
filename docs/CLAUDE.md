@@ -191,6 +191,12 @@ python3 scripts/audit-ratings-consistency.py    # verify 0 mismatches across all
   `generate-anchor-files.sh` on a first insert). `compute-ship-ratings.py` preserves this
   authored data across rebuilds. Schema: `data/ship-ratings/README.md`; uses its own
   `td.fct`/`span.scval` classes so the ratings tooling ignores it.
+- **Cross-variant pills.** Each dossier's §Role & Overview ends with an *"Other role builds
+  of this ship"* pill row (`.vchips`, `.nolink`-wrapped) linking the same hull's sibling-role
+  dossiers with their live `NN/100`. It reads ratings from the sibling headlines, so after
+  changing a rating — or adding/removing a dossier — run `python3 scripts/add-variant-builds.py`
+  to refresh it (alphabetical; idempotent; singletons skipped; adds no `<section id>`, so no
+  anchor regen). Docs: `scripts/add-variant-builds.md`.
 
 ### Change a ship loadout (3-State Loadout / Engineering Plan tables)
 **`data/ship-loadouts/<dossier-basename>.json` is the canonical source of truth for every
@@ -308,6 +314,7 @@ python3 scripts/compute-ship-ratings.py  # rebuild data/ship-ratings/ (source of
 python3 scripts/reconcile-ratings-html.py         # push data/ship-ratings/ into the by-role pages (+resort)
 python3 scripts/build-ship-loadouts.py            # build dossier 3-State Loadout + Engineering Plan tables + Coriolis/EDSY/SLEF export rows from data/ship-loadouts/ (canonical)
 python3 scripts/build-ship-scorecards.py          # build the dossier §"Why This Rating" scorecard from data/ship-ratings/ (canonical)
+python3 scripts/add-variant-builds.py             # refresh each dossier's §Role & Overview "Other role builds" variant pill row (sibling-role links + live NN/100) from the dossiers
 python3 scripts/audit-ship-loadouts.py            # deterministic completeness/consistency audit of all SLEF loadouts (missing slots, sizing, engineering, experimentals)
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```

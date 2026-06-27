@@ -22,6 +22,7 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Chips | `.chip` (`.amber` / `.fed` / `.maroon` / `.faint`) | inline tags / flags |
 | Key-value chip | `.chip.kv` (`span` label › `b` value) | masthead label+value spec chip (e.g. `Class · Small`) |
 | Pills | `.pill` (`.lo` / `.md` / `.hi` / `.fed` / `.neutral`) | bold status / severity tags |
+| Role-variant pills | `.vchips` > `.vchip` (`.r-<role>` for the 7 role hues; inner `.vrole` name + `.vrate` `NN`/100) | row of links to the same hull's **other role dossiers**, under a `.subhead` in a dossier's §Role & Overview |
 | Key caps | `.kbd` | keyboard / control references |
 | Accent text | `.acc` | inline emphasis in the page accent |
 | Record card | `.rec-list` > `.rec` (`.ac-amber/.ac-fed/.ac-maroon/.ac-good`) | the repeating data entry |
@@ -100,6 +101,13 @@ The workhorse repeating entry.
   line; each `li` has a bold `.st` title + prose. Use `<ol>` for true sequences.
 - **Pills / kbd / accent text.** `.pill` is bolder/squarer than `.chip`, with severity
   colours. `.kbd` = control key cap. `.acc` = inline accent emphasis.
+- **Role-variant pills (`.vchips`/`.vchip`).** A `flex-wrap` row of pill **links** to the
+  same hull's other role dossiers — placed under a `.subhead` ("Other role builds of this
+  ship") at the end of a dossier's §Role & Overview, wrapped in `.nolink`. Each `.vchip`
+  pairs `.vrole` (role name, condensed uppercase, in its role hue) with `.vrate` (the
+  headline-style rating: bold `--ink` number + dim `/100` `<small>`). Add **`.r-<role>`**
+  (`combat`/`ax`/`exploration`/`mining`/`multipurpose`/`passenger`/`trading`) to tint the
+  pill border + role name per the `--role-*` tokens.
 - **Icon callout (`.callout.icon`).** Adds a leading glyph in the accent: `★` tip,
   `▲` warn/danger, `◈` default. Label via `.lbl` (or `.co-eyebrow`).
 - **Location readout (`.loc-card`).** Dashed k/v rows; coordinate value uses
