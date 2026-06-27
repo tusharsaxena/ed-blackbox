@@ -38,6 +38,7 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Multi-column | `.cols-2` / `.cols-3` | responsive column layout (collapses to 1 under 680px) |
 | Card grid | `.cards.<count>` > `.card` (`.ico`, h4, p; **amber top border by default**, `.ac-amber/.ac-fed/.ac-maroon/.ac-good` to override) | feature / objective cards; `.four`/`.three`/`.two`/`.one` sets cards-per-row |
 | Pick cards | `.pickgrid` > `.pickcard` (`.who`/`.pick`/`.alt`) | "who should use this" recommendations |
+| FAQ glossary | `.faq` > `.faq-row` (`.faq-q` amber question, left · `.faq-a` answer, right) | two-column Q&A list (stacks under 760px) — lighter than a stack of cards |
 | Step timeline | `ol.steps`/`ul.steps` > `li` (`.st` + p) | numbered procedures |
 | HUD panel | `.hud` (+ `.hud-c1` `.hud-c2` spans) | framed key takeaway / readout |
 | Callout | `.callout` (**amber edge by default**; `.tip` / `.warn` / `.danger`; add `.icon` for a glyph) | asides, caveats, warnings |
@@ -90,6 +91,10 @@ The workhorse repeating entry.
   `.ico` eyebrow + h4 + prose. Pick cards = recommendations, coloured **left** edge:
   `.who` (reader profile), `.pick` (the name — white like a card title, with the score/cost
   `<small>` on its own row beneath), prose, `.alt` "Also:" line.
+- **FAQ glossary (`.faq`).** A two-column Q&A list for a run of questions — `.faq-q`
+  (the question, amber, in the left 300px column) beside `.faq-a` (the answer, right),
+  each `.faq-row` hairline-separated. Stacks to one column under 760px. Use it instead of a
+  `.cards one` stack when a long FAQ would otherwise read as a wall of identical boxes.
 - **Amber by default; `.accent-page` to opt in.** Every component (cards, callouts, `.rec`,
   pick cards, `.hud`, `.dial`, the focus ring) paints with the **component accent** — amber
   on every page, *not* the per-page accent. The page accent themes only the masthead `.role`

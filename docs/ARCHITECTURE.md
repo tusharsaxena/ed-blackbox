@@ -89,7 +89,8 @@ tokens  →  components  →  templates  →  pages
   `blueprints.html`. (`.ratebox`/`.dial` are now used only by `ships/rating-methodology.html`.)
   The **`.vchips`** strip (per-role `.vchip.r-<role>` pills carrying a `.vrole` label + a
   `.vrate` `NN/100`) backs the cross-variant "Other role builds of this ship" block injected
-  into dossiers (§6).
+  into dossiers (§6); the **`.faq`** two-column glossary (`.faq-row` > `.faq-q`/`.faq-a`)
+  renders the landing page's §05 FAQ.
 - **Theming model — one knob.** A page re-themes by overriding only a **five-token
   accent group** (`--accent`, `--accent-lt`, `--accent-deep`, `--accent-soft`,
   `--accent-glow`) in a tiny page-level `<style>`. The brand frame (grid, glows,
