@@ -404,7 +404,10 @@ function renderTable(rows0, keysReq) {
     return `<div class="spec-wrap">${table}<div class="spec-fade"></div>` +
       `<button class="spec-pill" type="button">Show all classes &#9662;</button></div>`;
   }
-  return `<div class="spec-wrap">${table}</div>`;
+  // Flat (single class group) tables aren't collapsible — mark the wrap `open` so
+  // the collapsed-state rule (`.spec-wrap .cD tbody tr{display:none}`) doesn't hide
+  // their rows (they carry no `.cd-vis`, and there's no pill to reveal them).
+  return `<div class="spec-wrap open">${table}</div>`;
 }
 
 // Build the full appended spec block for a card from its CARD_MAP entry.
@@ -440,11 +443,13 @@ function matchClose(s, innerStart) {
 // before it (so re-running starts from a clean body).
 function stripSpecBlocks(body) {
   let out = body;
+  const WRAP = /<div class="spec-wrap(?: open)?">/;   // flat tables carry the `open` class
   for (;;) {
-    const m = /<p class="spec-label">[\s\S]*?<\/p>\s*<div class="spec-wrap">|<div class="spec-wrap">/.exec(out);
+    const m = /<p class="spec-label">[\s\S]*?<\/p>\s*<div class="spec-wrap(?: open)?">|<div class="spec-wrap(?: open)?">/.exec(out);
     if (!m) break;
-    const wrapStart = out.indexOf('<div class="spec-wrap">', m.index);
-    const innerStart = wrapStart + '<div class="spec-wrap">'.length;
+    const wm = WRAP.exec(out.slice(m.index));
+    const wrapStart = m.index + wm.index;
+    const innerStart = wrapStart + wm[0].length;
     const close = matchClose(out, innerStart);
     out = out.slice(0, m.index) + out.slice(close + '</div>'.length);
   }
