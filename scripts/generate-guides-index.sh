@@ -126,7 +126,9 @@ cat <<'HEAD'
       <a href="#section-systems">Systems</a>
     </nav>
     <div class="header-qn">
-      <span class="qn-eyebrow muted">On this page</span>
+      <div class="hdr-crumb solo">
+        <span class="hdr-crumb-title">Home</span>
+      </div>
       <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
       </button>
