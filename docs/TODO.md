@@ -52,7 +52,7 @@ Legend: ✅ done · ☐ not done.
 - ✅ **Refine the landing-page "What Is This Website" intro** — §01 of `scripts/generate-guides-index.sh` rewritten in a commander-to-commander voice (what the site is, what it covers, who it's for, how it's kept honest, where to start); regenerated `guides/index.html`.
 - ✅ **Refine the landing-page FAQ** — §05 placeholder Q&A replaced with 10 real entries (affiliation, currency of data, how ratings are decided, per-role scoring, Coriolis/EDSY/SLEF exports, the 3-state loadout columns, engineering, platform, coverage, and contributing/corrections last); regenerated.
 - ☐ **Define the Changelog update policy** — the landing-page Changelog (§06 in `generate-guides-index.sh`) is hand-written with FIXED dates and is **not** auto-edited. Decide when/how releases get added (e.g. on publish, per milestone) and document it.
-- ☐ Insert hyperlinks within the site into all pages - especially to Ships, Engineers, Blueprints - but also anywhere else that is relevant (e.g. if Page X reference Community Goals, hyperlink to the Community Goals guide) *(partial: powerplay §08 links each role's pick to its power card, and third-party-apps §18 links each app to its card; the Rating Methodology callout now links all 128 dossiers + 7 by-role pages, and Materials/Modules cross-link Blueprints & Engineers; broad Ships/Engineers/Blueprints cross-linking still pending)*
+- ✅ Insert hyperlinks within the site into all pages — especially to Ships, Engineers, Blueprints, plus anywhere else relevant. Built as a cross-link pipeline: `build-link-dictionary.py` (the term→target map; fuzzy/alias layer hand-curated in `data/links/link-aliases.json` + per-hull aliases in `data/ship-aliases/`), `apply-hyperlinks.py` (wraps every in-prose/list/table reference at confidence ≥ 0.75, skipping headings/nav/credits/`.nolink`), and `link-by-role-pages.py` (role-correct links for the by-role ladders). Open policy normalized by `normalize-link-targets.py`, audited by `verify-links.py` (0 broken). Recipe in `docs/CLAUDE.md` → *Cross-link a page (hyperlinks)*; below-bar candidates logged to `data/links/hyperlink-opportunities.xlsx` for review.
 - ☐ Publish on GitHub Pages
 
 ## Phase 2 — Content-as-data tooling
@@ -108,4 +108,4 @@ Legend: ✅ done · ☐ not done.
 
 ## Open decisions (needs a call before building)
 
-- ☐ Should hyperlinks open in a new tab/page? (decide the site-wide link target behavior)
+- ✅ Should hyperlinks open in a new tab/page? **Resolved:** internal links are relative and open in the **same tab**; external links open in a **new tab** (`target="_blank" rel="noopener noreferrer"`). Enforced by `scripts/normalize-link-targets.py` (byte-preserving, idempotent); documented in `docs/CLAUDE.md` → Conventions → *Links*.

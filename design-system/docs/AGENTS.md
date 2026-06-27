@@ -14,7 +14,7 @@ Design-system version: **1.3.0** (see `../CHANGELOG.md`).
 ```
 design-system/
 ├─ css/ed-blackbox.css     ← THE stylesheet. All tokens + components + a11y. Fonts via @import.
-├─ js/ed-blackbox.js        ← THE behaviours. 4 null-safe modules (quick-nav, TOC spy, coord copy, scroll-to-top).
+├─ js/ed-blackbox.js        ← THE behaviours. 5 null-safe modules (quick-nav, TOC spy, coord copy, scroll-to-top, Copy-SLEF).
 ├─ templates/
 │  ├─ starter-page.html     ← copy this to begin a new page
 │  └─ component-gallery.html← live demo of every component (visual + markup reference)

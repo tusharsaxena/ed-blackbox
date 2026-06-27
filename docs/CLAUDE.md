@@ -83,7 +83,12 @@ docs/              project docs (this file, architecture, todo)
    catalogued components only (`component-gallery.html` is the copy-paste reference). The
    masthead is kicker + `h1.title` (one amber `<span>` word + a `<span class="role">` tag)
    + `.masthead-meta`, then the briefing box (no `.subtitle`/`.chips`). Keep one `<h1>` with one
-   maroon `<span>` word.
+   maroon `<span>` word. Also set the page's location in two places: `nav.breadcrumbs`
+   (`Home › Section › … › Page`) and the matching header `.hdr-crumb` (current page as
+   `.hdr-crumb-title` over its parent trail in `.hdr-crumb-trail`) — both are placeholders in
+   the starter template. The crumb is breadcrumb-derived, so
+   `python3 scripts/header-crumb-from-breadcrumbs.py <path>` will (re)build it from the
+   breadcrumbs if you'd rather not write it by hand.
 5. Verify facts (rule 1); add it as a `card …` line in
    `scripts/generate-guides-index.sh` and re-run so it appears on the landing page.
 6. Re-run `scripts/generate-anchor-files.sh` so the page gets its sibling

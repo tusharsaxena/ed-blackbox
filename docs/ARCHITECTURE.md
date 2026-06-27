@@ -48,7 +48,7 @@ Each guide is one `.html` file that **links** the shared design system:
   <style>:root{--accent:…;--accent-lt:…;…}</style>   ← only the 5-token accent override
 </head>
 <body>
-  <header class="site-header"> brand · site-nav · header-qn (quick-nav + scroll-to-top) </header>
+  <header class="site-header"> brand · site-nav · header-qn (hdr-crumb breadcrumb + quick-nav + scroll-to-top) </header>
   <nav class="breadcrumbs"> Home › … › this page </nav>
   <div class="wrap">
     <header class="masthead"> kicker · h1.title (one accent word + .role tag) · masthead-meta </header>
@@ -92,11 +92,13 @@ tokens  →  components  →  templates  →  pages
   `--accent-glow`) in a tiny page-level `<style>`. The brand frame (grid, glows,
   masthead, title span) never changes. Convention: combat→maroon, exploration/
   liners→fed-blue, mining/default→amber, complete→green.
-- **`js/ed-blackbox.js`** — 4 null-safe vanilla modules, each guards for its own
+- **`js/ed-blackbox.js`** — 5 null-safe vanilla modules, each guards for its own
   markup so unused ones are inert: (1) quick-nav filter/search (matches both the visible
   name and an optional `data-kw` keyword string, and hides empty `.qn-sec` group headers),
   (2) TOC scrollspy via `IntersectionObserver`, (3) click-to-copy coordinates, (4) scroll-to-top
-  (header `.qn-totop` button). **Four engineering pages are fully self-contained** — instead
+  (header `.qn-totop` button), (5) loadout-export — copies a dossier's one-state SLEF to the
+  clipboard with a toast (the §3-State Loadout `.lex-copy[data-slef]` rows). **Four engineering
+  pages are fully self-contained** — instead
   of linking the shared file they run a **page-local** `<script>`: `modules.html`,
   `engineers.html`, `checklist.html`, `blueprints.html`. Each drives the richer quick-nav
   dialect (`.qn-item[data-target]` rows + clickable `.qn-item.qn-group` coloured headers,
@@ -107,7 +109,10 @@ tokens  →  components  →  templates  →  pages
 - **Site chrome (v1.1.0)** — a global sticky header (`.site-header` > `.hdr-inner`:
   `.brand` logo+wordmark, `.site-nav`, optional right-aligned `.header-qn` in-page
   quick-nav with a `.qn-totop` scroll-to-top button) and `nav.breadcrumbs`, both sitting
-  **outside `.wrap`**. The quick-nav lives only in the header; the old standalone
+  **outside `.wrap`**. The `.header-qn` now leads with a `.hdr-crumb` block — the current
+  page title over its parent breadcrumb trail (the breadcrumb data restyled; it replaced the
+  former "On this page" eyebrow) — derived from each page's `nav.breadcrumbs` by
+  `scripts/header-crumb-from-breadcrumbs.py`. The quick-nav lives only in the header; the old standalone
   `nav.quicknav` bar was retired. The masthead-meta carries a **last-updated** date (no
   sources/patch line); per-page sources move to a `.credits` section (the last numbered
   section, above the footer); the footer is brand + author + part (no "Next:" pointer).
@@ -153,9 +158,9 @@ guides/
 
 **File census:** ~770 files — 170 HTML (166 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
-3 wired logos + concept candidates under `logos/concepts/`), 235 Markdown (prose docs +
+3 wired logos + concept candidates under `logos/concepts/`), 253 Markdown (prose docs +
 **167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 34 `.py` + 8 `.mjs`) and its data
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 43 `.py` + 8 `.mjs`) and its data
 (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
