@@ -137,8 +137,11 @@ python3 scripts/verify-links.py                      # 0 broken targets/anchors
   candidate (incl. below-bar) is logged to `data/links/link-candidates.csv` and rolled up by
   `build-link-report.py` into `data/links/hyperlink-opportunities.xlsx` for review. The rewrite
   is byte-preserving.
-- **Excluded as link sources** (never edited): `guides/activities/**`,
-  `guides/ships/by-role/**`, generated `guides/index.html`.
+- **Excluded as link sources** (never edited by the generic applier): `guides/activities/**`,
+  `guides/ships/by-role/**`, generated `guides/index.html`. The **by-role ladder pages** get
+  their role-correct links from a dedicated pass instead — `scripts/link-by-role-pages.py`
+  (ship cells + picks → `<ship>-<role>` dossier; engineering table → module/blueprint/engineer
+  anchors). Re-run it after editing a ladder or engineering table.
 - The fuzzy/alias layer is **hand-curated** in `data/links/link-aliases.json` (abbreviations,
   nicknames, disambiguation keyword sets) — extend it there, not in the applier. **Per-hull
   display-name aliases** (e.g. `Type-8` → Type-8 Transporter) live in `data/ship-aliases/`
