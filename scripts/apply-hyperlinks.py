@@ -46,7 +46,7 @@ SKIP_TAGS = {"a", "h1", "h2", "h3", "h4", "h5", "h6", "script", "style", "svg",
 SKIP_CLASSES = {"kicker", "role", "brand", "qn-item", "qn", "toc", "quicknav",
                 "dial", "hud", "scval", "fct", "cr-link", "cr-src", "credits",
                 "lex-btn", "lex-copy", "mx-search", "breadcrumb", "tabs",
-                "masthead-meta", "tag", "chip"}
+                "masthead-meta", "tag", "chip", "nolink"}
 VOID = {"br", "img", "input", "meta", "link", "hr", "area", "base", "col",
         "embed", "source", "track", "wbr", "path", "circle", "rect", "line",
         "polyline", "polygon", "use", "stop"}
@@ -151,6 +151,9 @@ def load_dict():
             add(sf, "anchor", e["anchor"])
     for slug, m in ships.items():
         add(m["name"], "ship", slug)
+        # per-hull display-name aliases folded in from data/ship-aliases/
+        for alias in m.get("aliases", []):
+            add(alias, "ship", slug)
     for form, slug in al["ship_aliases"].items():
         add(form, "ship", slug)
     for grp in ("module_aliases", "blueprint_group_aliases", "blueprint_aliases",

@@ -48,6 +48,14 @@ python3 scripts/apply-hyperlinks.py                         # apply to all edita
 **Excluded as link sources** (never edited): `guides/activities/**`,
 `guides/ships/by-role/**`, and the generated `guides/index.html`.
 
+**Never linked within a page:** headings, nav, stat tiles, the scorecard, `.credits`, existing
+`<a>`/`<script|style|svg>`, and any element carrying **`class="nolink"`** — add that class to a
+`<section>` or element to keep an editorial block permanently link-free across re-runs.
+
+**Per-hull display-name aliases** (e.g. `Type-8` → Type-8 Transporter) come from
+`data/ship-aliases/` via `build-link-dictionary.py`; nicknames/abbreviations stay in
+`data/links/link-aliases.json`. See `scripts/build-link-dictionary.md`.
+
 **Run it on any newly added page** (then `normalize-link-targets.py`), and re-run after
 `build-link-dictionary.py` when the source catalog changes. Verify with
 `python3 scripts/verify-links.py`.

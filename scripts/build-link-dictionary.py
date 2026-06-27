@@ -29,6 +29,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent.parent
 G = ROOT / "guides"
 OUT_DEFAULT = ROOT / "data" / "links" / "link-dictionary.base.json"
+SHIP_ALIASES = ROOT / "data" / "ship-aliases" / "ship-aliases.json"
 
 ROLES = ["multipurpose", "combat", "exploration", "trading", "mining", "passenger", "ax"]
 # acronym fixes for slug->label title-casing
@@ -168,6 +169,16 @@ def ships(entries, ships_map):
     for slug, m in ships_map.items():
         m["default_role"] = next((r for r in ROLES if r in m["roles"]),
                                  next(iter(m["roles"])))
+    # fold in hand-curated display-name aliases (data/ship-aliases/) — these are
+    # extra surface forms (short names) that link to the same hull's role dossier.
+    # data/ships/ is imported verbatim from coriolis-data, so aliases live separately.
+    if SHIP_ALIASES.exists():
+        al = json.loads(SHIP_ALIASES.read_text(encoding="utf-8")).get("aliases", {})
+        for slug, forms in al.items():
+            if slug not in ships_map:
+                print(f"  WARN ship alias slug '{slug}' has no dossier", file=sys.stderr)
+                continue
+            ships_map[slug]["aliases"] = list(forms)
 
 
 def main():

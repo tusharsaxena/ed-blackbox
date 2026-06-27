@@ -31,5 +31,19 @@ keyword sets** used for disambiguation (blueprint vs module, rank context for su
 the generic-adjective stoplist). `apply-hyperlinks.py` loads both files. Edit the aliases
 by hand; the applier warns on any alias pointing at an unknown anchor/hull.
 
+## Per-hull display-name aliases — `data/ship-aliases/`
+
+`data/ships/` is imported **verbatim** from [EDCD/coriolis-data](https://github.com/EDCD/coriolis-data)
+and must not be hand-edited. Alternate **display-name** surface forms for a hull (e.g. the short
+name `Type-8` for `Type-8 Transporter`) therefore live in `data/ship-aliases/ship-aliases.json`,
+keyed by the dossier ship slug. `build-link-dictionary.py` reads that file and attaches an
+`aliases` list to each hull in the `ships` map; `apply-hyperlinks.py` then registers those forms
+as ship surface forms resolving to the hull's role dossier. The script warns on any alias slug
+with no matching dossier. Schema + rationale: `data/ship-aliases/README.md`.
+
+> Nicknames / abbreviations (`Conda`, `Vette`, `T8`) still live in `link-aliases.json`
+> (`ship_aliases`); `data/ship-aliases/` is for canonical name variants organised per hull.
+
 **Re-run after adding/removing a source element** (engineer, module, blueprint, power, ship
-dossier) so the catalog stays in sync, then re-run `apply-hyperlinks.py`.
+dossier) or after editing `data/ship-aliases/` so the catalog stays in sync, then re-run
+`apply-hyperlinks.py`.

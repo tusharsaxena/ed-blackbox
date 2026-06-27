@@ -130,15 +130,20 @@ python3 scripts/normalize-link-targets.py <path|dir> # internal=same tab, extern
 python3 scripts/verify-links.py                      # 0 broken targets/anchors
 ```
 - `apply-hyperlinks.py` links **every occurrence** in prose/callouts/lists/**table cells**,
-  never in headings/nav/stat-tiles/scorecard/credits/existing `<a>`/`<script|style|svg>`;
-  fuzzy + context-aware (`FSD`→Frame Shift Drive; module vs blueprint group by context; ship
-  name→role dossier). Confidence **≥ 0.75 applied**; every candidate (incl. below-bar) is
-  logged to `data/links/link-candidates.csv` and rolled up by `build-link-report.py` into
-  `data/links/hyperlink-opportunities.xlsx` for review. The rewrite is byte-preserving.
+  never in headings/nav/stat-tiles/scorecard/credits/existing `<a>`/`<script|style|svg>`, nor
+  inside any element carrying **`class="nolink"`** (add it to a `<section>`/element to keep a
+  block link-free permanently); fuzzy + context-aware (`FSD`→Frame Shift Drive; module vs
+  blueprint group by context; ship name→role dossier). Confidence **≥ 0.75 applied**; every
+  candidate (incl. below-bar) is logged to `data/links/link-candidates.csv` and rolled up by
+  `build-link-report.py` into `data/links/hyperlink-opportunities.xlsx` for review. The rewrite
+  is byte-preserving.
 - **Excluded as link sources** (never edited): `guides/activities/**`,
   `guides/ships/by-role/**`, generated `guides/index.html`.
 - The fuzzy/alias layer is **hand-curated** in `data/links/link-aliases.json` (abbreviations,
-  nicknames, disambiguation keyword sets) — extend it there, not in the applier. Full guide:
+  nicknames, disambiguation keyword sets) — extend it there, not in the applier. **Per-hull
+  display-name aliases** (e.g. `Type-8` → Type-8 Transporter) live in `data/ship-aliases/`
+  (keyed by dossier slug; `data/ships/` is imported verbatim from coriolis-data and must not be
+  edited) and are folded into the ships map by `build-link-dictionary.py`. Full guide:
   `scripts/apply-hyperlinks.md` / `scripts/build-link-dictionary.md`.
 
 ### Edit an existing guide

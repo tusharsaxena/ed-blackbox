@@ -17,5 +17,7 @@ The subdirs below are **project-authored** (NOT coriolis-data):
   dossier 3-State Loadout / Engineering Plan tables and the Coriolis/EDSY/SLEF exports.
 - `fdev/`          — `shipyard.csv`, vendored from **[EDCD/FDevIDs](https://github.com/EDCD/FDevIDs)**:
   ship display name → FDev journal symbol, used to build the planner export URLs.
+- `ship-aliases/`  — hand-curated per-hull **display-name aliases** (e.g. `Type-8` → Type-8
+  Transporter) for hyperlink name matching; kept separate from imported `ships/`. See its README.
 
 License: see EDCD/coriolis-data — All Data and [associated JSON](https://github.com/EDCD/coriolis-data) files are intellectual property and copyright of Frontier Developments plc ('Frontier', 'Frontier Developments') and are subject to their
