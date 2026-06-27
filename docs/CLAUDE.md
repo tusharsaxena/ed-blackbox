@@ -290,6 +290,11 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
 - Don't break or silently rename cross-link anchor ids.
 - Don't add new top-level page chrome/background layers — the grid + glows are global.
 - Don't mass-rename files or restructure folders outside a dedicated, tracked task.
+- **Don't use Playwright** (the Playwright MCP browser tools) — nor stand up a local
+  `http.server` to feed it. The author has forbidden browser-automation rendering in this
+  project. Present visual/markup work statically (show the component markup, diff against
+  `component-gallery.html` by reading it) or via `AskUserQuestion` previews; if a live render
+  is genuinely needed, ask how the author wants it done first.
 
 ## Commands
 
