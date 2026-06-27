@@ -255,6 +255,22 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .chip.sp-emp{color:var(--fed-lt);border-color:rgba(79,159,214,.4)}
 .chip.sp-all{color:var(--good-lt);border-color:rgba(95,179,122,.45)}
 .chip.sp-ind{color:var(--amber-lt);border-color:rgba(224,145,58,.4)}
+/* role-variant pills — a row of links to the same hull's other role dossiers (used in a
+   dossier's §Role & Overview, under a .subhead). Each pill: role name in its role hue +
+   headline-style rating (big number, small /100). Add .r-<role> for the role colour. */
+.vchips{display:flex;flex-wrap:wrap;gap:var(--space-3);margin:var(--space-4) 0 var(--space-2)}
+.vchip{display:inline-flex;align-items:baseline;gap:7px;text-decoration:none;padding:5px 12px;border:1px solid var(--hair-strong);border-radius:var(--radius-pill);background:rgba(255,255,255,.015);transition:background .15s}
+.vchip:hover{background:rgba(255,255,255,.06)}
+.vchip .vrole{font-family:'Saira Condensed',sans-serif;font-size:var(--fs-xs);letter-spacing:.8px;text-transform:uppercase;font-weight:600;line-height:1}
+.vchip .vrate{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-sm2);line-height:1;color:var(--ink)}
+.vchip .vrate small{font-size:var(--fs-2xs);font-weight:600;color:var(--ink-dim);margin-left:1px}
+.vchip.r-combat{border-color:var(--role-combat-soft)}.vchip.r-combat .vrole{color:var(--role-combat)}
+.vchip.r-ax{border-color:var(--role-ax-soft)}.vchip.r-ax .vrole{color:var(--role-ax)}
+.vchip.r-exploration{border-color:var(--role-exploration-soft)}.vchip.r-exploration .vrole{color:var(--role-exploration)}
+.vchip.r-mining{border-color:var(--role-mining-soft)}.vchip.r-mining .vrole{color:var(--role-mining)}
+.vchip.r-multipurpose{border-color:var(--role-multipurpose-soft)}.vchip.r-multipurpose .vrole{color:var(--role-multipurpose)}
+.vchip.r-passenger{border-color:var(--role-passenger-soft)}.vchip.r-passenger .vrole{color:var(--role-passenger)}
+.vchip.r-trading{border-color:var(--role-trading-soft)}.vchip.r-trading .vrole{color:var(--role-trading)}
 
 /* ---- 9. PERMALINK ANCHOR ---- */
 .permalink{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--ink-faint);text-decoration:none;font-size:var(--fs-md);line-height:1;padding:var(--space-1) var(--space-2);border-radius:var(--radius-sm);flex:none;opacity:.5;transition:opacity var(--motion-fast),color var(--motion-fast)}
