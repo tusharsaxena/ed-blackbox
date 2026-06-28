@@ -196,18 +196,18 @@
   <p class="lead">The vanilla method: edit one file, restart the game. Always edit <b>GraphicsConfigurationOverride.xml</b>, never the base <code>GraphicsConfiguration.xml</code> — the Override survives game patches and a mistake there is far less likely to break anything.</p>
 
   <ol class="steps">
-    <li><span class="st">Close Elite Dangerous</span> entirely. The file is read at launch.</li>
-    <li><span class="st">Find the file.</span> On Windows it lives at:
+    <li><span class="st">Close Elite Dangerous</span><p>Close it entirely. The file is read at launch.</p></li>
+    <li><span class="st">Find the file.</span><p>On Windows it lives at:</p>
       <div class="codebox">
         <div class="cb-head"><span class="dot"></span>File location · Windows</div>
 <pre>%LOCALAPPDATA%\Frontier Developments\Elite Dangerous\Options\Graphics\GraphicsConfigurationOverride.xml</pre>
       </div>
       <span class="muted">Paste that path (including <code>%LOCALAPPDATA%</code>) into the Explorer address bar. If your Windows profile is relocated to another drive, it resolves under that profile's <code>AppData\Local</code> instead of <code>C:</code>. macOS: <code>~/Library/Application Support/Frontier Developments/…/Options/Graphics</code>.</span>
     </li>
-    <li><span class="st">If the file doesn't exist, create it</span> as a plain-text file with exactly that name (watch for a hidden <code>.txt</code> extension), and paste the default block below into it.</li>
-    <li><span class="st">Back it up first.</span> Copy the file (or the default block) somewhere safe before editing. This is the one-line insurance policy everyone recommends.</li>
-    <li><span class="st">Edit the matrix.</span> Inside <code>&lt;GUIColour&gt; → &lt;Default&gt;</code>, replace the three <code>&lt;Matrix…&gt;</code> lines with your chosen values (from a preset or a web editor's output).</li>
-    <li><span class="st">Save, close, launch.</span> The new colours appear the moment you're in the cockpit — no further toggles.</li>
+    <li><span class="st">If the file doesn't exist, create it</span><p>Create it as a plain-text file with exactly that name (watch for a hidden <code>.txt</code> extension), and paste the default block below into it.</p></li>
+    <li><span class="st">Back it up first.</span><p>Copy the file (or the default block) somewhere safe before editing. This is the one-line insurance policy everyone recommends.</p></li>
+    <li><span class="st">Edit the matrix.</span><p>Inside <code>&lt;GUIColour&gt; → &lt;Default&gt;</code>, replace the three <code>&lt;Matrix…&gt;</code> lines with your chosen values (from a preset or a web editor's output).</p></li>
+    <li><span class="st">Save, close, launch.</span><p>The new colours appear the moment you're in the cockpit — no further toggles.</p></li>
   </ol>
 
   <div class="codebox">
