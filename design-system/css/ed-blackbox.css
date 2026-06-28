@@ -133,23 +133,20 @@ section > p{margin:0 0 var(--space-10);color:var(--ink-dim);line-height:var(--lh
 .qn-totop{flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--panel2);border:1px solid var(--hair-strong);border-radius:var(--radius-md);color:var(--ink-dim);cursor:pointer;transition:color var(--motion-fast),border-color var(--motion-fast),background var(--motion-fast)}
 .qn-totop:hover{color:var(--amber-lt);border-color:var(--amber);background:var(--panel)}
 .qn-totop svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-/* in-header crumb — replaces the "On this page" eyebrow with the page's breadcrumb trail:
-   current page as the title, parent trail beneath it (data mirrors the .breadcrumbs nav) */
+/* in-header crumb — the site's only breadcrumb (the standalone .breadcrumbs nav was retired):
+   current page as the title, navigable parent trail beneath it (links, no Home) */
 .hdr-crumb{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;height:30px;line-height:1;white-space:nowrap;text-align:right}
 .hdr-crumb.solo{justify-content:center}
 .hdr-crumb.solo .hdr-crumb-title{top:0}
 .hdr-crumb-title{position:relative;top:2px;font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:var(--fs-2xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber)}
 .hdr-crumb-trail{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-2xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);display:flex;align-items:center;gap:var(--space-4)}
 .hdr-crumb-trail .sep{opacity:.45}
+.hdr-crumb-trail a{color:inherit;text-decoration:none;transition:color .12s}
+.hdr-crumb-trail a:hover,.hdr-crumb-trail a:focus-visible{color:var(--amber-lt)}
 @media (max-width:560px){.hdr-crumb{display:none}}
-.breadcrumbs{max-width:1140px;margin:0 auto;padding:var(--space-8) var(--space-11) 0;font-family:'Saira Condensed',sans-serif;font-size:var(--fs-sm2);letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap}
-.breadcrumbs a{color:var(--ink-dim);text-decoration:none}
-.breadcrumbs a:hover{color:var(--amber-lt)}
-.breadcrumbs .sep{opacity:.45}
-.breadcrumbs .current{color:var(--amber-lt)}
 
 /* ---- 3. MASTHEAD ---- */
-header.masthead{padding:54px 0 var(--space-13);border-bottom:1px solid var(--hair-strong);margin-bottom:var(--space-4)}
+header.masthead{padding:var(--space-13) 0;border-bottom:1px solid var(--hair-strong);margin-bottom:var(--space-4)}
 .kicker{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:5px;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:var(--space-6);margin-bottom:var(--space-9);flex-wrap:wrap}
 .kicker::before{content:"";width:34px;height:1px;background:var(--amber);opacity:.7}
 .kicker .sep{color:var(--ink-faint);opacity:.8}

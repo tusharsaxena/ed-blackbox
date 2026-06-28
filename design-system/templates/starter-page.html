@@ -47,10 +47,13 @@
     <!-- OPTIONAL in-page jump: keep only on pages with anchored sections/records.
          Each .qn-item href must match an id on THIS page. -->
     <div class="header-qn">
+      <!-- ---- CRUMB (required) — set the trail for THIS page. Title = current page;
+           trail = parent links (relative, same-tab), NO Home. Top-level page: add
+           class="hdr-crumb solo" and drop the trail span. ---- -->
       <div class="hdr-crumb">
         <span class="hdr-crumb-title">Page Title</span>
         <span class="hdr-crumb-trail">
-          <span>Section</span>
+          <a href="../index.html#section-dossiers">Section</a>
         </span>
       </div>
       <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
@@ -71,15 +74,6 @@
     </div>
   </div>
 </header>
-
-<!-- ---- BREADCRUMBS (required) — set the trail for THIS page ---- -->
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-  <a href="/ed-blackbox/guides/index.html">Home</a>
-  <span class="sep">›</span>
-  <a href="/ed-blackbox/guides/index.html#section-dossiers">Section</a>
-  <span class="sep">›</span>
-  <span class="current" aria-current="page">Page Title</span>
-</nav>
 
 <div class="wrap">
 

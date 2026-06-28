@@ -9,8 +9,7 @@ the usage notes, states, and anti-patterns. Use only what's here; don't invent c
 | Component | Class(es) | When to use |
 |---|---|---|
 | Global header | `header.site-header` > `.hdr-inner` (`.brand` `.nav-sep` `.site-nav` `.header-qn` with a `.hdr-crumb` block + `.qn-totop` scroll-to-top button) | sticky brand + nav on every page; outside `.wrap` |
-| Header crumb | `.hdr-crumb` (`.hdr-crumb-title` over `.hdr-crumb-trail` > `span`/`.sep`; `.solo` when trail-less) | right-aligned in `.header-qn`: current page title over its parent breadcrumb trail (mirrors `nav.breadcrumbs`, links dropped) |
-| Breadcrumbs | `nav.breadcrumbs` (`a` `.sep` `.current`) | trail under the header (`Home › Section › Page`) |
+| Header crumb | `.hdr-crumb` (`.hdr-crumb-title` over `.hdr-crumb-trail` > `a`/`.sep`; `.solo` when trail-less) | right-aligned in `.header-qn`: **the site's only breadcrumb** — current page title over its **navigable** parent trail (relative same-tab links, **no Home**) |
 | Masthead | `header.masthead` + `.kicker` (series label, no id) `.title` (`.role`) `.subtitle`/`.lede` `.masthead-meta` (part, last-updated — no sources/patch) | top of the page body |
 | Quick-nav | `.header-qn` in the global header (+ JS module 1) | searchable jump to anchored records/sections |
 | Sticky TOC | `nav.toc` (+ JS module 2 scrollspy) | long **section**-based guides |

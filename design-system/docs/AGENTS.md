@@ -53,8 +53,11 @@ updates. Inlining or forking re-introduces drift and is a regression.
 3. **Pick the accent** for the page's domain (`02-tokens.md` → "Per-page accent").
    Combat = maroon, exploration/nav/liners = fed-blue, mining/cargo/index = amber
    (default, delete the override), completed = good.
-4. **Set the global header & breadcrumbs** (`.site-header` + `nav.breadcrumbs`, outside
-   `.wrap`): brand links home, set the `.active` nav item, build the breadcrumb trail.
+4. **Set the global header & crumb** (`.site-header`, outside `.wrap`): brand links home,
+   set the `.active` nav item, and build the in-header `.hdr-crumb` — current page in
+   `.hdr-crumb-title`, its navigable parent trail (relative same-tab links, **no Home**) in
+   `.hdr-crumb-trail` (a top-level page uses `hdr-crumb solo` with no trail). The standalone
+   `nav.breadcrumbs` strip is retired — don't add one back.
    Standardize the `<title>` as `<Page Name> | E:D Black Box` and link the favicon.
 5. **Fill the masthead** (kicker series label — **no** id; title with one gold `<span>`;
    scope line; meta = part + last-updated, **no sources line, no patch**) per

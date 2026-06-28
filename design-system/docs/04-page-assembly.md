@@ -23,14 +23,16 @@ the CSS `@import` — no font `<link>` needed. The only per-page CSS permitted i
 ## Body order (top to bottom)
 
 Mandatory: global header, masthead, ≥1 numbered section, footer. The rest as content
-needs. The header and breadcrumbs sit **outside `.wrap`**, directly under `<body>`;
-everything else goes inside `.wrap`.
+needs. The header sits **outside `.wrap`**, directly under `<body>`; everything else goes
+inside `.wrap`.
 
 0. **`header.site-header`** *(required, global)* — sticky bar with `.brand` (logo +
    `E:D Black Box` wordmark, links home), a `.nav-sep`, primary `.site-nav`
-   (Home · Ships · Engineering · Systems; set `.active` for the current area), and an
-   optional right-aligned `.header-qn` in-page quick-nav. Follow with `nav.breadcrumbs`
-   (`Home › Section › Page`, last crumb `.current[aria-current="page"]`).
+   (Home · Ships · Engineering · Systems; set `.active` for the current area), and the
+   right-aligned `.header-qn`. The `.header-qn` leads with the `.hdr-crumb` — **the site's
+   only breadcrumb**: current page in `.hdr-crumb-title` over a navigable `.hdr-crumb-trail`
+   (`Section › Page`, relative same-tab links, **no Home**; a top-level page uses
+   `hdr-crumb solo` with no trail). The standalone `nav.breadcrumbs` strip was retired.
 1. **`header.masthead`** — `.kicker` (series label + `//` separators, **no** id);
    `h1.title` with exactly one word in `<span>` (gold) and an optional
    `<span class="role">` suffix for ship × role dossiers; `.subtitle`/`.lede` one-line
@@ -130,8 +132,8 @@ components are present.
 - [ ] Page `<style>`, if any, contains **only** the `--accent*` override (≤5 lines).
 - [ ] Accent matches the page's domain (or amber default with no override).
 - [ ] `<title>` is `<Page Name> | E:D Black Box`; favicon linked.
-- [ ] Global `.site-header` present (brand + nav, `.active` set) with `nav.breadcrumbs`
-      below it, both outside `.wrap`.
+- [ ] Global `.site-header` present (brand + nav, `.active` set) with the in-header
+      `.hdr-crumb` (navigable trail, no Home; no standalone `nav.breadcrumbs`), outside `.wrap`.
 - [ ] Masthead: kicker is a series label (no id); title with one gold `<span>` (+ `.role`
       if a dossier), scope line, meta (part + last-updated; no sources line, no patch).
 - [ ] In-page nav at most one: header `.header-qn` **or** `toc`; no duplicate `#qn-*` ids.

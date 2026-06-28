@@ -32,7 +32,7 @@ Legend: ✅ done · ☐ not done.
 
 ### Site chrome
 - ✅ Common header and footer — built (`.site-header`, `footer`) *(on design-system pages + the landing page; legacy rollout = Phase 1)*
-- ✅ Page header + breadcrumbs (parent-index navigation) — built (`.site-header` + `nav.breadcrumbs`)
+- ✅ Page header + breadcrumbs (parent-index navigation) — built (`.site-header` + the in-header `.hdr-crumb`; the standalone `nav.breadcrumbs` strip was retired 2026-06-28, its links folded into the crumb trail)
 - ✅ Standardize page titles — `<Page Name> | E:D Black Box` set on the templates + landing page *(legacy retitling = Phase 1)*
 - ✅ Quick-nav (`.header-qn`) **plus a "scroll to top" button** (`.qn-totop`) — built in the header *(present on design-system pages; legacy rollout = Phase 1)*
 

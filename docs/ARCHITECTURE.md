@@ -49,7 +49,6 @@ Each guide is one `.html` file that **links** the shared design system:
 </head>
 <body>
   <header class="site-header"> brand · site-nav · header-qn (hdr-crumb breadcrumb + quick-nav + scroll-to-top) </header>
-  <nav class="breadcrumbs"> Home › … › this page </nav>
   <div class="wrap">
     <header class="masthead"> kicker · h1.title (one accent word + .role tag) · masthead-meta </header>
     <div class="verdict"> BRIEFING: verdict + brief + .stat-grid </div>
@@ -112,12 +111,14 @@ tokens  →  components  →  templates  →  pages
   behaviour; `checklist.html` also wires its bespoke unlock-map SVG in that same script.
 - **Site chrome (v1.1.0)** — a global sticky header (`.site-header` > `.hdr-inner`:
   `.brand` logo+wordmark, `.site-nav`, optional right-aligned `.header-qn` in-page
-  quick-nav with a `.qn-totop` scroll-to-top button) and `nav.breadcrumbs`, both sitting
-  **outside `.wrap`**. The `.header-qn` now leads with a `.hdr-crumb` block — the current
-  page title over its parent breadcrumb trail (the breadcrumb data restyled; it replaced the
-  former "On this page" eyebrow) — derived from each page's `nav.breadcrumbs` by
-  `scripts/header-crumb-from-breadcrumbs.py`. The quick-nav lives only in the header; the old standalone
-  `nav.quicknav` bar was retired. The masthead-meta carries a **last-updated** date (no
+  quick-nav with a `.qn-totop` scroll-to-top button), sitting **outside `.wrap`**. The
+  `.header-qn` leads with a `.hdr-crumb` block — **the site's only breadcrumb** — the current
+  page title over its **navigable** parent trail (`.hdr-crumb-trail` of relative same-tab
+  links, **no Home**; `.solo` when trail-less). The standalone `nav.breadcrumbs` strip below
+  the header was **retired site-wide (2026-06-28)** by `scripts/deprecate-breadcrumbs.py`,
+  which folded its link targets into the crumb trail (so the precursor
+  `header-crumb-from-breadcrumbs.py` — which derived a *link-less* crumb from that nav — is
+  obsolete); the old standalone `nav.quicknav` bar was retired earlier. The masthead-meta carries a **last-updated** date (no
   sources/patch line); per-page sources move to a `.credits` section (the last numbered
   section, above the footer); the footer is brand + author + part (no "Next:" pointer).
 - **Standard above-the-fold (briefing pass).** Every migrated page now opens with a
@@ -131,7 +132,7 @@ tokens  →  components  →  templates  →  pages
   now reused by the worked examples on `ships/rating-methodology.html`).
 - **`templates/`** — `starter-page.html` (scaffold for a new page) and
   `component-gallery.html` (live copy-paste reference for every component); both include
-  the header + breadcrumb + credits markup.
+  the header (with its `.hdr-crumb`) + credits markup.
 - **`docs/`** — `01-principles` … `07-imagery-icons`, plus `AGENTS.md` (the agent
   workflow + pre-ship checklist) and `README.md` / `CHANGELOG.md`.
 
@@ -162,9 +163,9 @@ guides/
 
 **File census:** ~770 files — 170 HTML (166 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
-3 wired logos + concept candidates under `logos/concepts/`), 256 Markdown (prose docs +
+3 wired logos + concept candidates under `logos/concepts/`), 257 Markdown (prose docs +
 **167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 44 `.py` + 8 `.mjs`) and its data
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 45 `.py` + 8 `.mjs`) and its data
 (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
@@ -290,7 +291,9 @@ Beyond those generators, `scripts/` also holds the **migration verification harn
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
 gate, `baseline-capture.sh`) and several **one-off content-migration scripts**
 (`fix-step-tuples`, `trim-svg`, `restructure-app-cards`, `classify-card-groups`,
-`convert-dossier-rating-cards`). Idempotent **table-maintenance sweeps** keep guide markup
+`convert-dossier-rating-cards`, and `deprecate-breadcrumbs.py` — the one-shot that retired
+the standalone `nav.breadcrumbs` strip site-wide and turned the in-header `.hdr-crumb` trail
+into links). Idempotent **table-maintenance sweeps** keep guide markup
 in sync with the design system — `sort-compare-tables.py` (orders comparison-table rows) and
 `align-table-headers.py` (puts each `<th>` on its column's `.num`/`.center` alignment, so a
 right/centre column's header sits over its figures). The **anchor-standardization toolchain** lives here too —
@@ -337,7 +340,7 @@ version-current (oEmbed-verified, ≤3 per page; present on 77 pages).
 ## 8. Known structural debt
 
 The **migration gap is closed** — every page links the design system, carries the global
-chrome (header, breadcrumbs, footer), and links back to the index. The palette fragmentation,
+chrome (header with in-header `.hdr-crumb`, footer), and links back to the index. The palette fragmentation,
 divergent token names, and per-page layout widths that the inline-CSS era produced are gone
 (one locked token set). What remains:
 
