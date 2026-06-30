@@ -442,6 +442,16 @@ python3 scripts/audit-powerplay.py         # 12 powers (allegiance matched) + 12
   leave changes staged/unstaged for the author to review. Run `git commit` **only** when the
   author explicitly asks ("commit this", "commit all", etc.). The author batches several rounds
   of edits, then asks to commit once; staging is fine, committing is not, until asked.
+- **The site is LIVE — branch for major/multi-commit changes.** Every commit on `master` is
+  **published immediately** to external users, so `master` must never carry in-flight work.
+  **Branch first** for any change that affects HTML pages and **can't land as a single clean
+  commit** — multi-step features, page redesigns, data-pipeline reworks, anything spanning
+  several edits/commits or that leaves the site half-migrated mid-way. Do the work on a feature
+  branch (`git switch -c <feature>`), let the author review, and merge to `master` only when the
+  whole change is complete and verified. **Allowed directly on `master`:** changes that land in
+  **one self-contained commit**, and changes that **don't touch the published HTML** (docs,
+  `scripts/` docs, memory, `data/` authoring that isn't yet built into pages). When unsure
+  whether a change is "major," branch — it's the safe default for a live site.
 - Don't invent game data or "improve" numbers from memory.
 - Don't re-derive or "improve" the locked design-system tokens/palette.
 - Don't hand-edit `guides/index.html` (regenerate it via `generate-guides-index.sh`).
