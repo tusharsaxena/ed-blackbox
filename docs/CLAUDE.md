@@ -295,11 +295,12 @@ python3 scripts/extract-blueprint-editorial.py # one-time seeder (HTML → edito
   experimentals/Totals/counts/anchors all match data; Sources external-only) then
   `python3 scripts/verify-links.py` and `python3 scripts/normalize-link-targets.py
   guides/engineering/blueprints.html`. Card `<section id>`s don't change, so no anchor regen.
-- **Materials and engineers are now also data-driven** (see *Change material data* /
-  *Change engineer data* below). **Still deferred:** powerplay — built next from EDCD + the
-  Fandom wiki (inara dropped as a fetched source; it 503s bots). Design:
-  `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`,
-  `…-edcd-reference-data-pipelines-design.md`, and `…-engineers-data-pipeline-design.md`.
+- **Materials, engineers, and powerplay are now all data-driven** (see *Change material data* /
+  *Change engineer data* / *Change powerplay data* below) — the three inara-deferred pages are
+  done, re-sourced off inara (which 503s bots) onto EDCD + the Fandom wiki + project-authored
+  data. Designs: `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`,
+  `…-edcd-reference-data-pipelines-design.md`, `…-engineers-data-pipeline-design.md`,
+  `…-powerplay-data-pipeline-design.md`.
 
 ### Change material data (Materials page)
 **`data/materials/material.csv` (verbatim EDCD/FDevIDs) is the canonical game-data source for
@@ -358,6 +359,28 @@ python3 scripts/audit-engineers.py         # roster + coriolis grade gate (+ omi
   source of truth).
 - On-foot (suit/weapon) engineer mods are editorial (coriolis has no on-foot engineering).
 - Design: `docs/superpowers/specs/2026-06-30-engineers-data-pipeline-design.md`.
+
+### Change powerplay data (Powerplay page)
+**`data/powerplay/powers.json` is the canonical roster** for `guides/systems/powerplay.html`
+(Powerplay 2.0): the **12 Powers** (`slug`, `name`, `allegiance`, `hq_system`) and **12
+exclusive modules** (`name`, `rating`, `source_power`). There is **no EDCD source** for
+powerplay, so this is **project-authored** editorial data (precedent: `data/ship-ratings/`).
+The §Powers + §Modules **card runs** are editorial — stored verbatim in
+**`data/powerplay/editorial.json`** and re-emitted byte-for-byte by `build-powerplay.py`
+between the 2 `<!-- BEGIN/END generated:powerplay -->` marker pairs.
+```bash
+python3 scripts/build-powerplay.py         # re-emit the §Powers + §Modules card runs
+python3 scripts/build-powerplay.py --check # preview, write nothing
+python3 scripts/audit-powerplay.py         # 12 powers (allegiance matched) + 12 modules == powers.json
+```
+- **To edit a card:** change its HTML in `editorial.json` (the `powers`/`modules` region
+  string), or change a fact in `powers.json`, then rebuild + audit. `powerplay-<slug>` ids are
+  deep-linked site-wide — **never rename**. After a build run `audit-powerplay.py`, then
+  `apply-hyperlinks.py` / `normalize-link-targets.py` / `verify-links.py` (re-seed via
+  `extract-powerplay-editorial.py` if the hyperlink pass enriches a card).
+- The page is current to **Powerplay 2.0**; verify any change vs the Fandom wiki (PP2.0) + EDSM
+  (rule 1). inara is not used (it 503s bots).
+- Design: `docs/superpowers/specs/2026-06-30-powerplay-data-pipeline-design.md`.
 
 ### Migrate a page to the design system *(done — reference only)*
 - Every guide + the landing page are migrated (the original 108 legacy pages plus everything
@@ -461,5 +484,7 @@ python3 scripts/audit-materials.py                # deterministic materials.html
 bash scripts/import-engineers.sh                  # re-vendor engineers.csv (38 roster) from EDCD/FDevIDs (canonical, read-only)
 python3 scripts/build-engineers.py                # re-emit the 38 engineer cards from data/engineers-extra/editorial.json
 python3 scripts/audit-engineers.py                # engineers.html roster + coriolis ship-mod-grade gate (over-claims fail; omissions warn)
+python3 scripts/build-powerplay.py                # re-emit powerplay.html §Powers + §Modules card runs from data/powerplay/editorial.json
+python3 scripts/audit-powerplay.py                # powerplay.html 12 powers (allegiance) + 12 modules == data/powerplay/powers.json
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```

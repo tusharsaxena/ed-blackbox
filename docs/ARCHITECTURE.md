@@ -340,8 +340,18 @@ The first step toward "content-as-data". Convention: every task script lives in
   roster and the rendered ship-engineer mod grades against it (over-claims fail; omissions warn),
   because coriolis splits deliberate editorial variant-collapses (Bi-Weave/Prismatic Shield
   Generator, Advanced Multi-Cannon) the page is right to keep merged. `extract-engineers-editorial.py`
-  was the one-time seeder. **Powerplay** is the last deferred page. Design:
+  was the one-time seeder. Design:
   `docs/superpowers/specs/2026-06-30-engineers-data-pipeline-design.md`.
+- **Powerplay pipeline** — `build-powerplay.py` re-emits the §Powers (12 power cards) + §Modules
+  (12 module cards) runs on `guides/systems/powerplay.html` from `data/powerplay/editorial.json`
+  (each card run stored verbatim) between the 2 `<!-- BEGIN/END generated:powerplay -->` marker
+  pairs. **No EDCD source exists for powerplay**, so the canonical roster `data/powerplay/powers.json`
+  (12 Powers + allegiance + HQ, 12 modules) is **project-authored** (like `data/ship-ratings/`).
+  `audit-powerplay.py` enforces page ⇄ `powers.json` (12 powers w/ allegiance class, 12 modules,
+  anchors, Sources external-only); the Powerplay-2.0 external truth came from an ultracode
+  wiki/EDSM pass. The page was already PP2.0-current, so this was structuring + verification,
+  not a rewrite. With this, **all three inara-deferred pages (materials, engineers, powerplay)
+  are data-driven**. Design: `docs/superpowers/specs/2026-06-30-powerplay-data-pipeline-design.md`.
 
 Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance

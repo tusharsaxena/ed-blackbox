@@ -47,6 +47,12 @@ The subdirs below are **project-authored** (NOT coriolis-data):
   `corrections.json` holds verified roster/mod overrides. `scripts/build-engineers.py` re-emits
   the cards byte-for-byte; `audit-engineers.py` checks the roster vs `engineers.csv` and the
   rendered ship-mod grades vs coriolis (over-claims fail, omissions warn). See its README.
+- `powerplay/`     — **project-authored** canonical data for `guides/systems/powerplay.html`
+  (Powerplay 2.0). **No EDCD source exists for powerplay**, so this is editorial data (like
+  `ship-ratings/`). `powers.json` = the 12 Powers (`slug`, `name`, `allegiance`, `hq_system`)
+  + 12 exclusive modules; `editorial.json` = the §Powers + §Modules card runs stored verbatim.
+  `scripts/build-powerplay.py` re-emits the card runs; `audit-powerplay.py` checks the page
+  against `powers.json` (12 powers w/ allegiance + 12 modules). See its README.
 - `ship-aliases/`  — hand-curated per-hull **display-name aliases** (e.g. `Type-8` → Type-8
   Transporter) for hyperlink name matching; kept separate from imported `ships/`. See its README.
 - `sources/`       — **canonical source of truth for every page's bottom-of-page Sources
