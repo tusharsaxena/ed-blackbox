@@ -44,12 +44,13 @@ data, run the script — never hand-edit the generated block.
 | `data/modifications/` (coriolis, read-only) + `data/modifications-extra/` overlays | the 185 blueprint cards on `guides/engineering/engineering-manuals/blueprints.html` | `build-blueprints.py` · `audit-blueprints.py` |
 | filesystem (dossiers) | `guides/index.html` landing page | `generate-guides-index.sh` |
 | each page's `<section id>`s | per-page `<name>-anchors.md` anchor catalogs | `generate-anchor-files.sh` |
+| `data/links/` (dictionary + curated aliases) | internal cross-links on every page (`<a>` to the right anchor) | `build-link-dictionary.py` · `apply-hyperlinks.py` · `normalize-link-targets.py` · `verify-links.py` (generators re-apply via `relink.py`; loadout tables linked deterministically by `dossier_links.py`) |
 
-All tooling lives in [`scripts/`](scripts/) — **43 reusable** build/maintenance scripts
-(4 `.sh` + 38 `.py` + 1 `.mjs`), each named for its task with a sibling `<name>.md` doc — see
+All tooling lives in [`scripts/`](scripts/) — **47 reusable** build/maintenance scripts
+(4 `.sh` + 42 `.py` + 1 `.mjs`), each named for its task with a sibling `<name>.md` doc — see
 [`scripts/README.md`](scripts/README.md). Completed one-off scripts (the design-system
 migration, data seeders, one-shot content fixes) are retained under
-[`scripts/archive/`](scripts/archive/README.md) (42 more).
+[`scripts/archive/`](scripts/archive/README.md) (44 more).
 The shared look is the design system in [`design-system/`](design-system/) (v1.3.0): one linked
 stylesheet + behaviours; pages re-theme only a five-token accent group. Game data imported from
 EDCD is in [`data/`](data/README.md).

@@ -173,8 +173,8 @@ guides/
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
 3 wired logos + concept candidates under `logos/concepts/`), 292 Markdown (prose docs +
 **167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling — **43 reusable** scripts (4 `.sh` + 38 `.py` +
-1 `.mjs`) and **42 archived** one-offs in `scripts/archive/` (7 `.sh` + 28 `.py` + 7 `.mjs`) —
+1 site JS, plus the `scripts/` tooling — **47 reusable** scripts (4 `.sh` + 42 `.py` +
+1 `.mjs`) and **44 archived** one-offs in `scripts/archive/` (7 `.sh` + 30 `.py` + 7 `.mjs`) —
 and its data (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages) — `engineering-manuals/` (checklist ·
@@ -288,9 +288,13 @@ The first step toward "content-as-data". Convention: every task script lives in
   the tables; re-run after edits. It also renders three **export** footer rows per state —
   **Open in Coriolis / Open in EDSY / Copy SLEF** — via `slef_to_url.py` (encodes a Journal
   `Loadout` event into the planner import URLs; display name → FDev journal symbol via the
-  vendored `data/fdev/shipyard.csv`). `audit-ship-loadouts.py` is the deterministic completeness
-  check over all SLEF builds (missing core slots incl. **Bulkheads**, sizing, symbol validity,
-  state drift, engineering/experimental coverage).
+  vendored `data/fdev/shipyard.csv`). The generated table cells carry **deterministic
+  cross-links** (`dossier_links.py`, below): module name and blueprint name always linked
+  (blueprint group-disambiguated, e.g. `Overcharged` → its module's group), engineer linked,
+  the **experimental effect never** linked (`.nolink`), and the `SLOT` column never linked.
+  `audit-ship-loadouts.py` is the deterministic completeness check over all SLEF builds (missing
+  core slots incl. **Bulkheads**, sizing, symbol validity, state drift, engineering/experimental
+  coverage). (Cargo racks aren't engineerable, so they carry no blueprint.)
 - **Variant pills** — `add-variant-builds.py` appends an *"Other role builds of this ship"* pill
   block to the end of each dossier's §Role & Overview, linking the same hull's sibling-role
   dossiers with their `NN/100` ratings (the `.vchips`/`.vchip` component, §3). Ratings are read
@@ -362,6 +366,28 @@ The first step toward "content-as-data". Convention: every task script lives in
   wiki/EDSM pass. The page was already PP2.0-current, so this was structuring + verification,
   not a rewrite. With this, **all three inara-deferred pages (materials, engineers, powerplay)
   are data-driven**. Design: `docs/superpowers/specs/2026-06-30-powerplay-data-pipeline-design.md`.
+
+- **Cross-link application** — the internal `<a>` links that wire pages together (§4's
+  anchor contract is the *target* scheme; this is how links get *applied*). `build-link-dictionary.py`
+  extracts every link target (engineers · blueprints · modules · materials · powers · superpowers ·
+  ship dossiers) into `data/links/link-dictionary.base.json`; a hand-curated
+  `data/links/link-aliases.json` adds abbreviations, disambiguation context, `block_forms`
+  (never-link words) and `prefer_module_forms` (module-over-blueprint preference).
+  `apply-hyperlinks.py` wraps references in prose/lists/table cells (≥ 0.75 confidence,
+  byte-preserving, idempotent — skips existing `<a>`, headings, breadcrumbs, and `.nolink`);
+  `normalize-link-targets.py` enforces the open policy (internal = same tab, external = new tab);
+  `verify-links.py` is the 0-broken gate. **Core link rules** (enforced by these scripts):
+  never link breadcrumbs or section/sub-headers; in the loadout tables module + blueprint names
+  always link while the experimental effect never does; common words that are also module names
+  (mining, refinery, sensor, …) are blocked in prose but still link as module/blueprint cells;
+  the one header exception is `checklist.html`, whose unlock/climb step headers link the engineer
+  (`link-checklist-engineers.py`, which also expands partial surnames). **Durability:** generated
+  regions are re-emitted without links, so the dossier/blueprint/materials generators call
+  `relink.py` (apply-hyperlinks → normalize) on what they rewrote, and the loadout tables get
+  precise, deterministic links from `dossier_links.py` (module/blueprint columns always, experimental
+  never — overriding the prose common-term block). `strip-unwanted-links.py` removes links the
+  rules forbid (the applier only adds). By-role ladder pages get role-correct links from the
+  dedicated `link-by-role-pages.py` instead of the generic applier.
 
 Beyond those generators, **completed one-off scripts have been moved to `scripts/archive/`**
 (catalogued in `scripts/archive/README.md`): the **migration verification harness**

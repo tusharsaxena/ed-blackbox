@@ -94,3 +94,13 @@ Moved every guide into index-mirrored subsection folders (`ships/{general,best-s
 |---|---|---|
 | `restructure-guides.py` | [restructure-guides.md](restructure-guides.md) | Moved all 166 guides into the new tree and rewrote every internal link (resolve-then-recompute, self-validating); moved each sibling `<base>-anchors.md` + mirrored `data/sources/*.json`. |
 | `fix-sources-page-paths.py` | [fix-sources-page-paths.md](fix-sources-page-paths.md) | Companion: realigned the internal `"page"` field of each moved `data/sources/**.json` to its new location so `audit-sources.py` round-trips. Idempotent. |
+
+## Link-rule & loadout data fixes *(complete)*
+
+One-shot data migrations behind the link-rule and loadout work (self-documented in their
+header docstrings; the durable behaviour lives in the reusable scripts + `data/links/link-aliases.json`).
+
+| Script | What it did |
+|---|---|
+| `remove-cargo-rack-engineering.py` | Stripped the bogus `CargoRack_IncreasedCapacity` ("Expanded Capacity") engineering from 247 cargo-rack modules across 68 `data/ship-loadouts/*.json` and reworded the matching per-slot notes — cargo racks aren't engineerable. |
+| `unwrap-stale-blueprint-group-links.py` | Unwrapped stale `#blueprint-group-*` prose links (except `bulkheads`) in the dossiers so the relink could re-add them as `#module-*` after the applier switched to module-preference (`prefer_module_forms`). |

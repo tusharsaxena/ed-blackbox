@@ -63,13 +63,48 @@ MODULE_ALIAS = {
     "guardian hull reinforcement": "module-guardian-reinforcement",
     "guardian module reinforcement": "module-guardian-reinforcement",
     "guardian shield reinforcement": "module-guardian-reinforcement",
+    "mining volley repeater": "module-mining",
     # mining tools
     "abrasion blaster": "module-mining",
     "seismic charge launcher": "module-mining",
     "sub surface displacement missile": "module-mining",
     "pulse wave analyser": "module-mining",
+    # weapons -> their modules.html category section (module, NOT the blueprint group)
+    "beam laser": "module-lasers",
+    "pulse laser": "module-lasers",
+    "burst laser": "module-lasers",
+    "multi cannon": "module-kinetic",
+    "cannon": "module-kinetic",
+    "fragment cannon": "module-kinetic",
+    "rail gun": "module-kinetic",
+    "plasma accelerator": "module-plasma",
+    "advanced missile rack": "module-explosive",
+    "seeker missile rack": "module-explosive",
+    "mine launcher": "module-explosive",
+    "torpedo pylon": "module-explosive",
+    # utilities / countermeasures
+    "chaff launcher": "module-countermeasures",
+    "heat sink launcher": "module-countermeasures",
+    "point defence": "module-countermeasures",
+    "caustic sink launcher": "module-countermeasures",
+    "electronic countermeasure": "module-countermeasures",
+    # scanners
+    "detailed surface scanner": "module-detailed-surface-scanner",
+    "kill warrant scanner": "module-scanners",
+    "frame shift wake scanner": "module-scanners",
+    "manifest scanner": "module-scanners",
+    # shield-generator variants
+    "bi weave shield generator": "module-shield-generator",
+    "prismatic shield generator": "module-shield-generator",
+    # interdictor
+    "frame shift drive interdictor": "module-fsd-interdictor",
+    "fsd interdictor": "module-fsd-interdictor",
     # scanners / limpets / flight assists
     "xeno scanner": "module-xeno",
+    "collector limpet controller": "module-limpet-controllers",
+    "prospector limpet controller": "module-limpet-controllers",
+    "hatch breaker limpet controller": "module-limpet-controllers",
+    "fuel transfer limpet controller": "module-limpet-controllers",
     "decontamination limpet controller": "module-limpet-controllers",
     "repair limpet controller": "module-limpet-controllers",
     "planetary vehicle hangar": "module-flight-assists",
@@ -96,14 +131,16 @@ def _maps():
         if e:
             module_surf.setdefault(_norm(surf), (e["file"], anchor))
 
+    # Module columns link a MODULE, never a blueprint group — so module_surf is built from the
+    # MODULE family only (+ curated module_aliases). Weapons/utilities that have no module-family
+    # surface resolve through MODULE_ALIAS below (to their modules.html category section).
     for e in base["entries"]:
-        if e["family"] in ("module", "blueprint-group"):
+        if e["family"] == "module":
             for sf in e.get("surface_forms", []):
                 if '"' not in sf:
                     addsurf(sf, e["anchor"])
             addsurf(e["label"], e["anchor"])
-    for form, anchor in {**al.get("module_aliases", {}),
-                         **al.get("blueprint_group_aliases", {})}.items():
+    for form, anchor in al.get("module_aliases", {}).items():
         addsurf(form, anchor)
 
     bp_eg = {}           # (norm effect, norm group) -> (file, anchor)

@@ -77,7 +77,26 @@
     "Collector Limpet Controller": "module-limpet-controllers",
     "Prospector Limpet Controller": "module-limpet-controllers",
     "Fuel Transfer Limpet Controller": "module-limpet-controllers",
-    "Limpet Controller": "module-limpet-controllers"
+    "Limpet Controller": "module-limpet-controllers",
+    "Beam Laser": "module-lasers",
+    "Pulse Laser": "module-lasers",
+    "Burst Laser": "module-lasers",
+    "Multi-Cannon": "module-kinetic",
+    "Multi Cannon": "module-kinetic",
+    "Cannon": "module-kinetic",
+    "Fragment Cannon": "module-kinetic",
+    "Rail Gun": "module-kinetic",
+    "Plasma Accelerator": "module-plasma",
+    "Advanced Missile Rack": "module-explosive",
+    "Seeker Missile Rack": "module-explosive",
+    "Mine Launcher": "module-explosive",
+    "Torpedo Pylon": "module-explosive",
+    "Caustic Sink Launcher": "module-countermeasures",
+    "Caustic Sink": "module-countermeasures",
+    "Chaff Launcher": "module-countermeasures",
+    "Frame Shift Wake Scanner": "module-scanners",
+    "Bi-Weave Shield Generator": "module-shield-generator",
+    "Prismatic Shield Generator": "module-shield-generator"
   },
 
   "blueprint_group_aliases": {
@@ -117,10 +136,19 @@
   "block_forms": ["longer range", "specialised", "cannon",
                   "mining", "refinery", "sensor", "limpet", "collector", "prospector",
                   "scanner", "drive", "shield", "cargo", "fuel", "armour", "hull"],
+  "_prefer_module_forms_note": "Surface forms that name a MODULE -> always link the module page, never the engineering blueprint group, even in engineering/loadout context. The applier drops the blueprint-group candidate for these. Blueprint EFFECT names (Overcharged, Dirty Drive Tuning) are unaffected and still link the blueprint.",
   "prefer_module_forms": [
     "fuel scoop", "cargo rack", "collector limpet controller",
     "prospector limpet controller", "fuel transfer limpet controller",
-    "limpet controller", "heat sink launcher", "point defence", "manifest scanner"
+    "limpet controller", "heat sink launcher", "point defence", "manifest scanner",
+    "thrusters", "frame shift drive", "refinery", "power plant", "power distributor",
+    "shield booster", "shield cell bank", "shield generator", "life support", "sensors",
+    "detailed surface scanner", "hull reinforcement", "module reinforcement", "fuel tank",
+    "kill warrant scanner", "frame shift wake scanner", "chaff launcher",
+    "beam laser", "pulse laser", "burst laser", "multi cannon", "multi-cannon",
+    "cannon", "fragment cannon", "rail gun", "plasma accelerator", "caustic sink launcher",
+    "caustic sink", "caustic sinks", "chaff launcher", "fsd",
+    "bi-weave shield generator", "prismatic shield generator"
   ],
   "ship_default_role": { "asp-explorer": "exploration" },
 
