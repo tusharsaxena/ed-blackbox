@@ -295,10 +295,11 @@ python3 scripts/extract-blueprint-editorial.py # one-time seeder (HTML → edito
   experimentals/Totals/counts/anchors all match data; Sources external-only) then
   `python3 scripts/verify-links.py` and `python3 scripts/normalize-link-targets.py
   guides/engineering/blueprints.html`. Card `<section id>`s don't change, so no anchor regen.
-- **Materials is now also data-driven** (see *Change material data* below). **Still deferred:**
-  engineers · powerplay — built next from EDCD + the Fandom wiki (inara dropped as a fetched
-  source; it 503s bots). Design: `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`
-  and `docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md`.
+- **Materials and engineers are now also data-driven** (see *Change material data* /
+  *Change engineer data* below). **Still deferred:** powerplay — built next from EDCD + the
+  Fandom wiki (inara dropped as a fetched source; it 503s bots). Design:
+  `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`,
+  `…-edcd-reference-data-pipelines-design.md`, and `…-engineers-data-pipeline-design.md`.
 
 ### Change material data (Materials page)
 **`data/materials/material.csv` (verbatim EDCD/FDevIDs) is the canonical game-data source for
@@ -331,6 +332,32 @@ python3 scripts/audit-materials.py         # deterministic page⇄data consisten
   Guardian/Thargoid `None`-category rows are stored but not shown — a future tech-broker/suit-
   materials display (tracked in `data/README.md`).
 - Design: `docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md`.
+
+### Change engineer data (Engineers page)
+**`data/engineers/engineers.csv` (verbatim EDCD/FDevIDs, READ-ONLY — re-fetched by
+`scripts/import-engineers.sh`) is the canonical roster** (38 engineers, 1:1 with the cards).
+The 38 cards are **editorial** and live in **`data/engineers-extra/editorial.json`** (each
+card's inner HTML stored verbatim + `accent`/`section`/`order`); `build-engineers.py` re-emits
+them byte-for-byte between the 8 `<!-- BEGIN/END generated:engineers -->` marker pairs.
+**Preserve-and-verify:** coriolis `data/modifications/modules.json` is a **verifier, not a
+generator** — `audit-engineers.py` checks the rendered ship-engineer mod grades against it
+(over-claims fail; omissions are warnings), because coriolis splits deliberate editorial
+variant-collapses (Bi-Weave/Prismatic Shield Generator, Advanced Multi-Cannon) the page is
+right to keep merged.
+```bash
+bash scripts/import-engineers.sh           # re-vendor engineers.csv from EDCD/FDevIDs
+python3 scripts/build-engineers.py         # re-emit the 38 cards from the overlay
+python3 scripts/build-engineers.py --check # preview, write nothing
+python3 scripts/audit-engineers.py         # roster + coriolis grade gate (+ omission warnings)
+```
+- **To edit a card:** change its `html` (or other field) in `editorial.json`, rebuild, audit.
+  Never hand-edit the cards in the page. `engineer-<slug>` ids are deep-linked site-wide —
+  **never rename them**. After a build run `audit-engineers.py`, then `apply-hyperlinks.py` /
+  `normalize-link-targets.py` / `verify-links.py` (if the hyperlink pass enriches a card,
+  re-run `extract-engineers-editorial.py` to recapture, then rebuild so the overlay stays the
+  source of truth).
+- On-foot (suit/weapon) engineer mods are editorial (coriolis has no on-foot engineering).
+- Design: `docs/superpowers/specs/2026-06-30-engineers-data-pipeline-design.md`.
 
 ### Migrate a page to the design system *(done — reference only)*
 - Every guide + the landing page are migrated (the original 108 legacy pages plus everything
@@ -431,5 +458,8 @@ python3 scripts/audit-blueprints.py               # deterministic blueprints.htm
 bash scripts/import-materials.sh                  # re-vendor material.csv/microresources.csv from EDCD/FDevIDs (canonical, read-only)
 python3 scripts/build-materials.py                # render materials.html catalog tables from data/materials/ (canonical) + data/materials-extra/ overlay
 python3 scripts/audit-materials.py                # deterministic materials.html ⇄ data consistency gate (counts/names/Raw-G5-empty/markers/Sources)
+bash scripts/import-engineers.sh                  # re-vendor engineers.csv (38 roster) from EDCD/FDevIDs (canonical, read-only)
+python3 scripts/build-engineers.py                # re-emit the 38 engineer cards from data/engineers-extra/editorial.json
+python3 scripts/audit-engineers.py                # engineers.html roster + coriolis ship-mod-grade gate (over-claims fail; omissions warn)
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```

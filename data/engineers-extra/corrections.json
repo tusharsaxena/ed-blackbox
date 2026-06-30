@@ -1,5 +1,16 @@
 {
-  "_about": "Project-authored corrections for the engineers pipeline. Roster name-fixes (if any) are inherited from data/modifications-extra/corrections.json via bp_common. Add engineer-specific overrides here as verified (e.g. confirmed mod-list omissions from the ultracode wiki pass). Empty by design at seed time.",
+  "_about": "Project-authored corrections for the engineers pipeline. Roster name-fixes are inherited from data/modifications-extra/corrections.json via bp_common. This file records verified editorial corrections and documents known coriolis-data discrepancies so audit-engineers.py omission warnings can be triaged.",
   "name_fixes": {},
-  "mod_corrections": {}
+
+  "applied_corrections": {
+    "_note": "Applied to the cards (editorial.json) after the 2026-06-30 ultracode wiki-verification pass.",
+    "petra-olmanova": "Advanced Missile Rack -> Seeker Missile Rack (G5). The Advanced Missile Rack is engineered only by Liz Ryder + Juri Ishmaak (confirmed by the site's own blueprints.html advanced-missile-rack card); Olmanova engineers the standard/Seeker Missile Rack family.",
+    "ram-tah": "Hatch Breaker Limpet Controller G3 -> G4 (matches coriolis + the three sibling limpet controllers). Removed G1 Guardian Gauss/Plasma/Shard — those are Technology Broker unlocks, not Ram Tah engineering blueprints; Guardian weapons cannot be engineered."
+  },
+
+  "known_coriolis_discrepancies": {
+    "_note": "Verified page-correct; coriolis is the outlier. audit-engineers.py emits omission/grade warnings here that should be IGNORED (do not 'fix' the page toward coriolis).",
+    "cargo_manifest_scanner_cs_group": "coriolis group 'cs' (Cargo/Manifest Scanner) is over-broad: it wrongly attributes the scanner to Felicity Farseer + Hera Tani (who do not offer it) and over-grades Bill Turner / Lori Jameson / Juri Ishmaak / Lei Cheung to G5 (real cap G3, matching the parallel 'kw'/'ws' scanner groups). Page correctly omits/uses G3. Verified vs Fandom/EDSM/scotty/ed-board.",
+    "caustic_sink_launcher": "coriolis lists Caustic Sink Launcher (G5) for Petra Olmanova + Ram Tah, but Update 15 (May 2023) reclassified it as experimental/consumable — it is no longer engineerable by anyone. Page correctly omits it."
+  }
 }

@@ -38,6 +38,15 @@ The subdirs below are **project-authored** (NOT coriolis-data):
   deferral flags) and `editorial.json` (per-section labels + build-owned `cell_links`).
   `scripts/build-materials.py` merges these with `materials/` to render the catalog tables;
   `audit-materials.py` verifies page ⇄ data. See its README + `scripts/build-materials.md`.
+- `engineers/`     — **canonical engineer roster** (`engineers.csv`, 38), vendored verbatim
+  from **[EDCD/FDevIDs](https://github.com/EDCD/FDevIDs)** by `scripts/import-engineers.sh`
+  (read-only). `system_address` = system id64. Ship-engineer *mod grades* come from coriolis
+  `modifications/modules.json` (verifier, not generator). See `scripts/import-engineers.md`.
+- `engineers-extra/` — overlay for the **engineers pipeline**. `editorial.json` stores all 38
+  cards' inner HTML verbatim (+ `accent`/`section`/`order`) — the cards are editorial;
+  `corrections.json` holds verified roster/mod overrides. `scripts/build-engineers.py` re-emits
+  the cards byte-for-byte; `audit-engineers.py` checks the roster vs `engineers.csv` and the
+  rendered ship-mod grades vs coriolis (over-claims fail, omissions warn). See its README.
 - `ship-aliases/`  — hand-curated per-hull **display-name aliases** (e.g. `Type-8` → Type-8
   Transporter) for hyperlink name matching; kept separate from imported `ships/`. See its README.
 - `sources/`       — **canonical source of truth for every page's bottom-of-page Sources

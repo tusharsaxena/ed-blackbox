@@ -329,9 +329,19 @@ The first step toward "content-as-data". Convention: every task script lives in
   Guardian/Thargoid (`category=None`) materials + all Odyssey microresources are **captured but
   not rendered** (deferred display). `audit-materials.py` is the deterministic gate (counts
   28/50/30, names present, Raw G5 empty, markers, Sources external-only). This re-sourced the
-  three blueprints-deferred pages off inara (which 503s bots) onto EDCD + the Fandom wiki;
-  **engineers + powerplay** follow next. Design:
-  `docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md`.
+  three blueprints-deferred pages off inara (which 503s bots) onto EDCD + the Fandom wiki.
+  Design: `docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md`.
+- **Engineers pipeline** — `build-engineers.py` (+ `engineers_common.py`) re-emits the 38
+  engineer cards on `guides/engineering/engineers.html` from `data/engineers-extra/editorial.json`
+  (each card's inner HTML stored verbatim; the cards are editorial) between the 8
+  `<!-- BEGIN/END generated:engineers -->` marker pairs. The **roster** is canonical from EDCD
+  `data/engineers/engineers.csv` (38, vendored by `import-engineers.sh`). **Preserve-and-verify:**
+  coriolis `modules.json` is a *verifier, not a generator* — `audit-engineers.py` checks the
+  roster and the rendered ship-engineer mod grades against it (over-claims fail; omissions warn),
+  because coriolis splits deliberate editorial variant-collapses (Bi-Weave/Prismatic Shield
+  Generator, Advanced Multi-Cannon) the page is right to keep merged. `extract-engineers-editorial.py`
+  was the one-time seeder. **Powerplay** is the last deferred page. Design:
+  `docs/superpowers/specs/2026-06-30-engineers-data-pipeline-design.md`.
 
 Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
