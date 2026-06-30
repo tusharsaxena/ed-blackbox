@@ -319,6 +319,10 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
 
 ## Don't
 
+- **Don't commit automatically.** Do the work, verify it (gate check / audits), and **stop** —
+  leave changes staged/unstaged for the author to review. Run `git commit` **only** when the
+  author explicitly asks ("commit this", "commit all", etc.). The author batches several rounds
+  of edits, then asks to commit once; staging is fine, committing is not, until asked.
 - Don't invent game data or "improve" numbers from memory.
 - Don't re-derive or "improve" the locked design-system tokens/palette.
 - Don't hand-edit `guides/index.html` (regenerate it via `generate-guides-index.sh`).
