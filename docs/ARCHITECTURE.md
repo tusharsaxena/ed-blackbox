@@ -11,7 +11,8 @@ see [`CLAUDE.md`](CLAUDE.md). Per-page data sources live in each page's bottom-o
 
 A **static website** — hand-authored HTML, no server, no framework, no build step
 required to view it. Every page is plain HTML/CSS/JS and opens directly in a browser
-or from `file://`. The deployment target is **GitHub Pages** (not yet live).
+or from `file://`. The deployment target is **GitHub Pages**, served at the custom apex
+domain **`edblackbox.com`** — setup steps (GitHub + Spaceship DNS) in [`DEPLOYMENT.md`](DEPLOYMENT.md).
 
 **Project facts:** authored by **Tushar Saxena** (in-game **CMDR Ka0s**, INARA 173082),
 licensed **MIT** (© 2026); remote `github.com/tusharsaxena/ed-blackbox`. Branch:
