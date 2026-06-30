@@ -24,6 +24,20 @@ The subdirs below are **project-authored** (NOT coriolis-data):
   dossier 3-State Loadout / Engineering Plan tables and the Coriolis/EDSY/SLEF exports.
 - `fdev/`          — `shipyard.csv`, vendored from **[EDCD/FDevIDs](https://github.com/EDCD/FDevIDs)**:
   ship display name → FDev journal symbol, used to build the planner export URLs.
+- `materials/`     — **canonical materials data**, vendored verbatim from
+  **[EDCD/FDevIDs](https://github.com/EDCD/FDevIDs)** by `scripts/import-materials.sh`
+  (read-only — re-fetched, never hand-edited). `material.csv` (`id,symbol,rarity,type,category,
+  name`; `rarity`=grade) drives the three catalog tables on `guides/engineering/materials.html`;
+  `microresources.csv` is the Odyssey on-foot items. See `scripts/import-materials.md`.
+  **Deferred display (TODO):** the Guardian/Thargoid (`category=None`) materials **and all
+  Odyssey microresources** are captured here but **not yet rendered** — materials.html currently
+  shows only Raw/Manufactured/Encoded. A future tech-broker / suit-materials display will surface
+  the rest.
+- `materials-extra/` — overlays for the **materials pipeline**, outside the read-only
+  `materials/` import. `corrections.json` (`raw_group_labels`, `category_order`, `display`
+  deferral flags) and `editorial.json` (per-section labels + build-owned `cell_links`).
+  `scripts/build-materials.py` merges these with `materials/` to render the catalog tables;
+  `audit-materials.py` verifies page ⇄ data. See its README + `scripts/build-materials.md`.
 - `ship-aliases/`  — hand-curated per-hull **display-name aliases** (e.g. `Type-8` → Type-8
   Transporter) for hyperlink name matching; kept separate from imported `ships/`. See its README.
 - `sources/`       — **canonical source of truth for every page's bottom-of-page Sources

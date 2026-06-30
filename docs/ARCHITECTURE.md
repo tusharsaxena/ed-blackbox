@@ -314,9 +314,24 @@ The first step toward "content-as-data". Convention: every task script lives in
   data, never the cards; `--check` previews. `audit-blueprints.py` is the deterministic gate
   (every page material/category/engineer/experimental/Total/count matches data, every
   `#engineer-<slug>` anchor resolves, Sources external-only). `extract-blueprint-editorial.py`
-  was the one-time seeder (HTML → `editorial.json`; reference only). Engineers/powerplay/materials
-  pages are deferred (inara.cz blocks automated extraction). Design:
+  was the one-time seeder (HTML → `editorial.json`; reference only). Design:
   `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`.
+- **Materials pipeline** — `build-materials.py` (+ shared loaders `materials_common.py`) renders
+  the three catalog tables (Raw 7×G1–G4, Manufactured 10×G1–G5, Encoded 6×G1–G5) on
+  `guides/engineering/materials.html` from the **canonical** `data/materials/material.csv`
+  (vendored verbatim from EDCD/FDevIDs by `import-materials.sh`, read-only), plus a
+  **project-authored** overlay in `data/materials-extra/`: `corrections.json` (`raw_group_labels`,
+  `category_order`, `display` deferral) and `editorial.json` (section labels + build-owned
+  `cell_links`). A **byte-compatible** splice rewrites only the run between
+  `<!-- BEGIN generated:materials -->` … `<!-- END generated:materials -->` markers in §03/04/05;
+  leads/`tbl-desc`/callouts/§06–09/Sources are preserved. The build **corrected** the Encoded
+  Encryption-Files/Data-Archives ladders (the old hand-typed page flagged them `kv-tbd`).
+  Guardian/Thargoid (`category=None`) materials + all Odyssey microresources are **captured but
+  not rendered** (deferred display). `audit-materials.py` is the deterministic gate (counts
+  28/50/30, names present, Raw G5 empty, markers, Sources external-only). This re-sourced the
+  three blueprints-deferred pages off inara (which 503s bots) onto EDCD + the Fandom wiki;
+  **engineers + powerplay** follow next. Design:
+  `docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md`.
 
 Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance

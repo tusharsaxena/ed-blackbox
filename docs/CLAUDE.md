@@ -295,9 +295,42 @@ python3 scripts/extract-blueprint-editorial.py # one-time seeder (HTML → edito
   experimentals/Totals/counts/anchors all match data; Sources external-only) then
   `python3 scripts/verify-links.py` and `python3 scripts/normalize-link-targets.py
   guides/engineering/blueprints.html`. Card `<section id>`s don't change, so no anchor regen.
-- **Out of scope (deferred):** engineers · powerplay · materials pages — their named source
-  (inara.cz) hard-blocks automated extraction; revisit when that data is available another way.
-  Design: `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`.
+- **Materials is now also data-driven** (see *Change material data* below). **Still deferred:**
+  engineers · powerplay — built next from EDCD + the Fandom wiki (inara dropped as a fetched
+  source; it 503s bots). Design: `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`
+  and `docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md`.
+
+### Change material data (Materials page)
+**`data/materials/material.csv` (verbatim EDCD/FDevIDs) is the canonical game-data source for
+`materials.html` and is READ-ONLY** — re-fetched by `scripts/import-materials.sh`, never
+hand-edited (same model as `data/fdev/shipyard.csv`). The page's three catalog tables (Raw
+7×G1–G4, Manufactured 10×G1–G5, Encoded 6×G1–G5) are *generated* from it plus a
+**project-authored** overlay in **`data/materials-extra/`** (kept outside `data/materials/` so
+a re-import never clobbers it):
+- `corrections.json` — `raw_group_labels` (numeric Raw category → `Group N`), `category_order`
+  (displayed categories per type, in render order), and `display` (Guardian/Thargoid `None`-
+  category materials marked `false` — captured but **not rendered**; deferred display).
+- `editorial.json` — per-section `header_label`/`tag`, and `cell_links` (in-cell cross-links the
+  build owns, so the generated region stays idempotent).
+```bash
+bash scripts/import-materials.sh           # re-vendor material.csv/microresources.csv from EDCD/FDevIDs
+python3 scripts/build-materials.py         # render the 3 catalog tables between markers
+python3 scripts/build-materials.py --check # preview the diff, write nothing
+python3 scripts/audit-materials.py         # deterministic page⇄data consistency gate
+```
+- The generator (`build-materials.py`, on shared loaders `materials_common.py`) reproduces the
+  `table.data` markup byte-for-byte and rewrites **only** the run between the
+  `<!-- BEGIN generated:materials -->` … `<!-- END generated:materials -->` markers in §03/04/05.
+  Leads, `tbl-desc`, callouts, §06–09, masthead and Sources are untouched. **Never hand-edit the
+  tables** — edit the data and rebuild.
+- After a rebuild run `python3 scripts/audit-materials.py`, then
+  `python3 scripts/apply-hyperlinks.py guides/engineering/materials.html`,
+  `python3 scripts/normalize-link-targets.py guides/engineering/materials.html`, and
+  `python3 scripts/verify-links.py`. Table `<section id>`s don't change, so no anchor regen.
+- **Capture-but-defer:** all Odyssey microresources (`data/materials/microresources.csv`) and the
+  Guardian/Thargoid `None`-category rows are stored but not shown — a future tech-broker/suit-
+  materials display (tracked in `data/README.md`).
+- Design: `docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md`.
 
 ### Migrate a page to the design system *(done — reference only)*
 - Every guide + the landing page are migrated (the original 108 legacy pages plus everything
@@ -395,5 +428,8 @@ python3 scripts/build-sources.py                  # regenerate every page's Sour
 python3 scripts/audit-sources.py                  # verify Sources coverage + external-only + no drift
 python3 scripts/build-blueprints.py               # render blueprints.html cards from data/modifications/ (canonical, read-only) + data/modifications-extra/ overlays
 python3 scripts/audit-blueprints.py               # deterministic blueprints.html ⇄ data consistency gate (materials/engineers/experimentals/Totals/counts/anchors)
+bash scripts/import-materials.sh                  # re-vendor material.csv/microresources.csv from EDCD/FDevIDs (canonical, read-only)
+python3 scripts/build-materials.py                # render materials.html catalog tables from data/materials/ (canonical) + data/materials-extra/ overlay
+python3 scripts/audit-materials.py                # deterministic materials.html ⇄ data consistency gate (counts/names/Raw-G5-empty/markers/Sources)
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```
