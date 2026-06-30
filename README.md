@@ -26,7 +26,9 @@ opens directly in a browser or from `file://`.
 ## Viewing it
 
 Open `guides/index.html` in a browser. That's it. Internal links are relative, so the repo
-serves as-is (deployment target: **GitHub Pages**).
+serves as-is. It's published live on **GitHub Pages** at **[edblackbox.com](https://edblackbox.com)**
+(the repo's `CNAME` + a site-root `index.html` redirect to `/guides/` handle this; setup in
+[`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)).
 
 ## How it's maintained
 
@@ -67,6 +69,8 @@ python3 scripts/verify-links.py          # audit every internal link + quick-nav
   the design system, content taxonomy, the generation pipelines, and data provenance.
 - [`docs/CLAUDE.md`](docs/CLAUDE.md) — working conventions and how-to recipes for editing the
   repo (golden rules, adding a guide, changing a rating/loadout/sources, cross-linking).
+- [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — how the site is published: GitHub Pages + the
+  `edblackbox.com` custom domain (Spaceship DNS records, verification, troubleshooting).
 
 ## Contributing & corrections
 
