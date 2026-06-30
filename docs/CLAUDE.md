@@ -25,8 +25,8 @@ guides/            166 HTML guides + index.html (generated) — all on the desig
 design-system/     v1.3.0 — css/ js/ templates/ legacy-templates/ docs/ (THE shared system every
                    page links; legacy-templates/ = the precursor Template.html/.md, reference only)
 images/            engineers/ (38 portraits) · ships/ (48 renders) · logos/ (logo·banner·favicon + concepts/)
-scripts/           reusable task scripts (+ per-script .md docs)
-docs/              project docs (this file, architecture, todo)
+scripts/           reusable task scripts (+ per-script .md docs); archive/ = completed one-offs
+docs/              project docs (this file, architecture; backlog → GitHub Issues)
 ```
 
 > **Migration complete (2026-06-23):** every guide and the generated landing page now link
@@ -89,8 +89,8 @@ docs/              project docs (this file, architecture, todo)
    same-tab, **no Home**) goes in `.hdr-crumb-trail`, separated by `<span class="sep">›</span>`
    — a placeholder in the starter template. A top-level page with no parent uses
    `class="hdr-crumb solo"` and drops the trail span. (The retired-nav→linked-crumb migration
-   was a one-shot: `scripts/deprecate-breadcrumbs.py`; `header-crumb-from-breadcrumbs.py` is
-   now obsolete.)
+   was a one-shot: `scripts/archive/deprecate-breadcrumbs.py`; `scripts/archive/header-crumb-from-breadcrumbs.py`
+   is now obsolete.)
 5. Verify facts (rule 1); add it as a `card …` line in
    `scripts/generate-guides-index.sh` and re-run so it appears on the landing page.
 6. Re-run `scripts/generate-anchor-files.sh` so the page gets its sibling
@@ -280,7 +280,7 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
 python3 scripts/build-blueprints.py            # render cards, inject between markers in sections 02–05
 python3 scripts/build-blueprints.py --check    # preview the diff, write nothing
 python3 scripts/audit-blueprints.py            # deterministic page⇄data consistency gate
-python3 scripts/extract-blueprint-editorial.py # one-time seeder (HTML → editorial.json); reference only
+python3 scripts/archive/extract-blueprint-editorial.py # one-time seeder (HTML → editorial.json); reference only (archived)
 ```
 - The generator (`build-blueprints.py`, on shared loaders `bp_common.py`) reproduces the
   `.bp-*` markup byte-for-byte and rewrites **only** the run of cards between the
@@ -355,7 +355,7 @@ python3 scripts/audit-engineers.py         # roster + coriolis grade gate (+ omi
   Never hand-edit the cards in the page. `engineer-<slug>` ids are deep-linked site-wide —
   **never rename them**. After a build run `audit-engineers.py`, then `apply-hyperlinks.py` /
   `normalize-link-targets.py` / `verify-links.py` (if the hyperlink pass enriches a card,
-  re-run `extract-engineers-editorial.py` to recapture, then rebuild so the overlay stays the
+  re-run `scripts/archive/extract-engineers-editorial.py` to recapture, then rebuild so the overlay stays the
   source of truth).
 - On-foot (suit/weapon) engineer mods are editorial (coriolis has no on-foot engineering).
 - Design: `docs/superpowers/specs/2026-06-30-engineers-data-pipeline-design.md`.
@@ -377,7 +377,7 @@ python3 scripts/audit-powerplay.py         # 12 powers (allegiance matched) + 12
   string), or change a fact in `powers.json`, then rebuild + audit. `powerplay-<slug>` ids are
   deep-linked site-wide — **never rename**. After a build run `audit-powerplay.py`, then
   `apply-hyperlinks.py` / `normalize-link-targets.py` / `verify-links.py` (re-seed via
-  `extract-powerplay-editorial.py` if the hyperlink pass enriches a card).
+  `scripts/archive/extract-powerplay-editorial.py` if the hyperlink pass enriches a card).
 - The page is current to **Powerplay 2.0**; verify any change vs the Fandom wiki (PP2.0) + EDSM
   (rule 1). inara is not used (it 503s bots).
 - Design: `docs/superpowers/specs/2026-06-30-powerplay-data-pipeline-design.md`.

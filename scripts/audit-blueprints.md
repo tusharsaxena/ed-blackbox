@@ -43,6 +43,6 @@ On any failure it prints one line per finding, a `FAIL — …` summary, and exi
 ## Pipeline
 
 Part of the blueprints `data → build → audit` pipeline:
-`extract-blueprint-editorial.py` (one-time seed) → `build-blueprints.py` (render) →
+`archive/extract-blueprint-editorial.py` (one-time seed; archived) → `build-blueprints.py` (render) →
 `audit-blueprints.py` (this). Run it after every `build-blueprints.py`. Design spec:
 `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`.

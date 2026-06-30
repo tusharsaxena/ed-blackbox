@@ -1,7 +1,7 @@
 # sources_lib.py
 
 Shared parse/render helpers for the canonical **Sources** pipeline. Imported by
-`extract-sources.py`, `build-sources.py` and `audit-sources.py` — not run directly.
+`build-sources.py`, `audit-sources.py` and the archived `archive/extract-sources.py` seeder — not run directly.
 
 ## What it provides
 

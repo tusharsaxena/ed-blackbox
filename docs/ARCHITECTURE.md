@@ -115,9 +115,9 @@ tokens  →  components  →  templates  →  pages
   `.header-qn` leads with a `.hdr-crumb` block — **the site's only breadcrumb** — the current
   page title over its **navigable** parent trail (`.hdr-crumb-trail` of relative same-tab
   links, **no Home**; `.solo` when trail-less). The standalone `nav.breadcrumbs` strip below
-  the header was **retired site-wide (2026-06-28)** by `scripts/deprecate-breadcrumbs.py`,
+  the header was **retired site-wide (2026-06-28)** by `scripts/archive/deprecate-breadcrumbs.py`,
   which folded its link targets into the crumb trail (so the precursor
-  `header-crumb-from-breadcrumbs.py` — which derived a *link-less* crumb from that nav — is
+  `scripts/archive/header-crumb-from-breadcrumbs.py` — which derived a *link-less* crumb from that nav — is
   obsolete); the old standalone `nav.quicknav` bar was retired earlier. The masthead-meta carries a **last-updated** date (no
   sources/patch line); per-page sources move to a `.credits` section (the last numbered
   section, above the footer); the footer is brand + author + part (no "Next:" pointer).
@@ -165,8 +165,9 @@ guides/
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
 3 wired logos + concept candidates under `logos/concepts/`), 260 Markdown (prose docs +
 **167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 49 `.py` + 8 `.mjs`) and its data
-(`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
+1 site JS, plus the `scripts/` tooling — **43 reusable** scripts (4 `.sh` + 38 `.py` +
+1 `.mjs`) and **40 archived** one-offs in `scripts/archive/` (7 `.sh` + 26 `.py` + 7 `.mjs`) —
+and its data (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
 
@@ -264,8 +265,8 @@ The first step toward "content-as-data". Convention: every task script lives in
   order whenever a dossier or rating changes. The same `data/ship-ratings/` files also hold the
   **scorecard** (`scorecard_weights` per role + per-ship `scorecard`); `build-ship-scorecards.py`
   renders these into each dossier's §"Why This Rating" section (weighted factor table whose
-  points sum to the headline rating), and `apply-scorecard-authoring.py` bulk-merges authored
-  rationales into the data.
+  points sum to the headline rating), and `scripts/archive/apply-scorecard-authoring.py` (archived
+  one-shot) bulk-merged the authored rationales into the data.
 - **Loadouts pipeline** — `build-ship-loadouts.py` (+ shared resolver `slef_resolve.py`) builds
   each dossier's **3-State Loadout** (`table.l3` + Notes) and **Engineering Plan** (`table.data`)
   tables from `data/ship-loadouts/<basename>.json`, the **canonical source of truth** (one file
@@ -293,7 +294,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   `{ page, lead[], sources[ {label, what, url, display} ], tag? }`; the build preserves each
   page's positional `sec-num` + section indent and is idempotent. It also rewrites
   `data/sources/_index.md`, a generated catalog of every unique external URL → citing pages.
-  The Sources section is **external references only** — `extract-sources.py` (the one-time
+  The Sources section is **external references only** — `scripts/archive/extract-sources.py` (the one-time
   bootstrap that populated the data from the existing HTML) strips inline internal cross-links,
   and `audit-sources.py` is the deterministic gate (coverage, external-only, no drift, schema).
   Edit the data, never the credits block. (Design: `docs/superpowers/specs/2026-06-30-canonical-sources-data-design.md`.)
@@ -313,7 +314,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   of sections 02–05; everything else (About, callouts, generated Sources) is preserved. Edit the
   data, never the cards; `--check` previews. `audit-blueprints.py` is the deterministic gate
   (every page material/category/engineer/experimental/Total/count matches data, every
-  `#engineer-<slug>` anchor resolves, Sources external-only). `extract-blueprint-editorial.py`
+  `#engineer-<slug>` anchor resolves, Sources external-only). `scripts/archive/extract-blueprint-editorial.py`
   was the one-time seeder (HTML → `editorial.json`; reference only). Design:
   `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`.
 - **Materials pipeline** — `build-materials.py` (+ shared loaders `materials_common.py`) renders
@@ -339,7 +340,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   coriolis `modules.json` is a *verifier, not a generator* — `audit-engineers.py` checks the
   roster and the rendered ship-engineer mod grades against it (over-claims fail; omissions warn),
   because coriolis splits deliberate editorial variant-collapses (Bi-Weave/Prismatic Shield
-  Generator, Advanced Multi-Cannon) the page is right to keep merged. `extract-engineers-editorial.py`
+  Generator, Advanced Multi-Cannon) the page is right to keep merged. `scripts/archive/extract-engineers-editorial.py`
   was the one-time seeder. Design:
   `docs/superpowers/specs/2026-06-30-engineers-data-pipeline-design.md`.
 - **Powerplay pipeline** — `build-powerplay.py` re-emits the §Powers (12 power cards) + §Modules
@@ -353,24 +354,25 @@ The first step toward "content-as-data". Convention: every task script lives in
   not a rewrite. With this, **all three inara-deferred pages (materials, engineers, powerplay)
   are data-driven**. Design: `docs/superpowers/specs/2026-06-30-powerplay-data-pipeline-design.md`.
 
-Beyond those generators, `scripts/` also holds the **migration verification harness**
-(`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
-gate, `baseline-capture.sh`) and several **one-off content-migration scripts**
-(`fix-step-tuples`, `trim-svg`, `restructure-app-cards`, `classify-card-groups`,
-`convert-dossier-rating-cards`, and `deprecate-breadcrumbs.py` — the one-shot that retired
-the standalone `nav.breadcrumbs` strip site-wide and turned the in-header `.hdr-crumb` trail
-into links). Idempotent **table-maintenance sweeps** keep guide markup
-in sync with the design system — `sort-compare-tables.py` (orders comparison-table rows) and
-`align-table-headers.py` (puts each `<th>` on its column's `.num`/`.center` alignment, so a
-right/centre column's header sits over its figures). The **anchor-standardization toolchain** lives here too —
-`standardize-anchors.py` (renames every navigable id onto the `<family>-<slug>` scheme and
-rewrites all internal links, including the `data-target` JS quick-nav) and `verify-links.py`
-(a full internal-link + quick-nav resolution audit) — alongside read-only gates such as
-`audit-section-numbers.py`. A **Sources-hygiene** sweep lives here too: `fix-generic-sources.py`
-(data-driven from `fix-generic-sources.ops.json`, `--check` re-verifies HTTP 200) repoints any
+Beyond those generators, **completed one-off scripts have been moved to `scripts/archive/`**
+(catalogued in `scripts/archive/README.md`): the **migration verification harness**
+(`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance gate,
+`baseline-capture.sh`), the **one-off content-migration scripts** (`fix-step-tuples`,
+`trim-svg`, `restructure-app-cards`, `classify-card-groups`, `convert-dossier-rating-cards`,
+`align-table-headers`, and `deprecate-breadcrumbs.py` — the one-shot that retired the
+standalone `nav.breadcrumbs` strip site-wide and turned the in-header `.hdr-crumb` trail into
+links), and the data-pipeline **seeders** (`extract-*-editorial.py`, `extract-sources.py`).
+They ran once and are kept for reference, not routine use. The reusable harness that remains
+in `scripts/` includes the idempotent **table-maintenance sweep** `sort-compare-tables.py`
+(orders comparison-table rows); the **anchor-standardization toolchain** — `standardize-anchors.py`
+(renames every navigable id onto the `<family>-<slug>` scheme and rewrites all internal links,
+including the `data-target` JS quick-nav) and `verify-links.py` (a full internal-link +
+quick-nav resolution audit) — alongside read-only gates such as `audit-section-numbers.py`;
+and a **Sources-hygiene** sweep, `fix-generic-sources.py` (data-driven from
+`fix-generic-sources.ops.json`, `--check` re-verifies HTTP 200) which repoints any
 bottom-of-page `.cr-link` that cited a website/repo **home** at the specific resource the
-figures came from, and drops rows with no specific target. The harness `.mjs` use Playwright
-(the repo's only dependency, a dev tool — there is still no build step). All are catalogued in
+figures came from, and drops rows with no specific target. The archived `.mjs` harness uses
+Playwright (a dev tool — there is still no build step). The reusable set is catalogued in
 `scripts/README.md`.
 
 **Future direction (planned; tracked in GitHub Issues):** extract page content into per-page

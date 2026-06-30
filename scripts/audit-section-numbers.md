@@ -25,5 +25,5 @@ after editing section heads or the quick-nav on any page.
 python3 scripts/audit-section-numbers.py
 ```
 
-Pair with `linkify-section-refs.py` — run this audit (and fix any numbering) **before**
-linkifying `§` references, since the linker maps `§N` to the current section number.
+Pair with the archived `archive/linkify-section-refs.py` — run this audit (and fix any numbering)
+**before** linkifying `§` references, since the linker maps `§N` to the current section number.

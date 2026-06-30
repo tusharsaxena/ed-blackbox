@@ -19,7 +19,7 @@ What/Pledge/Ranks/States/Earning/Selection/Pitfalls — masthead, Sources, foote
 
 The power/module cards are **editorial** (ethos, lore, tactical notes), so each card run is
 stored as a verbatim region and re-emitted byte-for-byte (seeder:
-`extract-powerplay-editorial.py`). The **structured facts** (12 powers + allegiance + HQ, 12
+`archive/extract-powerplay-editorial.py`, archived). The **structured facts** (12 powers + allegiance + HQ, 12
 modules) live in `data/powerplay/powers.json` and are enforced by `audit-powerplay.py` —
 coriolis/EDCD has no powerplay data, so `powers.json` is project-authored (like
 `data/ship-ratings/`).

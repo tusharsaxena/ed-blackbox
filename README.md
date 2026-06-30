@@ -44,8 +44,11 @@ data, run the script — never hand-edit the generated block.
 | filesystem (dossiers) | `guides/index.html` landing page | `generate-guides-index.sh` |
 | each page's `<section id>`s | per-page `<name>-anchors.md` anchor catalogs | `generate-anchor-files.sh` |
 
-All tooling lives in [`scripts/`](scripts/) (9 `.sh` + 54 `.py` + 8 `.mjs`), each script named
-for its task with a sibling `<name>.md` doc — see [`scripts/README.md`](scripts/README.md).
+All tooling lives in [`scripts/`](scripts/) — **43 reusable** build/maintenance scripts
+(4 `.sh` + 38 `.py` + 1 `.mjs`), each named for its task with a sibling `<name>.md` doc — see
+[`scripts/README.md`](scripts/README.md). Completed one-off scripts (the design-system
+migration, data seeders, one-shot content fixes) are retained under
+[`scripts/archive/`](scripts/archive/README.md) (40 more).
 The shared look is the design system in [`design-system/`](design-system/) (v1.3.0): one linked
 stylesheet + behaviours; pages re-theme only a five-token accent group. Game data imported from
 EDCD is in [`data/`](data/README.md).

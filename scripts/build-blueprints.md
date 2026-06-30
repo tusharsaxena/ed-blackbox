@@ -92,5 +92,5 @@ that set the pipeline up). The builder finds the section by the nearest precedin
 
 - `scripts/bp_common.py` — shared loaders (`load_data`/`load_corrections`/`load_editorial`),
   `material_category`, `avg_rolls`, `engineer_anchor`, `slugify`, `fix_engineer`.
-- `scripts/extract-blueprint-editorial.py` — one-time seeder for `editorial.json`.
+- `scripts/archive/extract-blueprint-editorial.py` — one-time seeder for `editorial.json` (archived).
 - `scripts/audit-blueprints.py` — deterministic page⇄data consistency audit.

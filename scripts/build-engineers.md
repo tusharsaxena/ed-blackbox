@@ -20,7 +20,7 @@ Everything else (masthead, intro/legend sections, callouts, Sources, footer) is 
 Per the design decision, the engineer cards are **editorial**: `editorial.json` stores each
 card's **inner HTML verbatim** (`cards["engineer-<slug>"].html`) plus `accent`, `name`,
 `section`, `order`. The build re-emits them byte-for-byte (the seeder
-`extract-engineers-editorial.py` captured them). The **data** value is delivered by
+`archive/extract-engineers-editorial.py`, archived, captured them). The **data** value is delivered by
 `audit-engineers.py`, which checks the roster against EDCD `engineers.csv` and the rendered
 **ship-engineer mod grades against coriolis** `modules.json` (over-claims fail; omissions are
 reported as warnings) — coriolis is a verifier, **not** a generator (it would otherwise expand
