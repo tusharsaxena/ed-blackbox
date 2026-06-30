@@ -46,7 +46,7 @@ SKIP_TAGS = {"a", "h1", "h2", "h3", "h4", "h5", "h6", "script", "style", "svg",
 SKIP_CLASSES = {"kicker", "role", "brand", "qn-item", "qn", "toc", "quicknav",
                 "dial", "hud", "scorecard", "scval", "fct", "cr-link", "cr-src", "credits",
                 "lex-btn", "lex-copy", "mx-search", "breadcrumb", "tabs",
-                "masthead-meta", "tag", "chip", "bp-card-title", "nolink"}
+                "masthead-meta", "tag", "chip", "bp-card-title", "matname", "exp-desc", "nolink"}
 VOID = {"br", "img", "input", "meta", "link", "hr", "area", "base", "col",
         "embed", "source", "track", "wbr", "path", "circle", "rect", "line",
         "polyline", "polygon", "use", "stop"}
@@ -441,8 +441,17 @@ def main():
     files = editable_files(args)
 
     DATA.mkdir(parents=True, exist_ok=True)
-    # --check writes to a throwaway log so it can never pollute the live candidate log
-    log_path = LOG if apply else DATA / "link-candidates.check.csv"
+    # --check writes to a throwaway log so it can never pollute the live candidate log.
+    # --log=PATH redirects the apply-mode log too (used by relink.py so a dossier rebuild
+    # doesn't churn the committed link-candidates.csv).
+    log_override = next((a.split("=", 1)[1] for a in flags if a.startswith("--log=")), None)
+    if not apply:
+        log_path = DATA / "link-candidates.check.csv"
+    elif log_override:
+        lp = Path(log_override)
+        log_path = lp if lp.is_absolute() else (ROOT / log_override)
+    else:
+        log_path = LOG
     new_log = "--reset-log" in flags or not log_path.exists()
     mode = "w" if new_log else "a"
     with log_path.open(mode, newline="", encoding="utf-8") as fh:

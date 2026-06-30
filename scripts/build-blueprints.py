@@ -282,6 +282,11 @@ def build(check):
     n_groups = len(edit["modgroups"])
     print(f"wrote {PAGE.relative_to(ROOT)} — {n_groups} modgroups, {n_cards} cards")
     print(f"reconcile: {n_data} data instances = {n_rendered} rendered + {n_excluded} excluded")
+    # The cards are re-emitted without the cross-links the hyperlink pass adds (ctx panels,
+    # prose), so re-apply them after every build to keep them durable (idempotent; relink.py).
+    print("\nrelinking blueprints.html…")
+    from relink import relink
+    relink([PAGE])
     return 0
 
 

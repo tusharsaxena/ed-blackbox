@@ -35,6 +35,7 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 REPO = Path(__file__).resolve().parent.parent
 DATA = REPO / "data" / "ship-ratings"
 DOSSIERS = REPO / "guides" / "ships" / "ship-dossiers"
@@ -151,6 +152,7 @@ def main(argv):
     flt = [a for a in argv if not a.startswith("-")]
     check = "--check" in argv
     counts = {"inserted": 0, "updated": 0, "unchanged": 0, "skipped": 0, "error": 0}
+    changed = []
     for role in ROLES:
         doc = json.loads((DATA / f"{role}.json").read_text(encoding="utf-8"))
         weights = {w["factor"]: w["weight"] for w in doc.get("scorecard_weights", [])}
@@ -176,6 +178,7 @@ def main(argv):
             tag = action.upper()
             if action in ("inserted", "updated") and not check:
                 path.write_text(new_html, encoding="utf-8")
+                changed.append(path)
             if action != "unchanged":
                 print(f"  {tag:<9} {r['dossier']}  ({r['ship']} · {r['rating']})")
     mode = " [--check, nothing written]" if check else ""
@@ -183,6 +186,11 @@ def main(argv):
           f"unchanged {counts['unchanged']}, errors {counts['error']}")
     if counts["inserted"]:
         print("  NOTE: new sections added — re-run scripts/generate-anchor-files.sh")
+    # Keep the regenerated scorecard's cross-links alive across rebuilds (idempotent; relink.py).
+    if changed:
+        print(f"\nrelinking {len(changed)} rebuilt dossier(s)…")
+        from relink import relink
+        relink(changed)
     return 1 if counts["error"] else 0
 
 

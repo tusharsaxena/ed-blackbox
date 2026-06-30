@@ -312,13 +312,13 @@ def process(spec_path, check_only=False):
     try:
         raw = json.loads(spec_path.read_text())
     except Exception as e:
-        return False, f"{spec_path.stem}: BAD JSON {e}"
+        return False, f"{spec_path.stem}: BAD JSON {e}", None
     if not isinstance(raw, list):
-        return True, f"{spec_path.stem}: skipped (not SLEF array — legacy format)"
+        return True, f"{spec_path.stem}: skipped (not SLEF array — legacy format)", None
     basename = spec_path.stem
     dossier = find_dossier(basename)
     if dossier is None:
-        return False, f"{basename}: NO DOSSIER"
+        return False, f"{basename}: NO DOSSIER", None
     builds, editorial = {}, {}
     for b in raw:
         props = b.get("header", {}).get("appCustomProperties", {}) or {}
@@ -329,13 +329,13 @@ def process(spec_path, check_only=False):
             editorial = props["edbb"]
     missing = [s for s in STATES if s not in builds]
     if missing:
-        return False, f"{basename}: missing build states {missing}"
+        return False, f"{basename}: missing build states {missing}", None
     warns = validate(builds)
     html = dossier.read_text()
     try:
         new_html = splice(html, builds, editorial)
     except Exception as e:  # noqa
-        return False, f"{basename}: ERROR {e}"
+        return False, f"{basename}: ERROR {e}", None
     changed = new_html != html
     if not check_only and changed:
         dossier.write_text(new_html)
@@ -344,7 +344,9 @@ def process(spec_path, check_only=False):
     msg = f"{basename}: {status}"
     for w in warns:
         msg += "\n" + w
-    return True, msg
+    # Hand the dossier back for relinking whenever we actually built (not --check): the splice
+    # re-emits the tables without links, so every build must re-apply them (relink is idempotent).
+    return True, msg, (dossier if not check_only else None)
 
 
 def main():
@@ -357,9 +359,12 @@ def main():
         print("no matching loadout data files")
         sys.exit(1)
     ok = warn = err = skip = 0
+    changed_dossiers = []
     for s in specs:
-        good, msg = process(s, check_only)
+        good, msg, dossier = process(s, check_only)
         print(("  " if good else "! ") + msg)
+        if dossier is not None:
+            changed_dossiers.append(dossier)
         if not good:
             err += 1
         elif "skipped" in msg:
@@ -369,6 +374,12 @@ def main():
         else:
             ok += 1
     print(f"\n{len(specs)} file(s): {ok} clean, {warn} with warnings, {skip} skipped, {err} errors")
+    # Re-apply hyperlinks to every dossier we just rewrote so the regenerated tables keep
+    # their cross-links (the splice above re-emits them without links). Idempotent; see relink.py.
+    if changed_dossiers:
+        print(f"\nrelinking {len(changed_dossiers)} rebuilt dossier(s)…")
+        from relink import relink  # noqa: E402  (sibling script; sys.path set at top)
+        relink(changed_dossiers)
     if err:
         sys.exit(1)
 

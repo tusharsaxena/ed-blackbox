@@ -160,11 +160,18 @@ python3 scripts/verify-links.py                      # 0 broken targets/anchors
   things the re-run can't self-heal:** (1) a **pre-existing partial link** — an `<a>` already
   wrapped around *part* of a longer term (e.g. `beam <a>lasers</a>`) blocks the fuller match; find
   and fix these by hand. (2) genuinely-**casual generic words** (a stray "mining"/"Shields"/"Drives"
-  in prose) — those stay hand-judged. **Generated pages drop their links on rebuild:** the
-  `blueprints.html` cards and each dossier's 3-State Loadout / Engineering Plan / scorecard tables
-  are re-emitted *without* hyperlinks by their builders, so **re-apply the pass after every such
-  rebuild** (this is the documented final step for `blueprints.html`/`materials.html` — and why a
-  full-site re-run shows most of its hits on the ship dossiers).
+  in prose) — those stay hand-judged. **Generated pages drop their links on rebuild** — so the
+  generators **re-apply the pass themselves**: `build-ship-loadouts.py`, `build-ship-scorecards.py`,
+  `build-blueprints.py` and `build-materials.py` each call `scripts/relink.py` (apply-hyperlinks →
+  normalize-link-targets) on the dossiers/page they rewrote, so the cross-links inside the 3-State
+  Loadout / Engineering Plan / scorecard tables, the blueprint cards and the materials catalog stay
+  durable across rebuilds. **You don't re-run the pass by hand after those builds** — it's wired in.
+  (`relink` logs to a gitignored throwaway so it never churns `link-candidates.csv`; verbatim-data
+  cells `matname`/`exp-desc` are in the applier's skip set so they're never linked.) The
+  `engineers.html`/`powerplay.html` builders are deliberately **not** wired: their cards are
+  re-emitted **verbatim from author-authored HTML overlays**, so their durability model is the
+  opposite — if the hyperlink pass enriches a card you **re-seed the overlay** (`extract-*-editorial.py`)
+  so the links live in the source of truth (wiring relink there would fight the re-seed and drift).
 - **Excluded as link sources** (never edited by the generic applier): `guides/systems/activity-guides/**`,
   `guides/ships/best-ships-by-role/**`, generated `guides/index.html`. The **by-role ladder pages** get
   their role-correct links from a dedicated pass instead — `scripts/link-by-role-pages.py`
@@ -241,9 +248,10 @@ python3 scripts/audit-ratings-consistency.py    # verify 0 mismatches across all
   (`verdict` + per-factor `earned` points that sum to its rating). Edit those in
   `data/ship-ratings/<role>.json`, then `python3 scripts/build-ship-scorecards.py` to inject
   the §"Why This Rating" section (auto-renumbers later sections + quick-nav; re-run
-  `generate-anchor-files.sh` on a first insert). `compute-ship-ratings.py` preserves this
-  authored data across rebuilds. Schema: `data/ship-ratings/README.md`; uses its own
-  `td.fct`/`span.scval` classes so the ratings tooling ignores it.
+  `generate-anchor-files.sh` on a first insert; it then re-applies hyperlinks to each rewritten
+  dossier via `scripts/relink.py` so the section's cross-links stay durable). `compute-ship-ratings.py`
+  preserves this authored data across rebuilds. Schema: `data/ship-ratings/README.md`; uses its own
+  `td.fct`/`span.scval` classes so the ratings tooling (and the hyperlink applier) ignore it.
 - **Cross-variant pills.** Each dossier's §Role & Overview ends with an *"Other role builds
   of this ship"* pill row (`.vchips`, `.nolink`-wrapped) linking the same hull's sibling-role
   dossiers with their live `NN/100`. It reads ratings from the sibling headlines, so after
@@ -283,7 +291,14 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
   `.lex-copy`). They regenerate with the tables — no separate step.
 - **Audit before/after edits:** `python3 scripts/audit-ship-loadouts.py` deterministically
   checks every build for missing core slots (incl. **Bulkheads**), sizing, symbol validity,
-  state drift, and engineering/experimental coverage.
+  state drift, and engineering/experimental coverage. (It reads the SLEF data, not the rendered
+  HTML, so the in-cell hyperlinks don't affect it.)
+- **Cross-links are kept durable automatically:** the splice re-emits the loadout/Engineering-Plan
+  tables without hyperlinks, so after building, `build-ship-loadouts.py` calls `scripts/relink.py`
+  on every dossier it rebuilt (apply-hyperlinks → normalize-link-targets). The module/blueprint/
+  engineer cells get linked exactly like the rest of the site — **no manual link step**, and a
+  rebuild never loses the links. Idempotent; `build-ship-scorecards.py` does the same for the
+  scorecard region. Run `python3 scripts/verify-links.py` after a bulk rebuild.
 - Design: `docs/superpowers/specs/2026-06-26-ship-loadout-data-design.md`.
 
 ### Change blueprint data (Blueprints page)
@@ -314,10 +329,13 @@ python3 scripts/archive/extract-blueprint-editorial.py # one-time seeder (HTML �
   `{1:3, 2:4, 3:4, 4:5, 5:7}` (experimentals = 1); **Total** = Per Roll × Avg Rolls.
   Engineers-per-grade come from `modules.json` (post-corrections, linked
   `engineers.html#engineer-<slug>`); experimentals from `specials.json`.
-- After a rebuild run `python3 scripts/audit-blueprints.py` (materials/categories/engineers/
-  experimentals/Totals/counts/anchors all match data; Sources external-only) then
-  `python3 scripts/verify-links.py` and `python3 scripts/normalize-link-targets.py
-  guides/engineering/engineering-manuals/blueprints.html`. Card `<section id>`s don't change, so no anchor regen.
+- `build-blueprints.py` **re-applies hyperlinks itself** after re-emitting the cards (it calls
+  `scripts/relink.py`), so the ctx-panel/prose cross-links are restored automatically — **no manual
+  apply/normalize step**. After a rebuild just run `python3 scripts/audit-blueprints.py`
+  (materials/categories/engineers/experimentals/Totals/counts/anchors all match data; Sources
+  external-only) and `python3 scripts/verify-links.py`. Card `<section id>`s don't change, so no
+  anchor regen. (Material-name and experimental-description cells are verbatim data and are in the
+  applier's skip set, so they're never linked.)
 - **Materials, engineers, and powerplay are now all data-driven** (see *Change material data* /
   *Change engineer data* / *Change powerplay data* below) — the three inara-deferred pages are
   done, re-sourced off inara (which 503s bots) onto EDCD + the Fandom wiki + project-authored
@@ -348,10 +366,10 @@ python3 scripts/audit-materials.py         # deterministic page⇄data consisten
   `<!-- BEGIN generated:materials -->` … `<!-- END generated:materials -->` markers in §03/04/05.
   Leads, `tbl-desc`, callouts, §06–09, masthead and Sources are untouched. **Never hand-edit the
   tables** — edit the data and rebuild.
-- After a rebuild run `python3 scripts/audit-materials.py`, then
-  `python3 scripts/apply-hyperlinks.py guides/engineering/materials-and-farming/materials.html`,
-  `python3 scripts/normalize-link-targets.py guides/engineering/materials-and-farming/materials.html`, and
-  `python3 scripts/verify-links.py`. Table `<section id>`s don't change, so no anchor regen.
+- `build-materials.py` **re-applies hyperlinks itself** after rebuilding (it calls `scripts/relink.py`),
+  so any cross-links stay durable — **no manual apply/normalize step** (material-name `matname` cells
+  are verbatim data and are skipped). After a rebuild just run `python3 scripts/audit-materials.py`
+  and `python3 scripts/verify-links.py`. Table `<section id>`s don't change, so no anchor regen.
 - **Capture-but-defer:** all Odyssey microresources (`data/materials/microresources.csv`) and the
   Guardian/Thargoid `None`-category rows are stored but not shown — a future tech-broker/suit-
   materials display (tracked in `data/README.md`).

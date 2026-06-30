@@ -112,6 +112,11 @@ def main():
 
     PAGE.write_text(new, encoding="utf-8")
     print(f"build-materials: wrote {len(blocks)} tables to {PAGE.relative_to(ROOT)}")
+    # Re-apply hyperlinks so any cross-links in the page stay durable across rebuilds (the catalog
+    # tables are re-emitted from data without links; material-name cells are skipped). See relink.py.
+    print("\nrelinking materials.html…")
+    from relink import relink
+    relink([PAGE])
 
 
 if __name__ == "__main__":
