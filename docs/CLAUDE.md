@@ -149,10 +149,13 @@ open policy.
 >    to full names ("Climb Farseer" → "Climb Felicity Farseer") so linking is consistent.
 > 3. **Loadout tables — generated, deterministic** (`build-ship-loadouts.py` via `dossier_links.py`,
 >    overrides rule 6): in the §3-State Loadout, §Engineering Plan, and the §Buy/Upgrade plans —
->    **module name ALWAYS linked**, **blueprint name ALWAYS linked** (group-disambiguated, e.g.
->    `Overcharged`), **experimental effect NEVER linked** (e.g. `Corrosive Shell`; wrapped `.nolink`).
->    Engineer names linked. In the editorial §Buy/Upgrade plans the **bold bullet-header** module
->    is linked; common terms in the description are not.
+>    **module name ALWAYS linked** (incl. armour/mining/Guardian-AX/passenger/limpet names via
+>    `dossier_links.MODULE_ALIAS`), **blueprint name ALWAYS linked** (group-disambiguated, e.g.
+>    `Overcharged`), **experimental effect NEVER linked** (e.g. `Corrosive Shell`; wrapped `.nolink`),
+>    and the **§3-State `SLOT` column is NEVER linked** even though its core-internal labels are
+>    module names (`slot` is in the applier's skip set). Engineer names linked. In the editorial
+>    §Buy/Upgrade plans the **bold bullet-header** module is linked; common terms in the
+>    description are not.
 > 4. **Avoid linking common terms in prose** — words that are both casual English and a module/
 >    material name are blocked site-wide (`block_forms` in `data/links/link-aliases.json`): mining,
 >    refinery, sensor(s), limpet(s), collector, prospector, scanner, drive(s), shield(s), cargo,

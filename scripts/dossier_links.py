@@ -36,6 +36,48 @@ def _norm(s):
 # module display / filebase variant -> canonical blueprint group (normalized)
 GROUP_ALIAS = {"armour": "bulkheads"}
 
+# Module/weapon display names that aren't catalogued surface forms, mapped to the anchor the
+# modules.html / blueprints.html page documents them under (so rule 3.1 — module ALWAYS linked
+# — holds for armour variants, mining tools, Guardian/AX gear, passenger cabins, limpets, etc.).
+# Keyed by normalized display name; verified against the actual page section ids.
+MODULE_ALIAS = {
+    # armour grades -> the Bulkheads engineering group (no module-bulkheads anchor exists)
+    "lightweight alloy": "blueprint-group-bulkheads",
+    "reinforced alloy": "blueprint-group-bulkheads",
+    "military grade composite": "blueprint-group-bulkheads",
+    "mirrored surface composite": "blueprint-group-bulkheads",
+    "reactive surface composite": "blueprint-group-bulkheads",
+    # passenger cabins
+    "economy passenger cabin": "module-passenger-cabin",
+    "first passenger cabin": "module-passenger-cabin",
+    "business passenger cabin": "module-passenger-cabin",
+    "luxury passenger cabin": "module-passenger-cabin",
+    # Guardian / AX weapons + reinforcement
+    "guardian gauss cannon": "module-guardian-ax",
+    "guardian shard cannon": "module-guardian-ax",
+    "guardian plasma charger": "module-guardian-ax",
+    "enhanced ax multi cannon": "module-guardian-ax",
+    "ax multi cannon": "module-guardian-ax",
+    "mining volley repeater": "module-mining",
+    "shutdown field neutraliser": "module-xeno",
+    "guardian hull reinforcement": "module-guardian-reinforcement",
+    "guardian module reinforcement": "module-guardian-reinforcement",
+    "guardian shield reinforcement": "module-guardian-reinforcement",
+    # mining tools
+    "abrasion blaster": "module-mining",
+    "seismic charge launcher": "module-mining",
+    "sub surface displacement missile": "module-mining",
+    "pulse wave analyser": "module-mining",
+    # scanners / limpets / flight assists
+    "xeno scanner": "module-xeno",
+    "decontamination limpet controller": "module-limpet-controllers",
+    "repair limpet controller": "module-limpet-controllers",
+    "planetary vehicle hangar": "module-flight-assists",
+    "fighter hangar": "module-flight-assists",
+    "supercruise assist": "module-flight-assists",
+    "docking computer": "module-flight-assists",
+}
+
 _M = None
 
 
@@ -88,7 +130,7 @@ def _maps():
                     eng.setdefault(_norm(sf), (e["file"], e["anchor"]))
 
     _M = dict(module_surf=module_surf, bp_eg=bp_eg, eff_groups=eff_groups,
-              groups=groups, bp_alias=bp_alias, eng=eng)
+              groups=groups, bp_alias=bp_alias, eng=eng, by_anchor=by_anchor)
     return _M
 
 
@@ -99,6 +141,10 @@ def _a(file, anchor, text):
 def _module_hit(name):
     M = _maps()
     key = _norm(name)
+    if key in MODULE_ALIAS:                       # curated display-name -> page anchor
+        e = M["by_anchor"].get(MODULE_ALIAS[key])
+        if e:
+            return (e["file"], e["anchor"])
     hit = M["module_surf"].get(key) or (M["module_surf"].get(key[:-1]) if key.endswith("s") else None)
     if hit:
         return hit
