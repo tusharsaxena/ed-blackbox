@@ -16,7 +16,8 @@ how it's built), **GitHub Issues** (backlog).
 
 ```
 guides/            166 HTML guides + index.html (generated) — all on the design system
-                   (link ed-blackbox.css/.js; only a tiny per-page accent-override <style>)
+                   (link ed-blackbox.css/.js + the shared analytics.js GA tag; only a tiny
+                   per-page accent-override <style>)
                    each guide has a sibling <name>-anchors.md (generated; 2 curated in
                    engineering/engineering-manuals/) — tree mirrors index.html's sections/subsections
   ships/           general/ (rating-methodology · ship-role-matrix, 2) ·
@@ -469,6 +470,13 @@ python3 scripts/audit-powerplay.py         # 12 powers (allegiance matched) + 12
 - **Naming:** prefer lowercase-kebab for new asset files. (Existing files are
   inconsistent — `_` vs `-`, mixed case; standardizing is a tracked TODO, so don't mass-
   rename ad hoc.) The stylesheet is `ed-blackbox` (note: differs from repo `ed-blackbox`).
+- **Site analytics.** `design-system/js/analytics.js` is the **single source of truth** for the
+  Google Analytics (GA4) tag — the Measurement ID lives **only** there (edit/disable it there;
+  an empty/placeholder value no-ops). It is a **separate** file from `ed-blackbox.js` on purpose:
+  it is markup-independent, so it loads on **every** page — including the four engineering
+  pages that can't take `ed-blackbox.js` without double-binding their inline quick-nav. New
+  pages inherit it from `starter-page.html`; `index.html` from `generate-guides-index.sh`. To
+  backfill any page missing it, run `python3 scripts/add-analytics-tag.py` (idempotent).
 - **Page accent themes only the `.role` title tag; everything else is amber.** The per-page
   accent (`--accent`, maroon/fed/green) colours **only** the masthead `.role` tag. Every
   design-system component (cards, callouts, `.rec`, pick cards, `.hud`, `.dial`, focus ring)

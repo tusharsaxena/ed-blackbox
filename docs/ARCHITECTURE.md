@@ -30,7 +30,7 @@ Matrix**, and the **New Pilot & Interface** guides — was authored on the syste
 | | Every page today |
 |---|---|
 | CSS | **one linked** `ed-blackbox.css` (+ a tiny per-page 5-token accent override `<style>`) |
-| JS | **one linked** `ed-blackbox.js` (4 engineering pages are self-contained with their own script instead — see §3) |
+| JS | **two linked** — `ed-blackbox.js` behaviours (4 engineering pages run their own inline script instead — see §3) **+** `analytics.js` (the GA4 tag, on every page) |
 | Consistency | a single locked token set; no more palette drift |
 
 A handful of pages also keep one **deliberately-scoped** `<style>`/`<script>`: the bespoke
@@ -48,6 +48,7 @@ Each guide is one `.html` file that **links** the shared design system:
   <title>… · <Series> | E:D Black Box</title>
   <link rel="stylesheet" href="…/design-system/css/ed-blackbox.css">
   <style>:root{--accent:…;--accent-lt:…;…}</style>   ← only the 5-token accent override
+  <script src="…/design-system/js/analytics.js" defer></script>   ← GA4 tag, on every page
 </head>
 <body>
   <header class="site-header"> brand · site-nav · header-qn (hdr-crumb breadcrumb + quick-nav + scroll-to-top) </header>
@@ -104,13 +105,22 @@ tokens  →  components  →  templates  →  pages
   (header `.qn-totop` button), (5) loadout-export — copies a dossier's one-state SLEF to the
   clipboard with a toast (the §3-State Loadout `.lex-copy[data-slef]` rows). **Four engineering
   pages are fully self-contained** — instead
-  of linking the shared file they run a **page-local** `<script>`: `modules.html`,
-  `engineers.html`, `checklist.html`, `blueprints.html`. Each drives the richer quick-nav
+  of linking `ed-blackbox.js` they run a **page-local** `<script>`: `modules.html`,
+  `engineers.html`, `checklist.html`, `blueprints.html` (they reimplement the quick-nav
+  themselves, so loading the shared modules too would double-bind the combobox). They **do**
+  link `analytics.js` — it is markup-independent, so GA still reaches them. Each drives the richer quick-nav
   dialect (`.qn-item[data-target]` rows + clickable `.qn-item.qn-group` coloured headers,
   filtered by `data-search`). `engineers.html` / `checklist.html` group their entries
   (engineers by tier; checklist by phase / engineer-tier / gate / farm — **each group header
   matching its section heading**); `blueprints.html` adds accordion fold + search-and-expand-card
   behaviour; `checklist.html` also wires its bespoke unlock-map SVG in that same script.
+- **`js/analytics.js`** — the site's **Google Analytics (GA4)** tag, kept deliberately
+  separate from `ed-blackbox.js`. Self-contained and markup-independent (it never touches page
+  behaviour), so it loads safely on **every** one of the 167 pages — including the four
+  engineering pages that can't take `ed-blackbox.js`. The GA4 Measurement ID lives **only**
+  here (single source of truth); an empty/placeholder value makes it a no-op. Backfilled by
+  `scripts/add-analytics-tag.py`; kept durable by `generate-guides-index.sh` (for the
+  regenerated `index.html`) and the starter template (for new pages).
 - **Site chrome (v1.1.0)** — a global sticky header (`.site-header` > `.hdr-inner`:
   `.brand` logo+wordmark, `.site-nav`, optional right-aligned `.header-qn` in-page
   quick-nav with a `.qn-totop` scroll-to-top button), sitting **outside `.wrap`**. The

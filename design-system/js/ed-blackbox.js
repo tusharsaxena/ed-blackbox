@@ -7,6 +7,7 @@
      3. coord-copy — click-to-copy coordinate chips (needs .coord[data-copy])
      4. to-top     — scroll the page to the top + clear any URL #anchor (needs .qn-totop)
      5. loadout-export — Copy SLEF to clipboard + toast (needs .lex-copy[data-slef])
+   (Google Analytics is loaded separately, see design-system/js/analytics.js.)
 */
 
 /* 1 — quick-nav */

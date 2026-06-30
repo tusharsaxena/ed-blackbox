@@ -16,6 +16,7 @@ be re-run later.
 | Script | Docs | What it does |
 |---|---|---|
 | `generate-guides-index.sh` | [generate-guides-index.md](generate-guides-index.md) | Regenerates `guides/index.html`, the "Black Box" landing page linking to every guide. |
+| `add-analytics-tag.py` | [add-analytics-tag.md](add-analytics-tag.md) | Inserts the shared Google Analytics (GA4) tag (`design-system/js/analytics.js`) before `</head>` on every guide page, with the correct depth-relative path. One-time backfill; idempotent; `--check` previews. The tag is kept durable by `generate-guides-index.sh` + the starter template. |
 | `generate-anchor-files.sh` | [generate-anchor-files.md](generate-anchor-files.md) | Regenerates the per-page `<basename>-anchors.md` files cataloging each guide's `<section id>` navigation anchors. |
 | `generate-ship-role-matrix.py` | [generate-ship-role-matrix.md](generate-ship-role-matrix.md) | Builds `guides/ships/general/ship-role-matrix.html` — the interactive Ship × Role Matrix (rows = hulls, columns = roles) projected from `data/ship-ratings/`. Dossier-backed cells only; pad class cross-checked against `data/ships/`. Header sort/filter glyphs + sticky header. `--page` writes the page; `--mockups` a throwaway preview. |
 | `sort-compare-tables.py` | [sort-compare-tables.md](sort-compare-tables.md) | Reorders the rows of every "How It Compares" `table.cmp` (ship dossiers + by-role) by `.rscore` rating, descending, with dash (`&mdash;`) ratings last. Reorder-only, stable, idempotent. |

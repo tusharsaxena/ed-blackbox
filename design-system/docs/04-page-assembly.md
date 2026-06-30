@@ -112,14 +112,22 @@ clear the bar.
 
 ## Behaviours
 
-Add once, before `</body>`:
+Two shared scripts. The **analytics** tag (Google Analytics / GA4) goes in the `<head>`
+on every page — its Measurement ID lives only in `analytics.js`:
+
+```html
+<script src="/ed-blackbox/design-system/js/analytics.js" defer></script>
+```
+
+The **behaviours** bundle is added once, before `</body>`:
 
 ```html
 <script src="/ed-blackbox/design-system/js/ed-blackbox.js" defer></script>
 ```
 
-All three modules are null-safe — include it on every page regardless of which
-components are present.
+All five modules are null-safe — include it on every page regardless of which
+components are present. (Four engineering pages run their own inline behaviours instead of
+`ed-blackbox.js`, but still link `analytics.js`.)
 
 ## Cross-manual linking
 
@@ -153,6 +161,7 @@ components are present.
       `<section id>` was added, removed, or renamed (updates `<basename>-anchors.md`).
 - [ ] Facts verified vs authoritative sources; unknowns marked `.kv-tbd`.
 - [ ] Accessibility floor cleared (`05-accessibility.md`).
+- [ ] Links `analytics.js` (defer) in the `<head>` — the shared GA4 tag, on every page.
 - [ ] Links `ed-blackbox.js` (defer) before `</body>`.
 - [ ] Per-page `section.credits` above the footer lists this page's sources (`.cr-row`: name · what it provided · link), following **Sources conventions**: every `.cr-link` targets the specific resource (no site/repo root); any YouTube rows are trusted-channel only, `YouTube — <Channel>`, oEmbed-verified, with a terse non-hype `.cr-what`.
 - [ ] Footer: `E:D Black Box` + `By CMDR Ka0s` + part (no "Next:" pointer).

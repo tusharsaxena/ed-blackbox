@@ -15,6 +15,7 @@ Design-system version: **1.3.0** (see `../CHANGELOG.md`).
 design-system/
 ├─ css/ed-blackbox.css     ← THE stylesheet. All tokens + components + a11y. Fonts via @import.
 ├─ js/ed-blackbox.js        ← THE behaviours. 5 null-safe modules (quick-nav, TOC spy, coord copy, scroll-to-top, Copy-SLEF).
+├─ js/analytics.js          ← Google Analytics (GA4) tag. Single source of truth for the Measurement ID; loaded on every page.
 ├─ templates/
 │  ├─ starter-page.html     ← copy this to begin a new page
 │  └─ component-gallery.html← live demo of every component (visual + markup reference)
@@ -38,6 +39,7 @@ own `<style>` may contain **only** a per-page `--accent*` override (≤5 lines).
 
 ```html
 <link rel="stylesheet" href="/ed-blackbox/design-system/css/ed-blackbox.css">
+<script src="/ed-blackbox/design-system/js/analytics.js" defer></script>
 ...
 <script src="/ed-blackbox/design-system/js/ed-blackbox.js" defer></script>
 ```
@@ -49,7 +51,7 @@ updates. Inlining or forking re-introduces drift and is a regression.
 
 1. **Copy `templates/starter-page.html`.** It already links the CSS/JS and has the
    masthead → verdict → section → footer skeleton.
-2. **Set the path** to `ed-blackbox.css` / `ed-blackbox.js` (see *Linking* below).
+2. **Set the path** to `ed-blackbox.css` / `analytics.js` / `ed-blackbox.js` (see *Linking* below).
 3. **Pick the accent** for the page's domain (`02-tokens.md` → "Per-page accent").
    Combat = maroon, exploration/nav/liners = fed-blue, mining/cargo/index = amber
    (default, delete the override), completed = good.

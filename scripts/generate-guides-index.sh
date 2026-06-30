@@ -109,6 +109,7 @@ cat <<'HEAD'
 .ship .roles a.r-passenger{color:var(--role-passenger)}.ship .roles a.r-passenger:hover{background:var(--role-passenger);border-color:var(--role-passenger);color:var(--bg)}
 .ship .roles a.r-multipurpose{color:var(--role-multipurpose)}.ship .roles a.r-multipurpose:hover{background:var(--role-multipurpose);border-color:var(--role-multipurpose);color:var(--bg)}
 </style>
+<script src="../design-system/js/analytics.js" defer></script>
 </head>
 <body>
 
