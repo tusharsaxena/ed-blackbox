@@ -85,12 +85,17 @@ Legend: ✅ done · ☐ not done.
 - ✅ Add ship photos to ship manuals + manufacturer logos *(ship renders **done** — framed hull render in all 128 dossiers via `add-ship-render.py`; manufacturer logos still pending)*
 - ✅ Remove fleet bias from content *(largely done — systems pages, the 6 activities role pages, the material-farm pages, combat-zones (incl. the last KA-05 ship tags) and the combat dossiers are now de-biased to role-neutral phrasing ("the fleet's Python Mk II" → "a medium combat ship such as the Python Mk II"); "Fleet Carrier" the game feature is kept. Remaining: the **"Fleet Operations Dossier"** masthead kicker still appears on combat-zones + system-colonization — decide whether that series branding stays)*
 - ✅ Remove "CMDR" etc. from headers *(the `CMDR KA0S · INARA 173082` identity chrome was removed site-wide, keeping the footer `By CMDR Ka0s` byline; "CMDR" still appears in dossier kickers and the footer byline)*
-- ☐ **Sources cleanup pass** — every page's bottom-of-page **"Sources"** (`section.credits`)
-      block currently lists mostly **external** references (coriolis-data, Coriolis, EDSY, Inara,
-      YouTube). Do a systematic review of all `.credits` blocks site-wide: confirm each `.cr-link`
-      still resolves and points at the specific resource, prune stale/self-referential entries
-      (e.g. removed `rating-methodology.html`'s internal "E:D Black Box — role dossiers" row), and
-      settle a consistent policy for internal vs external sources. *(Deferred — do as one sweep.)*
+- ✅ **Sources cleanup pass / canonical Sources data** — the internal-vs-external policy is
+      **settled: the Sources section is external references only.** Every page's `section.credits`
+      block is now **generated from a canonical source of truth**, `data/sources/<path-mirroring-guides>.json`
+      (one file per credits-bearing page; schema `{ page, lead[], sources[{label, what, url, display}], tag? }`).
+      The one-time `scripts/extract-sources.py` bootstrapped the data from the existing HTML and
+      **stripped every inline internal cross-link** from the descriptions; `scripts/build-sources.py`
+      regenerates the blocks (preserving each page's `sec-num`) and a `data/sources/_index.md` catalog
+      of all 495 unique external URLs → citing pages; `scripts/audit-sources.py` is the deterministic
+      gate (coverage, **external-only**, no drift, schema). Edit the data, never the credits block —
+      see `docs/CLAUDE.md` → *Change a page's sources*. *(Periodic `.cr-link` HTTP-liveness re-checks
+      still run via `fix-generic-sources.py --check` / `verify-links.py` as needed.)*
 - ☐ Create a root `README.md` — project overview, what the site is, how it's built/run, links into `docs/`
 - ✅ Regenerate the index page — migrated onto the design system and restructured into Ships/Engineering/Systems + briefing/about/FAQ/changelog (`generate-guides-index.sh`)
 

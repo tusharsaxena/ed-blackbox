@@ -61,7 +61,15 @@ inside `.wrap`.
 
 ## Sources conventions (`section.credits`)
 
-Each `.cr-row` is a citation. Two standing rules govern what goes in the block — both
+**The block is generated from canonical data — don't hand-edit it.** Each page's
+`section.credits` is built by `scripts/build-sources.py` from `data/sources/<path-mirroring-guides>.json`
+(the source of truth: `{ page, lead[], sources[{label, what, url, display}], tag? }`). Edit the
+data file and rebuild; `scripts/audit-sources.py` verifies no drift. See `docs/CLAUDE.md` →
+*Change a page's sources*.
+
+Each `.cr-row` is a citation, and **the section is external references only** — never cite
+another page on this site here (cross-link those in the prose instead); `audit-sources.py`
+fails on any internal `<a href>` in the block. Two further rules govern what goes in it — both
 have been swept across the existing pages, and **new pages must follow them from the
 start**.
 

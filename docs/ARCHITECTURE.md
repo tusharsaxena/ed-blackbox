@@ -74,7 +74,7 @@ The formal replacement for per-page CSS. Layered:
 ```
 tokens  →  components  →  templates  →  pages
 (:root)    (CSS classes)  (starter +    (link the CSS/JS,
-           + 4 JS modules)  gallery)      set one accent group)
+           + 5 JS modules)  gallery)      set one accent group)
 ```
 
 - **`css/ed-blackbox.css`** — single source of truth. `:root` holds a **locked** token
@@ -163,9 +163,9 @@ guides/
 
 **File census:** ~770 files — 170 HTML (166 guides + generated `index.html` + 2
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
-3 wired logos + concept candidates under `logos/concepts/`), 257 Markdown (prose docs +
+3 wired logos + concept candidates under `logos/concepts/`), 260 Markdown (prose docs +
 **167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling (9 `.sh` + 45 `.py` + 8 `.mjs`) and its data
+1 site JS, plus the `scripts/` tooling (9 `.sh` + 49 `.py` + 8 `.mjs`) and its data
 (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
 **Engineering** (`guides/engineering/`, 9 pages):
@@ -286,6 +286,17 @@ The first step toward "content-as-data". Convention: every task script lives in
   dossiers with their `NN/100` ratings (the `.vchips`/`.vchip` component, §3). Ratings are read
   live from the sibling headlines; idempotent, and singleton hulls are skipped — so it lands on
   the **115 multi-variant dossiers** (of 128).
+- **Sources pipeline** — `build-sources.py` (+ shared parser/renderer `sources_lib.py`)
+  regenerates every page's bottom-of-page **Sources** block (`section.credits`) from
+  `data/sources/<path-mirroring-guides>.json`, the **canonical source of truth** (one file per
+  credits-bearing page, mirroring the ratings/loadouts pipelines). Each file is
+  `{ page, lead[], sources[ {label, what, url, display} ], tag? }`; the build preserves each
+  page's positional `sec-num` + section indent and is idempotent. It also rewrites
+  `data/sources/_index.md`, a generated catalog of every unique external URL → citing pages.
+  The Sources section is **external references only** — `extract-sources.py` (the one-time
+  bootstrap that populated the data from the existing HTML) strips inline internal cross-links,
+  and `audit-sources.py` is the deterministic gate (coverage, external-only, no drift, schema).
+  Edit the data, never the credits block. (Design: `docs/superpowers/specs/2026-06-30-canonical-sources-data-design.md`.)
 
 Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance
@@ -328,7 +339,11 @@ masthead no longer carries an inline `Sources …` line (it shows a last-updated
 instead); per-page sources are listed in a dedicated **`section.credits`** block (the
 **Sources** section) at the bottom of the page (above the footer), each citing the
 specific sources that page's facts were verified against (mostly 5+ per page; a few hard pages at 4).
-Two conventions govern that block (full rules: `design-system/docs/04-page-assembly.md` →
+That block is **generated from the canonical `data/sources/**.json`** by
+`scripts/build-sources.py` (§6) — the data is the source of truth; edit it, not the HTML —
+and is **external references only** (no links to other site pages; enforced by
+`audit-sources.py`). Two further conventions govern it (full rules:
+`design-system/docs/04-page-assembly.md` →
 *Sources conventions*): every `.cr-link` points at the **specific** resource the figures came
 from — never a site/repo **root** (swept by `scripts/fix-generic-sources.py`, §6) — and a short
 list of **trusted-channel YouTube videos** (Obsidian Ant, Down to Earth Astronomy, Ricardos

@@ -97,6 +97,9 @@ docs/              project docs (this file, architecture, todo)
    `<basename>-anchors.md` anchor catalog (see *Anchor files* below).
 7. **Cross-link it** — run the hyperlink pass so references on the new page link out
    (and follow the link-open policy). See *Cross-link a page (hyperlinks)* below.
+8. **Register its sources** — author the page's external references in
+   `data/sources/<path-mirroring-guides>.json` and run `scripts/build-sources.py` to generate
+   the bottom-of-page **Sources** block. See *Change a page's sources* below.
 
 ### Regenerate the landing page
 ```bash
@@ -162,6 +165,31 @@ python3 scripts/verify-links.py                      # 0 broken targets/anchors
   Need something new? Add it to the design system as a reusable component, then use it.
 - If your edit adds, removes, or renames any `<section id>`, re-run
   `scripts/generate-anchor-files.sh` to refresh that page's `<basename>-anchors.md`.
+- If your edit touches the page's **Sources**, edit its `data/sources/**.json` file and
+  re-run `scripts/build-sources.py` — never hand-edit the credits block (see below).
+
+### Change a page's sources (Sources / `section.credits`)
+**`data/sources/<path-mirroring-guides>.json` is the canonical source of truth for every
+page's bottom-of-page Sources block** (`<section class="credits">`) — one file per
+credits-bearing page, mirroring the `guides/` tree (e.g. `data/sources/ships/dossiers/
+python-combat.json`). The block is **generated** from it, like the ratings/loadouts pipelines.
+**Edit the JSON, never the credits HTML.** **Add an entry here whenever you add a source to a
+page or create a new page** — this is the one place all sources live.
+```bash
+python3 scripts/build-sources.py                    # regenerate all credits blocks (+ _index.md)
+python3 scripts/build-sources.py systems/superpower  # only matching path fragments
+python3 scripts/build-sources.py --check            # preview diffs, write nothing
+python3 scripts/audit-sources.py                    # verify coverage + external-only + no drift
+```
+- Schema per file: `{ page, lead[] (intro paragraphs), sources[ {label, what, url, display} ],
+  tag? }`. `label`/`what`/`display` text is verbatim (entities preserved); `sec-num` is **not**
+  stored — it's positional and preserved from the page. Build is idempotent.
+- **The Sources section is external references only.** Don't add a source that links to
+  another page on this site (cross-link those in the prose instead — see *Cross-link a page*);
+  `audit-sources.py` fails on any internal `<a href>` (`#…`, relative, `.html`) inside a
+  credits block.
+- `data/sources/_index.md` is a **generated** catalog of every unique URL → citing pages
+  (rebuilt by `build-sources.py`); don't hand-edit it. Full guide: `scripts/build-sources.md`.
 
 ### Change a ship rating (keep the data + HTML in sync)
 **`data/ship-ratings/<role>.json` is the source of truth for the 1–100 suitability
@@ -277,12 +305,14 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
   **masthead no longer displays** the INARA id, a patch label, or an inline `Sources …`
   line; the masthead-meta carries the series part + a **last-updated** date, and the
   footer is brand + `By CMDR Ka0s` + part. Per-page **sources** now live in a dedicated
-  bottom-of-page **`section.credits`** block (above the footer). Building that block follows
-  the **Sources conventions** in `design-system/docs/04-page-assembly.md`: every `.cr-link`
-  targets the **specific** resource (never a site/repo root — sweep with
-  `scripts/fix-generic-sources.py`), and any video sources are **trusted-channel YouTube**
-  only (`YouTube — <Channel>`, oEmbed-verified, terse non-hype `.cr-what`, ≤3 per page).
-  Source verification is still required (rule 1). (The `CMDR KA0S · INARA 173082` identity chrome has been removed site-wide — the
+  bottom-of-page **`section.credits`** block (above the footer), **generated from the
+  canonical `data/sources/**.json`** (see *Change a page's sources*) — edit the data, not the
+  block. Building that block follows the **Sources conventions** in
+  `design-system/docs/04-page-assembly.md`: every `.cr-link` targets the **specific** resource
+  (never a site/repo root — sweep with `scripts/fix-generic-sources.py`), it is **external
+  references only** (no links to other site pages), and any video sources are
+  **trusted-channel YouTube** only (`YouTube — <Channel>`, oEmbed-verified, terse non-hype
+  `.cr-what`, ≤3 per page). Source verification is still required (rule 1). (The `CMDR KA0S · INARA 173082` identity chrome has been removed site-wide — the
   footer `By CMDR Ka0s` byline is kept; powerplay has been de-biased to role/ethos-agnostic.
   Dropping "CMDR" from dossier kickers and reducing fleet bias on the remaining pages continue
   as editorial polish — see `TODO.md` Phase 4.)
@@ -292,6 +322,9 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
 - Don't invent game data or "improve" numbers from memory.
 - Don't re-derive or "improve" the locked design-system tokens/palette.
 - Don't hand-edit `guides/index.html` (regenerate it via `generate-guides-index.sh`).
+- Don't hand-edit a page's **Sources** (`section.credits`) block or `data/sources/_index.md` —
+  edit `data/sources/**.json` and run `build-sources.py`. Don't put internal-site links in a
+  Sources section; it's external references only.
 - Don't auto-edit the landing-page **Changelog** (§06 in `generate-guides-index.sh`) — its
   entries are hand-written with **fixed** dates (not build-stamped). Add a release only when
   explicitly asked; routine work (even regenerating `index.html`) leaves it untouched.
@@ -318,5 +351,7 @@ python3 scripts/build-ship-loadouts.py            # build dossier 3-State Loadou
 python3 scripts/build-ship-scorecards.py          # build the dossier §"Why This Rating" scorecard from data/ship-ratings/ (canonical)
 python3 scripts/add-variant-builds.py             # refresh each dossier's §Role & Overview "Other role builds" variant pill row (sibling-role links + live NN/100) from the dossiers
 python3 scripts/audit-ship-loadouts.py            # deterministic completeness/consistency audit of all SLEF loadouts (missing slots, sizing, engineering, experimentals)
+python3 scripts/build-sources.py                  # regenerate every page's Sources block + _index.md from data/sources/ (canonical)
+python3 scripts/audit-sources.py                  # verify Sources coverage + external-only + no drift
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```
