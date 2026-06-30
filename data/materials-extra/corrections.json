@@ -1,0 +1,51 @@
+{
+  "_about": "Project-authored overlay for the materials pipeline. data/materials/ is verbatim EDCD/FDevIDs (read-only); this file carries presentation + deferral that are NOT in the CSV. Consumed by materials_common.py. See docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md.",
+
+  "raw_group_labels": {
+    "1": "Group 1", "2": "Group 2", "3": "Group 3", "4": "Group 4",
+    "5": "Group 5", "6": "Group 6", "7": "Group 7"
+  },
+
+  "category_order": {
+    "Raw": ["1", "2", "3", "4", "5", "6", "7"],
+    "Manufactured": ["Chemical", "Thermic", "Heat", "Conductive", "Mechanical Components",
+                     "Capacitors", "Shielding", "Composite", "Crystals", "Alloys"],
+    "Encoded": ["Emission Data", "Wake Scans", "Shield Data", "Encryption Files",
+                "Data Archives", "Encoded Firmware"]
+  },
+
+  "_display_note": "Guardian/Thargoid materials (FDevIDs category=None) are captured in data/materials/ but not rendered on materials.html yet — see deferred_note. Listed explicitly so the deferral is auditable rather than implicit.",
+  "display": {
+    "Guardian Power Cell": false,
+    "Guardian Power Conduit": false,
+    "Guardian Sentinel Weapon Parts": false,
+    "Guardian Sentinel Wreckage Components": false,
+    "Guardian Technology Component": false,
+    "Bio-Mechanical Conduits": false,
+    "Propulsion Elements": false,
+    "Sensor Fragment": false,
+    "Weapon Parts": false,
+    "Wreckage Components": false,
+    "Thargoid Carapace": false,
+    "Thargoid Energy Cell": false,
+    "Thargoid Organic Circuitry": false,
+    "Thargoid Technological Components": false,
+    "Guardian Module Blueprint Segment": false,
+    "Guardian Vessel Blueprint Segment": false,
+    "Guardian Weapon Blueprint Segment": false,
+    "Pattern Alpha Obelisk Data": false,
+    "Pattern Beta Obelisk Data": false,
+    "Pattern Gamma Obelisk Data": false,
+    "Pattern Delta Obelisk Data": false,
+    "Pattern Epsilon Obelisk Data": false,
+    "Ship Flight Data": false,
+    "Ship Systems Data": false,
+    "Thargoid Material Composition Data": false,
+    "Thargoid Residue Data": false,
+    "Thargoid Ship Signature": false,
+    "Thargoid Structural Data": false,
+    "Thargoid Wake Data": false
+  },
+
+  "deferred_note": "None-category (Guardian/Thargoid) materials and all Odyssey microresources (data/materials/microresources.csv) are captured in data/materials/ but not rendered on materials.html yet. Tracked for a future tech-broker / suit-materials display (data/README.md TODO)."
+}

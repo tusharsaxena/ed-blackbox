@@ -33,7 +33,10 @@ def load_materials():
         for r in csv.DictReader(fh):
             rows.append({
                 "id": r["id"], "symbol": r["symbol"], "rarity": int(r["rarity"]),
-                "type": r["type"], "category": r["category"], "name": r["name"],
+                "type": r["type"], "category": r["category"],
+                # FDevIDs carries the occasional stray-whitespace name
+                # (e.g. "Untypical Shield Scans "); normalize for display.
+                "name": r["name"].strip(),
             })
     return rows
 
