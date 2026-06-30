@@ -34,6 +34,15 @@ END = "<!-- END generated:materials -->"
 TYPES = ["Raw", "Manufactured", "Encoded"]
 
 
+def _cell(name, cell_links):
+    """Escape a material name and wrap any build-owned in-cell cross-links (first
+    occurrence of each text -> internal <a href>). Keeps the generated region idempotent."""
+    cell = m.esc(name)
+    for text, href in cell_links.get(name, []):
+        cell = cell.replace(m.esc(text), f'<a href="{m.esc(href)}">{m.esc(text)}</a>', 1)
+    return cell
+
+
 def render_table(type_name, ed):
     """Reproduce the <div class="tbl-scroll"><table class="data">…</table></div> for a
     displayed type, byte-compatible with the page's indentation."""
@@ -43,9 +52,10 @@ def render_table(type_name, ed):
         head = f"<th>{m.esc(label)}</th>" + "".join(f"<th>G{g}</th>" for g in (1, 2, 3, 4)) + "<th></th>"
     else:
         head = f"<th>{m.esc(label)}</th>" + "".join(f"<th>G{g}</th>" for g in (1, 2, 3, 4, 5))
+    cell_links = ed.get("cell_links", {})
     rows = []
     for row in m.displayed_grid(type_name):
-        tds = "".join(f"<td>{m.esc(row['cells'][g])}</td>" for g in (1, 2, 3, 4, 5))
+        tds = "".join(f"<td>{_cell(row['cells'][g], cell_links)}</td>" for g in (1, 2, 3, 4, 5))
         rows.append(f"          <tr><td><b>{m.esc(row['label'])}</b></td>{tds}</tr>")
     body = "\n".join(rows)
     return (

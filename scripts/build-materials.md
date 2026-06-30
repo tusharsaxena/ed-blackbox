@@ -32,10 +32,15 @@ there is no G5 raw material); Manufactured/Encoded G1–G5.
 ## Notes
 
 - **Idempotent:** a second `--check` after a write prints nothing.
-- **In-cell cross-links** (e.g. `Shielding Sensors` → `modules.html#module-sensors`) are
-  re-applied after a build by the hyperlink pass — see the *Cross-link a page* recipe and
-  `scripts/apply-hyperlinks.py`. Run `apply-hyperlinks.py` + `normalize-link-targets.py` +
-  `verify-links.py` on the page after rebuilding.
+- **In-cell cross-links** (e.g. `Shielding Sensors` → `modules.html#module-sensors`,
+  `Anomalous FSD Telemetry` → `modules.html#module-frame-shift-drive`) are **owned by the
+  build** via `editorial.json` → `cell_links` (keyed by material name; wraps the first
+  occurrence of a substring). This keeps the generated region idempotent — the generic
+  hyperlink pass would otherwise re-add them and the next build would strip them (the same
+  reason `build-blueprints.py` emits its own generated-region links). Add a new in-cell link
+  by extending `cell_links`, not by hand-editing the table. Still run `apply-hyperlinks.py`
+  + `normalize-link-targets.py` + `verify-links.py` on the page after a build to link the
+  surrounding editorial prose.
 - Gate the result with `python3 scripts/audit-materials.py`.
 - The corrected **Encoded** Encryption-Files / Data-Archives ladders differ from the old
   hand-typed page (which flagged them `kv-tbd` as approximate) — the CSV is authoritative.

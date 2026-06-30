@@ -49,11 +49,14 @@ def main():
     # 4. every rendered name present in the page between markers; and the page's generated
     #    region contains no stray material cell beyond the data (count <td> data cells).
     region = "".join(re.findall(re.escape(BEGIN) + r"(.*?)" + re.escape(END), html, re.S))
+    # Strip build-owned in-cell <a> wrappers so a name split by a cross-link
+    # (e.g. "Shielding <a …>Sensors</a>") still matches as contiguous text.
+    region_text = re.sub(r"</?a\b[^>]*>", "", region)
     for t in ("Raw", "Manufactured", "Encoded"):
         for row in m.displayed_grid(t):
             for g in m.GRADES_FOR[t]:
                 name = row["cells"][g]
-                if name and m.esc(name) not in region:
+                if name and m.esc(name) not in region_text:
                     fails.append(f"{t} {row['label']} G{g}: '{name}' not found in generated region")
 
     # 5. no deferred (Guardian/Thargoid/None) material leaked into the rendered region

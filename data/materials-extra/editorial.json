@@ -4,5 +4,11 @@
     "Raw":          { "id": "section-raw",          "header_label": "Group",    "tag": "Elements" },
     "Manufactured": { "id": "section-manufactured", "header_label": "Chain",    "tag": "Components" },
     "Encoded":      { "id": "section-encoded",      "header_label": "Category", "tag": "Data" }
+  },
+
+  "_cell_links_about": "In-cell cross-links the build OWNS (so the generated region stays idempotent — the generic hyperlink pass would otherwise re-add then the next build strip them). Keyed by full material name; each entry wraps the first occurrence of <text> in an internal <a href>. Mirrors how build-blueprints emits its generated-region links.",
+  "cell_links": {
+    "Shielding Sensors":      [["Sensors", "modules.html#module-sensors"]],
+    "Anomalous FSD Telemetry": [["FSD", "modules.html#module-frame-shift-drive"]]
   }
 }
