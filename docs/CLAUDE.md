@@ -150,6 +150,21 @@ python3 scripts/verify-links.py                      # 0 broken targets/anchors
   candidate (incl. below-bar) is logged to `data/links/link-candidates.csv` and rolled up by
   `build-link-report.py` into `data/links/hyperlink-opportunities.xlsx` for review. The rewrite
   is byte-preserving.
+- **Re-run the pass whenever content changes — not just for brand-new pages.** It's idempotent
+  (skips existing `<a>`), so re-running only *adds* newly-matchable links, never duplicates. Run it
+  on any page after a **significant content edit**, and **site-wide** (or on the affected
+  namespaces) after the **engine or `link-aliases.json` improves** (e.g. a new plural form like
+  "Shield Boosters"/"HRPs", or a new alias like Thermal Vent → beam-laser group) so existing pages
+  pick up the new matches. Always **dry-run first** (`--check`, writes
+  `data/links/link-candidates.check.csv`) and skim the would-apply list before applying. **Two
+  things the re-run can't self-heal:** (1) a **pre-existing partial link** — an `<a>` already
+  wrapped around *part* of a longer term (e.g. `beam <a>lasers</a>`) blocks the fuller match; find
+  and fix these by hand. (2) genuinely-**casual generic words** (a stray "mining"/"Shields"/"Drives"
+  in prose) — those stay hand-judged. **Generated pages drop their links on rebuild:** the
+  `blueprints.html` cards and each dossier's 3-State Loadout / Engineering Plan / scorecard tables
+  are re-emitted *without* hyperlinks by their builders, so **re-apply the pass after every such
+  rebuild** (this is the documented final step for `blueprints.html`/`materials.html` — and why a
+  full-site re-run shows most of its hits on the ship dossiers).
 - **Excluded as link sources** (never edited by the generic applier): `guides/systems/activity-guides/**`,
   `guides/ships/best-ships-by-role/**`, generated `guides/index.html`. The **by-role ladder pages** get
   their role-correct links from a dedicated pass instead — `scripts/link-by-role-pages.py`
@@ -170,6 +185,11 @@ python3 scripts/verify-links.py                      # 0 broken targets/anchors
   `scripts/generate-anchor-files.sh` to refresh that page's `<basename>-anchors.md`.
 - If your edit touches the page's **Sources**, edit its `data/sources/**.json` file and
   re-run `scripts/build-sources.py` — never hand-edit the credits block (see below).
+- If your edit **adds or substantially rewrites prose, lists, or tables**, re-run the
+  **hyperlink pass** so the new references become links (idempotent; see *Cross-link a page*):
+  `python3 scripts/apply-hyperlinks.py <path>` → `python3 scripts/normalize-link-targets.py <path>`
+  → `python3 scripts/verify-links.py` (0 broken). Then check for any **pre-existing partial link**
+  the applier couldn't fix (e.g. `beam <a>lasers</a>`) and hand-fix it.
 
 ### Change a page's sources (Sources / `section.credits`)
 **`data/sources/<path-mirroring-guides>.json` is the canonical source of truth for every
