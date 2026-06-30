@@ -8,7 +8,7 @@ Book**, a static site of Elite Dangerous field manuals by Tushar Saxena (CMDR Ka
 > in automatically, so it loads at the start of every session.
 
 **Orient yourself first:** [`ARCHITECTURE.md`](ARCHITECTURE.md) (what's in the repo +
-how it's built), [`TODO.md`](TODO.md) (backlog).
+how it's built), **GitHub Issues** (backlog).
 
 ---
 
@@ -315,7 +315,7 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
   `.cr-what`, ≤3 per page). Source verification is still required (rule 1). (The `CMDR KA0S · INARA 173082` identity chrome has been removed site-wide — the
   footer `By CMDR Ka0s` byline is kept; powerplay has been de-biased to role/ethos-agnostic.
   Dropping "CMDR" from dossier kickers and reducing fleet bias on the remaining pages continue
-  as editorial polish — see `TODO.md` Phase 4.)
+  as editorial polish — tracked in GitHub Issues.)
 
 ## Don't
 

@@ -1,7 +1,7 @@
 # Architecture — Elite:Dangerous Black Book
 
 How the site is put together technically — system model, the shared design system, and the
-content inventory. For the backlog/roadmap see [`TODO.md`](TODO.md); for working conventions
+content inventory. The backlog/roadmap is tracked in **GitHub Issues**; for working conventions
 see [`CLAUDE.md`](CLAUDE.md). Per-page data sources live in each page's bottom-of-page
 **Sources** (`section.credits`) block.
 
@@ -14,7 +14,7 @@ required to view it. Every page is plain HTML/CSS/JS and opens directly in a bro
 or from `file://`. The deployment target is **GitHub Pages** (not yet live).
 
 **Project facts:** authored by **Tushar Saxena** (in-game **CMDR Ka0s**, INARA 173082),
-licensed **MIT** (© 2026); remote `github.com/tusharsaxena/ed-blackbook`. Branch:
+licensed **MIT** (© 2026); remote `github.com/tusharsaxena/ed-blackbox`. Branch:
 `master`. Current phase: the design-system migration is **complete** —
 every page links the shared stylesheet — so work has shifted to **publishing and editorial
 polish** (landing-page copy, fleet-bias cleanup, GitHub Pages).
@@ -318,7 +318,7 @@ figures came from, and drops rows with no specific target. The harness `.mjs` us
 (the repo's only dependency, a dev tool — there is still no build step). All are catalogued in
 `scripts/README.md`.
 
-**Future direction (planned, `TODO.md` Phase 2):** extract page content into per-page
+**Future direction (planned; tracked in GitHub Issues):** extract page content into per-page
 Markdown (`Page_Data.md`) and build generators that assemble full pages from Markdown +
 the design-system template — turning the site from hand-authored HTML into
 rendered-from-data HTML. (The companion anchor catalogs are already generated, above.)
@@ -363,21 +363,21 @@ divergent token names, and per-page layout widths that the inline-CSS era produc
   is a tracked TODO (don't mass-rename ad hoc). Note: the stylesheet is `ed-blackbo**x**`
   while the repo is `ed-blackbo**ok**`.
 - **Manufacturer logos** — ship hull renders are now embedded in all 128 dossiers
-  (`add-ship-render.py`); manufacturer logos are still pending (`TODO.md` Phase 4).
+  (`add-ship-render.py`); manufacturer logos are still pending (tracked in GitHub Issues).
 - **Fleet bias** — dossiers / by-role / activities still reference the personal fleet (KA-05
-  ship tags); systems pages are largely de-biased (`TODO.md` Phase 4).
+  ship tags); systems pages are largely de-biased (tracked in GitHub Issues).
 - **DS version string** — `--ds-version` is still `1.3.0` though the final migration added
   components (`.step-card`, `.bp-*`) and quick-nav features; bump when convenient.
 
 A few pages keep a single deliberately-scoped `<style>`/`<script>` for genuinely bespoke
 behaviour (the `checklist.html` unlock map; the `blueprints.html` accordion/search; the
-`index.html` grids) — these are intentional, not migration debt. All tracked in [`TODO.md`](TODO.md).
+`index.html` grids) — these are intentional, not migration debt. All tracked in GitHub Issues.
 
 ---
 
 ## 9. Deployment
 
-Target: **GitHub Pages** from `github.com/tusharsaxena/ed-blackbook` (planned). Because
+Target: **GitHub Pages** from `github.com/tusharsaxena/ed-blackbox` (planned). Because
 everything is static with relative links, the repo can be served as-is; the eventual
 site root and whether `guides/index.html` becomes the site index are open decisions.
 No build pipeline is required today — `scripts/` runs locally on demand.
