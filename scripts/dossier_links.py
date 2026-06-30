@@ -200,9 +200,12 @@ def group_norm(group_hint):
         return g
     if g.endswith("s") and g[:-1] in M["groups"]:
         return g[:-1]
-    for cand in M["groups"]:                       # variant containment, longest first
-        if g and (g in cand or cand in g):
-            return cand
+    # variant containment (e.g. "multi cannon turrets" -> "multi cannon"): pick the LONGEST
+    # matching group, deterministically (set iteration order is not stable across processes, so
+    # never return the first match — that flips "Multi-Cannon Turrets" between cannon/multi-cannon).
+    matches = [cand for cand in M["groups"] if g and (g in cand or cand in g)]
+    if matches:
+        return max(sorted(matches), key=len)
     return g
 
 

@@ -84,7 +84,15 @@ def size_of(item):
     return None
 
 
+# Groups whose only coriolis "blueprint" is a Tech-Broker capacity variant, not an engineering
+# blueprint — so they are NOT engineerable and must not raise W1. Cargo racks: their sole entry
+# is CargoRack_IncreasedCapacity, excluded site-wide (data/modifications-extra/corrections.json).
+NOT_ENGINEERABLE = {"cr"}
+
+
 def group_has_blueprints(grp):
+    if grp in NOT_ENGINEERABLE:
+        return False
     return bool(MODS.get(grp, {}).get("blueprints"))
 
 
