@@ -1,0 +1,15 @@
+{
+  "_README": "Project-authored upstream-data fixes for the blueprints pipeline. Kept OUTSIDE data/modifications/ (verbatim EDCD/coriolis-data import, re-cloned on re-import — must NOT be edited) so a coriolis re-import never clobbers it; same rationale as data/ship-aliases/ vs imported data/ships/. Applied by scripts/bp_common.py on read. See scripts/build-blueprints.md.",
+  "engineer_name_fixes": {
+    "Felicty Farseer": "Felicity Farseer"
+  },
+  "exclude_instances": [
+    {
+      "module": "cr",
+      "blueprint": "CargoRack_IncreasedCapacity",
+      "why": "Tech Broker module variant (Expanded Capacity Cargo Rack), not an engineer workshop blueprint: coriolis lists zero engineers and zero material costs for it (grade 5 only, components {} / engineers []). The Blueprints page documents engineer-applied modifications only, so this 186th data instance is intentionally not rendered, leaving 185 cards. Rendering it would produce a card with no engineers and no material rows."
+    }
+  ],
+  "_experimental_applicability_note": "experimental_applicability is empty by design: data/modifications/modules.json encodes the module -> [special_edname] map directly (the `specials` array on each module), so build-blueprints.py resolves experimentals from coriolis data, not from this overlay. 22 modgroups carry experimentals (84 distinct live effects, each resolving in specials.json); 21 carry none (sensors, limpet controllers, scanners, missile racks, etc. have no experimental effects in-game). The 3 `(Legacy)` effects (Plasma slug / Super penetrator / Feedback cascade) are excluded by the generator because each has a live non-legacy replacement that is rendered. Verified against coriolis specials.json. Populate this map only for a future group the data cannot resolve automatically.",
+  "experimental_applicability": {}
+}

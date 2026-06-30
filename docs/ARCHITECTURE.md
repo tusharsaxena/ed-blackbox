@@ -297,6 +297,26 @@ The first step toward "content-as-data". Convention: every task script lives in
   bootstrap that populated the data from the existing HTML) strips inline internal cross-links,
   and `audit-sources.py` is the deterministic gate (coverage, external-only, no drift, schema).
   Edit the data, never the credits block. (Design: `docs/superpowers/specs/2026-06-30-canonical-sources-data-design.md`.)
+- **Blueprints pipeline** — `build-blueprints.py` (+ shared loaders `bp_common.py`) renders the
+  **185 blueprint cards** (`.bp-modgroup`/`.bp-card`) on `guides/engineering/blueprints.html`
+  from the **canonical** verbatim coriolis data in `data/modifications/` (`blueprints.json`,
+  `modules.json`, `specials.json`), plus two **project-authored** overlays in the NEW
+  `data/modifications-extra/` (kept outside the read-only import, like `data/ship-aliases/`):
+  `corrections.json` (upstream fixes — the `Felicty Farseer` typo, the 186th instance excluded
+  with a reason, an experimental-applicability map left empty since coriolis encodes it) and
+  `editorial.json` (authored `title`/`effect`/`suit`/`ctx` prose + per-modgroup
+  `display`/`section`/`order`, none of which lives in coriolis). Per Roll = component qty;
+  Avg Rolls = the formula `{1:3,2:4,3:4,4:5,5:7}` (experimentals = 1); Total = product;
+  engineers-per-grade from `modules.json`, experimentals from `specials.json`. A
+  **byte-compatible** splice rewrites only the run of cards between
+  `<!-- BEGIN generated:blueprints -->` … `<!-- END generated:blueprints -->` markers in each
+  of sections 02–05; everything else (About, callouts, generated Sources) is preserved. Edit the
+  data, never the cards; `--check` previews. `audit-blueprints.py` is the deterministic gate
+  (every page material/category/engineer/experimental/Total/count matches data, every
+  `#engineer-<slug>` anchor resolves, Sources external-only). `extract-blueprint-editorial.py`
+  was the one-time seeder (HTML → `editorial.json`; reference only). Engineers/powerplay/materials
+  pages are deferred (inara.cz blocks automated extraction). Design:
+  `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`.
 
 Beyond those generators, `scripts/` also holds the **migration verification harness**
 (`shot.mjs` full-page screenshots, `fingerprint.mjs` + `fp-diff.mjs` content-invariance

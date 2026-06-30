@@ -263,6 +263,42 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
   state drift, and engineering/experimental coverage.
 - Design: `docs/superpowers/specs/2026-06-26-ship-loadout-data-design.md`.
 
+### Change blueprint data (Blueprints page)
+**`data/modifications/` (verbatim EDCD/coriolis-data) is the canonical game-data source for
+`blueprints.html` and is READ-ONLY** — re-cloned on re-import, never hand-edited. The page's
+**185 blueprint cards** (`.bp-modgroup`/`.bp-card`) are *generated* from it plus two
+**project-authored** overlays in **`data/modifications-extra/`** (kept outside
+`data/modifications/` so a coriolis re-import never clobbers them — same rationale as
+`data/ship-aliases/` vs imported `data/ships/`):
+- `corrections.json` — upstream-data fixes: `engineer_name_fixes` (e.g. `Felicty Farseer` →
+  `Felicity Farseer`), `exclude_instances` (the 186th data instance — the Tech-Broker
+  `CargoRack_IncreasedCapacity` — is excluded with a `why`, leaving 185 cards), and
+  `experimental_applicability` (empty by design; experimentals resolve from coriolis directly).
+- `editorial.json` — authored prose + presentation NOT in coriolis: blueprint display `title`,
+  one-line `effect`, `suit` tags, the three `ctx` panels, and per-modgroup `display`/`section`/`order`.
+```bash
+python3 scripts/build-blueprints.py            # render cards, inject between markers in sections 02–05
+python3 scripts/build-blueprints.py --check    # preview the diff, write nothing
+python3 scripts/audit-blueprints.py            # deterministic page⇄data consistency gate
+python3 scripts/extract-blueprint-editorial.py # one-time seeder (HTML → editorial.json); reference only
+```
+- The generator (`build-blueprints.py`, on shared loaders `bp_common.py`) reproduces the
+  `.bp-*` markup byte-for-byte and rewrites **only** the run of cards between the
+  `<!-- BEGIN generated:blueprints -->` … `<!-- END generated:blueprints -->` markers in each
+  of sections 02–05. Everything else (About, masthead, callouts, footer, generated Sources) is
+  untouched. **Never hand-edit the cards** — edit the data and rebuild.
+- **Per Roll** = component qty from `blueprints.json`; **Avg Rolls** = the formula
+  `{1:3, 2:4, 3:4, 4:5, 5:7}` (experimentals = 1); **Total** = Per Roll × Avg Rolls.
+  Engineers-per-grade come from `modules.json` (post-corrections, linked
+  `engineers.html#engineer-<slug>`); experimentals from `specials.json`.
+- After a rebuild run `python3 scripts/audit-blueprints.py` (materials/categories/engineers/
+  experimentals/Totals/counts/anchors all match data; Sources external-only) then
+  `python3 scripts/verify-links.py` and `python3 scripts/normalize-link-targets.py
+  guides/engineering/blueprints.html`. Card `<section id>`s don't change, so no anchor regen.
+- **Out of scope (deferred):** engineers · powerplay · materials pages — their named source
+  (inara.cz) hard-blocks automated extraction; revisit when that data is available another way.
+  Design: `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`.
+
 ### Migrate a page to the design system *(done — reference only)*
 - Every guide + the landing page are migrated (the original 108 legacy pages plus everything
   authored since, all on the design system). If you ever need the pattern: replace the
@@ -357,5 +393,7 @@ python3 scripts/add-variant-builds.py             # refresh each dossier's §Rol
 python3 scripts/audit-ship-loadouts.py            # deterministic completeness/consistency audit of all SLEF loadouts (missing slots, sizing, engineering, experimentals)
 python3 scripts/build-sources.py                  # regenerate every page's Sources block + _index.md from data/sources/ (canonical)
 python3 scripts/audit-sources.py                  # verify Sources coverage + external-only + no drift
+python3 scripts/build-blueprints.py               # render blueprints.html cards from data/modifications/ (canonical, read-only) + data/modifications-extra/ overlays
+python3 scripts/audit-blueprints.py               # deterministic blueprints.html ⇄ data consistency gate (materials/engineers/experimentals/Totals/counts/anchors)
 # open design-system/templates/component-gallery.html in a browser for the component reference
 ```

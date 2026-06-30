@@ -40,10 +40,11 @@ data, run the script — never hand-edit the generated block.
 | `data/ship-ratings/<role>.json` | dossier ratings, scorecards, by-role ladders | `compute-ship-ratings.py` · `reconcile-ratings-html.py` · `build-ship-scorecards.py` · `audit-ratings-consistency.py` |
 | `data/ship-loadouts/<dossier>.json` (SLEF) | dossier 3-State Loadout + Engineering Plan tables + Coriolis/EDSY/SLEF export rows | `build-ship-loadouts.py` · `audit-ship-loadouts.py` |
 | `data/sources/<page>.json` | every page's **Sources** block (external references only) | `build-sources.py` · `audit-sources.py` |
+| `data/modifications/` (coriolis, read-only) + `data/modifications-extra/` overlays | the 185 blueprint cards on `guides/engineering/blueprints.html` | `build-blueprints.py` · `audit-blueprints.py` |
 | filesystem (dossiers) | `guides/index.html` landing page | `generate-guides-index.sh` |
 | each page's `<section id>`s | per-page `<name>-anchors.md` anchor catalogs | `generate-anchor-files.sh` |
 
-All tooling lives in [`scripts/`](scripts/) (9 `.sh` + 49 `.py` + 8 `.mjs`), each script named
+All tooling lives in [`scripts/`](scripts/) (9 `.sh` + 54 `.py` + 8 `.mjs`), each script named
 for its task with a sibling `<name>.md` doc — see [`scripts/README.md`](scripts/README.md).
 The shared look is the design system in [`design-system/`](design-system/) (v1.3.0): one linked
 stylesheet + behaviours; pages re-theme only a five-token accent group. Game data imported from

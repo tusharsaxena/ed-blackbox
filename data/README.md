@@ -11,6 +11,13 @@ copying `modules/`, `ships/`, `modifications/` here.
 
 The subdirs below are **project-authored** (NOT coriolis-data):
 
+- `modifications-extra/` — overlays for the **blueprints pipeline**, kept outside the read-only
+  `modifications/` import so a coriolis re-import never clobbers them. `corrections.json`
+  (upstream-data fixes: `engineer_name_fixes`, `exclude_instances`, `experimental_applicability`)
+  and `editorial.json` (authored blueprint `title`/`effect`/`suit`/`ctx` + per-modgroup
+  `display`/`section`/`order` — none of which lives in coriolis). `scripts/build-blueprints.py`
+  merges these with `modifications/` to render `guides/engineering/blueprints.html`'s cards;
+  `audit-blueprints.py` verifies page ⇄ data. See `scripts/build-blueprints.md`.
 - `ship-ratings/`  — canonical 1–100 suitability ratings **and** the "Why This Rating" scorecard
   data (per-role `scorecard_weights` + per-ship `scorecard`); editorial judgement — see its README.
 - `ship-loadouts/` — per-dossier **SLEF** loadouts (3 states each); source of truth for the
