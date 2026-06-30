@@ -113,7 +113,10 @@
   },
 
   "_corrections": "Applied after the 2026-06-26 adversarial verification pass (verify-hyperlinks workflow). block_forms = never link (generic English / false positives). prefer_module_forms = bare component names that, in fit/loadout prose, should target the module not the blueprint group. ship_default_role = override the default role dossier for a bare ship mention.",
-  "block_forms": ["longer range", "specialised", "cannon"],
+  "_block_forms_note": "Surface forms never auto-linked in PROSE (the matcher also blocks each one's +s plural). These are words that are both casual prose and a module/material name; the loadout-table module/blueprint cells are linked deterministically by build-ship-loadouts.py (dossier_links.py), which ignores this block, so the table override of rule 6 still holds.",
+  "block_forms": ["longer range", "specialised", "cannon",
+                  "mining", "refinery", "sensor", "limpet", "collector", "prospector",
+                  "scanner", "drive", "shield", "cargo", "fuel", "armour", "hull"],
   "prefer_module_forms": [
     "fuel scoop", "cargo rack", "collector limpet controller",
     "prospector limpet controller", "fuel transfer limpet controller",

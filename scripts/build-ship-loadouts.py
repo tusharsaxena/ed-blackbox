@@ -27,6 +27,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import slef_resolve as R  # noqa: E402
 import slef_to_url as U  # noqa: E402
+import dossier_links as DL  # noqa: E402  deterministic per-column cross-links
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "ship-loadouts"
@@ -60,14 +61,27 @@ def _module_display(mod):
 
 
 def render_buy_cell(mod):
-    return _module_display(mod)[0]
+    """Initial / A-Rated column -> HTML. The module NAME is always linked (deterministic,
+    overrides the prose common-term block); the size+rating prefix and mount stay plain."""
+    if not mod or not mod.get("Item"):
+        return MDASH
+    spec = R.resolve_item(mod["Item"])
+    if not spec:
+        return esc(f"?{mod['Item']}")
+    size, rating, name = spec.get("size"), spec.get("rating"), spec.get("name")
+    prefix = f"{size}{rating} " if size is not None and rating else ""
+    html = esc(prefix) + DL.link_module(name)
+    if spec.get("mount"):
+        html += esc(f" ({R.MOUNT_DISPLAY.get(spec['mount'], spec['mount'])})")
+    return html
 
 
 def render_eng_cell(eng_mod, arated_mod):
-    """Engineered column: blueprint + experimental ONLY.
+    """Engineered column -> HTML. Blueprint name is ALWAYS linked (disambiguated by the
+    A-Rated module's group); the experimental effect is NEVER linked (wrapped .nolink).
       - A-Rated slot empty          -> '—'
-      - blueprint + experimental    -> 'G5 Overcharged + Corrosive Shell'
-      - blueprint, no experimental  -> 'G5 Overcharged (no experimental effect)'
+      - blueprint + experimental    -> 'G5 <a>Overcharged</a> + <span nolink>Corrosive Shell</span>'
+      - blueprint, no experimental  -> 'G5 <a>Overcharged</a> (no experimental effect)'
       - fitted, no blueprint        -> '(No blueprint available)'
     """
     if not arated_mod or not arated_mod.get("Item"):
@@ -76,9 +90,12 @@ def render_eng_cell(eng_mod, arated_mod):
     if eng and eng.get("BlueprintName"):
         grade = eng.get("Level")
         bp = R.resolve_blueprint(eng["BlueprintName"])
-        head = f"G{grade} {bp}" if grade else bp
+        group = (R.resolve_item(arated_mod["Item"]) or {}).get("file", "")
+        bp_html = DL.link_blueprint(bp, group)
+        head = (f"G{grade} " if grade else "") + bp_html
         if eng.get("ExperimentalEffect"):
-            head += f" + {R.resolve_special(eng['ExperimentalEffect'])}"
+            exp = R.resolve_special(eng["ExperimentalEffect"])
+            head += f' + <span class="nolink">{esc(exp)}</span>'
         else:
             head += " (no experimental effect)"
         return head
@@ -128,11 +145,13 @@ def render_l3_table(builds, notes):
         arat = render_buy_cell(row["arated"])
         eng = render_eng_cell(row["engineered"], row["arated"])
         note = notes.get(row["slot"], "")
+        # init/arat/eng are pre-linked HTML (module/blueprint linked, experimental .nolink);
+        # slot label + notes stay plain text (the relink pass links notes, block-filtered).
         lines.append(
             f'<tr><td class="slot">{esc(row["label"])}</td>'
-            f'<td class="st">{esc(init)}</td>'
-            f'<td class="st">{esc(arat)}</td>'
-            f'<td class="eng">{esc(eng)}</td>'
+            f'<td class="st">{init}</td>'
+            f'<td class="st">{arat}</td>'
+            f'<td class="eng">{eng}</td>'
             f'<td class="note">{esc(note)}</td></tr>'
         )
     lines.append(render_export_rows(builds))
@@ -198,14 +217,18 @@ def render_eng_plan_table(plan):
                  "<th>Engineer</th></tr></thead>")
     lines.append("<tbody>")
     for e in plan:
-        mod = esc(e["module"])
+        # Module ALWAYS linked, Blueprint ALWAYS linked (group-disambiguated by the module),
+        # Engineer linked (splits 'A / B'), Experimental NEVER linked (wrapped .nolink).
+        mod = DL.link_module_text(e["module"])
         if e.get("size") is not None:
             mod = f"{mod} ({e['size']})"
         grade = e.get("grade")
         bp = e.get("blueprint", "")
-        bp_disp = f"{esc(bp)} ({grade})" if grade else esc(bp)
-        exp = esc(e.get("experimental", MDASH) or MDASH)
-        eng = esc(e.get("engineer", MDASH) or MDASH)
+        bp_disp = DL.link_blueprint(bp, e.get("module", ""))
+        if grade:
+            bp_disp += f" ({grade})"
+        exp = f'<span class="nolink">{esc(e.get("experimental", MDASH) or MDASH)}</span>'
+        eng = DL.link_engineer(e.get("engineer", MDASH) or MDASH)
         lines.append(f'<tr><td class="mod">{mod}</td><td>{bp_disp}</td>'
                      f'<td>{exp}</td><td>{eng}</td></tr>')
     lines.append("</tbody>")

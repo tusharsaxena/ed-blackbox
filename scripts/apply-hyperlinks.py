@@ -45,7 +45,7 @@ SKIP_TAGS = {"a", "h1", "h2", "h3", "h4", "h5", "h6", "script", "style", "svg",
              "code", "pre", "button", "textarea", "option", "title", "nav", "head"}
 SKIP_CLASSES = {"kicker", "role", "brand", "qn-item", "qn", "toc", "quicknav",
                 "dial", "hud", "scorecard", "scval", "fct", "cr-link", "cr-src", "credits",
-                "lex-btn", "lex-copy", "mx-search", "breadcrumb", "tabs",
+                "lex-btn", "lex-copy", "mx-search", "breadcrumb", "hdr-crumb", "tabs",
                 "masthead-meta", "tag", "chip", "bp-card-title", "matname", "exp-desc", "nolink"}
 VOID = {"br", "img", "input", "meta", "link", "hr", "area", "base", "col",
         "embed", "source", "track", "wbr", "path", "circle", "rect", "line",

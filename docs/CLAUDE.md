@@ -135,7 +135,32 @@ those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md
 Every guide cross-links references to the "source" pages (engineers · blueprints · modules ·
 materials · powers · superpowers · ship dossiers). **Any new or substantially edited page
 must be run through the same pass** so its references become links and its links follow the
-open policy:
+open policy.
+
+> **CORE LINK RULES — what must NEVER and ALWAYS be linked** (enforced by the scripts;
+> apply them to any new page / content change):
+> 1. **Never link breadcrumbs or section/sub headers.** No hyperlink in `.hdr-crumb` (the
+>    current-page label) or in any `<hN>` / `.sec-head` / `.step-action` heading. (`hdr-crumb`
+>    + the `hN` tags are in `apply-hyperlinks.py`'s skip set; `scripts/strip-unwanted-links.py`
+>    removes any that slipped in.) The structural `.hdr-crumb-trail` parent nav stays.
+> 2. **`checklist.html` is the one header exception** — the engineer in each `Unlock …` / `Climb
+>    … to Grade N` step header **is** linked (the engineer is the point of the step), via
+>    `scripts/link-checklist-engineers.py`. Partial surnames in those headers are first expanded
+>    to full names ("Climb Farseer" → "Climb Felicity Farseer") so linking is consistent.
+> 3. **Loadout tables — generated, deterministic** (`build-ship-loadouts.py` via `dossier_links.py`,
+>    overrides rule 6): in the §3-State Loadout, §Engineering Plan, and the §Buy/Upgrade plans —
+>    **module name ALWAYS linked**, **blueprint name ALWAYS linked** (group-disambiguated, e.g.
+>    `Overcharged`), **experimental effect NEVER linked** (e.g. `Corrosive Shell`; wrapped `.nolink`).
+>    Engineer names linked. In the editorial §Buy/Upgrade plans the **bold bullet-header** module
+>    is linked; common terms in the description are not.
+> 4. **Avoid linking common terms in prose** — words that are both casual English and a module/
+>    material name are blocked site-wide (`block_forms` in `data/links/link-aliases.json`): mining,
+>    refinery, sensor(s), limpet(s), collector, prospector, scanner, drive(s), shield(s), cargo,
+>    fuel, armour, hull (each + its plural). **Rule 3 overrides this** inside the loadout-table
+>    module/blueprint cells (where the word IS the module). Compound names ("Mining Laser",
+>    "Shield Generator", "Cargo Rack") are unaffected.
+
+Run the pass:
 ```bash
 python3 scripts/build-link-dictionary.py            # only if you added a source element
 python3 scripts/apply-hyperlinks.py <path|dir>      # wrap references in internal <a> (>=0.75)
@@ -453,7 +478,10 @@ python3 scripts/audit-powerplay.py         # 12 powers (allegiance matched) + 12
 - **Links:** internal links are **relative** and open in the **same tab**; external links
   open in a **new tab** (`target="_blank" rel="noopener noreferrer"`). This is settled —
   enforce it with `scripts/normalize-link-targets.py` (byte-preserving, idempotent; run it
-  on any new/edited page). Don't hand-add `target="_blank"` to an internal link.
+  on any new/edited page). Don't hand-add `target="_blank"` to an internal link. **What gets
+  linked is governed by the CORE LINK RULES** (never breadcrumbs/headers; loadout-table module/
+  blueprint always, experimental never; common terms blocked in prose; `checklist.html` engineer
+  headers are the exception) — see *Cross-link a page (hyperlinks)*.
 - **Keep the lexicon current.** `guides/systems/new-pilot-and-interface/cmdrs-lexicon.html` (the *CMDR's Lexicon*) is the
   site's **canonical terminology reference**. Whenever you add a new guide, or introduce or
   redefine an Elite Dangerous term, acronym, or site-specific phrase in any page, **add or
