@@ -7,7 +7,7 @@ the **source of truth** for the 1–100 suitability ratings. Read-only on the HT
 
 Per role, per ship:
 
-- **Ship has a dossier** (`guides/ships/dossiers/<ship>-<role>.html`): canonical = the
+- **Ship has a dossier** (`guides/ships/ship-dossiers/<ship>-<role>.html`): canonical = the
   dossier **headline** rating (`<div class="n">N<small>/100`). The dossier is
   authoritative; any divergent by-role ladder value is treated as stale.
 - **Ship has no dossier**: if every place it appears (by-role ladder + peer-comparison

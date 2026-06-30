@@ -21,7 +21,7 @@ Usage:
     python3 scripts/apply-hyperlinks.py --check                 # dry-run all editable pages
     python3 scripts/apply-hyperlinks.py guides/systems          # one dir/glob/file
     python3 scripts/apply-hyperlinks.py --reset-log <paths...>  # truncate the CSV first
-Exclusions (never edited as link sources): guides/activities/**, guides/ships/by-role/**, guides/index.html (generated).
+Exclusions (never edited as link sources): guides/systems/activity-guides/**, guides/ships/best-ships-by-role/**, guides/index.html (generated).
 """
 from __future__ import annotations
 import csv
@@ -44,14 +44,14 @@ ROLES = ["multipurpose", "combat", "exploration", "trading", "mining", "passenge
 SKIP_TAGS = {"a", "h1", "h2", "h3", "h4", "h5", "h6", "script", "style", "svg",
              "code", "pre", "button", "textarea", "option", "title", "nav", "head"}
 SKIP_CLASSES = {"kicker", "role", "brand", "qn-item", "qn", "toc", "quicknav",
-                "dial", "hud", "scval", "fct", "cr-link", "cr-src", "credits",
+                "dial", "hud", "scorecard", "scval", "fct", "cr-link", "cr-src", "credits",
                 "lex-btn", "lex-copy", "mx-search", "breadcrumb", "tabs",
                 "masthead-meta", "tag", "chip", "bp-card-title", "nolink"}
 VOID = {"br", "img", "input", "meta", "link", "hr", "area", "base", "col",
         "embed", "source", "track", "wbr", "path", "circle", "rect", "line",
         "polyline", "polygon", "use", "stop"}
 
-EXCLUDE_DIRS = ("activities/", "ships/by-role/")
+EXCLUDE_DIRS = ("systems/activity-guides/", "ships/best-ships-by-role/")
 
 
 # ---------------------------------------------------------------- skip scanner

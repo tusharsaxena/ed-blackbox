@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaconda &middot; Exploration &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Exploration → fed-blue (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Anaconda · Exploration</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-explore"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Explore</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Anaconda</span><span class="role ac-role-exploration">Exploration</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The long-standing benchmark for <em>capital</em> exploration</h2>
+      <p>A top-tier explorer with range and module space that rival any ship in the game. It trades the <a href="mandalay-exploration.html">Mandalay</a>'s superior range-per-mass and the large pad's resupply flexibility for unmatched capacity and versatility — the same hull re-roles to combat or hauling, with no rank gate required.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/anaconda.jpg" alt="Anaconda" width="160" height="90">
+      <figcaption><b>Anaconda</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">94<small>/100</small></div><div class="bar mini"><i style="--pct:94"></i></div></div>
+      <div class="stat"><div class="n">~78</div><div class="l">Max jump (LY, engineered)</div></div>
+      <div class="stat"><div class="n">12</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">Class 7</div><div class="l"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div></div>
+      <div class="stat"><div class="n">~142M</div><div class="l">Hull price (Cr)</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad class</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Before the modern dedicated explorers arrived, the Anaconda was <em>the</em> long-range ship &mdash; and it remains one of the best. A strong <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> on a hull with vast internals gives it ~78 LY engineered while carrying everything an expedition could need: the largest scoop, multiple AFMUs, big SRV bays, <a href="../../engineering/engineering-manuals/modules.html#module-scanners">scanners</a> and comforts, with room to spare. And it does all this with no rank gate.</p>
+    <p>Its great advantage over the dedicated explorers is versatility: the same Anaconda that explores can re-role to a combat battleship or a bulk hauler by swapping modules. Its disadvantages are the large pad (no outpost landings) and ponderous handling. But for a capital-scale explorer that carries everything, jumps enormously and costs less than the flagship Caspian, the Anaconda is a perennial, proven choice.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Capital-scale exploration with versatility: long, fully-equipped expeditions, carrier-based deep-space operations, large exobiology runs, and any trip where carrying capacity and the option to re-role matter.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-ax" href="anaconda-ax.html"><span class="vrole">AX</span><span class="vrate">88<small>/100</small></span></a>
+        <a class="vchip r-combat" href="anaconda-combat.html"><span class="vrole">Combat</span><span class="vrate">88<small>/100</small></span></a>
+        <a class="vchip r-mining" href="anaconda-mining.html"><span class="vrole">Mining</span><span class="vrate">86<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="anaconda-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">88<small>/100</small></span></a>
+        <a class="vchip r-passenger" href="anaconda-passenger.html"><span class="vrole">Passenger</span><span class="vrate">82<small>/100</small></span></a>
+        <a class="vchip r-trading" href="anaconda-trading.html"><span class="vrole">Trading</span><span class="vrate">76<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-explore">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~78 <small>LY</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">183 / 244 <small>m/s</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div><div class="v">Up to Class 7</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">400 <small>t</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;4&middot;4&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">8</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></div><div class="v">Class 6</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">1 (class 5)</div></div>
+    </div>
+    <p>Four things make the Anaconda a great explorer:</p>
+    <ul class="bullets">
+      <li><b>Huge jump range.</b> A light-for-a-capital hull plus a strong <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> give it ~78 LY engineered &mdash; among the best in the game.</li>
+      <li><b>Vast internals.</b> Twelve optionals carry the largest scoop, multiple AFMUs, big SRV bays, <a href="../../engineering/engineering-manuals/modules.html#module-scanners">scanners</a> and comforts at once, with redundancy.</li>
+      <li><b>No rank gate.</b> Unlike the navy capitals, anyone with the credits can fly one &mdash; the accessible capital explorer.</li>
+      <li><b>Total versatility.</b> The same hull re-roles to combat or hauling &mdash; an explorer that's also a battleship and a freighter.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's a large pad, so no outpost landings &mdash; resupply means stations or a carrier. It's slow and ponderous, and the modern <a href="mandalay-exploration.html">Mandalay</a> beats it on range-per-mass from a far cheaper medium hull. The Anaconda's case is capital capacity plus versatility; for pure range or pad flexibility, a <a href="mandalay-exploration.html">Mandalay</a> or <a href="krait-phantom-exploration.html">Phantom</a> is the smarter, cheaper buy.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">A ~78 LY capital explorer with twelve optionals and a Class 7 scoop carrying everything an expedition needs; only its bulky canopy and large-pad bulk keep it under the Mandalay's 96.</p>
+    <p>The <b>94/100</b> headline is a verdict against the exploration role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Engineered jump range</td><td class="sc"><span class="scval">34</span><span class="den">/35</span><div class="bar mini"><i style="--pct:97"></i></div></td><td class="wcell">~78 LY engineered on a 400 t hull with Class 6 FSD plus Guardian Booster 5 puts it level with the Caspian and within reach of nearly every explorer; only the medium Mandalay (~85) and Phantom (~75) sit near it, so it leads the large-pad field but trails the range king.</td></tr>
+      <tr><td class="fct">Heat profile</td><td class="sc"><span class="scval">13</span><span class="den">/15</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">A capital hull runs warmer than light explorers, but G5 Low Emissions on the 8-rated plant plus Thermal Spread keep scooping heat in check, and the Class 8 power plant gives ample thermal headroom; two heat-sink launchers cover silent-running resets. Solid, not class-leading.</td></tr>
+      <tr><td class="fct">Fuel tank &amp; reach</td><td class="sc"><span class="scval">10</span><span class="den">/10</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">The largest available scoop (Class 7) refuels almost instantly, and vast internals allow a 5C plus 4C extra fuel tank on top of the stock C tank, stretching the gap between scoopable stars far beyond any small or medium explorer.</td></tr>
+      <tr><td class="fct">Canopy &amp; visibility</td><td class="sc"><span class="scval">8</span><span class="den">/10</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">The Anaconda's broad, high cockpit and long nose give notably poor downward and lateral sightlines for landings and surface science, well behind the panoramic Asp Explorer or Diamondback; the clear field weakness for an exploration cockpit.</td></tr>
+      <tr><td class="fct">Internals</td><td class="sc"><span class="scval">20</span><span class="den">/20</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">Twelve optional internals (7·6·6·6·5·5·5·4·4·4·2·1) plus a Class 5 military slot carry the biggest scoop, a multi-SRV hangar, two or three AFMUs, surface scanner, shields, limpets and cabins at once with redundancy — unmatched capacity in the role.</td></tr>
+      <tr><td class="fct">Comfort &amp; cost</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">~142M Cr hull, ~190M all-in — cheaper than the Caspian but a major outlay; the large pad bars outpost landings and handling is ponderous. Versatility (re-role to combat or hauling, no rank gate) softens the cost, but the Caspian out-comforts it.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">94</span><span class="den">/100</span><div class="bar mini"><i style="--pct:94"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for exploration specifically</em>. The role column is the maximum engineered jump range in light-years &mdash; the headline number for deep-space travel.</p>
+    <h3 class="subhead">Same class &mdash; large-pad explorers</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Anaconda <span class="pill md">this</span></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod"><a href="caspian-explorer-exploration.html">Caspian Explorer</a></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="p">Purpose-built; more utilities and comfort</span><span class="c">Far pricier; not combat-capable</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-clipper-exploration.html">Imperial Clipper</a></td><td><span class="pill pad-large">Large</span></td><td>~45</td><td class="pcc"><span class="p">Far faster; cheaper</span><span class="c">Much shorter range; less capacity</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod"><a href="beluga-liner-exploration.html">Beluga Liner</a></td><td><span class="pill pad-large">Large</span></td><td>~40</td><td class="pcc"><span class="p">Luxury passenger comfort</span><span class="c">Short range; passenger-first</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Anaconda and the Caspian are the two great large explorers. The Caspian is the purpose-built flagship with more comfort; the Anaconda matches its range, costs less, needs no rank, and re-roles to anything. For a versatile capital explorer, the Anaconda is the value flagship.</p>
+    <h3 class="subhead">Other classes &mdash; the cheaper, more flexible rivals</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Anaconda</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="mandalay-exploration.html">Mandalay</a></td><td><span class="pill pad-medium">Medium</span></td><td>~85</td><td class="pcc"><span class="p">Greater range; medium pad; far cheaper</span><span class="c">Far less capacity and redundancy</span></td><td><span class="rscore">96</span><div class="bar mini"><i style="--pct:96"></i></div></td></tr>
+        <tr><td class="mod"><a href="caspian-explorer-exploration.html">Caspian Explorer</a></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="p">More dedicated comfort and utilities</span><span class="c">Far pricier</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-exploration.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~75</td><td class="pcc"><span class="p">Medium pad; far cheaper; great balance</span><span class="c">Less capacity</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-explorer-exploration.html">Diamondback Explorer</a></td><td><span class="pill pad-small">Small</span></td><td>~68</td><td class="pcc"><span class="p">Tiny price; lands anywhere</span><span class="c">A fraction of the capacity</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-exploration.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~62</td><td class="pcc"><span class="p">Cheap; medium pad; great visibility</span><span class="c">Far less range and capacity</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The mediums jump as far or further, land more flexibly and cost a fraction &mdash; for many explorers the rational choice. The Anaconda earns its place when you want capital capacity, redundancy and the freedom to re-role the same hull to combat or hauling between expeditions.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~142M Cr</div></div>
+      <div class="cell"><div class="k">A-rated explorer</div><div class="v">~165M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~190M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~142M Cr the Anaconda is a major purchase but cheaper than the flagship Caspian, and it carries no rank gate. A full exploration fit brings the all-in figure to around 190M Cr.</p>
+    <p>Its versatility softens the cost: a single engineered Anaconda can be your explorer, your battleship and your hauler by swapping modules &mdash; effectively several ships in one, spreading the investment across roles.</p>
+    <div class="callout"><span class="lbl">The versatile capital</span><p>Around 190M Cr all-in for a capital explorer that also fights and hauls &mdash; cheaper than the Caspian, and far more flexible. One Anaconda can be your whole large-ship fleet.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A capital expedition fit using the vast internals. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises range while carrying full kit and redundancy. Hardpoints stay empty — an explorer runs clean.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0I Heat Sink Launcher</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">A light shield booster pads the landing shield; Heavy Duty maximises its raw MJ for botched touchdowns.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">8E Power Plant</td><td class="st">8D Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">D-rated to save mass; Low Emissions keeps heat low while scooping and Thermal Spread bleeds the rest.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">7E Thrusters</td><td class="st">7D Thrusters</td><td class="eng">G5 Clean Drive Tuning + Stripped Down</td><td class="note">D-rated for mass; Clean Drive Tuning runs cool and Stripped Down sheds weight for range.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">6E Frame Shift Drive</td><td class="st">6A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rated and the heart of the build; Increased Range plus Mass Manager drives the ~78 LY jump.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">5E Life Support</td><td class="st">5D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rated and Lightweight to trim mass; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">8E Power Distributor</td><td class="st">8D Power Distributor</td><td class="eng">G3 Engine Focused (no experimental effect)</td><td class="note">D-rated; Engine Focused keeps the engine pip charged for boosting and high-wake escapes.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">8E Sensors</td><td class="st">8D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rated and Lightweight — exploration needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Military Slots</td></tr>
+<tr><td class="slot">Military 1</td><td class="st">—</td><td class="st">5A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 7</td><td class="st">7E Fuel Scoop</td><td class="st">7A Fuel Scoop</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">5H Guardian FSD Booster</td><td class="eng">(No blueprint available)</td><td class="note">Guardian FSD Booster size 5 is the largest flat jump-range bonus available; it under-fills the size-6 slot and carries no blueprint.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">2G Planetary Vehicle Hangar</td><td class="eng">(No blueprint available)</td><td class="note">Multi-SRV Planetary Vehicle Hangar for surface science and exobiology; hangars carry no blueprint.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5C Bi-Weave Shield Generator</td><td class="eng">G5 Enhanced Low Power + Stripped Down</td><td class="note">A light bi-weave for landing safety; Enhanced Low Power plus Stripped Down keep its mass and power draw minimal.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">3A Repair Limpet Controller</td><td class="eng">(No blueprint available)</td><td class="note">Repair Limpet Controller patches hull damage the AFMU can't touch; limpet controllers carry no blueprint.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Extra fuel tank extends the gap between scoopable stars; fuel tanks aren't engineerable.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note"></td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5WRTWsCMRCG%2F0vOHrqUfrC3gpUK2krXWylhuhndYEzCZGKx4n9vdpX61UM8hTwveZJ5sxG4QsuiFCMHykUWPVE12icAFmpnFezJKywx0f1uqHan0nbsVDQYRPmxEZVxLX2ipYuUsiHj8kgloQvknEBhkfI3K0qmiD0xIe1I81qUxbb3J5pqu34BUt5py8VB2HiWDQIHbRcGoq0bJMmRCFlyOpOhnrhvpIkBywdtukT6lvuWy6B%2F8FHWBkLIeewYtH22c21TGSdK7GCne8jXDSg1nrqecZ%2F0Ck%2BVzdojqZZ32vt87UjPsIreOzob3KQg7ILOeZfv7Lrs68CkvyI7%2BqdRdUiv7fUdFJwpA9rgKFxrGkQ0U7CLU9ksUU70eOrbDFu73BSyar%2F10hhq53zen39ufwHszJq1hwMAAA%3D%3D&amp;bn=Anaconda" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XVUW%2FaMBAH8O%2FiZzQRIKzK26a2WiW6sdG3aYqO%2BEgsjG2d7W5ZxXef49BBGKrMw56inJVfYt%2FfzgvDZ1SOFWyhgWvv2IitGmFCARRUWnE4VD7DDkP1cPfA%2B6fC7aPmXqJlxfcXtpK6q36gnfYUxh4c7k6oEuJAWRNwzML4F8UKRx5HbElCk3AtK7L96C%2F0JFT7CYgbLZTLjmBjXNkgOCvUVoJXVYNUOk%2BErnThmWvpyf%2Bjp0PaNgIlX2ttXXCt%2BI3jspJgbZ4AL%2FVPpKUE5Y5oeEVpurrp6lG86cVJgvgIQt2pWqjQwAGJsRi59%2BncPYWUhHxs3C2JZxySTWuQeFeP7Dx93guxwZU3RtPZxGUYsP1ANPP0T41reSusI7H2TtOFFeXH0WvX9RtwOCMtKqvJXivde5RPoLZDbBOqLlRPZz1N6beQwgG142zoERoQdEhknt6Z7jLOylUXk3%2B%2F0FZam9MMJZOTSM6HZO3DphKgNnawgZLR6SV07eu6XUMbqUl6X6KYRzE%2Fa3Tc4jUqJHiNzmuLyg1Yl6rPL%2BmctMJwmjrS8tC2%2BIbplSt8E%2FHZGzGYXSdm40viIKiz9KBGsQ%2FWZChWQLUmqLanHctSyT5YZ%2Bnn6EBI5NbTBiq0FSjVnfpvHPcj1h%2BbSELVrHhhH6VHE27c4Ue5itu9vPtlQHHkwVmEX61kRT5iXz3Innk33u9%2F7P8AwuLaIYYHAAA%3D&amp;bn=Anaconda" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F9VWXU%2FbMBT9L3mupn5QhvrGgA6kdjCCtIdpsm6T28Sqa0f%2BKMsQ%2F303TqBJKLS0SNNeWuVaPj7HPufaDwGuUNpgFEwUxMrZoBOEKc%2BoABIiJWOoKt9giVStvq7ichZ9TlXsBJpg9PMhCIUqqqd6qZymsSuLyxoUAz%2FAEg0x9mj8WgYjqx12ghvNleY2D0a9TnAhEy4RNZdJMHoIvgiHGX3YikMJz07jFcgIY8KZkAoRjIad4LsDUcJ86j4%2Bdp4p3XGZX4KOM0U4vTW1NLMsRbCGy4UAJ6MUNbNOa7TM0py9SU65idglIYeEfAYZRMXEZ6q9Han2%2Fx%2BqgyZVk3IU8UwpY4mn4X%2BwyyIBxgz3Jhp6yC8VJDFe5eeuTrVlAAL8nRHakswK4mI%2Bx6hgbTKMOIgWwyh1cpEHdXk36h71jQBp19KIDcuKelbUva6TUld%2Fb13rdVhoEYRN95VUYxYpJSgcdT1T4LKkYpqC0Be9mM%2BHiimH2Z2Tb0Rzi4yKj%2BBJau%2Bx%2BG3oGGtaiswwt%2Bear7CpJc0JOC7qXs%2FxoaYbh%2BdsomRyCzLBfQXNTVxkd9X014TPMXRZpnTLYIIGTDngRQwPPZTaSmxS7OePcld3aZ3enefcWM1nziq9IQvxevQDE1Fbkz1NXtu3Ij54nfgtxNBia1Aapc3HkAw92Lv3c%2BxQ3IFcNJnNqWqpWj%2FvwWvU6pnmtAjovNtr4mnMgOuq8w4PDcHpeMrK7rvjfVv8dXssLDrKS6GGmlNWbzcHxJPgQg%2F3fn59z%2B%2B4yS9xdKFxkBTZ%2BuU13OEsPOhgE%2BjMJUk%2Bg9xD9bcYr4049IjDlpO92gQlaniK3ZNt2ByMPfCW%2FfqMfJ1ZvuRm%2F25eUn21m3uNx5s0xlpJpJej1UpUhvY6B1tM0wY%2F8eBHbwTk6J8EpNfdRKzRCY527wQesYxcv4kYgU6UhmhRt9%2F%2B7%2B%2BzAu62gLuSkUYga7x8NW6TXmav1bRitMDp1WKcnkOEJgIpi0fuIa%2FbqkuTQ0G%2BfTi%2FHv8CZi3EmA8NAAA%3D&amp;bn=Anaconda" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5WRTWsCMRCG%2F0vOHrqUfrC3gpUK2krXWylhuhndYEzCZGKx4n9vdpX61UM8hTwveZJ5sxG4QsuiFCMHykUWPVE12icAFmpnFezJKywx0f1uqHan0nbsVDQYRPmxEZVxLX2ipYuUsiHj8kgloQvknEBhkfI3K0qmiD0xIe1I81qUxbb3J5pqu34BUt5py8VB2HiWDQIHbRcGoq0bJMmRCFlyOpOhnrhvpIkBywdtukT6lvuWy6B%2F8FHWBkLIeewYtH22c21TGSdK7GCne8jXDSg1nrqecZ%2F0Ck%2BVzdojqZZ32vt87UjPsIreOzob3KQg7ILOeZfv7Lrs68CkvyI7%2BqdRdUiv7fUdFJwpA9rgKFxrGkQ0U7CLU9ksUU70eOrbDFu73BSyar%2F10hhq53zen39ufwHszJq1hwMAAA%3D%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XVUW%2FaMBAH8O%2FiZzQRIKzK26a2WiW6sdG3aYqO%2BEgsjG2d7W5ZxXef49BBGKrMw56inJVfYt%2FfzgvDZ1SOFWyhgWvv2IitGmFCARRUWnE4VD7DDkP1cPfA%2B6fC7aPmXqJlxfcXtpK6q36gnfYUxh4c7k6oEuJAWRNwzML4F8UKRx5HbElCk3AtK7L96C%2F0JFT7CYgbLZTLjmBjXNkgOCvUVoJXVYNUOk%2BErnThmWvpyf%2Bjp0PaNgIlX2ttXXCt%2BI3jspJgbZ4AL%2FVPpKUE5Y5oeEVpurrp6lG86cVJgvgIQt2pWqjQwAGJsRi59%2BncPYWUhHxs3C2JZxySTWuQeFeP7Dx93guxwZU3RtPZxGUYsP1ANPP0T41reSusI7H2TtOFFeXH0WvX9RtwOCMtKqvJXivde5RPoLZDbBOqLlRPZz1N6beQwgG142zoERoQdEhknt6Z7jLOylUXk3%2B%2F0FZam9MMJZOTSM6HZO3DphKgNnawgZLR6SV07eu6XUMbqUl6X6KYRzE%2Fa3Tc4jUqJHiNzmuLyg1Yl6rPL%2BmctMJwmjrS8tC2%2BIbplSt8E%2FHZGzGYXSdm40viIKiz9KBGsQ%2FWZChWQLUmqLanHctSyT5YZ%2Bnn6EBI5NbTBiq0FSjVnfpvHPcj1h%2BbSELVrHhhH6VHE27c4Ue5itu9vPtlQHHkwVmEX61kRT5iXz3Innk33u9%2F7P8AwuLaIYYHAAA%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F9VWXU%2FbMBT9L3mupn5QhvrGgA6kdjCCtIdpsm6T28Sqa0f%2BKMsQ%2F303TqBJKLS0SNNeWuVaPj7HPufaDwGuUNpgFEwUxMrZoBOEKc%2BoABIiJWOoKt9giVStvq7ichZ9TlXsBJpg9PMhCIUqqqd6qZymsSuLyxoUAz%2FAEg0x9mj8WgYjqx12ghvNleY2D0a9TnAhEy4RNZdJMHoIvgiHGX3YikMJz07jFcgIY8KZkAoRjIad4LsDUcJ86j4%2Bdp4p3XGZX4KOM0U4vTW1NLMsRbCGy4UAJ6MUNbNOa7TM0py9SU65idglIYeEfAYZRMXEZ6q9Han2%2Fx%2BqgyZVk3IU8UwpY4mn4X%2BwyyIBxgz3Jhp6yC8VJDFe5eeuTrVlAAL8nRHakswK4mI%2Bx6hgbTKMOIgWwyh1cpEHdXk36h71jQBp19KIDcuKelbUva6TUld%2Fb13rdVhoEYRN95VUYxYpJSgcdT1T4LKkYpqC0Be9mM%2BHiimH2Z2Tb0Rzi4yKj%2BBJau%2Bx%2BG3oGGtaiswwt%2Bear7CpJc0JOC7qXs%2FxoaYbh%2BdsomRyCzLBfQXNTVxkd9X014TPMXRZpnTLYIIGTDngRQwPPZTaSmxS7OePcld3aZ3enefcWM1nziq9IQvxevQDE1Fbkz1NXtu3Ij54nfgtxNBia1Aapc3HkAw92Lv3c%2BxQ3IFcNJnNqWqpWj%2FvwWvU6pnmtAjovNtr4mnMgOuq8w4PDcHpeMrK7rvjfVv8dXssLDrKS6GGmlNWbzcHxJPgQg%2F3fn59z%2B%2B4yS9xdKFxkBTZ%2BuU13OEsPOhgE%2BjMJUk%2Bg9xD9bcYr4049IjDlpO92gQlaniK3ZNt2ByMPfCW%2FfqMfJ1ZvuRm%2F25eUn21m3uNx5s0xlpJpJej1UpUhvY6B1tM0wY%2F8eBHbwTk6J8EpNfdRKzRCY527wQesYxcv4kYgU6UhmhRt9%2F%2B7%2B%2BzAu62gLuSkUYga7x8NW6TXmav1bRitMDp1WKcnkOEJgIpi0fuIa%2FbqkuTQ0G%2BfTi%2FHv8CZi3EmA8NAAA%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Anaconda&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;anaconda_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size8_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size6_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size8_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size8_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size7&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size7_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Anaconda&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;anaconda_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size8_class2&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class2&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size6_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size8_class2&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size8_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_repairer_size5_class5&quot;},{&quot;Slot&quot;:&quot;Slot01_Size7&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size7_class5&quot;},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size6&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot06_Size5&quot;,&quot;Item&quot;:&quot;int_dronecontrol_repair_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot08_Size4&quot;,&quot;Item&quot;:&quot;int_repairer_size4_class5&quot;},{&quot;Slot&quot;:&quot;Slot10_Size4&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot11_Size2&quot;,&quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot12_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;exploration&quot;,&quot;intro&quot;:&quot;A capital expedition fit using the vast internals. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises range while carrying full kit and redundancy. Hardpoints stay empty — an explorer runs clean.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Capital capacity and redundancy&quot;,&quot;text&quot;:&quot;The Anaconda carries the biggest scoop, a multi-SRV bay, two or three AFMUs (one in the protected military slot), scanner, comforts and extra fuel all at once — capital-scale self-sufficiency, while still jumping ~78 LY.&quot;},&quot;notes&quot;:{&quot;TinyHardpoint1&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint3&quot;:&quot;A light shield booster pads the landing shield; Heavy Duty maximises its raw MJ for botched touchdowns.&quot;,&quot;PowerPlant&quot;:&quot;D-rated to save mass; Low Emissions keeps heat low while scooping and Thermal Spread bleeds the rest.&quot;,&quot;MainEngines&quot;:&quot;D-rated for mass; Clean Drive Tuning runs cool and Stripped Down sheds weight for range.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated and the heart of the build; Increased Range plus Mass Manager drives the ~78 LY jump.&quot;,&quot;LifeSupport&quot;:&quot;D-rated and Lightweight to trim mass; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;D-rated; Engine Focused keeps the engine pip charged for boosting and high-wake escapes.&quot;,&quot;Radar&quot;:&quot;D-rated and Lightweight — exploration needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Military01&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot01_Size7&quot;:&quot;Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.&quot;,&quot;Slot02_Size6&quot;:&quot;Guardian FSD Booster size 5 is the largest flat jump-range bonus available; it under-fills the size-6 slot and carries no blueprint.&quot;,&quot;Slot03_Size6&quot;:&quot;Multi-SRV Planetary Vehicle Hangar for surface science and exobiology; hangars carry no blueprint.&quot;,&quot;Slot04_Size6&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot05_Size5&quot;:&quot;A light bi-weave for landing safety; Enhanced Low Power plus Stripped Down keep its mass and power draw minimal.&quot;,&quot;Slot06_Size5&quot;:&quot;Repair Limpet Controller patches hull damage the AFMU can't touch; limpet controllers carry no blueprint.&quot;,&quot;Slot07_Size5&quot;:&quot;Flex slot — an economy cabin for tourism, or swap for science or extra storage per trip; cabins aren't engineerable.&quot;,&quot;Slot08_Size4&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot09_Size4&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;,&quot;Slot10_Size4&quot;:&quot;Extra fuel tank extends the gap between scoopable stars; fuel tanks aren't engineerable.&quot;,&quot;Slot11_Size2&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Clean Drive Tuning&quot;,&quot;experimental&quot;:&quot;Stripped Down&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:8,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Life Support&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Sensors&quot;,&quot;size&quot;:8,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Bill Turner / Juri Ishmaak&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:8,&quot;grade&quot;:&quot;G3&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Shield Generator&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Enhanced Low Power&quot;,&quot;experimental&quot;:&quot;Stripped Down&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Anaconda&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;anaconda_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size8_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Tuned&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_lightweight&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size8_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size8_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_repairer_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot01_Size7&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FuelScoop_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size6&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Optimised&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_lightweight&quot;}},{&quot;Slot&quot;:&quot;Slot06_Size5&quot;,&quot;Item&quot;:&quot;int_dronecontrol_repair_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot08_Size4&quot;,&quot;Item&quot;:&quot;int_repairer_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot10_Size4&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot11_Size2&quot;,&quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot12_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Capital capacity and redundancy</span><p>The Anaconda carries the biggest scoop, a multi-SRV bay, two or three AFMUs (one in the protected military slot), scanner, comforts and extra fuel all at once — capital-scale self-sufficiency, while still jumping ~78 LY.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull with stock E-rated cores and the class-7 <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">fuel scoop</a> (E-rated at this stage); slot one <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">Heat Sink Launcher</a> in a utility mount. The hull ships with free <b>Lightweight Alloy</b> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> &mdash; the lightest option, and the one a pure explorer keeps all the way through engineering, so there is no armour buy to make. Initial is a flyable shell &mdash; the cheap buy-only fit before A-rating.</p>
+    <p>Every optional internal stays empty (&mdash;) for now: no <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a>, SRV hangar, AFMUs, bi-weave shield, surface scanner or repair limpet until the A-rated pass fills them.</p>
+    <p>Hardpoints stay empty &mdash; an explorer runs clean.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a capital explorer &mdash; everything serves jump range, and dead mass is cut, not carried:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; A</b> &mdash; Jump range is everything; A-rate the drive first. <span class="acc">~18M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a> &rarr; A (class 7)</b> &mdash; The biggest scoop refuels almost instantly. <span class="acc">~18M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> 5</b> &mdash; The largest flat range bonus available. <span class="acc">material cost</span></li>
+      <li><span class="stepnum">4</span><b>Two AFMUs (military 5A + 4A)</b> &mdash; Mutual-repair redundancy without the bloat; a third size-6 <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> is pure dead weight, so that slot stays empty. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">5</span><b>SRV bay (2G) + repair limpet (3A)</b> &mdash; One SRV and a light repair controller cover surface work and deep-space hull repair at a fraction of the mass of oversized units. <span class="acc">~few M Cr</span></li>
+      <li><span class="stepnum">6</span><b>Bi-Weave shield + booster &rarr; 5C / 0A</b> &mdash; A light bi-weave and a <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> for landing safety, not combat. <span class="acc">~few M Cr</span></li>
+      <li><span class="stepnum">7</span><b><a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a> (size-1 slot)</b> &mdash; Maps planets for major cartographic payouts; it drops in the size-1 optional, leaving the larger slots free. <span class="acc">~250k Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Range first, no dead mass</span><p>A-rate the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> and class-7 scoop, add the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a>, then fit only the redundancy that earns its weight &mdash; two AFMUs, a single-SRV bay, a small repair controller and the surface scanner. The Anaconda has room for a <a href="../../engineering/engineering-manuals/modules.html#module-passenger-cabin">passenger cabin</a> and a third <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, but on a pure explorer that is mass the jump range pays for, so leave those slots empty.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The exploration engineering pattern at capital scale. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; <a href="../../engineering/engineering-manuals/engineers.html#engineer-professor-palin">Professor Palin</a> handles <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-thrusters-clean-drive-tuning">Clean Drive Tuning</a> on the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>. Pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (6)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Thrusters (7)</td><td>Clean Drive Tuning (G5)</td><td>Stripped Down</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Plant (8)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Life Support (5)</td><td>Lightweight (G5)</td><td>—</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Sensors (8)</td><td>Lightweight (G5)</td><td>—</td><td>Bill Turner / Juri Ishmaak</td></tr>
+<tr><td class="mod">Power Distributor (8)</td><td>Engine Focused (G3)</td><td>—</td><td>The Dweller</td></tr>
+<tr><td class="mod">Shield Generator (5)</td><td>Enhanced Low Power (G5)</td><td>Stripped Down</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> to G5 with Mass Manager &mdash; the foundation of the Anaconda's ~78 LY range.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> to shed mass from the capital hull.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant to keep heat manageable when scooping.</li>
+      <li><span class="stepnum">4</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-thrusters-clean-drive-tuning">Clean Drive Tuning</a> <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> for efficient travel.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; the standard exploration blueprints on capital-class modules; the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> needs a Guardian-site run. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max jump (LY)</td><td>~42</td><td>~60</td><td class="acc">~80</td></tr>
+        <tr><td class="mod">Module capacity</td><td>vast</td><td>vast</td><td class="acc">vast</td></tr>
+        <tr><td class="mod">Versatility</td><td>high</td><td>high</td><td class="acc">high</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>244 m/s</td><td>244 m/s</td><td class="acc">~290 m/s</td></tr>
+        <tr><td class="mod">Pad access</td><td>large</td><td>large</td><td class="acc">large</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Anaconda jumps ~80 LY while still carrying full expedition redundancy &mdash; two AFMUs, an SRV, a repair limpet and a surface scanner. Trimming the dead mass (the third <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, the oversized SRV bay and repair controller, the <a href="../../engineering/engineering-manuals/modules.html#module-passenger-cabin">passenger cabin</a>) is what protects that range; the same hull re-roles to a battleship or freighter. It stays slow and large-pad-bound on its <b>Lightweight Alloy</b> hull &mdash; that's the capital trade. For versatile, fully-equipped deep-space travel, it's a proven benchmark.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Long, equipped expeditions.</b> Capital range and capacity suit the longest self-sufficient deep-space trips.</li>
+      <li><b>Carrier-based operations.</b> A natural flagship for fleet-carrier expeditions, resupplying on the carrier.</li>
+      <li><b>Large exobiology runs.</b> Multi-SRV bays and vast storage suit prolonged surface science.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Versatile flagship.</b> Re-role the same hull to combat or bulk hauling between expeditions &mdash; one ship, many jobs.</li>
+      <li><b>Deep-space tourism.</b> Passenger cabins plus capital comfort make it a fine sightseeing liner to distant wonders.</li>
+      <li><b>Months-long voyages.</b> Triple AFMUs and deep stores let it stay out almost indefinitely.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example destinations</span><p>Any deep-space target suits it. From your home base it reaches the core or rim in few jumps and carries everything for an extended stay &mdash; ideally with a fleet carrier.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and class-7 scoop first; then exploit the vast internals for capital redundancy.</li>
+      <li>Use the protected military slot for an <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> &mdash; keep your repair capability safe.</li>
+      <li>Mind the large pad &mdash; plan resupply around stations or a carrier.</li>
+      <li>Its versatility is the headline &mdash; the same hull is your explorer, battleship and freighter; it has combat and multipurpose manuals too.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Anaconda is the classic long-range capital: ~78 LY of range, vast internals and total versatility, with no rank gate. The <a href="mandalay-exploration.html">Mandalay</a> out-ranges it from a cheaper medium and the Caspian out-comforts it &mdash; but neither matches the Anaconda's blend of capital capacity, accessibility and the freedom to re-role to anything. For decades the explorer's ship, and still one of the very best.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/anaconda" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Anaconda ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/anaconda" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/anaconda.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/anaconda.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Anaconda shipyard page &mdash; hull stats, module sellers, tech brokers, and material traders.</span><a class="cr-link" href="https://inara.cz/elite/ship/70/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/70</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Anaconda lore, manufacturer, and role overview backing the dossier write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Anaconda" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Anaconda</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Opinionated full-ship review weighing the Anaconda's versatility, including exploration range and internal module space.</span><a class="cr-link" href="https://www.youtube.com/watch?v=BdTnshu3o7c" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=BdTnshu3o7c</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

@@ -30,7 +30,7 @@ import slef_to_url as U  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "ship-loadouts"
-DOSSIER_DIR = ROOT / "guides" / "ships" / "dossiers"
+DOSSIER_DIR = ROOT / "guides" / "ships" / "ship-dossiers"
 SHIPS_DIR = ROOT / "data" / "ships"
 
 MDASH = "—"

@@ -15,11 +15,11 @@
 #     header links — Ships, Engineering, Systems — each holding the relevant
 #     guide groups as labelled sub-sections. Ends with FAQ + Changelog.
 #   - Hand-curated cards for the guides (title + one-liner, set in the CARD CALLS).
-#   - Auto-discovers every ship dossier in guides/ships/dossiers/*.html and groups
+#   - Auto-discovers every ship dossier in guides/ships/ship-dossiers/*.html and groups
 #     them by ship, with one role link per dossier (colour-coded by role).
 #
 # WHEN TO RE-RUN
-#   - After adding/removing/renaming any ship dossier (ships/dossiers/*.html) — the
+#   - After adding/removing/renaming any ship dossier (ships/ship-dossiers/*.html) — the
 #     ship grid is rebuilt from the filesystem, so those stay in sync for free.
 #   - After adding a new top-level guide, add a matching `card ...` line in the
 #     relevant sub-section below, then re-run.
@@ -47,11 +47,12 @@ OUT="$GUIDES/index.html"
 
 # Hero stat-card + masthead counts — computed from the filesystem so they never
 # drift (substituted into the HEAD heredoc's __TOKENS__ after generation). One card
-# per top-level namespace; activities count under Systems. TOTAL = every guide HTML
-# minus index.html, and equals SHIPS + ENG + SYSTEMS by construction.
+# per top-level namespace; activities now live under Systems (guides/systems/
+# activity-guides/), so the systems find already counts them. TOTAL = every guide
+# HTML minus index.html, and equals SHIPS + ENG + SYSTEMS by construction.
 SHIPS_COUNT=$(find "$GUIDES/ships" -name '*.html' | wc -l | tr -d ' ')
 ENG_COUNT=$(find "$GUIDES/engineering" -name '*.html' | wc -l | tr -d ' ')
-SYSTEMS_COUNT=$(( $(find "$GUIDES/systems" -name '*.html' | wc -l) + $(find "$GUIDES/activities" -name '*.html' | wc -l) ))
+SYSTEMS_COUNT=$(find "$GUIDES/systems" -name '*.html' | wc -l | tr -d ' ')
 TOTAL_COUNT=$(( $(find "$GUIDES" -name '*.html' | wc -l) - 1 ))
 
 # Emit a guide card.  args: href, accentClass, title, desc
@@ -204,8 +205,8 @@ cat <<'HEAD'
     <div class="gcards">
 HEAD
 
-card "ships/rating-methodology.html"   ""  "Rating Methodology"    "How every ship earns its 1–100 suitability rating — the roster-relative, fully-engineered rubric."
-card "ships/ship-role-matrix.html"      ""  "Ship × Role Matrix"    "Every published ship-role suitability score on one sortable grid — 48 hulls across seven roles, each cell linked straight to its dossier."
+card "ships/general/rating-methodology.html"   ""  "Rating Methodology"    "How every ship earns its 1–100 suitability rating — the roster-relative, fully-engineered rubric."
+card "ships/general/ship-role-matrix.html"      ""  "Ship × Role Matrix"    "Every published ship-role suitability score on one sortable grid — 48 hulls across seven roles, each cell linked straight to its dossier."
 
 cat <<'SHIPS_BEST'
     </div>
@@ -215,13 +216,13 @@ cat <<'SHIPS_BEST'
     <div class="gcards">
 SHIPS_BEST
 
-card "ships/by-role/combat.html"       ""  "Combat"       "Combat ships ranked, from starter to capital."
-card "ships/by-role/ax.html"           ""  "Anti-Xeno (AX)"    "The ships that hold up against Thargoids."
-card "ships/by-role/exploration.html"  ""  "Exploration"  "Jump range, comfort and the long black, ranked."
-card "ships/by-role/mining.html"       ""        "Mining"       "Mining platforms ranked by yield and fit."
-card "ships/by-role/trading.html"      "" "Trading"      "Cargo haulers ranked by tonnage and economy."
-card "ships/by-role/passenger.html"    ""  "Passenger"    "Cabin capacity and range for the tourism trade."
-card "ships/by-role/multipurpose.html" ""        "Multipurpose"     "Do-everything ships ranked for the multipurpose pilot."
+card "ships/best-ships-by-role/combat.html"       ""  "Combat"       "Combat ships ranked, from starter to capital."
+card "ships/best-ships-by-role/ax.html"           ""  "Anti-Xeno (AX)"    "The ships that hold up against Thargoids."
+card "ships/best-ships-by-role/exploration.html"  ""  "Exploration"  "Jump range, comfort and the long black, ranked."
+card "ships/best-ships-by-role/mining.html"       ""        "Mining"       "Mining platforms ranked by yield and fit."
+card "ships/best-ships-by-role/trading.html"      "" "Trading"      "Cargo haulers ranked by tonnage and economy."
+card "ships/best-ships-by-role/passenger.html"    ""  "Passenger"    "Cabin capacity and range for the tourism trade."
+card "ships/best-ships-by-role/multipurpose.html" ""        "Multipurpose"     "Do-everything ships ranked for the multipurpose pilot."
 
 cat <<'SHIPS3'
     </div>
@@ -234,7 +235,7 @@ SHIPS3
 # ---- ship dossiers, auto-discovered (slug-role.html) and grouped by ship ----
 # Filenames are kebab-case `<ship-slug>-<role>.html`; role = last '-' token,
 # ship-slug = the rest. Display name comes from ship_name() (ship-names.tsv).
-for f in "$GUIDES"/ships/dossiers/*.html; do
+for f in "$GUIDES"/ships/ship-dossiers/*.html; do
   base="$(basename "$f" .html)"
   role="$(echo "$base" | sed -E 's/.*-([a-z]+)$/\1/')"
   slug="$(echo "$base" | sed -E 's/-[a-z]+$//')"
@@ -245,7 +246,7 @@ while IFS='|' read -r ship roles; do
   echo "$roles" | tr ';' '\n' | while IFS='=' read -r role file; do
     [ -z "$role" ] && continue
     cls="$(role_class "$role")"
-    printf '<a class="%s" href="ships/dossiers/%s">%s</a>' "$cls" "$file" "$(role_label "$role")"
+    printf '<a class="%s" href="ships/ship-dossiers/%s">%s</a>' "$cls" "$file" "$(role_label "$role")"
   done
   printf '</span></div>\n'
 done
@@ -264,10 +265,10 @@ cat <<'ENG'
     <div class="gcards">
 ENG
 
-card "engineering/checklist.html"  ""       "Unlock Checklist"   "New-pilot engineering progression — what to unlock, and when."
-card "engineering/engineers.html"  ""       "Engineers"      "Every engineer: location, meeting requirement, unlock and referrals."
-card "engineering/blueprints.html" ""       "Blueprints"         "The module blueprint catalogue across every grade and effect."
-card "engineering/modules.html"    ""       "Modules"            "Every outfitting slot — core internals, optionals, hardpoints and utilities, the A–E trade-off and what to fit per role."
+card "engineering/engineering-manuals/checklist.html"  ""       "Unlock Checklist"   "New-pilot engineering progression — what to unlock, and when."
+card "engineering/engineering-manuals/engineers.html"  ""       "Engineers"      "Every engineer: location, meeting requirement, unlock and referrals."
+card "engineering/engineering-manuals/blueprints.html" ""       "Blueprints"         "The module blueprint catalogue across every grade and effect."
+card "engineering/engineering-manuals/modules.html"    ""       "Modules"            "Every outfitting slot — core internals, optionals, hardpoints and utilities, the A–E trade-off and what to fit per role."
 
 cat <<'FARM'
     </div>
@@ -277,11 +278,11 @@ cat <<'FARM'
     <div class="gcards">
 FARM
 
-card "engineering/materials.html"                  "" "Materials"            "The three material types, grade ladders and trader exchange ratios — hoard high, trade down."
-card "engineering/farms/davs-hope.html"            "" "Dav's Hope"           "The classic manufactured-material loop at Dav's Hope."
-card "engineering/farms/crystalline-shards.html"   "" "Crystalline Shards"   "Surface raw-material farming at Crystalline Shard sites."
-card "engineering/farms/high-grade-emissions.html" "" "High Grade Emissions" "Farming encoded materials from High Grade Emission signals."
-card "engineering/farms/jameson-crash-site.html"   "" "Jameson Crash Site"   "The Jameson Crash Site encoded-data farm."
+card "engineering/materials-and-farming/materials.html"            "" "Materials"            "The three material types, grade ladders and trader exchange ratios — hoard high, trade down."
+card "engineering/materials-and-farming/davs-hope.html"            "" "Dav's Hope"           "The classic manufactured-material loop at Dav's Hope."
+card "engineering/materials-and-farming/crystalline-shards.html"   "" "Crystalline Shards"   "Surface raw-material farming at Crystalline Shard sites."
+card "engineering/materials-and-farming/high-grade-emissions.html" "" "High Grade Emissions" "Farming encoded materials from High Grade Emission signals."
+card "engineering/materials-and-farming/jameson-crash-site.html"   "" "Jameson Crash Site"   "The Jameson Crash Site encoded-data farm."
 
 cat <<'SYS'
     </div>
@@ -297,12 +298,12 @@ cat <<'SYS'
     <div class="gcards">
 SYS
 
-card "systems/new-cmdr-guide.html"          ""  "New CMDR's Guide"   "Your first hours in the black — controls, the core loop, the career tracks, first credits, and a getting-started checklist."
-card "systems/pilots-federation.html"       ""  "Pilots Federation" "What the Pilots Federation is, and every pilot rank ladder — how each is earned and what it unlocks."
-card "systems/cmdrs-lexicon.html"            ""  "CMDR's Lexicon"        "The site glossary — Elite Dangerous terminology, acronyms and community slang, defined and cross-linked."
-card "systems/docking-landing-manual.html" ""  "Docking &amp; Landing" "Requesting docking, pads, and station/outpost landing procedure."
-card "systems/hud-customization.html"      ""  "HUD Customization"     "Retune your cockpit HUD colours with the GraphicsConfig matrix."
-card "systems/third-party-apps.html"       ""  "Third-Party Apps"      "The essential companion apps, planners and tools for commanders."
+card "systems/new-pilot-and-interface/new-cmdr-guide.html"          ""  "New CMDR's Guide"   "Your first hours in the black — controls, the core loop, the career tracks, first credits, and a getting-started checklist."
+card "systems/new-pilot-and-interface/pilots-federation.html"       ""  "Pilots Federation" "What the Pilots Federation is, and every pilot rank ladder — how each is earned and what it unlocks."
+card "systems/new-pilot-and-interface/cmdrs-lexicon.html"            ""  "CMDR's Lexicon"        "The site glossary — Elite Dangerous terminology, acronyms and community slang, defined and cross-linked."
+card "systems/new-pilot-and-interface/docking-landing-manual.html" ""  "Docking &amp; Landing" "Requesting docking, pads, and station/outpost landing procedure."
+card "systems/new-pilot-and-interface/hud-customization.html"      ""  "HUD Customization"     "Retune your cockpit HUD colours with the GraphicsConfig matrix."
+card "systems/new-pilot-and-interface/third-party-apps.html"       ""  "Third-Party Apps"      "The essential companion apps, planners and tools for commanders."
 
 cat <<'SYS2'
     </div>
@@ -312,12 +313,12 @@ cat <<'SYS2'
     <div class="gcards">
 SYS2
 
-card "systems/bgs.html"                 ""        "Background Simulation" "How minor factions, influence and states actually work."
-card "systems/powerplay.html"           ""        "Powerplay"                   "Pledging to a Power, earning merits, and the weekly cycle."
-card "systems/superpower-rank.html"     ""        "Superpower Rank"       "Climbing Federation, Empire and Alliance reputation."
-card "systems/community-goals.html"     ""        "Community Goals"             "How CGs work and how to land in the top tiers."
-card "systems/system-colonization.html" ""  "System Colonisation"         "Claiming systems and building out your own infrastructure."
-card "systems/fleet-carrier.html"       ""  "Fleet Carrier"              "Buying, financing, fitting and jumping a Fleet Carrier."
+card "systems/galaxy-and-power-systems/bgs.html"                 ""        "Background Simulation" "How minor factions, influence and states actually work."
+card "systems/galaxy-and-power-systems/powerplay.html"           ""        "Powerplay"                   "Pledging to a Power, earning merits, and the weekly cycle."
+card "systems/galaxy-and-power-systems/superpower-rank.html"     ""        "Superpower Rank"       "Climbing Federation, Empire and Alliance reputation."
+card "systems/galaxy-and-power-systems/community-goals.html"     ""        "Community Goals"             "How CGs work and how to land in the top tiers."
+card "systems/galaxy-and-power-systems/system-colonization.html" ""  "System Colonisation"         "Claiming systems and building out your own infrastructure."
+card "systems/galaxy-and-power-systems/fleet-carrier.html"       ""  "Fleet Carrier"              "Buying, financing, fitting and jumping a Fleet Carrier."
 
 cat <<'SYS3'
     </div>
@@ -327,12 +328,12 @@ cat <<'SYS3'
     <div class="gcards">
 SYS3
 
-card "activities/combat.html"      ""  "Combat"       "Bounty hunting, massacre missions and PvE combat."
-card "activities/ax.html"          ""  "Anti-Xeno" "Fighting Thargoids — gear, tactics and venues."
-card "activities/exploration.html" ""  "Exploration"  "Long-range exploration, scanning and exobiology."
-card "activities/mining.html"      ""        "Mining"       "Laser, core and subsurface mining for profit."
-card "activities/trading.html"     "" "Trading"      "Cargo trading, loops and reading the market."
-card "activities/passenger.html"   ""  "Passenger"    "Passenger missions, tourism and sightseeing runs."
+card "systems/activity-guides/combat.html"      ""  "Combat"       "Bounty hunting, massacre missions and PvE combat."
+card "systems/activity-guides/ax.html"          ""  "Anti-Xeno" "Fighting Thargoids — gear, tactics and venues."
+card "systems/activity-guides/exploration.html" ""  "Exploration"  "Long-range exploration, scanning and exobiology."
+card "systems/activity-guides/mining.html"      ""        "Mining"       "Laser, core and subsurface mining for profit."
+card "systems/activity-guides/trading.html"     "" "Trading"      "Cargo trading, loops and reading the market."
+card "systems/activity-guides/passenger.html"   ""  "Passenger"    "Passenger missions, tourism and sightseeing runs."
 
 cat <<'SYS4'
     </div>
@@ -342,8 +343,8 @@ cat <<'SYS4'
     <div class="gcards">
 SYS4
 
-card "systems/combat-zones.html"      "" "Combat Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
-card "systems/pve-combat-venues.html" "" "PvE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
+card "systems/combat-venues/combat-zones.html"      "" "Combat Zones" "Conflict Zones — tactics, payouts, and how to read a CZ."
+card "systems/combat-venues/pve-combat-venues.html" "" "PvE Combat Venues"       "RES, CZ, Nav Beacons and signal sources for PvE combat."
 
 cat <<'FOOT'
     </div>
@@ -357,7 +358,7 @@ cat <<'FOOT'
       <div class="faq-row"><h4 class="faq-q">Is this a complete guide to the game?</h4><p class="faq-a">No. The Black Box covers only the ships, systems and activities I've worked through myself so far &mdash; not the whole of Elite Dangerous. I add guides as I get hands-on with more of the game, so the library keeps growing; expect gaps, and expect them to fill in over time. Want something specific covered next? <a href="https://github.com/tusharsaxena/ed-blackbox/issues">Open a feature request</a>.</p></div>
       <div class="faq-row"><h4 class="faq-q">Does this apply to my platform (PC / console)?</h4><p class="faq-a">Mostly PC. This manual targets the <strong>Live (Odyssey 4.0)</strong> game. Console (PS4/Xbox) is frozen on <strong>Legacy 3.8</strong> &mdash; Frontier ended console development in 2022 &mdash; so it never got Odyssey, Powerplay 2.0, System Colonisation, or any ship added since late 2022 (Python Mk II, Cobra Mk V, Kestrel Mk II, Lynx Highliner&hellip;). For hulls that exist on both, core stats and engineering still match, so those ratings and builds hold &mdash; but the newer-ship dossiers and several systems guides are Live-only.</p></div>
       <div class="faq-row"><h4 class="faq-q">How current is the information?</h4><p class="faq-a">Game figures &mdash; ship, module and engineering stats &mdash; are checked against EDCD/coriolis-data, INARA, EDSY and Coriolis, and every page lists its sources at the foot. Ship ratings, loadouts and &ldquo;best for the job&rdquo; picks are <em>editorial judgement</em>, not Frontier data. When the game changes a page can lag; anything uncertain is marked rather than guessed, and corrections are welcome.</p></div>
-      <div class="faq-row"><h4 class="faq-q">How are the ship ratings decided?</h4><p class="faq-a">Each ship gets a 1&ndash;100 score for a given role, but it's a judgement call, not a spec-sheet sum. The number is <em>roster-relative</em> (measured against every other ship doing that job), assumes a <em>fully-engineered</em> build, and is weighed across an ordered set of role factors. Every dossier shows the working in its &ldquo;Why This Rating&rdquo; scorecard, and the full method is on the <a href="ships/rating-methodology.html">rating methodology</a> page.</p></div>
+      <div class="faq-row"><h4 class="faq-q">How are the ship ratings decided?</h4><p class="faq-a">Each ship gets a 1&ndash;100 score for a given role, but it's a judgement call, not a spec-sheet sum. The number is <em>roster-relative</em> (measured against every other ship doing that job), assumes a <em>fully-engineered</em> build, and is weighed across an ordered set of role factors. Every dossier shows the working in its &ldquo;Why This Rating&rdquo; scorecard, and the full method is on the <a href="ships/general/rating-methodology.html">rating methodology</a> page.</p></div>
       <div class="faq-row"><h4 class="faq-q">Why is the same ship rated differently in different roles?</h4><p class="faq-a">Because each score is set against the field <em>for that role</em>, using that role's factor weights. A hull that's a monster hauler can be middling in a knife-fight, so its trading and combat numbers differ on purpose. Compare ships within a role, not across roles.</p></div>
       <div class="faq-row"><h4 class="faq-q">Can I open these builds in Coriolis or EDSY?</h4><p class="faq-a">Yes. Every dossier's 3-State Loadout has <strong>Open in Coriolis</strong> and <strong>Open in EDSY</strong> links that load the exact build straight into the planner &mdash; no copy-paste &mdash; plus a <strong>Copy SLEF</strong> button to drop it into anything else that reads Ship Loadout Export Format.</p></div>
       <div class="faq-row"><h4 class="faq-q">What do the three loadout columns mean?</h4><p class="faq-a">They're a budget path, not one fixed build. <strong>Initial</strong> is buy-only with no engineering &mdash; what you fly the day you buy the hull. <strong>A-Rated</strong> swaps in A-rated cores for a combat-ready ship. <strong>Engineered</strong> is the full blueprint-and-experimental tour. Fly whichever column you can afford and work toward the next.</p></div>

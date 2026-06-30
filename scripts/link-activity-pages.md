@@ -1,11 +1,11 @@
 # link-activity-pages.py
 
-Cross-links the six **role/activity playbooks** under `guides/activities/`
+Cross-links the six **role/activity playbooks** under `guides/systems/activity-guides/`
 (`combat` · `exploration` · `mining` · `trading` · `passenger` · `ax`).
 
 ## Why this isn't the generic pass
 
-`guides/activities/**` is deliberately **excluded** from `apply-hyperlinks.py`.
+`guides/systems/activity-guides/**` is deliberately **excluded** from `apply-hyperlinks.py`.
 Those pages are named after their role (`combat.html`, not `<hull>-combat.html`),
 so the generic pass couldn't infer the page's role and would resolve a bare ship
 name to the hull's **default** role dossier — wrong on a role playbook (a ship
@@ -38,7 +38,7 @@ byte-preserving. Candidates are appended to `data/links/link-candidates.csv` (or
 the throwaway `link-candidates.check.csv` under `--check`).
 
 The **"Best Ship by Role" links** (the early-game ship-pick bullet pointing at
-`guides/ships/by-role/<role>.html`, and the §"Best Ships for the Role"
+`guides/ships/best-ships-by-role/<role>.html`, and the §"Best Ships for the Role"
 `<Role> — Ship Comparison` references) are **hand-authored**, not emitted by this
 script — the by-role comparison page isn't a catalogued link target.
 
@@ -47,14 +47,14 @@ script — the by-role comparison page isn't a catalogued link target.
 ```bash
 python3 scripts/link-activity-pages.py --check     # dry-run all 6 activity pages
 python3 scripts/link-activity-pages.py             # apply to all 6
-python3 scripts/link-activity-pages.py guides/activities/combat.html   # one file
+python3 scripts/link-activity-pages.py guides/systems/activity-guides/combat.html   # one file
 ```
 
 Re-run after editing an activity playbook. Then run
-`python3 scripts/normalize-link-targets.py guides/activities` and
+`python3 scripts/normalize-link-targets.py guides/systems/activity-guides` and
 `python3 scripts/verify-links.py` (0 broken).
 
 ## Related
 
 - `apply-hyperlinks.py` — the shared engine (generic editable pages).
-- `link-by-role-pages.py` — the analogous dedicated pass for `guides/ships/by-role/**`.
+- `link-by-role-pages.py` — the analogous dedicated pass for `guides/ships/best-ships-by-role/**`.

@@ -16,7 +16,7 @@ The subdirs below are **project-authored** (NOT coriolis-data):
   (upstream-data fixes: `engineer_name_fixes`, `exclude_instances`, `experimental_applicability`)
   and `editorial.json` (authored blueprint `title`/`effect`/`suit`/`ctx` + per-modgroup
   `display`/`section`/`order` — none of which lives in coriolis). `scripts/build-blueprints.py`
-  merges these with `modifications/` to render `guides/engineering/blueprints.html`'s cards;
+  merges these with `modifications/` to render `guides/engineering/engineering-manuals/blueprints.html`'s cards;
   `audit-blueprints.py` verifies page ⇄ data. See `scripts/build-blueprints.md`.
 - `ship-ratings/`  — canonical 1–100 suitability ratings **and** the "Why This Rating" scorecard
   data (per-role `scorecard_weights` + per-ship `scorecard`); editorial judgement — see its README.
@@ -27,7 +27,7 @@ The subdirs below are **project-authored** (NOT coriolis-data):
 - `materials/`     — **canonical materials data**, vendored verbatim from
   **[EDCD/FDevIDs](https://github.com/EDCD/FDevIDs)** by `scripts/import-materials.sh`
   (read-only — re-fetched, never hand-edited). `material.csv` (`id,symbol,rarity,type,category,
-  name`; `rarity`=grade) drives the three catalog tables on `guides/engineering/materials.html`;
+  name`; `rarity`=grade) drives the three catalog tables on `guides/engineering/materials-and-farming/materials.html`;
   `microresources.csv` is the Odyssey on-foot items. See `scripts/import-materials.md`.
   **Deferred display (TODO):** the Guardian/Thargoid (`category=None`) materials **and all
   Odyssey microresources** are captured here but **not yet rendered** — materials.html currently
@@ -47,7 +47,7 @@ The subdirs below are **project-authored** (NOT coriolis-data):
   `corrections.json` holds verified roster/mod overrides. `scripts/build-engineers.py` re-emits
   the cards byte-for-byte; `audit-engineers.py` checks the roster vs `engineers.csv` and the
   rendered ship-mod grades vs coriolis (over-claims fail, omissions warn). See its README.
-- `powerplay/`     — **project-authored** canonical data for `guides/systems/powerplay.html`
+- `powerplay/`     — **project-authored** canonical data for `guides/systems/galaxy-and-power-systems/powerplay.html`
   (Powerplay 2.0). **No EDCD source exists for powerplay**, so this is editorial data (like
   `ship-ratings/`). `powers.json` = the 12 Powers (`slug`, `name`, `allegiance`, `hq_system`)
   + 12 exclusive modules; `editorial.json` = the §Powers + §Modules card runs stored verbatim.
@@ -57,7 +57,7 @@ The subdirs below are **project-authored** (NOT coriolis-data):
   Transporter) for hyperlink name matching; kept separate from imported `ships/`. See its README.
 - `sources/`       — **canonical source of truth for every page's bottom-of-page Sources
   block** (`section.credits`). One JSON per credits-bearing page, mirroring the `guides/` tree
-  (e.g. `sources/ships/dossiers/python-combat.json`). Schema: `{ page, lead[], sources[
+  (e.g. `sources/ships/ship-dossiers/python-combat.json`). Schema: `{ page, lead[], sources[
   {label, what, url, display} ], tag? }`. The Sources section is **external references only**.
   Edit these files, then run `python3 scripts/build-sources.py` to regenerate the HTML
   (`audit-sources.py` verifies no drift) — **never hand-edit the credits block**. `_index.md`

@@ -30,12 +30,13 @@ with the text of that section's first heading. HTML entities (`&amp;`,
 - **Only `<section id="…">` elements are catalogued.** Widget / JS-hook ids
   (`qn-*`, `toast`, checklist-item ids, `emap-inner`, …) are intentionally
   excluded — they aren't navigation targets.
-- **Pages with no section anchors get no file.** The four `engineering/farms/`
-  pages and `systems/pve-combat-venues.html` are link-hub pages with no
+- **Pages with no section anchors get no file.** The four
+  `engineering/materials-and-farming/` farm pages and
+  `systems/combat-venues/pve-combat-venues.html` are link-hub pages with no
   sectioned nav, so they have no anchor file. A *stale* generated file for such
   a page is removed so the tree stays in sync.
-- **Hand-curated catalogs are never touched.** `engineering/blueprints.html`
-  and `engineering/engineers.html` carry richer, manually-maintained catalogs
+- **Hand-curated catalogs are never touched.** `engineering/engineering-manuals/blueprints.html`
+  and `engineering/engineering-manuals/engineers.html` carry richer, manually-maintained catalogs
   (`#grp-`, `#bp-`, `#eng-` ids + notes) that can't be derived mechanically —
   they're listed in `CURATED` at the top of the script and skipped. Only files
   containing the generated marker line are ever overwritten or deleted, so any
@@ -63,4 +64,4 @@ carries at least a `#credits` Sources-section anchor).
 
 If a page needs a richer hand-maintained catalog, add its `guides/`-relative
 path to `CURATED` in the script and author the `.md` by hand (use
-`engineering/blueprints-anchors.md` as the format reference).
+`engineering/engineering-manuals/blueprints-anchors.md` as the format reference).

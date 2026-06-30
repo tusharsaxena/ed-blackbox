@@ -85,7 +85,7 @@ tokens  →  components  →  templates  →  pages
   the components promoted during the final migration: **`.step-card`** (numbered action-card
   used by `checklist.html`) and the **`.bp-*`** blueprint accordion set (`.bp-card`,
   `.bp-modgroup`, `.bp-table`, `.bp-ctx`, `.bp-fold`, `.bp-rec`, `.bp-exp-tag`) used by
-  `blueprints.html`. (`.ratebox`/`.dial` are now used only by `ships/rating-methodology.html`.)
+  `blueprints.html`. (`.ratebox`/`.dial` are now used only by `ships/general/rating-methodology.html`.)
   The **`.vchips`** strip (per-role `.vchip.r-<role>` pills carrying a `.vrole` label + a
   `.vrate` `NN/100`) backs the cross-variant "Other role builds of this ship" block injected
   into dossiers (§6); the **`.faq`** two-column glossary (`.faq-row` > `.faq-q`/`.faq-a`)
@@ -129,7 +129,7 @@ tokens  →  components  →  templates  →  pages
   box chrome is hardcoded **amber** (independent of the page's accent group). Ship dossiers
   carry their **0–100 suitability rating as the first stat card** with a `.bar.mini` bar — the
   earlier `.ratebox`/`.dial` rating dial was retired from dossiers (the classes remain defined,
-  now reused by the worked examples on `ships/rating-methodology.html`).
+  now reused by the worked examples on `ships/general/rating-methodology.html`).
 - **`templates/`** — `starter-page.html` (scaffold for a new page) and
   `component-gallery.html` (live copy-paste reference for every component); both include
   the header (with its `.hdr-crumb`) + credits markup.
@@ -146,19 +146,24 @@ Naming: classes are mostly unprefixed semantic names; accent variants use `.ac-*
 ## 4. Content taxonomy & routing
 
 Directory structure **is** the routing — a path maps directly to a URL once on GitHub
-Pages. **166 guides** (all on the design system) in four areas, plus a generated landing page:
+Pages. **166 guides** (all on the design system) in three areas, plus a generated landing
+page. The tree mirrors `index.html`'s sections/subsections:
 
 ```
 guides/
-  index.html                 ← landing page (generated; see §6)
-  engineering/   engineers · blueprints · checklist · materials · modules · farms/ (4)   — 9 pages
-  systems/       14 game-system guides
-  ships/
-    rating-methodology.html  — how the 1–100 suitability score is derived
-    ship-role-matrix.html    — the full ship × role grid on one page (generated; see §6)
-    dossiers/    128 dossiers — the ship × role matrix (48 ships)
-    by-role/     7  ladders   — "best ship for role X"
-  activities/    6 guides     — "how to play role X"
+  index.html                       ← landing page (generated; see §6)
+  ships/                           — 137 pages
+    general/             rating-methodology · ship-role-matrix  (2; matrix generated, see §6)
+    best-ships-by-role/  7 ladders   — "best ship for role X"
+    ship-dossiers/       128 dossiers — the ship × role matrix (48 ships)
+  engineering/                     — 9 pages
+    engineering-manuals/    checklist · engineers · blueprints · modules  (4)
+    materials-and-farming/  materials + 4 farm guides                     (5)
+  systems/                         — 20 pages
+    new-pilot-and-interface/   6 guides
+    galaxy-and-power-systems/  6 guides
+    activity-guides/           6 guides   — "how to play role X"
+    combat-venues/             2 guides
 ```
 
 **File census:** ~770 files — 170 HTML (166 guides + generated `index.html` + 2
@@ -166,10 +171,11 @@ design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 sh
 3 wired logos + concept candidates under `logos/concepts/`), 260 Markdown (prose docs +
 **167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
 1 site JS, plus the `scripts/` tooling — **43 reusable** scripts (4 `.sh` + 38 `.py` +
-1 `.mjs`) and **40 archived** one-offs in `scripts/archive/` (7 `.sh` + 26 `.py` + 7 `.mjs`) —
+1 `.mjs`) and **42 archived** one-offs in `scripts/archive/` (7 `.sh` + 28 `.py` + 7 `.mjs`) —
 and its data (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
-**Engineering** (`guides/engineering/`, 9 pages):
+**Engineering** (`guides/engineering/`, 9 pages) — `engineering-manuals/` (checklist ·
+engineers · blueprints · modules) + `materials-and-farming/` (materials + the 4 farm guides):
 
 | Page | Purpose |
 |---|---|
@@ -178,22 +184,22 @@ and its data (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`)
 | `checklist.html` | "The Unlock Run" — engineering unlock progression as numbered phases + a bespoke SVG **Engineer Unlock Map** (kept page-scoped); `.step-card` components; modules-style grouped header quick-nav (phases · engineer tiers · permit gates · material farms; page-local `<script>`). |
 | `materials.html` | Materials primer: the three types, grade ladders, the material-trader exchange-ratio heat-matrix, storage caps, where-to-farm links, and tracking tools. Bespoke page-scoped `<style>` for the table column-parity + ratio matrix. |
 | `modules.html` | Outfitting catalog (core internals · optional internals · hardpoints · utility mounts) on the `.bp-*` accordion (sibling of `blueprints.html`); A–E class & size system; per-role picks. Self-contained inline `<script>`. |
-| `farms/` (4) | Material-farm location guides (`davs-hope`, `crystalline-shards`, `high-grade-emissions`, `jameson-crash-site`) — DS amber, with click-to-copy coordinate readouts. |
+| `materials-and-farming/` (4 farm guides) | Material-farm location guides (`davs-hope`, `crystalline-shards`, `high-grade-emissions`, `jameson-crash-site`) — DS amber, with click-to-copy coordinate readouts. |
 
-**Systems** (`guides/systems/`, 14 pages): `bgs`, `cmdrs-lexicon`, `combat-zones`,
-`community-goals`, `docking-landing-manual`, `fleet-carrier`, `hud-customization`,
-`new-cmdr-guide`, `pilots-federation`, `powerplay`, `pve-combat-venues`, `superpower-rank`,
-`system-colonization`, `third-party-apps`. (The last three of the new trio —
-`new-cmdr-guide`, `pilots-federation`, `cmdrs-lexicon` — are the **New Pilot & Interface**
-subsection.)
+**Systems** (`guides/systems/`, 20 pages) — four subsections: **`new-pilot-and-interface/`**
+(6: `new-cmdr-guide`, `pilots-federation`, `cmdrs-lexicon`, `docking-landing-manual`,
+`hud-customization`, `third-party-apps`), **`galaxy-and-power-systems/`** (6: `bgs`,
+`powerplay`, `superpower-rank`, `community-goals`, `system-colonization`, `fleet-carrier`),
+**`activity-guides/`** (6 role playbooks — "how to play role X", formerly the retired
+top-level `activities/` namespace), and **`combat-venues/`** (2: `combat-zones`, `pve-combat-venues`).
 
 **Ships** (`guides/ships/`, 137 pages) — the core data structure, a **ship × role matrix**:
 a sparse grid of (ship, role) pairs spanning **48 ships**. Each populated cell is one
-dossier `dossiers/<ship>-<role>.html` (briefing hull render + rating bar + spec grid + loadout
-tables); the `by-role/` ladders ("best ship for role X"); `rating-methodology.html`, the
+dossier `ship-dossiers/<ship>-<role>.html` (briefing hull render + rating bar + spec grid + loadout
+tables); the `best-ships-by-role/` ladders ("best ship for role X"); `general/rating-methodology.html`, the
 explainer for the 1–100 suitability score the dossiers and ladders display (cross-linked from
-all 128 dossiers + 7 by-role pages); and `ship-role-matrix.html`, the whole grid rendered on
-one page (generated; see §6). The separate top-level `guides/activities/` how-tos (each
+all 128 dossiers + 7 by-role pages); and `general/ship-role-matrix.html`, the whole grid rendered on
+one page (generated; see §6). The `guides/systems/activity-guides/` how-tos (each
 set to its role's DS accent group) and the generated landing page are other *projections* of
 that grid.
 
@@ -209,8 +215,8 @@ standardized `<family>-<slug>` scheme (migration + rules: `scripts/standardize-a
   navigable anchors — a contract for other pages and external tools. These are
   **generated** from each page's `<section id="…">` by `scripts/generate-anchor-files.sh`
   (§6); re-run it when ids change. The two **hand-curated** catalogs —
-  `engineering/blueprints-anchors.md` (`#blueprint-group-`/`#blueprint-` cards) and
-  `engineering/engineers-anchors.md` (`#engineer-` rows + notes) — carry richer annotations
+  `engineering/engineering-manuals/blueprints-anchors.md` (`#blueprint-group-`/`#blueprint-` cards) and
+  `engineering/engineering-manuals/engineers-anchors.md` (`#engineer-` rows + notes) — carry richer annotations
   the generator can't derive and are edited by hand. Keep ids stable regardless.
 
 ---
@@ -244,7 +250,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   Systems** (ids `#section-dossiers`/`#section-engineering`/`#section-systems`) — each
   holding the guide groups as labelled subsections, plus a briefing, a "What Is This Website"
   intro, an FAQ, and a hand-written **Changelog**. The ship-dossier grid is **auto-discovered**
-  from `guides/ships/dossiers/*.html` (so it self-syncs); the other cards are hand-curated in the
+  from `guides/ships/ship-dossiers/*.html` (so it self-syncs); the other cards are hand-curated in the
   script. `index.html` is a **generated artifact** — edit the generator, not the file. The
   masthead "Updated" line is build-stamped; the **Changelog dates are fixed** and never
   auto-edited (add a release only when asked).
@@ -256,7 +262,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   only ever touches files carrying its own generated marker, so hand-authored catalogs
   are safe. Re-run after adding/removing/renaming a guide or any `<section id>`. Baseline:
   165 generated + 2 curated.
-- **`generate-ship-role-matrix.py`** → regenerates `guides/ships/ship-role-matrix.html`, the
+- **`generate-ship-role-matrix.py`** → regenerates `guides/ships/general/ship-role-matrix.html`, the
   whole ship × role grid on one page, from the dossiers + the canonical suitability ratings.
 - **Ratings pipeline** — `compute-ship-ratings.py` rebuilds `data/ship-ratings/` (the 1–100
   source of truth) from the dossier headlines, `reconcile-ratings-html.py` pushes those
@@ -299,7 +305,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   and `audit-sources.py` is the deterministic gate (coverage, external-only, no drift, schema).
   Edit the data, never the credits block. (Design: `docs/superpowers/specs/2026-06-30-canonical-sources-data-design.md`.)
 - **Blueprints pipeline** — `build-blueprints.py` (+ shared loaders `bp_common.py`) renders the
-  **185 blueprint cards** (`.bp-modgroup`/`.bp-card`) on `guides/engineering/blueprints.html`
+  **185 blueprint cards** (`.bp-modgroup`/`.bp-card`) on `guides/engineering/engineering-manuals/blueprints.html`
   from the **canonical** verbatim coriolis data in `data/modifications/` (`blueprints.json`,
   `modules.json`, `specials.json`), plus two **project-authored** overlays in the NEW
   `data/modifications-extra/` (kept outside the read-only import, like `data/ship-aliases/`):
@@ -319,7 +325,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`.
 - **Materials pipeline** — `build-materials.py` (+ shared loaders `materials_common.py`) renders
   the three catalog tables (Raw 7×G1–G4, Manufactured 10×G1–G5, Encoded 6×G1–G5) on
-  `guides/engineering/materials.html` from the **canonical** `data/materials/material.csv`
+  `guides/engineering/materials-and-farming/materials.html` from the **canonical** `data/materials/material.csv`
   (vendored verbatim from EDCD/FDevIDs by `import-materials.sh`, read-only), plus a
   **project-authored** overlay in `data/materials-extra/`: `corrections.json` (`raw_group_labels`,
   `category_order`, `display` deferral) and `editorial.json` (section labels + build-owned
@@ -333,7 +339,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   three blueprints-deferred pages off inara (which 503s bots) onto EDCD + the Fandom wiki.
   Design: `docs/superpowers/specs/2026-06-30-edcd-reference-data-pipelines-design.md`.
 - **Engineers pipeline** — `build-engineers.py` (+ `engineers_common.py`) re-emits the 38
-  engineer cards on `guides/engineering/engineers.html` from `data/engineers-extra/editorial.json`
+  engineer cards on `guides/engineering/engineering-manuals/engineers.html` from `data/engineers-extra/editorial.json`
   (each card's inner HTML stored verbatim; the cards are editorial) between the 8
   `<!-- BEGIN/END generated:engineers -->` marker pairs. The **roster** is canonical from EDCD
   `data/engineers/engineers.csv` (38, vendored by `import-engineers.sh`). **Preserve-and-verify:**
@@ -344,7 +350,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   was the one-time seeder. Design:
   `docs/superpowers/specs/2026-06-30-engineers-data-pipeline-design.md`.
 - **Powerplay pipeline** — `build-powerplay.py` re-emits the §Powers (12 power cards) + §Modules
-  (12 module cards) runs on `guides/systems/powerplay.html` from `data/powerplay/editorial.json`
+  (12 module cards) runs on `guides/systems/galaxy-and-power-systems/powerplay.html` from `data/powerplay/editorial.json`
   (each card run stored verbatim) between the 2 `<!-- BEGIN/END generated:powerplay -->` marker
   pairs. **No EDCD source exists for powerplay**, so the canonical roster `data/powerplay/powers.json`
   (12 Powers + allegiance + HQ, 12 modules) is **project-authored** (like `data/ship-ratings/`).

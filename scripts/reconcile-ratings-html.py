@@ -5,7 +5,7 @@ reconcile-ratings-html.py — push the canonical ship ratings into the HTML guid
 Source of truth: data/ship-ratings/<role>.json (built by compute-ship-ratings.py).
 This script makes the guides match those files:
 
-  By-role pages  guides/ships/by-role/<role>.html
+  By-role pages  guides/ships/best-ships-by-role/<role>.html
     - every ranking table (full-ladder + per-class breakdowns; the tables that carry
       <span class="rscore">):
         * a ship present in the data file  -> its rscore and the row's --pct bar are
@@ -22,7 +22,7 @@ This script makes the guides match those files:
   removal still need an editorial pass — this script reports emptied tbodies so that
   pass knows where to look.
 
-  Dossier pages  guides/ships/dossiers/<ship>-<role>.html
+  Dossier pages  guides/ships/ship-dossiers/<ship>-<role>.html
     - the "How It Compares" peer tables (<table class="cmp">): a peer present in the
       data file has its value reconciled; a peer ABSENT from the data file (dropped
       tier-2 hull) has its row removed. Peer tables keep their authored order.
@@ -40,8 +40,8 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-BY_ROLE = REPO / "guides" / "ships" / "by-role"
-DOSSIERS = REPO / "guides" / "ships" / "dossiers"
+BY_ROLE = REPO / "guides" / "ships" / "best-ships-by-role"
+DOSSIERS = REPO / "guides" / "ships" / "ship-dossiers"
 DATA = REPO / "data" / "ship-ratings"
 ROLES = ["ax", "combat", "exploration", "mining", "multipurpose", "passenger", "trading"]
 

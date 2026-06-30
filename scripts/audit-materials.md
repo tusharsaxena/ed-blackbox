@@ -1,6 +1,6 @@
 # audit-materials.py
 
-Deterministic, read-only gate over `guides/engineering/materials.html` ⇄
+Deterministic, read-only gate over `guides/engineering/materials-and-farming/materials.html` ⇄
 `data/materials/`. Run after `build-materials.py` (and after any data/overlay edit).
 
 ```bash

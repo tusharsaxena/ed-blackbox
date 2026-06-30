@@ -6,7 +6,7 @@ briefing box (`.verdict.has-render`), with the stat-grid spanning full width ben
 The matching component CSS lives in `design-system/css/ed-blackbox.css`
 (`.ship-figure` / `.verdict.has-render`).
 
-For each dossier in guides/ships/dossiers/ it:
+For each dossier in guides/ships/ship-dossiers/ it:
   1. Derives the hull render from the dossier slug — strips the role suffix
      (-combat, -exploration, …) and collapses "mk-<roman>" to "mk<roman>" to match
      the image filenames (cobra-mk-iii -> cobra-mkiii.jpg). Dossiers whose render
@@ -32,7 +32,7 @@ import sys
 import glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOSSIERS = os.path.join(ROOT, "guides", "ships", "dossiers")
+DOSSIERS = os.path.join(ROOT, "guides", "ships", "ship-dossiers")
 IMAGES = os.path.join(ROOT, "images", "ships")
 NAMES_TSV = os.path.join(ROOT, "scripts", "ship-names.tsv")
 

@@ -1,6 +1,6 @@
 # data/powerplay/
 
-**Project-authored** canonical data for `guides/systems/powerplay.html` (**Powerplay 2.0**).
+**Project-authored** canonical data for `guides/systems/galaxy-and-power-systems/powerplay.html` (**Powerplay 2.0**).
 
 Unlike `data/materials/` and `data/engineers/`, there is **no EDCD/FDevIDs source** for
 powerplay — so this is **editorial data** (the precedent is `data/ship-ratings/`): it is

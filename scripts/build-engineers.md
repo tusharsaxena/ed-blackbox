@@ -1,6 +1,6 @@
 # build-engineers.py
 
-Render the 38 engineer cards on `guides/engineering/engineers.html` from the editorial
+Render the 38 engineer cards on `guides/engineering/engineering-manuals/engineers.html` from the editorial
 overlay. **Edit the data/overlay, never the cards directly.**
 
 ```bash

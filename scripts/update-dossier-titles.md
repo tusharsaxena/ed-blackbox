@@ -10,7 +10,7 @@ Sets every ship dossier's HTML `<title>` to one canonical form:
 
 ## What it does
 
-For each `guides/ships/dossiers/*.html`:
+For each `guides/ships/ship-dossiers/*.html`:
 
 1. Reads the **ship name** and **role label** from the page's own masthead —
    `<h1 class="title"><span>Ship</span><span class="role …">Role</span></h1>` — so the

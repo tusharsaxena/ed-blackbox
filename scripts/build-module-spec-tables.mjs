@@ -1,5 +1,5 @@
 // scripts/build-module-spec-tables.mjs — rebuild every module spec table on
-// guides/engineering/modules.html FROM the locally-imported EDCD/coriolis-data
+// guides/engineering/engineering-manuals/modules.html FROM the locally-imported EDCD/coriolis-data
 // dataset under data/modules/{standard,internal,hardpoints}/*.json.
 //
 // Source of truth is LOCAL JSON (no web scraping). Each coriolis file is shaped
@@ -32,7 +32,7 @@ import { dirname, join } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const DATA_DIR = join(ROOT, 'data', 'modules');
-const HTML = join(ROOT, 'guides', 'engineering', 'modules.html');
+const HTML = join(ROOT, 'guides', 'engineering', 'engineering-manuals', 'modules.html');
 
 const SPEC_STYLE_MARKER = '/* concept-D spec tables */';
 

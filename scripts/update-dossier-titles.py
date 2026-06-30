@@ -8,7 +8,7 @@ The <Ship> name and <Role> label are read from the dossier's own masthead
 title always matches what the page displays. `·` is written as the `&middot;` entity, the
 form already used in these titles.
 
-Idempotent: re-running yields the same titles. Edits guides/ships/dossiers/*.html in place.
+Idempotent: re-running yields the same titles. Edits guides/ships/ship-dossiers/*.html in place.
 
 Usage:
     python3 scripts/update-dossier-titles.py            # update all dossiers
@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DOSSIERS = ROOT / "guides" / "ships" / "dossiers"
+DOSSIERS = ROOT / "guides" / "ships" / "ship-dossiers"
 
 TITLE_RE = re.compile(r"<title>.*?</title>", re.DOTALL)
 # <h1 class="title"><span>Federal Corvette</span><span class="role ac-role-combat">Combat</span></h1>

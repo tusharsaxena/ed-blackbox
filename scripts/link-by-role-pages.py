@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """link-by-role-pages.py — curate the cross-links on the by-role ladder pages.
 
-`guides/ships/by-role/**` is deliberately EXCLUDED from the generic
+`guides/ships/best-ships-by-role/**` is deliberately EXCLUDED from the generic
 `apply-hyperlinks.py` pass (it would resolve a bare ship name to the hull's
 *default* role, which is wrong on a role ladder). This script adds the role-correct
 links those pages need, deterministically:
@@ -12,7 +12,7 @@ links those pages need, deterministically:
   2. The headline pick (`<div class="pick">`) in **Recommendations By <Role>** →
      same role-correct dossier.
   3. The **Cost & Engineering Reality** table:
-       - Module column   → guides/engineering/modules.html#module-<slug>
+       - Module column   → guides/engineering/engineering-manuals/modules.html#module-<slug>
        - Blueprint col   → blueprints.html#blueprint-<group>-<effect> (module×blueprint)
        - Engineer col    → engineers.html#engineer-<slug>
      …and strips bold (`<b>`) / accent (`<span class="acc">`) emphasis from the
@@ -29,7 +29,7 @@ survive a later ratings reconcile.
 Usage:
     python3 scripts/link-by-role-pages.py --check         # dry-run, print every change
     python3 scripts/link-by-role-pages.py                 # apply to all 7 by-role pages
-    python3 scripts/link-by-role-pages.py guides/ships/by-role/combat.html   # one file
+    python3 scripts/link-by-role-pages.py guides/ships/best-ships-by-role/combat.html   # one file
 """
 from __future__ import annotations
 import json
@@ -38,7 +38,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BYROLE = ROOT / "guides" / "ships" / "by-role"
+BYROLE = ROOT / "guides" / "ships" / "best-ships-by-role"
 DICT = ROOT / "data" / "links" / "link-dictionary.base.json"
 ALIASES = ROOT / "data" / "ship-aliases" / "ship-aliases.json"
 
@@ -119,7 +119,7 @@ def link_ships_in_section(sec: str, ships: dict, log: list) -> str:
             if name not in _NON_SHIP_SEEN:        # only ship-looking misses are interesting
                 log.append(("ship?", name))
             return m.group(0)
-        return f'{m.group(1)}<a href="../dossiers/{base}">{m.group(2)}</a>{m.group(3)}'
+        return f'{m.group(1)}<a href="../ship-dossiers/{base}">{m.group(2)}</a>{m.group(3)}'
     return MOD_CELL.sub(repl, sec)
 
 
@@ -130,7 +130,7 @@ def link_picks_in_section(sec: str, ships: dict, log: list) -> str:
         if not base:
             log.append(("pick?", name))
             return m.group(0)
-        return f'{m.group(1)}<a href="../dossiers/{base}">{m.group(2)}</a>{m.group(3)}'
+        return f'{m.group(1)}<a href="../ship-dossiers/{base}">{m.group(2)}</a>{m.group(3)}'
     return PICK.sub(repl, sec)
 
 
@@ -169,7 +169,7 @@ def link_eng_table(sec: str, cat, log: list) -> str:
         k = ENGINEER_ALIAS.get(norm(nm), norm(nm))
         a = eng.get(k)
         if a:
-            return f'<a href="../../engineering/engineers.html#{a}">{nm}</a>'
+            return f'<a href="../../engineering/engineering-manuals/engineers.html#{a}">{nm}</a>'
         if k not in ENGINEER_SKIP:
             log.append(("engineer?", nm.strip()))
         return nm
@@ -186,7 +186,7 @@ def link_eng_table(sec: str, cat, log: list) -> str:
         if "<a" not in mod:
             lead, rest = lead_split(mod)
             if manchor and manchor in module_anchors:
-                mod = f'<a href="../../engineering/modules.html#{manchor}">{lead}</a>{rest}'
+                mod = f'<a href="../../engineering/engineering-manuals/modules.html#{manchor}">{lead}</a>{rest}'
             elif lead.strip():
                 log.append(("module?", lead.strip()))
         # --- Blueprint column: strip emphasis, then link module×blueprint ---
@@ -197,7 +197,7 @@ def link_eng_table(sec: str, cat, log: list) -> str:
             if group and bl.strip():
                 anchor = f"blueprint-{group}-{slug}"
                 if anchor in blueprint_anchors:
-                    bp = f'<a href="../../engineering/blueprints.html#{anchor}">{bl}</a>{brest}'
+                    bp = f'<a href="../../engineering/engineering-manuals/blueprints.html#{anchor}">{bl}</a>{brest}'
                 else:
                     log.append(("blueprint?", f"{group} / {bl.strip()}"))
         # --- Experimental column: strip emphasis only ---

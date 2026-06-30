@@ -22,7 +22,7 @@ Idempotent:
 After a first-time insert anywhere, re-run scripts/generate-anchor-files.sh to refresh the
 per-page <basename>-anchors.md catalogs.
 
-Read-only on the data. Writes guides/ships/dossiers/*.html. Run from anywhere.
+Read-only on the data. Writes guides/ships/ship-dossiers/*.html. Run from anywhere.
 
 Usage:
   python3 scripts/build-ship-scorecards.py            # all dossiers with scorecard data
@@ -37,7 +37,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 DATA = REPO / "data" / "ship-ratings"
-DOSSIERS = REPO / "guides" / "ships" / "dossiers"
+DOSSIERS = REPO / "guides" / "ships" / "ship-dossiers"
 ROLES = ["ax", "combat", "exploration", "mining", "multipurpose", "passenger", "trading"]
 
 ROLE_LABEL = {
@@ -87,7 +87,7 @@ def build_section(num: int, role: str, rating: int, weights: dict, sc: dict) -> 
       </tbody>
     </table>
     </div>
-    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../rating-methodology.html">how ships are rated</a>.</p></div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
   </section>
 """
 

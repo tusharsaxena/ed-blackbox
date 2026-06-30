@@ -42,8 +42,8 @@ TEMPLATES = [
 ]
 CURATED_MD = {
     # curated catalog  ->  the page whose map rewrites its #ids
-    os.path.join(GUIDES, "engineering", "engineers-anchors.md"):  "engineering/engineers.html",
-    os.path.join(GUIDES, "engineering", "blueprints-anchors.md"): "engineering/blueprints.html",
+    os.path.join(GUIDES, "engineering", "engineering-manuals", "engineers-anchors.md"):  "engineering/engineering-manuals/engineers.html",
+    os.path.join(GUIDES, "engineering", "engineering-manuals", "blueprints-anchors.md"): "engineering/engineering-manuals/blueprints.html",
 }
 
 # --- regexes -----------------------------------------------------------------
@@ -95,7 +95,7 @@ def classify(relk, tag, classes, oid, body, tag_end):
     # --- excluded functional / widget / diagram ids (any page) ---
     if oid.startswith("qn-"):           return ("skip", "quicknav-widget")
     if oid == "toc":                    return ("skip", "scrollspy-container")
-    if relk == "engineering/checklist.html":
+    if relk == "engineering/engineering-manuals/checklist.html":
         if oid in ("emap-inner", "wires"):              return ("skip", "unlock-map-structural")
         if oid.startswith("n-") and "enode" in cset:    return ("skip", "diagram-node")
         if oid.startswith("c-") and "echip" in cset:    return ("skip", "diagram-chip")
@@ -114,31 +114,31 @@ def classify(relk, tag, classes, oid, body, tag_end):
         return ("rename", "section-" + base)
 
     # --- typed families (page + element aware) ---
-    if relk == "engineering/engineers.html" and tag == "article" and oid.startswith("eng-"):
+    if relk == "engineering/engineering-manuals/engineers.html" and tag == "article" and oid.startswith("eng-"):
         return ("rename", "engineer-" + oid[len("eng-"):])
 
-    if relk == "engineering/checklist.html" and tag == "article":
+    if relk == "engineering/engineering-manuals/checklist.html" and tag == "article":
         if oid.startswith("unlock-"): return ("rename", "engineer-unlock-" + oid[len("unlock-"):])
         if oid.startswith("refer-"):  return ("rename", "engineer-refer-"  + oid[len("refer-"):])
         for p in ("grind-", "farm-", "prep-", "build-", "travel-"):
             if oid.startswith(p):     return ("rename", "step-" + oid)
 
-    if relk == "engineering/blueprints.html" and tag == "div":
+    if relk == "engineering/engineering-manuals/blueprints.html" and tag == "div":
         if oid.startswith("grp-"): return ("rename", "blueprint-group-" + oid[len("grp-"):])
         if oid.startswith("bp-"):  return ("rename", "blueprint-" + oid[len("bp-"):])
 
-    if relk == "engineering/modules.html" and tag == "div":
+    if relk == "engineering/engineering-manuals/modules.html" and tag == "div":
         if "bp-modgroup" in cset and oid.startswith("grp-"):
             return ("rename", "module-group-" + oid[len("grp-"):])
         if "bp-card" in cset:
             for p in ("mod-", "wpn-", "util-"):
                 if oid.startswith(p): return ("rename", "module-" + oid[len(p):])
 
-    if relk == "systems/powerplay.html" and tag == "article" and oid.startswith("pw-"):
+    if relk == "systems/galaxy-and-power-systems/powerplay.html" and tag == "article" and oid.startswith("pw-"):
         return ("rename", "powerplay-" + oid[len("pw-"):])
-    if relk == "systems/superpower-rank.html" and tag == "article" and oid.startswith("pow-"):
+    if relk == "systems/galaxy-and-power-systems/superpower-rank.html" and tag == "article" and oid.startswith("pow-"):
         return ("rename", "superpower-" + oid[len("pow-"):])
-    if relk == "systems/third-party-apps.html" and tag == "article" and oid.startswith("app-"):
+    if relk == "systems/new-pilot-and-interface/third-party-apps.html" and tag == "article" and oid.startswith("app-"):
         return ("skip", "already-app")
 
     # templates: treat their sections like guides (handled above); anything else here

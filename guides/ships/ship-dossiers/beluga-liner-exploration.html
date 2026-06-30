@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beluga Liner &middot; Exploration &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Exploration → fed-blue (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Beluga Liner · Exploration</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-explore"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Explore</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Saud Kruger</div>
+    <h1 class="title"><span>Beluga Liner</span><span class="role ac-role-exploration">Exploration</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A liner pressed into exploration &mdash; <em>comfortable</em>, well-stocked, but short-legged</h2>
+      <p>The Beluga can be outfitted for deep space &mdash; vast internals hold scoop, scanner, SRV bay, AFMUs and comforts at once &mdash; but it carries a heavy, passenger-first hull on a drive that only manages ~40 LY engineered. As a dedicated explorer it's outclassed by every purpose-built ship and most cheap mediums. Its honest niche is a slow, luxurious tourer for an owner who already has one.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/beluga-liner.jpg" alt="Beluga Liner" width="160" height="90">
+      <figcaption><b>Beluga Liner</b> &middot; Saud Kruger</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">58<small>/100</small></div><div class="bar mini"><i style="--pct:58"></i></div></div>
+      <div class="stat"><div class="n">~40</div><div class="l">Max jump (LY, engineered)</div></div>
+      <div class="stat"><div class="n">12</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">Class 6</div><div class="l"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div></div>
+      <div class="stat"><div class="n">~79.7M</div><div class="l">Hull price (Cr)</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad class</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Beluga Liner is Saud Kruger's flagship passenger ship, and exploration is not its job. But twelve optional internals &mdash; four of them class 6 &mdash; give it more raw module space than most dedicated explorers, so it <em>can</em> be kitted for deep space: the largest scoop it can mount, a multi-SRV bay, two or three AFMUs, <a href="../../engineering/engineering-manuals/modules.html#module-scanners">scanners</a> and creature comforts, all carried at once with redundancy to spare. For the explorer who values self-sufficiency and a comfortable cabin over speed, that capacity is real.</p>
+    <p>The problem is range and bulk. A 950-tonne hull on a class-7 drive tops out around ~40 LY even fully engineered &mdash; less than half what a <a href="mandalay-exploration.html">Mandalay</a> or <a href="anaconda-exploration.html">Anaconda</a> manages &mdash; so every leg of a deep-space trip takes far more jumps. Add the large pad (no outpost landings) and ponderous handling, and the Beluga becomes a slow, expensive way to do what cheaper, longer-legged ships do better. It rates <b>58</b>: capable of the job, but rarely the right tool for it.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Comfortable, fully-stocked slow touring for an owner who already flies one: leisurely sightseeing close to home, carrier-supported expeditions where range matters less, and trips where carrying capacity and cabin comfort outweigh jump speed.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-passenger" href="beluga-liner-passenger.html"><span class="vrole">Passenger</span><span class="vrate">95<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-explore">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~40 <small>LY</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">200 / 280 <small>m/s</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div><div class="v">Up to Class 6</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">950 <small>t</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;6&middot;6&middot;5&middot;5&middot;4&middot;3&middot;3&middot;3&middot;3&middot;1</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">6</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></div><div class="v">Class 7</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">None</div></div>
+    </div>
+    <p>What the Beluga brings to exploration &mdash; and what holds it back:</p>
+    <ul class="bullets">
+      <li><b>Vast internals.</b> Twelve optionals carry scoop, scanner, multi-SRV bay, multiple AFMUs and comforts together, with redundancy &mdash; capital-scale self-sufficiency.</li>
+      <li><b>No rank gate.</b> Anyone with the credits can fly one; it shares the <a href="anaconda-exploration.html">Anaconda</a>'s accessibility.</li>
+      <li><b>Comfortable cabins.</b> The luxury hull makes a fine sightseeing tourer if you bring passengers along for the view.</li>
+      <li><b>But short range.</b> ~40 LY engineered on a 950-t hull is the killer &mdash; roughly half a <a href="mandalay-exploration.html">Mandalay</a> or <a href="anaconda-exploration.html">Anaconda</a>, so trips drag out over many more jumps.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Range is the whole game in exploration, and the Beluga is short by half. It's also a large pad (no outpost resupply), heavy, and slow to line up jumps. The module space is genuinely good, but a cheap <a href="diamondback-explorer-exploration.html">Diamondback Explorer</a> or a medium <a href="krait-phantom-exploration.html">Krait Phantom</a> out-ranges it for a fraction of the price and lands anywhere. The Beluga only makes sense as an explorer if you already own one and want comfort over speed.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Capital-scale internals and no rank gate keep it afloat, but ~40 LY engineered — half a Mandalay or Anaconda — caps it at 58.</p>
+    <p>The <b>58/100</b> headline is a verdict against the exploration role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Engineered jump range</td><td class="sc"><span class="scval">11</span><span class="den">/35</span><div class="bar mini"><i style="--pct:31"></i></div></td><td class="wcell">~40 LY engineered on a 950 t hull driven by a class-7 FSD with Increased Range + Guardian Booster 5 — roughly half what a Mandalay (~85), Anaconda (~78) or Diamondback Explorer (~68) reaches. Even a starter Hauler or Adder matches its legs; this is the decisive limiter.</td></tr>
+      <tr><td class="fct">Heat profile</td><td class="sc"><span class="scval">8</span><span class="den">/15</span><div class="bar mini"><i style="--pct:53"></i></div></td><td class="wcell">Class-6 Low Emissions + Thermal Spread power plant plus heat-sink launchers keep scooping heat manageable, but the heavy 950 t hull and large radiating profile give no thermal advantage — strictly mid-field, not a stealth scooper.</td></tr>
+      <tr><td class="fct">Fuel tank &amp; reach</td><td class="sc"><span class="scval">8</span><span class="den">/10</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">Mounts the largest Class-6 fuel scoop it can take for fast refuels, and the vast internals (6·6·6·6·5·5·4·3·3·3·3·1) easily host extra fuel tanks (7C core plus a 3C) to widen the gap between scoopable stars. Reach between fuel stops is genuinely strong.</td></tr>
+      <tr><td class="fct">Canopy &amp; visibility</td><td class="sc"><span class="scval">8</span><span class="den">/10</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">The Saud Kruger luxury hull carries an expansive wrap-around canopy with excellent forward and lateral visibility — a clear sightseeing and scanning asset, among the better cockpits in the role.</td></tr>
+      <tr><td class="fct">Internals</td><td class="sc"><span class="scval">18</span><span class="den">/20</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Twelve optional internals — four Class 6 — give capital-scale module space, carrying the biggest scoop, a multi-SRV bay, twin AFMUs, repair limpet, bi-weave, scanner and a comfort cabin all at once with redundancy. Role-leading capacity and the single reason it scores this high.</td></tr>
+      <tr><td class="fct">Comfort &amp; cost</td><td class="sc"><span class="scval">5</span><span class="den">/10</span><div class="bar mini"><i style="--pct:50"></i></div></td><td class="wcell">Comfortable cabins and no rank or permit gate, but ~79.7M Cr hull and ~115M Cr all-in is poor value for a short-legged explorer; large pad blocks outpost resupply. Justifiable only as a re-roled owned liner.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">58</span><span class="den">/100</span><div class="bar mini"><i style="--pct:58"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for exploration specifically</em>. The role column is the maximum engineered jump range in light-years &mdash; the headline number for deep-space travel.</p>
+    <h3 class="subhead">Same class &mdash; large-pad ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Beluga Liner</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Beluga Liner <span class="pill md">this</span></td><td><span class="pill pad-large">Large</span></td><td>~40</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+        <tr><td class="mod"><a href="orca-exploration.html">Orca</a></td><td><span class="pill pad-large">Large</span></td><td>~42</td><td class="pcc"><span class="p">Far faster; far lighter; cheaper</span><span class="c">Less module space and redundancy</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-clipper-exploration.html">Imperial Clipper</a></td><td><span class="pill pad-large">Large</span></td><td>~45</td><td class="pcc"><span class="p">Much faster; longer range; cheaper</span><span class="c">Fewer internals; needs <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-exploration.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="p">Nearly double the range; same capacity; re-roles to anything</span><span class="c">Pricier hull</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod"><a href="caspian-explorer-exploration.html">Caspian Explorer</a></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="p">Purpose-built; huge range; explorer comforts</span><span class="c">Far pricier</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Even among large pads the Beluga trails. The <a href="orca-exploration.html">Orca</a> and <a href="imperial-clipper-exploration.html">Clipper</a> out-run it from lighter, faster, cheaper hulls; the <a href="anaconda-exploration.html">Anaconda</a> matches its capacity and nearly doubles its range. The Beluga's only edge here is cabin comfort &mdash; which counts for little on a survey trip.</p>
+    <h3 class="subhead">Other classes &mdash; the cheaper, longer-legged rivals</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Beluga Liner</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="mandalay-exploration.html">Mandalay</a></td><td><span class="pill pad-medium">Medium</span></td><td>~85</td><td class="pcc"><span class="p">Double the range; medium pad; far cheaper</span><span class="c">Less raw capacity</span></td><td><span class="rscore">96</span><div class="bar mini"><i style="--pct:96"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-explorer-exploration.html">Diamondback Explorer</a></td><td><span class="pill pad-small">Small</span></td><td>~68</td><td class="pcc"><span class="p">Far longer range; tiny price; lands anywhere</span><span class="c">A fraction of the internals</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-exploration.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~52</td><td class="pcc"><span class="p">Longer range; cheap; medium pad</span><span class="c">Cramped; few utilities</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod"><a href="hauler-exploration.html">Hauler</a></td><td><span class="pill pad-small">Small</span></td><td>~45</td><td class="pcc"><span class="p">Longer range; dirt cheap; lands anywhere</span><span class="c">Almost no capacity</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+        <tr><td class="mod"><a href="adder-exploration.html">Adder</a></td><td><span class="pill pad-small">Small</span></td><td>~38</td><td class="pcc"><span class="p">Cheap starter; lands anywhere</span><span class="c">Tiny; comparable range only</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>This is the Beluga's real competition, and it loses on the metric that matters: even a starter <a href="hauler-exploration.html">Hauler</a> or <a href="adder-exploration.html">Adder</a> matches its range, while a cheap <a href="diamondback-explorer-exploration.html">Diamondback Explorer</a> jumps far further and lands anywhere. The Beluga keeps a rating in the high 50s only because its sheer module space lets it carry a complete, redundant expedition &mdash; just slowly.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~79.7M Cr</div></div>
+      <div class="cell"><div class="k">A-rated explorer</div><div class="v">~95M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~115M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~79.7M Cr the Beluga is a major purchase, and a full exploration fit brings the all-in figure to around 115M Cr. For that money you could buy and fully engineer a <a href="diamondback-explorer-exploration.html">Diamondback Explorer</a> many times over &mdash; and out-range the Beluga at every step.</p>
+    <p>The only honest cost case is reuse: if the Beluga is already in your hangar as a passenger liner, swapping cabins for scoop, scanner and AFMUs costs little and gives you a comfortable touring ship. Buying one <em>for</em> exploration is hard to justify.</p>
+    <div class="callout"><span class="lbl">Buy it for passengers, not parsecs</span><p>~115M Cr for a short-legged explorer is poor value &mdash; the Beluga earns its keep carrying passengers. Re-role an owned hull for a comfortable tour by all means; don't purchase one to explore.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>An exploration fit that uses the Beluga's vast internals for a complete, redundant expedition. Initial is buy-only; A-rated is the expedition baseline; Engineered squeezes every light-year from a heavy hull while carrying full kit. Hardpoints stay empty and the cabins come out — mass is the enemy here.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0I Heat Sink Launcher</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">A light shield booster pads the landing shield; Heavy Duty maximises its raw MJ for botched touchdowns.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">6E Power Plant</td><td class="st">6D Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">D-rated to save mass on a 950 t hull; Low Emissions keeps heat low while scooping and Thermal Spread bleeds the rest.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">7E Thrusters</td><td class="st">7D Thrusters</td><td class="eng">G5 Clean Drive Tuning + Stripped Down</td><td class="note">D-rated for mass; Clean Drive Tuning runs cool and Stripped Down sheds weight for range.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">7E Frame Shift Drive</td><td class="st">7A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rated and the heart of the build; Increased Range plus Mass Manager drives the ~40 LY jump out of a heavy liner.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">8E Life Support</td><td class="st">8D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">The class-8 life support is the single biggest mass target — D-rate and go Lightweight; it has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">6E Power Distributor</td><td class="st">6D Power Distributor</td><td class="eng">G3 Engine Focused + Stripped Down</td><td class="note">D-rated; Engine Focused keeps the engine pip charged for boosting and high-wake escapes.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">5E Sensors</td><td class="st">5D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rated and Lightweight — exploration needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">7C Fuel Tank</td><td class="st">7C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6E Fuel Scoop</td><td class="st">6A Fuel Scoop</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">5H Guardian FSD Booster</td><td class="eng">(No blueprint available)</td><td class="note">Guardian FSD Booster size 5 is the largest flat jump-range bonus available — vital on a short-legged hull; it under-fills the size-6 slot and carries no blueprint.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">6G Planetary Vehicle Hangar</td><td class="eng">(No blueprint available)</td><td class="note">Multi-SRV Planetary Vehicle Hangar for surface science and exobiology; hangars carry no blueprint.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">6A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5C Bi-Weave Shield Generator</td><td class="eng">G5 Enhanced Low Power + Stripped Down</td><td class="note">A light bi-weave for landing safety; Enhanced Low Power plus Stripped Down keep its mass and power draw minimal.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">3A Repair Limpet Controller</td><td class="eng">(No blueprint available)</td><td class="note">Repair Limpet Controller patches hull the AFMU can't touch; the largest variant is size 3, so it under-fills this size-4 slot and carries no blueprint.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3E Economy Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Flex slot — a single economy cabin for a sightseeing tour, or swap for science or storage per trip; cabins aren't engineerable.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">A modest extra fuel tank extends the gap between scoopable stars; fuel tanks aren't engineerable.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3D Guardian Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note"></td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5WQTU8CMRCG%2F0vPHNwYP7I3EzSSgBKXmzHNQGfZhtI20ykGCf%2FddiHioofl1PR5O8%2FuvDuBG7QsSjF2oFxkMRBVo30CczRxCUZbpCN8gTWm4HgbqcNguk6cigaDKN93ojIu0wdau5gHR4zrrk1Cm8klgcIiPXm1omSKOBBT0o40b0VZ7Ac%2Frpm222cg5Z22XJycjWfZIHDQdmUg2kWT5ByJkCWnmR7qqftEmhqwfNKmj0ifuc9cBv2Ft3JhIIQ%2BPzsBbR%2FtMi0aukpsYau76697olR6qrvmIekNdpXN1iOpzC%2FVjnWNVfTe0dniJgXhELTO%2B%2F7OtsuhDkx6HtnRP42qU3ppr2%2Bg4EwZ0AZHoTXdXFBpRDMDu%2BrK6kQ50d9NXvew5eOqkFXe5q8xLJzz%2FVb92H8Dgcg3Z40DAAA%3D&amp;bn=Beluga%20Liner" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XVUW%2BbMBAA4P%2FCcx5CKG2Xt0nt1EptFy19myZ04AOsGBud7U6s6n%2BfcegSGNJMpT1F3MUf9tmHXyN8QWmibfSggClrolW0r3nrAjkKW4HgEmkIPkGDLjE83bPjQPf4qJgVqKPt99doL1Qf%2FUyNsv3Ae4PNWMvA57KKgGHs%2FvJVRltDFlfRjrgibrpoG7%2Bt%2FljPXHZ3QKxVXJr4ZNatyWoEo7k8CLCyqB1uLBGazLgxS%2BnN%2F6OTMa1rjoLlSmnjXM1%2F4TorBGidBsA79RNpJ0CaE%2BpekbV9vO3jXrw8ipsA8RG4vJWV2xw9JtEHPXcVzn0hd1DcESnNDfEXHJN11yKxPn7Ohqz7gZe4t22raLJw4RL6mPDmdfhUfS1vuDbEc2sUzVSUnbJL6%2FoNGExIjVIr0l5KF5TUongGeRhjpYsaFz2vZBKg9T%2FrONv3q%2Flb1IVS7flS01ByM0dW1jUBB1nq0YEPRpM5NLdV1eXQLd0RL17MiYQtcEL60MJTL6aTrfZNXqH75MH74Rm2PMlK0CZUv5zTR%2FNNF873yosXY5GRklgoaUiJgfd4shC%2F9ngyaSUnuK8JUgE5l%2BduHOp%2BmnMLoEoRFIePkPF6jhx1VbKsq%2BJjC8STyqIBLpBpSyUUqAuQ%2FT0YeJF4N56b6XtrNf7%2BJeSyVFRgg8MVkPyrMX68%2FQYrHRFeAQgAAA%3D%3D&amp;bn=Beluga%20Liner" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F9VXXU%2FbMBT9L3muJkIpsL4BpQOpDEaQ9jBN0a1zk1h17cgfZR3iv%2B%2FGCTQJZZQWadpLq1zHx%2Bdcn3vtPAS4QGmDYTBRkChng14Q5bygwBSFy0BwiboOfoU50kD9dJlUE%2BnxSiVOoAmGPx6CSKgyeqLnypUTLy3O22gx%2BLE405BgSK9cy2BotcNecKO50twug2HYC85lRq%2Bj5jILhg%2FBqXBY0IOtaVQrxCfJAiTDhHAmpEUEw0Ev%2BOZoKQ%2Fzae%2FxsffM6o7L5QXopFCEE67Y5YWNcwRruJwJcJLlRNM6rdHGluZsTfKKGxZfEHJEyGdQACsnPlMNN6S6%2F%2F9Q7bepmpyjSKZKGUs8Df%2BNezETYMxga6KRhzytIYnxYjlyTaodAxDgr4LQ5uRXEOdpiqxkbQpkHESHIcudnC2DprwbdY%2F6RoC0K2nEJi7KeFHGva7DStf%2B1rpW68SRRRA231ZSgxlTSlBxNPVcAZcVFdMWhD7oxRztKqYaju%2Bc%2FEtpviGj5iN4ltt7LH9bOsaaliIzpHak%2BQLbWvIlASdlvKlne9ONo1E8UTK7BZnhtoJSk5S1u2j7a8JTjFxRKN0xmKABUw14Ece7bkpjpXhS5vN7ldVNWqd354gbq%2FnUWaXX1EKyGv3AimisGT9NXtm3Jt5%2Ff3002b5msVtIoKPUoDRKGy9wsKvAyIO9ey%2FGDsUdyFmbWUpRS9Gm4fuvUWuglX97YRyVO%2FYS0VAHKZrbuUMNEVzk4aoWvuGh7fntr%2BOXOTp1OEiqq%2BYJM9hUdH8d6NRl2XIKy40s3EU8WIeosQCuUX9MFk%2FGV1vkb%2BCJDTpe9jAZ0qUMnoq29nQ%2FTsHYHc%2FoL8%2FI14Xlc262Pwsqqq8Wqtd4uE5jK%2FmDf5P8I0%2FsoE0s0UoiU9JqJWqWnmP%2FDY5d8GMP3u%2F0Y0Kg4xM1gymXTdxwU9zP63AZ6ExpYLONIN9M51kJd1vCXUqmEcggL2%2Beb2Q33FtHtNUM%2B%2B9rhmHVbMLOfqEFTncp43QKDA0DWX7M7HTnrvs%2FOR%2FkexwVhus0P7XDuf8c08hlqjTDsqKaaXi9mf18%2FAMkIF%2BcEA4AAA%3D%3D&amp;bn=Beluga%20Liner" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5WQTU8CMRCG%2F0vPHNwYP7I3EzSSgBKXmzHNQGfZhtI20ykGCf%2FddiHioofl1PR5O8%2FuvDuBG7QsSjF2oFxkMRBVo30CczRxCUZbpCN8gTWm4HgbqcNguk6cigaDKN93ojIu0wdau5gHR4zrrk1Cm8klgcIiPXm1omSKOBBT0o40b0VZ7Ac%2Frpm222cg5Z22XJycjWfZIHDQdmUg2kWT5ByJkCWnmR7qqftEmhqwfNKmj0ifuc9cBv2Ft3JhIIQ%2BPzsBbR%2FtMi0aukpsYau76697olR6qrvmIekNdpXN1iOpzC%2FVjnWNVfTe0dniJgXhELTO%2B%2F7OtsuhDkx6HtnRP42qU3ppr2%2Bg4EwZ0AZHoTXdXFBpRDMDu%2BrK6kQ50d9NXvew5eOqkFXe5q8xLJzz%2FVb92H8Dgcg3Z40DAAA%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XVUW%2BbMBAA4P%2FCcx5CKG2Xt0nt1EptFy19myZ04AOsGBud7U6s6n%2BfcegSGNJMpT1F3MUf9tmHXyN8QWmibfSggClrolW0r3nrAjkKW4HgEmkIPkGDLjE83bPjQPf4qJgVqKPt99doL1Qf%2FUyNsv3Ae4PNWMvA57KKgGHs%2FvJVRltDFlfRjrgibrpoG7%2Bt%2FljPXHZ3QKxVXJr4ZNatyWoEo7k8CLCyqB1uLBGazLgxS%2BnN%2F6OTMa1rjoLlSmnjXM1%2F4TorBGidBsA79RNpJ0CaE%2BpekbV9vO3jXrw8ipsA8RG4vJWV2xw9JtEHPXcVzn0hd1DcESnNDfEXHJN11yKxPn7Ohqz7gZe4t22raLJw4RL6mPDmdfhUfS1vuDbEc2sUzVSUnbJL6%2FoNGExIjVIr0l5KF5TUongGeRhjpYsaFz2vZBKg9T%2FrONv3q%2Flb1IVS7flS01ByM0dW1jUBB1nq0YEPRpM5NLdV1eXQLd0RL17MiYQtcEL60MJTL6aTrfZNXqH75MH74Rm2PMlK0CZUv5zTR%2FNNF873yosXY5GRklgoaUiJgfd4shC%2F9ngyaSUnuK8JUgE5l%2BduHOp%2BmnMLoEoRFIePkPF6jhx1VbKsq%2BJjC8STyqIBLpBpSyUUqAuQ%2FT0YeJF4N56b6XtrNf7%2BJeSyVFRgg8MVkPyrMX68%2FQYrHRFeAQgAAA%3D%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F9VXXU%2FbMBT9L3muJkIpsL4BpQOpDEaQ9jBN0a1zk1h17cgfZR3iv%2B%2FGCTQJZZQWadpLq1zHx%2Bdcn3vtPAS4QGmDYTBRkChng14Q5bygwBSFy0BwiboOfoU50kD9dJlUE%2BnxSiVOoAmGPx6CSKgyeqLnypUTLy3O22gx%2BLE405BgSK9cy2BotcNecKO50twug2HYC85lRq%2Bj5jILhg%2FBqXBY0IOtaVQrxCfJAiTDhHAmpEUEw0Ev%2BOZoKQ%2Fzae%2FxsffM6o7L5QXopFCEE67Y5YWNcwRruJwJcJLlRNM6rdHGluZsTfKKGxZfEHJEyGdQACsnPlMNN6S6%2F%2F9Q7bepmpyjSKZKGUs8Df%2BNezETYMxga6KRhzytIYnxYjlyTaodAxDgr4LQ5uRXEOdpiqxkbQpkHESHIcudnC2DprwbdY%2F6RoC0K2nEJi7KeFHGva7DStf%2B1rpW68SRRRA231ZSgxlTSlBxNPVcAZcVFdMWhD7oxRztKqYaju%2Bc%2FEtpviGj5iN4ltt7LH9bOsaaliIzpHak%2BQLbWvIlASdlvKlne9ONo1E8UTK7BZnhtoJSk5S1u2j7a8JTjFxRKN0xmKABUw14Ece7bkpjpXhS5vN7ldVNWqd354gbq%2FnUWaXX1EKyGv3AimisGT9NXtm3Jt5%2Ff3002b5msVtIoKPUoDRKGy9wsKvAyIO9ey%2FGDsUdyFmbWUpRS9Gm4fuvUWuglX97YRyVO%2FYS0VAHKZrbuUMNEVzk4aoWvuGh7fntr%2BOXOTp1OEiqq%2BYJM9hUdH8d6NRl2XIKy40s3EU8WIeosQCuUX9MFk%2FGV1vkb%2BCJDTpe9jAZ0qUMnoq29nQ%2FTsHYHc%2FoL8%2FI14Xlc262Pwsqqq8Wqtd4uE5jK%2FmDf5P8I0%2FsoE0s0UoiU9JqJWqWnmP%2FDY5d8GMP3u%2F0Y0Kg4xM1gymXTdxwU9zP63AZ6ExpYLONIN9M51kJd1vCXUqmEcggL2%2Beb2Q33FtHtNUM%2B%2B9rhmHVbMLOfqEFTncp43QKDA0DWX7M7HTnrvs%2FOR%2FkexwVhus0P7XDuf8c08hlqjTDsqKaaXi9mf18%2FAMkIF%2BcEA4AAA%3D%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Beluga Liner&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;belugaliner_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size7_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size8_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size7_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size6_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Beluga Liner&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;belugaliner_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class2&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class2&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size7_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size8_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class2&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size7_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size6_class5&quot;},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size6&quot;,&quot;Item&quot;:&quot;int_buggybay_size6_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size6&quot;,&quot;Item&quot;:&quot;int_repairer_size6_class5&quot;},{&quot;Slot&quot;:&quot;Slot05_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot06_Size5&quot;,&quot;Item&quot;:&quot;int_repairer_size5_class5&quot;},{&quot;Slot&quot;:&quot;Slot07_Size4&quot;,&quot;Item&quot;:&quot;int_dronecontrol_repair_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot08_Size3&quot;,&quot;Item&quot;:&quot;int_passengercabin_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot09_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot10_Size3&quot;,&quot;Item&quot;:&quot;int_fueltank_size3_class3&quot;},{&quot;Slot&quot;:&quot;Slot12_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;},{&quot;Slot&quot;:&quot;Slot11_Size3&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size3_class2&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;exploration&quot;,&quot;intro&quot;:&quot;An exploration fit that uses the Beluga's vast internals for a complete, redundant expedition. Initial is buy-only; A-rated is the expedition baseline; Engineered squeezes every light-year from a heavy hull while carrying full kit. Hardpoints stay empty and the cabins come out — mass is the enemy here.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Capacity without the range&quot;,&quot;text&quot;:&quot;The Beluga carries a complete, redundant expedition all at once — the largest scoop it takes, a multi-SRV bay, twin AFMUs, a repair-limpet controller, scanner and a comfort cabin. The catch is that even stripped and engineered it still only jumps ~40 LY, so every destination is many more jumps away than on a proper explorer.&quot;},&quot;notes&quot;:{&quot;TinyHardpoint1&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint3&quot;:&quot;A light shield booster pads the landing shield; Heavy Duty maximises its raw MJ for botched touchdowns.&quot;,&quot;PowerPlant&quot;:&quot;D-rated to save mass on a 950 t hull; Low Emissions keeps heat low while scooping and Thermal Spread bleeds the rest.&quot;,&quot;MainEngines&quot;:&quot;D-rated for mass; Clean Drive Tuning runs cool and Stripped Down sheds weight for range.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated and the heart of the build; Increased Range plus Mass Manager drives the ~40 LY jump out of a heavy liner.&quot;,&quot;LifeSupport&quot;:&quot;The class-8 life support is the single biggest mass target — D-rate and go Lightweight; it has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;D-rated; Engine Focused keeps the engine pip charged for boosting and high-wake escapes.&quot;,&quot;Radar&quot;:&quot;D-rated and Lightweight — exploration needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.&quot;,&quot;Slot02_Size6&quot;:&quot;Guardian FSD Booster size 5 is the largest flat jump-range bonus available — vital on a short-legged hull; it under-fills the size-6 slot and carries no blueprint.&quot;,&quot;Slot03_Size6&quot;:&quot;Multi-SRV Planetary Vehicle Hangar for surface science and exobiology; hangars carry no blueprint.&quot;,&quot;Slot04_Size6&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot05_Size5&quot;:&quot;A light bi-weave for landing safety; Enhanced Low Power plus Stripped Down keep its mass and power draw minimal.&quot;,&quot;Slot06_Size5&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot07_Size4&quot;:&quot;Repair Limpet Controller patches hull the AFMU can't touch; the largest variant is size 3, so it under-fills this size-4 slot and carries no blueprint.&quot;,&quot;Slot08_Size3&quot;:&quot;Flex slot — a single economy cabin for a sightseeing tour, or swap for science or storage per trip; cabins aren't engineerable.&quot;,&quot;Slot09_Size3&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot10_Size3&quot;:&quot;A modest extra fuel tank extends the gap between scoopable stars; fuel tanks aren't engineerable.&quot;,&quot;Slot12_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Clean Drive Tuning&quot;,&quot;experimental&quot;:&quot;Stripped Down&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Life Support&quot;,&quot;size&quot;:8,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Sensors&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Bill Turner / Juri Ishmaak&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G3&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Shield Generator&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Enhanced Low Power&quot;,&quot;experimental&quot;:&quot;Stripped Down&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Beluga Liner&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;belugaliner_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Tuned&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_lightweight&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size8_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_lightweight&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size7_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FuelScoop_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size6&quot;,&quot;Item&quot;:&quot;int_buggybay_size6_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size6&quot;,&quot;Item&quot;:&quot;int_repairer_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot05_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Optimised&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_lightweight&quot;}},{&quot;Slot&quot;:&quot;Slot06_Size5&quot;,&quot;Item&quot;:&quot;int_repairer_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot07_Size4&quot;,&quot;Item&quot;:&quot;int_dronecontrol_repair_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot08_Size3&quot;,&quot;Item&quot;:&quot;int_passengercabin_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot09_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot10_Size3&quot;,&quot;Item&quot;:&quot;int_fueltank_size3_class3&quot;},{&quot;Slot&quot;:&quot;Slot12_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot11_Size3&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size3_class2&quot;}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Capacity without the range</span><p>The Beluga carries a complete, redundant expedition all at once — the largest scoop it takes, a multi-SRV bay, twin AFMUs, a repair-limpet controller, scanner and a comfort cabin. The catch is that even stripped and engineered it still only jumps ~40 LY, so every destination is many more jumps away than on a proper explorer.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit the largest scoop it takes (class 6) plus a heat-sink launcher &mdash; refuelling first. The core internals stay stock E-rated at this stage, and the hull's default <b>Lightweight Alloy</b> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> are left as bought &mdash; they are already the lightest option and cost nothing.</p>
+    <p>Leave the rest of the bays empty &mdash; the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a>, SRV bay, AFMUs, bi-weave shield, repair limpet, Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a>, surface scanner and cabin all wait for the A-rated pass.</p>
+    <p>Hardpoints stay empty and no cabins go in yet &mdash; on this heavy hull, every tonne saved buys range.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for the Beluga as an explorer:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">Frame Shift Drive</a> &rarr; 7A</b> &mdash; Range is everything and the Beluga has little to spare; A-rate the drive first. <span class="acc">~20M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a> &rarr; 6A</b> &mdash; The biggest scoop it takes refuels quickly between its many jumps. <span class="acc">~10M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> 5</b> &mdash; The largest flat range bonus available &mdash; vital on a short-legged hull. <span class="acc">material cost</span></li>
+      <li><span class="stepnum">4</span><b>Cores &rarr; D-rate</b> &mdash; <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a>, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>, <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a>, <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> and <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">power distributor</a> drop to D for mass; every tonne is a light-year. <span class="acc">low cost</span></li>
+      <li><span class="stepnum">5</span><b>SRV bay, AFMUs + Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a></b> &mdash; Surface access, deep redundancy and the last open size-3 takes a <b>3D Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">Module Reinforcement</a></b> so a clumsy landing on this ponderous hull doesn't cripple a module. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">6</span><b>Bi-Weave <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; 5C + <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">Shield Booster</a></b> &mdash; A light shield for landing safety on a heavy hull. <span class="acc">modest</span></li>
+      <li><span class="stepnum">7</span><b><a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a></b> &mdash; Maps planets for cartographic payouts. <span class="acc">~250k Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Range first, always</span><p>On a hull this heavy the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, class-6 scoop and <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a> are non-negotiable &mdash; squeeze every light-year out of the drive, then fill the generous internals with redundancy. Engineer the stock <b>Lightweight Alloys</b> (Lightweight blueprint) and add <b>Flow Control</b> to the distributor to claw back the last few tonnes. The capacity is the only thing the Beluga does well in this role.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The standard exploration engineering pattern, aimed squarely at squeezing range from a heavy hull. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; <a href="../../engineering/engineering-manuals/engineers.html#engineer-professor-palin">Professor Palin</a> or <a href="../../engineering/engineering-manuals/engineers.html#engineer-mel-brandon">Mel Brandon</a> handle the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>. Pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (7)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Thrusters (7)</td><td>Clean Drive Tuning (G5)</td><td>Stripped Down</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Plant (6)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Life Support (8)</td><td>Lightweight (G5)</td><td>—</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Sensors (5)</td><td>Lightweight (G5)</td><td>—</td><td>Bill Turner / Juri Ishmaak</td></tr>
+<tr><td class="mod">Power Distributor (6)</td><td>Engine Focused (G3)</td><td>—</td><td>The Dweller</td></tr>
+<tr><td class="mod">Shield Generator (5)</td><td>Enhanced Low Power (G5)</td><td>Stripped Down</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> to G5 with Mass Manager &mdash; the foundation of every light-year the Beluga can reach.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> to shed mass from the heavy hull &mdash; the class-8 <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> is a prime target.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant to keep heat manageable when scooping.</li>
+      <li><span class="stepnum">4</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-thrusters-clean-drive-tuning">Clean Drive Tuning</a> <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> for efficient travel.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; the standard exploration blueprints; the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> needs a Guardian-site run. Mass-reduction matters more here than on most hulls because the Beluga starts so heavy. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max jump (LY)</td><td>~24</td><td>~32</td><td class="acc">~40</td></tr>
+        <tr><td class="mod">Module capacity</td><td>vast</td><td>vast</td><td class="acc">vast</td></tr>
+        <tr><td class="mod">Hull protection</td><td>stock alloy</td><td>+ module reinf.</td><td class="acc">lightweight (eng)</td></tr>
+        <tr><td class="mod">Comfort</td><td>high</td><td>high</td><td class="acc">high</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>280 m/s</td><td>280 m/s</td><td class="acc">~330 m/s</td></tr>
+        <tr><td class="mod">Pad access</td><td>large</td><td>large</td><td class="acc">large</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Beluga jumps ~40 LY while carrying a full, redundant expedition in comfort &mdash; lightweight-engineered Lightweight Alloys keep the hull mass minimal, and a Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a> in the last size-3 bay guards the internals against rough landings. But ~40 LY is the problem, roughly half what the genre leaders manage. It stays heavy and large-pad-bound. For self-sufficient comfort it works; for getting anywhere quickly, almost any dedicated explorer is the better ship.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Comfortable short tours.</b> Leisurely sightseeing to nearby nebulae and scenic systems where range matters less.</li>
+      <li><b>Carrier-supported trips.</b> Jump the carrier to the region, then potter locally &mdash; the Beluga's short legs hurt less.</li>
+      <li><b>Surface science.</b> The SRV bay and deep stores suit unhurried exobiology around a chosen base.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Sightseeing liner.</b> Bring paying passengers on the scenic run &mdash; the one role where its cabins and range overlap.</li>
+      <li><b>Re-roled owned hull.</b> Already own a Beluga? Swap cabins for scoop and <a href="../../engineering/engineering-manuals/modules.html#module-scanners">scanners</a> for a no-extra-ship tour.</li>
+      <li><b>Self-sufficient base camp.</b> Twin AFMUs and vast stores let it sit out in the black for a long stay near one site.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example destinations</span><p>Keep targets within reach &mdash; nearby nebulae, scenic clusters, regions a fleet carrier can stage you to. The Beluga rewards a slow, comfortable stay over the long-haul dash a true explorer makes.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>, class-6 scoop and <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a> first &mdash; on a 950-t hull, range is scarce and must be defended.</li>
+      <li>Strip cabins and downsize the <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">fuel tank</a> for exploration; mass costs you light-years directly.</li>
+      <li>Mind the large pad &mdash; no outpost landings; plan resupply around stations or a carrier.</li>
+      <li>Its real home is the passenger role &mdash; it has a dedicated passenger manual; explore in it only if you already own one.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Beluga Liner rates <b>58</b> for exploration: capable, but rarely the right call. Its vast internals carry a complete, redundant, comfortable expedition &mdash; and that capacity, plus its no-rank accessibility, is the only reason it scores this high. But ~40 LY engineered is roughly half what a <a href="mandalay-exploration.html">Mandalay</a>, <a href="anaconda-exploration.html">Anaconda</a> or even a cheap <a href="diamondback-explorer-exploration.html">Diamondback Explorer</a> delivers, and the large pad and heavy hull compound the problem. It isn't worse because it's a bad ship &mdash; it's a superb passenger liner doing a job it wasn't built for. Buy one to carry people; explore in it only if it's already in your hangar and comfort beats speed.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, used to model the exploration FSD/scoop/internal fit on this hull.</span><a class="cr-link" href="https://coriolis.io/outfit/beluga_liner" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/beluga_liner</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Beluga Liner ship page — manufacturer specs, hull mass/speed, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/beluga-liner" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../beluga-liner</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Core slot sizes (class-7 FSD, optional internals 6&middot;6&middot;6&middot;6&middot;5&middot;5&middot;4&middot;3&middot;3&middot;3&middot;3&middot;1) and engineering blueprint data behind the loadout.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/beluga.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/beluga.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Beluga Liner</span><span class="cr-what">Stock hull stats, internal layout, and module sellers cross-checked for the exploration build.</span><a class="cr-link" href="https://inara.cz/elite/ship/57/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/57</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Beluga Liner</span><span class="cr-what">Manufacturer (Saud Kruger), hull role, and lore reference backing the dossier write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Beluga_Liner" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Beluga_Liner</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Deep-dive review of the Beluga Liner covering its jump range and internal module space — context for its limits as an explorer.</span><a class="cr-link" href="https://www.youtube.com/watch?v=9ejyrb9lRjU" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=9ejyrb9lRjU</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

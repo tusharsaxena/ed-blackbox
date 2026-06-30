@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import materials_common as m
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGE = ROOT / "guides" / "engineering" / "materials.html"
+PAGE = ROOT / "guides" / "engineering" / "materials-and-farming" / "materials.html"
 BEGIN = "<!-- BEGIN generated:materials -->"
 END = "<!-- END generated:materials -->"
 

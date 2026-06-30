@@ -8,7 +8,7 @@ to a table with already-canonical ratings — e.g. when new dossier'd hulls are 
 to a by-role ladder — reconcile makes no value change, so the resort never fires and
 the new rows sit at the bottom out of order. This script closes that gap.
 
-For each guides/ships/by-role/<role>.html it sorts the rows of:
+For each guides/ships/best-ships-by-role/<role>.html it sorts the rows of:
   * every RANKING table (one carrying <span class="rscore">N</span>) by N, descending;
   * every COST table (a <table> with <td class="mod"> ship names but NO rscore) by the
     ship's canonical rating from data/ship-ratings/<role>.json, descending — so the cost
@@ -30,7 +30,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-BY_ROLE = REPO / "guides" / "ships" / "by-role"
+BY_ROLE = REPO / "guides" / "ships" / "best-ships-by-role"
 DATA = REPO / "data" / "ship-ratings"
 ROLES = ["ax", "combat", "exploration", "mining", "multipurpose", "passenger", "trading"]
 

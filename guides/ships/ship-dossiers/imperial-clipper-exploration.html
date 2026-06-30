@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperial Clipper &middot; Exploration &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Exploration → fed-blue (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Imperial Clipper · Exploration</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-explore"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Explore</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Imperial Clipper</span><span class="role ac-role-exploration">Exploration</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A <em>characterful</em> explorer held back by a class-5 drive</h2>
+      <p>The Clipper will go exploring &mdash; it scoops fast, looks magnificent doing it, and boosts like nothing else its size &mdash; but a class-5 <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> on a heavy 400 t hull caps engineered range at ~40 LY, well short of the dedicated explorers. Cheap at ~21M Cr and gated only by Imperial Baron, it makes a fine stylish tourer, yet for serious deep-space range a <a href="mandalay-exploration.html">Mandalay</a>, <a href="krait-phantom-exploration.html">Phantom</a> or even an <a href="asp-explorer-exploration.html">Asp</a> out-jumps it from a smaller, cheaper hull.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/imperial-clipper.jpg" alt="Imperial Clipper" width="160" height="90">
+      <figcaption><b>Imperial Clipper</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">63<small>/100</small></div><div class="bar mini"><i style="--pct:63"></i></div></div>
+      <div class="stat"><div class="n">~40</div><div class="l">Max jump (LY, engineered)</div></div>
+      <div class="stat"><div class="n">9</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">Class 7</div><div class="l"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div></div>
+      <div class="stat"><div class="n">~21.1M</div><div class="l">Hull price (Cr)</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad class</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Imperial Clipper is a speed hull first, and exploration exposes its one structural weakness: a class-5 <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">frame shift drive</a> on a 400-tonne body. Even fully engineered with a <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a> it tops out around ~40 LY &mdash; respectable, but a long way behind the mediums and smalls built for the job. It scoops quickly, carries enough internals for a proper expedition kit, and crosses systems in style, but it cannot out-range a dedicated explorer.</p>
+    <p>What it does offer is character and accessibility: it's cheap (~21M Cr), needs only a low <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank, and is the most beautiful thing in any hangar. If you already own one &mdash; or you're grinding <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Empire</a> rank and want a stylish hull to wander in between bigger goals &mdash; it makes a perfectly serviceable tourer. As a considered exploration purchase, though, almost every cheaper alternative jumps further.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Stylish, casual exploration: short-to-mid expeditions, sightseeing tours, exobiology day-trips, and giving an existing Imperial Clipper a second job &mdash; anywhere flair and fast scooping matter more than maximum range.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-combat" href="imperial-clipper-combat.html"><span class="vrole">Combat</span><span class="vrate">79<small>/100</small></span></a>
+        <a class="vchip r-mining" href="imperial-clipper-mining.html"><span class="vrole">Mining</span><span class="vrate">70<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="imperial-clipper-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">73<small>/100</small></span></a>
+        <a class="vchip r-passenger" href="imperial-clipper-passenger.html"><span class="vrole">Passenger</span><span class="vrate">64<small>/100</small></span></a>
+        <a class="vchip r-trading" href="imperial-clipper-trading.html"><span class="vrole">Trading</span><span class="vrate">74<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-explore">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~40 <small>LY</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">300 / 380 <small>m/s</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div><div class="v">Up to Class 7</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">400 <small>t</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;4&middot;4&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></div><div class="v">Class 5</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Baron</div></div>
+    </div>
+    <p>What the Clipper brings to exploration &mdash; and what it lacks:</p>
+    <ul class="bullets">
+      <li><b>Fast scooping and travel.</b> A big scoop tops the tank quickly, and at 380 m/s boost it crosses systems and reaches scoopable stars faster than any dedicated explorer.</li>
+      <li><b>Enough internals for a real kit.</b> Nine optionals carry a scoop, <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a>, SRV bay, AFMUs and a scanner at once &mdash; a complete, if not redundant, expedition.</li>
+      <li><b>Cheap and low-rank.</b> Under 21M credits on a modest <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> Baron rank &mdash; one of the most accessible large hulls to take out.</li>
+      <li><b>But a class-5 drive on a heavy hull.</b> The 400 t mass and a class-5 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> are the hard limit &mdash; even maxed, range stays around ~40 LY.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Range is the whole story: ~40 LY engineered is fine but unremarkable, and the heavy hull means no engineering trick closes the gap to a <a href="mandalay-exploration.html">Mandalay</a> or <a href="krait-phantom-exploration.html">Phantom</a>. Add a large-pad-only footprint (no outpost resupply) and only two crew seats, and the Clipper's exploration case rests on style and a low entry cost, not capability.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Cheap (~21M), low-rank, internals-rich and fast-scooping, but a class-5 FSD on a 400 t hull caps engineered range near ~40 LY — exploration's core currency is where it falls short.</p>
+    <p>The <b>63/100</b> headline is a verdict against the exploration role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Engineered jump range</td><td class="sc"><span class="scval">16</span><span class="den">/35</span><div class="bar mini"><i style="--pct:46"></i></div></td><td class="wcell">Engineered range tops out near ~40 LY — a class-5 FSD bolted to a 400 t hull, lifted only by a 5A drive and Guardian booster. That trails Asp (~62), Phantom (~75), Mandalay (~85) and the large Anaconda/Caspian (~78), and no engineering closes the gap.</td></tr>
+      <tr><td class="fct">Heat profile</td><td class="sc"><span class="scval">9</span><span class="den">/15</span><div class="bar mini"><i style="--pct:60"></i></div></td><td class="wcell">A 6D Low Emissions + Thermal Spread plant and Clean Drive Tuning thrusters keep heat manageable while scooping, but the heavy frame and large powerplant give no real thermal advantage over the cooler dedicated explorers. Mid-field.</td></tr>
+      <tr><td class="fct">Fuel tank &amp; reach</td><td class="sc"><span class="scval">7</span><span class="den">/10</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">Class-7 fuel scoop tops the tank in seconds — faster than any dedicated explorer — and the nine optionals allow a 4C plus an extra 2C tank to stretch sparse routes. Per-jump reach is modest, but refuel cadence is a genuine strength.</td></tr>
+      <tr><td class="fct">Canopy &amp; visibility</td><td class="sc"><span class="scval">7</span><span class="den">/10</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">The Gutamaya cockpit gives a wide, characterful forward view well-suited to scanning and scenic flying, with 2 crew seats. Strong but not best-in-class against the Asp Explorer's panoramic canopy.</td></tr>
+      <tr><td class="fct">Internals</td><td class="sc"><span class="scval">16</span><span class="den">/20</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">Nine optional internals (7·6·4·4·3·3·2·2·1) carry a full expedition kit at once — class-7 scoop, Guardian booster, SRV bay, two AFMUs, bi-weave, scanner and spare tankage — more internal bulk than any medium rival. A clear standout.</td></tr>
+      <tr><td class="fct">Comfort &amp; cost</td><td class="sc"><span class="scval">8</span><span class="den">/10</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">~21.1M Cr hull, ~35M all-in, gated only by Imperial Baron, with 300/380 m/s speed making it the fastest tourer of its size. Held back only by the large pad blocking outpost resupply.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">63</span><span class="den">/100</span><div class="bar mini"><i style="--pct:63"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for exploration specifically</em>. The role column is the maximum engineered jump range in light-years &mdash; the headline number for deep-space travel.</p>
+    <h3 class="subhead">Same class &mdash; large-pad explorers</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Imperial Clipper</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="anaconda-exploration.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="p">Vastly more range and capacity; versatile</span><span class="c">Slower; far pricier</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod"><a href="caspian-explorer-exploration.html">Caspian Explorer</a></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="p">Purpose-built; huge range; full comfort</span><span class="c">Far pricier; not a speed ship</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod">Imperial Clipper <span class="pill md">this</span></td><td><span class="pill pad-large">Large</span></td><td>~40</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod"><a href="orca-exploration.html">Orca</a></td><td><span class="pill pad-large">Large</span></td><td>~44</td><td class="pcc"><span class="p">Comfort cabins; slightly more range</span><span class="c">Passenger-first; pricier</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod"><a href="beluga-liner-exploration.html">Beluga Liner</a></td><td><span class="pill pad-large">Large</span></td><td>~40</td><td class="pcc"><span class="p">Luxury passenger comfort</span><span class="c">Slow; passenger-first; huge price</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among large hulls the Clipper sits with the passenger liners near the bottom of the explorer ladder &mdash; it ties the <a href="orca-passenger.html">Orca</a> and edges the <a href="beluga-liner-passenger.html">Beluga</a>, but the two true large explorers, the <a href="anaconda-passenger.html">Anaconda</a> and Caspian, jump nearly twice as far. The Clipper's only edge here is speed and price.</p>
+    <h3 class="subhead">Other classes &mdash; the cheaper, longer-jumping rivals</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Imperial Clipper</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="mandalay-exploration.html">Mandalay</a></td><td><span class="pill pad-medium">Medium</span></td><td>~85</td><td class="pcc"><span class="p">Double the range; medium pad; cheap</span><span class="c">Less internal bulk</span></td><td><span class="rscore">96</span><div class="bar mini"><i style="--pct:96"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-exploration.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~75</td><td class="pcc"><span class="p">Far more range; medium pad; versatile</span><span class="c">Slower flat-out</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-exploration.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~62</td><td class="pcc"><span class="p">More range; medium pad; cheap; great view</span><span class="c">Slower; smaller</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-courier-exploration.html">Imperial Courier</a></td><td><span class="pill pad-small">Small</span></td><td>~55</td><td class="pcc"><span class="p">More range; lands anywhere; Imperial; fast</span><span class="c">Tiny internals</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-exploration.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~50</td><td class="pcc"><span class="p">More range; cheap; medium pad</span><span class="c">Slow; flimsy</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The pattern is the same in every direction: smaller, cheaper hulls out-jump the Clipper, land on outposts it can't use, and cost less. Even the little <a href="imperial-courier-exploration.html">Imperial Courier</a> &mdash; the Clipper's natural Gutamaya stablemate &mdash; out-ranges it from a small pad. The Clipper explores on charm, not on the numbers.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~21.1M Cr</div></div>
+      <div class="cell"><div class="k">A-rated explorer</div><div class="v">~28M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~35M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Imperial Baron</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~21.1M Cr the Clipper is cheap for a large hull, gated only by the modest <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> Baron rank. An exploration fit needs little hardware beyond a scoop, <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a> and a maxed <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>, so the all-in cost stays around 35M Cr &mdash; a fraction of a dedicated capital explorer.</p>
+    <p>The natural way to own one is as a by-product of an Imperial-rank journey: the grind toward Squire and the Achenar permit passes Baron along the way, leaving you a stylish, affordable hull you can take wandering between bigger objectives.</p>
+    <div class="callout"><span class="lbl">Cheap and stylish, not far-reaching</span><p>Around 35M Cr all-in for a fast, gorgeous tourer on a low <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank &mdash; an easy second ship to explore in, but never the range pick.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A travel-light exploration fit. Initial is buy-only; A-Rated is the expedition baseline; Engineered strips mass to push the class-5 drive as far as it will go. Plans and costs follow in the sections below.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0I Heat Sink Launcher</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">6E Power Plant</td><td class="st">6D Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">6D keeps mass down — with no guns to feed, output is not the limit; Low Emissions cuts heat and draw, Thermal Spread bleeds more while scooping.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">6E Thrusters</td><td class="st">6D Thrusters</td><td class="eng">G5 Clean Drive Tuning + Drag Drives</td><td class="note">6D thrusters; Clean Drive Tuning runs cool and efficient, Drag Drives adds boost speed to climb the Clipper out of gravity wells.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">The whole build — a 5A SCO drive for maximum range and fast in-system travel; Increased Range + Mass Manager is the single biggest lever on this heavy hull's reach.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">5E Life Support</td><td class="st">5D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">6E Power Distributor</td><td class="st">6D Power Distributor</td><td class="eng">G3 Engine Focused (no experimental effect)</td><td class="note">6D is plenty without weapons; Engine Focused (G3) gives engine-capacitor headroom for repeated boosts on landing approaches — only a partial roll is needed.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">5E Sensors</td><td class="st">5D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; exploration needs no sensor range, so save the mass on this heavy frame.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock 4C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 7</td><td class="st">7E Fuel Scoop</td><td class="st">7A Fuel Scoop</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">5H Guardian FSD Booster</td><td class="eng">(No blueprint available)</td><td class="note">The Guardian FSD Booster — a flat ~+10 LY jump-range gain unlocked at a Guardian site, not bought; the single largest range bolt-on and not engineerable.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">2G Planetary Vehicle Hangar</td><td class="eng">(No blueprint available)</td><td class="note">A size-4 SRV hangar (2 bays) for exobiology, surface prospecting and Guardian-site runs; carries no blueprint.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3C Bi-Weave Shield Generator</td><td class="eng">G5 Enhanced Low Power + Lo-Draw</td><td class="note">A light bi-weave gives a fast-regenerating buffer for landings and accidental scrapes; Enhanced Low Power + Lo-Draw keeps its draw and mass minimal (bi-weaves are C-rated only).</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Extra fuel tank to stretch the gap between scoopable stars on sparse routes; fuel tanks are not engineerable.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5WQTWvCQBCG%2F8uePTT0Q8itYEsFbaXxVsqydUezuNldZmctVvzvnY1S0RaanMI8b%2BbJ5N0J2IAjUYqJV9onEgNR1SYwgCYYBEmoNOARP6sGODpOY31Y5XHqdbIQRfm2E5X1md5j41NeHBM0lz6p2lSu8lTwSy9OlIQJBmKGxqOhrSiL%2FeDHNjdu%2B6RQB28cFSdrHUjWoCgat7YquUXNckqIQJJ4p4N65j8BZ1Y5Omn5IzJkHjKX0XzBnVxYFWOXY6fKuAe3Mo4bOVNCC%2FvqHpFr58KXNEKzgXNlvQ2AOvNWe9tdOzFLqFIIHi9%2B3HIQD0FfZ9vlyERC85HI4x%2BN6lPat4hXpdWFMoKLHmPfOx8T2Lly63PZkikxbW03B9t1B1t%2BXBWy4q3hb2NceB9a5fC%2FA9%2F331M19NKRAwAA&amp;bn=Imperial%20Clipper" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F63UX2vbMBAA8O%2Bi5zzMdv5seRt0ZYV2C0vfxhAX62yLOpI4nTKy0u8%2BWc6WOgvFhj0Z3Vk%2FiTtJzwIPaFisxb0FZQOLmdg22sUA7p0mlEygkE7hL7DHmDqN7lQ%2FNQ4frAoterH%2B%2Fiy2re2iH2lvQzfxjnF%2F6UlIWVl3oyz%2B9NWINVPAmdiQtqT5KNbZy%2Byv9qjN8TOQclYbzs5q41g2COy1eWohmLKJOAciZMlxzlQ6%2F6%2F0xv5E2rRg%2BMzGRaTr4q6LS69%2F4VKWLXifjxAfQJtPptYmFntAYgpO5W4pdjT2suIb0gccks3RIakuLu0BqWyA6n6FRb%2FCYsQK97rCbXDO0kUN2pjwfeK1mY8t6432THoX2NKV4qpzdmpNvoGCC9Kj8Zb81H3eBmwfwTwNsSpGOUaTNu%2B1YoTWfd5lchtnrf4VfWmtS%2BRqfHMSmSdyOSTrEG%2BEBlN5tbPWM%2FZlHI0WCZ0P0V2o6%2BMOjonKx9cxifNrIqGD%2BKrQ61qO3uMiicVFqxuNrarRIMGfw1OcmiQr8DxWX17TB%2FstJu53lcT8jdOUTzxN76%2BJZbzmlqAckNlY8kMisyGpkEG3qHygCkr0JRjTPaZvvaI%2FXn4DXKUGJ50GAAA%3D&amp;bn=Imperial%20Clipper" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F82WUU%2FbMBDHv4ufq4m2FLa%2BMaADqR2MIO1hmqyrc0ksXDuynW4d4rvv7BTalAIlIG0vjXyu%2F%2F797TvbtwznqD0bsrGB1FSedVhSyJICOCulRe4tpGiX4a8wQ%2Bpats7Teig1JyatFDo2%2FHHLEmVC9MjOTBUGnnucbepxiL08D60u%2FelCs6G3FXbYpZXGSr9gw26HnepcakQrdc6Gt%2ByzqrCkhl%2BC1HPwo3QOWmBKOmPyo9hw0GHfKlC1zIe9u7vOA9e11IszsGlpSKe74itKzwsE76S%2BUVBpURCmr6xFzz2NaQ05kU7wM1JOSPkYShBh4ANqd0fU3n%2BNeml%2Bob1UoP0Kk3R5GeJliHMn%2F%2BABFwqc67UmXM3DE4%2BgfPHkppPW75KEZpSloE6zDEUgdSUKCWqdTBijKHvW%2FUxA6hrFNQ1hDL6PmbqbX1f6mdx9wcaSx8zRKirhDRsjSzNRrWb%2BxMo5Nq0UC9JNQzwOFwXYvHY2qJ0NWjsbJSd8bHR%2BBTrHttYyl4Y0ny8alsYyw6QqS2M3Uk1Rh6s71k203561mfhY5oX%2FjuF3p1Mm5umJdN7KaeWN3VIV6ar3HWtjbU5%2BP3iVyEvw%2FtPgV5DCBq1D7Yx177OoSRR79XqOKlTXoG%2BaZBlFPUUj2n6N1n8KbU0tfPa6PKFRh48VHZ0HZZQ8fHMdkFwS5agIUaU73lGRrxf5Dpp8eUX3gQRNtTE1xnmsc2ewq%2Bl%2BFN1vik6rPF9MYRGlei%2Fs8Kbi%2FjZFiyXQbW%2FXN6b9Kh6NJi3WbxDB%2Bhu5HGVy1GjhvvD6y8ThGTjfPrGj8pcH5YvSy5l07U%2F2GpVjlkkhw0vrkcODbQ4bS9%2F%2FN0t%2FGMF6zxRr75XF%2BnGboqALy1gQDcn2r8njIHcV5M61sAi0d4%2FfQC9Z%2FxRBu03QFD1IemK4ymYg0AnQOjzZ3vJWWx6klEKgn9%2Bcn3d%2FAenci%2FHnCwAA&amp;bn=Imperial%20Clipper" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5WQTWvCQBCG%2F8uePTT0Q8itYEsFbaXxVsqydUezuNldZmctVvzvnY1S0RaanMI8b%2BbJ5N0J2IAjUYqJV9onEgNR1SYwgCYYBEmoNOARP6sGODpOY31Y5XHqdbIQRfm2E5X1md5j41NeHBM0lz6p2lSu8lTwSy9OlIQJBmKGxqOhrSiL%2FeDHNjdu%2B6RQB28cFSdrHUjWoCgat7YquUXNckqIQJJ4p4N65j8BZ1Y5Omn5IzJkHjKX0XzBnVxYFWOXY6fKuAe3Mo4bOVNCC%2FvqHpFr58KXNEKzgXNlvQ2AOvNWe9tdOzFLqFIIHi9%2B3HIQD0FfZ9vlyERC85HI4x%2BN6lPat4hXpdWFMoKLHmPfOx8T2Lly63PZkikxbW03B9t1B1t%2BXBWy4q3hb2NceB9a5fC%2FA9%2F331M19NKRAwAA" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F63UX2vbMBAA8O%2Bi5zzMdv5seRt0ZYV2C0vfxhAX62yLOpI4nTKy0u8%2BWc6WOgvFhj0Z3Vk%2FiTtJzwIPaFisxb0FZQOLmdg22sUA7p0mlEygkE7hL7DHmDqN7lQ%2FNQ4frAoterH%2B%2Fiy2re2iH2lvQzfxjnF%2F6UlIWVl3oyz%2B9NWINVPAmdiQtqT5KNbZy%2Byv9qjN8TOQclYbzs5q41g2COy1eWohmLKJOAciZMlxzlQ6%2F6%2F0xv5E2rRg%2BMzGRaTr4q6LS69%2F4VKWLXifjxAfQJtPptYmFntAYgpO5W4pdjT2suIb0gccks3RIakuLu0BqWyA6n6FRb%2FCYsQK97rCbXDO0kUN2pjwfeK1mY8t6432THoX2NKV4qpzdmpNvoGCC9Kj8Zb81H3eBmwfwTwNsSpGOUaTNu%2B1YoTWfd5lchtnrf4VfWmtS%2BRqfHMSmSdyOSTrEG%2BEBlN5tbPWM%2FZlHI0WCZ0P0V2o6%2BMOjonKx9cxifNrIqGD%2BKrQ61qO3uMiicVFqxuNrarRIMGfw1OcmiQr8DxWX17TB%2FstJu53lcT8jdOUTzxN76%2BJZbzmlqAckNlY8kMisyGpkEG3qHygCkr0JRjTPaZvvaI%2FXn4DXKUGJ50GAAA%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F82WUU%2FbMBDHv4ufq4m2FLa%2BMaADqR2MIO1hmqyrc0ksXDuynW4d4rvv7BTalAIlIG0vjXyu%2F%2F797TvbtwznqD0bsrGB1FSedVhSyJICOCulRe4tpGiX4a8wQ%2Bpats7Teig1JyatFDo2%2FHHLEmVC9MjOTBUGnnucbepxiL08D60u%2FelCs6G3FXbYpZXGSr9gw26HnepcakQrdc6Gt%2ByzqrCkhl%2BC1HPwo3QOWmBKOmPyo9hw0GHfKlC1zIe9u7vOA9e11IszsGlpSKe74itKzwsE76S%2BUVBpURCmr6xFzz2NaQ05kU7wM1JOSPkYShBh4ANqd0fU3n%2BNeml%2Bob1UoP0Kk3R5GeJliHMn%2F%2BABFwqc67UmXM3DE4%2BgfPHkppPW75KEZpSloE6zDEUgdSUKCWqdTBijKHvW%2FUxA6hrFNQ1hDL6PmbqbX1f6mdx9wcaSx8zRKirhDRsjSzNRrWb%2BxMo5Nq0UC9JNQzwOFwXYvHY2qJ0NWjsbJSd8bHR%2BBTrHttYyl4Y0ny8alsYyw6QqS2M3Uk1Rh6s71k203561mfhY5oX%2FjuF3p1Mm5umJdN7KaeWN3VIV6ar3HWtjbU5%2BP3iVyEvw%2FtPgV5DCBq1D7Yx177OoSRR79XqOKlTXoG%2BaZBlFPUUj2n6N1n8KbU0tfPa6PKFRh48VHZ0HZZQ8fHMdkFwS5agIUaU73lGRrxf5Dpp8eUX3gQRNtTE1xnmsc2ewq%2Bl%2BFN1vik6rPF9MYRGlei%2Fs8Kbi%2FjZFiyXQbW%2FXN6b9Kh6NJi3WbxDB%2Bhu5HGVy1GjhvvD6y8ThGTjfPrGj8pcH5YvSy5l07U%2F2GpVjlkkhw0vrkcODbQ4bS9%2F%2FN0t%2FGMF6zxRr75XF%2BnGboqALy1gQDcn2r8njIHcV5M61sAi0d4%2FfQC9Z%2FxRBu03QFD1IemK4ymYg0AnQOjzZ3vJWWx6klEKgn9%2Bcn3d%2FAenci%2FHnCwAA" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Imperial Clipper&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;empire_trader_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size7&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size7_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Imperial Clipper&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;empire_trader_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class2&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class2&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_overcharge_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class2&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size7&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size7_class5&quot;},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size4&quot;,&quot;Item&quot;:&quot;int_repairer_size4_class5&quot;},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size3_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_repairer_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_fueltank_size2_class3&quot;},{&quot;Slot&quot;:&quot;Slot08_Size2&quot;,&quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;exploration&quot;,&quot;intro&quot;:&quot;A travel-light exploration fit. Initial is buy-only; A-Rated is the expedition baseline; Engineered strips mass to push the class-5 drive as far as it will go. Plans and costs follow in the sections below.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Light is right&quot;,&quot;text&quot;:&quot;The class-5 drive rewards a stripped hull: a class-7 scoop and class-5 Guardian booster are the range workhorses, while D-rated lightweight cores keep mass down. Don't over-fit — every extra tonne costs you light-years on this heavy 400 t frame.&quot;},&quot;notes&quot;:{&quot;TinyHardpoint1&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint3&quot;:&quot;One light booster cheaply multiplies the landing bi-weave's raw MJ; Heavy Duty + Super Capacitors is the biggest gain per tonne.&quot;,&quot;PowerPlant&quot;:&quot;6D keeps mass down — with no guns to feed, output is not the limit; Low Emissions cuts heat and draw, Thermal Spread bleeds more while scooping.&quot;,&quot;MainEngines&quot;:&quot;6D thrusters; Clean Drive Tuning runs cool and efficient, Drag Drives adds boost speed to climb the Clipper out of gravity wells.&quot;,&quot;FrameShiftDrive&quot;:&quot;The whole build — a 5A SCO drive for maximum range and fast in-system travel; Increased Range + Mass Manager is the single biggest lever on this heavy hull's reach.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;6D is plenty without weapons; Engine Focused (G3) gives engine-capacitor headroom for repeated boosts on landing approaches — only a partial roll is needed.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; exploration needs no sensor range, so save the mass on this heavy frame.&quot;,&quot;FuelTank&quot;:&quot;Stock 4C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size7&quot;:&quot;Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.&quot;,&quot;Slot02_Size6&quot;:&quot;The Guardian FSD Booster — a flat ~+10 LY jump-range gain unlocked at a Guardian site, not bought; the single largest range bolt-on and not engineerable.&quot;,&quot;Slot03_Size4&quot;:&quot;A size-4 SRV hangar (2 bays) for exobiology, surface prospecting and Guardian-site runs; carries no blueprint.&quot;,&quot;Slot04_Size4&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot05_Size3&quot;:&quot;A light bi-weave gives a fast-regenerating buffer for landings and accidental scrapes; Enhanced Low Power + Lo-Draw keeps its draw and mass minimal (bi-weaves are C-rated only).&quot;,&quot;Slot06_Size3&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot07_Size2&quot;:&quot;Extra fuel tank to stretch the gap between scoopable stars on sparse routes; fuel tanks are not engineerable.&quot;,&quot;Slot08_Size2&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot09_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Clean Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Life Support&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Sensors&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Bill Turner / Juri Ishmaak&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G3&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Shield Generator&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Enhanced Low Power&quot;,&quot;experimental&quot;:&quot;Lo-Draw&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;size&quot;:0,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Imperial Clipper&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;empire_trader_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Tuned&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_overcharge_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size7&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FuelScoop_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size4&quot;,&quot;Item&quot;:&quot;int_repairer_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size3_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Optimised&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_efficient&quot;}},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_repairer_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_fueltank_size2_class3&quot;},{&quot;Slot&quot;:&quot;Slot08_Size2&quot;,&quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Light is right</span><p>The class-5 drive rewards a stripped hull: a class-7 scoop and class-5 Guardian booster are the range workhorses, while D-rated lightweight cores keep mass down. Don't over-fit — every extra tonne costs you light-years on this heavy 400 t frame.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Baron and buy the hull (~21M Cr). The buy-only state is deliberately bare: the stock <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> Alloy <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> the hull ships with, E-rated cores (6E <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a>, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> and <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a>; 5E <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>, <a href="../../engineering/engineering-manuals/modules.html#module-life-support">Life Support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">Sensors</a>), a single 0I <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">Heat Sink Launcher</a>, the full-size 7E <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a> and the stock 4C <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">Fuel Tank</a>.</p>
+    <p>Every slot that makes it an explorer is left empty (&mdash;) at this stage: the class-5 <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a>, the single-bay SRV hangar, both AFMUs, the 3C bi-weave shield, the <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a>, the extra <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">fuel tank</a> and the <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a>. The second utility mount also stays empty for now.</p>
+    <p>Nothing is A-rated or engineered yet &mdash; even the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> and scoop stay at stock E, and the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> stay Lightweight throughout (mass, not armour, is the priority on an explorer). The A-rated pass below is where range, refuelling and the expedition kit actually arrive.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a light explorer:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; A</b> &mdash; Jump range is everything; A-rate the class-5 drive first. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a> &rarr; A (class 7)</b> &mdash; A big scoop refuels in seconds. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> 5</b> &mdash; The largest flat range bonus available &mdash; ~+10 LY. <span class="acc">material cost</span></li>
+      <li><span class="stepnum">4</span><b>SRV bay (single, size 2) + 2&times; <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a></b> &mdash; Surface access and self-repair (one size-4, one size-3 <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>); a single bay is all a solo explorer needs. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Bi-Weave Shield (3C)</b> &mdash; A fast-regenerating buffer for landings and accidental scrapes; no booster &mdash; the bi-weave alone is enough crash protection. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a></b> &mdash; Maps planets for cartographic payouts. <span class="acc">~250k Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Range first, then go light</span><p>A-rate the <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and scoop, bolt on the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a>, then keep everything else D-rated and minimal. The second utility stays a <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink</a>, not a <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a>, and the hangar drops to a single bay &mdash; the Clipper has slots for more, but mass is the enemy of its already-modest range.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The standard exploration engineering pattern, applied to wring everything from a class-5 drive. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; <a href="../../engineering/engineering-manuals/engineers.html#engineer-professor-palin">Professor Palin</a> (or <a href="../../engineering/engineering-manuals/engineers.html#engineer-mel-brandon">Mel Brandon</a>) handles the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Thrusters (6)</td><td>Clean Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Plant (6)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Life Support (5)</td><td>Lightweight (G5)</td><td>—</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Sensors (5)</td><td>Lightweight (G5)</td><td>—</td><td>Bill Turner / Juri Ishmaak</td></tr>
+<tr><td class="mod">Power Distributor (6)</td><td>Engine Focused (G3)</td><td>—</td><td>The Dweller</td></tr>
+<tr><td class="mod">Shield Generator (3)</td><td>Enhanced Low Power (G5)</td><td>Lo-Draw</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster (0)</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> to G5 with Mass Manager &mdash; the single biggest lever on this hull's range.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> to shed every spare tonne from the heavy frame.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant to keep heat down while scooping.</li>
+      <li><span class="stepnum">4</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-thrusters-clean-drive-tuning">Clean Drive Tuning</a> <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> for efficient, cool travel.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light-to-moderate &mdash; the standard exploration blueprints plus a Guardian-site run for the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">FSD booster</a>; no weapon grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max jump (LY)</td><td>~22</td><td>~30</td><td class="acc">~40</td></tr>
+        <tr><td class="mod"><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a></td><td>Lightweight</td><td>Lightweight</td><td class="acc">Lightweight (G5)</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>380 m/s</td><td>380 m/s</td><td class="acc">~440 m/s</td></tr>
+        <tr><td class="mod">Self-repair</td><td>none</td><td>2 <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a></td><td class="acc">2 <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a></td></tr>
+        <tr><td class="mod">Pad access</td><td>large</td><td>large</td><td class="acc">large</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Clipper jumps ~40 LY while scooping fast and travelling quicker than anything its size &mdash; a comfortable, stylish tourer. The <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> stay Lightweight (G5 reduces their mass, not buys armour) and the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-shield-booster">shield booster</a> and dual SRV bay are gone, all in service of range. But that range still trails every dedicated explorer, the large pad blocks outpost resupply, and the heavy hull leaves no headroom to do better. It explores well enough; it never excels at it.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Short-to-mid expeditions.</b> ~40 LY is fine for nearby nebulae and regional tours rather than core-and-back marathons.</li>
+      <li><b>Sightseeing runs.</b> Fast travel and a great cockpit make it a pleasant ship to wander in.</li>
+      <li><b>Exobiology day-trips.</b> The SRV bay and scanner suit casual surface science close to the bubble.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>A second job for a Clipper.</b> If you already fly one for trade or combat, an explorer refit gives it a new use without a new hull.</li>
+      <li><b>Imperial-flavour wandering.</b> A stylish hull for an <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Empire</a> pilot to roam in mid-rank-grind.</li>
+      <li><b>Carrier-assisted trips.</b> Pair it with a fleet carrier to offset the modest range and large-pad-only resupply.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example destinations</span><p>Best pointed at regional targets a few dozen jumps out &mdash; nearby nebulae, scenic tours, local exobiology. For the deep black, take a longer-legged hull or lean on a fleet carrier.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and scoop first; then keep the build deliberately light &mdash; mass is the killer on this hull.</li>
+      <li>The class-5 drive is the hard ceiling; no engineering closes the gap to a <a href="mandalay-exploration.html">Mandalay</a> or <a href="krait-phantom-exploration.html">Phantom</a>.</li>
+      <li>Mind the large pad &mdash; plan resupply around stations or a carrier, never outposts.</li>
+      <li>Its real argument is style and a low entry cost; the same hull also has trading and combat manuals.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Imperial Clipper earns a <b>63</b> for exploration: it scoops fast, looks superb and crosses systems quicker than any rival, but a class-5 <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> on a 400-tonne hull caps engineered range near ~40 LY &mdash; mid-pack, level with the <a href="orca-exploration.html">Orca</a>, behind cheaper mediums and smalls that jump much further and land more freely. It isn't rated lower because it's cheap, low-rank and genuinely capable of a real expedition; it isn't rated higher because range is exploration's currency, and the Clipper simply doesn't have enough of it. A charming tourer, not a deep-space pick.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner used to validate the exploration loadout, jump range and slot layout.</span><a class="cr-link" href="https://coriolis.io/outfit/imperial_clipper" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/imperial_clipper</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Imperial Clipper ship page — manufacturer specs, speed figures, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/imperial-clipper" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../imperial-clipper</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout (class-5 FSD, optional internals), module variants, and engineering blueprint data behind the build.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_clipper.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/imperial_clipper.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Imperial Clipper</span><span class="cr-what">Ship reference page: hull stats, scoop and module slot layout, and the Imperial Baron rank requirement.</span><a class="cr-link" href="https://inara.cz/elite/ship/45/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/45</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Imperial Clipper ship article: role profile, Gutamaya manufacture, and rank/pad details.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Imperial_Clipper" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Imperial_Clipper</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

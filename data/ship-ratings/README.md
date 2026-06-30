@@ -7,7 +7,7 @@ that role. **These files are the source of truth for ship ratings** — the HTML
 
 > **Editorial data, not coriolis.** Unlike `data/ships|modules|modifications` (imported
 > verbatim from EDCD/coriolis-data), these ratings are *authored judgement* — see
-> `guides/ships/rating-methodology.html`. They live here so the value is stated once and
+> `guides/ships/general/rating-methodology.html`. They live here so the value is stated once and
 > reused, instead of being duplicated (and drifting) across dozens of pages.
 
 ## Schema
@@ -45,7 +45,7 @@ that role. **These files are the source of truth for ship ratings** — the HTML
 - `scorecard_weights` *(per-role; rating-rationale feature)* — the role's factors in
   **priority order**, each with an integer **weight** (its share of 100; weights are
   multiples of 5 and **sum to 100**). An *editorial decomposition* of the role's stated
-  priority order (see `guides/ships/rating-methodology.html`), **not** an in-game formula.
+  priority order (see `guides/ships/general/rating-methodology.html`), **not** an in-game formula.
 - `ratings[].scorecard` *(optional; rating-rationale feature)* — a ship's "show-your-work"
   breakdown: a one-line `verdict` plus a `factors` array (same factors/order as
   `scorecard_weights`). Each factor's `earned` points are `0..weight`, and **`earned`

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fer-de-Lance &middot; Combat &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Combat → maroon (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Fer-de-Lance · Combat</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Zorgon Peterson</div>
+    <h1 class="title"><span>Fer-de-Lance</span><span class="role ac-role-combat">Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The medium duellist — <em>lethal</em> one-on-one</h2>
+      <p>The premier medium duelling hull and one of the best combat ships at any size. A huge hardpoint flanked by four mediums, best-in-class agility, and an oversized class-6 distributor combine to make it lethal in one-on-one fights. Tiny internals and a short jump range are the price; when the target is a single enemy, nothing in its class does it better.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/fer-de-lance.jpg" alt="Fer-de-Lance" width="160" height="90">
+      <figcaption><b>Fer-de-Lance</b> &middot; Zorgon Peterson</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">93<small>/100</small></div><div class="bar mini"><i style="--pct:93"></i></div></div>
+      <div class="stat"><div class="n">1H · 4M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">265 / 357</div><div class="l">Speed / boost m/s</div></div>
+      <div class="stat"><div class="n">~51M</div><div class="l">Hull price Cr</div></div>
+      <div class="stat"><div class="n">M</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Fer-de-Lance is built around a single idea: win the fight in front of you. A huge hardpoint &mdash; rare on a medium &mdash; sits amid four mediums with tight convergence, and a class-6 <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">power distributor</a> (the size you'd expect on a far bigger ship) feeds them all without the brown-outs that throttle other fighters. Six utility mounts carry an unusually heavy defensive suite for the class.</p>
+    <p>It pays for that focus with internals. Just six optionals, none larger than class 5, mean it can't tank as deeply or carry the cell-bank stacks of a <a href="krait-mk-ii-combat.html">Krait</a> or <a href="python-mk-ii-combat.html">Python Mk II</a>, and its jump range is short. But in a duel &mdash; PvP or a tough single NPC &mdash; its agility, alpha and sustained fire are class-leading. The FDL is a scalpel, not a hammer.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>One-on-one combat: PvP duelling, assassination targets, high-ranked single NPCs, and any fight where out-manoeuvring and focusing down one enemy matters more than grinding a crowd.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">265 / 357 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1 Huge &middot; 4 Medium</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">6</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">250 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~271 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">405</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a></div><div class="v">Class 6</div></div>
+      <div class="cell"><div class="k">Distributor</div><div class="v">Class 6 <small>(oversized)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;4&middot;4&middot;2&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Class-leading</div></div>
+      <div class="cell"><div class="k">Jump range</div><div class="v">Short</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+    </div>
+    <p>Four things make the Fer-de-Lance the duelling king:</p>
+    <ul class="bullets">
+      <li><b>A huge hardpoint.</b> The single biggest gun mount on any medium &mdash; a huge multi-cannon or <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-plasma-accelerator">plasma accelerator</a> delivers alpha that ends fights.</li>
+      <li><b>Oversized distributor.</b> A class-6 <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">power distributor</a> on a 250t hull means you fire the huge gun, the four mediums and boost without ever starving &mdash; uninterrupted pressure.</li>
+      <li><b>Best-in-class agility.</b> It turns and holds a target better than any other medium, keeping your guns on the enemy and theirs off you.</li>
+      <li><b>Six utility mounts.</b> Room for a heavy shield-booster and <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a> suite that lets a relatively small hull punch defensively above its weight.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Six small optionals and a short jump range are real costs &mdash; the FDL can't tank as deeply as a <a href="krait-mk-ii-combat.html">Krait</a>, can't stack cell banks like a <a href="python-mk-ii-combat.html">Python Mk II</a>, and is tedious to fly between systems. In a long multi-target grind it tires; in a crowd it can be swarmed. Its dominance is the duel, not the marathon.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">A unique huge hardpoint, an oversized distributor and class-leading agility make it the best duellist below the Corvette; only its shallow internals keep it off the role ceiling.</p>
+    <p>The <b>93/100</b> headline is a verdict against the combat role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Hardpoints</td><td class="sc"><span class="scval">29</span><span class="den">/30</span><div class="bar mini"><i style="--pct:97"></i></div></td><td class="wcell">One Huge plus four Medium mounts — the single biggest gun on any medium, alpha that ends fights. Only the large, rank-gated Corvette (2×Huge) and Cutter field more.</td></tr>
+      <tr><td class="fct">Power distributor</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">A class-6 distributor, oversized for the hull, feeds the huge gun, four mediums and boost without brown-outs; only full-energy loadouts ever strain it.</td></tr>
+      <tr><td class="fct">Shield</td><td class="sc"><span class="scval">14</span><span class="den">/15</span><div class="bar mini"><i style="--pct:93"></i></div></td><td class="wcell">~271 MJ base is exceptional on a medium; six utility mounts stack four Heavy-Duty boosters and the bi-weave engineers past 1,100 MJ.</td></tr>
+      <tr><td class="fct">Armour &amp; internals</td><td class="sc"><span class="scval">12</span><span class="den">/15</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">405 base armour, but only six optional slots topping out at class 5 — it can't tank as deeply as a Krait or stack cell banks like a Python Mk II. Its one real limit.</td></tr>
+      <tr><td class="fct">Agility</td><td class="sc"><span class="scval">20</span><span class="den">/20</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">Best-in-class — it turns and holds a target better than any other medium, 265/357 m/s rising past ~480 boost engineered. The trait that decides duels.</td></tr>
+      <tr><td class="fct">Utility &amp; flexibility</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Six utility mounts and no rank or permit gate, but no fighter bay and a short jump range — a duelling scalpel, not an all-purpose grinder.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">93</span><span class="den">/100</span><div class="bar mini"><i style="--pct:93"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad combat ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Fer-de-Lance</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Fer-de-Lance <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>1H 4M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-mk-ii-combat.html">Python Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; deeper tank; more sustained DPS</span><span class="c">Less agile; no huge hardpoint</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-combat.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; deep internals; balanced and tanky</span><span class="c">Less agile; no huge hardpoint</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="mamba-combat.html">Mamba</a></td><td><span class="pill pad-medium">Medium</span></td><td>1H 2L 2S</td><td class="pcc"><span class="p">Faster; same huge-mount alpha on a straight pass</span><span class="c">Far worse agility; can't hold a turn fight</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-chieftain-combat.html">Alliance Chieftain</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 1M 3S</td><td class="pcc"><span class="p">Superb agility; tough; cheap; great AX</span><span class="c">Lower alpha; no huge mount</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-challenger-combat.html">Alliance Challenger</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 3M 3S</td><td class="pcc"><span class="p">Tankiest <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-all">Alliance</a> hull; many guns</span><span class="c">Slower; less agile</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="corsair-combat.html">Corsair</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 3M</td><td class="pcc"><span class="p">Six guns; modern; roomier internals</span><span class="c">Less agile; no huge mount</span></td><td><span class="rscore">85</span><div class="bar mini"><i style="--pct:85"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-assault-ship-combat.html">Federal Assault Ship</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 2M</td><td class="pcc"><span class="p">Fast, agile, tough Federal brawler</span><span class="c">Less firepower; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank gate</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-combat.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">Versatile; roomy; multi-role</span><span class="c">Less agile; lower combat ceiling</span></td><td><span class="rscore">83</span><div class="bar mini"><i style="--pct:83"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-gunship-combat.html">Federal Gunship</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 4M 2S</td><td class="pcc"><span class="p">Seven hardpoints; very tough</span><span class="c">Sluggish; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank gate</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>For one-on-one fighting the Fer-de-Lance tops the medium class &mdash; nothing else combines a huge hardpoint, this agility and an oversized distributor. The <a href="python-mk-ii-combat.html">Python Mk II</a> and <a href="krait-mk-ii-combat.html">Krait</a> match or beat it for grinding crowds and tanking, but in a duel the FDL is the medium to beat.</p>
+    <h3 class="subhead">Other classes &mdash; the larger leagues</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Fer-de-Lance</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="federal-corvette-combat.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">More guns and tank; also highly agile for a large ship</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> Rear Admiral rank; ~187M Cr; large pad</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-combat.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shields and firepower</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; poor agility; large pad</span></td><td><span class="rscore">91</span><div class="bar mini"><i style="--pct:91"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-combat.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight hardpoints; vast internals</span><span class="c">Ponderous; costly; large pad</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="kestrel-mk-ii-combat.html">Kestrel Mk II</a></td><td><span class="pill pad-small">Small</span></td><td>3L 2S</td><td class="pcc"><span class="p">Small-pad with huge firepower; agile</span><span class="c">Newer; less internal room than the FDL</span></td><td><span class="rscore">85</span><div class="bar mini"><i style="--pct:85"></i></div></td></tr>
+        <tr><td class="mod"><a href="vulture-combat.html">Vulture</a></td><td><span class="pill pad-small">Small</span></td><td>2L</td><td class="pcc"><span class="p">Small-pad agility; cheap duellist on a budget</span><span class="c">Only two guns; power-starved; less alpha</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The <a href="federal-corvette-combat.html">Corvette</a> is the FDL writ large &mdash; the only ship that out-duels it, at the cost of a Federal grind and a large pad. Below it, the <a href="vulture-combat.html">Vulture</a> is the small-pad budget duellist. For a medium-pad scalpel that beats almost anything one-on-one, the Fer-de-Lance stands nearly alone.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~51M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~70M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~90M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~51M Cr the hull is a premium medium, with no rank or permit gate. Its small internals actually keep the outfitting bill modest &mdash; there are fewer big modules to A-rate &mdash; so the all-in engineered cost is reasonable for a top-tier fighter.</p>
+    <p>Spend on the weapons, distributor and shield first; the FDL's combat value comes from feeding its guns and holding a tight defensive utility suite, not from deep internal modules it doesn't have.</p>
+    <div class="callout"><span class="lbl">No rank gate</span><p>The FDL needs only credits &mdash; no navy grind. It's the most accessible elite duelling hull in the game.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A duelling fit built around the huge hardpoint and a heavy utility suite, tanked as deeply as six small optionals allow. Initial is buy-only; A-rated is the duel-ready baseline; Engineered applies the house combat pattern.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Huge 1</td><td class="st">4A Multi-Cannon (Gimballed)</td><td class="st">4A Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Corrosive Shell</td><td class="note">Primary huge mount — Overcharged with the single Corrosive Shell strips armour resistance for the whole battery.</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">2F Pulse Laser (Gimballed)</td><td class="st">2D Beam Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Gimballed beam — Efficient with Thermal Vent strips shields and vents heat so it runs cold.</td></tr>
+<tr><td class="slot">Medium 2</td><td class="st">2F Pulse Laser (Gimballed)</td><td class="st">2D Beam Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Second Thermal-Vent beam doubles the cool shield-stripping output.</td></tr>
+<tr><td class="slot">Medium 3</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Gimballed multi-cannon — Overcharged with Auto Loader chews hull without reload gaps.</td></tr>
+<tr><td class="slot">Medium 4</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Second Overcharged multi-cannon keeps sustained hull DPS on target.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0A Shield Booster</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">First of four Heavy-Duty shield boosters — the cheapest large gain in shield strength.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Second Heavy-Duty booster stacks more raw shield MJ.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Third Heavy-Duty booster; diminishing returns set in but it still pays.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Chaff Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.</td></tr>
+<tr><td class="slot">Utility 5</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 6</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Fourth Heavy-Duty booster fills the last utility — this hull shield-tanks, so boosters beat point defence in a duel.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Military Grade Composite</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">6E Power Plant</td><td class="st">6A Power Plant</td><td class="eng">G5 Overcharged + Thermal Spread</td><td class="note">Overcharged adds the headroom for the huge gun, four mediums, shield &amp; cells; Thermal Spread bleeds the extra heat.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">5E Thrusters</td><td class="st">5A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated plus Dirty Drives &amp; Drag Drives preserve the class-leading agility that wins duels.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">4E Frame Shift Drive</td><td class="st">4A Frame Shift Drive</td><td class="eng">G3 Increased Range + Mass Manager</td><td class="note">A-rated with G3 Increased Range only — Mass Manager softens the heavy combat fit; the FDL is no jump monster.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">4E Life Support</td><td class="st">4D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">6E Power Distributor</td><td class="st">6A Power Distributor</td><td class="eng">G5 Charge Enhanced + Super Conduits</td><td class="note">A-rate this FIRST — the oversized class-6 unit lets the huge gun and four mediums fire without browning out; Charge Enhanced + Super Conduits deepen the WEP pool.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">4E Sensors</td><td class="st">4D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight — combat needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">3C Fuel Tank</td><td class="st">3C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock class-3 tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Shield Generator</td><td class="st">5C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Fast Charge</td><td class="note">Bi-weave regenerates fast under fire; Reinforced adds MJ and Fast Charge speeds the regen that defines it.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Heavy-Duty hull reinforcement — the cheapest large multiplier on effective armour.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Second Heavy-Duty HRP; armour stacks linearly across the small internals.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Module Reinforcement spreads penetrating-hit damage across the internals; not engineerable.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XTQU%2FCMBQH8O%2FSMwcQ8MDNBAkkoMRxM2Yp9G1r7NrmtcUg4bv7VkACkbAZPS39v%2B639q3dMliD9mzApoYLEzxrsaSQloIMUIDiegWH7ImXQPlhNBH792g4MyIocGzwumWJMlX6gKUJSLWJh%2FIMS3kspTlyAR2a8azZwGOAFpujNCj9hg06u9Y3NQ45jDkKa6T2nRNZWJ%2BWQXm54lobneayXHKVFjS9hjoDIUN5zbVBOVquAzyyZZzfHL77L7h7sxO%2FlXt%2FJy%2Bk3lzrsSskKLE0xnnqhpOf0E5X1BrXrwHPzQfgnA6UP6H0idRWua3yKN7vxTrHbMalftS51HSQz0iIYeT69bkR0m2he5L5Ico1nJPFxtJ9qPLI9uqzU5lBEqw1eLFxRQW3LzQ1Yy%2BH0nmUy%2BAN%2FtBRcao27esLF%2FyCdKCdQdd0naMAasH1%2BzmWUeopjVp3r3VraNWj3UmT6rdeLC8ezBw0ID9u%2BOaff9t9AQ7KoNxLBQAA&amp;bn=Fer-de-Lance" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XV32%2BbMBAH8P%2FFz3kokOQhb5O6qpWaLVr6Nk3I4AOs%2Bgc6252yqv%2F7DidZRkpVqJqniDvng%2FkaHc8MnsB4tmL3lgsbPJuxbSNbKlSAAhQ3JRxq37gGqh%2Bu7sT%2Bf3S5tiIocGz185ltle2qX1DbgNS786B7WM5jK6%2BRC8hoxXfDVh4DzNgGpUXpd2yVvMz%2BUbehhluOorXS%2BORENq3PdVBeltwYa%2FJa6oKrvKHlI9Q1CBn0W24BXCvuAI%2Bqjsunu%2BmF3OzdHD4qzz9PfpBm91bCrpGgRGGt85SGk3%2FgKi8pGreYCqeXgrNLwWcRlw2vKsWDKRuCPa2cCi76YAPcO2keT2ZABP8hevmJIWzsb8ANTQF%2FQukWedvV264exeV4cc2l%2BWpqaWj69EiIxcgtxnM3SCOOhlvlr1E%2BQZ9sdi0Nsa4e2fl49l5WsA1ta%2FHswRU13L7xv5mOzfJaOo%2ByCN7iQKLi1J2a6w8u%2BBnpwDiLbuo%2BbwKoB24e%2B1hFVU%2FVqGV7bcy3oPu5SvJtd6xn24svZg0GkB8f%2BHDyWV5x58fqadTnQ3oJShXHXU84%2F%2BhmQ24TlEKQprJYggYz%2BTWI9DzS6Rg6nUgvIp30aR2%2F96%2FxZCK%2BHMIHok7ei%2FrXy196vNpryAgAAA%3D%3D&amp;bn=Fer-de-Lance" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F92YXW%2FaMBSG%2F4uv0VS%2BesHdWsqoRNeOVOrFNFkmOUmsOnbmDzZW8d934kBJKLRrQJrKTVGOw%2Bv3sc85Nn0iMAdpyYBMFIuUs6RFgpTnGIhBRyCYDGEV%2B8oywPjq6Toqv4ePNypyAgwZfH8igVBF9LPOlNM4dm0hq4lR5odoolkEXXzjVpKB1Q5a5E5zpbldkEG7Ra5kwiWA5jIhgydyIRzk%2BGBXLsoJ6BjYfDF0%2BJ0WmSCKIIN%2Bi3xzTJQ6n85Q6XeOMhnaZeIqjiEsDJocQs7E2k2YOvm4IMtl6xlh7BIYMx3lCmdtb1DS3NLMCctDJqWSNOHZDIVSfL0xzQOwHKVu56DDlOkEoqY8odJaGT4HalIQokZ0AxF32T6mGbBMMAN6TZT51w9lQoc85EWuNCSyKegMP32evoLTOS2c7psZdxygI%2BQcc1ZRgf0D9GtEvY9PdM%2FlYl%2F9mJSDiGZKGYtJZ%2FgfOKMhZqDpNwYKvOTFSvLgXld3uKPl1fA6p43XPW28rWLDeohjwZwMsf1Qi282xrrhJqSXhd4ly1nIq0TtOtFed%2F26uxSYNVw%2Bbgw6rcEewSeuug1QubnV85PLkzv1C%2FQdXsbsBg3d0LyI50Xcc50fyrWZh5ZwjdtxxVmolECh2jHDuCytmDoQ%2BKCH6R8KUw7TIdfNd2blR%2BH55M%2BWOsZI40yYC7Edary%2F1VHSBepG2t%2FrEKd3KM4oGNKJksmUSX9tXfF038UTm6go3Xk9vSY8hsDludJb%2BSVwwJQDVYhOY4jKTHTCk9Q%2BQPF37%2Fa8KIIhN1bzGR72ekcpRJvRIxZEZU46RrsjDT8dyHBxUHFUvcbM1G%2BWUxaxLUAD0ihtjrMPgRd79xaMHIh7Jh%2FrzmKMWox6a93S2t6fiRW14uOsTYOi2LdYfUNMQIJm671c9YNuuViHde4vz8pT4DJWOmze6UqvVMPKbtEIltuUHU%2FZ20UZ4m%2B%2B2Xr1esc5mS5R86LQDEqT3FT5evs32Jvt7jKbOiH0erGKpThOIo5RdlqTPfg0fel0x4nqQXsetPMvoJ0PDdr3oO06aOb%2FB%2FQStf0G6rb4%2BS7xHbnd%2Fi%2B5%2FWP5F0sMLpYxEwAA&amp;bn=Fer-de-Lance" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XTQU%2FCMBQH8O%2FSMwcQ8MDNBAkkoMRxM2Yp9G1r7NrmtcUg4bv7VkACkbAZPS39v%2B639q3dMliD9mzApoYLEzxrsaSQloIMUIDiegWH7ImXQPlhNBH792g4MyIocGzwumWJMlX6gKUJSLWJh%2FIMS3kspTlyAR2a8azZwGOAFpujNCj9hg06u9Y3NQ45jDkKa6T2nRNZWJ%2BWQXm54lobneayXHKVFjS9hjoDIUN5zbVBOVquAzyyZZzfHL77L7h7sxO%2FlXt%2FJy%2Bk3lzrsSskKLE0xnnqhpOf0E5X1BrXrwHPzQfgnA6UP6H0idRWua3yKN7vxTrHbMalftS51HSQz0iIYeT69bkR0m2he5L5Ico1nJPFxtJ9qPLI9uqzU5lBEqw1eLFxRQW3LzQ1Yy%2BH0nmUy%2BAN%2FtBRcao27esLF%2FyCdKCdQdd0naMAasH1%2BzmWUeopjVp3r3VraNWj3UmT6rdeLC8ezBw0ID9u%2BOaff9t9AQ7KoNxLBQAA" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XV32%2BbMBAH8P%2FFz3kokOQhb5O6qpWaLVr6Nk3I4AOs%2Bgc6252yqv%2F7DidZRkpVqJqniDvng%2FkaHc8MnsB4tmL3lgsbPJuxbSNbKlSAAhQ3JRxq37gGqh%2Bu7sT%2Bf3S5tiIocGz185ltle2qX1DbgNS786B7WM5jK6%2BRC8hoxXfDVh4DzNgGpUXpd2yVvMz%2BUbehhluOorXS%2BORENq3PdVBeltwYa%2FJa6oKrvKHlI9Q1CBn0W24BXCvuAI%2Bqjsunu%2BmF3OzdHD4qzz9PfpBm91bCrpGgRGGt85SGk3%2FgKi8pGreYCqeXgrNLwWcRlw2vKsWDKRuCPa2cCi76YAPcO2keT2ZABP8hevmJIWzsb8ANTQF%2FQukWedvV264exeV4cc2l%2BWpqaWj69EiIxcgtxnM3SCOOhlvlr1E%2BQZ9sdi0Nsa4e2fl49l5WsA1ta%2FHswRU13L7xv5mOzfJaOo%2ByCN7iQKLi1J2a6w8u%2BBnpwDiLbuo%2BbwKoB24e%2B1hFVU%2FVqGV7bcy3oPu5SvJtd6xn24svZg0GkB8f%2BHDyWV5x58fqadTnQ3oJShXHXU84%2F%2BhmQ24TlEKQprJYggYz%2BTWI9DzS6Rg6nUgvIp30aR2%2F96%2FxZCK%2BHMIHok7ei%2FrXy196vNpryAgAAA%3D%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F92YXW%2FaMBSG%2F4uv0VS%2BesHdWsqoRNeOVOrFNFkmOUmsOnbmDzZW8d934kBJKLRrQJrKTVGOw%2Bv3sc85Nn0iMAdpyYBMFIuUs6RFgpTnGIhBRyCYDGEV%2B8oywPjq6Toqv4ePNypyAgwZfH8igVBF9LPOlNM4dm0hq4lR5odoolkEXXzjVpKB1Q5a5E5zpbldkEG7Ra5kwiWA5jIhgydyIRzk%2BGBXLsoJ6BjYfDF0%2BJ0WmSCKIIN%2Bi3xzTJQ6n85Q6XeOMhnaZeIqjiEsDJocQs7E2k2YOvm4IMtl6xlh7BIYMx3lCmdtb1DS3NLMCctDJqWSNOHZDIVSfL0xzQOwHKVu56DDlOkEoqY8odJaGT4HalIQokZ0AxF32T6mGbBMMAN6TZT51w9lQoc85EWuNCSyKegMP32evoLTOS2c7psZdxygI%2BQcc1ZRgf0D9GtEvY9PdM%2FlYl%2F9mJSDiGZKGYtJZ%2FgfOKMhZqDpNwYKvOTFSvLgXld3uKPl1fA6p43XPW28rWLDeohjwZwMsf1Qi282xrrhJqSXhd4ly1nIq0TtOtFed%2F26uxSYNVw%2Bbgw6rcEewSeuug1QubnV85PLkzv1C%2FQdXsbsBg3d0LyI50Xcc50fyrWZh5ZwjdtxxVmolECh2jHDuCytmDoQ%2BKCH6R8KUw7TIdfNd2blR%2BH55M%2BWOsZI40yYC7Edary%2F1VHSBepG2t%2FrEKd3KM4oGNKJksmUSX9tXfF038UTm6go3Xk9vSY8hsDludJb%2BSVwwJQDVYhOY4jKTHTCk9Q%2BQPF37%2Fa8KIIhN1bzGR72ekcpRJvRIxZEZU46RrsjDT8dyHBxUHFUvcbM1G%2BWUxaxLUAD0ihtjrMPgRd79xaMHIh7Jh%2FrzmKMWox6a93S2t6fiRW14uOsTYOi2LdYfUNMQIJm671c9YNuuViHde4vz8pT4DJWOmze6UqvVMPKbtEIltuUHU%2FZ20UZ4m%2B%2B2Xr1esc5mS5R86LQDEqT3FT5evs32Jvt7jKbOiH0erGKpThOIo5RdlqTPfg0fel0x4nqQXsetPMvoJ0PDdr3oO06aOb%2FB%2FQStf0G6rb4%2BS7xHbnd%2Fi%2B5%2FWP5F0sMLpYxEwAA" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Fer-de-Lance&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;ferdelance_armour_grade1&quot;},{&quot;Slot&quot;:&quot;HugeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_huge&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size3_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Fer-de-Lance&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;ferdelance_armour_grade3&quot;},{&quot;Slot&quot;:&quot;HugeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_huge&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint5&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint6&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size3_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size4&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size4_class5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size1&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size1_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size1&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size1_class5&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;combat&quot;,&quot;intro&quot;:&quot;A duelling fit built around the huge hardpoint and a heavy utility suite, tanked as deeply as six small optionals allow. Initial is buy-only; A-rated is the duel-ready baseline; Engineered applies the house combat pattern.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Feed the huge gun&quot;,&quot;text&quot;:&quot;The FDL's identity is its huge hardpoint — a huge multi-cannon (Corrosive) or plasma accelerator. The oversized class-6 distributor means you can fire it continuously; build the rest of the ship to keep that gun on target.&quot;},&quot;notes&quot;:{&quot;HugeHardpoint1&quot;:&quot;Primary huge mount — Overcharged with the single Corrosive Shell strips armour resistance for the whole battery.&quot;,&quot;MediumHardpoint1&quot;:&quot;Gimballed beam — Efficient with Thermal Vent strips shields and vents heat so it runs cold.&quot;,&quot;MediumHardpoint2&quot;:&quot;Second Thermal-Vent beam doubles the cool shield-stripping output.&quot;,&quot;MediumHardpoint3&quot;:&quot;Gimballed multi-cannon — Overcharged with Auto Loader chews hull without reload gaps.&quot;,&quot;MediumHardpoint4&quot;:&quot;Second Overcharged multi-cannon keeps sustained hull DPS on target.&quot;,&quot;TinyHardpoint1&quot;:&quot;First of four Heavy-Duty shield boosters — the cheapest large gain in shield strength.&quot;,&quot;TinyHardpoint2&quot;:&quot;Second Heavy-Duty booster stacks more raw shield MJ.&quot;,&quot;TinyHardpoint3&quot;:&quot;Third Heavy-Duty booster; diminishing returns set in but it still pays.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.&quot;,&quot;TinyHardpoint5&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint6&quot;:&quot;Fourth Heavy-Duty booster fills the last utility — this hull shield-tanks, so boosters beat point defence in a duel.&quot;,&quot;PowerPlant&quot;:&quot;Overcharged adds the headroom for the huge gun, four mediums, shield &amp; cells; Thermal Spread bleeds the extra heat.&quot;,&quot;MainEngines&quot;:&quot;A-rated plus Dirty Drives &amp; Drag Drives preserve the class-leading agility that wins duels.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated with G3 Increased Range only — Mass Manager softens the heavy combat fit; the FDL is no jump monster.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate this FIRST — the oversized class-6 unit lets the huge gun and four mediums fire without browning out; Charge Enhanced + Super Conduits deepen the WEP pool.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight — combat needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock class-3 tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size5&quot;:&quot;Bi-weave regenerates fast under fire; Reinforced adds MJ and Fast Charge speeds the regen that defines it.&quot;,&quot;Slot02_Size4&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot03_Size4&quot;:&quot;Heavy-Duty hull reinforcement — the cheapest large multiplier on effective armour.&quot;,&quot;Slot04_Size2&quot;:&quot;Second Heavy-Duty HRP; armour stacks linearly across the small internals.&quot;,&quot;Slot05_Size1&quot;:&quot;Module Reinforcement spreads penetrating-hit damage across the internals; not engineerable.&quot;,&quot;Slot06_Size1&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Multi-Cannons&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Corrosive Shell (huge) / Auto Loader (mediums)&quot;,&quot;engineer&quot;:&quot;Tod McQuinn&quot;},{&quot;module&quot;:&quot;Beam Lasers&quot;,&quot;size&quot;:2,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Efficient&quot;,&quot;experimental&quot;:&quot;Thermal Vent&quot;,&quot;engineer&quot;:&quot;Broo Tarquin&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Charge Enhanced&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Boosters&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;},{&quot;module&quot;:&quot;Hull Reinforcement&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Fer-de-Lance&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;ferdelance_armour_grade3&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_armour_chunky&quot;}},{&quot;Slot&quot;:&quot;HugeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_huge&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_corrosive_shell&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_ChaffCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint5&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint6&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Boosted&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_HighFrequency&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size3_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size4&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size2_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot05_Size1&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size1_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size1&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size1_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Feed the huge gun</span><p>The FDL's identity is its huge hardpoint — a huge multi-cannon (Corrosive) or plasma accelerator. The oversized class-6 distributor means you can fire it continuously; build the rest of the ship to keep that gun on target.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit the largest shield the class-5 bay allows &mdash; a 5E <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a>. The hull-reinforcement, cell-bank and module-reinforcement internals stay empty for now; it's duel-ready quickly on shields alone, riding the stock Lightweight Alloy <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> (~405 armour).</p>
+    <p>Arm the huge mount with a 4A Multi-Cannon (Gimballed), and fit the mediums buy-only as a mix of gimballed pulse <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a> (shields) and multi-cannons (hull).</p>
+    <p>Fit a single <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> and leave the other five utility mounts empty for now &mdash; the FDL tanks through shields, not bulk armour.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a duellist &mdash; feed the guns, then the shield, then buy the one bulkhead that's worth the mass:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; A</b> &mdash; The oversized unit is the FDL's heart; A-rate it so the huge gun never starves. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; A</b> &mdash; Headroom for the huge gun, four mediums, shields and boosters. <span class="acc">~7M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; A</b> &mdash; Preserve the class-leading agility that wins duels &mdash; and carries the added bulkhead mass. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; bi-weave</b> &mdash; Fast regen keeps you in the fight against a single focused target. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; A</b> &mdash; Mitigate the short range as much as possible. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> &rarr; Military Grade Composite</b> &mdash; The one armour concession: ~405 &rarr; ~790 effective, nearly doubling the buffer behind the shield, with 4D/2D hull reinforcements stacked under it. Pricey, so it lands last. <span class="acc">~46M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Agility is the weapon</span><p>Don't over-mass the FDL chasing tank &mdash; its survival still comes from not being hit. Military Grade Composite is the single bulkhead step worth the weight; A-rate the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a> to carry it and stop there, rather than piling on heavier plate.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern focused on a duelling hull. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Power Plant (6)</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Thrusters (5)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (huge) / Auto Loader (mediums)</td><td>Tod McQuinn</td></tr>
+<tr><td class="mod">Beam Lasers (2)</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+<tr><td class="mod">Power Distributor (6)</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Bi-Weave Shield (5)</td><td>Reinforced (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; the huge gun plus four mediums need uninterrupted power.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">Thrusters</a> to G5 to maximise the agility advantage.</li>
+      <li><span class="stepnum">3</span>Huge multi-cannon Overcharged with Corrosive; Thermal-Vent beams to strip shields cool.</li>
+      <li><span class="stepnum">4</span>Reinforced bi-weave and Heavy-Duty boosters &mdash; the FDL shield-tanks, so prioritise shields over hull.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate-to-heavy &mdash; fewer big modules than a <a href="krait-mk-ii-combat.html">Krait</a>, but the weapon, distributor and shield blueprints are all G5. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>357 m/s</td><td>357 m/s</td><td class="acc">~480 m/s</td></tr>
+        <tr><td class="mod">Agility</td><td>excellent</td><td>excellent</td><td class="acc">elite</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~380</td><td>~540</td><td class="acc">~1,100+</td></tr>
+        <tr><td class="mod">Armour (effective)</td><td>~405</td><td>~790</td><td class="acc">~2,000+</td></tr>
+        <tr><td class="mod">Alpha damage</td><td>high</td><td>very high</td><td class="acc">elite (huge mount)</td></tr>
+        <tr><td class="mod">Jump range</td><td>short</td><td>short</td><td class="acc">short</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineering pushes boost past 480 m/s and shields past 1,000 MJ while keeping the FDL's elite agility. Military Grade Composite plus <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-bulkheads-heavy-duty">Heavy Duty</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> and the 4D/2D hull reinforcements lift effective armour past 2,000 &mdash; a real fallback if the shield breaks &mdash; turning an already-lethal duellist into a medium that out-flies and out-alphas almost anything one-on-one. The short jump range never improves much; that's the price of the focus.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Assassination missions.</b> The FDL's alpha and agility make short work of single high-value targets &mdash; scan the nav beacon to find them and end the fight fast.</li>
+      <li><b>High-ranked RES targets.</b> Pick off the Deadly and Elite bounties others avoid; the huge gun cracks them quickly.</li>
+      <li><b>Bounty turn-ins.</b> Cash vouchers toward the <a href="../../engineering/engineering-manuals/engineers.html#engineer-tod-mcquinn">Tod McQuinn</a> unlock while you fly the ship his blueprints serve.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>PvP duelling.</b> The FDL is a perennial top-tier PvP hull &mdash; agility, a huge mount and a heavy shield-booster suite define the meta duellist.</li>
+      <li><b>CZ flagship hunting.</b> Drop into a conflict zone and focus the enemy's biggest ships, where its alpha matters most.</li>
+      <li><b>Power-play combat.</b> Eliminate priority enemy targets quickly during fortification and undermining.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any system with a Haz RES or assassination targets suits it. Its short range means basing it near your hunting grounds rather than roaming far between fights.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Fly it as a scalpel: pick single targets, out-turn them, focus them down &mdash; don't wade into a crowd that can swarm its thin internals.</li>
+      <li>Shield-tank, don't hull-tank; six small optionals can't carry enough armour, but they can carry a strong shield and a cell bank.</li>
+      <li>Accept the short jump range &mdash; base the FDL near your fights rather than fighting its transit.</li>
+      <li>The huge hardpoint defines the build; choose its weapon (multi-cannon for sustained, plasma for alpha) and design the mediums to support it.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Fer-de-Lance is the medium that wins duels. A huge hardpoint, an oversized distributor and class-leading agility make it lethal one-on-one, and it needs no rank to fly. Its tiny internals and short range keep it from being an all-purpose grinder &mdash; but when the job is to out-fly and destroy a single target, nothing in its class does it better.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/fer_de_lance" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/fer_de_lance</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Fer-de-Lance ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/fer-de-lance" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../fer-de-lance</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/fer_de_lance.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/fer_de_lance.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Fer-de-Lance</span><span class="cr-what">Ship reference page: stat block, hardpoint &amp; module slot layout, sell locations.</span><a class="cr-link" href="https://inara.cz/elite/ship/56/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/56</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Fer-de-Lance ship article: role profile, manufacturer, and design history.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Fer-de-Lance" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Fer-de-Lance</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

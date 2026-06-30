@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGE = ROOT / "guides" / "engineering" / "engineers.html"
+PAGE = ROOT / "guides" / "engineering" / "engineering-manuals" / "engineers.html"
 EDITORIAL = ROOT / "data" / "engineers-extra" / "editorial.json"
 
 BEGIN = "<!-- BEGIN generated:engineers -->"

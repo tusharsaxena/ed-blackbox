@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUD Customization &middot; New Pilots &amp; Interface | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems" class="active">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">HUD Customization</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-systems">Systems</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-new-pilot">New Pilot &amp; Interface</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-what"><span class="qn-dot amber"></span><span class="qn-nm">What is the HUD?</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-why"><span class="qn-dot amber"></span><span class="qn-nm">Why you'd care</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-change"><span class="qn-dot amber"></span><span class="qn-nm">What you can (and can't) change</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-matrix"><span class="qn-dot amber"></span><span class="qn-nm">How the colour matrix works</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-how"><span class="qn-dot amber"></span><span class="qn-nm">How to change it — step by step</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-presets"><span class="qn-dot amber"></span><span class="qn-nm">Presets &amp; starter values</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-gotchas"><span class="qn-dot amber"></span><span class="qn-nm">Odyssey notes &amp; gotchas</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">08</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<header class="masthead">
+  <div class="kicker">New Pilots &amp; Interface <span class="sep">//</span> Cockpit HUD</div>
+  <h1 class="title"><span>HUD</span> Customization <span class="role">Interface Guide</span></h1>
+  <div class="masthead-meta">
+    <span>Series <b>Systems</b></span>
+    <span>Updated <b>2026-06-25</b></span>
+  </div>
+</header>
+
+<div class="verdict">
+  <div class="v-eyebrow">Briefing</div>
+  <h2>It's a <em>nine-number</em> text file, not a settings screen.</h2>
+  <p>Elite has no in-game HUD colour option. Every pixel of the ship HUD is pushed through a 3&times;3 colour-transform matrix defined in a plain XML file. Edit nine numbers and the whole interface re-tints — free, client-side, and FDev-sanctioned. The matrix is global: it recolours friend/foe markers, shields, warnings and commander portraits alongside the decorative elements. For per-element control and cabin lighting, the EDHM shader mod goes further.</p>
+  <div class="stat-grid">
+    <div class="stat"><div class="n">1</div><div class="l">File to edit</div></div>
+    <div class="stat"><div class="n">9</div><div class="l">Matrix values (3&times;3)</div></div>
+    <div class="stat"><div class="n">0 CR</div><div class="l">Cost — no game files modified</div></div>
+    <div class="stat"><div class="n">~2 min</div><div class="l">Basic setup time</div></div>
+    <div class="stat"><div class="n">Global</div><div class="l">XML recolours everything at once</div></div>
+  </div>
+</div>
+
+<!-- 01 -->
+<section id="section-what">
+  <div class="sec-head"><span class="sec-num">01</span><h2>What is the HUD?</h2><span class="tag">Concept</span></div>
+  <p class="lead">The HUD (Heads-Up Display) is the entire holographic interface projected across your cockpit canopy — the gauges, panels and markers the game draws on top of the world. In lore it's the ship's interface; in practice it's the layer you read to fly, fight, trade and navigate.</p>
+  <p>The ship HUD is built from one persistent overlay plus three pull-out panels you summon with the directional keys/stick. Knowing the panels cold is a survival skill — being able to instantly re-route power or pick an escape vector can save a rebuy. The breakdown below follows the NEWP HUD guide's anatomy.</p>
+
+  <h3 class="subhead">The main flight overlay</h3>
+  <div class="cards three">
+    <article class="card"><div class="c-head"><h3>Comms &amp; info (top-left/top)</h3></div><p>Chat, mission and NPC messages, friend/wing requests; the GMT game clock and new-contact alerts. <b>NPC interdiction warnings appear here first.</b></p></article>
+    <article class="card"><div class="c-head"><h3>Status strip</h3></div><p>Powerplay standing, your ship's <b>signature</b> (noise — more power/heat = easier to lock from range), fuel reserve, and mass-lock / landing-gear / cargo-scoop indicators.</p></article>
+    <article class="card"><div class="c-head"><h3>PIPs / power distributor</h3></div><p>The <b>SYS / ENG / WEP</b> capacitor balance. Shields, thruster output and weapon supply respectively; RST resets to 2-2-2.</p></article>
+    <article class="card"><div class="c-head"><h3>Shields &amp; hull</h3></div><p>The three rings around your ship silhouette are shield layers; once down, damage eats hull (the percentage bar beneath).</p></article>
+    <article class="card"><div class="c-head"><h3>Radar / scanner</h3></div><p>3D contact display. <b>Filled = NPC, hollow = player; green = your faction, yellow = neutral, red = hostile; square = ship, triangle = hardpoints deployed.</b> Heat gauge left, speed/blue optimal-turn band right.</p></article>
+    <article class="card"><div class="c-head"><h3>Target panels</h3></div><p>Locked-target shields/hull (right), plus the target/location info block — name, ship, distance, allegiance, or system info when nothing is locked.</p></article>
+  </div>
+
+  <h3 class="subhead">The three pull-out panels</h3>
+  <ul class="bullets">
+    <li><b>Navigation panel (left)</b> — system contacts, the Transactions tab (active missions, bounties, fines), the Contacts tab (request docking here), and the Target sub-system tab for module sniping. Houses the galaxy-map and system-map buttons — both worth a dedicated keybind.</li>
+    <li><b>Comms panel (top)</b> — chat, inbox, social/friends, history, squadron feed, and the text-channel settings.</li>
+    <li><b>Systems / ship panel (right)</b> — commander info and rebuy cost, the <b>Modules</b> tab (toggle modules and set power priority), <b>Fire Groups</b>, ship options, inventory (cargo/materials), faction status, and Galnet radio.</li>
+  </ul>
+  <div class="callout"><span class="lbl">Reference</span><p>The fullest plain-English walkthrough of every panel and indicator is NEWP's HUD guide: <a href="https://newp.io/hud" target="_blank" rel="noopener noreferrer">newp.io/hud</a>. This manual is about <b>re-skinning</b> that interface, not learning to read it.</p></div>
+</section>
+
+<!-- 02 -->
+<section id="section-why">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Why you'd care</h2><span class="tag">Concept</span></div>
+  <p class="lead">"Orange fatigue" is a real and widely-shared complaint. Beyond aesthetics, recolouring the HUD has practical and accessibility payoffs.</p>
+  <div class="legend">
+    <div class="lg"><h4>Comfort &amp; aesthetics</h4>
+      <div class="row"><span>Break the monotony of the default amber after hundreds of hours.</span></div>
+      <div class="row"><span>Match a personal palette, a squadron identity, or a ship's livery.</span></div>
+      <div class="row"><span>Cooler tints (blue/teal/green) read as easier on the eyes for long sessions — and in <b>VR</b>, where bright orange can fatigue.</span></div>
+    </div>
+    <div class="lg"><h4>Legibility &amp; accessibility</h4>
+      <div class="row"><span>Higher contrast against bright skyboxes, station interiors or planet surfaces.</span></div>
+      <div class="row"><span><b>Colour-blindness:</b> the default relies on a red/yellow/green contact scheme that can be hard to separate — a custom matrix can widen those differences.</span></div>
+      <div class="row"><span>Cleaner, more readable <b>screenshots and video</b>.</span></div>
+    </div>
+  </div>
+  <div class="callout"><span class="lbl">The trade-off</span><p>Because the standard method recolours <b>everything uniformly</b>, a careless palette can do the opposite of help — washing out red danger warnings or blurring the green-vs-red friend/foe distinction. Good customization is as much about <b>preserving signal</b> as changing colour. More on this in <a href="#section-change">Section 3</a> and <a href="#section-gotchas">Section 7</a>.</p></div>
+</section>
+
+<!-- 03 -->
+<section id="section-change">
+  <div class="sec-head"><span class="sec-num">03</span><h2>What you can (and can't) change</h2><span class="tag">Concept</span></div>
+  <p class="lead">There is no setting for HUD layout. You cannot move, resize, hide or re-order panels and gauges — the geometry is fixed. What you <em>can</em> change is colour, and how much control you get depends on the method.</p>
+
+  <h3 class="subhead">With the built-in XML matrix (vanilla, no mods)</h3>
+  <ul class="bullets">
+    <li><b>You change:</b> the colour of the <b>entire ship HUD at once</b> — panels, gauges, text, radar, the lot — by transforming the game's source colours.</li>
+    <li><b>It also affects, like it or not:</b> shield/contact colours, friend/foe markers, warning text, the galaxy &amp; system map, and <b>commander avatar portraits</b> (these always shift, sometimes dramatically).</li>
+    <li><b>You cannot:</b> recolour one element independently of the rest. Every HUD pixel runs through the same matrix. You also can't change layout, fonts or sizes.</li>
+  </ul>
+
+  <h3 class="subhead">With the EDHM shader mod (advanced)</h3>
+  <ul class="bullets">
+    <li><b>Per-element colour</b> — set distinct colours for individual HUD components instead of one global transform, avoiding the "everything turns one colour" problem.</li>
+    <li><b>Cabin lighting</b> — recolour (even bi-colour) the cockpit ambient light, and dim the dashboard lights that glare into your eyes.</li>
+    <li>In <b>Odyssey</b>, EDHM exposes RGB values for many individual HUD/panel elements; in Horizons you can blend XML colours with EDHM's set.</li>
+  </ul>
+  <div class="callout"><span class="lbl">The short version</span><p>Want a different colour with zero install and zero risk? <b>Edit the XML.</b> Want surgical, per-element control and cabin lighting? <b>Use EDHM.</b> Both are covered below.</p></div>
+</section>
+
+<!-- 04 -->
+<section id="section-matrix">
+  <div class="sec-head"><span class="sec-num">04</span><h2>How the colour matrix works</h2><span class="tag">Concept</span></div>
+  <p class="lead">The game draws the HUD in a base palette built around its signature "star orange." Before display, every colour is multiplied by a 3&times;3 transform you supply. Understanding the maths means you can read and write presets by hand instead of guessing.</p>
+
+  <p>Each output channel is a <b>weighted mix of the three source channels</b>. The three XML lines are the rows of the matrix:</p>
+
+  <div class="mx-wrap">
+    <div class="mx">
+      <div class="mx-t">Default = identity (orange, unchanged)</div>
+      <table>
+        <tr><td class="collbl"></td><td class="collbl">from R</td><td class="collbl">from G</td><td class="collbl">from B</td></tr>
+        <tr><td class="rowlbl r">MatrixRed</td><td class="v1">1</td><td class="v0">0</td><td class="v0">0</td></tr>
+        <tr><td class="rowlbl g">MatrixGreen</td><td class="v0">0</td><td class="v1">1</td><td class="v0">0</td></tr>
+        <tr><td class="rowlbl b">MatrixBlue</td><td class="v0">0</td><td class="v0">0</td><td class="v1">1</td></tr>
+      </table>
+      <div class="mx-cap">Each row passes its own channel through untouched &rarr; <b>no change</b>. This is the baseline orange HUD.</div>
+    </div>
+    <div class="mx">
+      <div class="mx-t">Example = orange &rarr; blue</div>
+      <table>
+        <tr><td class="collbl"></td><td class="collbl">from R</td><td class="collbl">from G</td><td class="collbl">from B</td></tr>
+        <tr><td class="rowlbl r">MatrixRed</td><td class="v0">0</td><td class="v0">0</td><td class="v0">0</td></tr>
+        <tr><td class="rowlbl g">MatrixGreen</td><td class="v0">0</td><td class="v1">1</td><td class="v0">0</td></tr>
+        <tr><td class="rowlbl b">MatrixBlue</td><td class="v1">1</td><td class="v0">0</td><td class="v0">0</td></tr>
+      </table>
+      <div class="mx-cap"><b>Red output is zeroed</b>; the strong source-red of orange is <b>redirected into the blue channel</b>. Green is kept. Orange elements become blue.</div>
+    </div>
+  </div>
+
+  <p>Read mathematically, for a source pixel <code>(R,G,B)</code>:</p>
+  <div class="codebox">
+    <div class="cb-head"><span class="dot"></span>The transform<span class="path">output = Matrix × source</span></div>
+<pre><span class="cm"># MatrixRed   = r1, r2, r3   →   out.R = r1·R + r2·G + r3·B</span>
+<span class="cm"># MatrixGreen = g1, g2, g3   →   out.G = g1·R + g2·G + g3·B</span>
+<span class="cm"># MatrixBlue  = b1, b2, b3   →   out.B = b1·R + b2·G + b3·B</span></pre>
+  </div>
+
+  <ul class="bullets">
+    <li><b>Values aren't capped at 0&ndash;1.</b> You can use values above 1 to boost intensity and <b>negative values</b> to subtract a channel — many sharp presets use numbers like <code>1.75</code> or <code>-1</code> to push saturation or carve out a hue. (Some old reports note negatives behaved oddly in early Horizons; they work in current builds.)</li>
+    <li><b>Keep warnings legible.</b> The danger reds and info blues run through the same matrix. The clever "purple HUD that keeps red warnings" presets work by leaving a small amount of red in <code>MatrixRed</code> rather than zeroing it.</li>
+    <li><b>This is why web editors exist</b> — eyeballing nine numbers against a live preview beats blind trial-and-error (the NEWP / Arkku editors below).</li>
+  </ul>
+</section>
+
+<!-- 05 -->
+<section id="section-how">
+  <div class="sec-head"><span class="sec-num">05</span><h2>How to change it — step by step</h2><span class="tag">Hands-on</span></div>
+  <p class="lead">The vanilla method: edit one file, restart the game. Always edit <b>GraphicsConfigurationOverride.xml</b>, never the base <code>GraphicsConfiguration.xml</code> — the Override survives game patches and a mistake there is far less likely to break anything.</p>
+
+  <ol class="steps">
+    <li><span class="st">Close Elite Dangerous</span><p>Close it entirely. The file is read at launch.</p></li>
+    <li><span class="st">Find the file.</span><p>On Windows it lives at:</p>
+      <div class="codebox">
+        <div class="cb-head"><span class="dot"></span>File location · Windows</div>
+<pre>%LOCALAPPDATA%\Frontier Developments\Elite Dangerous\Options\Graphics\GraphicsConfigurationOverride.xml</pre>
+      </div>
+      <span class="muted">Paste that path (including <code>%LOCALAPPDATA%</code>) into the Explorer address bar. If your Windows profile is relocated to another drive, it resolves under that profile's <code>AppData\Local</code> instead of <code>C:</code>. macOS: <code>~/Library/Application Support/Frontier Developments/…/Options/Graphics</code>.</span>
+    </li>
+    <li><span class="st">If the file doesn't exist, create it</span><p>Create it as a plain-text file with exactly that name (watch for a hidden <code>.txt</code> extension), and paste the default block below into it.</p></li>
+    <li><span class="st">Back it up first.</span><p>Copy the file (or the default block) somewhere safe before editing. This is the one-line insurance policy everyone recommends.</p></li>
+    <li><span class="st">Edit the matrix.</span><p>Inside <code>&lt;GUIColour&gt; → &lt;Default&gt;</code>, replace the three <code>&lt;Matrix…&gt;</code> lines with your chosen values (from a preset or a web editor's output).</p></li>
+    <li><span class="st">Save, close, launch.</span><p>The new colours appear the moment you're in the cockpit — no further toggles.</p></li>
+  </ol>
+
+  <div class="codebox">
+    <div class="cb-head"><span class="dot"></span>Default / reset block — paste this to start (or to revert)<span class="path">UTF-8 · no BOM</span></div>
+<pre><span class="tag">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="tag">&lt;GraphicsConfig&gt;</span>
+  <span class="tag">&lt;GUIColour&gt;</span>
+    <span class="tag">&lt;Default&gt;</span>
+      <span class="tag">&lt;LocalisationName&gt;</span>Standard<span class="tag">&lt;/LocalisationName&gt;</span>
+      <span class="tag">&lt;MatrixRed&gt;</span> <span class="val">1, 0, 0</span> <span class="tag">&lt;/MatrixRed&gt;</span>
+      <span class="tag">&lt;MatrixGreen&gt;</span> <span class="val">0, 1, 0</span> <span class="tag">&lt;/MatrixGreen&gt;</span>
+      <span class="tag">&lt;MatrixBlue&gt;</span> <span class="val">0, 0, 1</span> <span class="tag">&lt;/MatrixBlue&gt;</span>
+    <span class="tag">&lt;/Default&gt;</span>
+  <span class="tag">&lt;/GUIColour&gt;</span>
+<span class="tag">&lt;/GraphicsConfig&gt;</span></pre>
+  </div>
+
+  <div class="callout"><span class="lbl">To revert</span><p>Restore the three matrix lines to <code>1,0,0</code> / <code>0,1,0</code> / <code>0,0,1</code>, or simply delete the whole <code>&lt;GUIColour&gt;…&lt;/GUIColour&gt;</code> block (or the Override file itself). Default orange returns on next launch.</p></div>
+  <div class="callout"><span class="lbl">Common failure</span><p>If colours don't change: you edited the <b>base</b> file instead of the <b>Override</b>; the file has a hidden <code>.txt</code> extension; the XML is malformed (a missing tag or stray character makes the game ignore it); or the game was still running when you saved. Re-check those four.</p></div>
+</section>
+
+<!-- 06 -->
+<section id="section-presets">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Presets &amp; starter values</h2><span class="tag">Hands-on</span></div>
+  <p class="lead">Copy-paste starting points, drawn from long-running community preset collections. Treat the swatches as approximate — the exact result depends on the source palette, so <b>preview in a web editor before committing</b>. Each row is the three matrix lines in <code>R / G / B</code> order.</p>
+
+  <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Preset</th><th>MatrixRed</th><th>MatrixGreen</th><th>MatrixBlue</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="mod"><span class="swatch" style="background:#e0913a"></span>Standard (default)</td>
+          <td class="mono">1, 0, 0</td><td class="mono">0, 1, 0</td><td class="mono">0, 0, 1</td>
+          <td>The baseline orange. Use to reset.</td>
+        </tr>
+        <tr>
+          <td class="mod"><span class="swatch" style="background:#4f9fd6"></span>Clean blue</td>
+          <td class="mono">0, 0.4, 0.7</td><td class="mono">0, 0, 0</td><td class="mono">1, 1, 1</td>
+          <td>Popular "DARKB1KE" cool blue. Easy on the eyes for long hauls / VR.</td>
+        </tr>
+        <tr>
+          <td class="mod"><span class="swatch" style="background:#9b6cff"></span>Purple (keeps red warnings)</td>
+          <td class="mono">0.18, 0, 0</td><td class="mono">0, 0, 1</td><td class="mono">0, 1, 1</td>
+          <td>Leaves a touch of red so danger text stays visible. Slightly dark overall.</td>
+        </tr>
+        <tr>
+          <td class="mod"><span class="swatch" style="background:#39c0e8"></span>Icy blue + yellow highlight</td>
+          <td class="mono">0, 0.39, 1</td><td class="mono">1, 1, 0</td><td class="mono">0, 0, 0</td>
+          <td>Two-tone: cyan fill with yellow accents — strong contact contrast.</td>
+        </tr>
+        <tr>
+          <td class="mod"><span class="swatch" style="background:#43c46a"></span>Green + white highlight</td>
+          <td class="mono">0, 0.38, 0</td><td class="mono">0, 0, 0</td><td class="mono">1, 0.64, 1</td>
+          <td>"Night-vision" green with near-white accenting.</td>
+        </tr>
+        <tr>
+          <td class="mod"><span class="swatch" style="background:#dfe6ea"></span>Cold white / steel</td>
+          <td class="mono">0.6, 0.6, 0.6</td><td class="mono">0.6, 0.6, 0.6</td><td class="mono">0.7, 0.7, 0.8</td>
+          <td>Desaturated mono look. Tune brightness via the shared value.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout"><span class="lbl">Bigger galleries</span><p>NEWP's editor ships four image-previewed presets (Light Orange, Kool-Aid, I'm Blue, Lavenderish) at <a href="https://newp.io/hudcolor" target="_blank" rel="noopener noreferrer">newp.io/hudcolor</a>. Larger community lists with screenshots live on the Steam discussions and the Frontier forums HUD-colour threads — most quote their XML alongside an Arkku preview link.</p></div>
+</section>
+
+<!-- 08 -->
+<section id="section-gotchas">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Odyssey notes &amp; gotchas</h2><span class="tag">Hands-on</span></div>
+  <p class="lead">Things specifically worth knowing on PC / Odyssey before and after you change anything.</p>
+  <ul class="bullets">
+    <li><b>Is it allowed / will it get me banned?</b> No. The effect is purely client-side; Frontier has stated it has no problem with HUD colour mods and has even featured customised HUDs. The XML edit touches no game mechanic and no server data. EDHM is likewise a strictly graphical mod.</li>
+    <li><b>On-foot stays orange.</b> The XML matrix transforms the <b>ship</b> HUD. In Odyssey, on-foot terminals and much of the suit HUD largely keep the standard orange/white and aren't recoloured by the matrix. EDHM's Odyssey version reaches more of these elements.</li>
+    <li><b>Edit the Override, not the base file.</b> <code>GraphicsConfiguration.xml</code> is overwritten on patches and a mistake can cause issues; <code>GraphicsConfigurationOverride.xml</code> persists across updates and is the safer target. (EDProfiler also writes here.)</li>
+    <li><b>Commander portraits always shift.</b> Avatar/mission-giver pictures are tinted by the same matrix — expect them to look "off" with strong palettes. There's no way to exempt them with the XML method.</li>
+    <li><b>Friend/foe and warnings are at stake.</b> Test your palette against a real contact (a hollow vs filled, green vs red marker) and a warning before relying on it in combat. If reds or the contact colours become ambiguous, dial back. This is the single most important safety check.</li>
+    <li><b>VR:</b> cooler/dimmer palettes noticeably reduce eye fatigue; EDHM's cabin-light dimming helps further with headset glare.</li>
+    <li><b>After a big update,</b> re-launch and glance at the HUD — the Override should persist, but verify, and keep your backup/preset handy just in case.</li>
+  </ul>
+  <div class="callout"><span class="lbl">Same file, more tricks</span><p>The <code>GraphicsConfigurationOverride.xml</code> file is also where the community enables other client-side tweaks — e.g. galaxy-map/route colours and skybox/nebula density adjustments. Out of scope here, but worth knowing the one file does double duty.</p></div>
+</section>
+
+<!-- Sources -->
+<section class="credits" id="section-credits">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Sources</h2></div>
+  <p class="lead">Figures on this page are verified against the sources below.</p>
+  <p class="lead">Note: web matrix editors (Arkku, NEWP, team2xh) all output the same XML format — preview in whichever you trust, then paste the three matrix lines. For per-element control and cabin lighting beyond the global matrix, EDHM is the power option.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">Fandom Wiki</span><span class="cr-what">HUD colour-matrix mechanics and the GraphicsConfigurationOverride.xml MatrixRed/Green/Blue reference.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/HUD_Color_Editor" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/HUD_Color_Editor</a></div>
+    <div class="cr-row"><span class="cr-src">Frontier Forums</span><span class="cr-what">Step-by-step community-canon method for editing HUD panel colours via the override file on Windows.</span><a class="cr-link" href="https://forums.frontier.co.uk/threads/how-to-properly-change-your-hud-panel-colors-colours-in-windows-for-all-versions-of-the-game.217198/" target="_blank" rel="noopener noreferrer">forums.frontier.co.uk/threads/how-to-properly-change-your-hud-panel-colors</a></div>
+    <div class="cr-row"><span class="cr-src">Arkku HUD editor</span><span class="cr-what">Live slider tool to preview the colour-transform matrix and export the values used on this page — the reference editor most presets point back to.</span><a class="cr-link" href="https://arkku.com/elite/hud_editor/" target="_blank" rel="noopener noreferrer">arkku.com/elite/hud_editor</a></div>
+    <div class="cr-row"><span class="cr-src">NEWP</span><span class="cr-what">The HUD anatomy walkthrough behind Section 1, plus the beginner-friendly colour editor with four image-previewed presets.</span><a class="cr-link" href="https://newp.io/hudcolor" target="_blank" rel="noopener noreferrer">newp.io/hudcolor</a></div>
+    <div class="cr-row"><span class="cr-src">team2xh editor</span><span class="cr-what">Alternative slider editor with a one-click Copy-XML button — same matrix format, different live preview.</span><a class="cr-link" href="https://team2xh.net/elite/" target="_blank" rel="noopener noreferrer">team2xh.net/elite</a></div>
+    <div class="cr-row"><span class="cr-src">EDHM-UI</span><span class="cr-what">The 3Dmigoto shader mod (and its UI wrapper) for per-element HUD recolouring and cabin lighting — the advanced path past the global matrix.</span><a class="cr-link" href="https://github.com/BlueMystical/EDHM_UI" target="_blank" rel="noopener noreferrer">github.com/BlueMystical/EDHM_UI</a></div>
+    <div class="cr-row"><span class="cr-src">EDProfiler</span><span class="cr-what">Manages launch-time graphics profiles (monitor vs VR) that write the same GraphicsConfigurationOverride.xml this page edits.</span><a class="cr-link" href="https://www.drkaii.com/tools/edprofiler/" target="_blank" rel="noopener noreferrer">drkaii.com/tools/edprofiler</a></div>
+    <div class="cr-row"><span class="cr-src">YouTube — Obsidian Ant</span><span class="cr-what">Graphics-tweaks tutorial covering GraphicsConfigurationOverride.xml edits, including the HUD colour matrix, alongside broader visual mods and settings.</span><a class="cr-link" href="https://www.youtube.com/watch?v=iIosivU9uVw" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=iIosivU9uVw</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-fine">
+    <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Systems &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+    <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+  </div>
+</footer>
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

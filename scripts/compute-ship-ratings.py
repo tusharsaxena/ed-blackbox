@@ -8,11 +8,11 @@ the HTML guides (ship dossiers + by-role ladders) reconcile to them via
 `reconcile-ratings-html.py`. Verify drift any time with
 `audit-ratings-consistency.py`.
 
-These ratings are *editorial judgement* (see guides/ships/rating-methodology.html),
+These ratings are *editorial judgement* (see guides/ships/general/rating-methodology.html),
 NOT coriolis-data game stats — that is why they live outside data/ships|modules.
 
 CANONICAL VALUE — resolution rules (per role, per ship):
-  * Ship HAS a dossier (guides/ships/dossiers/<ship>-<role>.html):
+  * Ship HAS a dossier (guides/ships/ship-dossiers/<ship>-<role>.html):
       canonical = the dossier's HEADLINE rating (<div class="n">N<small>/100).
       The dossier is authoritative; any divergent by-role ladder value is stale.
   * Ship has NO dossier:
@@ -36,8 +36,8 @@ from collections import defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-BY_ROLE = REPO / "guides" / "ships" / "by-role"
-DOSSIERS = REPO / "guides" / "ships" / "dossiers"
+BY_ROLE = REPO / "guides" / "ships" / "best-ships-by-role"
+DOSSIERS = REPO / "guides" / "ships" / "ship-dossiers"
 OUT = REPO / "data" / "ship-ratings"
 ROLES = ["ax", "combat", "exploration", "mining", "multipurpose", "passenger", "trading"]
 

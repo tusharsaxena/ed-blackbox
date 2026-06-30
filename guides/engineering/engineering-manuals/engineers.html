@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineers &middot; Engineering Manuals | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers">Ships</a>
+      <a href="../../index.html#section-engineering" class="active">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Engineers</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-engineering">Engineering</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-eng-manuals">Engineering Manuals</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to an engineer…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+<div class="qn-item qn-group" role="option" data-target="section-about" data-search="sections on this page contents"><span class="qn-nm">Page Sections</span><span class="qn-side">Jump to</span></div>
+<div class="qn-item" role="option" data-target="section-about" data-search="01 about primer intro what the engineers are overview"><span class="qn-nm">01 · What the Engineers Are</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-legend" data-search="02 legend how to read this manual key guide"><span class="qn-nm">02 · How to read this manual</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-ship-t1" data-search="03 ship engineers tier 1 one"><span class="qn-nm">03 · Ship Engineers — Tier 1</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-ship-t2" data-search="04 ship engineers tier 2 two"><span class="qn-nm">04 · Ship Engineers — Tier 2</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-ship-t3" data-search="05 ship engineers tier 3 three"><span class="qn-nm">05 · Ship Engineers — Tier 3</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-ship-col" data-search="06 ship engineers colonia"><span class="qn-nm">06 · Ship Engineers — Colonia</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-ody-t1" data-search="07 odyssey on-foot engineers tier 1 one"><span class="qn-nm">07 · Odyssey Engineers — Tier 1</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-ody-t2" data-search="08 odyssey on-foot engineers tier 2 two"><span class="qn-nm">08 · Odyssey Engineers — Tier 2</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-ody-t3" data-search="09 odyssey on-foot engineers tier 3 three"><span class="qn-nm">09 · Odyssey Engineers — Tier 3</span><span class="qn-side">Section</span></div>
+<div class="qn-item" role="option" data-target="section-ody-col" data-search="10 odyssey on-foot engineers colonia"><span class="qn-nm">10 · Odyssey Engineers — Colonia</span><span class="qn-side">Section</span></div>
+<div class="qn-item qn-group" role="option" data-target="section-ship-t1" data-search="ship · tier 1 engineers"><span class="qn-nm">Ship · Tier 1</span><span class="qn-side">5 engineers</span></div>
+<div class="qn-item" role="option" data-target="engineer-felicity-farseer" data-search="felicity farseer frame shift drive fsd increased range thrusters"><span class="qn-nm">Felicity Farseer</span><span class="qn-side">Frame Shift Drive</span></div>
+<div class="qn-item" role="option" data-target="engineer-elvira-martuuk" data-search="elvira martuuk frame shift drive fsd increased range g5 shields thrusters"><span class="qn-nm">Elvira Martuuk</span><span class="qn-side">Frame Shift Drive</span></div>
+<div class="qn-item" role="option" data-target="engineer-the-dweller" data-search="the dweller power distributor charge enhanced lasers"><span class="qn-nm">The Dweller</span><span class="qn-side">Power Distributor</span></div>
+<div class="qn-item" role="option" data-target="engineer-tod-mcquinn" data-search="tod "the blaster" mcquinn multi-cannon multicannon overcharged rail gun kinetic"><span class="qn-nm">Tod &quot;The Blaster&quot; McQuinn</span><span class="qn-side">Multi-cannon</span></div>
+<div class="qn-item" role="option" data-target="engineer-liz-ryder" data-search="liz ryder missile mine torpedo seeker dumbfire weapons hull"><span class="qn-nm">Liz Ryder</span><span class="qn-side">Missiles / Mines</span></div>
+<div class="qn-item qn-group" role="option" data-target="section-ship-t2" data-search="ship · tier 2 engineers"><span class="qn-nm">Ship · Tier 2</span><span class="qn-side">6 engineers</span></div>
+<div class="qn-item" role="option" data-target="engineer-juri-ishmaak" data-search="juri ishmaak sensors lightweight g5 detailed surface scanner mines"><span class="qn-nm">Juri Ishmaak</span><span class="qn-side">Sensors</span></div>
+<div class="qn-item" role="option" data-target="engineer-selene-jean" data-search="selene jean hull reinforcement armour heavy duty"><span class="qn-nm">Selene Jean</span><span class="qn-side">Armour / Hull</span></div>
+<div class="qn-item" role="option" data-target="engineer-hera-tani" data-search="hera tani power plant overcharged armoured low emissions detailed surface scanner"><span class="qn-nm">Hera Tani</span><span class="qn-side">Power Plant</span></div>
+<div class="qn-item" role="option" data-target="engineer-lei-cheung" data-search="lei cheung shield generator reinforced sensors detailed surface scanner"><span class="qn-nm">Lei Cheung</span><span class="qn-side">Shield Generator</span></div>
+<div class="qn-item" role="option" data-target="engineer-marco-qwent" data-search="marco qwent power plant armoured overcharged shield"><span class="qn-nm">Marco Qwent</span><span class="qn-side">Power Plant</span></div>
+<div class="qn-item" role="option" data-target="engineer-zacariah-nemo" data-search="zacariah nemo fragment cannon overcharged g5 multi-cannon"><span class="qn-nm">Zacariah Nemo</span><span class="qn-side">Fragment Cannon</span></div>
+<div class="qn-item qn-group" role="option" data-target="section-ship-t3" data-search="ship · tier 3 engineers"><span class="qn-nm">Ship · Tier 3</span><span class="qn-side">10 engineers</span></div>
+<div class="qn-item" role="option" data-target="engineer-the-sarge" data-search="the sarge limpet controllers cannon g5"><span class="qn-nm">The Sarge</span><span class="qn-side">Limpets / Cannon</span></div>
+<div class="qn-item" role="option" data-target="engineer-colonel-bris-dekker" data-search="colonel bris dekker fsd interdictor long range g4"><span class="qn-nm">Colonel Bris Dekker</span><span class="qn-side">FSD Interdictor</span></div>
+<div class="qn-item" role="option" data-target="engineer-didi-vatermann" data-search="didi vatermann shield booster heavy duty shield generator"><span class="qn-nm">Didi Vatermann</span><span class="qn-side">Shield Booster</span></div>
+<div class="qn-item" role="option" data-target="engineer-bill-turner" data-search="bill turner afmu shielded plasma scanners sensors"><span class="qn-nm">Bill Turner</span><span class="qn-side">AFMU / Plasma</span></div>
+<div class="qn-item" role="option" data-target="engineer-broo-tarquin" data-search="broo tarquin pulse laser efficient beam burst"><span class="qn-nm">Broo Tarquin</span><span class="qn-side">Pulse Laser</span></div>
+<div class="qn-item" role="option" data-target="engineer-tiana-fortune" data-search="tiana fortune kill warrant scanner long range g5 sensors fsd interdictor"><span class="qn-nm">Tiana Fortune</span><span class="qn-side">Scanners / KWS</span></div>
+<div class="qn-item" role="option" data-target="engineer-ram-tah" data-search="ram tah guardian module unlock heat sink g5"><span class="qn-nm">Ram Tah</span><span class="qn-side">Guardian / Heat Sink</span></div>
+<div class="qn-item" role="option" data-target="engineer-professor-palin" data-search="professor palin thrusters dirty drive tuning"><span class="qn-nm">Professor Palin</span><span class="qn-side">Thrusters</span></div>
+<div class="qn-item" role="option" data-target="engineer-lori-jameson" data-search="lori jameson life support fuel scoop afmu shielded g4"><span class="qn-nm">Lori Jameson</span><span class="qn-side">Life Support / Scoop</span></div>
+<div class="qn-item" role="option" data-target="engineer-chloe-sedesi" data-search="chloe sedesi thrusters g5 dirty drive palin"><span class="qn-nm">Chloe Sedesi</span><span class="qn-side">Thrusters</span></div>
+<div class="qn-item qn-group" role="option" data-target="section-ship-col" data-search="ship · colonia engineers"><span class="qn-nm">Ship · Colonia</span><span class="qn-side">4 engineers</span></div>
+<div class="qn-item" role="option" data-target="engineer-petra-olmanova" data-search="petra olmanova afmu shielded g5 defensive utilities point defence chaff"><span class="qn-nm">Petra Olmanova</span><span class="qn-side">AFMU / Defence</span></div>
+<div class="qn-item" role="option" data-target="engineer-mel-brandon" data-search="mel brandon nine module one-stop g5 shields fsd lasers"><span class="qn-nm">Mel Brandon</span><span class="qn-side">Multi-module</span></div>
+<div class="qn-item" role="option" data-target="engineer-etienne-dorn" data-search="etienne dorn life support lightweight g5 power plant sensors"><span class="qn-nm">Etienne Dorn</span><span class="qn-side">Life Support</span></div>
+<div class="qn-item" role="option" data-target="engineer-marsha-hicks" data-search="marsha hicks fuel scoop shielded g5 multi-cannon"><span class="qn-nm">Marsha Hicks</span><span class="qn-side">Fuel Scoop</span></div>
+<div class="qn-item qn-group" role="option" data-target="section-ody-t1" data-search="odyssey · tier 1 engineers"><span class="qn-nm">Odyssey · Tier 1</span><span class="qn-side">3 engineers</span></div>
+<div class="qn-item" role="option" data-target="engineer-domino-green" data-search="domino green plasma weapons manticore suit weapon mods on-foot"><span class="qn-nm">Domino Green</span><span class="qn-side">Plasma (suit)</span></div>
+<div class="qn-item" role="option" data-target="engineer-hero-ferrari" data-search="hero ferrari kinetic weapons karma suit weapon mods on-foot"><span class="qn-nm">Hero Ferrari</span><span class="qn-side">Kinetic (suit)</span></div>
+<div class="qn-item" role="option" data-target="engineer-jude-navarro" data-search="jude navarro suit mods on-foot armour"><span class="qn-nm">Jude Navarro</span><span class="qn-side">Suit mods</span></div>
+<div class="qn-item qn-group" role="option" data-target="section-ody-t2" data-search="odyssey · tier 2 engineers"><span class="qn-nm">Odyssey · Tier 2</span><span class="qn-side">3 engineers</span></div>
+<div class="qn-item" role="option" data-target="engineer-kit-fowler" data-search="kit fowler plasma weapons grade 4 5 on-foot"><span class="qn-nm">Kit Fowler</span><span class="qn-side">Plasma weapons</span></div>
+<div class="qn-item" role="option" data-target="engineer-wellington-beck" data-search="wellington beck kinetic weapons grade 4 5 on-foot"><span class="qn-nm">Wellington Beck</span><span class="qn-side">Kinetic weapons</span></div>
+<div class="qn-item" role="option" data-target="engineer-terra-velasquez" data-search="terra velasquez suits grade 4 5 on-foot armour"><span class="qn-nm">Terra Velasquez</span><span class="qn-side">Suits</span></div>
+<div class="qn-item qn-group" role="option" data-target="section-ody-t3" data-search="odyssey · tier 3 engineers"><span class="qn-nm">Odyssey · Tier 3</span><span class="qn-side">3 engineers</span></div>
+<div class="qn-item" role="option" data-target="engineer-oden-geiger" data-search="oden geiger advanced suit mods on-foot"><span class="qn-nm">Oden Geiger</span><span class="qn-side">Suit mods</span></div>
+<div class="qn-item" role="option" data-target="engineer-yarden-bond" data-search="yarden bond weapon mods stowed reloading on-foot"><span class="qn-nm">Yarden Bond</span><span class="qn-side">Weapon mods</span></div>
+<div class="qn-item" role="option" data-target="engineer-uma-laszlo" data-search="uma laszlo weapon handling on-foot"><span class="qn-nm">Uma Laszlo</span><span class="qn-side">Weapon handling</span></div>
+<div class="qn-item qn-group" role="option" data-target="section-ody-col" data-search="odyssey · colonia engineers"><span class="qn-nm">Odyssey · Colonia</span><span class="qn-side">4 engineers</span></div>
+<div class="qn-item" role="option" data-target="engineer-baltanos" data-search="baltanos suit engineering on-foot colonia"><span class="qn-nm">Baltanos</span><span class="qn-side">Suit eng.</span></div>
+<div class="qn-item" role="option" data-target="engineer-eleanor-bresa" data-search="eleanor bresa kinetic weapon mods on-foot colonia"><span class="qn-nm">Eleanor Bresa</span><span class="qn-side">Kinetic mods</span></div>
+<div class="qn-item" role="option" data-target="engineer-rosa-dayette" data-search="rosa dayette plasma weapon mods on-foot colonia"><span class="qn-nm">Rosa Dayette</span><span class="qn-side">Plasma mods</span></div>
+<div class="qn-item" role="option" data-target="engineer-yi-shen" data-search="yi shen high-grade suit weapon mods on-foot colonia"><span class="qn-nm">Yi Shen</span><span class="qn-side">Suit &amp; weapon</span></div>
+      <div class="qn-empty" hidden>No matches</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ---- MASTHEAD ---- -->
+  <header class="masthead">
+    <div class="kicker">Engineering Manuals <span class="sep">//</span> Engineers</div>
+    <h1 class="title"><span>Engineers</span> <span class="role">Reference Manual</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Engineering</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <!-- ---- BRIEFING ---- -->
+  <div class="verdict">
+    <div class="v-eyebrow">Briefing</div>
+    <h2>Engineering is a <em>referral tree</em>, not a shop</h2>
+    <p>You start with a handful of Tier 1 engineers who ask only that you meet a simple condition and hand in one item. Climbing each of them to grade&nbsp;3–4 unlocks referrals to Tier 2, and Tier 2 referrals open Tier 3; permits and rank grinds gate the deepest tier. There are 38 engineers in all — 25 ship-side modifying hulls and modules, and 13 Odyssey engineers modifying suits and handheld weapons. This manual catalogues every one, grouped by tier, with the meeting requirement, unlock hand-in, referral chain and full blueprint list for each.</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">38</div><div class="l">Engineers total</div></div>
+      <div class="stat"><div class="n">25</div><div class="l">Ship-side</div></div>
+      <div class="stat"><div class="n">13</div><div class="l">Odyssey / on-foot</div></div>
+      <div class="stat"><div class="n">8</div><div class="l">In Colonia (22 kly)</div></div>
+    </div>
+  </div>
+
+  <section id="section-about">
+  <div class="sec-head"><span class="sec-num">01</span><h2>What the Engineers Are</h2><span class="tag">Primer</span></div>
+  <p>The <strong>Engineers</strong> are secretive, eccentric specialists who modify your ship's weapons and modules — and, in Odyssey, your suits and handheld weapons — to <strong>exceed their baseline performance</strong>. Each works out of a <strong>Workshop</strong> on a planetary surface (you need a Planetary Approach Suite to land); turn up without an invitation and the site treats you as trespassing and opens fire.</p>
+  <p>Engineering is how a stock ship becomes a capable one — a longer-jumping <a href="blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, harder-hitting weapons, tougher armour, cooler-running power. You don't buy a finished upgrade: you spend <strong>materials</strong> (scavenged from wrecks, missions, scans, <a href="modules.html#module-mining">mining</a> and planetary sites) to roll a <strong>blueprint</strong> onto a module at a chosen grade. Every engineer offers their own blueprints and is unlocked and ranked separately.</p>
+  <h3 class="subhead">How an engineer works</h3>
+  <ul class="bullets">
+    <li><b>Unlock</b> — meet the invite requirement and hand in the unlock item to gain access. The five Tier-1 ship engineers need only a simple condition; Tier 2 and Tier 3 are reached by <em>referrals</em> from engineers you've already climbed — the tree this manual maps.</li>
+    <li><b>Reputation, grades 1–5</b> — each ship engineer levels through <strong>five grades</strong> as you craft with them, and the stronger rolls unlock at the higher grades. Buying modifications builds reputation; some engineers also take commodities, exploration data or bounty vouchers.</li>
+    <li><b>Roll a blueprint</b> — spend materials to apply a modification. A roll's downside is fixed for its grade; the upside improves the more materials you invest.</li>
+    <li><b>Experimental effects</b> — at the Workshop you can spend extra materials to add one <strong>experimental effect</strong> on top of a modification for a further edge.</li>
+    <li><b>Pin for remote use</b> — pin <strong>one</strong> blueprint per engineer and re-roll it later at any station with a <strong>Remote Workshop</strong>, no return trip needed.</li>
+    <li><b>Odyssey is different</b> — the <strong>13</strong> on-foot engineers modify suits and handheld weapons and grant their mods <em>immediately</em> on meeting the requirement — no grade grind.</li>
+  </ul>
+  <div class="callout"><span class="lbl">Unlock them in the right order</span><p>Because Tier 2/3 access is gated behind referrals, permits and rank, the order you tackle engineers in matters. The <a href="checklist.html">Unlock Run checklist</a> sequences all 38 into one dependency-correct trip — the ideal way to unlock the whole roster without backtracking. This manual is the reference for <em>who's who</em>; the Unlock Run is the route.</p></div>
+</section>
+<section id="section-legend">
+  <div class="sec-head"><span class="sec-num">02</span><h2>How to read this manual</h2><span class="tag">Legend</span></div>
+  <p class="lead">Engineers are grouped by tier and side (ship vs on-foot). A coloured left edge marks each one's side, with permit-locked engineers flagged separately. Referral names are clickable — they jump straight to that engineer's entry.</p>
+  <div class="legend">
+    <div class="lg"><h4>Left-edge colour</h4>
+      <div class="row"><span class="swatch sw-amber"></span><b>Ship-side</b> — hull & module engineering</div>
+      <div class="row"><span class="swatch sw-fed"></span><b>Odyssey</b> — suit & weapon engineering</div>
+      <div class="row"><span class="swatch sw-maroon"></span><b>Permit-locked</b> — needs a system permit first</div>
+    </div>
+    <div class="lg"><h4>Tiers</h4>
+      <div class="row"><b>Tier 1</b> — entry; no referral needed</div>
+      <div class="row"><b>Tier 2</b> — reached by a Tier 1 referral</div>
+      <div class="row"><b>Tier 3</b> — deep tier; referral + often a permit</div>
+      <div class="row"><b>Colonia</b> — 22,000 ly out, on the expedition</div>
+    </div>
+    <div class="lg"><h4>Card fields</h4>
+      <div class="row"><b>Meeting req</b> — the condition to get the invite</div>
+      <div class="row"><b>Unlock hand-in</b> — what you turn in to open them</div>
+      <div class="row"><b>Refers you to</b> — who climbing them unlocks</div>
+      <div class="row"><b>Mods offered</b> — the blueprints they grant</div>
+    </div>
+  </div>
+</section>
+<section id="section-ship-t1">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Ship Engineers — Tier 1</h2><span class="tag">SHIP-SIDE · 5</span></div>
+  <p class="lead">The entry tier. No referral or permit gates — meet a simple requirement, hand in one item, and you are in. These five open every downstream chain.</p>
+  <!-- BEGIN generated:engineers -->
+  <div class="rec-list"><article class="rec ac-amber" id="engineer-felicity-farseer">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/felicity-farseer.webp" alt="Felicity Farseer portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Felicity Farseer</h3><a class="permalink" href="#engineer-felicity-farseer" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 1</span><span class="chip faint">Ship</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Deciat</b></div><div class="lk">Body</div><div class="lv">6 A</div><div class="lk">Settlement</div><div class="lv">Farseer Inc</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank Scout or higher.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-frame-shift-drive">Frame Shift Drive</a></li><li>G3 <a href="blueprints.html#blueprint-group-thrusters">Thrusters</a></li><li>G3 <a href="blueprints.html#blueprint-group-sensors">Sensors</a></li><li>G3 <a href="blueprints.html#blueprint-group-detailed-surface-scanner">Detailed Surface Scanner</a></li><li>G1 <a href="blueprints.html#blueprint-group-shield-booster">Shield Booster</a></li><li>G1 <a href="blueprints.html#blueprint-group-fsd-interdictor">FSD Interdictor</a></li><li>G1 <a href="blueprints.html#blueprint-group-power-plant">Power Plant</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-juri-ishmaak">Juri Ishmaak</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">1× Meta Alloy (buy at Darnielle&#x27;s Progress, Maia, ~80k CR).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">A natural home base — Deciat sits close to the core systems and you&#x27;ll return here constantly. Pin <a href="blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> to re-roll <a href="blueprints.html#blueprint-group-frame-shift-drive">FSDs</a> remotely at any workshop.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">She is a well-known explorer, although she is rumoured to have once been a deadly assassin before heading out into the black. Some claim she needed to &#x27;cool off&#x27; after a high-profile case, so went exploring, but Elvira denies it. She is fascinated by all things alien and has become expert at spotting human fakes. She believes in being self-sufficient, and her tight-knit group grows all their own food.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-elvira-martuuk">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/elvira-martuuk.webp" alt="Elvira Martuuk portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Elvira Martuuk</h3><a class="permalink" href="#engineer-elvira-martuuk" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 1</span><span class="chip faint">Ship</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Khun</b></div><div class="lk">Body</div><div class="lv">5</div><div class="lk">Settlement</div><div class="lv">Long Sight Base</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Reach a maximum distance of 300 ly from your career start.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-frame-shift-drive">Frame Shift Drive</a></li><li>G3 <a href="blueprints.html#blueprint-group-shield-generator">Shield Generator</a></li><li>G2 <a href="blueprints.html#blueprint-group-thrusters">Thrusters</a></li><li>G1 <a href="blueprints.html#blueprint-group-shield-cell-bank">Shield Cell Bank</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-marco-qwent">Marco Qwent</a>, <a href="#engineer-mel-brandon">Mel Brandon</a>, <a href="#engineer-zacariah-nemo">Zacariah Nemo</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">3× Soontill Relics (sold only at Garry&#x27;s Reclamations, Cheranovsky City, Ngurii).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Don&#x27;t over-invest materials here — she is a stepping stone, not a destination.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">She is a legendary explorer who engineered her own improvements to her <a href="../../ships/ship-dossiers/asp-explorer-mining.html">Asp Explorer</a> early in her career. She is willing to share some of that knowledge with fellow explorers and also operates an extensive training programme for technicians and mechanics heading out into the black. She based herself at her father&#x27;s <a href="modules.html#module-mining">mining</a> and <a href="blueprints.html#blueprint-group-refinery">refinery</a> facility, though in fact her operation is separate.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-the-dweller">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/the-dweller.webp" alt="The Dweller portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>The Dweller</h3><a class="permalink" href="#engineer-the-dweller" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 1</span><span class="chip faint">Ship</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Wyrd</b></div><div class="lk">Body</div><div class="lv">A 2</div><div class="lk">Settlement</div><div class="lv">Black Hide</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Deal with at least 5 different black markets.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-power-distributor">Power Distributor</a></li><li>G4 <a href="blueprints.html#blueprint-group-pulse-laser">Pulse Laser</a></li><li>G3 <a href="blueprints.html#blueprint-group-burst-laser">Burst Laser</a></li><li>G3 <a href="blueprints.html#blueprint-group-beam-laser">Beam Laser</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-lei-cheung">Lei Cheung</a>, <a href="#engineer-marsha-hicks">Marsha Hicks</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">Pay 500,000 CR (no commodity).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">If you lack the 5-black-market prereq, buy 1t of anything in any Anarchy system and dump it on that station&#x27;s black market, five times.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">A mysterious contact in the Aganippe underworld. No-one knows his background, and he and his small group of like-minded individuals closely guard his identity and that of their best customers. He is renowned for custom modifications for local criminal elements, and is known to help outsiders who have the right contacts.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-tod-mcquinn">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/tod-mcquinn.webp" alt="Tod &quot;The Blaster&quot; McQuinn portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Tod &quot;The Blaster&quot; McQuinn</h3><a class="permalink" href="#engineer-tod-mcquinn" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 1</span><span class="chip faint">Ship</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Wolf 397</b></div><div class="lk">Body</div><div class="lv">Trus Madi</div><div class="lk">Settlement</div><div class="lv">Trophy Camp</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Earn more than 15 bounty vouchers.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-multi-cannon">Multi-Cannon</a></li><li>G5 <a href="blueprints.html#blueprint-group-rail-gun">Rail Gun</a></li><li>G3 <a href="blueprints.html#blueprint-group-fragment-cannon">Fragment Cannon</a></li><li>G2 <a href="blueprints.html#blueprint-group-cannon">Cannon</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-selene-jean">Selene Jean</a>, <a href="#engineer-petra-olmanova">Petra Olmanova</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">100,000 CR worth of bounty vouchers (any faction).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">30 minutes of bounty hunting at any RES near a Nav Beacon clears both the meeting and unlock requirements at once.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">He earned his nickname from a successful season in the CQC Arena. Since then he&#x27;s garnered further fame as a bounty hunter, flying a <a href="../../ships/ship-dossiers/fer-de-lance-combat.html">Fer-de-Lance</a> with seriously overpowered multi-cannons. He&#x27;s always happy to help fellow bounty hunters. For his current venture he&#x27;s teamed up with some old CQC friends to form a custom modification enterprise.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-liz-ryder">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/liz-ryder.webp" alt="Liz Ryder portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Liz Ryder</h3><a class="permalink" href="#engineer-liz-ryder" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 1</span><span class="chip faint">Ship</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Eurybia</b></div><div class="lk">Body</div><div class="lv">Makalu</div><div class="lk">Settlement</div><div class="lv">Demolition Unlimited</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Cordial or Friendly with the Eurybia Blue Mafia.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-seeker-missile-rack">Seeker Missile Rack</a></li><li>G5 <a href="blueprints.html#blueprint-group-torpedo-pylon">Torpedo Pylon</a></li><li>G5 <a href="blueprints.html#blueprint-group-advanced-missile-rack">Advanced Missile Rack</a></li><li>G3 <a href="blueprints.html#blueprint-group-mine-launcher">Mine Launcher</a></li><li>G1 <a href="blueprints.html#blueprint-group-hull-reinforcement-package">Hull Reinforcement Package</a></li><li>G1 <a href="blueprints.html#blueprint-group-bulkheads">Bulkheads</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-hera-tani">Hera Tani</a>, <a href="#engineer-etienne-dorn">Etienne Dorn</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">200× Landmines (buy at Eurybia, Lave, or Diaguandri).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Run Blue Mafia missions out of Eurybia to reach Cordial reputation, then turn in the Engineer Invitation Contract.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">A demolitions expert who used to work for Devastator and Sons, but left to work for a crime syndicate known as the Blue Mafia. Some claim she had a personal relationship with a member of the syndicate and was forced to leave when the connection was discovered, starting Demolition Unlimited. The syndicate quickly saw the merits of her ability and helped grow her team into something much bigger.</div></div>
+</article></div>
+  <!-- END generated:engineers -->
+</section><section id="section-ship-t2">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Ship Engineers — Tier 2</h2><span class="tag">SHIP-SIDE · 6</span></div>
+  <p class="lead">Reached by referral from a Tier 1 engineer once you climb them to grade 3–4. The bulk of the game&#x27;s combat and shield workhorses live here.</p>
+  <!-- BEGIN generated:engineers -->
+  <div class="rec-list"><article class="rec ac-amber" id="engineer-juri-ishmaak">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/juri-ishmaak.webp" alt="Juri Ishmaak portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Juri Ishmaak</h3><a class="permalink" href="#engineer-juri-ishmaak" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-felicity-farseer">Felicity Farseer</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Giryak</b></div><div class="lk">Body</div><div class="lv">2 A</div><div class="lk">Settlement</div><div class="lv">Pater&#x27;s Memorial</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Claim more than 50 Federal Combat Bonds.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-mine-launcher">Mine Launcher</a></li><li>G5 <a href="blueprints.html#blueprint-group-sensors">Sensors</a></li><li>G5 <a href="blueprints.html#blueprint-group-detailed-surface-scanner">Detailed Surface Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-torpedo-pylon">Torpedo Pylon</a></li><li>G3 <a href="blueprints.html#blueprint-group-seeker-missile-rack">Seeker Missile Rack</a></li><li>G3 <a href="blueprints.html#blueprint-group-frame-shift-wake-scanner">Frame Shift Wake Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-kill-warrant-scanner">Kill Warrant Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-manifest-scanner">Manifest Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-advanced-missile-rack">Advanced Missile Rack</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-the-sarge">The Sarge</a>, <a href="#engineer-colonel-bris-dekker">Colonel Bris Dekker</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">100,000–1,000,000 CR worth of Federal Combat Bonds.</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Combat Bonds come from Federal Conflict Zones, not bounties — bring a combat ship.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">An ambitious combat specialist whose father was a pilot in a mercenary wing. He followed in his father&#x27;s footsteps operating with the wing, and believes in careful preparation before any combat. After retiring from combat he set up a base of operations to focus on his passion for engineering.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-selene-jean">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/selene-jean.webp" alt="Selene Jean portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Selene Jean</h3><a class="permalink" href="#engineer-selene-jean" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by Tod McQuinn</div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Kuk</b></div><div class="lk">Body</div><div class="lv">B 3</div><div class="lk">Settlement</div><div class="lv">Prospector&#x27;s Rest</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Mine at least 500 tons of ore.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-hull-reinforcement-package">Hull Reinforcement Package</a></li><li>G5 <a href="blueprints.html#blueprint-group-bulkheads">Bulkheads</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-didi-vatermann">Didi Vatermann</a>, <a href="#engineer-bill-turner">Bill Turner</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">10× Painite (core-mine it; the Borann runs count toward the 500t).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Requires the Tod McQuinn referral first. The <a href="../../ships/ship-dossiers/type-11-prospector-mining.html">Type-11</a> <a href="modules.html#module-mining">mining</a> vessel is the natural ship for the 500t / Painite grind.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">A former miner, Selene has a talent for improving a ship&#x27;s hull defence, although she only offers her services to fellow prospectors. She&#x27;s rumoured to be the daughter of a rock hermit, but rarely talks about her childhood. As a counterpoint to her secluded upbringing she has gathered a robust, trusted team, mostly fellow ex-prospectors.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-hera-tani">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/hera-tani.webp" alt="Hera Tani portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Hera Tani</h3><a class="permalink" href="#engineer-hera-tani" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-liz-ryder">Liz Ryder</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Kuwemaki</b></div><div class="lk">Body</div><div class="lv">A 3 A</div><div class="lk">Settlement</div><div class="lv">The Jet&#x27;s Hole</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Empire</a> rank Outsider or higher (one <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> mission).</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-power-plant">Power Plant</a></li><li>G5 <a href="blueprints.html#blueprint-group-detailed-surface-scanner">Detailed Surface Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-sensors">Sensors</a></li><li>G3 <a href="blueprints.html#blueprint-group-power-distributor">Power Distributor</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-broo-tarquin">Broo Tarquin</a>, <a href="#engineer-tiana-fortune">Tiana Fortune</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">50× Kamitra Cigars (buy at Hammel Terminal, Kamitra — Imperial space).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Overcharged needs Selenium at G3 — trade for it at a Raw trader (no direct farm; 6:1 from capped G4s). You already hold the Kamitra Cigars.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Her talent with power-management systems was evident from an early age. She grew up with the Jet Rats gang, keeping in close communication with them, but will also help those friendly with the gang. In turn they assigned anyone with sufficient technical ability to work and learn from her. Since their demise she has found favour with a mysterious imperial benefactor.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-lei-cheung">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/lei-cheung.webp" alt="Lei Cheung portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Lei Cheung</h3><a class="permalink" href="#engineer-lei-cheung" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-the-dweller">The Dweller</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Laksak</b></div><div class="lk">Body</div><div class="lv">A 1</div><div class="lk">Settlement</div><div class="lv">Trader&#x27;s Rest</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Trade in over 50 different markets.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-shield-generator">Shield Generator</a></li><li>G5 <a href="blueprints.html#blueprint-group-sensors">Sensors</a></li><li>G5 <a href="blueprints.html#blueprint-group-detailed-surface-scanner">Detailed Surface Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-shield-booster">Shield Booster</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-ram-tah">Ram Tah</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">200× Gold (buy from any high-tech / industrial market).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">He grew up in a trade clan of tramp traders, learning engineering on the job and discovering an affinity for shield technology. Even though he receives regular offers, he won&#x27;t leave his family. He is willing to help fellow traders and has built a large operation over the years, with other family members running a scrapping and rebuilding business on the same site.</div></div>
+</article>
+<article class="rec ac-maroon" id="engineer-marco-qwent">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/marco-qwent.webp" alt="Marco Qwent portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Marco Qwent</h3><a class="permalink" href="#engineer-marco-qwent" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">Ship</span><span class="chip maroon">Permit</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-elvira-martuuk">Elvira Martuuk</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Sirius</b> <span class="kv-tbd">[permit]</span></div><div class="lk">Body</div><div class="lv">Lucifer</div><div class="lk">Settlement</div><div class="lv">Qwent Research Base</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from the Sirius Corporation (Sirius permit).</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G4 <a href="blueprints.html#blueprint-group-power-plant">Power Plant</a></li><li>G3 <a href="blueprints.html#blueprint-group-power-distributor">Power Distributor</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-professor-palin">Professor Palin</a>, <a href="#engineer-lori-jameson">Lori Jameson</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">25× Modular Terminals (mission rewards only — not buyable).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Get Allied with Sirius Corp via missions, take the permit mission, then wait for the invite mission to spawn (try O&#x27;Brien Vision). Modular Terminals farm best from passenger missions in High-Tech / Boom systems. Note: courting Uma Laszlo later requires LOWERING Sirius rep, so don&#x27;t over-invest.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">An ex Sirius Corp. tech guru. Such is his technical talent that he&#x27;s allowed some latitude with what he works on and who he works with, as long as Sirius Corp receive the appropriate recognition. They support his efforts by maintaining a significant base for him to operate from.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-zacariah-nemo">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/zacariah-nemo.webp" alt="Zacariah Nemo portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Zacariah Nemo</h3><a class="permalink" href="#engineer-zacariah-nemo" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-elvira-martuuk">Elvira Martuuk</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Yoru</b></div><div class="lk">Body</div><div class="lv">4</div><div class="lk">Settlement</div><div class="lv">Nemo Cyber Party Base</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from the Party of Yoru.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-fragment-cannon">Fragment Cannon</a></li><li>G3 <a href="blueprints.html#blueprint-group-multi-cannon">Multi-Cannon</a></li><li>G2 <a href="blueprints.html#blueprint-group-plasma-accelerator">Plasma Accelerator</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">25× Xihe Companions (buy at Xihe markets).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Zacariah has been at the centre of a small cult-like commune for decades, the Nemo Cyber Party. Rumour has it he has a cyber-enhanced brain that can take vast information dumps directly to it. His skill with weapons manufacturing is made available to those favoured by the Party, and he has attracted a growing group of &#x27;cyber-freaks&#x27; usually shunned in normal society.</div></div>
+</article></div>
+  <!-- END generated:engineers -->
+</section><section id="section-ship-t3">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Ship Engineers — Tier 3</h2><span class="tag">SHIP-SIDE · 10</span></div>
+  <p class="lead">The deep tier — most sit behind a permit or a rank grind, and all need a Tier 2 referral. Includes Broo Tarquin, Professor Palin and Ram Tah.</p>
+  <!-- BEGIN generated:engineers -->
+  <div class="rec-list"><article class="rec ac-amber" id="engineer-the-sarge">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/the-sarge.webp" alt="The Sarge portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>The Sarge</h3><a class="permalink" href="#engineer-the-sarge" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-juri-ishmaak">Juri Ishmaak</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Beta-3 Tucani</b></div><div class="lk">Body</div><div class="lv">2 B A</div><div class="lk">Settlement</div><div class="lv">The Beach</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> Navy rank Midshipman or higher.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-collector-limpet-controller">Collector Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-fuel-transfer-limpet-controller">Fuel Transfer Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-hatch-breaker-limpet-controller">Hatch Breaker Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-prospector-limpet-controller">Prospector Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-cannon">Cannon</a></li><li>G3 <a href="blueprints.html#blueprint-group-rail-gun">Rail Gun</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">50× Aberrant Shield Pattern Analysis (encoded — scan ships in combat, or trade up).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">No one knows The Sarge&#x27;s real name and he won&#x27;t reveal it, even to close friends. He&#x27;s an ex-Federal Navy specialist who worked closely with the now-defunct Colonial Drones Corporation, and later with the drone division of Core Dynamics, tweaking drone controllers and long-range patrol support systems. His reputation has attracted followers who learn from him.</div></div>
+</article>
+<article class="rec ac-maroon" id="engineer-colonel-bris-dekker">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/colonel-bris-dekker.webp" alt="Colonel Bris Dekker portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Colonel Bris Dekker</h3><a class="permalink" href="#engineer-colonel-bris-dekker" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span><span class="chip maroon">Permit</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-juri-ishmaak">Juri Ishmaak</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Sol</b> <span class="kv-tbd">[permit]</span></div><div class="lk">Body</div><div class="lv">Iapetus</div><div class="lk">Settlement</div><div class="lv">Dekker&#x27;s Yard</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federation</a> Friendly + Sol permit (from the Petty Officer grind).</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G4 <a href="blueprints.html#blueprint-group-fsd-interdictor">FSD Interdictor</a></li><li>G3 <a href="blueprints.html#blueprint-group-frame-shift-drive">Frame Shift Drive</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">1–10M CR worth of Federal Combat Bonds (bank ~10M to be safe).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">The Sol permit drops out of the <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> Navy Petty Officer rank grind.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Colonel Bris Dekker retired with full honours a decade ago. He served as a <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> Navy officer in an elite recon squadron and has an almost natural affinity for frame shift technology. Even in retirement the navy call on him to evaluate changes or upgrades, and his facility has been vastly upgraded to support the training courses he provides.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-didi-vatermann">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/didi-vatermann.webp" alt="Didi Vatermann portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Didi Vatermann</h3><a class="permalink" href="#engineer-didi-vatermann" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-selene-jean">Selene Jean</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Leesti</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Vatermann LLC</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank Merchant or higher.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-shield-booster">Shield Booster</a></li><li>G3 <a href="blueprints.html#blueprint-group-shield-generator">Shield Generator</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">50× Lavian Brandy (buy in the Lave system; illegal in some Federal space).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Merchant rank comes naturally from the old Robigo runs — you likely already have it.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Didi&#x27;s father died several decades ago as a result of a shield-booster malfunction. Since then she has dedicated her life to making <a href="modules.html#module-shield-booster">shield boosters</a> safer. In recent years her success has been such that she now lives in luxury, with a team of dedicated mechanics helping to implement her designs.</div></div>
+</article>
+<article class="rec ac-maroon" id="engineer-bill-turner">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/bill-turner.webp" alt="Bill Turner portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Bill Turner</h3><a class="permalink" href="#engineer-bill-turner" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span><span class="chip maroon">Permit</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-selene-jean">Selene Jean</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Alioth</b> <span class="kv-tbd">[permit]</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Turner Metallics Inc</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-all">Alliance</a> Friendly + Alioth Independents Allied (for the Alioth permit).</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-plasma-accelerator">Plasma Accelerator</a></li><li>G5 <a href="blueprints.html#blueprint-group-sensors">Sensors</a></li><li>G5 <a href="blueprints.html#blueprint-group-detailed-surface-scanner">Detailed Surface Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-life-support">Life Support</a></li><li>G3 <a href="blueprints.html#blueprint-group-refinery">Refinery</a></li><li>G3 <a href="blueprints.html#blueprint-group-auto-field-maintenance-unit">Auto Field-Maintenance Unit</a></li><li>G3 <a href="blueprints.html#blueprint-group-fuel-scoop">Fuel Scoop</a></li><li>G3 <a href="blueprints.html#blueprint-group-frame-shift-wake-scanner">Frame Shift Wake Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-kill-warrant-scanner">Kill Warrant Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-manifest-scanner">Manifest Scanner</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">50× Bromellite (sub-surface mine it in icy rings).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Bill Turner claims to be the son of the famous but elusive late Mic Turner, and despite his young age he&#x27;s reputed to be a wizard with utilities and <a href="blueprints.html#blueprint-group-plasma-accelerator">plasma accelerators</a>.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-broo-tarquin">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/broo-tarquin.webp" alt="Broo Tarquin portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Broo Tarquin</h3><a class="permalink" href="#engineer-broo-tarquin" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-hera-tani">Hera Tani</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Muang</b></div><div class="lk">Body</div><div class="lv">5 A</div><div class="lk">Settlement</div><div class="lv">Broo&#x27;s Legacy</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank Competent or higher.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-burst-laser">Burst Laser</a></li><li>G5 <a href="blueprints.html#blueprint-group-pulse-laser">Pulse Laser</a></li><li>G5 <a href="blueprints.html#blueprint-group-beam-laser">Beam Laser</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">50× Fujin Tea (buy at Fujin, Imperial space).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Competent is ~3–4 hours of bounty hunting if you&#x27;re not there yet — and it&#x27;s on the way to the <a href="../../ships/ship-dossiers/federal-corvette-combat.html">Corvette</a>&#x27;s combat rank.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Broo Tarquin was the founder of Dead-Eye Defence Systems, now part of Thule Industries. Since retiring from his role as chief designer, he spends his days tinkering in his workshop and drinking exotic tea. Others have joined him in his work, and his workshop has expanded into a wider operation, making components from their own smelted alloys.</div></div>
+</article>
+<article class="rec ac-maroon" id="engineer-tiana-fortune">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/tiana-fortune.webp" alt="Tiana Fortune portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Tiana Fortune</h3><a class="permalink" href="#engineer-tiana-fortune" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span><span class="chip maroon">Permit</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-hera-tani">Hera Tani</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Achenar</b> <span class="kv-tbd">[permit]</span></div><div class="lk">Body</div><div class="lv">4 A</div><div class="lk">Settlement</div><div class="lv">Fortune&#x27;s Loss</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Empire</a> Friendly + Achenar permit (from the <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> Navy grind).</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-frame-shift-wake-scanner">Frame Shift Wake Scanner</a></li><li>G5 <a href="blueprints.html#blueprint-group-kill-warrant-scanner">Kill Warrant Scanner</a></li><li>G5 <a href="blueprints.html#blueprint-group-manifest-scanner">Manifest Scanner</a></li><li>G5 <a href="blueprints.html#blueprint-group-collector-limpet-controller">Collector Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-fuel-transfer-limpet-controller">Fuel Transfer Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-hatch-breaker-limpet-controller">Hatch Breaker Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-prospector-limpet-controller">Prospector Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-sensors">Sensors</a></li><li>G3 <a href="blueprints.html#blueprint-group-fsd-interdictor">FSD Interdictor</a></li><li>G3 <a href="blueprints.html#blueprint-group-detailed-surface-scanner">Detailed Surface Scanner</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">50× Decoded Emission Data (encoded — scan ship wakes, or trade up).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">The Achenar permit drops out of the <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> Navy Squire rank grind.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">An electronic-engineering genius rumoured to be the illegitimate child of an Imperial Guard officer. Her own military career was cut short when the circumstances of her birth were revealed, resulting in her expulsion from the guard. Many in her unit demonstrated their loyalty by joining her once they&#x27;d completed their service.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-ram-tah">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/ram-tah.webp" alt="Ram Tah portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Ram Tah</h3><a class="permalink" href="#engineer-ram-tah" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-lei-cheung">Lei Cheung</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Meene</b></div><div class="lk">Body</div><div class="lv">AB 5 D</div><div class="lk">Settlement</div><div class="lv">Phoenix Base</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank Surveyor or higher.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-electronic-countermeasure">Electronic Countermeasure</a></li><li>G5 <a href="blueprints.html#blueprint-group-point-defence">Point Defence</a></li><li>G5 <a href="blueprints.html#blueprint-group-heat-sink-launcher">Heat Sink Launcher</a></li><li>G5 <a href="blueprints.html#blueprint-group-chaff-launcher">Chaff Launcher</a></li><li>G4 <a href="blueprints.html#blueprint-group-collector-limpet-controller">Collector Limpet Controller</a></li><li>G4 <a href="blueprints.html#blueprint-group-fuel-transfer-limpet-controller">Fuel Transfer Limpet Controller</a></li><li>G4 <a href="blueprints.html#blueprint-group-prospector-limpet-controller">Prospector Limpet Controller</a></li><li>G4 <a href="blueprints.html#blueprint-group-hatch-breaker-limpet-controller">Hatch Breaker Limpet Controller</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">50× Classified Scan Databanks (encoded — mission rewards / high-RES scans).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">The Booster itself is a tech-broker module build at a Guardian site, not a graded blueprint.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Ram Tah has travelled as far as it is possible to go in the galaxy. Over the years he has collected many strange and unusual items, and is always eager to acquire something new and unknown from the black. On his travels he learned the value of limpets and various defence mechanisms, and spent many years perfecting his craft in improving them.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-professor-palin">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/professor-palin.webp" alt="Professor Palin portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Professor Palin</h3><a class="permalink" href="#engineer-professor-palin" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-marco-qwent">Marco Qwent</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Arque</b></div><div class="lk">Body</div><div class="lv">4 E</div><div class="lk">Settlement</div><div class="lv">Abel Laboratory</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Reach a maximum distance of 5,000 ly from your career start.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-thrusters">Thrusters</a></li><li>G3 <a href="blueprints.html#blueprint-group-frame-shift-drive">Frame Shift Drive</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">25× Sensor Fragments (Pleiades Thargoid wreckage — grabbed in Phase 0).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">The 5,000 ly meeting requirement is cleared trivially by the Colonia expedition.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Professor Palin spent the early part of his career in the Federation, but in 3301 decided to establish an independent institute dedicated to studying the Thargoids. The following year he set up a research base focused on developing new defence technologies. He continues to research the Thargoids in Arque, and is considered one of the galaxy&#x27;s foremost experts on Thargoid technology.</div></div>
+</article>
+<article class="rec ac-maroon" id="engineer-lori-jameson">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/lori-jameson.webp" alt="Lori Jameson portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Lori Jameson</h3><a class="permalink" href="#engineer-lori-jameson" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span><span class="chip maroon">Permit</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-marco-qwent">Marco Qwent</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Shinrarta Dezhra</b> <span class="kv-tbd">[permit]</span></div><div class="lk">Body</div><div class="lv">A 1</div><div class="lk">Settlement</div><div class="lv">Jameson Base</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank Dangerous + Shinrarta Dezhra permit (Elite in any career).</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-sensors">Sensors</a></li><li>G5 <a href="blueprints.html#blueprint-group-detailed-surface-scanner">Detailed Surface Scanner</a></li><li>G4 <a href="blueprints.html#blueprint-group-refinery">Refinery</a></li><li>G4 <a href="blueprints.html#blueprint-group-fuel-scoop">Fuel Scoop</a></li><li>G4 <a href="blueprints.html#blueprint-group-auto-field-maintenance-unit">Auto Field-Maintenance Unit</a></li><li>G4 <a href="blueprints.html#blueprint-group-life-support">Life Support</a></li><li>G3 <a href="blueprints.html#blueprint-group-frame-shift-wake-scanner">Frame Shift Wake Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-kill-warrant-scanner">Kill Warrant Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-manifest-scanner">Manifest Scanner</a></li><li>G3 <a href="blueprints.html#blueprint-group-shield-cell-bank">Shield Cell Bank</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">25× Kongga Ale (buy at Kongga).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">One of the great-granddaughters of John Jameson, the most famous Pilots Federation member ever. She is an accomplished explorer in her own right and has developed various techniques for improved automated systems. Her facility is popular with those preparing ships for extended deep-space operations, and she ensures pleasant surroundings while they await their upgrades.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-chloe-sedesi">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/chloe-sedesi.webp" alt="Chloe Sedesi portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Chloe Sedesi</h3><a class="permalink" href="#engineer-chloe-sedesi" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-marco-qwent">Marco Qwent</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Shenve (Witch Head)</b></div><div class="lk">Body</div><div class="lv">A 6</div><div class="lk">Settlement</div><div class="lv">Cinder Dock</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Reach a maximum distance of 5,000 ly from your career start.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-thrusters">Thrusters</a></li><li>G3 <a href="blueprints.html#blueprint-group-frame-shift-drive">Frame Shift Drive</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">25× Sensor Fragments (second Pleiades batch).</div></div>
+  </div>
+  <div class="rec-note"><div class="rn-eyebrow">Notes</div><div class="rn-body">Effectively a duplicate of Professor Palin — the same grade-5 <a href="blueprints.html#blueprint-group-thrusters">Thrusters</a> (Dirty Drive) line. Reached via a Marco Qwent referral; generally skipped unless a second thruster engineer is wanted.</div></div>
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Chloe Sedesi served a number of artificer apprenticeships before joining Professor Ishmael Palin&#x27;s staff as a mechanic. She swiftly became a vital team member, displaying remarkable aptitude across technical disciplines. When the Witch Head enclave was established, she resigned from Palin&#x27;s team and, with his blessing, travelled to Cinder Dock to offer the techniques she had learned at the Palin Research Institute.</div></div>
+</article></div>
+  <!-- END generated:engineers -->
+</section><section id="section-ship-col">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Ship Engineers — Colonia</h2><span class="tag">SHIP-SIDE · 4</span></div>
+  <p class="lead">22,000 ly from the bubble. Niche grade-5 specialists reached on the Colonia expedition. Mel Brandon is a nine-module one-stop worth the trip.</p>
+  <!-- BEGIN generated:engineers -->
+  <div class="rec-list"><article class="rec ac-amber" id="engineer-petra-olmanova">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/petra-olmanova.webp" alt="Petra Olmanova portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Petra Olmanova</h3><a class="permalink" href="#engineer-petra-olmanova" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Colonia</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by Tod McQuinn</div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Asura</b></div><div class="lk">Body</div><div class="lv">1 A</div><div class="lk">Settlement</div><div class="lv">Sanctuary</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Combat rank Expert or higher.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-hull-reinforcement-package">Hull Reinforcement Package</a></li><li>G5 <a href="blueprints.html#blueprint-group-bulkheads">Bulkheads</a></li><li>G5 <a href="blueprints.html#blueprint-group-mine-launcher">Mine Launcher</a></li><li>G5 <a href="blueprints.html#blueprint-group-seeker-missile-rack">Seeker Missile Rack</a></li><li>G5 <a href="blueprints.html#blueprint-group-torpedo-pylon">Torpedo Pylon</a></li><li>G5 <a href="blueprints.html#blueprint-group-chaff-launcher">Chaff Launcher</a></li><li>G5 <a href="blueprints.html#blueprint-group-electronic-countermeasure">Electronic Countermeasure</a></li><li>G5 <a href="blueprints.html#blueprint-group-heat-sink-launcher">Heat Sink Launcher</a></li><li>G5 <a href="blueprints.html#blueprint-group-point-defence">Point Defence</a></li><li>G5 <a href="blueprints.html#blueprint-group-auto-field-maintenance-unit">Auto Field-Maintenance Unit</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">200× Progenitor Cells (Combat Aftermath salvage / mission rewards).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Petra Olmanova was a specialist combat technician believed killed in an explosion at Consolidated Plasma Corp&#x27;s primary research facility. She survived relatively unscathed and resurfaced some time later as a freelancer. Her base has since become a sanctuary, and she spurns social interaction unless business is involved.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-mel-brandon">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/mel-brandon.webp" alt="Mel Brandon portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Mel Brandon</h3><a class="permalink" href="#engineer-mel-brandon" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Colonia</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-elvira-martuuk">Elvira Martuuk</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Luchtaine</b></div><div class="lk">Body</div><div class="lv">A 1 C</div><div class="lk">Settlement</div><div class="lv">The Brig</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Invitation from the Colonia Council.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-frame-shift-drive">Frame Shift Drive</a></li><li>G5 <a href="blueprints.html#blueprint-group-thrusters">Thrusters</a></li><li>G5 <a href="blueprints.html#blueprint-group-shield-generator">Shield Generator</a></li><li>G5 <a href="blueprints.html#blueprint-group-burst-laser">Burst Laser</a></li><li>G5 <a href="blueprints.html#blueprint-group-pulse-laser">Pulse Laser</a></li><li>G5 <a href="blueprints.html#blueprint-group-beam-laser">Beam Laser</a></li><li>G5 <a href="blueprints.html#blueprint-group-fsd-interdictor">FSD Interdictor</a></li><li>G5 <a href="blueprints.html#blueprint-group-shield-booster">Shield Booster</a></li><li>G4 <a href="blueprints.html#blueprint-group-shield-cell-bank">Shield Cell Bank</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">100,000 CR worth of bounty vouchers.</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">A specialist in laser-based weaponry, shields, <a href="modules.html#module-frame-shift-drive">frame shift drives</a> and engines. He was dishonourably discharged from the Federal Defence Force for disobeying a senior officer who ordered a combat strike on a labour protest, but he was popular in the service and retains useful contacts. Many of his comrades-in-arms have since joined him in his business.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-etienne-dorn">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/etienne-dorn.webp" alt="Etienne Dorn portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Etienne Dorn</h3><a class="permalink" href="#engineer-etienne-dorn" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Colonia</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-liz-ryder">Liz Ryder</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Los</b></div><div class="lk">Body</div><div class="lv">A 2 B</div><div class="lk">Settlement</div><div class="lv">Kraken&#x27;s Retreat</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Trade rank Dealer or higher.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-plasma-accelerator">Plasma Accelerator</a></li><li>G5 <a href="blueprints.html#blueprint-group-sensors">Sensors</a></li><li>G5 <a href="blueprints.html#blueprint-group-detailed-surface-scanner">Detailed Surface Scanner</a></li><li>G5 <a href="blueprints.html#blueprint-group-life-support">Life Support</a></li><li>G5 <a href="blueprints.html#blueprint-group-power-plant">Power Plant</a></li><li>G5 <a href="blueprints.html#blueprint-group-power-distributor">Power Distributor</a></li><li>G5 <a href="blueprints.html#blueprint-group-frame-shift-wake-scanner">Frame Shift Wake Scanner</a></li><li>G5 <a href="blueprints.html#blueprint-group-kill-warrant-scanner">Kill Warrant Scanner</a></li><li>G5 <a href="blueprints.html#blueprint-group-manifest-scanner">Manifest Scanner</a></li><li>G5 <a href="blueprints.html#blueprint-group-rail-gun">Rail Gun</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">25× Occupied Escape Pods (illegal salvage — hand in at a Colonia anarchy).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Etienne Dorn used to be the lead shield engineer for Kraken Shield Specialists, but these days he&#x27;s mostly self-employed. He still shares developments with his former employers, but usually offers products to private clients first — for the right price. His success has let him develop state-of-the-art facilities, but he prefers to work with robots to maintain his seclusion.</div></div>
+</article>
+<article class="rec ac-amber" id="engineer-marsha-hicks">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/marsha-hicks.webp" alt="Marsha Hicks portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Marsha Hicks</h3><a class="permalink" href="#engineer-marsha-hicks" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Colonia</span><span class="chip faint">Ship</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-the-dweller">The Dweller</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Tir</b></div><div class="lk">Body</div><div class="lv">A 2</div><div class="lk">Settlement</div><div class="lv">The Watchtower</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Exploration rank Surveyor or higher.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>G5 <a href="blueprints.html#blueprint-group-collector-limpet-controller">Collector Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-fuel-transfer-limpet-controller">Fuel Transfer Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-hatch-breaker-limpet-controller">Hatch Breaker Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-prospector-limpet-controller">Prospector Limpet Controller</a></li><li>G5 <a href="blueprints.html#blueprint-group-refinery">Refinery</a></li><li>G5 <a href="blueprints.html#blueprint-group-fuel-scoop">Fuel Scoop</a></li><li>G5 <a href="blueprints.html#blueprint-group-cannon">Cannon</a></li><li>G5 <a href="blueprints.html#blueprint-group-multi-cannon">Multi-Cannon</a></li><li>G5 <a href="blueprints.html#blueprint-group-fragment-cannon">Fragment Cannon</a></li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">10× mined Osmium (laser-mine in any metallic ring).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Marsha Hicks has been in and out of more penitentiaries than she can count. She decided to go straight and move out to Colonia after the death of her daughter, when the Thargoids attacked Bhal. She doesn&#x27;t like dealing with people, but everyone has to make a living, and working as an engineer is better than going back to jail.</div></div>
+</article></div>
+  <!-- END generated:engineers -->
+</section><section id="section-ody-t1">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Odyssey Engineers — Tier 1</h2><span class="tag">ON-FOOT / ODYSSEY · 3</span></div>
+  <p class="lead">On-foot (suit &amp; handheld weapon) engineering. Three entry engineers, each opening one of the three Odyssey referral chains.</p>
+  <!-- BEGIN generated:engineers -->
+  <div class="rec-list"><article class="rec ac-fed" id="engineer-domino-green">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/domino-green.webp" alt="Domino Green portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Domino Green</h3><a class="permalink" href="#engineer-domino-green" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 1</span><span class="chip faint">On-foot</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Orishis</b></div><div class="lk">Body</div><div class="lv">4</div><div class="lk">Settlement</div><div class="lv">The Jackrabbit</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Travel at least 100 ly in Apex Interstellar shuttles.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Greater Range</li><li>Stability</li><li>Enhanced Tracking</li><li>Extra Backpack Capacity</li><li>Reduced Tool Battery Consumption</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-kit-fowler">Kit Fowler</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">5× Push (illicit good).</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Orphaned at the age of seven, Domino was placed in a public-relations initiative by the Rockforth Corporation, which housed and educated her but expected her to work for Rockforth as an adult. While displaying a prodigious talent for technology, she also lacked discipline and proved highly irreverent. She was dismissed as a poor investment and now operates a workshop established with her family inheritance.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-hero-ferrari">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/hero-ferrari.webp" alt="Hero Ferrari portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Hero Ferrari</h3><a class="permalink" href="#engineer-hero-ferrari" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 1</span><span class="chip faint">On-foot</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Siris</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Nevermore Terrace</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Complete 10 on-foot Conflict Zones.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Faster Handling</li><li>Noise Suppressor</li><li>Increased Sprint Duration</li><li>Improved Jump Assist</li><li>Increased Air Reserves</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-wellington-beck">Wellington Beck</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">5× Settlement Defence Plans.</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Little is known of Hero&#x27;s history, and it is widely believed she operates under a pseudonym. She is skilled with weapons modification and demonstrates a keen knowledge of military-grade technology, but appears comfortable in the relatively sedate world of engineering. When not upgrading equipment, Hero practises traditional calligraphy and watercolour techniques.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-jude-navarro">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/jude-navarro.webp" alt="Jude Navarro portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Jude Navarro</h3><a class="permalink" href="#engineer-jude-navarro" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 1</span><span class="chip faint">On-foot</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Aurai</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Marshall&#x27;s Drift</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Complete 10 Restore or Reactivation missions.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Reload Speed</li><li>Magazine Size</li><li>Extra Ammo Capacity</li><li>Damage Resistance</li><li>Added Melee Damage</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-terra-velasquez">Terra Velasquez</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">5× Genetic Repair Meds.</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">The son of a freedom fighter killed defending his home system, Jude entered military service as soon as he was able, to continue his family&#x27;s struggle. Years of resistance in an under-equipped militia wore on him until injuries forced him to retire. Jude now puts his engineering talents to use for private clients, but is rumoured to send much of it to family and former comrades.</div></div>
+</article></div>
+  <!-- END generated:engineers -->
+</section><section id="section-ody-t2">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Odyssey Engineers — Tier 2</h2><span class="tag">ON-FOOT / ODYSSEY · 3</span></div>
+  <p class="lead">Reached by referral from an Odyssey Tier 1. Mid-grade suit and weapon modifications.</p>
+  <!-- BEGIN generated:engineers -->
+  <div class="rec-list"><article class="rec ac-fed" id="engineer-kit-fowler">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/kit-fowler.webp" alt="Kit Fowler portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Kit Fowler</h3><a class="permalink" href="#engineer-kit-fowler" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">On-foot</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-domino-green">Domino Green</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Capoya</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">The Last Call</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Sell 5 Opinion Polls to bartenders.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Stowed Reloading</li><li>Magazine Size</li><li>Added Melee Damage</li><li>Faster Shield Regen</li><li>Extra Ammo Capacity</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-yarden-bond">Yarden Bond</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">5× Surveillance Equipment.</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Politically conscientious from adolescence, Kit has a reputation for indulging fringe ideologies and conspiracy. An aptitude for engineering makes it easy for him to find work; this income funds an independent broadcast called &#x27;End Times&#x27; that serves as a platform for his paranoid rants and apocalyptic predictions.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-wellington-beck">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/wellington-beck.webp" alt="Wellington Beck portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Wellington Beck</h3><a class="permalink" href="#engineer-wellington-beck" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">On-foot</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-hero-ferrari">Hero Ferrari</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Jolapa</b></div><div class="lk">Body</div><div class="lv">6 A</div><div class="lk">Settlement</div><div class="lv">Beck Facility</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Sell 15 Multimedia / Classic Entertainment / Cat Media to bartenders.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Greater Range</li><li>Scope</li><li>Reduced Tool Battery Consumption</li><li>Improved Battery Capacity</li><li>Extra Backpack Capacity</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-uma-laszlo">Uma Laszlo</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">5× Insight Entertainment Suites.</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">From an early age Beck demonstrated a prodigious talent for the sciences, flourishing at the prestigious Dormu Academy and earning several advanced degrees. He briefly worked for the Sirius Corporation, but the relationship did not last, due to a reported difficulty working as part of a team. Using the credits earned from Sirius, Beck established an independent workshop to pursue more personal projects.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-terra-velasquez">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/terra-velasquez.webp" alt="Terra Velasquez portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Terra Velasquez</h3><a class="permalink" href="#engineer-terra-velasquez" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 2</span><span class="chip faint">On-foot</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-jude-navarro">Jude Navarro</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Shou Xing</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Rascal&#x27;s Choice</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Complete 6 Covert Theft / Covert Heist missions.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Improved Hip Fire Accuracy</li><li>Noise Suppressor</li><li>Increased Sprint Duration</li><li>Combat Movement Speed</li><li>Increased Air Reserves</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-oden-geiger">Oden Geiger</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">15× Financial Projections.</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">As the only daughter of a prosperous entrepreneur, Terra was born into extraordinary wealth, but a rebellious streak led her to reject the expectations placed upon her. She fled home, falling in with an antiauthoritarian group that engaged in a string of daring robberies. One failed heist and a decade of incarceration later, Terra operates an independent workshop and claims to have left her criminal past behind.</div></div>
+</article></div>
+  <!-- END generated:engineers -->
+</section><section id="section-ody-t3">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Odyssey Engineers — Tier 3</h2><span class="tag">ON-FOOT / ODYSSEY · 3</span></div>
+  <p class="lead">Top-tier on-foot mods. Note Uma Laszlo requires you to LOWER Sirius rep — which conflicts with the <a href="../../systems/galaxy-and-power-systems/powerplay.html#powerplay-li-yong-rui">Li Yong-Rui</a> pledge often used for the Marco Qwent shortcut.</p>
+  <!-- BEGIN generated:engineers -->
+  <div class="rec-list"><article class="rec ac-fed" id="engineer-oden-geiger">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/oden-geiger.webp" alt="Oden Geiger portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Oden Geiger</h3><a class="permalink" href="#engineer-oden-geiger" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">On-foot</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-terra-velasquez">Terra Velasquez</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Candiaei</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Ankh&#x27;s Promise</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Sell 20 Biological / Employee Genetic / Genetic Research data to bartenders.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Stability</li><li>Scope</li><li>Enhanced Tracking</li><li>Improved Battery Capacity</li><li>Night Vision</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">Referral from Terra Velasquez.</div></div>
+  </div>
+  
+  <div class="rec-desc nobio"><div class="dq-eyebrow">In-Game Description</div><div class="dq">No biographical record available in-game.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-yarden-bond">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/yarden-bond.webp" alt="Yarden Bond portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Yarden Bond</h3><a class="permalink" href="#engineer-yarden-bond" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">On-foot</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-kit-fowler">Kit Fowler</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Bayan</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Salamander Bank</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Sell 5 Smear Campaign Plans to bartenders.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Faster Handling</li><li>Improved Hip Fire Accuracy</li><li>Audio Masking</li><li>Improved Jump Assist</li><li>Combat Movement Speed</li><li>Quieter Footsteps</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">Referral from Kit Fowler.</div></div>
+  </div>
+  
+  <div class="rec-desc nobio"><div class="dq-eyebrow">In-Game Description</div><div class="dq">No biographical record available in-game.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-uma-laszlo">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/uma-laszlo.webp" alt="Uma Laszlo portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Uma Laszlo</h3><a class="permalink" href="#engineer-uma-laszlo" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Tier 3</span><span class="chip faint">On-foot</span></div>
+      <div class="rec-meta">referred by <a href="#engineer-wellington-beck">Wellington Beck</a></div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Xuane</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Laszlo&#x27;s Resolve</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Reach Unfriendly or lower reputation with the Sirius Corporation.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Reload Speed</li><li>Stowed Reloading</li><li>Headshot Damage</li><li>Damage Resistance</li><li>Faster Shield Regen</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">Referral from Wellington Beck.</div></div>
+  </div>
+  
+  <div class="rec-desc nobio"><div class="dq-eyebrow">In-Game Description</div><div class="dq">No biographical record available in-game.</div></div>
+</article></div>
+  <!-- END generated:engineers -->
+</section><section id="section-ody-col">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Odyssey Engineers — Colonia</h2><span class="tag">ON-FOOT / ODYSSEY · 4</span></div>
+  <p class="lead">On-foot engineers out in Colonia. Yi Shen is gated behind the other three Colonia Odyssey engineers.</p>
+  <!-- BEGIN generated:engineers -->
+  <div class="rec-list"><article class="rec ac-fed" id="engineer-baltanos">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/baltanos.webp" alt="Baltanos portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Baltanos</h3><a class="permalink" href="#engineer-baltanos" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Colonia</span><span class="chip faint">On-foot</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Deriso</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">The Divine Apparatus</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Friendly reputation with the Colonia Council.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Noise Suppressor</li><li>Improved Hip Fire Accuracy</li><li>Faster Handling</li><li>Improved Jump Assist</li><li>Increased Air Reserves</li><li>Increased Sprint Duration</li><li>Combat Movement Speed</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-yi-shen">Yi Shen</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">10× Faction Associates data.</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Hailing from a nation where technology is considered a gateway to spiritual fulfillment, Baltanos serves his church in spreading its transhumanist creed. Many cybernetic implants have altered — or &#x27;blessed&#x27; — his ability to manipulate components, facilitating a successful engineering career. Eager to complete a long pilgrimage to humanity&#x27;s furthest reaches, he now functions as a missionary from his Colonia workshop.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-eleanor-bresa">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/eleanor-bresa.webp" alt="Eleanor Bresa portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Eleanor Bresa</h3><a class="permalink" href="#engineer-eleanor-bresa" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Colonia</span><span class="chip faint">On-foot</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Desy</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Bresa Modifications</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Visit 5 settlements in the Colonia region.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Magazine Size</li><li>Reload Speed</li><li>Stowed Reloading</li><li>Added Melee Damage</li><li>Damage Resistance</li><li>Extra Ammo Capacity</li><li>Faster Shield Regen</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-yi-shen">Yi Shen</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">10× Digital Designs data.</div></div>
+  </div>
+  
+  <div class="rec-desc nobio"><div class="dq-eyebrow">In-Game Description</div><div class="dq">No biographical record available in-game.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-rosa-dayette">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/rosa-dayette.webp" alt="Rosa Dayette portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Rosa Dayette</h3><a class="permalink" href="#engineer-rosa-dayette" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Colonia</span><span class="chip faint">On-foot</span></div>
+      
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Kojeara</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Rosa&#x27;s Shop</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Sell 10 Culinary or Cocktail Recipes to Colonia stations.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Greater Range</li><li>Scope</li><li>Stability</li><li>Extra Backpack Capacity</li><li>Enhanced Tracking</li><li>Reduced Tool Battery Consumption</li><li>Improved Battery Capacity</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><a href="#engineer-yi-shen">Yi Shen</a></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">10× Manufacturing Instructions data.</div></div>
+  </div>
+  
+  <div class="rec-desc"><div class="dq-eyebrow">In-Game Description</div><div class="dq">Born and raised in a starport within a feudalist system, Rosa had few obvious skills in her youth, but had a passion for mechanical things, fascinated by the constant stream of ships outside her apartment window. With donated, swapped and refurbished tools she began to tinker and reverse-engineer the gadgets at home. Her natural talent blossomed into patching up suits and equipment for neighbours, friends, and eventually the whole station.</div></div>
+</article>
+<article class="rec ac-fed" id="engineer-yi-shen">
+  <div class="rec-id">
+    <div class="rec-banner"><img src="../../../images/engineers/yi-shen.webp" alt="Yi Shen portrait" loading="lazy" decoding="async"></div>
+    <div class="rec-id-body">
+      <div class="rec-name"><h3>Yi Shen</h3><a class="permalink" href="#engineer-yi-shen" title="Permalink">#</a></div>
+      <div class="chips"><span class="chip amber">Colonia</span><span class="chip faint">On-foot</span></div>
+      <div class="rec-meta">referred by Baltanos / Bresa / Dayette</div>
+    </div>
+  </div>
+  <div class="rec-body">
+    <div class="rc area-a"><div class="rcl">Location</div><div class="kvgrid"><div class="lk">System</div><div class="lv"><b>Einheriar</b></div><div class="lk">Body</div><div class="lv"><span class="kv-tbd">unconfirmed</span></div><div class="lk">Settlement</div><div class="lv">Eidolon Hold</div></div></div>
+    <div class="rc area-b"><div class="rcl">Meeting requirement</div><div class="rcv">Complete the referral tasks for Baltanos, Bresa and Dayette.</div></div>
+    <div class="rc area-e"><div class="rcl">Modifications offered</div><ul class="reclist"><li>Audio Masking</li><li>Headshot Damage</li><li>Quieter Footsteps</li><li>Night Vision</li></ul></div>
+    <div class="rc area-c"><div class="rcl">Refers you to</div><div class="rcv"><span class="muted">— none —</span></div></div>
+    <div class="rc area-d"><div class="rcl">Unlock hand-in</div><div class="rcv">Referrals from all three Colonia on-foot engineers.</div></div>
+  </div>
+  
+  <div class="rec-desc nobio"><div class="dq-eyebrow">In-Game Description</div><div class="dq">No biographical record available in-game.</div></div>
+</article></div>
+  <!-- END generated:engineers -->
+</section>
+
+<section class="credits" id="section-credits">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Sources</h2></div>
+  <p class="lead">Figures on this page are verified against the sources below.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">Inara — Engineers</span><span class="cr-what">Engineer unlock requirements, meeting prerequisites, hand-in items, locations, and referral chains for all 38.</span><a class="cr-link" href="https://inara.cz/elite/engineers/" target="_blank" rel="noopener noreferrer">inara.cz/elite/engineers</a></div>
+    <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Engineer roster cross-referenced against the open data set; blueprint and modification grades each engineer offers.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/modifications/blueprints.json" target="_blank" rel="noopener noreferrer">coriolis-data/modifications/blueprints.json</a></div>
+    <div class="cr-row"><span class="cr-src">Elite Dangerous Fandom Wiki</span><span class="cr-what">Engineer biographies, lore, in-game descriptions, unlock-mechanics cross-checks, and the engineer portrait images used on this page.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Engineers" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Engineers</a></div>
+    <div class="cr-row"><span class="cr-src">EDSM</span><span class="cr-what">Engineer base systems &amp; workshop bodies — Deciat, Khun, Wyrd and the rest of the location coordinates.</span><a class="cr-link" href="https://www.edsm.net/en/engineers" target="_blank" rel="noopener noreferrer">edsm.net/en/engineers</a></div>
+    <div class="cr-row"><span class="cr-src">EDEngineer</span><span class="cr-what">Material-cost and unlock-item cross-checks for each engineer&#x27;s hand-in.</span><a class="cr-link" href="https://github.com/msarilar/EDEngineer" target="_blank" rel="noopener noreferrer">github.com/msarilar/EDEngineer</a></div>
+    <div class="cr-row"><span class="cr-src">YouTube — Mile 13 Gaming</span><span class="cr-what">Engineering tutorial: unlocking engineers, planning module upgrades, and using the ED Engineer app to map grinds.</span><a class="cr-link" href="https://www.youtube.com/watch?v=rpDnVdgqPhs" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=rpDnVdgqPhs</a></div>
+    <div class="cr-row"><span class="cr-src">YouTube — Down to Earth Astronomy</span><span class="cr-what">Livestream walkthrough of unlocking the Odyssey on-foot engineers, covering invite conditions and unlock steps.</span><a class="cr-link" href="https://www.youtube.com/watch?v=wIwoH_1LlsM" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=wIwoH_1LlsM</a></div>
+    <div class="cr-row"><span class="cr-src">YouTube — Down to Earth Astronomy</span><span class="cr-what">Livestream walkthrough of unlocking the Colonia-region engineers, covering invite requirements and the trek out to Colonia.</span><a class="cr-link" href="https://www.youtube.com/watch?v=8mGi8W5mnXw" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=8mGi8W5mnXw</a></div>
+  </div>
+</section>
+
+  <!-- ---- FOOTER ---- -->
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Engineering &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  // ---- Quick-nav searchable combobox (mirrors guides/engineering/engineering-manuals/modules.html) ----
+  var input = document.getElementById('qn-search');
+  var panel = document.getElementById('qn-panel');
+  var clear = document.getElementById('qn-clear');
+  if(!input || !panel) return;
+  var items = Array.prototype.slice.call(panel.querySelectorAll('.qn-item'));
+  var activeIdx = -1;
+
+  function visibleItems(){ return items.filter(function(it){ return it.style.display !== 'none'; }); }
+  function openPanel(){ panel.classList.add('open'); input.setAttribute('aria-expanded','true'); }
+  function closePanel(){ panel.classList.remove('open'); input.setAttribute('aria-expanded','false'); clearActive(); }
+  function clearActive(){ items.forEach(function(it){ it.classList.remove('active'); }); activeIdx = -1; }
+  function setActive(idx){
+    var vis = visibleItems();
+    if(!vis.length){ clearActive(); return; }
+    if(idx < 0) idx = vis.length - 1;
+    if(idx >= vis.length) idx = 0;
+    items.forEach(function(it){ it.classList.remove('active'); });
+    vis[idx].classList.add('active'); activeIdx = idx;
+    vis[idx].scrollIntoView({ block:'nearest' });
+  }
+  function filter(){
+    var q = input.value.trim().toLowerCase();
+    clear.hidden = q.length === 0;
+    var shown = 0;
+    items.forEach(function(it){
+      var match = q === '' || it.getAttribute('data-search').indexOf(q) !== -1;
+      it.style.display = match ? '' : 'none';
+      if(match) shown++;
+    });
+    var empty = panel.querySelector('.qn-empty');
+    if(empty){ if(shown === 0){ empty.hidden = false; empty.style.display = ''; } else { empty.hidden = true; empty.style.display = 'none'; } }
+    clearActive(); openPanel();
+  }
+  function openAndScroll(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var y = el.getBoundingClientRect().top + window.pageYOffset - 84;
+    window.scrollTo({ top:y, behavior:'smooth' });
+  }
+  function jump(it){
+    var id = it.getAttribute('data-target');
+    closePanel(); input.value = ''; clear.hidden = true;
+    items.forEach(function(x){ x.style.display = ''; });
+    var em = panel.querySelector('.qn-empty'); if(em){ em.hidden = true; em.style.display = 'none'; }
+    openAndScroll(id);
+    history.replaceState(null, '', '#' + id);
+  }
+  function openIfItems(){ if(items.length) openPanel(); }
+
+  input.addEventListener('focus', openIfItems);
+  input.addEventListener('click', openIfItems);
+  input.addEventListener('input', filter);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowDown'){ e.preventDefault(); if(!panel.classList.contains('open')) openPanel(); setActive(activeIdx + 1); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); if(!panel.classList.contains('open')) openPanel(); setActive(activeIdx - 1); }
+    else if(e.key === 'Enter'){ e.preventDefault(); var vis = visibleItems(); if(!vis.length) return; jump(activeIdx >= 0 ? vis[activeIdx] : vis[0]); }
+    else if(e.key === 'Escape'){ if(input.value){ input.value=''; filter(); } closePanel(); input.blur(); }
+  });
+  items.forEach(function(it){
+    it.addEventListener('click', function(){ jump(it); });
+    it.addEventListener('mousemove', function(){
+      var vis = visibleItems(); var i = vis.indexOf(it);
+      if(i !== -1){ items.forEach(function(x){ x.classList.remove('active'); }); it.classList.add('active'); activeIdx = i; }
+    });
+  });
+  clear.addEventListener('click', function(){
+    input.value = ''; clear.hidden = true;
+    items.forEach(function(x){ x.style.display = ''; });
+    var em = panel.querySelector('.qn-empty'); if(em){ em.hidden = true; em.style.display = 'none'; }
+    clearActive(); input.focus(); openPanel();
+  });
+  document.addEventListener('click', function(e){
+    var dd = document.getElementById('qn-dd');
+    if(dd && !dd.contains(e.target)) closePanel();
+  });
+
+  // ---- Scroll to a record/section targeted by the URL hash ----
+  if(location.hash){ var hid = location.hash.slice(1); setTimeout(function(){ openAndScroll(hid); }, 60); }
+  window.addEventListener('hashchange', function(){ if(location.hash) openAndScroll(location.hash.slice(1)); });
+
+  // ---- Header scroll-to-top button ----
+  document.querySelectorAll('.qn-totop').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault();
+      if(location.hash && history.replaceState) history.replaceState(null,'',location.pathname+location.search);
+      window.scrollTo({top:0,behavior:'smooth'}); });
+  });
+})();
+</script>
+</body>
+</html>

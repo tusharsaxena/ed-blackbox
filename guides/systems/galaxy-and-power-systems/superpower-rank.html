@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Superpower Rank &middot; Galaxy &amp; Power Systems | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems" class="active">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Superpower Rank</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-systems">Systems</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-galaxy">Galaxy &amp; Power Systems</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-legend"><span class="qn-dot amber"></span><span class="qn-nm">How to read this manual</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-what"><span class="qn-dot amber"></span><span class="qn-nm">What the superpowers are</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why"><span class="qn-dot amber"></span><span class="qn-nm">Why rank matters — rewards</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-mechanics"><span class="qn-dot amber"></span><span class="qn-nm">Rank vs reputation — mechanics</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-fed-ladder"><span class="qn-dot amber"></span><span class="qn-nm">Federation — rank ladder</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-emp-ladder"><span class="qn-dot amber"></span><span class="qn-nm">Empire — rank ladder</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-alliance"><span class="qn-dot amber"></span><span class="qn-nm">Alliance — reputation, not rank</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-howearned"><span class="qn-dot amber"></span><span class="qn-nm">How rank is earned</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-start-fed"><span class="qn-dot amber"></span><span class="qn-nm">Getting started — Federation</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-start-emp"><span class="qn-dot amber"></span><span class="qn-nm">Getting started — Empire</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-start-all"><span class="qn-dot amber"></span><span class="qn-nm">Getting started — Alliance</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-rescue"><span class="qn-dot amber"></span><span class="qn-nm">Fastest method everywhere — rescues</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-notes"><span class="qn-dot amber"></span><span class="qn-nm">Field notes for a new commander</span><span class="qn-side">13</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">14</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<header class="masthead">
+  <div class="kicker">Galaxy &amp; Power Systems <span class="sep">//</span> Allegiance &amp; Rank</div>
+  <h1 class="title">The <span>Superpowers</span> <span class="role">Rank Ladder</span></h1>
+  <div class="masthead-meta">
+    <span>Series <b>Systems</b></span>
+    <span>Updated <b>2026-06-25</b></span>
+  </div>
+</header>
+
+<div class="verdict">
+  <div class="v-eyebrow">Briefing</div>
+  <h2>Two navies you can <em>climb</em>, one alliance you can only befriend</h2>
+  <p>The <a href="#superpower-fed">Federation</a> and the <a href="#superpower-emp">Empire</a> each run a naval auxiliary that any independent pilot can join. Run missions for their aligned factions and you climb 14 ranks, unlocking permit-locked systems, restricted ships, and a couple of engineers along the way. The <a href="#superpower-all">Alliance</a> has no navy and no rank ladder — its ships need no rank at all, so for the Alliance the only currency is plain reputation. Rank, once earned, is permanent; reputation decays. The grind is the same shape for both navies: take missions for aligned factions, always pick the Reputation reward, and complete a "Navy" promotion mission each time the bar fills.</p>
+  <div class="stat-grid">
+    <div class="stat"><div class="n mar">14</div><div class="l">Federal Navy ranks</div></div>
+    <div class="stat"><div class="n fed">14</div><div class="l">Imperial Navy ranks</div></div>
+    <div class="stat"><div class="n good">0</div><div class="l">Alliance ranks (rep only)</div></div>
+    <div class="stat"><div class="n">12</div><div class="l">Rank for <a href="../../ships/ship-dossiers/federal-corvette-multipurpose.html">Corvette</a> / <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Cutter</a></div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Rank for Sol / Achenar permit</div></div>
+  </div>
+</div>
+
+<section id="section-legend">
+  <div class="sec-head"><span class="sec-num">01</span><h2>How to read this manual</h2><span class="tag">Legend</span></div>
+  <p class="lead">Everything here is colour-coded by superpower, and one distinction runs through the whole manual: <b>rank</b> is not the same thing as <b>reputation</b>. Get that straight first and the rest falls into place.</p>
+  <div class="legend">
+    <div class="lg"><h4>Colour code</h4>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-maroon"></span><b>Federation</b></span><span class="kv-v">red · Federal Navy</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-fed"></span><b>Empire</b></span><span class="kv-v">blue · Imperial Navy</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-good"></span><b>Alliance</b></span><span class="kv-v">green · no navy</span></div>
+      <div class="kv-row"><span class="kv-k"><span class="swatch sw-amber"></span><b>General</b></span><span class="kv-v">amber · applies to all</span></div>
+    </div>
+    <div class="lg"><h4>Two different bars</h4>
+      <div class="kv-row"><span class="kv-k"><b>Rank</b></span><span class="kv-v">your naval grade. Permanent. Gates ships &amp; permits.</span></div>
+      <div class="kv-row"><span class="kv-k"><b>Reputation</b></span><span class="kv-v">your standing. Decays over time. Speeds mission supply.</span></div>
+      <div class="kv-row"><span class="kv-k"><b>Promotion mission</b></span><span class="kv-v">the "Navy" job that actually advances rank.</span></div>
+    </div>
+    <div class="lg"><h4>Where to look in-game</h4>
+      <div class="row">Right HUD panel (key <b>4</b>) → <b>Status</b> tab</div>
+      <div class="row">Second block down → <b>Reputation</b></div>
+      <div class="row">Each superpower shows a rank name + a progress bar</div>
+    </div>
+  </div>
+</section>
+
+<section id="section-what">
+  <div class="sec-head"><span class="sec-num">02</span><h2>What the superpowers are</h2><span class="tag">Overview</span></div>
+  <p class="lead">Three galactic superpowers dominate the inhabited bubble. Each is really an umbrella over hundreds of minor factions; working for those factions is how you build standing with the superpower above them.</p>
+  <div class="cards three">
+    <article class="card ac-maroon" id="superpower-fed">
+      <div class="c-head"><h3 class="sp-fed">The Federation</h3> <span class="c-eyebrow">Democratic · Core Dynamics warships</span></div>
+      <p>A sprawling representative democracy centred on Sol, fond of bureaucracy and big combat ships. Its Federal Navy Auxiliary is open to freelancers and rewards the climb with the <a href="../../ships/ship-dossiers/federal-dropship-combat.html">Dropship</a> line and, at the top, the combat-specialised <a href="../../ships/ship-dossiers/federal-corvette-combat.html">Federal Corvette</a>.</p>
+      <div class="kvgrid">
+        <span class="lk">Capital</span><span class="lv">Sol (permit-locked)</span>
+        <span class="lk">Navy</span><span class="lv">Federal Navy · 14 ranks</span>
+        <span class="lk">Top ship</span><span class="lv"><a href="../../ships/ship-dossiers/federal-corvette-multipurpose.html">Federal Corvette</a> (Rank 12)</span>
+      </div>
+    </article>
+    <article class="card ac-fed" id="superpower-emp">
+      <div class="c-head"><h3 class="sp-emp">The Empire</h3> <span class="c-eyebrow">Aristocratic · Gutamaya hulls</span></div>
+      <p>A rigid, slavery-tolerating aristocracy of Houses, centred on Achenar. Its Imperial Navy Auxiliary uses noble titles for ranks — Outsider up to King — and hands out the elegant Gutamaya ships, ending in the enormous <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Imperial Cutter</a>.</p>
+      <div class="kvgrid">
+        <span class="lk">Capital</span><span class="lv">Achenar (permit-locked)</span>
+        <span class="lk">Navy</span><span class="lv">Imperial Navy · 14 ranks</span>
+        <span class="lk">Top ship</span><span class="lv"><a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Imperial Cutter</a> (Rank 12)</span>
+      </div>
+    </article>
+    <article class="card ac-good" id="superpower-all">
+      <div class="c-head"><h3 class="sp-all">The Alliance</h3> <span class="c-eyebrow">Coalition · Lakon ships, no rank</span></div>
+      <p>A voluntary coalition of independent systems pooling defence. Critically, it runs <b>no naval auxiliary</b> — so none of its ships or systems are locked behind a rank. Alliance ships are Lakon-built (<a href="../../ships/ship-dossiers/alliance-chieftain-combat.html">Chieftain</a>, <a href="../../ships/ship-dossiers/alliance-challenger-combat.html">Challenger</a>, <a href="../../ships/ship-dossiers/alliance-crusader-combat.html">Crusader</a>, <a href="../../ships/ship-dossiers/type-10-defender-combat.html">Type-10</a>) and any pilot can buy them outright.</p>
+      <div class="kvgrid">
+        <span class="lk">Capital</span><span class="lv">Alioth (permit via faction rep)</span>
+        <span class="lk">Navy</span><span class="lv">None — reputation only</span>
+        <span class="lk">Ships</span><span class="lv">No rank required</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="section-why">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Why rank matters — rewards &amp; benefits</h2><span class="tag">Payoff</span></div>
+  <p class="lead">For most commanders the ships are the whole reason to grind, but rank quietly improves a lot of your day-to-day galaxy too.</p>
+  <ul class="bullets">
+    <li><b>Restricted ships.</b> The <a href="../../ships/ship-dossiers/federal-dropship-combat.html">Federal Dropship</a>/<a href="../../ships/ship-dossiers/federal-assault-ship-combat.html">Assault Ship</a>/<a href="../../ships/ship-dossiers/federal-gunship-combat.html">Gunship</a>/<a href="../../ships/ship-dossiers/federal-corvette-multipurpose.html">Corvette</a> and the <a href="../../ships/ship-dossiers/imperial-courier-multipurpose.html">Imperial Courier</a>/<a href="../../ships/ship-dossiers/imperial-clipper-multipurpose.html">Clipper</a>/<a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Cutter</a> can only be bought once you hold the right Navy rank — and the rank is required to <b>fly</b> them too, no matter which station sells them.</li>
+    <li><b>System permits.</b> Climbing automatically grants permits to locked systems — most famously <b>Sol</b> (Federation, Rank 4) and <b>Achenar</b> (Empire, Rank 4), plus a handful of others further up each ladder.</li>
+    <li><b>Engineer access.</b> A few engineers gate on superpower standing: <a href="../../engineering/engineering-manuals/engineers.html#engineer-hera-tani">Hera Tani</a> (Empire, first rank), <a href="../../engineering/engineering-manuals/engineers.html#engineer-colonel-bris-dekker">Colonel Bris Dekker / "The Sarge"</a> (Federation, Rank 3), and <a href="../../engineering/engineering-manuals/engineers.html#engineer-bill-turner">Bill Turner</a> (Alliance — Friendly reputation, not rank).</li>
+    <li><b>Better &amp; more frequent missions.</b> Higher superpower standing raises the chance that lucrative superpower-flagged missions spawn for you, and combined with your combat/trade/explore rank it bumps the payouts on those jobs.</li>
+    <li><b>Bragging rights &amp; lore.</b> Sol is the birthplace of humanity and Achenar the Imperial throne-world — gated content you simply cannot visit without the rank.</li>
+  </ul>
+  <div class="callout">
+    <div class="co-eyebrow">Key fact</div>
+    <p>Ships and permits are gated on <b>rank</b>, which you never lose. The fluctuating <b>reputation</b> bar does not directly unlock anything — it just makes the aligned factions friendlier and their missions more plentiful, which in turn feeds your rank climb.</p>
+  </div>
+</section>
+
+<section id="section-mechanics">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Rank vs reputation — the mechanics</h2><span class="tag">Core loop</span></div>
+  <p class="lead">Both bars move when you do good work for aligned minor factions, but they behave very differently. Understanding this saves a lot of confused relogging.</p>
+  <ul class="bullets">
+    <li><b>Rank is permanent.</b> Once you reach a rank you keep it forever, even if you switch to grinding the other superpower. You can fully unlock the <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Cutter</a> <em>and</em> the <a href="../../ships/ship-dossiers/federal-corvette-multipurpose.html">Corvette</a> on one account.</li>
+    <li><b>Reputation decays — to a floor.</b> Above 75% Friendly, superpower reputation bleeds back down toward 75% over real-world days whether you play or not. But once you have ever reached 75%, it never drops below that. Practically: a serious grinder is always sitting at max rep, because the rank missions keep topping it up.</li>
+    <li><b>Rank advances only via promotion missions.</b> When the rank bar hits 100%, aligned factions you are <b>Cordial or better</b> with start offering a "Federal Navy …" / "Imperial Navy …" job. Completing one promotes you a single rank.</li>
+    <li><b>Overflow is never wasted.</b> If the bar caps before a promotion mission appears, progress keeps banking in the background. You can hit 100% across several ranks, then chain promotion missions and jump multiple grades quickly.</li>
+    <li><b>Always take the Reputation reward.</b> Rank gained from a mission scales with its REP reward, and the credit/goods alternatives usually give equal or less rep. Take credits/materials only when you specifically need them.</li>
+  </ul>
+  <div class="callout">
+    <div class="co-eyebrow">Common trap</div>
+    <p>Bounty hunting and combat-bond turn-ins barely move the Navy rank bar — it is fundamentally a <b>mission</b> grind. If your rank reads "None" after hours of pirate-killing, that is why. And if a promotion mission won't appear, you are almost certainly not yet Cordial with any aligned faction in that system; do a few ordinary jobs there first.</p>
+  </div>
+</section>
+
+<section id="section-fed-ladder">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Federation — rank ladder</h2><span class="tag">Federal Navy · 14 ranks</span></div>
+  <p class="lead">Fourteen ranks from Recruit to Admiral. Highlighted rows are the ones with a tangible reward — a ship, a permit, or an engineer.</p>
+  <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>No.</th><th>Rank</th><th>Unlocks</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">0</td><td><b>None</b></td><td>—</td></tr>
+        <tr><td class="mod">1</td><td><b>Recruit</b></td><td>—</td></tr>
+        <tr><td class="mod">2</td><td><b>Cadet</b></td><td>—</td></tr>
+        <tr><td class="mod">3</td><td><b>Midshipman</b></td><td><span class="acc"><a href="../../ships/ship-dossiers/federal-dropship-combat.html">Federal Dropship</a></span> · <a href="../../engineering/engineering-manuals/engineers.html#engineer-colonel-bris-dekker">Colonel Bris Dekker</a> ("<a href="../../engineering/engineering-manuals/engineers.html#engineer-the-sarge">The Sarge</a>") engineer invitation</td></tr>
+        <tr><td class="mod">4</td><td><b>Petty Officer</b></td><td><span class="acc">Sol</span> permit</td></tr>
+        <tr><td class="mod">5</td><td><b>Chief Petty Officer</b></td><td><span class="acc"><a href="../../ships/ship-dossiers/federal-assault-ship-combat.html">Federal Assault Ship</a></span> · <span class="acc">Vega</span> + <span class="acc">Beta Hydri</span> permits</td></tr>
+        <tr><td class="mod">6</td><td><b>Warrant Officer</b></td><td><span class="acc">PLX 695</span> permit</td></tr>
+        <tr><td class="mod">7</td><td><b>Ensign</b></td><td><span class="acc"><a href="../../ships/ship-dossiers/federal-gunship-combat.html">Federal Gunship</a></span> · <span class="acc">Ross 128</span> permit</td></tr>
+        <tr><td class="mod">8</td><td><b>Lieutenant</b></td><td><span class="acc">Exbeur</span> permit</td></tr>
+        <tr><td class="mod">9</td><td><b>Lieutenant Commander</b></td><td>—</td></tr>
+        <tr><td class="mod">10</td><td><b>Post Commander</b></td><td><span class="acc">Hors</span> permit</td></tr>
+        <tr><td class="mod">11</td><td><b>Post Captain</b></td><td>—</td></tr>
+        <tr><td class="mod">12</td><td><b>Rear Admiral</b></td><td><span class="acc"><a href="../../ships/ship-dossiers/federal-corvette-multipurpose.html">Federal Corvette</a></span></td></tr>
+        <tr><td class="mod">13</td><td><b>Vice Admiral</b></td><td>—</td></tr>
+        <tr><td class="mod">14</td><td><b>Admiral</b></td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <div class="co-eyebrow">Milestones that matter</div>
+    <p><b>Rank 4 (Petty Officer)</b> is the famous one — it grants the Sol permit, so most casual Federation climbs stop here. <b>Rank 12 (Rear Admiral)</b> is the long haul for the <a href="../../ships/ship-dossiers/federal-corvette-combat.html">Federal Corvette</a>, the strongest pure-combat hull of the "big three". The <a href="../../ships/ship-dossiers/federal-dropship-combat.html">Dropship</a>, <a href="../../ships/ship-dossiers/federal-assault-ship-combat.html">Assault Ship</a> and <a href="../../ships/ship-dossiers/federal-gunship-combat.html">Gunship</a> at ranks 3/5/7 are useful combat stepping-stones on the way up.</p>
+  </div>
+</section>
+
+<section id="section-emp-ladder">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Empire — rank ladder</h2><span class="tag">Imperial Navy · 14 ranks</span></div>
+  <p class="lead">Fourteen noble titles from Outsider to King. The Empire front-loads an engineer at the very first rank, which makes it worth a few missions even if you never want a Gutamaya ship.</p>
+  <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>No.</th><th>Rank</th><th>Unlocks</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">0</td><td><b>None</b></td><td>—</td></tr>
+        <tr><td class="mod">1</td><td><b>Outsider</b></td><td><a href="../../engineering/engineering-manuals/engineers.html#engineer-hera-tani">Hera Tani</a> engineer invitation</td></tr>
+        <tr><td class="mod">2</td><td><b>Serf</b></td><td>—</td></tr>
+        <tr><td class="mod">3</td><td><b>Master</b></td><td><span class="acc"><a href="../../ships/ship-dossiers/imperial-courier-multipurpose.html">Imperial Courier</a></span></td></tr>
+        <tr><td class="mod">4</td><td><b>Squire</b></td><td><span class="acc">Achenar</span> permit</td></tr>
+        <tr><td class="mod">5</td><td><b>Knight</b></td><td>—</td></tr>
+        <tr><td class="mod">6</td><td><b>Lord</b></td><td>—</td></tr>
+        <tr><td class="mod">7</td><td><b>Baron</b></td><td><span class="acc"><a href="../../ships/ship-dossiers/imperial-clipper-multipurpose.html">Imperial Clipper</a></span> · <span class="acc">Summerland</span> permit</td></tr>
+        <tr><td class="mod">8</td><td><b>Viscount</b></td><td>—</td></tr>
+        <tr><td class="mod">9</td><td><b>Count</b></td><td>—</td></tr>
+        <tr><td class="mod">10</td><td><b>Earl</b></td><td><span class="acc">Facece</span> permit</td></tr>
+        <tr><td class="mod">11</td><td><b>Marquis</b></td><td>—</td></tr>
+        <tr><td class="mod">12</td><td><b>Duke</b></td><td><span class="acc"><a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Imperial Cutter</a></span></td></tr>
+        <tr><td class="mod">13</td><td><b>Prince</b></td><td>—</td></tr>
+        <tr><td class="mod">14</td><td><b>King</b></td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <div class="co-eyebrow">Milestones that matter</div>
+    <p><b>Rank 1 (Outsider)</b> unlocks the <a href="../../engineering/engineering-manuals/engineers.html#engineer-hera-tani">Hera Tani</a> engineer invitation — cheap and worth grabbing early. <b>Rank 4 (Squire)</b> gives the Achenar permit. <b>Rank 7 (Baron)</b> opens the fast, pretty <a href="../../ships/ship-dossiers/imperial-clipper-multipurpose.html">Imperial Clipper</a>, and <b>Rank 12 (Duke)</b> is the <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Imperial Cutter</a> — the biggest-cargo single-pilot ship in the game. The Empire is also the <em>fastest</em> superpower to grind (see Section 10).</p>
+  </div>
+</section>
+
+<section id="section-alliance">
+  <div class="sec-head"><span class="sec-num">07</span><h2>The Alliance — reputation, not rank</h2><span class="tag">No navy</span></div>
+  <p class="lead">The Alliance is the odd one out: there is no Alliance Navy auxiliary, no rank ladder, and no rank-locked ship. So you cannot "grind Alliance rank" — there is nothing to grind <em>to</em>. What you build is plain superpower reputation, which still does useful things.</p>
+  <ul class="bullets">
+    <li><b>Alliance ships need no rank.</b> The <a href="../../ships/ship-dossiers/alliance-chieftain-combat.html">Chieftain</a>, <a href="../../ships/ship-dossiers/alliance-challenger-combat.html">Challenger</a>, <a href="../../ships/ship-dossiers/alliance-crusader-combat.html">Crusader</a> and <a href="../../ships/ship-dossiers/type-10-defender-combat.html">Type-10 Defender</a> are Lakon hulls — any pilot can buy them with credits alone.</li>
+    <li><b>The one permit:</b> Alliance reputation does <em>not</em> directly grant permits. The Alliance capital <b>Alioth</b> is permit-locked, but that permit comes from reputation with the <b>Alioth Independents minor faction</b>, via a specific permit mission — not from your superpower bar.</li>
+    <li><b>Engineer gate:</b> <a href="../../engineering/engineering-manuals/engineers.html#engineer-bill-turner">Bill Turner</a> requires you to be <b>Friendly</b> with the Alliance (and to hold the Alioth permit to reach him). This is the main concrete reason a new commander touches Alliance reputation.</li>
+    <li><b>It amplifies minor-faction rep.</b> A high Alliance standing makes your reputation gains and losses with Alliance-aligned minor factions larger, which speeds everything else with those factions.</li>
+  </ul>
+  <div class="callout">
+    <div class="co-eyebrow">Bottom line</div>
+    <p>Treat "the Alliance grind" as two separate, smaller jobs: (1) build Alliance superpower reputation by doing missions for Alliance factions, and (2) separately grind the Alioth Independents to Allied to earn the Alioth permit. Neither involves a rank ladder. See Section 11 for the steps.</p>
+  </div>
+</section>
+
+<section id="section-howearned">
+  <div class="sec-head"><span class="sec-num">08</span><h2>How rank is earned</h2><span class="tag">Mission types</span></div>
+  <p class="lead">For both navies the engine is identical: complete missions for minor factions flying the superpower's insignia, take the Reputation reward, and cash in a Navy promotion mission whenever the bar tops out. These are the mission types worth chasing, fastest first.</p>
+  <ul class="bullets">
+    <li><b>Station-rescue passenger missions</b> — by far the fastest when a station is under attack and burning. Plentiful, low-risk, big rep. (Full method in Section 12.)</li>
+    <li><b>Data-courier / delivery missions</b> — low pay, very low risk, and they turn around fast. The backbone of the paired-system loops because you can stack roughly 20 at once.</li>
+    <li><b>Cargo-delivery missions</b> — higher rep and decent pay, but you risk pirate interdictions, so carry a cargo hold and ideally shields.</li>
+    <li><b>Donation / charity missions</b> — pure credit sinks for very little effort; they accelerate the climb hard if you are already rich. Worth banking a few million first if you want to burn cash for speed.</li>
+    <li><b>Source-and-return missions</b> at repairing stations — slower than evac passengers but the requested commodities are common and risk stays low.</li>
+  </ul>
+  <div class="callout">
+    <div class="co-eyebrow">Passenger missions &amp; Powerplay — don't confuse them</div>
+    <p>Passenger missions <b>do</b> earn superpower reputation and rank. They earn <b>zero Powerplay merits</b>, which is a separate system entirely. So a passenger run is great for Navy rank but useless for a Powerplay pledge — keep the two goals mentally separate.</p>
+  </div>
+</section>
+
+<section id="section-start-fed">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Getting started — Federation</h2><span class="tag">Step-by-step</span></div>
+  <p class="lead">The Federation has no single overwhelmingly fast system the way the Empire does. Instead there are three classic paired-system "ping-pong" loops — pick whichever is supplying missions well on the day.</p>
+  <ol class="steps">
+    <li><span class="st">Fit a courier ship</span><p>Take a small or medium ship with <b>~15 ly+ jump range</b>. Add a <b>Docking Computer</b> and <b>Supercruise Assist</b> so you can run the loop nearly hands-free. No weapons needed; a modest cargo hold helps if you also want cargo missions.</p></li>
+    <li><span class="st">Pick a paired loop</span><p>Choose one of the three Federation loops below and fly to it. Each works the same way: hoover up missions in one system, jump to its partner, hand in, refill, repeat.</p></li>
+    <li><span class="st">Stack missions from Federal factions</span><p>At the board, take every <b>data-courier and delivery</b> mission to the partner system from factions flying the <b>Federation insignia</b> — plus any <b>donation</b> jobs if you are flush. Always select the <b>Reputation reward</b>.</p></li>
+    <li><span class="st">Avoid planetary-port destinations</span><p>Skip missions marked with the planetary/Horizons icon — surface ports sit far from the star and the approach wastes minutes per trip. Stick to orbital stations.</p></li>
+    <li><span class="st">Jump, hand in, refill, repeat</span><p>Fly to the partner system, hand everything in, take return missions, jump back. A full loop is a few minutes; the rep adds up steadily.</p></li>
+    <li><span class="st">Cash the promotion mission</span><p>When the rank bar reads 100%, look for a <b>"Federal Navy …"</b> job from a Federal faction you are Cordial+ with, and complete it to actually rank up. Keep grinding even if it hasn't appeared — progress banks in the background.</p></li>
+    <li><span class="st">Know your stops</span><p>Pause at <b>Petty Officer (4)</b> for the Sol permit; push to <b>Rear Admiral (12)</b> for the <a href="../../ships/ship-dossiers/federal-corvette-multipurpose.html">Corvette</a>.</p></li>
+  </ol>
+  <div class="cards three">
+    <article class="card"><div class="c-head"><h3>Ceos / Sothis</h3><span class="c-eyebrow">Closest to a "classic" run</span></div><p>Mirror of the Imperial method. Downside: just <b>one</b> Federal faction across the pair, so supply depends heavily on its state (boom/outbreak = easy). Multiple stations per system means the suicide-rebuy trick is unreliable here — collect ~20 missions, jump, then work station to station. A Python-class hold lets you grab cargo jobs too.</p></article>
+    <article class="card"><div class="c-head"><h3>Ochosi / Chakpa</h3><span class="c-eyebrow">Most mission supply</span></div><p><b>Three</b> Federal-aligned factions in each system, so far more missions on the board. The trade-off: their jobs point at a wider spread of nearby systems, so it can be fiddlier to stack neatly into one destination.</p></article>
+    <article class="card"><div class="c-head"><h3>Canopus / Exphiay</h3><span class="c-eyebrow">Highest rep, slowest trips</span></div><p>Generally higher REP per mission and cargo-biased — bring a big hold (a <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Cutter</a> is ideal and tanks the NPC pirates). Catch: Canopus stations sit ~42,000 Ls from the star, so each supercruise leg is long. Best once you have a fast, well-shielded hauler.</p></article>
+  </div>
+</section>
+
+<section id="section-start-emp">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Getting started — Empire</h2><span class="tag">Step-by-step</span></div>
+  <p class="lead">The Empire has the single best rank-grind spot in the game: the <b>Mainani ↔ Ngalinn</b> data-courier shuttle. Two Imperial systems, very close together, each packed with Empire factions and offering stacks of data deliveries to the other.</p>
+  <ol class="steps">
+    <li><span class="st">Bring a small or medium ship</span><p>Both systems have only a <b>single outpost</b> with small/medium pads — <b>no large ships</b>. A nimble courier with good jump range and a Supercruise Assist is perfect; you don't need cargo space for the core loop.</p></li>
+    <li><span class="st">Dock at Mainani &amp; load up</span><p>Take every <b>Data Delivery / courier</b> mission to Ngalinn from factions flying the <b><a href="../../ships/ship-dossiers/imperial-eagle-combat.html">Imperial Eagle</a></b> insignia, plus any <b>credit-donation</b> jobs if you have spare funds. Always take the <b>Reputation reward</b>. You can hold roughly 20 at a time.</p></li>
+    <li><span class="st">Jump to Ngalinn and hand in</span><p>Make the short jump, hand in the data, and take a fresh batch of missions back to Mainani.</p></li>
+    <li><span class="st">(Optional) The suicide-rebuy speed trick</span><p>Because data-delivery missions <b>do not fail on ship destruction</b>, you can self-destruct the instant you arrive in the destination system — you rebuy right at the target and skip the supercruise + landing entirely. Crude, but it roughly doubles loop speed once you have a cheap rebuy.</p></li>
+    <li><span class="st">Overflow at Aitvas</span><p>If you run low on Mainani↔Ngalinn missions, <b>Flettner Survey in Aitvas</b> has plenty of Imperial factions too — top up there.</p></li>
+    <li><span class="st">Cash the promotion mission</span><p>At 100%, take an <b>"Imperial Navy …"</b> job from a Cordial+ Imperial faction to advance one rank.</p></li>
+    <li><span class="st">Know your stops</span><p><b>Outsider (1)</b> = <a href="../../engineering/engineering-manuals/engineers.html#engineer-hera-tani">Hera Tani</a> invitation · <b>Master (3)</b> = <a href="../../ships/ship-dossiers/imperial-courier-multipurpose.html">Imperial Courier</a> · <b>Squire (4)</b> = Achenar permit · <b>Baron (7)</b> = <a href="../../ships/ship-dossiers/imperial-clipper-multipurpose.html">Imperial Clipper</a> · <b>Duke (12)</b> = <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Imperial Cutter</a>.</p></li>
+  </ol>
+  <div class="callout">
+    <div class="co-eyebrow">Note</div>
+    <p>You are pledged to <b><a href="powerplay.html#powerplay-li-yong-rui">Li Yong-Rui</a></b> (Sirius, Imperial-aligned) for Powerplay — but a Powerplay pledge does <b>not</b> grant Imperial Navy rank. You still climb via Imperial-faction missions above. With Achenar (Squire, Rank 4) as your stated target, the Mainani/Ngalinn loop is the shortest path: four ranks is a short evening's work here.</p>
+  </div>
+</section>
+
+<section id="section-start-all">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Getting started — Alliance</h2><span class="tag">Step-by-step</span></div>
+  <p class="lead">There is no rank to chase, so the Alliance "grind" is really just two reputation jobs. Do them only if you want <a href="../../engineering/engineering-manuals/engineers.html#engineer-bill-turner">Bill Turner</a> or the Alioth permit — otherwise the Alliance ships are buyable with no standing at all.</p>
+  <ol class="steps">
+    <li><span class="st">Pick a convenient Alliance system</span><p>Find a system with <b>Alliance-aligned minor factions</b> (Alliance insignia on the board) and stations <b>close to the star</b> — short supercruise legs keep the rep-per-hour high.</p></li>
+    <li><span class="st">Run any missions, take Reputation</span><p>Mission type barely matters for plain superpower rep — couriers, cargo, donations all work. Take the <b>Reputation reward</b> each time to lift your Alliance bar toward Friendly.</p></li>
+    <li><span class="st">For Alioth: grind the Alioth Independents</span><p>The Alioth permit is separate. Work the <b>Alioth Independents</b> faction specifically — a common spot is <b>78 Ursae Majoris (Rominger Dock)</b>, near Alioth — until you reach <b>Allied</b> with that faction.</p></li>
+    <li><span class="st">Accept the permit mission</span><p>At Allied, a permit mission referencing <b>"Making Friends and Going Places"</b> appears at a nearby Alioth Independents station. Complete it to receive the Alioth permit. (If it won't show, relog — this one is known to be finicky.)</p></li>
+    <li><span class="st">Then unlock <a href="../../engineering/engineering-manuals/engineers.html#engineer-bill-turner">Bill Turner</a></span><p>With the Alioth permit in hand and Alliance reputation at <b>Friendly+</b>, you meet <a href="../../engineering/engineering-manuals/engineers.html#engineer-bill-turner">Bill Turner</a>'s requirements and can begin his unlock.</p></li>
+  </ol>
+</section>
+
+<section id="section-rescue">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Fastest method everywhere — station rescues</h2><span class="tag">Universal</span></div>
+  <p class="lead">When a starport is attacked (by Thargoids or humans), it catches fire and its population scrambles to evacuate — flooding the passenger board with rescue missions. If the local factions are Federal- or Imperial-aligned, this is the single fastest way to build their reputation, and it works for both.</p>
+  <ol class="steps">
+    <li><span class="st">Fit for evacuation</span><p>Bring a ship with as many <b>economy passenger cabins</b> as possible (desperate refugees don't need luxury), plus <b>shields</b> and several <b>heat sinks</b> — burning stations are volatile and hot. <a href="../../ships/ship-dossiers/type-7-transporter-trading.html">Type-7</a>, <a href="../../ships/ship-dossiers/python-multipurpose.html">Python</a> and <a href="../../ships/ship-dossiers/anaconda-multipurpose.html">Anaconda</a> are popular choices.</p></li>
+    <li><span class="st">Approach hot</span><p>Drop a <b><a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink</a></b> as you fly into the burning station to avoid overheating, then dock.</p></li>
+    <li><span class="st">Take the efficient missions</span><p>At the passenger board, prefer missions with the <b>fewest passengers for the highest REP</b>. Fill your cabins.</p></li>
+    <li><span class="st">Ferry to the rescue megaship</span><p>Drop another <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink</a> on the way out, fly to the nearby rescue vessel, hand in, and return. Rinse and repeat — the rep stacks fast.</p></li>
+  </ol>
+  <div class="callout">
+    <div class="co-eyebrow">The catch</div>
+    <p>You will <b>not</b> find Navy promotion missions at a burning station, so your rank <em>bar</em> fills rapidly but you can't actually advance there. Bank the progress, then pop over to a normal aligned system, pick up the "Federal/Imperial Navy …" mission, and collect all your earned ranks at once.</p>
+  </div>
+</section>
+
+<section id="section-notes">
+  <div class="sec-head"><span class="sec-num">13</span><h2>Field notes for a new commander</h2><span class="tag">Tips</span></div>
+  <ul class="bullets">
+    <li><b>Set allegiance by where you work, not a menu.</b> You don't "join" a superpower from a screen — you just do missions for its aligned factions and the rank bar appears.</li>
+    <li><b>Grind both navies if you want.</b> Federal and Imperial rank don't conflict; only reputation fluctuates. A popular path is Empire first (fastest) for a <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Cutter</a>, then run the Federation grind <em>in</em> that <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Cutter</a> for the <a href="../../ships/ship-dossiers/federal-corvette-multipurpose.html">Corvette</a>.</li>
+    <li><b>Reputation has a 75% floor.</b> Once you hit 75% Friendly with a superpower it never drops below that, so a lapsed grinder doesn't fall back to zero — they resume from a comfortable base.</li>
+    <li><b>Rank is required to fly, not just buy.</b> The 20%-markup yards (Sola Prospect, Jameson Memorial) only change the <em>price</em> — they do not bypass the rank gate on the <a href="../../ships/ship-dossiers/federal-dropship-combat.html">Dropship</a> line, <a href="../../ships/ship-dossiers/imperial-courier-multipurpose.html">Courier</a>, <a href="../../ships/ship-dossiers/imperial-clipper-multipurpose.html">Clipper</a>, <a href="../../ships/ship-dossiers/imperial-cutter-multipurpose.html">Cutter</a> or <a href="../../ships/ship-dossiers/federal-corvette-multipurpose.html">Corvette</a>.</li>
+    <li><b>Banked overflow is your friend.</b> Don't stop the moment the bar fills — keep working, hit 100% across several ranks, then chain promotion missions for a multi-rank jump.</li>
+    <li><b>Don't bother with combat for rank.</b> Bounties and combat bonds move the Navy bar very little; it's a mission grind. Combat ranks are a totally separate ladder.</li>
+    <li><b>Engineer shortcuts worth grabbing.</b> Even if you never want a faction ship: one Imperial mission gets you to Outsider and the <a href="../../engineering/engineering-manuals/engineers.html#engineer-hera-tani">Hera Tani</a> invitation; three Federal ranks reach <a href="../../engineering/engineering-manuals/engineers.html#engineer-colonel-bris-dekker">"The Sarge"</a>; and Friendly Alliance + Alioth opens <a href="../../engineering/engineering-manuals/engineers.html#engineer-bill-turner">Bill Turner</a>.</li>
+  </ul>
+</section>
+
+<!-- Sources -->
+<section class="credits" id="section-credits">
+  <div class="sec-head"><span class="sec-num">14</span><h2>Sources</h2></div>
+  <p class="lead">Figures on this page are verified against the sources below.</p>
+  <div class="cr-rows">
+    <div class="cr-row"><span class="cr-src">Fandom — Federation/Ranks</span><span class="cr-what">The 14-rank Federal Navy Auxiliary ladder and the ships/permits each Federal tier unlocks.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Federation/Ranks" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Federation/Ranks</a></div>
+    <div class="cr-row"><span class="cr-src">Fandom — Empire/Ranks</span><span class="cr-what">The 14-rank Imperial Navy Auxiliary ladder and the Imperial ships/permits each tier unlocks.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Empire/Ranks" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Empire/Ranks</a></div>
+    <div class="cr-row"><span class="cr-src">Fandom — Reputation</span><span class="cr-what">Reputation tiers (Allied&rarr;Hostile), the 75% Friendly floor, and how promotion missions unlock.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Reputation" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Reputation</a></div>
+    <div class="cr-row"><span class="cr-src">NEWP</span><span class="cr-what">Federation/Empire rank guide — the fastest-method routing (Empire courier loop, station rescues) behind Sections 9&ndash;12.</span><a class="cr-link" href="https://newp.io/superpowerrank" target="_blank" rel="noopener noreferrer">newp.io/superpowerrank</a></div>
+    <div class="cr-row"><span class="cr-src">Frontier Forums</span><span class="cr-what">Pilots' Federation rank requirements — naval rank ladders and the ships/permits each tier unlocks.</span><a class="cr-link" href="https://forums.frontier.co.uk/threads/pilots-federation-elite-rank-requirements-combat-trade-explorer.117378/" target="_blank" rel="noopener noreferrer">forums.frontier.co.uk/threads/pilots-federation-elite-rank-requirements</a></div>
+    <div class="cr-row"><span class="cr-src">YouTube — TheYamiks</span><span class="cr-what">Grinding Federation and Empire navy ranks to unlock the Federal Corvette and Imperial Cutter.</span><a class="cr-link" href="https://www.youtube.com/watch?v=ag96Su3io2A" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=ag96Su3io2A</a></div>
+    <div class="cr-row"><span class="cr-src">YouTube — Down to Earth Astronomy</span><span class="cr-what">Fast rank-up across both Empire and Federation navies via mission loops building reputation toward ascension missions.</span><a class="cr-link" href="https://www.youtube.com/watch?v=aMJkSF-NS-0" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=aMJkSF-NS-0</a></div>
+    <div class="cr-row"><span class="cr-src">YouTube — Down to Earth Astronomy</span><span class="cr-what">Federation rank grind using data-delivery missions to build reputation toward Federal Navy ascension missions.</span><a class="cr-link" href="https://www.youtube.com/watch?v=xCyz0d93fPo" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=xCyz0d93fPo</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-fine">
+    <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Systems &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+    <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+  </div>
+</footer>
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

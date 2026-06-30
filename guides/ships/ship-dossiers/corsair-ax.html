@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corsair &middot; AX Combat &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: AX → good-green (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Corsair · AX Combat</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight-thargoids"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight Thargoids</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Corsair</span><span class="role ac-role-ax">AX Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A fast Gutamaya Gauss boat &mdash; an agile AX <em>skirmisher</em></h2>
+      <p>Three medium mounts feed a full triple-Gauss heart-cracking battery, three large mounts add AX multi-cannons, and Imperial pace lets the Corsair dodge the lightning that staggers heavier hulls. Ten optional internals carry a deep shield/hull tank and Guardian hardening despite the ship having <em>no military slots and no fighter bay</em> &mdash; the two omissions that hold it just behind the <a href="alliance-chieftain-ax.html">Chieftain</a>, <a href="krait-mk-ii-ax.html">Krait</a> and <a href="alliance-challenger-ax.html">Challenger</a>. No rank, no permit, just a steep price.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/corsair.jpg" alt="Corsair" width="160" height="90">
+      <figcaption><b>Corsair</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">84<small>/100</small></div><div class="bar mini"><i style="--pct:84"></i></div></div>
+      <div class="stat"><div class="n">3L · 3M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">Military slots</div></div>
+      <div class="stat"><div class="n">355 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">~76.9M</div><div class="l">Hull price (Cr)</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Point Gutamaya's modern combat medium at the Thargoids and you get a fast, well-armed AX skirmisher. Three medium hardpoints carry a full triple-Gauss battery &mdash; the meta heart-cracking weapon &mdash; while three large mounts add Enhanced AX multi-cannons for sustained hull damage. Imperial speed and good agility let it bob and weave through an Interceptor's lightning the way the agile mediums do, and ten optional internals (deep for a combat hull) give it the room to tank with shields, <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> and Guardian hardening at once.</p>
+    <p>The reason it sits at <b>84</b> rather than alongside the top AX mediums is specific and honest: the Corsair has <b>no military slots and no fighter bay</b>. Module hardening &mdash; the Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">Module Reinforcement</a> that keeps Thargoid lightning from stripping your kit &mdash; has to come out of the same optionals you want for shields and hull, and there is no SLF decoy to split a swarm. The <a href="alliance-chieftain-ax.html">Chieftain</a>, <a href="krait-mk-ii-ax.html">Krait Mk II</a> and <a href="alliance-challenger-ax.html">Challenger</a> all bring at least one of those advantages, so they edge ahead. The Corsair answers with three native Gauss mounts, raw speed and internal depth &mdash; and no rank or permit gate.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Mobile anti-Xeno work: Interceptor hunts where you dodge rather than soak, AX Conflict Zone skirmishing, and any sortie where a fast, six-mount Gauss platform with deep internals wants to control range and stay out of the lightning.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-combat" href="corsair-combat.html"><span class="vrole">Combat</span><span class="vrate">85<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="corsair-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">82<small>/100</small></span></a>
+        <a class="vchip r-trading" href="corsair-trading.html"><span class="vrole">Trading</span><span class="vrate">74<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight-thargoids">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3L &middot; 3M <small>(3 medium Gauss)</small></div></div>
+      <div class="cell"><div class="k">Fighter bay</div><div class="v">No <small>(no SLF decoy)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0 <small>(hardening from optionals)</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">280 / 355 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Base armour / shield</div><div class="v">270 / ~235 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Corsair a capable <a href="../../engineering/engineering-manuals/modules.html#module-xeno">Xeno</a> hunter:</p>
+    <ul class="bullets">
+      <li><b>Three medium Gauss mounts.</b> A native triple-Gauss battery &mdash; the heart-cracking weapon of choice &mdash; with three large mounts left over for Enhanced AX multi-cannons.</li>
+      <li><b>Imperial speed and agility.</b> 355 m/s on boost and good handling let it dodge the lightning that heavier AX hulls must absorb &mdash; in AX, evasion is survival.</li>
+      <li><b>Ten optional internals.</b> Deep enough to layer a bi-weave shield, <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> <em>and</em> Guardian module hardening despite having no dedicated military bays.</li>
+      <li><b>No rank, no permit.</b> Pure-credit access to a fast, six-mount AX platform &mdash; no navy ladder to climb first.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The Corsair has <b>no military slots</b>, so its Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">Module Reinforcement</a> competes for the same optionals as its shield and hull tank &mdash; you can't harden as freely as a <a href="alliance-chieftain-ax.html">Chieftain</a> or <a href="alliance-challenger-ax.html">Challenger</a>. It also has <b>no fighter bay</b> for a decoy, only a medium-grade base hull (270 armour / ~235 MJ shield), and at ~76.9M Cr it is a premium price for a medium. Its case is mobility and firepower, not soak.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Three native medium Gauss mounts and Imperial 355 m/s boost lead the score; no military slots and a medium-grade 270/~235 MJ base tank cap it at 84.</p>
+    <p>The <b>84/100</b> headline is a verdict against the anti-Xeno role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Hardpoints for Gauss</td><td class="sc"><span class="scval">23</span><span class="den">/25</span><div class="bar mini"><i style="--pct:92"></i></div></td><td class="wcell">Three medium hardpoints take a full native triple-Gauss battery with three large mounts left for Enhanced AX multi-cannons and a Guardian Plasma Charger — six mounts total, more medium Gauss than the Krait Mk II (2M) or Phantom, short only of the Gunship/Cutter four-medium ceiling.</td></tr>
+      <tr><td class="fct">Heat capacity &amp; management</td><td class="sc"><span class="scval">16</span><span class="den">/20</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">Heat is managed by speed plus a heat-sink launcher and Overcharged + Thermal Spread on the 7A plant, but the capacitor-hungry triple Gauss and absent military bays give no exceptional thermal margin — solidly mid-to-upper field, not class-leading.</td></tr>
+      <tr><td class="fct">Hull tank &amp; reinforcement room</td><td class="sc"><span class="scval">14</span><span class="den">/20</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">Ten optionals (6·6·6·5·5·5·4·3·2·1) push effective armour past ~2,500 and shield near ~900 MJ engineered, but with zero military slots and only a 270 armour / ~235 MJ base hull, Guardian MRP/HRP must compete with shield and tank for the same bays — the explicit limiter behind the Chieftain and Challenger.</td></tr>
+      <tr><td class="fct">Agility</td><td class="sc"><span class="scval">23</span><span class="den">/25</span><div class="bar mini"><i style="--pct:92"></i></div></td><td class="wcell">280/355 m/s with good Imperial handling, extendable to ~430 m/s boost on G5 Dirty Drives — the lead strength, letting it dodge the lightning that heavier AX hulls must absorb where the large warships cannot evade at all.</td></tr>
+      <tr><td class="fct">Caustic handling &amp; support slots</td><td class="sc"><span class="scval">8</span><span class="den">/10</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">Four utility mounts and the deep optionals carry an Advanced Xeno Scanner, caustic-sink launcher, decontamination limpet and stacked Guardian caustic-resistant HRP, but there is no fighter bay for an SLF decoy to split a swarm.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">84</span><span class="den">/100</span><div class="bar mini"><i style="--pct:84"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, hardening and heat management matter as much as raw mounts.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad AX ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Corsair</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="alliance-chieftain-ax.html">Alliance Chieftain</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 1M 3S</td><td class="pcc"><span class="p">Military slots for hardening; cheaper; very agile</span><span class="c">Fewer Gauss mounts; shallower internals</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-ax.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">SLF decoy; deep internals; no rank</span><span class="c">No military slots; one fewer medium Gauss mount</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-challenger-ax.html">Alliance Challenger</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 3M 3S</td><td class="pcc"><span class="p">Three military slots; tankier; cheaper</span><span class="c">Slower; fewer large AX mounts</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod">Corsair <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>3L 3M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-ax.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 2M</td><td class="pcc"><span class="p">Faster; long reach; no rank</span><span class="c">Fewer mounts; no military slots; thinner tank</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-gunship-ax.html">Federal Gunship</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 4M 2S</td><td class="pcc"><span class="p">Maximum Gauss mounts; military slots; very tough</span><span class="c">Slow and clumsy; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank gate</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among the AX mediums the Corsair is the fast, deep-internal generalist: more native Gauss mounts than the <a href="krait-mk-ii-ax.html">Krait</a> or <a href="krait-phantom-ax.html">Phantom</a>, faster than the <a href="alliance-challenger-ax.html">Challenger</a>, roomier than the <a href="alliance-chieftain-ax.html">Chieftain</a>. What costs it the points is the missing module hardening &mdash; every hull above it either has military slots or a decoy bay, and in AX that survivability matters more than an extra gun.</p>
+    <h3 class="subhead">Other classes &mdash; the large AX warships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Corsair</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="imperial-cutter-ax.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>1H 2L 4M</td><td class="pcc"><span class="p">Highest shield tank in the game; four medium Gauss</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> Duke rank; large pad; can't dodge</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-ax.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; no rank</span><span class="c">Ponderous; large pad; far harder to evade in</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-corvette-ax.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">Capital tank; two military slots; eight utilities</span><span class="c">Rear Admiral rank; large pad; too heavy to dodge</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-10-defender-ax.html">Type-10 Defender</a></td><td><span class="pill pad-large">Large</span></td><td>4L 3M 2S</td><td class="pcc"><span class="p">Huge mount count; enormous armour; no rank</span><span class="c">Very slow; feeble shields; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The large warships out-tank and out-mount the Corsair but need a pad and usually a rank grind, and none can dodge an Interceptor's lightning. The Corsair trades their soak for speed: it stays out of the fire rather than standing in it, fields three native Gauss from a medium pad, and asks for no rank at all.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~76.9M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted (A-rated)</div><div class="v">~110M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~140M+ Cr</div></div>
+      <div class="cell"><div class="k">Rebuy (eng.)</div><div class="v">~7M Cr</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Pad / Permit</div><div class="v">Medium / None</div></div>
+    </div>
+    <p>At ~76.9M Cr the Corsair is one of the priciest combat mediums, but it carries <b>no rank or permit gate</b> &mdash; just credits and the Guardian/AX unlocks. A full AX fit with triple Gauss, Enhanced AX multi-cannons, a capable shield and layered Guardian reinforcement runs to roughly ~110M Cr A-rated and ~140M+ Cr engineered, with a modest medium-ship rebuy near ~7M to budget for.</p>
+    <p>You pay for speed and breadth, not survivability. If you already fly the Corsair as a combat or multipurpose medium, converting it to AX is straightforward &mdash; you keep its pace and add Gauss. If you want maximum staying power per credit, the Alliance hulls deliver most of the AX capability with military slots and a lower price.</p>
+    <div class="callout"><span class="lbl">Premium, no rank</span><p>~140M Cr engineered plus the Guardian-tech grind buys a fast, six-mount AX skirmisher with no navy ladder to climb. The rebuy is light for a ship at this firepower &mdash; you pay up front for the hull, not on every loss.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A fast AX skirmisher: triple Guardian Gauss on the medium mounts for heart damage, two Enhanced AX multi-cannons and a Guardian Plasma Charger on the large mounts for sustained hull damage, and the deep optionals carrying a bi-weave shield, Guardian module hardening and Guardian hull reinforcement to make up for the absent military slots. Initial is buy-only; A-Rated adds the unlocked AX/Guardian kit; Engineered hardens shields, hull, heat and mobility — the AX and Guardian weapons themselves cannot be engineered.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Large 1</td><td class="st">—</td><td class="st">3C Enhanced AX Multi-Cannon (Gimballed)</td><td class="eng">(No blueprint available)</td><td class="note">Enhanced (V2) AX multi-cannon, gimballed to track Interceptor drift; sustained anti-hull DPS — AX weapons carry no engineering blueprint.</td></tr>
+<tr><td class="slot">Large 2</td><td class="st">—</td><td class="st">3C Enhanced AX Multi-Cannon (Gimballed)</td><td class="eng">(No blueprint available)</td><td class="note">Second gimballed Enhanced AX multi-cannon doubles the sustained hull pressure between exertion phases; not engineerable.</td></tr>
+<tr><td class="slot">Large 3</td><td class="st">—</td><td class="st">3C Guardian Plasma Charger (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Plasma Charger adds a charge-up burst that hits hearts and hull hard; Guardian weapons cannot be engineered.</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">—</td><td class="st">2B Guardian Gauss Cannon (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Gauss Cannon — the primary heart-cracker; fixed-only, immensely capacitor-hungry, and carries no engineering blueprint.</td></tr>
+<tr><td class="slot">Medium 2</td><td class="st">—</td><td class="st">2B Guardian Gauss Cannon (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Second fixed Gauss; three together crack an exerted heart in one window — manage WEP pips between shots.</td></tr>
+<tr><td class="slot">Medium 3</td><td class="st">—</td><td class="st">2B Guardian Gauss Cannon (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Third fixed Gauss completes the heart battery; Gauss is the reason the distributor is A-rated first.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">—</td><td class="st">0C Xeno Scanner</td><td class="eng">(No blueprint available)</td><td class="note">Advanced Xeno Scanner reads Thargoid type and live heart count; scanners have no blueprint.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0I Caustic Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds caustic-sink charges. Clears caustic damage in Thargoid fights.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Thermal Resistant + Super Capacitors</td><td class="note">Shield Booster — Thermal Resistant against Thargoid thermal and caustic damage; the only engineered utility.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Military Grade Composite</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">7E Power Plant</td><td class="st">7A Power Plant</td><td class="eng">G5 Overcharged + Thermal Spread</td><td class="note">A-rate to power Gauss, Plasma Charger, shield and cells; Overcharged adds headroom, Thermal Spread bleeds the extra heat.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">7E Thrusters</td><td class="st">7A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rate + Dirty Drives — Imperial speed is this hull's survivability, so protect and extend it.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rated to reach AX zones and Maelstroms; Increased Range with Mass Manager offsets the heavy defensive fit.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">4E Life Support</td><td class="st">4D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">7E Power Distributor</td><td class="st">7A Power Distributor</td><td class="eng">G5 Charge Enhanced + Super Conduits</td><td class="note">A-rate this FIRST — triple Gauss drains the class-7 weapons capacitor faster than anything else on the ship.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">6E Sensors</td><td class="st">6D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; AX fights are close-range, so trade sensor range for mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock class-5 tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6C Bi-Weave Shield Generator</td><td class="st">6C Bi-Weave Shield Generator</td><td class="eng">G5 Thermal Resistant + Hi-Cap</td><td class="note">Bi-weave regenerates fast under Thargoid fire; Thermal Resistant blunts their thermal damage and Hi-Cap adds raw MJ.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">6A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">5D Guardian Hull Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Guardian HRP (caps at size 5) under-fills this size-6 slot — Guardian armour resists caustic and is unlock-only, not engineerable.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5D Guardian Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Module Reinforcement protects the cores from penetrating hits — the hardening the missing military slots would have given; not engineerable.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5D Guardian Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Second Guardian MRP spreads internal damage further; Guardian tech carries no blueprint.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5D Guardian Hull Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Second size-5 Guardian HRP — the bulk of the caustic-resistant effective armour; unlock-only.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">3E Decontamination Limpet Controller</td><td class="eng">(No blueprint available)</td><td class="note">Decontamination Limpet Controller cleans caustic off the hull; the controller maxes at size 3, so it under-fills this size-4 slot, and limpet controllers have no blueprint.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3D Guardian Hull Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Size-3 Guardian HRP adds more caustic-resistant armour from the mid optionals; not engineerable.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Standard Hull Reinforcement — the one reinforcement that CAN be engineered: Heavy Duty + Deep Plating.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Guardian Hull Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Smallest optional — a size-1 Guardian HRP squeezes a last sliver of caustic-resistant armour; unlock-only.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5WR30vDMBDH%2F5c878Eyf0DfhCkMNh3WN5FwLtfuME3KJZnMsf%2FdpJvWDoX2KdznuA933%2BwFbtF4kYuFBWWDFxNRbKiJYG3ZAfEJPECNEZ6quToOxXJpVdDoRP6yF4W2id5ybUManHusO5OElsuKQWEW249G5J4DTsSKyTL5ncizw%2BTHs7IfyCsNxncuMl42iTeJS0efeCPXGpwbYlwCmTtTkYkL95TYwrG6e46pxDxKP2PaYl%2B52TXIKvFWezVcu6ASi9A0ls8O17Hhjo3WeTnc2WY5I%2BeZ3oK3%2FEeiquuODeIJFJwpHRoX%2F701XY%2BINKB%2BBvPel5WR%2Bkh%2FJzkdYEvPRSaLtMPZehtCrSo0yPB98GnNqSzB%2BX%2Ftr4cvLR2V%2FjUDAAA%3D&amp;bn=Corsair" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F72VW2%2BbQBCF%2FwvPfjDGdlq%2FVUqjRrJbq85bVa3G7ACjLLtoL27cKP%2B9y%2FoWkN1C6%2FQJOKv9zsxhGZ4j3KC00SyaK%2BDK2WgQrQqqvJAqbYD0XvgMJXpx%2F3TPd5v840JxJ9BEs2%2FP0UqoWv2gS%2BXqjfcWyxOJQdBZroFj4pe%2FyGhmtcNBtNSkNNltNItfBkfOHHSOn0DzSpG08QlYVJaBLZ2wlIKUSrKcyjUIJuodvcmjNyMnTXLu%2FAKBZJUAU4IAJ9MCNcvoCXlniwVycuWlXI4eOThj9k3sDMqwsb%2FD6M0dkus7PJDcXsroCaUKWJ898A3I1JOt39CX20om9eX6g2NIPh7frXVao%2F0reiuVAsFeCz1uok1BKPhaKWM919BPHLLUn1Ez6QBeqh%2BolwKkPUG9Batqvar1QLzpTlwAyY8yJ%2BnnSgOJQeyLu9N%2BePmxldlbTRtsIotthZrXesBOumPnlOHKVZXSrcaFXzC7hcAc75ijrlnekrGa1s4qfSZRflrtG8RX4NBCGpTGj%2BdAmnav886heAD52IRlXrVefZ1kl0FfX4YxW9U1tMoLBzNH%2F6XCoeF9mQnLwNiu9NFleopCrA9VT7unGbjJOe5hfhVOCI0kM6VTLHH%2FIUy6xxwsxsFict6iDL%2FffzeZ%2FA%2BT6e9MrhPWTbAYNy24VhJTJa1WgvFwByVJsOT%2FK7VLsnOJu7q8Cy5Jn0aSno28Dxaj1rA6ix71Q8fDgI77VB%2F%2FyeL7yy%2FXBbO5SwoAAA%3D%3D&amp;bn=Corsair" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F81XW0%2FbMBT%2BL36uJtq0sPVtUBiTysYI0h6mKTLOSWLh2JkvHR3iv%2B%2FYKW1SWqAXpr00zbH8Xc7xsZ17AhOQlgzJWNFUOUs6JC54hQGmtKFczwJfaAkYnL19TutJ%2BHqhUifAkOGPexIL5aMfdamcn%2FjZQrlASmiIJ7mmKUQ4%2FFWSodUOOuRSc6W5nZJht0NOZc4lgOYyJ8N7ciwcVPhiZxJq9OQc6GQ6cjinQ8ZoQpDhoEO%2BOSpqnHcHiHRXIUyJWqk4zTJgXp2pgHEqHtWwwsnbKXl46Mz1j6nO4ZzqtFJI210YKSqbUFs6YTmjUiqZ5Ly8QSzhZ6xztBa592bIURs5dzjAqUwqQU1JBXWSFaCTjN9B%2BmqKC0i5K9flZc6RU2fMzERNUIaJmzP03pwh2j%2FDNZfTdTm6A6kCLOaephMqGSJbnLAp7lJmGMrFhWO4vJ3X1jqtwT6L%2FmKrXXDDfKPZGJFPaEUZb%2FZbt91vD%2BvULmW5QMD%2FVWq%2FLdUUHER6o5SxqNPwP3CQMOwhM9haaBwgj2eQ1%2Bi%2F5GzbPaytb8VWdql%2Bg74UVNqFMdSSVD5e%2BXhwdbSrqwVPUltLt7XUUMaUEgjU9HNBuaylmLYhCMH9mKmHkxHX258uMz1qAlrgybpk40wjE66EzI40n0DbSjFF3NTHg53BrnbO4lEyVjK%2FojLs81v5yUzqG3eydFLyDGJXVUovrS%2BBA6YeCCb6tYne1iYaTMmY54X9Dv53rZ0nTTDixmp%2B46zSK1ohXYzusSEanMk5yj3T8MuBZNOdmqOpNaPGtipyRVO6ZNCANHgDC74Od61DHMA2LsGZA3FN5W1bWYZRi9HmOo9ecRb6x0E3ib2hJa9hQ8wBT1j6WMuZ56hO1m779qc58l52bt9SwhatCgZzvfXmGAhx85i0w%2F0cRyeIeewx41oeN80NvL%2B%2BrkFstErs412qcEJo4DJTmoFPRrPYvdcWux8oBqspyvAJsjvJ4F%2BQHD5Hsp9kHQWKfpsi1UoCU9JqJZI0%2FKMll9RyvON6lqhm6b6W5X1giTYxEm1o5EOg6C0djyuhe7tubOcIe9WC3fkL86nSFTc0%2F%2BgeBKPdTXLZfSmXPx%2F%2BAiSOh6jdDwAA&amp;bn=Corsair" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5WR30vDMBDH%2F5c878Eyf0DfhCkMNh3WN5FwLtfuME3KJZnMsf%2FdpJvWDoX2KdznuA933%2BwFbtF4kYuFBWWDFxNRbKiJYG3ZAfEJPECNEZ6quToOxXJpVdDoRP6yF4W2id5ybUManHusO5OElsuKQWEW249G5J4DTsSKyTL5ncizw%2BTHs7IfyCsNxncuMl42iTeJS0efeCPXGpwbYlwCmTtTkYkL95TYwrG6e46pxDxKP2PaYl%2B52TXIKvFWezVcu6ASi9A0ls8O17Hhjo3WeTnc2WY5I%2BeZ3oK3%2FEeiquuODeIJFJwpHRoX%2F701XY%2BINKB%2BBvPel5WR%2Bkh%2FJzkdYEvPRSaLtMPZehtCrSo0yPB98GnNqSzB%2BX%2Ftr4cvLR2V%2FjUDAAA%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F72VW2%2BbQBCF%2FwvPfjDGdlq%2FVUqjRrJbq85bVa3G7ACjLLtoL27cKP%2B9y%2FoWkN1C6%2FQJOKv9zsxhGZ4j3KC00SyaK%2BDK2WgQrQqqvJAqbYD0XvgMJXpx%2F3TPd5v840JxJ9BEs2%2FP0UqoWv2gS%2BXqjfcWyxOJQdBZroFj4pe%2FyGhmtcNBtNSkNNltNItfBkfOHHSOn0DzSpG08QlYVJaBLZ2wlIKUSrKcyjUIJuodvcmjNyMnTXLu%2FAKBZJUAU4IAJ9MCNcvoCXlniwVycuWlXI4eOThj9k3sDMqwsb%2FD6M0dkus7PJDcXsroCaUKWJ898A3I1JOt39CX20om9eX6g2NIPh7frXVao%2F0reiuVAsFeCz1uok1BKPhaKWM919BPHLLUn1Ez6QBeqh%2BolwKkPUG9Batqvar1QLzpTlwAyY8yJ%2BnnSgOJQeyLu9N%2BePmxldlbTRtsIotthZrXesBOumPnlOHKVZXSrcaFXzC7hcAc75ijrlnekrGa1s4qfSZRflrtG8RX4NBCGpTGj%2BdAmnav886heAD52IRlXrVefZ1kl0FfX4YxW9U1tMoLBzNH%2F6XCoeF9mQnLwNiu9NFleopCrA9VT7unGbjJOe5hfhVOCI0kM6VTLHH%2FIUy6xxwsxsFict6iDL%2FffzeZ%2FA%2BT6e9MrhPWTbAYNy24VhJTJa1WgvFwByVJsOT%2FK7VLsnOJu7q8Cy5Jn0aSno28Dxaj1rA6ix71Q8fDgI77VB%2F%2FyeL7yy%2FXBbO5SwoAAA%3D%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F81XW0%2FbMBT%2BL36uJtq0sPVtUBiTysYI0h6mKTLOSWLh2JkvHR3iv%2B%2FYKW1SWqAXpr00zbH8Xc7xsZ17AhOQlgzJWNFUOUs6JC54hQGmtKFczwJfaAkYnL19TutJ%2BHqhUifAkOGPexIL5aMfdamcn%2FjZQrlASmiIJ7mmKUQ4%2FFWSodUOOuRSc6W5nZJht0NOZc4lgOYyJ8N7ciwcVPhiZxJq9OQc6GQ6cjinQ8ZoQpDhoEO%2BOSpqnHcHiHRXIUyJWqk4zTJgXp2pgHEqHtWwwsnbKXl46Mz1j6nO4ZzqtFJI210YKSqbUFs6YTmjUiqZ5Ly8QSzhZ6xztBa592bIURs5dzjAqUwqQU1JBXWSFaCTjN9B%2BmqKC0i5K9flZc6RU2fMzERNUIaJmzP03pwh2j%2FDNZfTdTm6A6kCLOaephMqGSJbnLAp7lJmGMrFhWO4vJ3X1jqtwT6L%2FmKrXXDDfKPZGJFPaEUZb%2FZbt91vD%2BvULmW5QMD%2FVWq%2FLdUUHER6o5SxqNPwP3CQMOwhM9haaBwgj2eQ1%2Bi%2F5GzbPaytb8VWdql%2Bg74UVNqFMdSSVD5e%2BXhwdbSrqwVPUltLt7XUUMaUEgjU9HNBuaylmLYhCMH9mKmHkxHX258uMz1qAlrgybpk40wjE66EzI40n0DbSjFF3NTHg53BrnbO4lEyVjK%2FojLs81v5yUzqG3eydFLyDGJXVUovrS%2BBA6YeCCb6tYne1iYaTMmY54X9Dv53rZ0nTTDixmp%2B46zSK1ohXYzusSEanMk5yj3T8MuBZNOdmqOpNaPGtipyRVO6ZNCANHgDC74Od61DHMA2LsGZA3FN5W1bWYZRi9HmOo9ecRb6x0E3ib2hJa9hQ8wBT1j6WMuZ56hO1m779qc58l52bt9SwhatCgZzvfXmGAhx85i0w%2F0cRyeIeewx41oeN80NvL%2B%2BrkFstErs412qcEJo4DJTmoFPRrPYvdcWux8oBqspyvAJsjvJ4F%2BQHD5Hsp9kHQWKfpsi1UoCU9JqJZI0%2FKMll9RyvON6lqhm6b6W5X1giTYxEm1o5EOg6C0djyuhe7tubOcIe9WC3fkL86nSFTc0%2F%2BgeBKPdTXLZfSmXPx%2F%2BAiSOh6jdDwAA" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Corsair&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;corsair_armour_grade1&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Corsair&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;corsair_armour_grade3&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_atmulticannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_atmulticannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_guardian_plasmalauncher_fixed_large&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_medium&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_xenoscanner_advanced_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_causticsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size6_class5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size6&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size5&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size5&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size4&quot;,&quot;Item&quot;:&quot;int_dronecontrol_decontamination_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot08_Size3&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size3_class2&quot;},{&quot;Slot&quot;:&quot;Slot09_Size2&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot10_Size1&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size1_class2&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;anti-xeno&quot;,&quot;intro&quot;:&quot;A fast AX skirmisher: triple Guardian Gauss on the medium mounts for heart damage, two Enhanced AX multi-cannons and a Guardian Plasma Charger on the large mounts for sustained hull damage, and the deep optionals carrying a bi-weave shield, Guardian module hardening and Guardian hull reinforcement to make up for the absent military slots. Initial is buy-only; A-Rated adds the unlocked AX/Guardian kit; Engineered hardens shields, hull, heat and mobility — the AX and Guardian weapons themselves cannot be engineered.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Harden from the optionals, not military bays&quot;,&quot;text&quot;:&quot;The Corsair has no military slots, so its Guardian Module Reinforcement and hull hardening come out of the ten optionals — budget two Guardian MRP and three Guardian HRP before chasing more shield. Put all three Gauss on the mediums, the AX multi-cannons and a Plasma Charger on the larges, and lean on Imperial speed to dodge what you cannot soak.&quot;},&quot;notes&quot;:{&quot;LargeHardpoint1&quot;:&quot;Enhanced (V2) AX multi-cannon, gimballed to track Interceptor drift; sustained anti-hull DPS — AX weapons carry no engineering blueprint.&quot;,&quot;LargeHardpoint2&quot;:&quot;Second gimballed Enhanced AX multi-cannon doubles the sustained hull pressure between exertion phases; not engineerable.&quot;,&quot;LargeHardpoint3&quot;:&quot;Guardian Plasma Charger adds a charge-up burst that hits hearts and hull hard; Guardian weapons cannot be engineered.&quot;,&quot;MediumHardpoint1&quot;:&quot;Guardian Gauss Cannon — the primary heart-cracker; fixed-only, immensely capacitor-hungry, and carries no engineering blueprint.&quot;,&quot;MediumHardpoint2&quot;:&quot;Second fixed Gauss; three together crack an exerted heart in one window — manage WEP pips between shots.&quot;,&quot;MediumHardpoint3&quot;:&quot;Third fixed Gauss completes the heart battery; Gauss is the reason the distributor is A-rated first.&quot;,&quot;TinyHardpoint1&quot;:&quot;Advanced Xeno Scanner reads Thargoid type and live heart count; scanners have no blueprint.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional / low-priority — Ammo Capacity adds caustic-sink charges. Clears caustic damage in Thargoid fights.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint4&quot;:&quot;Shield Booster — Thermal Resistant against Thargoid thermal and caustic damage; the only engineered utility.&quot;,&quot;PowerPlant&quot;:&quot;A-rate to power Gauss, Plasma Charger, shield and cells; Overcharged adds headroom, Thermal Spread bleeds the extra heat.&quot;,&quot;MainEngines&quot;:&quot;A-rate + Dirty Drives — Imperial speed is this hull's survivability, so protect and extend it.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated to reach AX zones and Maelstroms; Increased Range with Mass Manager offsets the heavy defensive fit.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate this FIRST — triple Gauss drains the class-7 weapons capacitor faster than anything else on the ship.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; AX fights are close-range, so trade sensor range for mass.&quot;,&quot;FuelTank&quot;:&quot;Stock class-5 tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Bi-weave regenerates fast under Thargoid fire; Thermal Resistant blunts their thermal damage and Hi-Cap adds raw MJ.&quot;,&quot;Slot02_Size6&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot03_Size6&quot;:&quot;Guardian HRP (caps at size 5) under-fills this size-6 slot — Guardian armour resists caustic and is unlock-only, not engineerable.&quot;,&quot;Slot04_Size5&quot;:&quot;Guardian Module Reinforcement protects the cores from penetrating hits — the hardening the missing military slots would have given; not engineerable.&quot;,&quot;Slot05_Size5&quot;:&quot;Second Guardian MRP spreads internal damage further; Guardian tech carries no blueprint.&quot;,&quot;Slot06_Size5&quot;:&quot;Second size-5 Guardian HRP — the bulk of the caustic-resistant effective armour; unlock-only.&quot;,&quot;Slot07_Size4&quot;:&quot;Decontamination Limpet Controller cleans caustic off the hull; the controller maxes at size 3, so it under-fills this size-4 slot, and limpet controllers have no blueprint.&quot;,&quot;Slot08_Size3&quot;:&quot;Size-3 Guardian HRP adds more caustic-resistant armour from the mid optionals; not engineerable.&quot;,&quot;Slot09_Size2&quot;:&quot;Standard Hull Reinforcement — the one reinforcement that CAN be engineered: Heavy Duty + Deep Plating.&quot;,&quot;Slot10_Size1&quot;:&quot;Smallest optional — a size-1 Guardian HRP squeezes a last sliver of caustic-resistant armour; unlock-only.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Charge Enhanced&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Thermal Resistant&quot;,&quot;experimental&quot;:&quot;Hi-Cap&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Thermal Resistant&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;},{&quot;module&quot;:&quot;Hull Reinforcement (standard)&quot;,&quot;size&quot;:2,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;},{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Corsair&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;corsair_armour_grade3&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_armour_chunky&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_atmulticannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_atmulticannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_guardian_plasmalauncher_fixed_large&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_medium&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_xenoscanner_advanced_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_causticsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_Thermic&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Boosted&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_HighFrequency&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Thermic&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_health&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot03_Size6&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size5&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size5&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size4&quot;,&quot;Item&quot;:&quot;int_dronecontrol_decontamination_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot08_Size3&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size3_class2&quot;},{&quot;Slot&quot;:&quot;Slot09_Size2&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size2_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot10_Size1&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size1_class2&quot;}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Harden from the optionals, not military bays</span><p>The Corsair has no military slots, so its Guardian Module Reinforcement and hull hardening come out of the ten optionals — budget two Guardian MRP and three Guardian HRP before chasing more shield. Put all three Gauss on the mediums, the AX multi-cannons and a Plasma Charger on the larges, and lean on Imperial speed to dodge what you cannot soak.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull &mdash; there is no rank to earn first. The AX/Guardian weapons, the <a href="../../engineering/engineering-manuals/modules.html#module-xeno">Xeno</a> Scanner, the caustic-sink kit and all the Guardian module and <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> are unlock-gated, so on credits alone the buy-only column leaves every hardpoint, every utility and the Guardian internals empty (&mdash;) until the materials are farmed.</p>
+    <p>What you can actually fit buy-only is the defensive shell: the stock <b>Lightweight Alloy</b> hull the Corsair ships with and a 6C Bi-Weave <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> in the first size-6 slot. The rest of the optionals stay open for the Guardian tank once it is unlocked.</p>
+    <p>The cores stay stock E-rated at this stage &mdash; the 7E <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-power-plant">power plant</a>, 7E <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>, 7E <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-power-distributor">power distributor</a>, 5E <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, 4E <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-life-support">life support</a> and 6E <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-sensors">sensors</a> all wait for the A-rating pass, and the hull stays <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> Alloy until that pass swaps in Military Grade Composite; only the class-5 <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">fuel tank</a> already sits at its working 5C rating.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority for the skirmisher:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>AX / Guardian weapons</b> &mdash; Triple 2B Guardian Gauss Cannons on the mediums, two 3C Enhanced AX Multi-Cannons and a 3C Guardian Plasma Charger on the larges. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &amp; Plant &rarr; 7A</b> &mdash; Gauss is brutally capacitor-hungry; the class-7 distributor and plant come before anything else. <span class="acc">~18M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; 7A</b> &mdash; The Imperial speed is the survivability; protect it. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">4</span><b>Guardian reinforcement</b> &mdash; Two 5D Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">MRP</a> and four Guardian <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">HRP</a> (5D, 5D, 3D, 1D) in the optionals to replace the missing military slots, plus a 2D <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">Hull Reinforcement</a> to fill the smallest. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> &rarr; Military Grade Composite</b> &mdash; Swap the stock Lightweight Alloy for the 2.5&times; hull-boost composite; it is the base armour the whole Guardian <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">HRP</a> stack multiplies. <span class="acc">~71M Cr</span></li>
+      <li><span class="stepnum">6</span><b>Shield &amp; booster</b> &mdash; The 6C Bi-Weave shield backed by a 0A <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">Shield Booster</a> and a 6A <a href="../../engineering/engineering-manuals/modules.html#module-shield-cell-bank">Shield Cell Bank</a> for burst healing. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">7</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &amp; light cores</b> &mdash; <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 5A for reach to the AX zones; <a href="../../engineering/engineering-manuals/modules.html#module-life-support">Life Support</a> &rarr; 4D and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">Sensors</a> &rarr; 6D to shed mass. <span class="acc">minor</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Capacitor before everything</span><p>Three Gauss empty the weapons capacitor fast &mdash; A-rate the class-7 distributor and plant first, then protect the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>, then build the Guardian-hardened tank into the deep optionals behind the Military Grade hull.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens shields, hull, heat and mobility; AX/Guardian weapons have limited engineering. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Power Distributor (7)</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Power Plant (7)</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Thrusters (7)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Bi-Weave Shield (6)</td><td>Thermal Resistant (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster</td><td>Thermal Resistant (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Hull Reinforcement (standard) (2)</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; triple Gauss is immensely capacitor- and power-hungry.</li>
+      <li><span class="stepnum">2</span>Dirty <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a> to G5 next &mdash; speed is how this hull survives the lightning.</li>
+      <li><span class="stepnum">3</span>Thermal-resistant bi-weave and <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a>, plus a Heavy-Duty <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a>, against Thargoid thermal and caustic damage.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and all Guardian reinforcement come from unlocks, not blueprints.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Heavy &mdash; G5 across the class-7 cores and a layered defensive suite, on top of the substantial Guardian-tech grind for the Gauss, AX multi-cannons and reinforcement. The Guardian unlocks are the real cost; ship blueprints are standard. Ask for exact per-blueprint or unlock counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>355 m/s</td><td>355 m/s</td><td class="acc">~430 m/s</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~235</td><td>~480</td><td class="acc">~900+</td></tr>
+        <tr><td class="mod"><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a></td><td>Lightweight Alloy</td><td>Mil. Grade Composite</td><td class="acc">Mil. Grade + Heavy Duty</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>~485</td><td>~2,600</td><td class="acc">~3,800+ (hull + Guardian <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">HRP</a>)</td></tr>
+        <tr><td class="mod">Module hardening</td><td>none</td><td>2 Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">MRP</a></td><td class="acc">2 <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">MRP</a> (from optionals)</td></tr>
+        <tr><td class="mod">AX firepower</td><td>high</td><td>high</td><td class="acc">high (3 Gauss + 3 large)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Corsair pairs three Gauss and three large AX mounts with a shield near ~900 MJ, a Military Grade Composite hull driven to Heavy Duty plus a five-deep Guardian <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">HRP</a> stack &mdash; effective armour into the high thousands with stacked caustic resistance &mdash; and ~430 m/s on boost: a fast, hard-hitting AX skirmisher. It still has no dedicated military slots, so the hull HP comes out of the optionals; it wins by dodging the lightning and cracking hearts quickly, not by standing in the fire.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Interceptor hunts.</b> Three Gauss crack hearts fast; use the speed to stay out of the lightning between exertion phases.</li>
+      <li><b>AX Conflict Zones.</b> Skirmish the edges of an AXCZ, picking targets and disengaging rather than soaking the swarm.</li>
+      <li><b>Scout and Cyclops culls.</b> Quick, mobile clears where pace and firepower beat staying power.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Wing flanker.</b> Pair with a tankier anchor &mdash; you dart and crack hearts while it holds aggro.</li>
+      <li><b>Maelstrom &amp; Titan runs.</b> The speed gets you in and out of dangerous airspace faster than a heavy hull.</li>
+      <li><b>Basilisk and Medusa hunts.</b> Manageable with disciplined positioning and heat control; respect the thinner tank.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example operations</span><p>Wherever Thargoids are fought &mdash; Interceptor hunts, AXCZ skirmishing, Maelstrom and Titan ops. The Corsair is the AX ship you bring when the plan is to dodge and out-pace the fight, not outlast it.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>No military slots: budget two Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">MRP</a> and Guardian <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">HRP</a> out of the optionals before chasing extra shield.</li>
+      <li>Put all three Gauss on the medium mounts and AX multi-cannons (plus a Plasma Charger) on the larges &mdash; the Corsair has no huge or military weapon mounts.</li>
+      <li>Speed is the survivability: manage your weapons capacitor, dodge the lightning, and re-engage rather than tanking it.</li>
+      <li>No fighter bay means no decoy &mdash; control range and heat yourself, and lean on the wing for aggro in big fights.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Corsair is a fast, well-armed AX skirmisher: three native Gauss mounts, three large AX mounts, <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> speed and ten optionals deep enough to layer a Guardian-hardened tank &mdash; all with no rank or permit. It scores 84 &mdash; just behind the <a href="alliance-chieftain-ax.html">Chieftain</a>, <a href="krait-mk-ii-ax.html">Krait</a> and <a href="alliance-challenger-ax.html">Challenger</a> &mdash; because it has no military slots for free module hardening and no fighter bay for a decoy, and its base tank is only medium-grade. Pay the premium, unlock the Guardian tech, and you have an agile Gauss boat that hunts Interceptors by dodging the lightning rather than soaking it.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship &mdash; used to validate the AX loadout, Gauss capacitor budget and the Guardian-reinforcement plan across the optionals.</span><a class="cr-link" href="https://coriolis.io/outfit/imperial_corsair" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/imperial_corsair</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, hardpoint sizes and the absence of military slots behind this AX reinforcement plan.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_corsair.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/imperial_corsair.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Corsair</span><span class="cr-what">Stock hull stats, hardpoint/internal layout, utility-mount count and price used for the AX cost figures.</span><a class="cr-link" href="https://inara.cz/elite/ship/44/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/44</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Corsair</span><span class="cr-what">Manufacturer (Gutamaya) and hull profile, cross-referenced against AX weapon class limits (no huge or military mounts).</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Corsair" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Corsair</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Corsair ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/corsair" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../corsair</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

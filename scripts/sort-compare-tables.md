@@ -5,7 +5,7 @@ they read **highest-rated first**.
 
 ## What it does
 
-Each ship page (`guides/ships/dossiers/` + `guides/ships/by-role/`) carries one or more
+Each ship page (`guides/ships/ship-dossiers/` + `guides/ships/best-ships-by-role/`) carries one or more
 `table.cmp` comparison tables whose final column is a rating in
 `<span class="rscore">NN</span>` (plus a `.bar mini` width hint). This script rewrites
 each such table's `<tbody>` so its `<tr>` rows are ordered by that rating, **descending**.

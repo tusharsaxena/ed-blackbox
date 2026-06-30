@@ -1,11 +1,11 @@
 # link-by-role-pages.py
 
 Curates the cross-links on the seven **by-role ladder pages**
-(`guides/ships/by-role/{combat,ax,mining,trading,exploration,passenger,multipurpose}.html`).
+(`guides/ships/best-ships-by-role/{combat,ax,mining,trading,exploration,passenger,multipurpose}.html`).
 
 ## Why a dedicated script
 
-`guides/ships/by-role/**` is deliberately **excluded** from the generic
+`guides/ships/best-ships-by-role/**` is deliberately **excluded** from the generic
 `apply-hyperlinks.py` pass: on a role ladder a bare ship name must link to *that page's
 role* dossier (combat.html → `federal-corvette-combat.html`, mining.html →
 `federal-corvette-mining.html`), but the generic applier resolves a bare hull name to its
@@ -18,11 +18,11 @@ Per page (role = filename stem):
 
 1. **Ship column** (`<td class="mod">`) in the **Full &lt;Role&gt; Ladder** and the
    **Small/Medium/Large-Pad &lt;Role&gt;** sections — every ship cell (comparison *and*
-   cost tables) → `../dossiers/<ship>-<role>.html`.
+   cost tables) → `../ship-dossiers/<ship>-<role>.html`.
 2. **Headline pick** (`<div class="pick">`) in **Recommendations By &lt;Role&gt;** → the
    same role-correct dossier. *(The "Also:" alternates in prose are left unlinked.)*
 3. **Cost & Engineering Reality** table (incl. the AX page's *Blueprint / Source* variant):
-   - **Module** col → `../../engineering/modules.html#module-<slug>`
+   - **Module** col → `../../engineering/engineering-manuals/modules.html#module-<slug>`
    - **Blueprint** col → `…/blueprints.html#blueprint-<group>-<effect>` (the module×blueprint
      combination — the group comes from the module on that row)
    - **Engineer** col → `…/engineers.html#engineer-<slug>` (each name in an `A / B` cell)
@@ -38,7 +38,7 @@ target dossier / anchor actually exists** — anything unresolved is reported, n
 ```bash
 python3 scripts/link-by-role-pages.py --check        # dry-run; prints +link counts + unresolved
 python3 scripts/link-by-role-pages.py                # apply to all 7 pages
-python3 scripts/link-by-role-pages.py guides/ships/by-role/combat.html   # one file
+python3 scripts/link-by-role-pages.py guides/ships/best-ships-by-role/combat.html   # one file
 python3 scripts/verify-links.py                      # confirm 0 broken targets/anchors
 ```
 

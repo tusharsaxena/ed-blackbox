@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krait Phantom &middot; Exploration &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Exploration → fed-blue (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Krait Phantom · Exploration</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-explore"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Explore</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Krait Phantom</span><span class="role ac-role-exploration">Exploration</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The <em>benchmark</em> medium explorer — premium range, deep internals, medium pad</h2>
+      <p>A premier exploration medium and a community favourite. The Krait Phantom combines a top-tier jump range with nine deep optional internals, good speed and medium-pad access — it ranks among the very best explorers, behind only the <a href="mandalay-exploration.html">Mandalay</a> and the long-range capitals on raw range, while beating them on pad flexibility and balance. No rank or permit required.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/krait-phantom.jpg" alt="Krait Phantom" width="160" height="90">
+      <figcaption><b>Krait Phantom</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">93<small>/100</small></div><div class="bar mini"><i style="--pct:93"></i></div></div>
+      <div class="stat"><div class="n">~75 LY</div><div class="l">Max jump (engineered)</div></div>
+      <div class="stat"><div class="n">6</div><div class="l"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a> class</div></div>
+      <div class="stat"><div class="n">9</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">~35.7M</div><div class="l">Hull price (Cr)</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad — most stations</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Krait Phantom is the <a href="krait-mk-ii-exploration.html">Krait Mk II</a>'s leaner, longer-legged sibling: it drops the fighter bay and a hardpoint in exchange for less mass and more range, producing one of the finest exploration mediums ever made. A strong <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> on a light-for-its-size hull gives it ~75 LY engineered, while nine optional internals (several large) let it carry a big <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">fuel scoop</a>, scanner, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, SRV bay and comforts with room to spare.</p>
+    <p>It's fast, it has good visibility, and its medium pad lands at the vast majority of stations &mdash; far more flexible than the large explorers. The result is a ship that travels far <em>and</em> carries everything, without the pad restrictions or cost of a capital. For many commanders the Phantom is the sweet spot of exploration: premium range, real capacity, no compromises that bite.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Serious long-range exploration with full kit: extended expeditions, exobiology, Guardian and Thargoid site visits, and any deep-space trip where carrying capacity and pad flexibility matter alongside range.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-ax" href="krait-phantom-ax.html"><span class="vrole">AX</span><span class="vrate">84<small>/100</small></span></a>
+        <a class="vchip r-mining" href="krait-phantom-mining.html"><span class="vrole">Mining</span><span class="vrate">70<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="krait-phantom-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">84<small>/100</small></span></a>
+        <a class="vchip r-passenger" href="krait-phantom-passenger.html"><span class="vrole">Passenger</span><span class="vrate">64<small>/100</small></span></a>
+        <a class="vchip r-trading" href="krait-phantom-trading.html"><span class="vrole">Trading</span><span class="vrate">62<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-explore">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~75 <small>LY</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">256 / 358 <small>m/s</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div><div class="v">Up to Class 6</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">270 <small>t</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;5&middot;5&middot;3&middot;3&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></div><div class="v">Class 5</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+    </div>
+    <p>Four things make the Phantom a premier exploration medium:</p>
+    <ul class="bullets">
+      <li><b>Premium jump range.</b> ~75 LY engineered puts it among the best explorers in the game &mdash; deep-space reach without a capital ship.</li>
+      <li><b>Deep internals and a class-6 scoop.</b> Nine optionals carry a large <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">fuel scoop</a>, scanner, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, SRV bay and comforts at once &mdash; a fully equipped expedition ship.</li>
+      <li><b>Speed and visibility.</b> Fast and easy to fly with a good canopy view &mdash; pleasant over long hauls.</li>
+      <li><b>Medium-pad access.</b> Lands at the vast majority of stations, unlike the large explorers &mdash; far fewer resupply headaches.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It can't quite match the <a href="mandalay-exploration.html">Mandalay</a>'s range or a capital's sheer module space and comfort on the very longest expeditions, and at ~36M Cr it's a real investment. But its compromises are mild: the Phantom gives up only a little range and capacity for a far more flexible pad and lower cost than the large explorers. There's little it does badly.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Near-apex engineered range paired with nine deep internals and medium-pad access, with almost no weak axis — a step behind only the Mandalay's longer legs and the capital explorers' module space.</p>
+    <p>The <b>93/100</b> headline is a verdict against the exploration role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Engineered jump range</td><td class="sc"><span class="scval">32</span><span class="den">/35</span><div class="bar mini"><i style="--pct:91"></i></div></td><td class="wcell">~75–80 LY engineered on a 270 t hull with an SCO drive and Guardian booster — among the best in the game, a step behind only the Mandalay (~85 LY) and the capital explorers.</td></tr>
+      <tr><td class="fct">Heat profile</td><td class="sc"><span class="scval">14</span><span class="den">/15</span><div class="bar mini"><i style="--pct:93"></i></div></td><td class="wcell">A Low-Emissions plant and clean drives keep it cool enough to scoop and neutron-boost safely, though it isn't the ice-cold outlier the Diamondback or Dolphin are.</td></tr>
+      <tr><td class="fct">Fuel tank &amp; reach</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">A fixed medium fuel tank and a class-6-capped scoop mean refuelling a touch earlier than a capital — fine, but more hops across the sparsest regions.</td></tr>
+      <tr><td class="fct">Canopy &amp; visibility</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">A good, open canopy for honking and bio-hunting — just shy of the Asp's wrap-around glass and the Mandalay's panorama.</td></tr>
+      <tr><td class="fct">Internals</td><td class="sc"><span class="scval">20</span><span class="den">/20</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">Nine optional slots carry a class-6 scoop, the Guardian booster, an SRV bay, dual AFMUs, a bi-weave and a scanner all at once — few explorers fit this much without sacrificing range.</td></tr>
+      <tr><td class="fct">Comfort &amp; cost</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Fast (256/358 m/s) and re-roles freely with no gates, but a ~36M Cr hull (~70M all-in, ~4.4M rebuy) is a real loss far from the bubble.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">93</span><span class="den">/100</span><div class="bar mini"><i style="--pct:93"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for exploration specifically</em>. The role column is the maximum engineered jump range in light-years &mdash; the headline number for deep-space travel.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad explorers</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Krait Phantom</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="mandalay-exploration.html">Mandalay</a></td><td><span class="pill pad-medium">Medium</span></td><td>~85</td><td class="pcc"><span class="p">Greater range; modern; lighter</span><span class="c">Less carrying capacity; pricier</span></td><td><span class="rscore">96</span><div class="bar mini"><i style="--pct:96"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>~75</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-exploration.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~62</td><td class="pcc"><span class="p">Cheaper; superb visibility</span><span class="c">Shorter range; less capacity</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-exploration.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>~58</td><td class="pcc"><span class="p">SLF bay; combat-capable too</span><span class="c">Heavier; shorter range</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-exploration.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~45</td><td class="pcc"><span class="p">Roomier; multi-role</span><span class="c">Much shorter range; heavy</span></td><td><span class="rscore">75</span><div class="bar mini"><i style="--pct:75"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-scout-exploration.html">Asp Scout</a></td><td><span class="pill pad-medium">Medium</span></td><td>~54</td><td class="pcc"><span class="p">Cheaper; light</span><span class="c">Shorter range; less capacity</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-exploration.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~48</td><td class="pcc"><span class="p">Cheap; decent range; cargo</span><span class="c">Slow; less specialised</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among medium explorers the Phantom is the capacity-plus-range champion. Only the <a href="mandalay-exploration.html">Mandalay</a> out-ranges it, and at the cost of carrying capacity; everything else gives up significant range or room. For a do-it-all expedition medium, the Phantom is the benchmark.</p>
+    <h3 class="subhead">Other classes &mdash; the range rivals</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Krait Phantom</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="mandalay-exploration.html">Mandalay</a></td><td><span class="pill pad-medium">Medium</span></td><td>~85</td><td class="pcc"><span class="p">The range king of the mediums</span><span class="c">Less capacity; pricier</span></td><td><span class="rscore">96</span><div class="bar mini"><i style="--pct:96"></i></div></td></tr>
+        <tr><td class="mod"><a href="caspian-explorer-exploration.html">Caspian Explorer</a></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="p">Vast module space; flagship comfort</span><span class="c">~189M Cr; large pad only</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-exploration.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>~78</td><td class="pcc"><span class="p">Huge range and internals</span><span class="c">Far pricier; large pad; ponderous</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-explorer-exploration.html">Diamondback Explorer</a></td><td><span class="pill pad-small">Small</span></td><td>~68</td><td class="pcc"><span class="p">Far cheaper; lands anywhere</span><span class="c">Less capacity and comfort</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="dolphin-exploration.html">Dolphin</a></td><td><span class="pill pad-small">Small</span></td><td>~58</td><td class="pcc"><span class="p">Very cool-running; cheap; comfortable</span><span class="c">Shorter range; less capacity</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The large explorers carry more and the <a href="mandalay-exploration.html">Mandalay</a> jumps further, but both trade away the Phantom's medium-pad flexibility (or, for the capitals, a great deal of money). The Phantom sits in the sweet spot: premium range and capacity without the pad and cost penalties of going large.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~35.7M Cr</div></div>
+      <div class="cell"><div class="k">A-rated explorer</div><div class="v">~50M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~70M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~35.7M Cr the Phantom is a serious purchase, but no rank or permit gates it. A full exploration fit &mdash; maxed <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>, class-6 scoop, scanner, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, SRV bay and comforts &mdash; brings the all-in figure to around 70M Cr.</p>
+    <p>It's the considered investment for a committed explorer: pricier than a DBE or <a href="asp-explorer-exploration.html">Asp</a>, but it carries more, jumps further and lands almost anywhere, making long expeditions markedly more comfortable and self-sufficient.</p>
+    <div class="callout"><span class="lbl">The committed explorer's pick</span><p>Around 70M Cr all-in for premium range, full expedition kit and medium-pad access &mdash; the ship many explorers settle on for the long haul.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A fully equipped expedition fit using the Phantom's deep, weight-light internals. Initial is a jump-capable buy-only starter; A-Rated is the expedition baseline; Engineered maximises range while keeping full kit and redundancy aboard. Plans and costs follow in the sections below.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0I Heat Sink Launcher</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">One light booster cheaply multiplies the bi-weave's raw MJ for safer landings; Heavy Duty + Super Capacitors is the biggest gain per tonne.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note"></td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">7E Power Plant</td><td class="st">7D Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">7D keeps mass down — with no guns to feed, output is not the limit; Low Emissions cuts heat and draw, Thermal Spread bleeds more.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">6E Thrusters</td><td class="st">6D Thrusters</td><td class="eng">G5 Clean Drive Tuning + Drag Drives</td><td class="note">6D thrusters; Clean Drive Tuning runs cool for safe planetary work, Drag Drives adds boost speed to climb out of gravity wells.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">The whole build — a 5A SCO drive for maximum range and fast in-system travel; Increased Range + Mass Manager is the single biggest roll in exploration.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">4E Life Support</td><td class="st">4D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">7E Power Distributor</td><td class="st">7D Power Distributor</td><td class="eng">G5 Engine Focused + Cluster Capacitors</td><td class="note">7D is plenty without weapons; Engine Focused + Cluster Capacitors gives engine-capacitor headroom for repeated boosts on landing approaches.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">6E Sensors</td><td class="st">6D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; exploration needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock 5C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6E Fuel Scoop</td><td class="st">6A Fuel Scoop</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5H Guardian FSD Booster</td><td class="eng">(No blueprint available)</td><td class="note">The Guardian FSD Booster — a flat jump-range gain unlocked at a Guardian site, not bought; size 5 is the largest and it is non-negotiable and not engineerable.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">4G Planetary Vehicle Hangar</td><td class="eng">(No blueprint available)</td><td class="note">A size-4 multi-SRV hangar for exobiology and Guardian-site runs (it under-fills this size-5 bay); hangars carry no blueprint.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3C Bi-Weave Shield Generator</td><td class="eng">G5 Enhanced Low Power + Lo-Draw</td><td class="note">A light size-3 bi-weave for a fast-regenerating landing buffer; Enhanced Low Power + Lo-Draw keeps its draw minimal (bi-weaves are C-rated only).</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3E Repair Limpet Controller</td><td class="eng">(No blueprint available)</td><td class="note">A repair limpet controller for hull repairs the AFMU cannot reach; swap for extra fuel if you prefer, and it carries no blueprint.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E Economy Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">A size-2 economy cabin for tourist legs, or swap for a science/utility module; passenger cabins are not engineerable.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5WQTU8CMRCG%2F0vPHNz4lezNBI0koMTlZkwz0oGdUNpmOsUg4b%2FbXT9w0cNyavq87dPpu1O4QSeqVGMPxidRA1XVFDJYMZBoS8v6Gz7AGnPwtRuZz4t5O%2FEmWYyqfN6pyvqG3vDaJ87ZSHDdtWloM71kMFjkI49OlcIJB2rK5Jlkq8piP%2Fhxzcht74FN8OSkODjrILpGkEhuZSG5eY2sJTGjaMl3eqin%2Fg15asHJQZsf0aHhoeE60jte67mFGPsMOwFyt25JLvfRUWILW91Vf90d59Jz3QsZMm2wq6y3Adk0vNVe9teOaYFVCsHz0cdtDuJn0Dov%2BjvbLocUhek1ied%2FGjWH9NRen8DAkTKii57jyZUmtDNwq65skalk%2BrvJ8x62ZjkrdNXM8NcY596HfgO%2B7D8AeT4lAI0DAAA%3D&amp;bn=Krait%20Phantom" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XVzY7aMBAA4HfxGVWEwG7Lre222pWgpWVvVWUNySSxMLY1tqko4t3rOFAI5ZDsqifkGfJlMv7bM9yicmzKZhpy7R0bsGUlTAisCYTjUpTVKfgFNhgSx9FT3jwYhnOde4mWTX%2Fs2VLqOvqeNtpTyD053LQ1DjHHS4Ick%2FCXr4pNHXkcsAUJTcLt2DQ5DP5az0LtHoFyo4VyydmsjOMVgrNCrSV4lVVI3HkidNyFZ%2FrSo%2F9Hp23aVgJlvtLauuBa8RuHPJNg7aQDvNC%2FkBYSlDuj4RXc1HFTx6N434ijDuIchPqkSqHCHLZIjMHI3XXnPlNYKGGJFO6BxBbbZLUzSHkd53qLlFVAZfOGSfcWzESBS2%2BMpqseyJCwTSKa4%2B5Vx7Y%2BCOtIrLzTdKO5%2BTnbt8XfIYcr0qKymmzv7nqUz6DWbawIUReil51MO2j1zzDhy7qGf0WbaW0uC5x0JUeRnLTJ0of9IEAVtrX2O6PpLXTly3K3gl3f%2BY7i%2BJZIaEDQqbieHz6JYno11XG%2Fl6iQ4LR40uMk8QKs66rf3dJb9aY9672%2FJeakFWZaOdLyyF%2FiSVf8bcRHV1spCOFgCXsfVkJFd9TTfRfd5KpodCAk5tZTARnaDJSqT%2B0XHNfj198EA9acqEhClWy6Zx%2BkRxMG7niNzoXN%2BGOQl0H%2BCAay%2BsEBm4UbWUbgmwfZYG%2BGh8PPwx8q95herQcAAA%3D%3D&amp;bn=Krait%20Phantom" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F9WWb2%2FaMBDGv0teo6lAaTfetaOslejaLZX2YpqsI7kkFsaO%2FIeNVf3uuzihJClbaai07RXyGT%2F%2BPc7d2fcBrlDaYBzMFMTK2aAXhBnPKbDQwC0TPM02wY%2BwRJqoRldxuZCG1yp2Ak0w%2FnofhEIV0TO9VE7T3JXFZVONgZ9jqYYY%2B%2FSXGxmMrXbYC241V5rbdTDu94ILmXKJqLlMg%2FF9cC4c5jSwFUa5AzuLVyAjjElnRl5EMB71gk8ORCnz5ujhofdIdcfl%2BhJ0nCvS6W%2FpstyyDMEaLhcCnIwy1Mw6rdEyS2s6Q15zE7FLUg5J%2BT3kEBULH1H7e6IO%2Fh%2FUYRPVZBxFPFfKWOI0%2FCcesUiAMaPOoKGXPK8kiXi1nrg6aisBSPBHTmpLylcQF0mCUUFtcow4iBZhlDm5WAd1e7fqO%2BpbAdJurRENy4t4XsS9r9PS16Czr%2B0%2BLLQIwmZdLdXIIqUEFUfdzzVwWaKYpiH0QW%2Fm5FAz5TS7c%2FIPpfmMjYpHrVAL6k4tG1NNO1EuJHai%2BQqbVrI16cZF3C%2BPMtBp6Wx0aPpNwwmbKZl%2BBpliV2uJiYsqXjUzbcYTDF2eK91KNUETppzwJo4P%2FTy1ndisaMpfsGr0zzdRn6cTbqzmc2eV3lEV8Xb2FWujtifbLN4mcvdKqdNGm8ZXd%2FwZYmjZNCiN0uZ1iiX0Yi%2F%2BEFOH4g7kokmWUNRStJ7tw9%2Bh1dSKn6M%2BCwtDTxUNNZK87vaAAiK50MuVnXzPu9vzDTzfqMmXOrp8OEgqqvpFM9rX9HCX6Nyl6XoO673qra14vEtRYw5cb%2BAOPcWz6XWH8xt5sGErl71MihI1bCp2WCUOS8DYA6%2FqD4%2FKN7nlS266XwklKsMk4REv3p9PHJ7sctg4%2BuHfOfrTXWCxVhIjJa1WoqKsM%2Fb3Tbi3XnzQasWkQHcoXX8w59LrDl6o%2B87r9lvQaIHTq8I4nUCEJgIpi0foIa%2FPqgXSxwcZd3nNH%2F%2BDT%2BRvD78AlxIdzmANAAA%3D&amp;bn=Krait%20Phantom" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5WQTU8CMRCG%2F0vPHNz4lezNBI0koMTlZkwz0oGdUNpmOsUg4b%2FbXT9w0cNyavq87dPpu1O4QSeqVGMPxidRA1XVFDJYMZBoS8v6Gz7AGnPwtRuZz4t5O%2FEmWYyqfN6pyvqG3vDaJ87ZSHDdtWloM71kMFjkI49OlcIJB2rK5Jlkq8piP%2Fhxzcht74FN8OSkODjrILpGkEhuZSG5eY2sJTGjaMl3eqin%2Fg15asHJQZsf0aHhoeE60jte67mFGPsMOwFyt25JLvfRUWILW91Vf90d59Jz3QsZMm2wq6y3Adk0vNVe9teOaYFVCsHz0cdtDuJn0Dov%2BjvbLocUhek1ied%2FGjWH9NRen8DAkTKii57jyZUmtDNwq65skalk%2BrvJ8x62ZjkrdNXM8NcY596HfgO%2B7D8AeT4lAI0DAAA%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XVzY7aMBAA4HfxGVWEwG7Lre222pWgpWVvVWUNySSxMLY1tqko4t3rOFAI5ZDsqifkGfJlMv7bM9yicmzKZhpy7R0bsGUlTAisCYTjUpTVKfgFNhgSx9FT3jwYhnOde4mWTX%2Fs2VLqOvqeNtpTyD053LQ1DjHHS4Ick%2FCXr4pNHXkcsAUJTcLt2DQ5DP5az0LtHoFyo4VyydmsjOMVgrNCrSV4lVVI3HkidNyFZ%2FrSo%2F9Hp23aVgJlvtLauuBa8RuHPJNg7aQDvNC%2FkBYSlDuj4RXc1HFTx6N434ijDuIchPqkSqHCHLZIjMHI3XXnPlNYKGGJFO6BxBbbZLUzSHkd53qLlFVAZfOGSfcWzESBS2%2BMpqseyJCwTSKa4%2B5Vx7Y%2BCOtIrLzTdKO5%2BTnbt8XfIYcr0qKymmzv7nqUz6DWbawIUReil51MO2j1zzDhy7qGf0WbaW0uC5x0JUeRnLTJ0of9IEAVtrX2O6PpLXTly3K3gl3f%2BY7i%2BJZIaEDQqbieHz6JYno11XG%2Fl6iQ4LR40uMk8QKs66rf3dJb9aY9672%2FJeakFWZaOdLyyF%2FiSVf8bcRHV1spCOFgCXsfVkJFd9TTfRfd5KpodCAk5tZTARnaDJSqT%2B0XHNfj198EA9acqEhClWy6Zx%2BkRxMG7niNzoXN%2BGOQl0H%2BCAay%2BsEBm4UbWUbgmwfZYG%2BGh8PPwx8q95herQcAAA%3D%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F9WWb2%2FaMBDGv0teo6lAaTfetaOslejaLZX2YpqsI7kkFsaO%2FIeNVf3uuzihJClbaai07RXyGT%2F%2BPc7d2fcBrlDaYBzMFMTK2aAXhBnPKbDQwC0TPM02wY%2BwRJqoRldxuZCG1yp2Ak0w%2FnofhEIV0TO9VE7T3JXFZVONgZ9jqYYY%2B%2FSXGxmMrXbYC241V5rbdTDu94ILmXKJqLlMg%2FF9cC4c5jSwFUa5AzuLVyAjjElnRl5EMB71gk8ORCnz5ujhofdIdcfl%2BhJ0nCvS6W%2FpstyyDMEaLhcCnIwy1Mw6rdEyS2s6Q15zE7FLUg5J%2BT3kEBULH1H7e6IO%2Fh%2FUYRPVZBxFPFfKWOI0%2FCcesUiAMaPOoKGXPK8kiXi1nrg6aisBSPBHTmpLylcQF0mCUUFtcow4iBZhlDm5WAd1e7fqO%2BpbAdJurRENy4t4XsS9r9PS16Czr%2B0%2BLLQIwmZdLdXIIqUEFUfdzzVwWaKYpiH0QW%2Fm5FAz5TS7c%2FIPpfmMjYpHrVAL6k4tG1NNO1EuJHai%2BQqbVrI16cZF3C%2BPMtBp6Wx0aPpNwwmbKZl%2BBpliV2uJiYsqXjUzbcYTDF2eK91KNUETppzwJo4P%2FTy1ndisaMpfsGr0zzdRn6cTbqzmc2eV3lEV8Xb2FWujtifbLN4mcvdKqdNGm8ZXd%2FwZYmjZNCiN0uZ1iiX0Yi%2F%2BEFOH4g7kokmWUNRStJ7tw9%2Bh1dSKn6M%2BCwtDTxUNNZK87vaAAiK50MuVnXzPu9vzDTzfqMmXOrp8OEgqqvpFM9rX9HCX6Nyl6XoO673qra14vEtRYw5cb%2BAOPcWz6XWH8xt5sGErl71MihI1bCp2WCUOS8DYA6%2FqD4%2FKN7nlS266XwklKsMk4REv3p9PHJ7sctg4%2BuHfOfrTXWCxVhIjJa1WoqKsM%2Fb3Tbi3XnzQasWkQHcoXX8w59LrDl6o%2B87r9lvQaIHTq8I4nUCEJgIpi0foIa%2FPqgXSxwcZd3nNH%2F%2BDT%2BRvD78AlxIdzmANAAA%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Krait Phantom&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;krait_light_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size6_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Krait Phantom&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;krait_light_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class2&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class2&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_overcharge_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class2&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size6_class5&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_buggybay_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_repairer_size5_class5&quot;},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size3_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_repairer_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot07_Size3&quot;,&quot;Item&quot;:&quot;int_dronecontrol_repair_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot08_Size2&quot;,&quot;Item&quot;:&quot;int_passengercabin_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;exploration&quot;,&quot;intro&quot;:&quot;A fully equipped expedition fit using the Phantom's deep, weight-light internals. Initial is a jump-capable buy-only starter; A-Rated is the expedition baseline; Engineered maximises range while keeping full kit and redundancy aboard. Plans and costs follow in the sections below.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Full kit, no compromise&quot;,&quot;text&quot;:&quot;The Phantom's nine optionals carry a class-6 scoop, the class-5 Guardian booster, an SRV bay, dual AFMUs and a scanner all at once — a fully self-sufficient expedition ship that still jumps ~75 LY. Few explorers carry this much without losing range. Mind that the scoop tops out at class 6, so refuel a touch earlier than a capital would.&quot;},&quot;notes&quot;:{&quot;TinyHardpoint1&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint3&quot;:&quot;One light booster cheaply multiplies the bi-weave's raw MJ for safer landings; Heavy Duty + Super Capacitors is the biggest gain per tonne.&quot;,&quot;PowerPlant&quot;:&quot;7D keeps mass down — with no guns to feed, output is not the limit; Low Emissions cuts heat and draw, Thermal Spread bleeds more.&quot;,&quot;MainEngines&quot;:&quot;6D thrusters; Clean Drive Tuning runs cool for safe planetary work, Drag Drives adds boost speed to climb out of gravity wells.&quot;,&quot;FrameShiftDrive&quot;:&quot;The whole build — a 5A SCO drive for maximum range and fast in-system travel; Increased Range + Mass Manager is the single biggest roll in exploration.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;7D is plenty without weapons; Engine Focused + Cluster Capacitors gives engine-capacitor headroom for repeated boosts on landing approaches.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; exploration needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock 5C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.&quot;,&quot;Slot02_Size5&quot;:&quot;The Guardian FSD Booster — a flat jump-range gain unlocked at a Guardian site, not bought; size 5 is the largest and it is non-negotiable and not engineerable.&quot;,&quot;Slot03_Size5&quot;:&quot;A size-4 multi-SRV hangar for exobiology and Guardian-site runs (it under-fills this size-5 bay); hangars carry no blueprint.&quot;,&quot;Slot04_Size5&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot05_Size3&quot;:&quot;A light size-3 bi-weave for a fast-regenerating landing buffer; Enhanced Low Power + Lo-Draw keeps its draw minimal (bi-weaves are C-rated only).&quot;,&quot;Slot06_Size3&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot07_Size3&quot;:&quot;A repair limpet controller for hull repairs the AFMU cannot reach; swap for extra fuel if you prefer, and it carries no blueprint.&quot;,&quot;Slot08_Size2&quot;:&quot;A size-2 economy cabin for tourist legs, or swap for a science/utility module; passenger cabins are not engineerable.&quot;,&quot;Slot09_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Clean Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Life Support&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Sensors&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Bill Turner / Juri Ishmaak&quot;},{&quot;module&quot;:&quot;Shield Generator&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Enhanced Low Power&quot;,&quot;experimental&quot;:&quot;Lo-Draw&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;size&quot;:0,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;Cluster Capacitors&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Krait Phantom&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;krait_light_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Tuned&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_overcharge_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_capacity&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FuelScoop_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_buggybay_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_repairer_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size3_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Optimised&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_efficient&quot;}},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_repairer_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot07_Size3&quot;,&quot;Item&quot;:&quot;int_dronecontrol_repair_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot08_Size2&quot;,&quot;Item&quot;:&quot;int_passengercabin_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Full kit, no compromise</span><p>The Phantom's nine optionals carry a class-6 scoop, the class-5 Guardian booster, an SRV bay, dual AFMUs and a scanner all at once — a fully self-sufficient expedition ship that still jumps ~75 LY. Few explorers carry this much without losing range. Mind that the scoop tops out at class 6, so refuel a touch earlier than a capital would.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull on stock E-rated core internals over its default Lightweight Alloy <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> and fit a class-6 <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">fuel scoop</a> (6E) &mdash; a jump-capable starter that puts range and refuelling first.</p>
+    <p>Run one <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink launcher</a> in a utility mount; no weapons fitted and no shield yet.</p>
+    <p>Leave every deep optional empty for now &mdash; the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a>, <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a>, SRV bay, AFMUs and landing shield all wait for the A-rated pass.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a premium explorer:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 5A</b> &mdash; Jump range is everything; the 5A <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">Frame Shift Drive</a> comes first. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a> &rarr; 6A</b> &mdash; A class-6 scoop refuels in seconds, keeping the trip moving. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">3</span><b>5H <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a></b> &mdash; The largest flat range bonus available. <span class="acc">material cost</span></li>
+      <li><span class="stepnum">4</span><b>1I <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a></b> &mdash; Maps planets for major cartographic payouts. <span class="acc">~250k Cr</span></li>
+      <li><span class="stepnum">5</span><b>AFMUs + SRV bay</b> &mdash; A 5A and 3A <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> plus a 4G Planetary Vehicle Hangar give self-repair and surface access for long expeditions. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">6</span><b>Bi-Weave Shield + full utility bank</b> &mdash; A 3C Bi-Weave <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> and 0A <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">Shield Booster</a> give a fast-regenerating landing buffer; three 0I <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink</a> launchers across the remaining utility mounts add deep heat headroom for scooping and neutron boosting. <span class="acc">minor cost</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Range, scoop, then kit</span><p>A-rate the <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and a class-6 scoop first, add the 5H <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a>, then fill the deep internals with scanner, SRV, AFMUs, a light bi-weave and comforts. Keep the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> at stock Lightweight Alloy, fill all four utility mounts (three heat sinks + a booster), and D-rate the remaining cores to save mass.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The exploration engineering pattern. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; <a href="../../engineering/engineering-manuals/engineers.html#engineer-professor-palin">Professor Palin</a> or <a href="../../engineering/engineering-manuals/engineers.html#engineer-mel-brandon">Mel Brandon</a> take the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>. Pin Farseer's blueprint for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Thrusters (6)</td><td>Clean Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Plant (7)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Life Support (4)</td><td>Lightweight (G5)</td><td>—</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Sensors (6)</td><td>Lightweight (G5)</td><td>—</td><td>Bill Turner / Juri Ishmaak</td></tr>
+<tr><td class="mod">Shield Generator (3)</td><td>Enhanced Low Power (G5)</td><td>Lo-Draw</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster (0)</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Power Distributor (7)</td><td>Engine Focused (G5)</td><td>Cluster Capacitors</td><td>The Dweller</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> to G5 with Mass Manager &mdash; the foundation of the Phantom's ~75 LY range.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> to shed mass.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant to keep heat low when scooping.</li>
+      <li><span class="stepnum">4</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-thrusters-clean-drive-tuning">Clean Drive Tuning</a> <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> for efficient, cool travel.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light-to-moderate &mdash; <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a> and lightweight blueprints; the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> needs a Guardian-site run. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max jump (LY)</td><td>~38</td><td>~52</td><td class="acc">~75</td></tr>
+        <tr><td class="mod">Module capacity</td><td>deep</td><td>deep</td><td class="acc">deep</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>358 m/s</td><td>358 m/s</td><td class="acc">~390 m/s</td></tr>
+        <tr><td class="mod">Heat / cooling</td><td>warm</td><td>warm</td><td class="acc">cold</td></tr>
+        <tr><td class="mod">Self-sufficiency</td><td>high</td><td>high</td><td class="acc">high</td></tr>
+        <tr><td class="mod">Pad access</td><td>medium</td><td>medium</td><td class="acc">medium</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Phantom jumps ~75 LY while carrying a full expedition suite and landing at most stations &mdash; the rare explorer that compromises on almost nothing. A <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-power-plant-low-emissions">Low Emissions</a> G5 + Thermal Spread <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-power-plant">power plant</a> and a bank of three heat sinks keep it cold through fuel scooping and neutron boosting, and the stock Lightweight Alloy <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> stay on to protect range. Only the <a href="mandalay-exploration.html">Mandalay</a>'s range and a capital's sheer space exceed it, each with its own trade-offs.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Extended expeditions.</b> Premium range plus full kit make it ideal for long, self-sufficient deep-space trips.</li>
+      <li><b>Exobiology and surveys.</b> A big SRV bay and <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">DSS</a> suit thorough planetary mapping and organic sampling.</li>
+      <li><b>Guardian and Thargoid site visits.</b> Range and capacity reach distant sites and carry the data and materials home.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Multi-month deep-space tourism.</b> Its comfort, range and self-repair suit the longest journeys.</li>
+      <li><b>Carrier-supported expeditions.</b> A medium pad lets it dock on fleet carriers and most stations en route.</li>
+      <li><b>Re-role to multipurpose.</b> The same hull swaps to cargo or light combat easily &mdash; it has a dedicated multipurpose manual too.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example destinations</span><p>Any deep-space target suits it. From your home base, a maxed Phantom reaches the core, nebulae or rim in few jumps and carries everything needed to stay out for months.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and a class-6 scoop first; then fill the deep internals with full expedition kit.</li>
+      <li>Carry two AFMUs for redundancy on the longest trips &mdash; the Phantom has the room.</li>
+      <li>Its medium pad is a real advantage over the large explorers for resupply &mdash; use it.</li>
+      <li>It re-roles to a fine multipurpose hull when you're not exploring.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Krait Phantom is the explorer's medium: premium jump range, deep internals for full expedition kit, good speed and medium-pad access, all without a rank gate. The <a href="mandalay-exploration.html">Mandalay</a> jumps further and the capitals carry more, but each trades something the Phantom keeps. For a do-everything long-range ship that compromises on almost nothing, it's the benchmark.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/krait_phantom" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/krait_phantom</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Krait Phantom ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/krait-phantom" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../krait-phantom</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/krait_phantom.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/krait_phantom.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Krait Phantom</span><span class="cr-what">Per-ship page: base stats, price, and outfitting reference for the Krait Phantom.</span><a class="cr-link" href="https://inara.cz/elite/ship/28/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/28</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Krait Phantom hull profile, jump range, internal layout, and role notes.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Krait_Phantom" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Krait_Phantom</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Down to Earth Astronomy</span><span class="cr-what">Exploration outfitting walkthrough for the Krait Phantom, covering jump-range optimisation and explorer internals.</span><a class="cr-link" href="https://www.youtube.com/watch?v=hmiKTeRLG2o" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=hmiKTeRLG2o</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Down to Earth Astronomy</span><span class="cr-what">Comparison ranking the Diamondback Explorer, Asp Explorer and Krait Phantom for jump range and exploration suitability.</span><a class="cr-link" href="https://www.youtube.com/watch?v=Prlvh1gBtIs" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=Prlvh1gBtIs</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

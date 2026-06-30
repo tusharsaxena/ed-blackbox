@@ -1,7 +1,7 @@
 # audit-blueprints.py
 
 Deterministic, non-LLM page⇄data consistency audit for the **Blueprints** page
-(`guides/engineering/blueprints.html`). It **parses the rendered page** and checks every
+(`guides/engineering/engineering-manuals/blueprints.html`). It **parses the rendered page** and checks every
 fact against canonical data — a different code path from `build-blueprints.py`, so it
 catches renderer bugs as well as hand-edits. Stdlib only; read-only.
 

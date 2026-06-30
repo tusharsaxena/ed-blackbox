@@ -6,7 +6,7 @@ spanning full width beneath it.
 
 ## What it does
 
-For every dossier in `guides/ships/dossiers/`:
+For every dossier in `guides/ships/ship-dossiers/`:
 
 1. **Derives the render** from the dossier slug — strips the role suffix
    (`-combat`, `-exploration`, `-multipurpose`, `-ax`, `-trading`, `-mining`,

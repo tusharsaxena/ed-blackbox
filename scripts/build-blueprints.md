@@ -1,6 +1,6 @@
 # build-blueprints.py
 
-Render the **Blueprints page** (`guides/engineering/blueprints.html`) blueprint cards from
+Render the **Blueprints page** (`guides/engineering/engineering-manuals/blueprints.html`) blueprint cards from
 canonical game data. Part of the blueprints `data → build → audit` pipeline (design:
 `docs/superpowers/specs/2026-06-30-blueprints-data-pipeline-design.md`).
 

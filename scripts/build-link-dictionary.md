@@ -8,14 +8,14 @@ anchor, family, canonical label, and seed surface form(s):
 
 | family | source page | anchors |
 |---|---|---|
-| `engineer` | `engineering/engineers.html` | `#engineer-<slug>` |
-| `blueprint-group` | `engineering/blueprints.html` | `#blueprint-group-<slug>` |
-| `blueprint` | `engineering/blueprints.html` | `#blueprint-<group>-<effect>` |
-| `module` | `engineering/modules.html` | `#module-<slug>` (not `-group-`) |
-| `material-section` | `engineering/materials.html` | `#section-<slug>` (page is coarse — no per-material anchors) |
-| `powerplay` | `systems/powerplay.html` | `#powerplay-<slug>` |
-| `superpower` | `systems/superpower-rank.html` | `#superpower-<fed\|emp\|all>` |
-| ships | `ships/dossiers/<ship>-<role>.html` | one entry per hull, `roles` map + `default_role` |
+| `engineer` | `engineering/engineering-manuals/engineers.html` | `#engineer-<slug>` |
+| `blueprint-group` | `engineering/engineering-manuals/blueprints.html` | `#blueprint-group-<slug>` |
+| `blueprint` | `engineering/engineering-manuals/blueprints.html` | `#blueprint-<group>-<effect>` |
+| `module` | `engineering/engineering-manuals/modules.html` | `#module-<slug>` (not `-group-`) |
+| `material-section` | `engineering/materials-and-farming/materials.html` | `#section-<slug>` (page is coarse — no per-material anchors) |
+| `powerplay` | `systems/galaxy-and-power-systems/powerplay.html` | `#powerplay-<slug>` |
+| `superpower` | `systems/galaxy-and-power-systems/superpower-rank.html` | `#superpower-<fed\|emp\|all>` |
+| ships | `ships/ship-dossiers/<ship>-<role>.html` | one entry per hull, `roles` map + `default_role` |
 
 ```bash
 python3 scripts/build-link-dictionary.py        # writes data/links/link-dictionary.base.json

@@ -50,8 +50,8 @@ python3 scripts/apply-hyperlinks.py guides/systems          # apply to a dir/glo
 python3 scripts/apply-hyperlinks.py                         # apply to all editable pages
 ```
 
-**Excluded as link sources** (never edited): `guides/activities/**`,
-`guides/ships/by-role/**`, and the generated `guides/index.html`. The first two get
+**Excluded as link sources** (never edited): `guides/systems/activity-guides/**`,
+`guides/ships/best-ships-by-role/**`, and the generated `guides/index.html`. The first two get
 their role-correct links from dedicated passes — `link-by-role-pages.py` and
 `link-activity-pages.py` (the latter reuses *this* engine; the page-role detection
 (`cur_role`) matches both a `<hull>-<role>` stem and a stem that **is** a role, e.g.

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandalay &middot; Multipurpose &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Mandalay · Multipurpose</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-versatile"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Versatile</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Zorgon Peterson</div>
+    <h1 class="title"><span>Mandalay</span><span class="role ac-role-multipurpose">Multipurpose</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The fast, far-reaching all-rounder — built to <em>travel</em> first</h2>
+      <p>A strong all-rounder that leans explorer. Four medium hardpoints and ten optional internals give real flexibility; speed and range are exceptional for the class. Lighter armour and a shield-light frame make it a softer brawler than a <a href="python-multipurpose.html">Python</a> or <a href="krait-mk-ii-multipurpose.html">Krait</a> — best as a fast, far-reaching do-everything hull for commanders who roam widely and fight occasionally.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/mandalay.jpg" alt="Mandalay" width="160" height="90">
+      <figcaption><b>Mandalay</b> &middot; Zorgon Peterson</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">78<small>/100</small></div><div class="bar mini"><i style="--pct:78"></i></div></div>
+      <div class="stat"><div class="n">4M · 2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">85+ LY</div><div class="l">Max jump (engineered)</div></div>
+      <div class="stat"><div class="n">~16.5M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Pad M</div><div class="l">Landing pad</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Mandalay is best known as the SCO-era benchmark explorer, but its specification reads like a generalist's: four medium hardpoints, ten optional internals, four utilities and a light, fast, agile frame. That combination lets one hull explore the black, fight in a RES, haul cargo and run mission boards &mdash; all while travelling further and faster than almost anything in its class.</p>
+    <p>Where it differs from the classic medium multiroles is emphasis. The <a href="python-multipurpose.html">Python</a> and <a href="krait-mk-ii-multipurpose.html">Krait</a> are heavier, tougher and built to fight first; the Mandalay is light, quick and built to travel first. As an all-rounder it trades a little durability for far more range and speed &mdash; an appealing balance for commanders who roam widely and fight occasionally.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Wide-ranging mixed play: explore and exobio one session, bounty hunt or run missions the next, haul a load of trade goods across the bubble after that &mdash; all from one fast, far-reaching hull.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-exploration" href="mandalay-exploration.html"><span class="vrole">Exploration</span><span class="vrate">96<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-versatile">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">280 / 350 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">4 Medium &middot; 2 Small</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">230 <small>t</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;4&middot;4&middot;3&middot;3&middot;2&middot;1&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~154 <small>t (all-cargo)</small></div></div>
+      <div class="cell"><div class="k">Max jump</div><div class="v">~85+ <small>LY (engineered)</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~220 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Core sizes</div><div class="v"><span style="font-size:14px;letter-spacing:.4px">PP5 &middot; TH5 &middot; FSD5 &middot; LS4 &middot; PD5 &middot; SS5 &middot; FT5</span></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+      <div class="cell"><div class="k">Canopy</div><div class="v">Transparent floor</div></div>
+    </div>
+    <p>Four things make the Mandalay a capable, distinctive all-rounder:</p>
+    <ul class="bullets">
+      <li><b>Four medium hardpoints.</b> More medium guns than most generalists &mdash; enough firepower to make the combat side of multirole work genuine, not token.</li>
+      <li><b>Ten optional internals.</b> Exceptional flexibility: cargo, cabins, mining kit or full expedition modules, with slots left for shields and reinforcement.</li>
+      <li><b>Class-leading range and SCO speed.</b> It reaches and crosses systems faster than any rival multirole &mdash; the whole bubble, and beyond, is within easy reach.</li>
+      <li><b>Light and agile.</b> High speed and nimble handling make it forgiving in a fight and quick on every errand.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>A <a href="python-multipurpose.html">Python</a> or <a href="krait-mk-ii-multipurpose.html">Krait Mk II</a> is tougher, better shielded and hits harder &mdash; the Mandalay's lighter frame and smaller core power mean it's a softer brawler and a lighter hauler than the heavyweight mediums. Its multirole case rests on doing every job <em>quickly and at extreme range</em> rather than on raw toughness or capacity.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Class-leading 85+ LY range, ten optionals and four gimballed mediums on a gate-free 16.5M Cr hull carry a 78, capped by a soft ~220 MJ shield and ~154 t cargo.</p>
+    <p>The <b>78/100</b> headline is a verdict against the multipurpose role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Breadth of internals</td><td class="sc"><span class="scval">23</span><span class="den">/30</span><div class="bar mini"><i style="--pct:77"></i></div></td><td class="wcell">Ten optional internals (6·5·4·4·3·3·2·1·1·1) plus four utilities give genuine do-everything slot count, but ~154 t max cargo trails the Python (~294 t), Krait Mk II (~230 t) and Phantom (~190 t) — broad slot range, smaller volume than the heavyweight mediums.</td></tr>
+      <tr><td class="fct">Firepower</td><td class="sc"><span class="scval">13</span><span class="den">/20</span><div class="bar mini"><i style="--pct:65"></i></div></td><td class="wcell">Four medium plus two small hardpoints, all gimballable, beat most generalists on medium-mount count, but there are no large mounts and a PP5/PD5 core caps the brawl. Real RES teeth, below the combat-first Python and Krait.</td></tr>
+      <tr><td class="fct">Jump range</td><td class="sc"><span class="scval">19</span><span class="den">/20</span><div class="bar mini"><i style="--pct:95"></i></div></td><td class="wcell">~85+ LY engineered laden jump on a 230 t frame with the stock SCO drive, plus 280/350 m/s travel, is class-leading — nothing in the medium multirole field reaches or crosses systems faster.</td></tr>
+      <tr><td class="fct">Flexibility &amp; re-fit cost</td><td class="sc"><span class="scval">13</span><span class="den">/15</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">No rank or permit gate and a ~16.5M Cr hull; re-roles by swapping optionals (cargo, cabin, mining, expedition) with core engineering done once. Its low 230 t mass keeps usable range even loaded — cheap, fast re-fit.</td></tr>
+      <tr><td class="fct">Survivability &amp; handling</td><td class="sc"><span class="scval">10</span><span class="den">/15</span><div class="bar mini"><i style="--pct:67"></i></div></td><td class="wcell">~220 MJ base shield (~430 engineered) and a light 230 t hull make it a softer brawler than a Python or Krait; survivability rests on 280/350 m/s speed and nimble handling, not tank — forgiving to fly, fragile if it stands and trades.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">78</span><span class="den">/100</span><div class="bar mini"><i style="--pct:78"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the multipurpose role specifically</em>. The role column is approximate maximum cargo &mdash; a fair proxy for the internal flexibility a do-everything hull needs.</p>
+    <h3 class="subhead">Same class &mdash; medium multiroles</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Mandalay</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="python-multipurpose.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~294</td><td class="pcc"><span class="p">Tougher, more cargo, more guns; the benchmark</span><span class="c">Slower; shorter range; costlier to run</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-multipurpose.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>~230</td><td class="pcc"><span class="p">Combat-first multirole with an SLF bay</span><span class="c">Heavier; far shorter range</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-multipurpose.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~190</td><td class="pcc"><span class="p">Roomy, long-legged, sleek</span><span class="c">Shorter range than the Mandalay; no SCO</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-multipurpose.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~128</td><td class="pcc"><span class="p">Cheaper; great canopy; proven all-rounder</span><span class="c">Shorter range; older flight model</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Mandalay <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>~154</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among medium all-rounders the Mandalay is the fast, far-reaching outlier. The <a href="python-combat.html">Python</a> and Kraits beat it on toughness, cargo and firepower; nothing beats it on range or travel speed. Choose it if you roam widely and fight occasionally; choose a <a href="python-combat.html">Python</a> or <a href="krait-mk-ii-combat.html">Krait</a> if combat and capacity come first.</p>
+    <h3 class="subhead">Other classes &mdash; bigger and smaller all-rounders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Mandalay</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="anaconda-multipurpose.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>~470</td><td class="pcc"><span class="p">Vast internals, range and firepower in one hull</span><span class="c">Large pad; ponderous; costly</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-multipurpose.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>~794</td><td class="pcc"><span class="p">Huge cargo, strong combat, superb shields</span><span class="c">Large pad; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; very costly</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-v-multipurpose.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>~110</td><td class="pcc"><span class="p">Best small-pad all-rounder; docks anywhere</span><span class="c">Less range and room than the Mandalay</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-corvette-multipurpose.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>~618</td><td class="pcc"><span class="p">Combat monster that can also haul</span><span class="c">Large pad; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank; expensive</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-explorer-multipurpose.html">Diamondback Explorer</a></td><td><span class="pill pad-small">Small</span></td><td>~60</td><td class="pcc"><span class="p">Cool, long-jumping, small-pad</span><span class="c">Cramped; weak as a hauler/fighter</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Larger hulls add cargo and combat power at the cost of pad access and credits; smaller hulls add small-pad reach at the cost of room and range. The Mandalay's niche is doing the all-rounder job at the longest range and highest speed of any medium &mdash; a different kind of value to the tanky heavyweights.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~16.5M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~28M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~45M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>The hull is around 16.5M Cr for Odyssey owners (non-Odyssey owners unlock it with ARX first). There is no rank or permit gate. A working multirole fit lands near 28M Cr; a fully engineered version sits around 45M+ depending on how combat-focused you make it.</p>
+    <p>Because it re-roles by swapping optionals, the Mandalay rewards engineering the cores once &mdash; especially the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> &mdash; then changing the bay per job. Its low mass means even a loaded fit keeps usable range.</p>
+    <div class="callout"><span class="lbl">One hull, many jobs</span><p>Engineer the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>, plant and distributor once; then swap optional modules to switch between exploration, cargo, combat and missions. The Mandalay keeps more range than any rival when you load it for non-exploration work.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A balanced multipurpose fit that keeps the Mandalay's range advantage while giving it real teeth and a useful bay. Initial is buy-only; A-Rated is the all-rounder baseline; Engineered applies the house pattern with range and sustain prioritised. Re-role by swapping the optional internals — cargo racks for trading, a passenger cabin, mining kit, or scanners + AFMU + fuel scoop for the deep black.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Corrosive Shell</td><td class="note">Primary gimballed multi-cannon; Corrosive Shell strips armour resistance for the whole battery.</td></tr>
+<tr><td class="slot">Medium 2</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Second medium multi-cannon; Auto Loader removes reloads so it never stops firing.</td></tr>
+<tr><td class="slot">Medium 3</td><td class="st">2F Pulse Laser (Gimballed)</td><td class="st">2D Beam Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">The laser slot — buy a cheap pulse, swap to a gimballed beam at A-rated; Thermal Vent runs it cold for shield-stripping.</td></tr>
+<tr><td class="slot">Medium 4</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Third medium multi-cannon; Auto Loader keeps its DPS uninterrupted.</td></tr>
+<tr><td class="slot">Small 1</td><td class="st">1G Pulse Laser (Gimballed)</td><td class="st">1G Pulse Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Small pulse adds heat-free shield chip; Efficient + Thermal Vent keeps it cool.</td></tr>
+<tr><td class="slot">Small 2</td><td class="st">1G Pulse Laser (Gimballed)</td><td class="st">1G Pulse Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Second small pulse rounds out the battery; Efficient trims power and heat.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0A Shield Booster</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Lone shield booster; Heavy Duty multiplies the bi-weave's raw MJ on a light frame.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0I Chaff Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0A Kill Warrant Scanner</td><td class="eng">G5 Long Range (no experimental effect)</td><td class="note">Optional / low-priority — Long Range extends scan reach. Reveals bounties for higher payouts.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">5E Power Plant</td><td class="st">5A Power Plant</td><td class="eng">G5 Overcharged + Thermal Spread</td><td class="note">A-rate for headroom across guns, shield and utilities; Overcharged adds margin, Thermal Spread bleeds the extra heat.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">5E Thrusters</td><td class="st">5A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated + Dirty Drives preserve the speed and agility that define the hull.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">The Mandalay's signature — keep the stock SCO drive and engineer Increased Range; Mass Manager claws back jump range under load.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">4E Life Support</td><td class="st">4D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">5E Power Distributor</td><td class="st">5A Power Distributor</td><td class="eng">G5 Charge Enhanced + Super Conduits</td><td class="note">A-rate to feed four mediums and boost together; Charge Enhanced + Super Conduits keep the weapon capacitor full.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">5E Sensors</td><td class="st">5D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; an all-rounder needs no sensor range, so save the mass for jumps.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">5E Shield Generator</td><td class="st">5C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Hi-Cap</td><td class="note">Bi-weave (a class-5 module under-fills this size-6 slot to save mass) regenerates fast under fire; Reinforced maximises its MJ and Hi-Cap adds more.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Cargo Rack</td><td class="st">5E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">4E Cargo Rack</td><td class="st">4E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">4D Hull Reinforcement</td><td class="st">4D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Hull reinforcement caps at size 5, so a size-4 HRP fills this slot; Heavy Duty + Deep Plating is the cheapest large armour multiplier.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">2H Planetary Vehicle Hangar</td><td class="st">2G Planetary Vehicle Hangar</td><td class="eng">(No blueprint available)</td><td class="note">Planetary Vehicle Hangar (size-2 SRV bay, the smallest that exists) for opportunistic exploration and exobio; hangars are not engineerable.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">1I Detailed Surface Scanner</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Second Module Reinforcement protects the cores; not engineerable.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XVTW%2BcMBAG4P%2Fi8x4Cy7bq3iqlVSMl7arkVlVowANY8ZfGdioa5b%2FXeKNu2GYryMcJ8Q5%2BGCzb3DG8Re3Zll0a4CZ4tmJlL2wMFGgOEoaH5CsojOnD3QXfj4q3V4YHiY5tf9yxUpox%2FUjKBIq1C4%2FqEVVBKlQdAccs1r9ptvUUcMV2JAwJP7Btdr%2F6C10hF0F9AeLWCO2zA9lbX6kgvWhAa6OrTqgaZKXSgOVy%2FmbyeirbIB1KcEgvhYvXa7lUIOWpWf63Yzc%2BvpjNX4u9Fno41azrBUpeG%2BN8hJ34jWdVE9%2FiNjPgnfmFtJOg%2FQGNr6jsmNsxT%2BJmL85avyD0J90JHffHhMQULuU%2BU9yEcfu1%2FpzELU7JfrBIfMyXspeixTJYa%2Bjow2UsuH0hmcV8M83luXCeRB28oSdmlB%2BqSzv%2BDhyOSIfaGXKLpzSgvAZ9M8XamPqYPtbWc1Z8vJxlVRlHvTtqLy3MDjUSPOODE5wneDOFG6DOEDQ3zyLXiSz%2BRxYLyeIpsg9SEgrdGmpQoZ6sp3wu%2FT7R%2BZSuQ9cNdfy5jGK%2BsNkPScymIkcPQiJ3gVpo0I2najxNfDx3Tro%2F7%2F8AIsWHj0sHAAA%3D&amp;bn=Mandalay" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XWX2%2BbMBAA8O%2FCcx4CJN2Wt0ldtUrNFi19myZ04AOs%2Bg8625myqt99xumawNIJb9kT4g7%2FfJyNxWOCO1Q2WSV3Gph2Npkl25Z3PiBBMRCwf458Aok%2B%2Bnx3yw6j%2FO1aMyfQJKuvj8lW6D76nqR25HO3FuUJVUBIFA0Bw9TnP6tkZcnhLNkQ18TtPlmlT7MXaI2MO%2FkRiHWaK5seybazhXTC8gqU0qpouCxBFDIMiJez%2FybnQ7lEkAIM0r%2B6i8tVvJUgxGtN7pwwOKjY9I9Hs9ml2Huu9q8Va1qOgpVaG%2Bthw3%2FgvKj8LGYZC4%2FKrVqoawFOVa2HrX8yFhztgxbBGq4ejqYjQvtX9GgrVMQlmn4vxPdgo78jbQQoezT9DEXXx7s%2BHsTldHENXH1QDVf%2BiBiQGIKx3A35c8ifQLW9Jr7DIdnuOyTWxwu9Q%2FKLRk30DHe8xq3rOk2jHgifMIdEMBcHM5va1mtuLPHSWU1nmsuO2diKvwCDEWlQGU3mVJpS541DcQ%2FqYYjVPmp99FTLpxwA%2FjJPi60fdTUqL3ynDfodCqMXzosajJ2qZ0FfDvXKL7smqAYFp1PJPJCLP5GLSHJxjmydEIRc1ZoqlKiiN1Wgl4HOz7W3QiHKX8uWT99Owb065w67kEd24U0gsyFZuqbZl%2F7XoBezyJd%2FG8R0KMrwP%2FJ7Z9NI%2FN05nKEFLpAZRzVUL6fsxFO7v6Tzixb97eknKtrULsMJAAA%3D&amp;bn=Mandalay" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F9WYy27jNhSG30Vro4hvM613TTyZBHA6qTXALIpCoKkjiQhFqry4VYO8%2BxxSTiIqtjMja5FsYoi0fv4fz4V07iPYgjDRIlpJkkprolEUF6zCgZKIlHBS70b%2BICXg6O7pOm3ewscbmVoOOlr8dR%2FFXLrR31UprcK5awNlSyohfiLJFUlhjPNfRLQwysIoulVMKmbqaDEeRZ9EzgSAYiKPFvfRObdQ4YPZeWjkkysg23ppjXO4QgweLeaj6E9LeKPzyxkq%2FVehTIlmCf%2BUZUCdPV0BZYQ%2FuqGFFXd19PAwegK4gZTZ8oqotJK47vgZpahMUlpuGCVCSJHkrNygVOlf6E30DUiFYl%2B2oGhBVA5pXyYqlZKabSHRBXB%2BjGryfqiINTLhmKGgjhFNQ6INkJITDWpYHnTHKHP535PGFKBK%2FPSVdwRn9v4DFCMnP1RHleUaggBp9%2FW3G5%2BQZvLOab4yUR8KjS4Y8HQjpTbIo9n%2FcJZQhNPz3jyxlzzfSZ7cvEOHe3p4gNeJFWZ7lnFiBcXNSQx%2BszfWDdM0uXB6F6QilLWJxiHRQXedvlUAMZqJu2eDVikwA%2FjEXTcxKve32ulJ1MVHu6Y0WJrsxFZS5GsicjiYIG2Pt%2FJfULec%2BDLZ%2BUPNpHLjlRv37uanunteJ2kyuXfHbDmjUnIUCk4CwkRjRYdA4AeHgWmmkyVT%2Fctw50fiEeLbf4hxqXAlLPzMLBXeSUKUokbd1I3715sTaBiyy3j5Awn0ClqmU1eK27CtrFgGsa0qqTqpxnFCNxMeYtZATHpDtFZKViwvzDdwf3%2B8HpZMG8U2eDSrPVWRPs8OWButNZMrtHup4B8LgtYn1Unba0Z0eI6tSUo6gBqElkq3ufrHIfZiPx2CSwv8KxF3obMMRw2Otq1ND1lrXz3w42ycxPjWhw6rPwhzwKZJOrGcNpt12on9%2BUl5DUxkUtH%2BTa%2Fx6qqKmyK8Wjm%2Bieebh3wU24JUhAZb1v%2FH44WTWzu5a0EV4H0tfXkaHgmrNzr1RmfHjM7ehNHZPqOF5Vw9xtJFaph%2BdYWy60D25EveS6d7LnoedO5Bp%2FtKg%2BLv4M1jyU2HucZeoOa504wbp0y3i2L2SlQ%2B7DMbps%2F0TaTPR290Ehrd2DyvN6T2PievZE1X8VevOA4VS%2F8vpJcpOf5J8d%2F2iadgCMP7lbYqI%2FTpsnrSZXp3JGDuEpEeaYfdDR2fDYr%2F98N333bNpsATAAA%3D&amp;bn=Mandalay" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XVTW%2BcMBAG4P%2Fi8x4Cy7bq3iqlVSMl7arkVlVowANY8ZfGdioa5b%2FXeKNu2GYryMcJ8Q5%2BGCzb3DG8Re3Zll0a4CZ4tmJlL2wMFGgOEoaH5CsojOnD3QXfj4q3V4YHiY5tf9yxUpox%2FUjKBIq1C4%2FqEVVBKlQdAccs1r9ptvUUcMV2JAwJP7Btdr%2F6C10hF0F9AeLWCO2zA9lbX6kgvWhAa6OrTqgaZKXSgOVy%2FmbyeirbIB1KcEgvhYvXa7lUIOWpWf63Yzc%2BvpjNX4u9Fno41azrBUpeG%2BN8hJ34jWdVE9%2FiNjPgnfmFtJOg%2FQGNr6jsmNsxT%2BJmL85avyD0J90JHffHhMQULuU%2BU9yEcfu1%2FpzELU7JfrBIfMyXspeixTJYa%2Bjow2UsuH0hmcV8M83luXCeRB28oSdmlB%2BqSzv%2BDhyOSIfaGXKLpzSgvAZ9M8XamPqYPtbWc1Z8vJxlVRlHvTtqLy3MDjUSPOODE5wneDOFG6DOEDQ3zyLXiSz%2BRxYLyeIpsg9SEgrdGmpQoZ6sp3wu%2FT7R%2BZSuQ9cNdfy5jGK%2BsNkPScymIkcPQiJ3gVpo0I2najxNfDx3Tro%2F7%2F8AIsWHj0sHAAA%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XWX2%2BbMBAA8O%2FCcx4CJN2Wt0ldtUrNFi19myZ04AOs%2Bg8625myqt99xumawNIJb9kT4g7%2FfJyNxWOCO1Q2WSV3Gph2Npkl25Z3PiBBMRCwf458Aok%2B%2Bnx3yw6j%2FO1aMyfQJKuvj8lW6D76nqR25HO3FuUJVUBIFA0Bw9TnP6tkZcnhLNkQ18TtPlmlT7MXaI2MO%2FkRiHWaK5seybazhXTC8gqU0qpouCxBFDIMiJez%2FybnQ7lEkAIM0r%2B6i8tVvJUgxGtN7pwwOKjY9I9Hs9ml2Huu9q8Va1qOgpVaG%2Bthw3%2FgvKj8LGYZC4%2FKrVqoawFOVa2HrX8yFhztgxbBGq4ejqYjQvtX9GgrVMQlmn4vxPdgo78jbQQoezT9DEXXx7s%2BHsTldHENXH1QDVf%2BiBiQGIKx3A35c8ifQLW9Jr7DIdnuOyTWxwu9Q%2FKLRk30DHe8xq3rOk2jHgifMIdEMBcHM5va1mtuLPHSWU1nmsuO2diKvwCDEWlQGU3mVJpS541DcQ%2FqYYjVPmp99FTLpxwA%2FjJPi60fdTUqL3ynDfodCqMXzosajJ2qZ0FfDvXKL7smqAYFp1PJPJCLP5GLSHJxjmydEIRc1ZoqlKiiN1Wgl4HOz7W3QiHKX8uWT99Owb065w67kEd24U0gsyFZuqbZl%2F7XoBezyJd%2FG8R0KMrwP%2FJ7Z9NI%2FN05nKEFLpAZRzVUL6fsxFO7v6Tzixb97eknKtrULsMJAAA%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F9WYy27jNhSG30Vro4hvM613TTyZBHA6qTXALIpCoKkjiQhFqry4VYO8%2BxxSTiIqtjMja5FsYoi0fv4fz4V07iPYgjDRIlpJkkprolEUF6zCgZKIlHBS70b%2BICXg6O7pOm3ewscbmVoOOlr8dR%2FFXLrR31UprcK5awNlSyohfiLJFUlhjPNfRLQwysIoulVMKmbqaDEeRZ9EzgSAYiKPFvfRObdQ4YPZeWjkkysg23ppjXO4QgweLeaj6E9LeKPzyxkq%2FVehTIlmCf%2BUZUCdPV0BZYQ%2FuqGFFXd19PAwegK4gZTZ8oqotJK47vgZpahMUlpuGCVCSJHkrNygVOlf6E30DUiFYl%2B2oGhBVA5pXyYqlZKabSHRBXB%2BjGryfqiINTLhmKGgjhFNQ6INkJITDWpYHnTHKHP535PGFKBK%2FPSVdwRn9v4DFCMnP1RHleUaggBp9%2FW3G5%2BQZvLOab4yUR8KjS4Y8HQjpTbIo9n%2FcJZQhNPz3jyxlzzfSZ7cvEOHe3p4gNeJFWZ7lnFiBcXNSQx%2BszfWDdM0uXB6F6QilLWJxiHRQXedvlUAMZqJu2eDVikwA%2FjEXTcxKve32ulJ1MVHu6Y0WJrsxFZS5GsicjiYIG2Pt%2FJfULec%2BDLZ%2BUPNpHLjlRv37uanunteJ2kyuXfHbDmjUnIUCk4CwkRjRYdA4AeHgWmmkyVT%2Fctw50fiEeLbf4hxqXAlLPzMLBXeSUKUokbd1I3715sTaBiyy3j5Awn0ClqmU1eK27CtrFgGsa0qqTqpxnFCNxMeYtZATHpDtFZKViwvzDdwf3%2B8HpZMG8U2eDSrPVWRPs8OWButNZMrtHup4B8LgtYn1Unba0Z0eI6tSUo6gBqElkq3ufrHIfZiPx2CSwv8KxF3obMMRw2Otq1ND1lrXz3w42ycxPjWhw6rPwhzwKZJOrGcNpt12on9%2BUl5DUxkUtH%2BTa%2Fx6qqKmyK8Wjm%2Bieebh3wU24JUhAZb1v%2FH44WTWzu5a0EV4H0tfXkaHgmrNzr1RmfHjM7ehNHZPqOF5Vw9xtJFaph%2BdYWy60D25EveS6d7LnoedO5Bp%2FtKg%2BLv4M1jyU2HucZeoOa504wbp0y3i2L2SlQ%2B7DMbps%2F0TaTPR290Ehrd2DyvN6T2PievZE1X8VevOA4VS%2F8vpJcpOf5J8d%2F2iadgCMP7lbYqI%2FTpsnrSZXp3JGDuEpEeaYfdDR2fDYr%2F98N333bNpsATAAA%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Mandalay&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;mandalay_armour_grade1&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_cargorack_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_cargorack_size4_class1&quot;},{&quot;Slot&quot;:&quot;Slot04_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Mandalay&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;mandalay_armour_grade1&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_crimescanner_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_overcharge_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_cargorack_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_cargorack_size4_class1&quot;},{&quot;Slot&quot;:&quot;Slot04_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot08_Size1&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size1_class2&quot;},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;},{&quot;Slot&quot;:&quot;Slot10_Size1&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size1_class2&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;multipurpose&quot;,&quot;intro&quot;:&quot;A balanced multipurpose fit that keeps the Mandalay's range advantage while giving it real teeth and a useful bay. Initial is buy-only; A-Rated is the all-rounder baseline; Engineered applies the house pattern with range and sustain prioritised. Re-role by swapping the optional internals — cargo racks for trading, a passenger cabin, mining kit, or scanners + AFMU + fuel scoop for the deep black.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Protect the range&quot;,&quot;text&quot;:&quot;The Mandalay's whole identity is range and speed — keep the stock SCO drive, A-rate the FSD and thrusters first, and the light frame means even a cargo or combat fit keeps far more reach than a Python or Krait would. That is its defining all-rounder advantage.&quot;},&quot;notes&quot;:{&quot;MediumHardpoint1&quot;:&quot;Primary gimballed multi-cannon; Corrosive Shell strips armour resistance for the whole battery.&quot;,&quot;MediumHardpoint2&quot;:&quot;Second medium multi-cannon; Auto Loader removes reloads so it never stops firing.&quot;,&quot;MediumHardpoint3&quot;:&quot;The laser slot — buy a cheap pulse, swap to a gimballed beam at A-rated; Thermal Vent runs it cold for shield-stripping.&quot;,&quot;MediumHardpoint4&quot;:&quot;Third medium multi-cannon; Auto Loader keeps its DPS uninterrupted.&quot;,&quot;SmallHardpoint1&quot;:&quot;Small pulse adds heat-free shield chip; Efficient + Thermal Vent keeps it cool.&quot;,&quot;SmallHardpoint2&quot;:&quot;Second small pulse rounds out the battery; Efficient trims power and heat.&quot;,&quot;TinyHardpoint1&quot;:&quot;Lone shield booster; Heavy Duty multiplies the bi-weave's raw MJ on a light frame.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Long Range extends scan reach. Reveals bounties for higher payouts.&quot;,&quot;PowerPlant&quot;:&quot;A-rate for headroom across guns, shield and utilities; Overcharged adds margin, Thermal Spread bleeds the extra heat.&quot;,&quot;MainEngines&quot;:&quot;A-rated + Dirty Drives preserve the speed and agility that define the hull.&quot;,&quot;FrameShiftDrive&quot;:&quot;The Mandalay's signature — keep the stock SCO drive and engineer Increased Range; Mass Manager claws back jump range under load.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate to feed four mediums and boost together; Charge Enhanced + Super Conduits keep the weapon capacitor full.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; an all-rounder needs no sensor range, so save the mass for jumps.&quot;,&quot;FuelTank&quot;:&quot;Stock C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Bi-weave (a class-5 module under-fills this size-6 slot to save mass) regenerates fast under fire; Reinforced maximises its MJ and Hi-Cap adds more.&quot;,&quot;Slot02_Size5&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot03_Size4&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot04_Size4&quot;:&quot;Hull reinforcement caps at size 5, so a size-4 HRP fills this slot; Heavy Duty + Deep Plating is the cheapest large armour multiplier.&quot;,&quot;Slot05_Size3&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot06_Size3&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot07_Size2&quot;:&quot;Planetary Vehicle Hangar (size-2 SRV bay, the smallest that exists) for opportunistic exploration and exobio; hangars are not engineerable.&quot;,&quot;Slot08_Size1&quot;:&quot;Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.&quot;,&quot;Slot09_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;,&quot;Slot10_Size1&quot;:&quot;Second Module Reinforcement protects the cores; not engineerable.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive (SCO)&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer / Elvira Martuuk&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Charge Enhanced&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Multi-Cannons&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Corrosive Shell (one) / Auto Loader (rest)&quot;,&quot;engineer&quot;:&quot;Tod McQuinn&quot;},{&quot;module&quot;:&quot;Beam &amp; Pulse Lasers&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Efficient&quot;,&quot;experimental&quot;:&quot;Thermal Vent&quot;,&quot;engineer&quot;:&quot;Broo Tarquin&quot;},{&quot;module&quot;:&quot;Shield Generator&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Hi-Cap&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;size&quot;:0,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;},{&quot;module&quot;:&quot;Hull Reinforcement&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;},{&quot;module&quot;:&quot;Life Support &amp; Sensors&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;(none)&quot;,&quot;engineer&quot;:&quot;Felicity Farseer / Lei Cheung&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Mandalay&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;mandalay_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_armour_chunky&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_corrosive_shell&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_ChaffCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_crimescanner_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Scanner_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Boosted&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_overcharge_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_HighFrequency&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_health&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_cargorack_size5_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_cargorack_size4_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot04_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot08_Size1&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size1_class2&quot;},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot10_Size1&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size1_class2&quot;}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Protect the range</span><p>The Mandalay's whole identity is range and speed — keep the stock SCO drive, A-rate the FSD and thrusters first, and the light frame means even a cargo or combat fit keeps far more reach than a Python or Krait would. That is its defining all-rounder advantage.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull &mdash; it ships with <b>Lightweight Alloy</b> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a>, which you keep: the Mandalay's whole case is range and speed, so the lightest case is the right call. Fit a 5E <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">shield generator</a>, a 4D <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a>, a 0A <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> and a couple of cargo racks (5E + 4E) &mdash; it's ready for mixed work immediately.</p>
+    <p>Arm three of the four mediums with 2F gimballed multi-cannons and the fourth with a 2F gimballed <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-pulse-laser">pulse laser</a>; add two 1G small pulse <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a> for shield-stripping.</p>
+    <p>Keep an SRV bay and a <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">detailed surface scanner</a> aboard so you can opportunistically explore and exobio between other jobs. The other three utility mounts and the support internals (<a href="../../engineering/engineering-manuals/modules.html#module-shield-cell-bank">shield cell bank</a>, <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a>) stay empty until the A-rated pass.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a fast, far-reaching all-rounder &mdash; range and sustain first:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; A (+ SCO)</b> &mdash; The Mandalay's signature; A-rate and keep the SCO drive for range and travel speed. <span class="acc">~2.5M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; A</b> &mdash; Feeds four mediums and boost &mdash; essential for the combat side. <span class="acc">~1M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; A</b> &mdash; Preserves the speed and agility that define the hull. <span class="acc">~1.5M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; A</b> &mdash; Headroom for guns, shields and utilities together. <span class="acc">~1.2M Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; 5C bi-weave</b> &mdash; Balanced, fast-recharging defence for a light frame. <span class="acc">~1M Cr</span></li>
+      <li><span class="stepnum">6</span><b>Weapons &amp; defensive fill</b> &mdash; Swap the laser slot to a 2D gimballed beam, and use the free mounts for <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a>, a heat-sink launcher and a <a href="../../engineering/engineering-manuals/modules.html#module-scanners">Kill Warrant Scanner</a>, plus a 3A <a href="../../engineering/engineering-manuals/modules.html#module-shield-cell-bank">shield cell bank</a> in the bay. <span class="acc">~2M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Keep it light</span><p>Leave the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> on <b>Lightweight Alloy</b> &mdash; Military Grade would cost the Mandalay its signature reach. A-rate the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> and <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a> first so loading it for combat or cargo never blunts the range. Deep-Plating engineering (next pass) buys back the armour without the Military-grade weight penalty.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>A balanced engineering pass that preserves range while adding teeth. Pin blueprints for remote G1&rarr;G5 application; visit engineers in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (SCO) (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer / Elvira Martuuk</td></tr>
+<tr><td class="mod">Thrusters (5)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Distributor (5)</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Power Plant (5)</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one) / Auto Loader (rest)</td><td>Tod McQuinn</td></tr>
+<tr><td class="mod">Beam &amp; Pulse Lasers</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+<tr><td class="mod">Shield Generator (5)</td><td>Reinforced (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster (0)</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Hull Reinforcement (4)</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Life Support &amp; Sensors</td><td>Lightweight (G5)</td><td>(none)</td><td>Felicity Farseer / Lei Cheung</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> first &mdash; the Mandalay rewards it more than any rival multirole.</li>
+      <li><span class="stepnum">2</span>Then <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> and distributor to keep speed and sustain combat.</li>
+      <li><span class="stepnum">3</span><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-power-plant-overcharged">Overcharged</a> to run four mediums plus shields and utilities.</li>
+      <li><span class="stepnum">4</span>Defences and weapons last, scaled to how much fighting you actually do.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; medium-class modules, with the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> blueprint the standout priority. Lightweight core blueprints and <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a>'s <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> work matter most; weapon and defence mats are common combat drops you likely already hold. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>350 m/s</td><td>350 m/s</td><td class="acc">~420 m/s</td></tr>
+        <tr><td class="mod">Jump range (laden)</td><td>~45 LY</td><td>~58 LY</td><td class="acc">~85+ LY</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~220</td><td>~300</td><td class="acc">~430</td></tr>
+        <tr><td class="mod">Armour (effective)</td><td>~280</td><td>~280</td><td class="acc">~560</td></tr>
+        <tr><td class="mod">Sustained DPS</td><td>medium</td><td>medium-high</td><td class="acc">medium-high</td></tr>
+        <tr><td class="mod">Cargo (multirole fit)</td><td>~80 t</td><td>~112 t</td><td class="acc">~112 t</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> stay <b>Lightweight Alloy</b> throughout; Heavy Duty G5 + Deep Plating roughly doubles effective armour without the Military-grade mass, so the laden jump still clears 85 LY. Engineering also lifts boost to ~420 m/s and roughly doubles shields &mdash; making the Mandalay the fastest, longest-legged generalist in its class, even with a combat or cargo bay fitted.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Explore-and-earn loops.</b> Run exobiology and first-discovery sweeps, then haul the data and any salvage home and switch to mission work &mdash; one hull, two careers.</li>
+      <li><b>Mixed mission boards.</b> Its speed and four mediums handle courier, data and bounty missions with ease.</li>
+      <li><b>RES bounty hunting.</b> Four medium hardpoints clear low and medium RES targets; the light frame keeps you mobile.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Far-flung operations.</b> Reach distant systems other multiroles can't, then fight, haul or scan once you arrive &mdash; the Mandalay's range turns the whole galaxy into a worksite.</li>
+      <li><b>Re-role on demand.</b> Saved loadouts let it flip between exploration, trade and combat as opportunities shift.</li>
+      <li><b>Powerplay reach.</b> Fast and far-reaching for fortification and merit runs across widely spaced systems.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any region works, but the Mandalay rewards routes other ships find too long. From your home base it can strike out to distant systems for exploration or missions and return faster than a heavier multirole could.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Lean into the range: take the jobs and routes that punish slower, shorter-legged ships.</li>
+      <li>Keep an SRV bay and <a href="../../engineering/engineering-manuals/modules.html#module-scanners">scanners</a> aboard permanently &mdash; the transparent floor makes opportunistic exobiology effortless.</li>
+      <li>Accept the softer hull; play it as a fast skirmisher and traveller, not a stand-and-tank brawler.</li>
+      <li><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> recover even more of its class-leading range.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Mandalay is the all-rounder for commanders who roam. It gives up some toughness and cargo to the heavyweight mediums, but in return it travels further and faster than anything in its class while still mounting four mediums and ten optionals. If your idea of multipurpose includes crossing the galaxy between jobs, nothing does it better.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/mandalay" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/mandalay</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Mandalay ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/mandalay" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../mandalay</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/mandalay.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/mandalay.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Mandalay</span><span class="cr-what">Ship-specific stats, hardpoint &amp; internal layout, and shipyard pricing.</span><a class="cr-link" href="https://inara.cz/elite/ship/67/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/67</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Mandalay</span><span class="cr-what">Manufacturer, lore, and the ship's role/spec reference.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Mandalay" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Mandalay</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — TheYamiks</span><span class="cr-what">Opinionated review of the Mandalay as an all-rounder, weighing its speed, jump range and combat trade-offs.</span><a class="cr-link" href="https://www.youtube.com/watch?v=4h-TdlHTP_Q" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=4h-TdlHTP_Q</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — The Buur Pit</span><span class="cr-what">In-game walkthrough of the Mandalay's full internal module slot layout for loadout planning.</span><a class="cr-link" href="https://www.youtube.com/watch?v=A-cZN3WWiBk" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=A-cZN3WWiBk</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

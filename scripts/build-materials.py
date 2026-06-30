@@ -3,7 +3,7 @@
 #
 # Canonical game data (data/materials/material.csv, verbatim EDCD/FDevIDs, read-only) +
 # the data/materials-extra/ overlay (group labels, category order, deferral) are rendered
-# into the three `table.data` grids of guides/engineering/materials.html, BYTE-COMPATIBLE
+# into the three `table.data` grids of guides/engineering/materials-and-farming/materials.html, BYTE-COMPATIBLE
 # with the hand-authored page. Only the run between
 #   <!-- BEGIN generated:materials -->  ...  <!-- END generated:materials -->
 # (one pair per displayed type, top-to-bottom) is rewritten; leads, tbl-desc, callouts,
@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import materials_common as m
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGE = ROOT / "guides" / "engineering" / "materials.html"
+PAGE = ROOT / "guides" / "engineering" / "materials-and-farming" / "materials.html"
 
 BEGIN = "<!-- BEGIN generated:materials -->"
 END = "<!-- END generated:materials -->"

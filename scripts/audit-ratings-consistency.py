@@ -4,11 +4,11 @@ audit-ratings-consistency.py — cross-page audit of ship suitability ratings.
 
 Every (role, ship) 1-100 rating is asserted in several places that must all agree:
 
-  * guides/ships/by-role/<role>.html
+  * guides/ships/best-ships-by-role/<role>.html
       - the full-ladder ranking table
       - the per-class breakdown tables
         (both: <td class="mod">SHIP…</td> … <span class="rscore">N</span>)
-  * guides/ships/dossiers/<ship>-<role>.html
+  * guides/ships/ship-dossiers/<ship>-<role>.html
       - the headline rating  <div class="n">N<small>/100</small>
       - the subject row in its peer table (marked `pill md">this` / baseline)
       - every peer-comparison row  <td class="mod">SHIP…</td> … rscore">N
@@ -31,8 +31,8 @@ from collections import defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-BY_ROLE = REPO / "guides" / "ships" / "by-role"
-DOSSIERS = REPO / "guides" / "ships" / "dossiers"
+BY_ROLE = REPO / "guides" / "ships" / "best-ships-by-role"
+DOSSIERS = REPO / "guides" / "ships" / "ship-dossiers"
 ROLES = ["ax", "combat", "exploration", "mining", "multipurpose", "passenger", "trading"]
 
 TAG_RE = re.compile(r"<[^>]+>")

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adder &middot; Exploration &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Exploration → fed-blue (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Adder · Exploration</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-explore"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Explore</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Zorgon Peterson</div>
+    <h1 class="title"><span>Adder</span><span class="role ac-role-exploration">Exploration</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The <em>cheapest</em> flexible hull that can also explore</h2>
+      <p>Light and inexpensive, the Adder carries more kit than a <a href="hauler-exploration.html">Hauler</a> &mdash; scoop, scanner, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, small SRV bay and room for cargo &mdash; while its 35-tonne hull pulls a respectable ~47 LY engineered. It trails the dedicated explorers in range and module space, but its versatility and near-zero cost make it a sensible multi-role pick for commanders who want one cheap hull for the black and the trade lane.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/adder.jpg" alt="Adder" width="160" height="90">
+      <figcaption><b>Adder</b> &middot; Zorgon Peterson</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">60<small>/100</small></div><div class="bar mini"><i style="--pct:60"></i></div></div>
+      <div class="stat"><div class="n">~47 LY</div><div class="l">Max jump (engineered)</div></div>
+      <div class="stat"><div class="n">Class 3</div><div class="l"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div></div>
+      <div class="stat"><div class="n">Small</div><div class="l">Pad size</div></div>
+      <div class="stat"><div class="n">~41k Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Adder is Zorgon Peterson's pint-sized jack-of-all-trades: cheap, light, and able to turn its hand to hauling, light combat, mining or exploration. As an explorer it leans on its low 35-tonne mass for a respectable ~47 LY engineered, while seven small optionals carry a scoop, scanner, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, SRV bay and even a little cargo &mdash; more useful kit than the featherweight <a href="hauler-exploration.html">Hauler</a>, for only a little more money.</p>
+    <p>It's no dedicated explorer: its range and module space sit below the Diamondbacks, and it's slow and lightly built. But it's genuinely versatile, so the same cheap hull that explores can also run cargo or a delivery mission, and it costs almost nothing. For a budget commander who wants one flexible little ship that can also venture into the black, the Adder is a sensible, characterful choice.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Cheap, versatile exploration: budget first expeditions, mixed explore-and-haul trips, exobiology on a shoestring, and as a flexible little hull that ventures into deep space between other jobs.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-mining" href="adder-mining.html"><span class="vrole">Mining</span><span class="vrate">48<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="adder-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">62<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-explore">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~47 <small>LY</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">221 / 321 <small>m/s</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div><div class="v">Up to Class 3</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">35 <small>t (light)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">3&middot;3&middot;2&middot;2&middot;1&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">2</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></div><div class="v">Class 3</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(lands anywhere)</small></div></div>
+      <div class="cell"><div class="k">Hull cost</div><div class="v">~41k Cr</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+    </div>
+    <p>Four things make the Adder a sensible budget explorer:</p>
+    <ul class="bullets">
+      <li><b>Light enough for decent range.</b> At 35 tonnes it jumps ~47 LY engineered &mdash; respectable for so cheap a hull.</li>
+      <li><b>Real (if small) kit plus cargo.</b> Seven optionals carry a scoop, scanner, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, small SRV bay and a <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a> &mdash; more useful than a <a href="hauler-exploration.html">Hauler</a>'s bare minimum.</li>
+      <li><b>Genuine versatility.</b> The same hull hauls, fights a little and mines &mdash; explore one week, run cargo the next.</li>
+      <li><b>Almost free.</b> At ~41k Cr with a trivial rebuy &mdash; a flexible deep-space-capable ship for pocket change.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Its class-3 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and small optionals give a modest range and tight module space, with no redundancy; it's slow and lightly shielded. The <a href="diamondback-scout-exploration.html">Diamondback Scout</a> (cool-running, four utilities) and DBE both make better dedicated explorers for a little more. The Adder's case is versatility and rock-bottom price, not deep-space capability per se.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Rock-bottom cost, no rank gate and genuine multi-role versatility carry the score, but a ~47 LY ceiling and tight all-small internals with no redundancy hold it to mid-field.</p>
+    <p>The <b>60/100</b> headline is a verdict against the exploration role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Engineered jump range</td><td class="sc"><span class="scval">19</span><span class="den">/35</span><div class="bar mini"><i style="--pct:54"></i></div></td><td class="wcell">At 35t the engineered fit reaches ~47 LY with a Class-3 FSD plus a 3H Guardian booster, respectable for the price but well short of the DBE (~68) and Asp (~62) and below the same-class Hauler (~50).</td></tr>
+      <tr><td class="fct">Heat profile</td><td class="sc"><span class="scval">9</span><span class="den">/15</span><div class="bar mini"><i style="--pct:60"></i></div></td><td class="wcell">A G5 Low Emissions Class-3 plant with Thermal Spread runs cool enough to scoop deep in a corona, but the light hull lacks the standout cold-running of the Diamondback Scout or Dolphin; heat is adequate, not a strength.</td></tr>
+      <tr><td class="fct">Fuel tank &amp; reach</td><td class="sc"><span class="scval">7</span><span class="den">/10</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">Class-3 (32t) fuel tank paired with a Class-3 fuel scoop gives a sensible scoop-interval-to-mass balance; reach per top-off is fine for a small hull but the modest tank means short hops between stars.</td></tr>
+      <tr><td class="fct">Canopy &amp; visibility</td><td class="sc"><span class="scval">6</span><span class="den">/10</span><div class="bar mini"><i style="--pct:60"></i></div></td><td class="wcell">The Adder's split forward canopy gives a usable but unremarkable forward arc; visibility is mid-field, neither the panoramic glass of the Asp Explorer nor a notable blind spot.</td></tr>
+      <tr><td class="fct">Internals</td><td class="sc"><span class="scval">10</span><span class="den">/20</span><div class="bar mini"><i style="--pct:50"></i></div></td><td class="wcell">Seven small optionals (3·3·2·2·1·1·1) and 0 military slots cover scoop, scanner, AFMU, 2-size SRV bay and a cargo rack, but the tight, all-small layout leaves no redundancy and trails dedicated explorers' module space.</td></tr>
+      <tr><td class="fct">Comfort &amp; cost</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">~41k Cr hull, no rank or permit gate, trivial rebuy, and ~3.5M Cr fully engineered make it near-free; cabin comfort is cramped, but rock-bottom cost and re-role versatility are the clear draw.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">60</span><span class="den">/100</span><div class="bar mini"><i style="--pct:60"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for exploration specifically</em>. The role column is the maximum engineered jump range in light-years &mdash; the headline number for deep-space travel.</p>
+    <h3 class="subhead">Same class &mdash; small-pad explorers</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Adder</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="diamondback-explorer-exploration.html">Diamondback Explorer</a></td><td><span class="pill pad-small">Small</span></td><td>~68</td><td class="pcc"><span class="p">Far more range, kit and redundancy; cool</span><span class="c">Pricier</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="dolphin-exploration.html">Dolphin</a></td><td><span class="pill pad-small">Small</span></td><td>~58</td><td class="pcc"><span class="p">Coolest-running; comfortable; roomier</span><span class="c">Pricier</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-scout-exploration.html">Diamondback Scout</a></td><td><span class="pill pad-small">Small</span></td><td>~55</td><td class="pcc"><span class="p">Cool-running; four utilities; more range</span><span class="c">Pricier; less versatile</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-courier-exploration.html">Imperial Courier</a></td><td><span class="pill pad-small">Small</span></td><td>~55</td><td class="pcc"><span class="p">Faster; strong shields</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; pricier</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-iii-exploration.html">Cobra Mk III</a></td><td><span class="pill pad-small">Small</span></td><td>~50</td><td class="pcc"><span class="p">More guns, cargo and room; versatile</span><span class="c">Pricier</span></td><td><span class="rscore">71</span><div class="bar mini"><i style="--pct:71"></i></div></td></tr>
+        <tr><td class="mod"><a href="hauler-exploration.html">Hauler</a></td><td><span class="pill pad-small">Small</span></td><td>~50</td><td class="pcc"><span class="p">Lighter; cheaper; longer range</span><span class="c">Far less kit and versatility</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+        <tr><td class="mod">Adder <span class="pill md">this</span></td><td><span class="pill pad-small">Small</span></td><td>~47</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among budget small-pad explorers the Adder is the versatile, ultra-cheap pick. The <a href="hauler-exploration.html">Hauler</a> jumps slightly further on pure lightness, the Diamondbacks make better dedicated explorers &mdash; but the Adder carries more than a <a href="hauler-exploration.html">Hauler</a> and does more jobs than any of them. Buy it for cheap flexibility, not for range.</p>
+    <h3 class="subhead">Other classes &mdash; the step-up</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Adder</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="diamondback-explorer-exploration.html">Diamondback Explorer</a></td><td><span class="pill pad-small">Small</span></td><td>~68</td><td class="pcc"><span class="p">The sensible dedicated explorer upgrade</span><span class="c">Pricier</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-exploration.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~62</td><td class="pcc"><span class="p">Roomy; great view; medium pad</span><span class="c">Vastly pricier</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="dolphin-exploration.html">Dolphin</a></td><td><span class="pill pad-small">Small</span></td><td>~58</td><td class="pcc"><span class="p">Cool, comfortable, roomier</span><span class="c">Pricier</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-iii-exploration.html">Cobra Mk III</a></td><td><span class="pill pad-small">Small</span></td><td>~50</td><td class="pcc"><span class="p">More capable versatile classic</span><span class="c">Pricier</span></td><td><span class="rscore">71</span><div class="bar mini"><i style="--pct:71"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-exploration.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~48</td><td class="pcc"><span class="p">Far more cargo; medium pad</span><span class="c">Pricier; slower</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Adder is a stepping-stone. For a dedicated explorer, the DBE or <a href="diamondback-scout-exploration.html">Diamondback Scout</a> is the upgrade; for more versatility, the <a href="cobra-mk-iii-exploration.html">Cobra Mk III</a>; for cargo, the <a href="type-6-transporter-exploration.html">Type-6</a>. The Adder's role is to be the cheapest <em>flexible</em> ship that can also explore &mdash; a budget all-rounder, not a specialist.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~41k Cr</div></div>
+      <div class="cell"><div class="k">A-rated explorer</div><div class="v">~800k Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~3.5M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~41k Cr the Adder is almost free, with no rank gate and a trivial rebuy, and a full explorer fit stays around 3.5M Cr all-in &mdash; a flexible deep-space-capable ship for very little.</p>
+    <p>It's a value-and-versatility pick. For a better dedicated explorer, spend a little more on a Diamondback; the Adder makes most sense when you want one cheap hull that can explore, haul and run missions interchangeably.</p>
+    <div class="callout"><span class="lbl">Cheap and flexible</span><p>A versatile, deep-space-capable hull for around 3.5M Cr all-in &mdash; explore, haul or run cargo in the same ship for pocket change.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A cheap, versatile explorer fit that keeps a little cargo room. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises range within the small frame.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0I Heat Sink Launcher</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">3E Power Plant</td><td class="st">3D Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">D-rate to save mass; Low Emissions runs the plant cool so you can sit deep in a star's corona and scoop.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">3E Thrusters</td><td class="st">3D Thrusters</td><td class="eng">G5 Clean Drive Tuning + Stripped Down</td><td class="note">D-rated thrusters are plenty for a 35t hull; Clean Drive Tuning trims heat and Stripped Down sheds mass for range.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">3E Frame Shift Drive</td><td class="st">3A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rate this FIRST and max Increased Range with Mass Manager — jump range is the whole point of the build.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">1E Life Support</td><td class="st">1D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate and Lightweight to save every kilo; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">2E Power Distributor</td><td class="st">2D Power Distributor</td><td class="eng">G3 Engine Focused (no experimental effect)</td><td class="note">D-rate is enough with no guns to feed; Engine Focused keeps the boost charging for fast scooping turns.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">3E Sensors</td><td class="st">3D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; exploration needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">3C Fuel Tank</td><td class="st">3C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Class-3 (32t) tank balances scoop interval against mass; fuel capacity cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">3E Fuel Scoop</td><td class="st">3A Fuel Scoop</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">3E Cargo Rack</td><td class="st">3H Guardian FSD Booster</td><td class="eng">(No blueprint available)</td><td class="note">Guardian FSD Booster adds a flat jump-range bonus on top of the engineered drive; Guardian tech carries no blueprint.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2G Planetary Vehicle Hangar</td><td class="eng">(No blueprint available)</td><td class="note">SRV Hangar (the lighter 2G) opens surface prospecting and exobiology; hangars are not engineerable.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1C Bi-Weave Shield Generator</td><td class="eng">G5 Enhanced Low Power (no experimental effect)</td><td class="note">Enhanced Low Power keeps the shield light and low-draw for the long haul.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5XQwU4CMRAG4HfpmYMLt72ZoJEElLjcjGnG7cA2lLaZTjFIeHfbBUWQw%2B5p038y37b%2FXuAWLYtSTB0oF1kMRNVonwJQCul0fIYNpuh0mqjjSjrOnIoGgyjf9qIyLqf3tHExL04YNz%2BOhDaVKwKFRRq%2BWFEyRRyIOWlHmneiLA6DX2Wh7e4JSHmnLRdnrfEsGwQO2q4NRFs3CedIhCw57XSg5%2B4TaW7A8plNP5E%2B5z7nMugvHMnaQAhdLjsDbR%2FsStvUxAWJbdiXe6RUdyp6yWPSW7wkm51HUjnvy071EqvovaOrh5s0CMdBaxbdzbbLsQ5M%2BiOyoxuNqvO01Yfd9VdQcEUGtMFR6F1pRLMAu77ElinllP7VRh20%2FLkrZJW3%2Fouhds73vWBLDm%2BRNdDKEdTrbuT74RtgWbAd1AMAAA%3D%3D&amp;bn=Adder" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5XTUWvbMBAH8O%2Bi5zzMybpC3gbtWKFdQ9O3UcTFOtsiiiROpxav9LtPVtIlbj1Qnoz%2Bx%2F0sn6xXgc9oWSzFrQPlIouZWHfapwCUQjosf8EOU3RY3ah9S1reORUNBrH8%2FSrWxg3pd9q5ODTeMO7eHQk5lS2BwioV761YMkWciRVpR5p7sazeZv%2BUR237n0DKO225OmqdZ9khcNB2ayDauks4RyJkyamngF65F6SVActHNr1E%2BiH3Qy6D%2FoMLWRsIYV4g3oG217bVNk1iRGIOz%2BV%2BUBp3GnTDV6SfcUx2vUdSQ37KXhSwt7rBdfTe0YcPN6kQ9oVsVuVbzbO80oFJbyI7mpioOlazPi%2FXH0DBBzKgDY7C2SONaB7BbsdYk1JO6am2KNCGx5dKroeuz2KonfPnHk4m51NkG9M10GCboDbOBcb9GIv3ucjofIxuYtv2G%2BjPPZEsfp0SCT1owtEZV6XiRRarsaiQQRtUIVIDNYYarB0ue9ktz%2B63KTd0Go1qMWHw%2FlMefvmFbCBwqX45pddArSOot6fu%2Fwfx9PYXbOXXWoMFAAA%3D&amp;bn=Adder" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F62Wb0%2FbMBDGv4tfVxNpxyb1HQM6kNrBCNJeTJN1jS%2BJhWtH%2FlPWIb77zkmgCbRbKX3Tymfd499j39l5YLhE7dmYTQ0IEzwbsLSUFQVACLTt8BsskELt6FI0KTScGREUOjb%2B%2BcBSZWL0xC5MiImXHhdPOhzqKC8sCExo8kqzsbcBB%2BzaSmOlX7FxMmDnupAa0UpdsPED%2B6ICVjTwLUCjzU%2FEEnSGgnSmxK%2FY%2BHjAvgdQjcyHo8fHwTPPrdSrC7CiMqSTrLnKyvMSwTup7xQEnZWE6YO16LmnnL0hZ9Jl%2FIKUU1I%2BhQqymPiMmmxHvTb3aK8VaL%2FGJF1exXgV49zJPzjimQLnhnsTrtfhqUdQvty6k6T1uyKhBR05qPM8xyySugozCapLlhmj6Ei6fmYgdYPi%2BoawDh7GTDPNb4P%2BR0H8x0bLo2RR%2BnuMvz0fE0tLUeXn%2FszKJfa9lCsSFjHe9XO8t59JesanRhc3oAvc11DuRCzu5arnYypzTENVGfuiwBRNuGaiNpG891A6K%2FFp3M8fza7u0rB1dZ5J562cB2%2Fshl4Q69mad3iQjuisyZ%2BS1%2BXbgo%2B2g9%2BAgBe0DrUz1h2m0tNa7M37OQmobkHf9clyinqKdtFG29A6avHvKOFpzHqt6OgWqA7UBySX1nLUeajEjtd9zTfcxFcEegUkaOqNuTHOY1M7O5se1aLDvug8FMVqDqudyvCl4sdNihYrkBZ7hf2OF3My22P%2FjmuwpA8m0IOkK94Fm0OGLgOt45P5nreyLWm6y0C%2FifDTJkJXGy2QsODpamivshHPwfn9OWvlr8%2FKV5WXC%2BneQvx5E3EGtjAWsrsu6%2F6nfRrlbqLcpc4sAgG%2B%2FgB5Bfrr8S%2BpgQxWBwoAAA%3D%3D&amp;bn=Adder" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5XQwU4CMRAG4HfpmYMLt72ZoJEElLjcjGnG7cA2lLaZTjFIeHfbBUWQw%2B5p038y37b%2FXuAWLYtSTB0oF1kMRNVonwJQCul0fIYNpuh0mqjjSjrOnIoGgyjf9qIyLqf3tHExL04YNz%2BOhDaVKwKFRRq%2BWFEyRRyIOWlHmneiLA6DX2Wh7e4JSHmnLRdnrfEsGwQO2q4NRFs3CedIhCw57XSg5%2B4TaW7A8plNP5E%2B5z7nMugvHMnaQAhdLjsDbR%2FsStvUxAWJbdiXe6RUdyp6yWPSW7wkm51HUjnvy071EqvovaOrh5s0CMdBaxbdzbbLsQ5M%2BiOyoxuNqvO01Yfd9VdQcEUGtMFR6F1pRLMAu77ElinllP7VRh20%2FLkrZJW3%2Fouhds73vWBLDm%2BRNdDKEdTrbuT74RtgWbAd1AMAAA%3D%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5XTUWvbMBAH8O%2Bi5zzMybpC3gbtWKFdQ9O3UcTFOtsiiiROpxav9LtPVtIlbj1Qnoz%2Bx%2F0sn6xXgc9oWSzFrQPlIouZWHfapwCUQjosf8EOU3RY3ah9S1reORUNBrH8%2FSrWxg3pd9q5ODTeMO7eHQk5lS2BwioV761YMkWciRVpR5p7sazeZv%2BUR237n0DKO225OmqdZ9khcNB2ayDauks4RyJkyamngF65F6SVActHNr1E%2BiH3Qy6D%2FoMLWRsIYV4g3oG217bVNk1iRGIOz%2BV%2BUBp3GnTDV6SfcUx2vUdSQ37KXhSwt7rBdfTe0YcPN6kQ9oVsVuVbzbO80oFJbyI7mpioOlazPi%2FXH0DBBzKgDY7C2SONaB7BbsdYk1JO6am2KNCGx5dKroeuz2KonfPnHk4m51NkG9M10GCboDbOBcb9GIv3ucjofIxuYtv2G%2BjPPZEsfp0SCT1owtEZV6XiRRarsaiQQRtUIVIDNYYarB0ue9ktz%2B63KTd0Go1qMWHw%2FlMefvmFbCBwqX45pddArSOot6fu%2Fwfx9PYXbOXXWoMFAAA%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F62Wb0%2FbMBDGv4tfVxNpxyb1HQM6kNrBCNJeTJN1jS%2BJhWtH%2FlPWIb77zkmgCbRbKX3Tymfd499j39l5YLhE7dmYTQ0IEzwbsLSUFQVACLTt8BsskELt6FI0KTScGREUOjb%2B%2BcBSZWL0xC5MiImXHhdPOhzqKC8sCExo8kqzsbcBB%2BzaSmOlX7FxMmDnupAa0UpdsPED%2B6ICVjTwLUCjzU%2FEEnSGgnSmxK%2FY%2BHjAvgdQjcyHo8fHwTPPrdSrC7CiMqSTrLnKyvMSwTup7xQEnZWE6YO16LmnnL0hZ9Jl%2FIKUU1I%2BhQqymPiMmmxHvTb3aK8VaL%2FGJF1exXgV49zJPzjimQLnhnsTrtfhqUdQvty6k6T1uyKhBR05qPM8xyySugozCapLlhmj6Ei6fmYgdYPi%2BoawDh7GTDPNb4P%2BR0H8x0bLo2RR%2BnuMvz0fE0tLUeXn%2FszKJfa9lCsSFjHe9XO8t59JesanRhc3oAvc11DuRCzu5arnYypzTENVGfuiwBRNuGaiNpG891A6K%2FFp3M8fza7u0rB1dZ5J562cB2%2Fshl4Q69mad3iQjuisyZ%2BS1%2BXbgo%2B2g9%2BAgBe0DrUz1h2m0tNa7M37OQmobkHf9clyinqKdtFG29A6avHvKOFpzHqt6OgWqA7UBySX1nLUeajEjtd9zTfcxFcEegUkaOqNuTHOY1M7O5se1aLDvug8FMVqDqudyvCl4sdNihYrkBZ7hf2OF3My22P%2FjmuwpA8m0IOkK94Fm0OGLgOt45P5nreyLWm6y0C%2FifDTJkJXGy2QsODpamivshHPwfn9OWvlr8%2FKV5WXC%2BneQvx5E3EGtjAWsrsu6%2F6nfRrlbqLcpc4sAgG%2B%2FgB5Bfrr8S%2BpgQxWBwoAAA%3D%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Adder&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;adder_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size3_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size3_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size3_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size1_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size2_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size3_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size3_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size3&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Adder&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;adder_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size3_class2&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size3_class2&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size3_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size1_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size2_class2&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size3_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size3_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size3&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot02_Size3&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size3&quot;},{&quot;Slot&quot;:&quot;Slot03_Size2&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_repairer_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot05_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;},{&quot;Slot&quot;:&quot;Slot06_Size1&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size1_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;int_cargorack_size1_class1&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;exploration&quot;,&quot;intro&quot;:&quot;A cheap, versatile explorer fit that keeps a little cargo room. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises range within the small frame.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Explore, with room to haul&quot;,&quot;text&quot;:&quot;The Adder's seven optionals fit a scoop, Guardian booster, scanner, small SRV bay and AFMU — with a slot or two left for cargo. That flexibility is the point: the same cheap hull explores or hauls as the trip demands.&quot;},&quot;notes&quot;:{&quot;TinyHardpoint1&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint2&quot;:&quot;Heavy Duty multiplies raw shield strength.&quot;,&quot;PowerPlant&quot;:&quot;D-rate to save mass; Low Emissions runs the plant cool so you can sit deep in a star's corona and scoop.&quot;,&quot;MainEngines&quot;:&quot;D-rated thrusters are plenty for a 35t hull; Clean Drive Tuning trims heat and Stripped Down sheds mass for range.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rate this FIRST and max Increased Range with Mass Manager — jump range is the whole point of the build.&quot;,&quot;LifeSupport&quot;:&quot;D-rate and Lightweight to save every kilo; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;D-rate is enough with no guns to feed; Engine Focused keeps the boost charging for fast scooping turns.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; exploration needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Class-3 (32t) tank balances scoop interval against mass; fuel capacity cannot be engineered.&quot;,&quot;Slot01_Size3&quot;:&quot;Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.&quot;,&quot;Slot02_Size3&quot;:&quot;Guardian FSD Booster adds a flat jump-range bonus on top of the engineered drive; Guardian tech carries no blueprint.&quot;,&quot;Slot03_Size2&quot;:&quot;SRV Hangar (the lighter 2G) opens surface prospecting and exobiology; hangars are not engineerable.&quot;,&quot;Slot04_Size2&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot05_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;,&quot;Slot06_Size1&quot;:&quot;Enhanced Low Power keeps the shield light and low-draw for the long haul.&quot;,&quot;Slot07_Size1&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Clean Drive Tuning&quot;,&quot;experimental&quot;:&quot;Stripped Down&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Life Support&quot;,&quot;size&quot;:1,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Sensors&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Bill Turner / Juri Ishmaak&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:2,&quot;grade&quot;:&quot;G3&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Adder&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;adder_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size3_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size3_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Tuned&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_lightweight&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size2_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size3_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size3_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size3&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FuelScoop_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot02_Size3&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size3&quot;},{&quot;Slot&quot;:&quot;Slot03_Size2&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_repairer_size2_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot05_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot06_Size1&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size1_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Optimised&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;int_cargorack_size1_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Explore, with room to haul</span><p>The Adder's seven optionals fit a scoop, Guardian booster, scanner, small SRV bay and AFMU — with a slot or two left for cargo. That flexibility is the point: the same cheap hull explores or hauls as the trip demands.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <ul class="bullets">
+      <li>Buy the hull (~41k Cr) and fit it stock E-rated &mdash; 3E <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a>, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a>, <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">Sensors</a>, 1E <a href="../../engineering/engineering-manuals/modules.html#module-life-support">Life Support</a>, 2E <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> and a 3C <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">Fuel Tank</a>. The hull ships with <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> Alloy <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> as standard; keep them &mdash; they are the lightest armour and exactly what a range build wants.</li>
+      <li>Add the cheap exploration basics now: a 3E <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a>, a 3E <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">Cargo Rack</a> and a 0I <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">Heat Sink Launcher</a> in the first utility.</li>
+      <li>Leave the rest empty &mdash; the second utility, both Size 2 internals and all three Size 1 slots stay vacant until the A-rated pass brings the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian booster</a>, SRV bay, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, scanner and bi-weave. No <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> goes here: its mass costs more range than it ever buys an explorer.</li>
+    </ul>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget all-rounder explorer:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 3A</b> &mdash; Jump range is everything; A-rate the drive first. <span class="acc">~150k Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a> &rarr; 3A</b> &mdash; Keeps the light hull topped up. <span class="acc">~600k Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> (3H)</b> &mdash; A flat range bonus &mdash; a Guardian-site run. <span class="acc">material cost</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a> (1I)</b> &mdash; Cartographic payouts. <span class="acc">~250k Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> (2E) + SRV bay (2G)</b> &mdash; Self-repair and surface access. <span class="acc">~600k Cr</span></li>
+      <li><span class="stepnum">6</span><b>1C Bi-Weave <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a></b> &mdash; A little crash padding for surface work and the long haul. Skip the <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a>: the second utility stays empty so the hull keeps every metre of jump range. <span class="acc">~100k Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Cheap to complete</span><p>A full A-rated, lightly engineered Adder explorer costs only a few million &mdash; and the same hull re-roles to hauling whenever you like.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The exploration engineering pattern on a cheap multi-role hull. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>'s <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a>; <a href="../../engineering/engineering-manuals/engineers.html#engineer-professor-palin">Professor Palin</a> or <a href="../../engineering/engineering-manuals/engineers.html#engineer-mel-brandon">Mel Brandon</a> take the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a> to G5. Pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (3)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Thrusters (3)</td><td>Clean Drive Tuning (G5)</td><td>Stripped Down</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Plant (3)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Life Support (1)</td><td>Lightweight (G5)</td><td>—</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Sensors (3)</td><td>Lightweight (G5)</td><td>—</td><td>Bill Turner / Juri Ishmaak</td></tr>
+<tr><td class="mod">Power Distributor (2)</td><td>Engine Focused (G3)</td><td>—</td><td>The Dweller</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> to G5 with Mass Manager for the Adder's ~47 LY range.</li>
+      <li><span class="stepnum">2</span>Lightweight everything non-essential to squeeze range from the small hull.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant for cool scooping.</li>
+      <li><span class="stepnum">4</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-thrusters-clean-drive-tuning">Clean Drive Tuning</a> <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> for efficient travel.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Very light &mdash; tiny modules and standard exploration blueprints; among the cheapest grinds. With a complete inventory this is trivial spend. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max jump (LY)</td><td>~28</td><td>~38</td><td class="acc">~47</td></tr>
+        <tr><td class="mod">Versatility</td><td>high</td><td>high</td><td class="acc">high</td></tr>
+        <tr><td class="mod">Module space</td><td>tight</td><td>tight</td><td class="acc">tight</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>321 m/s</td><td>321 m/s</td><td class="acc">~350 m/s</td></tr>
+        <tr><td class="mod">Cost-efficiency</td><td>excellent</td><td>excellent</td><td class="acc">excellent</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Adder jumps ~47 LY while keeping room to haul or run missions &mdash; a cheap, flexible little ship that can also explore. Lightweight Alloy <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> kept stock, a Stripped Down bi-weave, and a deleted <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-shield-booster">shield booster</a> strip every spare kilo so the hull holds that range. Its range and capacity trail the dedicated explorers; its versatility and price are the draw.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Budget first expeditions.</b> A cheap, flexible way to take a first proper trip into the black.</li>
+      <li><b>Mixed explore-and-haul trips.</b> Carry cargo or run a delivery alongside surveying.</li>
+      <li><b>Exobiology on a shoestring.</b> A small SRV bay and <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">DSS</a> suit modest organic-sampling outings.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Flexible budget play.</b> Re-role the same cheap hull between exploration, hauling and light combat.</li>
+      <li><b>Cheap local surveys.</b> Map nearby systems at minimal cost and risk.</li>
+      <li><b>Learning the ropes.</b> A versatile, forgiving ship to learn deep-space basics in.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example destinations</span><p>Nearby systems and first steps toward the core suit it. From your home base it's a cheap, flexible way to combine a short expedition with a cargo run.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Lean on the versatility &mdash; the Adder explores adequately and re-roles to hauling or missions easily.</li>
+      <li>Keep it light for range, but a <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a> or two costs little and adds flexibility.</li>
+      <li>It's a budget multi-role, not a dedicated explorer &mdash; a Diamondback is the upgrade for serious range.</li>
+      <li>Carry one <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> and plan short hops; there's no room for redundancy.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Adder is the cheap all-rounder of the black: light enough for a respectable jump range, roomy enough for real (if small) kit and some cargo, and able to haul or fight between expeditions &mdash; all for pocket change. It's no dedicated explorer, but as the cheapest flexible hull that can also venture into deep space, it's a sensible, characterful budget choice.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/adder" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/adder</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Adder ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/adder" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../adder</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/adder.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/adder.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Adder shipyard page &mdash; hull stats, module sellers, tech brokers, and material traders.</span><a class="cr-link" href="https://inara.cz/elite/ship/15/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/15</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Adder lore, manufacturer, and role overview backing the dossier write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Adder" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Adder</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

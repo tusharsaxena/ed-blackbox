@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lynx Highliner &middot; Passenger &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Lynx Highliner · Passenger</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-a-liner"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It a Liner</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-arx-pre-built-option"><span class="qn-dot amber"></span><span class="qn-nm">ARX Pre-Built Option</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">13</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">14</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Saud Kruger</div>
+    <h1 class="title"><span>Lynx Highliner</span><span class="role ac-role-passenger">Passenger</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The bubble's best medium liner for <em>dedicated</em> passenger work</h2>
+      <p>A pre-built Saud Kruger dedicated liner purpose-set for the Robigo&ndash;Sirius sightseeing run. Its liner comfort bonus and medium-pad reach put it ahead of converted hulls per seat; it lands where the large <a href="orca-passenger.html">Orca</a> and <a href="beluga-liner-passenger.html">Beluga</a> can't. Arrives on stock E modules &mdash; engineer the cores in place and fill the open slots to reach its potential while keeping the free rebuy.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/lynx-highliner.jpg" alt="Lynx Highliner" width="160" height="90">
+      <figcaption><b>Lynx Highliner</b> &middot; Saud Kruger</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">90<small>/100</small></div><div class="bar mini"><i style="--pct:90"></i></div></div>
+      <div class="stat"><div class="n">~100</div><div class="l">Max passengers (est.)</div></div>
+      <div class="stat"><div class="n">M</div><div class="l">Pad class</div></div>
+      <div class="stat"><div class="n">~68M</div><div class="l">Hull value (Cr)</div></div>
+      <div class="stat"><div class="n">Yes</div><div class="l">Pre-built (ARX)</div></div>
+      <div class="stat"><div class="n">Yes</div><div class="l">Liner comfort bonus</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Lynx Highliner (your KA-16M) is a pre-built Saud Kruger medium liner &mdash; a dedicated passenger ship that lands on a medium pad, carries the Saud Kruger comfort bonus, and is purpose-set for the Robigo&ndash;Sirius sightseeing run, one of the most lucrative passenger loops in the bubble. As a dedicated liner it earns premium rates and happy passengers per seat, and its medium pad reaches stations the large <a href="orca-passenger.html">Orca</a> and <a href="beluga-liner-passenger.html">Beluga</a> can't.</p>
+    <p>It arrives as a pre-built with stock E-rated modules and a modest starting cabin suite (your current fit carries four economy cabins &mdash; about 48 passengers). The pre-built rules apply: the stock modules sell for nothing and can't be stored, so the play is to engineer the cores in place and fit better cabins and kit into the open slots, never swapping the stock modules out, which preserves the free rebuy. Built up, it's a superb medium liner &mdash; flexible, comfortable, and ideal for the Robigo run you already fly it on.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Medium-pad luxury passenger work: the Robigo&ndash;Sirius sightseeing run (its purpose), high-value VIP missions to medium-pad destinations, and flexible cruise routes the large liners can't reach.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-a-liner">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It a Liner</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max passengers (est.)</div><div class="v">~100</div></div>
+      <div class="cell"><div class="k">Current cabins (your fit)</div><div class="v">4 econ (~48 pax)</div></div>
+      <div class="cell"><div class="k">Internal type</div><div class="v">mediumtransport01</div></div>
+      <div class="cell"><div class="k">Hull value</div><div class="v">~68M Cr</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></div><div class="v">Overcharge (SCO) size 5</div></div>
+      <div class="cell"><div class="k">Liner comfort bonus</div><div class="v">Yes <small>(Saud Kruger)</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Pre-built</div><div class="v">Yes <small>(ARX, stock E modules)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Lynx a fine medium liner:</p>
+    <ul class="bullets">
+      <li><b>Dedicated-liner comfort bonus.</b> As a Saud Kruger ship, passengers pay premium and complain least &mdash; more profit per seat than a converted hull.</li>
+      <li><b>Medium-pad flexibility.</b> Lands at most stations, including outposts the large <a href="orca-passenger.html">Orca</a> and <a href="beluga-liner-passenger.html">Beluga</a> can't use &mdash; ideal for varied passenger routes.</li>
+      <li><b>Purpose-set for Robigo.</b> Configured for the famously lucrative Robigo&ndash;Sirius sightseeing loop you already run.</li>
+      <li><b>Pre-built and ready.</b> A complete liner out of the box with a free rebuy &mdash; build it up by engineering cores in place and filling open slots.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It holds fewer passengers than the large <a href="beluga-liner-passenger.html">Beluga</a>, and its stock pre-built modules are all E-rated &mdash; it needs building up (engineered cores, better cabins in the open slots) to reach its potential. Its <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> and current fit give only a modest ~16 LY range as configured. The Lynx's case is medium-pad dedicated-liner flexibility for the Robigo run; for sheer capacity, the <a href="beluga-liner-passenger.html">Beluga</a> wins.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">A dedicated Saud Kruger medium liner that leads on comfort and medium-pad reach with ~100 seats, held off the top tier only by a hold far smaller than the Beluga's ~184.</p>
+    <p>The <b>90/100</b> headline is a verdict against the passenger role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Cabin capacity &amp; class fit</td><td class="sc"><span class="scval">31</span><span class="den">/35</span><div class="bar mini"><i style="--pct:89"></i></div></td><td class="wcell">Built-up ~100 economy passengers across size-6/5/5/5/4 optional slots from a stock ~48-pax fit; strong for a purpose-built liner and ahead of the Dolphin (~42), but under the Beluga (~184) and even converted mediums like the Python (~146).</td></tr>
+      <tr><td class="fct">Comfort</td><td class="sc"><span class="scval">20</span><span class="den">/20</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">Carries the Saud Kruger dedicated-liner comfort bonus, so passengers pay premium and complain least, beating any converted hull (Cutter, Anaconda, Python) on profit per seat. Comfort is its single strongest attribute, matched only among liners by Beluga/Orca/Dolphin.</td></tr>
+      <tr><td class="fct">Jump range &amp; tank</td><td class="sc"><span class="scval">17</span><span class="den">/20</span><div class="bar mini"><i style="--pct:85"></i></div></td><td class="wcell">Engineered size-5 SCO FSD (Increased Range + Mass Manager) reaches ~38 LY from ~16 LY stock on a fixed 32t (5C) tank. Adequate for the short Robigo-Sirius loop but unremarkable beside long-legged converted hulls like the Krait Phantom.</td></tr>
+      <tr><td class="fct">Shield &amp; safety</td><td class="sc"><span class="scval">12</span><span class="den">/15</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">6C bi-weave (Reinforced + Fast Charge) plus a 0A Heavy Duty booster covers passenger safety, but raw MJ falls far short of the Imperial Cutter's apex shields, and two 1F pulse lasers are token defence only.</td></tr>
+      <tr><td class="fct">Pad class &amp; cost</td><td class="sc"><span class="scval">10</span><span class="den">/10</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">Medium pad lands at outposts the large Orca and Beluga cannot reach, with no rank or permit gate. ~68M Cr hull (~85M+ built up, ~3.5M rebuy) is moderate, and the pre-built free rebuy survives in-place engineering.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">90</span><span class="den">/100</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for passenger work specifically</em>. The role column is the maximum economy passenger capacity &mdash; but note that dedicated liners earn comfort bonuses, and the Lynx's medium pad reaches routes the large liners can't.</p>
+    <h3 class="subhead">Same role &mdash; dedicated liners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Lynx Highliner</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="beluga-liner-passenger.html">Beluga Liner</a></td><td><span class="pill pad-large">Large</span></td><td>~184</td><td class="pcc"><span class="p">Far more cabins; same comfort bonus</span><span class="c">Large pad; far pricier; slower</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Lynx Highliner <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>~100</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="orca-passenger.html">Orca</a></td><td><span class="pill pad-large">Large</span></td><td>~96</td><td class="pcc"><span class="p">Far faster; comfort bonus</span><span class="c">Large pad</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="dolphin-passenger.html">Dolphin</a></td><td><span class="pill pad-small">Small</span></td><td>~42</td><td class="pcc"><span class="p">Cheaper; cool; lands anywhere; comfort bonus</span><span class="c">Far fewer cabins</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among dedicated liners the Lynx is the medium-pad flexible pick. The <a href="beluga-liner-passenger.html">Beluga</a> carries far more and the <a href="orca-passenger.html">Orca</a> is faster, but both are large-pad; the Lynx lands where they can't, which is gold for the varied station destinations of sightseeing missions. The <a href="dolphin-passenger.html">Dolphin</a> is its cheaper small cousin.</p>
+    <h3 class="subhead">Other classes &mdash; the converted ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Lynx Highliner</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="beluga-liner-passenger.html">Beluga Liner</a></td><td><span class="pill pad-large">Large</span></td><td>~184</td><td class="pcc"><span class="p">Far more cabins; comfort bonus</span><span class="c">Large pad; pricier</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-passenger.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>~204</td><td class="pcc"><span class="p">Far more raw cabins; apex shields</span><span class="c">No liner bonus; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; less profit/seat</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-passenger.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>~202</td><td class="pcc"><span class="p">Far more raw cabins; versatile</span><span class="c">No liner bonus; large pad</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-passenger.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~146</td><td class="pcc"><span class="p">More raw cabins; defensible</span><span class="c">No liner bonus; less profit/seat</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-passenger.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~80</td><td class="pcc"><span class="p">Great range; versatile</span><span class="c">No liner bonus; fewer cabins</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Converted ships like the <a href="python-passenger.html">Python</a> or <a href="imperial-cutter-passenger.html">Cutter</a> fit more raw cabins but lack the liner comfort bonus, so they earn less per seat and draw fewer premium passengers. The Lynx's dedicated-liner status plus medium-pad flexibility make it a better-earning, more flexible passenger ship despite a smaller hold.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull (pre-built)</div><div class="v">~68M Cr value</div></div>
+      <div class="cell"><div class="k">Current modules</div><div class="v">~1.3M Cr (stock E)</div></div>
+      <div class="cell"><div class="k">Built-up</div><div class="v">~85M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>The Lynx arrives as a pre-built liner valued around 68M Cr with cheap stock E-rated modules (~1.3M Cr) and a ~3.5M Cr rebuy. Building it up &mdash; engineered cores in place, better cabins and a stronger shield in the open slots &mdash; brings its practical value past 85M Cr.</p>
+    <p>Its earning power is the Robigo run: high-value sightseeing missions on a short, lucrative loop, where the dedicated-liner bonus and medium pad shine. As a pre-built it's a ready-made earner from the start, improving as you build it.</p>
+    <div class="callout"><span class="lbl">Pre-built Robigo earner</span><p>A ready-made dedicated liner for the lucrative Robigo&ndash;Sirius run &mdash; earning from day one, and better as you engineer the cores and fill the open cabin slots.</p></div>
+  </section>
+
+  <!-- s5 -->
+  <section id="section-arx-pre-built-option">
+    <div class="sec-head"><span class="sec-num">06</span><h2>ARX Pre-Built Option</h2></div>
+    <p>The Lynx Highliner is a pre-built (ARX) ship, so the pre-built rules apply: its stock E-rated modules sell for 0 Cr and can't be stored or transferred, but engineering them <em>in place</em> does not void the free rebuy. Never swap a stock module out &mdash; only add modules to open slots, and engineer the existing cores where they sit.</p>
+    <p>In practice: engineer the stock <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a> and <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-power-plant">power plant</a> in place for range and mobility; upgrade cabins by fitting better ones into the open optional slots; and add a stronger shield. This keeps the free rebuy intact while turning the stock liner into a properly capable Robigo ship.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Pre-built rule</th><th>What it means for the Lynx</th></tr></thead>
+      <tbody>
+        <tr><td>Stock modules sell for 0 Cr</td><td>The Lynx's stock E-rated modules have no resale value and can't be stored or transferred &mdash; there's no gain in removing them.</td></tr>
+        <tr><td>Engineering in place keeps the free rebuy</td><td>Modifying the stock cores where they sit (via the remote workshop) does not void the pre-built free rebuy &mdash; so engineer them in place.</td></tr>
+        <tr><td>Only add to open slots</td><td>Build the ship up by fitting better cabins, a shield and utilities into the empty slots &mdash; never swap a stock module out.</td></tr>
+        <tr><td>Result</td><td>A fully built-up, engineered Lynx that still carries its free rebuy &mdash; the right way to upgrade any pre-built.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Engineer in place, add to open slots</span><p>Don't sell or swap the stock modules &mdash; engineer them where they are and fill the empty slots with better cabins and a shield. That preserves the free rebuy while building the liner up.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">07</span><h2>3-State Loadout</h2></div>
+    <p>The Lynx is a pre-built Saud Kruger medium liner. Initial is its stock fit — E-rated cores, a size-5 shield and four economy cabins (~48 passengers). A-Rated lifts the cores to A and fills the optional slots with a bi-weave shield and a mixed economy/business/first/luxury cabin suite; Engineered adds the range, mobility and shield blueprints. Engineer the stock cores in place via the remote workshop to keep the pre-built free rebuy rather than selling them.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">1F Pulse Laser (Fixed)</td><td class="st">1F Pulse Laser (Fixed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Efficient runs cool; Thermal Vent vents heat.</td></tr>
+<tr><td class="slot">Medium 2</td><td class="st">1F Pulse Laser (Fixed)</td><td class="st">1F Pulse Laser (Fixed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Efficient runs cool; Thermal Vent vents heat.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Shield booster multiplies the bi-weave's raw MJ; Heavy Duty is the cheapest large gain in passenger safety.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">5E Power Plant</td><td class="st">5A Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">A-rate for headroom to run shield and cabins; Low Emissions keeps it cool and Thermal Spread bleeds the rest.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">6E Thrusters</td><td class="st">6A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated + Dirty Drive Tuning give a heavy liner the speed to boost clear of trouble.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rated SCO drive; Increased Range + Mass Manager stretch every jump to reach the Robigo beacons.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">6E Life Support</td><td class="st">6D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">5E Power Distributor</td><td class="st">5A Power Distributor</td><td class="eng">G5 Engine Focused + Super Conduits</td><td class="note">A-rate then Engine Focused + Super Conduits to keep the boost charged for fast getaways.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">3E Sensors</td><td class="st">3D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; a liner needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock 32t tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">5E Shield Generator</td><td class="st">6C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Fast Charge</td><td class="note">Bi-Weave in the size-6 slot regenerates fast under fire; Reinforced maximises MJ and Fast Charge speeds recovery — passenger safety first.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Economy Passenger Cabin</td><td class="st">5C First Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">First-class cabin for premium VIP fares; cabins themselves are not engineerable.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Economy Passenger Cabin</td><td class="st">5B Luxury Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Luxury cabin earns the top Robigo VIP rates — fewest seats, highest profit per head.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">4E Economy Passenger Cabin</td><td class="st">5E Economy Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Economy cabin fills the volume seats, cheap headcount alongside the VIP suites.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">4E Economy Passenger Cabin</td><td class="st">4D Business Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Business cabin balances comfort and headcount in the size-4 slot.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">1E Supercruise Assist</td><td class="st">1E Supercruise Assist</td><td class="eng">(No blueprint available)</td><td class="note">Supercruise Assist eases the long Robigo cruises; navigation aids carry no blueprint.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">1E Docking Computer</td><td class="st">1E Docking Computer</td><td class="eng">(No blueprint available)</td><td class="note">Advanced Docking Computer for hands-free dock and launch; not engineerable.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XUS0%2FDMAwA4P%2BS8w7sibQbEiCQBkyMG0KVabzNIk0iJxkv8d9xA2J0GlKL4FTFbr86dtpXhRu0UU3VzIF2KaqeWqzJS6BCTamKDDZ4x%2FGg%2F5m6hAol%2Fbk61x%2BPy%2FLC6WQwqOntq1oYV0ePuHKJJXcesdpnFpDvKFYMGus3XFk1jZywp%2BZMjik%2Bq2n%2FrfclXmThDFh7Rzb2t%2Fbax8InE9BAQC6W9IS6CBUY050d%2FBE7d4%2FIcwM2bkHhC1%2FHfR0vAr3guChFD632D2RP7IqsNLpBYg5mbtKeO2WZpsxxGY%2BZNtgk188eWdfxrlXOaImL5OsZN0kjifCR6Fpq7uUxhch0n6LjPR3V22zXiq9Bww4Z0AbHIUvDDi1NaG7APjSxpUSjRL%2FXNWyh1Rf5TBZ1r3bKWxMavUKLDL%2FYcIYHGR7vtFIEOU3IJdyT%2FZU7%2FCd31NIddXTH2R39uTvJ7mBncEk%2Bq5ITBRRLjmxb7TBr%2FaamXflAdlW6yqcoPyjQG7Al6h%2FRu7d3G0agHPUFAAA%3D&amp;bn=Lynx%20Highliner" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F63UTW%2FbMAwG4P%2Ficw51PjogtwFdsQLNFiy9DYPAWLQtRJYESsqWFf3vo9VsqY0Wk4edApPxozc0nccCj2hCsS7uLUgbQzErdq1yXOhQqtgFAuOdpXBVnlufoENun6%2Fu5PPtfLmxMmr0xfrrY7HTtq%2B%2Bp85G4t5dwO41U0D6hmgIJPYnfDbFOlDEWbElZUmFU7Eun2Z%2FxE0SPgJJZ5UJ5cVuXRAuao8aPJKo1Q%2BUwneg9XR2%2Fp%2FYB2VOb2X1rUIt99b6wK5XP%2FFKVHyIX02FR2lbhOCVOWiIpmrZDpEIgwh8Twa9td%2BRthpMuLB8iHB93fX1FHaVH3YDynwwjTK8HAMSUzFx1%2FncLfEG8u7V4YbUEYdke3JIsq8Le0SqWqAGpwa%2BVzXuoutXdKhrbvjnxsvU89yx3igfSO1jsPTKcOWlOzXxF5AwIj0ab8knaZGf8zaifgBzGGI1VwNXX%2BZaZGj9B7%2Flu35Wo3hp%2FRs0SPD7B5%2FHuRA1%2BJCrz5O%2BGs2TGd4uXgDYK%2FNPqRfT3GWuu5zmlrnuKrnLv7rL%2FF1I7nVy56OnF%2Fk1qygqj2yp%2FKf1LmnlUJO2OijTVLZzsf8zBHkEU6F8E%2F329AtxJx8nuQYAAA%3D%3D&amp;bn=Lynx%20Highliner" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F9WWXU%2FbMBSG%2F4uvq4mWlkm9gxUGUtkYQdrFNFkmPkmsOnbkj44O9b%2Fv2A00iSiUlJvdtMqx%2Ffh9fY4%2FHgksQTkyJXPNuPaODEhSiAoDJXDhS2eYspU27mhYN31jJWBz%2FXXFN8Px81pzL8GS6a9Hkkgdoqem1N5g25WD8iUmZbEHzQ3jEGb4rsjUGQ8DcmOENsKtyHQ4IOcqFwrACJWT6SM5kx4q%2FHC1mM089JQvmUqBI2eOviSZTgbkh2dyg%2Fl0tF4PnrVdRy2XzPBKI2m4VVlUjlZeWpDMgqGZeABObcmk7C3wJ7BKK3qeZSIVYcV2KUTSQ4WYEjsxif0hDWJtBalgkroCDAqhMWmvuBn9327uhFrtyowtBEh%2Br7V1aMeKv3BEU%2FRmJ739JBF5ViMvgS1XM49De9pqK0wLrxar3fY6qSqAOSvUQjKvUlwf6rwx4KjDMb0NXgubBl8uQfIXVrFUNO0Nd%2B%2BSG%2F0HzI1kMcm1TOTSKsSrEI8pmByagu08NHHApCv6rn5DWaq1xNOgtU%2BYUBsptm0IYjCaOTnUzKaZzoTpX0S1Hr0EI%2FFo7ti4MDgTlm3mZkYsoW2lWCGXh3gcnhbM5PAxabpIZnSuVX7LVA59rWWWhzJftjfFXGSQ%2BCrcC207EhvspqGZnlFvE42Z6FzkhfsJ4XevWyPW6UxYZ8S9d9q8sCv4tvUD90ZjTvo0eFvI%2FXdKU23GbPscvmWcdSxaUFYbG50dH5qJJMLenYQLD%2FKOqUVbWYZRh9Hmoh%2FvktaghT98iSShtDpe40GegwLDnrJZV9%2FxZrEOu3G%2BPpNvQahMm9feLntdOtRALTecCuuuy1F0OekULdrB0wYPCnYvVK%2FVO34fd7wvd%2Fw%2B7nBf7iRyx29yx28UeJd7ErmjThV5TFtqvLCALLG7arq0z5E2bNO4ThdYVKkuKx%2BeF2z75n0Z%2Bnv9DwLSEhnlCwAA&amp;bn=Lynx%20Highliner" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XUS0%2FDMAwA4P%2BS8w7sibQbEiCQBkyMG0KVabzNIk0iJxkv8d9xA2J0GlKL4FTFbr86dtpXhRu0UU3VzIF2KaqeWqzJS6BCTamKDDZ4x%2FGg%2F5m6hAol%2Fbk61x%2BPy%2FLC6WQwqOntq1oYV0ePuHKJJXcesdpnFpDvKFYMGus3XFk1jZywp%2BZMjik%2Bq2n%2FrfclXmThDFh7Rzb2t%2Fbax8InE9BAQC6W9IS6CBUY050d%2FBE7d4%2FIcwM2bkHhC1%2FHfR0vAr3guChFD632D2RP7IqsNLpBYg5mbtKeO2WZpsxxGY%2BZNtgk188eWdfxrlXOaImL5OsZN0kjifCR6Fpq7uUxhch0n6LjPR3V22zXiq9Bww4Z0AbHIUvDDi1NaG7APjSxpUSjRL%2FXNWyh1Rf5TBZ1r3bKWxMavUKLDL%2FYcIYHGR7vtFIEOU3IJdyT%2FZU7%2FCd31NIddXTH2R39uTvJ7mBncEk%2Bq5ITBRRLjmxb7TBr%2FaamXflAdlW6yqcoPyjQG7Al6h%2FRu7d3G0agHPUFAAA%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F63UTW%2FbMAwG4P%2Ficw51PjogtwFdsQLNFiy9DYPAWLQtRJYESsqWFf3vo9VsqY0Wk4edApPxozc0nccCj2hCsS7uLUgbQzErdq1yXOhQqtgFAuOdpXBVnlufoENun6%2Fu5PPtfLmxMmr0xfrrY7HTtq%2B%2Bp85G4t5dwO41U0D6hmgIJPYnfDbFOlDEWbElZUmFU7Eun2Z%2FxE0SPgJJZ5UJ5cVuXRAuao8aPJKo1Q%2BUwneg9XR2%2Fp%2FYB2VOb2X1rUIt99b6wK5XP%2FFKVHyIX02FR2lbhOCVOWiIpmrZDpEIgwh8Twa9td%2BRthpMuLB8iHB93fX1FHaVH3YDynwwjTK8HAMSUzFx1%2FncLfEG8u7V4YbUEYdke3JIsq8Le0SqWqAGpwa%2BVzXuoutXdKhrbvjnxsvU89yx3igfSO1jsPTKcOWlOzXxF5AwIj0ab8knaZGf8zaifgBzGGI1VwNXX%2BZaZGj9B7%2Flu35Wo3hp%2FRs0SPD7B5%2FHuRA1%2BJCrz5O%2BGs2TGd4uXgDYK%2FNPqRfT3GWuu5zmlrnuKrnLv7rL%2FF1I7nVy56OnF%2Fk1qygqj2yp%2FKf1LmnlUJO2OijTVLZzsf8zBHkEU6F8E%2F329AtxJx8nuQYAAA%3D%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F9WWXU%2FbMBSG%2F4uvq4mWlkm9gxUGUtkYQdrFNFkmPkmsOnbkj44O9b%2Fv2A00iSiUlJvdtMqx%2Ffh9fY4%2FHgksQTkyJXPNuPaODEhSiAoDJXDhS2eYspU27mhYN31jJWBz%2FXXFN8Px81pzL8GS6a9Hkkgdoqem1N5g25WD8iUmZbEHzQ3jEGb4rsjUGQ8DcmOENsKtyHQ4IOcqFwrACJWT6SM5kx4q%2FHC1mM089JQvmUqBI2eOviSZTgbkh2dyg%2Fl0tF4PnrVdRy2XzPBKI2m4VVlUjlZeWpDMgqGZeABObcmk7C3wJ7BKK3qeZSIVYcV2KUTSQ4WYEjsxif0hDWJtBalgkroCDAqhMWmvuBn9327uhFrtyowtBEh%2Br7V1aMeKv3BEU%2FRmJ739JBF5ViMvgS1XM49De9pqK0wLrxar3fY6qSqAOSvUQjKvUlwf6rwx4KjDMb0NXgubBl8uQfIXVrFUNO0Nd%2B%2BSG%2F0HzI1kMcm1TOTSKsSrEI8pmByagu08NHHApCv6rn5DWaq1xNOgtU%2BYUBsptm0IYjCaOTnUzKaZzoTpX0S1Hr0EI%2FFo7ti4MDgTlm3mZkYsoW2lWCGXh3gcnhbM5PAxabpIZnSuVX7LVA59rWWWhzJftjfFXGSQ%2BCrcC207EhvspqGZnlFvE42Z6FzkhfsJ4XevWyPW6UxYZ8S9d9q8sCv4tvUD90ZjTvo0eFvI%2FXdKU23GbPscvmWcdSxaUFYbG50dH5qJJMLenYQLD%2FKOqUVbWYZRh9Hmoh%2FvktaghT98iSShtDpe40GegwLDnrJZV9%2FxZrEOu3G%2BPpNvQahMm9feLntdOtRALTecCuuuy1F0OekULdrB0wYPCnYvVK%2FVO34fd7wvd%2Fw%2B7nBf7iRyx29yx28UeJd7ErmjThV5TFtqvLCALLG7arq0z5E2bNO4ThdYVKkuKx%2BeF2z75n0Z%2Bnv9DwLSEhnlCwAA" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Lynx Highliner&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;mediumtransport01_armour_grade1&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_fixed_small&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_fixed_small&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size6_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size3_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size4_class1&quot;},{&quot;Slot&quot;:&quot;Slot05_Size4&quot;,&quot;Item&quot;:&quot;int_passengercabin_size4_class1&quot;},{&quot;Slot&quot;:&quot;Slot06_Size2&quot;,&quot;Item&quot;:&quot;Int_SupercruiseAssist&quot;},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;Int_DockingComputer_Advanced&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Lynx Highliner&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;mediumtransport01_armour_grade1&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_fixed_small&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_fixed_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_overcharge_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size6_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size3_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class4&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot05_Size4&quot;,&quot;Item&quot;:&quot;int_passengercabin_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size2&quot;,&quot;Item&quot;:&quot;Int_SupercruiseAssist&quot;},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;Int_DockingComputer_Advanced&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;passenger&quot;,&quot;intro&quot;:&quot;The Lynx is a pre-built Saud Kruger medium liner. Initial is its stock fit — E-rated cores, a size-5 shield and four economy cabins (~48 passengers). A-Rated lifts the cores to A and fills the optional slots with a bi-weave shield and a mixed economy/business/first/luxury cabin suite; Engineered adds the range, mobility and shield blueprints. Engineer the stock cores in place via the remote workshop to keep the pre-built free rebuy rather than selling them.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Engineer in place, fill the open slots&quot;,&quot;text&quot;:&quot;Initial is the Lynx as delivered — stock E modules, four economy cabins, ~48 passengers. Built up it carries a mixed VIP cabin suite behind a bi-weave shield, cores engineered in place for range &amp; cool running. Mix first &amp; luxury cabins for high-value Robigo VIP fares and economy for volume.&quot;},&quot;notes&quot;:{&quot;MediumHardpoint1&quot;:&quot;Efficient runs cool; Thermal Vent vents heat.&quot;,&quot;MediumHardpoint2&quot;:&quot;Efficient runs cool; Thermal Vent vents heat.&quot;,&quot;TinyHardpoint1&quot;:&quot;Shield booster multiplies the bi-weave's raw MJ; Heavy Duty is the cheapest large gain in passenger safety.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;PowerPlant&quot;:&quot;A-rate for headroom to run shield and cabins; Low Emissions keeps it cool and Thermal Spread bleeds the rest.&quot;,&quot;MainEngines&quot;:&quot;A-rated + Dirty Drive Tuning give a heavy liner the speed to boost clear of trouble.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated SCO drive; Increased Range + Mass Manager stretch every jump to reach the Robigo beacons.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate then Engine Focused + Super Conduits to keep the boost charged for fast getaways.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; a liner needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock 32t tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Bi-Weave in the size-6 slot regenerates fast under fire; Reinforced maximises MJ and Fast Charge speeds recovery — passenger safety first.&quot;,&quot;Slot02_Size5&quot;:&quot;First-class cabin for premium VIP fares; cabins themselves are not engineerable.&quot;,&quot;Slot03_Size5&quot;:&quot;Luxury cabin earns the top Robigo VIP rates — fewest seats, highest profit per head.&quot;,&quot;Slot04_Size5&quot;:&quot;Economy cabin fills the volume seats, cheap headcount alongside the VIP suites.&quot;,&quot;Slot05_Size4&quot;:&quot;Business cabin balances comfort and headcount in the size-4 slot.&quot;,&quot;Slot06_Size2&quot;:&quot;Supercruise Assist eases the long Robigo cruises; navigation aids carry no blueprint.&quot;,&quot;Slot07_Size1&quot;:&quot;Advanced Docking Computer for hands-free dock and launch; not engineerable.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Life Support&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;(none)&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Sensors&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;(none)&quot;,&quot;engineer&quot;:&quot;Bill Turner / Juri Ishmaak&quot;},{&quot;module&quot;:&quot;Shield Generator&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Lynx Highliner&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;mediumtransport01_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_fixed_small&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_fixed_small&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_overcharge_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size3_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class4&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot05_Size4&quot;,&quot;Item&quot;:&quot;int_passengercabin_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size2&quot;,&quot;Item&quot;:&quot;Int_SupercruiseAssist&quot;},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;Int_DockingComputer_Advanced&quot;}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Engineer in place, fill the open slots</span><p>Initial is the Lynx as delivered — stock E modules, four economy cabins, ~48 passengers. Built up it carries a mixed VIP cabin suite behind a bi-weave shield, cores engineered in place for range &amp; cool running. Mix first &amp; luxury cabins for high-value Robigo VIP fares and economy for volume.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>The Lynx ships complete, so the Initial column is simply its stock fit &mdash; nothing to buy. It rides on stock <b>Lightweight Alloy</b> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a>, carries two <b>1F Pulse <a href="../../engineering/engineering-manuals/modules.html#module-lasers">Lasers</a> (Fixed)</b> on the medium hardpoints, all-E cores (5E <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a>, 6E <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a>, 5E <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">Frame Shift Drive</a>, 6E <a href="../../engineering/engineering-manuals/modules.html#module-life-support">Life Support</a>, 5E <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a>, 3E <a href="../../engineering/engineering-manuals/modules.html#module-sensors">Sensors</a>), a 5C <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">fuel tank</a>, a 5E <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> and four economy cabins (two size-5, two size-4 &mdash; about 48 passengers), plus a 1E Supercruise Assist and 1E Docking Computer.</p>
+    <p>Both utility mounts are left empty (&mdash;) at this stage &mdash; no <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> or heat-sink launcher until the A-rated pass. It earns on the Robigo run out of the box.</p>
+    <p>The stock modules &mdash; <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> included &mdash; sell for nothing and can't be stored, so engineer the cores and armour in place rather than swapping them out &mdash; that preserves the free rebuy.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>Build-up priority (engineer in place / fill open slots):</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Cores &rarr; A</b> &mdash; 5A <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a>, 6A <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a>, 5A <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">Frame Shift Drive</a> and 5A <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> for power headroom, range and the mobility to boost clear. <span class="acc">credit cost</span></li>
+      <li><span class="stepnum">2</span><b>Shield &rarr; 6C Bi-Weave (size-6 slot)</b> &mdash; fast-regen passenger safety on threatened routes. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Cabin suite (open slots)</b> &mdash; 5C First, 5B Luxury and 4D Business for premium fares, economy in the remaining size-5 slot for volume. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-life-support">Life Support</a> &rarr; 6D, <a href="../../engineering/engineering-manuals/modules.html#module-sensors">Sensors</a> &rarr; 3D</b> &mdash; drop to D to shed mass a liner doesn't need. <span class="acc">credit cost</span></li>
+      <li><span class="stepnum">5</span><b>Utilities &rarr; 0A <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">Shield Booster</a> + 0I <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">Heat Sink Launcher</a> (open mounts)</b> &mdash; reinforce the shield and dump heat. <span class="acc">~2M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Build into the open slots</span><p>The Lynx earns from day one &mdash; improve it by engineering the stock cores in place and fitting better cabins, a shield and utilities into the open slots, never selling the stock modules. Leave the <b>Lightweight Alloy</b> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> on &mdash; a liner wants mass off the hull, not heavier armour; the Engineered pass takes them to <b>G5 Lightweight Armour</b> for free integrity at no weight cost.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Engineering Plan</h2></div>
+    <p>Passenger engineering for the Lynx, applied to the stock cores in place. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; pin blueprints for remote G1&rarr;G5 application &mdash; ideal for engineering a pre-built without swapping modules.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Power Plant (5)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Thrusters (6)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Life Support (6)</td><td>Lightweight (G5)</td><td>(none)</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Power Distributor (5)</td><td>Engine Focused (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Sensors (3)</td><td>Lightweight (G5)</td><td>(none)</td><td>Bill Turner / Juri Ishmaak</td></tr>
+<tr><td class="mod">Shield Generator (6)</td><td>Reinforced (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Engineer the stock <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> in place for <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> &mdash; remote workshop application is perfect here (no module swap).</li>
+      <li><span class="stepnum">2</span>Engineer <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a> and plant in place for mobility and cool running.</li>
+      <li><span class="stepnum">3</span>Add and engineer a bi-weave shield in the open slot for passenger safety.</li>
+      <li><span class="stepnum">4</span>Upgrade cabins in the open slots; cabins themselves aren't engineered.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; standard passenger blueprints (<a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>, plant, shield) applied in place via the remote workshop, which suits a pre-built perfectly. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Passengers (built up)</td><td>~48 (stock)</td><td>~80</td><td class="acc">~100</td></tr>
+        <tr><td class="mod">Max jump (LY)</td><td>~16 (stock)</td><td>~28</td><td class="acc">~38</td></tr>
+        <tr><td class="mod"><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a></td><td>Lightweight Alloy (stock)</td><td>Lightweight Alloy</td><td class="acc">G5 Lightweight Armour</td></tr>
+        <tr><td class="mod">Liner comfort bonus</td><td>yes</td><td>yes</td><td class="acc">yes</td></tr>
+        <tr><td class="mod">Pad access</td><td>medium</td><td>medium</td><td class="acc">medium</td></tr>
+        <tr><td class="mod">Free rebuy</td><td>yes (pre-built)</td><td>yes</td><td>yes (if cores + armour engineered in place)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>As delivered the Lynx carries ~48 passengers ~16 LY on stock modules and Lightweight Alloy <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a>; built up &mdash; engineered cores in place, upgraded cabins, a real shield, and G5 Lightweight Armour that adds integrity without weight &mdash; it carries around 100 in comfort on a flexible medium pad, with range to reach the Robigo beacons. The dedicated-liner bonus and medium pad make it a superb, flexible earner.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>The Robigo&ndash;Sirius run.</b> Its purpose &mdash; high-value sightseeing missions on a short, lucrative loop.</li>
+      <li><b>Medium-pad VIP work.</b> Premium fares to stations the large liners can't reach.</li>
+      <li><b>Flexible cruise routes.</b> Varied passenger missions where a medium pad opens more destinations.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Built-up dedicated liner.</b> Engineered cores and luxury cabins make it a premium medium earner.</li>
+      <li><b>Pre-built convenience.</b> Earning from day one, with a free rebuy preserved by engineering in place.</li>
+      <li><b>Carrier-supported cruising.</b> A medium liner that docks on carriers for distant passenger operations.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>The Robigo&ndash;Sirius sightseeing loop is its home &mdash; one of the bubble's most lucrative passenger runs. From there its medium pad and liner bonus make varied VIP and tourist routes profitable too.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Engineer the stock cores in place and fill the open slots &mdash; never sell stock modules, to keep the free rebuy.</li>
+      <li>Mix in first/luxury cabins for high-value VIP fares; economy for volume.</li>
+      <li>The medium pad is a real edge over the <a href="orca-passenger.html">Orca</a> and <a href="beluga-liner-passenger.html">Beluga</a> &mdash; it reaches more destinations.</li>
+      <li>Use the remote workshop to engineer the pre-built cores without swapping modules.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Lynx Highliner is your Robigo liner: a pre-built medium dedicated passenger ship with the Saud Kruger comfort bonus and a flexible medium pad, purpose-set for the bubble's most lucrative sightseeing run. It carries fewer than the giant <a href="beluga-liner-passenger.html">Beluga</a> and arrives on stock modules, but built up &mdash; engineered cores in place, upgraded cabins, a real shield &mdash; it's a superb, flexible, free-rebuy earner that lands where the big liners can't.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">14</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/lynx_highliner" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/lynx_highliner</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Lynx Highliner ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/lynx-highliner" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../lynx-highliner</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Lynx Highliner</span><span class="cr-what">Per-ship page: base stats, price, and passenger-cabin reference for the Lynx Highliner.</span><a class="cr-link" href="https://inara.cz/elite/ship/87/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/87</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Lynx Highliner hull profile, passenger-cabin capacity, Mk II cabins, and role notes.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Lynx_Highliner" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Lynx_Highliner</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — The Buur Pit</span><span class="cr-what">Full review of the Lynx Highliner medium passenger liner, weighing whether it is worth buying.</span><a class="cr-link" href="https://www.youtube.com/watch?v=D-YXUYY4sd4" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=D-YXUYY4sd4</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Review and evaluation of the Lynx Highliner, covering its role fit and per-seat value as a passenger liner.</span><a class="cr-link" href="https://www.youtube.com/watch?v=gY__NhFI2KI" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=gY__NhFI2KI</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — TheYamiks</span><span class="cr-what">Opinionated, critical review of the Lynx Highliner passenger liner.</span><a class="cr-link" href="https://www.youtube.com/watch?v=eRNFt-QVzYw" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=eRNFt-QVzYw</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

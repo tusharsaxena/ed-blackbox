@@ -17,11 +17,14 @@ how it's built), **GitHub Issues** (backlog).
 ```
 guides/            166 HTML guides + index.html (generated) — all on the design system
                    (link ed-blackbox.css/.js; only a tiny per-page accent-override <style>)
-                   each guide has a sibling <name>-anchors.md (generated; 2 curated in engineering/)
-  engineering/     engineers · blueprints · checklist · materials · modules · farms/ (4)
-  systems/         14 game-system guides
-  ships/           rating-methodology · ship-role-matrix · dossiers/ (128) · by-role/ (7)
-  activities/      6 role playbooks (how to fly each role)
+                   each guide has a sibling <name>-anchors.md (generated; 2 curated in
+                   engineering/engineering-manuals/) — tree mirrors index.html's sections/subsections
+  ships/           general/ (rating-methodology · ship-role-matrix, 2) ·
+                   best-ships-by-role/ (7 role ladders) · ship-dossiers/ (128)
+  engineering/     engineering-manuals/ (checklist · engineers · blueprints · modules, 4) ·
+                   materials-and-farming/ (materials + 4 farm guides, 5)
+  systems/         new-pilot-and-interface/ (6) · galaxy-and-power-systems/ (6) ·
+                   activity-guides/ (6 role playbooks) · combat-venues/ (2)
 design-system/     v1.3.0 — css/ js/ templates/ legacy-templates/ docs/ (THE shared system every
                    page links; legacy-templates/ = the precursor Template.html/.md, reference only)
 images/            engineers/ (38 portraits) · ships/ (48 renders) · logos/ (logo·banner·favicon + concepts/)
@@ -109,7 +112,7 @@ Re-run after adding/removing/renaming a ship dossier, or after adding a card lin
 new top-level guide. Docs: `scripts/generate-guides-index.md`.
 
 > **Counts auto-update — always re-run after adding/removing ANY guide page.** The hero
-> stat cards (**Ship / Engineering / Systems guides** — one per namespace; `activities/`
+> stat cards (**Ship / Engineering / Systems guides** — one per namespace; `systems/activity-guides/`
 > counts under Systems) and the masthead **`N guides`** total are computed by the generator
 > from the filesystem: each card = `find guides/<ns> -name '*.html'` and the total =
 > `(all guides/**/*.html) − 1` (index.html isn't a guide), which equals the three cards
@@ -147,8 +150,8 @@ python3 scripts/verify-links.py                      # 0 broken targets/anchors
   candidate (incl. below-bar) is logged to `data/links/link-candidates.csv` and rolled up by
   `build-link-report.py` into `data/links/hyperlink-opportunities.xlsx` for review. The rewrite
   is byte-preserving.
-- **Excluded as link sources** (never edited by the generic applier): `guides/activities/**`,
-  `guides/ships/by-role/**`, generated `guides/index.html`. The **by-role ladder pages** get
+- **Excluded as link sources** (never edited by the generic applier): `guides/systems/activity-guides/**`,
+  `guides/ships/best-ships-by-role/**`, generated `guides/index.html`. The **by-role ladder pages** get
   their role-correct links from a dedicated pass instead — `scripts/link-by-role-pages.py`
   (ship cells + picks → `<ship>-<role>` dossier; engineering table → module/blueprint/engineer
   anchors). Re-run it after editing a ladder or engineering table.
@@ -171,13 +174,13 @@ python3 scripts/verify-links.py                      # 0 broken targets/anchors
 ### Change a page's sources (Sources / `section.credits`)
 **`data/sources/<path-mirroring-guides>.json` is the canonical source of truth for every
 page's bottom-of-page Sources block** (`<section class="credits">`) — one file per
-credits-bearing page, mirroring the `guides/` tree (e.g. `data/sources/ships/dossiers/
+credits-bearing page, mirroring the `guides/` tree (e.g. `data/sources/ships/ship-dossiers/
 python-combat.json`). The block is **generated** from it, like the ratings/loadouts pipelines.
 **Edit the JSON, never the credits HTML.** **Add an entry here whenever you add a source to a
 page or create a new page** — this is the one place all sources live.
 ```bash
 python3 scripts/build-sources.py                    # regenerate all credits blocks (+ _index.md)
-python3 scripts/build-sources.py systems/superpower  # only matching path fragments
+python3 scripts/build-sources.py systems/galaxy-and-power-systems/superpower  # only matching path fragments
 python3 scripts/build-sources.py --check            # preview diffs, write nothing
 python3 scripts/audit-sources.py                    # verify coverage + external-only + no drift
 ```
@@ -294,7 +297,7 @@ python3 scripts/archive/extract-blueprint-editorial.py # one-time seeder (HTML �
 - After a rebuild run `python3 scripts/audit-blueprints.py` (materials/categories/engineers/
   experimentals/Totals/counts/anchors all match data; Sources external-only) then
   `python3 scripts/verify-links.py` and `python3 scripts/normalize-link-targets.py
-  guides/engineering/blueprints.html`. Card `<section id>`s don't change, so no anchor regen.
+  guides/engineering/engineering-manuals/blueprints.html`. Card `<section id>`s don't change, so no anchor regen.
 - **Materials, engineers, and powerplay are now all data-driven** (see *Change material data* /
   *Change engineer data* / *Change powerplay data* below) — the three inara-deferred pages are
   done, re-sourced off inara (which 503s bots) onto EDCD + the Fandom wiki + project-authored
@@ -326,8 +329,8 @@ python3 scripts/audit-materials.py         # deterministic page⇄data consisten
   Leads, `tbl-desc`, callouts, §06–09, masthead and Sources are untouched. **Never hand-edit the
   tables** — edit the data and rebuild.
 - After a rebuild run `python3 scripts/audit-materials.py`, then
-  `python3 scripts/apply-hyperlinks.py guides/engineering/materials.html`,
-  `python3 scripts/normalize-link-targets.py guides/engineering/materials.html`, and
+  `python3 scripts/apply-hyperlinks.py guides/engineering/materials-and-farming/materials.html`,
+  `python3 scripts/normalize-link-targets.py guides/engineering/materials-and-farming/materials.html`, and
   `python3 scripts/verify-links.py`. Table `<section id>`s don't change, so no anchor regen.
 - **Capture-but-defer:** all Odyssey microresources (`data/materials/microresources.csv`) and the
   Guardian/Thargoid `None`-category rows are stored but not shown — a future tech-broker/suit-
@@ -361,7 +364,7 @@ python3 scripts/audit-engineers.py         # roster + coriolis grade gate (+ omi
 - Design: `docs/superpowers/specs/2026-06-30-engineers-data-pipeline-design.md`.
 
 ### Change powerplay data (Powerplay page)
-**`data/powerplay/powers.json` is the canonical roster** for `guides/systems/powerplay.html`
+**`data/powerplay/powers.json` is the canonical roster** for `guides/systems/galaxy-and-power-systems/powerplay.html`
 (Powerplay 2.0): the **12 Powers** (`slug`, `name`, `allegiance`, `hq_system`) and **12
 exclusive modules** (`name`, `rating`, `source_power`). There is **no EDCD source** for
 powerplay, so this is **project-authored** editorial data (precedent: `data/ship-ratings/`).
@@ -413,7 +416,7 @@ python3 scripts/audit-powerplay.py         # 12 powers (allegiance matched) + 12
   open in a **new tab** (`target="_blank" rel="noopener noreferrer"`). This is settled —
   enforce it with `scripts/normalize-link-targets.py` (byte-preserving, idempotent; run it
   on any new/edited page). Don't hand-add `target="_blank"` to an internal link.
-- **Keep the lexicon current.** `guides/systems/cmdrs-lexicon.html` (the *CMDR's Lexicon*) is the
+- **Keep the lexicon current.** `guides/systems/new-pilot-and-interface/cmdrs-lexicon.html` (the *CMDR's Lexicon*) is the
   site's **canonical terminology reference**. Whenever you add a new guide, or introduce or
   redefine an Elite Dangerous term, acronym, or site-specific phrase in any page, **add or
   update the matching lexicon entry** — correct category, terse 1–2-sentence definition, and a

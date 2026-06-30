@@ -1,6 +1,6 @@
 # audit-powerplay.py
 
-Deterministic, read-only gate over `guides/systems/powerplay.html` ⇄
+Deterministic, read-only gate over `guides/systems/galaxy-and-power-systems/powerplay.html` ⇄
 `data/powerplay/powers.json`. Run after `build-powerplay.py` (and after any data edit).
 
 ```bash

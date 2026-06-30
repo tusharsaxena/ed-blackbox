@@ -1,7 +1,7 @@
 # build-powerplay.py
 
 Re-emit the §Powers (12 power cards) and §Modules (12 module cards) runs on
-`guides/systems/powerplay.html` from the editorial overlay. **Edit the data, never the page.**
+`guides/systems/galaxy-and-power-systems/powerplay.html` from the editorial overlay. **Edit the data, never the page.**
 
 ```bash
 python3 scripts/build-powerplay.py            # write the page

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asp Explorer &middot; Trading &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Asp Explorer · Trading</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-haul"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Haul</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Asp Explorer</span><span class="role ac-role-trading">Trading</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The <em>cheap, long-legged</em> starter hauler &mdash; modest hold, real range, no gates</h2>
+      <p>A capable budget trader rather than a bulk one. Its ~128-tonne hold is small next to a dedicated transporter, but the Asp is cheap, ungated, jumps further than any rival in its bracket, and lands on the medium pads that reach most stations. For early-game commodity runs, rare-goods loops and self-financing your way toward a bigger freighter, it earns its keep. For maximum tonnage, you outgrow it fast.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/asp-explorer.jpg" alt="Asp Explorer" width="160" height="90">
+      <figcaption><b>Asp Explorer</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">58<small>/100</small></div><div class="bar mini"><i style="--pct:58"></i></div></div>
+      <div class="stat"><div class="n">~128 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">8</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">340 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">~6.1M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad class</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Asp Explorer is built for the black, but its big internal bay and low running cost make it a serviceable trader too &mdash; just not a heavy one. Loaded for cargo it carries about 128 tonnes, a fraction of what a Type-class transporter swallows, but it does so with no rank or permit gate, on a hull most new commanders can afford within their first few hours.</p>
+    <p>Where it actually wins is range and reach. The Asp jumps further than anything else in its price bracket, so it can run long-haul and rare-goods routes that punish short-legged transporters, and its medium pad opens the outpost economy a large-pad freighter is locked out of. Treat it as the trader you grow <em>through</em>: cheap to buy, cheap to lose, and quick to bankroll the <a href="type-7-transporter-trading.html">Type-7</a>, <a href="type-9-heavy-trading.html">Type-9</a> or <a href="python-trading.html">Python</a> that eventually replaces it.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Early-game and budget trading: rare-goods loops, long-distance commodity runs, outpost-to-outpost work the big freighters can't land at, and self-financing your way up the ladder while you learn the trade routes.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-exploration" href="asp-explorer-exploration.html"><span class="vrole">Exploration</span><span class="vrate">86<small>/100</small></span></a>
+        <a class="vchip r-mining" href="asp-explorer-mining.html"><span class="vrole">Mining</span><span class="vrate">64<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="asp-explorer-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">80<small>/100</small></span></a>
+        <a class="vchip r-passenger" href="asp-explorer-passenger.html"><span class="vrole">Passenger</span><span class="vrate">60<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-haul">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Haul</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo (all-cargo)</div><div class="v">~128 <small>t</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">250 / 340 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">280 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~140 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;3&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Core sizes</div><div class="v"><span style="font-size:14px;letter-spacing:.4px">PP5 &middot; TH5 &middot; FSD5 &middot; LS4 &middot; PD4 &middot; SS5 &middot; FT5</span></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Three things make the Asp a credible budget hauler:</p>
+    <ul class="bullets">
+      <li><b>A big bay for the money.</b> Eight optional internals &mdash; a class-6, a class-5 and three class-3s among them &mdash; give ~128 t all-cargo, far more than the cheap small haulers.</li>
+      <li><b>Range no rival matches in its bracket.</b> Even laden the Asp jumps well, and engineered it clears routes a short-legged transporter has to break into many hops.</li>
+      <li><b>Medium pad, no gates.</b> It lands at outposts the big freighters can't reach, and there's no rank or permit between you and the hull &mdash; buy it and trade today.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The hold is the limit. A <a href="type-7-transporter-trading.html">Type-7</a> carries roughly double, a <a href="type-9-heavy-trading.html">Type-9</a> or <a href="imperial-cutter-trading.html">Cutter</a> many times more, and even the medium <a href="type-8-transporter-trading.html">Type-8</a> out-hauls it comfortably. The Asp's shields are thin and its profit-per-trip is modest. Its case is cheap, ungated, long-range hauling &mdash; not tonnage. For volume, step up to a Type-class transporter.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Class-leading laden range and ungated medium-pad reach carry the score; a ~128 t hold many times smaller than the transporters and thin shields cap it at 58.</p>
+    <p>The <b>58/100</b> headline is a verdict against the trading role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Maximum cargo</td><td class="sc"><span class="scval">15</span><span class="den">/35</span><div class="bar mini"><i style="--pct:43"></i></div></td><td class="wcell">~128 t all-cargo from eight optionals (one class-6, one class-5, three class-3s) sits well below mid-field — a Type-7 (~310 t), Type-8 (~406 t) and Type-9 (~790 t) carry double to six times more; only the small starters undercut it.</td></tr>
+      <tr><td class="fct">Pad class &amp; market reach</td><td class="sc"><span class="scval">15</span><span class="den">/20</span><div class="bar mini"><i style="--pct:75"></i></div></td><td class="wcell">Medium pad reaches outpost markets large-pad freighters are locked out of, with no rank or permit gate — buy and trade immediately. Only large-pad hulls beat it on raw station coverage at high-volume hubs.</td></tr>
+      <tr><td class="fct">Laden jump range</td><td class="sc"><span class="scval">13</span><span class="den">/15</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">~40+ LY laden engineered (5A FSD, Increased Range + Mass Manager, Lightweight life support/sensors) is the best in its price bracket — it runs long-haul and rare-goods loops in single hops that break short-legged transporters into many.</td></tr>
+      <tr><td class="fct">Survivability</td><td class="sc"><span class="scval">8</span><span class="den">/20</span><div class="bar mini"><i style="--pct:40"></i></div></td><td class="wcell">Thin defence: ~140 MJ base, only ~330 MJ with an engineered class-5 bi-weave plus two Heavy-Duty boosters, and the shield steals the single biggest non-cargo slot. It survives by running on A-rated thrusters, not tanking.</td></tr>
+      <tr><td class="fct">Speed &amp; cost</td><td class="sc"><span class="scval">7</span><span class="den">/10</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">~6.1M Cr ungated hull is among the cheapest ships that trade at any scale and bankrolls its own replacement; 340 m/s boost (~395 engineered) is adequate to break interdictions but unremarkable.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">58</span><span class="den">/100</span><div class="bar mini"><i style="--pct:58"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for trading specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; the headline number for bulk hauling.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad traders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Asp Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="type-8-transporter-trading.html">Type-8 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~406</td><td class="pcc"><span class="p">Far more cargo; medium pad; no gate</span><span class="c">Slower; shorter legs; no combat use</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-trading.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~112</td><td class="pcc"><span class="p">Cheaper; similar hold; pure hauler</span><span class="c">Slower; weaker; far less versatile</span></td><td><span class="rscore">65</span><div class="bar mini"><i style="--pct:65"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-trading.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>~228</td><td class="pcc"><span class="p">More cargo; far more guns and shield</span><span class="c">Pricier; shorter range</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-trading.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~280</td><td class="pcc"><span class="p">More cargo; longer-legged than the <a href="krait-mk-ii-trading.html">Krait Mk II</a></span><span class="c">Pricier; thinner combat profile</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+        <tr><td class="mod">Asp Explorer <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>~128</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-v-multipurpose.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>~140</td><td class="pcc"><span class="p">Small-pad reach; similar hold; cheap</span><span class="c">Shorter range; tighter core power</span></td><td><span class="rscore">52</span><div class="bar mini"><i style="--pct:52"></i></div></td></tr>
+        <tr><td class="mod"><a href="dolphin-exploration.html">Dolphin</a></td><td><span class="pill pad-small">Small</span></td><td>~98</td><td class="pcc"><span class="p">Cheaper; small-pad; efficient</span><span class="c">Less hold; passenger-leaning</span></td><td><span class="rscore">46</span><div class="bar mini"><i style="--pct:46"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among mid-tier haulers the Asp is the long-range, ungated pick rather than the high-tonnage one. The <a href="type-8-transporter-trading.html">Type-8</a> and the Kraits carry more; the <a href="type-6-transporter-trading.html">Type-6</a> is a cheaper pure hauler. The Asp's edge is that it trades, explores and fights from one cheap hull &mdash; if pure cargo is the goal, the dedicated transporters win.</p>
+    <h3 class="subhead">Other classes &mdash; large and small traders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Asp Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="type-9-heavy-trading.html">Type-9 Heavy</a></td><td><span class="pill pad-large">Large</span></td><td>~790</td><td class="pcc"><span class="p">Many times the cargo; cheap per tonne</span><span class="c">Large pad; slow; ponderous; no range</span></td><td><span class="rscore">94</span><div class="bar mini"><i style="--pct:94"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-7-transporter-trading.html">Type-7 Transporter</a></td><td><span class="pill pad-large">Large</span></td><td>~310</td><td class="pcc"><span class="p">Roughly double the hold; cheap</span><span class="c">Large pad; sluggish; lightly defended</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-trading.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~294</td><td class="pcc"><span class="p">More cargo; far tougher; medium pad</span><span class="c">Much pricier; shorter range</span></td><td><span class="rscore">72</span><div class="bar mini"><i style="--pct:72"></i></div></td></tr>
+        <tr><td class="mod"><a href="keelback-trading.html">Keelback</a></td><td><span class="pill pad-medium">Medium</span></td><td>~80</td><td class="pcc"><span class="p">SLF bay; cheaper; combat-defensible</span><span class="c">Less cargo; shorter range; slow</span></td><td><span class="rscore">52</span><div class="bar mini"><i style="--pct:52"></i></div></td></tr>
+        <tr><td class="mod"><a href="hauler-trading.html">Hauler</a></td><td><span class="pill pad-small">Small</span></td><td>~26</td><td class="pcc"><span class="p">Dirt cheap; long-legged starter</span><span class="c">Tiny hold; barely a trader</span></td><td><span class="rscore">42</span><div class="bar mini"><i style="--pct:42"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Step up to a <a href="type-7-transporter-trading.html">Type-7</a> or <a href="type-9-heavy-trading.html">Type-9</a> for the tonnage that drives serious profit, at the cost of large-pad access, speed and range. The Asp sits above the small starters like the <a href="hauler-trading.html">Hauler</a> but well below the dedicated freighters &mdash; the bridge ship that funds the next one rather than the destination.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~6.1M Cr</div></div>
+      <div class="cell"><div class="k">A-rated trader</div><div class="v">~10M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~18&ndash;22M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~6.1M Cr with no rank or permit gate, the Asp is one of the cheapest ships that can trade at any worthwhile scale. A practical A-rated cargo fit runs around 10M Cr all-in; engineering the cores for range and a tougher shield pushes it to roughly 18&ndash;22M.</p>
+    <p>That affordability is the whole point of trading an Asp: it bankrolls its own replacement. A handful of profitable loops covers the hull many times over, and the same engineered cores carry straight across to its exploration or multirole fits when you move tonnage to a dedicated freighter.</p>
+    <div class="callout"><span class="lbl">The bridge trader</span><p>Cheap enough to buy early, ungated, and quick to pay for itself &mdash; the Asp is the hull that finances your first big freighter, then keeps earning as a backup hauler and explorer.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A cargo-first fit that keeps a working shield and enough range to run long routes. Initial is buy-only; A-rated is the trade baseline with a fast-recovering bi-weave; Engineered keeps that bi-weave and applies a range-and-escape pattern to the cores, filling every remaining slot with cargo. Drop the shield entirely for the ~128 t all-cargo maximum on safe runs.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0E Shield Booster</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">First Heavy-Duty booster multiplies the thin bi-weave's raw MJ — the cheapest survivability a hauler can buy.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Second Heavy-Duty booster; stacking two is plenty of defence for a ship that escapes rather than tanks.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Chaff Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">5E Power Plant</td><td class="st">5A Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">A-rate for headroom and a cooler hull; Low Emissions plus Thermal Spread keep the heat and signature down for a quiet trader.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">5E Thrusters</td><td class="st">5A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated + Dirty Drive Tuning give the boost speed to break a pirate interdiction — the Asp survives by leaving.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">The Asp's whole trading edge: A-rated with Increased Range and Mass Manager turns long routes into single hops, laden.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">4E Life Support</td><td class="st">4D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more laden range; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">4E Power Distributor</td><td class="st">4D Power Distributor</td><td class="eng">G5 Engine Focused + Super Conduits</td><td class="note">D-rate is enough with no guns; Engine Focused plus Super Conduits feed the boost-and-run escape.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">5E Sensors</td><td class="st">5D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight — a trader needs no sensor range, so bank the mass as jump range.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock C tank sized to the FSD's max-range tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6E Cargo Rack</td><td class="st">6E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Shield Generator</td><td class="st">5C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Fast Charge</td><td class="note">The only slot that fits a shield; a bi-weave (Reinforced + Fast Charge) recovers fast under fire. Pull it for a class-5 rack on safe runs.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">3E Cargo Rack</td><td class="st">3E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">3E Cargo Rack</td><td class="st">3E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F63SQWvCMBQH8O%2BSswe7qofeBm5M0E1Wb2OUp3m2YTEJL4nDid99aermKmO0sFPJ%2F5Ffkz85Mtyjcixjcw1ce8cGLK%2BECQFYc148wg5DcF7NeLMhLBeae4mWZS9Hlktdp7e0057CbOZw1ygFxKwoCTgmYfSkWObI44AtSWgS7sCy5DT4NlZCHR6AuNFCueRiVcYVthIo%2BVpr65AKKz5wWGwkWNsFXup3pKUE5S5o%2BEVh6tzUeRTH3cUFCHWnSqFCCy0SY9iXu6dQdSh566Yk9tgmq4NB4nXel52LLebeGE1XF5dhYJtBNEc9u5wK60isvdP0S6P8Mu2rPwOHK9Kispps70o9yhWotza2DakL6U8t7aDVn2FS5GHXpC1ugEpNsGnISfcDRvImkuOrG8e3XqJCgq8Oxz3hNMLpX2dNe5KjfyBfT5%2F7J9gRegQAAA%3D%3D&amp;bn=Asp%20Explorer" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XT30vDMBAH8P8lz3uw7TZlb4KKgj%2BG802knM11DXZJuFyUKf7vpqk6O2S2MJ9Kvtd8ehfSN4HPqFnMxKUBaTyLkVhUyoYAnP1cXMMKQ%2FC5upDthrC8MtLX6MTs%2Fk0satOkx7QynkLtgnHVKjnELF8SSExC6UaLGZPHkZiTMqR4LWbJ%2B%2BjbuFN6fQ4krVGak41VWc5dpbCWj8Y4RsqdesWDvKjBuclQOP0vOOvCRQVlWYPXRRVgDm8OBcddsEJgp%2FTTxvREyH3puXlBmtegecOGj%2BS2yW2Tx%2Bkn%2Fae%2FAqVP9VLpcBU6JMZwKHdG4b6Fm1byCaln7JLV2iLJJh%2FKXqoSF95aQ1uD16Hg2kI0x62Z9j3LE%2BWY1KNnQ7%2BcqNxUh%2Bq3IGGLdKidIfdz9j7Smcf6DvRTFytDyiH9qWU9tOZxkOSLsGvaFQugpSEoWnLakklfMo3kZGvi%2BF8uUSPB1xl%2B9ZqX4LivnkU929VwNrDh8f7Jyf7JaSTTXWQ6kDzcP3kUyWQXmfxFPrx%2FABbROJPQBgAA&amp;bn=Asp%20Explorer" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F92WUU%2FbMBDHv4ufq4m0lE19gxYGUtlYg8TDNFmHc0ksXDuynW4d4rvv4hSalFFBqDTYSyPf1X%2F%2F%2FrmznVuGC9SejdjUQGJKz3oszmVBAXDFavAF5kiB1egsqSfQ8NwkpULHRt9vWaxMFT20c1Nayp15nNcqHEKMZxYSjCj1VbORtyX22IWVxkq%2FZKOox451JjWilTpjo1t2pEosaOBXy9fK%2FDBZgBaYkM6U2BUbDXvsWwmqlvmwd3fXe6C5lHp5CjYpDOlEa6q88NzlElVybYzzaLmTv3GPCwXODTsjxkHyaCV5irBYTkqa%2BhQqCf4qSG1ObxTUcZqiqKhdgUKC2iAUealvluxJe%2F3%2F296gbU%2FkkKYKSi1ymuzpn51tnUsn%2BLjSG0MBQjYdRc%2Fsrf02XY7gndQ3a8DSWvQ74KS37mNSfhHqhfmJ9kKB9mtM0uVFFS%2BqeGiQ4WsbZL0Ojz2C8nnX3miQCWMUbfemn3OQukZxbUMYgrsxU6f5RNruLb7iMQu0is7XDRsnllaiTZX6iZULbFvJl6SbVPHd2DmJJ3xqdDYDnWFXP6lLqt5etPfpVKYYl0Vh7EZ%2FKUq4OhFM7Ncm%2Bp1NNFbiU5nl%2Fgqr32fdBaE5J9J5K69Lb%2BxftkKyzu6Gd3NNfj953b3dt0eTNgXnWzWZQQIbFh1qZ6xrtlN3Z3EQe3ERTkpUl6Bv2mQpRT1Fm2iDp9AaatVjL%2BIxzTpoKwqwmbEgasmDWrL7t8e4kptVcmdaWASHyeMDeIvtANoPoMONooRLMEONFu7b7v4N1FV93W39%2BUF5hlKnxm77dHrWhc0trnCrM%2BuRy0FwOdhWjsGbKMf%2BewEdvhfQgwDa3wbafxOgH98L6KcAGm0Djf4N6I%2B7P97sMDg7DgAA&amp;bn=Asp%20Explorer" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F63SQWvCMBQH8O%2BSswe7qofeBm5M0E1Wb2OUp3m2YTEJL4nDid99aermKmO0sFPJ%2F5Ffkz85Mtyjcixjcw1ce8cGLK%2BECQFYc148wg5DcF7NeLMhLBeae4mWZS9Hlktdp7e0057CbOZw1ygFxKwoCTgmYfSkWObI44AtSWgS7sCy5DT4NlZCHR6AuNFCueRiVcYVthIo%2BVpr65AKKz5wWGwkWNsFXup3pKUE5S5o%2BEVh6tzUeRTH3cUFCHWnSqFCCy0SY9iXu6dQdSh566Yk9tgmq4NB4nXel52LLebeGE1XF5dhYJtBNEc9u5wK60isvdP0S6P8Mu2rPwOHK9Kispps70o9yhWotza2DakL6U8t7aDVn2FS5GHXpC1ugEpNsGnISfcDRvImkuOrG8e3XqJCgq8Oxz3hNMLpX2dNe5KjfyBfT5%2F7J9gRegQAAA%3D%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XT30vDMBAH8P8lz3uw7TZlb4KKgj%2BG802knM11DXZJuFyUKf7vpqk6O2S2MJ9Kvtd8ehfSN4HPqFnMxKUBaTyLkVhUyoYAnP1cXMMKQ%2FC5upDthrC8MtLX6MTs%2Fk0satOkx7QynkLtgnHVKjnELF8SSExC6UaLGZPHkZiTMqR4LWbJ%2B%2BjbuFN6fQ4krVGak41VWc5dpbCWj8Y4RsqdesWDvKjBuclQOP0vOOvCRQVlWYPXRRVgDm8OBcddsEJgp%2FTTxvREyH3puXlBmtegecOGj%2BS2yW2Tx%2Bkn%2Fae%2FAqVP9VLpcBU6JMZwKHdG4b6Fm1byCaln7JLV2iLJJh%2FKXqoSF95aQ1uD16Hg2kI0x62Z9j3LE%2BWY1KNnQ7%2BcqNxUh%2Bq3IGGLdKidIfdz9j7Smcf6DvRTFytDyiH9qWU9tOZxkOSLsGvaFQugpSEoWnLakklfMo3kZGvi%2BF8uUSPB1xl%2B9ZqX4LivnkU929VwNrDh8f7Jyf7JaSTTXWQ6kDzcP3kUyWQXmfxFPrx%2FABbROJPQBgAA" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F92WUU%2FbMBDHv4ufq4m0lE19gxYGUtlYg8TDNFmHc0ksXDuynW4d4rvv4hSalFFBqDTYSyPf1X%2F%2F%2FrmznVuGC9SejdjUQGJKz3oszmVBAXDFavAF5kiB1egsqSfQ8NwkpULHRt9vWaxMFT20c1Nayp15nNcqHEKMZxYSjCj1VbORtyX22IWVxkq%2FZKOox451JjWilTpjo1t2pEosaOBXy9fK%2FDBZgBaYkM6U2BUbDXvsWwmqlvmwd3fXe6C5lHp5CjYpDOlEa6q88NzlElVybYzzaLmTv3GPCwXODTsjxkHyaCV5irBYTkqa%2BhQqCf4qSG1ObxTUcZqiqKhdgUKC2iAUealvluxJe%2F3%2F296gbU%2FkkKYKSi1ymuzpn51tnUsn%2BLjSG0MBQjYdRc%2Fsrf02XY7gndQ3a8DSWvQ74KS37mNSfhHqhfmJ9kKB9mtM0uVFFS%2BqeGiQ4WsbZL0Ojz2C8nnX3miQCWMUbfemn3OQukZxbUMYgrsxU6f5RNruLb7iMQu0is7XDRsnllaiTZX6iZULbFvJl6SbVPHd2DmJJ3xqdDYDnWFXP6lLqt5etPfpVKYYl0Vh7EZ%2FKUq4OhFM7Ncm%2Bp1NNFbiU5nl%2Fgqr32fdBaE5J9J5K69Lb%2BxftkKyzu6Gd3NNfj953b3dt0eTNgXnWzWZQQIbFh1qZ6xrtlN3Z3EQe3ERTkpUl6Bv2mQpRT1Fm2iDp9AaatVjL%2BIxzTpoKwqwmbEgasmDWrL7t8e4kptVcmdaWASHyeMDeIvtANoPoMONooRLMEONFu7b7v4N1FV93W39%2BUF5hlKnxm77dHrWhc0trnCrM%2BuRy0FwOdhWjsGbKMf%2BewEdvhfQgwDa3wbafxOgH98L6KcAGm0Djf4N6I%2B7P97sMDg7DgAA" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Asp Explorer&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;asp_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class1&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size4_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_cargorack_size6_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot04_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Asp Explorer&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;asp_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size4_class2&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_cargorack_size6_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot04_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot06_Size2&quot;,&quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot08_Size1&quot;,&quot;Item&quot;:&quot;int_cargorack_size1_class1&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;trading&quot;,&quot;intro&quot;:&quot;A cargo-first fit that keeps a working shield and enough range to run long routes. Initial is buy-only; A-rated is the trade baseline with a fast-recovering bi-weave; Engineered keeps that bi-weave and applies a range-and-escape pattern to the cores, filling every remaining slot with cargo. Drop the shield entirely for the ~128 t all-cargo maximum on safe runs.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Shield in the class-5 slot&quot;,&quot;text&quot;:&quot;The Asp's 280 t hull needs a class-5 generator, so the shield costs you its single biggest non-cargo slot. Keep it for contested or pirate-heavy lanes; pull it for a cargo rack to reach the ~128 t all-cargo maximum when the route is safe. Either way the class-6 and three class-3s do the bulk of the hauling.&quot;},&quot;notes&quot;:{&quot;TinyHardpoint1&quot;:&quot;First Heavy-Duty booster multiplies the thin bi-weave's raw MJ — the cheapest survivability a hauler can buy.&quot;,&quot;TinyHardpoint2&quot;:&quot;Second Heavy-Duty booster; stacking two is plenty of defence for a ship that escapes rather than tanks.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;PowerPlant&quot;:&quot;A-rate for headroom and a cooler hull; Low Emissions plus Thermal Spread keep the heat and signature down for a quiet trader.&quot;,&quot;MainEngines&quot;:&quot;A-rated + Dirty Drive Tuning give the boost speed to break a pirate interdiction — the Asp survives by leaving.&quot;,&quot;FrameShiftDrive&quot;:&quot;The Asp's whole trading edge: A-rated with Increased Range and Mass Manager turns long routes into single hops, laden.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more laden range; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;D-rate is enough with no guns; Engine Focused plus Super Conduits feed the boost-and-run escape.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight — a trader needs no sensor range, so bank the mass as jump range.&quot;,&quot;FuelTank&quot;:&quot;Stock C tank sized to the FSD's max-range tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot02_Size5&quot;:&quot;The only slot that fits a shield; a bi-weave (Reinforced + Fast Charge) recovers fast under fire. Pull it for a class-5 rack on safe runs.&quot;,&quot;Slot03_Size3&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot04_Size3&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot05_Size3&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot06_Size2&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot07_Size2&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot08_Size1&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Shield Boosters&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Life Support / Sensors&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;(none)&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Asp Explorer&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;asp_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_ChaffCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_cargorack_size6_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot04_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot06_Size2&quot;,&quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot08_Size1&quot;,&quot;Item&quot;:&quot;int_cargorack_size1_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Shield in the class-5 slot</span><p>The Asp's 280 t hull needs a class-5 generator, so the shield costs you its single biggest non-cargo slot. Keep it for contested or pirate-heavy lanes; pull it for a cargo rack to reach the ~128 t all-cargo maximum when the route is safe. Either way the class-6 and three class-3s do the bulk of the hauling.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~6.1M Cr) and fill it with cargo racks plus a basic shield &mdash; it can start earning on its first run.</p>
+    <p>The Asp ships with <b>Lightweight Alloy</b> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> as standard, and that is exactly what a trader wants &mdash; heavier Military Grade plate would only cost jump range. Leave the hull stock and spend on cargo and range instead.</p>
+    <p>Fit a basic class-5 (5E) <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">shield generator</a> in the second-largest slot, fill the class-6 and two of the class-3 slots with cargo racks, and add one <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> for cheap survivability. Leave the rest of the optional slots and the three spare utility mounts empty until you can afford to fill them.</p>
+    <p>A-rate the <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> as soon as you can afford it so even the buy-only fit keeps the range that makes the Asp worth trading.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget hauler &mdash; range first, then keep what cargo it has alive:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 5A</b> &mdash; The Asp's signature strength and its trading edge; range turns long routes into single hops. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; 5A</b> &mdash; Speed to escape interdictions a thin-shielded hauler can't win. <span class="acc">~1.2M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; 5A</b> &mdash; Headroom for the shield and a lighter, cooler hull. <span class="acc">~1M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; 5C bi-weave</b> &mdash; Fast-recovering protection for the cargo under fire; stack a second <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> and slot <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a> and a <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink</a> in the spare utilities. <span class="acc">~800k Cr</span></li>
+      <li><span class="stepnum">5</span><b>Cargo racks &rarr; fill</b> &mdash; Top out the remaining optionals; tonnage is profit-per-trip. <span class="acc">~1M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Range and escape protect the cargo</span><p>The Asp can't out-tank a determined pirate, so it survives by leaving &mdash; A-rate the <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> first so it jumps far and boosts away, then add the bi-weave for the times it can't. Leave the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> stock <b>Lightweight Alloy</b>: armour you can't shoot back with isn't worth the range it costs a hauler.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The trading engineering pattern weighted to range and escape. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Thrusters (5)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Plant (5)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Bi-Weave Shield (5)</td><td>Reinforced (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Power Distributor (4)</td><td>Engine Focused (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>(none)</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> first &mdash; it is the Asp's whole trading advantage and the cheapest gain per material.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">Thrusters</a> to G5 for the speed to break and run from interdictions.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant plus <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">lightweight</a> <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> to recover laden range.</li>
+      <li><span class="stepnum">4</span>Bi-weave shield and boosters last, scaled to how dangerous your routes are.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Low to moderate &mdash; medium-class modules and Farseer's <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> blueprint are cheap to grind, and an early trader will have most of the materials from normal play. This is the easiest big hauler to engineer. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max cargo (t)</td><td>~80</td><td>~104</td><td class="acc">~128 (no shield)</td></tr>
+        <tr><td class="mod">Laden jump (LY)</td><td>~18</td><td>~28</td><td class="acc">~40+</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~140</td><td>~210</td><td class="acc">~330</td></tr>
+        <tr><td class="mod">Hull (armour)</td><td>~189</td><td>~189</td><td class="acc">~205 (lighter)</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>340 m/s</td><td>340 m/s</td><td class="acc">~395 m/s</td></tr>
+        <tr><td class="mod">Survivability</td><td>low</td><td>moderate</td><td class="acc">moderate</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> stay <b>Lightweight Alloy</b> throughout &mdash; a G5 Lightweight pass on the engineered hull nudges integrity up while shaving mass, so the armour line firms slightly without touching jump range. Engineered, the Asp hauls ~104 t behind a working bi-weave at a ~40 LY laden jump, or strips to ~128 t when the route is clear. It will never carry like a transporter, but it travels further and escapes faster than anything in its price class &mdash; a long-range earner rather than a bulk one.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Rare-goods loops.</b> Long-distance rare commodities reward range and patience, not tonnage &mdash; the Asp's home ground.</li>
+      <li><b>Outpost commodity runs.</b> Medium-pad access lets it trade at outposts a <a href="type-9-heavy-trading.html">Type-9</a> is locked out of.</li>
+      <li><b>Mission-board cargo.</b> Run delivery and supply missions while you learn the local market and build a stake.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Funding the next ship.</b> Profitable loops bankroll a <a href="type-7-transporter-trading.html">Type-7</a>, <a href="type-9-heavy-trading.html">Type-9</a> or <a href="python-trading.html">Python</a> &mdash; the Asp is the bridge trader.</li>
+      <li><b>Long-haul and frontier supply.</b> Its range carries goods to distant or freshly-colonised systems short-legged haulers struggle to reach.</li>
+      <li><b>Powerplay logistics.</b> Roomy and economical for fortification hauling and merit runs while you grind faction standing.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Any rare-goods circuit or long commodity loop suits it. From a home base the Asp can run mission cargo, outpost trade and frontier supply between systems a large-pad freighter can't service.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>The class-5 slot is your only home for a shield &mdash; decide per route whether the protection or the <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a> is worth more.</li>
+      <li><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> recover meaningful laden range with no practical downside.</li>
+      <li>It survives by running, not tanking &mdash; keep A-rated <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> and a topped fuel reserve for the boost away from an interdiction.</li>
+      <li>Don't fight its nature: as a trader it's a long-range earner and a stepping stone, not a tonnage king.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Asp Explorer is the cheap, long-legged starter hauler: a ~128-tonne hold, real jump range, and no gates, on a hull that pays for itself fast. It earns its <b>58</b> rather than more because the dedicated transporters out-haul it many times over and its shields are thin &mdash; but it earns it rather than less because nothing in its price bracket trades this far or re-roles this easily. Buy it early, run it hard, and let it fund the freighter that replaces it.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, used to verify the cargo-fit slot layout and max-cargo figure for this trading build.</span><a class="cr-link" href="https://coriolis.io/outfit/asp_explorer" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/asp_explorer</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Asp Explorer ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/asp-explorer" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../asp-explorer</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Authoritative hull data behind the spec grid &mdash; optional-internal sizes, core slot classes, hull mass and speed used to size the cargo fit.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/asp.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/asp.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Asp Explorer shipyard page &mdash; hull price, cargo capacity and module-seller locations cross-checked for the cost and loadout sections.</span><a class="cr-link" href="https://inara.cz/elite/ship/35/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/35</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Asp Explorer lore and Lakon manufacture backing the role write-up and its standing among budget haulers.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Asp_Explorer" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Asp_Explorer</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

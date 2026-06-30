@@ -84,3 +84,13 @@ rating wheel). Read the per-script `.md` doc before assuming a script still appl
 | Script | Docs | What it did |
 |---|---|---|
 | `rename-to-black-box.py` | [rename-to-black-box.md](rename-to-black-box.md) | One-shot rename **E:D Black Book → E:D Black Box** across every tracked text file. |
+
+## Guides restructure *(complete 2026-06-30)*
+
+Moved every guide into index-mirrored subsection folders (`ships/{general,best-ships-by-role,ship-dossiers}`,
+`engineering/{engineering-manuals,materials-and-farming}`, `systems/{new-pilot-and-interface,galaxy-and-power-systems,activity-guides,combat-venues}`).
+
+| Script | Docs | What it did |
+|---|---|---|
+| `restructure-guides.py` | [restructure-guides.md](restructure-guides.md) | Moved all 166 guides into the new tree and rewrote every internal link (resolve-then-recompute, self-validating); moved each sibling `<base>-anchors.md` + mirrored `data/sources/*.json`. |
+| `fix-sources-page-paths.py` | [fix-sources-page-paths.md](fix-sources-page-paths.md) | Companion: realigned the internal `"page"` field of each moved `data/sources/**.json` to its new location so `audit-sources.py` round-trips. Idempotent. |

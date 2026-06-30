@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Federal Dropship &middot; Combat &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Federal Dropship · Combat</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Core Dynamics</div>
+    <h1 class="title"><span>Federal Dropship</span><span class="role ac-role-combat">Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The Federal combat ladder starts here — cheap, tough, and <em>unglamorous</em></h2>
+      <p>The <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federation</a>'s lowest-rank warship: five hardpoints, two military slots and a 540 armour base for ~13.5M Cr. Its shields are weak and it turns ponderously, but the hull tanks well and the rebuy is painless — making it a durable, affordable vehicle for the <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank grind toward the <a href="federal-assault-ship-combat.html">FAS</a>, <a href="federal-gunship-combat.html">Gunship</a> and ultimately the <a href="federal-corvette-combat.html">Corvette</a>.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/federal-dropship.jpg" alt="Federal Dropship" width="160" height="90">
+      <figcaption><b>Federal Dropship</b> &middot; Core Dynamics</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">76<small>/100</small></div><div class="bar mini"><i style="--pct:76"></i></div></div>
+      <div class="stat"><div class="n">1L · 4M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Military slots</div></div>
+      <div class="stat"><div class="n">304 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">~13.5M</div><div class="l">Hull price (Cr)</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad class</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Federal Dropship is Core Dynamics' military transport turned light gunship &mdash; the ship Federal pilots first earn and the chassis the <a href="federal-assault-ship-combat.html">FAS</a> and <a href="federal-gunship-combat.html">Gunship</a> are built on. Five hardpoints (one large, four medium), two military slots and a heavy 540 armour base give it a respectable bite and a tough hide for very little money.</p>
+    <p>It's no thoroughbred: it's slow, turns ponderously and has weak base shields. But it's the cheapest <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> combat hull by a wide margin, requires only the lowest <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank to buy, and is durable enough to fight effectively while you climb toward the <a href="federal-assault-ship-combat.html">FAS</a>, <a href="federal-gunship-combat.html">Gunship</a> and ultimately the <a href="federal-corvette-combat.html">Corvette</a>. As a value entry point and a rank-grind tool, it earns its place.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Entry-level conflict-zone and RES combat, pirate massacres, and the early stretch of the Federal-rank grind &mdash; an affordable, tough first warship that gets the job done without finesse.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-ax" href="federal-dropship-ax.html"><span class="vrole">AX</span><span class="vrate">73<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">182 / 304 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">1 Large &middot; 4 Medium</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">580 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">540 <small>(heavy)</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~104 <small>MJ (low)</small></div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">2 <small>(class 4)</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a></div><div class="v">Class 6</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;5&middot;4&middot;3&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Modest</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> Midshipman</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+    </div>
+    <p>Four things define the Dropship as a combat ship:</p>
+    <ul class="bullets">
+      <li><b>Five hardpoints.</b> One large and four mediums give it more guns than its humble reputation suggests &mdash; a genuine main battery for the price.</li>
+      <li><b>Heavy armour and military slots.</b> A 540 armour base plus two reinforcement bays make it tough enough to brawl despite its weak shields.</li>
+      <li><b>Lowest cost and rank gate.</b> The cheapest <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> combat hull, on the lowest <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank &mdash; the accessible first rung of the ladder.</li>
+      <li><b>Deep, flexible optionals.</b> Eight optional internals (more than the <a href="federal-assault-ship-combat.html">FAS</a> or <a href="federal-gunship-combat.html">Gunship</a>) give room for shields, cells and reinforcement.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's slow, turns poorly and has the lowest base shield of the Federal trio &mdash; it can't dictate range, dodge, or shield-tank well, and its DPS trails the premium mediums. The <a href="federal-assault-ship-combat.html">FAS</a> is faster and more aggressive; the <a href="federal-gunship-combat.html">Gunship</a> hits far harder. The Dropship's case is purely value and accessibility &mdash; it's where you start, not where you stay.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Five guns, 540 heavy armour and deep reinforcement-friendly internals at the lowest Federal cost and rank carry it; ponderous agility and the trio's weakest shields cap it at 76.</p>
+    <p>The <b>76/100</b> headline is a verdict against the combat role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Hardpoints</td><td class="sc"><span class="scval">26</span><span class="den">/30</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">Five mounts — one large plus four medium — give a genuine main battery for the price, more guns than its reputation suggests, though all medium-or-smaller hardpoints cap raw DPS below premium mediums like the FAS (2L 2M) and Gunship (1L 4M 2S).</td></tr>
+      <tr><td class="fct">Power distributor</td><td class="sc"><span class="scval">8</span><span class="den">/10</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">A class-6 power distributor sustains five guns and boost adequately once A-rated, but it trails the Gunship's class-7 unit and demands early A-rating since the five-weapon draw plus boost empties it quickly.</td></tr>
+      <tr><td class="fct">Shield</td><td class="sc"><span class="scval">9</span><span class="den">/15</span><div class="bar mini"><i style="--pct:60"></i></div></td><td class="wcell">Base shield is only ~104 MJ — the lowest of the Federal trio — and even engineered to a ~450 MJ bi-weave it stays a regenerating buffer, not a primary defence; it cannot shield-tank.</td></tr>
+      <tr><td class="fct">Armour &amp; internals</td><td class="sc"><span class="scval">14</span><span class="den">/15</span><div class="bar mini"><i style="--pct:93"></i></div></td><td class="wcell">A 540 heavy armour base, two class-4 military slots and a deep eight-slot optional bank (6·5·5·4·3·3·2·1) stack to ~3,000+ effective armour engineered — more reinforcement room than the FAS or Gunship and its defining strength.</td></tr>
+      <tr><td class="fct">Agility</td><td class="sc"><span class="scval">11</span><span class="den">/20</span><div class="bar mini"><i style="--pct:55"></i></div></td><td class="wcell">182/304 m/s and a ponderous turn at 580 t hull mass make it the slowest, least nimble of the medium combat field; it cannot dictate range or dodge, winning only by attrition — the headline limiter.</td></tr>
+      <tr><td class="fct">Utility &amp; flexibility</td><td class="sc"><span class="scval">8</span><span class="den">/10</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">Four utility mounts comfortably carry two shield boosters plus chaff and a heat-sink launcher, full enough to support the thin shield and run Thermal-Vent resets without competition for slots.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">76</span><span class="den">/100</span><div class="bar mini"><i style="--pct:76"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad combat ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Federal Dropship</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="alliance-chieftain-combat.html">Alliance Chieftain</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 1M 3S</td><td class="pcc"><span class="p">Far more agile; tougher; no rank gate</span><span class="c">Pricier hull</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="corsair-combat.html">Corsair</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 3M</td><td class="pcc"><span class="p">Six guns; modern; faster; no rank</span><span class="c">Far pricier</span></td><td><span class="rscore">85</span><div class="bar mini"><i style="--pct:85"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-assault-ship-combat.html">Federal Assault Ship</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 2M</td><td class="pcc"><span class="p">Much faster and more agile; bigger guns</span><span class="c">Higher rank; pricier</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-gunship-combat.html">Federal Gunship</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 4M 2S</td><td class="pcc"><span class="p">Seven mounts; far tougher; class-7 distributor</span><span class="c">Higher rank; even slower; pricier</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-crusader-combat.html">Alliance Crusader</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 2M 3S</td><td class="pcc"><span class="p">SLF bay; 3 crew; tankier; no rank</span><span class="c">Slower; pricier</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="vulture-combat.html">Vulture</a></td><td><span class="pill pad-small">Small</span></td><td>2L</td><td class="pcc"><span class="p">Agile small-pad duellist; no rank</span><span class="c">Two guns; less tank and room</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-v-combat.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>3M 2S</td><td class="pcc"><span class="p">Fast small-pad all-rounder; no rank</span><span class="c">Less tank; small-ship guns</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod">Federal Dropship <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>1L 4M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">76</span><div class="bar mini"><i style="--pct:76"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Dropship is the budget basement of the medium combat class. Almost every rival is faster, more agile or hits harder &mdash; but none is cheaper, and few are tougher for the money. It's the ship you buy to start the Federal journey, not the one you keep once you've climbed it.</p>
+    <h3 class="subhead">Other classes &mdash; the road ahead</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Federal Dropship</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="federal-corvette-combat.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">The apex the Dropship grind leads to</span><span class="c">Rear Admiral rank; ~187M Cr; large pad</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-combat.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shields and firepower</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; large pad</span></td><td><span class="rscore">91</span><div class="bar mini"><i style="--pct:91"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-combat.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight mounts; vast internals; no rank</span><span class="c">Ponderous; costly; large pad</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="vulture-combat.html">Vulture</a></td><td><span class="pill pad-small">Small</span></td><td>2L</td><td class="pcc"><span class="p">Cheap agile small-pad duellist</span><span class="c">Two guns; power-starved</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="eagle-mk-ii-combat.html">Eagle Mk II</a></td><td><span class="pill pad-small">Small</span></td><td>3S</td><td class="pcc"><span class="p">Cheapest agile fighter; no rank</span><span class="c">Eggshell hull; tiny guns</span></td><td><span class="rscore">55</span><div class="bar mini"><i style="--pct:55"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Dropship is rung one of a ladder whose top is the <a href="federal-corvette-combat.html">Federal Corvette</a>. Every fight in it earns rank toward the <a href="federal-assault-ship-combat.html">FAS</a>, then the <a href="federal-gunship-combat.html">Gunship</a>, then the apex large warship. Treat it as the durable, affordable vehicle for that climb rather than a destination.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~13.5M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~22M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~38M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">Fed. Midshipman</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~13.5M Cr the Dropship is the cheapest <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> combat hull, gated only by the low Midshipman rank. Its engineering bill is modest, and because it's the rank-grind ship, you'll likely outfit it just enough to fight effectively rather than maxing it out.</p>
+    <p>Spend on the cores and a bi-weave shield buffer; the Dropship's value is being good enough to win the fights that raise your <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank, cheaply.</p>
+    <div class="callout"><span class="lbl">Rung one of the ladder</span><p>The Dropship is the entry point of the Federal combat line. Buy it, fight in it, climb to the <a href="federal-assault-ship-combat.html">FAS</a> and <a href="federal-gunship-combat.html">Gunship</a>, and ultimately the <a href="federal-corvette-combat.html">Corvette</a> &mdash; each fight in the Dropship advances that grind.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A no-frills armour-tank brawler fit using both military slots. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern weighted to hull, since shields are weak.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Large 1</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Corrosive Shell</td><td class="note">The single large mount carries the Corrosive Shell multi-cannon, stripping armour resistance for the whole battery.</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">2F Pulse Laser (Gimballed)</td><td class="st">2D Beam Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Buy a cheap pulse, swap to a Thermal-Vent beam once A-rated for heat-free shield-stripping.</td></tr>
+<tr><td class="slot">Medium 2</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Gimballed medium multi-cannon; Auto Loader keeps its DPS uninterrupted.</td></tr>
+<tr><td class="slot">Medium 3</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Second medium multi-cannon; Auto Loader removes reloads so the kinetic battery never stops firing.</td></tr>
+<tr><td class="slot">Medium 4</td><td class="st">2F Pulse Laser (Gimballed)</td><td class="st">2F Pulse Laser (Gimballed)</td><td class="eng">G5 Efficient + Phasing Sequence</td><td class="note">Efficient pulse runs cool and chips at hulls; Phasing Sequence leaks damage through shields.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0A Shield Booster</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">First shield booster; Heavy Duty multiplies the thin bi-weave's raw MJ where it matters most.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Second Heavy-Duty booster — the cheapest large gain on a weak shield.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Chaff Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Military Grade Composite</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">6E Power Plant</td><td class="st">6A Power Plant</td><td class="eng">G5 Overcharged + Thermal Spread</td><td class="note">Powers five guns, a shield and reinforcement; Overcharged adds headroom, Thermal Spread bleeds the extra heat.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">6E Thrusters</td><td class="st">6A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated + Dirty Drives recover what mobility the heavy hull allows.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G3 Increased Range + Mass Manager</td><td class="note">A-rated to reach fights and Federal-rank turn-ins; only G3 range — combat doesn't need a jump monster.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">5E Life Support</td><td class="st">5D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">6E Power Distributor</td><td class="st">6A Power Distributor</td><td class="eng">G5 Charge Enhanced + Super Conduits</td><td class="note">A-rate this early — five guns plus boost drain the class-6 distributor fast.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">4E Sensors</td><td class="st">4D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; combat needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Military Slots</td></tr>
+<tr><td class="slot">Military 1</td><td class="st">4E Hull Reinforcement</td><td class="st">4D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Heavy-Duty hull reinforcement in the first military slot is the cheapest large multiplier on effective armour.</td></tr>
+<tr><td class="slot">Military 2</td><td class="st">—</td><td class="st">4D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6E Shield Generator</td><td class="st">6C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Fast Charge</td><td class="note">Bi-weave regenerates fast under fire; Reinforced maximises its MJ and Fast Charge speeds the buffer's recovery.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Cargo Rack</td><td class="st">5A Shield Cell Bank</td><td class="eng">G4 Specialised + Flow Control</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Hull reinforcement caps at size 5, so a 5D HRP fully fills this slot for max effective armour.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Second Heavy-Duty HRP — armour stacks linearly, so more plating is more survival.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A Shield Cell Bank</td><td class="eng">G4 Specialised + Flow Control</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Module Reinforcement protects the cores; not engineerable.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">More internal protection for the modules that keep you flying; not engineerable.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Hull Reinforcement</td><td class="eng">G5 Heavy Duty (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7WUwU4bMRCG38XnHLJAOOSGRKsiJTRquFVoNVnPbkZ4bWtsg1LEuzN2aNNEoO5W7cnyP6Nv7H%2FGflb4iDaquVo40C5FNVHrLXkRWtTIEMnZWrPzIav74C30KAlvuxu9B8h26XQyGNT8%2B7NaG5fVK%2B5dYondROzfp9ZQcuqOQWMlqV%2BtmkdOOFErJscUd2pevUx%2BMRfAHX4B1t6RjdUBvvWx7pOJ1IC1UqGjfgOmNjl%2FAHeJmlL%2FEdgnE9BAQP7J7Uv%2BePDZH0%2F8t%2BTz%2F0a%2B%2BGdm3JHdfeSxjAMavXEuRCEH%2BoHTupEyYTYAvHJPyCsDNh6gUqL2WfdZL8TLPXHIoC2B7CfbkZWZPkJiEcfiPrM8HHkybbxmesRj5HbnkXXWC3Y2HLugFtfJe8cnFzcSCPvAWGbx8ppCZNqk6PgdR%2FUhOtaIb6DhBBnQBsehkC5GWJrQ3IF9OIa1okZRf6edD%2Bk3GYrAu2l10ptkDCPZ1nGDPb4N0ohj5mVa1ets08m9y8R3aPOvON7JAj4r4NkxuJFPzzE0D8Naf%2F%2FyCjK0YYILBgAA&amp;bn=Federal%20Dropship" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XW0W6bMBQG4HfxdTQlELqJu01ZlUpJlzW9mybk4ANYNTY6tjNlUd59xkmbgogCXXuFOLY%2B7N%2FGsCewBWlITBaKMmUNGZF1wStXyIABUsOVTBiqStfVY%2BM9LcF1ON3dsSPgbpeKWQGaxL%2F2ZC1UXf2KpbLo2u4MlN1qQn2fJEfKIHRdf0gSG7QwIivkCrnZkXhyGL2YC4o5zCmySnFpJme8qExSWmF4SqV0T8h5uaEiEXX%2FHu4SGLflJXgDtBRUAz6zpe8%2B3A2uDvitcvhh8rQpV1ZoeFsYj1zuLkXsdgMItlFKGydr%2FhfGSeoeo6OhcPBRcCvitKBZJqiVaeFg43oOBVvJFkCN5vLpbFpEMH3plfoDuBJUmjPrHpJUdb2q6372N%2F1nv6Rcfpc5l%2B69bpDgi0O5W3SHhzs2MjNDvoUmWewqQFbXPRv1Zxc8g7WtKoWtiQvXoI8Nr82gb5Yzrg3yjTUKOxJl59ahQTxQRlukBqkVai9N%2B4%2Fz1oJ4pPKpiWWualz1tdbncF1ywQ3F3XjSWhsrBAKXmcIUSjhtpAHDfIGDJlz6j8Z%2F0fVlPEnW9Qq0IvUvfg6y%2Fug0FylMMqpNXz3wetSlpyDE5jnpAXvWu2GX2511NDCQqaen77yMno48HV5NIxyYxk2Xe2mDhAMH%2FdnjPXdfMBD%2F4vFe78zkCj0ix%2FMWkMucxHvyTVio3I05%2FXjNHfvQYOdAt7uZNfUnYuH%2B6ASJoxH5aak4kp%2FGh8Pvwz9DV8oI7QkAAA%3D%3D&amp;bn=Federal%20Dropship" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F92XXU%2FbMBSG%2F4uvq4l%2BbVPvBoWBVDZGJnExTZabnDQWjp35o1uH%2Bt937JSSlBbWpNIGN1Sxzev3ic85PrkjMAdpyYhMFEuUs6RDoowXOJBCAppZriRNtCqMHy0nP7EccMHq6SIpBfDxUiVOgCGjb3ckEsqPftC5chrnLizk21UpC2voTLME%2Brj0syQjqx10yJXmSnO7IKNuh5zKGZcAmssZGd2RY%2BGgwAe7slPuRM%2BBzRdjh%2F%2FTIROEE2Q07JAvjolS580RKv0qUCZH30ycpinE3qkpIOZM3LuJMydvF2S57KxZJkzP4JzppFC4bfcBKisszZ2wPGZSItmM51NUEn59Y54bYAVqfZ6DjjOvlDQlipXWyvA5UJOBEDWmS0i4y3dBTYHlghnQ90h5WN6WCR3ymPuwaUhkM9A5%2FobYfQKn9%2BwZHQboAIfEnFVUYBKCfoqo%2F%2BqIBnWiwgkD%2F2PMFRkzuAU18MOBjKHG9JXLxa4kwhoHIpkqZSxCGf4bjmiMhGbYmCkKkscrydYlr%2B5wS%2BWr4fVeN95GhmESpKlgTsZYc6jFlY2xLrmJ6YnXO2EFi3mVqFsn2uluI1syYBaj8vbBoNMa7AF84lu3ESrvZfVK%2FQR9JVjIspVN1KWFHy%2F8eAiQt20D5GEfWkZJ4yJVcRYrJVCoVqoYl6UVUweCMHgYmHKajrluHuIrPwqrdqi4dYwzjTthUqV2rLENqKNkC9RNdGgPEGfYFucsGtOJkrNrJkP3s%2BLp78WTmsTH9nyjAeMpRK4olN6IL4ETppyoQvQaQ1R2ohM%2By%2BwN%2BL87j%2BdREoy5sZpP8QrUW1IheZg9YEJU9qTnaPdMl1fVolVyVL2mzNT7rWuWsA1AA9IobQLXoO05REFs7yM4cyC%2BMnlbd5biqMXRqrWd3xvVKsBxE6YXR92NzHFCaOAyVToG%2FwoPw3yOstc12dY34GOnW27BNWavjpmHr7r9QSvS%2FueoSyMf6hvREu7mGUj%2FVVjPhn4Zbu2aiI9r5fUrTdr1EVTDyq4vpctNyl6gHG6jjPHja3off8PDNEknqHnsNaPSJDdVvkEDPu%2BSwrpbfgTY3wa4PRWGLzUVAugggA5edc4H0GEA7T8bsv2XGrJvtwHuKmv9PcvauyD%2BlzWzt6f4%2ByD%2BV%2FdO91%2FE4HL5ffkHNRa%2FuUQUAAA%3D&amp;bn=Federal%20Dropship" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7WUwU4bMRCG38XnHLJAOOSGRKsiJTRquFVoNVnPbkZ4bWtsg1LEuzN2aNNEoO5W7cnyP6Nv7H%2FGflb4iDaquVo40C5FNVHrLXkRWtTIEMnZWrPzIav74C30KAlvuxu9B8h26XQyGNT8%2B7NaG5fVK%2B5dYondROzfp9ZQcuqOQWMlqV%2BtmkdOOFErJscUd2pevUx%2BMRfAHX4B1t6RjdUBvvWx7pOJ1IC1UqGjfgOmNjl%2FAHeJmlL%2FEdgnE9BAQP7J7Uv%2BePDZH0%2F8t%2BTz%2F0a%2B%2BGdm3JHdfeSxjAMavXEuRCEH%2BoHTupEyYTYAvHJPyCsDNh6gUqL2WfdZL8TLPXHIoC2B7CfbkZWZPkJiEcfiPrM8HHkybbxmesRj5HbnkXXWC3Y2HLugFtfJe8cnFzcSCPvAWGbx8ppCZNqk6PgdR%2FUhOtaIb6DhBBnQBsehkC5GWJrQ3IF9OIa1okZRf6edD%2Bk3GYrAu2l10ptkDCPZ1nGDPb4N0ohj5mVa1ets08m9y8R3aPOvON7JAj4r4NkxuJFPzzE0D8Naf%2F%2FyCjK0YYILBgAA" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XW0W6bMBQG4HfxdTQlELqJu01ZlUpJlzW9mybk4ANYNTY6tjNlUd59xkmbgogCXXuFOLY%2B7N%2FGsCewBWlITBaKMmUNGZF1wStXyIABUsOVTBiqStfVY%2BM9LcF1ON3dsSPgbpeKWQGaxL%2F2ZC1UXf2KpbLo2u4MlN1qQn2fJEfKIHRdf0gSG7QwIivkCrnZkXhyGL2YC4o5zCmySnFpJme8qExSWmF4SqV0T8h5uaEiEXX%2FHu4SGLflJXgDtBRUAz6zpe8%2B3A2uDvitcvhh8rQpV1ZoeFsYj1zuLkXsdgMItlFKGydr%2FhfGSeoeo6OhcPBRcCvitKBZJqiVaeFg43oOBVvJFkCN5vLpbFpEMH3plfoDuBJUmjPrHpJUdb2q6372N%2F1nv6Rcfpc5l%2B69bpDgi0O5W3SHhzs2MjNDvoUmWewqQFbXPRv1Zxc8g7WtKoWtiQvXoI8Nr82gb5Yzrg3yjTUKOxJl59ahQTxQRlukBqkVai9N%2B4%2Fz1oJ4pPKpiWWualz1tdbncF1ywQ3F3XjSWhsrBAKXmcIUSjhtpAHDfIGDJlz6j8Z%2F0fVlPEnW9Qq0IvUvfg6y%2Fug0FylMMqpNXz3wetSlpyDE5jnpAXvWu2GX2511NDCQqaen77yMno48HV5NIxyYxk2Xe2mDhAMH%2FdnjPXdfMBD%2F4vFe78zkCj0ix%2FMWkMucxHvyTVio3I05%2FXjNHfvQYOdAt7uZNfUnYuH%2B6ASJoxH5aak4kp%2FGh8Pvwz9DV8oI7QkAAA%3D%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F92XXU%2FbMBSG%2F4uvq4l%2BbVPvBoWBVDZGJnExTZabnDQWjp35o1uH%2Bt937JSSlBbWpNIGN1Sxzev3ic85PrkjMAdpyYhMFEuUs6RDoowXOJBCAppZriRNtCqMHy0nP7EccMHq6SIpBfDxUiVOgCGjb3ckEsqPftC5chrnLizk21UpC2voTLME%2Brj0syQjqx10yJXmSnO7IKNuh5zKGZcAmssZGd2RY%2BGgwAe7slPuRM%2BBzRdjh%2F%2FTIROEE2Q07JAvjolS580RKv0qUCZH30ycpinE3qkpIOZM3LuJMydvF2S57KxZJkzP4JzppFC4bfcBKisszZ2wPGZSItmM51NUEn59Y54bYAVqfZ6DjjOvlDQlipXWyvA5UJOBEDWmS0i4y3dBTYHlghnQ90h5WN6WCR3ymPuwaUhkM9A5%2FobYfQKn9%2BwZHQboAIfEnFVUYBKCfoqo%2F%2BqIBnWiwgkD%2F2PMFRkzuAU18MOBjKHG9JXLxa4kwhoHIpkqZSxCGf4bjmiMhGbYmCkKkscrydYlr%2B5wS%2BWr4fVeN95GhmESpKlgTsZYc6jFlY2xLrmJ6YnXO2EFi3mVqFsn2uluI1syYBaj8vbBoNMa7AF84lu3ESrvZfVK%2FQR9JVjIspVN1KWFHy%2F8eAiQt20D5GEfWkZJ4yJVcRYrJVCoVqoYl6UVUweCMHgYmHKajrluHuIrPwqrdqi4dYwzjTthUqV2rLENqKNkC9RNdGgPEGfYFucsGtOJkrNrJkP3s%2BLp78WTmsTH9nyjAeMpRK4olN6IL4ETppyoQvQaQ1R2ohM%2By%2BwN%2BL87j%2BdREoy5sZpP8QrUW1IheZg9YEJU9qTnaPdMl1fVolVyVL2mzNT7rWuWsA1AA9IobQLXoO05REFs7yM4cyC%2BMnlbd5biqMXRqrWd3xvVKsBxE6YXR92NzHFCaOAyVToG%2FwoPw3yOstc12dY34GOnW27BNWavjpmHr7r9QSvS%2FueoSyMf6hvREu7mGUj%2FVVjPhn4Zbu2aiI9r5fUrTdr1EVTDyq4vpctNyl6gHG6jjPHja3off8PDNEknqHnsNaPSJDdVvkEDPu%2BSwrpbfgTY3wa4PRWGLzUVAugggA5edc4H0GEA7T8bsv2XGrJvtwHuKmv9PcvauyD%2BlzWzt6f4%2ByD%2BV%2FdO91%2FE4HL5ffkHNRa%2FuUQUAAA%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Federal Dropship&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;federation_dropship_armour_grade1&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class1&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_cargorack_size5_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Federal Dropship&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;federation_dropship_armour_grade3&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Military02&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size5_class5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size3_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot08_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;combat&quot;,&quot;intro&quot;:&quot;A no-frills armour-tank brawler fit using both military slots. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern weighted to hull, since shields are weak.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Armour-tank, shield-buffer&quot;,&quot;text&quot;:&quot;With the lowest shields of the Federal trio, the Dropship leans hard on armour. Fill the military slots and several optionals with Heavy-Duty reinforcement and treat the bi-weave as a regenerating buffer, not the main defence.&quot;},&quot;notes&quot;:{&quot;LargeHardpoint1&quot;:&quot;The single large mount carries the Corrosive Shell multi-cannon, stripping armour resistance for the whole battery.&quot;,&quot;MediumHardpoint1&quot;:&quot;Buy a cheap pulse, swap to a Thermal-Vent beam once A-rated for heat-free shield-stripping.&quot;,&quot;MediumHardpoint2&quot;:&quot;Gimballed medium multi-cannon; Auto Loader keeps its DPS uninterrupted.&quot;,&quot;MediumHardpoint3&quot;:&quot;Second medium multi-cannon; Auto Loader removes reloads so the kinetic battery never stops firing.&quot;,&quot;MediumHardpoint4&quot;:&quot;Efficient pulse runs cool and chips at hulls; Phasing Sequence leaks damage through shields.&quot;,&quot;TinyHardpoint1&quot;:&quot;First shield booster; Heavy Duty multiplies the thin bi-weave's raw MJ where it matters most.&quot;,&quot;TinyHardpoint2&quot;:&quot;Second Heavy-Duty booster — the cheapest large gain on a weak shield.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;PowerPlant&quot;:&quot;Powers five guns, a shield and reinforcement; Overcharged adds headroom, Thermal Spread bleeds the extra heat.&quot;,&quot;MainEngines&quot;:&quot;A-rated + Dirty Drives recover what mobility the heavy hull allows.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated to reach fights and Federal-rank turn-ins; only G3 range — combat doesn't need a jump monster.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate this early — five guns plus boost drain the class-6 distributor fast.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; combat needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Military01&quot;:&quot;Heavy-Duty hull reinforcement in the first military slot is the cheapest large multiplier on effective armour.&quot;,&quot;Military02&quot;:&quot;Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.&quot;,&quot;Slot01_Size6&quot;:&quot;Bi-weave regenerates fast under fire; Reinforced maximises its MJ and Fast Charge speeds the buffer's recovery.&quot;,&quot;Slot02_Size5&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot03_Size5&quot;:&quot;Hull reinforcement caps at size 5, so a 5D HRP fully fills this slot for max effective armour.&quot;,&quot;Slot04_Size4&quot;:&quot;Second Heavy-Duty HRP — armour stacks linearly, so more plating is more survival.&quot;,&quot;Slot05_Size3&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot06_Size3&quot;:&quot;Module Reinforcement protects the cores; not engineerable.&quot;,&quot;Slot07_Size2&quot;:&quot;More internal protection for the modules that keep you flying; not engineerable.&quot;,&quot;Slot08_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G3&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer / Elvira Martuuk&quot;},{&quot;module&quot;:&quot;Multi-Cannons&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Corrosive Shell (large) / Auto Loader (mediums)&quot;,&quot;engineer&quot;:&quot;Tod McQuinn&quot;},{&quot;module&quot;:&quot;Beam &amp; Pulse Lasers&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Efficient&quot;,&quot;experimental&quot;:&quot;Thermal Vent (beam) / Phasing Sequence (pulse)&quot;,&quot;engineer&quot;:&quot;Broo Tarquin&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Charge Enhanced&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;},{&quot;module&quot;:&quot;Hull Reinforcement&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Boosters&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Federal Dropship&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;federation_dropship_armour_grade3&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_armour_chunky&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_corrosive_shell&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_phasing_sequence&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_ChaffCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Boosted&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_HighFrequency&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Military02&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldcell_efficient&quot;}},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot04_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldcell_efficient&quot;}},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size3_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot08_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Armour-tank, shield-buffer</span><p>With the lowest shields of the Federal trio, the Dropship leans hard on armour. Fill the military slots and several optionals with Heavy-Duty reinforcement and treat the bi-weave as a regenerating buffer, not the main defence.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Earn Midshipman, buy the hull (~13.5M Cr), fit an E-rated <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">shield generator</a> with one <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a>, and drop a <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> into the first military slot.</p>
+    <p>Arm the large mount with a gimballed multi-cannon and spread two more multi-cannons and two pulse <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a> across the four mediums.</p>
+    <p>Leave the stock <b>Lightweight Alloy</b> plating on for now &mdash; Military Grade Composite comes with the A-rate pass. Leave the second military slot, the three spare utilities and the deeper optional slots empty until then; even on factory <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> the hull soaks enough to make a capable, cheap rank-grind brawler.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget armour-tank:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; 6A</b> &mdash; Power for five guns, a shield and the reinforcement stack. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> &rarr; Military Grade Composite</b> &mdash; The foundation of the tank; it multiplies every hull-reinforcement point that follows. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; 6A</b> &mdash; Sustain the guns and boost. <span class="acc">~2.5M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; 6A</b> &mdash; Recover what mobility the heavy hull allows. <span class="acc">~2.5M Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; 6C bi-weave</b> &mdash; A regenerating buffer over the armour tank, backed by 5A and 3A shield cell banks for burst repairs. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 5A</b> &mdash; Reach fights and Federal-rank turn-ins. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">7</span><b>Reinforcement &amp; defensive utilities</b> &mdash; Fill the second military slot and the deeper optionals with hull (and module) reinforcement &mdash; right down to a hull package in the size-1 internal, not a scanner &mdash; add a second <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a>, and slot <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a> and a <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink</a>. The armour stack is the real tank. <span class="acc">~2M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Just enough to climb</span><p>The Dropship doesn't need maxing out &mdash; Military Grade plating, A-rated cores, a bi-weave and a wall of reinforcement, and it's good enough to win the fights that raise your <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank. Save the deep engineering for the <a href="federal-corvette-ax.html">Corvette</a> it leads to.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern weighted to hull, since shields are weak. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Power Plant (6)</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Thrusters (6)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G3)</td><td>Mass Manager</td><td>Felicity Farseer / Elvira Martuuk</td></tr>
+<tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (large) / Auto Loader (mediums)</td><td>Tod McQuinn</td></tr>
+<tr><td class="mod">Beam &amp; Pulse Lasers</td><td>Efficient (G5)</td><td>Thermal Vent (beam) / Phasing Sequence (pulse)</td><td>Broo Tarquin</td></tr>
+<tr><td class="mod">Power Distributor (6)</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Bi-Weave Shield (6)</td><td>Reinforced (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Plant and distributor to G5 first to power and sustain the five guns.</li>
+      <li><span class="stepnum">2</span>Heavy-Duty <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> in the military slots and optionals &mdash; armour is the main tank.</li>
+      <li><span class="stepnum">3</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">Thrusters</a> to G5 to recover what mobility the heavy hull allows.</li>
+      <li><span class="stepnum">4</span>Weapons and the bi-weave buffer last.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light-to-moderate &mdash; standard combat G5s plus Heavy-Duty reinforcement. As the rank-grind ship it rarely needs full engineering. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>304 m/s</td><td>304 m/s</td><td class="acc">~370 m/s</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>540</td><td>~1,500</td><td class="acc">~3,000+</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~150</td><td>~210</td><td class="acc">~450</td></tr>
+        <tr><td class="mod">Sustained DPS</td><td>medium</td><td>medium-high</td><td class="acc">medium-high</td></tr>
+        <tr><td class="mod">Value</td><td>high</td><td>high</td><td class="acc">high</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The jump from Initial to A-rated is mostly the Military Grade Composite bulkhead and a wall of <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> &mdash; even unengineered it roughly triples effective armour. Engineering then pushes it into the thousands, adds a usable shield buffer with twin Thermo-Block cell banks for low-heat burst repairs, and turns a cheap transport-turned-gunship into a genuinely durable rank-grind brawler. It stays slow and plain &mdash; but it stays alive, which is all the grind asks.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Federal conflict zones.</b> Fight for the <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federation</a> to earn combat bonds and <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> Navy rank &mdash; the Dropship's core purpose.</li>
+      <li><b>Hazardous RES.</b> Its armour lets it brawl high-value targets despite the weak shields.</li>
+      <li><b>Pirate massacre stacks.</b> Stack missions and clear them in steady RES or CZ sessions.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>The <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank climb.</b> Grind Midshipman &rarr; CPO &rarr; Ensign and beyond, unlocking the <a href="federal-assault-ship-combat.html">FAS</a>, <a href="federal-gunship-combat.html">Gunship</a> and eventually the <a href="federal-corvette-combat.html">Corvette</a> as you go.</li>
+      <li><b>Budget CZ farming.</b> Cheap to rebuy, so you can fight aggressively without fearing the insurance bill.</li>
+      <li><b>Power-play combat.</b> Clears enemy assets cheaply during fortification while you build Federal standing.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any Federal-aligned CZ or Haz RES suits it &mdash; favour <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federation</a> systems so combat bonds raise <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank. The Dropship's whole arc is the <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> grind toward a <a href="federal-corvette-combat.html">Corvette</a>.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Treat it as the rank-grind ship it is &mdash; outfit it just enough to win, and save deep engineering for the <a href="federal-corvette-combat.html">Corvette</a>.</li>
+      <li>Armour-tank it: the low shields mean Heavy-Duty reinforcement does the heavy lifting.</li>
+      <li>It's slow &mdash; pick fights you can win by attrition rather than ones that need you to dictate range.</li>
+      <li>Its cheap rebuy lets you fly aggressively while learning Federal CZ tactics.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> Dropship is the honest workhorse of the <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> combat line: cheap, tough and accessible, if slow and plain. It won't dazzle, but it's where the <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> journey begins &mdash; an affordable, durable brawler you fight in to earn the rank that unlocks the <a href="federal-assault-ship-combat.html">FAS</a>, the <a href="federal-gunship-combat.html">Gunship</a> and, ultimately, the <a href="federal-corvette-combat.html">Corvette</a>. Rung one, and a sturdy one.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/federal_dropship" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/federal_dropship</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Federal Dropship ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/federal-dropship" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../federal-dropship</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/federal_dropship.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/federal_dropship.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Federal Dropship</span><span class="cr-what">Ship overview: stats, internals layout, hardpoints, price, and Federal rank requirement.</span><a class="cr-link" href="https://inara.cz/elite/ship/50/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/50</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Federal Dropship lore, Core Dynamics manufacturer, multirole/combat profile, and design notes.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Federal_Dropship" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Federal_Dropship</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

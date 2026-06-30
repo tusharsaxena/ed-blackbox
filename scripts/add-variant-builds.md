@@ -47,7 +47,7 @@ links; the rating is `--ink` bold with a dim `/100`). No page-level CSS.
 ```bash
 python3 scripts/add-variant-builds.py                  # all dossiers
 python3 scripts/add-variant-builds.py --check          # dry-run: report, write nothing
-python3 scripts/add-variant-builds.py guides/ships/dossiers/anaconda-combat.html  # specific file(s)
+python3 scripts/add-variant-builds.py guides/ships/ship-dossiers/anaconda-combat.html  # specific file(s)
 python3 scripts/add-variant-builds.py --check <file>   # dry-run a subset (used by the batch rollout)
 ```
 

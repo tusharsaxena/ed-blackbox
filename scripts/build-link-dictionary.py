@@ -8,14 +8,14 @@ rules are layered on by the family sub-agents (see build-link-dictionary.md),
 producing the final data/links/link-dictionary.json the applier consumes.
 
 Families & anchor schemes:
-    engineers     guides/engineering/engineers.html      #engineer-<slug>
-    blueprint-grp guides/engineering/blueprints.html      #blueprint-group-<slug>
-    blueprint     guides/engineering/blueprints.html      #blueprint-<group>-<effect>
-    module        guides/engineering/modules.html         #module-<slug> (not -group-)
-    material      guides/engineering/materials.html       #section-<slug> (page is coarse)
-    powerplay     guides/systems/powerplay.html           #powerplay-<slug>
-    superpower    guides/systems/superpower-rank.html     #superpower-<fed|emp|all>
-    ship-dossier  guides/ships/dossiers/<ship>-<role>.html
+    engineers     guides/engineering/engineering-manuals/engineers.html      #engineer-<slug>
+    blueprint-grp guides/engineering/engineering-manuals/blueprints.html      #blueprint-group-<slug>
+    blueprint     guides/engineering/engineering-manuals/blueprints.html      #blueprint-<group>-<effect>
+    module        guides/engineering/engineering-manuals/modules.html         #module-<slug> (not -group-)
+    material      guides/engineering/materials-and-farming/materials.html       #section-<slug> (page is coarse)
+    powerplay     guides/systems/galaxy-and-power-systems/powerplay.html           #powerplay-<slug>
+    superpower    guides/systems/galaxy-and-power-systems/superpower-rank.html     #superpower-<fed|emp|all>
+    ship-dossier  guides/ships/ship-dossiers/<ship>-<role>.html
 
 Usage:  python3 scripts/build-link-dictionary.py [--out PATH]
 """
@@ -55,7 +55,7 @@ def lead_text(el) -> str:
 
 
 def engineers(entries):
-    p = G / "engineering" / "engineers.html"
+    p = G / "engineering" / "engineering-manuals" / "engineers.html"
     soup = soup_of(p)
     rel = p.relative_to(G).as_posix()
     for el in soup.select('[id^="engineer-"]'):
@@ -70,7 +70,7 @@ def engineers(entries):
 
 
 def blueprints(entries):
-    p = G / "engineering" / "blueprints.html"
+    p = G / "engineering" / "engineering-manuals" / "blueprints.html"
     soup = soup_of(p)
     rel = p.relative_to(G).as_posix()
     group_slugs = []
@@ -99,7 +99,7 @@ def blueprints(entries):
 
 
 def modules(entries):
-    p = G / "engineering" / "modules.html"
+    p = G / "engineering" / "engineering-manuals" / "modules.html"
     soup = soup_of(p)
     rel = p.relative_to(G).as_posix()
     for el in soup.select('[id^="module-"]'):
@@ -113,7 +113,7 @@ def modules(entries):
 
 
 def materials(entries):
-    p = G / "engineering" / "materials.html"
+    p = G / "engineering" / "materials-and-farming" / "materials.html"
     rel = p.relative_to(G).as_posix()
     # only section-level anchors exist; expose the page + a few useful sections
     for slug, label in [("section-raw", "Raw Materials"),
@@ -126,7 +126,7 @@ def materials(entries):
 
 
 def powerplay(entries):
-    p = G / "systems" / "powerplay.html"
+    p = G / "systems" / "galaxy-and-power-systems" / "powerplay.html"
     soup = soup_of(p)
     rel = p.relative_to(G).as_posix()
     for el in soup.select('[id^="powerplay-"]'):
@@ -137,7 +137,7 @@ def powerplay(entries):
 
 
 def superpowers(entries):
-    p = G / "systems" / "superpower-rank.html"
+    p = G / "systems" / "galaxy-and-power-systems" / "superpower-rank.html"
     rel = p.relative_to(G).as_posix()
     for sid, label, alt in [("superpower-fed", "Federation", ["Federal"]),
                             ("superpower-emp", "Empire", ["Imperial"]),
@@ -147,7 +147,7 @@ def superpowers(entries):
 
 
 def ships(entries, ships_map):
-    ddir = G / "ships" / "dossiers"
+    ddir = G / "ships" / "ship-dossiers"
     for f in sorted(ddir.glob("*.html")):
         base = f.stem
         role = next((r for r in ROLES if base.endswith("-" + r)), None)
@@ -164,7 +164,7 @@ def ships(entries, ships_map):
             name = titleize(ship_slug)
         m = ships_map.setdefault(ship_slug, {"name": name, "roles": {}})
         m["name"] = name or m["name"]
-        m["roles"][role or "default"] = f"ships/dossiers/{base}.html"
+        m["roles"][role or "default"] = f"ships/ship-dossiers/{base}.html"
     # choose a default role per ship by priority
     for slug, m in ships_map.items():
         m["default_role"] = next((r for r in ROLES if r in m["roles"]),

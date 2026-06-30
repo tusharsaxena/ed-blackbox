@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kestrel Mk II &middot; Combat &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Combat → maroon (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Kestrel Mk II · Combat</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Saud Kruger</div>
+    <h1 class="title"><span>Kestrel Mk II</span><span class="role ac-role-combat">Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The small-pad <em>firepower</em> king — three large hardpoints on a hull that docks anywhere</h2>
+      <p>The most heavily armed small ship in the game. Three large hardpoints are unheard-of on a small hull; backed by strong shields and real speed, it out-guns nearly every small ship and many mediums from any pad. Its ceiling is thin armour and shallow internals — a glass cannon that wins by hitting first and hitting hard, not by trading blows.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/kestrel-mkii.jpg" alt="Kestrel Mk II" width="160" height="90">
+      <figcaption><b>Kestrel Mk II</b> &middot; Saud Kruger</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">85<small>/100</small></div><div class="bar mini"><i style="--pct:85"></i></div></div>
+      <div class="stat"><div class="n">3L 2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">278 / 370</div><div class="l">Speed / boost m/s</div></div>
+      <div class="stat"><div class="n">~338 MJ</div><div class="l">Base shield</div></div>
+      <div class="stat"><div class="n">~13.8M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Kestrel Mk II is Saud Kruger's surprise contribution to the combat scene: a small-pad hull carrying three large hardpoints, a count normally reserved for mediums and large ships. Backed by strong shields, four utilities and genuine speed, it delivers a main battery that out-guns nearly every small ship and many mediums, while keeping the universal small-pad access that lets it dock anywhere.</p>
+    <p>It pays for that firepower with fragility. Its armour is thin and its internals shallow (one military slot, modest optionals), so it can't tank a prolonged brawl the way a <a href="cobra-mk-v-combat.html">Cobra Mk V</a> or a medium can. The Kestrel is a glass cannon scaled to a small hull &mdash; it wins by hitting harder and faster than its size suggests, then disengaging before its modest defences give out.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Alpha-heavy small-pad combat: RES bounty hunting where firepower ends fights fast, picking off priority targets, and any engagement where three large guns settle things before the thin hull matters.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">278 / 370 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3 Large &middot; 2 Small</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">190 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~338 <small>MJ (strong)</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">135 <small>(thin)</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a></div><div class="v">Class 5</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;4&middot;3&middot;2&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">1 <small>(class 4)</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(docks anywhere)</small></div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Good</div></div>
+    </div>
+    <p>Four things make the Kestrel the small-pad firepower king:</p>
+    <ul class="bullets">
+      <li><b>Three large hardpoints.</b> Unheard-of on a small hull &mdash; alpha and sustained DPS that beat almost every small ship and many mediums.</li>
+      <li><b>Strong shields.</b> A 338 MJ base shield is excellent for the class, giving it a real buffer despite the thin armour.</li>
+      <li><b>Speed and small-pad access.</b> Fast enough to dictate range and able to dock at any outpost &mdash; firepower that reaches anywhere.</li>
+      <li><b>Four utilities.</b> Room for a proper shield-booster and <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a> suite to stretch its glass-cannon defences.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Thin armour, a single military slot and shallow optionals mean it can't tank a long fight &mdash; once shields drop, it's brittle. Its class-5 plant is also stretched feeding three large guns. The Kestrel is a glass cannon: devastating on the attack, fragile under sustained return fire. Build it to end fights quickly, not to grind them.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Three large hardpoints on a small hull, backed by a strong ~338 MJ shield and universal pad access, lead the score; thin 135 armour and a stretched class-5 distributor cap it.</p>
+    <p>The <b>85/100</b> headline is a verdict against the combat role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Hardpoints</td><td class="sc"><span class="scval">30</span><span class="den">/30</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">Three Large plus two Small hardpoints on a small hull is unmatched in the small-pad field; nothing else its size carries three large mounts, rivalling a Krait Mk II's main battery from a pad that docks anywhere.</td></tr>
+      <tr><td class="fct">Power distributor</td><td class="sc"><span class="scval">7</span><span class="den">/10</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">Only a class-5 power distributor must feed three large guns plus boost, the most strained system on the hull; A-rating and Charge Enhanced are mandatory just to sustain fire, and it stays the build's tightest constraint.</td></tr>
+      <tr><td class="fct">Shield</td><td class="sc"><span class="scval">14</span><span class="den">/15</span><div class="bar mini"><i style="--pct:93"></i></div></td><td class="wcell">A ~338 MJ base shield is strong for a small ship and engineers past 1,100 MJ on a Reinforced bi-weave with two Heavy-Duty boosters across four utilities; this is the only real tank the hull has.</td></tr>
+      <tr><td class="fct">Armour &amp; internals</td><td class="sc"><span class="scval">8</span><span class="den">/15</span><div class="bar mini"><i style="--pct:53"></i></div></td><td class="wcell">Base armour of just 135 with one class-4 military slot and shallow optionals (5·4·3·2·2·2·1) means it cannot trade blows; once shields drop it is brittle, the clear limiter on the score.</td></tr>
+      <tr><td class="fct">Agility</td><td class="sc"><span class="scval">16</span><span class="den">/20</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">278/370 m/s and good handling let it dictate range and disengage, and Dirty Drives push boost near 450 m/s; competent but not class-leading, outturned by the Vulture, Eagle and Courier.</td></tr>
+      <tr><td class="fct">Utility &amp; flexibility</td><td class="sc"><span class="scval">10</span><span class="den">/10</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">Four utility mounts fit a full shield-booster, chaff and heat-sink suite, and small-pad access with no rank or permit gate lets it base and turn in at outpost-only stations medium fighters cannot reach.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">85</span><span class="den">/100</span><div class="bar mini"><i style="--pct:85"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <h3 class="subhead">Same class &mdash; small-pad combat ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Kestrel Mk II</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Kestrel Mk II <span class="pill md">this</span></td><td><span class="pill pad-small">Small</span></td><td>3L 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">85</span><div class="bar mini"><i style="--pct:85"></i></div></td></tr>
+        <tr><td class="mod"><a href="vulture-combat.html">Vulture</a></td><td><span class="pill pad-small">Small</span></td><td>2L</td><td class="pcc"><span class="p">More agile; tougher armour; far cheaper</span><span class="c">One fewer large gun; power-starved</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-v-combat.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>3M 2S</td><td class="pcc"><span class="p">Tankier; deeper internals; cheaper</span><span class="c">Medium guns, not large &mdash; less alpha</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-courier-combat.html">Imperial Courier</a></td><td><span class="pill pad-small">Small</span></td><td>3M</td><td class="pcc"><span class="p">Faster; superb shields; very cheap</span><span class="c">Medium guns; paper hull</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="viper-mk-iv-combat.html">Viper Mk IV</a></td><td><span class="pill pad-small">Small</span></td><td>2M 2S</td><td class="pcc"><span class="p">Tough; cheap; forgiving</span><span class="c">Far less firepower</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+        <tr><td class="mod"><a href="viper-mk-iii-combat.html">Viper Mk III</a></td><td><span class="pill pad-small">Small</span></td><td>2M 2S</td><td class="pcc"><span class="p">Faster; very cheap</span><span class="c">Fragile; far less firepower</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-scout-combat.html">Diamondback Scout</a></td><td><span class="pill pad-small">Small</span></td><td>2M 2S</td><td class="pcc"><span class="p">Cool-running; four utilities; cheap</span><span class="c">Modest guns; far less alpha</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+        <tr><td class="mod"><a href="eagle-mk-ii-combat.html">Eagle Mk II</a></td><td><span class="pill pad-small">Small</span></td><td>3S</td><td class="pcc"><span class="p">Best agility; dirt cheap</span><span class="c">Tiny guns; eggshell hull</span></td><td><span class="rscore">55</span><div class="bar mini"><i style="--pct:55"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Kestrel tops the small combat class for firepower outright &mdash; nothing else its size carries three large guns. The <a href="vulture-combat.html">Vulture</a> is the tougher, cheaper two-large alternative and the <a href="cobra-mk-v-combat.html">Cobra Mk V</a> the more durable all-rounder, but for pure small-pad alpha the Kestrel is unmatched.</p>
+    <h3 class="subhead">Other classes &mdash; the mediums it embarrasses</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Kestrel Mk II</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="fer-de-lance-combat.html">Fer-de-Lance</a></td><td><span class="pill pad-medium">Medium</span></td><td>1H 4M</td><td class="pcc"><span class="p">Huge mount; far more tank and room</span><span class="c">Medium pad; far pricier</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-combat.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">Same three large mounts, plus tank and SLF</span><span class="c">Medium pad; far pricier</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-mk-ii-combat.html">Python Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; far more tank</span><span class="c">Medium pad; far pricier</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-chieftain-combat.html">Alliance Chieftain</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 1M 3S</td><td class="pcc"><span class="p">Agile tank; military slots; more durable</span><span class="c">Medium pad; pricier</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="vulture-combat.html">Vulture</a></td><td><span class="pill pad-small">Small</span></td><td>2L</td><td class="pcc"><span class="p">The cheaper, tougher small-pad alternative</span><span class="c">One fewer large gun</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Kestrel's three large guns rival a <a href="krait-mk-ii-combat.html">Krait Mk II</a>'s main battery from a small pad &mdash; remarkable &mdash; but the mediums back their guns with tank and internals the Kestrel can't match. Fly the Kestrel for small-pad firepower and reach; step up to a medium when you need to survive longer fights.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~13.8M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~22M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~35M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~13.8M Cr the Kestrel is pricey for a small ship &mdash; you pay for those three large hardpoints &mdash; but it carries no rank or permit gate. Engineering three large guns plus a strong shield is the bulk of the cost.</p>
+    <p>It's a premium small-pad fighter: more expensive than a <a href="cobra-mk-v-combat.html">Cobra Mk V</a> or <a href="vulture-combat.html">Vulture</a>, justified only if you value its unique firepower-and-reach combination over their durability and lower price.</p>
+    <div class="callout"><span class="lbl">Premium small-pad firepower</span><p>You're paying for three large guns on a small hull &mdash; a unique capability. If raw alpha with universal pad access is the goal, the price is justified; if not, the <a href="vulture-combat.html">Vulture</a> or <a href="cobra-mk-v-combat.html">Cobra Mk V</a> offer more per credit.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A glass-cannon shield-tank fit built around the three large guns. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern, leaning on shields since the armour is thin.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Large 1</td><td class="st">3E Pulse Laser (Gimballed)</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Corrosive Shell</td><td class="note">Primary large mount; the single Corrosive Shell strips armour resistance for the whole battery.</td></tr>
+<tr><td class="slot">Large 2</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Second large multi-cannon; Auto Loader removes reloads so it never stops firing.</td></tr>
+<tr><td class="slot">Large 3</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="st">3C Beam Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Large beam for shield-stripping; Thermal Vent vents heat so it runs cold on a heat-tight small hull.</td></tr>
+<tr><td class="slot">Small 1</td><td class="st">1G Multi-Cannon (Gimballed)</td><td class="st">1G Pulse Laser (Gimballed)</td><td class="eng">G5 Efficient + Phasing Sequence</td><td class="note">Small pulse adds heat-free shield damage; Efficient keeps draw and heat low.</td></tr>
+<tr><td class="slot">Small 2</td><td class="st">—</td><td class="st">1G Pulse Laser (Gimballed)</td><td class="eng">G5 Efficient + Phasing Sequence</td><td class="note">Second small pulse; left empty on the buy-only fit, fitted once the hull is paid off.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0A Shield Booster</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">First Heavy-Duty shield booster — the cheapest large gain on the bi-weave's raw MJ.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Second Heavy-Duty booster; the Kestrel leans on shields because the armour is thin.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Chaff Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Military Grade Composite</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">5E Power Plant</td><td class="st">5A Power Plant</td><td class="eng">G5 Overcharged + Thermal Spread</td><td class="note">A-rate alongside the distributor; Overcharged feeds three large guns and a strong shield, Thermal Spread bleeds the extra heat.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">5E Thrusters</td><td class="st">5A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated + Dirty Drives give the speed to dictate range and disengage.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">4E Frame Shift Drive</td><td class="st">4A Frame Shift Drive</td><td class="eng">G3 Increased Range + Mass Manager</td><td class="note">A-rated to reach RES sites and turn-ins; only G3 range — combat needs no jump monster.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">1E Life Support</td><td class="st">1D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass on a size-1 slot; Lightweight trims more, and life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">5E Power Distributor</td><td class="st">5A Power Distributor</td><td class="eng">G5 Charge Enhanced + Super Conduits</td><td class="note">A-rate this FIRST — three large guns plus boost strain the class-5 distributor harder than anything else.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">2E Sensors</td><td class="st">2D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; combat needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Military Slots</td></tr>
+<tr><td class="slot">Military 1</td><td class="st">4E Hull Reinforcement</td><td class="st">4D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">The lone military slot; Heavy-Duty hull reinforcement is the cheapest large multiplier on the thin armour.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Shield Generator</td><td class="st">5C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Hi-Cap</td><td class="note">Bi-weave regenerates fast under fire; Reinforced maximises its low base MJ and Hi-Cap adds more.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">4E Cargo Rack</td><td class="st">4A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">More Heavy-Duty hull where the slot allows — armour stacks linearly.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Second Module Reinforcement protects the cores that keep you flying; not engineerable.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F63UwU7jMBAG4HfxuYemwKU3JFgtUoGKcEMomsbTdoRjW2MbKIh3Z%2BJW201VpAQ4RZlxviS%2FJ3lX%2BIw2qqmaOdAuRTVS5Zq8FEIDxtSuWUAcF5V93XVuoEHp7s6u9PZqOb12OhkMavrwrkrj2uo5Ny6x9K4iNkfICvKCasWgsZB1t1ZNIyccqTmTY4obNS0%2BRv%2FAGfAK%2FwJr78jGYi%2Bvfax8MgENBBSQ5B6mMu3yweykyzbJRKrBWmd%2F5p78mlu2OX4VwxE3597DvSe7%2BYoNa0KjF86FKAEHesNxVUva4awHPHcvyHMDNu5RuUXl27pv61k824p9JuEayF7aFVmZuA6JuTiU%2B8My1jLQy3jB9Ixdcr3xyLqtZ%2Fa0PzujJZbJe8cHL26kEbaNbBb9zZzlBYXItEjR8ZFE9b47NIg70HBABrTBccjSZECkCc092KcutpRqlOr%2FSZ702W8yFIE34%2BJgb5IxjGSXjmtscDdIA7aoPcjPqGxjOnjvPPErtMjwjSQzPMnwaReu5TN3DPVTv2d9%2FPgECeqwJaYFAAA%3D&amp;bn=Kestrel%20Mk%20II" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XWUW%2FaMBAA4P%2FiZzRBgE3K26a2ohJsrPRtmqIjuRALx47ONitD%2FPddDBpLStVEGk%2FIZ%2FP5fEkuOQjcoXYiFnMDmfFODMSqkBUHbAlKpaZcgxuOEv1ynvkKJfLsefSYnf7Nw4XJvEIr4h8HsVKmjn6m0njiuUeH5RUygbAg2RBkOOZ137SIHXkciCVJQ9LtRTw6Dv6Cc6ANzoCyykjtRhe5qFxSeuVkClobnWwkb6ISVa%2Fv7UY3csdNd41QKrBIfdVVXca3qlB5ZbHBhqr3ZqP%2FxT5LvX8rWVtIVNnaGOsYtvI3DpOUd7HTvnB0K7h10dIC8lyB12nBsOOVfcFJEywQnJV6ezE9Ebqu9NL8Qloq0O7C8iZJVcerOh5OP%2B1%2B%2BgVIfa83UvOz3CAxBPtyD8QNg1tF7u5I7rBJFvsKKavjgZ10Z%2Bcyx5WvKkOtgyuesKeJYI5OZtS1lnfSOpJr7wxdqWh2me1biCfIoEVa1NaQDVLUPc8Hj%2BoZ9LaJ5Rx1HP23kl166kIq6YD2w1Hr2nilCKXODaVY4vlGmnRPs%2F7hNr%2Bqy9Q6d3g6N6iRoFXJcZKDdV31KOiTa3qKSq1b5Zh2dcfBHXcpyLhnQSaBjt5NOeqZ8vSaW4Z38uuko55Jf7wl%2Fingne6%2B9x7mgTh1LiSpNyI%2BiC%2FKY8UDd%2F5smTH71GBnCLv9nXd1s53zx5AS8XQgvntQJ%2FLDkNEXblOyXg7qPs8xrXO3FaaS34OvM00Lr7d7cTz%2BPP4B%2FkZv2WAJAAA%3D&amp;bn=Kestrel%20Mk%20II" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F92YW2%2FaMBiG%2F4uv0cSpm8TdWsqoRNeuqbSLabJM8oVYdezMB1ZW9b%2Fvi8NKEqCHhGlrb0Cxw%2Bv3ib%2BDwx2BJUhLRmSmWKScJR0SJDzDAZMyIUKVzpnt9qi8Xc98Zing7PrqLCp%2BjZfnKnICDBl9uyOBUPnoR50qp3HuzEK6Q5IyfwNdaBbBAO%2B7kGRktYMOudRcaW5XZNTrkFO54BJAc7kgoztyLBxkeGHXXopl6BTYcjV2%2BJsOmSGWIKOjDvnimCh03nVR6TZDmRRNM3EaxxDmNk0GIWfij5swcfJmRe7vOw8gM6YXMGU6yhQu29sQJZmlqROWh0xKJemCI5ygIr%2B%2FMc9XYBlqXSxBh0muFDUlCpXWyvAlUJOAEI8w9V8NE3NWUYHRCvoRnkGVZw4sFcyAPigNeuMhzzOgIYtNQGNOUJ%2BDZZggz5R9AZc5YaBC4xPrn9NkCTO4BDXww4EM4RGi%2FhsguuZytW%2BLTMJBRHOljEUmw39Bl4YIaI4aMwVe8ngt2brYVR3uqHkVvP7bxqtVC6xQcSyYkyHmJ7V4Z2Osc25CepLrnbCMhbxM1KsS7XU3rLpLgFmMypuNQac12AP4xKduA1R%2BkdVL9RP0pWA%2By9Y2UZdm%2BXiWj%2FsAOWobIJt1aBEljTtIyVmolEChMs8547KwYqpA4AcPA1NM0zHXzUN87UdhS%2FXtsIox0bgSJlVsxxoPAFWUZIW6kfYHA8QZtsWZBGM6U3JxxaTvqmuewYt4YhPlsb2sHb14DIHLMqVr8SVwwhQTHqJXQPQbQ5RWojO%2BSOxXyD%2F3bs9WEoy5sZrP8Xyid6RCtJk9YEKU1qRTtDvRRatatUqOsteYmerZ5IpFrAZoQBqljefqt92HwIu9eAsmDsQ1kzdVZzGOWhwtx%2FneN41yFeC4CNOrbq%2BWOU4IDVzGSoeQP8KycHPmKcpeVWRbd8Btpzu6YP6Fr2JBHo%2B1LfUNdAESNKuF7KCIiXad%2FtOD8gN31K7Z58VD2GSbr%2B%2F5hrv4QnwrmtfCo%2B0Z5gQ1j3PNoLDHTZlsuD%2BCvdmBNzt4TtQNXnXUDT1o%2F8ld6f8Pu3K0y2zq%2F%2FHY3penKmBd%2FP3fFP%2FgxZ9VxXqvK56%2B3%2F8GiRo%2BtL4SAAA%3D&amp;bn=Kestrel%20Mk%20II" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F63UwU7jMBAG4HfxuYemwKU3JFgtUoGKcEMomsbTdoRjW2MbKIh3Z%2BJW201VpAQ4RZlxviS%2FJ3lX%2BIw2qqmaOdAuRTVS5Zq8FEIDxtSuWUAcF5V93XVuoEHp7s6u9PZqOb12OhkMavrwrkrj2uo5Ny6x9K4iNkfICvKCasWgsZB1t1ZNIyccqTmTY4obNS0%2BRv%2FAGfAK%2FwJr78jGYi%2Bvfax8MgENBBSQ5B6mMu3yweykyzbJRKrBWmd%2F5p78mlu2OX4VwxE3597DvSe7%2BYoNa0KjF86FKAEHesNxVUva4awHPHcvyHMDNu5RuUXl27pv61k824p9JuEayF7aFVmZuA6JuTiU%2B8My1jLQy3jB9Ixdcr3xyLqtZ%2Fa0PzujJZbJe8cHL26kEbaNbBb9zZzlBYXItEjR8ZFE9b47NIg70HBABrTBccjSZECkCc092KcutpRqlOr%2FSZ702W8yFIE34%2BJgb5IxjGSXjmtscDdIA7aoPcjPqGxjOnjvPPErtMjwjSQzPMnwaReu5TN3DPVTv2d9%2FPgECeqwJaYFAAA%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XWUW%2FaMBAA4P%2FiZzRBgE3K26a2ohJsrPRtmqIjuRALx47ONitD%2FPddDBpLStVEGk%2FIZ%2FP5fEkuOQjcoXYiFnMDmfFODMSqkBUHbAlKpaZcgxuOEv1ynvkKJfLsefSYnf7Nw4XJvEIr4h8HsVKmjn6m0njiuUeH5RUygbAg2RBkOOZ137SIHXkciCVJQ9LtRTw6Dv6Cc6ANzoCyykjtRhe5qFxSeuVkClobnWwkb6ISVa%2Fv7UY3csdNd41QKrBIfdVVXca3qlB5ZbHBhqr3ZqP%2FxT5LvX8rWVtIVNnaGOsYtvI3DpOUd7HTvnB0K7h10dIC8lyB12nBsOOVfcFJEywQnJV6ezE9Ebqu9NL8Qloq0O7C8iZJVcerOh5OP%2B1%2B%2BgVIfa83UvOz3CAxBPtyD8QNg1tF7u5I7rBJFvsKKavjgZ10Z%2Bcyx5WvKkOtgyuesKeJYI5OZtS1lnfSOpJr7wxdqWh2me1biCfIoEVa1NaQDVLUPc8Hj%2BoZ9LaJ5Rx1HP23kl166kIq6YD2w1Hr2nilCKXODaVY4vlGmnRPs%2F7hNr%2Bqy9Q6d3g6N6iRoFXJcZKDdV31KOiTa3qKSq1b5Zh2dcfBHXcpyLhnQSaBjt5NOeqZ8vSaW4Z38uuko55Jf7wl%2Fingne6%2B9x7mgTh1LiSpNyI%2BiC%2FKY8UDd%2F5smTH71GBnCLv9nXd1s53zx5AS8XQgvntQJ%2FLDkNEXblOyXg7qPs8xrXO3FaaS34OvM00Lr7d7cTz%2BPP4B%2FkZv2WAJAAA%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F92YW2%2FaMBiG%2F4uv0cSpm8TdWsqoRNeuqbSLabJM8oVYdezMB1ZW9b%2Fvi8NKEqCHhGlrb0Cxw%2Bv3ib%2BDwx2BJUhLRmSmWKScJR0SJDzDAZMyIUKVzpnt9qi8Xc98Zing7PrqLCp%2BjZfnKnICDBl9uyOBUPnoR50qp3HuzEK6Q5IyfwNdaBbBAO%2B7kGRktYMOudRcaW5XZNTrkFO54BJAc7kgoztyLBxkeGHXXopl6BTYcjV2%2BJsOmSGWIKOjDvnimCh03nVR6TZDmRRNM3EaxxDmNk0GIWfij5swcfJmRe7vOw8gM6YXMGU6yhQu29sQJZmlqROWh0xKJemCI5ygIr%2B%2FMc9XYBlqXSxBh0muFDUlCpXWyvAlUJOAEI8w9V8NE3NWUYHRCvoRnkGVZw4sFcyAPigNeuMhzzOgIYtNQGNOUJ%2BDZZggz5R9AZc5YaBC4xPrn9NkCTO4BDXww4EM4RGi%2FhsguuZytW%2BLTMJBRHOljEUmw39Bl4YIaI4aMwVe8ngt2brYVR3uqHkVvP7bxqtVC6xQcSyYkyHmJ7V4Z2Osc25CepLrnbCMhbxM1KsS7XU3rLpLgFmMypuNQac12AP4xKduA1R%2BkdVL9RP0pWA%2By9Y2UZdm%2BXiWj%2FsAOWobIJt1aBEljTtIyVmolEChMs8547KwYqpA4AcPA1NM0zHXzUN87UdhS%2FXtsIox0bgSJlVsxxoPAFWUZIW6kfYHA8QZtsWZBGM6U3JxxaTvqmuewYt4YhPlsb2sHb14DIHLMqVr8SVwwhQTHqJXQPQbQ5RWojO%2BSOxXyD%2F3bs9WEoy5sZrP8Xyid6RCtJk9YEKU1qRTtDvRRatatUqOsteYmerZ5IpFrAZoQBqljefqt92HwIu9eAsmDsQ1kzdVZzGOWhwtx%2FneN41yFeC4CNOrbq%2BWOU4IDVzGSoeQP8KycHPmKcpeVWRbd8Btpzu6YP6Fr2JBHo%2B1LfUNdAESNKuF7KCIiXad%2FtOD8gN31K7Z58VD2GSbr%2B%2F5hrv4QnwrmtfCo%2B0Z5gQ1j3PNoLDHTZlsuD%2BCvdmBNzt4TtQNXnXUDT1o%2F8ld6f8Pu3K0y2zq%2F%2FHY3penKmBd%2FP3fFP%2FgxZ9VxXqvK56%2B3%2F8GiRo%2BtL4SAAA%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Kestrel Mk II&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;smallcombat01_nx_armour_grade1&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size1_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size2_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class1&quot;},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size4&quot;,&quot;Item&quot;:&quot;int_cargorack_size4_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Kestrel Mk II&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;smallcombat01_nx_armour_grade3&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_large&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size1_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size2_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size4&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size4_class5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size3_class2&quot;},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size2_class5&quot;},{&quot;Slot&quot;:&quot;Slot05_Size2&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size2&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;combat&quot;,&quot;intro&quot;:&quot;A glass-cannon shield-tank fit built around the three large guns. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern, leaning on shields since the armour is thin.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Shield-tank the glass cannon&quot;,&quot;text&quot;:&quot;With thin armour and one military slot, the Kestrel survives on shields — a Reinforced bi-weave, two Heavy-Duty boosters and a pair of cell banks. End fights before the shield drops; the hull underneath is brittle.&quot;},&quot;notes&quot;:{&quot;LargeHardpoint1&quot;:&quot;Primary large mount; the single Corrosive Shell strips armour resistance for the whole battery.&quot;,&quot;LargeHardpoint2&quot;:&quot;Second large multi-cannon; Auto Loader removes reloads so it never stops firing.&quot;,&quot;LargeHardpoint3&quot;:&quot;Large beam for shield-stripping; Thermal Vent vents heat so it runs cold on a heat-tight small hull.&quot;,&quot;SmallHardpoint1&quot;:&quot;Small pulse adds heat-free shield damage; Efficient keeps draw and heat low.&quot;,&quot;SmallHardpoint2&quot;:&quot;Second small pulse; left empty on the buy-only fit, fitted once the hull is paid off.&quot;,&quot;TinyHardpoint1&quot;:&quot;First Heavy-Duty shield booster — the cheapest large gain on the bi-weave's raw MJ.&quot;,&quot;TinyHardpoint2&quot;:&quot;Second Heavy-Duty booster; the Kestrel leans on shields because the armour is thin.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;PowerPlant&quot;:&quot;A-rate alongside the distributor; Overcharged feeds three large guns and a strong shield, Thermal Spread bleeds the extra heat.&quot;,&quot;MainEngines&quot;:&quot;A-rated + Dirty Drives give the speed to dictate range and disengage.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated to reach RES sites and turn-ins; only G3 range — combat needs no jump monster.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass on a size-1 slot; Lightweight trims more, and life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate this FIRST — three large guns plus boost strain the class-5 distributor harder than anything else.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; combat needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Military01&quot;:&quot;The lone military slot; Heavy-Duty hull reinforcement is the cheapest large multiplier on the thin armour.&quot;,&quot;Slot01_Size5&quot;:&quot;Bi-weave regenerates fast under fire; Reinforced maximises its low base MJ and Hi-Cap adds more.&quot;,&quot;Slot02_Size4&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot03_Size3&quot;:&quot;More Heavy-Duty hull where the slot allows — armour stacks linearly.&quot;,&quot;Slot04_Size2&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot05_Size2&quot;:&quot;Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.&quot;,&quot;Slot06_Size2&quot;:&quot;Second Module Reinforcement protects the cores that keep you flying; not engineerable.&quot;,&quot;Slot07_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Multi-Cannons&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Corrosive Shell (one) / Auto Loader (rest)&quot;,&quot;engineer&quot;:&quot;Tod McQuinn&quot;},{&quot;module&quot;:&quot;Beam Laser&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Efficient&quot;,&quot;experimental&quot;:&quot;Thermal Vent&quot;,&quot;engineer&quot;:&quot;Broo Tarquin&quot;},{&quot;module&quot;:&quot;Pulse Lasers&quot;,&quot;size&quot;:1,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Efficient&quot;,&quot;experimental&quot;:&quot;Phasing Sequence&quot;,&quot;engineer&quot;:&quot;Broo Tarquin&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Charge Enhanced&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Hi-Cap&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Boosters&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;},{&quot;module&quot;:&quot;Hull Reinforcement&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Kestrel Mk II&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;smallcombat01_nx_armour_grade3&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_armour_chunky&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_corrosive_shell&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_large&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_phasing_sequence&quot;}},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_phasing_sequence&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_ChaffCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Boosted&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_HighFrequency&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size2_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_health&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size4&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size3_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size2_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot05_Size2&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size2&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Shield-tank the glass cannon</span><p>With thin armour and one military slot, the Kestrel survives on shields — a Reinforced bi-weave, two Heavy-Duty boosters and a pair of cell banks. End fights before the shield drops; the hull underneath is brittle.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull on stock <b>Lightweight Alloy</b> and fit the largest shield the class-5 bay allows plus the military-slot reinforcement &mdash; armour spend waits until the guns and shield are paid off.</p>
+    <p>Arm the three large mounts with two gimballed multi-cannons and a gimballed <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-pulse-laser">pulse laser</a> for shield-stripping, plus one small gimballed multi-cannon; the second small mount, the spare utilities and the deeper optionals stay empty until the hull is paid off.</p>
+    <p>Even unengineered, three large guns make it a fearsome RES attacker &mdash; just don't linger once shields fall.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a small-pad gunboat:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; 5A</b> &mdash; Three large guns plus boost strain the class-5 distributor; A-rate first. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; 5A</b> &mdash; Headroom to run three large guns and a strong shield. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; 5C bi-weave</b> &mdash; Shields are the Kestrel's only real tank; prioritise them. <span class="acc">~1.5M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> &rarr; Military Grade Composite</b> &mdash; The 2.5 hull-boost roughly doubles the base armour over the stock Lightweight Alloy; the cheapest way to buy a margin behind the shield. <span class="acc">~4.5M Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; 5A</b> &mdash; Speed to dictate range and disengage. <span class="acc">~1.5M Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 4A</b> &mdash; Reach RES sites and turn-ins faster. <span class="acc">~1.5M Cr</span></li>
+    </ul>
+    <p>Fill the deeper optionals with shield cell banks, hull and <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a> &mdash; and put a small <b>1D <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">Hull Reinforcement</a></b> in the size-1 slot rather than a surface scanner; this is a combat fit with nothing to map.</p>
+    <div class="callout"><span class="lbl">Feed the guns, save the shield</span><p>Three large guns tax a small ship's power &mdash; A-rate the distributor and plant, then pour the rest into the shield. Military-grade <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> add a real buffer, but the shield is still what keeps you alive.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern on a small gunboat, weighted to shields. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Power Plant (5)</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Thrusters (5)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Multi-Cannons (3)</td><td>Overcharged (G5)</td><td>Corrosive Shell (one) / Auto Loader (rest)</td><td>Tod McQuinn</td></tr>
+<tr><td class="mod">Beam Laser (3)</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+<tr><td class="mod">Pulse Lasers (1)</td><td>Efficient (G5)</td><td>Phasing Sequence</td><td>Broo Tarquin</td></tr>
+<tr><td class="mod">Power Distributor (5)</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Bi-Weave Shield (5)</td><td>Reinforced (G5)</td><td>Hi-Cap</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and plant to G5 first &mdash; three large guns demand it on a small hull.</li>
+      <li><span class="stepnum">2</span>Reinforced bi-weave shield plus Heavy-Duty boosters &mdash; the Kestrel's main tank.</li>
+      <li><span class="stepnum">3</span>Weapons: Overcharged multi-cannons with one Corrosive, Thermal-Vent beam.</li>
+      <li><span class="stepnum">4</span>The single military-slot <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">HRP</a> and a light cell bank round out the brittle hull.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate &mdash; three large weapon blueprints plus core and shield G5s; heavier than a typical small ship's grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>360 m/s</td><td>360 m/s</td><td class="acc">~450 m/s</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~470</td><td>~650</td><td class="acc">~1,100+</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>135</td><td>~390</td><td class="acc">~750</td></tr>
+        <tr><td class="mod">Alpha damage</td><td>very high</td><td>very high</td><td class="acc">elite (3 large)</td></tr>
+        <tr><td class="mod">Tank</td><td>shield-only</td><td>shield + buffer</td><td class="acc">shield + armour buffer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Kestrel pairs a 1,100 MJ shield with three large guns and 450 m/s of boost &mdash; small-pad firepower that rivals a medium's. Military Grade Composite <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a>, two engineered hull reinforcements (4D in the military slot, 3D in an optional) and a third small 1D plate in the size-1 slot give it a genuine armour buffer, but the shield and shield cells are still the primary tank &mdash; it wins through alpha and recharge, not raw durability.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>RES bounty hunting.</b> Three large guns end fights fast &mdash; ideal for clearing high-value targets before your thin hull is tested.</li>
+      <li><b>Priority-target hunting.</b> Pick off the toughest single targets in a RES with overwhelming alpha.</li>
+      <li><b>Bounty turn-ins.</b> Cash vouchers toward the <a href="../../engineering/engineering-manuals/engineers.html#engineer-tod-mcquinn">Tod McQuinn</a> unlock while flying the multi-cannons his blueprint serves.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Aggressive small-pad combat.</b> Use speed and three large guns to dominate engagements, then disengage before shields fall.</li>
+      <li><b>Giant-killing.</b> Its medium-rivalling firepower lets it punch far above its size against larger NPCs.</li>
+      <li><b>Outpost-based hunting.</b> Small-pad access lets it base and turn in where medium fighters can't.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any Haz RES near an outpost suits it. Around your home base, RES and massacre payouts double as Imperial-standing progress &mdash; and the small pad reaches outpost-only turn-ins.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Shield-tank it &mdash; end fights with alpha before the thin armour is exposed.</li>
+      <li>Watch the class-5 power feeding three large guns; Overcharge the plant and Charge-Enhance the distributor.</li>
+      <li>It's a glass cannon by design &mdash; play aggressively but disengage the moment shields drop.</li>
+      <li>For more durability at the cost of alpha, the <a href="cobra-mk-v-combat.html">Cobra Mk V</a> or <a href="vulture-combat.html">Vulture</a> are the small-pad alternatives.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Kestrel Mk II is the small-pad firepower king: three large hardpoints and strong shields on a hull that docks anywhere, with no rank gate. Its thin armour makes it a glass cannon, but for sheer alpha from a small ship &mdash; rivalling mediums twice its size &mdash; nothing else comes close. Hit hard, hit first, and disengage.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/kestrel" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/kestrel</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Kestrel Mk II ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/kestrel-mk-ii" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../kestrel-mk-ii</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/kestrel.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/kestrel.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Kestrel Mk II</span><span class="cr-what">Per-ship page: base stats, price, and outfitting reference for the Kestrel Mk II.</span><a class="cr-link" href="https://inara.cz/elite/ship/7/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/7</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Kestrel Mk II hull profile, hardpoints, exclusive modules, and role notes.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Kestrel_Mk_II" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Kestrel_Mk_II</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Hands-on combat evaluation of the Kestrel Mk II, testing firepower and dogfighting performance against the small-pad field.</span><a class="cr-link" href="https://www.youtube.com/watch?v=OIJqn_kUA0g" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=OIJqn_kUA0g</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — The Buur Pit</span><span class="cr-what">Full review of the Kestrel Mk II covering hardpoints, shields, speed and overall capability.</span><a class="cr-link" href="https://www.youtube.com/watch?v=jY3_Ld6avrE" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=jY3_Ld6avrE</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Mile 13 Gaming</span><span class="cr-what">Review focused on the Kestrel Mk II's three large hardpoints, packing medium-ship firepower into a small hull.</span><a class="cr-link" href="https://www.youtube.com/watch?v=lNYo_yRsSws" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=lNYo_yRsSws</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

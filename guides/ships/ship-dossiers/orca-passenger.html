@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orca &middot; Passenger &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Orca · Passenger</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-a-liner"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It a Liner</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Saud Kruger</div>
+    <h1 class="title"><span>Orca</span><span class="role ac-role-passenger">Passenger</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The fast luxury liner — <em>speed</em> is the edge</h2>
+      <p>A superb dedicated liner and the fast passenger specialist. Its Saud Kruger comfort bonus plus exceptional speed make distant sightseeing trips quick and lucrative — fewer cabins than a <a href="beluga-liner-passenger.html">Beluga</a>, but it reaches far-flung destinations faster and in equal luxury, turning trips around quickly enough to rival the flagship on long routes.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/orca.jpg" alt="Orca" width="160" height="90">
+      <figcaption><b>Orca</b> &middot; Saud Kruger</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">88<small>/100</small></div><div class="bar mini"><i style="--pct:88"></i></div></div>
+      <div class="stat"><div class="n">~96</div><div class="l">Max passengers (econ)</div></div>
+      <div class="stat"><div class="n">390 m/s</div><div class="l">Boost (fastest large)</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">~47.8M</div><div class="l">Hull price (Cr)</div></div>
+      <div class="stat"><div class="n">Large</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Orca is Saud Kruger's sports liner: a sleek, gorgeous ship that carries up to ~96 passengers in dedicated-liner comfort, and does it faster than anything else its size &mdash; a 390 m/s boost that shames every other large hull. For sightseeing missions to distant scenic destinations, that speed is gold: it reaches far-flung beacons and turns trips around in a fraction of a <a href="beluga-liner-passenger.html">Beluga</a>'s time, so even with fewer cabins it can out-earn the bigger liner on long routes.</p>
+    <p>It carries the Saud Kruger comfort bonus, so its passengers pay premium rates and rate their trips highly, and its good looks and pace make it a joy to fly. It holds about half a <a href="beluga-liner-passenger.html">Beluga</a>'s passengers and is a large pad, so for sheer volume close to home the flagship wins. But for fast, luxurious sightseeing to the galaxy's scenic corners, the Orca is the elegant specialist &mdash; the liner that gets there first.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Fast luxury sightseeing: distant scenic tourist runs where speed turns trips around quickly, premium VIP transport in style, and any passenger work where reaching far-flung destinations fast beats raw cabin count.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-exploration" href="orca-exploration.html"><span class="vrole">Exploration</span><span class="vrate">63<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-a-liner">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It a Liner</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max passengers (econ)</div><div class="v">~96</div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">308 / 390 <small>m/s (fastest large)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">290 <small>t</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;5&middot;5&middot;4&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Liner comfort bonus</div><div class="v">Yes <small>(Saud Kruger)</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">Multi</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Orca the fast liner:</p>
+    <ul class="bullets">
+      <li><b>The fastest large ship.</b> A 390 m/s boost reaches distant scenic spots and turns sightseeing trips around quickly &mdash; speed is profit on long routes.</li>
+      <li><b>Dedicated-liner comfort bonus.</b> Saud Kruger luxury means premium pay and happy passengers per seat.</li>
+      <li><b>Good cabin capacity.</b> Up to ~96 passengers, or premium suites for VIP missions.</li>
+      <li><b>Sleek and lovely.</b> A joy to fly, and a stylish way to carry passengers in luxury.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It holds about half a <a href="beluga-liner-passenger.html">Beluga</a>'s passengers, so for high-volume work close to home the flagship out-grosses it. It's a large pad and its jump range is only moderate. The Orca's case is speed plus luxury for distant trips; for maximum capacity or pad flexibility, the <a href="beluga-liner-passenger.html">Beluga</a> and the medium Lynx respectively serve better.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">An apex luxury liner whose Saud Kruger comfort bonus and class-leading 470 m/s boost earn the 88; only its ~96-seat capacity — half a Beluga's — holds it back.</p>
+    <p>The <b>88/100</b> headline is a verdict against the passenger role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Cabin capacity &amp; class fit</td><td class="sc"><span class="scval">30</span><span class="den">/35</span><div class="bar mini"><i style="--pct:86"></i></div></td><td class="wcell">~96 economy passengers is mid-field — half the Beluga's ~184 and below the converted Cutter (~204) and Python (~146) — but the 6·5·5·5·4·3·2·2·1 internals and three size-5 slots give full cabin-class flexibility from economy bulk to first/luxury VIP suites. Capacity is the limiter, class fit is not.</td></tr>
+      <tr><td class="fct">Comfort</td><td class="sc"><span class="scval">19</span><span class="den">/20</span><div class="bar mini"><i style="--pct:95"></i></div></td><td class="wcell">Carries the Saud Kruger dedicated-liner comfort bonus, so every fare pays premium rates — role-leading per-seat earnings shared only with the Beluga, Lynx and Dolphin and absent on the higher-capacity Cutter, Anaconda and Python.</td></tr>
+      <tr><td class="fct">Jump range &amp; tank</td><td class="sc"><span class="scval">17</span><span class="den">/20</span><div class="bar mini"><i style="--pct:85"></i></div></td><td class="wcell">Engineered jump is moderate at ~42 LY (G5 Increased Range FSD on the 290t hull), but the 308/390 m/s base and ~470 m/s engineered boost — fastest of any large hull — compound into faster turnarounds that effectively extend reach on distant routes.</td></tr>
+      <tr><td class="fct">Shield &amp; safety</td><td class="sc"><span class="scval">13</span><span class="den">/15</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">A size-5 bi-weave (Reinforced + Fast Charge) is the smallest that covers the 290t hull, backed by 4 utility mounts (two Heavy-Duty boosters, point defence, heat sink) and a 2A cell bank — solid soft-liner safety, though short of the Cutter's apex shields, with the 470 m/s boost as the real escape.</td></tr>
+      <tr><td class="fct">Pad class &amp; cost</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Large pad costs landing flexibility versus the medium Lynx, but ~47.8M Cr hull (cheaper than the Beluga) with no rank gate and no permit, ~72M all-in engineered, makes it the value luxury liner.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">88</span><span class="den">/100</span><div class="bar mini"><i style="--pct:88"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for passenger work specifically</em>. The role column is the maximum economy passenger capacity &mdash; but note that dedicated liners earn comfort bonuses, and speed turns trips around faster, both raising effective earnings above raw cabin count.</p>
+    <h3 class="subhead">Same class &mdash; large passenger ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Orca</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="beluga-liner-passenger.html">Beluga Liner</a></td><td><span class="pill pad-large">Large</span></td><td>~184</td><td class="pcc"><span class="p">Twice the cabins; same liner bonus</span><span class="c">Far slower; longer trips</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod">Orca <span class="pill md">this</span></td><td><span class="pill pad-large">Large</span></td><td>~96</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-passenger.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>~204</td><td class="pcc"><span class="p">More raw cabins; apex shields; fast</span><span class="c">No liner bonus; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; less profit/seat</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-passenger.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>~202</td><td class="pcc"><span class="p">More raw cabins; versatile</span><span class="c">No liner bonus; slower; less profit/seat</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Orca trades the <a href="beluga-liner-passenger.html">Beluga</a>'s capacity for speed &mdash; and on distant sightseeing routes, its pace turns trips around fast enough to rival the flagship's earnings. Against the converted <a href="imperial-cutter-passenger.html">Cutter</a> and <a href="anaconda-passenger.html">Anaconda</a>, its liner bonus means more profit per seat despite fewer cabins. The fast luxury pick.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated and medium options</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max passengers</th><th>Pros &amp; cons vs Orca</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="beluga-liner-passenger.html">Beluga Liner</a></td><td><span class="pill pad-large">Large</span></td><td>~184</td><td class="pcc"><span class="p">Twice the cabins</span><span class="c">Far slower</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod"><a href="lynx-highliner-passenger.html">Lynx Highliner</a></td><td><span class="pill pad-medium">Medium</span></td><td>~100</td><td class="pcc"><span class="p">Medium pad; dedicated liner; Robigo-ready</span><span class="c">Slower</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="dolphin-passenger.html">Dolphin</a></td><td><span class="pill pad-small">Small</span></td><td>~42</td><td class="pcc"><span class="p">Cheap; lands anywhere; comfort bonus</span><span class="c">Far fewer cabins; slower</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-passenger.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~146</td><td class="pcc"><span class="p">Medium pad; many cabins; defensible</span><span class="c">No liner bonus; slower; less profit/seat</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-clipper-passenger.html">Imperial Clipper</a></td><td><span class="pill pad-large">Large</span></td><td>~80</td><td class="pcc"><span class="p">Also fast</span><span class="c">No liner bonus; fewer cabins</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Lynx and <a href="dolphin-passenger.html">Dolphin</a> land more flexibly and the <a href="beluga-liner-passenger.html">Beluga</a> carries more; the Orca's distinction is being the fast large liner. For distant scenic runs where speed compounds into profit, the Orca is the elegant specialist among the dedicated liners.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~47.8M Cr</div></div>
+      <div class="cell"><div class="k">A-rated liner</div><div class="v">~58M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~72M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~47.8M Cr the Orca is cheaper than the <a href="beluga-liner-passenger.html">Beluga</a>, with no rank gate. A passenger fit &mdash; a cabin suite, shields and a good <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &mdash; brings the all-in figure to around 72M Cr.</p>
+    <p>It's the value luxury liner: less capacity than the <a href="beluga-liner-passenger.html">Beluga</a>, but cheaper and far faster, so on distant routes its quick turnarounds make it a strong earner. For a stylish, efficient passenger ship that isn't a flagship, the Orca is a lovely choice.</p>
+    <div class="callout"><span class="lbl">Fast, stylish, efficient</span><p>Around 72M Cr all-in for the fastest large liner &mdash; fewer cabins than a <a href="beluga-liner-passenger.html">Beluga</a>, but quick turnarounds on distant routes keep it earning.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A fast luxury liner fit mixing economy volume with premium first- and business-class cabins, plus a bi-weave shield and a long-range FSD. Initial is buy-only; A-rated is the liner baseline; Engineered preserves the Orca's signature speed while maximising range.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">A-rated shield booster; Heavy Duty multiplies the bi-weave's raw MJ for cheap passenger safety.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Second Heavy-Duty booster — the cheapest large gain in shield strength for a soft liner.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Point Defence</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds rounds. Point Defence shoots down incoming missiles and torpedoes.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">5E Power Plant</td><td class="st">5A Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">A-rated class-5 plant powers cabins, shield and cores; Low Emissions keeps the heat and signature low, Thermal Spread bleeds the rest.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">6E Thrusters</td><td class="st">6A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated thrusters with Dirty Drives protect the Orca's defining speed; Drag Drives sharpens the boost that shakes an interdiction.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rated and Increased Range at G5 with Mass Manager — the comfortable range that reaches far-flung scenic beacons fast.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">6E Life Support</td><td class="st">6A Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">A-rated for endurance on long fares; Lightweight trims mass to stretch jump range. Life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">5E Power Distributor</td><td class="st">5A Power Distributor</td><td class="eng">G5 Engine Focused + Cluster Capacitors</td><td class="note">Engine Focused biases the class-5 distributor toward ENG for boosting away from danger; Cluster Capacitors deepens the reservoir.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">4E Sensors</td><td class="st">4D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight — a liner needs no sensor range, so save the mass for jump range.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock class-C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6E Economy Passenger Cabin</td><td class="st">6E Economy Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Economy Cabin 6 (32 seats) carries the bulk headcount that makes group sightseeing runs pay.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Economy Passenger Cabin</td><td class="st">5C First Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">First-Class Cabin 5 is the premium VIP cabin; swap to Luxury 5 for the top-paying fares at the cost of seats.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Economy Passenger Cabin</td><td class="st">5E Economy Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Economy Cabin 5 (16 seats) adds volume; the Orca's three size-5 slots let you rebalance economy vs premium per board.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Fast Charge</td><td class="note">Bi-weave shield sized to the 290t hull — size 5 is the smallest that covers it; Reinforced maximises MJ and Fast Charge speeds the regen under fire.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">4E Economy Passenger Cabin</td><td class="st">4D Business Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Business Cabin 4 — mid-tier comfort that earns more per seat than economy without a size-5 slot.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3E Economy Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Economy Cabin 3 (4 seats); size-3 slots accept only economy or business cabins.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2E Economy Passenger Cabin</td><td class="eng">(No blueprint available)</td><td class="note">Economy Cabin 2 (2 seats) tops up headcount — size-2 slots take economy cabins only.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2A Shield Cell Bank</td><td class="eng">G4 Specialised + Flow Control</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7WSQUvDMBTHv0vOPVi3euhNmMJg02K9iZRsed2CbRJekskc%2B%2B6%2BZsXZIrQ9eCrv96c%2FXv7JicEBlGMpW2kutHcsYvleGgIat7ydnngNRNppKS5%2F0LjWwldgWfp2YnmlG3qPtfZI2dJB3WoKHmCxQy4gpuxZsdShh4hlKDVKd2RpfI5%2BJJn%2BBMwqrtxVJJUrTMNNwwsrvyApthW3doxxzaV6UDupaNuOEgIMurvxukekSqiM0i1QHqCr3B8NoGj41C1XsoTcG6Oxd%2FCKAnsJpq4aulxI61BuvNP4R6Pimk7d%2BIUL3lNaUFajDab5hEo9VK9cfXRlJVFH9PdesxG25nMTF3nTVe%2FEZKBLB3qXG6mmthm8t8GbDHqTid7ZP3mT4J0Pegdv6%2F38DWBI1hkxBAAA&amp;bn=Orca" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XUUU%2FbMBAH8O%2Fi5z6QpIWtb5PYNCRgFeUNTdY1vjQWrm2dbVCH%2BO44TreSqlLihz1V%2Fp%2Fy6%2BVyyRvDF9SeLdmtAWGCZzO2bqWNgaEaDqd72GFMDqcb0V8Rj3dGBIWOLZ%2Fe2FqZLv1GOxMo1m487g4MhxTyLYHAItZ%2Babb0FHDGViQNSb9ny%2BJ99g95lHr%2FE0hYI7UvjlhrPXetRCU2xjiPxJ38gxe8VuDcIhcu%2FxdcDWEbkR2kisAGdY3cByL03MercvH5EG8RvJP6WUHQdRsbz6NX5hVppUD7Ixv%2FhNsut12eJrGYPok7kPq73kod92JAYgoTdzmd%2B0Fx%2BeLaNf6a5AsOyXZvkUSX53Z5KxtcB2sNndy4igXXF3JbTbO8ls6T3ARv6MxExbGa2%2FEDCDghHWpnyCVp3kvllJEGVI%2Bgn4dYE1Mf0899VRO07uei4OtuVid3HIX40DF%2BATZSf55mMdUtk7sYdXP7rfLcyf3Oz7n9h2WLGglOHnzFG3B%2Bqr5I%2Bny064xdSO5lcqtRt8qcxlVyy1G3zHS%2FnHP7Kdeo1ObvFpfT367kfk1uMXRroK0hqHuyGGv19%2FsHlI3JclQHAAA%3D&amp;bn=Orca" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F92XXU%2FbMBSG%2F4uvq4n0g229AwoDqWxdg8TFNFmuc5JYuHZkO9061P%2B%2B46TQJMDShl7tBuRj%2BfH7%2Bhw7p48EVqAcGZOpZpHOHemRMBUZBrThbDv6ypaAke3oJipX4PBWR7kES8Y%2FHkkotY%2BemaXODc7dOFhuMZQVQZoYFkGAc98UGTuTQ4%2FMjNBGuDUZBz1yqRKhAIxQCRk%2FknOZQ4YDt92%2FRNOzaMUUhwg5U1QvyXjUI99zJkvMh5PNpvcs506o9TUzUaaRE%2BxkpZmjNhUgo4XW1oGhVvyBE8ols3bUWWJYIM%2B3yGtgq%2FUkx6VvSUXg7wxpSzxSJi%2FjGLhXbTPggsmGQp7m6mFN3rTX%2F7%2FtDer2MrSyZMVMBDFgRVCXGwOOOlzV2eKtsJzOPHXiqRYuWMa4qJoM9iy3YV1wCsxZoR4kyxVP0fDR5GIiXIjkg6TO9C8wM8mU28lELs18PPPxomZG762Z3T40dMCkS7uWS0UZ11riC1D1c8uEKqXYuiEogoWZ0%2FeaKafpRJjuVb%2FVo1dgJD66DRtXBnfCexa7iRErqFtJ18iNfPw4ubkKJ3SqVTJnKoGufmIb%2Bdpe1a%2FuVMQQ5lmmTaO%2BJE7YcuI4OansRKciSd09%2BL97fR6K4pwI64xY5E6bV65CtJs94oWo7EmfFu%2Bqt%2Fv1qKrlT89B1fGcRaxh0%2BIzp40t3A1Ld%2F3un4gCdnAirnKQd0w91JXFGHUYrR784C1pFZr%2FdxLQ0JdXI6VIwAsI2JUshKoWYLAvt19wR63cQ%2FUODuPurXf4Grf89CagwLBGZQ9ozKx7Z4%2Fw5Zk8B6Fi7AL%2F0bDt1SZQA1u5%2FlncNF2OCpfD1tNrK%2FAm97TgDlq5gwOz8rHg9lu5%2FQO5n17jlifIQcrF023qH6cXvEDmuWeGZbKEreZ52CHPXiWFOBZc%2BN8ZLxL9uTAY1A1yZhJtGC%2B9BS1n1urtwuPmHnejuAGGpl72Vi9es5%2Bbv%2BG9aZNPDQAA&amp;bn=Orca" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7WSQUvDMBTHv0vOPVi3euhNmMJg02K9iZRsed2CbRJekskc%2B%2B6%2BZsXZIrQ9eCrv96c%2FXv7JicEBlGMpW2kutHcsYvleGgIat7ydnngNRNppKS5%2F0LjWwldgWfp2YnmlG3qPtfZI2dJB3WoKHmCxQy4gpuxZsdShh4hlKDVKd2RpfI5%2BJJn%2BBMwqrtxVJJUrTMNNwwsrvyApthW3doxxzaV6UDupaNuOEgIMurvxukekSqiM0i1QHqCr3B8NoGj41C1XsoTcG6Oxd%2FCKAnsJpq4aulxI61BuvNP4R6Pimk7d%2BIUL3lNaUFajDab5hEo9VK9cfXRlJVFH9PdesxG25nMTF3nTVe%2FEZKBLB3qXG6mmthm8t8GbDHqTid7ZP3mT4J0Pegdv6%2F38DWBI1hkxBAAA" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XUUU%2FbMBAH8O%2Fi5z6QpIWtb5PYNCRgFeUNTdY1vjQWrm2dbVCH%2BO44TreSqlLihz1V%2Fp%2Fy6%2BVyyRvDF9SeLdmtAWGCZzO2bqWNgaEaDqd72GFMDqcb0V8Rj3dGBIWOLZ%2Fe2FqZLv1GOxMo1m487g4MhxTyLYHAItZ%2Babb0FHDGViQNSb9ny%2BJ99g95lHr%2FE0hYI7UvjlhrPXetRCU2xjiPxJ38gxe8VuDcIhcu%2FxdcDWEbkR2kisAGdY3cByL03MercvH5EG8RvJP6WUHQdRsbz6NX5hVppUD7Ixv%2FhNsut12eJrGYPok7kPq73kod92JAYgoTdzmd%2B0Fx%2BeLaNf6a5AsOyXZvkUSX53Z5KxtcB2sNndy4igXXF3JbTbO8ls6T3ARv6MxExbGa2%2FEDCDghHWpnyCVp3kvllJEGVI%2Bgn4dYE1Mf0899VRO07uei4OtuVid3HIX40DF%2BATZSf55mMdUtk7sYdXP7rfLcyf3Oz7n9h2WLGglOHnzFG3B%2Bqr5I%2Bny064xdSO5lcqtRt8qcxlVyy1G3zHS%2FnHP7Kdeo1ObvFpfT367kfk1uMXRroK0hqHuyGGv19%2FsHlI3JclQHAAA%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F92XXU%2FbMBSG%2F4uvq4n0g229AwoDqWxdg8TFNFmuc5JYuHZkO9061P%2B%2B46TQJMDShl7tBuRj%2BfH7%2Bhw7p48EVqAcGZOpZpHOHemRMBUZBrThbDv6ypaAke3oJipX4PBWR7kES8Y%2FHkkotY%2BemaXODc7dOFhuMZQVQZoYFkGAc98UGTuTQ4%2FMjNBGuDUZBz1yqRKhAIxQCRk%2FknOZQ4YDt92%2FRNOzaMUUhwg5U1QvyXjUI99zJkvMh5PNpvcs506o9TUzUaaRE%2BxkpZmjNhUgo4XW1oGhVvyBE8ols3bUWWJYIM%2B3yGtgq%2FUkx6VvSUXg7wxpSzxSJi%2FjGLhXbTPggsmGQp7m6mFN3rTX%2F7%2FtDer2MrSyZMVMBDFgRVCXGwOOOlzV2eKtsJzOPHXiqRYuWMa4qJoM9iy3YV1wCsxZoR4kyxVP0fDR5GIiXIjkg6TO9C8wM8mU28lELs18PPPxomZG762Z3T40dMCkS7uWS0UZ11riC1D1c8uEKqXYuiEogoWZ0%2FeaKafpRJjuVb%2FVo1dgJD66DRtXBnfCexa7iRErqFtJ18iNfPw4ubkKJ3SqVTJnKoGufmIb%2Bdpe1a%2FuVMQQ5lmmTaO%2BJE7YcuI4OansRKciSd09%2BL97fR6K4pwI64xY5E6bV65CtJs94oWo7EmfFu%2Bqt%2Fv1qKrlT89B1fGcRaxh0%2BIzp40t3A1Ld%2F3un4gCdnAirnKQd0w91JXFGHUYrR784C1pFZr%2FdxLQ0JdXI6VIwAsI2JUshKoWYLAvt19wR63cQ%2FUODuPurXf4Grf89CagwLBGZQ9ozKx7Z4%2Fw5Zk8B6Fi7AL%2F0bDt1SZQA1u5%2FlncNF2OCpfD1tNrK%2FAm97TgDlq5gwOz8rHg9lu5%2FQO5n17jlifIQcrF023qH6cXvEDmuWeGZbKEreZ52CHPXiWFOBZc%2BN8ZLxL9uTAY1A1yZhJtGC%2B9BS1n1urtwuPmHnejuAGGpl72Vi9es5%2Bbv%2BG9aZNPDQAA" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Orca&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;orca_armour_grade1&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size6_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_passengercabin_size6_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot05_Size4&quot;,&quot;Item&quot;:&quot;int_passengercabin_size4_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Orca&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;orca_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_plasmapointdefence_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size6_class5&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_passengercabin_size6_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot05_Size4&quot;,&quot;Item&quot;:&quot;int_passengercabin_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_passengercabin_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_passengercabin_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot08_Size2&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size2_class5&quot;},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_cargorack_size1_class1&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;passenger&quot;,&quot;intro&quot;:&quot;A fast luxury liner fit mixing economy volume with premium first- and business-class cabins, plus a bi-weave shield and a long-range FSD. Initial is buy-only; A-rated is the liner baseline; Engineered preserves the Orca's signature speed while maximising range.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Speed plus the right cabins&quot;,&quot;text&quot;:&quot;Fit a cabin mix to the board — economy for volume, first/business for premium fares, and swap a size-5 cabin to Luxury for an all-VIP run — then lean on the Orca's pace to reach distant scenic spots fast. Keep the bi-weave, a cell bank and point defence for threatened routes. The Saud Kruger comfort bonus applies to every fare, and the speed turns each trip around quickly.&quot;},&quot;notes&quot;:{&quot;TinyHardpoint1&quot;:&quot;A-rated shield booster; Heavy Duty multiplies the bi-weave's raw MJ for cheap passenger safety.&quot;,&quot;TinyHardpoint2&quot;:&quot;Second Heavy-Duty booster — the cheapest large gain in shield strength for a soft liner.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds rounds. Point Defence shoots down incoming missiles and torpedoes.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;PowerPlant&quot;:&quot;A-rated class-5 plant powers cabins, shield and cores; Low Emissions keeps the heat and signature low, Thermal Spread bleeds the rest.&quot;,&quot;MainEngines&quot;:&quot;A-rated thrusters with Dirty Drives protect the Orca's defining speed; Drag Drives sharpens the boost that shakes an interdiction.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated and Increased Range at G5 with Mass Manager — the comfortable range that reaches far-flung scenic beacons fast.&quot;,&quot;LifeSupport&quot;:&quot;A-rated for endurance on long fares; Lightweight trims mass to stretch jump range. Life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;Engine Focused biases the class-5 distributor toward ENG for boosting away from danger; Cluster Capacitors deepens the reservoir.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight — a liner needs no sensor range, so save the mass for jump range.&quot;,&quot;FuelTank&quot;:&quot;Stock class-C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Economy Cabin 6 (32 seats) carries the bulk headcount that makes group sightseeing runs pay.&quot;,&quot;Slot02_Size5&quot;:&quot;First-Class Cabin 5 is the premium VIP cabin; swap to Luxury 5 for the top-paying fares at the cost of seats.&quot;,&quot;Slot03_Size5&quot;:&quot;Economy Cabin 5 (16 seats) adds volume; the Orca's three size-5 slots let you rebalance economy vs premium per board.&quot;,&quot;Slot04_Size5&quot;:&quot;Bi-weave shield sized to the 290t hull — size 5 is the smallest that covers it; Reinforced maximises MJ and Fast Charge speeds the regen under fire.&quot;,&quot;Slot05_Size4&quot;:&quot;Business Cabin 4 — mid-tier comfort that earns more per seat than economy without a size-5 slot.&quot;,&quot;Slot06_Size3&quot;:&quot;Economy Cabin 3 (4 seats); size-3 slots accept only economy or business cabins.&quot;,&quot;Slot07_Size2&quot;:&quot;Economy Cabin 2 (2 seats) tops up headcount — size-2 slots take economy cabins only.&quot;,&quot;Slot08_Size2&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot09_Size1&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;Cluster Capacitors&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Shield Boosters&quot;,&quot;size&quot;:0,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Life Support / Sensors&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;(none)&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Orca&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;orca_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_plasmapointdefence_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_PointDefenseCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_capacity&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_passengercabin_size6_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_passengercabin_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot05_Size4&quot;,&quot;Item&quot;:&quot;int_passengercabin_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_passengercabin_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot07_Size2&quot;,&quot;Item&quot;:&quot;int_passengercabin_size2_class1&quot;},{&quot;Slot&quot;:&quot;Slot08_Size2&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size2_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldcell_efficient&quot;}},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_cargorack_size1_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Speed plus the right cabins</span><p>Fit a cabin mix to the board — economy for volume, first/business for premium fares, and swap a size-5 cabin to Luxury for an all-VIP run — then lean on the Orca's pace to reach distant scenic spots fast. Keep the bi-weave, a cell bank and point defence for threatened routes. The Saud Kruger comfort bonus applies to every fare, and the speed turns each trip around quickly.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Lightweight Alloy <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> are the stock hull plating &mdash; they ship with the Orca, so there's nothing to buy here. They stay on through every state; a liner trades armour for the mass budget that feeds speed and jump range.</p>
+    <p>Buy the hull and fit E-rated cores across the board &mdash; <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">power plant</a>, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>, <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>, <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a>, distributor and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a>, on a stock 5C <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">fuel tank</a>.</p>
+    <p>Fill the optional slots with economy cabins only &mdash; sizes 6, 5, 5 and 4 &mdash; for a buy-only headcount; the first-class, business and bi-weave upgrades come with the A-rate.</p>
+    <p>Leave the four utility mounts and the size-5 shield slot empty, along with the size-3/2/1 internals &mdash; boosters, <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">point defence</a>, shield, cell bank and the cargo slot are an A-rate job.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a fast liner:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; A</b> &mdash; Range to reach distant scenic destinations. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; A</b> &mdash; Preserve the speed that makes turnarounds fast. <span class="acc">~7M Cr</span></li>
+      <li><span class="stepnum">3</span><b>Cabin suite</b> &mdash; The payload; fit the mix the board demands. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; bi-weave</b> &mdash; Passenger safety on threatened routes. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; A</b> &mdash; Power for cabins, shields and modules. <span class="acc">~7M Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; A</b> &mdash; ENG capacity for repeated boosting away from danger. <span class="acc">~2M Cr</span></li>
+    </ul>
+    <p>Round out the kit with the safety net: two 0A shield boosters and a 2A <a href="../../engineering/engineering-manuals/modules.html#module-shield-cell-bank">shield cell bank</a> behind the bi-weave, plus 0I <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">point defence</a> and a heat-sink launcher on the utility mounts. <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> stay stock Lightweight Alloy &mdash; a liner buys speed, not plating.</p>
+    <div class="callout"><span class="lbl">Speed is profit</span><p>On distant sightseeing routes the Orca's pace turns trips around fast &mdash; A-rate the <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> so it reaches far-flung beacons quickly and comes back for the next fare.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The passenger engineering pattern, speed-weighted. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Thrusters (6)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Power Plant (5)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Bi-Weave Shield (5)</td><td>Reinforced (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Power Distributor (5)</td><td>Engine Focused (G5)</td><td>Cluster Capacitors</td><td>The Dweller</td></tr>
+<tr><td class="mod">Shield Boosters (0)</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Life Support / Sensors</td><td>Lightweight (G5)</td><td>(none)</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Dirty <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> first &mdash; the Orca's speed is its identity and its profit on long routes.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> to reach distant scenic destinations.</li>
+      <li><span class="stepnum">3</span>Bi-weave shield and boosters for passenger safety.</li>
+      <li><span class="stepnum">4</span>Cabins aren't engineered &mdash; just fit the right classes for the board.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light-to-moderate &mdash; thruster, <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, plant and shield blueprints; no weapon grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max passengers</td><td>~70</td><td>~88</td><td class="acc">~96</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>390 m/s</td><td>390 m/s</td><td class="acc">~470 m/s</td></tr>
+        <tr><td class="mod">Liner comfort bonus</td><td>yes</td><td>yes</td><td class="acc">yes</td></tr>
+        <tr><td class="mod">Max jump (LY)</td><td>~26</td><td>~34</td><td class="acc">~42</td></tr>
+        <tr><td class="mod"><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a></td><td>Lightweight</td><td>Lightweight</td><td class="acc">Lightweight (G5)</td></tr>
+        <tr><td class="mod">Trip turnaround</td><td>fast</td><td>fast</td><td class="acc">fastest</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Orca carries ~96 luxury passengers at over 450 m/s, reaching distant scenic spots and turning trips around faster than any rival &mdash; speed that compounds into profit on long routes. The Lightweight-engineered bulkhead and bi-weave/cell-bank stack keep it alive on threatened routes without taxing the mass budget that drives that speed. It holds half a <a href="beluga-liner-passenger.html">Beluga</a>'s fares, but gets there first, and in equal style.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Distant sightseeing runs.</b> Reach far-flung scenic beacons fast and turn trips around quickly.</li>
+      <li><b>Premium VIP transport.</b> First-class and luxury cabins for high-paying fares, delivered in style.</li>
+      <li><b>Efficient cruise loops.</b> Its speed makes long passenger routes profitable per hour.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Fast luxury specialist.</b> The liner for distant trips where speed beats raw capacity.</li>
+      <li><b>Stylish VIP work.</b> Its looks and pace suit prestige passenger missions.</li>
+      <li><b>Carrier-supported cruising.</b> A fast liner that docks on carriers for distant operations.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example routes</span><p>Distant scenic destinations suit it best, where its speed turns long trips around fast. From your home base, the Orca reaches far-flung sightseeing beacons quicker than any rival.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Lean on speed &mdash; the Orca's pace is profit on distant routes; A-rate the <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>.</li>
+      <li>Match cabin classes to the board &mdash; economy for volume, luxury for VIP pay.</li>
+      <li>The liner comfort bonus means more per seat than a converted ship of the same capacity.</li>
+      <li>For maximum volume close to home, the <a href="beluga-liner-passenger.html">Beluga</a> out-grosses it; for distant trips, the Orca wins.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Orca is the fast luxury liner: a dedicated-liner comfort bonus and the speed of a sports ship, carrying passengers to distant scenic spots faster and in more style than any rival. It holds half a <a href="beluga-liner-passenger.html">Beluga</a>'s fares, but its pace turns long trips around so quickly that it earns just as well on far-flung routes &mdash; the elegant, efficient specialist of passenger travel.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/orca" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/orca</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Orca ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/orca" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../orca</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/orca.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/orca.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Orca</span><span class="cr-what">Ship-specific stats, passenger-cabin capacity, and shipyard pricing.</span><a class="cr-link" href="https://inara.cz/elite/ship/55/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/55</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Orca</span><span class="cr-what">Saud Kruger lore, luxury-cabin role, and the ship's spec reference.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Orca" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Orca</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

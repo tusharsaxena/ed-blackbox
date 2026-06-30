@@ -9,9 +9,9 @@ appears.
 For each of the 7 roles (`ax · combat · exploration · mining · multipurpose ·
 passenger · trading`):
 
-- **`guides/ships/by-role/<role>.html`** — the full-ladder ranking table *and* the
+- **`guides/ships/best-ships-by-role/<role>.html`** — the full-ladder ranking table *and* the
   per-class breakdown tables (`<td class="mod">SHIP</td> … <span class="rscore">N</span>`).
-- **`guides/ships/dossiers/<ship>-<role>.html`** — the headline rating
+- **`guides/ships/ship-dossiers/<ship>-<role>.html`** — the headline rating
   (`<div class="n">N<small>/100</small>`), the subject's own peer row (marked
   `pill md">this` / baseline), and **every** peer-comparison row.
 
@@ -48,5 +48,5 @@ Each mismatch is classified by whether the ship **owns a dossier** for that role
 
 - It reports **disagreement**, not which value is correct. Confirm before changing any
   number — ratings are game-judgement data (see
-  `guides/ships/rating-methodology.html`), and tier-2 cases are genuinely ambiguous.
+  `guides/ships/general/rating-methodology.html`), and tier-2 cases are genuinely ambiguous.
 - Purely diagnostic — it never edits files.

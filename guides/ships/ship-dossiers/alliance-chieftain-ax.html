@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alliance Chieftain &middot; AX Combat &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: AX → good-green (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Alliance Chieftain · AX Combat</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight-thargoids"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight Thargoids</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Alliance Chieftain</span><span class="role ac-role-ax">AX Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The anti-Xeno benchmark — <em>agility</em> wins where armour fails</h2>
+      <p>The <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-all">Alliance</a> Chieftain leads the AX rankings by evasion, not brute force. Its agility physically dodges Interceptor lightning that destroys slower hulls; three class-4 military slots pack Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a> against module-stripping fire; and the 2L 1M 3S hardpoint mix carries a full AX weapon suite. Cheap, forgiving, and the ship most commanders use to learn Thargoid combat.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/alliance-chieftain.jpg" alt="Alliance Chieftain" width="160" height="90">
+      <figcaption><b>Alliance Chieftain</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">90<small>/100</small></div><div class="bar mini"><i style="--pct:90"></i></div></div>
+      <div class="stat"><div class="n">2L 1M 3S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Military slots (class 4)</div></div>
+      <div class="stat"><div class="n">235 m/s</div><div class="l">Top speed</div></div>
+      <div class="stat"><div class="n">~18.6M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>Fighting Thargoids is a different discipline from fighting humans &mdash; Interceptors hit with lightning that strips modules, caustic clouds that eat your hull, and shutdown fields that kill your systems &mdash; and the Alliance Chieftain answers all of it. It's agile enough to physically dodge the lightning attacks that punish slower ships, its three class-4 military slots take Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">Module Reinforcement</a> to survive what does land, and its 2L 1M 3S hardpoints carry a balanced AX weapon suite.</p>
+    <p>It's cheap (~18.6M Cr), nimble, and forgiving &mdash; the ship most commanders cut their teeth on against Cyclops and Basilisk Interceptors, and it scales up to the tougher ones with practice. It's not the tankiest AX hull (its sibling the <a href="alliance-challenger-ax.html">Challenger</a> is sturdier) nor the highest-DPS (the <a href="krait-mk-ii-ax.html">Krait Mk II</a> hits harder), but its balance of evasion, hardening and firepower makes it the anti-Xeno benchmark &mdash; the default recommendation for learning to kill Thargoids.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Anti-Xeno combat: hunting Thargoid Interceptors (Cyclops through Medusa), clearing scout swarms, Anti-Xeno Conflict Zones, and Maelstrom and Titan operations &mdash; the agile AX fighter for learning and scaling the discipline.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-combat" href="alliance-chieftain-combat.html"><span class="vrole">Combat</span><span class="vrate">88<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight-thargoids">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight Thargoids</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2L &middot; 1M &middot; 3S</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">3 (class 4) &mdash; key for AX</div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">235 / 338 <small>m/s (agile)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">400 <small>t</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;4&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Manoeuvrability</div><div class="v">Excellent (dodges lightning)</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>Four things make the Chieftain the AX benchmark:</p>
+    <ul class="bullets">
+      <li><b>Agility to dodge.</b> It physically evades Thargoid lightning and swarm attacks that slower ships simply eat &mdash; the single most important AX trait.</li>
+      <li><b>Three military slots.</b> Class-4 bays for Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">Module Reinforcement</a>, hardening it against the module-stripping fire that cripples lesser hulls.</li>
+      <li><b>AX-ready hardpoints.</b> A 2L 1M 3S mix carries a balanced suite of Gauss, AX multi-cannons and missiles.</li>
+      <li><b>Cheap and forgiving.</b> Under 19M credits, nimble and accessible &mdash; the natural ship to learn Thargoid combat in.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's less durable than the heavier <a href="alliance-challenger-ax.html">Challenger</a> and lower-DPS than a <a href="krait-mk-ii-ax.html">Krait Mk II</a>, and its medium hull can't soak punishment the way a capital can. Against the toughest Interceptors (Hydra) or in heavy AXCZ, a tankier or higher-damage ship may serve better. The Chieftain's case is balanced agility-plus-hardening for learning and general AX work &mdash; the all-round benchmark, not the extreme at any axis.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">It wins the Thargoid fight by evasion, not brute force — best-in-class agility plus three military slots for Guardian reinforcement — and ties the Cutter at the top without leading any firepower or tank axis.</p>
+    <p>The <b>90/100</b> headline is a verdict against the anti-Xeno role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Hardpoints for Gauss</td><td class="sc"><span class="scval">21</span><span class="den">/25</span><div class="bar mini"><i style="--pct:84"></i></div></td><td class="wcell">2×Large 1×Medium 3×Small; Gauss fits only small/medium, so one medium plus the small mounts carry it while the Large mounts take Enhanced AX Multi-Cannons — lighter on the role's key medium mount than a Krait Mk II (2×Medium).</td></tr>
+      <tr><td class="fct">Heat capacity &amp; management</td><td class="sc"><span class="scval">18</span><span class="den">/20</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Heat is the limiter on any Gauss boat; an Overcharged + Thermal Spread plant and a Heat Sink Launcher keep it in check, but the hull holds no special heat advantage over the field.</td></tr>
+      <tr><td class="fct">Hull tank &amp; reinforcement room</td><td class="sc"><span class="scval">17</span><span class="den">/20</span><div class="bar mini"><i style="--pct:85"></i></div></td><td class="wcell">Three class-4 military slots for Guardian Hull/Module Reinforcement — a survival edge rare on a medium — though internals of 6·5·4·2·2·1 cap how high the stack goes versus the Challenger and the larges.</td></tr>
+      <tr><td class="fct">Agility</td><td class="sc"><span class="scval">25</span><span class="den">/25</span><div class="bar mini"><i style="--pct:100"></i></div></td><td class="wcell">235/338 m/s and the tightest handling in the field — agile enough to physically dodge Interceptor lightning, the single most important AX survival skill.</td></tr>
+      <tr><td class="fct">Caustic handling &amp; support slots</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Four utility mounts and enough internal room for the full kit — Xeno Scanner, Caustic Sink, Heat Sink, AFMU and a shield booster — with Guardian reinforcement adding caustic resistance.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">90</span><span class="den">/100</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for anti-Xeno combat specifically</em>. The role column is the hardpoint loadout &mdash; the basis for an AX weapon suite. Evasion, hardening and heat management matter as much as raw mounts.</p>
+    <h3 class="subhead">Same class &mdash; medium AX fighters</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Alliance Chieftain</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Alliance Chieftain <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>2L 1M 3S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-ax.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">More large mounts; higher DPS; SLF</span><span class="c">No military slots; less agile</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-challenger-ax.html">Alliance Challenger</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 3M 3S</td><td class="pcc"><span class="p">Tankier; same 3 military slots</span><span class="c">Slower; less agile</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="corsair-ax.html">Corsair</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 3M</td><td class="pcc"><span class="p">Six mounts; modern</span><span class="c">No military slots; weaker shields</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-ax.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 2M</td><td class="pcc"><span class="p">Fast; good range to reach sites</span><span class="c">No military slots; lighter</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-ax.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">Tough; high DPS</span><span class="c">Less agile; no military slots</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among medium AX fighters the Chieftain is the agile, well-hardened benchmark. The <a href="krait-mk-ii-ax.html">Krait Mk II</a> out-damages it and the <a href="alliance-challenger-ax.html">Challenger</a> out-tanks it, but neither matches the Chieftain's blend of evasion and three module-reinforcing military slots. The default learning and all-round AX choice.</p>
+    <h3 class="subhead">Other classes &mdash; the heavier AX options</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Alliance Chieftain</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="krait-mk-ii-ax.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">Higher DPS; SLF</span><span class="c">No military slots</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-ax.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>1H 2L 4M</td><td class="pcc"><span class="p">Apex shields; huge firepower</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; far less agile</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-ax.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Many mounts; tanky</span><span class="c">Ponderous; can't dodge well</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-corvette-ax.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>2H 2L 2M</td><td class="pcc"><span class="p">Massive firepower; tanky</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank; poor agility</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-gunship-ax.html">Federal Gunship</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 4M 2S</td><td class="pcc"><span class="p">Many mounts; tanky</span><span class="c">Slow; clumsy</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The large AX ships bring more firepower and tank but can't dodge Thargoid attacks the way the Chieftain can &mdash; evasion is king in AX. They suit heavy AXCZ and the toughest Interceptors once you've mastered the discipline; the Chieftain is where you learn it and where most pilots stay.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~18.6M Cr</div></div>
+      <div class="cell"><div class="k">AX-fitted</div><div class="v">~30M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~45M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~18.6M Cr the Chieftain is cheap, with no rank gate. An AX fit &mdash; Guardian and AX weapons, <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a>, caustic and heat utilities &mdash; brings the all-in figure to around 45M Cr, much of it Guardian-tech material grinds rather than credits.</p>
+    <p>Its low price and forgiving handling make it the sensible first AX investment: cheap enough to lose while learning, capable enough to keep killing Interceptors long after. The main cost is unlocking the Guardian weapons and modules, not the hull.</p>
+    <div class="callout"><span class="lbl">Cheap to learn AX in</span><p>Around 45M Cr (mostly Guardian-tech unlocks) for the benchmark Thargoid fighter &mdash; cheap, forgiving, and the ship most pilots learn the discipline in.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>An anti-Xeno fit built on the Chieftain's agility: two large Enhanced AX Multi-Cannons for sustained fire, three Guardian Gauss Cannons for precision burst, a Guardian Shard Cannon for close work, and the full caustic/heat toolkit. Initial is the buy-only bare hull; A-Rated bolts on the Thargoid kit and Guardian reinforcement; Engineered hardens mobility, shields and survival — the AX/Guardian weapons themselves carry no engineering.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Large 1</td><td class="st">—</td><td class="st">3C Enhanced AX Multi-Cannon (Gimballed)</td><td class="eng">(No blueprint available)</td><td class="note">Enhanced AX Multi-Cannon (gimballed) — the large mounts are the only ones that take an AX multi-cannon; gimbals make the sustained anti-Thargoid DPS easy to land. No weapon engineering exists.</td></tr>
+<tr><td class="slot">Large 2</td><td class="st">—</td><td class="st">3C Enhanced AX Multi-Cannon (Gimballed)</td><td class="eng">(No blueprint available)</td><td class="note">Second large Enhanced AX Multi-Cannon for sustained kinetic AX damage on hearts and exertions; not engineerable.</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">—</td><td class="st">2B Guardian Gauss Cannon (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Gauss Cannon (medium, fixed) — the hardest-hitting AX precision weapon; charge-and-release on exposed hearts. Gauss has no blueprint.</td></tr>
+<tr><td class="slot">Small 1</td><td class="st">—</td><td class="st">1D Guardian Gauss Cannon (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Gauss Cannon (small) — Gauss only fits small/medium, so the small mounts carry the precision battery; fixed, high distributor draw, not engineerable.</td></tr>
+<tr><td class="slot">Small 2</td><td class="st">—</td><td class="st">1D Guardian Gauss Cannon (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Second small Guardian Gauss Cannon; trigger discipline keeps the WEP capacitor from emptying. No engineering.</td></tr>
+<tr><td class="slot">Small 3</td><td class="st">—</td><td class="st">1D Guardian Shard Cannon (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Shard Cannon (small) — shotgun burst for scouts and close passes; no blueprint available.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">—</td><td class="st">0E Xeno Scanner</td><td class="eng">(No blueprint available)</td><td class="note">Xeno Scanner reads Thargoid type and exposed hearts; utility scanner, not engineerable.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0I Caustic Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds caustic-sink charges. Clears caustic damage in Thargoid fights.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Thermal Resistant + Super Capacitors</td><td class="note">Shield Booster — Thermal Resistant against Thargoid thermal fire, Super Capacitors adds raw MJ back.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Military Grade Composite</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">6E Power Plant</td><td class="st">6A Power Plant</td><td class="eng">G5 Overcharged + Thermal Spread</td><td class="note">A-rate first to power Gauss, AX guns and the shield; Overcharged adds headroom, Thermal Spread bleeds the extra heat that AX weapons generate.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">6E Thrusters</td><td class="st">6A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated + Dirty Drive Tuning gives the agility that dodges Interceptor lightning — the single most important AX upgrade.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rated with Increased Range + Mass Manager to reach Thargoid airspace and Maelstroms; pin Farseer's blueprint for remote application.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">5E Life Support</td><td class="st">5A Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">A-rated with Lightweight to trim mass; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">6E Power Distributor</td><td class="st">6A Power Distributor</td><td class="eng">G5 Charge Enhanced + Super Conduits</td><td class="note">A-rate and Charge-Enhance it — Gauss cannons drain the WEP capacitor fast; Super Conduits stretches each charge.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">4E Sensors</td><td class="st">4D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; AX fights are close-range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock C tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Military Slots</td></tr>
+<tr><td class="slot">Military 1</td><td class="st">—</td><td class="st">4D Guardian Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Module Reinforcement — spreads Thargoid module-stripping damage and adds caustic resistance; Guardian tech is not engineerable.</td></tr>
+<tr><td class="slot">Military 2</td><td class="st">—</td><td class="st">4D Guardian Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Second Guardian Module Reinforcement; the military slots are the cheapest survival gain against Thargoid weapons.</td></tr>
+<tr><td class="slot">Military 3</td><td class="st">—</td><td class="st">4D Guardian Hull Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Hull Reinforcement adds armour with built-in caustic resistance; no blueprint.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">6C Bi-Weave Shield Generator</td><td class="eng">G5 Thermal Resistant + Fast Charge</td><td class="note">Bi-Weave Shield (6C, the only size-6 bi-weave rating) regenerates fast under fire; Thermal Resistant + Fast Charge against thermal Thargoid attacks.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5D Guardian Hull Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Guardian Hull Reinforcement 5 — large caustic-resistant armour block; Guardian modules cannot be engineered.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Hull Reinforcement Package — Heavy Duty + Deep Plating for the cheapest effective-armour multiplier.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Module Reinforcement Package protects the internals; not engineerable.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Small Hull Reinforcement Package, Heavy Duty + Deep Plating — armour stacks linearly, so even a size-1 helps.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5WQQUsDMRCF%2F0vOeylVD3srVKHQ6uJ6E1mimW0Hs0mYTKq19L87u63WLRa6x%2Fc98pF5WwVrcKxyNffa%2BMQqU%2BUKgwDeBPg8xHvdgKBDmpn9E4kLb5KFqPLnrSqtb%2BmEGp9IuhlD8%2BOpdEerJWkDIykfnMqZEmSqIPSEvFH5aJf9Wgr%2FAVRY7fhoQsdVaHloeRXxC26qN6tjvMS40Ohu3RKdfLenhA4O1d2RbCJr1DwlXENfuZKbybS8015frp1jDWUKwdPJ4VaKuC%2BGOrstpxiZ8DWxp38WNcd26BCP2ugTZQQXPcXOdDVg0gT2Sbv3vqwWykL%2F2sZnbS%2B7b8d5MfjTAgAA&amp;bn=Alliance%20Chieftain" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7WVwW7bMAyG38XnHGIn7iG3Ad2wAskWLL0Ng8DYtE1UlgxK6pIVfffJStrMRoLaWXuK9dP6fopi6KcIH1HZaBEtNeTa2WgSbSpqvGD3De6Oy29Qo5eOq7v8sMUvVzp3Ek20%2BPkUbaRu1U9ca8c%2BdmexfuEICKooGXKc%2BeB3FS0sO5xEaybNZPfRIn6evFKWwCV%2BBc4bTcrGJ1zVWAG2dtJSBkppJUqqtyCFbHeMJifvSF5hTq6%2BlHTpfIDAU8EZc3QoaIe5qMPGAQ6bGqS8wsC0%2B0bzkw%2Fmzy7wTeUfruLfk9pfKs8OlQ5ZI4stGMqE9W%2BPhfZqkvlS%2BHYxpB4kOJVVHm4dM9qr6L2KVAj2vdDzLtpUhDLfam2s5xr6g1ORSTAmHQBe69%2FIawnKnqDeQjSt3rR6IN4MJ66A1GdVkvKzpIPEII7FfWE%2FsPyoKuwt0yN2kZUfSJy3esCmw7FLKnDjmkZz7%2BDSB8whMJYZanlLxjJtndV8pqL5KTq2ED8ghx7SoDKaTSDND6RkSEkdyntQD11Y4VXr1X9pQ8b7iiRZ4P007vJeZkAdviuMpArNGdZ4bKkRCb9aJB9vMTtvUTkp%2F8ug%2FZnGYtNeeu8Ww%2F%2B3RD%2FNoNcXM1GAsUPpSaCnYw6QjjzALFjMuxaMDRAfZ898eEcH4jwQexd7PtlkZLLpOfSlXhkLvwnweEje8VvoX89%2FAbNPtmG9CQAA&amp;bn=Alliance%20Chieftain" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F9VXW2%2FaMBT%2BL35GE9c%2B8NaOMirB1jWV9jBNlklOEquOnfnCyir%2B%2B04cWkhKOm6VtpfSHOPvcnKOj3kisABpyZBMFYuUs6RFgpTnGLDLHB7Xj59ZBhhaP91E5RZ8nKnICTBk%2BP2JBEIV0UudKadx7cZC9oxDmY%2FSRLMIerj4RZKh1Q5a5FZzpbldkmGnRa5lwiWA5jIhwydyJRzk%2BGDXAkpsOgG2WI4c7mmRKRoQZDhoka%2BOiRLnQxuRHnOEyVApE9dxDGGhzeQQciae1YSpkw9Lslq1XtRPmU5gwnSUK6TtbGykuaXMZk5YHjIplaQJz%2BaIJYodTY4akbtnRJ5BxF3WJDpxuMAZojJnzJoh5o8Q0cxv3IMhyJgQRxCYYt%2FB%2BN13xu814JsU%2FzkK%2F57LZVN6HkEqrxo0nTPDQ2rx24eC1nISYiqwXAyXD4I5GaYIbp3WYN9E%2F2uDzbgJi%2FayASJ%2FZDkL%2BXaXdapdtmpSW8twioD%2FqtR%2BVapJOYhorpSxqNPw39CmoWDGDI4WGnjIqzXkPfrPeHjsyVXVt%2BMAu1W%2FQN8KJu3GGGqheRHPi7h3dXGqqw0PLa1Fx1raUhYqJRBo28%2BMcVlKMVVD4IPnMVMu0xHXx8%2BUtR61AC1wltZsjDUyYSXEdqT5AqpWUhyROiri3s7gVDvjYESnSiZ3TPoBcpSf2ERF4y5q85HHELg8V7pWXwIXTLlwHhNbTHTKk9R%2Bg%2BJvo51XTTDixmo%2Bd1bpHa0QbVbP2BBbnHSCcscafjqQ4fKk5tjWGjNjK2%2FkjkWsZtCANEob76tf%2Buoef3x5sINfwdiBuGfyoaosxqjF6La03j5XHI4kTC%2FbnSre8%2BzO%2FD1UA5ex0iEUydzL%2FS6K7vtT9HZTpE6IkwiKj3aHBkU910rCz40E8BbCaiXfK2vqtPH26QX5LAOOalhrLQ7LVd1i11scHJLFwYFZ7HmKfpVCQ864Xl8M%2BqeeGJfjGS2z98bwfOW974XVinS35%2B6pvT9B2LsK7Mk%2FvV4r3XGJ8UYHu4w2dWH3wNd74cE7%2B2Sx839l8cfqD54OCNjVDwAA&amp;bn=Alliance%20Chieftain" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5WQQUsDMRCF%2F0vOeylVD3srVKHQ6uJ6E1mimW0Hs0mYTKq19L87u63WLRa6x%2Fc98pF5WwVrcKxyNffa%2BMQqU%2BUKgwDeBPg8xHvdgKBDmpn9E4kLb5KFqPLnrSqtb%2BmEGp9IuhlD8%2BOpdEerJWkDIykfnMqZEmSqIPSEvFH5aJf9Wgr%2FAVRY7fhoQsdVaHloeRXxC26qN6tjvMS40Ohu3RKdfLenhA4O1d2RbCJr1DwlXENfuZKbybS8015frp1jDWUKwdPJ4VaKuC%2BGOrstpxiZ8DWxp38WNcd26BCP2ugTZQQXPcXOdDVg0gT2Sbv3vqwWykL%2F2sZnbS%2B7b8d5MfjTAgAA" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7WVwW7bMAyG38XnHGIn7iG3Ad2wAskWLL0Ng8DYtE1UlgxK6pIVfffJStrMRoLaWXuK9dP6fopi6KcIH1HZaBEtNeTa2WgSbSpqvGD3De6Oy29Qo5eOq7v8sMUvVzp3Ek20%2BPkUbaRu1U9ca8c%2BdmexfuEICKooGXKc%2BeB3FS0sO5xEaybNZPfRIn6evFKWwCV%2BBc4bTcrGJ1zVWAG2dtJSBkppJUqqtyCFbHeMJifvSF5hTq6%2BlHTpfIDAU8EZc3QoaIe5qMPGAQ6bGqS8wsC0%2B0bzkw%2Fmzy7wTeUfruLfk9pfKs8OlQ5ZI4stGMqE9W%2BPhfZqkvlS%2BHYxpB4kOJVVHm4dM9qr6L2KVAj2vdDzLtpUhDLfam2s5xr6g1ORSTAmHQBe69%2FIawnKnqDeQjSt3rR6IN4MJ66A1GdVkvKzpIPEII7FfWE%2FsPyoKuwt0yN2kZUfSJy3esCmw7FLKnDjmkZz7%2BDSB8whMJYZanlLxjJtndV8pqL5KTq2ED8ghx7SoDKaTSDND6RkSEkdyntQD11Y4VXr1X9pQ8b7iiRZ4P007vJeZkAdviuMpArNGdZ4bKkRCb9aJB9vMTtvUTkp%2F8ug%2FZnGYtNeeu8Ww%2F%2B3RD%2FNoNcXM1GAsUPpSaCnYw6QjjzALFjMuxaMDRAfZ898eEcH4jwQexd7PtlkZLLpOfSlXhkLvwnweEje8VvoX89%2FAbNPtmG9CQAA" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F9VXW2%2FaMBT%2BL35GE9c%2B8NaOMirB1jWV9jBNlklOEquOnfnCyir%2B%2B04cWkhKOm6VtpfSHOPvcnKOj3kisABpyZBMFYuUs6RFgpTnGLDLHB7Xj59ZBhhaP91E5RZ8nKnICTBk%2BP2JBEIV0UudKadx7cZC9oxDmY%2FSRLMIerj4RZKh1Q5a5FZzpbldkmGnRa5lwiWA5jIhwydyJRzk%2BGDXAkpsOgG2WI4c7mmRKRoQZDhoka%2BOiRLnQxuRHnOEyVApE9dxDGGhzeQQciae1YSpkw9Lslq1XtRPmU5gwnSUK6TtbGykuaXMZk5YHjIplaQJz%2BaIJYodTY4akbtnRJ5BxF3WJDpxuMAZojJnzJoh5o8Q0cxv3IMhyJgQRxCYYt%2FB%2BN13xu814JsU%2FzkK%2F57LZVN6HkEqrxo0nTPDQ2rx24eC1nISYiqwXAyXD4I5GaYIbp3WYN9E%2F2uDzbgJi%2FayASJ%2FZDkL%2BXaXdapdtmpSW8twioD%2FqtR%2BVapJOYhorpSxqNPw39CmoWDGDI4WGnjIqzXkPfrPeHjsyVXVt%2BMAu1W%2FQN8KJu3GGGqheRHPi7h3dXGqqw0PLa1Fx1raUhYqJRBo28%2BMcVlKMVVD4IPnMVMu0xHXx8%2BUtR61AC1wltZsjDUyYSXEdqT5AqpWUhyROiri3s7gVDvjYESnSiZ3TPoBcpSf2ERF4y5q85HHELg8V7pWXwIXTLlwHhNbTHTKk9R%2Bg%2BJvo51XTTDixmo%2Bd1bpHa0QbVbP2BBbnHSCcscafjqQ4fKk5tjWGjNjK2%2FkjkWsZtCANEob76tf%2Buoef3x5sINfwdiBuGfyoaosxqjF6La03j5XHI4kTC%2FbnSre8%2BzO%2FD1UA5ex0iEUydzL%2FS6K7vtT9HZTpE6IkwiKj3aHBkU910rCz40E8BbCaiXfK2vqtPH26QX5LAOOalhrLQ7LVd1i11scHJLFwYFZ7HmKfpVCQ864Xl8M%2BqeeGJfjGS2z98bwfOW974XVinS35%2B6pvT9B2LsK7Mk%2FvV4r3XGJ8UYHu4w2dWH3wNd74cE7%2B2Sx839l8cfqD54OCNjVDwAA" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Alliance Chieftain&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;typex_armour_grade1&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Alliance Chieftain&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;typex_armour_grade3&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_atmulticannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_atmulticannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_medium&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_small&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_small&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_guardian_shardcannon_fixed_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_xenoscanner_basic_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_causticsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class5&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Military02&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Military03&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_repairer_size4_class5&quot;},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size2&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;anti-xeno&quot;,&quot;intro&quot;:&quot;An anti-Xeno fit built on the Chieftain's agility: two large Enhanced AX Multi-Cannons for sustained fire, three Guardian Gauss Cannons for precision burst, a Guardian Shard Cannon for close work, and the full caustic/heat toolkit. Initial is the buy-only bare hull; A-Rated bolts on the Thargoid kit and Guardian reinforcement; Engineered hardens mobility, shields and survival — the AX/Guardian weapons themselves carry no engineering.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Dodge, harden, manage heat&quot;,&quot;text&quot;:&quot;AX combat is evasion and survival: dodge the lightning, soak what lands behind Guardian module and hull reinforcement (the three military slots are gold here), clear caustic with the sink launcher and a heat-sink overheat, repair stripped modules with the AFMU, and watch heat — Gauss and AX weapons run hot. The Chieftain's agility makes the dodging possible.&quot;,&quot;tone&quot;:&quot;tip&quot;},&quot;notes&quot;:{&quot;LargeHardpoint1&quot;:&quot;Enhanced AX Multi-Cannon (gimballed) — the large mounts are the only ones that take an AX multi-cannon; gimbals make the sustained anti-Thargoid DPS easy to land. No weapon engineering exists.&quot;,&quot;LargeHardpoint2&quot;:&quot;Second large Enhanced AX Multi-Cannon for sustained kinetic AX damage on hearts and exertions; not engineerable.&quot;,&quot;MediumHardpoint1&quot;:&quot;Guardian Gauss Cannon (medium, fixed) — the hardest-hitting AX precision weapon; charge-and-release on exposed hearts. Gauss has no blueprint.&quot;,&quot;SmallHardpoint1&quot;:&quot;Guardian Gauss Cannon (small) — Gauss only fits small/medium, so the small mounts carry the precision battery; fixed, high distributor draw, not engineerable.&quot;,&quot;SmallHardpoint2&quot;:&quot;Second small Guardian Gauss Cannon; trigger discipline keeps the WEP capacitor from emptying. No engineering.&quot;,&quot;SmallHardpoint3&quot;:&quot;Guardian Shard Cannon (small) — shotgun burst for scouts and close passes; no blueprint available.&quot;,&quot;TinyHardpoint1&quot;:&quot;Xeno Scanner reads Thargoid type and exposed hearts; utility scanner, not engineerable.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional / low-priority — Ammo Capacity adds caustic-sink charges. Clears caustic damage in Thargoid fights.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint4&quot;:&quot;Shield Booster — Thermal Resistant against Thargoid thermal fire, Super Capacitors adds raw MJ back.&quot;,&quot;PowerPlant&quot;:&quot;A-rate first to power Gauss, AX guns and the shield; Overcharged adds headroom, Thermal Spread bleeds the extra heat that AX weapons generate.&quot;,&quot;MainEngines&quot;:&quot;A-rated + Dirty Drive Tuning gives the agility that dodges Interceptor lightning — the single most important AX upgrade.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated with Increased Range + Mass Manager to reach Thargoid airspace and Maelstroms; pin Farseer's blueprint for remote application.&quot;,&quot;LifeSupport&quot;:&quot;A-rated with Lightweight to trim mass; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate and Charge-Enhance it — Gauss cannons drain the WEP capacitor fast; Super Conduits stretches each charge.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; AX fights are close-range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock C tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Military01&quot;:&quot;Guardian Module Reinforcement — spreads Thargoid module-stripping damage and adds caustic resistance; Guardian tech is not engineerable.&quot;,&quot;Military02&quot;:&quot;Second Guardian Module Reinforcement; the military slots are the cheapest survival gain against Thargoid weapons.&quot;,&quot;Military03&quot;:&quot;Guardian Hull Reinforcement adds armour with built-in caustic resistance; no blueprint.&quot;,&quot;Slot01_Size6&quot;:&quot;Bi-Weave Shield (6C, the only size-6 bi-weave rating) regenerates fast under fire; Thermal Resistant + Fast Charge against thermal Thargoid attacks.&quot;,&quot;Slot02_Size5&quot;:&quot;Guardian Hull Reinforcement 5 — large caustic-resistant armour block; Guardian modules cannot be engineered.&quot;,&quot;Slot03_Size4&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot04_Size2&quot;:&quot;Hull Reinforcement Package — Heavy Duty + Deep Plating for the cheapest effective-armour multiplier.&quot;,&quot;Slot05_Size2&quot;:&quot;Module Reinforcement Package protects the internals; not engineerable.&quot;,&quot;Slot06_Size1&quot;:&quot;Small Hull Reinforcement Package, Heavy Duty + Deep Plating — armour stacks linearly, so even a size-1 helps.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Charge Enhanced&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Thermal Resistant&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Thermal Resistant&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;},{&quot;module&quot;:&quot;Hull Reinforcement&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Alliance Chieftain&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;typex_armour_grade3&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_armour_chunky&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_atmulticannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_atmulticannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_medium&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_small&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_guardian_gausscannon_fixed_small&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_guardian_shardcannon_fixed_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_xenoscanner_basic_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_causticsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_Thermic&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Boosted&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_HighFrequency&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Military01&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Military02&quot;,&quot;Item&quot;:&quot;int_guardianmodulereinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Military03&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Thermic&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_guardianhullreinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot03_Size4&quot;,&quot;Item&quot;:&quot;int_repairer_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size2_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot05_Size2&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Dodge, harden, manage heat</span><p>AX combat is evasion and survival: dodge the lightning, soak what lands behind Guardian module and hull reinforcement (the three military slots are gold here), clear caustic with the sink launcher and a heat-sink overheat, repair stripped modules with the AFMU, and watch heat — Gauss and AX weapons run hot. The Chieftain's agility makes the dodging possible.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>The Initial state is the bare hull on its stock cores and default <b>Lightweight Alloy</b> bulkhead &mdash; nothing on a Thargoid ship is worth buying un-rated, so every hardpoint, utility, military and optional slot stays empty (&mdash;) until you can A-rate and add Guardian/AX kit.</p>
+    <p>Fitted buy-only: the stock 6E <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a>, 6E <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a>, 5E <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">Frame Shift Drive</a>, 5E <a href="../../engineering/engineering-manuals/modules.html#module-life-support">Life Support</a>, 6E <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a>, 4E <a href="../../engineering/engineering-manuals/modules.html#module-sensors">Sensors</a> and the 4C <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">Fuel Tank</a> &mdash; the cores you immediately A-rate. The <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> Alloy bulkhead is the hull's factory armour, not a purchase.</p>
+    <p>Left empty for now: both large Enhanced AX Multi-Cannons, the Guardian Gauss and Shard Cannons, all four utilities (<a href="../../engineering/engineering-manuals/modules.html#module-xeno">Xeno</a> Scanner, Caustic and Heat Sinks, <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">Shield Booster</a>), the three military Guardian reinforcement slots, the bi-weave shield and every optional internal.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>AX-fitting priority:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b>Military Grade Composite bulkhead + Guardian module/<a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a></b> &mdash; Swap the stock Lightweight Alloy for Military Grade Composite, then fill the three military slots: two 4D Guardian <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">Module Reinforcement</a> and a 4D Guardian <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">Hull Reinforcement</a>, plus the optional 5D Guardian <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">Hull Reinforcement</a>, HRPs, a <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">Module Reinforcement</a> and a 4A <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">2</span><b>AX / Guardian weapons</b> &mdash; Two 3C Enhanced AX Multi-Cannons (Gimballed) on the large mounts; three Guardian Gauss Cannons and a Guardian Shard Cannon across the medium and small. <span class="acc">material unlocks</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; 6A, <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; 6A</b> &mdash; Feed the hot Gauss and AX fire and keep the WEP capacitor from emptying. <span class="acc">core A-rate</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; 6A</b> &mdash; Agility to dodge lightning is the core AX skill; A-rate the 5A <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and 5A <a href="../../engineering/engineering-manuals/modules.html#module-life-support">Life Support</a> alongside. <span class="acc">~4M Cr</span></li>
+      <li><span class="stepnum">5</span><b>Caustic + heat utilities</b> &mdash; <a href="../../engineering/engineering-manuals/modules.html#module-xeno">Xeno</a> Scanner, Caustic Sink and <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">Heat Sink</a> launchers. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">6</span><b>Shield &rarr; 6C bi-weave + 0A booster</b> &mdash; A fast-regen bi-weave with a <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-shield-booster">Shield Booster</a>; later engineered thermal-resistant against Thargoid fire. <span class="acc">~5M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Guardian tech is the grind</span><p>The Chieftain itself is cheap &mdash; the real investment is unlocking Guardian weapons and <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a> at Guardian sites. That tech, plus its agility and a Military Grade hull, is what kills Thargoids.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>AX engineering hardens the ship's mobility, heat and survival &mdash; AX/Guardian weapons themselves have limited engineering. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Thrusters (6)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Plant (6)</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Power Distributor (6)</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Bi-Weave Shield (6)</td><td>Thermal Resistant (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster</td><td>Thermal Resistant (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Dirty <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> for the agility that dodges Thargoid attacks &mdash; the priority.</li>
+      <li><span class="stepnum">2</span>Thermal-resistant shield and HRPs against Thargoid thermal and caustic damage.</li>
+      <li><span class="stepnum">3</span>Overcharged plant and Charge-Enhanced distributor to run hot Gauss weapons.</li>
+      <li><span class="stepnum">4</span>Note: AX/Guardian weapons and <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a> come from unlocks, not engineer blueprints.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Moderate ship engineering plus significant Guardian-tech unlocks &mdash; the Guardian weapons and module/<a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> need material runs at Guardian sites, which is the real grind. Ship blueprints are standard. Ask for exact per-blueprint or unlock counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Hull armour</td><td>Lightweight</td><td>Mil-Grade</td><td class="acc">Mil-Grade + Heavy Duty</td></tr>
+        <tr><td class="mod">Agility (dodge)</td><td>high</td><td>high</td><td class="acc">excellent</td></tr>
+        <tr><td class="mod">Module hardening</td><td>none</td><td>3 mil slots</td><td class="acc">3 mil slots</td></tr>
+        <tr><td class="mod">AX firepower</td><td>none</td><td>good</td><td class="acc">good</td></tr>
+        <tr><td class="mod">Heat management</td><td>key</td><td>key</td><td class="acc">managed</td></tr>
+        <tr><td class="mod">Survivability vs Thargoids</td><td>low</td><td>high</td><td class="acc">high</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered and Guardian-equipped, the Chieftain dodges Interceptor lightning, soaks what lands behind a Heavy Duty Military Grade hull and Guardian reinforcement, and kills with Gauss and AX weapons &mdash; the balanced benchmark for Thargoid combat. Heavier ships out-tank it and the <a href="krait-mk-ii-combat.html">Krait Mk II</a> out-damages it, but none teaches or scales AX better.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Learning Thargoid combat.</b> Forgiving agility and cheap rebuy make it the place to learn the discipline.</li>
+      <li><b>Interceptor hunting.</b> Cyclops and Basilisk first, scaling to Medusa with practice.</li>
+      <li><b>Scout-swarm clearing.</b> Fast, agile work against Thargoid scouts.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Anti-Xeno Conflict Zones.</b> A nimble, hardened fighter for AXCZ alongside other commanders.</li>
+      <li><b>Maelstrom and Titan operations.</b> Agile enough for the most dangerous Thargoid airspace.</li>
+      <li><b>Scaling up.</b> The ship to master AX in before considering heavier or higher-DPS hulls.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example operations</span><p>Wherever the Thargoid threat is active &mdash; Interceptor hunts, AXCZ, Maelstrom approaches. From your base, the Chieftain is the agile, affordable spearhead for anti-Xeno work.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Agility is everything &mdash; dodging Thargoid lightning matters more than tank or DPS.</li>
+      <li>Fill the three military slots with Guardian reinforcement; it's the Chieftain's key AX advantage.</li>
+      <li>Manage heat carefully &mdash; Gauss and AX weapons run hot; carry heat sinks.</li>
+      <li>Carry caustic sinks and a decontamination limpet for the caustic damage Interceptors inflict.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Alliance Chieftain is the anti-Xeno benchmark: agile enough to dodge Thargoid lightning, hardened by three Guardian-reinforced military slots, and armed for the job &mdash; cheap, forgiving, and the ship most commanders learn to kill Thargoids in. Heavier hulls out-tank it and the <a href="krait-mk-ii-combat.html">Krait Mk II</a> out-damages it, but for the balance of evasion, hardening and firepower that AX combat demands, the Chieftain leads.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/alliance_chieftain" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/alliance_chieftain</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Alliance Chieftain ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/alliance-chieftain" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../alliance-chieftain</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/alliance_chieftain.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/alliance_chieftain.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara</span><span class="cr-what">Alliance Chieftain shipyard page &mdash; hull stats, module sellers, tech brokers, and material traders.</span><a class="cr-link" href="https://inara.cz/elite/ship/48/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/48</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom</span><span class="cr-what">Alliance Chieftain lore, manufacturer, and role overview backing the dossier write-up.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Alliance_Chieftain" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Alliance_Chieftain</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Down to Earth Astronomy</span><span class="cr-what">Livestream build of an anti-Xeno Alliance Chieftain, working through module choices for AX combat.</span><a class="cr-link" href="https://www.youtube.com/watch?v=qk2Ig_QOqmQ" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=qk2Ig_QOqmQ</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Obsidian Ant</span><span class="cr-what">First look at the Alliance Chieftain, taking it into combat against Thargoid Scouts.</span><a class="cr-link" href="https://www.youtube.com/watch?v=bpBD5e0ZY0U" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=bpBD5e0ZY0U</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

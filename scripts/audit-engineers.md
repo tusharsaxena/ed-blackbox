@@ -1,6 +1,6 @@
 # audit-engineers.py
 
-Deterministic, read-only gate over `guides/engineering/engineers.html` ⇄ canonical data.
+Deterministic, read-only gate over `guides/engineering/engineering-manuals/engineers.html` ⇄ canonical data.
 Run after `build-engineers.py` (and after any overlay edit).
 
 ```bash

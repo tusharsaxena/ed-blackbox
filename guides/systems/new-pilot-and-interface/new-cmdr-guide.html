@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New CMDR's Guide &middot; New Pilots &amp; Interface | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems" class="active">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">New CMDR's Guide</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-systems">Systems</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-new-pilot">New Pilot &amp; Interface</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-undock"><span class="qn-dot amber"></span><span class="qn-nm">Before You Undock</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-fly"><span class="qn-dot amber"></span><span class="qn-nm">Learn to Fly</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-docking"><span class="qn-dot amber"></span><span class="qn-nm">Docking &amp; Your First Landing</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-loop"><span class="qn-dot amber"></span><span class="qn-nm">The Core Game Loop</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-careers"><span class="qn-dot amber"></span><span class="qn-nm">Pick a Career</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-income"><span class="qn-dot amber"></span><span class="qn-nm">Making Your First Credits</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-ships"><span class="qn-dot amber"></span><span class="qn-nm">What to Buy (and What to Skip) Early</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-apps"><span class="qn-dot amber"></span><span class="qn-nm">Essential Apps &amp; Tools</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering"><span class="qn-dot amber"></span><span class="qn-nm">Engineering: The Next Step</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-endgame"><span class="qn-dot amber"></span><span class="qn-nm">The Bigger Galaxy</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-checklist"><span class="qn-dot amber"></span><span class="qn-nm">First 10 Hours: Objective Checklist</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-pitfalls"><span class="qn-dot amber"></span><span class="qn-nm">Common Early Mistakes</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">New Pilots &amp; Interface <span class="sep">//</span> First Ten Hours</div>
+    <h1 class="title">New CMDR's <span>Guide</span> <span class="role">Getting Started</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Systems</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <!-- HERO / VERDICT -->
+  <div class="verdict">
+    <div class="v-eyebrow">Field Briefing</div>
+    <h2>You spawn in a loaned Sidewinder with almost nothing — <em>this is the map out</em>.</h2>
+    <p>This is the manual for your first ten hours: learn to fly and dock, pick a career, bank your first million, and leave the starter zone pointed somewhere on purpose. <b>Fly safe, fly cheap, keep your rebuy in the bank.</b> Every deeper subject below has its own guide on this site — this page is the index to all of them, in the order a new commander actually needs them.</p>
+    <div class="why">
+      <div><h4>Start in Solo or PvE</h4><p>Same galaxy, same progression, none of the Open-mode PvP risk while you learn.</p></div>
+      <div><h4>Pick one focus</h4><p>Combat, trade or exploration — commit to a single track for your first millions.</p></div>
+      <div><h4>Never lose more than you have</h4><p>Insurance rebuy is the only number that ends a career. Keep it covered, always.</p></div>
+    </div>
+  </div>
+
+  <!-- 01 BEFORE YOU UNDOCK -->
+  <section id="section-undock">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Before You Undock</h2><span class="tag">Setup</span></div>
+    <p class="lead">Five minutes of setup saves you hours of frustration. Pick a safe game mode, run the training scenarios, and bind the controls you will use every minute.</p>
+
+    <h3 class="subhead">Choose your game mode</h3>
+    <p>You pick a mode at login, and you can switch any time. All three share one galaxy and one persistent save — progress counts identically wherever you play.</p>
+    <div class="cards three">
+      <article class="card">
+        <div class="c-head"><h3>Solo</h3></div>
+        <div class="card-tags"><span class="pill md">Recommended start</span></div>
+        <p>The full galaxy with <b>NPCs only</b> — no other players can instance into your session. Fully persistent, progresses exactly like Open. The safest place to learn.</p>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>Private Group</h3></div>
+        <div class="card-tags"><span class="pill md">Recommended start</span></div>
+        <p>An invite-only shared instance. Large PvE communities (e.g. <b>Mobius</b>) give you co-op company without open PvP. Also progresses normally.</p>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>Open</h3></div>
+        <div class="card-tags"><span class="pill hi">PvP possible</span></div>
+        <p>The shared instance where any commander can find you — cooperation and hostility both. Worth it later; not where you want to make your first mistakes.</p>
+      </article>
+    </div>
+
+    <h3 class="subhead">Run the training scenarios</h3>
+    <p>From the main menu, work through <b>Basic Flight, Docking, Travel and Combat</b> before you touch your real save. They teach every control in a consequence-free sandbox — no rebuy, no lost cargo.</p>
+
+    <h3 class="subhead">Where you start</h3>
+    <p>New commanders begin in the <b>Pilots' Federation District</b>, a protected starter region (start systems include <span class="acc">LHS 3447 / Trevithick Dock</span>, Asellus Primus and Dromi) with reduced PvP exposure, meant to onboard you over roughly your first hours in the game.</p>
+    <div class="legend">
+      <div class="lg"><h4>Your opening hand</h4>
+        <div class="kv-row"><span class="kv-k"><b>Ship</b></span><span class="kv-v">a loaned <b><a href="../../ships/ship-dossiers/sidewinder-mk-i-combat.html">Sidewinder Mk I</a></b> — disposable, free to replace if destroyed while broke.</span></div>
+        <div class="kv-row"><span class="kv-k"><b>Starting credits</b></span><span class="kv-v"><span class="kv-tbd">unconfirmed</span> — sources disagree (historically a small grubstake); treat your real balance as the truth, not any guide's figure.</span></div>
+        <div class="kv-row"><span class="kv-k"><b>New-pilot insurance</b></span><span class="kv-v">a large <b>rebuy discount</b> that ends the first time you raise any Pilots' <a href="../galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federation</a> rank. Mistakes are nearly free right now — use the window.</span></div>
+      </div>
+    </div>
+
+    <h3 class="subhead">Bind your controls early</h3>
+    <p>HOTAS is pleasant but <b>mouse-and-keyboard is fully viable</b>. Whatever you fly with, set custom binds for the actions you reach for constantly before you rely on them in the wild.</p>
+    <div class="callout"><span class="lbl">Minimum bind set</span><p>Throttle · pitch / roll / yaw · landing gear · cargo scoop · lights · target ahead · next system in route · honk (Discovery Scanner) · silent running · deploy hardpoints. The HUD reference colours are a separate job — see <a href="hud-customization.html">HUD Customization</a>.</p></div>
+  </section>
+
+  <!-- 02 LEARN TO FLY -->
+  <section id="section-fly">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Learn to Fly</h2><span class="tag">Flight</span></div>
+    <p class="lead">Three travel modes, one set of controls. Master the normal-space sweet spot, then supercruise, then the jump to the next star.</p>
+
+    <h3 class="subhead">Normal space</h3>
+    <p>Your axes are <b>pitch, roll, yaw, lateral / vertical thrust and throttle</b>. The throttle has a <b>blue "sweet spot" zone</b> — sit your throttle inside it for the tightest turn rate. <b>Flight Assist</b> is on by default and dampens your movement; leave it <span class="acc">ON</span> as a beginner. FA-off is an advanced skill, not a starting requirement. <b>Boost</b> gives a burst of speed for escaping trouble — never boost inside a station.</p>
+
+    <h3 class="subhead">Supercruise — travel within a system</h3>
+    <p>Supercruise is in-system faster-than-light travel. Approaching a target, throttle to roughly <b>75%</b> and watch the <span class="acc">"7 seconds to target"</span> readout — drop too fast or too slow and you overshoot, the single most common new-player frustration.</p>
+
+    <h3 class="subhead">Hyperspace — jump between systems</h3>
+    <p>The <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">Frame Shift Drive</a> (<a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>) jumps you star-to-star. Plot a route in the <b>Galaxy Map</b>, target the next system, charge, jump. Many jumps drop you facing a star — <b>throttle down on arrival</b> to stay clear of its exclusion zone.</p>
+    <div class="callout danger"><span class="lbl">Fuel kills more new pilots than pirates</span><p>Every jump burns fuel. A <b><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a></b> refuels you by skimming scoopable stars — the <span class="acc">KGB FOAM</span> classes (O, B, A, F, G, K, M). Running dry far from a station strands you. If it happens, the <a href="third-party-apps.html#app-fuel-rats">Fuel Rats</a> will come get you.</p></div>
+  </section>
+
+  <!-- 03 DOCKING -->
+  <section id="section-docking">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Docking &amp; Your First Landing</h2><span class="tag">Docking</span></div>
+    <p class="lead">Stations are safe zones with rules. Request a pad, keep your speed down, match the hologram, and put the gear down.</p>
+    <ol class="steps">
+      <li><span class="st">Request docking</span><p>Within about <b>7.5 km</b> of the station, open the Contacts panel and request docking. You are assigned a numbered <b>landing pad</b>.</p></li>
+      <li><span class="st">Slow down inside the slot</span><p>Keep approach speed <b>under ~100 m/s</b> through the mail slot and inside the no-fire zone. The station opens fire if you loiter, speed, or scan it hostile.</p></li>
+      <li><span class="st">Match and descend</span><p>Line up with the pad's hologram orientation, deploy <b>landing gear</b> (default <span class="kbd">L</span>), and settle onto the pad. Auto-dock works but can fail — learn the manual approach first.</p></li>
+    </ol>
+    <div class="callout"><span class="lbl">Pad sizes</span><p>Pads are <b>Small / Medium / Large</b> and your hull must fit. <b>Outposts have no Large pads</b>, so big ships can't dock there — check before you haul a fat cargo run to one. The full request / approach / pad / outpost procedure lives in the <a href="docking-landing-manual.html">Docking &amp; Landing Manual</a>.</p></div>
+  </section>
+
+  <!-- 04 CORE GAME LOOP -->
+  <section id="section-loop">
+    <div class="sec-head"><span class="sec-num">04</span><h2>The Core Game Loop</h2><span class="tag">Loop</span></div>
+    <p class="lead">Everything in Elite is a variation on one loop. Learn it once and every activity reads the same.</p>
+    <div class="hud"><span class="hud-c1"></span><span class="hud-c2"></span>
+      <p><b>Accept work → travel (supercruise / FSD) → do the thing → return and get paid → upgrade → repeat at a bigger scale.</b></p>
+    </div>
+    <p>Two interfaces carry it. The <b>Galaxy Map</b> plots interstellar routes and reads trade and economy data; the <b>System Map</b> finds stations, bodies and signal sources once you arrive. The <b>Mission Board</b> at every station is your main early income and reputation engine — <b>data courier and delivery</b> jobs are the safest first work, paying roughly <span class="acc">10k–50k CR</span> each.</p>
+
+    <h3 class="subhead">How ranks work</h3>
+    <p>Ranks run on <b>six independent tracks</b> certified by the <a href="pilots-federation.html">Pilots Federation</a> — Combat, Trade, Exploration, plus Mercenary, Exobiologist and CQC. Each is a nine-step ladder.</p>
+    <div class="hud"><span class="hud-c1"></span><span class="hud-c2"></span>
+      <p>Harmless → Mostly Harmless → Novice → Competent → Expert → Master → Dangerous → Deadly → <b>Elite</b> — with prestige <b>Elite I–V</b> added in Odyssey.</p>
+    </div>
+    <p>Combat rank grows by killing higher-ranked enemies; Trade and Exploration rank up by <b>credits generated in that activity</b> (Trade Elite alone takes on the order of a billion credits of profit).</p>
+    <p><b>Superpower ranks</b> — <a href="../galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federation</a>, <a href="../galaxy-and-power-systems/superpower-rank.html#superpower-emp">Empire</a>, <a href="../galaxy-and-power-systems/superpower-rank.html#superpower-all">Alliance</a> — are a separate system that unlocks permit-locked ships; that ladder is its own guide, <a href="../galaxy-and-power-systems/superpower-rank.html">Superpower Rank</a>.</p>
+  </section>
+
+  <!-- 05 CAREERS -->
+  <section id="section-careers">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Pick a Career</h2><span class="tag">Careers</span></div>
+    <p class="lead">You don't have to commit forever — but pick a single focus for your first millions. Each track below links the <b>activity guide</b> (how to fly it) and the <b>by-role ship ladder</b> (what to fly).</p>
+    <div class="cards three">
+      <article class="card ac-role-combat">
+        <div class="c-head"><h3>Combat</h3><span class="c-eyebrow">Bounties &amp; massacres</span></div>
+        <p>Hunt <b>Wanted</b> NPCs for bounties at <b>Nav Beacons</b> and <b>Resource Extraction Sites</b>. Start in a <b>Low RES</b> against Harmless pirates; massacre missions stack well on top. How: <a href="../activity-guides/combat.html">Combat playbook</a>. Venues: <a href="../combat-venues/pve-combat-venues.html">PvE Combat Venues</a> &amp; <a href="../combat-venues/combat-zones.html">Combat Zones</a>. Ships: <a href="../../ships/best-ships-by-role/combat.html">Best Combat Ships</a>.</p>
+      </article>
+      <article class="card ac-role-trading">
+        <div class="c-head"><h3>Trade</h3><span class="c-eyebrow">Buy low, sell high</span></div>
+        <p>Run a profitable A↔B commodity loop; read prices in the Galaxy Map or INARA. <b>Lowest risk</b>, steady scaling into bigger cargo hulls. How: <a href="../activity-guides/trading.html">Trading playbook</a>. Ships: <a href="../../ships/best-ships-by-role/trading.html">Best Trading Ships</a>.</p>
+      </article>
+      <article class="card ac-role-exploration">
+        <div class="c-head"><h3>Exploration</h3><span class="c-eyebrow">Map the black</span></div>
+        <p>Honk the Discovery Scanner on arrival, map bodies with a <b><a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a></b>, sell data at Universal Cartographics. <b>Exobiology</b> (scanning plant life on foot with the Artemis Suit) pays roughly <span class="acc">1–5M CR per valuable species</span>. How: <a href="../activity-guides/exploration.html">Exploration playbook</a>. Ships: <a href="../../ships/best-ships-by-role/exploration.html">Best Exploration Ships</a>.</p>
+      </article>
+    </div>
+    <div class="callout"><span class="lbl">Other tracks</span><p><b>Mining</b> (<a href="../activity-guides/mining.html">how</a> · <a href="../../ships/best-ships-by-role/mining.html">ships</a>) and <b>Passenger</b> work (<a href="../activity-guides/passenger.html">how</a> · <a href="../../ships/best-ships-by-role/passenger.html">ships</a>) are viable from early on. <b>Anti-Xeno</b> — the war against the Thargoids (<a href="../activity-guides/ax.html">how</a> · <a href="../../ships/best-ships-by-role/ax.html">ships</a>) — is a specialised endgame track, <span class="acc">not a beginner activity</span>.</p></div>
+  </section>
+
+  <!-- 06 INCOME -->
+  <section id="section-income">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Making Your First Credits</h2><span class="tag">Income</span></div>
+    <p class="lead">The fastest early money is unglamorous: stack same-destination missions and run them in one trip. Bank a rebuy buffer before you spend on anything.</p>
+    <div class="cards three">
+      <article class="card">
+        <div class="c-head"><h3>Stack missions</h3></div>
+        <p>At a busy system, fill your board with <b>same-destination</b> delivery, courier and passenger jobs and clear them in a single run. Lowest skill floor, reliable payout.</p>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>Bounty hunting</h3></div>
+        <p><b>Low / High RES</b> bounty hunting against Wanted NPCs turns combat into steady income — and feeds Combat rank at the same time.</p>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>Exobiology</h3></div>
+        <p>Once you can reach biological worlds, on-foot scanning is the <b>highest credit-per-hour</b> a new pilot can reach, for those willing to learn it.</p>
+      </article>
+    </div>
+    <p>Realistic early targets: clear <b>~100,000 CR</b> inside the starter system, then leave and grind your chosen career toward <b>~5–10M CR</b> — enough for a real ship plus a rebuy buffer.</p>
+    <div class="callout danger"><span class="lbl">Keep your rebuy in the bank</span><p>Insurance rebuy is roughly <b>5% of total ship + module value</b>; the Pilots' Federation insures the other ≥95%. Die without the rebuy on hand and you are dumped back into a free <a href="../../ships/ship-dossiers/sidewinder-mk-i-combat.html">Sidewinder</a>. <b>Never fly a hull you can't afford to buy back.</b></p></div>
+    <div class="callout"><span class="lbl">Bigger money, when ready</span><p>Time-limited <a href="../galaxy-and-power-systems/community-goals.html">Community Goals</a> are galaxy-wide events with tiered payouts — a new pilot who contributes can earn well above the usual early rates.</p></div>
+  </section>
+
+  <!-- 07 WHAT TO BUY -->
+  <section id="section-ships">
+    <div class="sec-head"><span class="sec-num">07</span><h2>What to Buy (and What to Skip) Early</h2><span class="tag">Ships</span></div>
+    <p class="lead"><b>Don't rush a big ship.</b> A cheap, well-outfitted small or medium beats an empty hull you can't afford to lose. Spend on the modules that matter for your role, not on hull size.</p>
+
+    <h3 class="subhead">Recommended early hulls</h3>
+    <p>Sensible first purchases by track. Prices are approximate purchase costs — <b>confirm the live figure on INARA before you buy</b>, prices shift with game updates.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead>
+        <tr><th>Hull</th><th>Role</th><th class="num">Approx. price</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr class="hl"><td><b><a href="../../ships/ship-dossiers/cobra-mk-iii-multipurpose.html">Cobra Mk III</a></b></td><td>Multirole</td><td class="num">349,718</td><td>The classic do-everything budget hull — this is the ~350k multirole new players are pointed at.</td></tr>
+        <tr><td><b><a href="../../ships/ship-dossiers/adder-multipurpose.html">Adder</a></b></td><td>Budget multi</td><td class="num">87,808</td><td>Cheapest real step up from the <a href="../../ships/ship-dossiers/sidewinder-mk-i-combat.html">Sidewinder</a>; light mining, trading and short-range exploring.</td></tr>
+        <tr><td><b><a href="../../ships/ship-dossiers/viper-mk-iii-combat.html">Viper Mk III</a></b></td><td>Combat</td><td class="num">142,931</td><td>Fast, cheap, dedicated combat — the budget bounty-hunter's first proper gun.</td></tr>
+        <tr><td><b><a href="../../ships/ship-dossiers/diamondback-explorer-multipurpose.html">Diamondback Explorer</a></b></td><td>Exploration</td><td class="num">1,894,760</td><td>Superb early long-range explorer / exobiology hull once you can afford it.</td></tr>
+        <tr><td><b><a href="../../ships/ship-dossiers/cobra-mk-v-multipurpose.html">Cobra Mk V</a></b></td><td>Multirole</td><td class="num">1,989,461</td><td>Buyable for credits since 24 Apr 2025 (Odyssey). Versatile but ~2M — <b>not</b> a 350k starter.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">Name trap</span><p>Some new-player guides quote the ~350k ship as a "<a href="../../ships/ship-dossiers/cobra-mk-v-multipurpose.html">Cobra Mk V</a>". It isn't — the <b>~350k multirole is the <a href="../../ships/ship-dossiers/cobra-mk-iii-multipurpose.html">Cobra Mk III</a></b>. The <a href="../../ships/ship-dossiers/cobra-mk-v-multipurpose.html">Cobra Mk V</a> is a separate ~2M hull. Always price a build on INARA, never from a third-party table.</p></div>
+
+    <h3 class="subhead">Priority module upgrades</h3>
+    <div class="legend">
+      <div class="lg"><h4>In rough order</h4>
+        <div class="kv-row"><span class="kv-k"><b>1 · <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></b></span><span class="kv-v">jump range — the single biggest quality-of-life upgrade on any ship.</span></div>
+        <div class="kv-row"><span class="kv-k"><b>2 · <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a></b></span><span class="kv-v">free fuel from stars; the difference between roaming freely and getting stranded.</span></div>
+        <div class="kv-row"><span class="kv-k"><b>3 · Core internals</b></span><span class="kv-v"><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">power plant</a>, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>, <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">power distributor</a> — keep the ship powered and responsive.</span></div>
+        <div class="kv-row"><span class="kv-k"><b>4 · Role gear</b></span><span class="kv-v"><a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a> for explorers; mining <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a> + <a href="../../engineering/engineering-manuals/modules.html#module-refinery">refinery</a> + collector limpets for miners.</span></div>
+      </div>
+    </div>
+    <div class="callout"><span class="lbl">Module grades A–E</span><p><b>A</b> = best and most expensive · <b>D</b> = lightest · <b>E</b> = cheapest. <b>D-rate to save weight and cash</b>, A-rate only the parts that matter for your role. Skip ships you can't insure, over-fitting a starter hull, and PvP gambles in Open.</p></div>
+    <div class="callout"><span class="lbl">Decide what to fly</span><p>Which hull wins each role, with 1–100 ratings: <a href="../../ships/general/ship-role-matrix.html">Ship × Role Matrix</a> and <a href="../../ships/best-ships-by-role/multipurpose.html">Best Multipurpose Ships</a>. How the scores are derived: <a href="../../ships/general/rating-methodology.html">Rating Methodology</a>. Per-ship deep dives: <a href="../../ships/ship-dossiers/cobra-mk-iii-multipurpose.html">Cobra Mk III</a>, <a href="../../ships/ship-dossiers/viper-mk-iii-combat.html">Viper Mk III</a>, <a href="../../ships/ship-dossiers/diamondback-explorer-exploration.html">Diamondback Explorer</a>.</p></div>
+  </section>
+
+  <!-- 08 APPS -->
+  <section id="section-apps">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Essential Apps &amp; Tools</h2><span class="tag">Apps</span></div>
+    <p class="lead">Elite is built to be played with a <b>second screen</b>. The in-game UI has no trade planner, no material checklist, no neutron router — community tools fill every gap. Four cover the new-pilot basics.</p>
+    <div class="cards three">
+      <article class="card">
+        <div class="c-head"><h3>INARA</h3></div>
+        <div class="card-tags"><span class="pill md">Reference</span></div>
+        <p>The commander dashboard — market and trade data, materials, engineers, station search, near-everything reference. The default answer to "where do I find…?".</p>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>Coriolis / EDSY</h3></div>
+        <div class="card-tags"><span class="pill md">Build planner</span></div>
+        <p>Offline ship outfitters — design and cost a full build before you spend a credit. Share a fit by sharing its URL.</p>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>EDSM</h3></div>
+        <div class="card-tags"><span class="pill md">Galaxy map</span></div>
+        <p>Community galaxy and system database; logs and shares your exploration once you feed it your journal.</p>
+      </article>
+      <article class="card">
+        <div class="c-head"><h3>Road to Riches</h3></div>
+        <div class="card-tags"><span class="pill md">Routing</span></div>
+        <p>Auto-generated high-value exploration scan routes — the standard way for a new explorer to fund a first real ship.</p>
+      </article>
+    </div>
+    <p>Underneath them, the local journal tools <b>EDMC / EDDiscovery</b> feed data to the whole ecosystem, and <b>Canonn</b> collects exobiology and mystery data. The full curated list, with what each tool does, is the <a href="third-party-apps.html">Third-Party Apps</a> directory.</p>
+  </section>
+
+  <!-- 09 ENGINEERING -->
+  <section id="section-engineering">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering: The Next Step</h2><span class="tag">Engineering</span></div>
+    <p class="lead"><b>Don't rush it.</b> Engineering is how modules become dramatically better — more jump range, tougher hull, harder-hitting weapons — but it's a mid-game project, not a first-hour one. Settle into a ship and a few million credits first.</p>
+    <p>It works in three parts: <b>unlock Engineers</b> (each has an invite requirement and a location), gather <b>materials</b> (raw, manufactured and encoded — found in the world, never bought), then apply <b>blueprints</b> at grades 1–5. A common first target is <b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> range</b> (<a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a>), but follow a proper unlock order rather than guessing your way through invites.</p>
+    <div class="callout"><span class="lbl">The engineering manuals</span><p>New-pilot unlock order: <a href="../../engineering/engineering-manuals/checklist.html">Unlock Checklist</a>. Who and where: <a href="../../engineering/engineering-manuals/engineers.html">Engineers</a>. What the effects do: <a href="../../engineering/engineering-manuals/blueprints.html">Blueprints</a>. Slot-by-slot fitting: <a href="../../engineering/engineering-manuals/modules.html">Modules</a>. Where to gather: <a href="../../engineering/materials-and-farming/materials.html">Materials</a> and farm routes like <a href="../../engineering/materials-and-farming/davs-hope.html">Dav's Hope</a>.</p></div>
+  </section>
+
+  <!-- 10 THE BIGGER GALAXY -->
+  <section id="section-endgame">
+    <div class="sec-head"><span class="sec-num">10</span><h2>The Bigger Galaxy</h2><span class="tag">Endgame</span></div>
+    <p class="lead">Horizon markers — the systems you grow into once the basics are second nature. One line each so you know they exist.</p>
+    <div class="legend">
+      <div class="lg"><h4>When you're ready</h4>
+        <div class="kv-row"><span class="kv-k"><b><a href="../galaxy-and-power-systems/bgs.html">Background Simulation</a></b></span><span class="kv-v">the living economy and politics of minor factions you can influence.</span></div>
+        <div class="kv-row"><span class="kv-k"><b><a href="../galaxy-and-power-systems/powerplay.html">Powerplay</a></b></span><span class="kv-v">pledge to a galactic Power and earn merits on a weekly cycle.</span></div>
+        <div class="kv-row"><span class="kv-k"><b><a href="../galaxy-and-power-systems/community-goals.html">Community Goals</a></b></span><span class="kv-v">galaxy-wide events with tiered rewards for everyone who contributes.</span></div>
+      </div>
+      <div class="lg"><h4>Capital ambitions</h4>
+        <div class="kv-row"><span class="kv-k"><b><a href="../galaxy-and-power-systems/system-colonization.html">System Colonisation</a></b></span><span class="kv-v">claim and build out your own systems.</span></div>
+        <div class="kv-row"><span class="kv-k"><b><a href="../galaxy-and-power-systems/fleet-carrier.html">Fleet Carrier</a></b></span><span class="kv-v">your own jump-capable mobile base — and a huge credit sink.</span></div>
+        <div class="kv-row"><span class="kv-k"><b><a href="../activity-guides/ax.html">Anti-Xeno</a></b></span><span class="kv-v">the war against the Thargoids; specialised gear required.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 CHECKLIST -->
+  <section id="section-checklist">
+    <div class="sec-head"><span class="sec-num">11</span><h2>First 10 Hours: Objective Checklist</h2><span class="tag">Checklist</span></div>
+    <p class="lead">Ordered milestones. Work down the list and you leave the starter zone competent, solvent, and pointed at a goal.</p>
+    <ol class="steps">
+      <li><span class="st">Run all four training scenarios</span><p>Basic Flight, Docking, Travel, Combat — before your real save.</p></li>
+      <li><span class="st">Set your keybinds</span><p>Gear, scoop, lights, target, route, honk, hardpoints.</p></li>
+      <li><span class="st">Dock and undock manually</span><p>At your start station, without taking damage.</p></li>
+      <li><span class="st">Plot a multi-system <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> route</span><p>Use the Galaxy Map; jump it end to end, throttling down on each arrival.</p></li>
+      <li><span class="st">Finish 3–5 courier / delivery missions</span><p>Clear roughly <span class="acc">~100,000 CR</span> from stacked jobs.</p></li>
+      <li><span class="st">Taste each track</span><p>Kill one Wanted ship in a Low RES, run one trade loop, honk and map one system.</p></li>
+      <li><span class="st">Fit a <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a></span><p>Add a <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a> if exploring; practise scooping fuel from a star.</p></li>
+      <li><span class="st">Bank a rebuy buffer</span><p>Reach ~100,000 CR with the rebuy set aside, not spent.</p></li>
+      <li><span class="st">Leave the starter zone</span><p>Head for a mission-rich hub — <b>Eravate</b>, <b>LHS 3447</b> or <b>Diaguandri</b>.</p></li>
+      <li><span class="st">Buy your first career ship</span><p><a href="../../ships/ship-dossiers/cobra-mk-iii-multipurpose.html">Cobra Mk III</a>, <a href="../../ships/ship-dossiers/viper-mk-iii-combat.html">Viper Mk III</a> or <a href="../../ships/ship-dossiers/adder-multipurpose.html">Adder</a> by track — keeping the rebuy covered.</p></li>
+      <li><span class="st">Bookmark your tools</span><p>INARA + Coriolis, and read your chosen track's activity guide here.</p></li>
+      <li><span class="st">Stretch: start engineering</span><p>Gather your first materials and pick a first Engineer to court.</p></li>
+    </ol>
+  </section>
+
+  <!-- 12 PITFALLS -->
+  <section id="section-pitfalls">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Common Early Mistakes</h2><span class="tag">Pitfalls</span></div>
+    <p class="lead">The deaths and dead ends every new commander hits at least once. Read them now and skip the lesson.</p>
+    <div class="callout danger"><span class="lbl">Fatal</span><p>Running out of <b>fuel</b> with no scoop · flying a ship you <b>can't afford to rebuy</b> · landing on <b>high-gravity (&gt;1G)</b> worlds before you can manage the descent.</p></div>
+    <div class="callout"><span class="lbl">Costly</span><p>Taking missions beyond your <b>jump range or cargo capacity</b> · <b>boosting or speeding inside stations</b> (they open fire) · mining <b>depleted rings</b> or forgetting <b>limpets</b>.</p></div>
+    <div class="callout tip"><span class="lbl">Avoidable</span><p>Don't gamble on <b>PvP in Open</b> while learning — play <b>Solo or a Private Group</b> until the fundamentals are automatic, then choose Open on your own terms.</p></div>
+  </section>
+
+  <!-- 13 SOURCES -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2><span class="tag">Verified</span></div>
+    <p class="lead">Facts on this page are verified against the sources below; uncertain figures (starting credits, exact starter-zone duration, live ship prices) are flagged in-text rather than guessed.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Steam Community</span><span class="cr-what">New-player first-session steps, docking speeds, career tracks and milestones (corroborate prices independently — its Cobra Mk V cost is inaccurate).</span><a class="cr-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3501779130" target="_blank" rel="noopener noreferrer">steamcommunity.com/…/3501779130</a></div>
+      <div class="cr-row"><span class="cr-src">ED Wiki — Ranks</span><span class="cr-what">The six rank tracks and the nine-step Harmless→Elite ladder plus Elite I–V.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Ranks" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Ranks</a></div>
+      <div class="cr-row"><span class="cr-src">ED Wiki — LHS 3447</span><span class="cr-what">Starter systems, Trevithick Dock and the loaned Sidewinder in the Pilots' Federation District.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/LHS_3447" target="_blank" rel="noopener noreferrer">fandom.com/wiki/LHS_3447</a></div>
+      <div class="cr-row"><span class="cr-src">ED Wiki — Sidewinder</span><span class="cr-what">Starter-ship role; Pilots' Federation insures ≥95%; free-Sidewinder loan on bankruptcy.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Sidewinder" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Sidewinder</a></div>
+      <div class="cr-row"><span class="cr-src">ED Wiki — Pilots Federation</span><span class="cr-what">New-pilot rebuy discount until your first rank-up; district onboarding.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Pilots_Federation" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Pilots_Federation</a></div>
+      <div class="cr-row"><span class="cr-src">ED Wiki — Cobra Mk V</span><span class="cr-what">Cobra Mk V purchasable for credits since 24 Apr 2025; price ~1.99M.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Cobra_Mk_V" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Cobra_Mk_V</a></div>
+      <div class="cr-row"><span class="cr-src">INARA — Ships</span><span class="cr-what">Current verified hull purchase prices (Adder, Viper Mk III, Diamondback Explorer, Cobra Mk V).</span><a class="cr-link" href="https://inara.cz/elite/ships/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ships</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD — coriolis-data</span><span class="cr-what">Canonical hull <code>retailCost</code> values (the exact base purchase prices shown in the early-hulls table).</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/tree/master/ships" target="_blank" rel="noopener noreferrer">github.com/EDCD/coriolis-data/…/ships</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Systems &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

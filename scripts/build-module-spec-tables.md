@@ -1,6 +1,6 @@
 # build-module-spec-tables.mjs
 
-Rebuilds every module **spec table** on `guides/engineering/modules.html` from the
+Rebuilds every module **spec table** on `guides/engineering/engineering-manuals/modules.html` from the
 locally-imported **EDCD / coriolis-data** dataset. Source of truth is **local JSON** —
 no web scraping.
 
@@ -77,9 +77,9 @@ After a run:
 # all 33 cards report a table; ≤11 cols each
 node scripts/build-module-spec-tables.mjs
 # no stale panels
-grep -c '>Availability<\|>Core stats<' guides/engineering/modules.html   # → 0
+grep -c '>Availability<\|>Core stats<' guides/engineering/engineering-manuals/modules.html   # → 0
 # byte-identical re-run
-cp guides/engineering/modules.html /tmp/a.html && node scripts/build-module-spec-tables.mjs && diff -q /tmp/a.html guides/engineering/modules.html
+cp guides/engineering/engineering-manuals/modules.html /tmp/a.html && node scripts/build-module-spec-tables.mjs && diff -q /tmp/a.html guides/engineering/engineering-manuals/modules.html
 ```
 
 This script does **not** add/remove any `<section id>`, so it doesn't require an anchor

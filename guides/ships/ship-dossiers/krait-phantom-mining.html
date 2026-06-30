@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krait Phantom &middot; Mining &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Mining → ac-role-mining (masthead role tag only; no other page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Krait Phantom · Mining</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-mine"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Mine</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Faulcon DeLacy</div>
+    <h1 class="title"><span>Krait Phantom</span><span class="role ac-role-mining">Mining</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A capable side-line miner that <em>reaches</em> the far hotspots</h2>
+      <p>The Phantom mines competently but it's not a dedicated rig. Only two large hardpoints and a modest ore hold cap its haul, and its light hull defends poorly compared with the <a href="python-mining.html">Python</a> or <a href="krait-mk-ii-mining.html">Krait</a> Mk&nbsp;II &mdash; yet its premium jump range and speed make it the medium that reaches distant hotspots and runs ore to far high-price markets. A mid-pack miner: fine if you already own one, outclassed within its own class for pure mining.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/krait-phantom.jpg" alt="Krait Phantom" width="160" height="90">
+      <figcaption><b>Krait Phantom</b> &middot; Faulcon DeLacy</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">70<small>/100</small></div><div class="bar mini"><i style="--pct:70"></i></div></div>
+      <div class="stat"><div class="n">~190 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">2L · 2M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">Medium</div><div class="l">Pad class</div></div>
+      <div class="stat"><div class="n">~35.7M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Krait Phantom is the <a href="krait-mk-ii-exploration.html">Krait</a> Mk&nbsp;II's leaner, longer-legged sibling &mdash; it drops a hardpoint and the fighter bay for less mass and more range. That trade reads well for exploration; for mining it's a mixed bag. The Phantom still fits a complete mining suite across its two large and two medium hardpoints, carries a <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-refinery">refinery</a>, <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">limpet controllers</a> and a respectable ore hold in its nine optional internals, and lands on a medium pad with no rank or permit. It mines perfectly well.</p>
+    <p>What holds it back is the comparison to its own neighbours. With only two large mounts it has one fewer mining-tool slot than the <a href="python-mining.html">Python</a>, its ~190&nbsp;t maximum cargo is mid-pack for a medium, and its light hull and modest base shield make it a poorer brawler when a pirate interdicts a laden run. Where it pulls ahead is reach: a premium <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and good speed let it strike distant or freshly-discovered hotspots, run ore to far high-price markets, and outrun trouble rather than tank it. For mining, treat it as the explorer-miner &mdash; capable, fast and far-ranging, but not the one you buy purely to crack cores.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Range-led mining: laser and core work at remote or far-flung hotspots, tritium runs to distant carriers, and any session where reaching the site and hauling ore a long way home matters more than maximum tonnage or sitting still under fire.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-ax" href="krait-phantom-ax.html"><span class="vrole">AX</span><span class="vrate">84<small>/100</small></span></a>
+        <a class="vchip r-exploration" href="krait-phantom-exploration.html"><span class="vrole">Exploration</span><span class="vrate">93<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="krait-phantom-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">84<small>/100</small></span></a>
+        <a class="vchip r-passenger" href="krait-phantom-passenger.html"><span class="vrole">Passenger</span><span class="vrate">64<small>/100</small></span></a>
+        <a class="vchip r-trading" href="krait-phantom-trading.html"><span class="vrole">Trading</span><span class="vrate">62<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-mine">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Ore hold (practical)</div><div class="v">~90&ndash;150 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~190 <small>t</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2L &middot; 2M <small>(tools)</small></div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~200 <small>MJ (light)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;5&middot;5&middot;5&middot;3&middot;3&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Jump range</div><div class="v">High <small>(reaches far hotspots)</small></div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>What the Phantom brings to a mining session:</p>
+    <ul class="bullets">
+      <li><b>Fits the full tool set.</b> Two large mounts take a mining laser and a seismic charge launcher; the two mediums take a sub-surface missile and an abrasion blaster &mdash; laser <em>and</em> core mining covered.</li>
+      <li><b>Deep internals for a real suite.</b> Nine optionals hold a <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-refinery">refinery</a>, prospector and collector controllers, a surface scanner and a worthwhile ore hold together.</li>
+      <li><b>Reach and speed.</b> Premium jump range strikes distant hotspots and runs ore to far markets; good speed lets it escape an interdiction it can't out-fight.</li>
+      <li><b>Medium-pad and rank-free.</b> Lands at most stations and ring systems; anyone with the credits can fly one.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>The Phantom has one fewer large hardpoint than the <a href="python-mining.html">Python</a>, a smaller ore hold than the <a href="type-8-transporter-mining.html">Type-8</a> or the capital miners, and a light hull with a modest base shield &mdash; so it neither out-hauls nor out-tanks the better dedicated mediums. Its mining case rests on reach and speed, not capacity or staying power. For maximum ore or a miner that fights pirates, look elsewhere in the class.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">A complete tool fit, premium range and rank-free medium-pad access earn a solid 70, held there by mid-pack ~190 t cargo and a light hull that escapes pirates rather than fighting them.</p>
+    <p>The <b>70/100</b> headline is a verdict against the mining role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Effective ore capacity</td><td class="sc"><span class="scval">23</span><span class="den">/35</span><div class="bar mini"><i style="--pct:66"></i></div></td><td class="wcell">~190 t maximum cargo (practical ore hold ~90-150 t once refinery and limpet controllers are fitted) is mid-pack for a medium, behind the Python (~294 t), Krait Mk II (~230 t) and Type-8 (~406 t). Nine optional internals (6·5·5·5·3·3·3·2·1) hold a real suite but cap the haul well short of the dedicated trade-miners.</td></tr>
+      <tr><td class="fct">Tool &amp; slot fit</td><td class="sc"><span class="scval">19</span><span class="den">/25</span><div class="bar mini"><i style="--pct:76"></i></div></td><td class="wcell">Two large plus two medium hardpoints fit the full kit — mining laser and seismic charge launcher on the larges, sub-surface missile and abrasion blaster on the mediums, covering both laser and core work. Four utility mounts take the Pulse Wave Analyser, shield booster and two heat sinks; one fewer large mount than the Python is the only real shortfall.</td></tr>
+      <tr><td class="fct">Survivability</td><td class="sc"><span class="scval">8</span><span class="den">/15</span><div class="bar mini"><i style="--pct:53"></i></div></td><td class="wcell">Light hull and a modest ~200 MJ base shield make it a poor brawler; even an engineered bi-weave (~600 MJ) is an escape shield, not a brawling one. It defends by running — good speed and premium jump range break interdictions the hull can't tank, which is the role's weakest leg here.</td></tr>
+      <tr><td class="fct">Pad class &amp; access</td><td class="sc"><span class="scval">13</span><span class="den">/15</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">Medium pad with no rank gate and no permit — lands at most stations and ring outposts, and anyone with ~35.7M Cr can fly one. That undercuts the large-pad capital miners (Cutter, Type-9, Type-11) on access and matches the best mediums.</td></tr>
+      <tr><td class="fct">Cost &amp; specialisation</td><td class="sc"><span class="scval">7</span><span class="den">/10</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">~35.7M Cr hull, ~68M Cr fully engineered, rank-free — cheaper than the Python but pricier than the dedicated trade-miners that return more ore per credit. Not a purpose-built rig: its value is highest as a re-role on a hull already owned for exploration or multipurpose work, not a from-scratch mining buy.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">70</span><span class="den">/100</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite (<a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-refinery">refinery</a>, <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">limpet controllers</a>) is fitted.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Krait Phantom</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="python-mining.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~294</td><td class="pcc"><span class="p">3 large mounts; bigger hold; fights pirates</span><span class="c">Pricier; shorter range</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-mining.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>~230</td><td class="pcc"><span class="p">SLF; combat-capable; bigger hold</span><span class="c">Heavier; shorter range</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod">Krait Phantom <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>~190</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="keelback-mining.html">Keelback</a></td><td><span class="pill pad-medium">Medium</span></td><td>~98</td><td class="pcc"><span class="p">Cheap; SLF for defence</span><span class="c">Far smaller hold; slow; short range</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-mining.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~128</td><td class="pcc"><span class="p">Cheaper; good range; fine view</span><span class="c">Smaller hold; lighter still</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-mining.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~112</td><td class="pcc"><span class="p">Very cheap; decent hold for cost</span><span class="c">Slow; flimsy; few mounts</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Within its own class the Phantom sits mid-pack. The <a href="python-mining.html">Python</a>, <a href="krait-mk-ii-mining.html">Krait</a> Mk&nbsp;II and <a href="type-8-transporter-mining.html">Type-8</a> all out-haul it and most can fight pirates better; the cheaper mediums below it carry far less. The Phantom's edge over its near-neighbours is range and speed, not mining throughput &mdash; which is exactly why it scores where it does.</p>
+    <h3 class="subhead">Other classes &mdash; the dedicated and capital miners</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Krait Phantom</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="type-11-prospector-mining.html">Type-11 Prospector</a></td><td><span class="pill pad-large">Large</span></td><td>~288</td><td class="pcc"><span class="p">Dedicated miner; exclusive Mk II mining modules</span><span class="c">Large pad; pricier</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-mining.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>~794</td><td class="pcc"><span class="p">Vast ore hold; strong shields; fast</span><span class="c">Large pad; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; far pricier</span></td><td><span class="rscore">92</span><div class="bar mini"><i style="--pct:92"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-9-heavy-mining.html">Type-9 Heavy</a></td><td><span class="pill pad-large">Large</span></td><td>~790</td><td class="pcc"><span class="p">Vast ore hold; cheap-ish</span><span class="c">Large pad; flimsy; can't fight</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-8-transporter-mining.html">Type-8 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~406</td><td class="pcc"><span class="p">Much larger ore hold; cheaper</span><span class="c">Slower; weaker defence; shorter range</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-7-transporter-mining.html">Type-7 Transporter</a></td><td><span class="pill pad-large">Large</span></td><td>~310</td><td class="pcc"><span class="p">Bigger hold; cheaper</span><span class="c">Large pad; can't fight; slow</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The capital miners and the dedicated <a href="type-11-prospector-mining.html">Type-11</a> dwarf the Phantom's haul, and even the medium-pad <a href="type-8-transporter-mining.html">Type-8</a> carries far more ore. The Phantom doesn't compete on tonnage anywhere &mdash; its only structural advantage over these is jump range and a medium pad, useful for reaching and supplying remote rings, not for filling a hold fastest.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~35.7M Cr</div></div>
+      <div class="cell"><div class="k">A-rated miner</div><div class="v">~50M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~68M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~35.7M Cr the Phantom is cheaper than the <a href="python-mining.html">Python</a> but pricier than the dedicated trade-miners, with no rank gate. A mining fit &mdash; tools, <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-refinery">refinery</a>, <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">limpet controllers</a>, ore racks and a light shield &mdash; brings the all-in figure to around 68M Cr once the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> and core modules are engineered.</p>
+    <p>The honest read: you don't buy a Phantom <em>for</em> mining. If you already own one for exploration or multipurpose work, fitting a mining suite is a sensible second loadout that exploits its range. As a from-scratch mining purchase, a <a href="python-multipurpose.html">Python</a>, <a href="krait-mk-ii-multipurpose.html">Krait</a> Mk&nbsp;II or <a href="type-8-transporter-mining.html">Type-8</a> returns more ore per credit.</p>
+    <div class="callout"><span class="lbl">Best as a second loadout</span><p>Around 68M Cr engineered &mdash; reasonable, but its value is highest as a re-role on a hull you already fly. For a purpose-bought miner the dedicated mediums earn their keep faster.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A complete mining fit for laser and core work that leans on range and a light shield rather than a brawl. Initial is buy-only; A-rated is the mining baseline; Engineered focuses on range, mobility and heat — the mining tools themselves are not meaningfully engineered.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Large 1</td><td class="st">1D Mining Laser (Fixed)</td><td class="st">2D Mining Laser (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Medium mining laser on a large mount — the highest-yield laser the hull can carry; mining lasers take no engineering.</td></tr>
+<tr><td class="slot">Large 2</td><td class="st">—</td><td class="st">2B Seismic Charge Launcher (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Seismic charge launcher cracks high-value cores; a core-mining staple with no useful blueprint.</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">—</td><td class="st">2B Sub Surface Displacement Missile (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Sub-surface displacement missile pops the deep deposits inside a cracked core; left stock.</td></tr>
+<tr><td class="slot">Medium 2</td><td class="st">—</td><td class="st">1D Abrasion Blaster (Fixed)</td><td class="eng">(No blueprint available)</td><td class="note">Abrasion blaster (small — the only size it comes in) shaves surface deposits off the rock; no blueprint exists.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">—</td><td class="st">0A Pulse Wave Analyser</td><td class="eng">(No blueprint available)</td><td class="note">Pulse Wave Analyser lights up mineral-rich rocks across the ring; scanners aren't engineerable.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Heavy-Duty booster multiplies the light bi-weave's raw MJ — the cheapest jump in the shield that buys your escape.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">7E Power Plant</td><td class="st">7A Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">A-rated to run lasers, limpets and the shield at once; Low Emissions with Thermal Spread holds heat down through long sessions.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">6E Thrusters</td><td class="st">6A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated thrusters with Dirty Drives — the Phantom's speed is its defence, so this is where you outrun pirates with a full hold.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rated FSD — Increased Range plus Mass Manager is the reason to mine in a Phantom: distant hotspots out, ore home.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">4E Life Support</td><td class="st">4D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rated to save mass; Lightweight trims more — life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">7E Power Distributor</td><td class="st">7A Power Distributor</td><td class="eng">G5 Engine Focused + Super Conduits</td><td class="note">A-rate first — lasers and limpets are power-hungry; Engine Focused feeds the boost that escapes interdiction.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">6E Sensors</td><td class="st">6D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Dropped to D and Lightweight; a miner needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock 32t tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6E Cargo Rack</td><td class="st">6E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5E Cargo Rack</td><td class="eng">G5 Expanded Capacity (no experimental effect)</td><td class="note">Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">4A Refinery</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the refinery. Processes mined fragments.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Fast Charge</td><td class="note">Class-5 bi-weave regenerates fast under fire; Reinforced plus Fast Charge is an escape shield, not a brawling one — trade it for ore if your rings are quiet.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A Collector Limpet Controller</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Optional / low-priority — Lightweight trims the controller's mass. Deploys collector limpets.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A Collector Limpet Controller</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Optional / low-priority — Lightweight trims the controller's mass. Deploys collector limpets.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A Prospector Limpet Controller</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Optional / low-priority — Lightweight trims the controller's mass. Deploys prospector limpets.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">1A Collector Limpet Controller</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Optional / low-priority — Lightweight trims the controller's mass. Deploys collector limpets.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5WSXUvDMBSG%2F0uud2HxC3onTHHQ6bDeiYTjctoelibhJJnOsf9u2qmzw4vuKuR5k4eTl2wFrtEEkYvCgrIxiIkoG3IJrBgoSE118wMfoMUUfO9man8xbedWRY1e5C9bUWrb0RtubeSUzQK2Q5uEPpM1g8IsHXk0Ig8ccSIWTJYpbESe7Sa%2FrgK4xntg5SyZkB2kjQuyJUOm1uCRZUUfqKRvQesR2oV9R15oMOFgTH7pOu46Lj194rVcJrsfM%2BgcyNyamkzqYqDEHva6q%2FG6O06Fp6qrMGVa41DZbByy6nivvRyvLajCMjpn%2BejhOgV%2BH%2FTOi%2FHOvssp%2BcD0FoPlfxpVh%2FTUXp9AwZHSo%2FGW%2FcmVRtTPYFZDWZVoSPRvk%2BcjbN1ylsmym2FoXKYvaxmWq3EDvu6%2BAGByg%2BOJAwAA&amp;bn=Krait%20Phantom" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7WVX2%2FaMBTFv0ueeWiAtBtvk7pqlWBDo2%2FTZF3im%2BQKx46u7Xas6nefY8ogiLFE3Z4in5v8zvXxnzwn%2BIjaJbNkbkAa75JRsqqoCcKGgZxQVFZ78TPUGAqvo3u5%2BzAMF0Z6hTaZfXtOVsq06geujedQu3dYd2kCYk2UDBLT8MoXncwcexwlSybD5LbJLH0Z%2FWbNgUv8BCwbQ9qlB2jVOFGTJl0qsMiioB8oRY2SfD2YOz7HFRbJ1nnF5RNwJYc6LOKLl1sX1q%2Bt50KSbWqyCt9ocn4esOa1sm6fka1BqR7sB9LbP7bPYHPQOgRv6SdeiTysgs2GUk%2F6tRWhkmtjrHsjeNIFVwjOkt4o8DqvAtt5ZnTChW%2BGoqf%2FFL00T8hLBdodsMFENK3etHrM4aZ%2FDgsg%2FVGXpMOh7CAxihF33R93x%2BHkhzNfuFumR%2Bwiq22DLFs9YrP%2B2DkVuPJNY%2Fhk4ioU7K4QmdMdc9w3y1sKO53W3hk%2Bk6g8VIfm%2BhUknCAtamvYHkfap887j%2BoB9KYLK4Lqgnqc5KQHrX1cpWLV9tAl5uGOMwz55rjBtC9yHJHZJWQ2EDk5h2Qswrbk7fFqZ32J03PE3TVSYqDCfqH3gYoCrOtLzyJ90qVLNhpzox0bJXKjFOaOjI4uk4HtX%2F9vg5u%2FGjRsbBMcXnMaavAuGoz7zyAdaPA%2BGqQnBuiAFMr23wk57n9FF%2B%2Fc7y%2B%2FALlt38HxCAAA&amp;bn=Krait%20Phantom" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F9WXUW%2FaMBDHv0ue0VRKWTfeurJulejWkUl7mCbriC%2BJhWNHtkPLqn73XRwoCQNKkz10Tyg2%2Bd%2Fvb9%2FZl4cAF6hcMAomGrguXNALwlTkNDA3IByTIknXg18gQ5pYPV3z6kV6vNG8kGiD0c%2BHIJS6HL0wmS4MzV07zJpqDPwcSwxw7NNfvqpg5EyBveDWCG2EWwajfi%2F4qBKhEI1QSTB6CD7IAnN6cCuMKgK74AtQEXLSmZAXGYyGveBbAbKSeXPy%2BNh7opqASfAzGJ5rEupv8NLcsUwoCiXBomGxuEfOMuSiyPYR7tU93aXLLAqbRalJ7sCk%2FKURbvwfD6MzW8xsYWIubJ4JK7FjkN0%2BYGZm0rr1GtkMpDxC%2B7tQy734BmwEStHCW%2FEbT1hEu2CHL1Xd4rWpQMlnWlt3pPCzORd6yQ8ryc8Ii%2BW4oFf35R4J3uekllGpgPwYxxiV1DbHSIDcIozSQs2XweM%2Be4OmvRTBWaHmEgoVpfS%2BK4xBxxy909rgjbBR6cuFpHwJOUSibq%2B%2Fv7QaqGevGvVW36G5laDcBpN0WV6O5%2BW4z5bzrtmyicNChyBd2jZRamSR1pJOu7qfGxCqQrFNQ%2BgHvZm3Xc1U02wsTPt8X%2FHoBRpJ182WjStDkajCYjc2YoFNK%2BmSdHk57u0Mu9q5CsdsolUyBZVgWz%2Bx5WVuL5pFOxExhkWea7OVX5ImbDXhTZxVJk5bm6hFYpPyav2Bq%2Bv6%2BavQJ%2BdY0EEuZoXTZkcp8M3sPyyIWky2fnmTve3Lo04bg3WNPZkChy2LFpXVxtaro%2F1OhF7sxZtwVaD8DmreJItp1NFoPdMHR1yG5c9Jn4WloaZiRP2JNhDN627bt16Xpdy0lLtWkUHqmPjfB%2FAB2x701IMOD4EOXwXoYBeowZgCm2W9kNsXxrRSE2hZ1WIc2c96vrNdfFVrkSCpwrp%2B16lUlUe3HujTk%2FIUhYq1OdSCH9UG0ZKucMvD%2Fy%2BXQ%2B9y0HTJjVYYaeWMlnQzSknCQivvdtB1Uy6f9CYiy%2FHlR6znfvufcp8%2Fy50bXe7gOrs6c9%2Bu9Gi6C%2Fg7D356%2FIL3X8eCv%2Ffc%2FS1udCCo3ys%2F6yDC9VdSp8Z5dVdRSYI6fND8evwDNm1qHCAQAAA%3D&amp;bn=Krait%20Phantom" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5WSXUvDMBSG%2F0uud2HxC3onTHHQ6bDeiYTjctoelibhJJnOsf9u2qmzw4vuKuR5k4eTl2wFrtEEkYvCgrIxiIkoG3IJrBgoSE118wMfoMUUfO9man8xbedWRY1e5C9bUWrb0RtubeSUzQK2Q5uEPpM1g8IsHXk0Ig8ccSIWTJYpbESe7Sa%2FrgK4xntg5SyZkB2kjQuyJUOm1uCRZUUfqKRvQesR2oV9R15oMOFgTH7pOu46Lj194rVcJrsfM%2BgcyNyamkzqYqDEHva6q%2FG6O06Fp6qrMGVa41DZbByy6nivvRyvLajCMjpn%2BejhOgV%2BH%2FTOi%2FHOvssp%2BcD0FoPlfxpVh%2FTUXp9AwZHSo%2FGW%2FcmVRtTPYFZDWZVoSPRvk%2BcjbN1ylsmym2FoXKYvaxmWq3EDvu6%2BAGByg%2BOJAwAA" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7WVX2%2FaMBTFv0ueeWiAtBtvk7pqlWBDo2%2FTZF3im%2BQKx46u7Xas6nefY8ogiLFE3Z4in5v8zvXxnzwn%2BIjaJbNkbkAa75JRsqqoCcKGgZxQVFZ78TPUGAqvo3u5%2BzAMF0Z6hTaZfXtOVsq06geujedQu3dYd2kCYk2UDBLT8MoXncwcexwlSybD5LbJLH0Z%2FWbNgUv8BCwbQ9qlB2jVOFGTJl0qsMiioB8oRY2SfD2YOz7HFRbJ1nnF5RNwJYc6LOKLl1sX1q%2Bt50KSbWqyCt9ocn4esOa1sm6fka1BqR7sB9LbP7bPYHPQOgRv6SdeiTysgs2GUk%2F6tRWhkmtjrHsjeNIFVwjOkt4o8DqvAtt5ZnTChW%2BGoqf%2FFL00T8hLBdodsMFENK3etHrM4aZ%2FDgsg%2FVGXpMOh7CAxihF33R93x%2BHkhzNfuFumR%2Bwiq22DLFs9YrP%2B2DkVuPJNY%2Fhk4ioU7K4QmdMdc9w3y1sKO53W3hk%2Bk6g8VIfm%2BhUknCAtamvYHkfap887j%2BoB9KYLK4Lqgnqc5KQHrX1cpWLV9tAl5uGOMwz55rjBtC9yHJHZJWQ2EDk5h2Qswrbk7fFqZ32J03PE3TVSYqDCfqH3gYoCrOtLzyJ90qVLNhpzox0bJXKjFOaOjI4uk4HtX%2F9vg5u%2FGjRsbBMcXnMaavAuGoz7zyAdaPA%2BGqQnBuiAFMr23wk57n9FF%2B%2Fc7y%2B%2FALlt38HxCAAA" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F9WXUW%2FaMBDHv0ue0VRKWTfeurJulejWkUl7mCbriC%2BJhWNHtkPLqn73XRwoCQNKkz10Tyg2%2Bd%2Fvb9%2FZl4cAF6hcMAomGrguXNALwlTkNDA3IByTIknXg18gQ5pYPV3z6kV6vNG8kGiD0c%2BHIJS6HL0wmS4MzV07zJpqDPwcSwxw7NNfvqpg5EyBveDWCG2EWwajfi%2F4qBKhEI1QSTB6CD7IAnN6cCuMKgK74AtQEXLSmZAXGYyGveBbAbKSeXPy%2BNh7opqASfAzGJ5rEupv8NLcsUwoCiXBomGxuEfOMuSiyPYR7tU93aXLLAqbRalJ7sCk%2FKURbvwfD6MzW8xsYWIubJ4JK7FjkN0%2BYGZm0rr1GtkMpDxC%2B7tQy734BmwEStHCW%2FEbT1hEu2CHL1Xd4rWpQMlnWlt3pPCzORd6yQ8ryc8Ii%2BW4oFf35R4J3uekllGpgPwYxxiV1DbHSIDcIozSQs2XweM%2Be4OmvRTBWaHmEgoVpfS%2BK4xBxxy909rgjbBR6cuFpHwJOUSibq%2B%2Fv7QaqGevGvVW36G5laDcBpN0WV6O5%2BW4z5bzrtmyicNChyBd2jZRamSR1pJOu7qfGxCqQrFNQ%2BgHvZm3Xc1U02wsTPt8X%2FHoBRpJ182WjStDkajCYjc2YoFNK%2BmSdHk57u0Mu9q5CsdsolUyBZVgWz%2Bx5WVuL5pFOxExhkWea7OVX5ImbDXhTZxVJk5bm6hFYpPyav2Bq%2Bv6%2BavQJ%2BdY0EEuZoXTZkcp8M3sPyyIWky2fnmTve3Lo04bg3WNPZkChy2LFpXVxtaro%2F1OhF7sxZtwVaD8DmreJItp1NFoPdMHR1yG5c9Jn4WloaZiRP2JNhDN627bt16Xpdy0lLtWkUHqmPjfB%2FAB2x701IMOD4EOXwXoYBeowZgCm2W9kNsXxrRSE2hZ1WIc2c96vrNdfFVrkSCpwrp%2B16lUlUe3HujTk%2FIUhYq1OdSCH9UG0ZKucMvD%2Fy%2BXQ%2B9y0HTJjVYYaeWMlnQzSknCQivvdtB1Uy6f9CYiy%2FHlR6znfvufcp8%2Fy50bXe7gOrs6c9%2Bu9Gi6C%2Fg7D356%2FIL3X8eCv%2Ffc%2FS1udCCo3ys%2F6yDC9VdSp8Z5dVdRSYI6fND8evwDNm1qHCAQAAA%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Krait Phantom&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;krait_light_armour_grade1&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_mininglaser_fixed_small&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_cargorack_size6_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Krait Phantom&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;krait_light_armour_grade1&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_mininglaser_fixed_medium&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_mining_seismchrgwarhd_fixed_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_mining_subsurfdispmisle_fixed_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_mining_abrblstr_fixed_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_mrascanner_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_cargorack_size6_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_cargorack_size5_class1&quot;},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_refinery_size4_class5&quot;},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_dronecontrol_collection_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_dronecontrol_collection_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot07_Size3&quot;,&quot;Item&quot;:&quot;int_dronecontrol_prospector_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot08_Size2&quot;,&quot;Item&quot;:&quot;int_dronecontrol_collection_size1_class5&quot;},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;mining&quot;,&quot;intro&quot;:&quot;A complete mining fit for laser and core work that leans on range and a light shield rather than a brawl. Initial is buy-only; A-rated is the mining baseline; Engineered focuses on range, mobility and heat — the mining tools themselves are not meaningfully engineered.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Tools, limpets, then run&quot;,&quot;text&quot;:&quot;A complete miner: a laser and seismic launcher for both styles, a Pulse Wave Analyser to find rocks, a refinery, prospector and collector controllers to work fast. The class-5 bi-weave and two heat sinks are about escaping a pirate — the Phantom's light hull and modest shield mean speed and a clean jump are its defence, not a gun. Trade the shield slot for more ore if your rings are quiet.&quot;},&quot;notes&quot;:{&quot;LargeHardpoint1&quot;:&quot;Medium mining laser on a large mount — the highest-yield laser the hull can carry; mining lasers take no engineering.&quot;,&quot;LargeHardpoint2&quot;:&quot;Seismic charge launcher cracks high-value cores; a core-mining staple with no useful blueprint.&quot;,&quot;MediumHardpoint1&quot;:&quot;Sub-surface displacement missile pops the deep deposits inside a cracked core; left stock.&quot;,&quot;MediumHardpoint2&quot;:&quot;Abrasion blaster (small — the only size it comes in) shaves surface deposits off the rock; no blueprint exists.&quot;,&quot;TinyHardpoint1&quot;:&quot;Pulse Wave Analyser lights up mineral-rich rocks across the ring; scanners aren't engineerable.&quot;,&quot;TinyHardpoint2&quot;:&quot;Heavy-Duty booster multiplies the light bi-weave's raw MJ — the cheapest jump in the shield that buys your escape.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;PowerPlant&quot;:&quot;A-rated to run lasers, limpets and the shield at once; Low Emissions with Thermal Spread holds heat down through long sessions.&quot;,&quot;MainEngines&quot;:&quot;A-rated thrusters with Dirty Drives — the Phantom's speed is its defence, so this is where you outrun pirates with a full hold.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated FSD — Increased Range plus Mass Manager is the reason to mine in a Phantom: distant hotspots out, ore home.&quot;,&quot;LifeSupport&quot;:&quot;D-rated to save mass; Lightweight trims more — life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate first — lasers and limpets are power-hungry; Engine Focused feeds the boost that escapes interdiction.&quot;,&quot;Radar&quot;:&quot;Dropped to D and Lightweight; a miner needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock 32t tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot02_Size5&quot;:&quot;Optional — Expanded Capacity adds cargo space; worth it for dedicated haulers. Holds cargo.&quot;,&quot;Slot03_Size5&quot;:&quot;Optional / low-priority — Shielded hardens the refinery. Processes mined fragments.&quot;,&quot;Slot04_Size5&quot;:&quot;Class-5 bi-weave regenerates fast under fire; Reinforced plus Fast Charge is an escape shield, not a brawling one — trade it for ore if your rings are quiet.&quot;,&quot;Slot05_Size3&quot;:&quot;Optional / low-priority — Lightweight trims the controller's mass. Deploys collector limpets.&quot;,&quot;Slot06_Size3&quot;:&quot;Optional / low-priority — Lightweight trims the controller's mass. Deploys collector limpets.&quot;,&quot;Slot07_Size3&quot;:&quot;Optional / low-priority — Lightweight trims the controller's mass. Deploys prospector limpets.&quot;,&quot;Slot08_Size2&quot;:&quot;Optional / low-priority — Lightweight trims the controller's mass. Deploys collector limpets.&quot;,&quot;Slot09_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G3&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:5,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Krait Phantom&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;krait_light_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_mininglaser_fixed_medium&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_mining_seismchrgwarhd_fixed_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_mining_subsurfdispmisle_fixed_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_mining_abrblstr_fixed_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_mrascanner_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_cargorack_size6_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot02_Size5&quot;,&quot;Item&quot;:&quot;int_cargorack_size5_class1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CargoRack_IncreasedCapacity&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot03_Size5&quot;,&quot;Item&quot;:&quot;int_refinery_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Refineries_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size5_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot05_Size3&quot;,&quot;Item&quot;:&quot;int_dronecontrol_collection_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CollectionLimpet_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot06_Size3&quot;,&quot;Item&quot;:&quot;int_dronecontrol_collection_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CollectionLimpet_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot07_Size3&quot;,&quot;Item&quot;:&quot;int_dronecontrol_prospector_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ProspectingLimpet_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot08_Size2&quot;,&quot;Item&quot;:&quot;int_dronecontrol_collection_size1_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;CollectionLimpet_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot09_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Tools, limpets, then run</span><p>A complete miner: a laser and seismic launcher for both styles, a Pulse Wave Analyser to find rocks, a refinery, prospector and collector controllers to work fast. The class-5 bi-weave and two heat sinks are about escaping a pirate — the Phantom's light hull and modest shield mean speed and a clean jump are its defence, not a gun. Trade the shield slot for more ore if your rings are quiet.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy-only is deliberately bare. The hull keeps its stock <b>Lightweight Alloy</b> bulkhead &mdash; the lightest, cheapest plating, and exactly what a range-led miner wants, so there's no armour spend here. Fit a single 1D Mining Laser on the first large mount and leave the second large, both mediums and all four utility mounts empty (&mdash;) &mdash; the seismic launcher, sub-surface missile, abrasion blaster, Pulse Wave Analyser, <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> and heat sinks all wait for the A-rated pass.</p>
+    <p>Core internals stay stock E-rated &mdash; 7E plant, 6E <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>, 5E <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>, 4E <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a>, 7E distributor, 6E <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> and the 5C <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">fuel tank</a> &mdash; enough to fly the hull to outfitting but not to mine hard.</p>
+    <p>Internals carry only a single 6E <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a>; the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-refinery">refinery</a>, prospector and collector controllers, the surface scanner, the bi-weave shield and the extra ore racks are all left empty (&mdash;) until the A-rated upgrade. Buy-only doesn't mine &mdash; it's a hull on credits, ready to kit out.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>The buy-only hull is bare, so this is where it becomes a working miner: the seismic launcher, sub-surface missile and abrasion blaster join the upgraded 2D laser, and the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-refinery">refinery</a>, prospector and collector controllers, Pulse Wave Analyser, surface scanner, a light 5C bi-weave shield, a 0A <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-shield-booster">shield booster</a> and two heat sinks all go on. The bulkhead stays the stock <b>Lightweight Alloy</b> &mdash; a Phantom miner runs, it doesn't tank, so the hull stays as light as possible for range and speed. A-rating priority for a range-led miner:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; A</b> &mdash; Mining <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a> and limpets are power-hungry; A-rate first. <span class="acc">~7M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; A</b> &mdash; Run tools, limpets and shield together without browning out. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; A</b> &mdash; The Phantom's whole case is reach; the A-rated drive comes early. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-refinery">Refinery</a> + <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">limpet controllers</a></b> &mdash; The heart of the mining loop. <span class="acc">~3M Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; A</b> &mdash; Speed to break interdictions and reposition over rocks. <span class="acc">~5M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Power, then range</span><p>A-rate the distributor and plant so the mining suite runs clean, then the <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &mdash; range is what the Phantom mines <em>for</em>. The shield stays modest and the bulkhead stays light; the <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> keep it nimble enough to flee.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>Mining engineering is light and focuses on the ship, not the tools &mdash; the mining hardware itself isn't meaningfully engineered. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (5)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Power Distributor (7)</td><td>Engine Focused (G3)</td><td>—</td><td>The Dweller</td></tr>
+<tr><td class="mod">Power Plant (7)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Thrusters (6)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Bi-Weave Shield (5)</td><td>Reinforced (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> first &mdash; it's the reason to mine in a Phantom at all; it strikes far hotspots and hauls ore to distant markets.</li>
+      <li><span class="stepnum">2</span>Low-Emissions plant keeps heat down through long mining sessions.</li>
+      <li><span class="stepnum">3</span>Dirty Drive <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> give the speed to break interdictions the light hull can't tank.</li>
+      <li><span class="stepnum">4</span>Leave the mining <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a>, <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">limpet controllers</a> and <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-refinery">refinery</a> stock &mdash; they don't benefit meaningfully from engineering.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; only the ship's range, mobility and defence blueprints; the mining tools are left stock, so there's no weapon-style grind. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Ore per trip (t)</td><td>~0</td><td>~110</td><td class="acc">~150</td></tr>
+        <tr><td class="mod">Reaches far hotspots</td><td>partly</td><td>yes</td><td class="acc">easily</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>none</td><td>~340</td><td class="acc">~600</td></tr>
+        <tr><td class="mod">Hull plating</td><td>Lightweight Alloy</td><td>Lightweight Alloy</td><td class="acc">+ Lightweight G5</td></tr>
+        <tr><td class="mod">Escapes pirates</td><td>maybe</td><td>usually</td><td class="acc">reliably (speed)</td></tr>
+        <tr><td class="mod">Pad access</td><td>medium</td><td>medium</td><td class="acc">medium</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Phantom mines a useful ~150&nbsp;t of ore, reaches distant hotspots in a handful of jumps, and is fast enough to break most interdictions rather than tank them. The bulkhead is deliberately the stock Lightweight Alloy with a G5 <b>Lightweight</b> roll &mdash; it sheds mass rather than adding armour, feeding the jump range and speed the whole build turns on. It hauls less and tanks worse than the <a href="python-mining.html">Python</a> or <a href="type-8-transporter-mining.html">Type-8</a>, but none of those reaches a far ring as quickly &mdash; reach, not raw haul, is what the upgrades buy.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Laser mining far hotspots.</b> Work platinum, painite or tritium hotspots that are a long jump from the bubble.</li>
+      <li><b>Core mining on the move.</b> Crack high-value cores (void opals, low-temperature diamonds) and jump on to the next ring quickly.</li>
+      <li><b>Mine-and-run.</b> When a pirate interdicts a laden run, boost and jump rather than brawl.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Remote-ring expeditions.</b> Its range strikes pristine rings far from traffic, where prices and rocks are best.</li>
+      <li><b>Tritium for distant carriers.</b> Mine fuel and run it a long way to a fleet carrier on a medium pad.</li>
+      <li><b>Re-role on demand.</b> Drop the mining kit and the same hull explores or runs cargo &mdash; it has dedicated exploration and multipurpose manuals too.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example sites</span><p>Any pristine metallic or icy ring suits it &mdash; especially distant ones. From your home base the Phantom reaches far-flung mining systems in fewer jumps than most mediums, mines them, and runs the ore a long way to a high-price market.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Play to range and speed, not tonnage or toughness &mdash; the Phantom mines best where reach matters and you can run from trouble.</li>
+      <li>Don't engineer the mining tools &mdash; they don't benefit; put the work into the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>, <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a> and shield instead.</li>
+      <li>A-rate the distributor and plant so <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a> and limpets run together without browning out.</li>
+      <li>For maximum ore or a miner that fights pirates, the <a href="python-ax.html">Python</a>, <a href="krait-mk-ii-ax.html">Krait</a> Mk&nbsp;II or <a href="type-8-transporter-mining.html">Type-8</a> beat it in its own class &mdash; pick the Phantom for the range.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Krait Phantom mines competently but it isn't a dedicated rig: two large mounts, a mid-pack ore hold and a light hull leave it out-hauled and out-tanked by the <a href="python-mining.html">Python</a>, <a href="krait-mk-ii-mining.html">Krait</a> Mk&nbsp;II and <a href="type-8-transporter-mining.html">Type-8</a> within its own class. What it keeps is premium jump range and speed &mdash; the medium that reaches distant hotspots, runs ore to far markets and escapes the pirates it can't out-fight. That earns it a solid <b>70</b>: a good range-led side-line miner and an easy re-role on a hull you already own, not the one to buy purely for cracking cores.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, used to validate the mining loadout, ore-rack capacity and power budget for this hull.</span><a class="cr-link" href="https://coriolis.io/outfit/krait_phantom" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/krait_phantom</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Krait Phantom ship page &mdash; manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/krait-phantom" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../krait-phantom</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Authoritative hull data: hardpoint sizes (2L/2M), optional-internal layout and base shield/mass used for the mining build.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/krait_phantom.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/krait_phantom.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara &mdash; Krait Phantom</span><span class="cr-what">Per-ship page: base stats, hull price and cargo ceiling cross-checked for the cost and capacity figures.</span><a class="cr-link" href="https://inara.cz/elite/ship/28/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/28</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom wiki</span><span class="cr-what">Krait Phantom hull profile and internal layout, referenced for the role overview and slot counts.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Krait_Phantom" target="_blank" rel="noopener noreferrer">fandom.com/wiki/Krait_Phantom</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

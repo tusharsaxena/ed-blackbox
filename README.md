@@ -12,14 +12,13 @@ authoritative sources. A static website by Tushar Saxena (CMDR Ka0s).
 
 ## What's here
 
-**166 guides** (plus a generated landing page), all on one shared design system, in four areas:
+**166 guides** (plus a generated landing page), all on one shared design system, in three areas:
 
 | Area | Count | What |
 |---|---|---|
 | `guides/engineering/` | 9 | Engineers, blueprints, the unlock checklist, materials, the outfitting catalog, and 4 material-farm guides. |
-| `guides/systems/` | 14 | Game-system guides — BGS, Powerplay, colonisation, fleet carriers, the CMDR's Lexicon, onboarding, and more. |
+| `guides/systems/` | 20 | Game-system guides — BGS, Powerplay, colonisation, fleet carriers, the CMDR's Lexicon, onboarding, combat venues, and 6 role playbooks (how to fly combat, mining, exploration, trading, passenger, and AX). |
 | `guides/ships/` | 137 | A ship × role matrix: **128 dossiers** across 48 hulls, 7 by-role ladders, the rating methodology, and the full matrix on one page. |
-| `guides/activities/` | 6 | Role playbooks — how to fly combat, mining, exploration, trading, passenger, and AX. |
 
 No server, no framework, **no build step to view it** — every page is plain HTML/CSS/JS that
 opens directly in a browser or from `file://`.
@@ -40,7 +39,7 @@ data, run the script — never hand-edit the generated block.
 | `data/ship-ratings/<role>.json` | dossier ratings, scorecards, by-role ladders | `compute-ship-ratings.py` · `reconcile-ratings-html.py` · `build-ship-scorecards.py` · `audit-ratings-consistency.py` |
 | `data/ship-loadouts/<dossier>.json` (SLEF) | dossier 3-State Loadout + Engineering Plan tables + Coriolis/EDSY/SLEF export rows | `build-ship-loadouts.py` · `audit-ship-loadouts.py` |
 | `data/sources/<page>.json` | every page's **Sources** block (external references only) | `build-sources.py` · `audit-sources.py` |
-| `data/modifications/` (coriolis, read-only) + `data/modifications-extra/` overlays | the 185 blueprint cards on `guides/engineering/blueprints.html` | `build-blueprints.py` · `audit-blueprints.py` |
+| `data/modifications/` (coriolis, read-only) + `data/modifications-extra/` overlays | the 185 blueprint cards on `guides/engineering/engineering-manuals/blueprints.html` | `build-blueprints.py` · `audit-blueprints.py` |
 | filesystem (dossiers) | `guides/index.html` landing page | `generate-guides-index.sh` |
 | each page's `<section id>`s | per-page `<name>-anchors.md` anchor catalogs | `generate-anchor-files.sh` |
 
@@ -48,7 +47,7 @@ All tooling lives in [`scripts/`](scripts/) — **43 reusable** build/maintenanc
 (4 `.sh` + 38 `.py` + 1 `.mjs`), each named for its task with a sibling `<name>.md` doc — see
 [`scripts/README.md`](scripts/README.md). Completed one-off scripts (the design-system
 migration, data seeders, one-shot content fixes) are retained under
-[`scripts/archive/`](scripts/archive/README.md) (40 more).
+[`scripts/archive/`](scripts/archive/README.md) (42 more).
 The shared look is the design system in [`design-system/`](design-system/) (v1.3.0): one linked
 stylesheet + behaviours; pages re-theme only a five-token accent group. Game data imported from
 EDCD is in [`data/`](data/README.md).

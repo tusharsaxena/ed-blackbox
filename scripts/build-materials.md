@@ -1,6 +1,6 @@
 # build-materials.py
 
-Render the three catalog tables on `guides/engineering/materials.html` from the canonical
+Render the three catalog tables on `guides/engineering/materials-and-farming/materials.html` from the canonical
 materials data. **Edit the data, never the tables.**
 
 ```bash

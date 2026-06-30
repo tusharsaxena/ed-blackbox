@@ -84,7 +84,7 @@ updates. Inlining or forking re-introduces drift and is a regression.
   assuming the repo is served at `https://<user>.github.io/ed-blackbox/`.
 - **Local / relative:** count directories up to the repo root, then
   `design-system/css/ed-blackbox.css`. E.g. a page at
-  `guides/ships/dossiers/foo.html` is 3 deep →
+  `guides/ships/ship-dossiers/foo.html` is 3 deep →
   `../../../design-system/css/ed-blackbox.css`.
 - The `component-gallery.html` and `starter-page.html` inside `design-system/` use the
   root-relative form (gallery uses `../` since it sits beside `css/`).

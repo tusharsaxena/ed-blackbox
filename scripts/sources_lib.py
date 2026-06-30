@@ -52,7 +52,7 @@ INTERNAL_A_RE = re.compile(
 
 # ----------------------------------------------------------------------------- path mapping
 def page_to_data_path(page_path):
-    """guides/activities/exploration.html -> data/sources/activities/exploration.json"""
+    """guides/systems/activity-guides/exploration.html -> data/sources/systems/activity-guides/exploration.json"""
     p = Path(page_path)
     rel = p.relative_to("guides") if p.parts and p.parts[0] == "guides" else \
         p.relative_to(GUIDES_DIR)
@@ -60,7 +60,7 @@ def page_to_data_path(page_path):
 
 
 def data_to_page_rel(data_path):
-    """data/sources/activities/exploration.json -> guides/activities/exploration.html"""
+    """data/sources/systems/activity-guides/exploration.json -> guides/systems/activity-guides/exploration.html"""
     rel = Path(data_path).resolve().relative_to(DATA_DIR)
     return "guides/" + str(rel.with_suffix(".html")).replace("\\", "/")
 

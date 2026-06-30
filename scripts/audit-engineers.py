@@ -16,8 +16,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import engineers_common as e
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGE = ROOT / "guides" / "engineering" / "engineers.html"
-BP = ROOT / "guides" / "engineering" / "blueprints.html"
+PAGE = ROOT / "guides" / "engineering" / "engineering-manuals" / "engineers.html"
+BP = ROOT / "guides" / "engineering" / "engineering-manuals" / "blueprints.html"
 BEGIN = "<!-- BEGIN generated:engineers -->"
 END = "<!-- END generated:engineers -->"
 

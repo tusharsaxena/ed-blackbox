@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corsair &middot; Combat &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Corsair · Combat</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Corsair</span><span class="role ac-role-combat">Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The modern all-round combat medium — wins on <em>breadth</em></h2>
+      <p>Six guns, ten optional internals and <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> speed put the Corsair in the top tier of combat mediums. It lacks a huge hardpoint, a fighter bay or military slots, so the duelling and SLF specialists edge it in their niches — but its raw mounts, internal depth and pace make it one of the most capable all-round combat mediums available, with no rank gate and no permit required.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/corsair.jpg" alt="Corsair" width="160" height="90">
+      <figcaption><b>Corsair</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">85<small>/100</small></div><div class="bar mini"><i style="--pct:85"></i></div></div>
+      <div class="stat"><div class="n">3L · 3M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">355 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">~76.9M</div><div class="l">Hull price (Cr)</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Corsair is Gutamaya's contemporary answer to the medium combat question, and it answers it with breadth. Six hardpoints &mdash; three large and three medium &mdash; give it a heavy, flexible main battery, while ten optional internals (deep for a combat hull) let it tank, sustain and even carry cargo without compromising its guns. Imperial design means it's quick and handsome with it.</p>
+    <p>Where the <a href="krait-mk-ii-combat.html">Krait</a> leans on an SLF bay and the <a href="fer-de-lance-combat.html">Fer-de-Lance</a> on a huge hardpoint, the Corsair simply does everything well: lots of guns, lots of room, plenty of speed. It has no military slots, so its tanking comes from those generous optionals rather than dedicated bays &mdash; but the sheer count of internals means it can still shield- or hull-tank deeply. It's the modern, do-it-all combat medium.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Conflict zones, Hazardous RES, pirate massacres and mixed combat play &mdash; anywhere a fast, six-gun medium with deep internals to tank and sustain is wanted, especially for pilots who like options.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-ax" href="corsair-ax.html"><span class="vrole">AX</span><span class="vrate">84<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="corsair-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">82<small>/100</small></span></a>
+        <a class="vchip r-trading" href="corsair-trading.html"><span class="vrole">Trading</span><span class="vrate">74<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">280 / 355 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3 Large &middot; 3 Medium</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">265 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~235 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">270</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a></div><div class="v">Class 7</div></div>
+      <div class="cell"><div class="k">Distributor</div><div class="v">Class 7</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Good</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+    </div>
+    <p>Four things make the Corsair a top-tier modern combat medium:</p>
+    <ul class="bullets">
+      <li><b>Six hardpoints.</b> Three large plus three medium &mdash; a heavy, flexible main battery that matches or beats most mediums for total firepower.</li>
+      <li><b>Ten optional internals.</b> Exceptionally deep for a combat hull, with three class-6 bays &mdash; tank with shields and cell banks, or hull-tank with reinforcement, without giving up guns.</li>
+      <li><b>Imperial speed and class-7 power.</b> Fast and agile with a strong plant and distributor to feed six guns plus boost &mdash; no power starvation.</li>
+      <li><b>Modern flexibility.</b> The room to carry cargo, <a href="../../engineering/engineering-manuals/modules.html#module-scanners">scanners</a> or extra defences means it adapts to mixed combat play better than narrower specialists.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>No huge hardpoint, no fighter bay, no military slots &mdash; it lacks the single standout feature of the <a href="fer-de-lance-combat.html">Fer-de-Lance</a>, <a href="krait-mk-ii-combat.html">Krait</a> or <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-all">Alliance</a> hulls. Its tanking, while deep, comes from optionals it must share with everything else. The Corsair wins on balance and breadth, not on any one peak stat; and at ~77M Cr it's a premium price for that breadth.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Six hardpoints (3L/3M) and ten optionals deliver top-tier breadth at a medium pad with no rank gate; the lack of a huge mount and only "Good" agility cap it below the duelling specialists.</p>
+    <p>The <b>85/100</b> headline is a verdict against the combat role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Hardpoints</td><td class="sc"><span class="scval">26</span><span class="den">/30</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">Six mounts (3 Large, 3 Medium) form a heavy, flexible main battery that matches or beats most mediums for total firepower. Lacking the huge hardpoint of the Fer-de-Lance/Mamba leaves it short of role-leading alpha.</td></tr>
+      <tr><td class="fct">Power distributor</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Class-7 distributor feeds six guns plus boost without power starvation, among the strongest distributors in the medium field. A-rating it first is mandatory since six mounts plus boost drain it faster than anything else.</td></tr>
+      <tr><td class="fct">Shield</td><td class="sc"><span class="scval">12</span><span class="den">/15</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">Base ~235 MJ scaling to ~1,000+ MJ engineered via a 6C bi-weave plus two Heavy-Duty boosters across four utility mounts. With no military slots, shield tank competes for the same optionals as hull and cargo.</td></tr>
+      <tr><td class="fct">Armour &amp; internals</td><td class="sc"><span class="scval">13</span><span class="den">/15</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">270 base armour and ten optional internals (6·6·6·5·5·5·4·3·2·1) give large-ship-style depth for hull reinforcement and module protection, ~2,000+ effective engineered. Zero military slots means defence shares the optional bays.</td></tr>
+      <tr><td class="fct">Agility</td><td class="sc"><span class="scval">16</span><span class="den">/20</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">280 / 355 m/s and rated only "Good" agility, fast for a six-gun medium and quicker than the Alliance hulls, but clearly below the elite handling of the Fer-de-Lance or the raw pace of the Mamba.</td></tr>
+      <tr><td class="fct">Utility &amp; flexibility</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Four utility mounts plus ten internals let it carry cargo, scanners or extra defences alongside six guns, with no rank or permit gate, only the ~76.9M Cr hull price. Breadth and credits-only access are its defining edge.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">85</span><span class="den">/100</span><div class="bar mini"><i style="--pct:85"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad combat ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Corsair</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="fer-de-lance-combat.html">Fer-de-Lance</a></td><td><span class="pill pad-medium">Medium</span></td><td>1H 4M</td><td class="pcc"><span class="p">Huge mount; elite agility and alpha</span><span class="c">Fragile internals; no cargo flexibility</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-mk-ii-combat.html">Python Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>4L 2M</td><td class="pcc"><span class="p">Four large mounts; more sustained DPS</span><span class="c">Only six optionals; less flexible</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-combat.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; deep internals; balanced</span><span class="c">Two fewer guns than the Corsair's six</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="mamba-combat.html">Mamba</a></td><td><span class="pill pad-medium">Medium</span></td><td>1H 2L 2S</td><td class="pcc"><span class="p">Far faster; bigger alpha</span><span class="c">Poor agility; fragile internals</span></td><td><span class="rscore">89</span><div class="bar mini"><i style="--pct:89"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-chieftain-combat.html">Alliance Chieftain</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 1M 3S</td><td class="pcc"><span class="p">More agile; cheaper; military slots</span><span class="c">Fewer big guns; shallower internals</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-challenger-combat.html">Alliance Challenger</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 3M 3S</td><td class="pcc"><span class="p">Tankier; military slots; cheaper</span><span class="c">Slower; fewer large mounts</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod">Corsair <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>3L 3M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">85</span><div class="bar mini"><i style="--pct:85"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-assault-ship-combat.html">Federal Assault Ship</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 2M</td><td class="pcc"><span class="p">Fast, agile, cheap; military slots</span><span class="c">Far fewer guns and internals</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-combat.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">Tankier; cheaper; equally roomy</span><span class="c">Slower; one fewer gun</span></td><td><span class="rscore">83</span><div class="bar mini"><i style="--pct:83"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-gunship-combat.html">Federal Gunship</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 4M 2S</td><td class="pcc"><span class="p">Seven mounts; very tough</span><span class="c">Sluggish; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank gate</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Corsair is the modern breadth pick: more guns than the <a href="krait-mk-ii-combat.html">Krait</a>, more room than the <a href="fer-de-lance-combat.html">FDL</a>, faster than the Alliance hulls. It lacks any one signature feature, so the specialists edge it in their niches &mdash; but as a fast, six-gun, deep-internal all-round combat medium, it's among the best, if you'll pay the premium.</p>
+    <h3 class="subhead">Other classes &mdash; the larger leagues</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Corsair</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="federal-corvette-combat.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">The combat apex; firepower and tank without peer</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-fed">Federal</a> rank; ~187M Cr; large pad</span></td><td><span class="rscore">98</span><div class="bar mini"><i style="--pct:98"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-combat.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>1H 2L 4M</td><td class="pcc"><span class="p">Vast shields; brutal firepower; Imperial sibling</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank; poor agility; large pad</span></td><td><span class="rscore">91</span><div class="bar mini"><i style="--pct:91"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-combat.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">Eight hardpoints; vast internals; no rank</span><span class="c">Ponderous; costly; large pad</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="kestrel-mk-ii-combat.html">Kestrel Mk II</a></td><td><span class="pill pad-small">Small</span></td><td>3L 2S</td><td class="pcc"><span class="p">Small-pad firepower; agile; cheaper</span><span class="c">Less internal room than the Corsair</span></td><td><span class="rscore">85</span><div class="bar mini"><i style="--pct:85"></i></div></td></tr>
+        <tr><td class="mod"><a href="vulture-combat.html">Vulture</a></td><td><span class="pill pad-small">Small</span></td><td>2L</td><td class="pcc"><span class="p">Small-pad agility; cheap</span><span class="c">Two guns; far less room and tank</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Large warships out-gun and out-tank the Corsair but need a pad and usually a rank grind. The Corsair delivers six guns and large-ship-style internal depth from a medium pad with no rank gate &mdash; the modern, flexible alternative to climbing a navy ladder.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~76.9M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~95M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~115M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~76.9M Cr the Corsair is one of the priciest combat mediums, but it carries no rank or permit gate &mdash; just credits. Its deep internals mean a full combat fit (six engineered guns, shields, cells, reinforcement) adds up, putting it among the more expensive mediums to bring to its ceiling.</p>
+    <p>You pay for breadth and modernity. If you want one combat medium that's fast, heavily armed and flexible, the Corsair justifies its price; if budget matters, the Alliance hulls deliver most of the capability for far less.</p>
+    <div class="callout"><span class="lbl">Premium, no rank</span><p>The Corsair is expensive but rank-free &mdash; the modern, credits-only route to a six-gun combat medium with large-ship internal depth.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A balanced six-gun combat fit using the deep optionals to shield-tank. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern. Re-weight optionals toward hull reinforcement for a tankier variant.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Large 1</td><td class="st">3E Pulse Laser (Gimballed)</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Corrosive Shell</td><td class="note">Primary large multi-cannon; the single Corrosive Shell strips armour resistance for the whole battery.</td></tr>
+<tr><td class="slot">Large 2</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Second large multi-cannon; Auto Loader removes reloads so its DPS never pauses.</td></tr>
+<tr><td class="slot">Large 3</td><td class="st">3C Multi-Cannon (Gimballed)</td><td class="st">3C Beam Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Large beam strips shields; Thermal Vent vents heat so it runs cold under sustained fire.</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">2F Pulse Laser (Gimballed)</td><td class="st">2D Beam Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Buy a cheap pulse, swap to a Thermal-Vent beam once A-rated for heat-free shield work.</td></tr>
+<tr><td class="slot">Medium 2</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Medium multi-cannon adds sustained kinetic DPS; Auto Loader keeps it topped up.</td></tr>
+<tr><td class="slot">Medium 3</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Second medium multi-cannon; Auto Loader keeps the kinetic fire uninterrupted.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0A Shield Booster</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">First Heavy-Duty shield booster — the cheapest large gain in shield strength.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Second Heavy-Duty booster stacks raw MJ onto the bi-weave.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Chaff Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Military Grade Composite</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">7E Power Plant</td><td class="st">7A Power Plant</td><td class="eng">G5 Overcharged + Thermal Spread</td><td class="note">Powers six guns plus a shield and cells; Overcharged adds headroom, Thermal Spread bleeds the extra heat.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">7E Thrusters</td><td class="st">7A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated + Dirty Drives preserve the Imperial speed and agility that define the Corsair.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">5E Frame Shift Drive</td><td class="st">5A Frame Shift Drive</td><td class="eng">G3 Increased Range (no experimental effect)</td><td class="note">A-rated to reach fights and turn-ins; only G3 range — combat doesn't need a jump monster.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">4E Life Support</td><td class="st">4D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">7E Power Distributor</td><td class="st">7A Power Distributor</td><td class="eng">G5 Charge Enhanced + Super Conduits</td><td class="note">A-rate this FIRST — six guns plus boost drain the class-7 distributor faster than anything else.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">6E Sensors</td><td class="st">6D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; combat needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="st">5C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock C-rated tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6E Shield Generator</td><td class="st">6C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Fast Charge</td><td class="note">Bi-weave regenerates fast for a brawler that re-engages; Reinforced maximises MJ and Fast Charge keeps regen high.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">6E Cargo Rack</td><td class="st">6A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 6</td><td class="st">—</td><td class="st">6A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Hull reinforcement caps at size 5, so a 5D HRP under-fills this size-6 slot for max effective armour.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Heavy-Duty hull reinforcement is the cheapest large multiplier on effective armour.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">—</td><td class="st">5D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">More Heavy-Duty hull where the slot allows.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">More internal protection for the modules that keep you flying; not engineerable.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F63U0U7CMBQG4HfpNRcgogl3Jmg0ASXCnTHLYT3ACV3bnLYaJLy7XUFxBOOmXi37233r%2FrTbCHxB7UVfDA1IE7xoicmSbAxyww6I98E9FBjD%2Fd2d3D0Ub0dGBoVO9J82YqJMmV5xYUL54J3H4iBlkPJswSCxE4cftOh7DtgSYybD5Nei39m2Pp0h8AJvgaU1pH3nAC6tz2xQDhU4jCAVM1CZKqc3Zs%2BqbBGUpxy0Nvpvbvff3BFKCkX9Hoo0vzn8cxO%2Flbv%2FJ09Jr7%2Brwi0JlZwZ43xsw9EbtrM8VuN6NeCxeUUeK9D%2BgMZXZLbMbZkn8XIn1tm%2BIyB9rRek4%2BmokJjCptwNxyMYD9%2FcD5hesEou1xZZlnlie%2FXZIc1xEqw1fPThKg643UAyz%2BubqcsBOc80C97wiUblYbRpEY8g4Yh0qF38ySTpokGlAdUU9KqKzWPqY%2Fq1yW4Nrby0O9mkXMPR8tLGXKBGho8PbrDMBJ%2BdgvP4CzEM%2Baoe%2Bbx9B5vEOXfwBQAA&amp;bn=Corsair" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XWXW%2FaMBQG4P%2FiazSRL7rlbh2tqAQba3pXTZFJThILx478wZYh%2FvscQ5clA5Fs7RXKsfNw%2FMo27BHsgCkUoiXHKdcKTVBUkMoUEi4kJuJU%2BIxLMMXT00N6fMk8rniqKUgUPu9RRHlT%2FShKrpsXHxSUrRRjW49zgVPwzPAXhkIlNEzQWhAuiKpR6Bwmv50lFjkssEgrTphyWrCoVFxqqkiCGeMszkm5wTSmzfzRrvtGrtd1N4BLiiWIseoKUqLLSzH8xZZ2%2Bnj3egz%2FKnuvJz8RVl9KQhYEaLrhXCqThiQ%2FYRonJhoZjIXdt4J7SSQFzjKKNUsKAyszcyzod8ECsJKEbVtTCwFqKL3m30GsKWaqZc2XxFVTr5q6Xf3N8NWvMGF3LCfMXBAdEmxxLHcvzC1k7p9MzQXZQZcs6gpE2tQtGwxnlySDSFcVF72FUzMgjwPW9I%2BmOzTLOZFKkI1WXJxJNG1HxwbxiFPcIyUwae5ZK82G93mvgT5htu1imakqU%2F0zySE3dvMxdeKo6aHXnj1EOTAQ%2BGXBpza9OMNSDdXdy3oClG5eup4NT9O63iu5E3Tc8CAIy1G4R7dUQ2Ue1OknNLLmJ2PeNmZUQUIwJRJSQy7NzzFFoT9BX7UpWvHd9NBv1rfNBr0DoCkVQFjGRQIlnE5rMHwvWDo4R5%2FJIRiZ7%2BycW9o%2FD%2F%2Ff9I3F%2FSF5%2BCPp95b2hvXtjcQ%2FWNy9GrY7Lmxnal1nSB7OlZav7ueFYR877ALwrp5rVbcbOuhuaIP%2BMLc1aaZjepdlkDS9y%2BNZONNpUmi2rdHh8O3wCx1kQxWzCgAA&amp;bn=Corsair" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F92YXU%2FbMBSG%2F4uvq4l%2Bwda7QWFFKoMRJC6myXKTk8bCsTN%2FsHWI%2F74TJ6VJaYGmnUR3QxU7ef0%2BPq8dhwcC9yAtGZCxYpFylrRIkPAMG0KlDeO6bPjKUsDG8uo8Kh7CywsVOQGGDL4%2FkECovPWzTpXLHzy3kC6UKPPtdKpZBF3svpRkYLWDFrnSXGluZ2TQbpFTOeUSQHM5JYMHciwcZHhhSwuFOh0Bu58NHT7TImOEEGTQb5FvjolC58MBKv3OUCZFr0ycxjGEuTuTQciZmLsJEyfvZuTxsfXkf8z0FEZMR5nCYdsLkCSzNHXC8pBJqSSd8nSCSiK%2FvzHPLbAMtS7vQYdJrhQ1JcJ51srwe6AmASFeYOrsDRNzVlGB2QT9Ak%2B3zjMBlgpmQO%2BUBr3xkOfBb8hiE9Ap%2FvoVV4W5gIi7dF3intGk%2Fva9wXk9bLsB%2BodpWyLq7j%2FRDZezdYEzCQcRTZQyFkNn%2BB84oCEm0PQbAwVe8riU3HrvrjtcsYXX8Dr%2FN95SGjEwcSyYkyGuT2rxzsZYF9yE9CTXO2EZC3mVqF0nWuuuV3eXALOGy7uFQac12B34xFm3ASpvZPVK%2FQJ9JZjfBUubqEuzvD3L231AjrYNyGIcWqSk8YKuOAuVEihU26gYl4UVUwcC37gbmKKbDrluHvHSj8Idzu9OdYwzjSPhoortUON5po6SzFA30v6cgzj9bXHOgiEdKzm9ZtIfEkqe7vrUjHkMgcsypZdiI7DDFB3eW6%2Fw1mnsrTISHfNpYm8h%2F7t21p9le8iN1XyCbwG9IuHRoneHOa%2BMSUdo90zDTwcynG2V%2BarXmJn6keOaRWwJ0IA0%2BOHhuQ63rUPgxTYuwZkDccPkXd1ZjK0WW6vxXfs9VFHLfw7aNMiBllj9C2MKEjSb17Jk7haTtd2b7cuT8jVwGSsdNt%2FACq9UQ2k3X9%2BPy5Sd9ZQhftpM5rN3uJs39wlqHueaQWGSmypfb32BvdnuPpntebP9pS3VCaHnlc3rVo1m81UzQtnrmuzWR6PnTlccjzxofxXoiqr030NVDleZTf2%2FVjavy7L4kRfvvaXkvb0u%2BUcP2n3bLHY3nMVPXrzzap467yBP7QNvtv2Wkrf3q%2BQ%2FHv8C8ez3OrQUAAA%3D&amp;bn=Corsair" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F63U0U7CMBQG4HfpNRcgogl3Jmg0ASXCnTHLYT3ACV3bnLYaJLy7XUFxBOOmXi37233r%2FrTbCHxB7UVfDA1IE7xoicmSbAxyww6I98E9FBjD%2Fd2d3D0Ub0dGBoVO9J82YqJMmV5xYUL54J3H4iBlkPJswSCxE4cftOh7DtgSYybD5Nei39m2Pp0h8AJvgaU1pH3nAC6tz2xQDhU4jCAVM1CZKqc3Zs%2BqbBGUpxy0Nvpvbvff3BFKCkX9Hoo0vzn8cxO%2Flbv%2FJ09Jr7%2Brwi0JlZwZ43xsw9EbtrM8VuN6NeCxeUUeK9D%2BgMZXZLbMbZkn8XIn1tm%2BIyB9rRek4%2BmokJjCptwNxyMYD9%2FcD5hesEou1xZZlnlie%2FXZIc1xEqw1fPThKg643UAyz%2BubqcsBOc80C97wiUblYbRpEY8g4Yh0qF38ySTpokGlAdUU9KqKzWPqY%2Fq1yW4Nrby0O9mkXMPR8tLGXKBGho8PbrDMBJ%2BdgvP4CzEM%2Baoe%2Bbx9B5vEOXfwBQAA" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XWXW%2FaMBQG4P%2FiazSRL7rlbh2tqAQba3pXTZFJThILx478wZYh%2FvscQ5clA5Fs7RXKsfNw%2FMo27BHsgCkUoiXHKdcKTVBUkMoUEi4kJuJU%2BIxLMMXT00N6fMk8rniqKUgUPu9RRHlT%2FShKrpsXHxSUrRRjW49zgVPwzPAXhkIlNEzQWhAuiKpR6Bwmv50lFjkssEgrTphyWrCoVFxqqkiCGeMszkm5wTSmzfzRrvtGrtd1N4BLiiWIseoKUqLLSzH8xZZ2%2Bnj3egz%2FKnuvJz8RVl9KQhYEaLrhXCqThiQ%2FYRonJhoZjIXdt4J7SSQFzjKKNUsKAyszcyzod8ECsJKEbVtTCwFqKL3m30GsKWaqZc2XxFVTr5q6Xf3N8NWvMGF3LCfMXBAdEmxxLHcvzC1k7p9MzQXZQZcs6gpE2tQtGwxnlySDSFcVF72FUzMgjwPW9I%2BmOzTLOZFKkI1WXJxJNG1HxwbxiFPcIyUwae5ZK82G93mvgT5htu1imakqU%2F0zySE3dvMxdeKo6aHXnj1EOTAQ%2BGXBpza9OMNSDdXdy3oClG5eup4NT9O63iu5E3Tc8CAIy1G4R7dUQ2Ue1OknNLLmJ2PeNmZUQUIwJRJSQy7NzzFFoT9BX7UpWvHd9NBv1rfNBr0DoCkVQFjGRQIlnE5rMHwvWDo4R5%2FJIRiZ7%2BycW9o%2FD%2F%2Ff9I3F%2FSF5%2BCPp95b2hvXtjcQ%2FWNy9GrY7Lmxnal1nSB7OlZav7ueFYR877ALwrp5rVbcbOuhuaIP%2BMLc1aaZjepdlkDS9y%2BNZONNpUmi2rdHh8O3wCx1kQxWzCgAA" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F92YXU%2FbMBSG%2F4uvq4l%2Bwda7QWFFKoMRJC6myXKTk8bCsTN%2FsHWI%2F74TJ6VJaYGmnUR3QxU7ef0%2BPq8dhwcC9yAtGZCxYpFylrRIkPAMG0KlDeO6bPjKUsDG8uo8Kh7CywsVOQGGDL4%2FkECovPWzTpXLHzy3kC6UKPPtdKpZBF3svpRkYLWDFrnSXGluZ2TQbpFTOeUSQHM5JYMHciwcZHhhSwuFOh0Bu58NHT7TImOEEGTQb5FvjolC58MBKv3OUCZFr0ycxjGEuTuTQciZmLsJEyfvZuTxsfXkf8z0FEZMR5nCYdsLkCSzNHXC8pBJqSSd8nSCSiK%2FvzHPLbAMtS7vQYdJrhQ1JcJ51srwe6AmASFeYOrsDRNzVlGB2QT9Ak%2B3zjMBlgpmQO%2BUBr3xkOfBb8hiE9Ap%2FvoVV4W5gIi7dF3intGk%2Fva9wXk9bLsB%2BodpWyLq7j%2FRDZezdYEzCQcRTZQyFkNn%2BB84oCEm0PQbAwVe8riU3HrvrjtcsYXX8Dr%2FN95SGjEwcSyYkyGuT2rxzsZYF9yE9CTXO2EZC3mVqF0nWuuuV3eXALOGy7uFQac12B34xFm3ASpvZPVK%2FQJ9JZjfBUubqEuzvD3L231AjrYNyGIcWqSk8YKuOAuVEihU26gYl4UVUwcC37gbmKKbDrluHvHSj8Idzu9OdYwzjSPhoortUON5po6SzFA30v6cgzj9bXHOgiEdKzm9ZtIfEkqe7vrUjHkMgcsypZdiI7DDFB3eW6%2Fw1mnsrTISHfNpYm8h%2F7t21p9le8iN1XyCbwG9IuHRoneHOa%2BMSUdo90zDTwcynG2V%2BarXmJn6keOaRWwJ0IA0%2BOHhuQ63rUPgxTYuwZkDccPkXd1ZjK0WW6vxXfs9VFHLfw7aNMiBllj9C2MKEjSb17Jk7haTtd2b7cuT8jVwGSsdNt%2FACq9UQ2k3X9%2BPy5Sd9ZQhftpM5rN3uJs39wlqHueaQWGSmypfb32BvdnuPpntebP9pS3VCaHnlc3rVo1m81UzQtnrmuzWR6PnTlccjzxofxXoiqr030NVDleZTf2%2FVjavy7L4kRfvvaXkvb0u%2BUcP2n3bLHY3nMVPXrzzap467yBP7QNvtv2Wkrf3q%2BQ%2FHv8C8ez3OrQUAAA%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Corsair&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;corsair_armour_grade1&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_cargorack_size6_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Corsair&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;corsair_armour_grade3&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;},{&quot;Slot&quot;:&quot;LargeHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_large&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size6_class5&quot;},{&quot;Slot&quot;:&quot;Slot03_Size6&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size5&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size5_class5&quot;},{&quot;Slot&quot;:&quot;Slot06_Size5&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;},{&quot;Slot&quot;:&quot;Slot08_Size3&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size3_class2&quot;},{&quot;Slot&quot;:&quot;Slot09_Size2&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size2_class5&quot;},{&quot;Slot&quot;:&quot;Slot10_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;combat&quot;,&quot;intro&quot;:&quot;A balanced six-gun combat fit using the deep optionals to shield-tank. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern. Re-weight optionals toward hull reinforcement for a tankier variant.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Tank with the depth, not military slots&quot;,&quot;text&quot;:&quot;The Corsair has no military bays, but ten optionals — three of them class-6 — let it tank deeply anyway. Decide shield-tank vs hull-tank and weight the optionals accordingly; you have the room either way.&quot;},&quot;notes&quot;:{&quot;LargeHardpoint1&quot;:&quot;Primary large multi-cannon; the single Corrosive Shell strips armour resistance for the whole battery.&quot;,&quot;LargeHardpoint2&quot;:&quot;Second large multi-cannon; Auto Loader removes reloads so its DPS never pauses.&quot;,&quot;LargeHardpoint3&quot;:&quot;Large beam strips shields; Thermal Vent vents heat so it runs cold under sustained fire.&quot;,&quot;MediumHardpoint1&quot;:&quot;Buy a cheap pulse, swap to a Thermal-Vent beam once A-rated for heat-free shield work.&quot;,&quot;MediumHardpoint2&quot;:&quot;Medium multi-cannon adds sustained kinetic DPS; Auto Loader keeps it topped up.&quot;,&quot;MediumHardpoint3&quot;:&quot;Second medium multi-cannon; Auto Loader keeps the kinetic fire uninterrupted.&quot;,&quot;TinyHardpoint1&quot;:&quot;First Heavy-Duty shield booster — the cheapest large gain in shield strength.&quot;,&quot;TinyHardpoint2&quot;:&quot;Second Heavy-Duty booster stacks raw MJ onto the bi-weave.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;PowerPlant&quot;:&quot;Powers six guns plus a shield and cells; Overcharged adds headroom, Thermal Spread bleeds the extra heat.&quot;,&quot;MainEngines&quot;:&quot;A-rated + Dirty Drives preserve the Imperial speed and agility that define the Corsair.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated to reach fights and turn-ins; only G3 range — combat doesn't need a jump monster.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate this FIRST — six guns plus boost drain the class-7 distributor faster than anything else.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; combat needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock C-rated tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size6&quot;:&quot;Bi-weave regenerates fast for a brawler that re-engages; Reinforced maximises MJ and Fast Charge keeps regen high.&quot;,&quot;Slot02_Size6&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot03_Size6&quot;:&quot;Hull reinforcement caps at size 5, so a 5D HRP under-fills this size-6 slot for max effective armour.&quot;,&quot;Slot04_Size5&quot;:&quot;Heavy-Duty hull reinforcement is the cheapest large multiplier on effective armour.&quot;,&quot;Slot05_Size5&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot06_Size5&quot;:&quot;Module Reinforcement spreads penetrating-hit damage across internals; not engineerable.&quot;,&quot;Slot07_Size4&quot;:&quot;More Heavy-Duty hull where the slot allows.&quot;,&quot;Slot08_Size3&quot;:&quot;More internal protection for the modules that keep you flying; not engineerable.&quot;,&quot;Slot09_Size2&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot10_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Multi-Cannons&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Corrosive Shell (one) / Auto Loader (rest)&quot;,&quot;engineer&quot;:&quot;Tod McQuinn&quot;},{&quot;module&quot;:&quot;Beam Lasers&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Efficient&quot;,&quot;experimental&quot;:&quot;Thermal Vent&quot;,&quot;engineer&quot;:&quot;Broo Tarquin&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:7,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Charge Enhanced&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:6,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;},{&quot;module&quot;:&quot;Hull Reinforcement&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;},{&quot;module&quot;:&quot;Shield Boosters&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Corsair&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;corsair_armour_grade3&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_armour_chunky&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_corrosive_shell&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_large&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;LargeHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_large&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_beamlaser_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_ChaffCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Boosted&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size7_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_HighFrequency&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size6_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size5_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size6&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size6_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size6&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot03_Size6&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size6_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot04_Size5&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size5_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot05_Size5&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot06_Size5&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size5_class2&quot;},{&quot;Slot&quot;:&quot;Slot07_Size4&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot08_Size3&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size3_class2&quot;},{&quot;Slot&quot;:&quot;Slot09_Size2&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size2_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot10_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Tank with the depth, not military slots</span><p>The Corsair has no military bays, but ten optionals — three of them class-6 — let it tank deeply anyway. Decide shield-tank vs hull-tank and weight the optionals accordingly; you have the room either way.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit the largest shield a class-6 bay allows plus a <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-shield-booster">shield booster</a> &mdash; RES-ready immediately. <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> stay stock Lightweight Alloy at this stage; the Military Grade swap waits for A-rating.</p>
+    <p>Arm the mounts buy-only with four gimballed multi-cannons and two pulse <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a> &mdash; cheap kinetic-plus-thermal cover until A-rating swaps a beam onto a large and a medium.</p>
+    <p>Slot a <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a> into one of the deep class-6 bays early; the internal depth means you needn't commit everything to combat at once.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a six-gun combat medium:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; 7A</b> &mdash; Six guns plus boost demand the class-7 distributor first. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; 7A</b> &mdash; Headroom for six guns, shields and utilities. <span class="acc">~10M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; 7A</b> &mdash; Preserve the Imperial speed and agility. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; 6C bi-weave</b> &mdash; Fast regen suits a brawler that re-engages. <span class="acc">~6M Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> &rarr; Military Grade Composite</b> &mdash; The hull-tank baseline before stacking reinforcement. <span class="acc">~9M Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 5A</b> &mdash; Reach fights and turn-ins faster. <span class="acc">~6M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Distributor and plant first</span><p>Six guns are power-hungry &mdash; A-rate the class-7 distributor and plant before weapons, then build the tank into the deep optionals: two size-6 shield cell banks behind the bi-weave, hull and <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">module reinforcement</a>, and a <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a>/heat-sink pair up top. Reinforcement packages stop at class 5, so the Size 6 bay carries the second bank rather than an undersized plate.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The full house combat pattern on a roomy modern medium. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Power Plant (7)</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Thrusters (7)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Multi-Cannons</td><td>Overcharged (G5)</td><td>Corrosive Shell (one) / Auto Loader (rest)</td><td>Tod McQuinn</td></tr>
+<tr><td class="mod">Beam Lasers</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+<tr><td class="mod">Power Distributor (7)</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Bi-Weave Shield (6)</td><td>Reinforced (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Shield Boosters</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and plant to G5 first to power and sustain six guns.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">Thrusters</a> to G5 to keep the Imperial speed advantage.</li>
+      <li><span class="stepnum">3</span>Weapons next: Overcharged multi-cannons with one Corrosive, Thermal-Vent beams.</li>
+      <li><span class="stepnum">4</span>Tank into the deep optionals: Reinforced bi-weave, cell banks and Heavy-Duty reinforcement.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Material-heavy &mdash; G5 across plant, <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>, distributor, six weapons and a deep defensive suite. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts to verify reserves.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>355 m/s</td><td>355 m/s</td><td class="acc">~430 m/s</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~330</td><td>~480</td><td class="acc">~1,000+</td></tr>
+        <tr><td class="mod"><a href="../../engineering/engineering-manuals/modules.html#module-shield-cell-bank">SCB</a> reserve</td><td>none</td><td>four banks</td><td class="acc">four banks</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>270</td><td>~540</td><td class="acc">~2,000+</td></tr>
+        <tr><td class="mod">Sustained DPS</td><td>very high</td><td>very high</td><td class="acc">elite (six guns)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Initial armour is stock Lightweight Alloy; A-rating drops in Military Grade Composite, and the engineered hull layers <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-bulkheads-heavy-duty">Heavy Duty</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> with <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> (5D, 4D, 1D) into the low thousands of effective armour. Behind the 1,000 MJ bi-weave sit four shield cell banks &mdash; two of them size-6 &mdash; for repeated re-engages, all at ~430 m/s. A fast, heavily armed medium with the internal depth to tank like a far larger ship. Breadth is its superpower.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Conflict zones.</b> Six guns and deep tanking let the Corsair dominate medium and high CZs for combat bonds.</li>
+      <li><b>Hazardous RES.</b> Heavy firepower clears high-value bounties fast while the deep internals keep you safe.</li>
+      <li><b>Pirate massacre stacks.</b> Stack missions and clear them in one well-armed session.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Mixed combat play.</b> Its room lets it carry cargo or <a href="../../engineering/engineering-manuals/modules.html#module-scanners">scanners</a> alongside its guns &mdash; ideal for combat-with-extras community goals.</li>
+      <li><b>High-intensity CZ farming.</b> Engineered, it thrives in the toughest conflict zones.</li>
+      <li><b>Power-play combat.</b> Clears enemy assets quickly while you grind Imperial standing &mdash; and as a Gutamaya hull it fits the Imperial aesthetic.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any Haz RES or CZ suits it. As an Imperial-built hull it pairs naturally with your Imperial-rank grind &mdash; CZ and massacre payouts double as standing progress.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Exploit the depth: decide shield- or hull-tank and use the ten optionals fully &mdash; few combat mediums can tank this hard.</li>
+      <li>Six guns reward a mixed loadout &mdash; multi-cannons for hull, beams for shields, one Corrosive to amplify it all.</li>
+      <li>It's fast for a six-gun medium &mdash; use the speed to control range as well as the firepower to win it.</li>
+      <li>At its price, it competes with large warships on capability; weigh the premium against an Alliance hull if budget matters.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Corsair is the modern, do-everything combat medium: six guns, ten optionals and <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> speed, with no rank gate. It lacks a signature trick &mdash; no huge mount, fighter bay or military slots &mdash; but its sheer breadth of firepower, room and pace makes it one of the most capable all-round combat mediums in the game, for those willing to pay the premium.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/corsair" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/corsair</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_corsair.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/imperial_corsair.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Corsair</span><span class="cr-what">Stock hull stats, hardpoint/internal layout, and module sellers for this ship.</span><a class="cr-link" href="https://inara.cz/elite/ship/44/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/44</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Corsair</span><span class="cr-what">Manufacturer (Gutamaya), multirole role assessment, and release history.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Corsair" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Corsair</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Corsair ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/corsair" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../corsair</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Assesses the Gutamaya Corsair's combat and multirole performance against rival medium hulls.</span><a class="cr-link" href="https://www.youtube.com/watch?v=vy5QvXX0COw" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=vy5QvXX0COw</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — TheYamiks</span><span class="cr-what">Opinionated review of the Corsair as a medium combat platform, weighing its strengths and weaknesses.</span><a class="cr-link" href="https://www.youtube.com/watch?v=F27K9zbYFnQ" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=F27K9zbYFnQ</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Critical take on the Corsair's limits: no huge hardpoint, no fighter bay, no military slots.</span><a class="cr-link" href="https://www.youtube.com/watch?v=rG6AYJjs3Ys" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=rG6AYJjs3Ys</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

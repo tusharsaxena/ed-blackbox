@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asp Scout &middot; Exploration &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Exploration → fed-blue (only permitted page-level CSS) -->
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Asp Scout · Exploration</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-explore"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Explore</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Asp Scout</span><span class="role ac-role-exploration">Exploration</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The <em>budget</em> medium explorer — capable, cheap, and perpetually overshadowed</h2>
+      <p>The Asp Scout is the lighter, cheaper sibling of the <a href="asp-explorer-exploration.html">Asp Explorer</a>: a medium-pad hull with a decent engineered jump range, seven optional internals for a full expedition kit, and no rank gate. It ranks mid-pack because its <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> and internals are a step down from the Explorer, and even the cheaper small-pad DBE out-ranges it — the Scout's case is purely price and medium-pad access.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/asp-scout.jpg" alt="Asp Scout" width="160" height="90">
+      <figcaption><b>Asp Scout</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">70<small>/100</small></div><div class="bar mini"><i style="--pct:70"></i></div></div>
+      <div class="stat"><div class="n">~54 LY</div><div class="l">Max jump (engineered)</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">150 t</div><div class="l">Hull mass</div></div>
+      <div class="stat"><div class="n">~3.82M Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">~14M Cr</div><div class="l">All-in engineered</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Asp Scout lives in the shadow of one of exploration's most beloved ships, the <a href="asp-explorer-exploration.html">Asp Explorer</a> &mdash; and that's a shame, because on its own terms it's a tidy, affordable medium explorer. Lighter and cheaper than its famous sibling, it offers a decent ~54 LY engineered range, seven optional internals for a proper expedition kit, and a medium pad that lands at most stations.</p>
+    <p>It is, admittedly, the lesser <a href="asp-explorer-exploration.html">Asp</a>. Its <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and internals are a step down from the Explorer's, so it jumps a little shorter and carries a little less, and the Explorer's superior range and famous canopy view make it the obvious choice for most. But the Scout costs markedly less, and for a budget commander who wants a medium-pad explorer with real kit at a low price, it's a quietly sensible pick that does the job without fuss.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Affordable medium-pad exploration: cost-conscious expeditions, exobiology, and a roomier-than-small explorer for a commander who wants medium-pad capacity without the <a href="asp-explorer-exploration.html">Asp Explorer</a>'s price.</p></div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-explore">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Explore</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~54 <small>LY</small></div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">223 / 304 <small>m/s</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel scoop</a></div><div class="v">Up to Class 5</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">150 <small>t (light)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">5&middot;4&middot;3&middot;3&middot;2&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">2</div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></div><div class="v">Class 4</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium <small>(most stations)</small></div></div>
+      <div class="cell"><div class="k">Hull cost</div><div class="v">~3.82M Cr</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+    </div>
+    <p>Four things make the Asp Scout a sensible budget medium explorer:</p>
+    <ul class="bullets">
+      <li><b>Light hull, decent range.</b> At 150 tonnes it jumps ~54 LY engineered &mdash; respectable for a cheap medium.</li>
+      <li><b>Tidy internals.</b> Seven optionals carry a class-5 scoop, scanner, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> and SRV bay &mdash; a complete expedition kit.</li>
+      <li><b>Medium-pad access.</b> Lands at the vast majority of stations &mdash; more flexible resupply than a large explorer.</li>
+      <li><b>Low price.</b> Markedly cheaper than the <a href="asp-explorer-exploration.html">Asp Explorer</a> for similar core capability &mdash; the value middleweight.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's the lesser <a href="asp-explorer-exploration.html">Asp</a>: a step down in <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>, range, internals and the Explorer's celebrated canopy view, with only two utilities and a slower hull. The <a href="asp-explorer-exploration.html">Asp Explorer</a> is a clearly better explorer for not a great deal more, and the premium mediums outclass both. The Scout's case is purely price &mdash; a cheaper route to a capable medium-pad explorer.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">A cheap, light 150 t medium-pad explorer with a full seven-optional kit and no rank gate, held to 70 by a modest ~54 LY range that even the small-pad DBE beats.</p>
+    <p>The <b>70/100</b> headline is a verdict against the exploration role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Engineered jump range</td><td class="sc"><span class="scval">22</span><span class="den">/35</span><div class="bar mini"><i style="--pct:63"></i></div></td><td class="wcell">Engineered ~54 LY on a Class-4 FSD with Guardian booster is respectable but mid-field at best — the Asp Explorer reaches ~62, the small-pad DBE ~68, the Krait Phantom ~75 and Mandalay ~85. Range is the clear limiter.</td></tr>
+      <tr><td class="fct">Heat profile</td><td class="sc"><span class="scval">11</span><span class="den">/15</span><div class="bar mini"><i style="--pct:73"></i></div></td><td class="wcell">150 t light hull with a D-rated, G5 Low Emissions power plant runs cool enough for safe scooping; solid but not class-leading — the Dolphin and Diamondback Scout run cooler still.</td></tr>
+      <tr><td class="fct">Fuel tank &amp; reach</td><td class="sc"><span class="scval">7</span><span class="den">/10</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">Class-4 fuel tank feeds a Class-5 fuel scoop, giving a couple of jumps between refuels and fast restocks at any star — ample reach for a ~54 LY hull.</td></tr>
+      <tr><td class="fct">Canopy &amp; visibility</td><td class="sc"><span class="scval">7</span><span class="den">/10</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">Bubble-style canopy gives good forward and side sightlines for scanning, but it falls short of the Asp Explorer's celebrated wraparound view that defines the top of this field.</td></tr>
+      <tr><td class="fct">Internals</td><td class="sc"><span class="scval">14</span><span class="den">/20</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell">Seven optionals (5·4·3·3·2·2·1) carry scoop, Guardian booster, AFMU, SRV bay, DSS and landing shield — a complete kit, though a step below the Explorer's larger slots and with zero military slots and only 2 utilities.</td></tr>
+      <tr><td class="fct">Comfort &amp; cost</td><td class="sc"><span class="scval">9</span><span class="den">/10</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">~3.82M Cr hull, ~14M Cr all-in engineered, no rank or permit gate, with medium-pad access to most stations — among the cheapest routes into a fully-kitted medium explorer.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">70</span><span class="den">/100</span><div class="bar mini"><i style="--pct:70"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for exploration specifically</em>. The role column is the maximum engineered jump range in light-years &mdash; the headline number for deep-space travel.</p>
+    <h3 class="subhead">Same class &mdash; medium-pad explorers</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Asp Scout</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="mandalay-exploration.html">Mandalay</a></td><td><span class="pill pad-medium">Medium</span></td><td>~85</td><td class="pcc"><span class="p">Far greater range; modern; roomy</span><span class="c">Much pricier</span></td><td><span class="rscore">96</span><div class="bar mini"><i style="--pct:96"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-exploration.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~75</td><td class="pcc"><span class="p">Premium range plus full kit</span><span class="c">Far pricier</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-exploration.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~62</td><td class="pcc"><span class="p">More range; superb visibility; roomier</span><span class="c">Pricier</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-exploration.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~45</td><td class="pcc"><span class="p">Roomier; multi-role</span><span class="c">Shorter range; heavy; pricier</span></td><td><span class="rscore">75</span><div class="bar mini"><i style="--pct:75"></i></div></td></tr>
+        <tr><td class="mod">Asp Scout <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>~54</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-exploration.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~48</td><td class="pcc"><span class="p">Cheaper; decent cargo</span><span class="c">Slower; less specialised</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Among medium explorers the Asp Scout is the budget option. Its own sibling the <a href="asp-explorer-exploration.html">Asp Explorer</a> beats it on range, room and that famous view for not much more, so the Scout makes most sense purely on price &mdash; a cheaper way into a capable medium-pad explorer.</p>
+    <h3 class="subhead">Other classes &mdash; the alternatives</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max jump (LY)</th><th>Pros &amp; cons vs Asp Scout</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="krait-phantom-exploration.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~75</td><td class="pcc"><span class="p">Premium range and capacity</span><span class="c">Far pricier</span></td><td><span class="rscore">93</span><div class="bar mini"><i style="--pct:93"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-explorer-exploration.html">Diamondback Explorer</a></td><td><span class="pill pad-small">Small</span></td><td>~68</td><td class="pcc"><span class="p">More range; cheaper; lands anywhere; cool</span><span class="c">Small pad; less capacity</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-exploration.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~62</td><td class="pcc"><span class="p">The obvious upgrade &mdash; more of everything</span><span class="c">Pricier</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="dolphin-exploration.html">Dolphin</a></td><td><span class="pill pad-small">Small</span></td><td>~58</td><td class="pcc"><span class="p">Coolest-running; comfortable; cheaper</span><span class="c">Small pad; less capacity</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-scout-exploration.html">Diamondback Scout</a></td><td><span class="pill pad-small">Small</span></td><td>~55</td><td class="pcc"><span class="p">Cheaper; cool-running</span><span class="c">Small pad; tighter internals</span></td><td><span class="rscore">74</span><div class="bar mini"><i style="--pct:74"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Curiously, the cheaper small-pad DBE out-ranges the Asp Scout and lands anywhere &mdash; so the Scout's main justification over a DBE is medium-pad capacity. Against its own sibling, the <a href="asp-explorer-exploration.html">Asp Explorer</a> is simply the better explorer for a little more. The Scout is a value-and-pad pick, not a range pick.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~3.82M Cr</div></div>
+      <div class="cell"><div class="k">A-rated explorer</div><div class="v">~8M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~14M Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~3.82M Cr the Asp Scout is cheap for a medium, with no rank gate. A full exploration fit brings it to around 14M Cr all-in &mdash; a capable medium-pad explorer for modest money.</p>
+    <p>It's a value pick. The <a href="asp-explorer-exploration.html">Asp Explorer</a> is the better ship for not much more, so the Scout makes most sense when budget is tight but a medium pad and decent capacity are wanted over a small-pad DBE.</p>
+    <div class="callout"><span class="lbl">Budget medium-pad explorer</span><p>Around 14M Cr all-in for a capable medium-pad explorer &mdash; cheaper than the <a href="asp-explorer-exploration.html">Asp Explorer</a>, though the Explorer is the better ship for a little more.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A tidy medium-pad explorer fit. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises range within the Scout's modest frame.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0I Heat Sink Launcher</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Lightweight Alloy</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">4E Power Plant</td><td class="st">4D Power Plant</td><td class="eng">G5 Low Emissions + Thermal Spread</td><td class="note">D-rated to save mass; Low Emissions runs it cold for safe scooping close to a star.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">4E Thrusters</td><td class="st">4D Thrusters</td><td class="eng">G5 Clean Drive Tuning + Double Braced</td><td class="note">D-rated for mass; Clean Drive Tuning keeps the thrusters cool and efficient on the long haul.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">4E Frame Shift Drive</td><td class="st">4A Frame Shift Drive</td><td class="eng">G5 Increased Range + Mass Manager</td><td class="note">A-rate this first — Increased Range plus Mass Manager is the whole jump-range case for the Scout.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">3E Life Support</td><td class="st">3D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate and go Lightweight to shed mass; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">4E Power Distributor</td><td class="st">4D Power Distributor</td><td class="eng">G3 Engine Focused + Stripped Down</td><td class="note">D-rated; Engine Focused gives enough engine cap to boost, Stripped Down trims the mass.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">4E Sensors</td><td class="st">4D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight — exploration needs no sensor range, so save the mass for jump range.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock class-4 tank — a couple of jumps between scoops; fuel capacity cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 5</td><td class="st">5E Fuel Scoop</td><td class="st">5A Fuel Scoop</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.</td></tr>
+<tr><td class="slot">Size 4</td><td class="st">—</td><td class="st">4H Guardian FSD Booster</td><td class="eng">(No blueprint available)</td><td class="note">Guardian FSD Booster adds a flat range bonus to every jump; needs a Guardian-site run and cannot be engineered.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A AFMU</td><td class="eng">G5 Shielded (no experimental effect)</td><td class="note">Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">2G Planetary Vehicle Hangar</td><td class="eng">(No blueprint available)</td><td class="note">Planetary Vehicle Hangar — a size-2 SRV bay under-fills the size-3 slot for surface mapping and exobiology.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2C Bi-Weave Shield Generator</td><td class="eng">G5 Enhanced Low Power + Lo-Draw</td><td class="note">Light bi-weave for landings only; Enhanced Low Power with Lo-Draw keeps mass and power minimal.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1I Detailed Surface Scanner</td><td class="eng">G5 Expanded Probe Scanning Radius (no experimental effect)</td><td class="note"></td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5WSwU7CQBCG32XPHGyQS28maCQBJZabMZuRHeiGsruZncUg4d2dFmMBTWxPzX5%2F59vpnx4U7tCxytXUg%2FGJ1UAVpQ0CIAYdly16gi0K%2Fj5NzGlMjjNvUoVR5a8HVVS%2Bpne09YkkmzBuz10amkSvCQxm8sKzUzlTwoGak%2FVkea%2Fy7Dj4MS2s2z8CmeCt46w1loF1icDRuk0FyS1LJM2JCFmzzHRQz%2F0H0rwCx61WLtGh5qHmOtpPvNXLCmLssuwMrLt3a%2BukjQslNrCv7oGkcil7xWOyO7xUlvuAZGreVzu1KyxSCJ6uPrySIJ6Cxjns7my6HNvIZN8Te%2FqjUdOmfTd%2BAQNXyogueoq9K01YLcBtLmUroSz03DbsYKsfN5kuZGr02yg%2FvA%2BNcvTfgm%2FHL6bVo3KJAwAA&amp;bn=Asp%20Scout" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F5XUUW%2BbMBAH8O%2FiZzSVEDSJt03t1Eppl42%2BTZN1wQdYdWzrbHdjUb77jJMtIasm8oT8P%2FwDzsY7hq%2BoPavYyoAwwbOM1b20MQBnuWtO0RNsMcbH0YM4TIvDRyOCQseqbztWKzOmH2hrAsXag8ftucUhVXhHIDCPN3zWrPIUMGNrkoakH1iV77O%2F0rPUwz2QsEZqn5%2FE3nreI3gn9YuCoJseiftAhJ77OGcGvTY%2FkNYKtD%2Bx8SHcjrkdc%2B7kL1zyRoFzixniI0h9pzupYzcmJKbwWu4TxZbHZrf%2BluQrTsl%2BsEhizM%2FZcga7ki3WwVpDFx%2BuYsEdCsks5r9q6uWtdJ7kJnhDb3RUnKrXNuIrCLggHWpnyF3d0oDqGfTLFGtj6mN6rhUztPFyk%2FM6zir%2FFeOGNzaR5fzFSeQikcsp2YX4G0jQrRMbY5zHYxvnokVCiylKaEHSkSqufM3lW%2BImdN2wgSGJi%2Fkrk8QyiYuLpe4lKtGhRoI%2Fm%2BcIF7wF5%2Bfq75OeT3WBHqRC4QK10KBrQOvxKPnPGZKxw0%2BOJHXHqh37qALaOPDHM7JOm5Pf%2FbSgBYrorOIxq1hVZuxLAHVg3t3s99%2F3vwEVmSVgggUAAA%3D%3D&amp;bn=Asp%20Scout" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F62WXU%2FbMBSG%2F4uvq4m2VJN6xwYdSO1gBGkXE7JOk5PEwrUtf5R1iP%2B%2BEyfQpHyn3LTyOfXj97XPqX3HcI3Ksymba8h08GzAklIYCoAz3KXb0E9YIYWb0VlWT6PhQmdBomPTP3cskbqKHtmVDpZyZx5XbRaHmOGFhQyH9INzxabeBhywCyu0FX7DpsMBO1GFUIhWqIJN79g3GdDQwDciaj4%2FytagUsyIMycfkk0nA%2FYrgKwxXw7u7wePmq6E2pyCzYwmznCrrTSelwjeCXUjIai0RMt9sBY99zSnt8iFcCk%2FJXJC5O9gIK0mPkodviz1Qt%2BivZCg%2FFYmcbmp4qaKcyf%2B4SFPJTg36q1wuw5PPIL05Ys7Say%2FhkArOnaQJ3mOaaXUGUwFyLayVGtJR9L2swChaimuawhj8HPM1Gl%2BFdQrBfGGjUaP16EoUe24mFlaiGo%2F98dWrLHrpNwQNqvibTeT3m5myTGfa1Vcgiqwr53cZVVprzcdH3ORYxKM0XanvCQlXJ2IJsb7HklrJT4XRel%2FY%2FX5rnaNtXksnLdiGby2z3RCts1%2BYj%2B01uQPk7fF2wgff7w72mpltQ239Wa0TV9CBjtOHSqnrfscg0mEffgsZgHlFaibrrKcop6ibWnjl6S1aNXXwZAnNGvylEjXhDYROdm7hwiXRBx1LcrsnRdF1DeK%2Bg67%2BopA94cARX211Np5bOruvabHETruQi0aELZBjff1fDRb9HB7%2BJywZSiKzRI2UdjojdLbJU4icbRTy1FYQf%2BsFh6atgGPeQ7O9y%2FsSP7xSD43XqyE638T1FI55rlIRfXUebJnX6PDYddhhh4EXX8u2BxSdCkoVT0n9nlHNE1LckG9fqrX9%2F8B6e6qUdAJAAA%3D&amp;bn=Asp%20Scout" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5WSwU7CQBCG32XPHGyQS28maCQBJZabMZuRHeiGsruZncUg4d2dFmMBTWxPzX5%2F59vpnx4U7tCxytXUg%2FGJ1UAVpQ0CIAYdly16gi0K%2Fj5NzGlMjjNvUoVR5a8HVVS%2Bpne09YkkmzBuz10amkSvCQxm8sKzUzlTwoGak%2FVkea%2Fy7Dj4MS2s2z8CmeCt46w1loF1icDRuk0FyS1LJM2JCFmzzHRQz%2F0H0rwCx61WLtGh5qHmOtpPvNXLCmLssuwMrLt3a%2BukjQslNrCv7oGkcil7xWOyO7xUlvuAZGreVzu1KyxSCJ6uPrySIJ6Cxjns7my6HNvIZN8Te%2FqjUdOmfTd%2BAQNXyogueoq9K01YLcBtLmUroSz03DbsYKsfN5kuZGr02yg%2FvA%2BNcvTfgm%2FHL6bVo3KJAwAA" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F5XUUW%2BbMBAH8O%2FiZzSVEDSJt03t1Eppl42%2BTZN1wQdYdWzrbHdjUb77jJMtIasm8oT8P%2FwDzsY7hq%2BoPavYyoAwwbOM1b20MQBnuWtO0RNsMcbH0YM4TIvDRyOCQseqbztWKzOmH2hrAsXag8ftucUhVXhHIDCPN3zWrPIUMGNrkoakH1iV77O%2F0rPUwz2QsEZqn5%2FE3nreI3gn9YuCoJseiftAhJ77OGcGvTY%2FkNYKtD%2Bx8SHcjrkdc%2B7kL1zyRoFzixniI0h9pzupYzcmJKbwWu4TxZbHZrf%2BluQrTsl%2BsEhizM%2FZcga7ki3WwVpDFx%2BuYsEdCsks5r9q6uWtdJ7kJnhDb3RUnKrXNuIrCLggHWpnyF3d0oDqGfTLFGtj6mN6rhUztPFyk%2FM6zir%2FFeOGNzaR5fzFSeQikcsp2YX4G0jQrRMbY5zHYxvnokVCiylKaEHSkSqufM3lW%2BImdN2wgSGJi%2Fkrk8QyiYuLpe4lKtGhRoI%2Fm%2BcIF7wF5%2Bfq75OeT3WBHqRC4QK10KBrQOvxKPnPGZKxw0%2BOJHXHqh37qALaOPDHM7JOm5Pf%2FbSgBYrorOIxq1hVZuxLAHVg3t3s99%2F3vwEVmSVgggUAAA%3D%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F62WXU%2FbMBSG%2F4uvq4m2VJN6xwYdSO1gBGkXE7JOk5PEwrUtf5R1iP%2B%2BEyfQpHyn3LTyOfXj97XPqX3HcI3Ksymba8h08GzAklIYCoAz3KXb0E9YIYWb0VlWT6PhQmdBomPTP3cskbqKHtmVDpZyZx5XbRaHmOGFhQyH9INzxabeBhywCyu0FX7DpsMBO1GFUIhWqIJN79g3GdDQwDciaj4%2FytagUsyIMycfkk0nA%2FYrgKwxXw7u7wePmq6E2pyCzYwmznCrrTSelwjeCXUjIai0RMt9sBY99zSnt8iFcCk%2FJXJC5O9gIK0mPkodviz1Qt%2BivZCg%2FFYmcbmp4qaKcyf%2B4SFPJTg36q1wuw5PPIL05Ys7Say%2FhkArOnaQJ3mOaaXUGUwFyLayVGtJR9L2swChaimuawhj8HPM1Gl%2BFdQrBfGGjUaP16EoUe24mFlaiGo%2F98dWrLHrpNwQNqvibTeT3m5myTGfa1Vcgiqwr53cZVVprzcdH3ORYxKM0XanvCQlXJ2IJsb7HklrJT4XRel%2FY%2FX5rnaNtXksnLdiGby2z3RCts1%2BYj%2B01uQPk7fF2wgff7w72mpltQ239Wa0TV9CBjtOHSqnrfscg0mEffgsZgHlFaibrrKcop6ibWnjl6S1aNXXwZAnNGvylEjXhDYROdm7hwiXRBx1LcrsnRdF1DeK%2Bg67%2BopA94cARX211Np5bOruvabHETruQi0aELZBjff1fDRb9HB7%2BJywZSiKzRI2UdjojdLbJU4icbRTy1FYQf%2BsFh6atgGPeQ7O9y%2FsSP7xSD43XqyE638T1FI55rlIRfXUebJnX6PDYddhhh4EXX8u2BxSdCkoVT0n9nlHNE1LckG9fqrX9%2F8B6e6qUdAJAAA%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Asp Scout&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;asp_scout_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size4_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size4_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size3_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size4_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size5_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Asp Scout&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;asp_scout_armour_grade1&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size4_class2&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size4_class2&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size3_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size4_class2&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size5_class5&quot;},{&quot;Slot&quot;:&quot;Slot02_Size4&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size4&quot;},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_repairer_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot04_Size3&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size2&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size2_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;exploration&quot;,&quot;intro&quot;:&quot;A tidy medium-pad explorer fit. Initial is buy-only; A-rated is the expedition baseline; Engineered maximises range within the Scout's modest frame.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Complete, if modest&quot;,&quot;text&quot;:&quot;The Scout's seven optionals carry a class-5 scoop, Guardian booster, SRV bay, AFMU and scanner — a full expedition kit, just with less range and redundancy than the Asp Explorer. Tidy and sufficient for cost-conscious trips.&quot;},&quot;notes&quot;:{&quot;TinyHardpoint1&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;TinyHardpoint2&quot;:&quot;Optional landing shield booster — Heavy Duty adds raw MJ so a hard touchdown won't breach the light bi-weave.&quot;,&quot;PowerPlant&quot;:&quot;D-rated to save mass; Low Emissions runs it cold for safe scooping close to a star.&quot;,&quot;MainEngines&quot;:&quot;D-rated for mass; Clean Drive Tuning keeps the thrusters cool and efficient on the long haul.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rate this first — Increased Range plus Mass Manager is the whole jump-range case for the Scout.&quot;,&quot;LifeSupport&quot;:&quot;D-rate and go Lightweight to shed mass; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;D-rated; Engine Focused gives enough engine cap to boost, Stripped Down trims the mass.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight — exploration needs no sensor range, so save the mass for jump range.&quot;,&quot;FuelTank&quot;:&quot;Stock class-4 tank — a couple of jumps between scoops; fuel capacity cannot be engineered.&quot;,&quot;Slot01_Size5&quot;:&quot;Optional / low-priority — Shielded hardens the scoop; scoop rate is unchanged. Refuels from stars.&quot;,&quot;Slot02_Size4&quot;:&quot;Guardian FSD Booster adds a flat range bonus to every jump; needs a Guardian-site run and cannot be engineered.&quot;,&quot;Slot03_Size3&quot;:&quot;Optional / low-priority — Shielded hardens the AFMU. Repairs modules between fights.&quot;,&quot;Slot04_Size3&quot;:&quot;Planetary Vehicle Hangar — a size-2 SRV bay under-fills the size-3 slot for surface mapping and exobiology.&quot;,&quot;Slot05_Size2&quot;:&quot;Light bi-weave for landings only; Enhanced Low Power with Lo-Draw keeps mass and power minimal.&quot;,&quot;Slot06_Size2&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Frame Shift Drive&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Increased Range&quot;,&quot;experimental&quot;:&quot;Mass Manager&quot;,&quot;engineer&quot;:&quot;Felicity Farseer&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Clean Drive Tuning&quot;,&quot;experimental&quot;:&quot;Double Braced&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Low Emissions&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Life Support&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Etienne Dorn&quot;},{&quot;module&quot;:&quot;Sensors&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;experimental&quot;:&quot;—&quot;,&quot;engineer&quot;:&quot;Bill Turner / Juri Ishmaak&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G3&quot;,&quot;blueprint&quot;:&quot;Engine Focused&quot;,&quot;experimental&quot;:&quot;Stripped Down&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Shield Generator&quot;,&quot;size&quot;:2,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Enhanced Low Power&quot;,&quot;experimental&quot;:&quot;Lo-Draw&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Booster&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Lightweight&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Asp Scout&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;asp_scout_armour_grade1&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_Advanced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Stealth&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Tuned&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_toughened&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size3_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_PriorityEngines&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_lightweight&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size4_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size5&quot;,&quot;Item&quot;:&quot;int_fuelscoop_size5_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FuelScoop_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot02_Size4&quot;,&quot;Item&quot;:&quot;int_guardianfsdbooster_size4&quot;},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_repairer_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;AFM_Shielded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot04_Size3&quot;,&quot;Item&quot;:&quot;int_buggybay_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size2&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size2_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Optimised&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_efficient&quot;}},{&quot;Slot&quot;:&quot;Slot07_Size1&quot;,&quot;Item&quot;:&quot;int_detailedsurfacescanner_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_Expanded&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Complete, if modest</span><p>The Scout's seven optionals carry a class-5 scoop, Guardian booster, SRV bay, AFMU and scanner — a full expedition kit, just with less range and redundancy than the Asp Explorer. Tidy and sufficient for cost-conscious trips.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~3.82M Cr) and fit only the cheap essentials: a stock <b>5E <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a></b> in the size-5 slot, the buy-only E-rated core internals (the <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> stays stock <b>4E</b> for now), the stock <b>4C <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">Fuel Tank</a></b>, and a <b>0I <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">Heat Sink Launcher</a></b> for heat dumps. The hull's default <b>Lightweight Alloy</b> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> are the right plating for an explorer &mdash; lowest mass, no spend.</p>
+    <p>Leave the rest empty at this stage &mdash; the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a>, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, SRV bay, <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a> and landing shield all wait for the A-rated pass.</p>
+    <p>No weapons; the lone <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink</a> is all the utility this state carries.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget medium explorer:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">Frame Shift Drive</a> &rarr; 4A</b> &mdash; Jump range is everything; A-rate the drive first. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">Fuel Scoop</a> &rarr; 5A</b> &mdash; A good scoop keeps the trip moving. <span class="acc">~2M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> (size 4)</b> &mdash; A flat range bonus &mdash; a Guardian-site run. <span class="acc">material cost</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a> (1I)</b> &mdash; Cartographic payouts; fit it in the size-1 slot, where it belongs. <span class="acc">~250k Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> (3A) + SRV bay (2G)</b> &mdash; Self-repair and surface access. <span class="acc">~1.5M Cr</span></li>
+      <li><span class="stepnum">6</span><b>Cores &rarr; D-rate</b> &mdash; <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a>, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>, <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a>, <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">power distributor</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> to D for lighter mass and longer jumps. <span class="acc">low cost</span></li>
+      <li><span class="stepnum">7</span><b>Bi-Weave Shield (2C)</b> &mdash; A light shield for safe landings &mdash; no <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a>, the bi-weave alone cushions the odd knock and the saved mass buys range. <span class="acc">low cost</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Solid value spec</span><p>A full A-rated, lightly engineered Asp Scout is a capable medium explorer for modest money &mdash; the <a href="asp-explorer-exploration.html">Asp Explorer</a> is better, but costs more. With the scanner sized correctly, one size-2 internal is left empty to keep the ship light.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The exploration engineering pattern. <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> (maxed) carries the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a>; <a href="../../engineering/engineering-manuals/engineers.html#engineer-professor-palin">Professor Palin</a> (or <a href="../../engineering/engineering-manuals/engineers.html#engineer-mel-brandon">Mel Brandon</a>) handles the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-thrusters-clean-drive-tuning">Clean Drive Tuning</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-thrusters">thrusters</a>; pin blueprints for remote G1&rarr;G5 application.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Frame Shift Drive (4)</td><td>Increased Range (G5)</td><td>Mass Manager</td><td>Felicity Farseer</td></tr>
+<tr><td class="mod">Thrusters (4)</td><td>Clean Drive Tuning (G5)</td><td>Double Braced</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Power Plant (4)</td><td>Low Emissions (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Life Support (3)</td><td>Lightweight (G5)</td><td>—</td><td>Etienne Dorn</td></tr>
+<tr><td class="mod">Sensors (4)</td><td>Lightweight (G5)</td><td>—</td><td>Bill Turner / Juri Ishmaak</td></tr>
+<tr><td class="mod">Power Distributor (4)</td><td>Engine Focused (G3)</td><td>Stripped Down</td><td>The Dweller</td></tr>
+<tr><td class="mod">Shield Generator (2)</td><td>Enhanced Low Power (G5)</td><td>Lo-Draw</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Booster</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Lightweight (G5)</td><td>—</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-frame-shift-drive">FSD</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-frame-shift-drive-increased-range">Increased Range</a> to G5 with Mass Manager for the Scout's ~54 LY range.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-life-support-lightweight">Lightweight</a> <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a> and <a href="../../engineering/engineering-manuals/modules.html#module-sensors">sensors</a> to shed mass.</li>
+      <li><span class="stepnum">3</span>Low-Emissions plant for cool scooping.</li>
+      <li><span class="stepnum">4</span><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-thrusters-clean-drive-tuning">Clean Drive Tuning</a> <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> for efficient travel.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; standard exploration blueprints on modest medium modules; the <a href="../../engineering/engineering-manuals/modules.html#module-guardian-fsd-booster">Guardian FSD Booster</a> needs a Guardian-site run. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max jump (LY)</td><td>~30</td><td>~40</td><td class="acc">~54</td></tr>
+        <tr><td class="mod">Module space</td><td>modest</td><td>modest</td><td class="acc">modest</td></tr>
+        <tr><td class="mod">Pad access</td><td>medium</td><td>medium</td><td class="acc">medium</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>304 m/s</td><td>304 m/s</td><td class="acc">~340 m/s</td></tr>
+        <tr><td class="mod">Cost-efficiency</td><td>good</td><td>good</td><td class="acc">good</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Asp Scout jumps ~54 LY with a complete (if modest) expedition kit on a medium pad, for low money. Stock <b>Lightweight Alloy</b> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> (Lightweight Armour G5) keep plating at minimum mass, and dropping the <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-shield-booster">shield booster</a> for the 2C bi-weave alone trims utility weight &mdash; every kilo is range. The <a href="asp-explorer-exploration.html">Asp Explorer</a> does it all a little better for a little more; the Scout's pitch is purely the lower price.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Cost-conscious expeditions.</b> A capable medium-pad explorer when budget matters.</li>
+      <li><b>Exobiology and surveys.</b> Its SRV bay and <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">DSS</a> suit planetary mapping and sampling.</li>
+      <li><b>Medium-pad deep-space trips.</b> Roomier capacity than a small explorer, with flexible resupply.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Budget medium exploration.</b> Most of a medium explorer's capability at a low price.</li>
+      <li><b>Stepping-stone to the <a href="asp-explorer-exploration.html">Asp Explorer</a>.</b> A cheap way to try medium-pad exploration before upgrading.</li>
+      <li><b>Carrier-supported trips.</b> A medium pad docks on fleet carriers and most stations en route.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example destinations</span><p>Any deep-space target suits it. From your home base it reaches expedition start points in a handful of jumps &mdash; a budget medium for the journey.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>It's the lesser <a href="asp-explorer-exploration.html">Asp</a> &mdash; the <a href="asp-explorer-exploration.html">Asp Explorer</a> is the better ship for a little more money.</li>
+      <li>Curiously, the cheaper small-pad DBE out-ranges it; the Scout's edge is medium-pad capacity.</li>
+      <li><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and a class-5 scoop first; then fill the tidy internals with full kit.</li>
+      <li>A sensible budget pick, but most explorers will be happier upgrading to the <a href="asp-explorer-exploration.html">Asp Explorer</a> or a <a href="krait-phantom-exploration.html">Phantom</a>.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Asp Scout is the forgotten middleweight: a cheap, light, medium-pad explorer with a decent range and tidy kit, forever overshadowed by its celebrated sibling. The <a href="asp-explorer-exploration.html">Asp Explorer</a> is the better ship for a little more, and even the small-pad DBE out-ranges it &mdash; but as a low-cost route to medium-pad exploration, the Scout quietly does the job.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/asp_scout" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/asp_scout</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Asp Scout ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/asp-scout" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../asp-scout</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/asp_scout.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/asp_scout.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Asp Scout</span><span class="cr-what">Stock hull stats, hardpoint/internal layout, and module sellers for this ship.</span><a class="cr-link" href="https://inara.cz/elite/ship/36/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/36</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Asp Scout</span><span class="cr-what">Manufacturer, role assessment, and lore reference for the Asp Scout.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Asp_Scout" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Asp_Scout</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — TheYamiks</span><span class="cr-what">Opinionated review of the Asp Scout's hull and handling, framing it against the larger Asp Explorer.</span><a class="cr-link" href="https://www.youtube.com/watch?v=q2ftkDhViKs" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=q2ftkDhViKs</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

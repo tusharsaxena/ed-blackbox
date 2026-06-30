@@ -1,6 +1,6 @@
 # generate-ship-role-matrix.py
 
-Builds **`guides/ships/ship-role-matrix.html`** — the *Ship × Role Matrix*, a single
+Builds **`guides/ships/general/ship-role-matrix.html`** — the *Ship × Role Matrix*, a single
 interactive grid of every published ship×role suitability verdict (rows = hulls,
 columns = the seven roles). It's a pure projection of the canonical ratings; re-run it
 whenever those ratings or dossiers change so the grid stays in sync.
@@ -17,7 +17,7 @@ whenever those ratings or dossiers change so the grid stays in sync.
 ## What it includes (and excludes)
 
 - **Dossier-backed cells only.** A ship×role pairing appears **only if it has a published
-  dossier** (`guides/ships/dossiers/<ship>-<role>.html`). Rated-but-dossier-less pairings
+  dossier** (`guides/ships/ship-dossiers/<ship>-<role>.html`). Rated-but-dossier-less pairings
   (e.g. Cobra Mk IV/V · Trading, Dolphin · Trading) render as **blank**, not as a score.
 - **`Python (original)`** (a legacy combat-only duplicate of `Python`) is dropped entirely.
 - Result at last build: **48 ships · 128 cells · 7 roles**.
@@ -42,10 +42,10 @@ minimum, which stack).
 
 ```bash
 python3 scripts/generate-ship-role-matrix.py            # print data-model summary + pad cross-check
-python3 scripts/generate-ship-role-matrix.py --page     # write guides/ships/ship-role-matrix.html
+python3 scripts/generate-ship-role-matrix.py --page     # write guides/ships/general/ship-role-matrix.html
 ```
 
-`--mockups` (design iteration only) writes a throwaway `guides/ships/_mockup-matrix-a3.html`.
+`--mockups` (design iteration only) writes a throwaway `guides/ships/general/_mockup-matrix-a3.html`.
 
 ## Cross-linking
 
@@ -63,8 +63,8 @@ cells/champions/nolink areas are self-contained).
 1. `bash scripts/generate-guides-index.sh` — the page already has its card line in the Ships ›
    General sub-section; this refreshes the landing page + auto-counts.
 2. `bash scripts/generate-anchor-files.sh` — regenerate the sibling `ship-role-matrix-anchors.md`.
-3. `python3 scripts/apply-hyperlinks.py guides/ships/ship-role-matrix.html` then
-   `python3 scripts/normalize-link-targets.py guides/ships/ship-role-matrix.html` — restore the
+3. `python3 scripts/apply-hyperlinks.py guides/ships/general/ship-role-matrix.html` then
+   `python3 scripts/normalize-link-targets.py guides/ships/general/ship-role-matrix.html` — restore the
    prose cross-links the regeneration wiped (Ship column + cards stay `nolink`).
 4. `python3 scripts/verify-links.py` — confirm every dossier link + anchor resolves.
 

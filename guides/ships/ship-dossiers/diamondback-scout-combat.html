@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamondback Scout &middot; Combat &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Diamondback Scout · Combat</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-fight"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Fight</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Lakon Spaceways</div>
+    <h1 class="title"><span>Diamondback Scout</span><span class="role ac-role-combat">Combat</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-06-25</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>The cool-running budget picket — durable and <em>stealthy</em>, not a hard hitter</h2>
+      <p>A cheap, tough-for-its-size small ship with a class-leading low-heat signature. Four utility mounts, solid armour, and a trivial rebuy make it a durable skirmisher — but only two medium and two small guns keep damage modest. Buy it for stealth, survivability, and value while learning combat fundamentals.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/diamondback-scout.jpg" alt="Diamondback Scout" width="160" height="90">
+      <figcaption><b>Diamondback Scout</b> &middot; Lakon Spaceways</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">60<small>/100</small></div><div class="bar mini"><i style="--pct:60"></i></div></div>
+      <div class="stat"><div class="n">2M 2S</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">384 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">~564k Cr</div><div class="l">Hull price</div></div>
+      <div class="stat"><div class="n">Small</div><div class="l">Pad size</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Diamondback Scout is Lakon's compact patrol ship, and its calling card is heat. It runs cooler than almost anything in its class, which makes it hard to detect and lets it deploy weapons and modules without spiking its signature &mdash; a genuine asset for stealthy approaches and silent-running tactics. Four utility mounts (generous for a small ship) round out a tough, cheap little hull.</p>
+    <p>As a fighter it's modest: two medium and two small hardpoints deal limited damage, and its speed and shields are unremarkable. But it's cheap, durable for its size and pleasant to fly, and its low heat gives it a tactical niche. The Scout is a budget picket and a fine stepping-stone &mdash; not a giant-killer, but a dependable small fighter that survives more than it should for the money.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Budget and stealthy small-pad combat: low-intensity RES, silent-running approaches, and as a cheap, durable first combat ship that teaches the basics without a punishing rebuy.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-exploration" href="diamondback-scout-exploration.html"><span class="vrole">Exploration</span><span class="vrate">74<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-fight">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Fight</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">283 / 384 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">2 Medium &middot; 2 Small</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">~170 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~93 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Base armour</div><div class="v">216</div></div>
+      <div class="cell"><div class="k">Heat signature</div><div class="v">Very low <small>(class-leading)</small></div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">3&middot;3&middot;3&middot;2&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+      <div class="cell"><div class="k">Hull cost</div><div class="v">~564k Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small <small>(docks anywhere)</small></div></div>
+    </div>
+    <p>Four things define the Scout as a combat ship:</p>
+    <ul class="bullets">
+      <li><b>Class-leading low heat.</b> It runs cold, making it hard to detect and able to deploy weapons and modules without a signature spike &mdash; a real stealth advantage.</li>
+      <li><b>Four utility mounts.</b> Generous for a small ship &mdash; room for shield boosters, <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a>, heat sinks and a scanner all at once.</li>
+      <li><b>Tough and cheap.</b> A 216 armour base on a ~564k Cr hull makes it durable for the money, with a trivial rebuy.</li>
+      <li><b>Decent speed.</b> 384 m/s boost lets it set range and disengage from fights it can't win.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>Only two medium and two small guns mean low damage, and its shields are weak. It can't out-fight the large-gun small ships or the firepower-focused mediums &mdash; it survives and skirmishes rather than killing quickly. The Scout's niche is heat and durability on a budget; for raw combat power, almost every pricier small ship beats it.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Class-leading low heat plus four utilities and tough-for-price armour carry it, but only 2M 2S firepower and a weak ~93 MJ base shield cap it as a durable budget skirmisher, not a killer.</p>
+    <p>The <b>60/100</b> headline is a verdict against the combat role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Hardpoints</td><td class="sc"><span class="scval">17</span><span class="den">/30</span><div class="bar mini"><i style="--pct:57"></i></div></td><td class="wcell">Two medium and two small mounts (2M 2S) put it mid-pack among small-pad fighters — same raw count as the Viper twins, but out-gunned by the Vulture's 2L, Kestrel's 3L 2S and Cobra Mk V's 3M 2S. Adequate gimballed multi-cannon/pulse battery, but alpha and sustained DPS stay modest.</td></tr>
+      <tr><td class="fct">Power distributor</td><td class="sc"><span class="scval">5</span><span class="den">/10</span><div class="bar mini"><i style="--pct:50"></i></div></td><td class="wcell">Class-3 distributor is the smallest core in the fit and caps weapon and boost sustain; engineered Charge Enhanced + Super Conduits makes it workable for a light multi-cannon/pulse load, but it has no headroom for heavy energy weapons.</td></tr>
+      <tr><td class="fct">Shield</td><td class="sc"><span class="scval">7</span><span class="den">/15</span><div class="bar mini"><i style="--pct:47"></i></div></td><td class="wcell">Base shield is only ~93 MJ, weak even for the class; A-rated 3C bi-weave reaches ~170 MJ and engineered with two Heavy-Duty boosters ~300 MJ. Usable buffer but well below shield-tank small ships like the Imperial Courier.</td></tr>
+      <tr><td class="fct">Armour &amp; internals</td><td class="sc"><span class="scval">10</span><span class="den">/15</span><div class="bar mini"><i style="--pct:67"></i></div></td><td class="wcell">216 base armour on a ~170 t hull is tough for the price, rising to ~900 effective with two Heavy-Duty HRPs. Internals 3·3·3·2·1·1 with zero military slots — decent reinforcement room but no dedicated combat-bulkhead bonus.</td></tr>
+      <tr><td class="fct">Agility</td><td class="sc"><span class="scval">13</span><span class="den">/20</span><div class="bar mini"><i style="--pct:65"></i></div></td><td class="wcell">283/384 m/s top/boost and nimble handling let it set range and disengage, but it is not in the elite-agility tier of the Vulture or Eagle. Solid, dictate-the-range mobility rather than a standout turn-fighter.</td></tr>
+      <tr><td class="fct">Utility &amp; flexibility</td><td class="sc"><span class="scval">8</span><span class="den">/10</span><div class="bar mini"><i style="--pct:80"></i></div></td><td class="wcell">Four utility mounts (generous for a small hull) carry two shield boosters, chaff and a heat sink at once, and its class-leading very-low heat signature enables silent-running approaches and Thermal-Vent resets — its genuine role-leading edge.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">60</span><span class="den">/100</span><div class="bar mini"><i style="--pct:60"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the combat role specifically</em>. The role column is the hardpoint loadout &mdash; the raw weapon mounts behind the damage.</p>
+    <h3 class="subhead">Same class &mdash; small-pad combat ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Diamondback Scout</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="kestrel-mk-ii-combat.html">Kestrel Mk II</a></td><td><span class="pill pad-small">Small</span></td><td>3L 2S</td><td class="pcc"><span class="p">Three large guns; far more alpha</span><span class="c">Far pricier; thin armour</span></td><td><span class="rscore">85</span><div class="bar mini"><i style="--pct:85"></i></div></td></tr>
+        <tr><td class="mod"><a href="vulture-combat.html">Vulture</a></td><td><span class="pill pad-small">Small</span></td><td>2L</td><td class="pcc"><span class="p">Two large guns; elite agility</span><span class="c">Pricier; power-starved</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-v-combat.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>3M 2S</td><td class="pcc"><span class="p">More guns, room and speed</span><span class="c">Pricier</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-courier-combat.html">Imperial Courier</a></td><td><span class="pill pad-small">Small</span></td><td>3M</td><td class="pcc"><span class="p">Faster; far stronger shields</span><span class="c">Paper armour; <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> rank</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="viper-mk-iv-combat.html">Viper Mk IV</a></td><td><span class="pill pad-small">Small</span></td><td>2M 2S</td><td class="pcc"><span class="p">Tougher; cheap; forgiving</span><span class="c">Hotter; fewer utilities</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+        <tr><td class="mod"><a href="viper-mk-iii-combat.html">Viper Mk III</a></td><td><span class="pill pad-small">Small</span></td><td>2M 2S</td><td class="pcc"><span class="p">Faster; very cheap</span><span class="c">Fragile; hotter</span></td><td><span class="rscore">63</span><div class="bar mini"><i style="--pct:63"></i></div></td></tr>
+        <tr><td class="mod">Diamondback Scout <span class="pill md">this</span></td><td><span class="pill pad-small">Small</span></td><td>2M 2S</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-iii-combat.html">Cobra Mk III</a></td><td><span class="pill pad-small">Small</span></td><td>2M 2S</td><td class="pcc"><span class="p">Cheap; versatile classic</span><span class="c">Hotter; thinner shields</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+        <tr><td class="mod"><a href="eagle-mk-ii-combat.html">Eagle Mk II</a></td><td><span class="pill pad-small">Small</span></td><td>3S</td><td class="pcc"><span class="p">More agile; cheaper</span><span class="c">Tiny guns; eggshell hull</span></td><td><span class="rscore">55</span><div class="bar mini"><i style="--pct:55"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Scout is the cool-running budget pick. The pricier small ships out-gun it comprehensively, but few match its heat signature, utility count and durability per credit. Buy it for stealth, survivability and value &mdash; not for firepower.</p>
+    <h3 class="subhead">Other classes &mdash; what you graduate to</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Diamondback Scout</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="krait-mk-ii-combat.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">A proper combat medium with tank and SLF</span><span class="c">Medium pad; far pricier</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="alliance-chieftain-combat.html">Alliance Chieftain</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 1M 3S</td><td class="pcc"><span class="p">Agile tank; military slots; real firepower</span><span class="c">Medium pad; far pricier</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="vulture-combat.html">Vulture</a></td><td><span class="pill pad-small">Small</span></td><td>2L</td><td class="pcc"><span class="p">The agile small-pad step-up in punch</span><span class="c">Pricier; power-starved</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-v-combat.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>3M 2S</td><td class="pcc"><span class="p">The roomy, harder-hitting small-pad upgrade</span><span class="c">Pricier</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod"><a href="diamondback-explorer-combat.html">Diamondback Explorer</a></td><td><span class="pill pad-small">Small</span></td><td>1L 2M</td><td class="pcc"><span class="p">The Scout's bigger sibling; cool-running explorer</span><span class="c">Explorer-first; pricier</span></td><td><span class="rscore">65</span><div class="bar mini"><i style="--pct:65"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Scout is a budget stepping-stone. When its modest firepower frustrates you, the small-pad step up is a <a href="vulture-combat.html">Vulture</a> or <a href="cobra-mk-v-combat.html">Cobra Mk V</a>; the real leap is a medium like the <a href="alliance-chieftain-combat.html">Chieftain</a> or <a href="krait-mk-ii-combat.html">Krait Mk II</a>. Until then it's a cheap, durable, stealthy way to learn combat.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~564k Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~2.5M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~8M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Small</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~564k Cr the Scout is very cheap, with no rank or permit gate and a trivial rebuy. Its small modules keep engineering costs low, so a fully kitted Scout remains one of the most affordable combat ships you can field.</p>
+    <p>It's a budget pick first and foremost: you buy it for value, stealth and durability while learning, then move to a harder-hitting hull once your skills outgrow its modest guns.</p>
+    <div class="callout"><span class="lbl">Cheap and durable</span><p>Under 600k Cr for a tough, cool-running small fighter with four utilities &mdash; one of the best value-for-survivability combat ships for a new pilot.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A durable, cool-running skirmisher fit that uses the four utilities. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern, leaning on the Scout's low heat and toughness.</p>
+    <div class="tbl-scroll">
+    <table class="l3">
+<thead><tr><th>Slot</th><th>Initial · buy-only</th><th>A-Rated · no eng</th><th>Engineered</th><th>Notes</th></tr></thead>
+<tbody>
+<tr class="grouprow"><td colspan="5">Hardpoints</td></tr>
+<tr><td class="slot">Medium 1</td><td class="st">2F Pulse Laser (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Corrosive Shell</td><td class="note">Primary medium multi-cannon; the single Corrosive Shell strips armour resistance for the whole battery.</td></tr>
+<tr><td class="slot">Medium 2</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="st">2F Multi-Cannon (Gimballed)</td><td class="eng">G5 Overcharged + Auto Loader</td><td class="note">Second medium multi-cannon; Auto Loader removes reloads so it never stops firing.</td></tr>
+<tr><td class="slot">Small 1</td><td class="st">1G Multi-Cannon (Gimballed)</td><td class="st">1G Pulse Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Small pulse laser; Efficient + Thermal Vent strips shields and dumps heat on every hit.</td></tr>
+<tr><td class="slot">Small 2</td><td class="st">—</td><td class="st">1G Pulse Laser (Gimballed)</td><td class="eng">G5 Efficient + Thermal Vent</td><td class="note">Second Thermal-Vent pulse keeps the Scout running cold — its whole identity under sustained fire.</td></tr>
+<tr class="grouprow"><td colspan="5">Utility Mounts</td></tr>
+<tr><td class="slot">Utility 1</td><td class="st">0A Shield Booster</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">First shield booster; Heavy Duty multiplies the bi-weave's raw MJ on a hull with little base shield.</td></tr>
+<tr><td class="slot">Utility 2</td><td class="st">—</td><td class="st">0A Shield Booster</td><td class="eng">G5 Heavy Duty + Super Capacitors</td><td class="note">Second Heavy-Duty booster — the cheapest large gain in shield strength on a small hull.</td></tr>
+<tr><td class="slot">Utility 3</td><td class="st">—</td><td class="st">0I Chaff Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.</td></tr>
+<tr><td class="slot">Utility 4</td><td class="st">—</td><td class="st">0I Heat Sink Launcher</td><td class="eng">G1 Ammo Capacity (no experimental effect)</td><td class="note">Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.</td></tr>
+<tr class="grouprow"><td colspan="5">Core Internals</td></tr>
+<tr><td class="slot">Bulkheads</td><td class="st">Lightweight Alloy</td><td class="st">Military Grade Composite</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note"></td></tr>
+<tr><td class="slot">Power Plant</td><td class="st">4E Power Plant</td><td class="st">4A Power Plant</td><td class="eng">G5 Overcharged + Thermal Spread</td><td class="note">A-rate it; Overcharged adds headroom for guns, shields and utilities, Thermal Spread bleeds the extra heat.</td></tr>
+<tr><td class="slot">Thrusters</td><td class="st">4E Thrusters</td><td class="st">4A Thrusters</td><td class="eng">G5 Dirty Drive Tuning + Drag Drives</td><td class="note">A-rated + Dirty Drives keep the nimble Scout fast enough to dictate the fight.</td></tr>
+<tr><td class="slot">Frame Shift Drive</td><td class="st">4E Frame Shift Drive</td><td class="st">4A Frame Shift Drive</td><td class="eng">G3 Increased Range + Mass Manager</td><td class="note">A-rated to reposition between fights; only G3 range — combat doesn't need a jump monster.</td></tr>
+<tr><td class="slot">Life Support</td><td class="st">2E Life Support</td><td class="st">2D Life Support</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">D-rate to save mass, Lightweight trims more; life support has no experimental effect.</td></tr>
+<tr><td class="slot">Power Distributor</td><td class="st">3E Power Distributor</td><td class="st">3A Power Distributor</td><td class="eng">G5 Charge Enhanced + Super Conduits</td><td class="note">A-rate this FIRST — the class-3 distributor is the smallest core and sets your weapon and boost sustain.</td></tr>
+<tr><td class="slot">Sensors</td><td class="st">2E Sensors</td><td class="st">2D Sensors</td><td class="eng">G5 Lightweight (no experimental effect)</td><td class="note">Drop to D and go Lightweight; combat needs no sensor range, so save the mass.</td></tr>
+<tr><td class="slot">Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="st">4C Fuel Tank</td><td class="eng">(No blueprint available)</td><td class="note">Stock tank; fuel capacity is fixed and cannot be engineered.</td></tr>
+<tr class="grouprow"><td colspan="5">Optional Internals</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">3E Shield Generator</td><td class="st">3C Bi-Weave Shield Generator</td><td class="eng">G5 Reinforced + Fast Charge</td><td class="note">Bi-weave regenerates fast under fire; Reinforced maximises its MJ, Fast Charge speeds the reform.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">3E Cargo Rack</td><td class="st">3D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Heavy-Duty hull reinforcement is the cheapest large multiplier on effective armour.</td></tr>
+<tr><td class="slot">Size 3</td><td class="st">—</td><td class="st">3A Shield Cell Bank</td><td class="eng">G4 Specialised (no experimental effect)</td><td class="note">Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.</td></tr>
+<tr><td class="slot">Size 2</td><td class="st">—</td><td class="st">2D Hull Reinforcement</td><td class="eng">G5 Heavy Duty + Deep Plating</td><td class="note">Second Heavy-Duty HRP — armour stacks linearly, so every plate counts on a light hull.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Module Reinforcement</td><td class="eng">(No blueprint available)</td><td class="note">Module Reinforcement spreads penetrating-hit damage across the cores; not engineerable.</td></tr>
+<tr><td class="slot">Size 1</td><td class="st">—</td><td class="st">1D Hull Reinforcement</td><td class="eng">G5 Heavy Duty (no experimental effect)</td><td class="note">Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.</td></tr>
+<tr class="grouprow lex-foot"><td colspan="5">Open in planner / Export</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in Coriolis</td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F53UTUvDQBAG4P%2By5x76oZfeBBULVYvpTSRMutN0cL%2BY3a1U8b%2B72RZrSguJp5B3Nk92J0O%2BBG7RBDEVcwvSxiAGotiQS4Ek0NbIClbvh%2FAJNKbC4W4m9w%2Bm20cro0Ivpq9folC2SW9Y28ipNguo21oJuVbWDBJHacmzEdPAEQdiwWSZwk5MR9%2BDX%2BsRJUX9ACydJRNGR3XjQumi8qjAYxJJV6BKndf3h8dtWEcVaAXGWNNbLjQodWnHZ2DfrO%2FgLsnsLrF%2BQ6hkZa0PqReePnFYrlJj%2FHUHeGE%2FkBcKTDii6RWla3LX5Fm82oudvhqQuTM1mTQYLRJz2Je75zR9ae7W4ZZpi21ys3PIssn7snNaYxGds3xycJUKfl%2FI5ri7mXt5Sz4wVTFYPtNReaxmfdJdfwEJJ6RH4y37vvu8j6iWYN7b2DqlIaV%2FOznpMvLpMhyVRXOak%2B3lwazRIMM%2FDpzh8Tl4BVxbbn4pnci37x8SPQQd7wQAAA%3D%3D&amp;bn=Diamondback%20Scout" target="_blank" rel="noopener" title="Open the Initial build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F7XVzW6jMBAA4HfxOYcCaQ%2B5rdSttlLTjZbeVhUa8BCs%2BAeN7a6yVd%2B9xkk3S5qoWGpPiBnzMTNgeGb4hNqxBbszwI13bMbKTvQhwAUoo3kNzWYfvAeFIbE%2Fu%2BW7C8Pp0nAv0bLF72dWSjNEv5EynkLu1qEaaxXEXLUm4FiEJT81WzjyOGMrEoaE27JF9jL7Zy2RC69%2BAPHeCO2yg9r1rlJeOtGA1kZXa6FqkJWKF6TL%2BefJpQIpz5Xce2lRgkV6c%2B2wPJnNP4t9EHp7rljbCZS8Nsa6AFvxFy%2BqJtzFXqbC%2BVfBxRhuOmhbCV43XYBdWJkKzsdgh%2BCs0JuD6YnQTaVX5g%2FSSoJ2BzbcpOqHeD%2FEY%2Ffz6d0vQejvei102HQjEmMwlbuhsLPDnm7dNYknHJPdtkfiQzyVvRMtlr7vDR01LkPC7hLRzHdmPnWW18I6ErV3hk5MlB%2ByUS%2BmV%2FwLOByRFrU1ZFPrvPEoH0Bvxlgboi5E%2F5%2FklC%2FgcLjIqnLo5qi8uInWqJHgqOGiasG6qXp%2BSu%2B8lIRCt4YaVLh%2FUYvpY4h0cb7wBqWs3waS8KCiO49uPqXkPLHky0hnY1rF39x7PEvEr07hp%2Bv%2BkH58eQXvejKUwwcAAA%3D%3D&amp;bn=Diamondback%20Scout" target="_blank" rel="noopener" title="Open the A-Rated build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://coriolis.io/import?data=H4sIAAAAAAAC%2F92XXW%2FaMBSG%2F4uv0VQC3QV3aymjEl27plIvpskyyUli4diZP9hYxX%2FfiQMloWRbA9LU3YBiJ6%2Ffx%2Bccn%2BSJwBKkJSMyUyxWzpIeCTNe4EDMWa5kPGfRYjP4ieWAE5ur67h6EC9vVOwEGDL68kRCocrRDzpXTuPctYW8qUaZn6OpZjEM8JZbSUZWO%2BiRO82V5nZFRv0euZIplwCay5SMnsiFcFDghd3YqFagU2DL1djhMz0yQxhBRuc98tkxUem8O0OlHwXK5OiXiaskgah0aAqIOBNbN1Hm5GJF1uveM8MNxNzlU6bjQuG6%2FR1NVliaO2F5xKRUkqY8n6NU7h%2FoTPQIrECx2yXoKGM6hbgrU6S0VoYvgZoMhPgdVfB2qJizigrMU9ANojBnQrSFqXDCgGAG9JbHlLcfi4PmeMTLCugIYzPQaIT68munCd44zQOXq7bQmIyDiOdKGYs8hv%2BEMxohnDnvzBN6yYuN5NFnQ9PhgSOigRf833iDJh4Wc5II5mSEsacW7%2ByMdcNNRC9LvUtWsIjXifpNolZ3w6a7DJg1XC52Bp3WYE%2FgE3fdhqj8Kqt36jvoO8F8hW1soi4tyvGiHPcJMjw2QXbr0CpLOh%2B2NWeRUgKFGk2EcVlZMU0g8IOngamm6Zjr7im%2B8aOw%2B%2FjO0cSYaFwJiyqxY43dsomSrVA31r6LngJnEo7pTMn0nskUdjyDV%2FEkJi5ze9ms0xlPIHRFofRefgmcMNWEhwgqiKAzRG0lOuNpZh%2Bh%2FG0Nz4siGHNjNZ9jK9cHSiHezXq%2Fg5MURG1NOkW7Ew3fHMhodVRx1L0mzDT73j2L2R6gAWmUNqeJQ%2BjFXh2CiQPxwOSi6SzBUYuj9TxvfTGvv6rg31mfhmWg9lh9Z0lBgmZ7sRxUm3VcC%2Fz4rHwPXCZKR91Pusor1bCxWx4E633K4BBl5oTQ2%2FVL9Tpn99hOUfa%2BIXt0p3%2Fp9EC396CD9nBG%2BCkx36bJ4DTvMpeoeVFqhpVTbuqBHLZnsjc79GaDv4lK8Kajcu5B%2B03Q3H92v0Tt%2FwF1X%2Fz9IfHDu9j%2FF7u4Xn9d%2FwKeGaV8qRAAAA%3D%3D&amp;bn=Diamondback%20Scout" target="_blank" rel="noopener" title="Open the Engineered build in Coriolis"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at coriolis.io.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Open in EDSY</td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F53UTUvDQBAG4P%2By5x76oZfeBBULVYvpTSRMutN0cL%2BY3a1U8b%2B72RZrSguJp5B3Nk92J0O%2BBG7RBDEVcwvSxiAGotiQS4Ek0NbIClbvh%2FAJNKbC4W4m9w%2Bm20cro0Ivpq9folC2SW9Y28ipNguo21oJuVbWDBJHacmzEdPAEQdiwWSZwk5MR9%2BDX%2BsRJUX9ACydJRNGR3XjQumi8qjAYxJJV6BKndf3h8dtWEcVaAXGWNNbLjQodWnHZ2DfrO%2FgLsnsLrF%2BQ6hkZa0PqReePnFYrlJj%2FHUHeGE%2FkBcKTDii6RWla3LX5Fm82oudvhqQuTM1mTQYLRJz2Je75zR9ae7W4ZZpi21ys3PIssn7snNaYxGds3xycJUKfl%2FI5ri7mXt5Sz4wVTFYPtNReaxmfdJdfwEJJ6RH4y37vvu8j6iWYN7b2DqlIaV%2FOznpMvLpMhyVRXOak%2B3lwazRIMM%2FDpzh8Tl4BVxbbn4pnci37x8SPQQd7wQAAA%3D%3D" target="_blank" rel="noopener" title="Open the Initial build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F7XVzW6jMBAA4HfxOYcCaQ%2B5rdSttlLTjZbeVhUa8BCs%2BAeN7a6yVd%2B9xkk3S5qoWGpPiBnzMTNgeGb4hNqxBbszwI13bMbKTvQhwAUoo3kNzWYfvAeFIbE%2Fu%2BW7C8Pp0nAv0bLF72dWSjNEv5EynkLu1qEaaxXEXLUm4FiEJT81WzjyOGMrEoaE27JF9jL7Zy2RC69%2BAPHeCO2yg9r1rlJeOtGA1kZXa6FqkJWKF6TL%2BefJpQIpz5Xce2lRgkV6c%2B2wPJnNP4t9EHp7rljbCZS8Nsa6AFvxFy%2BqJtzFXqbC%2BVfBxRhuOmhbCV43XYBdWJkKzsdgh%2BCs0JuD6YnQTaVX5g%2FSSoJ2BzbcpOqHeD%2FEY%2Ffz6d0vQejvei102HQjEmMwlbuhsLPDnm7dNYknHJPdtkfiQzyVvRMtlr7vDR01LkPC7hLRzHdmPnWW18I6ErV3hk5MlB%2ByUS%2BmV%2FwLOByRFrU1ZFPrvPEoH0Bvxlgboi5E%2F5%2FklC%2FgcLjIqnLo5qi8uInWqJHgqOGiasG6qXp%2BSu%2B8lIRCt4YaVLh%2FUYvpY4h0cb7wBqWs3waS8KCiO49uPqXkPLHky0hnY1rF39x7PEvEr07hp%2Bv%2BkH58eQXvejKUwwcAAA%3D%3D" target="_blank" rel="noopener" title="Open the A-Rated build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="lex-cell"><a class="lex-btn" href="https://edsy.org/#/I=H4sIAAAAAAAC%2F92XXW%2FaMBSG%2F4uv0VQC3QV3aymjEl27plIvpskyyUli4diZP9hYxX%2FfiQMloWRbA9LU3YBiJ6%2Ffx%2Bccn%2BSJwBKkJSMyUyxWzpIeCTNe4EDMWa5kPGfRYjP4ieWAE5ur67h6EC9vVOwEGDL68kRCocrRDzpXTuPctYW8qUaZn6OpZjEM8JZbSUZWO%2BiRO82V5nZFRv0euZIplwCay5SMnsiFcFDghd3YqFagU2DL1djhMz0yQxhBRuc98tkxUem8O0OlHwXK5OiXiaskgah0aAqIOBNbN1Hm5GJF1uveM8MNxNzlU6bjQuG6%2FR1NVliaO2F5xKRUkqY8n6NU7h%2FoTPQIrECx2yXoKGM6hbgrU6S0VoYvgZoMhPgdVfB2qJizigrMU9ANojBnQrSFqXDCgGAG9JbHlLcfi4PmeMTLCugIYzPQaIT68munCd44zQOXq7bQmIyDiOdKGYs8hv%2BEMxohnDnvzBN6yYuN5NFnQ9PhgSOigRf833iDJh4Wc5II5mSEsacW7%2ByMdcNNRC9LvUtWsIjXifpNolZ3w6a7DJg1XC52Bp3WYE%2FgE3fdhqj8Kqt36jvoO8F8hW1soi4tyvGiHPcJMjw2QXbr0CpLOh%2B2NWeRUgKFGk2EcVlZMU0g8IOngamm6Zjr7im%2B8aOw%2B%2FjO0cSYaFwJiyqxY43dsomSrVA31r6LngJnEo7pTMn0nskUdjyDV%2FEkJi5ze9ms0xlPIHRFofRefgmcMNWEhwgqiKAzRG0lOuNpZh%2Bh%2FG0Nz4siGHNjNZ9jK9cHSiHezXq%2Fg5MURG1NOkW7Ew3fHMhodVRx1L0mzDT73j2L2R6gAWmUNqeJQ%2BjFXh2CiQPxwOSi6SzBUYuj9TxvfTGvv6rg31mfhmWg9lh9Z0lBgmZ7sRxUm3VcC%2Fz4rHwPXCZKR91Pusor1bCxWx4E633K4BBl5oTQ2%2FVL9Tpn99hOUfa%2BIXt0p3%2Fp9EC396CD9nBG%2BCkx36bJ4DTvMpeoeVFqhpVTbuqBHLZnsjc79GaDv4lK8Kajcu5B%2B03Q3H92v0Tt%2FwF1X%2Fz9IfHDu9j%2FF7u4Xn9d%2FwKeGaV8qRAAAA%3D%3D" target="_blank" rel="noopener" title="Open the Engineered build in EDSY"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7h9v9"/></svg><span>open</span></a></td><td class="note">One-click open at edsy.org.</td></tr>
+<tr class="lex-row"><td class="slot lex-lbl">Copy SLEF</td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;initial&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Diamondback Scout&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;diamondback_armour_grade1&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size4_class1&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size4_class1&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class1&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size2_class1&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size3_class1&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size2_class1&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size3&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size3_class1&quot;},{&quot;Slot&quot;:&quot;Slot02_Size3&quot;,&quot;Item&quot;:&quot;int_cargorack_size3_class1&quot;}]}}]" title="Copy the Initial SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;arated&quot;}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Diamondback Scout&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;diamondback_armour_grade3&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size4_class5&quot;},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size4_class5&quot;},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class5&quot;},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size2_class2&quot;},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size3_class5&quot;},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size2_class2&quot;},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size3&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size3_class3_fast&quot;},{&quot;Slot&quot;:&quot;Slot02_Size3&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size3_class2&quot;},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size3_class5&quot;},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size2_class2&quot;},{&quot;Slot&quot;:&quot;Slot05_Size1&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size1_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;}]}}]" title="Copy the A-Rated SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="lex-cell"><button type="button" class="lex-btn lex-copy" data-slef="[{&quot;header&quot;:{&quot;appName&quot;:&quot;E:D Black Box&quot;,&quot;appVersion&quot;:&quot;1.0&quot;,&quot;appURL&quot;:&quot;https://github.com/tusharsaxena/ed-blackbox&quot;,&quot;appCustomProperties&quot;:{&quot;state&quot;:&quot;engineered&quot;,&quot;edbb&quot;:{&quot;role&quot;:&quot;combat&quot;,&quot;intro&quot;:&quot;A durable, cool-running skirmisher fit that uses the four utilities. Initial is buy-only; A-rated is the combat-ready baseline; Engineered applies the house combat pattern, leaning on the Scout's low heat and toughness.&quot;,&quot;callout&quot;:{&quot;label&quot;:&quot;Lean on heat and toughness&quot;,&quot;text&quot;:&quot;The Scout's edge is low heat and durability, not firepower — run silent on approach, use the four utilities for boosters and a heat sink, and tank with shield plus a couple of reinforcements. Win by surviving and skirmishing, not by out-damaging.&quot;},&quot;notes&quot;:{&quot;MediumHardpoint1&quot;:&quot;Primary medium multi-cannon; the single Corrosive Shell strips armour resistance for the whole battery.&quot;,&quot;MediumHardpoint2&quot;:&quot;Second medium multi-cannon; Auto Loader removes reloads so it never stops firing.&quot;,&quot;SmallHardpoint1&quot;:&quot;Small pulse laser; Efficient + Thermal Vent strips shields and dumps heat on every hit.&quot;,&quot;SmallHardpoint2&quot;:&quot;Second Thermal-Vent pulse keeps the Scout running cold — its whole identity under sustained fire.&quot;,&quot;TinyHardpoint1&quot;:&quot;First shield booster; Heavy Duty multiplies the bi-weave's raw MJ on a hull with little base shield.&quot;,&quot;TinyHardpoint2&quot;:&quot;Second Heavy-Duty booster — the cheapest large gain in shield strength on a small hull.&quot;,&quot;TinyHardpoint3&quot;:&quot;Optional / low-priority — Ammo Capacity adds chaff salvos. Chaff spoils gimballed and turreted fire.&quot;,&quot;TinyHardpoint4&quot;:&quot;Optional / low-priority — Ammo Capacity adds heat-sink charges. Dumps heat for silent running and Thermal-Vent resets.&quot;,&quot;PowerPlant&quot;:&quot;A-rate it; Overcharged adds headroom for guns, shields and utilities, Thermal Spread bleeds the extra heat.&quot;,&quot;MainEngines&quot;:&quot;A-rated + Dirty Drives keep the nimble Scout fast enough to dictate the fight.&quot;,&quot;FrameShiftDrive&quot;:&quot;A-rated to reposition between fights; only G3 range — combat doesn't need a jump monster.&quot;,&quot;LifeSupport&quot;:&quot;D-rate to save mass, Lightweight trims more; life support has no experimental effect.&quot;,&quot;PowerDistributor&quot;:&quot;A-rate this FIRST — the class-3 distributor is the smallest core and sets your weapon and boost sustain.&quot;,&quot;Radar&quot;:&quot;Drop to D and go Lightweight; combat needs no sensor range, so save the mass.&quot;,&quot;FuelTank&quot;:&quot;Stock tank; fuel capacity is fixed and cannot be engineered.&quot;,&quot;Slot01_Size3&quot;:&quot;Bi-weave regenerates fast under fire; Reinforced maximises its MJ, Fast Charge speeds the reform.&quot;,&quot;Slot02_Size3&quot;:&quot;Heavy-Duty hull reinforcement is the cheapest large multiplier on effective armour.&quot;,&quot;Slot03_Size3&quot;:&quot;Optional / low-priority — Specialised cuts the cell bank's heat and power spike. Burst shield healing for emergencies.&quot;,&quot;Slot04_Size2&quot;:&quot;Second Heavy-Duty HRP — armour stacks linearly, so every plate counts on a light hull.&quot;,&quot;Slot05_Size1&quot;:&quot;Module Reinforcement spreads penetrating-hit damage across the cores; not engineerable.&quot;,&quot;Slot06_Size1&quot;:&quot;Optional / low-priority — Expanded Probe Scanning widens probe coverage. Maps planets for exploration data.&quot;},&quot;engineeringPlan&quot;:[{&quot;module&quot;:&quot;Power Plant&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Thermal Spread&quot;,&quot;engineer&quot;:&quot;Hera Tani&quot;},{&quot;module&quot;:&quot;Thrusters&quot;,&quot;size&quot;:4,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Dirty Drive Tuning&quot;,&quot;experimental&quot;:&quot;Drag Drives&quot;,&quot;engineer&quot;:&quot;Professor Palin / Mel Brandon&quot;},{&quot;module&quot;:&quot;Multi-Cannons&quot;,&quot;size&quot;:2,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Overcharged&quot;,&quot;experimental&quot;:&quot;Corrosive Shell (one) / Auto Loader (rest)&quot;,&quot;engineer&quot;:&quot;Tod McQuinn&quot;},{&quot;module&quot;:&quot;Pulse Lasers&quot;,&quot;size&quot;:1,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Efficient&quot;,&quot;experimental&quot;:&quot;Thermal Vent&quot;,&quot;engineer&quot;:&quot;Broo Tarquin&quot;},{&quot;module&quot;:&quot;Power Distributor&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Charge Enhanced&quot;,&quot;experimental&quot;:&quot;Super Conduits&quot;,&quot;engineer&quot;:&quot;The Dweller&quot;},{&quot;module&quot;:&quot;Bi-Weave Shield&quot;,&quot;size&quot;:3,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Reinforced&quot;,&quot;experimental&quot;:&quot;Fast Charge&quot;,&quot;engineer&quot;:&quot;Lei Cheung&quot;},{&quot;module&quot;:&quot;Shield Boosters&quot;,&quot;size&quot;:0,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Super Capacitors&quot;,&quot;engineer&quot;:&quot;Didi Vatermann&quot;},{&quot;module&quot;:&quot;Bulkheads&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;},{&quot;module&quot;:&quot;Hull Reinforcement&quot;,&quot;grade&quot;:&quot;G5&quot;,&quot;blueprint&quot;:&quot;Heavy Duty&quot;,&quot;experimental&quot;:&quot;Deep Plating&quot;,&quot;engineer&quot;:&quot;Selene Jean&quot;}]}}},&quot;data&quot;:{&quot;Ship&quot;:&quot;Diamondback Scout&quot;,&quot;Modules&quot;:[{&quot;Slot&quot;:&quot;Armour&quot;,&quot;Item&quot;:&quot;diamondback_armour_grade3&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Armour_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_armour_chunky&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_corrosive_shell&quot;}},{&quot;Slot&quot;:&quot;MediumHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Overcharged&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_auto_loader&quot;}},{&quot;Slot&quot;:&quot;SmallHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;SmallHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_pulselaser_gimbal_small&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Weapon_Efficient&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_thermal_vent&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint1&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint2&quot;,&quot;Item&quot;:&quot;hpt_shieldbooster_size0_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldBooster_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shieldbooster_chunky&quot;}},{&quot;Slot&quot;:&quot;TinyHardpoint3&quot;,&quot;Item&quot;:&quot;hpt_chafflauncher_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_ChaffCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;TinyHardpoint4&quot;,&quot;Item&quot;:&quot;hpt_heatsinklauncher_turret_tiny&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Misc_HeatSinkCapacity&quot;,&quot;Level&quot;:1,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerPlant&quot;,&quot;Item&quot;:&quot;int_powerplant_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerPlant_Boosted&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerplant_cooled&quot;}},{&quot;Slot&quot;:&quot;MainEngines&quot;,&quot;Item&quot;:&quot;int_engine_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Engine_Dirty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_engine_overloaded&quot;}},{&quot;Slot&quot;:&quot;FrameShiftDrive&quot;,&quot;Item&quot;:&quot;int_hyperdrive_size4_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;FSD_LongRange&quot;,&quot;Level&quot;:3,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_fsd_heavy&quot;}},{&quot;Slot&quot;:&quot;LifeSupport&quot;,&quot;Item&quot;:&quot;int_lifesupport_size2_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;LifeSupport_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;PowerDistributor&quot;,&quot;Item&quot;:&quot;int_powerdistributor_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;PowerDistributor_HighFrequency&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_powerdistributor_fast&quot;}},{&quot;Slot&quot;:&quot;Radar&quot;,&quot;Item&quot;:&quot;int_sensors_size2_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;Sensor_LightWeight&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;FuelTank&quot;,&quot;Item&quot;:&quot;int_fueltank_size4_class3&quot;},{&quot;Slot&quot;:&quot;Slot01_Size3&quot;,&quot;Item&quot;:&quot;int_shieldgenerator_size3_class3_fast&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldGenerator_Reinforced&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_shield_regenerative&quot;}},{&quot;Slot&quot;:&quot;Slot02_Size3&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size3_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot03_Size3&quot;,&quot;Item&quot;:&quot;int_shieldcellbank_size3_class5&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;ShieldCellBank_Specialised&quot;,&quot;Level&quot;:4,&quot;Quality&quot;:1.0}},{&quot;Slot&quot;:&quot;Slot04_Size2&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size2_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0,&quot;ExperimentalEffect&quot;:&quot;special_hullreinforcement_chunky&quot;}},{&quot;Slot&quot;:&quot;Slot05_Size1&quot;,&quot;Item&quot;:&quot;int_modulereinforcement_size1_class2&quot;},{&quot;Slot&quot;:&quot;Slot06_Size1&quot;,&quot;Item&quot;:&quot;int_hullreinforcement_size1_class2&quot;,&quot;Engineering&quot;:{&quot;BlueprintName&quot;:&quot;HullReinforcement_HeavyDuty&quot;,&quot;Level&quot;:5,&quot;Quality&quot;:1.0}}]}}]" title="Copy the Engineered SLEF to clipboard"><svg class="lex-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>copy</span></button></td><td class="note">Copies the raw Ship Loadout Export Format for that state.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="callout"><span class="lbl">Lean on heat and toughness</span><p>The Scout's edge is low heat and durability, not firepower — run silent on approach, use the four utilities for boosters and a heat sink, and tank with shield plus a couple of reinforcements. Win by surviving and skirmishing, not by out-damaging.</p></div>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull (~564k Cr) on stock Lightweight Alloy and fit a stock 3E <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-shield-generator">Shield Generator</a> &mdash; cheap and instantly RES-ready. The bulkhead upgrade, the hull reinforcements and the spare internals (the second size-3 starts as a <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a>) wait for the A-rated pass.</p>
+    <p>Arm one medium with a gimballed multi-cannon and the other with a gimballed <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-pulse-laser">pulse laser</a>, plus one small gimballed multi-cannon; the second small mount stays empty buy-only.</p>
+    <p>Fit a single <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> on the first utility mount; the other three utilities &mdash; a second booster, <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a> and a <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sink</a> &mdash; wait for the A-rated pass.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a budget skirmisher:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; 3A</b> &mdash; Sustain the guns and boost. <span class="acc">~400k Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; 4A</b> &mdash; Speed to set range and disengage. <span class="acc">~500k Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; 4A</b> &mdash; Headroom for guns, shields and utilities. <span class="acc">~400k Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; 3C bi-weave</b> &mdash; A regenerating buffer over the modest hull. <span class="acc">~300k Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> &rarr; Military Grade Composite</b> &mdash; The cheapest big jump in raw armour for a brawler. <span class="acc">~200k Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 4A</b> &mdash; Reach RES sites and turn-ins. <span class="acc">~400k Cr</span></li>
+    </ul>
+    <p>The internals fill out the defensive kit: a 3A <a href="../../engineering/engineering-manuals/modules.html#module-shield-cell-bank">Shield Cell Bank</a> in the size-3, a 3D and 2D <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">Hull Reinforcement</a>, plus a 1D <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">Hull Reinforcement</a> and a 1D <a href="../../engineering/engineering-manuals/modules.html#module-module-reinforcement">Module Reinforcement</a> in the two size-1 slots &mdash; the size-1 carries armour and module protection now, not a <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a> that has no place on a combat hull.</p>
+    <div class="callout"><span class="lbl">Cheap to A-rate</span><p>The Scout's small modules make a full A-rating inexpensive &mdash; Military Grade <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> and a stack of reinforcements bring it to a competent combat standard for a couple of million credits.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The house combat pattern on a budget hull. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+    <div class="tbl-scroll">
+    <table class="data">
+<thead><tr><th>Module</th><th>Blueprint</th><th>Experimental</th><th>Engineer</th></tr></thead>
+<tbody>
+<tr><td class="mod">Power Plant (4)</td><td>Overcharged (G5)</td><td>Thermal Spread</td><td>Hera Tani</td></tr>
+<tr><td class="mod">Thrusters (4)</td><td>Dirty Drive Tuning (G5)</td><td>Drag Drives</td><td>Professor Palin / Mel Brandon</td></tr>
+<tr><td class="mod">Multi-Cannons (2)</td><td>Overcharged (G5)</td><td>Corrosive Shell (one) / Auto Loader (rest)</td><td>Tod McQuinn</td></tr>
+<tr><td class="mod">Pulse Lasers (1)</td><td>Efficient (G5)</td><td>Thermal Vent</td><td>Broo Tarquin</td></tr>
+<tr><td class="mod">Power Distributor (3)</td><td>Charge Enhanced (G5)</td><td>Super Conduits</td><td>The Dweller</td></tr>
+<tr><td class="mod">Bi-Weave Shield (3)</td><td>Reinforced (G5)</td><td>Fast Charge</td><td>Lei Cheung</td></tr>
+<tr><td class="mod">Shield Boosters (0)</td><td>Heavy Duty (G5)</td><td>Super Capacitors</td><td>Didi Vatermann</td></tr>
+<tr><td class="mod">Bulkheads</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+<tr><td class="mod">Hull Reinforcement</td><td>Heavy Duty (G5)</td><td>Deep Plating</td><td>Selene Jean</td></tr>
+</tbody>
+</table>
+    </div>
+    <h3 class="subhead">Recommended order</h3>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span>Distributor and <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> first for sustain and mobility.</li>
+      <li><span class="stepnum">2</span><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a> <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-power-plant-overcharged">Overcharged</a> to run guns, shields and utilities.</li>
+      <li><span class="stepnum">3</span>Weapons: Overcharged multi-cannons with one Corrosive, Efficient/Thermal-Vent pulses (which also help keep it cool).</li>
+      <li><span class="stepnum">4</span>Reinforced bi-weave and a couple of Heavy-Duty reinforcements for the modest tank.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Material intensity (qualitative)</span><p>Light &mdash; small-class modules throughout; one of the cheapest combat grinds. With a complete inventory this is spend, not farm. Ask for exact per-blueprint counts if needed.</p></div>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>384 m/s</td><td>384 m/s</td><td class="acc">~460 m/s</td></tr>
+        <tr><td class="mod">Heat signature</td><td>very low</td><td>very low</td><td class="acc">very low</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~120</td><td>~170</td><td class="acc">~300</td></tr>
+        <tr><td class="mod">Armour (eff.)</td><td>216</td><td>~480</td><td class="acc">~950</td></tr>
+        <tr><td class="mod">Sustained DPS</td><td>low-medium</td><td>medium</td><td class="acc">medium</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Military Grade <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">bulkheads</a> and the reinforcement stack lift A-rated effective armour past 480; engineered &mdash; HeavyDuty G5 + Deep Plating on the bulkhead and every <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a> &mdash; it clears ~950. The Scout becomes a cheap, durable, cool-running skirmisher with a usable shield, 460 m/s of boost and a class-leading heat signature. Its damage stays modest; it wins by surviving, staying stealthy and skirmishing, not by hitting hard.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Low-intensity RES.</b> Pick off lower-value bounties safely while you learn combat fundamentals cheaply.</li>
+      <li><b>Silent-running approaches.</b> Exploit the low heat to close on targets undetected before deploying weapons.</li>
+      <li><b>Bounty turn-ins.</b> Cash vouchers toward the <a href="../../engineering/engineering-manuals/engineers.html#engineer-tod-mcquinn">Tod McQuinn</a> unlock in an affordable hull.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Stealthy skirmishing.</b> Engineered, the Scout's heat and toughness let it pick fights and disengage at will.</li>
+      <li><b>Budget learning platform.</b> Its trivial rebuy makes it a low-risk ship to learn combat in before investing in a hard-hitter.</li>
+      <li><b>Cool-running specialist tasks.</b> Its heat profile suits any activity where a low signature is an advantage.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any low or medium RES near an outpost suits it. Around your home base it's a cheap, durable way to grind early bounties and learn the ropes.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>Exploit the heat &mdash; the Scout's stealth and silent-running are its real edge over other budget fighters.</li>
+      <li>Use all four utilities; the generous mount count is a key advantage at this price.</li>
+      <li>Don't expect to out-damage pricier small ships &mdash; win by surviving and skirmishing.</li>
+      <li>It's a great cheap teacher; move up to a <a href="vulture-combat.html">Vulture</a>, <a href="cobra-mk-v-combat.html">Cobra Mk V</a> or a medium once your skills outgrow its guns.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Diamondback Scout is the cool-running budget picket: cheap, tough for its size, generously equipped with utilities, and the coolest-running small ship in the game. Its firepower is modest, so it survives and skirmishes rather than killing fast &mdash; but for value, stealth and durability while you learn, few small combat ships serve better for the money.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/diamondback_scout" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/diamondback_scout</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Diamondback Scout ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/diamondback-scout" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../diamondback-scout</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/diamondback_scout.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/diamondback_scout.json</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Diamondback Scout</span><span class="cr-what">Ship overview: stats, internals layout, hardpoints, price, and shipyard availability.</span><a class="cr-link" href="https://inara.cz/elite/ship/24/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/24</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous Wiki</span><span class="cr-what">Diamondback Scout lore, manufacturer, agility/hardpoint profile, and design notes.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Diamondback_Scout" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Diamondback_Scout</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

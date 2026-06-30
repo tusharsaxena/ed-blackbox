@@ -6,7 +6,7 @@ Builds the **3-State Loadout** table (`table.l3` + intro + callout + Notes colum
 ## Canonical source — SLEF
 
 **`data/ship-loadouts/<dossier-basename>.json` is the single source of truth** — one file per
-dossier (e.g. `federal-corvette-combat.json` → `guides/ships/dossiers/federal-corvette-combat.html`).
+dossier (e.g. `federal-corvette-combat.json` → `guides/ships/ship-dossiers/federal-corvette-combat.html`).
 
 Each file is a **SLEF array** (Ship Loadout Export Format,
 <https://inara.cz/elite/inara-impexp-slef/>) of **three builds**, tagged in

@@ -2,7 +2,7 @@
 # audit-blueprints.py — deterministic page<->data consistency audit for the Blueprints page.
 #
 # Independent of build-blueprints.py (different code path: this PARSES the rendered
-# guides/engineering/blueprints.html and checks every fact against canonical data
+# guides/engineering/engineering-manuals/blueprints.html and checks every fact against canonical data
 # instead of re-rendering it). Stdlib only, non-LLM. Exits non-zero with one line per
 # failure on any of:
 #   - a material / category / per-roll / engineer / experimental on the page not matching
@@ -31,8 +31,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import bp_common as b
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGE = ROOT / "guides" / "engineering" / "blueprints.html"
-ENGINEERS = ROOT / "guides" / "engineering" / "engineers.html"
+PAGE = ROOT / "guides" / "engineering" / "engineering-manuals" / "blueprints.html"
+ENGINEERS = ROOT / "guides" / "engineering" / "engineering-manuals" / "engineers.html"
 
 BEGIN = "<!-- BEGIN generated:blueprints -->"
 END = "<!-- END generated:blueprints -->"

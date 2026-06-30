@@ -1,6 +1,6 @@
 # sort-byrole-ladders.py
 
-Re-sort the ranking and cost tables on every `guides/ships/by-role/<role>.html` page by
+Re-sort the ranking and cost tables on every `guides/ships/best-ships-by-role/<role>.html` page by
 rating, descending.
 
 ## Why this exists

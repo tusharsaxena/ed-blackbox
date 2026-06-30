@@ -4,7 +4,7 @@
 # Canonical game data (data/modifications/, verbatim EDCD/coriolis-data import, read-only)
 # + a project-authored corrections overlay + an authored editorial overlay
 # (data/modifications-extra/) are merged and rendered into the .bp-modgroup / .bp-card
-# markup of guides/engineering/blueprints.html, BYTE-COMPATIBLE with the hand-authored
+# markup of guides/engineering/engineering-manuals/blueprints.html, BYTE-COMPATIBLE with the hand-authored
 # page. Only the run of modgroups inside each of sections 02-05 — delimited by
 #   <!-- BEGIN generated:blueprints -->  ...  <!-- END generated:blueprints -->
 # — is rewritten; everything else on the page (About, masthead, callouts, footer, the
@@ -41,7 +41,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import bp_common as b
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGE = ROOT / "guides" / "engineering" / "blueprints.html"
+PAGE = ROOT / "guides" / "engineering" / "engineering-manuals" / "blueprints.html"
 
 BEGIN = "<!-- BEGIN generated:blueprints -->"
 END = "<!-- END generated:blueprints -->"

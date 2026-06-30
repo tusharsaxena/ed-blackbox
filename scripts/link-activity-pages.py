@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """link-activity-pages.py — cross-link the role/activity playbooks.
 
-`guides/activities/**` is deliberately EXCLUDED from the generic
+`guides/systems/activity-guides/**` is deliberately EXCLUDED from the generic
 `apply-hyperlinks.py` pass: those pages are named after their role
 (`combat.html`, `exploration.html`, …) rather than `<hull>-<role>.html`, so the
 generic pass couldn't infer the page's role and would resolve a bare ship name to
@@ -25,7 +25,7 @@ the throwaway check log under --check), same as the generic pass.
 Usage:
     python3 scripts/link-activity-pages.py --check     # dry-run all 6 activity pages
     python3 scripts/link-activity-pages.py             # apply to all 6
-    python3 scripts/link-activity-pages.py guides/activities/combat.html   # one file
+    python3 scripts/link-activity-pages.py guides/systems/activity-guides/combat.html   # one file
 """
 from __future__ import annotations
 import csv
@@ -34,7 +34,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ACT = ROOT / "guides" / "activities"
+ACT = ROOT / "guides" / "systems" / "activity-guides"
 DATA = ROOT / "data" / "links"
 
 # Subject-noun suppression for the playbooks. In this prose the bare activity

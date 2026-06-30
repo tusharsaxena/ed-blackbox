@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGE = ROOT / "guides" / "systems" / "powerplay.html"
+PAGE = ROOT / "guides" / "systems" / "galaxy-and-power-systems" / "powerplay.html"
 EDITORIAL = ROOT / "data" / "powerplay" / "editorial.json"
 BEGIN = "<!-- BEGIN generated:powerplay -->"
 END = "<!-- END generated:powerplay -->"
