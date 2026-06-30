@@ -70,15 +70,33 @@ canonical read-only vs overlay; `--check`; idempotent; Sources external-only; st
 `engineer-<slug>` anchors (the rest of the site deep-links them — **do not rename**); never
 auto-commit.
 
-## Modifications-offered derivation (the accuracy core)
+## Modifications-offered: preserve-and-verify (decision)
 
-For each **ship** engineer, invert `modules.json`: collect every blueprint group where the
-engineer appears in any grade's `engineers[]`, taking the **max grade**. Map the coriolis
-module key → display group + `blueprint-group-<slug>` anchor (reuse `bp_common`). Render as
-`G<max> <group>` linked, sorted by descending grade then name — matching the page form. The
-**audit fails** if the page claims a grade an engineer does not actually offer in coriolis
-(a real correction opportunity). On-foot engineers' mod lists come from
-`corrections.json` (coriolis has no on-foot engineering), flagged for wiki verification.
+**Decision (made during implementation):** ship-engineer "Modifications offered" lists are
+**extract-and-preserved** as editorial (like every other card field), **not** regenerated from
+coriolis. Measurement showed 14/25 ship engineers diverge from a naive coriolis derivation,
+and the divergences are a *mix*: genuine page omissions (e.g. Felicity/Hera missing
+**Manifest Scanner**), grade disagreements (Manifest Scanner G3-page vs G5-coriolis for
+Juri/Bill/Lori), and — most importantly — **deliberate editorial granularity** the page is
+right to keep: coriolis lists *Bi-Weave Shield Generator* / *Prismatic Shield Generator* and
+*Advanced Multi-Cannon* as **separate** blueprint groups, which the page sensibly collapses
+into "Shield Generator" / "Multi-cannon". Auto-deriving would expand every shield engineer to
+three shield rows and degrade the curated UX.
+
+So coriolis is used as a **verifier, not a generator**: `engineers_common.ship_mods_by_engineer()`
+inverts `modules.json` (max grade per blueprint group, `bp_common` anchors), and
+`audit-engineers.py` reports two discrepancy classes as **warnings for editorial review**:
+- **over-claim** — the page lists `G<n> <group>` at a grade coriolis does not back (hard fail
+  candidate);
+- **omission** — coriolis shows an engineer→group the page omits (informational; may be a real
+  correction or a deliberate variant-collapse).
+
+The **ultracode verification pass** (Task 8) confirms the real discrepancies (Manifest-Scanner
+omissions, the G3/G5 grade splits) against the Fandom wiki, and confirmed corrections are
+applied **editorially** to `editorial.json`. On-foot engineers' mod lists are editorial in
+`corrections.json` (coriolis has no on-foot engineering), also wiki-verified. This keeps the
+page byte-stable (strict diff-guard) while still delivering rule-1 verification + targeted,
+verified corrections.
 
 ## Verification (rule 1)
 
