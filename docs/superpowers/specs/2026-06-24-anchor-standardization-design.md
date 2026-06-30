@@ -1,7 +1,7 @@
 # Anchor Standardization — Design Spec
 
 **Date:** 2026-06-24
-**Goal:** Give every *navigation anchor* across the Black Book a single, consistent
+**Goal:** Give every *navigation anchor* across the Black Box a single, consistent
 `<family>-<slug>` naming scheme; regenerate the `*-anchors.md` catalogs; and rewrite
 every internal hyperlink to point at the new ids — with zero broken links.
 

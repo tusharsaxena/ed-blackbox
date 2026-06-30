@@ -15,7 +15,7 @@ import re, sys, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 GUIDES = ROOT / "guides"
 
-ISSUES = "https://github.com/tusharsaxena/ed-blackbook/issues"
+ISSUES = "https://github.com/tusharsaxena/ed-blackbox/issues"
 
 FOOTER_RE = re.compile(r'([ \t]*)<footer>.*?</footer>', re.DOTALL)
 SPAN_RE = re.compile(r'<span[^>]*>(.*?)</span>', re.DOTALL)

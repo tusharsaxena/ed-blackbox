@@ -1,4 +1,4 @@
-# Architecture — Elite:Dangerous Black Book
+# Architecture — Elite:Dangerous Black Box
 
 How the site is put together technically — system model, the shared design system, and the
 content inventory. The backlog/roadmap is tracked in **GitHub Issues**; for working conventions

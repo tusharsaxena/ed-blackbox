@@ -1,7 +1,7 @@
 # CLAUDE.md — working in this repo
 
 Operating guidance for AI agents (and humans) working on the **Elite:Dangerous Black
-Book**, a static site of Elite Dangerous field manuals by Tushar Saxena (CMDR Ka0s).
+Box**, a static site of Elite Dangerous field manuals by Tushar Saxena (CMDR Ka0s).
 
 > **Loading note:** Claude Code auto-loads `CLAUDE.md` from the repo **root**, not from
 > `docs/`. The root `CLAUDE.md` is a one-line shim (`@docs/CLAUDE.md`) that pulls this file
@@ -280,7 +280,7 @@ python3 scripts/slef_resolve.py find multi_cannon 4 A G   # authoring aid: find 
 
 - **Naming:** prefer lowercase-kebab for new asset files. (Existing files are
   inconsistent — `_` vs `-`, mixed case; standardizing is a tracked TODO, so don't mass-
-  rename ad hoc.) The stylesheet is `ed-blackbox` (note: differs from repo `ed-blackbook`).
+  rename ad hoc.) The stylesheet is `ed-blackbox` (note: differs from repo `ed-blackbox`).
 - **Page accent themes only the `.role` title tag; everything else is amber.** The per-page
   accent (`--accent`, maroon/fed/green) colours **only** the masthead `.role` tag. Every
   design-system component (cards, callouts, `.rec`, pick cards, `.hud`, `.dial`, focus ring)

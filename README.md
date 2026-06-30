@@ -1,4 +1,4 @@
-# Elite:Dangerous Black Book
+# Elite:Dangerous Black Box
 
 Operator-grade field manuals for **Elite Dangerous** — ship dossiers, engineering
 walkthroughs, and game-system guides, written commander-to-commander and verified against

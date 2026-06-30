@@ -49,7 +49,7 @@ and a fixed class-map playbook; ~9 bespoke pages are hand-migrated.
 - [ ] **Step 1: Install Playwright + Chromium**
 
 ```bash
-cd /mnt/d/Profile/Users/Tushar/Documents/GIT/ed-blackbook
+cd /mnt/d/Profile/Users/Tushar/Documents/GIT/ed-blackbox
 npm init -y >/dev/null 2>&1 || true
 npm i -D playwright
 npx playwright install chromium

@@ -1,7 +1,7 @@
 # data/ — game-data source of truth
 
 Imported verbatim from **[EDCD/coriolis-data](https://github.com/EDCD/coriolis-data)**
-(commit `0db9234`). This is the authoritative dataset for ED Black Book pages that render
+(commit `0db9234`). This is the authoritative dataset for ED Black Box pages that render
 game stats (modules, ships, engineering modifications). Re-import by re-cloning the repo and
 copying `modules/`, `ships/`, `modifications/` here.
 

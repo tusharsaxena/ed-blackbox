@@ -8,7 +8,7 @@ export const meta = {
   ],
 }
 
-const ROOT = '/mnt/d/Profile/Users/Tushar/Documents/GIT/ed-blackbook'
+const ROOT = '/mnt/d/Profile/Users/Tushar/Documents/GIT/ed-blackbox'
 let WORK = args
 if (typeof WORK === 'string') WORK = JSON.parse(WORK)
 if (!Array.isArray(WORK)) throw new Error('args is not an array: got ' + typeof WORK)

@@ -9,7 +9,7 @@ fine-print lines (`.ft-fine`).
 <footer>
   <div class="ft-fine">
     <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; {PART}
-          &middot; <a href="https://github.com/tusharsaxena/ed-blackbook/issues">Report an issue</a></span>
+          &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues">Report an issue</a></span>
     <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan
           content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
   </div>

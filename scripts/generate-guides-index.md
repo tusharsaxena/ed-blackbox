@@ -1,6 +1,6 @@
 # generate-guides-index.sh
 
-Regenerates `guides/index.html` — the "Black Book" landing page that links to every
+Regenerates `guides/index.html` — the "Black Box" landing page that links to every
 guide in the project, grouped logically.
 
 ## What it does

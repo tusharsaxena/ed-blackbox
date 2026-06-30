@@ -1,6 +1,6 @@
 # scripts/
 
-Reusable scripts for building and maintaining the Elite:Dangerous Black Book.
+Reusable scripts for building and maintaining the Elite:Dangerous Black Box.
 
 **Convention:** every script used for a project task lives here, named specifically for
 what it does. Each script has its own documentation file with the **same name and a
@@ -10,7 +10,7 @@ be re-run later.
 
 | Script | Docs | What it does |
 |---|---|---|
-| `generate-guides-index.sh` | [generate-guides-index.md](generate-guides-index.md) | Regenerates `guides/index.html`, the "Black Book" landing page linking to every guide. |
+| `generate-guides-index.sh` | [generate-guides-index.md](generate-guides-index.md) | Regenerates `guides/index.html`, the "Black Box" landing page linking to every guide. |
 | `generate-anchor-files.sh` | [generate-anchor-files.md](generate-anchor-files.md) | Regenerates the per-page `<basename>-anchors.md` files cataloging each guide's `<section id>` navigation anchors. |
 | `header-crumb-from-breadcrumbs.py` | [header-crumb-from-breadcrumbs.md](header-crumb-from-breadcrumbs.md) | One-time migration: replaces the in-header **"On this page"** eyebrow with a breadcrumb-derived **`.hdr-crumb`** block (current page as title + parent trail beneath, links dropped). Derives content from each page's own `.breadcrumbs` nav; idempotent + byte-preserving; skips the generated `guides/index.html` (its crumb comes from `generate-guides-index.sh`). `--check` previews. **Obsolete** since `deprecate-breadcrumbs.py` removed the `.breadcrumbs` nav. |
 | `deprecate-breadcrumbs.py` | [deprecate-breadcrumbs.md](deprecate-breadcrumbs.md) | One-shot migration: retires the standalone `<nav class="breadcrumbs">` strip site-wide and makes the in-header **`.hdr-crumb`** the only breadcrumb — its parent trail becomes navigable links (relative, same-tab, **no Home**) reusing the nav's own hrefs/labels; the nav (+ its comment) is removed. Top-level pages → `hdr-crumb solo`. Idempotent + byte-preserving; `--check` previews. Skips generated `guides/index.html`; leaves the stale `generate-ship-role-matrix.py`. |
@@ -76,6 +76,7 @@ be re-run later.
 | `build-sources.py` | [build-sources.md](build-sources.md) | Regenerates each page's **Sources** block from canonical `data/sources/**.json` — the source of truth; the credits HTML is generated (never hand-edit it). Preserves each page's positional `sec-num` + section indent; idempotent. Also rewrites `data/sources/_index.md` (every unique external URL → citing pages). Filter by path fragment; `--check` previews; `--no-index` skips the catalog. |
 | `audit-sources.py` | [audit-sources.md](audit-sources.md) | Read-only deterministic audit of the Sources pipeline: coverage (every credits page ↔ a data file at its mirrored path), **external-only** (every `url` external; no internal `<a href>` in any credits block), no drift (rebuild is a no-op), and schema. Exits nonzero on any failure. |
 | `sources_lib.py` | [sources_lib.md](sources_lib.md) | Shared parse/render helpers for the Sources pipeline (parse a credits block → indent/sec-num/tag/leads/rows; render the canonical block; page↔data path mapping; strip internal links). Imported by `extract-sources.py`/`build-sources.py`/`audit-sources.py`; no CLI. |
+| `rename-to-black-box.py` | [rename-to-black-box.md](rename-to-black-box.md) | One-shot project rename **E:D Black Book → E:D Black Box**: two exact string replacements (`Black Book`→`Black Box`, `blackbook`→`blackbox` covering `ed-blackbook` URLs/package name) across every tracked text file (binaries skipped, LF preserved, the tool excludes itself). `--check` previews per-file counts. Generators + SLEF `appName` are renamed too, so regeneration is a no-op; one line-wrapped header was fixed by hand. |
 
 **Data:** `ship-names.tsv` (`slug<TAB>Display Name`) supplies the ship grid's display
 names to `generate-guides-index.sh`; extend it when a new ship dossier is added.
