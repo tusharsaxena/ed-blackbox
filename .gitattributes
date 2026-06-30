@@ -1,0 +1,20 @@
+# Line-ending policy for the Elite:Dangerous Black Book.
+#
+# Store ALL text files as LF in the repository and check them out as LF on disk.
+# This repo is authored from WSL/Linux and deployed to GitHub Pages, so LF is the
+# canonical form everywhere. Git normalizes on commit, so a CRLF working copy no
+# longer produces spurious whole-file diffs.
+#
+# Re-normalize after editing this file with:  git add --renormalize .
+
+* text=auto eol=lf
+
+# Binary assets — never normalize or diff as text.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.gif   binary
+*.ico   binary
+*.xlsx  binary
+*.pdf   binary
