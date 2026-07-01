@@ -6,7 +6,7 @@ Every unique external reference cited across the site's **Sources** sections, wi
 pages that cite it. Canonical data lives in `data/sources/**.json`; regenerate this
 file with `python3 scripts/build-sources.py`.
 
-**487 unique URLs** across **159 pages**.
+**487 unique URLs** across **160 pages**.
 
 | Source | URL | Cited by |
 |---|---|---|
@@ -46,7 +46,7 @@ file with `python3 scripts/build-sources.py`.
 | Coriolis | <https://coriolis.io/outfit/keelback> | ships/ship-dossiers/keelback-mining.html, ships/ship-dossiers/keelback-trading.html |
 | Coriolis | <https://coriolis.io/outfit/kestrel> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | Coriolis | <https://coriolis.io/outfit/krait_mkii> | ships/ship-dossiers/krait-mk-ii-ax.html, ships/ship-dossiers/krait-mk-ii-combat.html, ships/ship-dossiers/krait-mk-ii-exploration.html, ships/ship-dossiers/krait-mk-ii-mining.html, ships/ship-dossiers/krait-mk-ii-multipurpose.html, ships/ship-dossiers/krait-mk-ii-trading.html |
-| Coriolis | <https://coriolis.io/outfit/krait_phantom> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
+| Coriolis | <https://coriolis.io/outfit/krait_phantom> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
 | Coriolis | <https://coriolis.io/outfit/lynx_highliner> | ships/ship-dossiers/lynx-highliner-passenger.html |
 | Coriolis | <https://coriolis.io/outfit/mamba> | ships/ship-dossiers/mamba-ax.html, ships/ship-dossiers/mamba-combat.html |
 | Coriolis | <https://coriolis.io/outfit/mandalay> | ships/ship-dossiers/mandalay-exploration.html |
@@ -72,7 +72,7 @@ file with `python3 scripts/build-sources.py`.
 | EDColony | <https://edcolony.com/> | systems/galaxy-and-power-systems/system-colonization.html |
 | EDGalaxy (HGE finder) | <https://edgalaxy.net/hge> | engineering/materials-and-farming/high-grade-emissions.html |
 | EDPowerPlay | <https://edpowerplay.com/> | systems/galaxy-and-power-systems/powerplay.html |
-| EDSY &amp; Coriolis | <https://edsy.org/> | engineering/engineering-manuals/modules.html, ships/general/rating-methodology.html |
+| EDSY &amp; Coriolis | <https://edsy.org/> | engineering/engineering-manuals/modules.html, ships/general/rating-methodology.html, ships/ship-dossiers/krait-phantom-combat.html |
 | edtools.cc — Hotspot Finder | <https://edtools.cc/hotspot> | systems/activity-mining.html |
 | edtools.cc | <https://edtools.cc/pve> | systems/combat-venues/combat-zones.html |
 | EDUtilities — Brain Trees | <https://edutilities.redsupergiant.uk/customtable/display?id=brain%20trees> | engineering/materials-and-farming/crystalline-shards.html |
@@ -131,7 +131,7 @@ file with `python3 scripts/build-sources.py`.
 | Fandom wiki | <https://elite-dangerous.fandom.com/wiki/Keelback> | ships/ship-dossiers/keelback-mining.html, ships/ship-dossiers/keelback-trading.html |
 | Fandom wiki | <https://elite-dangerous.fandom.com/wiki/Kestrel_Mk_II> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | Fandom wiki | <https://elite-dangerous.fandom.com/wiki/Krait_Mk_II> | ships/ship-dossiers/krait-mk-ii-ax.html, ships/ship-dossiers/krait-mk-ii-combat.html, ships/ship-dossiers/krait-mk-ii-exploration.html, ships/ship-dossiers/krait-mk-ii-mining.html, ships/ship-dossiers/krait-mk-ii-multipurpose.html, ships/ship-dossiers/krait-mk-ii-trading.html |
-| Fandom wiki | <https://elite-dangerous.fandom.com/wiki/Krait_Phantom> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
+| Fandom wiki | <https://elite-dangerous.fandom.com/wiki/Krait_Phantom> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
 | ED Wiki — LHS 3447 | <https://elite-dangerous.fandom.com/wiki/LHS_3447> | systems/new-pilot-and-interface/new-cmdr-guide.html |
 | Fandom Wiki | <https://elite-dangerous.fandom.com/wiki/Landing_Pad> | systems/new-pilot-and-interface/docking-landing-manual.html |
 | Fandom wiki | <https://elite-dangerous.fandom.com/wiki/Lynx_Highliner> | ships/ship-dossiers/lynx-highliner-passenger.html |
@@ -219,7 +219,7 @@ file with `python3 scripts/build-sources.py`.
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/keelback.json> | ships/ship-dossiers/keelback-mining.html, ships/ship-dossiers/keelback-trading.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/kestrel.json> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/krait_mkii.json> | ships/ship-dossiers/krait-mk-ii-ax.html, ships/ship-dossiers/krait-mk-ii-combat.html, ships/ship-dossiers/krait-mk-ii-exploration.html, ships/ship-dossiers/krait-mk-ii-mining.html, ships/ship-dossiers/krait-mk-ii-multipurpose.html, ships/ship-dossiers/krait-mk-ii-trading.html |
-| EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/krait_phantom.json> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
+| EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/krait_phantom.json> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/mamba.json> | ships/ship-dossiers/mamba-ax.html, ships/ship-dossiers/mamba-combat.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/mandalay.json> | ships/ship-dossiers/mandalay-exploration.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/orca.json> | ships/ship-dossiers/orca-exploration.html, ships/ship-dossiers/orca-passenger.html |
@@ -269,7 +269,7 @@ file with `python3 scripts/build-sources.py`.
 | Inara — Diamondback Scout | <https://inara.cz/elite/ship/24/> | ships/ship-dossiers/diamondback-scout-combat.html, ships/ship-dossiers/diamondback-scout-exploration.html |
 | Inara — Cobra Mk III | <https://inara.cz/elite/ship/25/> | ships/ship-dossiers/cobra-mk-iii-combat.html, ships/ship-dossiers/cobra-mk-iii-exploration.html, ships/ship-dossiers/cobra-mk-iii-mining.html, ships/ship-dossiers/cobra-mk-iii-multipurpose.html, ships/ship-dossiers/cobra-mk-iii-trading.html |
 | Inara &mdash; Krait Mk II | <https://inara.cz/elite/ship/27/> | ships/ship-dossiers/krait-mk-ii-ax.html, ships/ship-dossiers/krait-mk-ii-combat.html, ships/ship-dossiers/krait-mk-ii-exploration.html, ships/ship-dossiers/krait-mk-ii-mining.html, ships/ship-dossiers/krait-mk-ii-multipurpose.html, ships/ship-dossiers/krait-mk-ii-trading.html |
-| Inara &mdash; Krait Phantom | <https://inara.cz/elite/ship/28/> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
+| Inara &mdash; Krait Phantom | <https://inara.cz/elite/ship/28/> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
 | Inara — Cobra Mk V | <https://inara.cz/elite/ship/29/> | ships/ship-dossiers/cobra-mk-v-combat.html, ships/ship-dossiers/cobra-mk-v-exploration.html, ships/ship-dossiers/cobra-mk-v-mining.html, ships/ship-dossiers/cobra-mk-v-multipurpose.html |
 | Inara — Type-6 Transporter | <https://inara.cz/elite/ship/30/> | ships/ship-dossiers/type-6-transporter-exploration.html, ships/ship-dossiers/type-6-transporter-mining.html, ships/ship-dossiers/type-6-transporter-trading.html |
 | Inara — Diamondback Explorer | <https://inara.cz/elite/ship/31/> | ships/ship-dossiers/diamondback-explorer-combat.html, ships/ship-dossiers/diamondback-explorer-exploration.html |
@@ -374,7 +374,7 @@ file with `python3 scripts/build-sources.py`.
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/keelback> | ships/ship-dossiers/keelback-mining.html, ships/ship-dossiers/keelback-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/kestrel-mk-ii> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/krait-mk-ii> | ships/ship-dossiers/krait-mk-ii-ax.html, ships/ship-dossiers/krait-mk-ii-combat.html, ships/ship-dossiers/krait-mk-ii-exploration.html, ships/ship-dossiers/krait-mk-ii-mining.html, ships/ship-dossiers/krait-mk-ii-multipurpose.html, ships/ship-dossiers/krait-mk-ii-trading.html |
-| Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/krait-phantom> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
+| Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/krait-phantom> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/lynx-highliner> | ships/ship-dossiers/lynx-highliner-passenger.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/mamba> | ships/ship-dossiers/mamba-ax.html, ships/ship-dossiers/mamba-combat.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/mandalay> | ships/ship-dossiers/mandalay-exploration.html |
