@@ -29,7 +29,7 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
-DOSSIERS = REPO / "guides" / "ships" / "dossiers"
+DOSSIERS = REPO / "guides" / "ships" / "ship-dossiers"
 
 # Closed set of role suffixes (must match the dossier filename scheme exactly).
 ROLES = ["ax", "combat", "exploration", "mining", "multipurpose", "passenger", "trading"]

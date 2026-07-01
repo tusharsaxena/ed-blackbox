@@ -25,12 +25,22 @@ matrix overlay, or the dossiers change so the grid stays in sync.
   amber ring) if it's still on the slate. **`<40` = poor fit**: greyed (Concept-D greyscale
   @30%), unlinked, with a "no dossier" tooltip. Exact cutoff — no fuzzy band.
 - **`Python (original)`** (a legacy combat-only duplicate of `Python`) is dropped entirely.
-- Result at last build: **48 ships · 336 cells · 7 roles** — 128 dossier · 38 candidates (≥40) ·
-  170 greyed (<40).
+- Result at last build: **48 ships · 336 cells · 7 roles** — 123 dossier · 34 candidates (≥40) ·
+  179 greyed (<40).
 
-> **TEMPORARY candidate ring.** The dashed amber ring on the 38 `≥40` no-dossier cells is a
-> build-tracker for the dossiers still to write. **Remove it** (`.cand` CSS rule + the `" cand"`
-> class in `render_table`) once those dossiers are built — the cells then flip to bright + linked.
+**Multirole rule (multipurpose).** A hull that scores **≥40 in at least 3** of the role-units
+**{Combat∨AX, Mining, Trading, Exploration, Passenger}** (Combat and AX count as **one** unit)
+is "multirole capable": its Multipurpose score is bumped to **≥40** (44/48/52 for 3/4/5 units) in
+the overlay if it isn't already, making it a Multipurpose dossier candidate. Applied when
+authoring `matrix-extra.json`; the bumped values are then just data.
+
+> **TEMPORARY working rings (two).** (1) A dashed **amber** ring on the `≥40` no-dossier cells
+> (`.cand`) = a dossier still **to build**. (2) A dashed **red** ring (`.dep`) on a cell that
+> **has** a dossier the rule says shouldn't exist — score `<40`, **or** a multipurpose dossier
+> whose hull isn't multirole (`<3` of {Combat∨AX, Mining, Trading, Exploration, Passenger} at
+> `≥40`) = a dossier **to deprecate/retire**. Both are build/cleanup trackers — **remove the
+> rings** (`.cand`/`.dep` CSS + the `" cand"`/`"dep"` classes in `render_table`) once the backlog
+> is cleared. At last build: 34 amber, **0 red** (the deprecation backlog is empty).
 
 ## The page
 

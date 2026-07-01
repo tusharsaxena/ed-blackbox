@@ -207,6 +207,12 @@ MATRIX_CSS = """
    the board. REMOVE the .cand ring (this rule + the " cand" class emitted in
    render_table) once the candidate dossiers are written. */
 .matrix td.cell.nd.cand{outline:1px dashed var(--amber);outline-offset:-2px;filter:grayscale(.55) opacity(.62)}
+/* NOTE(deprecate-ring · TEMPORARY): a cell that HAS a dossier but the rule says it
+   shouldn't — score <40, or a multipurpose dossier whose hull isn't multirole (<3
+   role-units at >=40). A DEPRECATION candidate, flagged with a dashed RED ring.
+   REMOVE the .dep ring (this rule + the "dep" class in render_table) once the
+   backlog is cleared. Pairs with the amber .cand (to-build) ring. */
+.matrix td.cell.dep{outline:2px dashed var(--danger);outline-offset:-2px;background:color-mix(in srgb,var(--danger) 14%,transparent)}
 .matrix td.cell.empty{color:var(--muted,#6b6256)}
 .matrix td.cell.empty .dash{opacity:.35}
 
@@ -381,6 +387,12 @@ def render_table(data, dossier_dir="../ship-dossiers/"):
             f'<td class="col-ship nolink"><span class="shipname">{s}</span></td>',
             f'<td class="col-class"><span class="pill {padcls}">{pad}</span></td>',
         ]
+        # multirole unit count (Combat|AX merged) — used by the deprecation check
+        def _rt(r):
+            return data[s][r]["rating"]
+        mru = sum(1 for v in (max(_rt("combat"), _rt("ax")), _rt("mining"),
+                              _rt("trading"), _rt("exploration"), _rt("passenger"))
+                  if v >= CUTOFF)
         for key, label in ROLES:
             c = data[s][key]
             rating = c["rating"]
@@ -388,8 +400,14 @@ def render_table(data, dossier_dir="../ship-dossiers/"):
             inner = (f'<span class="rscore">{rating}</span>'
                      f'<div class="bar mini"><i style="--pct:{rating}"></i></div>')
             if c["dossier"]:
-                inner = f'<a href="{dossier_dir}{c["dossier"]}" title="{s} · {label}">{inner}</a>'
-                cells.append(f'<td class="cell r-{key}">{inner}</td>')
+                # DEPRECATION check: a dossier the rule says shouldn't exist — score
+                # <CUTOFF, or a multipurpose dossier whose hull isn't multirole (<3 units)
+                dep = rating < CUTOFF or (key == "multipurpose" and mru < 3)
+                klass = "cell dep" if dep else "cell"
+                tip = f"{s} · {label}" + (
+                    " — DEPRECATE: rule says no dossier" if dep else "")
+                inner = f'<a href="{dossier_dir}{c["dossier"]}" title="{tip}">{inner}</a>'
+                cells.append(f'<td class="{klass} r-{key}">{inner}</td>')
             else:
                 # no dossier: Concept-D greyed + unlinked; a >=CUTOFF score is a
                 # dossier CANDIDATE (dashed-ring — a temporary build-tracker, see CSS)
@@ -411,7 +429,10 @@ def render_table(data, dossier_dir="../ship-dossiers/"):
             f'each cell is the hull\'s 1–100 score for that role; the bar runs '
             f'<span class="hi-red">red</span> (high) → <span class="hi-green">green</span> (low). '
             f'<b>Bright, linked</b> cells open a dossier; <b>greyed</b> cells are a '
-            f'sub-40 poor fit with no dossier (hover for the tooltip). Use each '
+            f'sub-40 poor fit with no dossier (hover for the tooltip). A dashed '
+            f'<b style="color:var(--amber)">amber ring</b> marks a ≥40 pair whose dossier is '
+            f'still to be built; a dashed <b style="color:var(--danger)">red ring</b> marks a '
+            f'dossier the rule says should be retired. Use each '
             f'column\'s sort and filter glyphs to reorder and narrow the grid. '
             f'{len(ships)} ships × {len(ROLES)} roles.</p>')
     return bar + table + desc
