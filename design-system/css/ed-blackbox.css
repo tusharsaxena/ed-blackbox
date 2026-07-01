@@ -232,6 +232,14 @@ h3.subhead{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(-
 .kv-row .kv-k{display:inline-flex;align-items:center;gap:var(--space-4);color:var(--ink);font-weight:600;white-space:nowrap}
 .kv-row .kv-k b{font-weight:600}
 .kv-row .kv-v{min-width:0}
+/* Each .kv-row is its own grid, so a per-row max-content key column sizes independently and
+   the value columns don't line up across rows. When kv-rows share a legend card, promote the
+   card to the grid and let the rows adopt its tracks via subgrid, so every value aligns to one
+   column (a real table look, desktop + mobile). Graceful fallback where :has()/subgrid absent. */
+.legend .lg:has(> .kv-row){display:grid;grid-template-columns:minmax(56px,max-content) 1fr;column-gap:var(--space-7);align-content:start}
+.legend .lg:has(> .kv-row) > h4{grid-column:1/-1}
+.legend .lg > .kv-row{grid-column:1/-1;grid-template-columns:subgrid}
+@media (max-width:560px){.legend .lg:has(> .kv-row){column-gap:var(--space-6)}.kv-row .kv-k{white-space:normal}}
 /* table description — a table's caption moved below it (bold; sits where a footnote would) */
 .tbl-desc{font-weight:600;font-size:var(--fs-sm2);color:var(--ink-dim);margin:var(--space-5) 0 var(--space-9);line-height:1.5}
 .swatch{display:inline-block;vertical-align:middle;width:22px;height:10px;border-radius:var(--radius-xs);flex:none;margin-right:var(--space-4)}
@@ -360,8 +368,8 @@ ul.reclist a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
 .rec-desc.nobio .dq{color:var(--ink-faint);opacity:.7}
 @media (max-width:720px){
   .rec{grid-template-columns:1fr}
-  .rec-id{grid-column:1;border-right:none;border-bottom:1px solid var(--hair)}
-  .rec-body{grid-column:1;grid-template-columns:1fr 1fr;grid-template-areas:"a b" "c d" "e e"}
+  .rec-id{grid-column:1;grid-row:auto;border-right:none;border-bottom:1px solid var(--hair)}
+  .rec-body{grid-column:1;grid-row:auto;grid-template-columns:1fr 1fr;grid-template-areas:"a b" "c d" "e e"}
   .rec-meta{margin-top:var(--space-4)}
 }
 @media (max-width:480px){.rec-body{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "d" "e"}}
@@ -373,8 +381,12 @@ ul.reclist a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
 .tbl-scroll{position:relative;margin:var(--space-9) 0;border:1px solid var(--hair);border-radius:var(--radius-md)}
 @media(max-width:920px){.tbl-scroll{overflow-x:auto}}
 /* DS default: pinned table headers, sticky UNDER the 62px site-header. Each table family's
-   thead th carries an opaque background (var(--bg2)) so scrolled rows don't bleed through. */
+   thead th carries an opaque background (var(--bg2)) so scrolled rows don't bleed through.
+   On narrow viewports the .tbl-scroll becomes an overflow-x scroll container, which TRAPS
+   position:sticky (it would then pin to the container, not the viewport, and float mid-table).
+   So below the horizontal-scroll breakpoint the header is un-pinned — it scrolls with the rows. */
 .tbl-scroll thead th{position:sticky;top:62px;z-index:var(--z-sticky)}
+@media(max-width:920px){.tbl-scroll thead th{position:static}}
 table.data{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
 table.data thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:11px var(--space-7);background:var(--bg2);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
 /* Header alignment follows the column's data alignment: a right-aligned (.num) or
@@ -724,7 +736,7 @@ footer b{color:var(--amber-lt);font-weight:700}
 .cr-link{font-family:'Saira Condensed',sans-serif;font-weight:600;font-size:var(--fs-sm);letter-spacing:.6px;text-transform:uppercase;color:var(--amber-lt);text-decoration:none;overflow-wrap:anywhere}
 .cr-link::after{content:"\00A0\2197"}
 .cr-link:hover{color:var(--amber)}
-@media (max-width:560px){.cr-row{flex-direction:column;gap:var(--space-2)}.cr-src{min-width:0}}
+@media (max-width:560px){.cr-rows{padding:var(--space-3) var(--space-8)}.cr-row{grid-template-columns:1fr;gap:var(--space-3)}.cr-src,.cr-what,.cr-link{min-width:0}.cr-link{justify-self:start}}
 
 /* ---- 30. GENERIC GAP COMPONENTS  (added v1.2.0 for the legacy-guide migration) ----
    Four generic primitives the legacy corpus needs but the DS lacked. Plain .chip and

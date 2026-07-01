@@ -31,6 +31,11 @@
   padding:.5rem .3rem;border-bottom:1px solid var(--line,#2a241c);text-align:center;
   border-left:1px solid rgba(255,255,255,.05)}
 .matrix thead th.col-ship{z-index:21;text-align:left;border-left:0}
+/* Below 920px .mx-wrap becomes an overflow scroll container (overflow-x:auto forces overflow-y
+   to auto too), which traps the header's position:sticky and floats it mid-table. Un-pin it
+   there — MUST come after the base rule above to win source order. position:relative (not
+   static) so the sort/filter .mh-pop popovers still anchor to the th. */
+@media(max-width:920px){.matrix thead th{position:relative;top:auto}}
 .matrix thead th.mh-open{z-index:45}
 .matrix thead th .mh{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:.4rem}
 .matrix thead th.col-ship .mh{justify-content:flex-start}
