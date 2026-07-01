@@ -23,5 +23,4 @@ Link format: `third-party-apps.html#<id>`
 - **Rescue & Player Groups** — `#section-rescue`
 - **Directories & Aggregators** — `#section-directories`
 - **YouTube Channels & Creators** — `#section-creators`
-- **Defunct — with Replacements** — `#section-defunct`
 - **By Play-Style — Recommended Stacks** — `#section-bystyle`
