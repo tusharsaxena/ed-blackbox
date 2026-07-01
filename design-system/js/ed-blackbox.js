@@ -155,8 +155,11 @@
    (and overflow-x:auto forces overflow-y:auto — not fixable in CSS). So for each such table we
    build a fixed clone of the thead, pin it just under the site-header while the table is in view,
    and translate it by -scrollLeft so it tracks the table's horizontal scroll. Presentational only
-   (aria-hidden, pointer-events:none); the real header stays the interactive one. */
+   (aria-hidden, pointer-events:none); the real header stays the interactive one.
+   Mirrored in the standalone design-system/js/sticky-tables.js for pages that can't load
+   ed-blackbox.js; the shared window.__edbbSticky guard means only one of the two ever runs. */
 (function(){
+  if(window.__edbbSticky) return; window.__edbbSticky=1;
   if(!window.matchMedia||!window.requestAnimationFrame) return;
   var mq=window.matchMedia('(max-width:920px)');
   function mobile(){ return mq.matches; }

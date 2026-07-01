@@ -866,7 +866,10 @@ nav.toc a:focus-visible,.permalink:focus-visible,[tabindex]:focus-visible{
 .bp-grp-bulk span{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--amber);font-size:var(--fs-sm);line-height:1}
 
 /* the collapsible card */
-.bp-card{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius-sm);margin:var(--space-4) 0;overflow:hidden}
+/* overflow:clip (not hidden) clips the rounded corners the same way but does NOT create a
+   scroll container, so a sticky <thead> inside pins to the viewport instead of being trapped
+   by the card (applies to the blueprint cards AND the modules.html spec cards, same component). */
+.bp-card{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius-sm);margin:var(--space-4) 0;overflow:clip}
 .bp-card-head{display:flex;align-items:center;gap:var(--space-6);padding:13px 16px;cursor:pointer;user-select:none;outline:none}
 .bp-card-head:focus-visible{box-shadow:inset 0 0 0 2px var(--amber)}
 .bp-fold{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;flex:none;border-radius:var(--radius-sm);color:var(--amber-lt);font-size:11px;background:rgba(224,145,58,.12);transition:transform .18s ease,background var(--motion-fast)}
@@ -894,8 +897,12 @@ nav.toc a:focus-visible,.permalink:focus-visible,[tabindex]:focus-visible{
 /* per-grade material table */
 .bp-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:var(--fs-base);table-layout:fixed}
 .bp-table col.c-num{width:14%}.bp-table col.c-cat{width:18%}.bp-table col.c-mat{width:auto}
-.bp-table thead th{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:var(--fs-2xs);color:var(--amber);text-align:left;padding:6px 10px;border-bottom:1px solid var(--hair);font-weight:600}
+/* sticky header: pins under the 62px site-header on desktop (opaque bg so scrolled rows don't
+   bleed through). On mobile the header is un-pinned and sticky-tables.js pins a synced clone
+   instead — matching the .tbl-scroll family (the mobile site-header is taller than 62px). */
+.bp-table thead th{position:sticky;top:62px;z-index:var(--z-sticky);background:var(--panel);font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:var(--fs-2xs);color:var(--amber);text-align:left;padding:6px 10px;border-bottom:1px solid var(--hair);font-weight:600}
 .bp-table thead th.r{text-align:right}
+@media(max-width:920px){.bp-table thead th{position:static}}
 .bp-table .gh td{background:rgba(224,145,58,.18);border-top:1px solid var(--amber);padding:9px 10px}
 .bp-table .eh td{background:rgba(79,159,214,.18);border-top:1px solid var(--fed);padding:9px 10px}
 .bp-table .gh .gnum{font-family:'Chakra Petch',sans-serif;font-weight:700;color:var(--amber-lt);font-size:var(--fs-base)}
