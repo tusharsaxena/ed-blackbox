@@ -383,10 +383,19 @@ ul.reclist a:hover{color:var(--amber);border-bottom-color:var(--amber-lt)}
 /* DS default: pinned table headers, sticky UNDER the 62px site-header. Each table family's
    thead th carries an opaque background (var(--bg2)) so scrolled rows don't bleed through.
    On narrow viewports the .tbl-scroll becomes an overflow-x scroll container, which TRAPS
-   position:sticky (it would then pin to the container, not the viewport, and float mid-table).
-   So below the horizontal-scroll breakpoint the header is un-pinned — it scrolls with the rows. */
+   position:sticky (it would then pin to the container, not the viewport, and float mid-table) —
+   and overflow-x:auto forces overflow-y:auto, so this can't be undone in CSS. So below the
+   horizontal-scroll breakpoint the native sticky is un-pinned here, and ed-blackbox.js module 6
+   re-creates a viewport-pinned header via a fixed .sthc clone (synced to the wrapper's h-scroll). */
 .tbl-scroll thead th{position:sticky;top:62px;z-index:var(--z-sticky)}
 @media(max-width:920px){.tbl-scroll thead th{position:static}}
+/* Mobile sticky-header clone (JS module 6): a fixed copy of the thead, pinned under the
+   site-header while the table is in view and horizontally synced to the scroll wrapper.
+   Purely presentational (pointer-events:none); only ever shown <=920px by the script. */
+.sthc{position:fixed;overflow:hidden;pointer-events:none;z-index:var(--z-sticky);display:none;background:var(--bg);box-shadow:0 6px 14px rgba(0,0,0,.34)}
+.sthc table{margin:0}
+.sthc thead th{position:static !important;top:auto !important}
+@media(min-width:921px){.sthc{display:none !important}}
 table.data{width:100%;border-collapse:collapse;font-size:var(--fs-base);min-width:560px}
 table.data thead th{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:var(--fs-xs);letter-spacing:1.4px;text-transform:uppercase;color:var(--amber-lt);text-align:left;padding:11px var(--space-7);background:var(--bg2);border-bottom:1px solid var(--hair-strong);white-space:nowrap}
 /* Header alignment follows the column's data alignment: a right-aligned (.num) or

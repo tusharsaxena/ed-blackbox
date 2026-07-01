@@ -7,6 +7,7 @@
      3. coord-copy — click-to-copy coordinate chips (needs .coord[data-copy])
      4. to-top     — scroll the page to the top + clear any URL #anchor (needs .qn-totop)
      5. loadout-export — Copy SLEF to clipboard + toast (needs .lex-copy[data-slef])
+     6. sticky-tables — mobile pinned table header (needs .tbl-scroll/.mx-wrap + <thead>)
    (Google Analytics is loaded separately, see design-system/js/analytics.js.)
 */
 
@@ -145,5 +146,76 @@
         document.body.removeChild(ta); ok();
       }catch(_){ fail(); }
     }
+  });
+})();
+
+/* 6 — mobile sticky table headers
+   On desktop the thead pins to the viewport on page scroll (pure CSS). On narrow viewports the
+   scroll wrapper (.tbl-scroll / .mx-wrap) is an overflow-x container, which traps position:sticky
+   (and overflow-x:auto forces overflow-y:auto — not fixable in CSS). So for each such table we
+   build a fixed clone of the thead, pin it just under the site-header while the table is in view,
+   and translate it by -scrollLeft so it tracks the table's horizontal scroll. Presentational only
+   (aria-hidden, pointer-events:none); the real header stays the interactive one. */
+(function(){
+  if(!window.matchMedia||!window.requestAnimationFrame) return;
+  var mq=window.matchMedia('(max-width:920px)');
+  function mobile(){ return mq.matches; }
+  var scrollers=[].slice.call(document.querySelectorAll('.tbl-scroll, .mx-wrap'));
+  if(!scrollers.length) return;
+  var header=document.querySelector('.site-header');
+  function pinLine(){ return header ? Math.max(0, header.getBoundingClientRect().bottom) : 0; }
+
+  scrollers.forEach(function(scroller){
+    var table=scroller.querySelector('table'),
+        thead=table&&table.tHead;
+    if(!thead) return;
+
+    var clone=document.createElement('div');
+    clone.className='sthc';
+    clone.setAttribute('aria-hidden','true');
+    var ctable=document.createElement('table');
+    ctable.className=table.className;
+    var cg=table.querySelector('colgroup');
+    if(cg) ctable.appendChild(cg.cloneNode(true));
+    ctable.appendChild(thead.cloneNode(true));
+    clone.appendChild(ctable);
+    document.body.appendChild(clone);
+
+    var shown=false, pending=0;
+    function syncWidths(){
+      ctable.style.width=table.offsetWidth+'px';
+      ctable.style.tableLayout='fixed';
+      var a=thead.querySelectorAll('th'), b=ctable.querySelectorAll('thead th');
+      for(var i=0;i<a.length;i++){ if(b[i]) b[i].style.width=a[i].getBoundingClientRect().width+'px'; }
+    }
+    function place(){
+      pending=0;
+      if(!mobile()){ if(shown){clone.style.display='none';shown=false;} return; }
+      var pin=pinLine(),
+          hr=thead.getBoundingClientRect(),
+          tr=table.getBoundingClientRect(),
+          sr=scroller.getBoundingClientRect();
+      // pin zone: the real header has scrolled above the pin line, but the table still spans it
+      if(hr.top<pin && tr.bottom>pin+hr.height){
+        clone.style.display='block';
+        clone.style.top=pin+'px';
+        clone.style.left=sr.left+'px';
+        clone.style.width=scroller.clientWidth+'px';
+        clone.style.height=hr.height+'px';
+        shown=true;
+        syncWidths();
+        ctable.style.transform='translateX('+(-scroller.scrollLeft)+'px)';
+      }else if(shown){
+        clone.style.display='none'; shown=false;
+      }
+    }
+    function schedule(){ if(!pending) pending=requestAnimationFrame(place); }
+    window.addEventListener('scroll',schedule,{passive:true});
+    window.addEventListener('resize',schedule);
+    (mq.addEventListener?mq.addEventListener.bind(mq,'change'):mq.addListener.bind(mq))(schedule);
+    scroller.addEventListener('scroll',function(){
+      if(shown) ctable.style.transform='translateX('+(-scroller.scrollLeft)+'px)';
+    },{passive:true});
+    place();
   });
 })();
