@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caspian Explorer &middot; Multipurpose &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Multipurpose → amber (design-system default; no override needed) -->
+<script src="../../../design-system/js/analytics.js" defer></script>
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Caspian Explorer · Multipurpose</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-versatile"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Versatile</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Saud Kruger</div>
+    <h1 class="title"><span>Caspian Explorer</span><span class="role ac-role-multipurpose">Multipurpose</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-07-01</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>Does <em>every job but one</em> — a gunless generalist with flagship reach and capacity</h2>
+      <p>A flexible do-everything hull with one hard limit: it carries <b>no weapon hardpoints</b>, so it does every job except combat. Fourteen optional internals and a class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> let one Caspian explore, haul, ferry passengers and run surface science in flagship comfort — but with zero guns and a ~189M Cr price, it is a costly generalist that can never fight. For versatility with teeth, a medium all-rounder does more for far less.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/caspian-explorer.jpg" alt="Caspian Explorer" width="160" height="90">
+      <figcaption><b>Caspian Explorer</b> &middot; Saud Kruger</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">66<small>/100</small></div><div class="bar mini"><i style="--pct:66"></i></div></div>
+      <div class="stat"><div class="n">14</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">Weapon hardpoints</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Utility mounts</div></div>
+      <div class="stat"><div class="n">~434 t</div><div class="l">Max cargo</div></div>
+      <div class="stat"><div class="n">~189M Cr</div><div class="l">Hull price</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Caspian Explorer is Saud Kruger's dedicated deep-space flagship, and its multipurpose case rests entirely on space. Fourteen optional internals and six utility mounts give it module capacity and comfort no other hull matches, and a class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> carries all of it a long way. As a generalist it trades, ferries passengers, explores and runs surface science from a single airframe, re-roled by swapping optional internals.</p>
+    <p>The catch is fundamental: the Caspian mounts <b>no weapons at all</b> &mdash; not a single hardpoint, only six utility slots for defensive kit. That makes it a multipurpose ship that can do every job except fight, and a poor choice the moment a task involves combat. It is also a large pad and a ~189M Cr investment. Its versatility is real but one-sided, which is why a cheaper medium all-rounder is the wiser buy for most commanders.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Non-combat multitasking at flagship scale: long trade runs, luxury passenger tourism, deep-space exploration and large-scale exobiology &mdash; all from one hull with room and range to spare, provided nothing needs shooting.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-exploration" href="caspian-explorer-exploration.html"><span class="vrole">Exploration</span><span class="vrate">94<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-versatile">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Versatile</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Max cargo</div><div class="v">~434 <small>t</small></div></div>
+      <div class="cell"><div class="k">Max jump (engineered)</div><div class="v">~55&ndash;78 <small>LY</small></div></div>
+      <div class="cell"><div class="k">Weapon hardpoints</div><div class="v">0</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">6</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">7&middot;6&middot;6&middot;5&middot;5&middot;5&middot;5&middot;4&middot;4&middot;3&middot;2&middot;1&middot;1&middot;1</div></div>
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">210 / 290 <small>m/s</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a></div><div class="v">Class 8 <small>(dedicated)</small></div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">950 <small>t</small></div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Military slots</div><div class="v">0</div></div>
+    </div>
+    <p>Three things make the Caspian a generalist &mdash; and one caps it:</p>
+    <ul class="bullets">
+      <li><b>Fourteen optional internals.</b> The deepest internal bay of any multipurpose hull &mdash; ~434 t of <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo</a>, <a href="../../engineering/engineering-manuals/modules.html#module-passenger-cabin">passenger cabins</a>, exploration kit and comforts, all interchangeable per job.</li>
+      <li><b>Class-8 dedicated <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>.</b> Flagship reach &mdash; a stripped fit jumps ~78 LY, and even laden with cargo it stays a strong long-range traveller.</li>
+      <li><b>Six utility mounts.</b> A generous defensive suite &mdash; <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield boosters</a>, <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">heat sinks</a>, <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a> and <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">point defence</a> to survive interdictions and slip away.</li>
+      <li><b>No weapons, ever.</b> Zero hardpoints means it cannot mount a single gun. The Caspian's multirole is explore/haul/ferry/science only &mdash; the combat half of "multipurpose" is simply absent.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>It's a gunless large pad &mdash; no outposts, no combat, ponderous at 210/290 m/s, and ~189M Cr to buy. Its case is capacity and range without teeth. For an all-rounder that also fights and lands at more stations, a <a href="python-multipurpose.html">Python</a> or <a href="krait-mk-ii-multipurpose.html">Krait Mk II</a> is the better ship for a fraction of the price.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">The role's deepest internals and a class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> carry it, but zero weapon hardpoints — it cannot mount a single gun — plus a ~189M Cr price and large-pad-only access cap a generalist that does every job except fight.</p>
+    <p>The <b>66/100</b> headline is a verdict against the multipurpose role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Breadth of internals</td><td class="sc"><span class="scval">29</span><span class="den">/30</span><div class="bar mini"><i style="--pct:97"></i></div></td><td class="wcell">Fourteen optional internals (7·6·6·5·5·5·5·4·4·3·2·1·1·1) hold ~434 t cargo or any role's full kit — the most internal slots of any multipurpose hull; capped just short of max only because the top optional is size 7 (no size-8 like the Cutter) and three slots are size 1.</td></tr>
+      <tr><td class="fct">Firepower</td><td class="sc"><span class="scval">3</span><span class="den">/20</span><div class="bar mini"><i style="--pct:15"></i></div></td><td class="wcell">Zero weapon hardpoints — the hull cannot mount a single gun, only six utility slots for defensive kit (shield boosters, heat sinks, chaff, point defence). It cannot fill the combat half of 'multipurpose' at all; this is the single biggest reason it sits at 66.</td></tr>
+      <tr><td class="fct">Jump range</td><td class="sc"><span class="scval">18</span><span class="den">/20</span><div class="bar mini"><i style="--pct:90"></i></div></td><td class="wcell">Class-8 dedicated SCO FSD jumps ~78 LY stripped and stays a strong long-range traveller (~55–60 LY) even laden — matches the Anaconda and leads the large field.</td></tr>
+      <tr><td class="fct">Flexibility &amp; re-fit cost</td><td class="sc"><span class="scval">8</span><span class="den">/15</span><div class="bar mini"><i style="--pct:53"></i></div></td><td class="wcell">No rank or permit gate, but ~189M Cr hull (among the priciest), large-pad-only (bars outposts), and no guns means it can never re-role into combat — its multirole spans explore/trade/passenger/science only.</td></tr>
+      <tr><td class="fct">Survivability &amp; handling</td><td class="sc"><span class="scval">8</span><span class="den">/15</span><div class="bar mini"><i style="--pct:53"></i></div></td><td class="wcell">Lightweight-alloy explorer hull with no military slots and only an optional bi-weave, slow 210/290 m/s ponderous 950 t frame; six utilities allow a solid defensive booster/heat-sink stack, but it tanks and turns worse than dedicated combat hulls and relies on running, not fighting.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">66</span><span class="den">/100</span><div class="bar mini"><i style="--pct:66"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for multipurpose use</em> &mdash; versatility across trade, exploration, passengers and combat. The role column is the maximum cargo capacity in tonnes as one measure of capacity; the Caspian's zero-hardpoint design is what holds its versatility below the field.</p>
+    <h3 class="subhead">Same class &mdash; large all-rounders</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Caspian Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="anaconda-multipurpose.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>~470</td><td class="pcc"><span class="p">Eight hardpoints; genuine warship; similar range</span><span class="c">Pricier to outfit; also large-pad</span></td><td><span class="rscore">88</span><div class="bar mini"><i style="--pct:88"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-multipurpose.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>~794</td><td class="pcc"><span class="p">Apex shields; huge-mount battery; ~794 t hold</span><span class="c">Duke-gated; weak jump range</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-corvette-multipurpose.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>~618</td><td class="pcc"><span class="p">Heaviest gun array in the role; un-killable tank</span><span class="c">Rank-gated; short ~31 LY jump</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-clipper-multipurpose.html">Imperial Clipper</a></td><td><span class="pill pad-large">Large</span></td><td>~250</td><td class="pcc"><span class="p">Fastest large hull; cheap; four hardpoints</span><span class="c">Shorter range; less capacity</span></td><td><span class="rscore">73</span><div class="bar mini"><i style="--pct:73"></i></div></td></tr>
+        <tr><td class="mod">Caspian Explorer <span class="pill md">this</span></td><td><span class="pill pad-large">Large</span></td><td>~434</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Every other large all-rounder mounts guns; the Caspian does not. The <a href="anaconda-multipurpose.html">Anaconda</a> matches its range and capacity and fights too, the <a href="imperial-cutter-multipurpose.html">Cutter</a> and <a href="federal-corvette-multipurpose.html">Corvette</a> out-tank and out-gun it, and even the cheap <a href="imperial-clipper-multipurpose.html">Clipper</a> carries four hardpoints. The Caspian leads only on internal count &mdash; and pays for it by being unable to fill the combat role at all.</p>
+    <h3 class="subhead">Other classes &mdash; the versatile mediums</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Caspian Explorer</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="python-multipurpose.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~294</td><td class="pcc"><span class="p">Three large hardpoints; medium pad; far cheaper</span><span class="c">Shorter ~45 LY range; less cargo</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-multipurpose.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>~230</td><td class="pcc"><span class="p">3 large guns plus fighter bay; lands anywhere</span><span class="c">Modest range; less capacity</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="corsair-multipurpose.html">Corsair</a></td><td><span class="pill pad-medium">Medium</span></td><td>~318</td><td class="pcc"><span class="p">Six hardpoints; ~318 t hold on a medium pad</span><span class="c">Weak ~42 LY range; priciest medium</span></td><td><span class="rscore">82</span><div class="bar mini"><i style="--pct:82"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-multipurpose.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~128</td><td class="pcc"><span class="p">Cheap; medium pad; six hardpoints; ~62 LY range</span><span class="c">Far less cargo and capacity</span></td><td><span class="rscore">80</span><div class="bar mini"><i style="--pct:80"></i></div></td></tr>
+        <tr><td class="mod">Caspian Explorer <span class="pill md">this</span></td><td><span class="pill pad-large">Large</span></td><td>~434</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">66</span><div class="bar mini"><i style="--pct:66"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The versatile mediums land at more stations, cost a fraction and &mdash; crucially &mdash; mount guns, so they cover the combat role the Caspian cannot touch. They carry less cargo and jump shorter, but for genuine do-everything flexibility they are the rational pick. The Caspian earns its place only on capacity and range, never on breadth of capability.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~189M Cr</div></div>
+      <div class="cell"><div class="k">A-rated multirole</div><div class="v">~215M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~245M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Large</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~189M Cr the Caspian is one of the most expensive ships in the game, though it carries no rank or permit gate. A full multipurpose fit &mdash; shields, cargo, scoop, SRV bay and reinforcement &mdash; pushes the all-in figure past 245M Cr.</p>
+    <p>That is a lot to pay for a generalist that cannot fight. The Caspian only makes financial sense if you specifically want flagship capacity and range for peaceful work; for a true do-everything ship, a <a href="python-multipurpose.html">Python</a> or <a href="krait-mk-ii-multipurpose.html">Krait Mk II</a> costs a fraction and covers combat too.</p>
+    <div class="callout"><span class="lbl">Flagship money, no guns</span><p>Around 245M Cr all-in for a gunless large hull. It buys unmatched internal space and reach &mdash; not versatility across every role. A cheap medium all-rounder is the value pick for genuine multipurpose work.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A do-everything-but-fight fit built on the Caspian's vast internals. Initial is buy-only; A-rated is the all-round baseline; Engineered layers the class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a>'s signature range on top.</p>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit the base class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and a big <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a> first &mdash; range and capacity are the whole point. The stock Lightweight Alloy hull is free, so there's no bulkhead spend here. A single <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield booster</a> stiffens the base shield while everything is cheap.</p>
+    <p>Everything else goes in E-rated and cheap buy-only: <a href="../../engineering/engineering-manuals/modules.html#module-power-plant">power plant</a>, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>, <a href="../../engineering/engineering-manuals/modules.html#module-life-support">life support</a>, <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">power distributor</a> and sensors all at base grade, with a class-7 <a href="../../engineering/engineering-manuals/modules.html#module-fuel-tank">fuel tank</a> and a base <a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">shield generator</a>.</p>
+    <p>Leave the rest of the optional internals empty for now &mdash; the <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">fuel scoop</a>, SRV bay, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, <a href="../../engineering/engineering-manuals/modules.html#module-shield-cell-bank">shield cell bank</a>, <a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">hull reinforcement</a>, extra cargo and surface scanner all wait for the A-rated pass.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a gunless multipurpose flagship:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 8A</b> &mdash; The class-8 drive is the heart of the ship; A-rate it first for reach across every job. <span class="acc">~25M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Plant</a>, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>, <a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">distributor</a> &rarr; A</b> &mdash; Power, agility and recharge to move a 950t hull and hold the shield. <span class="acc">~40M Cr</span></li>
+      <li><span class="stepnum">3</span><b>6C bi-weave + 3&times; <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield boosters</a></b> &mdash; The shield is the only defence on a gunless hull; make it fast and deep. <span class="acc">~10M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">Cargo racks</a> + <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">fuel scoop</a></b> &mdash; Fill the big slots with the trading and self-sufficiency kit the multirole lives on. <span class="acc">~15M Cr</span></li>
+      <li><span class="stepnum">5</span><b>SRV bay + <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> + <a href="../../engineering/engineering-manuals/modules.html#module-shield-cell-bank">shield cell bank</a></b> &mdash; Surface access, self-repair and burst shield healing for long solo runs. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/modules.html#module-hull-reinforcement">Hull reinforcement</a> + <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">Detailed Surface Scanner</a></b> &mdash; Cheap effective-armour on a military-slot-less hull, and cartographic payouts on the side. <span class="acc">~2M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Range and shield first, then fill the bays</span><p>A-rate the class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and cores, harden the bi-weave, then use the Caspian's vast space for cargo, scoop, SRV and repair. With no guns to buy, the credits go into capacity and survivability instead.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>The all-rounder engineering pattern at flagship scale: <a href="../../engineering/engineering-manuals/engineers.html#engineer-felicity-farseer">Felicity Farseer</a> maxes the class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> for range, while the plant, <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a>, distributor and shield work spread across the usual engineers. With no weapons to roll, the whole budget goes into reach and survivability.</p>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Max jump (LY)</td><td>~30</td><td>~42</td><td class="acc">~55&ndash;78</td></tr>
+        <tr><td class="mod">Cargo capacity</td><td>~192 t</td><td>~350 t</td><td class="acc">~434 t max</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>base</td><td>~450</td><td class="acc">~900+</td></tr>
+        <tr><td class="mod">Hull (armour)</td><td>stock light</td><td>military</td><td class="acc">heavy-eng</td></tr>
+        <tr><td class="mod">Firepower</td><td>none</td><td>none</td><td class="acc">none</td></tr>
+        <tr><td class="mod">Speed (boost)</td><td>290 m/s</td><td>290 m/s</td><td class="acc">~330 m/s</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Engineered, the Caspian jumps a long way while carrying deep cargo, a hardened bi-weave, an <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a>, an SRV bay and reinforcement &mdash; a self-sufficient generalist with real capacity and reach. What no state changes is the firepower line: it stays <b>none</b>, because the hull has no mounts. That single fixed zero is why a capable, well-built ship still rates only 66 for multipurpose.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Bulk trade runs.</b> ~434 t of hold plus flagship range make long-haul commodity loops between economy hubs a natural fit.</li>
+      <li><b>Deep-space exploration.</b> The class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> and a big <a href="../../engineering/engineering-manuals/modules.html#module-fuel-scoop">scoop</a> reach the black as well as any dedicated explorer.</li>
+      <li><b>Mixed peaceful careers.</b> Trade one week, explore the next, run passenger work between &mdash; one hull for every non-combat job.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Luxury passenger tourism.</b> <a href="../../engineering/engineering-manuals/modules.html#module-passenger-cabin">Passenger cabins</a> plus flagship comfort make it a premier sightseeing liner to distant wonders.</li>
+      <li><b>Large-scale exobiology.</b> An SRV bay and vast storage suit thorough, prolonged surface science.</li>
+      <li><b>Self-sufficient expeditions.</b> Scoop, <a href="../../engineering/engineering-manuals/modules.html#module-afmu">AFMU</a> and deep stores keep it out for months without resupply.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Avoid anything that shoots back</span><p>Skip combat zones, pirate-heavy routes and any mission that expects teeth &mdash; the Caspian has none. Where it goes, it goes to work or to look, and it leaves the fighting to hulls built for it.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>No weapon hardpoints at all &mdash; plan every activity around avoiding, not winning, a fight.</li>
+      <li>A hardened bi-weave and six utilities are your whole defence; stack <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">boosters</a> and carry <a href="../../engineering/engineering-manuals/modules.html#module-countermeasures">chaff</a> to survive interdictions and jump clear.</li>
+      <li>Mind the large pad &mdash; plan resupply around orbital stations, planetary ports or a fleet carrier; outposts are out.</li>
+      <li>It's a luxury generalist, not a value pick &mdash; a <a href="python-multipurpose.html">Python</a> or <a href="krait-mk-ii-multipurpose.html">Krait Mk II</a> does more, fights, and costs far less.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Caspian Explorer is a superb peaceful generalist wearing the wrong label: fourteen internals and a class-8 <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> give it unmatched capacity and reach, but with <b>zero guns</b>, a large pad and a ~189M Cr price it does every job except the one that defines a true multirole. Buy it for range and space without teeth; buy a medium all-rounder for genuine do-everything versatility.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/caspian_explorer" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/caspian_explorer</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Caspian Explorer</span><span class="cr-what">Stock hull stats, optional-internal layout, and the absence of weapon hardpoints on this ship.</span><a class="cr-link" href="https://inara.cz/elite/ship/86/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/86</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Caspian Explorer</span><span class="cr-what">Manufacturer, Class-8 FSD, utility-mount count and the no-weapon-hardpoint design.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Caspian_Explorer" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Caspian_Explorer</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Caspian Explorer ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/caspian-explorer" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../caspian-explorer</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — The Buur Pit</span><span class="cr-what">Opinionated review of the Caspian Explorer covering its strengths, capacity and the limits of using it outside pure exploration.</span><a class="cr-link" href="https://www.youtube.com/watch?v=CdRY2kcZU2Q" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=CdRY2kcZU2Q</a></div>
+      <div class="cr-row"><span class="cr-src">YouTube — Ricardos Gaming</span><span class="cr-what">Full breakdown of the Caspian Explorer: Class-8 FSD, Mk II modules and optional-internal capacity.</span><a class="cr-link" href="https://www.youtube.com/watch?v=ScE3BP8hFQk" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=ScE3BP8hFQk</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>

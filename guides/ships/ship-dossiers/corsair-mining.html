@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corsair &middot; Mining &middot; Ship Dossier | E:D Black Box</title>
+<link rel="icon" type="image/png" href="../../../images/logos/favicon.png">
+<link rel="stylesheet" href="../../../design-system/css/ed-blackbox.css">
+<!-- Per-page accent: Mining → amber (only permitted page-level CSS) -->
+<script src="../../../design-system/js/analytics.js" defer></script>
+</head>
+<body>
+
+<!-- ---- GLOBAL HEADER ---- -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a class="brand" href="../../index.html" aria-label="E:D Black Box — home">
+      <img src="../../../images/logos/logo.png" alt="">
+      <span class="wordmark"><span class="hl">E:D</span> Black Box</span>
+    </a>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#section-dossiers" class="active">Ships</a>
+      <a href="../../index.html#section-engineering">Engineering</a>
+      <a href="../../index.html#section-systems">Systems</a>
+    </nav>
+    <div class="header-qn">
+      <div class="hdr-crumb">
+        <span class="hdr-crumb-title">Corsair · Mining</span>
+        <span class="hdr-crumb-trail">
+          <a href="../../index.html#section-dossiers">Ships</a>
+          <span class="sep">›</span>
+          <a href="../../index.html#section-ship-dossiers">Ship Dossiers</a>
+        </span>
+      </div>
+      <button class="qn-totop" type="button" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13 L12 6 L20 13"/><path d="M4 18.5 L12 11.5 L20 18.5"/></svg>
+      </button>
+      <div class="qn-dd" id="qn-dd">
+        <div class="qn-field">
+          <span class="qn-ico" aria-hidden="true">⌕</span>
+          <input id="qn-search" class="qn-input" type="text" placeholder="Jump to a section…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qn-panel" aria-autocomplete="list">
+          <button id="qn-clear" class="qn-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="qn-panel" id="qn-panel" role="listbox">
+          <a class="qn-item" href="#section-role-overview"><span class="qn-dot amber"></span><span class="qn-nm">Role &amp; Overview</span><span class="qn-side">01</span></a>
+          <a class="qn-item" href="#section-key-stats-what-makes-it-mine"><span class="qn-dot amber"></span><span class="qn-nm">Key Stats &amp; What Makes It Mine</span><span class="qn-side">02</span></a>
+          <a class="qn-item" href="#section-why-this-rating"><span class="qn-dot amber"></span><span class="qn-nm">Why This Rating</span><span class="qn-side">03</span></a>
+          <a class="qn-item" href="#section-how-it-compares"><span class="qn-dot amber"></span><span class="qn-nm">How It Compares</span><span class="qn-side">04</span></a>
+          <a class="qn-item" href="#section-cost-access"><span class="qn-dot amber"></span><span class="qn-nm">Cost &amp; Access</span><span class="qn-side">05</span></a>
+          <a class="qn-item" href="#section-3-state-loadout"><span class="qn-dot amber"></span><span class="qn-nm">3-State Loadout</span><span class="qn-side">06</span></a>
+          <a class="qn-item" href="#section-initial-loadout-buy-only-plan"><span class="qn-dot amber"></span><span class="qn-nm">Initial Loadout &mdash; Buy-Only Plan</span><span class="qn-side">07</span></a>
+          <a class="qn-item" href="#section-a-rated-loadout-upgrade-plan"><span class="qn-dot amber"></span><span class="qn-nm">A-Rated Loadout &mdash; Upgrade Plan</span><span class="qn-side">08</span></a>
+          <a class="qn-item" href="#section-engineering-plan"><span class="qn-dot amber"></span><span class="qn-nm">Engineering Plan</span><span class="qn-side">09</span></a>
+          <a class="qn-item" href="#section-key-stat-upgrades"><span class="qn-dot amber"></span><span class="qn-nm">Key Stat Upgrades</span><span class="qn-side">10</span></a>
+          <a class="qn-item" href="#section-key-activities-where-to-do-them"><span class="qn-dot amber"></span><span class="qn-nm">Key Activities &amp; Where To Do Them</span><span class="qn-side">11</span></a>
+          <a class="qn-item" href="#section-field-notes-what-else-to-know"><span class="qn-dot amber"></span><span class="qn-nm">Field Notes &mdash; What Else To Know</span><span class="qn-side">12</span></a>
+          <a class="qn-item" href="#section-credits"><span class="qn-dot amber"></span><span class="qn-nm">Sources</span><span class="qn-side">13</span></a>
+          <div class="qn-empty" hidden>No matching sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Ship Dossier <span class="sep">//</span> Gutamaya</div>
+    <h1 class="title"><span>Corsair</span><span class="role ac-role-mining">Mining</span></h1>
+    <div class="masthead-meta">
+      <span>Series <b>Ships</b></span>
+      <span>Updated <b>2026-07-01</b></span>
+    </div>
+  </header>
+
+  <div class="verdict has-render">
+    <div class="v-body">
+      <div class="v-eyebrow">Briefing</div>
+      <h2>A capable-but-costly medium miner — wins on <em>internal depth</em>, not specialisation</h2>
+      <p>The Corsair mounts the full extraction suite and carries a deeper ore hold than most medium-pad hulls, thanks to three size-6 optional bays, and keeps a real bi-weave and a gun to fend off pirates. But it brings <b>no</b> mining hull bonus and none of the <a href="type-11-prospector-mining.html">Type-11's</a> exclusive tooling, and at ~76.9M Cr it is one of the priciest medium miners. It mines well; it just never mines <em>cheaply</em>, which is why it lands mid-pack.</p>
+    </div>
+    <figure class="ship-figure">
+      <img src="../../../images/ships/corsair.jpg" alt="Corsair" width="160" height="90">
+      <figcaption><b>Corsair</b> &middot; Gutamaya</figcaption>
+    </figure>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">68<small>/100</small></div><div class="bar mini"><i style="--pct:68"></i></div></div>
+      <div class="stat"><div class="n">3L · 3M</div><div class="l">Hardpoints</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">Optional internals</div></div>
+      <div class="stat"><div class="n">355 m/s</div><div class="l">Boost speed</div></div>
+      <div class="stat"><div class="n">~76.9M</div><div class="l">Hull price (Cr)</div></div>
+    </div>
+  </div>
+
+  <div class="callout"><span class="lbl">Rating methodology</span><p>This ship's <span class="acc">1&ndash;100 suitability rating</span> reflects its fully-engineered fit for this role, scored against every ship in the role. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  <!-- s1 -->
+  <section id="section-role-overview">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role &amp; Overview</h2></div>
+    <p>The Corsair is a medium-pad multirole hull re-roled to <a href="../../engineering/engineering-manuals/modules.html#module-mining">mining</a>, and it does the job through sheer internal depth rather than any purpose-built advantage. Ten optional internals &mdash; three of them class 6 &mdash; let it carry the complete tool suite (<a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a>, seismic launcher, sub-surface missile, abrasion blaster), a <a href="../../engineering/engineering-manuals/modules.html#module-refinery">refinery</a>, a limpet swarm and a genuinely useful ore hold at the same time, which most mediums cannot.</p>
+    <p>What it lacks is specialisation. There is no mining hull bonus, no exclusive Mk II hardware like the <a href="type-11-prospector-mining.html">Type-11 Prospector</a>, and the mining tools cap at medium, so the three large mounts are under-filled. Against the dedicated trade-miners it costs far more per tonne of ore returned: a <a href="type-8-transporter-mining.html">Type-8</a> or <a href="python-mining.html">Python</a> extracts as much for a fraction of the outlay. The Corsair earns its keep only if you already own it, or want one medium hull that mines, fights and hauls without a module swap being a compromise.</p>
+    <div class="callout"><span class="lbl">Where this hull shines</span><p>Pristine metallic and icy rings within reach of a medium-pad refinery, especially when you value docking flexibility and self-defence over ore-per-credit &mdash; and for pilots who already fly the Corsair in another role and want it to mine on the side.</p></div>
+    <div class="nolink">
+      <h3 class="subhead">Other role builds of this ship</h3>
+      <div class="vchips">
+        <a class="vchip r-ax" href="corsair-ax.html"><span class="vrole">AX</span><span class="vrate">84<small>/100</small></span></a>
+        <a class="vchip r-combat" href="corsair-combat.html"><span class="vrole">Combat</span><span class="vrate">85<small>/100</small></span></a>
+        <a class="vchip r-multipurpose" href="corsair-multipurpose.html"><span class="vrole">Multipurpose</span><span class="vrate">82<small>/100</small></span></a>
+        <a class="vchip r-trading" href="corsair-trading.html"><span class="vrole">Trading</span><span class="vrate">74<small>/100</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- s2 -->
+  <section id="section-key-stats-what-makes-it-mine">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Key Stats &amp; What Makes It Mine</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Top speed / boost</div><div class="v">280 / 355 <small>m/s</small></div></div>
+      <div class="cell"><div class="k">Hardpoints</div><div class="v">3 Large &middot; 3 Medium</div></div>
+      <div class="cell"><div class="k">Utility mounts</div><div class="v">4</div></div>
+      <div class="cell"><div class="k">Hull mass</div><div class="v">265 <small>t</small></div></div>
+      <div class="cell"><div class="k">Base shield</div><div class="v">~235 <small>MJ</small></div></div>
+      <div class="cell"><div class="k">Max cargo (mining fit)</div><div class="v">~176 <small>t</small></div></div>
+      <div class="cell"><div class="k"><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power plant</a></div><div class="v">Class 7</div></div>
+      <div class="cell"><div class="k">Distributor</div><div class="v">Class 7</div></div>
+      <div class="cell"><div class="k">Optional internals</div><div class="v">6&middot;6&middot;6&middot;5&middot;5&middot;5&middot;4&middot;3&middot;2&middot;1</div></div>
+      <div class="cell"><div class="k">Pad size</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Agility</div><div class="v">Good</div></div>
+      <div class="cell"><div class="k">Crew seats</div><div class="v">2</div></div>
+    </div>
+    <p>Three things make the Corsair a workable medium miner:</p>
+    <ul class="bullets">
+      <li><b>Ten optional internals, three class-6.</b> Exceptional depth for a medium &mdash; enough to hold the full extraction suite <em>and</em> a competitive ore hold (~176 t) without the constant slot-juggling smaller hulls suffer.</li>
+      <li><b>Six hardpoints plus four utilities.</b> Every mining tool fits with a large mount left over for a gun, and the four utility mounts carry a Pulse Wave Analyser and a shield-booster pair.</li>
+      <li><b>Medium pad, no rank, <a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> pace.</b> Docks at outposts the large barges can't reach, needs no rank or permit, and boosts to 355 m/s to break an interdiction.</li>
+    </ul>
+    <div class="callout"><span class="lbl">The ceiling, stated honestly</span><p>No mining hull bonus, no exclusive <a href="type-11-prospector-mining.html">Mk II tools</a>, and <a href="../../engineering/engineering-manuals/modules.html#module-mining">mining lasers</a>/launchers cap at medium so the three large mounts under-fill. The ~176 t hold is good for a medium but well under a <a href="type-8-transporter-mining.html">Type-8</a> (~406 t) or any capital barge, and at ~76.9M Cr you pay a premium for breadth a dedicated miner doesn't need. The Corsair mines competently; it never mines <em>economically</em>.</p></div>
+  </section>
+
+  <!-- s3 -->
+  <!-- Why This Rating -->
+  <section id="section-why-this-rating">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Why This Rating</h2><span class="tag">Scorecard</span></div>
+    <p class="lead">Deep internals and a full tool-and-gun fit on a rank-free medium pad carry the score; the absence of any mining specialisation, a mid-pack ore hold and a premium hull price cap it at 68.</p>
+    <p>The <b>68/100</b> headline is a verdict against the mining role's priority-ordered factors. Each factor carries a <b>weight</b> (its share of 100); this hull earns part of each based on how it performs against the whole field. The points <b>sum to the rating</b>.</p>
+    <div class="tbl-scroll">
+    <table class="data scorecard">
+      <colgroup><col style="width:190px"><col style="width:150px"><col></colgroup>
+      <thead><tr><th>Role factor</th><th class="sc">Score</th><th>Why this score</th></tr></thead>
+      <tbody>
+      <tr><td class="fct">Effective ore capacity</td><td class="sc"><span class="scval">20</span><span class="den">/35</span><div class="bar mini"><i style="--pct:57"></i></div></td><td class="wcell">Three size-6 bays plus a size-5 give ~176 t max cargo (~140-150 t practical after the suite) — good for a medium and above the Asp (~72 t) or Krait Phantom (~190 t is close), but well under the Type-8 (~406 t) and every capital barge; deep internals underused by a mid hold.</td></tr>
+      <tr><td class="fct">Tool &amp; slot fit</td><td class="sc"><span class="scval">19</span><span class="den">/25</span><div class="bar mini"><i style="--pct:76"></i></div></td><td class="wcell">Six hardpoints (3L/3M) plus four utilities and ten optionals seat the complete suite — two lasers, seismic launcher, sub-surface missile, abrasion blaster, PWA, refinery and limpet controllers — with a gun to spare, but no Mk II exclusives, no hull bonus, and mining tools cap at medium so the large mounts under-fill.</td></tr>
+      <tr><td class="fct">Survivability</td><td class="sc"><span class="scval">13</span><span class="den">/15</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">A size-6 bi-weave, two Heavy-Duty boosters, a defensive multi-cannon and Imperial 355 m/s boost let it deter and out-run pirates rather than only flee; no military slots keep it short of the Python's ~1,100 MJ, so it is solid-not-leading for a medium.</td></tr>
+      <tr><td class="fct">Pad class &amp; access</td><td class="sc"><span class="scval">13</span><span class="den">/15</span><div class="bar mini"><i style="--pct:87"></i></div></td><td class="wcell">Medium pad with no rank and no permit reaches ring-adjacent outposts the large barges can't dock at — strong access that matches the best mediums, though it doesn't lead the class.</td></tr>
+      <tr><td class="fct">Cost &amp; specialisation</td><td class="sc"><span class="scval">3</span><span class="den">/10</span><div class="bar mini"><i style="--pct:30"></i></div></td><td class="wcell">~76.9M Cr hull, rank-free but one of the priciest medium miners, with zero mining bonus and no exclusive tooling; a Type-8 (~35M) or Python (~55M) return more ore per credit, so it only makes sense re-roled from a hull already owned.</td></tr>
+      <tr class="totalrow"><td class="fct"><b>Weighted total</b></td><td class="sc"><span class="scval">68</span><span class="den">/100</span><div class="bar mini"><i style="--pct:68"></i></div></td><td class="wcell"><em>Matches the headline suitability rating for this ship in this role.</em></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout"><span class="lbl">How to read it</span><p>Weights are an editorial decomposition of the role's stated priority order &mdash; not an in-game formula. Bar length shows how fully each factor is earned; the longest factors carried the score, the shortest are where it gave points away. See <a href="../general/rating-methodology.html">how ships are rated</a>.</p></div>
+  </section>
+
+  <section id="section-how-it-compares">
+    <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
+    <p>Both tables rate ships <em>for the mining role specifically</em>. The role column is the hardpoint loadout &mdash; the mounts that carry the extraction tools (and any defensive gun).</p>
+    <h3 class="subhead">Same class &mdash; medium-pad mining ships</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Corsair</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="type-11-prospector-mining.html">Type-11 Prospector</a></td><td><span class="pill pad-medium">Medium</span></td><td>1L 3M 2S</td><td class="pcc"><span class="p">Purpose-built; exclusive Mk II tools; class-7 distributor</span><span class="c">Costlier hull; smaller hold than the barges</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-mining.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">Bigger hold; ~1,100 MJ shield; cheaper</span><span class="c">Slower; no huge internal-depth edge</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-mining.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>3L 2M</td><td class="pcc"><span class="p">SLF bay; ~1,000 MJ bi-weave; cheaper</span><span class="c">Smaller ~150-190 t ore hold</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-8-transporter-mining.html">Type-8 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>1M 5S</td><td class="pcc"><span class="p">Far bigger ~406 t hold; much cheaper</span><span class="c">Small mounts; escape-only defence</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-mining.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>2L 2M</td><td class="pcc"><span class="p">Premium range; lighter; cheaper</span><span class="c">Shallower ~190 t hold; thinner shield</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="keelback-mining.html">Keelback</a></td><td><span class="pill pad-medium">Medium</span></td><td>2M 2S</td><td class="pcc"><span class="p">Fighter bay; a fraction of the price</span><span class="c">Tiny ~70 t hold; feeble throughput</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Corsair <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>3L 3M</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-mining.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>2M 4S</td><td class="pcc"><span class="p">Far cheaper; long legs</span><span class="c">Only ~72 t ore; thin shield</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-mining.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>2S</td><td class="pcc"><span class="p">Sub-million-credit starter</span><span class="c">~64 t hold; two small mounts only</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The Corsair sits mid-pack among the mediums: more mounts and deeper internals than the <a href="krait-phantom-mining.html">Krait Phantom</a> or <a href="asp-explorer-mining.html">Asp</a>, but out-held and out-valued by the cheaper <a href="type-8-transporter-mining.html">Type-8</a> and out-defended by the <a href="python-mining.html">Python</a>. Its depth is real; its price and lack of any mining bonus are what keep it level with the fighter-bay <a href="keelback-mining.html">Keelback</a> rather than climbing past the specialists.</p>
+    <h3 class="subhead">Other classes &mdash; the larger leagues</h3>
+    <div class="tbl-scroll">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Hardpoints</th><th>Pros &amp; cons vs Corsair</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="imperial-cutter-mining.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>1H 2L 4M</td><td class="pcc"><span class="p">~640 t hold; apex ~2,500 MJ shields</span><span class="c"><a href="../../systems/galaxy-and-power-systems/superpower-rank.html#superpower-emp">Imperial</a> Duke rank; ~200M Cr; large pad</span></td><td><span class="rscore">92</span><div class="bar mini"><i style="--pct:92"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-9-heavy-mining.html">Type-9 Heavy</a></td><td><span class="pill pad-large">Large</span></td><td>3M 2S</td><td class="pcc"><span class="p">~790 t hold; cheap volume; no rank</span><span class="c">~110 MJ shields; crawls; large pad</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-mining.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>1H 3L 2M 2S</td><td class="pcc"><span class="p">~320-400 t hold; battleship defence; no rank</span><span class="c">Costlier; ponderous; large pad</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="panther-clipper-mk-ii-mining.html">Panther Clipper Mk II</a></td><td><span class="pill pad-large">Large</span></td><td>2L 4M 4S</td><td class="pcc"><span class="p">Largest hold in the game (~1,048 t)</span><span class="c">~287M Cr; large pad; overkill</span></td><td><span class="rscore">77</span><div class="bar mini"><i style="--pct:77"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-10-defender-mining.html">Type-10 Defender</a></td><td><span class="pill pad-large">Large</span></td><td>4L 3M 2S</td><td class="pcc"><span class="p">Highest armour in the game; full guns</span><span class="c">Glacial; ~165M Cr; large pad</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-corvette-mining.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>2H 1L 2M 2S</td><td class="pcc"><span class="p">~700 t hold; untouchable self-defence</span><span class="c">Rear Admiral rank; ~183M Cr; large pad</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-v-mining.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>3M 2S</td><td class="pcc"><span class="p">Docks anywhere; fast; very cheap</span><span class="c">Only ~56 t ore; class-5 internals</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Against the larger leagues the Corsair's trade is clear: it forfeits the capital barges' vast holds in exchange for medium-pad docking and no rank grind. It out-defends the volume haulers and out-docks the large pads, but any commander chasing raw ore-per-run should climb to a <a href="type-9-heavy-mining.html">Type-9</a> or <a href="imperial-cutter-mining.html">Cutter</a> &mdash; and any commander chasing value should drop to a <a href="type-8-transporter-mining.html">Type-8</a>.</p>
+  </section>
+
+  <!-- s4 -->
+  <section id="section-cost-access">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cost &amp; Access</h2></div>
+    <div class="specgrid">
+      <div class="cell"><div class="k">Hull</div><div class="v">~76.9M Cr</div></div>
+      <div class="cell"><div class="k">Retail (A-rated)</div><div class="v">~92M Cr</div></div>
+      <div class="cell"><div class="k">Engineered</div><div class="v">~105M+ Cr</div></div>
+      <div class="cell"><div class="k">Pad</div><div class="v">Medium</div></div>
+      <div class="cell"><div class="k">Rank</div><div class="v">None</div></div>
+      <div class="cell"><div class="k">Permit</div><div class="v">None</div></div>
+    </div>
+    <p>At ~76.9M Cr the Corsair is one of the most expensive medium-pad miners, and for mining that money buys nothing the role rewards &mdash; there is no hull bonus, no exclusive tooling, just internal depth you can approximate on cheaper hulls. A full mining fit adds a refinery, <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">limpet controllers</a> and a bi-weave on top, but no combat-grade engineering is needed, so the all-in figure stays modest against the hull price itself.</p>
+    <p>The value case is thin from scratch and strong if the Corsair is already in your hangar. As a from-new mining buy, a <a href="type-8-transporter-mining.html">Type-8</a> (~35M Cr) hauls far more ore per credit and a <a href="python-mining.html">Python</a> defends itself better for less. The Corsair only makes sense when you want one medium hull that also mines.</p>
+    <div class="callout"><span class="lbl">Premium, no rank</span><p>Rank-free and permit-free, so anyone with the credits can fly it &mdash; but the credits are the point: this is a costly way into a role that cheaper, more specialised hulls do better.</p></div>
+  </section>
+
+  <!-- s6 -->
+  <section id="section-3-state-loadout">
+    <div class="sec-head"><span class="sec-num">06</span><h2>3-State Loadout</h2></div>
+    <p>A complete laser-and-core mining fit that keeps a gun and a bi-weave for self-defence, using the deep optionals for ore. Initial is buy-only; A-rated is the mining baseline; Engineered focuses on range, mobility and shield &mdash; the mining tools themselves are not meaningfully engineered.</p>
+  </section>
+
+  <!-- s7 -->
+  <section id="section-initial-loadout-buy-only-plan">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Initial Loadout &mdash; Buy-Only Plan</h2></div>
+    <p>Buy the hull and fit the mining essentials cheaply: a mining <a href="../../engineering/engineering-manuals/modules.html#module-lasers">laser</a> and a seismic charge launcher on two large mounts, an abrasion blaster on a medium, and a Pulse Wave Analyser up top to find rocks worth cracking. <a href="../../engineering/engineering-manuals/blueprints.html#blueprint-group-bulkheads">Bulkheads</a> stay stock Lightweight Alloy &mdash; a miner sheds mass, it doesn't armour up.</p>
+    <p>Slot a class-6 <a href="../../engineering/engineering-manuals/modules.html#module-refinery">refinery</a>-and-hold core: a <a href="../../engineering/engineering-manuals/modules.html#module-refinery">refinery</a>, one <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">collector controller</a>, one <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">prospector controller</a>, a <a href="../../engineering/engineering-manuals/modules.html#module-detailed-surface-scanner">detailed surface scanner</a> and a <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo rack</a> in the first size-6 bay. A stock bi-weave in another size-6 keeps you alive long enough to run &mdash; you can mine profitably before spending a credit on A-rating.</p>
+    <p>Leave the two remaining large mounts and the spare bays empty at this stage; the internal depth means you can add the sub-surface missile, a second laser and more racks as credits allow.</p>
+  </section>
+
+  <!-- s8 -->
+  <section id="section-a-rated-loadout-upgrade-plan">
+    <div class="sec-head"><span class="sec-num">08</span><h2>A-Rated Loadout &mdash; Upgrade Plan</h2></div>
+    <p>A-rating priority for a medium miner is mobility and hold, not firepower:</p>
+    <ul class="bullets">
+      <li><span class="stepnum">1</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-plant">Power Plant</a> &rarr; 7A</b> &mdash; Runs <a href="../../engineering/engineering-manuals/modules.html#module-lasers">lasers</a>, the limpet swarm and a real shield together. <span class="acc">~9M Cr</span></li>
+      <li><span class="stepnum">2</span><b><a href="../../engineering/engineering-manuals/modules.html#module-thrusters">Thrusters</a> &rarr; 7A</b> &mdash; Preserve the Imperial pace so a laden hull can break interdictions. <span class="acc">~8M Cr</span></li>
+      <li><span class="stepnum">3</span><b><a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> &rarr; 5A</b> &mdash; Reach distant hotspots and haul a deep hold home. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">4</span><b><a href="../../engineering/engineering-manuals/modules.html#module-power-distributor">Power Distributor</a> &rarr; 7A</b> &mdash; Sustains mining-laser draw and boost charge together. <span class="acc">~7M Cr</span></li>
+      <li><span class="stepnum">5</span><b><a href="../../engineering/engineering-manuals/modules.html#module-shield-generator">Shield Generator</a> &rarr; 6C bi-weave</b> &mdash; The most shield the hull will carry for the exposed minutes of cracking a core. <span class="acc">~5M Cr</span></li>
+      <li><span class="stepnum">6</span><b><a href="../../engineering/engineering-manuals/modules.html#module-refinery">Refinery</a> &rarr; 4A</b> &mdash; More reagent bins means fewer part-filled fragments wasted. <span class="acc">~1M Cr</span></li>
+    </ul>
+    <div class="callout"><span class="lbl">Fill the bays for ore</span><p>Once the cores are A-rated, load the remaining optionals for haul: <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo racks</a> in every bay the suite doesn't need, a second <a href="../../engineering/engineering-manuals/modules.html#module-limpet-controllers">collector controller</a> to keep limpets in the air, and a <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield-booster</a> pair up top. Add the defensive <a href="../../engineering/engineering-manuals/modules.html#module-lasers">multi-cannon</a> to the free medium mount only if you mine hot rings.</p></div>
+  </section>
+
+  <!-- s9 -->
+  <section id="section-engineering-plan">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Engineering Plan</h2></div>
+    <p>Engineer for reach, mobility and shield &mdash; the mining tools carry no blueprints, so they stay stock. Pin blueprints for remote G1&rarr;G5 application; visit in person for experimentals.</p>
+  </section>
+
+  <!-- s10 -->
+  <section id="section-key-stat-upgrades">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Key Stat Upgrades</h2></div>
+    <p>Approximate progression across the three states (figures are representative, not exact rolls):</p>
+    <div class="tbl-scroll">
+    <table class="data">
+      <thead><tr><th>Stat</th><th>Initial</th><th>A-rated</th><th>Engineered</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">Top speed (boost)</td><td>355 m/s</td><td>355 m/s</td><td class="acc">~430 m/s</td></tr>
+        <tr><td class="mod">Jump range (laden)</td><td>~18 LY</td><td>~28 LY</td><td class="acc">~40 LY</td></tr>
+        <tr><td class="mod">Shield (MJ)</td><td>~230</td><td>~340</td><td class="acc">~700+</td></tr>
+        <tr><td class="mod">Ore hold (practical)</td><td>~60 t</td><td>~140 t</td><td class="acc">~150 t</td></tr>
+        <tr><td class="mod">Self-defence</td><td>none</td><td>light</td><td class="acc">deters pirates</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Initial is a functional but bare loop: stock cores, a couple of tools and a small hold. A-rating transforms reach and mobility &mdash; the ~28 LY laden range and boosted <a href="../../engineering/engineering-manuals/modules.html#module-thrusters">thrusters</a> make distant hotspots practical and interdictions survivable. Engineered, the <a href="../../engineering/engineering-manuals/modules.html#module-frame-shift-drive">FSD</a> stretches past ~40 LY laden, the ~700 MJ bi-weave and two <a href="../../engineering/engineering-manuals/modules.html#module-shield-booster">shield boosters</a> buy real survival time, and a single Overcharged <a href="../../engineering/engineering-manuals/modules.html#module-lasers">multi-cannon</a> with Corrosive Shell turns off casual pirates. The ore hold barely moves &mdash; mining tools don't engineer &mdash; so the gains are all in getting there, getting home and staying alive.</p>
+  </section>
+
+  <!-- s11 -->
+  <section id="section-key-activities-where-to-do-them">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Key Activities &amp; Where To Do Them</h2></div>
+    <div class="cards two">
+      <div class="card"><span class="ico">Getting started</span><ul class="bullets">
+      <li><b>Laser mining, metallic rings.</b> Two <a href="../../engineering/engineering-manuals/modules.html#module-mining">mining lasers</a> plus a Pulse Wave Analyser make painite and platinum hotspots the reliable earner.</li>
+      <li><b>Core (motherlode) mining.</b> The seismic launcher, sub-surface missile and abrasion blaster crack void opals and low-temperature diamonds for the big single hits.</li>
+      <li><b>Medium-pad refineries.</b> The hull's edge &mdash; sell at ring-adjacent outposts a capital barge can't dock at.</li>
+    </ul></div>
+      <div class="card"><span class="ico">Advanced</span><ul class="bullets">
+      <li><b>Distant pristine hotspots.</b> Engineered laden range lets it reach untouched rings other mediums slog out to.</li>
+      <li><b>Mine-and-defend runs.</b> The bi-weave and gun let it work slightly hotter rings than a defenceless hauler dares.</li>
+      <li><b>Mixed sessions.</b> Its room and speed let it re-role between mining, a cargo run and light combat without a full refit.</li>
+    </ul></div>
+    </div>
+    <div class="callout"><span class="lbl">Generic example systems</span><p>Any pristine metallic or icy ring within a medium-pad refinery's reach suits it. Prioritise hotspots close to an outpost you can dock at &mdash; the Corsair's medium pad is the whole point of choosing it over a barge.</p></div>
+  </section>
+
+  <!-- s12 -->
+  <section id="section-field-notes-what-else-to-know">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Field Notes &mdash; What Else To Know</h2></div>
+    <ul class="bullets">
+      <li>The three size-6 bays are the reason to mine in a Corsair &mdash; use them for <a href="../../engineering/engineering-manuals/modules.html#module-cargo-rack">cargo</a>, not gear, and keep the suite in the smaller slots.</li>
+      <li><a href="../../engineering/engineering-manuals/modules.html#module-mining">Mining lasers</a> and launchers cap at medium, so the large mounts under-fill &mdash; don't expect the hardpoint count to translate into extra mining power.</li>
+      <li>It carries a real bi-weave and a gun; unlike most mediums it can deter a pirate rather than only flee, but it still can't brawl &mdash; treat the gun as a deterrent.</li>
+      <li>If you don't already own the hull, price it honestly against a <a href="type-8-transporter-mining.html">Type-8</a> or <a href="python-mining.html">Python</a> before buying one to mine.</li>
+    </ul>
+    <div class="callout"><span class="lbl">Verdict</span><p>The Corsair is a competent medium miner held back by economics, not capability: deep internals, a full tool-and-gun fit and medium-pad access are all genuine, but no mining bonus, a mid-pack hold and a ~76.9M Cr price mean cheaper, more specialised hulls return more ore per credit. Mine in one if you already fly it; buy something else if mining is the plan. That balance is exactly why it rates <b>68</b>.</p></div>
+  </section>
+
+  <!-- Sources -->
+  <section class="credits" id="section-credits">
+    <div class="sec-head"><span class="sec-num">13</span><h2>Sources</h2></div>
+    <p class="lead">Figures on this page are verified against the sources below.</p>
+    <div class="cr-rows">
+      <div class="cr-row"><span class="cr-src">Coriolis</span><span class="cr-what">Interactive outfitting &amp; build planner, preloaded for this ship.</span><a class="cr-link" href="https://coriolis.io/outfit/corsair" target="_blank" rel="noopener noreferrer">coriolis.io/outfit/corsair</a></div>
+      <div class="cr-row"><span class="cr-src">EDCD coriolis-data</span><span class="cr-what">Ship slot layout, module variants, and engineering blueprint data.</span><a class="cr-link" href="https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_corsair.json" target="_blank" rel="noopener noreferrer">coriolis-data/ships/imperial_corsair.json</a></div>
+      <div class="cr-row"><span class="cr-src">EDSY</span><span class="cr-what">Alternate outfitting planner used to cross-check the mining loadout and module sizing.</span><a class="cr-link" href="https://edsy.org/" target="_blank" rel="noopener noreferrer">edsy.org</a></div>
+      <div class="cr-row"><span class="cr-src">Inara — Corsair</span><span class="cr-what">Stock hull stats, hardpoint/internal layout, and module sellers for this ship.</span><a class="cr-link" href="https://inara.cz/elite/ship/44/" target="_blank" rel="noopener noreferrer">inara.cz/elite/ship/44</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Corsair</span><span class="cr-what">Manufacturer (Gutamaya), medium-pad hull profile, and release history.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Corsair" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Corsair</a></div>
+      <div class="cr-row"><span class="cr-src">Fandom — Mining</span><span class="cr-what">Mining mechanics reference: laser, core (motherlode), sub-surface and surface deposits, and the tools each needs.</span><a class="cr-link" href="https://elite-dangerous.fandom.com/wiki/Mining" target="_blank" rel="noopener noreferrer">elite-dangerous.fandom.com/wiki/Mining</a></div>
+      <div class="cr-row"><span class="cr-src">Elite Dangerous (official)</span><span class="cr-what">Frontier's official Corsair ship page — manufacturer specs, feature overview, and the ship render used on this page.</span><a class="cr-link" href="https://www.elitedangerous.com/equipment/starships/corsair" target="_blank" rel="noopener noreferrer">elitedangerous.com/.../corsair</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-fine">
+      <span>&copy; 2026 Elite:Dangerous Black Box &middot; CMDR Ka0s &middot; Ship &times; Role Dossier &middot; <a href="https://github.com/tusharsaxena/ed-blackbox/issues" target="_blank" rel="noopener noreferrer">Report an issue</a></span>
+      <span>Elite Dangerous is a trademark of Frontier Developments plc. Unofficial fan content &mdash; not affiliated with or endorsed by Frontier Developments.</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../../../design-system/js/ed-blackbox.js" defer></script>
+</body>
+</html>
