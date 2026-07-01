@@ -1,42 +1,60 @@
 /*! ed-blackbox — page scroll-progress indicator
-   A thin amber hairline bar, pinned directly under the 62px site-header, that fills
-   left→right as the reader scrolls the page. Single source of truth for the indicator.
-   Loaded once per page via <script src=".../design-system/js/scroll-progress.js" defer>.
+   A thin amber hairline pinned to the bottom edge of the site-header that fills left→right
+   as the reader scrolls the page. Single source of truth for the indicator. Loaded once per
+   page via <script src=".../design-system/js/scroll-progress.js" defer>.
 
-   Self-contained and (nearly) markup-independent — like analytics.js it injects its own
-   element and styles and never touches existing page markup/behaviour, so it is safe on
-   every page, INCLUDING the four engineering-manual pages that ship their own inline
-   quick-nav and cannot load ed-blackbox.js. Styling uses the design-system CSS tokens
-   (--maroon/--amber/--amber-lt, present on every page via ed-blackbox.css) with hard
-   fallbacks, so it still renders correctly if those tokens are ever absent.
+   Self-contained and markup-independent — like analytics.js it injects its own element and
+   styles and never touches existing page behaviour, so it is safe on every page, INCLUDING
+   the four engineering-manual pages that ship their own inline quick-nav and cannot load
+   ed-blackbox.js. Styling uses the design-system CSS tokens (--maroon/--amber/--amber-lt,
+   present on every page via ed-blackbox.css) with hard fallbacks.
 
-   Perf: the bar is a 100%-wide fixed element scaled with transform:scaleX() (GPU-
-   composited, zero layout), updated on a requestAnimationFrame-throttled passive scroll
-   listener — the same approach as ed-blackbox.js's sticky-header module. No width
-   transition (a scroll-driven bar must track the scroll exactly, not ease behind it), so
-   there is nothing for prefers-reduced-motion to disable. To restyle or disable, edit
-   this file and nowhere else. */
+   WHY IT'S BUILT THIS WAY (earlier attempts flickered on load — a thick line that thinned to
+   crisp only after a scroll). Root causes, now all removed:
+     1. The glow. A box-shadow renders as a fuzzy band during progressive paint, and the
+        page's background grid shows through it — reading as a thick, textured line. FIX: no
+        box-shadow at all; the bar is a crisp solid gradient.
+     2. The fill technique. transform:scaleX() scales the whole element including its
+        gradient, so a short bar showed mostly the dark maroon end (looked like a dark thick
+        band). FIX: fill with width% over a viewport-anchored gradient (background-size:100vw)
+        — the colour is identical at any width; the bar just reveals more of it.
+     3. Sub-pixel position. The bar sits at top = header height. On a fractional-DPR display
+        (Windows/WSL at 125/150%) that CSS height maps to a *fractional device pixel*, so a
+        2px line straddled a device-pixel boundary and rendered 3px thick until a scroll
+        snapped it. FIX: snap `top` to the nearest whole device pixel —
+        Math.round(h*dpr)/dpr — so the top edge always lands on a device-pixel boundary.
+        (Recomputed on resize/zoom, which is when DPR or the header height can change.)
+
+   Perf: width writes on a 2px element are trivial; updates are requestAnimationFrame-
+   throttled on a passive scroll listener. No transition (a scroll-driven bar must track the
+   scroll exactly), so nothing for prefers-reduced-motion to disable. A ResizeObserver on
+   <body> keeps the fill correct as the document height settles during load. To restyle or
+   disable, edit this file and nowhere else. */
 (function(){
   if(document.getElementById('edbb-scroll-progress')) return;   // never double-inject
 
-  // --- inject the bar ---------------------------------------------------------
+  // --- inject the bar: no glow, viewport-anchored gradient, filled by width --------------
   var bar=document.createElement('div');
   bar.id='edbb-scroll-progress';
   bar.setAttribute('aria-hidden','true');   // decorative chrome — not announced
   bar.style.cssText=[
-    'position:fixed','left:0','top:62px','width:100%','height:2px',
-    'transform:scaleX(0)','transform-origin:left center',
-    'z-index:40',   // --z-sticky: above content, below the --z-nav:50 site-header
+    'position:fixed','top:0','left:0','width:0','height:2px',
+    'z-index:40',   // --z-sticky: above page content, below the --z-nav:50 site-header
     'pointer-events:none',
-    'background:linear-gradient(90deg,var(--maroon,#8b2332),var(--amber,#e0913a) 60%,var(--amber-lt,#f4b15f))',
-    'box-shadow:0 0 10px rgba(224,145,58,.5)',
-    'will-change:transform'
+    'background:linear-gradient(90deg,var(--maroon,#8b2332),var(--amber,#e0913a) 55%,var(--amber-lt,#f4b15f))',
+    'background-size:100vw 100%','background-repeat:no-repeat','background-position:left center',
+    'will-change:width'
   ].join(';');
   (document.body||document.documentElement).appendChild(bar);
 
-  // --- position under the (sticky) site-header, whatever its height -----------
-  var header=document.querySelector('.site-header');
-  function place(){ bar.style.top=(header?header.offsetHeight:0)+'px'; }
+  // --- position under the (sticky) site-header, snapped to a whole device pixel ----------
+  var header=document.querySelector('.site-header'), lastTop=-1;
+  function place(){
+    if(!header) return;   // no header → leave it at top:0
+    var dpr=window.devicePixelRatio||1;
+    var t=Math.round(header.getBoundingClientRect().height*dpr)/dpr;
+    if(t!==lastTop){ lastTop=t; bar.style.top=t+'px'; }
+  }
 
   // --- fraction scrolled (0..1) ----------------------------------------------
   function frac(){
@@ -47,11 +65,19 @@
   }
 
   var pending=false;
-  function render(){ pending=false; bar.style.transform='scaleX('+frac()+')'; }
+  function render(){ pending=false; place(); bar.style.width=(frac()*100)+'%'; }
   function schedule(){ if(!pending){ pending=true; requestAnimationFrame(render); } }
 
   window.addEventListener('scroll',schedule,{passive:true});
-  window.addEventListener('resize',function(){ place(); schedule(); });
-  window.addEventListener('load',function(){ place(); render(); });   // fonts may re-wrap the header
-  place(); render();
+  window.addEventListener('resize',schedule);   // catches zoom / DPR changes → re-snaps top
+  window.addEventListener('load',schedule);
+  // The document height (and the header, via font/wrap) keep settling as assets stream in
+  // during load; recompute whenever <body> resizes so the bar converges without a scroll.
+  if(window.ResizeObserver){
+    var ro=new ResizeObserver(schedule);
+    if(document.body) ro.observe(document.body);
+    if(header) ro.observe(header);
+  }
+
+  schedule();
 })();
