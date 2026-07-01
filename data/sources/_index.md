@@ -6,7 +6,7 @@ Every unique external reference cited across the site's **Sources** sections, wi
 pages that cite it. Canonical data lives in `data/sources/**.json`; regenerate this
 file with `python3 scripts/build-sources.py`.
 
-**490 unique URLs** across **165 pages**.
+**494 unique URLs** across **171 pages**.
 
 | Source | URL | Cited by |
 |---|---|---|
@@ -24,7 +24,7 @@ file with `python3 scripts/build-sources.py`.
 | Coriolis | <https://coriolis.io/outfit/asp_explorer> | ships/ship-dossiers/asp-explorer-exploration.html, ships/ship-dossiers/asp-explorer-mining.html, ships/ship-dossiers/asp-explorer-multipurpose.html, ships/ship-dossiers/asp-explorer-passenger.html, ships/ship-dossiers/asp-explorer-trading.html |
 | Coriolis | <https://coriolis.io/outfit/asp_scout> | ships/ship-dossiers/asp-scout-exploration.html |
 | Coriolis | <https://coriolis.io/outfit/beluga_liner> | ships/ship-dossiers/beluga-liner-exploration.html, ships/ship-dossiers/beluga-liner-passenger.html |
-| Coriolis | <https://coriolis.io/outfit/caspian_explorer> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-multipurpose.html |
+| Coriolis | <https://coriolis.io/outfit/caspian_explorer> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-mining.html, ships/ship-dossiers/caspian-explorer-multipurpose.html, ships/ship-dossiers/caspian-explorer-passenger.html, ships/ship-dossiers/caspian-explorer-trading.html |
 | Coriolis | <https://coriolis.io/outfit/cobra_mk_iii> | ships/ship-dossiers/cobra-mk-iii-combat.html, ships/ship-dossiers/cobra-mk-iii-exploration.html, ships/ship-dossiers/cobra-mk-iii-mining.html, ships/ship-dossiers/cobra-mk-iii-multipurpose.html, ships/ship-dossiers/cobra-mk-iii-trading.html |
 | Coriolis | <https://coriolis.io/outfit/cobra_mk_v> | ships/ship-dossiers/cobra-mk-v-combat.html, ships/ship-dossiers/cobra-mk-v-exploration.html, ships/ship-dossiers/cobra-mk-v-mining.html, ships/ship-dossiers/cobra-mk-v-multipurpose.html |
 | Coriolis | <https://coriolis.io/outfit/corsair> | ships/ship-dossiers/corsair-combat.html, ships/ship-dossiers/corsair-mining.html, ships/ship-dossiers/corsair-multipurpose.html, ships/ship-dossiers/corsair-trading.html |
@@ -44,7 +44,7 @@ file with `python3 scripts/build-sources.py`.
 | Coriolis | <https://coriolis.io/outfit/imperial_cutter> | ships/ship-dossiers/imperial-cutter-ax.html, ships/ship-dossiers/imperial-cutter-combat.html, ships/ship-dossiers/imperial-cutter-mining.html, ships/ship-dossiers/imperial-cutter-multipurpose.html, ships/ship-dossiers/imperial-cutter-passenger.html, ships/ship-dossiers/imperial-cutter-trading.html |
 | Coriolis | <https://coriolis.io/outfit/imperial_eagle> | ships/ship-dossiers/imperial-eagle-combat.html |
 | Coriolis | <https://coriolis.io/outfit/keelback> | ships/ship-dossiers/keelback-mining.html, ships/ship-dossiers/keelback-trading.html |
-| Coriolis | <https://coriolis.io/outfit/kestrel> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
+| Coriolis | <https://coriolis.io/outfit/kestrel> | ships/ship-dossiers/kestrel-mk-ii-ax.html, ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | Coriolis | <https://coriolis.io/outfit/krait_mkii> | ships/ship-dossiers/krait-mk-ii-ax.html, ships/ship-dossiers/krait-mk-ii-combat.html, ships/ship-dossiers/krait-mk-ii-exploration.html, ships/ship-dossiers/krait-mk-ii-mining.html, ships/ship-dossiers/krait-mk-ii-multipurpose.html, ships/ship-dossiers/krait-mk-ii-trading.html |
 | Coriolis | <https://coriolis.io/outfit/krait_phantom> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
 | Coriolis | <https://coriolis.io/outfit/lynx_highliner> | ships/ship-dossiers/lynx-highliner-passenger.html |
@@ -56,7 +56,7 @@ file with `python3 scripts/build-sources.py`.
 | Coriolis | <https://coriolis.io/outfit/python_nx> | ships/ship-dossiers/python-mk-ii-ax.html, ships/ship-dossiers/python-mk-ii-combat.html |
 | Coriolis | <https://coriolis.io/outfit/sidewinder> | ships/ship-dossiers/sidewinder-mk-i-combat.html |
 | Coriolis | <https://coriolis.io/outfit/type_10_defender> | ships/ship-dossiers/type-10-defender-ax.html, ships/ship-dossiers/type-10-defender-combat.html, ships/ship-dossiers/type-10-defender-mining.html, ships/ship-dossiers/type-10-defender-trading.html |
-| Coriolis | <https://coriolis.io/outfit/type_11_prospector> | ships/ship-dossiers/type-11-prospector-mining.html |
+| Coriolis | <https://coriolis.io/outfit/type_11_prospector> | ships/ship-dossiers/type-11-prospector-mining.html, ships/ship-dossiers/type-11-prospector-multipurpose.html, ships/ship-dossiers/type-11-prospector-trading.html |
 | Coriolis | <https://coriolis.io/outfit/type_6_transporter> | ships/ship-dossiers/type-6-transporter-exploration.html, ships/ship-dossiers/type-6-transporter-mining.html, ships/ship-dossiers/type-6-transporter-trading.html |
 | Coriolis | <https://coriolis.io/outfit/type_7_transport> | ships/ship-dossiers/type-7-transporter-passenger.html |
 | Coriolis | <https://coriolis.io/outfit/type_7_transporter> | ships/ship-dossiers/type-7-transporter-mining.html, ships/ship-dossiers/type-7-transporter-trading.html |
@@ -72,8 +72,10 @@ file with `python3 scripts/build-sources.py`.
 | EDColony | <https://edcolony.com/> | systems/galaxy-and-power-systems/system-colonization.html |
 | EDGalaxy (HGE finder) | <https://edgalaxy.net/hge> | engineering/materials-and-farming/high-grade-emissions.html |
 | EDPowerPlay | <https://edpowerplay.com/> | systems/galaxy-and-power-systems/powerplay.html |
-| EDSY &amp; Coriolis | <https://edsy.org/> | engineering/engineering-manuals/modules.html, ships/general/rating-methodology.html, ships/ship-dossiers/corsair-mining.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/type-10-defender-trading.html |
+| EDSY &amp; Coriolis | <https://edsy.org/> | engineering/engineering-manuals/modules.html, ships/general/rating-methodology.html, ships/ship-dossiers/corsair-mining.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/type-10-defender-trading.html, ships/ship-dossiers/type-11-prospector-multipurpose.html |
+| EDSY | <https://edsy.org/#/L=,mnpEBm2A0S0S0SI00I00I00,,,> | ships/ship-dossiers/caspian-explorer-trading.html |
 | EDSY | <https://edsy.org/#/L=H> | ships/ship-dossiers/federal-corvette-trading.html |
+| EDSY | <https://edsy.org/#/L=I40> | ships/ship-dossiers/type-11-prospector-trading.html |
 | edtools.cc — Hotspot Finder | <https://edtools.cc/hotspot> | systems/activity-mining.html |
 | edtools.cc | <https://edtools.cc/pve> | systems/combat-venues/combat-zones.html |
 | EDUtilities — Brain Trees | <https://edutilities.redsupergiant.uk/customtable/display?id=brain%20trees> | engineering/materials-and-farming/crystalline-shards.html |
@@ -92,7 +94,7 @@ file with `python3 scripts/build-sources.py`.
 | Fandom — Beluga Liner | <https://elite-dangerous.fandom.com/wiki/Beluga_Liner> | ships/ship-dossiers/beluga-liner-exploration.html, ships/ship-dossiers/beluga-liner-passenger.html |
 | ED Wiki &mdash; Bounty Hunter | <https://elite-dangerous.fandom.com/wiki/Bounty_Hunter> | ships/best-ships-by-role/combat.html |
 | ED Wiki &mdash; Careers | <https://elite-dangerous.fandom.com/wiki/Careers> | ships/best-ships-by-role/multipurpose.html |
-| Fandom — Caspian Explorer | <https://elite-dangerous.fandom.com/wiki/Caspian_Explorer> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-multipurpose.html |
+| Fandom — Caspian Explorer | <https://elite-dangerous.fandom.com/wiki/Caspian_Explorer> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-mining.html, ships/ship-dossiers/caspian-explorer-multipurpose.html, ships/ship-dossiers/caspian-explorer-passenger.html, ships/ship-dossiers/caspian-explorer-trading.html |
 | Elite Dangerous Fandom Wiki — Weapons &amp; Thargoid Combat | <https://elite-dangerous.fandom.com/wiki/Category:Weapons> | engineering/engineering-manuals/modules.html |
 | Fandom — Cobra Mk III | <https://elite-dangerous.fandom.com/wiki/Cobra_Mk_III> | ships/ship-dossiers/cobra-mk-iii-combat.html, ships/ship-dossiers/cobra-mk-iii-exploration.html, ships/ship-dossiers/cobra-mk-iii-mining.html, ships/ship-dossiers/cobra-mk-iii-multipurpose.html, ships/ship-dossiers/cobra-mk-iii-trading.html |
 | Fandom — Cobra Mk V | <https://elite-dangerous.fandom.com/wiki/Cobra_Mk_V> | ships/ship-dossiers/cobra-mk-v-combat.html, ships/ship-dossiers/cobra-mk-v-exploration.html, ships/ship-dossiers/cobra-mk-v-mining.html, ships/ship-dossiers/cobra-mk-v-multipurpose.html, systems/new-pilot-and-interface/new-cmdr-guide.html |
@@ -143,13 +145,13 @@ file with `python3 scripts/build-sources.py`.
 | Elite Dangerous Wiki — Material Trader | <https://elite-dangerous.fandom.com/wiki/Material_Trader> | engineering/materials-and-farming/materials.html |
 | Elite Dangerous Wiki — Materials | <https://elite-dangerous.fandom.com/wiki/Materials> | engineering/materials-and-farming/materials.html |
 | ED Wiki &mdash; Miner | <https://elite-dangerous.fandom.com/wiki/Miner> | ships/best-ships-by-role/mining.html, systems/activity-mining.html |
-| Fandom — Mining | <https://elite-dangerous.fandom.com/wiki/Mining> | ships/ship-dossiers/corsair-mining.html |
+| Fandom — Mining | <https://elite-dangerous.fandom.com/wiki/Mining> | ships/ship-dossiers/caspian-explorer-mining.html, ships/ship-dossiers/corsair-mining.html |
 | ED Wiki &mdash; Mining Laser | <https://elite-dangerous.fandom.com/wiki/Mining_Laser> | ships/best-ships-by-role/mining.html |
 | Fandom — Nav Beacon | <https://elite-dangerous.fandom.com/wiki/Nav_Beacon> | systems/combat-venues/pve-combat-venues.html |
 | Fandom — Orca | <https://elite-dangerous.fandom.com/wiki/Orca> | ships/ship-dossiers/orca-exploration.html, ships/ship-dossiers/orca-passenger.html |
 | Elite Dangerous Fandom Wiki — Outfitting | <https://elite-dangerous.fandom.com/wiki/Outfitting> | engineering/engineering-manuals/modules.html |
 | Fandom — Panther Clipper Mk II | <https://elite-dangerous.fandom.com/wiki/Panther_Clipper_Mk_II> | ships/ship-dossiers/panther-clipper-mk-ii-mining.html, ships/ship-dossiers/panther-clipper-mk-ii-trading.html |
-| ED Wiki &mdash; Passenger Cabin | <https://elite-dangerous.fandom.com/wiki/Passenger_Cabin> | ships/best-ships-by-role/passenger.html, systems/activity-passenger.html |
+| ED Wiki &mdash; Passenger Cabin | <https://elite-dangerous.fandom.com/wiki/Passenger_Cabin> | ships/best-ships-by-role/passenger.html, ships/ship-dossiers/caspian-explorer-passenger.html, systems/activity-passenger.html |
 | ED Wiki &mdash; Passenger Carrier | <https://elite-dangerous.fandom.com/wiki/Passenger_Carrier> | ships/best-ships-by-role/passenger.html, systems/activity-passenger.html |
 | ED Wiki — Pilots Federation | <https://elite-dangerous.fandom.com/wiki/Pilots_Federation> | systems/new-pilot-and-interface/new-cmdr-guide.html, systems/new-pilot-and-interface/pilots-federation.html |
 | Elite Dangerous Fandom Wiki | <https://elite-dangerous.fandom.com/wiki/Powerplay> | systems/galaxy-and-power-systems/powerplay.html |
@@ -166,11 +168,12 @@ file with `python3 scripts/build-sources.py`.
 | Elite Dangerous Fandom Wiki | <https://elite-dangerous.fandom.com/wiki/Technical_Blueprints> | engineering/engineering-manuals/blueprints.html |
 | ED Wiki &mdash; Thargoid Combat | <https://elite-dangerous.fandom.com/wiki/Thargoid_Combat> | ships/best-ships-by-role/ax.html, systems/activity-ax.html |
 | Fandom — Thargoid Interceptor | <https://elite-dangerous.fandom.com/wiki/Thargoid_Interceptor> | systems/activity-ax.html |
+| Fandom wiki &mdash; Thargoid combat | <https://elite-dangerous.fandom.com/wiki/Thargoids> | ships/ship-dossiers/kestrel-mk-ii-ax.html |
 | Fandom — Tourist Beacon | <https://elite-dangerous.fandom.com/wiki/Tourist_Beacon> | systems/activity-passenger.html |
 | ED Wiki &mdash; Trader | <https://elite-dangerous.fandom.com/wiki/Trader> | ships/best-ships-by-role/trading.html |
 | Fandom Wiki | <https://elite-dangerous.fandom.com/wiki/Tritium> | systems/galaxy-and-power-systems/fleet-carrier.html |
 | Fandom — Type-10 Defender | <https://elite-dangerous.fandom.com/wiki/Type-10_Defender> | ships/ship-dossiers/type-10-defender-ax.html, ships/ship-dossiers/type-10-defender-combat.html, ships/ship-dossiers/type-10-defender-mining.html, ships/ship-dossiers/type-10-defender-trading.html |
-| Fandom — Type-11 Prospector | <https://elite-dangerous.fandom.com/wiki/Type-11_Prospector> | ships/ship-dossiers/type-11-prospector-mining.html |
+| Fandom — Type-11 Prospector | <https://elite-dangerous.fandom.com/wiki/Type-11_Prospector> | ships/ship-dossiers/type-11-prospector-mining.html, ships/ship-dossiers/type-11-prospector-multipurpose.html, ships/ship-dossiers/type-11-prospector-trading.html |
 | Fandom — Type-6 Transporter | <https://elite-dangerous.fandom.com/wiki/Type-6_Transporter> | ships/ship-dossiers/type-6-transporter-exploration.html, ships/ship-dossiers/type-6-transporter-mining.html, ships/ship-dossiers/type-6-transporter-trading.html |
 | ED Wiki &mdash; Type-7 Transporter | <https://elite-dangerous.fandom.com/wiki/Type-7_Transporter> | ships/ship-dossiers/type-7-transporter-mining.html, ships/ship-dossiers/type-7-transporter-passenger.html, ships/ship-dossiers/type-7-transporter-trading.html |
 | ED Wiki &mdash; Type-8 Transporter | <https://elite-dangerous.fandom.com/wiki/Type-8_Transporter> | ships/ship-dossiers/type-8-transporter-mining.html, ships/ship-dossiers/type-8-transporter-trading.html |
@@ -220,7 +223,7 @@ file with `python3 scripts/build-sources.py`.
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_cutter.json> | ships/ship-dossiers/imperial-cutter-ax.html, ships/ship-dossiers/imperial-cutter-combat.html, ships/ship-dossiers/imperial-cutter-mining.html, ships/ship-dossiers/imperial-cutter-multipurpose.html, ships/ship-dossiers/imperial-cutter-passenger.html, ships/ship-dossiers/imperial-cutter-trading.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/imperial_eagle.json> | ships/ship-dossiers/imperial-eagle-combat.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/keelback.json> | ships/ship-dossiers/keelback-mining.html, ships/ship-dossiers/keelback-trading.html |
-| EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/kestrel.json> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
+| EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/kestrel.json> | ships/ship-dossiers/kestrel-mk-ii-ax.html, ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/krait_mkii.json> | ships/ship-dossiers/krait-mk-ii-ax.html, ships/ship-dossiers/krait-mk-ii-combat.html, ships/ship-dossiers/krait-mk-ii-exploration.html, ships/ship-dossiers/krait-mk-ii-mining.html, ships/ship-dossiers/krait-mk-ii-multipurpose.html, ships/ship-dossiers/krait-mk-ii-trading.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/krait_phantom.json> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/mamba.json> | ships/ship-dossiers/mamba-ax.html, ships/ship-dossiers/mamba-combat.html |
@@ -231,7 +234,7 @@ file with `python3 scripts/build-sources.py`.
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/python_nx.json> | ships/ship-dossiers/python-mk-ii-ax.html, ships/ship-dossiers/python-mk-ii-combat.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/sidewinder.json> | ships/ship-dossiers/sidewinder-mk-i-combat.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/type_10_defender.json> | ships/ship-dossiers/type-10-defender-ax.html, ships/ship-dossiers/type-10-defender-combat.html, ships/ship-dossiers/type-10-defender-mining.html, ships/ship-dossiers/type-10-defender-trading.html |
-| EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/type_11_prospector.json> | ships/ship-dossiers/type-11-prospector-mining.html |
+| EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/type_11_prospector.json> | ships/ship-dossiers/type-11-prospector-mining.html, ships/ship-dossiers/type-11-prospector-multipurpose.html, ships/ship-dossiers/type-11-prospector-trading.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/type_6_transporter.json> | ships/ship-dossiers/type-6-transporter-exploration.html, ships/ship-dossiers/type-6-transporter-mining.html, ships/ship-dossiers/type-6-transporter-trading.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/type_7_transport.json> | ships/ship-dossiers/type-7-transporter-mining.html, ships/ship-dossiers/type-7-transporter-passenger.html, ships/ship-dossiers/type-7-transporter-trading.html |
 | EDCD coriolis-data | <https://github.com/EDCD/coriolis-data/blob/master/ships/type_8_transport.json> | ships/ship-dossiers/type-8-transporter-mining.html, ships/ship-dossiers/type-8-transporter-trading.html |
@@ -253,6 +256,7 @@ file with `python3 scripts/build-sources.py`.
 | Inara | <https://inara.cz/elite/commodities/> | ships/best-ships-by-role/mining.html, ships/best-ships-by-role/trading.html, systems/activity-mining.html, systems/activity-trading.html |
 | Inara — CG tracker | <https://inara.cz/elite/communitygoals/> | systems/galaxy-and-power-systems/community-goals.html |
 | Inara — Crystal Shards | <https://inara.cz/elite/component/26/> | engineering/materials-and-farming/crystalline-shards.html |
+| Inara &mdash; Anti-Xeno weapons | <https://inara.cz/elite/components-list/9/> | ships/ship-dossiers/kestrel-mk-ii-ax.html |
 | INARA — Components / Materials | <https://inara.cz/elite/components/> | engineering/materials-and-farming/materials.html |
 | Inara — Engineers | <https://inara.cz/elite/engineers/> | engineering/engineering-manuals/checklist.html, engineering/engineering-manuals/engineers.html |
 | Inara — Modules | <https://inara.cz/elite/galaxy-modules/> | engineering/engineering-manuals/modules.html |
@@ -303,13 +307,13 @@ file with `python3 scripts/build-sources.py`.
 | Inara &mdash; Type-9 Heavy | <https://inara.cz/elite/ship/65/> | ships/ship-dossiers/type-9-heavy-mining.html, ships/ship-dossiers/type-9-heavy-trading.html |
 | Inara — Type-10 Defender | <https://inara.cz/elite/ship/66/> | ships/ship-dossiers/type-10-defender-ax.html, ships/ship-dossiers/type-10-defender-combat.html, ships/ship-dossiers/type-10-defender-mining.html, ships/ship-dossiers/type-10-defender-trading.html |
 | Inara &mdash; Mandalay | <https://inara.cz/elite/ship/67/> | ships/ship-dossiers/mandalay-exploration.html |
-| Inara — Type-11 Prospector | <https://inara.cz/elite/ship/68/> | ships/ship-dossiers/type-11-prospector-mining.html |
+| Inara — Type-11 Prospector | <https://inara.cz/elite/ship/68/> | ships/ship-dossiers/type-11-prospector-mining.html, ships/ship-dossiers/type-11-prospector-multipurpose.html, ships/ship-dossiers/type-11-prospector-trading.html |
 | Inara &mdash; Kestrel Mk II | <https://inara.cz/elite/ship/7/> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | Inara | <https://inara.cz/elite/ship/70/> | ships/ship-dossiers/anaconda-ax.html, ships/ship-dossiers/anaconda-combat.html, ships/ship-dossiers/anaconda-exploration.html, ships/ship-dossiers/anaconda-mining.html, ships/ship-dossiers/anaconda-multipurpose.html, ships/ship-dossiers/anaconda-passenger.html, ships/ship-dossiers/anaconda-trading.html |
 | Inara &mdash; Imperial Cutter | <https://inara.cz/elite/ship/75/> | ships/ship-dossiers/imperial-cutter-ax.html, ships/ship-dossiers/imperial-cutter-combat.html, ships/ship-dossiers/imperial-cutter-mining.html, ships/ship-dossiers/imperial-cutter-multipurpose.html, ships/ship-dossiers/imperial-cutter-passenger.html, ships/ship-dossiers/imperial-cutter-trading.html |
 | Inara — Federal Corvette | <https://inara.cz/elite/ship/80/> | ships/ship-dossiers/federal-corvette-ax.html, ships/ship-dossiers/federal-corvette-combat.html, ships/ship-dossiers/federal-corvette-mining.html, ships/ship-dossiers/federal-corvette-multipurpose.html, ships/ship-dossiers/federal-corvette-trading.html |
 | Inara — Panther Clipper Mk II | <https://inara.cz/elite/ship/85/> | ships/ship-dossiers/panther-clipper-mk-ii-mining.html, ships/ship-dossiers/panther-clipper-mk-ii-trading.html |
-| Inara — Caspian Explorer | <https://inara.cz/elite/ship/86/> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-multipurpose.html |
+| Inara — Caspian Explorer | <https://inara.cz/elite/ship/86/> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-mining.html, ships/ship-dossiers/caspian-explorer-multipurpose.html, ships/ship-dossiers/caspian-explorer-passenger.html, ships/ship-dossiers/caspian-explorer-trading.html |
 | Inara &mdash; Lynx Highliner | <https://inara.cz/elite/ship/87/> | ships/ship-dossiers/lynx-highliner-passenger.html |
 | Inara | <https://inara.cz/elite/ships/> | ships/best-ships-by-role/ax.html, ships/best-ships-by-role/combat.html, ships/best-ships-by-role/multipurpose.html, ships/general/rating-methodology.html, systems/new-pilot-and-interface/new-cmdr-guide.html |
 | Inara — Dav's Hope | <https://inara.cz/elite/station/228006/> | engineering/materials-and-farming/davs-hope.html |
@@ -356,7 +360,7 @@ file with `python3 scripts/build-sources.py`.
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/asp-explorer> | ships/ship-dossiers/asp-explorer-exploration.html, ships/ship-dossiers/asp-explorer-mining.html, ships/ship-dossiers/asp-explorer-multipurpose.html, ships/ship-dossiers/asp-explorer-passenger.html, ships/ship-dossiers/asp-explorer-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/asp-scout> | ships/ship-dossiers/asp-scout-exploration.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/beluga-liner> | ships/ship-dossiers/beluga-liner-exploration.html, ships/ship-dossiers/beluga-liner-passenger.html |
-| Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/caspian-explorer> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-multipurpose.html |
+| Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/caspian-explorer> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-mining.html, ships/ship-dossiers/caspian-explorer-multipurpose.html, ships/ship-dossiers/caspian-explorer-passenger.html, ships/ship-dossiers/caspian-explorer-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/cobra-mk-iii> | ships/ship-dossiers/cobra-mk-iii-combat.html, ships/ship-dossiers/cobra-mk-iii-exploration.html, ships/ship-dossiers/cobra-mk-iii-mining.html, ships/ship-dossiers/cobra-mk-iii-multipurpose.html, ships/ship-dossiers/cobra-mk-iii-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/cobra-mk-v> | ships/ship-dossiers/cobra-mk-v-combat.html, ships/ship-dossiers/cobra-mk-v-exploration.html, ships/ship-dossiers/cobra-mk-v-mining.html, ships/ship-dossiers/cobra-mk-v-multipurpose.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/corsair> | ships/ship-dossiers/corsair-ax.html, ships/ship-dossiers/corsair-combat.html, ships/ship-dossiers/corsair-mining.html, ships/ship-dossiers/corsair-multipurpose.html, ships/ship-dossiers/corsair-trading.html |
@@ -375,7 +379,7 @@ file with `python3 scripts/build-sources.py`.
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/imperial-cutter> | ships/ship-dossiers/imperial-cutter-ax.html, ships/ship-dossiers/imperial-cutter-combat.html, ships/ship-dossiers/imperial-cutter-mining.html, ships/ship-dossiers/imperial-cutter-multipurpose.html, ships/ship-dossiers/imperial-cutter-passenger.html, ships/ship-dossiers/imperial-cutter-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/imperial-eagle> | ships/ship-dossiers/imperial-eagle-combat.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/keelback> | ships/ship-dossiers/keelback-mining.html, ships/ship-dossiers/keelback-trading.html |
-| Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/kestrel-mk-ii> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
+| Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/kestrel-mk-ii> | ships/ship-dossiers/kestrel-mk-ii-ax.html, ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/krait-mk-ii> | ships/ship-dossiers/krait-mk-ii-ax.html, ships/ship-dossiers/krait-mk-ii-combat.html, ships/ship-dossiers/krait-mk-ii-exploration.html, ships/ship-dossiers/krait-mk-ii-mining.html, ships/ship-dossiers/krait-mk-ii-multipurpose.html, ships/ship-dossiers/krait-mk-ii-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/krait-phantom> | ships/ship-dossiers/krait-phantom-ax.html, ships/ship-dossiers/krait-phantom-combat.html, ships/ship-dossiers/krait-phantom-exploration.html, ships/ship-dossiers/krait-phantom-mining.html, ships/ship-dossiers/krait-phantom-multipurpose.html, ships/ship-dossiers/krait-phantom-passenger.html, ships/ship-dossiers/krait-phantom-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/lynx-highliner> | ships/ship-dossiers/lynx-highliner-passenger.html |
@@ -387,7 +391,7 @@ file with `python3 scripts/build-sources.py`.
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/python-mk-ii> | ships/ship-dossiers/python-mk-ii-ax.html, ships/ship-dossiers/python-mk-ii-combat.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/sidewinder> | ships/ship-dossiers/sidewinder-mk-i-combat.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/type-10-defender> | ships/ship-dossiers/type-10-defender-ax.html, ships/ship-dossiers/type-10-defender-combat.html, ships/ship-dossiers/type-10-defender-mining.html, ships/ship-dossiers/type-10-defender-trading.html |
-| Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/type-11-prospector> | ships/ship-dossiers/type-11-prospector-mining.html |
+| Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/type-11-prospector> | ships/ship-dossiers/type-11-prospector-mining.html, ships/ship-dossiers/type-11-prospector-multipurpose.html, ships/ship-dossiers/type-11-prospector-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/type-6-transporter> | ships/ship-dossiers/type-6-transporter-exploration.html, ships/ship-dossiers/type-6-transporter-mining.html, ships/ship-dossiers/type-6-transporter-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/type-7-transporter> | ships/ship-dossiers/type-7-transporter-mining.html, ships/ship-dossiers/type-7-transporter-passenger.html, ships/ship-dossiers/type-7-transporter-trading.html |
 | Elite Dangerous (official) | <https://www.elitedangerous.com/equipment/starships/type-8-transporter> | ships/ship-dossiers/type-8-transporter-mining.html, ships/ship-dossiers/type-8-transporter-trading.html |
@@ -423,7 +427,7 @@ file with `python3 scripts/build-sources.py`.
 | YouTube — TheYamiks | <https://www.youtube.com/watch?v=BdzvrUmcb10> | systems/new-pilot-and-interface/docking-landing-manual.html |
 | YouTube — Ricardos Gaming | <https://www.youtube.com/watch?v=ByfyTDgpPtY> | ships/ship-dossiers/cobra-mk-v-combat.html, ships/ship-dossiers/cobra-mk-v-exploration.html, ships/ship-dossiers/cobra-mk-v-mining.html, ships/ship-dossiers/cobra-mk-v-multipurpose.html |
 | YouTube — TheYamiks | <https://www.youtube.com/watch?v=C7qOi_Ip4LE> | engineering/engineering-manuals/modules.html |
-| YouTube — The Buur Pit | <https://www.youtube.com/watch?v=CdRY2kcZU2Q> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-multipurpose.html |
+| YouTube — The Buur Pit | <https://www.youtube.com/watch?v=CdRY2kcZU2Q> | ships/ship-dossiers/caspian-explorer-exploration.html, ships/ship-dossiers/caspian-explorer-mining.html, ships/ship-dossiers/caspian-explorer-multipurpose.html, ships/ship-dossiers/caspian-explorer-trading.html |
 | YouTube — The Buur Pit | <https://www.youtube.com/watch?v=D-YXUYY4sd4> | ships/ship-dossiers/lynx-highliner-passenger.html |
 | YouTube — Down to Earth Astronomy | <https://www.youtube.com/watch?v=E-373ICzdOE> | systems/combat-venues/combat-zones.html |
 | YouTube — TheYamiks | <https://www.youtube.com/watch?v=E3ssKpcaBAk> | ships/ship-dossiers/mamba-combat.html |
@@ -468,7 +472,7 @@ file with `python3 scripts/build-sources.py`.
 | YouTube — Down to Earth Astronomy | <https://www.youtube.com/watch?v=hmiKTeRLG2o> | ships/ship-dossiers/krait-phantom-exploration.html |
 | YouTube — Mile 13 Gaming | <https://www.youtube.com/watch?v=i9-RcMJYrSQ> | ships/ship-dossiers/panther-clipper-mk-ii-trading.html |
 | YouTube — Obsidian Ant | <https://www.youtube.com/watch?v=iIosivU9uVw> | systems/new-pilot-and-interface/hud-customization.html |
-| YouTube — The Buur Pit | <https://www.youtube.com/watch?v=jY3_Ld6avrE> | ships/ship-dossiers/kestrel-mk-ii-combat.html |
+| YouTube — The Buur Pit | <https://www.youtube.com/watch?v=jY3_Ld6avrE> | ships/ship-dossiers/kestrel-mk-ii-ax.html, ships/ship-dossiers/kestrel-mk-ii-combat.html |
 | YouTube — TheYamiks | <https://www.youtube.com/watch?v=jspC_D44y3I> | ships/ship-dossiers/panther-clipper-mk-ii-trading.html |
 | Video guide | <https://www.youtube.com/watch?v=kKoAf135wn0> | engineering/materials-and-farming/davs-hope.html |
 | YouTube — Down to Earth Astronomy | <https://www.youtube.com/watch?v=kgEnqR4sIqw> | systems/galaxy-and-power-systems/bgs.html |
