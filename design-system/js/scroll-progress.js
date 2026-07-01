@@ -6,18 +6,19 @@
    Self-contained and markup-independent — like analytics.js it injects its own element and
    styles and never touches existing page behaviour, so it is safe on every page, INCLUDING
    the four engineering-manual pages that ship their own inline quick-nav and cannot load
-   ed-blackbox.js. Styling uses the design-system CSS tokens (--maroon/--amber/--amber-lt,
-   present on every page via ed-blackbox.css) with hard fallbacks.
+   ed-blackbox.js. A solid amber fill — the design-system --amber token (present on every
+   page via ed-blackbox.css, the same amber as the .sec-num section badges) with a hard
+   fallback.
 
    WHY IT'S BUILT THIS WAY (earlier attempts flickered on load — a thick line that thinned to
    crisp only after a scroll). Root causes, now all removed:
      1. The glow. A box-shadow renders as a fuzzy band during progressive paint, and the
         page's background grid shows through it — reading as a thick, textured line. FIX: no
-        box-shadow at all; the bar is a crisp solid gradient.
-     2. The fill technique. transform:scaleX() scales the whole element including its
-        gradient, so a short bar showed mostly the dark maroon end (looked like a dark thick
-        band). FIX: fill with width% over a viewport-anchored gradient (background-size:100vw)
-        — the colour is identical at any width; the bar just reveals more of it.
+        box-shadow at all; the bar is a crisp solid amber fill.
+     2. The fill technique. transform:scaleX() scales the whole element, so with a gradient a
+        short bar showed mostly the dark end (looked like a dark thick band). FIX: fill with
+        width% over a solid background — the colour is identical at any width; the bar just
+        reveals more of it.
      3. Sub-pixel position. The bar sits at top = header height. On a fractional-DPR display
         (Windows/WSL at 125/150%) that CSS height maps to a *fractional device pixel*, so a
         2px line straddled a device-pixel boundary and rendered 3px thick until a scroll
@@ -41,8 +42,7 @@
     'position:fixed','top:0','left:0','width:0','height:2px',
     'z-index:40',   // --z-sticky: above page content, below the --z-nav:50 site-header
     'pointer-events:none',
-    'background:linear-gradient(90deg,var(--maroon,#8b2332),var(--amber,#e0913a) 55%,var(--amber-lt,#f4b15f))',
-    'background-size:100vw 100%','background-repeat:no-repeat','background-position:left center',
+    'background:var(--amber,#e0913a)',
     'will-change:width'
   ].join(';');
   (document.body||document.documentElement).appendChild(bar);
