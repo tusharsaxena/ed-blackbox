@@ -12,13 +12,13 @@ authoritative sources. A static website by Tushar Saxena (CMDR Ka0s).
 
 ## What's here
 
-**166 guides** (plus a generated landing page), all on one shared design system, in three areas:
+**198 guides** (plus a generated landing page), all on one shared design system, in three areas:
 
 | Area | Count | What |
 |---|---|---|
 | `guides/engineering/` | 9 | Engineers, blueprints, the unlock checklist, materials, the outfitting catalog, and 4 material-farm guides. |
 | `guides/systems/` | 20 | Game-system guides — BGS, Powerplay, colonisation, fleet carriers, the CMDR's Lexicon, onboarding, combat venues, and 6 role playbooks (how to fly combat, mining, exploration, trading, passenger, and AX). |
-| `guides/ships/` | 137 | A ship × role matrix: **128 dossiers** across 48 hulls, 7 by-role ladders, the rating methodology, and the full matrix on one page. |
+| `guides/ships/` | 169 | A ship × role matrix: **160 dossiers** across 48 hulls, 7 by-role ladders, the rating methodology, and the full matrix on one page. |
 
 No server, no framework, **no build step to view it** — every page is plain HTML/CSS/JS that
 opens directly in a browser or from `file://`.
@@ -46,8 +46,8 @@ data, run the script — never hand-edit the generated block.
 | each page's `<section id>`s | per-page `<name>-anchors.md` anchor catalogs | `generate-anchor-files.sh` |
 | `data/links/` (dictionary + curated aliases) | internal cross-links on every page (`<a>` to the right anchor) | `build-link-dictionary.py` · `apply-hyperlinks.py` · `normalize-link-targets.py` · `verify-links.py` (generators re-apply via `relink.py`; loadout tables linked deterministically by `dossier_links.py`) |
 
-All tooling lives in [`scripts/`](scripts/) — **47 reusable** build/maintenance scripts
-(4 `.sh` + 42 `.py` + 1 `.mjs`), each named for its task with a sibling `<name>.md` doc — see
+All tooling lives in [`scripts/`](scripts/) — **49 reusable** build/maintenance scripts
+(4 `.sh` + 44 `.py` + 1 `.mjs`), each named for its task with a sibling `<name>.md` doc — see
 [`scripts/README.md`](scripts/README.md). Completed one-off scripts (the design-system
 migration, data seeders, one-shot content fixes) are retained under
 [`scripts/archive/`](scripts/archive/README.md) (44 more).

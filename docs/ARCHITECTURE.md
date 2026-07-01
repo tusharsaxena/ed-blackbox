@@ -22,7 +22,7 @@ every page links the shared stylesheet — and the site is **published live** at
 fleet-bias cleanup).
 
 There is now **one styling world**. The design-system migration that was the project's
-central effort is **done (2026-06-23)**: all **166 guides + the generated landing page**
+central effort is **done (2026-06-23)**: all **198 guides + the generated landing page**
 link the single `design-system/` stylesheet and behaviours. (The migration moved the 108
 legacy pages; everything added since — the later ship×role dossiers, the **Ship × Role
 Matrix**, and the **New Pilot & Interface** guides — was authored on the system from the start.)
@@ -116,7 +116,7 @@ tokens  →  components  →  templates  →  pages
   behaviour; `checklist.html` also wires its bespoke unlock-map SVG in that same script.
 - **`js/analytics.js`** — the site's **Google Analytics (GA4)** tag, kept deliberately
   separate from `ed-blackbox.js`. Self-contained and markup-independent (it never touches page
-  behaviour), so it loads safely on **every** one of the 167 pages — including the four
+  behaviour), so it loads safely on **every** one of the 199 pages — including the four
   engineering pages that can't take `ed-blackbox.js`. The GA4 Measurement ID lives **only**
   here (single source of truth); an empty/placeholder value makes it a no-op. Backfilled by
   `scripts/add-analytics-tag.py`; kept durable by `generate-guides-index.sh` (for the
@@ -158,16 +158,16 @@ Naming: classes are mostly unprefixed semantic names; accent variants use `.ac-*
 ## 4. Content taxonomy & routing
 
 Directory structure **is** the routing — a path maps directly to a URL once on GitHub
-Pages. **166 guides** (all on the design system) in three areas, plus a generated landing
+Pages. **198 guides** (all on the design system) in three areas, plus a generated landing
 page. The tree mirrors `index.html`'s sections/subsections:
 
 ```
 guides/
   index.html                       ← landing page (generated; see §6)
-  ships/                           — 137 pages
+  ships/                           — 169 pages
     general/             rating-methodology · ship-role-matrix  (2; matrix generated, see §6)
     best-ships-by-role/  7 ladders   — "best ship for role X"
-    ship-dossiers/       128 dossiers — the ship × role matrix (48 ships)
+    ship-dossiers/       160 dossiers — the ship × role matrix (48 ships)
   engineering/                     — 9 pages
     engineering-manuals/    checklist · engineers · blueprints · modules  (4)
     materials-and-farming/  materials + 4 farm guides                     (5)
@@ -178,12 +178,12 @@ guides/
     combat-venues/             2 guides
 ```
 
-**File census:** ~1,165 git-tracked files — 171 HTML (166 guides + the generated landing
+**File census:** ~1,311 git-tracked files — 203 HTML (198 guides + the generated landing
 `guides/index.html` + the hand-authored site-root redirect `index.html` (§9) + 2
 design-system templates + 1 legacy template), images (38 engineer `.webp`, 48 ship `.jpg`,
-3 wired logos + concept candidates under `logos/concepts/`), 292 Markdown (prose docs +
-**167 per-page `*-anchors.md` catalogs** — 165 generated + 2 curated, see §4/§6), 1 site CSS,
-1 site JS, plus the `scripts/` tooling — **47 reusable** scripts (4 `.sh` + 42 `.py` +
+3 wired logos + concept candidates under `logos/concepts/`), 330 Markdown (prose docs +
+**199 per-page `*-anchors.md` catalogs** — 197 generated + 2 curated, see §4/§6), 1 site CSS,
+1 site JS, plus the `scripts/` tooling — **49 reusable** scripts (4 `.sh` + 44 `.py` +
 1 `.mjs`) and **44 archived** one-offs in `scripts/archive/` (7 `.sh` + 30 `.py` + 7 `.mjs`) —
 and its data (`scripts/ship-names.tsv` + `scripts/fix-generic-sources.ops.json`).
 
@@ -206,12 +206,12 @@ engineers · blueprints · modules) + `materials-and-farming/` (materials + the 
 **`activity-guides/`** (6 role playbooks — "how to play role X", formerly the retired
 top-level `activities/` namespace), and **`combat-venues/`** (2: `combat-zones`, `pve-combat-venues`).
 
-**Ships** (`guides/ships/`, 137 pages) — the core data structure, a **ship × role matrix**:
+**Ships** (`guides/ships/`, 169 pages) — the core data structure, a **ship × role matrix**:
 a sparse grid of (ship, role) pairs spanning **48 ships**. Each populated cell is one
 dossier `ship-dossiers/<ship>-<role>.html` (briefing hull render + rating bar + spec grid + loadout
 tables); the `best-ships-by-role/` ladders ("best ship for role X"); `general/rating-methodology.html`, the
 explainer for the 1–100 suitability score the dossiers and ladders display (cross-linked from
-all 128 dossiers + 7 by-role pages); and `general/ship-role-matrix.html`, the whole grid rendered on
+all 160 dossiers + 7 by-role pages); and `general/ship-role-matrix.html`, the whole grid rendered on
 one page (generated; see §6). The `guides/systems/activity-guides/` how-tos (each
 set to its role's DS accent group) and the generated landing page are other *projections* of
 that grid.
@@ -270,11 +270,11 @@ The first step toward "content-as-data". Convention: every task script lives in
 - **`generate-anchor-files.sh`** → regenerates the per-page `<basename>-anchors.md`
   anchor catalogs (§4). For each guide it extracts every `<section id="…">` and the
   section's title and writes the sibling `.md`. Every guide also carries a `#credits`
-  (**Sources**) section anchor, so all 166 now get a catalog; the two hand-curated catalogs
+  (**Sources**) section anchor, so all 198 now get a catalog; the two hand-curated catalogs
   (`blueprints-anchors.md`, `engineers-anchors.md`) are skipped via a `CURATED` list. It
   only ever touches files carrying its own generated marker, so hand-authored catalogs
   are safe. Re-run after adding/removing/renaming a guide or any `<section id>`. Baseline:
-  165 generated + 2 curated.
+  197 generated + 2 curated.
 - **`generate-ship-role-matrix.py`** → regenerates `guides/ships/general/ship-role-matrix.html`, the
   whole ship × role grid on one page, from the dossiers + the canonical suitability ratings.
 - **Ratings pipeline** — `compute-ship-ratings.py` rebuilds `data/ship-ratings/` (the 1–100
@@ -309,7 +309,7 @@ The first step toward "content-as-data". Convention: every task script lives in
   block to the end of each dossier's §Role & Overview, linking the same hull's sibling-role
   dossiers with their `NN/100` ratings (the `.vchips`/`.vchip` component, §3). Ratings are read
   live from the sibling headlines; idempotent, and singleton hulls are skipped — so it lands on
-  the **115 multi-variant dossiers** (of 128).
+  the **153 multi-variant dossiers** (of 160).
 - **Sources pipeline** — `build-sources.py` (+ shared parser/renderer `sources_lib.py`)
   regenerates every page's bottom-of-page **Sources** block (`section.credits`) from
   `data/sources/<path-mirroring-guides>.json`, the **canonical source of truth** (one file per
@@ -450,7 +450,7 @@ and is **external references only** (no links to other site pages; enforced by
 from — never a site/repo **root** (swept by `scripts/fix-generic-sources.py`, §6) — and a short
 list of **trusted-channel YouTube videos** (Obsidian Ant, Down to Earth Astronomy, Ricardos
 Gaming, Mile 13 Gaming, TheYamiks, The Buur Pit) may be cited as extra rows where relevant and
-version-current (oEmbed-verified, ≤3 per page; present on 77 pages).
+version-current (oEmbed-verified, ≤3 per page; present on 79 pages).
 
 ---
 
@@ -464,7 +464,7 @@ divergent token names, and per-page layout widths that the inline-CSS era produc
 - **Naming inconsistency** — some asset filenames still mix `_` vs `-` and case; standardizing
   is a tracked TODO (don't mass-rename ad hoc). Note: the stylesheet is `ed-blackbo**x**`
   while the repo is `ed-blackbo**ok**`.
-- **Manufacturer logos** — ship hull renders are now embedded in all 128 dossiers
+- **Manufacturer logos** — ship hull renders are now embedded in all 160 dossiers
   (`add-ship-render.py`); manufacturer logos are still pending (tracked in GitHub Issues).
 - **Fleet bias** — dossiers / by-role / activities still reference the personal fleet (KA-05
   ship tags); systems pages are largely de-biased (tracked in GitHub Issues).

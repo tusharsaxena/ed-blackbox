@@ -15,13 +15,13 @@ how it's built), **GitHub Issues** (backlog).
 ## Repo layout (quick reference)
 
 ```
-guides/            166 HTML guides + index.html (generated) — all on the design system
+guides/            198 HTML guides + index.html (generated) — all on the design system
                    (link ed-blackbox.css/.js + the shared analytics.js GA tag; only a tiny
                    per-page accent-override <style>)
                    each guide has a sibling <name>-anchors.md (generated; 2 curated in
                    engineering/engineering-manuals/) — tree mirrors index.html's sections/subsections
   ships/           general/ (rating-methodology · ship-role-matrix, 2) ·
-                   best-ships-by-role/ (7 role ladders) · ship-dossiers/ (128)
+                   best-ships-by-role/ (7 role ladders) · ship-dossiers/ (160)
   engineering/     engineering-manuals/ (checklist · engineers · blueprints · modules, 4) ·
                    materials-and-farming/ (materials + 4 farm guides, 5)
   systems/         new-pilot-and-interface/ (6) · galaxy-and-power-systems/ (6) ·
@@ -129,7 +129,7 @@ bash scripts/generate-anchor-files.sh   # rewrites all *-anchors.md; prints coun
 **Re-run whenever you add/remove/rename a `<section id>`, or add/rename/remove a guide.**
 The script only touches files carrying its generated marker, so the hand-curated
 `blueprints-anchors.md` / `engineers-anchors.md` are safe (edit those by hand). Every
-guide now carries a section-anchored catalog (**165 generated + 2 curated** = 167); only
+guide now carries a section-anchored catalog (**197 generated + 2 curated** = 199); only
 those two curated files are hand-edited. Docs: `scripts/generate-anchor-files.md`.
 
 ### Cross-link a page (hyperlinks)
