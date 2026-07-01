@@ -1,33 +1,43 @@
 # generate-ship-role-matrix.py
 
 Builds **`guides/ships/general/ship-role-matrix.html`** — the *Ship × Role Matrix*, a single
-interactive grid of every published ship×role suitability verdict (rows = hulls,
-columns = the seven roles). It's a pure projection of the canonical ratings; re-run it
-whenever those ratings or dossiers change so the grid stays in sync.
+interactive grid of **every** ship×role suitability score (rows = hulls, columns = the seven
+roles). The **full grid is filled** — no blank cells. Re-run it whenever the ratings, the
+matrix overlay, or the dossiers change so the grid stays in sync.
 
 ## Data sources (read-only)
 
 - **`data/ship-ratings/<role>.json`** — the canonical 1–100 suitability ratings (source of
-  truth; see `compute-ship-ratings.py`). Each cell's score + dossier link comes from here.
-- **`data/ships/*.json`** — used only to **cross-check** the landing-pad class. Pad class is
-  declared in the `PAD` map in the script (verified against the hand-checked dossiers,
-  because coriolis-data predates several 2024–25 hulls) and the script warns on any
-  disagreement with `properties.class` (1/2/3 → Small/Medium/Large).
+  truth; see `compute-ship-ratings.py`). Supplies every **dossier-backed** cell's score + link
+  (plus the few consistent dossier-less authored values, e.g. Cobra Mk IV/V · Trading).
+- **`data/ship-ratings/matrix-extra.json`** — the **matrix-only overlay**: hand-authored 1–100
+  scores for every ship×role pair that has **no dossier**, so the grid can show all 336 cells.
+  It is read **only here** — never by `compute-ship-ratings.py` / `reconcile-ratings-html.py`,
+  so these values never enter the canonical role JSONs or the by-role ladder pages. Grounded in
+  `data/ships` metrics + E:D role aptitudes; sub-40 values are coarse "poor fit" signals.
+- **`data/ships/*.json`** — used only to **cross-check** the landing-pad class (`PAD` map;
+  warns on disagreement with `properties.class`).
 
-## What it includes (and excludes)
+## What it includes
 
-- **Dossier-backed cells only.** A ship×role pairing appears **only if it has a published
-  dossier** (`guides/ships/ship-dossiers/<ship>-<role>.html`). Rated-but-dossier-less pairings
-  (e.g. Cobra Mk IV/V · Trading, Dolphin · Trading) render as **blank**, not as a score.
+- **The whole board.** Every ship×role pair gets a cell. **`≥40` = a dossier is warranted**:
+  rendered **bright + linked** if the dossier exists, or as a greyed **candidate** (dashed
+  amber ring) if it's still on the slate. **`<40` = poor fit**: greyed (Concept-D greyscale
+  @30%), unlinked, with a "no dossier" tooltip. Exact cutoff — no fuzzy band.
 - **`Python (original)`** (a legacy combat-only duplicate of `Python`) is dropped entirely.
-- Result at last build: **48 ships · 128 cells · 7 roles**.
+- Result at last build: **48 ships · 336 cells · 7 roles** — 128 dossier · 38 candidates (≥40) ·
+  170 greyed (<40).
+
+> **TEMPORARY candidate ring.** The dashed amber ring on the 38 `≥40` no-dossier cells is a
+> build-tracker for the dossiers still to write. **Remove it** (`.cand` CSS rule + the `" cand"`
+> class in `render_table`) once those dossiers are built — the cells then flip to bright + linked.
 
 ## The page
 
 Full design-system chrome (header quick-nav, breadcrumb, masthead, Field-Briefing verdict,
 footer — **no Sources section**). Three sections:
 
-1. `#section-reading-the-grid` — **Reading the Grid** (how to read it; dossier-only note; filters)
+1. `#section-reading-the-grid` — **Reading the Grid** (how to read it; bright-vs-grey; filters)
 2. `#section-matrix` — **The Matrix** (the hero table)
 3. `#section-what-the-grid-reveals` — **What the Grid Reveals** (patterns + role-champions table)
 

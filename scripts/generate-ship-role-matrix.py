@@ -64,18 +64,31 @@ PAD_OF = {ship: pad for pad, ships in PAD.items() for ship in ships}
 PAD_CLASS = {"Small": "pad-small", "Medium": "pad-medium", "Large": "pad-large"}
 
 
+# Suitability >= CUTOFF warrants a dedicated dossier (rendered bright + linked, or
+# as a >=CUTOFF "candidate" if not yet built); < CUTOFF is a poor fit shown greyed
+# and unlinked. Exact cutoff — no fuzzy band.
+CUTOFF = 40
+
+
 def load_matrix():
+    """Every ship x role cell, filled. Authored ratings (dossier-backed OR the few
+    consistent dossier-less values) come from the canonical role JSONs; every
+    remaining pair comes from the matrix-only overlay data/ship-ratings/matrix-extra.json
+    (hand-authored, matrix-only — never fed to compute/reconcile or the ladders)."""
     data = {}
     for key, _ in ROLES:
         j = json.loads((RATINGS / f"{key}.json").read_text())
         for r in j["ratings"]:
             if r["ship"] == "Python (original)":
                 continue  # legacy duplicate of Python (combat-only, no dossier)
-            if not r.get("dossier"):
-                continue  # matrix shows ONLY ship×role pairs that have a published dossier
             data.setdefault(r["ship"], {})[key] = {
-                "rating": r["rating"], "dossier": r["dossier"]
+                "rating": r["rating"], "dossier": r.get("dossier")
             }
+    extra = json.loads((RATINGS / "matrix-extra.json").read_text())
+    for key, ships in extra["ratings"].items():
+        for ship, rating in ships.items():
+            # only fill a cell the canonical files didn't already author
+            data.setdefault(ship, {}).setdefault(key, {"rating": rating, "dossier": None})
     return data
 
 
@@ -180,12 +193,20 @@ MATRIX_CSS = """
   border-left:1px solid rgba(255,255,255,.05)}
 .matrix tbody tr:hover td.col-ship,.matrix tbody tr:hover td.col-class,.matrix tbody tr:hover td.cell{
   box-shadow:inset 0 0 0 99px rgba(247,179,43,.05)}
-/* hover highlights the WHOLE cell — amber border + fill */
-.matrix tbody tr:hover td.cell:not(.empty):hover{
+/* hover highlights the WHOLE cell — amber border + fill (linked cells only) */
+.matrix tbody tr:hover td.cell:not(.nd):hover{
   box-shadow:inset 0 0 0 1px var(--amber),inset 0 0 0 99px rgba(247,179,43,.13)}
-.matrix td.cell a{display:block;color:inherit;text-decoration:none;padding:.16rem .15rem}
+.matrix td.cell a,.matrix td.cell span{display:block;color:inherit;text-decoration:none;padding:.16rem .15rem}
 .matrix td.cell .rscore{display:block;font-weight:400;font-size:.82rem;line-height:1.1}
 .matrix td.cell .bar.mini{height:5px;margin-top:3px;width:90%;margin-inline:auto}
+/* no-dossier cells — Concept D: greyscale @30%, unlinked, "no dossier" tooltip */
+.matrix td.cell.nd{filter:grayscale(1) opacity(.30)}
+.matrix td.cell.nd span{cursor:default}
+/* NOTE(candidate-ring · TEMPORARY): a no-dossier pair scored >=40 is a dossier
+   CANDIDATE, flagged with a dashed amber ring so the build backlog is visible on
+   the board. REMOVE the .cand ring (this rule + the " cand" class emitted in
+   render_table) once the candidate dossiers are written. */
+.matrix td.cell.nd.cand{outline:1px dashed var(--amber);outline-offset:-2px;filter:grayscale(.55) opacity(.62)}
 .matrix td.cell.empty{color:var(--muted,#6b6256)}
 .matrix td.cell.empty .dash{opacity:.35}
 
@@ -361,20 +382,23 @@ def render_table(data, dossier_dir="../ship-dossiers/"):
             f'<td class="col-class"><span class="pill {padcls}">{pad}</span></td>',
         ]
         for key, label in ROLES:
-            c = data[s].get(key)
-            if c:
-                attrs.append(f'data-r-{key}="{c["rating"]}"')
-                rating = c["rating"]
-                inner = (f'<span class="rscore">{rating}</span>'
-                         f'<div class="bar mini"><i style="--pct:{rating}"></i></div>')
-                if c["dossier"]:
-                    inner = f'<a href="{dossier_dir}{c["dossier"]}" title="{s} · {label}">{inner}</a>'
-                else:
-                    inner = f'<span title="{s} · {label} (no dossier)">{inner}</span>'
+            c = data[s][key]
+            rating = c["rating"]
+            attrs.append(f'data-r-{key}="{rating}"')
+            inner = (f'<span class="rscore">{rating}</span>'
+                     f'<div class="bar mini"><i style="--pct:{rating}"></i></div>')
+            if c["dossier"]:
+                inner = f'<a href="{dossier_dir}{c["dossier"]}" title="{s} · {label}">{inner}</a>'
                 cells.append(f'<td class="cell r-{key}">{inner}</td>')
             else:
-                attrs.append(f'data-r-{key}=""')
-                cells.append(f'<td class="cell empty r-{key}"><span class="dash">·</span></td>')
+                # no dossier: Concept-D greyed + unlinked; a >=CUTOFF score is a
+                # dossier CANDIDATE (dashed-ring — a temporary build-tracker, see CSS)
+                cand = rating >= CUTOFF
+                klass = "cell nd" + (" cand" if cand else "")
+                tip = (f"{s} · {label} — no dossier"
+                       + (" · candidate (score ≥40)" if cand else ""))
+                inner = f'<span title="{tip}">{inner}</span>'
+                cells.append(f'<td class="{klass} r-{key}">{inner}</td>')
         rows.append(f'<tr {" ".join(attrs)}>' + "".join(cells) + "</tr>")
 
     bar = ('<div class="mx-bar"><span class="mx-count" id="mx-count"></span>'
@@ -386,7 +410,8 @@ def render_table(data, dossier_dir="../ship-dossiers/"):
     desc = (f'<p class="tbl-desc"><b>Ship × Role suitability matrix</b> — '
             f'each cell is the hull\'s 1–100 score for that role; the bar runs '
             f'<span class="hi-red">red</span> (high) → <span class="hi-green">green</span> (low). '
-            f'Click a cell to open its dossier; use each '
+            f'<b>Bright, linked</b> cells open a dossier; <b>greyed</b> cells are a '
+            f'sub-40 poor fit with no dossier (hover for the tooltip). Use each '
             f'column\'s sort and filter glyphs to reorder and narrow the grid. '
             f'{len(ships)} ships × {len(ROLES)} roles.</p>')
     return bar + table + desc
@@ -491,23 +516,27 @@ SITE_HEADER = """<header class="site-header">
 </header>"""
 
 
-def build_page(data, date="2026-06-25"):
+def build_page(data, date="2026-07-01"):
     n_ships = len(data)
     n_cells = sum(len(v) for v in data.values())
+    n_dossier = sum(1 for v in data.values() for c in v.values() if c["dossier"])
+    n_cand = sum(1 for v in data.values() for c in v.values()
+                 if not c["dossier"] and c["rating"] >= CUTOFF)
+    n_poor = n_cells - n_dossier - n_cand
     matrix = render_table(data)
 
     intro = f"""  <section id="section-reading-the-grid">
     <div class="sec-head"><span class="sec-num">01</span><h2>Reading the Grid</h2><span class="tag">Orientation</span></div>
-    <p class="lead">One board for the whole fleet: <b>{n_ships} hulls</b> down the side, <b>seven roles</b> across the top, and in each cell the ship's <b>1&ndash;100 suitability</b> for that job &mdash; the same verdict its dossier carries. Click any cell to open that dossier.</p>
+    <p class="lead">One board for the whole fleet: <b>{n_ships} hulls</b> down the side, <b>seven roles</b> across the top, and in every cell the ship's <b>1&ndash;100 suitability</b> for that job &mdash; all <b>{n_cells}</b> pairings, none left blank. A <b>bright, linked</b> cell opens that pairing's dossier; a <b>greyed</b> cell is a sub-40 poor fit with no dossier.</p>
     <div class="cards four">
-      <div class="card"><span class="ico">Rows × cols</span><h4>Hulls &times; roles</h4><p>Every ship that earns a verdict in at least one role, scored against the seven job columns.</p></div>
+      <div class="card"><span class="ico">Rows × cols</span><h4>Every hull × role</h4><p>All {n_ships} hulls scored against all seven job columns &mdash; the complete {n_cells}-cell board.</p></div>
       <div class="card"><span class="ico">1&ndash;100</span><h4>The score</h4><p>A roster-relative, fully-engineered suitability <a href="rating-methodology.html">rating</a> &mdash; higher is a better fit for that role.</p></div>
       <div class="card"><span class="ico">Bar</span><h4>At a glance</h4><p>The bar runs <span class="hi-red">red</span> (high) to <span class="hi-green">green</span> (low), so a column reads as a ladder without parsing numbers.</p></div>
       <div class="card"><span class="ico">Class</span><h4>Landing pad</h4><p>The Class column is the hull's pad size &mdash; <b>Small</b>, <b>Medium</b> or <b>Large</b> &mdash; the first filter on any buy.</p></div>
     </div>
 
-    <h3 class="subhead">Only what's been written up</h3>
-    <p>The grid shows <b>only ship&times;role pairings that have a published dossier</b> &mdash; {n_cells} of them. A <b>blank cell is not a zero</b>: it means there is no dossier for that pairing yet, sometimes because the hull is a poor fit for the role, sometimes because the write-up is still on the slate. Use the grid to compare what's documented, not to rule a hull out.</p>
+    <h3 class="subhead">Bright is documented, grey is a poor fit</h3>
+    <p>Of the <b>{n_cells}</b> pairings, <b>{n_dossier}</b> carry a published dossier &mdash; the <b>bright, linked</b> cells. The <b>greyed</b> cells score <b>below&nbsp;40</b>: the hull is a poor fit for that role, so there is no dedicated write-up (hover a cell for its &ldquo;no dossier&rdquo; note). A greyed number is a coarse &ldquo;don't bother&rdquo; signal, not a full verdict &mdash; use the bright cells to compare what's documented.</p>
     <div class="callout"><span class="lbl">Drive it from the headers</span><p>Every column title carries a <b>sort</b> glyph (⇅&nbsp;→&nbsp;▲&nbsp;→&nbsp;▼) and a <b>funnel</b>. Sort by any role to rank the field; search a hull by name; gate the table by pad class; or set a minimum score on one or more roles &mdash; the role minimums <b>stack</b>, so &ldquo;Combat&nbsp;≥&nbsp;85 and Trading&nbsp;≥&nbsp;70&rdquo; finds the hulls that do both.</p></div>
   </section>"""
 
@@ -536,8 +565,8 @@ def build_page(data, date="2026-06-25"):
 
     <div class="cards two nolink">
       <div class="card">
-        <div class="c-head"><h3>The true generalists</h3><span class="c-eyebrow">a verdict in all 7</span></div>
-        <p>Only two hulls carry a rating in <b>every role</b>: the <b>Anaconda</b> and the <b>Python</b>. The Anaconda never drops below <b>76</b> (trading) and peaks at <b>94</b> (exploration) &mdash; the definitive do-everything, at a Large-pad price and a Large-pad bankroll. The Python repeats the trick on a <b>Medium</b> pad for a fraction of the cost: the working commander's one-ship answer.</p>
+        <div class="c-head"><h3>The true generalists</h3><span class="c-eyebrow">70+ in all 7</span></div>
+        <p>Only two hulls <b>clear 70 in every single role</b>: the <b>Anaconda</b> and the <b>Python</b>. The Anaconda never drops below <b>76</b> (trading) and peaks at <b>94</b> (exploration) &mdash; the definitive do-everything, at a Large-pad price and a Large-pad bankroll. The Python repeats the trick on a <b>Medium</b> pad for a fraction of the cost: the working commander's one-ship answer.</p>
       </div>
       <div class="card">
         <div class="c-head"><h3>Pad size isn't destiny</h3><span class="c-eyebrow">Medium punches up</span></div>
@@ -556,7 +585,7 @@ def build_page(data, date="2026-06-25"):
     </div>
     <p class="tbl-desc"><b>Apex per role</b> &mdash; AX is a tie at 90 (Alliance Chieftain shown; Imperial Cutter matches it).</p>
 
-    <div class="callout"><span class="lbl">Specialists buy a podium</span><p>Single-column hulls trade breadth for a peak: the <b>Fer-de-Lance</b> (combat&nbsp;93), <b>Caspian Explorer</b> (exploration&nbsp;94), <b>Type-11 Prospector</b> (mining&nbsp;95) and <b>Lynx Highliner</b> (passenger&nbsp;90) each appear in <b>one</b> role and dominate it. The grid's empty rows beside them are the price &mdash; pick a specialist when you fly one job, a generalist when you fly all of them.</p></div>
+    <div class="callout"><span class="lbl">Specialists buy a podium</span><p>Specialist hulls trade breadth for a peak: the <b>Fer-de-Lance</b> (combat&nbsp;93), <b>Caspian Explorer</b> (exploration&nbsp;94), <b>Type-11 Prospector</b> (mining&nbsp;95) and <b>Lynx Highliner</b> (passenger&nbsp;90) each carry a published dossier in <b>one</b> role and dominate it. The <b>grey cells</b> down the rest of their row are the price &mdash; pick a specialist when you fly one job, a generalist when you fly all of them.</p></div>
   </section>"""
 
     return f"""<!DOCTYPE html>
@@ -588,12 +617,12 @@ def build_page(data, date="2026-06-25"):
 
   <div class="verdict">
     <div class="v-eyebrow">Field Briefing</div>
-    <h2>Every published ship&times;role verdict, on one <em>sortable</em> grid.</h2>
-    <p>The matrix collapses <b>{n_cells} dossier verdicts</b> into a single board &mdash; <b>{n_ships} hulls</b> against <b>seven roles</b>, each cell the hull's 1&ndash;100 suitability for that job, linked straight to the write-up. It is the fastest way to ask &ldquo;what's the best ship for X?&rdquo; or &ldquo;what else is this hull good at?&rdquo; without opening fifty pages.</p>
+    <h2>Every ship&times;role verdict, on one <em>sortable</em> grid.</h2>
+    <p>The matrix puts all <b>{n_cells} pairings</b> on a single board &mdash; <b>{n_ships} hulls</b> against <b>seven roles</b>, each cell the hull's 1&ndash;100 suitability for that job. <b>{n_dossier}</b> are documented and linked straight to the write-up; the rest are scored but sub-40. It is the fastest way to ask &ldquo;what's the best ship for X?&rdquo; or &ldquo;what else is this hull good at?&rdquo; without opening fifty pages.</p>
     <div class="why">
       <div><h4>Rows are hulls</h4><p>Columns are the seven roles; the Class column is the landing pad.</p></div>
       <div><h4>Cells are verdicts</h4><p>The same roster-relative, engineered 1&ndash;100 score each dossier carries.</p></div>
-      <div><h4>Blanks aren't zeros</h4><p>A pairing with no published dossier is simply left empty &mdash; not rated down.</p></div>
+      <div><h4>Grey is a poor fit</h4><p>A greyed, unlinked cell scored below 40 &mdash; no dossier, a hull to skip for that job.</p></div>
     </div>
   </div>
 
@@ -626,7 +655,11 @@ def build_page(data, date="2026-06-25"):
 def main():
     data = load_matrix()
     n_cells = sum(len(v) for v in data.values())
-    print(f"Loaded {len(data)} ships, {n_cells} dossier-backed cells across {len(ROLES)} roles.")
+    n_doss = sum(1 for v in data.values() for c in v.values() if c["dossier"])
+    n_cand = sum(1 for v in data.values() for c in v.values()
+                 if not c["dossier"] and c["rating"] >= CUTOFF)
+    print(f"Loaded {len(data)} ships, {n_cells} cells across {len(ROLES)} roles "
+          f"({n_doss} dossier · {n_cand} candidates >=40 · {n_cells-n_doss-n_cand} greyed <40).")
     cross_check_pad()
     if "--mockups" in sys.argv:
         out = OUT_DIR / "_mockup-matrix-a3.html"

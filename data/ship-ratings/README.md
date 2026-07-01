@@ -57,6 +57,19 @@ that role. **These files are the source of truth for ship ratings** — the HTML
   dossier** *and* the pages disagreed on their rating, so there was no authority to pick
   a value. They are not rated and were removed from the ladders and peer tables.
 
+## `matrix-extra.json` — matrix-only overlay (not part of the canonical pipeline)
+
+`matrix-extra.json` holds hand-authored 1–100 scores for the ship×role pairs that have **no
+dossier**, so the *Ship × Role Matrix* (`generate-ship-role-matrix.py`) can fill all 336 cells.
+It is **read only by the matrix generator** — never by `compute-ship-ratings.py`,
+`reconcile-ratings-html.py`, or `audit-ratings-consistency.py`. That isolation is deliberate:
+these values must **not** flow into the canonical role JSONs above or into the by-role ladder
+pages (they would inject ~170 poor-fit hulls into ladders that should list only rated
+contenders). Rule: **≥40** warrants a dossier (rendered bright+linked, or a dashed-ring
+"candidate" until built); **<40** is a poor fit (greyed, unlinked). Schema:
+`{ _comment, cutoff: 40, ratings: { <role>: { <ship>: <int> } } }`. Grounded in `data/ships`
+metrics + E:D role aptitudes; the sub-40 values are coarse "poor fit" signals, not verdicts.
+
 ## Workflow
 
 ```bash
