@@ -158,39 +158,58 @@
   </section>
   <section id="section-how-it-compares">
     <div class="sec-head"><span class="sec-num">04</span><h2>How It Compares</h2></div>
-    <p>Both tables rate ships <em>for mining specifically</em>. The role column is the maximum cargo capacity in tonnes &mdash; though practical ore capacity is lower once the mining suite and fighter bay are fitted.</p>
-    <h3 class="subhead">Same class &mdash; medium-pad miners</h3>
-    <div class="tbl-scroll">
+    <p>Every table rates ships <em>for mining specifically</em>, split by landing-pad class. The <b>Max cargo</b> column is maximum ore-hold tonnage; the rating is the same 1&ndash;100 suitability verdict used across the site.</p>
+    <h3 class="subhead">Same class &mdash; medium mining ships</h3>
+    <div class="tbl-scroll nolink">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
-      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Keelback</th><th>Rating</th></tr></thead>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod"><a href="python-mining.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~294</td><td class="pcc"><span class="p">Far bigger hold; fights without an SLF</span><span class="c">Far pricier</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
-        <tr><td class="mod"><a href="type-8-transporter-mining.html">Type-8 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~406</td><td class="pcc"><span class="p">Vastly bigger hold</span><span class="c">Can't fight; pricier</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
-        <tr><td class="mod"><a href="krait-mk-ii-mining.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>~230</td><td class="pcc"><span class="p">Bigger hold; SLF and big guns</span><span class="c">Far pricier</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
-        <tr><td class="mod"><a href="krait-phantom-mining.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~190</td><td class="pcc"><span class="p">Bigger hold; great range</span><span class="c">No fighter; pricier</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
-        <tr><td class="mod">Keelback <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>~98</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
-        <tr><td class="mod"><a href="corsair-mining.html">Corsair</a></td><td><span class="pill pad-medium">Medium</span></td><td>~176</td><td class="pcc"><span class="p">Far deeper hold; full extraction suite</span><span class="c">Far pricier; no fighter bay</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-11-prospector-mining.html">Type-11 Prospector</a></td><td><span class="pill pad-medium">Medium</span></td><td>~288 t</td><td class="pcc"><span class="p">Higher-rated; tool fit; pad access</span><span class="c">Value</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
+        <tr><td class="mod"><a href="python-mining.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~294 t</td><td class="pcc"><span class="p">Higher-rated; tool fit; survivability</span><span class="c">Ore hold</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-mk-ii-mining.html">Krait Mk II</a></td><td><span class="pill pad-medium">Medium</span></td><td>~230 t</td><td class="pcc"><span class="p">Higher-rated; survivability; pad access</span><span class="c">Ore hold</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-8-transporter-mining.html">Type-8 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~406 t</td><td class="pcc"><span class="p">Higher-rated; ore hold; tool fit</span><span class="c">Survivability</span></td><td><span class="rscore">84</span><div class="bar mini"><i style="--pct:84"></i></div></td></tr>
+        <tr><td class="mod"><a href="krait-phantom-mining.html">Krait Phantom</a></td><td><span class="pill pad-medium">Medium</span></td><td>~190 t</td><td class="pcc"><span class="p">Higher-rated; pad access; tool fit</span><span class="c">Survivability</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="corsair-mining.html">Corsair</a></td><td><span class="pill pad-medium">Medium</span></td><td>~318 t</td><td class="pcc"><span class="p">Survivability; pad access</span><span class="c">Value</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod">Keelback <span class="pill md">this</span></td><td><span class="pill pad-medium">Medium</span></td><td>~98 t</td><td class="pcc"><span class="base">&mdash; this hull (baseline)</span></td><td><span class="rscore">68</span><div class="bar mini"><i style="--pct:68"></i></div></td></tr>
+        <tr><td class="mod"><a href="asp-explorer-mining.html">Asp Explorer</a></td><td><span class="pill pad-medium">Medium</span></td><td>~130 t</td><td class="pcc"><span class="p">Tool fit; pad access</span><span class="c">Lower-rated; survivability</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-6-transporter-mining.html">Type-6 Transporter</a></td><td><span class="pill pad-medium">Medium</span></td><td>~114 t</td><td class="pcc"><span class="p">Value; pad access</span><span class="c">Lower-rated; survivability</span></td><td><span class="rscore">62</span><div class="bar mini"><i style="--pct:62"></i></div></td></tr>
       </tbody>
     </table>
     </div>
-    <p>The Keelback carries the least of the medium miners but is the cheapest with a fighter bay. The <a href="python-mining.html">Python</a> and <a href="krait-mk-ii-mining.html">Krait Mk II</a> defend themselves better with far bigger holds, but cost much more. The Keelback's edge is cheap SLF defence &mdash; a niche pick.</p>
-    <h3 class="subhead">Other classes &mdash; the alternatives</h3>
-    <div class="tbl-scroll">
+    <p class="nolink">9 medium-pad mining hulls carry a rating, led by <b><a href="type-11-prospector-mining.html">Type-11 Prospector</a></b> (95). Every same-pad rival lands where this one does &mdash; the direct field to shop.</p>
+    <h3 class="subhead">Other classes &mdash; the capital barges</h3>
+    <div class="tbl-scroll nolink">
     <table class="cmp">
       <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
-      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo (t)</th><th>Pros &amp; cons vs Keelback</th><th>Rating</th></tr></thead>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons</th><th>Rating</th></tr></thead>
       <tbody>
-        <tr><td class="mod"><a href="type-11-prospector-mining.html">Type-11 Prospector</a></td><td><span class="pill pad-large">Large</span></td><td>~288</td><td class="pcc"><span class="p">Dedicated miner; exclusive Mk II modules</span><span class="c">Large pad; far pricier</span></td><td><span class="rscore">95</span><div class="bar mini"><i style="--pct:95"></i></div></td></tr>
-        <tr><td class="mod"><a href="python-mining.html">Python</a></td><td><span class="pill pad-medium">Medium</span></td><td>~294</td><td class="pcc"><span class="p">Bigger hold; fights decisively itself</span><span class="c">Far pricier</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
-        <tr><td class="mod"><a href="type-7-transporter-mining.html">Type-7 Transporter</a></td><td><span class="pill pad-large">Large</span></td><td>~310</td><td class="pcc"><span class="p">Far bigger hold; cheap-ish</span><span class="c">Large pad; can't fight</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
-        <tr><td class="mod"><a href="caspian-explorer-mining.html">Caspian Explorer</a></td><td><span class="pill pad-large">Large</span></td><td>~276</td><td class="pcc"><span class="p">Far bigger hold; full suite and a gun</span><span class="c">Large pad; vastly pricier</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
-        <tr><td class="mod"><a href="cobra-mk-v-mining.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>~90</td><td class="pcc"><span class="p">Faster; versatile; lands anywhere</span><span class="c">No fighter; similar hold</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
-        <tr><td class="mod"><a href="adder-mining.html">Adder</a></td><td><span class="pill pad-small">Small</span></td><td>~30</td><td class="pcc"><span class="p">Cheaper; lands anywhere</span><span class="c">Tiny hold; no fighter</span></td><td><span class="rscore">48</span><div class="bar mini"><i style="--pct:48"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-cutter-mining.html">Imperial Cutter</a></td><td><span class="pill pad-large">Large</span></td><td>~794 t</td><td class="pcc"><span class="p">Higher-rated; tool fit; survivability</span><span class="c">Pad access</span></td><td><span class="rscore">92</span><div class="bar mini"><i style="--pct:92"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-9-heavy-mining.html">Type-9 Heavy</a></td><td><span class="pill pad-large">Large</span></td><td>~790 t</td><td class="pcc"><span class="p">Higher-rated; ore hold; value</span><span class="c">Survivability</span></td><td><span class="rscore">90</span><div class="bar mini"><i style="--pct:90"></i></div></td></tr>
+        <tr><td class="mod"><a href="anaconda-mining.html">Anaconda</a></td><td><span class="pill pad-large">Large</span></td><td>~470 t</td><td class="pcc"><span class="p">Higher-rated; tool fit; survivability</span><span class="c">Pad access</span></td><td><span class="rscore">86</span><div class="bar mini"><i style="--pct:86"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-7-transporter-mining.html">Type-7 Transporter</a></td><td><span class="pill pad-large">Large</span></td><td>~310 t</td><td class="pcc"><span class="p">Higher-rated; value; tool fit</span><span class="c">Survivability</span></td><td><span class="rscore">78</span><div class="bar mini"><i style="--pct:78"></i></div></td></tr>
+        <tr><td class="mod"><a href="panther-clipper-mk-ii-mining.html">Panther Clipper Mk II</a></td><td><span class="pill pad-large">Large</span></td><td>~662 t</td><td class="pcc"><span class="p">Higher-rated; ore hold; tool fit</span><span class="c">Value</span></td><td><span class="rscore">77</span><div class="bar mini"><i style="--pct:77"></i></div></td></tr>
+        <tr><td class="mod"><a href="imperial-clipper-mining.html">Imperial Clipper</a></td><td><span class="pill pad-large">Large</span></td><td>~250 t</td><td class="pcc"><span class="p">Higher-rated; value; survivability</span><span class="c">Pad access</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="type-10-defender-mining.html">Type-10 Defender</a></td><td><span class="pill pad-large">Large</span></td><td>~534 t</td><td class="pcc"><span class="p">Higher-rated; survivability; tool fit</span><span class="c">Value</span></td><td><span class="rscore">70</span><div class="bar mini"><i style="--pct:70"></i></div></td></tr>
+        <tr><td class="mod"><a href="federal-corvette-mining.html">Federal Corvette</a></td><td><span class="pill pad-large">Large</span></td><td>~618 t</td><td class="pcc"><span class="p">Survivability; ore hold</span><span class="c">Lower-rated; value</span></td><td><span class="rscore">64</span><div class="bar mini"><i style="--pct:64"></i></div></td></tr>
+        <tr><td class="mod"><a href="caspian-explorer-mining.html">Caspian Explorer</a></td><td><span class="pill pad-large">Large</span></td><td>~434 t</td><td class="pcc"><span class="p">Tool fit; survivability</span><span class="c">Lower-rated; value</span></td><td><span class="rscore">60</span><div class="bar mini"><i style="--pct:60"></i></div></td></tr>
       </tbody>
     </table>
     </div>
-    <p>If you want a defended miner, the pricier <a href="python-mining.html">Python</a> and <a href="krait-mk-ii-mining.html">Krait Mk II</a> do it far better with much bigger holds. The Keelback's only edge is doing it cheaply. For most budget miners, a bigger-hold option or simply mining safe systems makes more sense &mdash; the Keelback is for the SLF novelty on a budget.</p>
+    <p class="nolink">The large-pad mining field (9 rated), led by <b><a href="imperial-cutter-mining.html">Imperial Cutter</a></b> (92) &mdash; bigger pads and bankrolls. They out-muscle this hull on the numbers, but sit a pad class away.</p>
+    <h3 class="subhead">Other classes &mdash; the small-pad prospectors</h3>
+    <div class="tbl-scroll nolink">
+    <table class="cmp">
+      <colgroup><col style="width:17%"><col style="width:9%"><col style="width:16%"><col style="width:46%"><col style="width:12%"></colgroup>
+      <thead><tr><th>Ship</th><th>Class</th><th>Max cargo</th><th>Pros &amp; cons</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="mod"><a href="cobra-mk-v-mining.html">Cobra Mk V</a></td><td><span class="pill pad-small">Small</span></td><td>~110 t</td><td class="pcc"><span class="p">Pad access; tool fit</span><span class="c">Lower-rated; ore hold</span></td><td><span class="rscore">58</span><div class="bar mini"><i style="--pct:58"></i></div></td></tr>
+        <tr><td class="mod"><a href="cobra-mk-iii-mining.html">Cobra Mk III</a></td><td><span class="pill pad-small">Small</span></td><td>~64 t</td><td class="pcc"><span class="p">Pad access; value</span><span class="c">Lower-rated; survivability</span></td><td><span class="rscore">52</span><div class="bar mini"><i style="--pct:52"></i></div></td></tr>
+        <tr><td class="mod"><a href="adder-mining.html">Adder</a></td><td><span class="pill pad-small">Small</span></td><td>~30 t</td><td class="pcc"><span class="p">Pad access; value</span><span class="c">Lower-rated; survivability</span></td><td><span class="rscore">48</span><div class="bar mini"><i style="--pct:48"></i></div></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="nolink">The small-pad mining field (3 rated), led by <b><a href="cobra-mk-v-mining.html">Cobra Mk V</a></b> (58) &mdash; cheaper hulls and tighter pads. They undercut this hull on the numbers, but sit a pad class away.</p>
   </section>
 
   <!-- s4 -->
