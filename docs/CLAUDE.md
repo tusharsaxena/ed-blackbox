@@ -477,6 +477,14 @@ python3 scripts/audit-powerplay.py         # 12 powers (allegiance matched) + 12
   pages that can't take `ed-blackbox.js` without double-binding their inline quick-nav. New
   pages inherit it from `starter-page.html`; `index.html` from `generate-guides-index.sh`. To
   backfill any page missing it, run `python3 scripts/add-analytics-tag.py` (idempotent).
+- **Scroll-progress indicator.** `design-system/js/scroll-progress.js` is the **single source
+  of truth** for the page scroll-progress bar — the thin amber hairline that fills under the
+  site-header as you scroll. Like `analytics.js` it is a **separate**, markup-independent file
+  (it injects its own element + styles, uses the DS colour tokens with fallbacks), so it loads
+  on **every** page including the four engineering pages that can't take `ed-blackbox.js`. New
+  pages inherit it from `starter-page.html`; `index.html` from `generate-guides-index.sh`. To
+  backfill any page missing it, run `python3 scripts/add-scroll-progress-tag.py` (idempotent).
+  Edit/restyle/disable it in that one file — don't reintroduce it as per-page CSS/JS.
 - **Page accent themes only the `.role` title tag; everything else is amber.** The per-page
   accent (`--accent`, maroon/fed/green) colours **only** the masthead `.role` tag. Every
   design-system component (cards, callouts, `.rec`, pick cards, `.hud`, `.dial`, focus ring)
